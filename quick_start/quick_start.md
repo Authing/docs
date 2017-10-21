@@ -9,7 +9,6 @@ We have multiple SDKs to use, here's the list:
  - [JavaScript][JavaScript_LINK]
  - [Python][Python_LINK]
  - [PHP][PHP_LINK]
- - [Java][Java_LINK]
  
 
   [JavaScript_LINK]: /quick_start/javascript

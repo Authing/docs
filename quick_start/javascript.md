@@ -21,22 +21,6 @@ $ npm install authing
 
 ----------
 
-#### #Import
-
-##### ES5
-
-``` javascript
-var Authing = require('authing');
-```
-
-##### ES6+
-
-``` javascript
-import Authing from 'authing';
-```
-
-----------
-
 #### #Usage
 
 ##### ES5
@@ -46,16 +30,17 @@ We use **Promise** to handle asynchronous programming in ES5.
 ``` javascript
 var Authing = require('authing');
 
-var clientId = 'your_client_id';
+var clientId = 'your_client_id'; //your client ID applied on our website
+
 var Auth = new Authing({
 	clientId: clientId
 });
 
-var username = 'test@testmail.com';
+var email = 'test@testmail.com';
 var password = 'testpassword';
 
 Auth.login({
-	username: username,
+	email: email,
 	password: password,
 	clientId: clientId
 }).then(function(res) {
@@ -64,6 +49,9 @@ Auth.login({
 	conosle.log(error);	
 });
 ```
+
+To know how to get a client id, please read  [How to get a client ID](/quick_start/howto.md).
+
 
 ##### ES6+
 
@@ -80,11 +68,11 @@ const main = async () => {
 		clientId
 	});
 
-	let username = 'test@testmail.com';
+	let email = 'test@testmail.com';
 	let password = 'testpassword';
 
 	const res = await Auth.login({
-		username,
+		email,
 		password
 	});
 
