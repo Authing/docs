@@ -5,12 +5,12 @@
  [^_^]:<[PHP](/quick_start/php.md)>
 - [User Service](/user_service/user_service.md)
  - [Users](/user_service/user_service.md)
-   - [ - Register](/user_service/add_user.md)
-   - [ - Login](/user_service/login.md)
-   - [ - Logout](/user_service/logout.md)
-   - [ - List User](/user_service/get_user.md)   
-   - [ - Remove User](/user_service/remove_user.md)
-   - [ - Update User Profile](/user_service/update_user.md)
+   - [Register](/user_service/add_user.md)
+   - [Login](/user_service/login.md)
+   - [Logout](/user_service/logout.md)
+   - [List User](/user_service/get_user.md)   
+   - [Remove User](/user_service/remove_user.md)
+   - [Update User Profile](/user_service/update_user.md)
 
 [^_^]:<
       - [Email Service](guide.md)

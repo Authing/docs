@@ -19,9 +19,7 @@
   - ``` javascript
 
 	{
-		code: 1, //-1 represents failed
-		data: null,
-		message: 'remove success'
+		_id: '59e5ff4935eebf1913cfe8a1'
 	}
 
     ```
