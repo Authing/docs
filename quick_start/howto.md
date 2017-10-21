@@ -19,11 +19,45 @@ Then go to the client dashboard to get the client ID.
 
 #### Use the client ID
 
+##### ES5
+
+``` javascript
+
+var Authing = require('authing');
+
+var clientId = 'your_client_id'; //your client ID applied on our website
+
+var myAccount = 'myemail@myemail.com';
+var myPasswd = 'myPasswd';
+
+var auth = new Authing({
+	clientId: clientId,
+	email: myAccount,
+	pasword: myPasswd
+});
+
+auth.then(function(auth) {
+
+	//use auth
+	
+});
+
+```
+
+##### ES6+
+
 ``` javascript
 import Authing from 'authing';
-let clientId = '59e374332023830871913ebf';
-let Auth = new Authing({
-	clientId
+
+let clientId = 'your_client_id';
+
+const myAccount = 'myemail@myemail.com';
+const myPasswd = 'myPasswd';
+
+const Auth = await new Authing({
+	clientId: clientId,
+	email: myAccount,
+	pasword: myPasswd
 });
 
 //use Auth
