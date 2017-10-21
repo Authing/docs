@@ -1,8 +1,8 @@
-- [Quick Start](/quick_start/quick_start.md)
+- [Quick Start](/README.md)
  - [JavaScript](/quick_start/javascript.md)
- - [Python](/quick_start/python.md) 
- - [PHP](/quick_start/php.md)
  - [How to get a client ID](/quick_start/howto.md)
+ [^_^]:<[Python](/quick_start/python.md)>
+ [^_^]:<[PHP](/quick_start/php.md)>
 - [User Service](/user_service/user_service.md)
  - [Users](/user_service/user_service.md)
    - [ - Register](/user_service/add_user.md)

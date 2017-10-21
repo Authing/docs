@@ -4,11 +4,9 @@
 
 > Authing, An awesome project to provide idendity service.
 
-We have multiple SDKs to use, here's the list:
+We will have multiple SDKs to use, but now we only support JavaScirpt:
 
  - [JavaScript][JavaScript_LINK]
- - [Python][Python_LINK]
- - [PHP][PHP_LINK]
  
 
   [JavaScript_LINK]: /quick_start/javascript
