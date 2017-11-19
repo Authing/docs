@@ -1,4 +1,4 @@
-# JavaScript
+# authing-js-sdk
 
 ----------
 
@@ -31,14 +31,11 @@ We use **Promise** to handle asynchronous programming in ES5.
 var Authing = require('authing');
 
 var clientId = 'your_client_id'; //your client ID applied on our website
-
-var myAccount = 'myemail@myemail.com';
-var myPasswd = 'myPasswd';
+var secret = 'your_app_secret'; //your app secret
 
 var auth = new Authing({
 	clientId: clientId,
-	email: myAccount,
-	pasword: myPasswd
+	secret: secret
 });
 
 auth.then(function(auth) {
@@ -73,14 +70,11 @@ import Authing from 'authing';
 const main = async () => {
 
 	let clientId = 'your_client_id';
-
-	const myAccount = 'myemail@myemail.com';
-	const myPasswd = 'myPasswd';
+	let secret = 'your_app_secret';
 
 	const Auth = await new Authing({
-		clientId: clientId,
-		email: myAccount,
-		pasword: myPasswd
+		clientId,
+		secret
 	});
 
 	let email = 'test@testmail.com';
@@ -104,4 +98,5 @@ main();
 ```
 
 For more API please continue reading.
+
 

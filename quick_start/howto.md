@@ -26,20 +26,15 @@ Then go to the client dashboard to get the client ID.
 var Authing = require('authing');
 
 var clientId = 'your_client_id'; //your client ID applied on our website
-
-var myAccount = 'myemail@myemail.com';
-var myPasswd = 'myPasswd';
+var secret = 'your_app_secret'; //your app secret
 
 var auth = new Authing({
 	clientId: clientId,
-	email: myAccount,
-	pasword: myPasswd
+	secret: secret
 });
 
 auth.then(function(auth) {
-
 	//use auth
-	
 });
 
 ```
@@ -49,17 +44,20 @@ auth.then(function(auth) {
 ``` javascript
 import Authing from 'authing';
 
-let clientId = 'your_client_id';
+const main = async () => {
 
-const myAccount = 'myemail@myemail.com';
-const myPasswd = 'myPasswd';
+	let clientId = 'your_client_id';
+	let secret = 'your_app_secret';
 
-const Auth = await new Authing({
-	clientId: clientId,
-	email: myAccount,
-	pasword: myPasswd
-});
+	const Auth = await new Authing({
+		clientId,
+		secret
+	});
 
-//use Auth
+	//user auth
+
+}
+
+main();
 
 ```
