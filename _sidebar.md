@@ -1,6 +1,7 @@
 - [Quick Start](/README.md)
  - [JavaScript](/quick_start/javascript.md)
  - [How to get a client ID](/quick_start/howto.md)
+ - [Error Code](/quick_start/error_code.md)
  [^_^]:<[Python](/quick_start/python.md)>
  [^_^]:<[PHP](/quick_start/php.md)>
 - [User Service](/user_service/user_service.md)
@@ -11,6 +12,7 @@
    - [List User](/user_service/get_user.md)   
    - [Remove User](/user_service/remove_user.md)
    - [Update User Profile](/user_service/update_user.md)
+- [OAuth](/oauth/oauth.md)
 
 [^_^]:<
       - [Email Service](guide.md)
