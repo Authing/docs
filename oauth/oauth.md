@@ -1,15 +1,22 @@
-# Quick Start
+# OAuth使用说明
 
 ----------
 
-> Authing, An awesome project to provide idendity service.
+### 配置参数说明
 
-We will have multiple SDKs to use, but now we only support JavaScirpt:
+![params][1]
 
- - [JavaScript][JavaScript_LINK]
- 
 
-  [JavaScript_LINK]: /quick_start/javascript
-  [PHP_LINK]: /quick_start/php
-  [Java_LINK]: /quick_start/java
-  [Python_LINK]: /quick_start/python
+Client ID       | Client Secret | Redirect
+--------------- | -------------------- | -------------------------------
+在OAuth平台上申请的APP ID或Client ID    |  OAuth平台提供的Client Secret    |  成功或失败后的回调URL
+
+### 回调参数说明
+
+注册成功或失败后都会回调Redirect中填写的网址，有三个参数：
+
+code            | message              | data
+--------------- | -------------------- | -------------------------------
+错误或成功代码    |  成功或错误返回的消息    |  成功后返回的数据，操作失败不返回此参数
+
+  [1]: http://oxacbp94f.bkt.clouddn.com/docs/oauth/params.jpg
