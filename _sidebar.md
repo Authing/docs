@@ -13,6 +13,7 @@
    - [Remove User](/user_service/remove_user.md)
    - [Update User Profile](/user_service/update_user.md)
    - [Reset Password](/user_service/reset_password.md)
+   - [Verify Email](/user_service/verify_email.md)
 - [OAuth](/oauth/oauth.md)
 
 [^_^]:<
