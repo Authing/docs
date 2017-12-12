@@ -4,6 +4,8 @@
 
 #### Authing.update(options)
 
+此接口可以用来修改密码、昵称、头像等各种用户信息
+
 - **Arguments:**
 
   - ```{Object} options```
