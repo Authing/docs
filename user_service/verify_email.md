@@ -1,16 +1,16 @@
-# Verify Email
+# 验证邮箱
 
 ----------
 
-#### First Authing.sendVerifyEmail(options)
+#### 首先发送验证邮件 Authing.sendVerifyEmail(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
-    - client: clientId
-    - email: target email
+    - client: client ID
+    - email: 需要验证的邮箱
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.sendVerifyEmail({
@@ -19,7 +19,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	{
@@ -28,4 +28,5 @@
     }
     ```
 
-Then, the user will receive the email which include a link, when he click the link, we will verify it and redirct to the link which you configed in the email templates settings.The verify result also be included in the redirect link. e.g.'your_redirect_link?verifyed=true&code=0'
+然后，用户将会收到一个包含验证链接的邮件，当用户打开此链接，我们将进行验证，验证完成之后重定向到您在```验证邮件模板```中所设置的```重定向链接```，并将验证结果一起返回。  
+例如：'```your_redirect_link?verifyed=true&code=0```'

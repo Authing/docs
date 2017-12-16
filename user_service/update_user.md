@@ -1,4 +1,4 @@
-# Update User Profile
+# 修改用户设置
 
 ----------
 
@@ -6,7 +6,7 @@
 
 此接口可以用来修改密码、昵称、头像等各种用户信息
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - _id ```{String} MUST```
@@ -27,7 +27,7 @@
 	- blocked: ```{Boolean}```
 	- isDeleted: ```{Boolean}```
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.update({
@@ -37,7 +37,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 

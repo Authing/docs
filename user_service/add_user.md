@@ -1,16 +1,16 @@
-# Register
+# 注册
 
 ----------
 
 #### Authing.register(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - email
     - password
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.register({
@@ -19,7 +19,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	{

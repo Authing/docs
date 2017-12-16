@@ -2,9 +2,9 @@
 
 ----------
 
-> Authing, An awesome project to provide idendity service.
+> Authing是一个提供身份认证服务的平台.
 
-We will have multiple SDKs to use, but now we only support JavaScirpt:
+未来我们将支持大部分主流语言，但暂时我们只支持Javascript:
 
  - [JavaScript][JavaScript_LINK]
  

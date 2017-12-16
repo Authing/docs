@@ -2,6 +2,6 @@
 
 ----------
 
-User Service contains **user management** and **client management**.
+User Service 包括 **用户管理** 和 **应用**.
 
-To use our API, you must have a client ID and init a instance with the ID, read [How to get a client ID](/quick_start/howto.md) to know.
+您必须获取**client ID**并初始化一个```Authing```实例才能使用我们的API。[怎样获取 client ID](/quick_start/howto.md) ?

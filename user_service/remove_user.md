@@ -1,20 +1,20 @@
-# Remove User
+# 删除用户
 
 ----------
 
 #### Authing.remove(uid)
 
-- **Arguments:**
+- **参数:**
 
   - ```{String} uid```
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
   let uid = '59e5ff4935eebf1913cfe8a1';
 	Authing.remove(uid);
   	```
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 

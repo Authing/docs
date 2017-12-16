@@ -2,30 +2,30 @@
 
 ----------
 
-JavaScript SDK of Authing supports **Angular.js**, **React.js**, **Vue.js** and also **Node.js**.They have compeletely same programming interfaces.
+JavaScript SDK 支持 **Angular.js**, **React.js**, **Vue.js** 以及 **Node.js**.我们提供了完全一致的接口.
 
-## Installation
+## 安装
 
 ----------
 
 #### NPM
 
-NPM is the recommended installation method when building large scale applications. It pairs nicely with module bundlers such as Webpack or Browserify.
+当构建大规模应用时，我们推荐使用```npm```进行安装， 它可以与一些模块打包工具很好地配合使用，如 ```Webpack```， ```Browserify。```
 
 ``` shell
 # latest stable
 $ npm install authing
 ```
 
-## Getting Started
+## 开始使用
 
 ----------
 
-#### #Usage
+##### 使用方法
 
 ##### ES5
 
-We use **Promise** to handle asynchronous programming in ES5.
+在```ES5```中我们使用 **Promise** 处理异步编程。
 
 ``` javascript
 var Authing = require('authing');
@@ -57,12 +57,12 @@ auth.then(function(auth) {
 
 ```
 
-To know how to get a client id, please read  [How to get a client ID](/quick_start/howto.md).
+[怎样获取client ID ?](/quick_start/howto.md)。
 
 
 ##### ES6+
 
-We use **async function** and keyword **await** to handle asynchronous programming in ES6+.
+在```ES6+```中，我们使用 **async 函数** 和 **await 关键字** 处理异步编程。
 
 ``` javascript
 import Authing from 'authing';
@@ -97,6 +97,6 @@ main();
 
 ```
 
-For more API please continue reading.
+想了解更多API，请[继续阅读](/quick_start/howto.md)。
 
 

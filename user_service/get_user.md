@@ -1,23 +1,23 @@
-# List User
+# 获取用户列表
 
 ----------
 
 #### Authing.list(page, count)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Number} page```
     - Default: ```1```
   - ```{Number} count```
     - Default: ```10```
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.list();
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 

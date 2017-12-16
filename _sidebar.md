@@ -1,7 +1,7 @@
-- [Quick Start](/README.md)
+- [起步](/README.md)
  - [JavaScript](/quick_start/javascript.md)
- - [How to get a client ID](/quick_start/howto.md)
- - [Error Code](/quick_start/error_code.md)
+ - [获取client ID](/quick_start/howto.md)
+ - [错误码](/quick_start/error_code.md)
  [^_^]:<[Python](/quick_start/python.md)>
  [^_^]:<[PHP](/quick_start/php.md)>
 - [User Service](/user_service/user_service.md)

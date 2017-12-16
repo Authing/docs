@@ -1,16 +1,16 @@
-# Reset Password
+# 重置密码
 
 ----------
 
-#### First Authing.sendResetPasswordEmail(options)
+#### 首先发送验证码 Authing.sendResetPasswordEmail(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - clientId
     - email
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.sendResetPasswordEmail({
@@ -19,7 +19,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	  {
@@ -30,16 +30,16 @@
     }
     ```
 
-#### Then Authing.verifyResetPasswordVerifyCode(options)
+#### 然后验证验证码 Authing.verifyResetPasswordVerifyCode(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - clientId
     - email
     - verifyCode
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.verifyResetPasswordVerifyCode({
@@ -49,7 +49,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	  {
@@ -59,9 +59,9 @@
     }
     ```
 
-#### Last Authing.changePassword(options)
+#### 最后发送新密码 Authing.changePassword(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - clientId
@@ -69,7 +69,7 @@
     - password
     - verifyCode
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.changePassword({
@@ -80,7 +80,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	  {

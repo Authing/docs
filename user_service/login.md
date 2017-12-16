@@ -1,16 +1,16 @@
-# Login
+# 登录
 
 ----------
 
 #### Authing.login(options)
 
-- **Arguments:**
+- **参数:**
 
   - ```{Object} options```
     - email
     - password
 
-- **Usage:**
+- **使用方法:**
 
   - ``` javascript
 	Authing.login({
@@ -19,7 +19,7 @@
 	});
   	```
 
-- **returns:**
+- **返回数据:**
 
   - ``` javascript
 	{

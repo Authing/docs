@@ -1,23 +1,23 @@
-# How to get a client ID
+# 获取 client ID
 
 ----------
 
-The client id can be applied on [Authing](http://authing.cn).
+```client ID``` 可以在 [Authing](http://authing.cn)申请，步骤如下。
 
-#### Login
+#### 登录
 
-Login at here: [Login - Authing](http://authing.cn/login).
+[登录 - Authing](http://authing.cn/login).
 
-#### Create a client
+#### 新建一个应用
 
-Create a client at here: [Login - Authing](http://authing.cn/dashboard).
+[控制中心 - Authing](http://authing.cn/dashboard).
 
 
-#### Get the client ID
+#### 获取 client ID
 
-Then go to the client dashboard to get the client ID.
+然后就能在应用的控制面板获取 client ID.
 
-#### Use the client ID
+#### 使用 client ID
 
 ##### ES5
 
