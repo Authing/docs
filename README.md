@@ -1,10 +1,10 @@
-# Quick Start
+# 快速开始
 
 ----------
 
-> Authing是一个提供身份认证服务的平台.
+> Authing是一个提供身份认证的服务平台.
 
-未来我们将支持大部分主流语言，但暂时我们只支持Javascript:
+未来我们将支持大部分主流语言，但目前我们只支持Javascript:
 
  - [JavaScript][JavaScript_LINK]
  
