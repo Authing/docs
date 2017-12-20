@@ -4,17 +4,17 @@
  - [错误码](/quick_start/error_code.md)
  [^_^]:<[Python](/quick_start/python.md)>
  [^_^]:<[PHP](/quick_start/php.md)>
-- [User Service](/user_service/user_service.md)
- - [Users](/user_service/user_service.md)
-   - [Register](/user_service/add_user.md)
-   - [Login](/user_service/login.md)
-   - [Logout](/user_service/logout.md)
-   - [List User](/user_service/get_user.md)   
-   - [Remove User](/user_service/remove_user.md)
-   - [Update User Profile](/user_service/update_user.md)
-   - [Reset Password](/user_service/reset_password.md)
-   - [Verify Email](/user_service/verify_email.md)
-- [OAuth](/oauth/oauth.md)
+- [用户接口](/user_service/user_service.md)
+ - [用户](/user_service/user_service.md)
+   - [注册](/user_service/add_user.md)
+   - [登录](/user_service/login.md)
+   - [退出](/user_service/logout.md)
+   - [用户列表](/user_service/get_user.md)   
+   - [删除用户](/user_service/remove_user.md)
+   - [更改用户资料](/user_service/update_user.md)
+   - [重置密码](/user_service/reset_password.md)
+   - [验证邮箱](/user_service/verify_email.md)
+- [第三方登录](/oauth/oauth.md)
 
 [^_^]:<
       - [Email Service](guide.md)
