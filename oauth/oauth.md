@@ -1,4 +1,4 @@
-# OAuth使用说明
+# 第三方登录配置及使用说明
 
 ----------
 
@@ -13,14 +13,16 @@ Client ID       | Client Secret | Redirect
 
 ### 回调参数说明
 
-注册成功或失败后都会回调Redirect中填写的网址，有三个参数：
+注册成功或失败后都会回调Redirect中填写的网址，会附带三个参数：
 
 code            | message              | data
 --------------- | -------------------- | -------------------------------
 错误或成功代码    |  成功或错误返回的消息    |  成功后返回的数据，操作失败不返回此参数
 
-  [1]: http://oxacbp94f.bkt.clouddn.com/docs/oauth/params.jpg
-  [2]: https://github.com/Authing/authing-js-oauth
+### Authing回调URL和对应OAuth开放平台中的回调URL的区别
+
+ - Authing回调URL由Authing调用，会返回最终用户数据，一般是客户端URL，呈现给用户看；
+ - 对应OAuth开放平台由对应OAuth平台调用，返回的是对应OAuth平台中的用户数据（仅在对应的第三方平台中配置了Authing的回调地址才这么做，否则还是回调至用户配置好的URL中）；
 
 ----------
 
@@ -44,9 +46,9 @@ code            | message              | data
 
 #### 需要编写后端代码的OAuth调用方法
 
-##### ```第一步```：在对应开放平台中配置好自己的回调URL；
-##### ```第二步```：下载SDK：[Github][2]（目前仅支持JavaScript）；
-##### ```第三步```：在开放平台中配置好的回调URL中调用后端SDK；
+ - ```第一步```：在对应开放平台中配置好自己的回调URL；
+ - ```第二步```：下载SDK：[Github][2]（目前仅支持JavaScript）；
+ - ```第三步```：在开放平台中配置好的回调URL中调用后端SDK；
 
 ##### SDK OAuth验证使用说明
 
@@ -71,4 +73,7 @@ oauth.auth()
 ```
 
 微信只需要把github换成wechat即可。
+
+  [1]: http://usercontents.authing.cn/docs/oauth/oauth_config.png
+  [2]: https://github.com/Authing/authing-js-oauth
 
