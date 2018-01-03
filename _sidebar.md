@@ -1,9 +1,9 @@
 - [起步](/README.md)
  - [JavaScript](/quick_start/javascript.md)
- - [获取client ID](/quick_start/howto.md)
- - [错误码](/quick_start/error_code.md)
  [^_^]:<[Python](/quick_start/python.md)>
  [^_^]:<[PHP](/quick_start/php.md)>
+- [获取ID和Secret](/quick_start/howto.md)
+- [错误代码](/quick_start/error_code.md) 
 - [用户接口](/user_service/user_service.md)
  - [用户](/user_service/user_service.md)
    - [注册](/user_service/add_user.md)
