@@ -23,7 +23,7 @@ Authing让您7行代码接入用户系统成为可能。
  - [JavaScript][JavaScript_LINK]
  
 
-  [JavaScript_LINK]: /quick_start/javascript
+  [JavaScript_LINK]: http://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
   [Java_LINK]: /quick_start/java
   [Python_LINK]: /quick_start/python
