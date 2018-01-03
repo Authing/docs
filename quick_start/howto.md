@@ -1,8 +1,8 @@
-# 获取 client ID
+# 获取 Client ID 和 Client Secret
 
 ----------
 
-```client ID``` 可以在 [Authing](http://authing.cn)申请，步骤如下。
+```Client ID```和```Client Secret``` 可以在 [Authing](http://authing.cn)控制台获取，步骤如下：
 
 #### 登录
 
@@ -13,51 +13,12 @@
 [控制中心 - Authing](http://authing.cn/dashboard).
 
 
-#### 获取 client ID
+#### 获取 Client ID
 
-然后就能在应用的控制面板获取 client ID.
+然后就能在应用的设置页面获取 Client ID 和 Client Secret.
 
-#### 使用 client ID
+#### 使用 Client ID
 
-##### ES5
+ - [JavaScript][JavaScript_LINK]
 
-``` javascript
-
-var Authing = require('authing');
-
-var clientId = 'your_client_id'; //your client ID applied on our website
-var secret = 'your_app_secret'; //your app secret
-
-var auth = new Authing({
-	clientId: clientId,
-	secret: secret
-});
-
-auth.then(function(auth) {
-	//use auth
-});
-
-```
-
-##### ES6+
-
-``` javascript
-import Authing from 'authing';
-
-const main = async () => {
-
-	let clientId = 'your_client_id';
-	let secret = 'your_app_secret';
-
-	const Auth = await new Authing({
-		clientId,
-		secret
-	});
-
-	//user auth
-
-}
-
-main();
-
-```
+   [JavaScript_LINK]: /quick_start/javascript

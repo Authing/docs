@@ -14,7 +14,7 @@ JavaScript SDK 支持 **Angular.js**, **React.js**, **Vue.js** 以及 **Node.js*
 
 ``` shell
 # latest stable
-$ npm install authing
+$ npm install authing-js-sdk --save
 ```
 
 ## 开始使用
@@ -28,36 +28,35 @@ $ npm install authing
 在```ES5```中我们使用 **Promise** 处理异步编程。
 
 ``` javascript
-var Authing = require('authing');
+var Authing = require('authing-js-sdk');
 
-var clientId = 'your_client_id'; //your client ID applied on our website
-var secret = 'your_app_secret'; //your app secret
-
+// 对Client ID和Client Secret进行验证，获取Access Token
 var auth = new Authing({
-	clientId: clientId,
-	secret: secret
+	clientId: 'your_client_id',
+	secret: 'your_app_secret'
 });
 
-auth.then(function(auth) {
+auth.then(function(validAuth) {
 
-	var email = 'test@testmail.com';
-	var password = 'testpassword';
+	//验证成功后返回新的authing-js-sdk实例(validAuth)，可以将此实例挂在全局
 
-	Auth.login({
-		email: email,
-		password: password,
-		clientId: clientId
-	}).then(function(res) {
-		console.log(res);	
+	validAuth.login({
+		email: 'test@testmail.com',
+		password: 'testpassword'
+	}).then(function(user) {
+		console.log(user);	
 	}).catch(function(error) {
 		conosle.log(error);	
 	});
 	
+}).catch(function(error) {
+	//验证失败
+	console.log(error);
 });
 
 ```
 
-[怎样获取client ID ?](/quick_start/howto.md)。
+[怎样获取client ID ?](http://docs.authing.cn/#/quick_start/howto)。
 
 
 ##### ES6+
@@ -65,30 +64,42 @@ auth.then(function(auth) {
 在```ES6+```中，我们使用 **async 函数** 和 **await 关键字** 处理异步编程。
 
 ``` javascript
-import Authing from 'authing';
+import Authing from 'authing-js-sdk';
 
 const main = async () => {
 
-	let clientId = 'your_client_id';
-	let secret = 'your_app_secret';
+	//使用async时需要使用try...catch...捕捉错误
 
-	const Auth = await new Authing({
-		clientId,
-		secret
-	});
+	let auth;
 
-	let email = 'test@testmail.com';
-	let password = 'testpassword';
+	try{
+		auth = await new Authing({
+			clientId: 'your_client_id',
+			secret: 'your_app_secret'
+		});
+	}catch(error) {
+		console.log('Authing验证失败:', error);
+	}
 
-	const res = await Auth.login({
-		email,
-		password
-	});
+	if(auth) {
 
-	if(res) {
-		console.log('login success');
-	}else {
-		console.log('login failed');
+		let user;
+
+		try {
+			user = await auth.login({
+				email: 'test@testmail.com',
+				password: 'testpassword'
+			});
+		}catch(error) {
+			console.log('登录失败:', error);
+		}
+
+		if(user) {
+			console.log('login success');
+		}else {
+			console.log('login failed');
+		}
+
 	}
 
 }
@@ -97,6 +108,8 @@ main();
 
 ```
 
-想了解更多API，请[继续阅读](/quick_start/howto.md)。
+了解更多报错的详情，请查看[错误代码](http://docs.authing.cn/#/quick_start/error_code)。
+
+获取Client ID和Client Secret，请[点击这里](http://docs.authing.cn/#/quick_start/howto)。
 
 
