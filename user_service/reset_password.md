@@ -7,15 +7,13 @@
 - **参数:**
 
   - ```{Object} options```
-    - clientId
     - email
 
 - **使用方法:**
 
   - ``` javascript
 	Authing.sendResetPasswordEmail({
-		email: email,
-		clientId: clientId
+		email: email
 	});
   	```
 
@@ -35,7 +33,6 @@
 - **参数:**
 
   - ```{Object} options```
-    - clientId
     - email
     - verifyCode
 
@@ -44,7 +41,6 @@
   - ``` javascript
 	Authing.verifyResetPasswordVerifyCode({
 		email: email,
-		clientId: clientId,
     verifyCode: verifyCode
 	});
   	```
@@ -64,7 +60,6 @@
 - **参数:**
 
   - ```{Object} options```
-    - clientId
     - email
     - password
     - verifyCode
@@ -74,7 +69,6 @@
   - ``` javascript
 	Authing.changePassword({
 		email: email,
-		clientId: clientId,
      password: password,
      verifyCode: verifyCode
 	});
