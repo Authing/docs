@@ -15,9 +15,10 @@
 	- username: ```{String}```
 	- nickname: ```{String}```
 	- company: ```{String}```
-	- photo: ```{String}```
+	- photo: ```{String || file object}```
 	- browser: ```{String}```
 	- password: ```{String}```
+	- oldPassword: ```{String}```(当有password时, 此参数必需)
 	- token: ```{String}```
 	- tokenExpiredAt: ```{String}```
 	- loginsCount: ```{Number}```
