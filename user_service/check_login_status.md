@@ -19,7 +19,7 @@
   - ``` javascript
 {
         status: true,
-        message: '验证通过'
+        message: '已登录'
     }
     ```
 
@@ -27,6 +27,7 @@
   - ``` javascript
 {
         status: false,
+        code: 2020,
         message: '未登录'
     }
  
@@ -36,6 +37,7 @@
   - ``` javascript
 {
         status: false,
+        code: 2206,
         message: '登录信息已过期'
     }
  
@@ -45,6 +47,7 @@
    ``` javascript
 {
         status: false,
+        code: 2207,
         message: '登录信息有误'
     }
  
