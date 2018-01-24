@@ -2,17 +2,17 @@
 
 ----------
 
-```Client ID```和```Client Secret``` 可以在 [Authing](http://authing.cn)控制台获取，步骤如下：
+```Client ID```和```Client Secret``` 可以在 [Authing](https://authing.cn)控制台获取，步骤如下：
 
 #### 登录
 
-[登录 - Authing](http://authing.cn/login)
+[登录 - Authing](https://authing.cn/login)
 
 ![login][login]
 
 #### 新建一个应用
 
-[控制中心 - Authing](http://authing.cn/dashboard)
+[控制中心 - Authing](https://authing.cn/dashboard)
 
 ![create_app][create_app]
 
