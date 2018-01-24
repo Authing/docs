@@ -2,7 +2,7 @@
 
 ----------
 
-> Authing是一个提供身份认证服务的产品：[http://authing.cn][Authing_LINK].
+> Authing是一个提供身份认证服务的产品：[https://authing.cn][Authing_LINK].
 
 Authing让您7行代码接入用户系统成为可能。
 
@@ -23,8 +23,8 @@ Authing让您7行代码接入用户系统成为可能。
  - [JavaScript][JavaScript_LINK]
  
 
-  [JavaScript_LINK]: http://docs.authing.cn/#/quick_start/javascript
+  [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
   [Java_LINK]: /quick_start/java
   [Python_LINK]: /quick_start/python
-  [Authing_LINK]: http://authing.cn
+  [Authing_LINK]: https://authing.cn
