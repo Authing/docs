@@ -19,6 +19,7 @@
    - [重置密码](/user_service/reset_password.md)
    - [验证邮箱](/user_service/verify_email.md)
 - [第三方登录](/oauth/oauth.md)
+   - [获取应用第三方OAuth列表](/oauth/read_oauth_list.md)
 
 [^_^]:<
       - [Email Service](guide.md)
