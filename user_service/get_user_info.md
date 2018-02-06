@@ -2,7 +2,7 @@
 
 ----------
 
-#### Authing.user(page, count)
+#### Authing.user(options)
 
 - **参数:**
 
