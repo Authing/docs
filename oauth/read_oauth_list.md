@@ -22,8 +22,8 @@
           "image": "http://oxacbp94f.bkt.clouddn.com/oauth/logo/github.svg",
           "description": "Github OAuth",
           "enabled": true,
-          "client": "59f86b4832eb28071bdd9214",
-          "user": "5a597f35085a2000144a10ed",
+          "client": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+          "user": "xxxxxxxxxxxxxxxxxxxxxxxxx",
           "oAuthUrl": null
         }, {
           "_id": "xxxxxxxxxxxxxxxxxxxxxxxxx",
