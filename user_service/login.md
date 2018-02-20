@@ -9,6 +9,7 @@
   - ```{Object} options```
     - email
     - password
+    - verifyCode(可选)
 
 - **使用方法:**
 
@@ -17,6 +18,14 @@
 		email: email,
 		password: password
 	});
+  /*
+    如果返回数据提示需要输入验证码，则登录参数应为
+    {
+      email: email,
+      password: password,
+      verifyCode: verifyCode
+    }
+  /*
   	```
 
 - **返回数据:**
