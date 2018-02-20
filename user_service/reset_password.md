@@ -2,7 +2,7 @@
 
 ----------
 
-#### 首先发送验证码 Authing.sendResetPasswordEmail(options)
+#### 1.发送验证码 Authing.sendResetPasswordEmail(options)
 
 - **参数:**
 
@@ -28,7 +28,7 @@
     }
     ```
 
-#### 然后验证验证码 Authing.verifyResetPasswordVerifyCode(options)
+#### 2.验证验证码 Authing.verifyResetPasswordVerifyCode(options)
 
 - **参数:**
 
@@ -55,7 +55,7 @@
     }
     ```
 
-#### 最后发送新密码 Authing.changePassword(options)
+#### 3.发送新密码 Authing.changePassword(options)
 
 - **参数:**
 

@@ -1,5 +1,8 @@
 # 上传头像
 
+**!!!important!!!**
+此方法仅JavaScript客户端可用
+
 ----------
 
 #### Authing.selectAvatarFile(cb)
