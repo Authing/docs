@@ -12,7 +12,9 @@
 - **使用方法:**
 
   - ``` javascript
-	Authing.user(options);
+	Authing.user({
+        id: 'xxxxxxx'
+    });
   	```
 
 - **返回数据:**
