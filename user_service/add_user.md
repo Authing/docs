@@ -9,7 +9,6 @@
   - ```{Object} options```
     - email
     - password
-    - verifyCode(可选)
 
 - **使用方法:**
 
@@ -19,12 +18,7 @@
 		password: password
 	});
   /*
-    如果返回数据提示需要输入验证码，则注册参数应为
-    {
-      email: email,
-      password: password,
-      verifyCode: verifyCode
-    }
+  注意：如果5分钟超过三次调用此方法会被禁止注册
   /*  
   	```
 
