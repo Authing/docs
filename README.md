@@ -6,6 +6,8 @@
 
 Authing让您7行代码接入用户系统成为可能。
 
+![cmd-markdown-logo](http://p57u1eyo1.bkt.clouddn.com/vue-demo.png)
+
 ## 功能特性
 
  - 第三方OAuth配置使用
@@ -21,10 +23,7 @@ Authing让您7行代码接入用户系统成为可能。
 未来我们将支持大部分主流语言，但目前我们只支持Javascript:
 
  - [JavaScript][JavaScript_LINK]
- 
-[VueDemo](http://sample.authing.cn)
-
-![cmd-markdown-logo](http://p57u1eyo1.bkt.clouddn.com/vue-demo.png)
+   - [VueDemo](http://sample.authing.cn)
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
