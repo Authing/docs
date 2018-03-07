@@ -2,12 +2,12 @@
 
 ----------
 
-#### Authing.readOauthList()
+#### Authing.readOAuthList()
 
 - **使用方法:**
 
   - ``` javascript
-    Authing.readOauthList();
+    Authing.readOAuthList();
     ```
   - 如果enabled为null则代表未启用
 
