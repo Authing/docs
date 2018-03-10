@@ -17,7 +17,7 @@ Authing对外开放的有两大模块：
 
 ### 请求链接
 
-``https://users.authing.cn``
+``https://users.authing.cn/graphql``
 
 ### 请求方式
 
@@ -40,7 +40,7 @@ OAuth模块负责OAuth登录／注册等操作。
 
 ### 请求链接
 
-``https://oauth.authing.cn``
+``https://oauth.authing.cn/graphql``
 
 
 ### 请求方式
@@ -59,6 +59,8 @@ this.OAuthService = new ApolloClient({
 ```
 
 ## 程序流程
+
+点击[这里](https://docs.authing.cn/#/quick_start/javascript)查看[JavaScript SDK](https://docs.authing.cn/#/quick_start/javascript)的使用方法，以体验流程。
 
 括号内的为对应使用的模块
 
