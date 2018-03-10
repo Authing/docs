@@ -34,12 +34,12 @@ code            | message              | data
 
 ##### Github
 
-将Github OAuth设置中的回调地址改为```http://oauth.authing.cn/oauth/github/redirect```.
+将Github OAuth设置中的回调地址改为```https://oauth.authing.cn/oauth/github/redirect```.
 将Github回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
 
 ##### 微信
 
-将微信开放平台中的回调地址改为```http://oauth.authing.cn/oauth/wechat/redirect```.
+将微信开放平台中的回调地址改为```https://oauth.authing.cn/oauth/wechat/redirect```.
 微信回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
 
 ----------
