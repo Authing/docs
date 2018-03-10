@@ -8,6 +8,8 @@ Authing让您7行代码接入用户系统成为可能。
 
 ![cmd-markdown-logo](http://p57u1eyo1.bkt.clouddn.com/vue-demo.png)
 
+如果您想为Authing贡献SDK，请参考[SDK Guid](https://docs.authing.cn/#/sdk/sdk)。
+
 ## 功能特性
 
  - 第三方OAuth配置使用
