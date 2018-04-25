@@ -21,6 +21,9 @@
 - [第三方登录](/oauth/oauth.md)
    - [获取应用第三方OAuth列表](/oauth/read_oauth_list.md)
    - [第三方登录配置说明](/oauth/oauth.md)
+- [SDK编写导览](/sdk/sdk.md)
+   - [开始编写](/sdk/modules.md)
+   - [GraphQL请求列表](/sdk/gql.md)
 
 [^_^]:<
       - [Email Service](guide.md)
