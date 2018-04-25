@@ -12,7 +12,7 @@ Json web token (JWT), 是为了在网络应用环境间传递声明而执行的�
 
 ## 认证流程
 
-![auth_uml](http://usercontents.authing.cn/white_paper/authing_auth_uml.png)
+![auth_uml](https://usercontents.authing.cn/white_paper/authing_auth_uml.png)
 
 - 用户使用用户名密码来请求服务器
 - 服务器进行验证用户的信息
