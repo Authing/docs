@@ -6,7 +6,7 @@
 
 Authing让您7行代码接入用户系统成为可能。
 
-![cmd-markdown-logo](http://usercontents.authing.cn/vue-demo.png)
+![cmd-markdown-logo](https//usercontents.authing.cn/vue-demo.png)
 
 如果您想为Authing贡献SDK，请参考[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
 
