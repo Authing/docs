@@ -200,6 +200,12 @@ mutation UpdateUser(
 }
 ```
 
+### 修改密码流程
+
+1. sendResetPasswordEmail 发送重置密码邮件给用户 
+2. verifyResetPasswordVerifyCode 检查验证码是否正确
+3. changePassword 使用新的密码和验证码来修改密码
+
 ### sendResetPasswordEmail
 
 ```
