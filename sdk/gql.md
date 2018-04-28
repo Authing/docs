@@ -7,7 +7,7 @@
 ### ReadOAuthList
 
 ``` 
-query getOAuthList($clientId: String!) {
+query ReadOAuthList($clientId: String!) {
 	ReadOauthList(clientId: $clientId) {
 	    _id
 	    name
