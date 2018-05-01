@@ -29,6 +29,6 @@
    [JavaScript_LINK]: /quick_start/javascript
 
 
-[login]: http://usercontents.authing.cn/docs/login.jpg
-[create_app]: http://usercontents.authing.cn/docs/create_app.png
-[get_access]: http://usercontents.authing.cn/docs/get_access.png
+[login]: https://usercontents.authing.cn/docs/login.jpg
+[create_app]: https://usercontents.authing.cn/docs/create_app.png
+[get_access]: https://usercontents.authing.cn/docs/get_access.png

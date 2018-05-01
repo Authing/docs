@@ -74,6 +74,6 @@ oauth.auth()
 
 微信只需要把github换成wechat即可。
 
-  [1]: http://usercontents.authing.cn/docs/oauth/oauth_config.png
+  [1]: https://usercontents.authing.cn/docs/oauth/oauth_config.png
   [2]: https://github.com/Authing/authing-js-oauth
 

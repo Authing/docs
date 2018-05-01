@@ -78,6 +78,6 @@ this.OAuthService = new ApolloClient({
 
 ## 其他规范
 
-1. 使用面向对象的编程方法，方法名称及参数参考文档：[用户接口](http://localhost:3000/#/user_service/user_service)
+1. 使用面向对象的编程方法，方法名称及参数参考文档：[用户接口](https://docs.authing.cn/#/user_service/user_service)
 2. 写好单元测试，测试好每一个接口
 3. 做好错误处理，边界检查

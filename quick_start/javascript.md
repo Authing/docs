@@ -58,7 +58,7 @@ auth.then(function(validAuth) {
 
 ```
 
-[怎样获取client ID ?](http://docs.authing.cn/#/quick_start/howto)。
+[怎样获取client ID ?](https://docs.authing.cn/#/quick_start/howto)。
 
 
 ##### ES6+
@@ -110,8 +110,8 @@ main();
 
 ```
 
-了解更多报错的详情，请查看[错误代码](http://docs.authing.cn/#/quick_start/error_code)。
+了解更多报错的详情，请查看[错误代码](https://docs.authing.cn/#/quick_start/error_code)。
 
-获取Client ID和Client Secret，请[点击这里](http://docs.authing.cn/#/quick_start/howto)。
+获取Client ID和Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 
