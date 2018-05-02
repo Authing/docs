@@ -2,9 +2,21 @@
 
 ----------
 
-此列表包含了所有方法的GraphQL请求文档，可直接复制粘贴使用
+此列表包含了所有方法的GraphQL请求文档，可直接复制粘贴使用。
+
+### getAccessTokenByAppSecret
+
+此接口用来验证ClientId和Secret是否正确，如果正确则返回相应的token，此token在接下来的某些接口中需要进行发送（以下称```OwnerToken```）。
+
+```
+query {
+	getAccessTokenByAppSecret(secret: "${options.secret}", clientId: "${options.clientId}")
+}
+```
 
 ### ReadOAuthList
+
+此接口用来读取用户在Authing控制台中配置的OAuth信息。
 
 ``` 
 query ReadOAuthList($clientId: String!) {
@@ -20,8 +32,13 @@ query ReadOAuthList($clientId: String!) {
 	}
 }
 ```
+#### 注意事项
+
+此接口不需要发送任何```Token```
 
 ### login
+
+此接口用来执行用户登录的操作，登录成功后会返回```UserToken```，建议单独维护此Token。
 
 ```
 mutation login($unionid: String, $email: String, $password: String, $lastIP: String, $registerInClient: String!, $verifyCode: String) {
@@ -48,7 +65,8 @@ mutation login($unionid: String, $email: String, $password: String, $lastIP: Str
 
 #### 注意事项
 
-此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔。
+1. 此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔；
+2. 此接口不需要发送任何```Token```。
 
 ##### Public Key
 
@@ -110,7 +128,8 @@ mutation register(
 
 #### 注意事项
 
-此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔。
+1. 此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔。
+2. 此接口不需要发送任何```Token```。
 
 ##### Public Key
 
@@ -124,6 +143,8 @@ GKl64GDcIq3au+aqJQIDAQAB
 ```
 
 ### user
+
+此接口用来读取用户资料，建议使用```OwnerToken```
 
 ```
 query user($id: String!, $registerInClient: String!){
@@ -152,7 +173,13 @@ query user($id: String!, $registerInClient: String!){
 }
 ```
 
+#### 注意事项
+
+此接口需要发送Token，建议直接使用```OwnerToken```。
+
 ### remove
+
+此接口用来删除用户数据，建议使用```OwnerToken```
 
 ```
 mutation removeUsers($ids: [String], $registerInClient: String, $operator: String){
@@ -162,7 +189,13 @@ mutation removeUsers($ids: [String], $registerInClient: String, $operator: Strin
 }
 ```
 
+#### 注意事项
+
+此接口需要发送Token，建议直接使用```OwnerToken```。
+
 ### update
+
+此接口用来更新用户资料，建议使用```OwnerToken```
 
 ```
 mutation UpdateUser(
@@ -230,11 +263,19 @@ mutation UpdateUser(
 }
 ```
 
+#### 注意事项
+
+此接口需要发送Token，建议直接使用```OwnerToken```。
+
 ### 修改密码流程
 
 1. sendResetPasswordEmail 发送重置密码邮件给用户 
 2. verifyResetPasswordVerifyCode 检查验证码是否正确
 3. changePassword 使用新的密码和验证码来修改密码
+
+#### 注意事项
+
+以下三个修改密码的Token可以不发送任何```Token```。
 
 ### sendResetPasswordEmail
 
@@ -273,6 +314,8 @@ mutation verifyResetPasswordVerifyCode(
 ```
 
 ### changePassword
+
+此接口用来更改忘记密码后的新密码，需要携带verifyCode，不用发送```Token```，正常的密码修正请使用上面的```update```接口。
 
 ```
 mutation changePassword(
@@ -327,3 +370,7 @@ mutation sendVerifyEmail(
 	}
 }
 ```
+
+#### 注意事项
+
+此接口不用发送任何```Token```。
