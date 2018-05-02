@@ -46,6 +46,21 @@ mutation login($unionid: String, $email: String, $password: String, $lastIP: Str
 }
 ```
 
+#### 注意事项
+
+此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔。
+
+##### Public Key
+
+``` shell
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4xKeUgQ+Aoz7TLfAfs9+paePb
+5KIofVthEopwrXFkp8OCeocaTHt9ICjTT2QeJh6cZaDaArfZ873GPUn00eOIZ7Ae
++TiA2BKHbCvloW3w5Lnqm70iSsUi5Fmu9/2+68GZRH9L7Mlh8cFksCicW2Y2W2uM
+GKl64GDcIq3au+aqJQIDAQAB
+-----END PUBLIC KEY-----
+```
+
 ### register
 
 ```
@@ -91,6 +106,21 @@ mutation register(
         blocked
     }
 }
+```
+
+#### 注意事项
+
+此处（登录）的密码需要加密，Authing使用了非对称加密算法，加密方式是```PKCS1v1.5```。注意，个别语言，如JavaScript（非Node）和Go在加密之后还要使用```base64```包一层，要注意喔。
+
+##### Public Key
+
+``` shell
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4xKeUgQ+Aoz7TLfAfs9+paePb
+5KIofVthEopwrXFkp8OCeocaTHt9ICjTT2QeJh6cZaDaArfZ873GPUn00eOIZ7Ae
++TiA2BKHbCvloW3w5Lnqm70iSsUi5Fmu9/2+68GZRH9L7Mlh8cFksCicW2Y2W2uM
+GKl64GDcIq3au+aqJQIDAQAB
+-----END PUBLIC KEY-----
 ```
 
 ### user
