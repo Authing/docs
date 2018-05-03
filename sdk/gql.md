@@ -169,7 +169,76 @@ query user($id: String!, $registerInClient: String!){
 		blocked
 		isDeleted
 	}
-	
+}
+```
+
+#### 注意事项
+
+此接口需要发送Token，建议直接使用```OwnerToken```。
+
+### list
+
+此接口用来读取用户列表，建议使用```OwnerToken```
+
+```
+query users($registerInClient: String, $page: Int, $count: Int){
+  users(registerInClient: $registerInClient, page: $page, count: $count) {
+    totalCount
+    list {
+      _id
+      email
+      emailVerified
+      username
+      nickname
+      company
+      photo
+      browser
+      password
+      registerInClient
+      token
+      tokenExpiredAt
+      loginsCount
+      lastLogin
+      lastIP
+      signedUp
+      blocked
+      isDeleted
+      group {
+        _id
+        name
+        descriptions
+        createdAt
+      }
+      clientType {
+        _id
+        name
+        description
+        image
+        example
+      }
+      userLocation {
+        _id
+        when
+        where
+      }
+      userLoginHistory {
+        totalCount
+        list{
+          _id
+          when
+          success
+          ip
+          result
+        }
+      }
+      systemApplicationType {
+        _id
+        name
+        descriptions
+        price
+      }
+    }
+  }
 }
 ```
 
