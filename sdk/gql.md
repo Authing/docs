@@ -246,6 +246,24 @@ query users($registerInClient: String, $page: Int, $count: Int){
 
 此接口需要发送Token，建议直接使用```OwnerToken```。
 
+### checkLoginStatus
+
+此接口检查用户登录状态，请使用```UserToken```
+
+```
+query checkLoginStatus {
+    checkLoginStatus {
+        status
+        code
+        message
+    }
+}
+```
+
+#### 注意事项
+
+此接口需要发送Token，请使用```UserToken```。
+
 ### remove
 
 此接口用来删除用户数据，建议使用```OwnerToken```
