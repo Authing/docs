@@ -22,10 +22,12 @@ Authing让您7行代码接入用户系统成为可能。
 
 ## 开发平台
 
-未来我们将支持大部分主流语言，但目前我们只支持Javascript:
+目前我们已经支持了JavaScript、Python和Go语言，未来将支持更多语言:
 
  - [JavaScript][JavaScript_LINK]
    - [VueDemo](http://sample.authing.cn)
+ - [Python][Python_LINK]
+ - [Go语言文档补充中...]
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
