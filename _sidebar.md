@@ -1,6 +1,7 @@
 - [起步](/README.md)
  - [JavaScript](/quick_start/javascript.md)
  - [Python](/quick_start/python.md)
+ - [Go](/quick_start/go.md) 
  [^_^]:<[PHP](/quick_start/php.md)>
 - [获取ID和Secret](/quick_start/howto.md)
 - [认证方式](/quick_start/jwt.md) 
