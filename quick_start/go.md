@@ -16,6 +16,8 @@ go get github.com/Authing/authing-go-sdk
 
 ## 开始使用
 
+----------
+
 ```go
 package main
 
@@ -101,6 +103,8 @@ func printJSON(v interface{}) {
 [更多例子](https://github.com/Authing/authing-go-sdk/blob/master/examples/main.go)
 
 ## API使用实例
+
+----------
 
 ### User Endpoint
 请先创建一个用户endpoint Client。然后你可以对用户进行一系列操作，包括注册，登录，更新用户资料，删除用户，修改密码等等。
