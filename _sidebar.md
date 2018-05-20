@@ -2,7 +2,7 @@
  - [JavaScript](/quick_start/javascript.md)
  - [Python](/quick_start/python.md)
  - [Go](/quick_start/go.md) 
- [^_^]:<[PHP](/quick_start/php.md)>
+ - [PHP](/quick_start/php.md)
 - [获取ID和Secret](/quick_start/howto.md)
 - [认证方式](/quick_start/jwt.md) 
 - [错误代码](/quick_start/error_code.md) 
