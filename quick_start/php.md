@@ -34,7 +34,7 @@ try {
     
     $client = new Client($data);
 
-     $client->login([
+    $client->login([
                        'email' => '376155014@qq.com',
                        'password' => '654321',
                    ]);
