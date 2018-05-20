@@ -8,6 +8,24 @@ Authing让您7行代码接入用户系统成为可能。
 
 ![cmd-markdown-logo](https://usercontents.authing.cn/vue-demo.png)
 
+## 开发平台
+
+目前我们已经支持了以下语言，更多语言的相关SDK正在开发中，相关文档请点击下面的链接查看:
+
+ - [JavaScript][JavaScript_LINK]
+   - [VueDemo](http://sample.authing.cn)
+ - [Python][Python_LINK]
+ - [Go][GO_LINK]
+ - [PHP][PHP_LINK]
+
+  [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
+  [PHP_LINK]: /quick_start/php
+  [Java_LINK]: /quick_start/java
+  [Python_LINK]: /quick_start/python
+  [GO_LINK]: /quick_start/go
+  [PHP_LINK]: /quick_start/php  
+  [Authing_LINK]: https://authing.cn
+
 如果您想为Authing贡献SDK，请参考[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
 
 ## 功能特性
@@ -19,19 +37,3 @@ Authing让您7行代码接入用户系统成为可能。
  - 自定义邮件模版、自定义第三方邮件服务
  - Docker微服务架构，拥有99.9%的服务可用性
  - 基于GraphQL的消息通信
-
-## 开发平台
-
-目前我们已经支持了JavaScript、Python和Go语言，未来将支持更多语言，相关文档请点击下面的链接:
-
- - [JavaScript][JavaScript_LINK]
-   - [VueDemo](http://sample.authing.cn)
- - [Python][Python_LINK]
- - [Go][GO_LINK]
-
-  [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
-  [PHP_LINK]: /quick_start/php
-  [Java_LINK]: /quick_start/java
-  [Python_LINK]: /quick_start/python
-  [GO_LINK]: /quick_start/go
-  [Authing_LINK]: https://authing.cn
