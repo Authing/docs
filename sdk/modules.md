@@ -81,4 +81,4 @@ this.OAuthService = new ApolloClient({
 1. 使用面向对象的编程方法，方法名称及参数参考文档：[用户接口](https://docs.authing.cn/#/user_service/user_service)
 2. 写好单元测试，测试好每一个接口
 3. 做好错误处理，边界检查
-4. **Authing的某些GraphQL查询需要发送不同的token，详情请看[GraphQL请求列表](http://localhost:3000/#/sdk/gql)中的相关说明**
+4. **Authing的某些GraphQL查询需要发送不同的token，详情请看[GraphQL请求列表](https:///docs.authing.cn/#/sdk/gql)中的相关说明**
