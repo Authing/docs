@@ -16,7 +16,7 @@ Authing SDK for PHP目支持PHP5.6+。
 
 ``` shell
 # latest stable
-$ composer install authing-php-sdk
+$ composer require authing/authing-php-sdk
 ```
 
 ## 开始使用
