@@ -4,12 +4,16 @@
 
 Authing的客户端SDK使用GraphQL进行通信，各语言需安装必要的GraphQL客户端。
 
+开始编写：
+
+- [开始编写Authing SDK](https://docs.authing.cn/#/sdk/modules)
+- [Authing GraphQL请求列表](https://docs.authing.cn/#/sdk/gql)
+
 GraphQL教程：
 
 - [GraphQL官方文档](http://facebook.github.io/graphql/October2016/)
 - [GraphQL: 一种用于 API 的查询语言(中文文档)](http://graphql.cn/)
 - [Apollo GraphQL Github](https://github.com/apollographql)
-
 
 参考案例：
 - [Authing JavaScript SDK](https://github.com/Authing/authing-js-sdk)
