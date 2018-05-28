@@ -9,8 +9,8 @@
 此接口用来验证ClientId和Secret是否正确，如果正确则返回相应的token，此token在接下来的某些接口中需要进行发送（以下称```OwnerToken```）。
 
 ```
-query {
-	getAccessTokenByAppSecret(secret: "${options.secret}", clientId: "${options.clientId}")
+query getAccessTokenByAppSecret($secret: String!, $clientId: String!){
+    getAccessTokenByAppSecret(secret: $secret, clientId: $clientId)
 }
 ```
 
