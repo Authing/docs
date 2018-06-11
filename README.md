@@ -17,6 +17,7 @@ Authing让您7行代码接入用户系统成为可能。
  - [Python][Python_LINK]
  - [Go][GO_LINK]
  - [PHP][PHP_LINK]
+ - [小程序][MINI_PROGEAM_LINK]
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
@@ -25,6 +26,7 @@ Authing让您7行代码接入用户系统成为可能。
   [GO_LINK]: /quick_start/go
   [PHP_LINK]: /quick_start/php  
   [Authing_LINK]: https://authing.cn
+  [MINI_PROGEAM_LINK]: /quick_start/wxapp
 
 如果您想为Authing贡献SDK，请参考[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
 

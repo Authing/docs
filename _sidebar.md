@@ -3,6 +3,7 @@
  - [Python](/quick_start/python.md)
  - [Go](/quick_start/go.md) 
  - [PHP](/quick_start/php.md)
+ - [小程序](/quick_start/wxapp.md) 
 - [获取ID和Secret](/quick_start/howto.md)
 - [认证方式](/quick_start/jwt.md) 
 - [错误代码](/quick_start/error_code.md) 

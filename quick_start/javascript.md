@@ -48,7 +48,7 @@ auth.then(function(validAuth) {
 	}).then(function(user) {
 		console.log(user);	
 	}).catch(function(error) {
-		conosle.log(error);	
+		console.log(error);	
 	});
 	
 }).catch(function(error) {
