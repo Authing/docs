@@ -13,7 +13,8 @@ Authing让您7行代码接入用户系统成为可能。
 目前我们已经支持了以下语言，更多语言的相关SDK正在开发中，相关文档请点击下面的链接查看:
 
  - [JavaScript][JavaScript_LINK]
-   - [VueDemo](http://sample.authing.cn)
+   - [Vue Demo](http://sample.authing.cn)
+   - [Express中间件](https://github.com/Authing/express-middleware)
  - [Python][Python_LINK]
  - [Go][GO_LINK]
  - [PHP][PHP_LINK]
