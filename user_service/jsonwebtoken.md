@@ -1,4 +1,4 @@
-# 解析JSON Web Token
+# 解析JSON Web Token（仅支持JavaScript）
 
 ----------
 
