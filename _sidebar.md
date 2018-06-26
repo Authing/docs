@@ -20,6 +20,7 @@
    - [更改用户资料](/user_service/update_user.md)
    - [重置密码](/user_service/reset_password.md)
    - [验证邮箱](/user_service/verify_email.md)
+   - [解析JSON Web Token](/user_service/jsonwebtoken.md)   
 - [第三方登录](/oauth/oauth.md)
    - [获取应用第三方OAuth列表](/oauth/read_oauth_list.md)
    - [第三方登录配置说明](/oauth/oauth.md)
