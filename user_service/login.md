@@ -10,6 +10,7 @@
     - email
     - password
     - verifyCode(可选)
+    - lastIP(可选，若连续出现验证码验证失败情况，请将客户端IP填入)
 
 - **使用方法:**
 
