@@ -2,11 +2,12 @@
 
 ----------
 
-#### Authing.checkLoginStatus()
+#### Authing.checkLoginStatus(token)
 
 - **参数:**
 
-  - 无
+  - ```{String} token```
+    - 可选参数，可将token字符串传入以检查此token是否可以使用，若不传入，则默认使用Authing SDK当前状态下维护的token
 
 - **使用方法:**
 
