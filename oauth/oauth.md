@@ -11,6 +11,12 @@ Client ID       | Client Secret | Redirect
 --------------- | -------------------- | -------------------------------
 在OAuth平台上申请的APP ID或Client ID    |  OAuth平台提供的Client Secret    |  成功或失败后的回调URL
 
+```!!IMPOTRANT!! 如果你想直接用网址访问（非SDK生成），需要增加state参数，state参数为您的Authing clientId，如Github：```
+
+``` shell
+https://github.com/login/oauth/authorize/?client_id=Github Client ID&state=Authing clientId
+```
+
 ### 回调参数说明
 
 注册成功或失败后都会回调Redirect中填写的网址，会附带三个参数：
