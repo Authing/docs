@@ -41,7 +41,7 @@ code            | message              | data
 ##### Github
 
 将Github OAuth设置中的回调地址改为```https://oauth.authing.cn/oauth/github/redirect```.
-将Github回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
+Github回调至此URL之后，Authing会跳至开发者配置好的Callback URL中。
 
 ##### 微信
 
