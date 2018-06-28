@@ -7,7 +7,7 @@
 - **参数:**
 
   - ```{String} token```
-    - 可选参数，可将token字符串传入以检查此token是否可以使用，若不传入，则默认使用Authing SDK当前状态下维护的token
+    - 此参数客户端可选，服务端必选，可将token字符串传入以检查此token是否可以使用，若不传入，则默认使用Authing SDK当前状态下维护的token
 
 - **使用方法:**
 
