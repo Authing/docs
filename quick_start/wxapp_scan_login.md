@@ -4,9 +4,17 @@
 
 注意：使用小程序扫码登录，请将``authing-js-sdk``升级到``v0.1.19``版本以上
 
-![小程序扫码登录实例图片](https://usercontents.authing.cn/wxapp-sacan.png)
+![扫码demo](https://usercontents.authing.cn/wxapp-scaning-demo.gif)
 
-### 基础用法
+### 接入流程
+
+##### 1. 配置小程序信息
+
+在Authing控制台中填入小程序的appId、secret和回调地址，用户扫码登录成功会回调至填入的地址。
+
+![配置小程序信息](https://usercontents.authing.cn/wxapp-oauth-config.png)
+
+##### 2. 使用SDK（authing-js-sdk）
 
 在``authing-js-sdk``中使用``startWXAppScaning``方法（[authing-js-sdk文档](https://docs.authing.cn/#/quick_start/javascript)）： 
 
@@ -46,6 +54,8 @@ validAuth.startWXAppScaning({
 });
 
 ```
+
+![小程序扫码登录实例图片](https://usercontents.authing.cn/wxapp-sacan.png)
 
 ### HTTP接口说明
 
