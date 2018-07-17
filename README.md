@@ -6,7 +6,7 @@
 
 Authing让您7行代码接入用户系统成为可能。
 
-![cmd-markdown-logo](https://usercontents.authing.cn/vue-demo.png)
+![cmd-markdown-logo](https://usercontents.authing.cn/authing-demo-login.png)
 
 ## 开发平台
 
@@ -18,7 +18,7 @@ Authing让您7行代码接入用户系统成为可能。
  - [Python][Python_LINK]
  - [Go][GO_LINK]
  - [PHP][PHP_LINK]
- - [小程序][MINI_PROGEAM_LINK]
+ - [小程序以及小程序扫码登录][MINI_PROGEAM_LINK]
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
   [PHP_LINK]: /quick_start/php
