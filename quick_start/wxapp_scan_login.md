@@ -23,7 +23,7 @@ var auth = new Authing({
 auth.then(function(validAuth) {
 
 	validAuth.startWXAppScaning({
-    	mount: 'qrcode-node', //二维码挂载点，如不写则默认漂浮在文档中间
+    	mount: 'qrcode-node', //二维码挂载点的ID，如不写则默认漂浮在文档中间
 	});
 	
 })
