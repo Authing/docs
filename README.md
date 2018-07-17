@@ -4,7 +4,7 @@
 
 > Authing是一个提供身份认证服务的产品：[https://authing.cn][Authing_LINK].
 
-Authing让您7行代码接入用户系统成为可能。
+Authing让您7行代码接入用户系统成为可能，[点击体验](http://sample.authing.cn)。
 
 ![cmd-markdown-logo](https://usercontents.authing.cn/authing-demo-login.png)
 
@@ -13,7 +13,7 @@ Authing让您7行代码接入用户系统成为可能。
 目前我们已经支持了以下语言，更多语言的相关SDK正在开发中，相关文档请点击下面的链接查看:
 
  - [JavaScript][JavaScript_LINK]
-   - [Vue Demo](http://sample.authing.cn)
+   - [体验Vue版的Demo](http://sample.authing.cn)
    - [Express中间件](https://github.com/Authing/express-middleware)
  - [Python][Python_LINK]
  - [Go][GO_LINK]
@@ -22,14 +22,14 @@ Authing让您7行代码接入用户系统成为可能。
  - [小程序扫码登录][MINI_PROGEAM_SCAN_LINK] 
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
-  [PHP_LINK]: /quick_start/php
-  [Java_LINK]: /quick_start/java
-  [Python_LINK]: /quick_start/python
-  [GO_LINK]: /quick_start/go
-  [PHP_LINK]: /quick_start/php  
+  [PHP_LINK]: https://docs.authing.cn/#/quick_start/php
+  [Java_LINK]: https://docs.authing.cn/#/quick_start/java
+  [Python_LINK]: https://docs.authing.cn/#/quick_start/python
+  [GO_LINK]: https://docs.authing.cn/#/quick_start/go
+  [PHP_LINK]: https://docs.authing.cn/#/quick_start/php  
   [Authing_LINK]: https://authing.cn
-  [MINI_PROGEAM_LINK]: /quick_start/wxapp
-  [MINI_PROGEAM_SCAN_LINK]: /quick_start/wxapp_scan_login
+  [MINI_PROGEAM_LINK]: https://docs.authing.cn/#/quick_start/wxapp
+  [MINI_PROGEAM_SCAN_LINK]: https://docs.authing.cn/#/quick_start/wxapp_scan_login
 
 如果您想为Authing贡献SDK，请参考[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
 
