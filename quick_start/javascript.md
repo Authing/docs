@@ -111,6 +111,12 @@ main();
 
 ```
 
+## 使用小程序扫码登录
+
+参考文档： [小程序扫码登录](https://docs.authing.cn/#/quick_start/wxapp_scan_login)
+
+注意：使用小程序扫码登录，请将``authing-js-sdk``升级到``v0.1.19``版本以上
+
 了解更多报错的详情，请查看[错误代码](https://docs.authing.cn/#/quick_start/error_code)。
 
 获取Client ID和Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
