@@ -31,7 +31,9 @@ Authing让您7行代码接入用户系统成为可能，[点击体验](http://sa
   [MINI_PROGEAM_LINK]: https://docs.authing.cn/#/quick_start/wxapp
   [MINI_PROGEAM_SCAN_LINK]: https://docs.authing.cn/#/quick_start/wxapp_scan_login
 
-如果您想为Authing贡献SDK，请参考[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
+如果您想使用第三方登录，请参考：[第三方登录](https://docs.authing.cn/#/oauth/oauth)。
+
+如果您想为Authing贡献SDK，请参考：[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
 
 ## 功能特性
 

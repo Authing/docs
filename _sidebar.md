@@ -10,7 +10,6 @@
 - [认证方式](/quick_start/jwt.md) 
 - [错误代码](/quick_start/error_code.md) 
 - [用户接口](/user_service/user_service.md)
- - [用户](/user_service/user_service.md)
    - [注册](/user_service/add_user.md)
    - [登录](/user_service/login.md)
    - [登录状态](/user_service/check_login_status.md)
