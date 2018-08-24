@@ -55,6 +55,12 @@ validAuth.startWXAppScaning({
 });
 ```
 
+### 注意事项
+
+打开小程序扫码登录后，若您使用了其他第三方服务（如 Github），那么在 [获取应用第三方OAuth列表](https://docs.authing.cn/#/oauth/read_oauth_list) 接口中需要手动过滤 ``alias`` 为 ``wxapp`` 的 OAuth应用，因为小程序扫码登录无链接可打开。
+
+``alias`` 为 ``wxapp`` 的应用即小程序扫码登录的应用。
+
 ![小程序扫码登录实例图片](https://usercontents.authing.cn/wxapp-sacan.png)
 
 ### HTTP接口说明

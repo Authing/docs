@@ -24,7 +24,8 @@
           "enabled": true,
           "client": "xxxxxxxxxxxxxxxxxxxxxxxxx",
           "user": "xxxxxxxxxxxxxxxxxxxxxxxxx",
-          "oAuthUrl": null
+          "oAuthUrl": null,
+          "alias": 'github'
         }, {
           "_id": "xxxxxxxxxxxxxxxxxxxxxxxxx",
           "name": "Wechat",
@@ -33,9 +34,16 @@
           "enabled": null,
           "client": null,
           "user": null,
-          "oAuthUrl": ""
+          "oAuthUrl": "",
+          "alias": 'wechat'
         }]
       }
     }
     ```
+
+#### 注意事项
+
+若您开启了小程序扫码登录，那么在本接口中需要手动过滤 ``alias`` 为 ``wxapp`` 的 OAuth应用，因为小程序扫码登录无链接可打开。
+
+``alias`` 为 ``wxapp`` 的应用即小程序扫码登录的应用。
 

@@ -31,10 +31,6 @@ Authing让您7行代码接入用户系统成为可能，[点击体验](http://sa
   [MINI_PROGEAM_LINK]: https://docs.authing.cn/#/quick_start/wxapp
   [MINI_PROGEAM_SCAN_LINK]: https://docs.authing.cn/#/quick_start/wxapp_scan_login
 
-如果您想使用第三方登录，请参考：[第三方登录](https://docs.authing.cn/#/oauth/oauth)。
-
-如果您想为Authing贡献SDK，请参考：[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
-
 ## 功能特性
 
  - 第三方OAuth配置使用
@@ -44,3 +40,11 @@ Authing让您7行代码接入用户系统成为可能，[点击体验](http://sa
  - 自定义邮件模版、自定义第三方邮件服务
  - Docker微服务架构，拥有99.9%的服务可用性
  - 基于GraphQL的消息通信
+
+## 第三方登录
+
+第三方登录指使用 Github、微信等方式进行登录，请参考 [第三方登录使用文档](https://docs.authing.cn/#/oauth/oauth)。
+
+## 为 Authing 贡献 SDK
+
+如果您想为 Authing 贡献 SDK，请参考：[SDK Guide](https://docs.authing.cn/#/sdk/sdk)。
