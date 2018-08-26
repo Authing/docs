@@ -2,23 +2,26 @@
 
 ----------
 
-> Authing是一个提供身份认证服务的产品：[https://authing.cn][Authing_LINK].
+> Authing 是一个领先的身份认证云：[https://authing.cn][Authing_LINK].
 
-Authing让您7行代码接入用户系统成为可能，[点击体验](http://sample.authing.cn)。
+Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript** 应用，仅[一行代码即可生成完整的登录表单](https://docs.authing.cn/#/quick_start/login-form)。
+
+[点击体验](https://sample.authing.cn)。
 
 ![cmd-markdown-logo](https://usercontents.authing.cn/authing-demo-login.png)
 
 ## 开发平台
 
-目前我们已经支持了以下语言，更多语言的相关SDK正在开发中，相关文档请点击下面的链接查看:
+目前我们已经支持了以下语言，更多语言的相关 SDK 正在开发中，相关文档请点击下面的链接查看:
 
  - [JavaScript][JavaScript_LINK]
-   - [体验Vue版的Demo](http://sample.authing.cn)
-   - [Express中间件](https://github.com/Authing/express-middleware)
+   - [一行代码生成登录表单](https://docs.authing.cn/#/quick_start/login-form) 
+   - [体验 Vue 版的 Demo](https://sample.authing.cn)
+   - [Express 中间件](https://github.com/Authing/express-middleware)
  - [Python][Python_LINK]
  - [Go][GO_LINK]
  - [PHP][PHP_LINK]
- - [小程序][MINI_PROGEAM_LINK]
+ - [小程序接入][MINI_PROGEAM_LINK]
  - [小程序扫码登录][MINI_PROGEAM_SCAN_LINK] 
 
   [JavaScript_LINK]: https://docs.authing.cn/#/quick_start/javascript
@@ -33,13 +36,18 @@ Authing让您7行代码接入用户系统成为可能，[点击体验](http://sa
 
 ## 功能特性
 
- - 第三方OAuth配置使用
- - 依托Web UI的用户管理系统
+ - 第三方 OAuth 配置使用
+ - 依托 Web UI 的用户管理系统
  - 跨平台多终端集成能力（即将支持Android、iOS）
- - 基于HTTPS和JWT的安全认证方式
+ - 基于 HTTPS 和 JWT 的安全认证方式
  - 自定义邮件模版、自定义第三方邮件服务
- - Docker微服务架构，拥有99.9%的服务可用性
- - 基于GraphQL的消息通信
+ - Docker 微服务架构，拥有 99.9% 的服务可用性
+ - 基于 GraphQL 的消息通信
+ - 微信小程序扫码登录
+
+## 微信小程序扫码登录
+
+小程序扫码登录指使用 Authing 小程序**身份管家**在网页端或其它客户端扫码微信登录，如需使用请参考文档：[小程序扫码登录][MINI_PROGEAM_SCAN_LINK]。
 
 ## 第三方登录
 
