@@ -2,6 +2,8 @@
 
 ----------
 
+[点击体验 OAuth 登录](http://sample.authing.cn)。
+
 ### 配置参数说明
 
 ![params][1]
