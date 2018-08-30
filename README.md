@@ -44,10 +44,15 @@ Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript*
  - Docker 微服务架构，拥有 99.9% 的服务可用性
  - 基于 GraphQL 的消息通信
  - 微信小程序扫码登录
+ - JavaScirpt 一行代码集成登录表单（Login Form）
 
 ## 微信小程序扫码登录
 
 小程序扫码登录指使用 Authing 小程序**身份管家**在网页端或其它客户端扫码微信登录，如需使用请参考文档：[小程序扫码登录][MINI_PROGEAM_SCAN_LINK]。
+
+## Login Form
+
+一行代码生成表单仅适用于 **JavaScript** 客户端应用，该功能简称 [Login-Form](https://github.com/Authing/login-form)，使用方法请[点击这里](https://docs.authing.cn/#/quick_start/login-form)。
 
 ## 第三方登录
 
