@@ -8,7 +8,7 @@ Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript*
 
 [点击体验](https://sample.authing.cn)。
 
-![cmd-markdown-logo](https://usercontents.authing.cn/authing-demo-login.png)
+<img width="400" height="400" src="https://cdn.authing.cn/sdk/guide/image/authing-login-form.png"/>
 
 ## 开发平台
 

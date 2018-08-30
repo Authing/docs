@@ -61,7 +61,7 @@ validAuth.startWXAppScaning({
 
 ``alias`` 为 ``wxapp`` 的应用即小程序扫码登录的应用。
 
-![小程序扫码登录实例图片](https://usercontents.authing.cn/wxapp-sacan.png)
+<img width="400" height="400" src="https://cdn.authing.cn/sdk/guide/image/authing-login-form-wx-qrcode.png"/>
 
 ### HTTP接口说明
 
