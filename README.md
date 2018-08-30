@@ -52,7 +52,7 @@ Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript*
 
 ## Login Form
 
-[Login-Form](https://github.com/Authing/login-form) 指一行代码生成表单，该功能仅适用于 **JavaScript** 客户端应用 ，使用方法请[点击这里](https://docs.authing.cn/#/quick_start/login-form)。
+[Login-Form](https://github.com/Authing/login-form) 指一行代码生成表单，该功能仅适用于 **JavaScript** 客户端应用 ，使用方法请 [点击这里](https://docs.authing.cn/#/quick_start/login-form)。
 
 ## 第三方登录
 
