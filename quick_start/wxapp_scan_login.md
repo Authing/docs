@@ -1,6 +1,8 @@
 # 小程序扫码登录(authing-js-sdk)
 
-小程序扫码登录指使用Authing小程序``身份管家``在网页端或其它客户端执行微信登录，目前的SDK仅支持客户端JavaScript。其它语言若想使用可参考[HTTP接口说明](https://docs.authing.cn/#/quick_start/wxapp_scan_login?id=http%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E)。[点击此处立即体验小程序扫码登录](http://sample.authing.cn)
+小程序扫码登录指使用Authing小程序``身份管家``在网页端或其它客户端执行微信登录，目前的SDK仅支持客户端JavaScript。其它语言若想使用可参考[HTTP接口说明](https://docs.authing.cn/#/quick_start/wxapp_scan_login?id=http%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E)。
+
+[点击体验小程序扫码登录](http://sample.authing.cn)。
 
 注意：使用小程序扫码登录，请将``authing-js-sdk``升级到``v1.0.4``版本以上
 
@@ -61,7 +63,7 @@ validAuth.startWXAppScaning({
 
 ``alias`` 为 ``wxapp`` 的应用即小程序扫码登录的应用。
 
-![小程序扫码登录实例图片](https://usercontents.authing.cn/wxapp-sacan.png)
+<img width="400" height="400" src="https://cdn.authing.cn/sdk/guide/image/authing-login-form-wx-qrcode.png"/>
 
 ### HTTP接口说明
 

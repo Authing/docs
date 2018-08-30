@@ -4,8 +4,9 @@
 
 JavaScript SDK 支持 **Angular.js**, **React.js**, **Vue.js** 以及 **Node.js**.我们提供了完全一致的接口.
 
-- [Vue Demo](http://sample.authing.cn)
-- [Express中间件](https://github.com/Authing/express-middleware)
+- [一行代码生成登录表单]()
+- [Vue Demo](https://sample.authing.cn)
+- [Express 中间件](https://github.com/Authing/express-middleware)
 
 ## 安装
 
@@ -28,7 +29,7 @@ $ npm install authing-js-sdk --save
 
 ##### ES5
 
-在```ES5```中我们使用 **Promise** 处理异步编程。
+在 ```ES5``` 中我们使用 **Promise** 处理异步编程。
 
 ``` javascript
 var Authing = require('authing-js-sdk');
@@ -61,6 +62,7 @@ auth.then(function(validAuth) {
 
 [怎样获取client ID ?](https://docs.authing.cn/#/quick_start/howto)。
 
+在初始化 Authing 构造函数时，会有网络请求，所以建议在整个程序中仅初始化一次。
 
 ##### ES6+
 
