@@ -29,7 +29,7 @@
 
 ### 2. 显示表单
 
-初始化 AuthingForm 即可。
+初始化 AuthingForm 即可，查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 ``` javascript
 
