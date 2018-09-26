@@ -24,12 +24,12 @@
 目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
-<script src="https://cdn.authing.cn/sdk/javascript/login-form.1.0.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.0.js"></script>
 ```
 
 ### 2. 显示表单
 
-初始化 AuthingForm 即可。
+初始化 AuthingForm 即可，查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 ``` javascript
 
@@ -45,7 +45,7 @@
 ### 3. 完整代码
 
 ``` html
-<script src="https://cdn.authing.cn/sdk/javascript/login-form.1.0.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.0.js"></script>
 <script>
   new AuthingForm({
     clientId: '填入_Authing_的_client_ID',
@@ -88,30 +88,39 @@ hideUP     |  否   |      false  | Boolean   |**是否隐藏用户名-密码登
 hideUsename     |  否   |      false  | Boolean   |**是否隐藏注册时的用户名填写**，隐藏后将不显示用户名输入框| -
 hideOAuth     |  否   |      false  | Boolean   |**是否隐藏第三方 OAuth 登录**，在开发者在 Authing 控制台开启 OAuth 登录后，若此项为 true 将隐藏全部 OAuth 登录| -
 hideClose|否|false|Boolean|**是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮或按 ESC 关闭登录框| -
-**placeholder**     |  否   |      false  | Object   |**定制输入框的 paceholder**| -
+**placeholder**     |  否   |      {}  | Object   |**定制输入框的 paceholder**| -
 **placeholder**.username     |  否   |      请输入用户名  | String   |**定制输入框的 paceholder**| -
 **placeholder**.email     |  否   |      请输入邮箱  | String   |**用户名输入框的 paceholder**| -
 **placeholder**.password     |  否   |      请输入密码  | String   |**邮箱输入框的 paceholder**| -
 **placeholder**.confirmPassword     |  否   |      请确认密码  | String   |**密码输入框的 paceholder**| -
 **placeholder**.verfiyCode     |  否   |      请输入验证码  | String   |**验证码输入框的 paceholder**| -
 **placeholder**.newPassword     |  否   |      请输入新密码  | String   |**新密码输入框的 paceholder**| -
-**qrcodeScanning**     |  否   |      false  | Object   |**小程序扫码登录的配置项**| -
+**qrcodeScanning**     |  否   |      {}  | Object   |**小程序扫码登录的配置项**| -
 **qrcodeScanning**.redirect     |  否   |      true  | Boolean   |**是否执行跳转（在用户后台配置的URL）**，若值为false，用户数据会通过 onSuccess 回调函数返回| -
 **qrcodeScanning**.onSuccess     |  否   |      null  | Function   |**登录成功后回调函数，redirect为true时不回调此函数**| user
 **qrcodeScanning**.onError     |  否   |      null  | Function   |**登录失败后回调函数，一般为网络问题** | error
 **qrcodeScanning**.onIntervalStarting     |  否   |      null  | Function   |**轮询时的回调函数，intervalNum 为 setInterval 返回的数值，可使用 clearInterval 停止轮询** | intervalNum
 **qrcodeScanning**.interval     |  否   |      1500  | Number   |每隔多少秒检查一次是否扫码，默认1500 | -
 **qrcodeScanning**.tips     |  否   |      使用 微信 或小程序 身份管家 扫码登录  | String   |提示信息，可写HTML | -
+**host**     |  否   |      {}  | Object   |**小程序扫码登录的配置项**| -
+**host**.user     |  否   |      [Authing 官方链接]  | String   |**GraphQL 链接**，默认 Authing 官方链接，此处用于私有部署 Authing 的用户使用| -
+**host**.oauth     |  否   |      [Authing 官方链接]  | String   |**GraphQL 链接**，默认 Authing 官方链接，此处用于私有部署 Authing 的用户使用| -
+
 
 完整代码：
 
 ``` javascript
   var form = new AuthingForm({
 
-  	// 必选，client ID
+    // 必选，client ID
     clientId: '5b7f79f519915500015f18ac',
     // 必选，secret
     secret: '82f36cba243e13f81f06675193732af7',
+
+    host: {
+      user: null,
+      oauth: null
+    },
 
     title: 'Authing',
     logo: 'https://cdn.authing.cn/authing-logo.png',
@@ -157,7 +166,7 @@ Login-Form 还提供了 **十五** 个事件，开发者可根据需要定制操
 ``` javascript
 var form = new AuthingForm({ clientId: 'xxxx', secret: 'xxxxx'});
 form.on('login', function(user) {
-	// 成功登录后的回调事件，参数 user 为用户数据
+  // 成功登录后的回调事件，参数 user 为用户数据
 });
 ```
 
@@ -186,66 +195,66 @@ formClosed     | Login Form 关闭事件   |      null | 用户按下 ESC 或点
 
 ``` javascript
 form.on('authingLoad', function (authing) {
-	console.log('on authing load', authing);
+  console.log('on authing load', authing);
 });
 
 form.on('authingUnload', function (error) {
-	console.log('on authing load error', error);
+  console.log('on authing load error', error);
 });
 
 form.on('oauthLoad', function (oauthList) {
-	console.log('on oauth load', oauthList);
+  console.log('on oauth load', oauthList);
 });
 
 form.on('oauthUnload', function (error) {
-	console.log('on oauth unload', error);
+  console.log('on oauth unload', error);
 });
 
 form.on('login', function (user) {
-	console.log('on login', user);
+  console.log('on login', user);
 });
 
 form.on('loginError', function (error) {
-	console.log('on login error', error);
+  console.log('on login error', error);
 });
 
 form.on('register', function (user) {
-	console.log('on register', user);
+  console.log('on register', user);
 });
 
 form.on('registerError', function (error) {
-	console.log('on register error', error);
+  console.log('on register error', error);
 });
 
 form.on('emailSent', function (data) {
-	console.log('on email sent', data);
+  console.log('on email sent', data);
 });
 
 form.on('emailSentError', function (error) {
-	console.log('on email sent error');
+  console.log('on email sent error');
 });
 
 form.on('resetPassword', function (result) {
-	console.log('on reset password');
+  console.log('on reset password');
 });
 
 form.on('resetPasswordError', function (error) {
-	console.log('on reset password error', error);
+  console.log('on reset password error', error);
 });
 
 form.on('scanning', function (data) {
-	console.log('on scanning success', data);
+  console.log('on scanning success', data);
 });
 
 form.on('scanningError', function (error) {
-	console.log('on scanning error', error);
+  console.log('on scanning error', error);
 });
 
 form.on('scanningIntervalStarting', function (interval) {
-	console.log('on scanning interval starting', interval);
+  console.log('on scanning interval starting', interval);
 });
 
 form.on('formClosed', function () {
-	console.log('on form closed');
+  console.log('on form closed');
 });
 ```
