@@ -2,14 +2,14 @@
 
 ----------
 
-要开始Authing SDK的编写，需要先了解Authing的模块分布。
+要开始 Authing SDK 的编写，需要先了解 Authing 的模块分布。
 
-Authing对外开放的有两大模块：
+Authing 对外开放的有两大模块：
 
 1. 用户模块（UserService）
-2. OAuth模块（OAuthService）
+2. OAuth 模块（OAuthService）
 
-在请求这两个模块的方法时，建议初始化不同的Graphql Client进行数据交互。
+在请求这两个模块的方法时，建议初始化不同的 Graphql Client 进行数据交互。
 
 ## 用户模块
 
@@ -21,7 +21,7 @@ Authing对外开放的有两大模块：
 
 ### 请求方式
 
-以JavaScript为例
+以 JavaScript 为例
 
 ``` javascript
 ...
@@ -36,7 +36,7 @@ this.UserService = new ApolloClient({
 
 ## OAuth模块
 
-OAuth模块负责OAuth登录／注册等操作。
+OAuth 模块负责 OAuth 登录／注册等操作。
 
 ### 请求链接
 
@@ -64,21 +64,21 @@ this.OAuthService = new ApolloClient({
 
 括号内的为对应使用的模块
 
-1. 认证Client Id和Secret是否合法(UserService);
+1. 认证 Client Id 和 Secret 是否合法(UserService);
 2. 如果认证失败，则抛出错误;
-3. 如果认证成功，则初始化UserService和OAuthService;
+3. 如果认证成功，则初始化 UserService 和 OAuthService;
 
-## 需要的Client列表
+## 需要的 Client 列表
 
-建议在编写SDK时，初始化以下三个模块：
+建议在编写 SDK 时，初始化以下三个模块：
 
-1. AuthService：用来认证ClientId和Secret是否正确，以及做一些应用所有者才有权限做的事情
+1. AuthService：用来认证 ClientId 和 Secret 是否正确，以及做一些应用所有者才有权限做的事情
 2. UserService：用来处理当前登录/注册操作，以及当前用户有权限做的事情
-3. OAuthService：用来处理OAuth登录/注册动作
+3. OAuthService：用来处理 OAuth 登录/注册动作
 
 ## 其他规范和注意事项
 
 1. 使用面向对象的编程方法，方法名称及参数参考文档：[用户接口](https://docs.authing.cn/#/user_service/user_service)
 2. 写好单元测试，测试好每一个接口
 3. 做好错误处理，边界检查
-4. **Authing的某些GraphQL查询需要发送不同的token，详情请看[GraphQL请求列表](https:///docs.authing.cn/#/sdk/gql)中的相关说明**
+4. **Authing 的某些 GraphQL 查询需要发送不同的token，详情请看 [GraphQL 请求列表](https:///docs.authing.cn/#/sdk/gql)中的相关说明**

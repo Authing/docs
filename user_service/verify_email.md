@@ -2,6 +2,8 @@
 
 ----------
 
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
+
 #### 首先发送验证邮件 Authing.sendVerifyEmail(options)
 
 - **参数:**

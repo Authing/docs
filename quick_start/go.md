@@ -2,7 +2,7 @@
 
 ----------
 
-Authing Go SDK目前支持go1.8+版本。
+Authing Go SDK 目前支持 Golang 1.8+ 版本。
 
 [官方文档请点击这里](https://docs.authing.cn)。
 
@@ -96,18 +96,18 @@ func printJSON(v interface{}) {
 }
 ```
 
-[怎样获取client ID ?](https://docs.authing.cn/#/quick_start/howto)。
+[怎样获取 Client ID ?](https://docs.authing.cn/#/quick_start/howto)。
 
-获取Client ID和Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
+获取 Client ID 和 Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 [更多例子](https://github.com/Authing/authing-go-sdk/blob/master/examples/main.go)
 
-## API使用实例
+## API 使用实例
 
 ----------
 
 ### User Endpoint
-请先创建一个用户endpoint Client。然后你可以对用户进行一系列操作，包括注册，登录，更新用户资料，删除用户，修改密码等等。
+请先创建一个用户 Endpoint Client。然后你可以对用户进行一系列操作，包括注册，登录，更新用户资料，删除用户，修改密码等等。
 
 ```go
 client := authing.NewClient(clientID, appSecret, false)
@@ -302,7 +302,7 @@ if err != nil {
 
 ### OAuth Endpoint
 
-请先创建OAuth Endpoint Client.
+请先创建 OAuth Endpoint Client.
 
 ```go
 oauthClient := authing.NewOauthClient(clientID, appSecret, false)
@@ -310,7 +310,7 @@ oauthClient := authing.NewOauthClient(clientID, appSecret, false)
 oauthClient.Client.Log = func(s string) { log.Println(s) }
 ```
 
-#### 读取OAuth列表
+#### 读取 OAuth 列表
 
 ```go
 readOauthListQueryParameter := authing.ReadOauthListQueryParameter{
