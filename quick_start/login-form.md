@@ -56,6 +56,8 @@
 
 为了应用的安全起见，建议参数中的 ``secret`` 以加密方式存储在客户端代码中。
 
+如果你想获取用户登录事件，请参考[完整事件列表](https://docs.authing.cn/#/quick_start/login-form?id=%E4%BA%8B%E4%BB%B6%E5%93%8D%E5%BA%94)。
+
 ## 高级功能
 
 ### 方法
