@@ -1,6 +1,8 @@
-# 解析JSON Web Token（仅支持JavaScript）
+# 解析 JSON Web Token（仅支持 JavaScript）
 
 ----------
+
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
 
 #### Authing.decodeToken(token)
 
@@ -26,7 +28,7 @@
         "clientId": "5b013d0b096aa60001cb26f6"
       },
       "status": {
-        "code": 200, // code有三种值, 另外两种为, 2206: token已过期, 2207: token错误 
+        "code": 200, // code 有三种值, 另外两种为, 2206: token 已过期, 2207: token 错误 
         "message": "token解析正常"
       },
       "iat": 1529839166,

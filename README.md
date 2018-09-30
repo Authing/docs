@@ -4,7 +4,7 @@
 
 > Authing 是一个领先的身份认证云：[https://authing.cn][Authing_LINK].
 
-Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript** 应用，仅[一行代码即可生成完整的登录表单](https://docs.authing.cn/#/quick_start/login-form)。
+Authing 让你 7 行代码接入用户系统成为可能，同时对 **JavaScript** 应用，仅[一行代码即可生成完整的登录表单](https://docs.authing.cn/#/quick_start/login-form)。
 
 [点击体验 Authing 登录表单](https://sample.authing.cn)。
 
@@ -40,7 +40,7 @@ Authing 让您7行代码接入用户系统成为可能，同时对 **JavaScript*
 
  - 第三方 OAuth 配置使用
  - 依托 Web UI 的用户管理系统
- - 跨平台多终端集成能力（即将支持Android、iOS）
+ - 跨平台多终端集成能力（即将支持 Android、iOS）
  - 基于 HTTPS 和 JWT 的安全认证方式
  - 自定义邮件模版、自定义第三方邮件服务
  - Docker 微服务架构，拥有 99.9% 的服务可用性

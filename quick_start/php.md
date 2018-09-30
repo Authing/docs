@@ -2,7 +2,7 @@
 
 ----------
 
-Authing SDK for PHP目支持PHP5.6+。
+Authing SDK for PHP 支持 PHP 5.6+。
 
 [官方文档请点击这里](https://docs.authing.cn)。
 
@@ -12,7 +12,7 @@ Authing SDK for PHP目支持PHP5.6+。
 
 #### composer
 
-当构建大规模应用时，我们推荐使用```composer```进行安装， 它可以与一些模块打包工具很好地配合使用。
+当构建大规模应用时，我们推荐使用 ```composer``` 进行安装， 它可以与一些模块打包工具很好地配合使用。
 
 ``` shell
 # latest stable
@@ -44,16 +44,16 @@ try {
 }
 ```
 
-[怎样获取client ID ?](https://docs.authing.cn/#/quick_start/howto)。
+[怎样获取 Client ID ?](https://docs.authing.cn/#/quick_start/howto)。
 
-获取Client ID和Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
+获取 Client ID 和 Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 ## 错误处理
 
 ----------
 
-统一使用try...catch处理错误
+统一使用 try...catch 处理错误
 
-了解更多报错的详情，请查看[错误代码列表](https://docs.authing.cn/#/quick_start/error_code)。
+如果在运行途中报错，请查看[错误代码列表](https://docs.authing.cn/#/quick_start/error_code)。
 
 [接口相关文档请点击这里](https://docs.authing.cn/#/user_service/add_user)。

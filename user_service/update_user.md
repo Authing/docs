@@ -2,6 +2,8 @@
 
 ----------
 
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
+
 #### Authing.update(options)
 
 此接口可以用来修改密码、昵称、头像等各种用户信息
@@ -18,7 +20,7 @@
 	- photo: ```{String || file object}```
 	- browser: ```{String}```
 	- password: ```{String}```
-	- oldPassword: ```{String}```(当有password时, 此参数必需)
+	- oldPassword: ```{String}```(当有 password 时, 此参数必需)
 	- token: ```{String}```
 	- tokenExpiredAt: ```{String}```
 	- loginsCount: ```{Number}```

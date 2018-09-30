@@ -2,6 +2,8 @@
 
 ----------
 
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
+
 #### 1.发送验证码 Authing.sendResetPasswordEmail(options)
 
 - **参数:**
@@ -50,7 +52,7 @@
   - ``` javascript
 	  {
       "message": "验证成功，请输入新密码",
-      "code":null,
+      "code": null,
       "__typename": "CommonMessage"
     }
     ```

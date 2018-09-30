@@ -2,6 +2,8 @@
 
 ----------
 
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
+
 #### Authing.list(page, count)
 
 - **参数:**

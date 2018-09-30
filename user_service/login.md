@@ -2,6 +2,8 @@
 
 ----------
 
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
+
 #### Authing.login(options)
 
 - **参数:**
@@ -9,8 +11,8 @@
   - ```{Object} options```
     - email
     - password
-    - verifyCode(可选)
-    - lastIP(可选，若连续出现验证码验证失败情况，请将客户端IP填入)
+    - verifyCode (可选)
+    - lastIP (可选，若连续出现验证码验证失败情况，请将客户端IP填入)
 
 - **使用方法:**
 
