@@ -15,8 +15,7 @@
 
 ![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
 
-[点击体验](https://sample.authing.cn/#/)。
-[在 jsfiddle 上尝试](https://jsfiddle.net/yelexin/Lanvjpct)
+[点击体验](https://sample.authing.cn/#/) 或 [在 jsfiddle 上尝试](https://jsfiddle.net/yelexin/Lanvjpct)
 
 ## 使用步骤
 
