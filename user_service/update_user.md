@@ -17,7 +17,7 @@
 	- username: ```{String}```
 	- nickname: ```{String}```
 	- company: ```{String}```
-  - oauth: ```{String}```
+   - oauth: ```{String}```
 	- photo: ```{String || file object}```
 	- browser: ```{String}```
 	- password: ```{String}```
