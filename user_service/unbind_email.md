@@ -1,40 +1,27 @@
-# 登录
+# 解绑邮箱
 
 ----------
 
 若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
 
-#### Authing.login(options)
+#### Authing.unbindEmail(options)
 
 - **参数:**
 
   - ```{Object} options```
-    - email
-    - password
-    - unionid（若不使用 email 和 password 则必选）
-    - verifyCode（可选）
-    - lastIP（可选，若连续出现验证码验证失败情况，请将客户端 IP 填入）
+    - uesr ```{String} 用户ID，可选，默认为当前登录用户的ID```
+    - client ```{String} 应用ID，可选，默认为当前登录应用的ID```
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.login({
-		email: email,
-		password: password
-	});
-  /*
-    如果返回数据提示需要输入验证码，则登录参数应为
-    {
-      email: email,
-      password: password,
-      verifyCode: verifyCode
-    }
-  /*
+	Authing.unbindEmail();
   	```
 
 - **返回数据:**
 
   - ``` javascript
+
 	{
         "_id": "59e5ff4935eebf1913cfe8a1",
         "email": "86700229ww6ss@163.com",
@@ -51,12 +38,11 @@
         "lastIP": null,
         "signedUp": "Tue Oct 17 2017 21:02:01 GMT+0800 (CST)",
         "blocked": false,
-        "isDeleted": false,
-        "group": {
-          "_id": "59e374332023830871913ebd",
-          "name": "default",
-          "descriptions": "default",
-          "createdAt": "Sun Oct 15 2017 22:44:03 GMT+0800 (CST)"
-        }
+        "isDeleted": false
      }
+
     ```
+
+#### 注意事项
+
+若未绑定其他登录方式, 则不可解绑邮箱

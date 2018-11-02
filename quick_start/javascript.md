@@ -60,7 +60,7 @@ auth.then(function(validAuth) {
 
 ```
 
-[怎样获取client ID ?](https://docs.authing.cn/#/quick_start/howto)。
+[怎样获取 Client ID ?](https://docs.authing.cn/#/quick_start/howto)。
 
 在初始化 Authing 构造函数时，会有网络请求，所以建议在整个程序中仅初始化一次。
 
@@ -117,10 +117,33 @@ main();
 
 参考文档： [小程序扫码登录](https://docs.authing.cn/#/quick_start/wxapp_scan_login)
 
-注意：使用小程序扫码登录，请将``authing-js-sdk``升级到``v0.1.19``版本以上
+注意：使用小程序扫码登录，请将``authing-js-sdk``升级到``v1.0.6``版本以上。
 
-了解更多报错的详情，请查看[错误代码](https://docs.authing.cn/#/quick_start/error_code)。
+## 自定义请求链接
 
-获取Client ID和Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
+```Authing``` 构造函数包含一个名为 ```host``` 对象，可接收自定义的请求链接（适合私有部署 Authing 的用户使用），使用方法如下：
+
+``` javascript
+
+const authing = new Authing({
+	clientId: 'xxxx',
+	secret: 'xxxxxx',
+	host: {
+		user: 'https://users.authing.cn/graphql',
+		oauth: 'https://oauth.authing.cn/graphql'
+	}
+});
+
+```
+
+```host``` 对象中 ```user``` 和 ```oauth``` 的默认值是 Authing 官方的请求链接：
+
+- [https://users.authing.cn/graphql](https://users.authing.cn/graphql)
+- [https://oauth.authing.cn/graphql](https://oauth.authing.cn/graphql)
+
+
+如果在运行过程中出现了错误，请查看[错误代码](https://docs.authing.cn/#/quick_start/error_code)。
+
+获取 Client ID 和 Client Secret，请[点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 

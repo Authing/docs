@@ -15,7 +15,7 @@
 
 ![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
 
-[点击体验](https://sample.authing.cn/#/)。
+[点击体验](https://sample.authing.cn/#/) 或 [在 jsfiddle 上尝试](https://jsfiddle.net/yelexin/Lanvjpct)。
 
 ## 使用步骤
 
@@ -24,7 +24,7 @@
 目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.2.js"></script>
 ```
 
 ### 2. 显示表单
@@ -55,6 +55,8 @@
 ```
 
 为了应用的安全起见，建议参数中的 ``secret`` 以加密方式存储在客户端代码中。
+
+如果你想获取用户登录事件，请参考[完整事件列表](https://docs.authing.cn/#/quick_start/login-form?id=%E4%BA%8B%E4%BB%B6%E5%93%8D%E5%BA%94)。
 
 ## 高级功能
 

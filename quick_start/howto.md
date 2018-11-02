@@ -2,7 +2,7 @@
 
 ----------
 
-```Client ID```和```Client Secret``` 可以在 [Authing](https://authing.cn)控制台获取，步骤如下：
+```Client ID``` 和 ```Client Secret``` 可以在 [Authing](https://authing.cn)控制台获取，步骤如下：
 
 #### 登录
 

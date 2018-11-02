@@ -1,6 +1,8 @@
-# 获取应用第三方OAuth列表
+# 获取应用第三方 OAuth 列表
 
 ----------
+
+若使用 ```JavaScript``` 调用，需要使用 ```then().catch()``` 捕获结果和错误。
 
 #### Authing.readOAuthList()
 
@@ -9,7 +11,8 @@
   - ``` javascript
     Authing.readOAuthList();
     ```
-  - 如果enabled为null则代表未启用
+  - 如果 enabled 为 null 则代表未启用
+  - 若 enabled 为 true , 若按[此方法](/oauth/oauth?id=不需要编写后端代码的-oauth-调用方法（推荐使用）)配置, 使用户访问oAuthUrl则可开始OAuth登录流程
 
 - **返回数据:**
 
