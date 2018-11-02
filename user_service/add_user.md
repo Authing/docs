@@ -9,6 +9,13 @@
   - ```{Object} options```
     - email
     - password
+    - unionid（若不使用 email 和 password 则必选）
+    - oauth （可选，oauth 信息的字符串，或者其他自定义的用户字段都可以以 JSON 字符串的形式存在这里）
+    - username（可选）
+    - nickname（可选）
+    - company（可选）
+    - photo（可选）
+    - lastIP（可选）
 
 - **使用方法:**
 
