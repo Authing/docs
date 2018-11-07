@@ -15,7 +15,9 @@
 
 ![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
 
-[点击体验](https://sample.authing.cn/#/) 或 [在 jsfiddle 上尝试](https://jsfiddle.net/yelexin/Lanvjpct)。
+[点击体验](https://sample.authing.cn/#/) 或 [在 jsrun 上尝试](https://jsrun.net/59hKp/edit)。
+
+<iframe width="100%" height="700" src="//jsrun.net/59hKp/embedded/all/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## 使用步骤
 
