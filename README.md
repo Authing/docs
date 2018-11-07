@@ -7,6 +7,9 @@
 Authing 让你 7 行代码接入用户系统成为可能，同时对 **JavaScript** 应用，仅[一行代码即可生成完整的登录表单](https://docs.authing.cn/#/quick_start/login-form)。
 
 [点击体验 Authing 登录表单](https://sample.authing.cn)。
+
+![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
+
 <iframe width="100%" height="700" src="//jsrun.net/59hKp/embedded/all/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 欢迎在 Github 上关注我们：[Authing - Github](https://github.com/authing)。
