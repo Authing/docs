@@ -31,7 +31,7 @@
 
 ### 2. 显示表单
 
-初始化 AuthingForm 即可，查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
+显示登录表单只需要初始化 AuthingForm 对象：
 
 ``` javascript
 
@@ -42,7 +42,9 @@
 
 ```
 
-完成这两步后就可以使用表单了。
+完成这两步后就可以查看并使用表单了。
+
+查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 ### 3. 完整代码
 
@@ -55,6 +57,8 @@
   });
 </script>
 ```
+
+若要使代码正常工作，请将网页运行在 HTTP 服务器下（最简单的方式是使用 [http-server](https://github.com/indexzero/http-server)）。
 
 为了应用的安全起见，建议参数中的 ``secret`` 以加密方式存储在客户端代码中。
 
