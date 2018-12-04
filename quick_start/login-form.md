@@ -13,7 +13,7 @@
  - 小程序扫码登录（需先在后台配置）
  - 响应式特性
 
-![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
+<!-- ![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png) -->
 
 [点击体验](https://sample.authing.cn/#/) 或 [在 jsrun 上尝试](https://jsrun.net/59hKp/edit)。
 
@@ -23,7 +23,9 @@
 
 ### 1. 引入代码
 
-目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
+目前只支持 **script** 引入，暂不支持 **NPM** 安装。
+
+使用 script 引入后可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
 <script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.2.js"></script>
