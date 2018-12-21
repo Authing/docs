@@ -28,7 +28,7 @@
 使用 script 引入后可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.2.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.3.js"></script>
 ```
 
 ### 2. 显示表单
@@ -51,7 +51,7 @@
 ### 3. 完整代码
 
 ``` html
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.3.js"></script>
 <script>
   new AuthingForm({
     clientId: '填入_Authing_的_client_ID',
