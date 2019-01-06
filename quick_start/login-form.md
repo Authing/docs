@@ -26,7 +26,7 @@
 目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.2.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.3.0.js"></script>
 ```
 
 ### 2. 显示表单
@@ -47,7 +47,7 @@
 ### 3. 完整代码
 
 ``` html
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.2.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.3.0.js"></script>
 <script>
   new AuthingForm({
     clientId: '填入_Authing_的_client_ID',
@@ -101,9 +101,6 @@ hideClose|否|false|Boolean|**是否隐藏登录框右上角的关闭按钮**，
 **placeholder**.newPassword     |  否   |      请输入新密码  | String   |**新密码输入框的 paceholder**| -
 **qrcodeScanning**     |  否   |      {}  | Object   |**小程序扫码登录的配置项**| -
 **qrcodeScanning**.redirect     |  否   |      true  | Boolean   |**是否执行跳转（在用户后台配置的URL）**，若值为false，用户数据会通过 onSuccess 回调函数返回| -
-**qrcodeScanning**.onSuccess     |  否   |      null  | Function   |**登录成功后回调函数，redirect为true时不回调此函数**| user
-**qrcodeScanning**.onError     |  否   |      null  | Function   |**登录失败后回调函数，一般为网络问题** | error
-**qrcodeScanning**.onIntervalStarting     |  否   |      null  | Function   |**轮询时的回调函数，intervalNum 为 setInterval 返回的数值，可使用 clearInterval 停止轮询** | intervalNum
 **qrcodeScanning**.interval     |  否   |      1500  | Number   |每隔多少秒检查一次是否扫码，默认1500 | -
 **qrcodeScanning**.tips     |  否   |      使用 微信 或小程序 身份管家 扫码登录  | String   |提示信息，可写HTML | -
 **host**     |  否   |      {}  | Object   |**小程序扫码登录的配置项**| -
@@ -150,12 +147,6 @@ hideClose|否|false|Boolean|**是否隐藏登录框右上角的关闭按钮**，
 
     qrcodeScanning: {
       redirect: true, // 可选，是否执行跳转（在用户后台配置的URL），默认为true，相关用户信息回传至url上
-      onSuccess: function (res) {
-      }, // 可选，登录成功后回调函数，redirect为true时不回调此函数
-      onError: function (error) {
-      }, // 可选，登录失败后回调函数，一般为网络问题
-      onIntervalStarting: function (intervalNum) {
-      }, // 可选，轮询时的回调函数，intervalNum 为 setInterval 返回的数值，可使用 clearInterval 停止轮询
       interval: 1500, // 可选，每隔多少秒检查一次是否扫码，默认1500
       tips: '使用 微信 或小程序 身份管家 扫码登录', // 可选，提示信息，可写HTML
     }
