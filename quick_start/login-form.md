@@ -13,7 +13,7 @@
  - 小程序扫码登录（需先在后台配置）
  - 响应式特性
 
-![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png)
+<!-- ![login-form](https://cdn.authing.cn/sdk/guide/image/login-form.png) -->
 
 [点击体验](https://sample.authing.cn/#/) 或 [在 jsrun 上尝试](https://jsrun.net/59hKp/edit)。
 
@@ -23,7 +23,9 @@
 
 ### 1. 引入代码
 
-目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
+目前只支持 **script** 引入，暂不支持 **NPM** 安装。
+
+使用 script 引入后可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
 <script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.3.0.js"></script>
@@ -31,7 +33,7 @@
 
 ### 2. 显示表单
 
-初始化 AuthingForm 即可，查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
+显示登录表单只需要初始化 AuthingForm 对象：
 
 ``` javascript
 
@@ -42,7 +44,9 @@
 
 ```
 
-完成这两步后就可以使用表单了。
+完成这两步后就可以查看并使用表单了。
+
+查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
 
 ### 3. 完整代码
 
@@ -55,6 +59,8 @@
   });
 </script>
 ```
+
+若要使代码正常工作，请将网页运行在 HTTP 服务器下（最简单的方式是使用 [http-server](https://github.com/indexzero/http-server)）。
 
 为了应用的安全起见，建议参数中的 ``secret`` 以加密方式存储在客户端代码中。
 

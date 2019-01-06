@@ -12,12 +12,14 @@
 <body>
   <div id="app"></div>
 </body>
+
+<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>  
 <script>
   window.$docsify = {
     search: 'auto', // default
 
     name: '',
-    repo: '',
+    repo: 'https://github.com/Authing/docs',
     subMaxLevel: 4,
 
     loadSidebar: true,
@@ -51,7 +53,13 @@
 
       // Headline depth, 1 - 6
       depth: 2
-    }
+    },
+
+    plugins: [
+      EditOnGithubPlugin.create(
+        'https://github.com/LearnSolid/docs/tree/master/'
+      ),
+    ]
   }
 </script>
 <script src="https://s13.cnzz.com/z_stat.php?id=1272835538&web_id=1272835538" language="JavaScript"></script>
