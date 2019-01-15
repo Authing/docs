@@ -78,7 +78,7 @@ HTTP接口适用于非 JavaScript 平台，JavaScript 开发者可以略过此�
 
 #### 1. 生成二维码
 
-##### 地址：https://oauth.authing.cn/oauth/wxapp/qrcode/:clientId?random=RANDOM_STRING
+##### 地址：https://oauth.authing.cn/oauth/wxapp/qrcode/<Authing 应用 ID>?random=RANDOM_STRING
 
 - **请求方法:**
 
@@ -86,10 +86,12 @@ HTTP接口适用于非 JavaScript 平台，JavaScript 开发者可以略过此�
 
 - **参数:**
 
-  - ```{String} clientId```
-  	- 即将登录的 Authing 应用 Id
   - ```{String} random```
   	- 客户端生成的随机字符串
+
+- **示例 URL**
+  
+	- `https://oauth.authing.cn/oauth/wxapp/qrcode/5c344f102e450b000170190a?random=UaJe6j5S47pRTLo7`
 
 - **返回数据:**
 
