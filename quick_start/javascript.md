@@ -4,7 +4,7 @@
 
 JavaScript SDK 支持 **Angular.js**, **React.js**, **Vue.js** 以及 **Node.js**.我们提供了完全一致的接口.
 
-- [一行代码生成登录表单]()
+- [一行代码生成登录表单](https://docs.authing.cn/#/quick_start/login-form)
 - [Vue Demo](https://sample.authing.cn)
 - [Express 中间件](https://github.com/Authing/express-middleware)
 
