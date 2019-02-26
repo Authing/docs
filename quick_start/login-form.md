@@ -23,46 +23,45 @@
 
 ### 1. 引入代码
 
-目前只支持 **script** 引入，暂不支持 **NPM** 安装。
-
-使用 script 引入后可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
+目前只支持 **script** 引入，暂不支持 **NPM** 安装，使用了本功能的开发者可以不必再安装 **authing-js-sdk**，因为通过 script 标签引入的代码中包含了 **authing-js-sdk**。
 
 ``` javascript
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.4.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.5.0.js"></script>
 ```
 
 ### 2. 显示表单
 
-显示登录表单只需要初始化 AuthingForm 对象：
+初始化 AuthingForm 即可，查看怎么获取 Client Id 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
+
+初始化 AuthingForm 的参数和 `authing-js-sdk` 的参数部分一样，请参考[文档](https://docs.authing.cn/#/quick_start/javascript?id=%E5%AE%A2%E6%88%B7%E7%AB%AF)。
 
 ``` javascript
 
   new AuthingForm({
-    clientId: '填入_Authing_的_client_ID',
-    secret: '填入_Authing_client_ID_的_secret'
+  	// 必填，client ID
+    clientId: 'your_client_id',
+    // 必填，timestamp
+    timestamp: Math.round(new Date() / 1000),
+    // 必填，nonce
+    nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
   });
 
 ```
 
-完成这两步后就可以查看并使用表单了。
-
-查看怎么获取 Client Id 和 Secret 请 [点击这里](https://docs.authing.cn/#/quick_start/howto)。
+完成这两步后就可以使用表单了。
 
 ### 3. 完整代码
 
 ``` html
-<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.4.0.js"></script>
+<script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.5.0.js"></script>
 <script>
   new AuthingForm({
-    clientId: '填入_Authing_的_client_ID',
-    secret: '填入_Authing_client_ID_的_secret'
-  });
+    clientId: 'your_client_id',
+    timestamp: Math.round(new Date() / 1000),
+    nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
+  });  
 </script>
 ```
-
-若要使代码正常工作，请将网页运行在 HTTP 服务器下（最简单的方式是使用 [http-server](https://github.com/indexzero/http-server)）。
-
-为了应用的安全起见，建议参数中的 ``secret`` 以加密方式存储在客户端代码中。
 
 如果你想获取用户登录事件，请参考[完整事件列表](https://docs.authing.cn/#/quick_start/login-form?id=%E4%BA%8B%E4%BB%B6%E5%93%8D%E5%BA%94)。
 
@@ -119,10 +118,12 @@ hideClose|否|false|Boolean|**是否隐藏登录框右上角的关闭按钮**，
 ``` javascript
   var form = new AuthingForm({
 
-    // 必选，client ID
-    clientId: '5b7f79f519915500015f18ac',
-    // 必选，secret
-    secret: '82f36cba243e13f81f06675193732af7',
+  	// 必填，client ID
+    clientId: 'your_client_id',
+    // 必填，timestamp
+    timestamp: Math.round(new Date() / 1000),
+    // 必填，nonce
+    nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
 
     host: {
       user: null,
@@ -167,7 +168,7 @@ Login-Form 还提供了 **十五** 个事件，开发者可根据需要定制操
 ``` javascript
 var form = new AuthingForm({ clientId: 'xxxx', secret: 'xxxxx'});
 form.on('login', function(user) {
-  // 成功登录后的回调事件，参数 user 为用户数据
+	// 成功登录后的回调事件，参数 user 为用户数据
 });
 ```
 
@@ -196,66 +197,66 @@ formClosed     | Login Form 关闭事件   |      null | 用户按下 ESC 或点
 
 ``` javascript
 form.on('authingLoad', function (authing) {
-  console.log('on authing load', authing);
+	console.log('on authing load', authing);
 });
 
 form.on('authingUnload', function (error) {
-  console.log('on authing load error', error);
+	console.log('on authing load error', error);
 });
 
 form.on('oauthLoad', function (oauthList) {
-  console.log('on oauth load', oauthList);
+	console.log('on oauth load', oauthList);
 });
 
 form.on('oauthUnload', function (error) {
-  console.log('on oauth unload', error);
+	console.log('on oauth unload', error);
 });
 
 form.on('login', function (user) {
-  console.log('on login', user);
+	console.log('on login', user);
 });
 
 form.on('loginError', function (error) {
-  console.log('on login error', error);
+	console.log('on login error', error);
 });
 
 form.on('register', function (user) {
-  console.log('on register', user);
+	console.log('on register', user);
 });
 
 form.on('registerError', function (error) {
-  console.log('on register error', error);
+	console.log('on register error', error);
 });
 
 form.on('emailSent', function (data) {
-  console.log('on email sent', data);
+	console.log('on email sent', data);
 });
 
 form.on('emailSentError', function (error) {
-  console.log('on email sent error');
+	console.log('on email sent error');
 });
 
 form.on('resetPassword', function (result) {
-  console.log('on reset password');
+	console.log('on reset password');
 });
 
 form.on('resetPasswordError', function (error) {
-  console.log('on reset password error', error);
+	console.log('on reset password error', error);
 });
 
 form.on('scanning', function (data) {
-  console.log('on scanning success', data);
+	console.log('on scanning success', data);
 });
 
 form.on('scanningError', function (error) {
-  console.log('on scanning error', error);
+	console.log('on scanning error', error);
 });
 
 form.on('scanningIntervalStarting', function (interval) {
-  console.log('on scanning interval starting', interval);
+	console.log('on scanning interval starting', interval);
 });
 
 form.on('formClosed', function () {
-  console.log('on form closed');
+	console.log('on form closed');
 });
 ```
