@@ -31,6 +31,8 @@
    - [获取用户第三方OAuth列表](/oauth/read_user_oauth_list.md)
    - [绑定第三方OAuth账号](/oauth/bind_oauth.md)
    - [解绑第三方OAuth账号](/oauth/unbind_oauth.md)
+- [OAuth 授权](/oauthProvider/new.md)
+   - [OAuth 授权流程](/oauthProvider/authorize.md)
 - [SDK 编写导览](/sdk/sdk.md)
    - [开始编写](/sdk/modules.md)
    - [GraphQL 请求列表](/sdk/gql.md)
