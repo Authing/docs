@@ -66,9 +66,9 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 返回的数据与第二步一样。
 
-### token 模式
+### implicit 模式
 
-与 `authorization_code` 不同，`token 模式` 直接返回 `access_token`，少了验证 `authorization_code` 的步骤，且不能刷新 `access_token`。
+与 `authorization_code` 不同，`implicit 模式` 直接返回 `access_token`，少了验证 `authorization_code` 的步骤，且不能刷新 `access_token`。
 
 1. 获取 `access_token`
 
@@ -89,4 +89,4 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 与 `authorization_code 模式` 的第三步一样。
 
 
-```!!IMPOTRANT!! token 模式的 access_token 的有效时间也只有 1 小时。我们建议使用 authorization_code 模式，因为这样将更为安全```
+```!!IMPOTRANT!! implicit 模式的 access_token 的有效时间也只有 1 小时。我们建议使用 authorization_code 模式，因为这样将更为安全```
