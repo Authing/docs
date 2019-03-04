@@ -51,7 +51,7 @@ grant_type      |  必须，授权类型，在 `authorization_code 模式`中必
 
 或作为 `Authoriztion` 头
 
-`Authorization: { access_token }`
+`Authorization: Bearer { access_token }`
 
 4. 刷新 `access_token`
 
