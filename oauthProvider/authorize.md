@@ -24,7 +24,7 @@ scope  |  允许的授权的范围，暂时没有实现此字段的相关功能�
 
 `{redirect_uri}?code=8cce9189ee40f6f8874a9d4618a2996ece7dd737&state=123456lkjljkf3`
 
-当授权成功后，用户将会被重定向到如上的链接，链接中带有参数 `code` 和 `state`。在 `redirect_uri` 的请求处理中，您应该检查 `state` 参数是否与您请求时一致，这样能确保请求不是来自第三方应用。然后，您应该使用 `POST` 请求`https://oauth.authing.cn/sso/token` 来获取 `access_token`，需要携带以下参数
+当授权成功后，用户将会被重定向到如上的链接，链接中带有参数 `code` 和 `state`。在 `redirect_uri` 的请求处理中，你应该检查 `state` 参数是否与你请求时一致，这样能确保请求不是来自第三方应用。然后，你应该使用 `POST` 请求`https://sso.authing.cn/token` 来获取 `access_token`，需要携带以下参数
 
 参数       |  说明
 -----------|----------------------------------
@@ -34,7 +34,17 @@ code     |  必须，我们返回的 `code`
 redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应用配置好的 `URL` 中的一个
 grant_type      |  必须，授权类型，在 `authorization_code 模式`中必须为 `"authorization_code"`
 
-返回
+例如：
+
+```shell
+curl --request POST \
+    --url https://sso.authing.cn/token \
+    --header 'Postman-Token: dd27d03d-5de2-41a9-bd23-ef6bf1521c40' \
+    --header 'cache-control: no-cache' \
+    --data 'app_id=<APP_ID>&app_secret=<APP_SECRET>&grant_type=authorization_code&code=<CODE>&redirect_uri=<REDIRECT_URI>'
+```
+
+返回：
 
 ```javascript
 {
@@ -45,7 +55,7 @@ grant_type      |  必须，授权类型，在 `authorization_code 模式`中必
 }
 ```
 
-3. 使用 `access_token` 请求 API
+1. 使用 `access_token` 请求 API
 
 `GET https://authing.cn/user?access_token=...`
 
@@ -55,7 +65,7 @@ grant_type      |  必须，授权类型，在 `authorization_code 模式`中必
 
 4. 刷新 `access_token`
 
-`access_token` 的有效时间只有 1 小时，`refresh_token` 的有效时间为 2 周，所以在申请 `access_token` 一小时以后，可通过 `POST` 请求`https://oauth.authing.cn/sso/token` 来重新获取 `access_token`，需要携带以下参数
+`access_token` 的有效时间只有 1 小时，`refresh_token` 的有效时间为 2 周，所以在申请 `access_token` 一小时以后，可通过 `POST` 请求`https://oauth.authing.cn/sso/token` 来重新获取 `access_token`，需要携带以下参数：
 
 参数       |  说明
 -----------|----------------------------------
