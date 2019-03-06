@@ -8,7 +8,7 @@
 
 首先需要请求以下链接来获取 `authorization_code`
 
-`https://oauth.authing.cn/sso/authorize?app_id=5c7253efe21948de32723725&state=123456lkjljkf3&response_type=code&redirect_uri=https%3A%2F%2Fauthing.cn&scope=user`
+`https://sso.authing.cn/authorize?app_id=5c7253efe21948de32723725&state=123456lkjljkf3&response_type=code&redirect_uri=https%3A%2F%2Fauthing.cn&scope=user`
 
 参数说明
 
@@ -20,7 +20,7 @@ redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应�
 state      |  一段随机字符串，主要用于防止跨站请求伪造攻击，它将原封不动地在 `redirect_uri` 中返回
 scope  |  允许的授权的范围，暂时没有实现此字段的相关功能，可不传
 
-2. 重定向并获取 `access_token`
+1. 重定向并获取 `access_token`
 
 `{redirect_uri}?code=8cce9189ee40f6f8874a9d4618a2996ece7dd737&state=123456lkjljkf3`
 
@@ -39,8 +39,6 @@ grant_type      |  必须，授权类型，在 `authorization_code 模式`中必
 ```shell
 curl --request POST \
     --url https://sso.authing.cn/token \
-    --header 'Postman-Token: dd27d03d-5de2-41a9-bd23-ef6bf1521c40' \
-    --header 'cache-control: no-cache' \
     --data 'app_id=<APP_ID>&app_secret=<APP_SECRET>&grant_type=authorization_code&code=<CODE>&redirect_uri=<REDIRECT_URI>'
 ```
 
@@ -65,7 +63,7 @@ curl --request POST \
 
 4. 刷新 `access_token`
 
-`access_token` 的有效时间只有 1 小时，`refresh_token` 的有效时间为 2 周，所以在申请 `access_token` 一小时以后，可通过 `POST` 请求`https://oauth.authing.cn/sso/token` 来重新获取 `access_token`，需要携带以下参数：
+`access_token` 的有效时间只有 1 小时，`refresh_token` 的有效时间为 2 周，所以在申请 `access_token` 一小时以后，可通过 `POST` 请求`https://sso.authing.cn/token` 来重新获取 `access_token`，需要携带以下参数：
 
 参数       |  说明
 -----------|----------------------------------
@@ -82,13 +80,13 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 1. 获取 `access_token`
 
-`https://oauth.authing.cn/sso/authorize?app_id=5c7253efe21948de32723725&state=123456lkjljkf3&response_type=token&redirect_uri=https%3A%2F%2Fauthing.cn&scope=user`
+`https://sso.authing.cn/authorize?app_id=5c7253efe21948de32723725&state=123456lkjljkf3&response_type=token&redirect_uri=https%3A%2F%2Fauthing.cn&scope=user`
 
 通过请求以上链接直接获取 `access_token`。
 
 请求参数中与 `authorization_code 模式` 的基本一样，只有 `response_type` 必须为 `"token"`。
 
-2. 重定向并返回 `access_token`
+1. 重定向并返回 `access_token`
 
 `{redirect_uri}#access_token=9a617eb1dddc9fc7a480b0778173fd7f9db33938&state=123456lkjljkf3`
 
