@@ -60,7 +60,7 @@ curl --request POST \
 
 `GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
 
-或作为 `Authoriztion` 头
+或作为 `Authoriztion` 头：
 
 `Authorization: Bearer { access_token }`
 
@@ -101,12 +101,11 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 `GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
 
-或作为 `Authoriztion` 头
+或作为 `Authoriztion` 头：
 
 `Authorization: Bearer { access_token }`
 
-
-```!!IMPOTRANT!! implicit 模式的 access_token 的有效时间也只有 1 小时。我们建议使用 authorization_code 模式，因为这样将更为安全```
+> **IMPOTRANT** `implicit` 模式的 `access_token` 的有效时间只有 1 小时。我们建议使用 `authorization_code` 模式，这样更为安全。
 
 ### 使用 client_id 作为参数
 
