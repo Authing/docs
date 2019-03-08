@@ -56,9 +56,9 @@ curl --request POST \
 }
 ```
 
-#### 3. 使用 `access_token` 请求 API
+#### 3. 使用 `access_token` 请求 `userInfo`
 
-`GET https://authing.cn/user?access_token=...`
+`GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
 
 或作为 `Authoriztion` 头
 
@@ -95,9 +95,15 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 当授权成功后，用户将会重定向到如上的链接，在 `hash` 中携带 `access_token`。
 
-#### 3. 使用 `access_token` 请求 API
+#### 3. 使用 `access_token` 请求 userInfo
 
 与 `authorization_code 模式` 的第三步一样。
+
+`GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
+
+或作为 `Authoriztion` 头
+
+`Authorization: Bearer { access_token }`
 
 
 ```!!IMPOTRANT!! implicit 模式的 access_token 的有效时间也只有 1 小时。我们建议使用 authorization_code 模式，因为这样将更为安全```
