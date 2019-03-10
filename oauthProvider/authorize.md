@@ -29,7 +29,7 @@ scope  |  允许的授权的范围，暂时没有实现此字段的相关功能�
 参数       |  说明
 -----------|----------------------------------
 app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
-app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`     
+app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`（[我想用 client_secret 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_secret-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
 code     |  必须，我们返回的 `code`
 redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应用配置好的 `URL` 中的一个，需要经过 urlencoded 编码
 grant_type      |  必须，授权类型，在 `authorization_code 模式`中必须为 `"authorization_code"`
@@ -71,7 +71,7 @@ curl --request POST \
 参数       |  说明
 -----------|----------------------------------
 app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
-app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`     
+app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`（[我想用 client_secret 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_secret-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
 refresh_token     |  必须，之前获取 `access_token` 时返回的 `refresh_token`
 grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refresh_token"`
 
@@ -118,7 +118,7 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 参数       |  说明
 -----------|----------------------------------
 app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
-app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`  
+app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`（[我想用 client_secret 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_secret-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
 grant_type  |  必须，授权的类型，在 `password 模式` 中值必须为 `"password"`
 username      |  必须，用户邮箱
 password   |  必须，用户密码
