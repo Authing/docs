@@ -158,7 +158,7 @@ password   |  必须，用户密码
 参数       |  说明
 -----------|----------------------------------
 app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
-app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`  
+app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`（[我想用 client_secret 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_secret-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
 grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值必须为 `"client_credentials"`
 
 返回
@@ -201,3 +201,15 @@ grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值
 
 **错误获取**
 ![app_id](https://usercontents.authing.cn/docs/oauth/not-here.png)
+
+**3.使用 client_secret 作为参数**
+
+我们支持将所有请求中的 `app_scret` 参数换为 `client_secret`，注意此处的 `client_secret` 仍然为创建 OAuth 应用后的 `app_secret`，而不是整个应用的 `client_secret`，如下图所示：
+
+**正确获取**
+![app_secret](https://usercontents.authing.cn/docs/oauth/right-client-secret.png)
+
+若无 OAuth 应用，新建一个即可。
+
+**错误获取**
+![client_secret](https://usercontents.authing.cn/docs/oauth/not-here.png)
