@@ -53,7 +53,8 @@ ajax.get({
     accessToken: '8e39481a209d5baef9618fea8627b2747d37e5b3',
     accessTokenExpiresAt: 2019-03-06T15:30:03.095Z,
     appId: 5c7babae09c091dbebdb4cdc,
-    userId: '5c00a5fbec1083000f5b27d4',
+    userOrClientId: '5c00a5fbec1083000f5b27d4',
+    grantType: 'authorization_code',
     when: 2019-03-06T14:30:03.100Z,
     isDeleted: false,
     isRevoked: false 

@@ -111,7 +111,7 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 **1. 获取 `access_token`**
 
-`https://sso.authing.cn/authorize`
+`https://sso.authing.cn/token`
 
 参数说明
 
@@ -144,9 +144,53 @@ password   |  必须，用户密码
 `Authorization: Bearer { access_token }`
 
 
-> **IMPOTRANT** `implicit` 模式的 `access_token` 的有效时间只有 1 小时。我们建议使用 `authorization_code` 模式，这样更为安全。
+### client_credentials 模式
+此模式用于获取对应 client 的所有用户信息，请谨慎使用，不支持刷新 token
 
-### 使用 client_id 作为参数
+#### 1. 获取 `access_token`
+
+`https://sso.authing.cn/token`
+
+使用 `POST` 请求以上接口
+
+参数说明
+
+参数       |  说明
+-----------|----------------------------------
+app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
+app_secret     |  必须，创建 OAuth 应用后详情中的 `App Secret`  
+grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值必须为 `"client_credentials"`
+
+返回
+```javascript
+{
+  "access_token":"4331396b953d3de3bcf74c564455323d0989a9a0",
+  "token_type":"Bearer",
+  "expires_in":3599, // token 有效时间
+}
+```
+
+#### 2. 使用 `access_token` 请求 userInfo
+
+与 `authorization_code 模式` 的第三步一样。
+
+`GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
+
+或作为 `Authoriztion` 头：
+
+`Authorization: Bearer { access_token }`
+
+
+### 注意事项
+
+#### 1. token 有效时间及四种模式的区别
+
+> 所有模式的 `access_token` 有效时间都是 1 小时，能够使用 `refresh_token` 的模式中的 `refresh_token` 的有效时间都为 2 周
+
+
+> 关于这四种模式的应用场景和区别，建议浏览 [理解 OAuth2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)，一般情况下只需开启 `authorization_code` 模式。
+
+#### 2.使用 client_id 作为参数
 
 我们支持将所有请求中的 `app_id` 参数换为 `client_id`，注意此处的 `client_id` 仍然为创建 OAuth 应用后的 `app_id`，而不是应用的 `client_id`，如下图所示：
 
