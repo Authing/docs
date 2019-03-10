@@ -20,7 +20,7 @@ redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应�
 state      |  一段随机字符串，主要用于防止跨站请求伪造攻击，它将原封不动地在 `redirect_uri` 中返回
 scope  |  允许的授权的范围，暂时没有实现此字段的相关功能，可不传
 
-**2. 重定向并获取 `access_token`*
+**2. 重定向并获取 `access_token`**
 
 `{redirect_uri}?code=8cce9189ee40f6f8874a9d4618a2996ece7dd737&state=123456lkjljkf3`
 
