@@ -147,7 +147,7 @@ password   |  必须，用户密码
 ### client_credentials 模式
 此模式用于获取对应 client 的所有用户信息，请谨慎使用，不支持刷新 token
 
-#### 1. 获取 `access_token`
+**1. 获取 `access_token`**
 
 `https://sso.authing.cn/token`
 
@@ -170,7 +170,7 @@ grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值
 }
 ```
 
-#### 2. 使用 `access_token` 请求 userInfo
+**2. 使用 `access_token` 请求 userInfo**
 
 与 `authorization_code 模式` 的第三步一样。
 
@@ -183,14 +183,14 @@ grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值
 
 ### 注意事项
 
-#### 1. token 有效时间及四种模式的区别
+**1. token 有效时间及四种模式的区别**
 
 > 所有模式的 `access_token` 有效时间都是 1 小时，能够使用 `refresh_token` 的模式中的 `refresh_token` 的有效时间都为 2 周
 
 
 > 关于这四种模式的应用场景和区别，建议浏览 [理解 OAuth2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)，一般情况下只需开启 `authorization_code` 模式。
 
-#### 2.使用 client_id 作为参数
+**2.使用 client_id 作为参数**
 
 我们支持将所有请求中的 `app_id` 参数换为 `client_id`，注意此处的 `client_id` 仍然为创建 OAuth 应用后的 `app_id`，而不是应用的 `client_id`，如下图所示：
 
@@ -201,15 +201,3 @@ grant_type  |  必须，授权的类型，在 `client_credentials 模式` 中值
 
 **错误获取**
 ![app_id](https://usercontents.authing.cn/docs/oauth/not-here.png)
-
-### 使用 client_secret 作为参数
-
-我们支持将所有请求中的 `app_scret` 参数换为 `client_secret`，注意此处的 `client_secret` 仍然为创建 OAuth 应用后的 `app_secret`，而不是整个应用的 `client_secret`，如下图所示：
-
-**正确获取**
-![app_secret](https://usercontents.authing.cn/docs/oauth/right-client-secret.png)
-
-若无 OAuth 应用，新建一个即可。
-
-**错误获取**
-![client_secret](https://usercontents.authing.cn/docs/oauth/not-here.png)
