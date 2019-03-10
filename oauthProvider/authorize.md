@@ -4,7 +4,7 @@
 
 ### authorization_code 模式
 
-#### 1. 请求授权
+**1. 请求授权**
 
 首先需要请求以下链接来获取 `authorization_code`
 
@@ -20,7 +20,7 @@ redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应�
 state      |  一段随机字符串，主要用于防止跨站请求伪造攻击，它将原封不动地在 `redirect_uri` 中返回
 scope  |  允许的授权的范围，暂时没有实现此字段的相关功能，可不传
 
-#### 2. 重定向并获取 `access_token`
+**2. 重定向并获取 `access_token`*
 
 `{redirect_uri}?code=8cce9189ee40f6f8874a9d4618a2996ece7dd737&state=123456lkjljkf3`
 
@@ -56,7 +56,7 @@ curl --request POST \
 }
 ```
 
-#### 3. 使用 `access_token` 请求 `userInfo`
+**3. 使用 `access_token` 请求 `userInfo`**
 
 `GET https://users.authing.cn/oauth/user/userinfo?access_token=...`
 
@@ -64,7 +64,7 @@ curl --request POST \
 
 `Authorization: Bearer { access_token }`
 
-#### 4. 刷新 `access_token`
+**4. 刷新 `access_token`**
 
 `access_token` 的有效时间只有 1 小时，`refresh_token` 的有效时间为 2 周，所以在申请 `access_token` 一小时以后，可通过 `POST` 请求`https://sso.authing.cn/token` 来重新获取 `access_token`，需要携带以下参数：
 
@@ -81,7 +81,7 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 与 `authorization_code` 不同，`implicit 模式` 直接返回 `access_token`，少了验证 `authorization_code` 的步骤，且不能刷新 `access_token`。
 
-#### 1. 获取 `access_token`
+**1. 获取 `access_token`**
 
 `https://sso.authing.cn/authorize?app_id=5c7253efe21948de32723725&state=123456lkjljkf3&response_type=token&redirect_uri=https%3A%2F%2Fauthing.cn&scope=user`
 
@@ -89,13 +89,13 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 请求参数中与 `authorization_code 模式` 的基本一样，只有 `response_type` 必须为 `"token"`。
 
-#### 2. 重定向并返回 `access_token`
+**2. 重定向并返回 `access_token`**
 
 `{redirect_uri}#access_token=9a617eb1dddc9fc7a480b0778173fd7f9db33938&state=123456lkjljkf3`
 
 当授权成功后，用户将会重定向到如上的链接，在 `hash` 中携带 `access_token`。
 
-#### 3. 使用 `access_token` 请求 userInfo
+**3. 使用 `access_token` 请求 userInfo**
 
 与 `authorization_code 模式` 的第三步一样。
 
@@ -109,7 +109,7 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 此模式要求有用户名和密码，且必须使用 `POST` 请求
 
-#### 1. 获取 `access_token`
+**1. 获取 `access_token`**
 
 `https://sso.authing.cn/authorize`
 
@@ -133,7 +133,7 @@ password   |  必须，用户密码
 }
 ```
 
-#### 2. 使用 `access_token` 请求 userInfo
+**2. 使用 `access_token` 请求 userInfo**
 
 与 `authorization_code 模式` 的第三步一样。
 
@@ -150,10 +150,22 @@ password   |  必须，用户密码
 
 我们支持将所有请求中的 `app_id` 参数换为 `client_id`，注意此处的 `client_id` 仍然为创建 OAuth 应用后的 `app_id`，而不是应用的 `client_id`，如下图所示：
 
-#### 正确获取
+**正确获取**
 ![app_id](https://usercontents.authing.cn/docs/oauth/right_app_id.png)
 
 若无 OAuth 应用，新建一个即可。
 
-#### 错误获取
+**错误获取**
 ![app_id](https://usercontents.authing.cn/docs/oauth/not-here.png)
+
+### 使用 client_secret 作为参数
+
+我们支持将所有请求中的 `app_scret` 参数换为 `client_secret`，注意此处的 `client_secret` 仍然为创建 OAuth 应用后的 `app_secret`，而不是整个应用的 `client_secret`，如下图所示：
+
+**正确获取**
+![app_secret](https://usercontents.authing.cn/docs/oauth/right-client-secret.png)
+
+若无 OAuth 应用，新建一个即可。
+
+**错误获取**
+![client_secret](https://usercontents.authing.cn/docs/oauth/not-here.png)
