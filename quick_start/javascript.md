@@ -33,9 +33,15 @@ $ npm install authing-js-sdk --save
 服务端可直接传入 `clientId` 和 `secret`。
 
 ``` javascript
-var authing = new Authing({
+const auth = new Authing({
 	clientId: 'your_client_id',
 	secret: 'your_client_secret'
+});
+
+auth.then((authing) => {
+	// authing.login
+	// authing.register
+	// ...
 });
 ```
 
@@ -53,32 +59,54 @@ var authing = new Authing({
 #### 示例
 
 ``` javascript
-var auth = new Authing({
+const auth = new Authing({
 	clientId: 'your_client_id',
 	timestamp: Math.round(new Date() / 1000),
 	nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
 });
+auth.then((authing) => {
+	// authing.login
+	// authing.register
+	// ...
+});
 ```
+
+### 使用 accessToken
+
+除了使用 clientId 和 secret 外，我们还支持传入 accessToken（需要 v1.5.0 版本及以上），示例如下：
+
+``` javascript
+  const auth = new Authing({
+    accessToken: '71fc55de0fccba1b3f7feb68277e4f379a1019e5'
+  });
+  auth.then((authing) => {
+		// authing.login
+		// authing.register
+		// ...
+  });
+```
+
+使用 accessToken 适用于 OAuth 场景，获取 accessToken 的方法请参考 [OAuth 授权流程](https://docs.authing.cn/#/oauthProvider/authorize)。
 
 ### 使用方法
 
 Authing SDK 的所有 API 都支持 **Promise**。
 
 ``` javascript
-var Authing = require('authing-js-sdk');
+const Authing = require('authing-js-sdk');
 
 // 对 Client ID 和 Client Secret 进行验证，获取 Access Token
-var auth = new Authing({
+const auth = new Authing({
 	// 若在浏览器端请使用 timestamp + nonce + clientId 的形式	
 	clientId: 'your_client_id',
 	secret: 'your_app_secret' 
 });
 
-auth.then(function(validAuth) {
+auth.then(function(authing) {
 
-	//验证成功后返回新的 authing-js-sdk 实例(validAuth)，可以将此实例挂在全局
+	//验证成功后返回新的 authing-js-sdk 实例(authing)，可以将此实例挂在全局
 
-	validAuth.login({
+	authing.login({
 		email: 'test@testmail.com',
 		password: 'testpassword'
 	}).then(function(user) {
@@ -159,17 +187,18 @@ main();
 
 ``` javascript
 
-var Authing = require('authing-js-sdk');
+const Authing = require('authing-js-sdk');
 
-var auth = new Authing({
+const auth = new Authing({
 	clientId: 'your_client_id',
-	secret: 'your_app_secret'
+	timestamp: Math.round(new Date() / 1000),
+	nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
 });
 
-auth.then(function(validAuth) {
+auth.then(function(authing) {
 
-	validAuth.startWXAppScaning({
-    	mount: 'qrcode-node', //二维码挂载点的 HTML 元素 ID，如不写则默认漂浮在文档中间
+	authing.startWXAppScaning({
+  	mount: 'qrcode-node', //二维码挂载点的 HTML 元素 ID，如不写则默认漂浮在文档中间
 	});
 	
 })
@@ -182,7 +211,7 @@ auth.then(function(validAuth) {
 
 ``` javascript
 
-validAuth.startWXAppScaning({
+authing.startWXAppScaning({
   	mount: 'qrcode-node', // 二维码挂载点，如不写则默认漂浮在文档中间
   	redirect: true, // 是否执行跳转（在用户后台配置的 URL），默认为 true，相关用户信息回传至 url 上
   	onSuccess: function(res) {}, // 登录成功后回调函数，redirect 为 true 时不回调此函数
@@ -202,7 +231,7 @@ validAuth.startWXAppScaning({
 
 ``` javascript
 
-const authing = new Authing({
+const auth = new Authing({
 	clientId: 'xxxx',
 	secret: 'xxxxxx',
 	host: {
