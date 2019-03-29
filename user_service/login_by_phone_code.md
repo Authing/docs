@@ -10,12 +10,12 @@
 
   - ```{Object} options```
     - phone
-    - phoneCode
+    - phoneCode，使用 [发送短信接口](/user_service/send_phone_code.md) 获取
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.login({
+	Authing.loginByPhoneCode({
 		phone: phone,
 		phoneCode: phoneCode
 	});
