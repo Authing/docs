@@ -8,6 +8,7 @@
 
 - [注册](https://docs.authing.cn/#/user_service/add_user)
 - [登录](https://docs.authing.cn/#/user_service/login)
+- [使用手机验证码登录](https://docs.authing.cn/#/user_service/login_by_phone_code)
 - [检测用户登录状态](https://docs.authing.cn/#/user_service/check_login_status)
 - [退出](https://docs.authing.cn/#/user_service/logout)
 - [获取用户资料](https://docs.authing.cn/#/user_service/get_user_info)

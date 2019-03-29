@@ -13,6 +13,7 @@
 - [用户接口](/user_service/user_service.md)
    - [注册](/user_service/add_user.md)
    - [登录](/user_service/login.md)
+   - [使用手机验证码登录](/user_service/login_by_phone_code)
    - [检测用户登录状态](/user_service/check_login_status.md)
    - [退出](/user_service/logout.md)
    - [获取用户资料](/user_service/get_user_info.md)
