@@ -12,6 +12,7 @@
 - [检测用户登录状态](https://docs.authing.cn/#/user_service/check_login_status)
 - [退出](https://docs.authing.cn/#/user_service/logout)
 - [获取用户资料](https://docs.authing.cn/#/user_service/get_user_info)
+- [获取用户角色](https://docs.authing.cn/#/user_service/get_user_role)
 - [一次性获取多个用户的资料](https://docs.authing.cn/#/user_service/user_patch)
 - [获取用户列表](https://docs.authing.cn/#/user_service/get_user)
 - [删除用户](https://docs.authing.cn/#/user_service/remove_user)
