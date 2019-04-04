@@ -24,7 +24,7 @@
 
   - ``` javascript
     {
-      "totalCount": 0,
+      "totalCount": 2,
       "list": [
         {
           "group": {
@@ -44,109 +44,101 @@
 
 ## 获取应用下所有角色
 
-#### Authing.queryRoles(clientId)
+#### Authing.queryRoles(options)
 
 - **参数:**
 
-  - ```{String} clientId```
+  - ```{Object} options```
+    - page: 第几页，选填，默认为 1
+    - count: 总数，选填，默认为 10
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.queryRoles('CLIENT_ID');
+	Authing.queryRoles({
+      page: 1,
+      count: 10
+  });
   	```
 
 - **返回数据:**
 
   - ``` javascript
     {
-      "totalCount": 0,
+      "totalCount": 1,
       "list": [
         {
-          "group": {
-            "name": "管理员",
-            "permissions": "{\"routes\": \"/api/v1\"}"
-          }
-        },
-        {
-          "group": {
-            "name": "读者",
-            "permissions": ""
-          }
+          "_id": "5ca5c3a88a61c7304fb1299a",
+          "name": "管理员",
+          "client": "5c9c659cb9440b05cb2570e6",
+          "descriptions": null,
+          "createdAt": "Thu Apr 04 2019 16:43:20 GMT+0800 (CST)",
+          "permissions": "{\"routes\": \"/api/v1\"}"
         }
       ]
     }
     ```
 
-## 新建用户角色
+## 创建用户角色
 
-#### Authing.createRole(userId)
+#### Authing.createRole(options)
 
 - **参数:**
 
-  - ```{String} userId```
+  - ```{Object} options```
+    - name: 角色名称，必填
+    - descriptions: 角色描述，必填
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.createRole('USER_ID');
+	Authing.createRole({
+        name: '测试角色',
+        descriptions: '测试角色的描述'
+  });
   	```
 
 - **返回数据:**
 
   - ``` javascript
     {
-      "totalCount": 0,
-      "list": [
-        {
-          "group": {
-            "name": "管理员",
-            "permissions": "{\"routes\": \"/api/v1\"}"
-          }
-        },
-        {
-          "group": {
-            "name": "读者",
-            "permissions": ""
-          }
-        }
-      ]
+      "_id": "5ca5c5dd8a61c7ffbfb129a9",
+      "name": "测试角色",
+      "client": "5c9c659cb9440b05cb2570e6",
+      "descriptions": "测试角色的描述"
     }
     ```
 
 ## 修改角色权限
 
-#### Authing.updateRolePermissions(userId)
+#### Authing.updateRolePermissions(options)
 
 - **参数:**
 
-  - ```{String} userId```
+  - ```{Object} options```
+    - name: 角色名称，必填
+    - roleId: 角色 ID，必填
+    - permissions: 角色权限，必填。输入自定义的权限字符串，可以是 JSON 或数组；之后可以通过 API 获取此处设置的权限既而实现自己的业务逻辑。
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.updateRolePermissions('USER_ID');
+	Authing.updateRolePermissions({
+      name: '测试角色',
+      roleId: '5ca5c5dd8a61c7ffbfb129a9',
+      permissions: 'route:all'
+  });
   	```
 
 - **返回数据:**
 
   - ``` javascript
     {
-      "totalCount": 0,
-      "list": [
-        {
-          "group": {
-            "name": "管理员",
-            "permissions": "{\"routes\": \"/api/v1\"}"
-          }
-        },
-        {
-          "group": {
-            "name": "读者",
-            "permissions": ""
-          }
-        }
-      ]
+      "_id": "5ca5c5dd8a61c7ffbfb129a9",
+      "name": "测试角色",
+      "client": "5c9c659cb9440b05cb2570e6",
+      "descriptions": "测试角色的描述",
+      "permissions": "route:all"
     }
     ```
 
@@ -188,36 +180,30 @@
 
 ## 将用户从某角色中移除
 
-#### Authing.removeUserFromRole(userId)
+#### Authing.removeUserFromRole(options)
 
 - **参数:**
 
-  - ```{String} userId```
+  - ```{Object} options```
+    - roleId: 角色 ID，必填
+    - user: 要指派的用户 ID，必填
 
 - **使用方法:**
 
   - ``` javascript
-	Authing.createRole('USER_ID');
+	Authing.removeUserFromRole({
+      user: '5ca332d265520f3d751b0f63',
+      roleId: '5ca5c5dd8a61c7ffbfb129a9',
+  });
   	```
 
 - **返回数据:**
 
   - ``` javascript
     {
-      "totalCount": 0,
-      "list": [
-        {
-          "group": {
-            "name": "管理员",
-            "permissions": "{\"routes\": \"/api/v1\"}"
-          }
-        },
-        {
-          "group": {
-            "name": "读者",
-            "permissions": ""
-          }
-        }
-      ]
+      "_id": null,
+      "client": null,
+      "group": null,
+      "user": null
     }
     ```
