@@ -87,13 +87,20 @@ grant_type      |  必须，授权类型，在刷新 token 时必须为 `"refres
 
 通过请求以上链接直接获取 `access_token`。
 
-请求参数中与 `authorization_code 模式` 的基本一样，只有 `response_type` 必须为 `"token"`。
+参数说明
+
+参数       |  说明
+-----------|----------------------------------
+app_id     |  必须，创建 OAuth 应用后详情中的 `App ID`（[我想用 client_id 作为参数](https://docs.authing.cn/#/oauthProvider/authorize?id=%E4%BD%BF%E7%94%A8-client_id-%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0)）
+response_type  |  必须，授权的类型，在 `implicit 模式` 中值必须为 `"token"`
+redirect_uri  |  必须，授权成功后的回掉地址，必须为 OAuth 应用配置好的 `URL` 中的一个
+scope  |  允许的授权的范围，暂时没有实现此字段的相关功能，可不传
 
 **2. 重定向并返回 `access_token`**
 
 `{redirect_uri}#access_token=9a617eb1dddc9fc7a480b0778173fd7f9db33938&state=123456lkjljkf3`
 
-当授权成功后，用户将会重定向到如上的链接，在 `hash` 中携带 `access_token`。
+当授权成功后，将会重定向到如上的链接，在 `hash` 中携带 `access_token`。
 
 **3. 使用 `access_token` 请求 userInfo**
 
