@@ -19,7 +19,7 @@
    - [检测用户登录状态](/user_service/check_login_status.md)
    - [退出](/user_service/logout.md)
    - [获取用户资料](/user_service/get_user_info.md)
-   - [获取用户角色](/user_service/get_user_role.md)
+   - [用户权限管理](/user_service/get_user_role.md)
    - [一次性获取多个用户的资料](/user_service/user_patch.md)
    - [用户列表](/user_service/get_user.md)   
    - [删除用户](/user_service/remove_user.md)
