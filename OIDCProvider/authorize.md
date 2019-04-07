@@ -8,7 +8,8 @@ AP（Authentication Provider） Authing 服务器
 ## 在 Authing 创建一个应用 A
 
 ## 在 A 应用第三方登录选项卡下创建 OIDC 应用
-需要填写一些 OIDC 配置项，包括 token 获取方式，二级域名设置，启用授权模式，回调 url
+需要填写一些 OIDC 配置项，包括 code 换 token 时的认证方式，二级域名设置，启用授权模式，回调 url
+
 
 此时 A 应用中的用户数据已经可以通过 OIDC 协议访问。
 
@@ -16,7 +17,7 @@ AP（Authentication Provider） Authing 服务器
 ## 发起授权
 End-User 发出 GET 请求，通过 query 的形式携带参数。（End-User 可以先 GET RP 下某个路由，然后 RP 返回 302，带上所需参数）其中 testapp 是你在控制台配置的 OIDC 应用二级域名。
 ```
-GET http://testapp.authing.cn/oauth/oidc/auth?client_id=5c9b079883e333d55a101082&redirect_uri=http://www.example.cn/example&scope=openid profile&response_type=code&state=jacket
+GET https://testapp.authing.cn/oauth/oidc/auth?client_id=5c9b079883e333d55a101082&redirect_uri=https://www.example.cn/example&scope=openid profile&response_type=code&state=jacket
 ```
 | 参数名 | 意义 |
 | ----- | --- |
@@ -36,7 +37,7 @@ GET http://testapp.authing.cn/oauth/oidc/auth?client_id=5c9b079883e333d55a101082
 如果成功，AP 会返回一个登录凭证 token。End-User 会携带这个 token
 
 ```
-POST http://testapp.authing.cn/oauth/oidc/interaction/5f322954-35db-45f5-956d-ae0cf4cfc2c8/login
+POST https://testapp.authing.cn/oauth/oidc/interaction/5f322954-35db-45f5-956d-ae0cf4cfc2c8/login
 ```
 
 获取权限列表，并进入确权界面。
@@ -51,7 +52,7 @@ End-User 此时会看到第三方要获取那些自己的个人信息，然后�
 
 那么 RP 相关路由接收到 code 后，需要
 ```
-POST http://testapp.authing.cn/oauth/oidc/token
+POST https://testapp.authing.cn/oauth/oidc/token
 ```
 
 Content-Type 需为 application/x-www-form-urlencoded
@@ -82,7 +83,7 @@ body 部分携带参数如下表
 RP 可以使用 token 换取用户信息。根据当初 scope 的不同，这里的返回信息也会有所不同。全部按照 [OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationExamples)返回字段。
 
 ```
-GET http://users.authing.cn/oauth/oidc/user/userinfo?access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ3TU9FTHQ0NzhrNG53U295M21rZWsiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU1NTYiLCJpYXQiOjE1NTQyNzI2NDAsImV4cCI6MTU1NDI3NjI0MCwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImF1ZCI6IjVjYTQ0ZmMyMzNiYjcyMDY0MmVjZmQ2NiJ9.rmrxj9Vqt-E-61wRezYwn3NbezL4EmWcb_-OUGI9Y_TfiVcKnDYEbwC0M51qTcDBHn27-4BBoo60gu8OGKQJdmSKRApkJ4Z550eUrFAWxXztvy76EWtjmAmOD41GAu_EzNB5MAPZAEsX8I3kOan6Ylv_GonrHuzOL-GV3qb0R_COuCb7xVKKG4vyaJxWLq_bfA9E1VqKIkbg484GJKDy6Cfa_iIlurE6sLMhhFL1ycYpzMvX8ELEpgzOzMWL9U9gtNhPad9PK1h3dAHJjFvXYr9veIYOzjPwEy5eIkBZvqH8Gp4iV1v4sM6oWZefeoaN2cmeYkDWOk-mpiqAzyhw6g
+GET https://users.authing.cn/oauth/oidc/user/userinfo?access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ3TU9FTHQ0NzhrNG53U295M21rZWsiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU1NTYiLCJpYXQiOjE1NTQyNzI2NDAsImV4cCI6MTU1NDI3NjI0MCwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImF1ZCI6IjVjYTQ0ZmMyMzNiYjcyMDY0MmVjZmQ2NiJ9.rmrxj9Vqt-E-61wRezYwn3NbezL4EmWcb_-OUGI9Y_TfiVcKnDYEbwC0M51qTcDBHn27-4BBoo60gu8OGKQJdmSKRApkJ4Z550eUrFAWxXztvy76EWtjmAmOD41GAu_EzNB5MAPZAEsX8I3kOan6Ylv_GonrHuzOL-GV3qb0R_COuCb7xVKKG4vyaJxWLq_bfA9E1VqKIkbg484GJKDy6Cfa_iIlurE6sLMhhFL1ycYpzMvX8ELEpgzOzMWL9U9gtNhPad9PK1h3dAHJjFvXYr9veIYOzjPwEy5eIkBZvqH8Gp4iV1v4sM6oWZefeoaN2cmeYkDWOk-mpiqAzyhw6g
 ```
 
 返回示例
@@ -95,11 +96,37 @@ GET http://users.authing.cn/oauth/oidc/user/userinfo?access_token=eyJhbGciOiJSUz
 }
 ```
 
+## 刷新 token
+可以利用 token 接口返回的 refresh_token，在后续刷新 token
+```
+POST https://example.authing.cn/oauth/oidc/token
+```
+Content-Type 需为 application/x-www-form-urlencoded
+
+body 部分携带参数如下表
+
+| 参数名 | 意义 |
+| ----- | --- |
+| client_id | OIDC 应用的 **app_id** |
+| client_secret | OIDC 应用的 **app_secret** |
+| grant_type | refresh_token |
+| refresh_token | code 换 token 接口返回的 refresh_token。例：WPsGJbvpBjqXz6IJIr1UHKyrdVF |
+返回示例
+```json
+{
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ4MjlRNnIzWkpndVViWHB5RGR0ZVciLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwczovL2F1dGhpbmcuY24iLCJpYXQiOjE1NTQ2MTI0NjQsImV4cCI6MTU1NDYxNjA2NCwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBvZmZsaW5lX2FjY2VzcyBwaG9uZSBlbWFpbCIsImF1ZCI6IjVjYTc2NWUzOTMxOTRkNTg5MWRiMTkyNyJ9.VgrdtZRCbapS0hCe5BiV-8rUTXd4x-ZMoFPHV5Zh_HCw-OsJoYN0mVwB1UQ0ZkrA4ojpcZ3MrLnKzRC81BgEnfvaInTqXW8qP36TvR-vl7JkVT-ThkBr0Xdilk0hCfWaMbX9qtCjWYT0b9zxDAdkBKygjztZ74TwKbxNI83vdKSj9A6OfwX9MG4k-Q3ZbKAj1fwncBAp2DEsv1Bd_-4y_n_w-2QtbzZf3409UEotKuU_wGLoVE3DLxJFvEtmunbxQOkqxOGS_JaIvFdhpTZ6I3H_DC5KO8xOR2A6nZGFOhYOZZfnr6tmY_EnOIEsnp4glgTCOqHhd1xoBoDcnEmWEA",
+    "expires_in": 3600,
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjIyMTIxIiwiYXRfaGFzaCI6InVySTYzZ3hyeU01UzNqejRLMmpWeGciLCJzaWQiOiIxOTdlOGExMy0wMzE4LTRkZDEtYjQ3Mi0xZjI0MDk5ZTUzOWYiLCJhdWQiOiI1Y2E3NjVlMzkzMTk0ZDU4OTFkYjE5MjciLCJleHAiOjE1NTQ2MTYwNjQsImlhdCI6MTU1NDYxMjQ2NCwiaXNzIjoiaHR0cHM6Ly9hdXRoaW5nLmNuIn0.wh3kCIGyu7IHvkbqCeu9OHg9mdLg-wSbU-1UBLPcNxl5MeXsGxtxjPyM6aONxLt_ZXfBFNZM7FWfGpV_qGSNmeGp0UYV_bK-N0wgB5ZkTN1O4EMECqy7qCExwK3kjsOa-o0KkkJxxcDkfEJ3Icn2Nr3q5ozMz_3oGJWqSt0KxQaR_rCtjbLV6dIpPL1MTpWElORXjsoKb1RVOHF0Qpfq8iuGVJAw828tq4cyLH9-IkE9TGX2L6dWmPaY1xd0ho0N1mqnWJrqacljrvX8qPTfGAB9-9rDk2EvFrZkFY6O6bKlMqdyX4ktxYMlku4-H74wxOqkQ_ZWlI3SUG_m-DNDWg",
+    "refresh_token": "wlfsGj5oSm5xmdUV_HqS9FTQpaj",
+    "scope": "openid profile offline_access phone email",
+    "token_type": "Bearer"
+}
+```
 ## Implicit Flow（隐式流程）
 
 ## 发起授权
 ```
-GET http://test001.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927&redirect_uri=https://market.hebut.club&scope=openid profile&response_type=id_token token&state=jazz&nonce=1831289
+GET https://example.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927&redirect_uri=https://example.com&scope=openid profile&response_type=id_token token&state=jazz&nonce=1831289
 ```
 
 | 参数名 | 意义 |
@@ -113,10 +140,23 @@ GET http://test001.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927
 | nonce | 一个随机字符串，用于防范 Replay 攻击，implicit 模式下必须填 |
 
 ## 直接跳转到 redirect_uri
-id_token、access_token 会以 query 的形式传递
+id_token、access_token 会以 url **hash** 的形式传递
 跳转后链接示例
 ```
-https://example.com/id_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiIxOTdlOGExMy0wMzE4LTRkZDEtYjQ3Mi0xZjI0MDk5ZTUzOWYiLCJhdF9oYXNoIjoiZTZTajJuU3JZSXdzV0hVZzJKb1hxUSIsImNfaGFzaCI6ImoxTFlQMEsyNHhaWEc5XzdQWHJjV1EiLCJzX2hhc2giOiJ3d0gzV3JVdm9IYklKeU1lWVR1OGx3IiwiYXVkIjoiNWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3IiwiZXhwIjoxNTU0NTQ2MTkxLCJpYXQiOjE1NTQ1NDI1OTEsImlzcyI6Imh0dHBzOi8vYXV0aGluZy5jbiJ9.AijNpK9yJD2jWBmfdMjSKjNkN3R4gN6gUuldHzt1EsW_NtFreklEzNwLyK5rF1zeijQRCyu7gRNyWDoihLTJFz6KHvt3ZwkvhWYCo6F8Ek86rk7GxQBkIsoBj7X9Z_BdJGahsiLJiK5CuSqH60iu7OdDlcXF_PjvcR_9HapB2NozF9SjhImmux9B64FYzEDCuY5Zw_AgpztKJmzPB-FSssSGCPqJ-sgmuIb9x6_fuajxpk9mm6PnstnlOHkN4ImatLnWtN1s69HMrz5RjC6GNd4A3-0QSrwmHqlq3KxEwQ4vo6Mv21gqcb4Z3QOoTU3WUmTlmWVc_W7hCngECEkznQ&access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ5bWt2dW5MRERoMjRNTVp2dG1Xc3oiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwczovL2F1dGhpbmcuY24iLCJpYXQiOjE1NTQ1NDI1OTEsImV4cCI6MTU1NDU0NjE5MSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImF1ZCI6IjVjYTc2NWUzOTMxOTRkNTg5MWRiMTkyNyJ9.Q3aTiM4Pzu5czVE0nyHB_Jazrn-nmMcli0JRLm1_7wjp4LZmvd_1zZY4503mR3YWtUG0ApVlC15yFwRuJjDCXG1bl4gCBFSDC46Nb2Mq7d2Njp04CfekC8uYllI1RDJccA-6kKtI9pZjEnfmtMa3xw_YjNgVQ1bQ5HtfikWxwwQwcEW1owBME6DWTW4GD1c1l_9OOfHubTIiT8d-SX-95XbHo9BTVPRaX9oL_GyX5bBBtmtnXj3U648TER_yhENmnSVlvhCW7P_H_Yqb4erAXUPwtaE7kvqF07qL2POsG6PljE6qNPBnXyUZyPRLyrokE0E916IB8e2mn_AWkMip3w&expires_in=3600&token_type=Bearer&state=jazz&session_state=938739ce36795eb334cf3c93d7e9d48a16616aa291ad3ed38671fe2fc4a9e4f6
+https://example.com/#code=_~BbC5~NQ0L1JfcTHnxgPYByuA3&id_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiIxOTdlOGExMy0wMzE4LTRkZDEtYjQ3Mi0xZjI0MDk5ZTUzOWYiLCJhdF9oYXNoIjoiZTZTajJuU3JZSXdzV0hVZzJKb1hxUSIsImNfaGFzaCI6ImoxTFlQMEsyNHhaWEc5XzdQWHJjV1EiLCJzX2hhc2giOiJ3d0gzV3JVdm9IYklKeU1lWVR1OGx3IiwiYXVkIjoiNWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3IiwiZXhwIjoxNTU0NTQ2MTkxLCJpYXQiOjE1NTQ1NDI1OTEsImlzcyI6Imh0dHBzOi8vYXV0aGluZy5jbiJ9.AijNpK9yJD2jWBmfdMjSKjNkN3R4gN6gUuldHzt1EsW_NtFreklEzNwLyK5rF1zeijQRCyu7gRNyWDoihLTJFz6KHvt3ZwkvhWYCo6F8Ek86rk7GxQBkIsoBj7X9Z_BdJGahsiLJiK5CuSqH60iu7OdDlcXF_PjvcR_9HapB2NozF9SjhImmux9B64FYzEDCuY5Zw_AgpztKJmzPB-FSssSGCPqJ-sgmuIb9x6_fuajxpk9mm6PnstnlOHkN4ImatLnWtN1s69HMrz5RjC6GNd4A3-0QSrwmHqlq3KxEwQ4vo6Mv21gqcb4Z3QOoTU3WUmTlmWVc_W7hCngECEkznQ&access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ5bWt2dW5MRERoMjRNTVp2dG1Xc3oiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwczovL2F1dGhpbmcuY24iLCJpYXQiOjE1NTQ1NDI1OTEsImV4cCI6MTU1NDU0NjE5MSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImF1ZCI6IjVjYTc2NWUzOTMxOTRkNTg5MWRiMTkyNyJ9.Q3aTiM4Pzu5czVE0nyHB_Jazrn-nmMcli0JRLm1_7wjp4LZmvd_1zZY4503mR3YWtUG0ApVlC15yFwRuJjDCXG1bl4gCBFSDC46Nb2Mq7d2Njp04CfekC8uYllI1RDJccA-6kKtI9pZjEnfmtMa3xw_YjNgVQ1bQ5HtfikWxwwQwcEW1owBME6DWTW4GD1c1l_9OOfHubTIiT8d-SX-95XbHo9BTVPRaX9oL_GyX5bBBtmtnXj3U648TER_yhENmnSVlvhCW7P_H_Yqb4erAXUPwtaE7kvqF07qL2POsG6PljE6qNPBnXyUZyPRLyrokE0E916IB8e2mn_AWkMip3w&expires_in=3600&token_type=Bearer&state=jazz&session_state=938739ce36795eb334cf3c93d7e9d48a16616aa291ad3ed38671fe2fc4a9e4f6
 ```
 
 ## Hybrid Flow（混合模式）
+## 发起授权
+```
+GET https://example.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927&redirect_uri=https://example.com&scope=openid profile&response_type=id_token token&state=jazz&nonce=1831289
+```
+
+混合模式下，code id_token、access_token 会以 url **hash** 的形式传递
+
+跳转后链接示例
+
+```
+https://example.com/#code=pIY83Jl_bcerNN9Wt57Sq0TAjTr&id_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiIxOTdlOGExMy0wMzE4LTRkZDEtYjQ3Mi0xZjI0MDk5ZTUzOWYiLCJhdF9oYXNoIjoiUFlXaTFER29jRlotYmlYd0d5WXlpZyIsImNfaGFzaCI6Ik4yUmkyUFpidktYdXRmdGhZbUhrM2ciLCJzX2hhc2giOiJ3d0gzV3JVdm9IYklKeU1lWVR1OGx3IiwiYXVkIjoiNWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3IiwiZXhwIjoxNTU0NjE1NjcyLCJpYXQiOjE1NTQ2MTIwNzIsImlzcyI6Imh0dHBzOi8vYXV0aGluZy5jbiJ9.a--JC_6CyUi0Z7z3DCKT51wJkKT7MmtlVHhrNujhxHCfgQqzqS3wMxVj6oEe_cfjVQNgJ-Xe1oiL8uMAxVN-cM1Ra1JQcavUujua2IxxtG4Nkh84rTukqsrPfuNhNO7MRP6Fa9qIIdKeKkQKyh1zBKE6322zK_ECdfGd2sWdqqXiQyJXg6ODhPZDidsGuluV3bZiAY3brMSMmh6QC99StOP5ZwSKtlRMyYE3MIRWsQ4W2HkHBrk67T_scQ6XN6mdBKi2OZW-E7fXeyVwH-ibWDzlUpmFSaj3a-WbkDe3nfCv8MHj439aJNU-AXfIgLsckvCO5_dJOUWGHg6hemT9bw&access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiIxUzgyaUtSdXFlWW1DUmFrMFl1S0kiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwczovL2F1dGhpbmcuY24iLCJpYXQiOjE1NTQ2MTIwNzIsImV4cCI6MTU1NDYxNTY3Miwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImF1ZCI6IjVjYTc2NWUzOTMxOTRkNTg5MWRiMTkyNyJ9.tHwxiH5QXXA46Y4mIwcBck3uDArMj5TMGEBAQ8Eeln6oFbwBY3aS5cSV6e3anZDwKZrdgrdFlyj9-Bl1T5V1rNJK-Xz_aFnM6XxyO1jSHcn-6KXGwmz68D50VIHior39cuoj9OXbNCei5RVghjh2cRT3SenYki7UeJBgmfQA6l2aZZpBrn9aphXr9OoPS47T59I0Ynn2yMIYIMDOX7hh8E5oV1hrK3hyjAvp3ghmzyRfj2BlG9rBo1hd_d5E8x6OIzNdvPKXwVASJZRxov2Dx0ma36zxzSObyXgCloUv2KlbmL9-Wj8d3H6FhHC75DLfJYx-uRgNqW7CFKGeRkPjkQ&expires_in=3600&token_type=Bearer&state=jazz&session_state=101666b6b70cfb4406ad9c0c906039de39776140e66e48acdb63ab8acb309701
+```
+
