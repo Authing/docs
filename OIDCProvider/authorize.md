@@ -11,7 +11,7 @@ AP（Authentication Provider） Authing 服务器
 文中 testapp.authing.cn，example.authing.cn，testapp、example 是你在控制台配置的应用二级域名
 
 ## 在 Authing 创建一个应用 A
-
+[如何创建应用？](http://docs.authing.cn/#/quick_start/howto?id=%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8)
 ## 在 A 应用第三方登录选项卡下创建 OIDC 应用
 
 需要填写一些 OIDC 配置项，包括 code 换 token 时的认证方式，二级域名设置，启用授权模式，回调 url
@@ -67,7 +67,7 @@ body 参数
 此时 A 应用中的用户数据已经可以通过 OIDC 协议访问。
 
 ## Authorization Code Flow（授权码模式）
-
+本教程 code 换取 token 使用的方式是 client_secret_post，选用其他方式，code 换取 token 过程需要做对应调整
 ## 发起授权
 
 | 参数名 | 意义 |
