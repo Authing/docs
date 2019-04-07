@@ -212,6 +212,7 @@ GET https://example.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db192
 ## 直接跳转到 redirect_uri
 
 id_token、access_token 会以 url **hash** 的形式传递
+
 跳转后链接示例
 
 ```
