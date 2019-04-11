@@ -79,6 +79,7 @@ body 参数
 | prompt | 可以为 none，login，consent 或 select_account，指定 AP 与 End-User 的交互方式，如需 refresh_token，必须为 consent [参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) |
 | state | 一个随机字符串，用于防范 CSRF 攻击，如果 response 中的 state 值和发送请求之前设置的 state 值不同，说明受到攻击 |
 | nonce | 一个随机字符串，用于防范 Replay 攻击 |
+
 End-User 发出 GET 请求，通过 query 的形式携带参数。（End-User 可以先 GET RP 下某个路由，然后 RP 返回 302，带上所需参数）其中 testapp 是你在控制台配置的 OIDC 应用二级域名。
 
 ```
