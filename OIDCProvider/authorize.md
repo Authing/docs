@@ -32,7 +32,7 @@ Content-Type: application/x-www-form-urlencoded
 Authorization: Basic NWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3OmJmNGQ0ZTI4ZTg4NWQ4NjBlZWM5YmIzNzEwYjAyMDY1
 ```
 
-其中 Basic<空格> 后面的一长串字符 = base64(<client_id>:<client_secret>)
+其中 Basic<空格> 后面的一长串字符 = base64(&lt;client_id&gt;:&lt;client_secret&gt;)
 
 上述示例字符串序列用 base64 解密之后为 5ca765e393194d5891db1927:bf4d4e28e885d860eec9bb3710b02065
 
