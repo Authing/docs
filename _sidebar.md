@@ -40,6 +40,7 @@
    - [OAuth 授权流程](/oauthProvider/authorize.md)
    - [检测 access_token](/oauthProvider/checkToken.md)
 - [OIDC 授权](/OIDCProvider/authorize.md)
+- [LDAP 服务配置](/ldap/config.md)
 - [SDK 编写导览](/sdk/sdk.md)
    - [开始编写](/sdk/modules.md)
    - [GraphQL 请求列表](/sdk/gql.md)
