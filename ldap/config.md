@@ -4,7 +4,15 @@
 
 LDAP 是轻量目录访问协议，英文全称是 Lightweight Directory Access Protocol，一般都简称为 LDAP。你可以把它理解为一个树型的用来存储用户和组织信息的数据库，常被用来做单点登录（ SSO ），更多介绍请[点击这里](https://baike.baidu.com/item/LDAP/2875565)。
 
-在 Authing 平台上，按照以下步骤即可完成 LDAP 配置。
+使用 LDAP 服务请先[创建一个 OAuth 应用](https://docs.authing.cn/#/oauthProvider/new)或[创建一个 OIDC 应用](https://docs.authing.cn/#/OIDCProvider/authorize?id=%E5%9C%A8-a-%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E9%80%89%E9%A1%B9%E5%8D%A1%E4%B8%8B%E5%88%9B%E5%BB%BA-oidc-%E5%BA%94%E7%94%A8)。
+
+创建完成后，LDAP 服务对全部 OAuth 或 OIDC 应用都可用。
+
+我们准备了一个[LDAP 测试应用](https://ldap.authing.cn/login/?app_id=5cbecf24d14c74627b93b9db)可让你体验使用 LDAP 登录的全流程（测试账户：tesla，测试密码：password）。
+
+![https://usercontents.authing.cn/docs/oauth/ldap/ldap_test.png](https://usercontents.authing.cn/docs/oauth/ldap/ldap_test.png)
+
+如果你想接入 LDAP 服务，请按照以下步骤完成 LDAP 配置。
 
 ## 添加 LDAP 服务
 
@@ -48,4 +56,4 @@ LDAP 是轻量目录访问协议，英文全称是 Lightweight Directory Access 
 
 用户可用此方式，通过修改 `Search DN` 和 `查询条件` 完成对 LDAP 的调试。
 
-
+配置完成后，访问任意 OAuth 应用或 OIDC 应用即可使用 LDAP 账号登录。
