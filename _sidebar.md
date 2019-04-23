@@ -15,6 +15,7 @@
    - [注册](/user_service/add_user.md)
    - [登录](/user_service/login.md)
    - [使用手机验证码登录](/user_service/login_by_phone_code.md)
+   - [使用 LDAP 登录](/user_service/login_by_ldap.md)
    - [发送手机验证码](/user_service/send_phone_code.md)
    - [检测用户登录状态](/user_service/check_login_status.md)
    - [退出](/user_service/logout.md)
