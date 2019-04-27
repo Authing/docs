@@ -15,6 +15,34 @@ AP（Authentication Provider） Authing 服务器
 ## 在 A 应用第三方登录选项卡下创建 OIDC 应用
 
 需要填写一些 OIDC 配置项，包括 code 换 token 时的认证方式，二级域名设置，启用授权模式，回调 url
+### 如何验证 access_token 签名，id_token 签名？
+如果签名算法设置的是 HS256 等 Hash 类算法，那么 Authing 使用 OIDC 应用的 app_secret 当作 key 进行签名，RP 需要用 app_secret 作为 HS256 签名参数来计算签名和 JWT 中的签名进行对比
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  "1133fd20c14e4cc29b6ecb71fb8eb952"// app_secret
+)
+```
+如果是 RS256 等非对称加密算法，需要使用公钥验证签名。你可以在创建 OIDC 应用时提供自己的 jwks_uri 或 jwks。如不提供，Authing 将使用默认的私钥进行签名，请使用 Authing 的公钥来验证签名
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxRijj2seoesv5K0Z+ymR
+K7DSDPxdsM2sGQD2ZVhLjLsxZWJtXUXh7ERdUU6OT3BqYZZf7CLIhN6yyNtTOgfg
+pLG9HVJd7ZSKzuy2dS7mo8jD8YRtptAJmNFqw6z8tQp5MNG1ZHqp9isKqJmx/CFY
+kRdXBmjjj8PMVSP757pkC3jCq7fsi0drSSg4lIxrSsGzL0++Ra9Du71Qe/ODQKU0
+brxaI1OKILtfcVPTHTaheV+0dw4eYkSDtyaLBG3jqsQbdncNg8PCEWchNzdO6aaj
+Uq4wbOzy/Ctp399mz0SGKfuC5S8gqAFABFT3DH3UD21ZztQZwFEV2AlvF+bcGEst
+cwIDAQAB
+-----END PUBLIC KEY-----
+```
+jwks [参考规范](https://openid.net/specs/openid-connect-registration-1_0.html#ClientMetadata)
+
+可以检验 jwt 的签名的 playground https://jwt.io
+
+RSA 的 pem 格式 与 jwk 格式互转 https://8gwifi.org/jwkconvertfunctions.jsp
+
+生成 jwk https://mkjwk.org/
 
 ### code 换 token 时的认证方式 —— POST 请求该怎么发？
 
