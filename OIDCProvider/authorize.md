@@ -130,6 +130,8 @@ body 参数
 
 ### 如何验证 access_token 签名，id_token 签名？
 如果签名算法设置的是 HS256 等 Hash 类算法，那么 Authing 使用 OIDC 应用的 app_secret 当作 key 进行签名，RP 需要用 app_secret 作为 HS256 签名参数来计算签名和 JWT 中的签名进行对比
+
+伪代码如下
 ```
 HMACSHA256(
   base64UrlEncode(header) + "." +
@@ -137,6 +139,13 @@ HMACSHA256(
   "1133fd20c14e4cc29b6ecb71fb8eb952"// app_secret
 )
 ```
+
+js 环境下可以使用 jsonwebtoken 进行验证
+```
+const jwt = require('jsonwebtoken')
+let decoded = jwt.verify(token, <appSecret>)
+```
+
 如果是 RS256 等非对称加密算法，需要使用公钥验证签名。你可以在创建 OIDC 应用时提供自己的 jwks_uri 或 jwks。如不提供，Authing 将使用默认的私钥进行签名，请使用 Authing 的公钥来验证签名
 ```
 -----BEGIN PUBLIC KEY-----
