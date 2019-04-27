@@ -27,7 +27,6 @@
 
 | scope 名称 | 对应信息                            |
 | ---------- | ----------------------------------- |
-| phone      | phone_number，phone_verified        |
 | address    | address                             |
 | email      | email，email_verified               |
 | phone      | phone_number, phone_number_verified |

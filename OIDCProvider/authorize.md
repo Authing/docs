@@ -15,84 +15,9 @@ AP（Authentication Provider） Authing 服务器
 ## 在 A 应用第三方登录选项卡下创建 OIDC 应用
 
 需要填写一些 OIDC 配置项，包括 code 换 token 时的认证方式，二级域名设置，启用授权模式，回调 url
-### 如何验证 access_token 签名，id_token 签名？
-如果签名算法设置的是 HS256 等 Hash 类算法，那么 Authing 使用 OIDC 应用的 app_secret 当作 key 进行签名，RP 需要用 app_secret 作为 HS256 签名参数来计算签名和 JWT 中的签名进行对比
-```
-HMACSHA256(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  "1133fd20c14e4cc29b6ecb71fb8eb952"// app_secret
-)
-```
-如果是 RS256 等非对称加密算法，需要使用公钥验证签名。你可以在创建 OIDC 应用时提供自己的 jwks_uri 或 jwks。如不提供，Authing 将使用默认的私钥进行签名，请使用 Authing 的公钥来验证签名
-```
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxRijj2seoesv5K0Z+ymR
-K7DSDPxdsM2sGQD2ZVhLjLsxZWJtXUXh7ERdUU6OT3BqYZZf7CLIhN6yyNtTOgfg
-pLG9HVJd7ZSKzuy2dS7mo8jD8YRtptAJmNFqw6z8tQp5MNG1ZHqp9isKqJmx/CFY
-kRdXBmjjj8PMVSP757pkC3jCq7fsi0drSSg4lIxrSsGzL0++Ra9Du71Qe/ODQKU0
-brxaI1OKILtfcVPTHTaheV+0dw4eYkSDtyaLBG3jqsQbdncNg8PCEWchNzdO6aaj
-Uq4wbOzy/Ctp399mz0SGKfuC5S8gqAFABFT3DH3UD21ZztQZwFEV2AlvF+bcGEst
-cwIDAQAB
------END PUBLIC KEY-----
-```
-jwks [参考规范](https://openid.net/specs/openid-connect-registration-1_0.html#ClientMetadata)
-
-可以检验 jwt 的签名的 playground https://jwt.io
-
-RSA 的 pem 格式 与 jwk 格式互转 https://8gwifi.org/jwkconvertfunctions.jsp
-
-生成 jwk https://mkjwk.org/
-
-### code 换 token 时的认证方式 —— POST 请求该怎么发？
-
-**client_secret_basic**
-使用 HTTP Basic authentication 模式进行认证
-
-```
-POST https://testapp.authing.cn/oauth/oidc/token
-```
-
-请求头
-
-```
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic NWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3OmJmNGQ0ZTI4ZTg4NWQ4NjBlZWM5YmIzNzEwYjAyMDY1
-```
-
-其中 Basic<空格> 后面的一长串字符 = base64(&lt;client_id&gt;:&lt;client_secret&gt;)
-
-上述示例字符串序列用 base64 解密之后为 5ca765e393194d5891db1927:bf4d4e28e885d860eec9bb3710b02065
-
-body 参数
-
-| 参数名       | 意义                                      |
-| ------------ | ----------------------------------------- |
-| code         | 授权码                                    |
-| redirect_uri | 在控制台配置的 OIDC 回调 url 其中的一个值 |
-| grant_type   | 授权类型，可以填 authorization_code       |
-
-**client_secret_post**
-
-```
-POST https://testapp.authing.cn/oauth/oidc/token
-```
-
-body 参数
-
-| 参数名        | 意义                                      |
-| ------------- | ----------------------------------------- |
-| client_id     | OIDC 应用的 **app_id**                    |
-| client_secret | OIDC 应用的 **app_secret**                |
-| code          | 授权码                                    |
-| redirect_uri  | 在控制台配置的 OIDC 回调 url 其中的一个值 |
-| grant_type    | 授权类型，可以填 authorization_code       |
-
-**其他方式**
-
-[参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
 
 此时 A 应用中的用户数据已经可以通过 OIDC 协议访问。
+
 
 ## Authorization Code Flow（授权码模式）
 本教程 code 换取 token 使用的方式是 client_secret_post，选用其他方式，code 换取 token 过程需要做对应调整
@@ -102,7 +27,7 @@ body 参数
 | ----- | --- |
 | client_id | OIDC 应用的 **app_id** |
 | redirect_uri | 在控制台配置的 OIDC 回调 url 其中的一个值 |
-| scope | 需要请求的权限 |
+| scope | 需要请求的权限，如果需要获取 email 和手机号需要有 phone email [参考 scope 表格](/OIDCProvider/OIDCFeatures.md) |
 | response_type | OIDC 模式，可以为 code, id_token, id_token token, code id_token, code token, code id_token token [参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationExamples)|
 | prompt | 可以为 none，login，consent 或 select_account，指定 AP 与 End-User 的交互方式，如需 refresh_token，必须为 consent [参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) |
 | state | 一个随机字符串，用于防范 CSRF 攻击，如果 response 中的 state 值和发送请求之前设置的 state 值不同，说明受到攻击 |
@@ -134,25 +59,58 @@ End-User 此时会看到第三方要获取那些自己的个人信息，然后�
 
 ## 换取 token
 
-如果你在控制台配置 OIDC 时，换取 token 方式设置的为 client_secret_post
+如果你在控制台配置 OIDC 时，换取 token 方式设置的为 client_secret_post，那么按照下面第一种方法发 POST 请求
 
-那么 RP 相关路由接收到 code 后，需要
+### code 换 token 时的认证方式 —— POST 请求该怎么发？
+
+**client_secret_post**
 
 ```
 POST https://testapp.authing.cn/oauth/oidc/token
 ```
 
-Content-Type 需为 application/x-www-form-urlencoded
+body 参数
 
-body 部分携带参数如下表
+| 参数名        | 意义                                      |
+| ------------- | ----------------------------------------- |
+| client_id     | OIDC 应用的 **app_id**                    |
+| client_secret | OIDC 应用的 **app_secret**                |
+| code          | 授权码                                    |
+| redirect_uri  | 在控制台配置的 OIDC 回调 url 其中的一个值 |
+| grant_type    | 授权类型，可以填 authorization_code       |
 
-| 参数名        | 意义                       |
-| ------------- | -------------------------- |
-| code          | 授权码                     |
-| client_id     | OIDC 应用的 **app_id**     |
-| client_secret | OIDC 应用的 **app_secret** |
-| grant_type    | authorization_code         |
-| redirect_uri  | 回调地址                   |
+**client_secret_basic**
+
+使用 HTTP Basic authentication 模式进行认证
+
+```
+POST https://testapp.authing.cn/oauth/oidc/token
+```
+
+请求头
+
+```
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic NWNhNzY1ZTM5MzE5NGQ1ODkxZGIxOTI3OmJmNGQ0ZTI4ZTg4NWQ4NjBlZWM5YmIzNzEwYjAyMDY1
+```
+
+其中 Basic<空格> 后面的一长串字符 = base64(&lt;client_id&gt;:&lt;client_secret&gt;)
+
+上述示例字符串序列用 base64 解密之后为 5ca765e393194d5891db1927:bf4d4e28e885d860eec9bb3710b02065
+
+body 参数
+
+| 参数名       | 意义                                      |
+| ------------ | ----------------------------------------- |
+| code         | 授权码                                    |
+| redirect_uri | 在控制台配置的 OIDC 回调 url 其中的一个值 |
+| grant_type   | 授权类型，可以填 authorization_code       |
+
+**其他方式**
+
+[参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
+
+
 
 返回示例
 
@@ -168,6 +126,37 @@ body 部分携带参数如下表
 ```
 
 其他方式参见 [OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
+
+
+### 如何验证 access_token 签名，id_token 签名？
+如果签名算法设置的是 HS256 等 Hash 类算法，那么 Authing 使用 OIDC 应用的 app_secret 当作 key 进行签名，RP 需要用 app_secret 作为 HS256 签名参数来计算签名和 JWT 中的签名进行对比
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  "1133fd20c14e4cc29b6ecb71fb8eb952"// app_secret
+)
+```
+如果是 RS256 等非对称加密算法，需要使用公钥验证签名。你可以在创建 OIDC 应用时提供自己的 jwks_uri 或 jwks。如不提供，Authing 将使用默认的私钥进行签名，请使用 Authing 的公钥来验证签名
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxRijj2seoesv5K0Z+ymR
+K7DSDPxdsM2sGQD2ZVhLjLsxZWJtXUXh7ERdUU6OT3BqYZZf7CLIhN6yyNtTOgfg
+pLG9HVJd7ZSKzuy2dS7mo8jD8YRtptAJmNFqw6z8tQp5MNG1ZHqp9isKqJmx/CFY
+kRdXBmjjj8PMVSP757pkC3jCq7fsi0drSSg4lIxrSsGzL0++Ra9Du71Qe/ODQKU0
+brxaI1OKILtfcVPTHTaheV+0dw4eYkSDtyaLBG3jqsQbdncNg8PCEWchNzdO6aaj
+Uq4wbOzy/Ctp399mz0SGKfuC5S8gqAFABFT3DH3UD21ZztQZwFEV2AlvF+bcGEst
+cwIDAQAB
+-----END PUBLIC KEY-----
+```
+jwks [参考规范](https://openid.net/specs/openid-connect-registration-1_0.html#ClientMetadata)
+
+可以检验 jwt 的签名的 playground https://jwt.io
+
+RSA 的 pem 格式 与 jwk 格式互转 https://8gwifi.org/jwkconvertfunctions.jsp
+
+生成 jwk https://mkjwk.org/
+
 
 ## token 换取用户信息
 
@@ -253,7 +242,7 @@ https://example.com/#code=_~BbC5~NQ0L1JfcTHnxgPYByuA3&id_token=eyJhbGciOiJSUzI1N
 ## 发起授权
 
 ```
-GET https://example.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927&redirect_uri=https://example.com&scope=openid profile&response_type=id_token token&state=jazz&nonce=1831289
+GET https://example.authing.cn/oauth/oidc/auth?client_id=5ca765e393194d5891db1927&redirect_uri=https://example.com&scope=openid profile&response_type=code id_token token&state=jazz&nonce=1831289
 ```
 
 混合模式下，code id_token、access_token 会以 url **hash** 的形式传递
