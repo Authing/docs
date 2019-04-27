@@ -146,7 +146,7 @@ const jwt = require('jsonwebtoken')
 let decoded = jwt.verify(token, <appSecret>)
 ```
 
-如果是 RS256 等非对称加密算法，需要使用公钥验证签名。你可以在创建 OIDC 应用时提供自己的 jwks_uri 或 jwks。如不提供，Authing 将使用默认的私钥进行签名，请使用 Authing 的公钥来验证签名
+如果是 RS256 等非对称加密算法，需要使用公钥验证签名。Authing 将使用私钥进行签名，请使用 Authing 的公钥来验证签名
 ```
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxRijj2seoesv5K0Z+ymR
