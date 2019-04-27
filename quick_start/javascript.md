@@ -52,7 +52,7 @@ auth.then((authing) => {
 - **clientId**
 	- 应用 ID，可从 [Authing 控制台](https://authing.cn/dashboard)中[获取](https://docs.authing.cn/#/quick_start/howto)。
 - **timestamp**
-    - 当前时间戳
+    - 当前时间戳 `Math.round(new Date() / 1000)`
 - **nonce**
 	- 一个随机数字，不要超过十位数
 
