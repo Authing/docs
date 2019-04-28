@@ -1,4 +1,6 @@
-# OIDC 三种流程
+# OIDC 参数参考
+
+## OIDC 三种认证流程的特征对比
 
 | 特性                           | 授权码流程 | 隐式流程 | 混合流程 |
 | ------------------------------ | ---------- | -------- | -------- |
@@ -10,7 +12,7 @@
 | 一次交互                       | no         | yes      | no       |
 | 必须服务器-服务器通信          | yes        | no       | varies   |
 
-# 不同 response_type 对应的授权流程
+## 不同 response_type 对应的授权流程
 
 | "response_type" value | Flow                    |
 | --------------------- | ----------------------- |
@@ -23,7 +25,7 @@
 
 [参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#Authentication)
 
-# scope 参数对应的用户信息
+## scope 参数对应的用户信息
 
 | scope 名称 | 对应信息                            |
 | ---------- | ----------------------------------- |
@@ -32,7 +34,7 @@
 | phone      | phone_number, phone_number_verified |
 | profile    | birthdate，family_name，gender，given_name，locale，middle_name，name，nickname，picture，preferred_username，profile，updated_at，website，zoneinfo |
 
-# 用户信息字段含义
+## 用户信息字段含义
 
 | 字段名                | 翻译             |
 | --------------------- | ---------------- |

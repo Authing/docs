@@ -38,6 +38,14 @@ Authing 让你 7 行代码接入用户系统成为可能，同时对 **JavaScrip
   [MINI_PROGEAM_LINK]: https://docs.authing.cn/#/quick_start/wxapp
   [MINI_PROGEAM_SCAN_LINK]: https://docs.authing.cn/#/quick_start/wxapp_scan_login
 
+## 单点登录
+
+目前 Authing 实现了 OAuth 2.0、OIDC 和 LDAP，相关文档请参考：
+
+1. [OAuth 授权](/oauthProvider/new)
+2. [OIDC 授权](/OIDCProvider/new)
+3. [配置 LDAP 服务](/ldap/config)
+
 ## 功能特性
 
  - 第三方 OAuth 配置使用
