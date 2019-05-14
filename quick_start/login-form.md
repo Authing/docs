@@ -55,7 +55,7 @@
 ``` html
 <script src="https://cdn.authing.cn/sdk/javascript/authing-login-form-1.5.0.js"></script>
 <script>
-  new AuthingForm({
+  const form = new AuthingForm({
     clientId: 'your_client_id',
     timestamp: Math.round(new Date() / 1000),
     nonce: Math.ceil(Math.random() * Math.pow(10, 6)),
@@ -63,7 +63,39 @@
 </script>
 ```
 
+### 4. 监听登录事件以获取用户信息
+
+``` javascript
+// 使用 `.on` 方法，并监听 `login` 事件即可在用户登录成功后获得用户信息
+form.on('login', (userInfo) => {
+  localStorage.setItem('userInfo', JSON.stringify(userInfo));
+  localStorage.setItem('token', JSON.stringify(userInfo.token));
+});
+```
+
 如果你想获取用户登录事件，请参考[完整事件列表](https://docs.authing.cn/#/quick_start/login-form?id=%E4%BA%8B%E4%BB%B6%E5%93%8D%E5%BA%94)。
+
+### 5. 在服务器端验证 JWT Token 的合法性以及是否过期
+
+验证 JWT 的合法性需要使用应用的密钥，密钥在控制台中可以获取到。
+
+以下以 JavaScript 为例（需要安装 `jsonwebtoken`）。
+
+``` javascript
+const jwt = require('jsonwebtoken');
+
+try {
+  let decoded = jwt.verify('JSON Web Token from client', 'your_secret'),
+    expired = (Date.parse(new Date()) / 1000) > decoded.exp
+  if (expired) {
+    // 过期
+  }else {
+    // 合法也没过期，正常放行
+  }
+} catch (error) {
+  // 不合法
+}
+```
 
 ## 高级功能
 
