@@ -17,7 +17,7 @@
    - [使用手机验证码登录](/user_service/login_by_phone_code.md)
    - [使用 LDAP 登录](/user_service/login_by_ldap.md)
    - [发送手机验证码](/user_service/send_phone_code.md)
-   - [检测用户登录状态](/user_service/check_login_status.md)
+   - [验证 JWT 合法性](/user_service/check_login_status.md)
    - [退出](/user_service/logout.md)
    - [获取用户资料](/user_service/get_user_info.md)
    - [用户权限管理](/user_service/get_user_role.md)
