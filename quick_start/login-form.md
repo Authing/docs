@@ -79,7 +79,7 @@ form.on('login', (userInfo) => {
 
 验证 JWT 的合法性需要使用应用的密钥，密钥在控制台中可以获取到。
 
-以下以 JavaScript 为例（需要安装 `jsonwebtoken`）。
+以下以 Node 为例（需要安装 `jsonwebtoken`）。
 
 ``` javascript
 const jwt = require('jsonwebtoken');
