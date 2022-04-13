@@ -1,0 +1,6 @@
+version: "3.4"
+services:
+  core:
+    image: registry.cn-beijing.aliyuncs.com/teamory/docs:latest
+    ports: 
+      - 3200:80
