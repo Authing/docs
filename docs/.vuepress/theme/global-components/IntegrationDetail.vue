@@ -1,6 +1,6 @@
 <template>
 	<div class="integration-detail">
-		<section class="integration-detail-banner">
+		<section class="integration-detail-banner" :style="[isInConsole && { marginTop: 24 }]">
 			<img class="no-zoom" src="~@theme/assets/images/integration/detail-banner.png" />
 			<h1>{{ this.$frontmatter.bannerTitle }}</h1>
 		</section>
@@ -16,7 +16,7 @@
 			/>
 
 			<div class="integration-detail-footer">
-				<RouterLink :to="backLink">
+				<RouterLink v-if="!isInConsole" :to="backLink">
 					<ArrowRight
 						:style="{
 							transform: 'rotate(180deg)',
@@ -26,12 +26,19 @@
 					回到列表
 				</RouterLink>
 				<div class="integration-detail-btn-container">
-					<AuthingButton :disabled="isFirstStep" @click="handlePrev">上一步</AuthingButton>
+					<AuthingButton
+            v-if="!isInConsole || isFirstStep"
+            :disabled="isFirstStep"
+            @click="handlePrev"
+            :style="[isInConsole && { width: '74px' }]"
+            >上一步</AuthingButton
+          >
 					<AuthingButton
 						@click="handleNext"
-						:style="{
-							marginLeft: '24px'
-						}"
+						:style="[
+              isInConsole && { width: '74px', background: '#215AE5' },
+              { marginLeft: '24px'}
+            ]"
 						type="primary"
 						>{{ isLastStep ? '我知道了，返回列表' : '下一步' }}</AuthingButton
 					>
@@ -61,7 +68,8 @@ export default {
 	},
 	data() {
 		return {
-			currStep: 0
+			currStep: 0,
+      isInConsole: ''
 		};
 	},
 	computed: {
@@ -90,7 +98,24 @@ export default {
 			}
 		}
 	},
+  mounted() {
+    this.registerMessage()
+  },
 	methods: {
+    // 注册消息事件来自 fe console
+    registerMessage() {
+      if (window) {
+        let _this = this;
+        window.addEventListener("message", evt => {
+          try {
+            const { event } = JSON.parse(evt.data);
+            if (event.source === "authing-fe-console") {
+              _this.isInConsole = event.eventType
+            }
+          } catch (e) {}
+        });
+      }
+    },
 		handlePrev() {
 			if (this.isFirstStep) {
 				return;
