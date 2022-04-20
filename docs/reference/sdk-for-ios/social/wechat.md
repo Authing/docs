@@ -51,13 +51,29 @@
 
 ### Info.plist 里面添加启动微信白名单
 
-key：LSApplicationQueriesSchemes
+key: LSApplicationQueriesSchemes
 
-value：weixin，weixinULAPI
+value: weixin, weixinULAPI
 
 > 注意大小写
 
 ![](./images/wechat/6.png)
+
+也可以通过 Source Code 方式打开 Info.plist，然后复制粘贴下面代码：
+
+```xml
+<plist version="1.0">
+<dict>
+    ...
+    <key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>weixin</string>
+		<string>weixinULAPI</string>
+	</array>
+    ...
+</dict>
+</plist>
+```
 
 <br>
 
@@ -69,6 +85,14 @@ Authing.setupWechat("your_wechat_appid", universalLink: "your_deep_link")
  ```
 
 >第一个参数为微信应用 id；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
+
+<br>
+
+### 设置 Associated Domains：
+
+> 替换为自己 Universal Link 对应的 host
+
+![](./images/wechat/7.png)
 
 <br>
 
