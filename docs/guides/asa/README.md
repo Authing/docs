@@ -79,7 +79,7 @@ Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发�
 
 ### 创建自定义 ASA 应用
 
-下面以「石墨文档」为例进行说明。首先在应用市场中找到 **自定义 ASA 应用**。
+下面以「石墨文档」为例进行说明。首先在应用市场中找到 **自定义 ASA 应用**
 
 ![](~@imagesZhCn/guides/asa/custom-1.png)
 
@@ -103,7 +103,7 @@ Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发�
     - 在 **type** 操作中使用时，值为字符串，可用 <code><span v-pre>{{account}}</span></code> 表示绑定的账号，<code><span v-pre>{{password}}</span></code> 表示绑定的密码
     - 在 **wait** 操作中使用时，值为数字，单位为毫秒，如 1000 表示等待 1 秒
 
-* 账号分配方式目前只支持**管理员设置账号和密码**
+* 账号分配方式目前只支持 **管理员设置账号和密码**
 
 ![](~@imagesZhCn/guides/asa/custom-3.png)
 
