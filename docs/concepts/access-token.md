@@ -7,7 +7,7 @@ tags:
   - OpaqueAccessToken
   - JwtAccessToken
 ---
-# 什么是 Access Token
+# 什么是 Access Token?
 
 <LastUpdated/>
 
