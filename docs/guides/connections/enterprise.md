@@ -6,7 +6,7 @@
 
 ## 连接办公应用
 
-我们支持连接一下企业办公应用：
+我们支持连接以下企业办公应用：
 
 - <router-link to="/connections/dingtalk-oa/" target="_blank">钉钉</router-link>
 - <router-link to="/connections/wechatwork/" target="_blank">企业微信</router-link>
