@@ -2,9 +2,9 @@
 
 <LastUpdated/>
 
- {{$localeConfig.brandName}} 应用市场（又名合作网络）是一套 {{$localeConfig.brandName}} 预先与第三方应用集成的目录，可以让 {{$localeConfig.brandName}} 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
+{{$localeConfig.brandName}} 应用市场（又名合作网络）是一套 {{$localeConfig.brandName}} 预先与第三方应用集成的目录，可以让 {{$localeConfig.brandName}} 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
 
-![](~@imagesZhCn/guides/application-market/1.png)
+![](~@imagesZhCn/guides/application-market/01.png)
 
 在这里，你仅需两步便可轻松地集成第三方应用：
 
@@ -18,7 +18,7 @@
 进入 {{$localeConfig.brandName}} 控制台后，转到应用市场。在这里，你可以根据需求选择应用集成。
 这里，让我们先搜索「腾讯」。
 
-![](~@imagesZhCn/guides/application-market/2.png)
+![](~@imagesZhCn/guides/application-market/02.png)
 
 点击第一个选项「腾讯云」。
 这将带你到腾讯云集成页面，其中包含以下信息：
@@ -27,15 +27,15 @@
 - 第三方集成应用地址和隐私政策
 - 「获取应用」按钮，它将带你进入应用安装集成配置页。
 
-![](~@imagesZhCn/guides/application-market/3.png)
+![](~@imagesZhCn/guides/application-market/03.png)
 
 单击「接入教程」按钮，你将看到集成应用配置的详细分步说明。
 
-![](~@imagesZhCn/guides/application-market/4.png)
+![](~@imagesZhCn/guides/application-market/04.png)
 
 按照帮助文档完成「腾讯云」的配置后，点击「保存」。你将被定向到 {{$localeConfig.brandName}} 应用列表页为用户分配权限。要测试它是否有效，请选择「体验登录」。
 
-![](~@imagesZhCn/guides/application-market/5.png)
+![](~@imagesZhCn/guides/application-market/05.png)
 
 链接正常运行，你将看到「腾讯云控制台」包含用户个人信息的页面。
 
