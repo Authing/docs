@@ -761,6 +761,13 @@
         image2x: "wps_logo.svg",
         category: "office",
       },
+      {
+        key: "didi-nightingale",
+        name: "Nightingale（夜莺）",
+        image: "nightingale_logo.svg",
+        image2x: "nightingale_logo.svg",
+        category: "devtools",
+      },
     ],
   categories:
     [
