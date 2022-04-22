@@ -727,6 +727,13 @@
         category: "office",
       },
       {
+        key: "wangyi-email-v2",
+        name: "网易企业邮箱（v2）",
+        image: "wangyi_logo@1.5x.svg",
+        image2x: "wangyi_logo@1.5x.svg",
+        category: "office",
+      },
+      {
         key: "guance",
         name: "观测云",
         image: "logo_Guanceyun_logo.svg",
