@@ -1130,7 +1130,7 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "社会化登录模块",
+          title: "社会化登录",
           path: "/reference/sdk-for-android/social/",
           children: [
             "/reference/sdk-for-android/social/wechat",

@@ -572,6 +572,40 @@ AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
 
 <br>
 
+## 更新手机号
+
+更新用户手机号码，调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+
+```java
+public static void updatePhone(String phoneCountryCode, String phone, String code,
+                               String oldPhoneCountryCode, String oldPhone, String oldCode,
+                               @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* *phoneCountryCode* 新手机号国家码 
+* *phone* 新手机号
+* *code* 新手机号短信验证码
+* *oldPhoneCountryCode* 旧手机号国家码
+* *oldPhone* 旧手机号
+* *oldCode* 旧手机号短信验证码
+
+**示例**
+
+```java
+AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+    if (code == 200) {
+    }
+});
+```
+
+**错误码**
+
+- 2020 未登录
+
+<br>
+
 ## 绑定手机号
 
 为当前登录用户绑定手机号。调用 [发送短信验证码](#发送短信验证码) 获取验证码。
