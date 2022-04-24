@@ -10,6 +10,8 @@
 
 ![image-20220327173229220](./images/create_project2.png)
 
+> 注意：Minimum SDK 版本 Android 7.0
+
 
 
 ## 第二步：添加 Guard 依赖
