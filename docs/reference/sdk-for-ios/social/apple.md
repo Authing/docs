@@ -14,7 +14,11 @@
 
 <br>
 
-## 步骤三：发起苹果认证
+## 步骤三：在工程里面启动 Sign in with Apple
+
+![](./images/apple/1.png)
+
+## 步骤四：发起苹果认证
 
 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 
