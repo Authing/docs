@@ -12,7 +12,7 @@ AuthFlow.start(this);
 
 效果如下：
 
-<img src="./images/standard.png" alt="drawing" width="300"/>
+<img src="./images/standard.png" alt="drawing" width="400"/>
 
 接下来，我们获取登录成功回调信息：
 
