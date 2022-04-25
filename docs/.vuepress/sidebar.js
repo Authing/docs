@@ -1138,10 +1138,23 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark"
           ]
+        }, 
+        {
+          title: "典型场景",
+          children: [
+            "/reference/sdk-for-android/scenario/splash",
+            "/reference/sdk-for-android/scenario/tokens",
+            "/reference/sdk-for-android/scenario/user-profile",
+            "/reference/sdk-for-android/scenario/webview",
+          ]
         },
         {
           title: "私有化部署",
           path: "/reference/sdk-for-android/onpremise"
+        },
+        {
+          title: "版本历史",
+          path: "/reference/sdk-for-android/version"
         }
       ]
     },
