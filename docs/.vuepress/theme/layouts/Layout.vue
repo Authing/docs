@@ -54,6 +54,28 @@
       </template>
     </Quickstarts>
 
+    <Reference v-else-if="$page.frontmatter.reference">
+      <template #sidebar>
+        <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+          <template #top>
+            <slot name="sidebar-top" />
+          </template>
+          <template #bottom>
+            <slot name="sidebar-bottom" />
+          </template>
+        </Sidebar>
+      </template>
+      <template #breadcrumb>
+        <Breadcrumb :sidebars="sidebarItems" />
+      </template>
+      <template #top>
+        <slot name="page-top"></slot>
+      </template>
+      <template #bottom>
+        <slot name="page-bottom"> </slot>
+      </template>
+    </Reference>
+
     <Page v-else :sidebar-items="sidebarItems">
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -91,6 +113,7 @@ import Footer from "@theme/components/Footer/index.vue";
 import Breadcrumb from "@theme/components/Breadcrumb.vue";
 import Quickstarts from "@theme/components/Quickstarts/index.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
+import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
 
 export default {
@@ -104,12 +127,13 @@ export default {
     Breadcrumb,
     PageSidebar,
     ApplicationIntegration,
-    Quickstarts
+    Quickstarts,
+    Reference,
   },
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
     };
   },
 
@@ -153,11 +177,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -165,14 +189,14 @@ export default {
       this.isSidebarOpen = false;
     });
 
-    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach(item =>
+    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach((item) =>
       delCookie(item)
     );
     let search = querystring.parse(
       typeof window !== "undefined" && window.location.search
     );
 
-    Object.keys(search).forEach(k => {
+    Object.keys(search).forEach((k) => {
       let v = search[k];
       setCookie(k, v);
     });
@@ -188,7 +212,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -202,8 +226,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
