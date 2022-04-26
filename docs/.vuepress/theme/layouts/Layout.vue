@@ -54,9 +54,6 @@
       </template>
     </Quickstarts>
 
-<<<<<<< HEAD
-    <Page v-else :sidebar-items="sidebarItems" :isInConsole="isInConsole">
-=======
     <Reference v-else-if="$page.frontmatter.reference">
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -80,7 +77,6 @@
     </Reference>
 
     <Page v-else :sidebar-items="sidebarItems">
->>>>>>> main
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
           <template #top>
