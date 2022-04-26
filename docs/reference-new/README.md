@@ -4,7 +4,7 @@
   reference: true,
   noSidebar: true,
   subtitle: "Authing  提供 RESTful 形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活得组合出你需要的认证流程。",
-  info: "新版 SDK 已于 2022 年 4 月 25 日正式上线，若你仍希望使用旧版 SDK，",
+  info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
   data:
@@ -17,36 +17,36 @@
               #
               title: "iOS Swift",
               icon: "iOS",
-              github: "https://github.com/authing/authing-swift",
-              doc: "/v2/xxxxxx",
+              github: "https://github.com/Authing/guard-ios",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Android",
               icon: "Android",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/guard-android",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Flutter",
               icon: "Flutter",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/sdk-flutter",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "React Natice",
               icon: "React-Native",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-rn-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "C#",
               icon: "csharp",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-api-client-net",
+              doc: "https://authing-open-api.readme.io",
             },
           ],
       },
@@ -58,29 +58,29 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "React",
               icon: "React-Native",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Vue",
               icon: "Vue",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Angular",
               icon: "Angular",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://authing-open-api.readme.io",
             },
           ],
       },
@@ -92,50 +92,50 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing.js",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Python",
               icon: "Python",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-py-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "C#",
               icon: "csharp",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-api-client-net",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing.js",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ruby",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Java",
               icon: "Java",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-java-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Golang",
               icon: "Go",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-go-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
           ],
       },
@@ -147,50 +147,50 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing.js",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Python",
               icon: "Python",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-py-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "C#",
               icon: "csharp",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-api-client-net",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing.js",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-ruby",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Java",
               icon: "Java",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-java-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Golang",
               icon: "Go",
-              github: "",
-              doc: "",
+              github: "https://github.com/Authing/authing-go-sdk",
+              doc: "https://authing-open-api.readme.io",
             },
           ],
       },
