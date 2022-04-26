@@ -54,7 +54,7 @@
             </div>
           </div>
         </div>
-        <Content class="theme-default-content" />
+        <!-- <Content class="theme-default-content" /> -->
         <downloadDemoPage v-if="showDownloadDemo" />
         <Feedback v-if="!$frontmatter.noFeedback" />
       </div>
