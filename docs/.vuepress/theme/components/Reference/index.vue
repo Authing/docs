@@ -141,6 +141,7 @@ export default {
     font-size: 24px;
     line-height: 38px;
     color: #1D2129;
+    margin-top: 1.5em;
     padding-bottom: 0;
     border-bottom: 0
   p
@@ -155,6 +156,7 @@ export default {
   background: #E8F2FF;
   line-height: 46px;
   padding: 0 1em;
+
 @media (max-width: $MQMobile)
   .sdk-banner
     display: block

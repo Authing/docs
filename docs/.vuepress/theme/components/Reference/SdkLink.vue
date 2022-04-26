@@ -51,7 +51,7 @@ export default {
   a
     line-height: 20px;
     color: #000;
-    padding: 0 1em;
+    padding-left:1em;
     img
       height: 20px;
       width: 20px;

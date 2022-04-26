@@ -3,7 +3,7 @@
   title: "开发集成",
   reference: true,
   noSidebar: true,
-  subtitle: "Authing  提供 RESTful、GraphQL 两种形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活得组合出你需要的认证流程。",
+  subtitle: "Authing  提供 RESTful 形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活得组合出你需要的认证流程。",
   info: "新版 SDK 已于 2022 年 4 月 25 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
