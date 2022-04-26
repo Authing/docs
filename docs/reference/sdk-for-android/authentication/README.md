@@ -252,13 +252,13 @@ AuthClient.logout((code, message, data)-> AuthFlow.start(this));
 向指定的手机发送短信验证码
 
 ```java
-public static void sendSms(String phone, String phoneCountryCode, @NotNull AuthCallback<?> callback)
+public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthCallback<?> callback)
 ```
 
 **参数**
 
-* *phone* 手机号
 * *phoneCountryCode* 电话国家码。可以为空，为空时默认为 +86
+* *phone* 手机号
 
 **示例**
 
@@ -569,6 +569,40 @@ AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
 
 * 2020 未登录
 * 1320011 旧密码不正确
+
+<br>
+
+## 更新手机号
+
+更新用户手机号码，调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+
+```java
+public static void updatePhone(String phoneCountryCode, String phone, String code,
+                               String oldPhoneCountryCode, String oldPhone, String oldCode,
+                               @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* *phoneCountryCode* 新手机号国家码，需以 + 开头，如中国大陆为 +86 
+* *phone* 新手机号
+* *code* 新手机号短信验证码
+* *oldPhoneCountryCode* 旧手机号国家码，需以 + 开头，如中国大陆为 +86
+* *oldPhone* 旧手机号
+* *oldCode* 旧手机号短信验证码
+
+**示例**
+
+```java
+AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+    if (code == 200) {
+    }
+});
+```
+
+**错误码**
+
+- 2020 未登录
 
 <br>
 

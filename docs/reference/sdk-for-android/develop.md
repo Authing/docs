@@ -10,15 +10,27 @@
 
 ![image-20220327173229220](./images/create_project2.png)
 
+> 注意：Minimum SDK 版本 Android 7.0
+
 
 
 ## 第二步：添加 Guard 依赖
 
+工程 build.gradle 文件里面需包含 mavenCentral
+
+ ```groovy
+ buildscript {
+    repositories {
+        mavenCentral()
+
+        // other repositories
+    }
+ }
+ ```
+
 ```groovy
 implementation 'cn.authing:guard:+'
 ```
-
-
 
 ## 第三步：初始化
 

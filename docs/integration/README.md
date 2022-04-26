@@ -727,6 +727,13 @@
         category: "office",
       },
       {
+        key: "wangyi-email-v2",
+        name: "网易企业邮箱（v2）",
+        image: "wangyi_logo@1.5x.svg",
+        image2x: "wangyi_logo@1.5x.svg",
+        category: "office",
+      },
+      {
         key: "guance",
         name: "观测云",
         image: "logo_Guanceyun_logo.svg",
@@ -760,6 +767,13 @@
         image: "wps_logo.svg",
         image2x: "wps_logo.svg",
         category: "office",
+      },
+      {
+        key: "didi-nightingale",
+        name: "Nightingale（夜莺）",
+        image: "nightingale_logo.svg",
+        image2x: "nightingale_logo.svg",
+        category: "devtools",
       },
     ],
   categories:

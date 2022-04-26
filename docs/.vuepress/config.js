@@ -4,9 +4,8 @@ const { basePath, config } = require("./env");
 const path = require("path");
 const webpack = require("webpack");
 
-const gaEnabled = config&&config.ga&&config.ga.enabled
-const gTrackingId = config&&config.ga&&config.ga.gTrackingId
-
+const gaEnabled = config && config.ga && config.ga.enabled;
+const gTrackingId = config && config.ga && config.ga.gTrackingId;
 
 const head = [
   [
@@ -28,16 +27,16 @@ const head = [
     {},
     `if(window.location.hostname === "docs.authing.cn"){window.Cohere.init("PUkf845sOZgDd59V6aTJCsuJ");}`,
   ],
-]
+];
 
-if(gaEnabled){
+if (gaEnabled) {
   head.push([
     "script",
     {
       async: true,
       src: `https://www.googletagmanager.com/gtag/js?id=${gTrackingId}`,
     },
-  ])
+  ]);
   head.push([
     "script",
     {},
@@ -45,10 +44,9 @@ if(gaEnabled){
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '${gTrackingId}');`
-  ])
+    gtag('config', '${gTrackingId}');`,
+  ]);
 }
-
 
 module.exports = {
   base: basePath,
@@ -80,6 +78,7 @@ module.exports = {
       description: "Authing 文档",
       navbarTitle: "文档",
       relatedDocText: "相关文档",
+      devDocText: "开发文档",
       brandName: sidebar.BRAND_NAME_ZH_CN,
       brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE,
     },
@@ -89,14 +88,14 @@ module.exports = {
       description: "Authing Docs",
       navbarTitle: "Documents",
       relatedDocText: "Related documents",
+      devDocText: "Development documents",
       brandName: sidebar.BRAND_NAME_EN_US,
       brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE,
     },
   },
   head,
   themeConfig: {
-    logo:
-      "https://files.authing.co/authing-console/authing-logo-new-20210924.svg",
+    logo: "https://files.authing.co/authing-console/authing-logo-new-20210924.svg",
     officeSiteDomain: "authing.cn",
     officeSiteUrl: "https://authing.cn",
     consoleDomain: "https://console.authing.cn",
