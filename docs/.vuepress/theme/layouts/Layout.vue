@@ -54,6 +54,9 @@
       </template>
     </Quickstarts>
 
+<<<<<<< HEAD
+    <Page v-else :sidebar-items="sidebarItems" :isInConsole="isInConsole">
+=======
     <Reference v-else-if="$page.frontmatter.reference">
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -77,6 +80,7 @@
     </Reference>
 
     <Page v-else :sidebar-items="sidebarItems">
+>>>>>>> main
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
           <template #top>
@@ -134,6 +138,10 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
+<<<<<<< HEAD
+      isInConsole: ''
+=======
+>>>>>>> main
     };
   },
 
@@ -200,9 +208,47 @@ export default {
       let v = search[k];
       setCookie(k, v);
     });
+
+    this.registerMessage();
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("message");
   },
 
   methods: {
+    // 注册消息事件来自 fe console
+    registerMessage() {
+      if (window) {
+        let _this = this;
+        window.addEventListener("message", evt => {
+          try {
+            const { event } = JSON.parse(evt.data);
+            if (event.source === "authing-fe-console") {
+              // 1. 隐藏头部和顶部区域
+              _this.hiddenModule();
+              _this.isInConsole = event.eventType
+              // if (event.eventType === 'console-protocol-common') {
+
+              // } else if (event.eventType === "console-protocol-asa") {
+
+              // }
+            }
+          } catch (e) {}
+        });
+      }
+    },
+
+    // 1. 移除模块
+    hiddenModule() {
+      let aside = document.querySelector("aside[class='sidebar']");
+      let header = document.querySelector("header[class*='navbar']");
+      let footer = document.querySelector("footer[class*='footer']");
+      aside.style = "display:none;";
+      header.style = "display:none;";
+      footer.style = "display:none;";
+    },
+
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
       this.$emit("toggle-sidebar", this.isSidebarOpen);
