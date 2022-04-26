@@ -116,7 +116,7 @@ export default {
   display: flex;
   justify-content: space-around;
   padding: 2em 0;
-  margin: 2.5em 0 1em;
+  margin: 3.5em 0 1.5em;
   border-radius: 6px;
   > div
     padding: 0 1em;
