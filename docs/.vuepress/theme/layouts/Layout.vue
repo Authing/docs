@@ -134,10 +134,7 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
-<<<<<<< HEAD
-      isInConsole: ''
-=======
->>>>>>> main
+      isInConsole: "",
     };
   },
 
@@ -217,13 +214,13 @@ export default {
     registerMessage() {
       if (window) {
         let _this = this;
-        window.addEventListener("message", evt => {
+        window.addEventListener("message", (evt) => {
           try {
             const { event } = JSON.parse(evt.data);
             if (event.source === "authing-fe-console") {
               // 1. 隐藏头部和顶部区域
               _this.hiddenModule();
-              _this.isInConsole = event.eventType
+              _this.isInConsole = event.eventType;
               // if (event.eventType === 'console-protocol-common') {
 
               // } else if (event.eventType === "console-protocol-asa") {
