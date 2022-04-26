@@ -54,7 +54,7 @@ static func authByCode(code: String, authRequest: AuthRequest, completion: @esca
 
 **参数**
 
-* *code* OIDC 授权码。通过 webview 的回调获取
+* *code* OIDC 授权码。通过 webview 的回调获取，每个 Code 只能使用一次。
 * *authRequest* 请求参数。
 
 **示例**

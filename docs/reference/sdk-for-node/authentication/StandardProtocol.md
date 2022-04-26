@@ -112,7 +112,7 @@ AuthenticationClient().getAccessTokenByCode(code, options)
 
 #### 参数
 
-- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
 - `options` \<object\> 发起 PKCE 授权登录时需要填写此参数。详情请见[使用 OIDC 授权码 + PKCE 模式](/federation/oidc/pkce/)。
 - `options.codeVerifier` \<string\> 校验码原始值，不是摘要值。
 
@@ -652,7 +652,7 @@ AuthenticationClient().getAccessTokenByCode(code)
 
 #### 参数
 
-- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OAuth 2.0 授权码模式](/federation/oauth2/authorization-code/)。
+- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OAuth 2.0 授权码模式](/federation/oauth2/authorization-code/)，每个 Code 只能使用一次。
 
 #### 示例
 
