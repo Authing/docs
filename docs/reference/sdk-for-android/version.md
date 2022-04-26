@@ -2,6 +2,14 @@
 
 <LastUpdated/>
 
+### 1.2.8
+
+1.一键登录、微信登录获取 Access token、Refresh token
+
+2.增加 startWeb API
+
+<br>
+
 ### 1.2.7
 
 1.自定义属性名称 src 改为 loginSource
