@@ -12,8 +12,23 @@ AuthFlow.start(this);
 
 效果如下：
 
-<img src="./images/standard.png" alt="image-20220407122556503" style="zoom:67%;" />
+<img src="./images/standard.png" alt="drawing" width="400"/>
 
-如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
+接下来，我们获取登录成功回调信息：
 
+```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+      //login success，do next task
+    }
+  }
+```
+
+登录成功后也可以通过如下代码获取本地用户数据
+
+```java
+UserInfo userInfo = Authing.getCurrentUser();
+```
 

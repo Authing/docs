@@ -77,6 +77,7 @@ export default {
       }
 
       if (hash) {
+        console.log(decodeURIComponent(hash))
         const node = document.querySelector(decodeURIComponent(hash))
         if (node) {
           // node is sometimes null - perhaps content hasn't loaded?

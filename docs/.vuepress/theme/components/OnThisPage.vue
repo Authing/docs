@@ -1,5 +1,5 @@
 <template>
-  <aside class="on-this-page-navigation">
+  <aside class="on-this-page-navigation" :style="[isInConsole && { display: 'block' } ]">
     <div v-show="showOnthisPage">
       <div>
         <ul class="links" v-if="items">
@@ -31,7 +31,7 @@ export default {
   components: {
     OnThisPageItem: () => import('../components/OnThisPageItem.vue'),
   },
-  props: ['items'],
+  props: ['items', 'isInConsole'],
   data() {
     return {
       activeAnchor: null,

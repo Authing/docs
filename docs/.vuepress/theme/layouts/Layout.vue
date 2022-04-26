@@ -54,6 +54,28 @@
       </template>
     </Quickstarts>
 
+    <Reference v-else-if="$page.frontmatter.reference">
+      <template #sidebar>
+        <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+          <template #top>
+            <slot name="sidebar-top" />
+          </template>
+          <template #bottom>
+            <slot name="sidebar-bottom" />
+          </template>
+        </Sidebar>
+      </template>
+      <template #breadcrumb>
+        <Breadcrumb :sidebars="sidebarItems" />
+      </template>
+      <template #top>
+        <slot name="page-top"></slot>
+      </template>
+      <template #bottom>
+        <slot name="page-bottom"> </slot>
+      </template>
+    </Reference>
+
     <Page v-else :sidebar-items="sidebarItems">
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -91,6 +113,7 @@ import Footer from "@theme/components/Footer/index.vue";
 import Breadcrumb from "@theme/components/Breadcrumb.vue";
 import Quickstarts from "@theme/components/Quickstarts/index.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
+import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
 
 export default {
@@ -104,12 +127,17 @@ export default {
     Breadcrumb,
     PageSidebar,
     ApplicationIntegration,
-    Quickstarts
+    Quickstarts,
+    Reference,
   },
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
+<<<<<<< HEAD
+      isInConsole: ''
+=======
+>>>>>>> main
     };
   },
 
@@ -153,11 +181,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -165,20 +193,58 @@ export default {
       this.isSidebarOpen = false;
     });
 
-    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach(item =>
+    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach((item) =>
       delCookie(item)
     );
     let search = querystring.parse(
       typeof window !== "undefined" && window.location.search
     );
 
-    Object.keys(search).forEach(k => {
+    Object.keys(search).forEach((k) => {
       let v = search[k];
       setCookie(k, v);
     });
+
+    this.registerMessage();
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("message");
   },
 
   methods: {
+    // 注册消息事件来自 fe console
+    registerMessage() {
+      if (window) {
+        let _this = this;
+        window.addEventListener("message", evt => {
+          try {
+            const { event } = JSON.parse(evt.data);
+            if (event.source === "authing-fe-console") {
+              // 1. 隐藏头部和顶部区域
+              _this.hiddenModule();
+              _this.isInConsole = event.eventType
+              // if (event.eventType === 'console-protocol-common') {
+
+              // } else if (event.eventType === "console-protocol-asa") {
+
+              // }
+            }
+          } catch (e) {}
+        });
+      }
+    },
+
+    // 1. 移除模块
+    hiddenModule() {
+      let aside = document.querySelector("aside[class='sidebar']");
+      let header = document.querySelector("header[class*='navbar']");
+      let footer = document.querySelector("footer[class*='footer']");
+      aside.style = "display:none;";
+      header.style = "display:none;";
+      footer.style = "display:none;";
+    },
+
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
       this.$emit("toggle-sidebar", this.isSidebarOpen);
@@ -188,7 +254,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -202,8 +268,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
