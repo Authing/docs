@@ -92,7 +92,7 @@
 import Guard
 import WeCom
 
-LarkLogin.setupLark(<#Lark App ID#>, Scheme: <#Lark Scheme#>)
+Authing.start(<#Authing AppId#>);
 WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>)
 
  ```
