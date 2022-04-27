@@ -7,8 +7,7 @@
   info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
-  data:
-    [
+  data: [
       {
         title: "移动、客户端应用",
         desc: "在移动 / 客户端应用中快速接入认证服务",
@@ -140,7 +139,8 @@
           ],
       },
       {
-        title: "后端、API 服务",
+        #
+        title: "后端服务",
         desc: "在后端调用 Authing 并保护 API 接口",
         list: [
             {
@@ -191,6 +191,19 @@
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
               doc: "https://authing-open-api.readme.io",
+            },
+          ],
+      },
+      {
+        #
+        title: "API 接口",
+        desc: "提供 RESTful 形式的 HTTP API，帮助快速获取认证能力",
+        list: [
+            {
+              #
+              title: "API",
+              icon: "Swagger",
+              api: "https://core.authing.cn/openapi/",
             },
           ],
       },
