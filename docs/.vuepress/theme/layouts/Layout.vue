@@ -76,7 +76,7 @@
       </template>
     </Reference>
 
-    <Page v-else :sidebar-items="sidebarItems">
+    <Page v-else :sidebar-items="sidebarItems" :isInConsole="isInConsole">
       <template #sidebar>
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
           <template #top>
@@ -128,13 +128,13 @@ export default {
     PageSidebar,
     ApplicationIntegration,
     Quickstarts,
-    Reference,
+    Reference
   },
 
   data() {
     return {
       isSidebarOpen: false,
-      isInConsole: "",
+      isInConsole: ""
     };
   },
 
@@ -178,11 +178,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar,
+          "no-sidebar": !this.shouldShowSidebar
         },
-        userPageClass,
+        userPageClass
       ];
-    },
+    }
   },
 
   mounted() {
@@ -190,14 +190,14 @@ export default {
       this.isSidebarOpen = false;
     });
 
-    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach((item) =>
+    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach(item =>
       delCookie(item)
     );
     let search = querystring.parse(
       typeof window !== "undefined" && window.location.search
     );
 
-    Object.keys(search).forEach((k) => {
+    Object.keys(search).forEach(k => {
       let v = search[k];
       setCookie(k, v);
     });
@@ -214,7 +214,7 @@ export default {
     registerMessage() {
       if (window) {
         let _this = this;
-        window.addEventListener("message", (evt) => {
+        window.addEventListener("message", evt => {
           try {
             const { event } = JSON.parse(evt.data);
             if (event.source === "authing-fe-console") {
@@ -251,7 +251,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY,
+        y: e.changedTouches[0].clientY
       };
     },
 
@@ -265,8 +265,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
