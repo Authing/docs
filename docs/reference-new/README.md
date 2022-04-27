@@ -197,13 +197,13 @@
       {
         #
         title: "API 接口",
-        desc: "RESTful API 接口",
+        desc: "提供 RESTful 形式的 HTTP API，帮助快速获取认证能力",
         list: [
             {
               #
               title: "API",
               icon: "Swagger",
-              api: "https://authing-open-api.readme.io",
+              api: "https://core.authing.cn/openapi/",
             },
           ],
       },
