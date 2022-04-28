@@ -1127,7 +1127,7 @@ const zhCnNavBar = {
             {
               title: "教程",
               children: [
-                "/reference/sdk-for-androidcomponent/tutorial/example",
+                "/reference/sdk-for-android/component/tutorial/example",
                 "/reference/sdk-for-android/component/tutorial/basic-login",
                 "/reference/sdk-for-android/component/tutorial/advanced-login",
                 "/reference/sdk-for-android/component/tutorial/refine-login",
