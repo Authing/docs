@@ -12,7 +12,7 @@
 
 ## 创建
 
-放置一个 Label，并将其类型改为 ErrorTextView
+放置一个 ErrorTextView
 
 ```xml
 <cn.authing.guard.ErrorTextView

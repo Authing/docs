@@ -11,7 +11,7 @@
 
 ## 界面设计
 
-新增一个导航入口页面，放置 AccountTextField、ResetPasswordButton，如下图：
+新增一个导航入口页面，放置 AccountEditText、ResetPasswordButton，如下图：
 
 ![](./images/reset_password_all1.png)
 

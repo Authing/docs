@@ -54,7 +54,7 @@ LoginMethodTab 可以用来切换登录方式，它可以根据控制台设置�
 
 再放置一个 LoginContainer，将EmailEditText、VerifyCodeEditText、GetEmailCodeButton 放到第三个 LoginContainer 里面，设置type属性，app:type="emailCode"。
 
-![image-20220412163956440](/Users/zhongjiahui/Library/Application Support/typora-user-images/image-20220412163956440.png)
+![](/Users/zhongjiahui/Authing/guard/component/tutorial/images/logincontainer3.png)
 
 ## 完成
 

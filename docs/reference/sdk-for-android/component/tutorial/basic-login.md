@@ -10,7 +10,7 @@
 
 ![](./images/login_account.png)
 
-再放置一个  PasswordEditText
+再放置一个 PasswordEditText
 
 ![](./images/login_password.png)
 
