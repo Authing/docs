@@ -128,7 +128,7 @@ WechatLoginButton
 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
 
 ```swift
-WechatLogin.shared.login(viewController: <#承载视图的ViewController#>) { code, message, userInfo in
+WechatLogin.login(viewController: <#承载视图的ViewController#>) { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
