@@ -1211,6 +1211,11 @@ const zhCnNavBar = {
                     "/reference/sdk-for-ios/component/basic/password-textfield"
                 },
                 {
+                  title: "邮箱输入框",
+                  path:
+                    "/reference/sdk-for-ios/component/basic/email-textfield"
+                },
+                {
                   title: "电话号码输入框",
                   path:
                     "/reference/sdk-for-ios/component/basic/phonenumber-textfield"
