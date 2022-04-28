@@ -2,6 +2,16 @@
 
 <LastUpdated/>
 
+### 1.2.9
+
+1.优化自动登录逻辑
+
+2.GetVerifyCodeButton 超组件支持多个电话号码
+
+3.账号输入框支持动态设置是否记住上次输入
+
+<br>
+
 ### 1.2.8
 
 1.一键登录、微信登录获取 Access token、Refresh token

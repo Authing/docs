@@ -32,3 +32,11 @@ AuthFlow.start(this);
 UserInfo userInfo = Authing.getCurrentUser();
 ```
 
+
+
+如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
+
+
+
+<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./component/" style="color:#FFF;">超组件使用指南 →</a>
+</span>
