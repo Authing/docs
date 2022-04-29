@@ -775,6 +775,20 @@
         image2x: "nightingale_logo.svg",
         category: "devtools",
       },
+      {
+        key: "mastodon",
+        name: "Mastodon",
+        image: "mastodon.svg",
+        image2x: "mastodon.svg",
+        category: "other",
+      },
+      {
+        key: "gitlab-cn",
+        name: "GitLab 极狐",
+        image: "gitlab-cn.svg",
+        image2x: "gitlab-cn.svg",
+        category: "devtools",
+      },
     ],
   categories:
     [
