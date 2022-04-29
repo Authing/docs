@@ -262,7 +262,7 @@ module.exports = {
             },
           ],
           // serviceStatus: "服务状态",
-          contactPhone: "15559944612",
+          contactPhone: "400 888 2106",
           contactEmail: "sales@authing.cn",
           contactAddress: "北京市朝阳区北辰世纪中心 B 座 16 层（总）",
           contactChenduAddress:
@@ -420,7 +420,7 @@ module.exports = {
             },
           ],
           // serviceStatus: "Service Status",
-          contactPhone: "15559944612",
+          contactPhone: "400 888 2106",
           contactEmail: "sales@authing.cn",
           contactAddress:
             "16 / F, Block B, NORTH STAR CENTURY CENTER, Beijing(Total)",
