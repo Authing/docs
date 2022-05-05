@@ -58,28 +58,28 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://authing-open-api.readme.io",
+              doc: "https://docs.authing.cn/v2/reference/guard/native-javascript.html",
             },
             {
               #
               title: "React",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://authing-open-api.readme.io",
+              doc: "https://docs.authing.cn/v2/reference/guard/react.html",
             },
             {
               #
               title: "Vue",
               icon: "Vue",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://authing-open-api.readme.io",
+              doc: "https://docs.authing.cn/v2/reference/guard/vue.html",
             },
             {
               #
               title: "Angular",
               icon: "Angular",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://authing-open-api.readme.io",
+              doc: "https://docs.authing.cn/v2/reference/guard/angular.html",
             },
           ],
       },
