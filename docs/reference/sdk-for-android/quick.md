@@ -7,7 +7,7 @@
 首先确保已经完成了  [开发准备工作](./develop.md)，然后在需要认证的地方调用：
 
 ```java
-// this is the activity 
+// this is the activity context
 AuthFlow.start(this);
 ```
 
