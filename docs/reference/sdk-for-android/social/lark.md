@@ -60,8 +60,8 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 2. 在应用启动时初始化 Authing
 
 ```java
-// context is Application or initial Activity
-// your_authing_app_id get from Authing console
+// context is application or initial activity
+// ”your_authing_app_id“ is obtained from the Authing console
 Authing.init(context, "your_authing_app_id");
 ```
 
