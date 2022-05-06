@@ -152,7 +152,7 @@ export default {
   overflow-y auto
   top calc(3.6rem + 36px)
   a
-    font-size 14px
+    font-size 12px
     border-left 3px solid transparent
     color: #666
     &:visited
