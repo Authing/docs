@@ -1,8 +1,9 @@
 <template>
   <div class="sdk-link">
-    <div>
+    <div v-if="item.icon">
       <img :src="require(`@theme/assets/images/reference/${item.icon}.svg`)" />
     </div>
+    <div v-else class="phd">&nbsp;</div>
     <div class="title">
       {{ item.title }}
     </div>
@@ -76,7 +77,7 @@ export default {
     padding: 0 1em;
     font-weight: 500;
     font-size: 16px;
-  img
+  img,.phd
     width: 40px;
     height: 40px;
   a
