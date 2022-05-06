@@ -53,8 +53,9 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 
 2. 在应用启动的时候初始化 Authing：
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
-Authing.init(context, appId);
+// context is Application or initial Activity
+// your_authing_app_id get from Authing console
+Authing.init(context, "your_authing_app_id");
 ```
 
 3. 由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：

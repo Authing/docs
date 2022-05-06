@@ -16,8 +16,9 @@ implementation files('libs/alipaysdk.aar')
 
 3. 在应用启动的时候初始化 Authing：
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
-Authing.init(context, appId);
+// context is Application or initial Activity
+// your_authing_app_id get from Authing console
+Authing.init(context, "your_authing_app_id");
 ```
 
 接下来，如果使用我们提供的支付宝登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：

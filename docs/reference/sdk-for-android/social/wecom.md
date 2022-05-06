@@ -94,8 +94,9 @@ implementation files('libs/wechatwork.jar')
 2. 在应用启动的时候初始化：
 
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
-Authing.init(context, appId);
+// context is Application or initial Activity
+// your_authing_app_id get from Authing console
+Authing.init(context, "your_authing_app_id");
 ```
 
 

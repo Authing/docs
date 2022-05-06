@@ -37,7 +37,9 @@ implementation 'cn.authing:guard:+'
 在应用启动时调用：
 
 ```java
-Authing.init(appContext, "your_authing_app_id");
+// context is Application or initial Activity
+// your_authing_app_id get from Authing console
+Authing.init(context, "your_authing_app_id");
 ```
 
 
