@@ -1456,6 +1456,10 @@ const zhCnNavBar = {
       path: "/reference/frameworks"
     },
     {
+      title: "Radius",
+      path: "/reference/radius/"
+    },
+    {
       title: "错误代码",
       path: "/reference/error-code"
     }

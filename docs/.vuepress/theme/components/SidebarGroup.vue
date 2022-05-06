@@ -80,7 +80,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 0.95em
+      font-size 16px
       line-height 1.4
       font-weight normal
       padding-left 0.8rem
@@ -89,7 +89,7 @@ export default {
     & > .sidebar-group-items
       padding-left 0.8rem
       & > li > .sidebar-link
-        font-size: 0.95em;
+        font-size: 14px
         border-left none
   &.depth-2
     & > .sidebar-heading
@@ -106,7 +106,7 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
-  font-size 14px
+  font-size 16px
   // text-transform uppercase
   padding 0.35rem 1.5rem 0.35rem 0.8rem
   width 100%
