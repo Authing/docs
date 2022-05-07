@@ -1437,7 +1437,27 @@ const zhCnNavBar = {
     },
     {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "开始开发",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          children: [
+            "/reference/sdk-for-flutter/authentication/",
+            "/reference/sdk-for-flutter/protocol/",
+            "/reference/sdk-for-flutter/mfa/",
+            "/reference/sdk-for-flutter/scan/",
+            "/reference/sdk-for-flutter/social/"
+          ]
+        },
+        {
+          title: "私有化部署",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",
