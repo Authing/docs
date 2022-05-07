@@ -53,8 +53,9 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 
 2. 在应用启动的时候初始化 Authing：
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
-Authing.init(context, appId);
+// context is application or initial activity
+// ”your_authing_app_id“ is obtained from the Authing console
+Authing.init(context, "your_authing_app_id");
 ```
 
 3. 由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：
@@ -113,7 +114,8 @@ button.setOnLoginListener((ok, data) -> {
 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
 
 ```java
-Wechat.login(appContext, ((ok, data) -> {
+Wechat wechat = new Wechat();
+wechat.login(appContext, ((ok, data) -> {
     if (ok) {
         // 登录成功，data 是用户信息
     } else {
