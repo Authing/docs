@@ -114,7 +114,8 @@ button.setOnLoginListener((ok, data) -> {
 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
 
 ```java
-Wechat.login(appContext, ((ok, data) -> {
+Wechat wechat = new Wechat();
+wechat.login(appContext, ((ok, data) -> {
     if (ok) {
         // 登录成功，data 是用户信息
     } else {

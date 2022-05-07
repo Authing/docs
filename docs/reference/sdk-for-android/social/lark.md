@@ -51,6 +51,7 @@
 - 在 app 的 build.gradle 文件中引入该 aar，引入相关依赖项。
 
 ```groovy
+implementation 'cn.authing:guard:+'
 implementation files ('libs/larksso-3.0.8.aar')
 implementation 'com.alibaba:fastjson:1.1.58.android'
 ```
@@ -100,7 +101,8 @@ button.setOnLoginListener((ok, data) -> {
 
 - 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 飞书登录 API
 ```java
-Lark.login(appContext, ((ok, data) -> {
+Lark lark = new Lark();
+lark.login(appContext, ((ok, data) -> {
     if (ok) {
         // 登录成功，data 是用户信息
     } else {

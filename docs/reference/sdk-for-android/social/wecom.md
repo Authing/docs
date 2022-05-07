@@ -74,14 +74,16 @@
 
 1. 设置依赖
 
-- 下载<a href="attachment/wechatwork.jar" target="_blank">企业微信 SDK</a>；
+- 下载[企业微信 SDK](http://dldir1.qq.com/foxmail/wwopen_docFile/sdk/lib_wwapi-2.0.12.11.aar)；
 - 将下载的 sdk  jar 文件拷贝到工程的 libs 目录下；
 - 在工程的 build.gradle 文件中引入该 jar，引入相关依赖项。
 
-```java
+```groovy
 implementation 'cn.authing:guard:+'
-implementation files('libs/wechatwork.jar')
+implementation files('libs/lib_wwapi-2.0.12.11.aar')
 ```
+
+> Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
 ​	如果需要混淆代码，为了保证sdk的正常使用，需要在proguard.cfg加上下面两行配置：
 
@@ -152,7 +154,7 @@ weCom.login(appContext, ((ok, data) -> {
 - 如果想完全自己实现企业微信登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
 
 
-```
+```java
 public static void loginByWecom(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
@@ -162,7 +164,7 @@ public static void loginByWecom(String authCode, @NotNull AuthCallback<UserInfo>
 
 **示例**
 
-```
+```java
 AuthClient.loginByWecom(authCode, (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
