@@ -2848,7 +2848,57 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Android",
-      path: "/reference/sdk-for-android"
+      path: "/reference/sdk-for-android/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-android/develop"
+        },
+        {
+          title: "Quick start",
+          path: "/reference/sdk-for-android/quick"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-android/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-android/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-android/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-android/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-android/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-android/social/",
+          children: [
+            {
+              title: "Wechat",
+              path: "/reference/sdk-for-android/social/wechat"
+            }
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-android/onpremise"
+        },
+        {
+          title: "Version history",
+          path: "/reference/sdk-for-android/version"
+        }
+      ]
     },
     {
       title: "Flutter",

@@ -25,7 +25,7 @@ sdkConfig:
     img2x: ios@2x.png
   android:
     name: Android
-    link: /en/reference/sdk-for-android.html
+    link: /en/reference/sdk-for-android/
     img: android.png
     img2x: android@2x.png
   flutter:
