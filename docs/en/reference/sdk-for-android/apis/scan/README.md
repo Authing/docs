@@ -1,22 +1,16 @@
----
-meta:
-  - name: description
-    content: Use ManagementClient
----
-
 # Scan API
 
 <LastUpdated/>
 
-要使用自建 App 扫码登录能力，请在 Authing 控制台勾选 "App 扫码登录" 选项。
+To use scan to login functionality, please check 'APP QR Code' at our console.
 
 ![](./images/1.png)
 
-当 Web 应用需要登录时，登录界面会显示一个可供 App 扫码的二维码，如下图：
+When web application needs to authenticate user, a QR code will be popped up:
 
 ![](./images/2.png)
 
-二维码数据结构如下：
+The QR code has the following data structure：
 
 ```json
 {
@@ -28,24 +22,22 @@ meta:
 }
 ```
 
-在 App 侧，确保 App 处于登录状态，在需要授权登录时，依次调用下面 API
+In your mobile App, first make sure user is already logged in, then call following API when scan to login is requried:
 
-## 标记二维码
+## Mark QR code
 
-此接口调用成功后，网页的二维码上面会显示用户头像
-
->注意：调用此接口前，App 必须处于登录状态
+When this API succeed, the web login page will show user picture on top of the QR code
 
 
 ```java
 public static void markQRCodeScanned(String ticket, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**param**
 
-* *ticket* 二维码数据里面的 random 字段
+* *ticket* the random field in the QR code data
 
-**示例**
+**example**
 
 ```java
 AuthClient.markQRCodeScanned(random, (code, message, data) -> {
@@ -55,29 +47,29 @@ AuthClient.markQRCodeScanned(random, (code, message, data) -> {
 });
 ```
 
-**错误码**
+**error**
 
-* 500 无效二维码
-* 2020 未登录
+* 500 invalid QR code
+* 2020 not logged
 
 <br>
 
-## 确认二维码登录
+## Confirm log in by QR code
 
-使用二维码登录。分两步的好处是，App 可以在扫描之后给用户一个提示，待用户确认之后再登录。
+This API do the actual login. The reason we split it into two steps is that right after scanning and marking, the mobile app can show a dialog, asking user to confirm the authentication.
 
->注意：调用此接口之前必须先调用 [标记二维码](#标记二维码)
+>Note: Before calling this API, you must first call [Mark QR code](#mark-qr-code)
 
 
 ```java
 public static void loginByScannedTicket(String ticket, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**param**
 
-* *ticket* 二维码数据里面的 random 字段
+* *ticket* the random field in the QR code data
 
-**示例**
+**example**
 
 ```java
 AuthClient.loginByScannedTicket(random, (code, message, data) -> {
@@ -87,9 +79,9 @@ AuthClient.loginByScannedTicket(random, (code, message, data) -> {
 });
 ```
 
-**错误码**
+**error**
 
-* 500 无效二维码
-* 2020 未登录
+* 500 invalid QR code
+* 2020 not logged
 
 <br>
