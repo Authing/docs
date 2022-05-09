@@ -789,6 +789,13 @@
         image2x: "gitlab-cn.svg",
         category: "devtools",
       },
+      {
+        key: "ldap-sangfor",
+        name: "SANGFOR",
+        image: "Sangfor_logo@2x.png",
+        image2x: "Sangfor_logo@3x.png",
+        category: "ldap",
+      },
     ],
   categories:
     [
