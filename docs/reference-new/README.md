@@ -138,62 +138,24 @@
             },
           ],
       },
-      # {
-      #   #
-      #   title: "后端服务",
-      #   desc: "在后端调用 Authing 并保护 API 接口",
-      #   list: [
-      #       {
-      #         #
-      #         title: "Javascript",
-      #         icon: "JavaScript",
-      #         github: "https://github.com/Authing/authing.js",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Python",
-      #         icon: "Python",
-      #         github: "https://github.com/Authing/authing-py-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "C#",
-      #         icon: "csharp",
-      #         github: "https://github.com/Authing/authing-api-client-net",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Node.js",
-      #         icon: "Nodejs",
-      #         github: "https://github.com/Authing/authing.js",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Ruby",
-      #         icon: "Ruby",
-      #         github: "https://github.com/Authing/authing-ruby",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Java",
-      #         icon: "Java",
-      #         github: "https://github.com/Authing/authing-java-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Golang",
-      #         icon: "Go",
-      #         github: "https://github.com/Authing/authing-go-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #     ],
-      # },
+
+      {
+        #
+        title: "框架集成",
+        # desc: "更新文案",
+        list: [
+            {
+              #
+              title: "Express OIDC",
+              doc: "https://docs.authing.cn/v2/frameworks/express-oidc-client/",
+            },
+            {
+              #
+              title: "Express Passport",
+              doc: "https://docs.authing.cn/v2/frameworks/express-passport-openidconnect/",
+            },
+          ],
+      },
       {
         #
         title: "API 接口",
@@ -227,11 +189,6 @@
               #
               title: "微信网页登录",
               doc: "https://docs.authing.cn/v2/reference/sdk-for-wxmp.html",
-            },
-            {
-              #
-              title: "框架集成",
-              doc: "https://docs.authing.cn/v2/reference/frameworks.html",
             },
             {
               #
