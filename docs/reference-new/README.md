@@ -7,13 +7,17 @@
   info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
+  # 编辑类型数据
   data: [
+      # 大类别
       {
         title: "登录组件（Guard）",
         desc: "Authing 登录组件（Guard）是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。",
+        # 链接元素
         list: [
             {
-              #
+              # 图标目录位于：docs/.vuepress/theme/assets/images/reference/
+              # 保存 svg 格式
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing-ui-components",
