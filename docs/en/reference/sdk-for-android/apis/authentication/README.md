@@ -1,327 +1,350 @@
-# 核心认证 API
+# Core Authentication API
 
 <LastUpdated/>
 
-## 邮箱注册
+## Use email registration
 
-使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```java
 public static void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱
-* *password* 明文密码
+* *`email`* email address
+* *`password`* password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2003 非法邮箱地址
-* 2026 邮箱已注册
+* `2003` Illegal email address
+* `2026` Registered mailbox
 
 <br>
 
-## 用户名注册
+## Register using username
 
-通过用户名注册帐号。用户名区分大小写且用户池内唯一。
+Use the username to register, the username is case sensitive and the only user pool.
 
 ```java
 public static void registerByUserName(String username, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *username* 用户名
-* *password* 明文密码
+* *`username`* username
+* *`password`* password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2026 用户名已存在
+* `2026` The user name already exists
 
 <br>
 
-## 短信验证码注册
+## Use mobile phone number registration
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send verification code) method sends SMS verification code.
 
 ```java
 public static void registerByPhoneCode(String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* *`phone`* The phone number
+* *`code`* SMS verification code
+* *`password`* initial password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.registerByPhoneCode("13012345678", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2001 验证码错误
-* 2026 手机号已注册
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
 
 <br>
 
-## 帐号密码登录
+## Use the email to login
+
+```java
+public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* *`email`*  email address
+* *`code`* email verification code
+
+**Example**
+
+```java
+AuthClient.loginByEmailCode("email", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2001` email verification code error
+
+<br>
+
+## Use the username to login
 
 ```java
 public static void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *account* 可以是手机号 / 邮箱 / 用户名
-* *password* 明文密码
+* *`account`* The phone number / email address / username
+* *`password`* password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## 手机验证码登录
+## Use the mobile phone number verification code to login
 
-通过短信验证码登录，需要先调用 [发送短信验证码](#发送短信验证码) 接口。
+Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send verification code) sends a SMS verification code.
 
 ```java
 public static void loginByPhoneCode(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
+* `phone` The phone number
+* *`code`* SMS verification code
 
-**示例**
+**Example**
 
 ```java
 AuthClient.loginByPhoneCode("13012345678", "1234", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2001 短信验证码不正确
+* `2001` SMS verification code error
 
 <br>
 
-## LDAP 登录
+##  Log in with an LDAP username
 
 ```java
 public static void loginByLDAP(String username, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *username* ldap 用户名
-* *password* 明文密码
+* *`username`* ldap username
+* *`password`* password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.loginByLDAP("username", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## AD 登录
+## Login with an AD username
 
 ```java
 public static void loginByAD(String username, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *username* AD 用户名
-* *password* 明文密码
+* *`username`* AD username
+* *`password`* password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.loginByAD("username", "strong", (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## 获取当前登录的用户信息
+## Get the user information of current login
 
-获取当前登录的用户信息，需要先登录
+Get the user information of the current login user, you need that is currently logged in to get it.
 
 ```java
 public static void getCurrentUser(@NotNull AuthCallback<UserInfo> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.getCurrentUser((code, message, userInfo) -> {
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 退出登录
+## Sign out
 
-退出登录。同时清除内存以及本地持久化的 token 和用户信息。退出登录后 Authing.getCurrentUser() 返回空
+Log out. Clear token and user information for both memory and local persistence. Authing.getcurrentuser () returns empty after logging out.
 
 ```java
 public static void logout(@NotNull AuthCallback<?> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 // AuthFlow.start(this) will go to login page
 AuthClient.logout((code, message, data)-> AuthFlow.start(this));
 ```
 
-**错误码**
+**Error Code**
 
-* 1010001 如果用户的 id token 非法或者过期
+* `1010001` If the user id token is invalid or expired
 
 <br>
 
-## 发送短信验证码
+## Send verification code
 
-向指定的手机发送短信验证码
+Sends an SMS verification code to the specified mobile phone.
 
 ```java
 public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthCallback<?> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phoneCountryCode* 电话国家码。可以为空，为空时默认为 +86
-* *phone* 手机号
+* *`phoneCountryCode`* Telephone country code, If null, the default value is +86
+* *`phone`* The phone number
 
-**示例**
+**Example**
 
 ```java
 AuthClient.sendSms("13012345678", "+86", (code, message, data)->{});
 ```
 
-**错误码**
+**Error Code**
 
-* 500 手机号码格式非法
+* `500` The mobile phone number format is invalid
 
 <br>
 
-## 发送邮件
+## Send email
 
-给指定邮箱发送邮件
+Sends an email to the specified mailbox.
 
 ```java
 public static void sendEmail(String emailAddress, String scene, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱地址
-* *scene* 发送场景，可选值包含：
-  - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
-  - VERIFY_EMAIL: 发送验证邮箱的邮件；
-  - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
-  - MFA_VERIFY: 发送 MFA 验证邮件。
+* *`email`* email address
+* *`scene`* Send a scene, optional value is ：
+  - `RESET_PASSWORD`: Send a reset password message, including the verification code;
+  - `VERIFY_EMAIL`: Send a message to verify the mailbox;
+  - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
+  - `MFA_VERIFY`: Send MFA verification email.
 
-**示例**
+**Example**
 
 ```java
 AuthClient.sendEmail("cool@gmail.com", "RESET_PASSWORD",  (code, message, data)->{
     if (code == 200) {
-        // 发送成功
+        // success
     }
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 1020017 邮箱地址非法
+* `1020017` Invalid email address
 
 <br>
 
-## 获取用户自定义数据
+## Get custom data
 
-获取用户自定义数据，你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)
-
-用户自定义数据会添加到传入的 userInfo 对象里面
-
-调用此接口需要先登录
+Get all custom data for the user. You need to be in the user pool [Define user-defined data meta information](https://docs.authing.cn/v2/guides/users/user-defined-field/). User-defined data is added to the passed userInfo object. A login is required to invoke this interface.
 
 ```java
 public static void getCustomUserData(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *userInfo* 用户信息对象
+* *`userInfo`* 
 
-**示例**
+**Example**
 
 ```java
 AuthClient.getCustomUserData(Authing.getCurrentUser(), (code, message, data)->{
@@ -331,27 +354,25 @@ AuthClient.getCustomUserData(Authing.getCurrentUser(), (code, message, data)->{
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 设置用户自定义数据
+## Set custom data
 
-设置用户的自定义数据。你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配。
-
-调用此接口需要先登录
+Set the user's custom field. You need to be in the userpool[Define user-defined data meta information](https://docs.authing.cn/v2/guides/users/user-defined-field/), and the type of incoming value must match the defined type. A login is required to invoke this interface.
 
 ```java
 public static void setCustomUserData(JSONObject customData, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *customData* key-value 形式的 JSONObject 对象
+* *`customData`* JSONObject in the form of key-value
 
-**示例**
+**Example**
 
 ```java
 JSONObject object = new JSONObject();
@@ -363,29 +384,27 @@ AuthClient.setCustomUserData(object, (code, message, res) -> {
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 更新用户头像
+## Update user profile picture
 
-通过从系统选择一张图片来更新用户头像
-
-调用此接口需要先登录
+Update the user profile picture by selecting an image from the system. A login is required to invoke this interface.
 
 ```java
 public static void uploadAvatar(InputStream in, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *in* 图片输入流。推荐使用系统默认图片选择器获取
+* *`in`* Image input stream. You are advised to use the default image picker
 
-**示例**
+**Example**
 
-启动系统默认图片选择器
+Start the system default image selector
 
 ```java
 Intent i = new Intent();
@@ -395,7 +414,7 @@ i.setAction(Intent.ACTION_GET_CONTENT);
 ((Activity) getContext()).startActivityForResult(Intent.createChooser(i, "Select Picture"), 1000);
 ```
 
-通过以下回调拿到图片输入流，并调用更新头像接口
+Get the image input stream with the following callback and call the update avatar interface
 
 ```java
 @Override
@@ -417,27 +436,27 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 通过短信验证码重置密码
+## Reset password via SMS verification code
 
-通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码
+Reset your password by SMS verification code, you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```java
 public static void resetPasswordByPhoneCode(String phone, String code, String newPassword, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* *`phone`* The phone number
+* *`code`* SMS Verification code
+* *`password`* New password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong", (code, message, data)->{
@@ -447,27 +466,27 @@ AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong", (code, mess
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2004 用户不存在
+* `2004` User does not exist
 
 <br>
 
-## 通过邮件验证码重置密码
+## Reset password via mail verification code
 
-通过邮件验证码重置密码，你需要先调用 [sendEmail](#发送邮件) 接口发送重置密码邮件（场景值为 `RESET_PASSWORD`）。
+eset password by email verification code, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
 
 ```java
 public static void resetPasswordByEmailCode(String emailAddress, String code, String newPassword, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
-* *password* 明文密码
+* *`email`* Email address
+* *`code`* Verification code
+* *`password`* New password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.resetPasswordByEmailCode("me@gmail.com", "1234", "strong", (code, message, data)->{
@@ -477,53 +496,53 @@ AuthClient.resetPasswordByEmailCode("me@gmail.com", "1234", "strong", (code, mes
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2004 用户不存在
+* `2004` User does not exist
 
 <br>
 
-## 修改用户资料
+## Modify user profile
 
-修改用户资料，此接口不能用于修改手机号、邮箱、密码
+Modify user information, this interface cannot be used to modify the mobile phone number, email, password.
 
 ```java
 public static void updateProfile(JSONObject object, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *object* 需要修改的用户资料对象
+* *`object`* Modified user profile
 
-可以通过此接口更新资料的字段：
+Fields of data can be updated through this interface：
 
-* username
-* nickname
-* company
-* photo
-* browser
-* device
-* name
-* givenName
-* familyName
-* middleName
-* profile
-* preferredUsername
-* website
-* gender
-* birthdate
-* zoneinfo
-* locale
-* address
-* streetAddress
-* locality
-* region
-* postalCode
-* city
-* province
-* country
+* `username`
+* `nickname`
+* `company`
+* `photo`
+* `browser`
+* `device`
+* `name`
+* `givenName`
+* `familyName`
+* `middleName`
+* `profile`
+* `preferredUsername`
+* `website`
+* `gender`
+* `birthdate`
+* `zoneinfo`
+* `locale`
+* `address`
+* `streetAddress`
+* `locality`
+* `region`
+* `postalCode`
+* `city`
+* `province`
+* `country`
 
-**示例**
+**Example**
 
 ```java
 JSONObject body = new JSONObject();
@@ -536,26 +555,26 @@ AuthClient.updateProfile(body, (code, message, userInfo)->{
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 更新用户密码
+## Update user password
 
-更新用户密码。如果用户没有设置密码，如通过短信验证码、社会化登录等方式注册的，oldPassword 留空。
+Update the user password. If the user does not set a password, such as SMS verification code, social login, etc., oldPassword is left blank.
 
 ```java
 public static void updatePassword(String newPassword, String oldPassword, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *newPassword* 新密码
-* *oldPassword* 旧密码。可以为空
+* *`newPassword`* New password
+* *`oldPassword`* Old password, if the user does not set a password, you can not fill
 
-**示例**
+**Example**
 
 ```java
 AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
@@ -565,16 +584,16 @@ AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320011 旧密码不正确
+* `2020` Not logged in
+* `1320011` The old password is incorrect
 
 <br>
 
-## 更新手机号
+## Update user mobile phone number
 
-更新用户手机号码，调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+Update the user mobile phone number. you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```java
 public static void updatePhone(String phoneCountryCode, String phone, String code,
@@ -582,16 +601,16 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
                                @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phoneCountryCode* 新手机号国家码，需以 + 开头，如中国大陆为 +86 
-* *phone* 新手机号
-* *code* 新手机号短信验证码
-* *oldPhoneCountryCode* 旧手机号国家码，需以 + 开头，如中国大陆为 +86
-* *oldPhone* 旧手机号
-* *oldCode* 旧手机号短信验证码
+* *`phoneCountryCode`* New mobile phone country code，It must start with a +, for example, +86 in mainland China
+* *`phone`* New mobile phone number
+* *`code`* New mobile phone number verification code
+* *`oldPhoneCountryCode`* Old mobile phone country code，It must start with a +, for example, +86 in mainland China
+* *`oldPhone`* Old mobile phone number
+* *`oldCode`* Old mobile phone number verification code
 
-**示例**
+**Example**
 
 ```java
 AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234",(code, message, data)->{
@@ -600,26 +619,26 @@ AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234"
 });
 ```
 
-**错误码**
+**Error Code**
 
-- 2020 未登录
+- `2020` Not logged in
 
 <br>
 
-## 绑定手机号
+## Binding mobile phone number
 
-为当前登录用户绑定手机号。调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+Bind the mobile phone number of the current login user.  you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```java
 public static void bindPhone(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
+* *`phone`* Thie phone number
+* *`code`* SMS Verification code
 
-**示例**
+**Example**
 
 ```java
 AuthClient.bindPhone("13012345678", "1234", (code, message, data)->{
@@ -628,21 +647,21 @@ AuthClient.bindPhone("13012345678", "1234", (code, message, data)->{
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 解绑手机号
+## Solution to the mobile number
 
-用户解绑手机号，如果用户没有绑定其他登录方式（邮箱、社会化登录账号），将无法解绑手机号，会提示错误。
+The user unbinds the mobile phone number. If the user does not bind other login methods (such as email or social login account), the mobile phone number cannot be unbound and an error message is displayed.
 
 ```java
 public static void unbindPhone(@NotNull AuthCallback<UserInfo> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.unbindPhone((code, message, data)-> {
@@ -651,27 +670,27 @@ AuthClient.unbindPhone((code, message, data)-> {
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320005 当前用户未绑定其他登录方式
+* `2020` Not logged in
+* `1320005` The current user is not bound to any other login mode
 
 <br>
 
-## 绑定邮箱
+## Binding mailbox
 
-为当前登录用户绑定邮箱。调用 [发送邮件](#发送邮件) 获取验证码。
+The mailbox is bound to the current login user. call [Send emai](#Send email) to get the verification code.
 
 ```java
 public static void bindEmail(String email, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
+* *`email`* Email address
+* *`code`* Email  verification code
 
-**示例**
+**Example**
 
 ```java
 AuthClient.bindEmail("me@gmail.com", "1234", (code, message, data)->{
@@ -680,21 +699,21 @@ AuthClient.bindEmail("me@gmail.com", "1234", (code, message, data)->{
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020`  Not logged in
 
 <br>
 
-## 解绑邮箱
+##  Menned mailbox
 
-用户解绑邮箱，如果用户没有绑定其他登录方式（手机号、社会化登录账号），将无法解绑邮箱，会提示错误。
+The user solves the mobile phone number. If the user does not bind other login mode (mobile phone number, social login account), it will not be able to decompose the mailbox, will prompt the error.
 
 ```java
 public static void unbindEmail(@NotNull AuthCallback<UserInfo> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.unbindEmail((code, message, data)-> {
@@ -703,26 +722,26 @@ AuthClient.unbindEmail((code, message, data)-> {
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320005 当前用户未绑定邮箱
+* `2020` Not logged in
+* `1320005` The current user is not bound to a mailbox
 
 <br>
 
-## 计算密码安全等级
+## Calculate password security level
 
-计算密码安全等级，返回三种级别：
+Calculate the password security level ：
 
-- `EWeak`: 等级低
-- `EMedium`: 等级中
-- `EStrong`: 等级高
+- `EWeak`: Low
+- `EMedium`: Middle
+- `EStrong`: High
 
 ```java
 public static PasswordStrength computePasswordSecurityLevel(String password)
 ```
 
-**示例**
+**Example**
 
 ```java
 PasswordStrength result = AuthClient.computePasswordSecurityLevel("123"); // EWeak
@@ -730,15 +749,15 @@ PasswordStrength result = AuthClient.computePasswordSecurityLevel("123"); // EWe
 
 <br>
 
-## 获取用户账号安全等级
+## Get user account security level
 
-获取当前登录帐号的安全等级。
+Get user account security level.
 
 ```java
 public static void getSecurityLevel(@NotNull AuthCallback<JSONObject> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.getSecurityLevel((code, message, data)-> {
@@ -747,7 +766,7 @@ AuthClient.getSecurityLevel((code, message, data)-> {
 });
 ```
 
-**回调 data 数据结构**
+**Callback data data structure**
 
 ```json
 {
@@ -760,19 +779,19 @@ AuthClient.getSecurityLevel((code, message, data)-> {
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 刷新当前用户的 Token
+## Refreshes the Token of the current user
 
 ```java
 public static void updateIdToken(@NotNull AuthCallback<UserInfo> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.updateIdToken((code, message, userInfo) ->{
@@ -781,26 +800,26 @@ AuthClient.updateIdToken((code, message, userInfo) ->{
 });
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取当前用户能够访问的应用
+## Get applications that current users can access
 
-获取当前用户能够访问的应用。注意返回的结果数据结构为 List\<Application\>
+Get the application that the current user can access. Note that the returned result data structure is List\<Application\>.
 
 ```java
 public static void listApplications(int page, int limit, @NotNull AuthCallback<List<Application>> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *page* 分页序号, 默认为 `1`。
-* *limit* 每页返回的个数, 默认为 `10`。
+* *`page`* Page serial number, default is `1`.
+* *`limit`* The number of times returned per page, the default is `10`.
 
-**示例**
+**Example**
 
 ```java
 AuthClient.listApplications((code, message, applications) ->{
@@ -809,7 +828,7 @@ AuthClient.listApplications((code, message, applications) ->{
 });
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
@@ -836,21 +855,21 @@ AuthClient.listApplications((code, message, applications) ->{
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取用户所在组织机构
+## Get list of data data in users
 
-获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 List\<Organization[]\>
+Obtain the organization of the user. Because the user can be in multiple independent organization trees, this interface returns a two-digit array. Note that the returned result data structure is List\<Organization[]\>.
 
 ```java
 public static void listOrgs(@NotNull AuthCallback<List<Organization[]>> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 AuthClient.listOrgs((code, message, organizations)->{
@@ -859,7 +878,7 @@ AuthClient.listOrgs((code, message, organizations)->{
 });
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
@@ -1026,25 +1045,25 @@ AuthClient.listOrgs((code, message, organizations)->{
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取角色
+## Get the list of roles owned by users
 
-获取当前登录用户的角色。注意返回的数据结构为 List\<Role\>
+Get the list of roles owned by users. Note that the returned result data structure is List\<Role\>.
 
 ```java
 public static void listRoles(String namespace, @NotNull AuthCallback<List<Role>> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *namespace* 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
+* *`namespace`* Permission group ID, used to filter role data. If empty, all roles of the user are returned
 
-**示例**
+**Example**
 
 ```java
 AuthClient.listRoles(null, (code, message, roles) ->{
@@ -1053,7 +1072,7 @@ AuthClient.listRoles(null, (code, message, roles) ->{
 });
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
@@ -1076,26 +1095,26 @@ AuthClient.listRoles(null, (code, message, roles) ->{
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取用户被授权的所有资源列表
+## Get all the list of users authorized to be authorized
 
-获取一个用户被授权的所有资源，用户被授权的所有资源里面包括从角色、分组、组织机构继承的资源。
+Gets all resources authorized by users, and users are authorized to include resources that are inherited from roles, packets, and organizational institutions.
 
 ```java
 public static void listAuthorizedResources(String namespace, String resourceType, @NotNull AuthCallback<List<Resource>> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *namespace* 权限分组 ID
-* *resourceType* 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
+* *`namespace`* Permission group ID.
+* *`resourceType`* Resource type. Can be the following types of DATA, API, MENU, UI, BUTTON. If null, all resource type data is returned.
 
-**示例**
+**Example**
 
 ```java
 AuthClient.listAuthorizedResources("default", (code, message, resources)->{
@@ -1104,7 +1123,7 @@ AuthClient.listAuthorizedResources("default", (code, message, resources)->{
 });
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
@@ -1122,26 +1141,26 @@ AuthClient.listAuthorizedResources("default", (code, message, resources)->{
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 通过首次登录的 Token 重置密码
+## Reset password through the first login Token
 
-通过首次登录的 Token 重置密码，需要在创建用户时设置“强制用户首次登录时修改密码”
+Reset password through the first login Token. You need to set Force User to change password at first login when creating a user.
 
 ```java
 public static void resetPasswordByFirstTimeLoginToken(String token, String newPassword, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**Parameter**
 
-* *token* 首次登录后获取的 token
-* *password* 明文密码
+* *`token`* First login Token
+* *`password`* Reset password
 
-**示例**
+**Example**
 
 ```java
 AuthClient.resetPasswordByFirstTimeLoginToken(token, password, (code, message, data)->{
@@ -1152,17 +1171,17 @@ AuthClient.resetPasswordByFirstTimeLoginToken(token, password, (code, message, d
 
 <br>
 
-## 删除帐号
+## Delete the account
 
-用户自助删除当前登录帐号。
+Users can delete their current login accounts.
 
->此操作不可逆，请务必给用户足够的提示
+>This operation cannot be reversed. Therefore, you must prompt the user.
 
 ```java
 public static void deleteAccount(AuthCallback<JSONObject> callback)
 ```
 
-**示例**
+**Example**
 
 ```java
 private void deleteAccount() {

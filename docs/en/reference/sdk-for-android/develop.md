@@ -35,6 +35,8 @@ implementation 'cn.authing:guard:+'
 at app startup, call:
 
 ```java
+// “context” is application or initial activity
+// ”your_authing_app_id“ is obtained from the Authing console
 Authing.init(appContext, "your_authing_app_id");
 ```
 

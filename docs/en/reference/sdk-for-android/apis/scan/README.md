@@ -35,7 +35,7 @@ public static void markQRCodeScanned(String ticket, @NotNull AuthCallback<JSONOb
 
 **param**
 
-* *ticket* the random field in the QR code data
+* *`ticket`* the random field in the QR code data
 
 **example**
 
@@ -49,8 +49,8 @@ AuthClient.markQRCodeScanned(random, (code, message, data) -> {
 
 **error**
 
-* 500 invalid QR code
-* 2020 not logged
+* `500` invalid QR code
+* `2020` not logged
 
 <br>
 
@@ -67,7 +67,7 @@ public static void loginByScannedTicket(String ticket, @NotNull AuthCallback<JSO
 
 **param**
 
-* *ticket* the random field in the QR code data
+* *`ticket`* the random field in the QR code data
 
 **example**
 
@@ -81,7 +81,7 @@ AuthClient.loginByScannedTicket(random, (code, message, data) -> {
 
 **error**
 
-* 500 invalid QR code
-* 2020 not logged
+* `500` invalid QR code
+* `2020` not logged
 
 <br>

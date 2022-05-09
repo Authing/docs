@@ -12,8 +12,8 @@ public static void mfaCheck(String phone, String email, @NotNull AuthCallback<JS
 
 **param**
 
-* *phone* phone number to be checked. can be null
-* *email* email address to be checked. can be null
+* *`phone`* phone number to be checked. can be null
+* *`email`* email address to be checked. can be null
 
 **example**
 
@@ -47,8 +47,8 @@ public static void mfaVerifyByPhone(String phone, String code, @NotNull AuthCall
 
 **param**
 
-* *phone* phone number
-* *code* SMS verification code
+* *`phone`* phone number
+* *`code`* SMS verification code
 
 **example**
 
@@ -69,8 +69,8 @@ public static void mfaVerifyByEmail(String email, String code, @NotNull AuthCall
 
 **param**
 
-* *email* email address
-* *code* email verification code
+* *`email`* email address
+* *`code`* email verification code
 
 **example**
 
@@ -91,7 +91,7 @@ public static void mfaVerifyByTOTP(String code, @NotNull AuthCallback<UserInfo> 
 
 **param**
 
-* *code* TOTP code
+* *`code`* TOTP code
 
 **example**
 
@@ -114,7 +114,7 @@ public static void mfaVerifyByRecoveryCode(String code, @NotNull AuthCallback<Us
 
 **param**
 
-* *code* recovery code
+* *`code`* recovery code
 
 **example**
 
