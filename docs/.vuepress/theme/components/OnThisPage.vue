@@ -177,8 +177,7 @@ export default {
     //   color #666
     &.router-link-active:before
       background #86909C
-    &:hover
-      color #86909C
+
     // & + ul a
     //   color: #999
     //   font-size 12px
@@ -207,6 +206,8 @@ export default {
       a
         text-decoration none
         display block
+        &:hover
+          color #86909C
         &.router-link-active
           // margin-left -19px
           // padding-left 19px
