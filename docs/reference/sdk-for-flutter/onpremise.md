@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-私有化部署的场景，域名为客户自己的域名，用来加密密码的公钥也是每个客户特有的，所以在调用 Authing.start() **之前**，需要先调用:
+私有化部署的场景，域名为客户自己的域名，用来加密密码的公钥也是每个客户特有的，在初始化之后，需要调用:
 
 ```swift
 Authing.setOnPremiseInfo(String host, String publicKey)
