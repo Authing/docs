@@ -65,7 +65,7 @@
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-flutter.html",
+              doc: "https://docs.authing.cn/v2/reference/sdk-for-flutter/",
             },
             {
               #
