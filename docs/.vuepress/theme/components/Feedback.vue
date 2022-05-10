@@ -168,7 +168,7 @@ export default {
       &:first-of-type
         margin-left 15px
       &:not(:first-of-type)
-        border-left none
+        // border-left none
         border-bottom-left-radius 0
         border-top-left-radius 0
       &:not(:last-of-type)

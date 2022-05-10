@@ -7,13 +7,17 @@
   info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
+  # 编辑类型数据
   data: [
+      # 大类别
       {
         title: "登录组件（Guard）",
         desc: "5分钟为你的应用接入 Authing 提供的认证服务",
+        # 链接元素
         list: [
             {
-              #
+              # 图标目录位于：docs/.vuepress/theme/assets/images/reference/
+              # 保存 svg 格式
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing-ui-components",
@@ -138,62 +142,24 @@
             },
           ],
       },
-      # {
-      #   #
-      #   title: "后端服务",
-      #   desc: "在后端调用 Authing 并保护 API 接口",
-      #   list: [
-      #       {
-      #         #
-      #         title: "Javascript",
-      #         icon: "JavaScript",
-      #         github: "https://github.com/Authing/authing.js",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Python",
-      #         icon: "Python",
-      #         github: "https://github.com/Authing/authing-py-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "C#",
-      #         icon: "csharp",
-      #         github: "https://github.com/Authing/authing-api-client-net",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Node.js",
-      #         icon: "Nodejs",
-      #         github: "https://github.com/Authing/authing.js",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Ruby",
-      #         icon: "Ruby",
-      #         github: "https://github.com/Authing/authing-ruby",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Java",
-      #         icon: "Java",
-      #         github: "https://github.com/Authing/authing-java-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #       {
-      #         #
-      #         title: "Golang",
-      #         icon: "Go",
-      #         github: "https://github.com/Authing/authing-go-sdk",
-      #         doc: "https://authing-open-api.readme.io",
-      #       },
-      #     ],
-      # },
+
+      {
+        #
+        title: "框架集成",
+        # desc: "更新文案",
+        list: [
+            {
+              #
+              title: "Express OIDC",
+              doc: "https://docs.authing.cn/v2/frameworks/express-oidc-client/",
+            },
+            {
+              #
+              title: "Express Passport",
+              doc: "https://docs.authing.cn/v2/frameworks/express-passport-openidconnect/",
+            },
+          ],
+      },
       {
         #
         title: "API 接口",
@@ -227,11 +193,6 @@
               #
               title: "微信网页登录",
               doc: "https://docs.authing.cn/v2/reference/sdk-for-wxmp.html",
-            },
-            {
-              #
-              title: "框架集成",
-              doc: "https://docs.authing.cn/v2/reference/frameworks.html",
             },
             {
               #
