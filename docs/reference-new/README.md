@@ -3,14 +3,14 @@
   title: "开发集成",
   reference: true,
   noSidebar: true,
-  subtitle: "Authing  提供 RESTful 形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活得组合出你需要的认证流程。",
+  subtitle: "Authing  提供 RESTful 形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活的组合出你需要的认证流程。",
   info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
   data: [
       {
         title: "登录组件（Guard）",
-        desc: "Authing 登录组件（Guard）是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。",
+        desc: "5分钟为你的应用接入 Authing 提供的认证服务",
         list: [
             {
               #
@@ -84,8 +84,8 @@
           ],
       },
       {
-        title: "SDK",
-        desc: "Authing 将 API 进一步封装为多语言的 SDK，目前共支持以下几种常见语言 / 场景：",
+        title: "标准 Web 应用",
+        desc: "在标准 Web 应用中快速接入 Authing 能力",
         list: [
             {
               #
