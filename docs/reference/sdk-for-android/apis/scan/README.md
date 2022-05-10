@@ -37,7 +37,7 @@ public static void markQRCodeScanned(String ticket, @NotNull AuthCallback<JSONOb
 
 **参数**
 
-* *ticket* 二维码数据里面的 random 字段
+* *`ticket`* 二维码数据里面的 random 字段
 
 **示例**
 
@@ -51,8 +51,8 @@ AuthClient.markQRCodeScanned(random, (code, message, data) -> {
 
 **错误码**
 
-* 500 无效二维码
-* 2020 未登录
+* `500` 无效二维码
+* `2020` 未登录
 
 <br>
 
@@ -69,7 +69,7 @@ public static void loginByScannedTicket(String ticket, @NotNull AuthCallback<JSO
 
 **参数**
 
-* *ticket* 二维码数据里面的 random 字段
+* *`ticket`* 二维码数据里面的 random 字段
 
 **示例**
 
@@ -83,7 +83,7 @@ AuthClient.loginByScannedTicket(random, (code, message, data) -> {
 
 **错误码**
 
-* 500 无效二维码
-* 2020 未登录
+* `500` 无效二维码
+* `2020` 未登录
 
 <br>
