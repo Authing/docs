@@ -1,14 +1,13 @@
-# 私有化部署
+# On-premise deployment
 
 <LastUpdated/>
 
-私有化部署的场景，域名为客户自己的域名，用来加密密码的公钥也是每个客户特有的，所以在调用 Authing.init() **之前**，需要先调用:
-
+We have to set up *domain* and *public key* for on-premise deployment. So **before** calling Authing.init(), you must first call:
 ```java
 Authing.setOnPremiseInfo(String host, String publicKey)   
 ```
 
-- *host* 是私有化域名，如：mycompany.com
-- *publicKey* 是私有化版本的公钥
+- *host* your on-premmise deployment domain. For example: authing.mycompany.com
+- *publicKey* your on-premmise deployment public key
 
-如果不清楚上述配置，请联系 Authing 售后。
+If you have any question, please contact our sales.

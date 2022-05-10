@@ -2911,16 +2911,16 @@ const translatedZhCnNavBar = {
             {
               title: "Wechat",
               path: "/reference/sdk-for-android/social/wechat"
+            },
+            {
+              title: "Alipay",
+              path: "/reference/sdk-for-android/social/alipay"
             }
           ]
         },
         {
           title: "On-premise",
           path: "/reference/sdk-for-android/onpremise"
-        },
-        {
-          title: "Version history",
-          path: "/reference/sdk-for-android/version"
         }
       ]
     },

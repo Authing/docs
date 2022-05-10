@@ -1,26 +1,24 @@
-# 支付宝登录
+# Login by Alipay
 
 <LastUpdated/>
 
-1. 在这个页面下载 [支付宝 Android SDK](https://opendocs.alipay.com/open/54/104509)
+1. Go to this page to download [Alipay Android SDK](https://opendocs.alipay.com/open/54/104509)
 
->支付宝将 Android、iOS 的 SDK 和 Demo 打包到一个 zip 包里面，找到里面的安卓 SDK，拷贝到 app 的 libs 目录
+>Alipay put Android、iOS SDK, as well as Demo into one single folder. Locate Android SDK inside this folder and copy it to app's libs folder
 
-2. 设置依赖：
+2. Add dependency：
 ```groovy
 implementation 'cn.authing:guard:+'
 implementation files('libs/alipaysdk.aar')
 ```
 
->Guard 只是 compileOnly 依赖支付宝 SDK，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
-
-3. 在应用启动的时候初始化 Authing：
+3. Init Authing upon App startup. e.g. Application's onCreate:
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
+// appId is Authing app id which can be obtained at Authing console
 Authing.init(context, appId);
 ```
 
-接下来，如果使用我们提供的支付宝登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
+Next, we recommend to use our UI component, all you need to do is 'place' it on the layout xml where you think appropriate, you can also create an instance of this component via code:
 
 ```xml
 <cn.authing.guard.AlipayLoginButton
@@ -31,49 +29,49 @@ Authing.init(context, appId);
     app:layout_constraintRight_toRightOf="parent"/>
 ```
 
-然后在 java 代码里面处理事件：
+Then handle callback event after login:
 
 ```java
 AlipayLoginButton button = findViewById(R.id.btn_alipay_login);
 button.setOnLoginListener((ok, data) -> {
     if (ok) {
-        // 登录成功，data 是用户信息
+        // login success, data is user info
     } else {
-        // 登录失败
+        // login fail
     }
 });
 ```
 
 <br>
 
-如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用：
+In case you don't want to use our UI component, you can have your own Button, and then inside your Button's onClick event, you can start alipay authentication and handle callback event like this:
 
 ```java
 Alipay.login(appContext, ((ok, data) -> {
     if (ok) {
-        // 登录成功，data 是用户信息
+        // login success, data is user info
     } else {
-        // 登录失败
+        // login fail
     }
 }));
 ```
 
-如果想完全自己实现支付宝登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
+If you want to implement the whole process by your own, right after you get auth code, please call this API to get Authing user info:
 
 ```java
 public static void loginByAlipay(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *authCode* 支付宝授权码
+* *authCode* auth code from alipay
 
-**示例**
+**example**
 
 ```java
 AuthClient.loginByAlipay(authCode, (code, message, userInfo)->{
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 });
 ```

@@ -1,20 +1,20 @@
-# 标准协议 API
+# OIDC API
 
 <LastUpdated/>
 
-## 生成 OIDC 协议的用户登录链接
+## build login URL
 
-生成登录 URL，传给 WebView 加载
+Use this API to generate login url, then pass this url to Webview
 
 ```java
 public static String buildAuthorizeUrl(Config config, AuthRequest authRequest)
 ```
 
-**参数**
-* *config* 应用配置，可以通过 Authing.getPublicConfig 获取
-* *authRequest* 请求参数
+**param**
+* *`config`* application configuration, obtained by Authing.getPublicConfig
+* *`authRequest`* auth request object
 
-**示例**
+**example**
 
 ```java
 AuthRequest authRequest = new AuthRequest();
@@ -25,17 +25,18 @@ Authing.getPublicConfig(config -> {
 });
 ```
 
-**设置 scope 参数**
+**set scope**
 
-默认值为 openid profile email phone username address offline_access role extended_fields
+use this API to set OIDC scope.
+Default scope is: openid profile email phone username address offline_access role extended_fields
 
 ```java
 authRequest.setScope(String scope)
 ```
 
-**设置回调参数**
+**set redirect url**
 
-SDK 会自动获取控制台默认回调。如果在控制台修改了回调，则需要设置 authRequest 回调地址。
+SDK will get the default redirect url from console. Use this API if you want to use a specific redirect url.
 
 ```java
 authRequest.setRedirectURL(String redirectURL)
@@ -43,20 +44,20 @@ authRequest.setRedirectURL(String redirectURL)
 
 <br>
 
-## code 换 token
+## get token by auth code
 
-通过 OIDC 授权码认证，返回的 UserInfo 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token
+This API returns token(s) by auth code. Note that in order to return *refresh token* make sure the scope includes *offline_access*, which is included by default.
 
 ```java
 public static void authByCode(String code, AuthRequest authRequest, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *code* OIDC 授权码。通过 webview 的回调获取，每个 Code 只能使用一次。
-* *authRequest* 请求参数。
+* *`code`* OIDC auth code
+* *`authRequest`* auth request object
 
-**示例**
+**example**
 
 ```java
 myWebView.setWebViewClient(new WebViewClient() {
@@ -83,45 +84,45 @@ myWebView.setWebViewClient(new WebViewClient() {
 
 <br>
 
-## 获取用户信息
+## Get user info
 
-通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
+Get detailed user info by access token. The returned UserInfo object is the same as the UserInfo object in parameter.
 
 ```java
 public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *userInfo* 包含 access token 的用户信息
-* *callback* 函数回调。通过此回调获取用户信息
+* *`userInfo`* includes access token
+* *`callback`* returns detailed user info if succeeds
 
-**示例**
+**example**
 
 ```java
 OIDCClient.getUserInfoByAccessToken(userInfo, (code, message, data)->{
     if (code == 200) {
-        // data 为更新了用户信息的 UserInfo 对象，和参数是同一个对象
+        // data is the same object as the first parameter
     }
 });
 ```
 
 <br>
 
-## 通过 refresh token 获取新的 access token 和 id token
+## Obtain new access token and id token by refresh token
 
-access token 的有效期通常较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
+the valid duration of an access token is usually short. After it expires, instead of pop up login dialog, which is not very user friendly, we should use refresh token to get new access token. Only show login page when refresh token is expired.
 
 ```java
 public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *refreshToken* 刷新凭证。注意登录 URL 里面的参数配置，请参考 “生成 OIDC 协议的用户登录链接”
-* *callback* 函数回调。通过此回调获取用户信息
+* *`refreshToken`* refresh token
+* *`callback`* includes new access token and id token
 
-**示例**
+**example**
 
 ```java
 OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
@@ -133,6 +134,6 @@ OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
 });
 ```
 
->注意，每次调用会得到新的 refresh token
+>Note: refresh token will also be refreshed
 
 <br>

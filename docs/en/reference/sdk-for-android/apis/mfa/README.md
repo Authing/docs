@@ -1,21 +1,21 @@
-# 多因素认证 API
+# MFA API
 
 <LastUpdated/>
 
-## MFA 检测
+## MFA check
 
-检测手机号或者邮箱是否可以被用作 MFA
+Check if phone number or email address can be used for MFA
 
 ```java
 public static void mfaCheck(String phone, String email, @NotNull AuthCallback<JSONObject> callback)
 ```
 
-**参数**
+**param**
 
-* *phone* 被检测的手机号。可以为空
-* *email* 被检测的邮箱。可以为空
+* *`phone`* phone number to be checked. can be null
+* *`email`* email address to be checked. can be null
 
-**示例**
+**example**
 
 ```java
 AuthClient.mfaCheck("13012345678", null, (code, message, ok) -> {
@@ -37,93 +37,90 @@ AuthClient.mfaCheck(null, "abc@gmail.com", (code, message, ok) -> {
 
 <br>
 
-## 短信验证
+## SMS
 
-通过短信进行多因素认证
+MFA by SMS
 
 ```java
 public static void mfaVerifyByPhone(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *phone* 手机号码
-* *code* 短信验证码
+* *`phone`* phone number
+* *`code`* SMS verification code
 
-**示例**
+**example**
 
 ```java
 AuthClient.mfaVerifyByPhone("13012345678", "1234", (code, message, userInfo)->{
-    // userInfo 用户信息
 });
 ```
 
 <br>
 
-## 邮箱验证
+## Email
 
-通过邮件验证码进行多因素认证
+MFA by email
 
 ```java
 public static void mfaVerifyByEmail(String email, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
+* *`email`* email address
+* *`code`* email verification code
 
-**示例**
+**example**
 
 ```java
 AuthClient.mfaVerifyByEmail("abc@gmail.com", "1234", (code, message, userInfo)->{
-    // userInfo 用户信息
 });
 ```
 
 <br>
 
-## TOTP 验证
+## TOTP
 
-通过一次性密码 TOTP (Time-based One Time Password) 进行多因素认证
+MFA by TOTP (Time-based One Time Password)
 
 ```java
 public static void mfaVerifyByTOTP(String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *code* TOTP code
+* *`code`* TOTP code
 
-**示例**
+**example**
 
 ```java
 AuthClient.mfaVerifyByTOTP("1234", (code, message, userInfo)->{
-    // userInfo 用户信息
 });
 ```
 
 <br>
 
-## 恢复码验证
+## Recovery code
 
-用户在绑定 TOTP 时会得到一个恢复码，用户需要安全保存该恢复码，在调用此 API 时，将其作为参数传入。
+MFA by recovery code. When user binds TOTP, a recovery code will be generated. User should save this code securely and pass it as parameter for this API
 
-注意，恢复码验证成功后，会生成新的恢复码，旧的恢复码失效
+>When MFA succeed, a new recovery code will be generated, the old one becomes invalid
 
 ```java
 public static void mfaVerifyByRecoveryCode(String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**参数**
+**param**
 
-* *code* 恢复码
+* *`code`* recovery code
 
-**示例**
+**example**
 
 ```java
 AuthClient.mfaVerifyByRecoveryCode("1234", (code, message, userInfo)->{
-    // 新的恢复码
+    // new recovery code
     String newCode = userInfo.getRecoveryCode();
 });
 ```
