@@ -3,6 +3,133 @@
     <div class="feedback-action-container">
       <h5 class="feedback-title">{{ feedbackConfig.title }}</h5>
 
+      <v-popover placement="bottom-end">
+        <button
+          @click="handleFeedback(STATUS.GOOD)"
+          :class="[
+            'feedback-btn',
+            'good',
+            {
+              active: status === STATUS.GOOD
+            }
+          ]"
+        >
+          <!-- <IconFont v-if="status === STATUS.GOOD" type="authing-good-" /> -->
+          <IconFont type="authing-good-" />
+          {{ feedbackConfig.useful }}
+        </button>
+
+        <!-- This will be the content of the popover -->
+        <template slot="popover">
+          <div style="position:relative">
+            <div v-if="submitted" class="feedback-success">
+              <!-- <div class="feedback-success"> -->
+              <div>
+                <img
+                  width="122px"
+                  src="~@theme/assets/images/feedback-success.png"
+                  alt="Feedback Success"
+                  style="display:block;margin: 10px auto;"
+                />
+              </div>
+              <div style="text-align: center">
+                <IconFont
+                  type="authing-tijiaochenggong"
+                  class="feedback-success-icon"
+                />
+                {{ feedbackConfig.successTip }}
+              </div>
+            </div>
+
+            <div v-else class="bad-reason">
+              <h4 class="bad-reason-title">
+                感谢反馈请问还有其他建议吗？
+              </h4>
+
+              <textarea
+                v-model="customReason"
+                class="authing-custom-feedback"
+                placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
+              />
+
+              <button
+                @click="submitFeedbackWithReason"
+                class="submit-feedback-btn"
+              >
+                提交
+              </button>
+              <p class="feedback-help" v-html="feedbackConfig.help"></p>
+            </div>
+          </div>
+        </template>
+      </v-popover>
+
+      <v-popover placement="bottom-end">
+        <button
+          @click="handleFeedback(STATUS.BAD)"
+          :class="[
+            'feedback-btn',
+            'bad',
+            {
+              active: status === STATUS.BAD
+            }
+          ]"
+        >
+          <!-- <IconFont v-if="status === STATUS.BAD" type="authing-good-" /> -->
+          <IconFont type="authing-good-" />
+          {{ feedbackConfig.useless }}
+        </button>
+
+        <!-- This will be the content of the popover -->
+        <template slot="popover">
+          <div style="position:relative">
+            <div v-if="submitted" class="feedback-success">
+              <!-- <div class="feedback-success"> -->
+              <div>
+                <img
+                  width="122px"
+                  src="~@theme/assets/images/feedback-success.png"
+                  alt="Feedback Success"
+                />
+              </div>
+              <div>
+                <IconFont
+                  type="authing-tijiaochenggong"
+                  class="feedback-success-icon"
+                />
+                {{ feedbackConfig.successTip }}
+              </div>
+            </div>
+
+            <div v-else class="bad-reason">
+              <h4 class="bad-reason-title">
+                <span style="color: red">*</span>
+                {{ feedbackConfig.uselessConfig.title }}
+              </h4>
+
+              <CheckboxGroup
+                v-model="badReasons"
+                :options="feedbackConfig.uselessConfig.reasons"
+              />
+
+              <textarea
+                v-model="customReason"
+                class="authing-custom-feedback"
+                placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
+              />
+
+              <button
+                @click="submitFeedbackWithReason"
+                class="submit-feedback-btn"
+              >
+                提交
+              </button>
+              <p class="feedback-help" v-html="feedbackConfig.help"></p>
+            </div>
+          </div>
+        </template>
+      </v-popover>
+
       <div class="github-edit">
         有什么建议或错别字吗？
         <a
@@ -14,132 +141,6 @@
         </a>
       </div>
     </div>
-    <v-popover placement="bottom-end">
-      <button
-        @click="handleFeedback(STATUS.GOOD)"
-        :class="[
-          'feedback-btn',
-          'good',
-          {
-            active: status === STATUS.GOOD
-          }
-        ]"
-      >
-        <!-- <IconFont v-if="status === STATUS.GOOD" type="authing-good-" /> -->
-        <IconFont type="authing-good-" />
-        {{ feedbackConfig.useful }}
-      </button>
-
-      <!-- This will be the content of the popover -->
-      <template slot="popover">
-        <div style="position:relative">
-          <div v-if="submitted" class="feedback-success">
-            <!-- <div class="feedback-success"> -->
-            <div>
-              <img
-                width="122px"
-                src="~@theme/assets/images/feedback-success.png"
-                alt="Feedback Success"
-                style="display:block;margin: 10px auto;"
-              />
-            </div>
-            <div style="text-align: center">
-              <IconFont
-                type="authing-tijiaochenggong"
-                class="feedback-success-icon"
-              />
-              {{ feedbackConfig.successTip }}
-            </div>
-          </div>
-
-          <div v-else class="bad-reason">
-            <h4 class="bad-reason-title">
-              感谢反馈请问还有其他建议吗？
-            </h4>
-
-            <textarea
-              v-model="customReason"
-              class="authing-custom-feedback"
-              placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
-            />
-
-            <button
-              @click="submitFeedbackWithReason"
-              class="submit-feedback-btn"
-            >
-              提交
-            </button>
-            <p class="feedback-help" v-html="feedbackConfig.help"></p>
-          </div>
-        </div>
-      </template>
-    </v-popover>
-
-    <v-popover placement="bottom-end">
-      <button
-        @click="handleFeedback(STATUS.BAD)"
-        :class="[
-          'feedback-btn',
-          'bad',
-          {
-            active: status === STATUS.BAD
-          }
-        ]"
-      >
-        <!-- <IconFont v-if="status === STATUS.BAD" type="authing-good-" /> -->
-        <IconFont type="authing-good-" />
-        {{ feedbackConfig.useless }}
-      </button>
-
-      <!-- This will be the content of the popover -->
-      <template slot="popover">
-        <div style="position:relative">
-          <div v-if="submitted" class="feedback-success">
-            <!-- <div class="feedback-success"> -->
-            <div>
-              <img
-                width="122px"
-                src="~@theme/assets/images/feedback-success.png"
-                alt="Feedback Success"
-              />
-            </div>
-            <div>
-              <IconFont
-                type="authing-tijiaochenggong"
-                class="feedback-success-icon"
-              />
-              {{ feedbackConfig.successTip }}
-            </div>
-          </div>
-
-          <div v-else class="bad-reason">
-            <h4 class="bad-reason-title">
-              <span style="color: red">*</span>
-              {{ feedbackConfig.uselessConfig.title }}
-            </h4>
-
-            <CheckboxGroup
-              v-model="badReasons"
-              :options="feedbackConfig.uselessConfig.reasons"
-            />
-
-            <textarea
-              v-model="customReason"
-              class="authing-custom-feedback"
-              placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
-            />
-
-            <button
-              @click="submitFeedbackWithReason"
-              class="submit-feedback-btn"
-            >
-              提交
-            </button>
-            <p class="feedback-help" v-html="feedbackConfig.help"></p>
-          </div>
-        </div>
-      </template>
-    </v-popover>
   </div>
 </template>
 
@@ -238,7 +239,7 @@ export default {
     cursor pointer
     font-size 14px
     color #4E5969
-    margin-bottom: 11px
+    margin-left: 12px
     &.active
       color $accentColor
     &.bad
