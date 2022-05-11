@@ -148,11 +148,11 @@ module.exports = {
         ],
         sidebar: sidebar.zhCnNavBar,
         feedback: {
-          title: "评价此文档",
+          title: "评价此篇文档",
           useful: "有帮助",
           useless: "无帮助",
-          help: `如果遇到其他问题，你可以在 <a href="https://forum.authing.cn/" target="_blank">authing-chat/community</a> 联系我们。`,
-          successTip: `提交成功！非常感谢您的反馈，我们会继续努力做到更好！`,
+          help: `如果遇到其他问题，立即 <a href="https://forum.authing.cn/" target="_blank">联系我们</a>`,
+          successTip: `提交成功，感谢您的反馈`,
           uselessConfig: {
             title: "您是否遇到以下问题",
             reasons: [
