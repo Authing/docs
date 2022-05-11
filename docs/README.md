@@ -30,7 +30,7 @@ sdkConfig:
     img2x: android@2x.png
   flutter:
     name: Flutter
-    link: /reference/sdk-for-flutter.html
+    link: /reference/sdk-for-flutter/
     img: flutter.png
     img2x: flutter@2x.png
   javascript:

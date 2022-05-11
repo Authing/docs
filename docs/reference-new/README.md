@@ -8,6 +8,8 @@
   link: "/v2/reference/",
   linkLabel: "可点击此处跳转",
   # 编辑类型数据
+  # 在目录重构时重点关注 https://docs.authing.cn/v2/reference/ 开头的旧文档链接
+  # 修改完成后可以用相对路径， 如 /v2/reference/
   data: [
       # 大类别
       {
@@ -43,6 +45,36 @@
               icon: "Angular",
               github: "https://github.com/Authing/authing-ui-components",
               doc: "https://docs.authing.cn/v2/reference/guard/angular.html",
+            },
+          ],
+      },
+      {
+        title: "单页应用",
+        desc: "在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录",
+        list: [
+            {
+              #
+              title: "Javascript",
+              icon: "JavaScript",
+              doc: "https://docs.authing.cn/v2/reference/guard/native-javascript.html",
+            },
+            {
+              #
+              title: "React",
+              icon: "React-Native",
+              doc: "https://docs.authing.cn/v2/quickstarts/spa/react.html",
+            },
+            {
+              #
+              title: "Vue",
+              icon: "Vue",
+              doc: "https://docs.authing.cn/v2/quickstarts/spa/vue.html",
+            },
+            {
+              #
+              title: "Angular",
+              icon: "Angular",
+              doc: "https://docs.authing.cn/v2/quickstarts/spa/angular.html",
             },
           ],
       },
@@ -96,7 +128,7 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-node/",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
@@ -110,7 +142,7 @@
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-csharp/",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
@@ -124,21 +156,21 @@
               title: "Ruby",
               icon: "Ruby",
               github: "https://github.com/Authing/authing-ruby",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-ruby.html",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-java/",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-go/",
+              doc: "https://authing-open-api.readme.io",
             },
           ],
       },
@@ -150,26 +182,31 @@
         list: [
             {
               #
+              icon: "Spring",
               title: "Spring CAS",
               doc: "https://docs.authing.cn/v2/frameworks/spring-security-cas/",
             },
             {
               #
+              icon: "Spring",
               title: "Spring OAuth",
               doc: "https://docs.authing.cn/v2/frameworks/spring-security-oauth/",
             },
             {
               #
+              icon: "Spring",
               title: "Spring OIDC",
               doc: "https://docs.authing.cn/v2/frameworks/spring-security-oidc/",
             },
             {
               #
+              icon: "Express",
               title: "Express OIDC",
               doc: "https://docs.authing.cn/v2/frameworks/express-oidc-client/",
             },
             {
               #
+              icon: "Express",
               title: "Express Passport",
               doc: "https://docs.authing.cn/v2/frameworks/express-passport-openidconnect/",
             },

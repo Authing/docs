@@ -1246,10 +1246,10 @@ const zhCnNavBar = {
         {
           title: "APIs",
           children: [
-            "/reference/sdk-for-android/authentication/",
-            "/reference/sdk-for-android/protocol/",
-            "/reference/sdk-for-android/mfa/",
-            "/reference/sdk-for-android/scan/"
+            "/reference/sdk-for-android/apis/authentication/",
+            "/reference/sdk-for-android/apis/protocol/",
+            "/reference/sdk-for-android/apis/mfa/",
+            "/reference/sdk-for-android/apis/scan/"
           ]
         },
         {
@@ -1261,7 +1261,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark"
           ]
-        }, 
+        },
         {
           title: "典型场景",
           children: [
@@ -1332,6 +1332,11 @@ const zhCnNavBar = {
                   title: "密码输入框",
                   path:
                     "/reference/sdk-for-ios/component/basic/password-textfield"
+                },
+                {
+                  title: "邮箱输入框",
+                  path:
+                    "/reference/sdk-for-ios/component/basic/email-textfield"
                 },
                 {
                   title: "电话号码输入框",
@@ -1432,7 +1437,27 @@ const zhCnNavBar = {
     },
     {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "开始开发",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          children: [
+            "/reference/sdk-for-flutter/authentication/",
+            "/reference/sdk-for-flutter/protocol/",
+            "/reference/sdk-for-flutter/mfa/",
+            "/reference/sdk-for-flutter/scan/",
+            "/reference/sdk-for-flutter/social/"
+          ]
+        },
+        {
+          title: "私有化部署",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",
@@ -2847,7 +2872,57 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Android",
-      path: "/reference/sdk-for-android"
+      path: "/reference/sdk-for-android/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-android/develop"
+        },
+        {
+          title: "Quick start",
+          path: "/reference/sdk-for-android/quick"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-android/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-android/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-android/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-android/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-android/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-android/social/",
+          children: [
+            {
+              title: "Wechat",
+              path: "/reference/sdk-for-android/social/wechat"
+            },
+            {
+              title: "Alipay",
+              path: "/reference/sdk-for-android/social/alipay"
+            }
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-android/onpremise"
+        }
+      ]
     },
     {
       title: "Flutter",
