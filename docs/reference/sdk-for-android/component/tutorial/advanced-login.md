@@ -10,7 +10,7 @@
 
 放置一个 LoginMethodTab
 
-![	](./images/loginmethodtab.png)
+![](./images/loginmethodtab.png)
 
 LoginMethodTab 可以用来切换登录方式，它可以根据控制台设置动态调整显示类容，更多信息请参考 [详细说明](./../basic/login-method-tab.md)
 
