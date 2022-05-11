@@ -53,14 +53,8 @@
 
           <div v-else class="bad-reason">
             <h4 class="bad-reason-title">
-              <span style="color: red">*</span>
-              {{ feedbackConfig.uselessConfig.title }}
+              感谢反馈请问还有其他建议吗？
             </h4>
-
-            <CheckboxGroup
-              v-model="badReasons"
-              :options="feedbackConfig.uselessConfig.reasons"
-            />
 
             <textarea
               v-model="customReason"
@@ -181,11 +175,6 @@ export default {
     }
   },
   methods: {
-    submitFeedback(params) {
-      feishuFeedback(params).then(() => {
-        this.submitted = true;
-      });
-    },
     handleFeedback(status) {
       if (status === this.status) {
         return;
@@ -194,22 +183,24 @@ export default {
       this.submitted = false;
       this.status = status;
 
-      // if (this.status === STATUS.GOOD) {
-      //   this.submitFeedback({
-      //     helpful: status === STATUS.GOOD,
-      //     docTitle: this.$page.title,
-      //     docUrl: window.location.href,
-      //     customReason: ""
-      //   });
-      // }
+      if (this.status === STATUS.GOOD) {
+        feishuFeedback({
+          helpful: status === STATUS.GOOD,
+          docTitle: this.$page.title,
+          docUrl: window.location.href,
+          customReason: ""
+        });
+      }
     },
     submitFeedbackWithReason() {
-      this.submitFeedback({
+      feishuFeedback({
         helpful: this.status === STATUS.GOOD,
         docTitle: this.$page.title,
         docUrl: window.location.href,
         customReason: this.customReason,
         reasonList: this.badReasons
+      }).then(() => {
+        this.submitted = true;
       });
     },
     hideSubmitDialog() {
