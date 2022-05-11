@@ -40,9 +40,10 @@
                 width="122px"
                 src="~@theme/assets/images/feedback-success.png"
                 alt="Feedback Success"
+                style="display:block;margin: 10px auto;"
               />
             </div>
-            <div>
+            <div style="text-align: center">
               <IconFont
                 type="authing-tijiaochenggong"
                 class="feedback-success-icon"
