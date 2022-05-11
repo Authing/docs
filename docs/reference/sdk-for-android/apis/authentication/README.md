@@ -12,8 +12,8 @@ public static void registerByEmail(String email, String password, @NotNull AuthC
 
 **参数**
 
-* *`email`* 邮箱
-* *`password`* 明文密码
+* `email` 邮箱
+* `password` 明文密码
 
 **示例**
 
@@ -42,8 +42,8 @@ public static void registerByUserName(String username, String password, @NotNull
 
 **参数**
 
-* *`username`* 用户名
-* *`password`* 明文密码
+* `username` 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -71,9 +71,9 @@ public static void registerByPhoneCode(String phone, String code, String passwor
 
 **参数**
 
-* *`phone`* 手机号
-* *`code`* 短信验证码
-* *`password`* 明文密码，如果没有可传 “” 或者 null
+* `phone` 手机号
+* `code` 短信验证码
+* `password` 明文密码，如果没有可传 “” 或者 null
 
 **示例**
 
@@ -100,8 +100,8 @@ public static void loginByAccount(String account, String password, @NotNull Auth
 
 **参数**
 
-* *`account`* 可以是手机号 / 邮箱 / 用户名
-* *`password`* 明文密码
+* `account` 可以是手机号 / 邮箱 / 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -129,8 +129,8 @@ public static void loginByPhoneCode(String phone, String code, @NotNull AuthCall
 
 **参数**
 
-* *`phone`* 手机号
-* *`code`* 短信验证码
+* `phone` 手机号
+* `code` 短信验证码
 
 **示例**
 
@@ -156,8 +156,8 @@ public static void loginByLDAP(String username, String password, @NotNull AuthCa
 
 **参数**
 
-* *`username`* ldap 用户名
-* *`password`* 明文密码
+* `username` ldap 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -183,8 +183,8 @@ public static void loginByAD(String username, String password, @NotNull AuthCall
 
 **参数**
 
-* *`username`* AD 用户名
-* *`password`* 明文密码
+* `username` AD 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -257,8 +257,8 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 
 **参数**
 
-* *`phoneCountryCode`* 电话国家码。可以为空，为空时默认为 +86
-* *`phone`* 手机号
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phone` 手机号
 
 **示例**
 
@@ -282,8 +282,8 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 
 **参数**
 
-* *`email`* 邮箱地址
-* *`scene`* 发送场景，可选值包含：
+* `email` 邮箱地址
+* `scene` 发送场景，可选值包含：
   - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
   - VERIFY_EMAIL: 发送验证邮箱的邮件；
   - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
@@ -319,7 +319,7 @@ public static void getCustomUserData(UserInfo userInfo, @NotNull AuthCallback<Us
 
 **参数**
 
-* *`userInfo`* 用户信息对象
+* `userInfo` 用户信息对象
 
 **示例**
 
@@ -349,7 +349,7 @@ public static void setCustomUserData(JSONObject customData, @NotNull AuthCallbac
 
 **参数**
 
-* *`customData`* key-value 形式的 JSONObject 对象
+* `customData` key-value 形式的 JSONObject 对象
 
 **示例**
 
@@ -381,7 +381,7 @@ public static void uploadAvatar(InputStream in, @NotNull AuthCallback<UserInfo> 
 
 **参数**
 
-* *`in`* 图片输入流。推荐使用系统默认图片选择器获取
+* `in` 图片输入流。推荐使用系统默认图片选择器获取
 
 **示例**
 
@@ -433,9 +433,9 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 
 **参数**
 
-* *`phone`* 手机号
-* *`code`* 短信验证码
-* *`password`* 明文密码
+* `phone` 手机号
+* `code` 短信验证码
+* `password` 明文密码
 
 **示例**
 
@@ -463,9 +463,9 @@ public static void resetPasswordByEmailCode(String emailAddress, String code, St
 
 **参数**
 
-* *`email`* 邮箱地址
-* *`code`* 邮件验证码
-* *`password`* 明文密码
+* `email` 邮箱地址
+* `code` 邮件验证码
+* `password` 明文密码
 
 **示例**
 
@@ -493,7 +493,7 @@ public static void updateProfile(JSONObject object, @NotNull AuthCallback<UserIn
 
 **参数**
 
-* *`object`* 需要修改的用户资料对象
+* `object` 需要修改的用户资料对象
 
 可以通过此接口更新资料的字段：
 
@@ -552,8 +552,8 @@ public static void updatePassword(String newPassword, String oldPassword, @NotNu
 
 **参数**
 
-* *`newPassword`* 新密码
-* *`oldPassword`* 旧密码。可以为空
+* `newPassword` 新密码
+* `oldPassword` 旧密码。可以为空
 
 **示例**
 
@@ -584,12 +584,12 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 
 **参数**
 
-* *`phoneCountryCode`* 新手机号国家码，需以 + 开头，如中国大陆为 +86 
-* *`phone`* 新手机号
-* *`code`* 新手机号短信验证码
-* *`oldPhoneCountryCode`* 旧手机号国家码，需以 + 开头，如中国大陆为 +86
-* *`oldPhone`* 旧手机号
-* *`oldCode`* 旧手机号短信验证码
+* `phoneCountryCode` 新手机号国家码，需以 + 开头，如中国大陆为 +86 
+* `phone` 新手机号
+* `code` 新手机号短信验证码
+* `oldPhoneCountryCode` 旧手机号国家码，需以 + 开头，如中国大陆为 +86
+* `oldPhone` 旧手机号
+* `oldCode` 旧手机号短信验证码
 
 **示例**
 
@@ -616,8 +616,8 @@ public static void bindPhone(String phone, String code, @NotNull AuthCallback<Us
 
 **参数**
 
-* *`phone`* 手机号
-* *`code`* 短信验证码
+* `phone` 手机号
+* `code` 短信验证码
 
 **示例**
 
@@ -668,8 +668,8 @@ public static void bindEmail(String email, String code, @NotNull AuthCallback<Us
 
 **参数**
 
-* *`email`* 邮箱地址
-* *`code`* 邮件验证码
+* `email` 邮箱地址
+* `code` 邮件验证码
 
 **示例**
 
@@ -797,8 +797,8 @@ public static void listApplications(int page, int limit, @NotNull AuthCallback<L
 
 **参数**
 
-* *`page`* 分页序号, 默认为 `1`。
-* *`limit`* 每页返回的个数, 默认为 `10`。
+* `page` 分页序号, 默认为 `1`。
+* `limit` 每页返回的个数, 默认为 `10`。
 
 **示例**
 
@@ -1042,7 +1042,7 @@ public static void listRoles(String namespace, @NotNull AuthCallback<List<Role>>
 
 **参数**
 
-* *`namespace`* 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
+* `namespace` 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
 
 **示例**
 
@@ -1092,8 +1092,8 @@ public static void listAuthorizedResources(String namespace, String resourceType
 
 **参数**
 
-* *`namespace`* 权限分组 ID
-* *`resourceType`* 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
+* `namespace` 权限分组 ID
+* `resourceType` 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
 
 **示例**
 
@@ -1138,8 +1138,8 @@ public static void resetPasswordByFirstTimeLoginToken(String token, String newPa
 
 **参数**
 
-* *`token`* 首次登录后获取的 token
-* *`password`* 明文密码
+* `token` 首次登录后获取的 token
+* `password` 明文密码
 
 **示例**
 
