@@ -15,6 +15,7 @@
 使用 AuthFlow 设置自定义的登录布局启动，并设置自定义的注册布局
 
 ```java
+//this is the activity context
 AuthFlow authFlow = AuthFlow.start(this, R.layout.login);
 authFlow.setRegisterLayoutId(R.layout.register);
 ```

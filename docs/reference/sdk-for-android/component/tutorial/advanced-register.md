@@ -36,11 +36,11 @@ RegisterMethodTab 可以用来切换注册方式，它可以根据控制台设�
 
 ## 放置 RegisterContainer 并将组件添加到容器里面
 
-放置一个 RegisterContainer，将 EmailEditText 、 PasswordEditText 和 PasswordConfirmEditText 放到里面，设置type属性app:type="emailPassword"。
+放置一个 RegisterContainer，将 EmailEditText 、 PasswordEditText 和 PasswordConfirmEditText 放到里面，设置 type 属性 app:type="emailPassword"。
 
 ![](./images/registercontainer1.png)
 
-再放置一个 RegisterContainer，将 PhoneNumberEditText、PasswordEditText、PasswordConfirmEditText、VerifyCodeEditText、GetVerifyCodeButton 放到里面，设置type属性app:type="phoneCodePassword"。
+再放置一个 RegisterContainer，将 PhoneNumberEditText、PasswordEditText、PasswordConfirmEditText、VerifyCodeEditText、GetVerifyCodeButton 放到里面，设置 type 属性 app:type="phoneCodePassword"。
 
 调整位置和间距。可以参考下面布局：
 

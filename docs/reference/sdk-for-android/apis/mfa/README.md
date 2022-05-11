@@ -12,8 +12,8 @@ public static void mfaCheck(String phone, String email, @NotNull AuthCallback<JS
 
 **参数**
 
-* *phone* 被检测的手机号。可以为空
-* *email* 被检测的邮箱。可以为空
+* `phone` 被检测的手机号。可以为空
+* `email` 被检测的邮箱。可以为空
 
 **示例**
 
@@ -47,8 +47,8 @@ public static void mfaVerifyByPhone(String phone, String code, @NotNull AuthCall
 
 **参数**
 
-* *phone* 手机号码
-* *code* 短信验证码
+* `phone` 手机号码
+* `code` 短信验证码
 
 **示例**
 
@@ -70,8 +70,8 @@ public static void mfaVerifyByEmail(String email, String code, @NotNull AuthCall
 
 **参数**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
+* `email` 邮箱地址
+* `code` 邮件验证码
 
 **示例**
 
@@ -93,7 +93,7 @@ public static void mfaVerifyByTOTP(String code, @NotNull AuthCallback<UserInfo> 
 
 **参数**
 
-* *code* TOTP code
+* `code` TOTP code
 
 **示例**
 
@@ -117,7 +117,7 @@ public static void mfaVerifyByRecoveryCode(String code, @NotNull AuthCallback<Us
 
 **参数**
 
-* *code* 恢复码
+* `code` 恢复码
 
 **示例**
 

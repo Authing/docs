@@ -1246,10 +1246,10 @@ const zhCnNavBar = {
         {
           title: "APIs",
           children: [
-            "/reference/sdk-for-android/authentication/",
-            "/reference/sdk-for-android/protocol/",
-            "/reference/sdk-for-android/mfa/",
-            "/reference/sdk-for-android/scan/"
+            "/reference/sdk-for-android/apis/authentication/",
+            "/reference/sdk-for-android/apis/protocol/",
+            "/reference/sdk-for-android/apis/mfa/",
+            "/reference/sdk-for-android/apis/scan/"
           ]
         },
         {
@@ -1261,7 +1261,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark"
           ]
-        }, 
+        },
         {
           title: "典型场景",
           children: [

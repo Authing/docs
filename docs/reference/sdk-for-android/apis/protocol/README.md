@@ -11,8 +11,8 @@ public static String buildAuthorizeUrl(Config config, AuthRequest authRequest)
 ```
 
 **参数**
-* *config* 应用配置，可以通过 Authing.getPublicConfig 获取
-* *authRequest* 请求参数
+* `config` 应用配置，可以通过 Authing.getPublicConfig 获取
+* `authRequest` 请求参数
 
 **示例**
 
@@ -53,8 +53,8 @@ public static void authByCode(String code, AuthRequest authRequest, @NotNull Aut
 
 **参数**
 
-* *code* OIDC 授权码。通过 webview 的回调获取，每个 Code 只能使用一次。
-* *authRequest* 请求参数。
+* `code` OIDC 授权码。通过 webview 的回调获取，每个 Code 只能使用一次。
+* `authRequest` 请求参数。
 
 **示例**
 
@@ -93,8 +93,8 @@ public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCall
 
 **参数**
 
-* *userInfo* 包含 access token 的用户信息
-* *callback* 函数回调。通过此回调获取用户信息
+* `userInfo` 包含 access token 的用户信息
+* `callback` 函数回调。通过此回调获取用户信息
 
 **示例**
 
@@ -118,8 +118,8 @@ public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull
 
 **参数**
 
-* *refreshToken* 刷新凭证。注意登录 URL 里面的参数配置，请参考 “生成 OIDC 协议的用户登录链接”
-* *callback* 函数回调。通过此回调获取用户信息
+* `refreshToken` 刷新凭证。注意登录 URL 里面的参数配置，请参考 “生成 OIDC 协议的用户登录链接”
+* `callback` 函数回调。通过此回调获取用户信息
 
 **示例**
 
