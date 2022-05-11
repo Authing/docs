@@ -11,8 +11,8 @@ public static String buildAuthorizeUrl(Config config, AuthRequest authRequest)
 ```
 
 **param**
-* *`config`* application configuration, obtained by Authing.getPublicConfig
-* *`authRequest`* auth request object
+* `config` application configuration, obtained by Authing.getPublicConfig
+* `authRequest` auth request object
 
 **example**
 
@@ -54,8 +54,8 @@ public static void authByCode(String code, AuthRequest authRequest, @NotNull Aut
 
 **param**
 
-* *`code`* OIDC auth code
-* *`authRequest`* auth request object
+* `code` OIDC auth code
+* `authRequest` auth request object
 
 **example**
 
@@ -94,8 +94,8 @@ public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCall
 
 **param**
 
-* *`userInfo`* includes access token
-* *`callback`* returns detailed user info if succeeds
+* `userInfo` includes access token
+* `callback` returns detailed user info if succeeds
 
 **example**
 
@@ -119,8 +119,8 @@ public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull
 
 **param**
 
-* *`refreshToken`* refresh token
-* *`callback`* includes new access token and id token
+* `refreshToken` refresh token
+* `callback` includes new access token and id token
 
 **example**
 

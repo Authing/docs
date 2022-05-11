@@ -12,8 +12,8 @@ public static void registerByEmail(String email, String password, @NotNull AuthC
 
 **Parameter**
 
-* *`email`* email address
-* *`password`* password
+* `email` email address
+* `password` password
 
 **Example**
 
@@ -42,8 +42,8 @@ public static void registerByUserName(String username, String password, @NotNull
 
 **Parameter**
 
-* *`username`* username
-* *`password`* password
+* `username` username
+* `password` password
 
 **Example**
 
@@ -71,9 +71,9 @@ public static void registerByPhoneCode(String phone, String code, String passwor
 
 **Parameter**
 
-* *`phone`* The phone number
-* *`code`* SMS verification code
-* *`password`* initial password
+* `phone` The phone number
+* `code` SMS verification code
+* `password` initial password, it can be null
 
 **Example**
 
@@ -100,8 +100,8 @@ public static void loginByEmailCode(String email, String code, @NotNull AuthCall
 
 **Parameter**
 
-* *`email`*  email address
-* *`code`* email verification code
+* `email`  email address
+* `code` email verification code
 
 **Example**
 
@@ -127,8 +127,8 @@ public static void loginByAccount(String account, String password, @NotNull Auth
 
 **Parameter**
 
-* *`account`* The phone number / email address / username
-* *`password`* password
+* `account` The phone number / email address / username
+* `password` password
 
 **Example**
 
@@ -157,7 +157,7 @@ public static void loginByPhoneCode(String phone, String code, @NotNull AuthCall
 **Parameter**
 
 * `phone` The phone number
-* *`code`* SMS verification code
+* `code` SMS verification code
 
 **Example**
 
@@ -183,8 +183,8 @@ public static void loginByLDAP(String username, String password, @NotNull AuthCa
 
 **Parameter**
 
-* *`username`* ldap username
-* *`password`* password
+* `username` ldap username
+* `password` password
 
 **Example**
 
@@ -210,8 +210,8 @@ public static void loginByAD(String username, String password, @NotNull AuthCall
 
 **Parameter**
 
-* *`username`* AD username
-* *`password`* password
+* `username` AD username
+* `password` password
 
 **Example**
 
@@ -284,8 +284,8 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 
 **Parameter**
 
-* *`phoneCountryCode`* Telephone country code, If null, the default value is +86
-* *`phone`* The phone number
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
 
 **Example**
 
@@ -309,8 +309,8 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 
 **Parameter**
 
-* *`email`* email address
-* *`scene`* Send a scene, optional value is ：
+* `email` email address
+* `scene` Send a scene, optional value is ：
   - `RESET_PASSWORD`: Send a reset password message, including the verification code;
   - `VERIFY_EMAIL`: Send a message to verify the mailbox;
   - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
@@ -342,7 +342,7 @@ public static void getCustomUserData(UserInfo userInfo, @NotNull AuthCallback<Us
 
 **Parameter**
 
-* *`userInfo`* 
+* `userInfo` 
 
 **Example**
 
@@ -370,7 +370,7 @@ public static void setCustomUserData(JSONObject customData, @NotNull AuthCallbac
 
 **Parameter**
 
-* *`customData`* JSONObject in the form of key-value
+* `customData` JSONObject in the form of key-value
 
 **Example**
 
@@ -400,7 +400,7 @@ public static void uploadAvatar(InputStream in, @NotNull AuthCallback<UserInfo> 
 
 **Parameter**
 
-* *`in`* Image input stream. You are advised to use the default image picker
+* `in` Image input stream. You are advised to use the default image picker
 
 **Example**
 
@@ -452,9 +452,9 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 
 **Parameter**
 
-* *`phone`* The phone number
-* *`code`* SMS Verification code
-* *`password`* New password
+* `phone` The phone number
+* `code` SMS Verification code
+* `password` New password
 
 **Example**
 
@@ -482,9 +482,9 @@ public static void resetPasswordByEmailCode(String emailAddress, String code, St
 
 **Parameter**
 
-* *`email`* Email address
-* *`code`* Verification code
-* *`password`* New password
+* `email` Email address
+* `code` Verification code
+* `password` New password
 
 **Example**
 
@@ -512,7 +512,7 @@ public static void updateProfile(JSONObject object, @NotNull AuthCallback<UserIn
 
 **Parameter**
 
-* *`object`* Modified user profile
+* `object` Modified user profile
 
 Fields of data can be updated through this interface：
 
@@ -571,8 +571,8 @@ public static void updatePassword(String newPassword, String oldPassword, @NotNu
 
 **Parameter**
 
-* *`newPassword`* New password
-* *`oldPassword`* Old password, if the user does not set a password, you can not fill
+* `newPassword` New password
+* `oldPassword` Old password, if the user does not set a password, you can not fill
 
 **Example**
 
@@ -603,12 +603,12 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 
 **Parameter**
 
-* *`phoneCountryCode`* New mobile phone country code，It must start with a +, for example, +86 in mainland China
-* *`phone`* New mobile phone number
-* *`code`* New mobile phone number verification code
-* *`oldPhoneCountryCode`* Old mobile phone country code，It must start with a +, for example, +86 in mainland China
-* *`oldPhone`* Old mobile phone number
-* *`oldCode`* Old mobile phone number verification code
+* `phoneCountryCode` New mobile phone country code，It must start with a +, for example, +86 in mainland China
+* `phone` New mobile phone number
+* `code` New mobile phone number verification code
+* `oldPhoneCountryCode` Old mobile phone country code，It must start with a +, for example, +86 in mainland China
+* `oldPhone` Old mobile phone number
+* `oldCode` Old mobile phone number verification code
 
 **Example**
 
@@ -635,8 +635,8 @@ public static void bindPhone(String phone, String code, @NotNull AuthCallback<Us
 
 **Parameter**
 
-* *`phone`* Thie phone number
-* *`code`* SMS Verification code
+* `phone` Thie phone number
+* `code` SMS Verification code
 
 **Example**
 
@@ -687,8 +687,8 @@ public static void bindEmail(String email, String code, @NotNull AuthCallback<Us
 
 **Parameter**
 
-* *`email`* Email address
-* *`code`* Email  verification code
+* `email` Email address
+* `code` Email  verification code
 
 **Example**
 
@@ -816,8 +816,8 @@ public static void listApplications(int page, int limit, @NotNull AuthCallback<L
 
 **Parameter**
 
-* *`page`* Page serial number, default is `1`.
-* *`limit`* The number of times returned per page, the default is `10`.
+* `page` Page serial number, default is `1`.
+* `limit` The number of times returned per page, the default is `10`.
 
 **Example**
 
@@ -1061,7 +1061,7 @@ public static void listRoles(String namespace, @NotNull AuthCallback<List<Role>>
 
 **Parameter**
 
-* *`namespace`* Permission group ID, used to filter role data. If empty, all roles of the user are returned
+* `namespace` Permission group ID, used to filter role data. If empty, all roles of the user are returned
 
 **Example**
 
@@ -1111,8 +1111,8 @@ public static void listAuthorizedResources(String namespace, String resourceType
 
 **Parameter**
 
-* *`namespace`* Permission group ID.
-* *`resourceType`* Resource type. Can be the following types of DATA, API, MENU, UI, BUTTON. If null, all resource type data is returned.
+* `namespace` Permission group ID.
+* `resourceType` Resource type. Can be the following types of DATA, API, MENU, UI, BUTTON. If null, all resource type data is returned.
 
 **Example**
 
@@ -1157,8 +1157,8 @@ public static void resetPasswordByFirstTimeLoginToken(String token, String newPa
 
 **Parameter**
 
-* *`token`* First login Token
-* *`password`* Reset password
+* `token` First login Token
+* `password` Reset password
 
 **Example**
 
