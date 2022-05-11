@@ -12,8 +12,8 @@ public static void registerByEmail(String email, String password, @NotNull AuthC
 
 **参数**
 
-* *email* 邮箱
-* *password* 明文密码
+* `email` 邮箱
+* `password` 明文密码
 
 **示例**
 
@@ -27,8 +27,8 @@ AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->
 
 **错误码**
 
-* 2003 非法邮箱地址
-* 2026 邮箱已注册
+* `2003` 非法邮箱地址
+* `2026` 邮箱已注册
 
 <br>
 
@@ -42,8 +42,8 @@ public static void registerByUserName(String username, String password, @NotNull
 
 **参数**
 
-* *username* 用户名
-* *password* 明文密码
+* `username` 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -57,7 +57,7 @@ AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
 
 **错误码**
 
-* 2026 用户名已存在
+* `2026` 用户名已存在
 
 <br>
 
@@ -71,9 +71,9 @@ public static void registerByPhoneCode(String phone, String code, String passwor
 
 **参数**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* `phone` 手机号
+* `code` 短信验证码
+* `password` 明文密码，如果没有可传 “” 或者 null
 
 **示例**
 
@@ -87,8 +87,8 @@ AuthClient.registerByPhoneCode("13012345678", "1234", "strong", (code, message, 
 
 **错误码**
 
-* 2001 验证码错误
-* 2026 手机号已注册
+* `2001` 验证码错误
+* `2026` 手机号已注册
 
 <br>
 
@@ -100,8 +100,8 @@ public static void loginByAccount(String account, String password, @NotNull Auth
 
 **参数**
 
-* *account* 可以是手机号 / 邮箱 / 用户名
-* *password* 明文密码
+* `account` 可以是手机号 / 邮箱 / 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -115,7 +115,7 @@ AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
 
 **错误码**
 
-* 2333 帐号或密码错误
+* `2333` 帐号或密码错误
 
 <br>
 
@@ -129,8 +129,8 @@ public static void loginByPhoneCode(String phone, String code, @NotNull AuthCall
 
 **参数**
 
-* *phone* 手机号
-* *code* 短信验证码
+* `phone` 手机号
+* `code` 短信验证码
 
 **示例**
 
@@ -144,7 +144,7 @@ AuthClient.loginByPhoneCode("13012345678", "1234", (code, message, userInfo)->{
 
 **错误码**
 
-* 2001 短信验证码不正确
+* `2001` 短信验证码不正确
 
 <br>
 
@@ -156,8 +156,8 @@ public static void loginByLDAP(String username, String password, @NotNull AuthCa
 
 **参数**
 
-* *username* ldap 用户名
-* *password* 明文密码
+* `username` ldap 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -171,7 +171,7 @@ AuthClient.loginByLDAP("username", "strong", (code, message, userInfo)->{
 
 **错误码**
 
-* 2333 帐号或密码错误
+* `2333` 帐号或密码错误
 
 <br>
 
@@ -183,8 +183,8 @@ public static void loginByAD(String username, String password, @NotNull AuthCall
 
 **参数**
 
-* *username* AD 用户名
-* *password* 明文密码
+* `username` AD 用户名
+* `password` 明文密码
 
 **示例**
 
@@ -198,7 +198,7 @@ AuthClient.loginByAD("username", "strong", (code, message, userInfo)->{
 
 **错误码**
 
-* 2333 帐号或密码错误
+* `2333` 帐号或密码错误
 
 <br>
 
@@ -222,7 +222,7 @@ AuthClient.getCurrentUser((code, message, userInfo) -> {
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -243,7 +243,7 @@ AuthClient.logout((code, message, data)-> AuthFlow.start(this));
 
 **错误码**
 
-* 1010001 如果用户的 id token 非法或者过期
+* `1010001` 如果用户的 id token 非法或者过期
 
 <br>
 
@@ -257,8 +257,8 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 
 **参数**
 
-* *phoneCountryCode* 电话国家码。可以为空，为空时默认为 +86
-* *phone* 手机号
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phone` 手机号
 
 **示例**
 
@@ -268,7 +268,7 @@ AuthClient.sendSms("13012345678", "+86", (code, message, data)->{});
 
 **错误码**
 
-* 500 手机号码格式非法
+* `500` 手机号码格式非法
 
 <br>
 
@@ -282,8 +282,8 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 
 **参数**
 
-* *email* 邮箱地址
-* *scene* 发送场景，可选值包含：
+* `email` 邮箱地址
+* `scene` 发送场景，可选值包含：
   - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
   - VERIFY_EMAIL: 发送验证邮箱的邮件；
   - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
@@ -301,7 +301,7 @@ AuthClient.sendEmail("cool@gmail.com", "RESET_PASSWORD",  (code, message, data)-
 
 **错误码**
 
-* 1020017 邮箱地址非法
+* `1020017` 邮箱地址非法
 
 <br>
 
@@ -319,7 +319,7 @@ public static void getCustomUserData(UserInfo userInfo, @NotNull AuthCallback<Us
 
 **参数**
 
-* *userInfo* 用户信息对象
+* `userInfo` 用户信息对象
 
 **示例**
 
@@ -333,7 +333,7 @@ AuthClient.getCustomUserData(Authing.getCurrentUser(), (code, message, data)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -349,7 +349,7 @@ public static void setCustomUserData(JSONObject customData, @NotNull AuthCallbac
 
 **参数**
 
-* *customData* key-value 形式的 JSONObject 对象
+* `customData` key-value 形式的 JSONObject 对象
 
 **示例**
 
@@ -365,7 +365,7 @@ AuthClient.setCustomUserData(object, (code, message, res) -> {
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -381,7 +381,7 @@ public static void uploadAvatar(InputStream in, @NotNull AuthCallback<UserInfo> 
 
 **参数**
 
-* *in* 图片输入流。推荐使用系统默认图片选择器获取
+* `in` 图片输入流。推荐使用系统默认图片选择器获取
 
 **示例**
 
@@ -419,7 +419,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -433,9 +433,9 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 
 **参数**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* `phone` 手机号
+* `code` 短信验证码
+* `password` 明文密码
 
 **示例**
 
@@ -449,7 +449,7 @@ AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong", (code, mess
 
 **错误码**
 
-* 2004 用户不存在
+* `2004` 用户不存在
 
 <br>
 
@@ -463,9 +463,9 @@ public static void resetPasswordByEmailCode(String emailAddress, String code, St
 
 **参数**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
-* *password* 明文密码
+* `email` 邮箱地址
+* `code` 邮件验证码
+* `password` 明文密码
 
 **示例**
 
@@ -479,7 +479,7 @@ AuthClient.resetPasswordByEmailCode("me@gmail.com", "1234", "strong", (code, mes
 
 **错误码**
 
-* 2004 用户不存在
+* `2004` 用户不存在
 
 <br>
 
@@ -493,35 +493,35 @@ public static void updateProfile(JSONObject object, @NotNull AuthCallback<UserIn
 
 **参数**
 
-* *object* 需要修改的用户资料对象
+* `object` 需要修改的用户资料对象
 
 可以通过此接口更新资料的字段：
 
-* username
-* nickname
-* company
-* photo
-* browser
-* device
-* name
-* givenName
-* familyName
-* middleName
-* profile
-* preferredUsername
-* website
-* gender
-* birthdate
-* zoneinfo
-* locale
-* address
-* streetAddress
-* locality
-* region
-* postalCode
-* city
-* province
-* country
+* `username`
+* `nickname`
+* `company`
+* `photo`
+* `browser`
+* `device`
+* `name`
+* `givenName`
+* `familyName`
+* `middleName`
+* `profile`
+* `preferredUsername`
+* `website`
+* `gender`
+* `birthdate`
+* `zoneinfo`
+* `locale`
+* `address`
+* `streetAddress`
+* `locality`
+* `region`
+* `postalCode`
+* `city`
+* `province`
+* `country`
 
 **示例**
 
@@ -538,7 +538,7 @@ AuthClient.updateProfile(body, (code, message, userInfo)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -552,8 +552,8 @@ public static void updatePassword(String newPassword, String oldPassword, @NotNu
 
 **参数**
 
-* *newPassword* 新密码
-* *oldPassword* 旧密码。可以为空
+* `newPassword` 新密码
+* `oldPassword` 旧密码。可以为空
 
 **示例**
 
@@ -567,8 +567,8 @@ AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
 
 **错误码**
 
-* 2020 未登录
-* 1320011 旧密码不正确
+* `2020` 未登录
+* `1320011` 旧密码不正确
 
 <br>
 
@@ -584,12 +584,12 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 
 **参数**
 
-* *phoneCountryCode* 新手机号国家码，需以 + 开头，如中国大陆为 +86 
-* *phone* 新手机号
-* *code* 新手机号短信验证码
-* *oldPhoneCountryCode* 旧手机号国家码，需以 + 开头，如中国大陆为 +86
-* *oldPhone* 旧手机号
-* *oldCode* 旧手机号短信验证码
+* `phoneCountryCode` 新手机号国家码，需以 + 开头，如中国大陆为 +86 
+* `phone` 新手机号
+* `code` 新手机号短信验证码
+* `oldPhoneCountryCode` 旧手机号国家码，需以 + 开头，如中国大陆为 +86
+* `oldPhone` 旧手机号
+* `oldCode` 旧手机号短信验证码
 
 **示例**
 
@@ -602,7 +602,7 @@ AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234"
 
 **错误码**
 
-- 2020 未登录
+- `2020` 未登录
 
 <br>
 
@@ -616,8 +616,8 @@ public static void bindPhone(String phone, String code, @NotNull AuthCallback<Us
 
 **参数**
 
-* *phone* 手机号
-* *code* 短信验证码
+* `phone` 手机号
+* `code` 短信验证码
 
 **示例**
 
@@ -630,7 +630,7 @@ AuthClient.bindPhone("13012345678", "1234", (code, message, data)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -653,8 +653,8 @@ AuthClient.unbindPhone((code, message, data)-> {
 
 **错误码**
 
-* 2020 未登录
-* 1320005 当前用户未绑定其他登录方式
+* `2020` 未登录
+* `1320005` 当前用户未绑定其他登录方式
 
 <br>
 
@@ -668,8 +668,8 @@ public static void bindEmail(String email, String code, @NotNull AuthCallback<Us
 
 **参数**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
+* `email` 邮箱地址
+* `code` 邮件验证码
 
 **示例**
 
@@ -682,7 +682,7 @@ AuthClient.bindEmail("me@gmail.com", "1234", (code, message, data)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -705,8 +705,8 @@ AuthClient.unbindEmail((code, message, data)-> {
 
 **错误码**
 
-* 2020 未登录
-* 1320005 当前用户未绑定邮箱
+* `2020` 未登录
+* `1320005` 当前用户未绑定邮箱
 
 <br>
 
@@ -762,7 +762,7 @@ AuthClient.getSecurityLevel((code, message, data)-> {
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -783,7 +783,7 @@ AuthClient.updateIdToken((code, message, userInfo) ->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -797,8 +797,8 @@ public static void listApplications(int page, int limit, @NotNull AuthCallback<L
 
 **参数**
 
-* *page* 分页序号, 默认为 `1`。
-* *limit* 每页返回的个数, 默认为 `10`。
+* `page` 分页序号, 默认为 `1`。
+* `limit` 每页返回的个数, 默认为 `10`。
 
 **示例**
 
@@ -838,7 +838,7 @@ AuthClient.listApplications((code, message, applications) ->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -1028,7 +1028,7 @@ AuthClient.listOrgs((code, message, organizations)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -1042,7 +1042,7 @@ public static void listRoles(String namespace, @NotNull AuthCallback<List<Role>>
 
 **参数**
 
-* *namespace* 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
+* `namespace` 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
 
 **示例**
 
@@ -1078,7 +1078,7 @@ AuthClient.listRoles(null, (code, message, roles) ->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -1092,8 +1092,8 @@ public static void listAuthorizedResources(String namespace, String resourceType
 
 **参数**
 
-* *namespace* 权限分组 ID
-* *resourceType* 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
+* `namespace` 权限分组 ID
+* `resourceType` 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
 
 **示例**
 
@@ -1124,7 +1124,7 @@ AuthClient.listAuthorizedResources("default", (code, message, resources)->{
 
 **错误码**
 
-* 2020 未登录
+* `2020` 未登录
 
 <br>
 
@@ -1138,8 +1138,8 @@ public static void resetPasswordByFirstTimeLoginToken(String token, String newPa
 
 **参数**
 
-* *token* 首次登录后获取的 token
-* *password* 明文密码
+* `token` 首次登录后获取的 token
+* `password` 明文密码
 
 **示例**
 

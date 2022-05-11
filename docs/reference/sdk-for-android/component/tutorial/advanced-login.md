@@ -44,15 +44,15 @@ LoginMethodTab 可以用来切换登录方式，它可以根据控制台设置�
 
 ## 放置 LoginContainer 并将组件添加到容器里面
 
-放置一个 LoginContainer，将 AccountEditText 和 PasswordEditText 放到第一个 LoginContainer 里，设置type属性app:type="accountPassword"。
+放置一个 LoginContainer，将 AccountEditText 和 PasswordEditText 放到第一个 LoginContainer 里，设置 type 属性app:type="accountPassword"。
 
 ![](./images/logincontainer1.png)
 
-再放置一个 LoginContainer，将PhoneNumberEditText、VerifyCodeEditText、GetVerifyCodeButton 放到第二个 LoginContainer 里面，设置type属性，app:type="phoneCode"。
+再放置一个 LoginContainer，将 PhoneNumberEditText、VerifyCodeEditText、GetVerifyCodeButton 放到第二个 LoginContainer 里面，设置 type 属性，app:type="phoneCode"。
 
 ![](./images/logincontainer2.png)
 
-再放置一个 LoginContainer，将EmailEditText、VerifyCodeEditText、GetEmailCodeButton 放到第三个 LoginContainer 里面，设置type属性，app:type="emailCode"。
+再放置一个 LoginContainer，将 EmailEditText、VerifyCodeEditText、GetEmailCodeButton 放到第三个 LoginContainer 里面，设置    type 属性，app:type="emailCode"。
 
 ![](/Users/zhongjiahui/Authing/guard/component/tutorial/images/logincontainer3.png)
 

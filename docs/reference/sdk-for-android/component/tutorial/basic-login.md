@@ -36,7 +36,7 @@
 
 
 
-Guard支持中英文版本，当我们把手机系统设置为英文后，效果如下：
+Guard 支持中英文版本，当我们把手机系统设置为英文后，效果如下：
 
 <img src="./images/login_page_en.png" alt="drawing" width="300"/>
 
