@@ -117,7 +117,7 @@
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-node/",
+              doc: "https://authing-open-api.readme.io",
             },
             {
               #
@@ -148,6 +148,21 @@
         title: "框架集成",
         # desc: "更新文案",
         list: [
+            {
+              #
+              title: "Spring CAS",
+              doc: "https://docs.authing.cn/v2/frameworks/spring-security-cas/",
+            },
+            {
+              #
+              title: "Spring OAuth",
+              doc: "https://docs.authing.cn/v2/frameworks/spring-security-oauth/",
+            },
+            {
+              #
+              title: "Spring OIDC",
+              doc: "https://docs.authing.cn/v2/frameworks/spring-security-oidc/",
+            },
             {
               #
               title: "Express OIDC",
