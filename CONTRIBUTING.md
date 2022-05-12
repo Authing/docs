@@ -1,4 +1,40 @@
-# Authing doc
+# Authing doc 贡献指南
+
+贡献新文档或者修改时建议 Fork 项目后，提交 PR 合并到主分支。
+
+## 环境准备
+
+- [VS Code](https://code.visualstudio.com/)
+- [Source Tree](https://www.sourcetreeapp.com/) 或者 Github [桌面客户端](https://desktop.github.com/)
+- Node.js 16.x [长期支持版本](https://nodejs.org/)
+
+本地调试，在 VS Code 终端中安装环境依赖：
+
+```bash
+# 只需要全局安装一次
+npm i -g yarn
+# 安装依赖，可以每次更新代码时都跑一遍，如果没有新的依赖项则秒结束
+yarn
+# 运行本项目
+yarn docs:dev
+# CTRL + C 停止，重新执行再次启动，不要重复启动多个
+```
+
+## 编译、热更新过慢
+
+本地调试时，可以针对性的移动 `docs/xxx` 目录，到 `demo/xxx` 下，然后调试的时候编译就会非常快，在提交代码之前把移动的文件夹再都放回来即可。
+
+docs 目录中需要一直保持的核心文件夹：
+
+```bash
+.vuepress
+common
+images
+```
+
+其他根据当前需要调试的章节保留一个目录即可。
+
+---
 
 ## 使用
 
@@ -18,7 +54,7 @@ npm run docs:build
 `page-ref`:
 
 ```bash
-# 普通 md: 绝对路径 
+# 普通 md: 绝对路径
 
 ::: page-ref /quickstart/hello-world.md
 :::
