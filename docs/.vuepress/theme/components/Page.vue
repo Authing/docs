@@ -82,7 +82,6 @@ export default {
     padding-left 0
     .breadcrumb-content-container
       margin 0
-    .feedback
       max-width $mainContentWidthWithSideBar
       margin 0 auto
   .main-content
