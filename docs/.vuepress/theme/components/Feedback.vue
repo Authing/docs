@@ -131,7 +131,7 @@
       </v-popover>
 
       <div class="github-edit">
-        有什么建议或错别字吗？
+        有建议或错误，可直接
         <a
           :href="
             `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
@@ -218,7 +218,7 @@ export default {
 .feedback
   background #FFFFFF
   border-radius 4px
-  border 1px solid #EEEEEE
+  // border 1px solid #EEEEEE
   padding 30px 24px
   margin-top 34px
   .github-edit
@@ -231,7 +231,7 @@ export default {
     margin-bottom 18px
   .feedback-btn
     display block
-    width 144px
+    width 90px
     height 32px
     background: #F2F3F5;
     border-radius: 4px;
@@ -298,15 +298,17 @@ export default {
   margin-right 1em
   flex-shrink 0
 .authing-custom-feedback
-  width 320px
+  width 100%
   height 90px
+  min-height: 90px
+  max-height: 300px
   background: #F2F3F5;
   border-radius: 2px;
   border 1px solid #EEEEEE
   font-size 14px
   padding 14px 20px
   margin-top 25px
-  resize auto
+  resize vertical
 
   box-sizing border-box
   &:focus
@@ -316,11 +318,12 @@ export default {
   background-color #396AFF
   background #396AFF
   border-radius 4px
-  height 40px
-  line-height 40px
-  width 120px
-  margin-top 24px
+  height 28px
+  line-height 28px
+  width 64px
+  margin-top 14px
   color #fff
+  font-size 14px
   outline none
   border none
   cursor pointer
