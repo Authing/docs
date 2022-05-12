@@ -5,6 +5,7 @@
   >
     <div v-show="showOnthisPage">
       <div>
+        <h3>本篇目录</h3>
         <ul class="links" v-if="items">
           <OnThisPageItem
             v-for="(link, index) in items"
@@ -156,6 +157,9 @@ export default {
   top 0
   overflow-y auto
   top calc(3.6rem + 36px)
+  h3
+    color #86909C
+    padding-left 16px
   a
     position: relative
     font-size 12px
