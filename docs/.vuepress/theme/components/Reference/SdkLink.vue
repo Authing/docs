@@ -69,8 +69,10 @@ export default {
       required: true
     }
   },
-  data: {
-    hostname: location.hostname
+  data() {
+    return {
+      hostname: window.location.hostname
+    };
   }
 };
 </script>
