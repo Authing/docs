@@ -71,7 +71,8 @@ export default {
   },
   data() {
     return {
-      hostname: window.location.hostname
+      hostname:
+        (typeof window !== "undefined" && window.location.hostname) || ""
     };
   }
 };
