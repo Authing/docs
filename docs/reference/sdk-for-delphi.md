@@ -24,9 +24,44 @@ meta:
 > 你可以在此[了解如何获取 UserPoolId 和 Secret](/guides/faqs/get-userpool-id-and-secret.md) .
 
 ```delphi
-func main() {
-	client := management.NewClient(userPoolId, secret)
-}
+unit ManagementClientTest;
+
+interface
+
+uses
+  System.SysUtils, System.Variants, System.Classes,
+  ManagementClientOptions, ManagementClient;
+
+type
+  TManagementClientTest = class(TObject)
+  public
+    constructor Create;
+    destructor Destroy; override;
+  private
+    FClientOptions: ManagementClientOptions;
+    FClient: ManagementClient
+  end;
+implementation
+
+const
+  DEF_ACCESS_KEY_ID = 'ACCESS_KEY_ID';
+  DEF_ACCESS_KEY_SECRET = 'ACCESS_KEY_SECRET';
+  DEF_HOST = 'https://core.dev.authing-inc.co';
+
+{ TManagementClientTest }
+
+constructor TManagementClientTest.Create;
+begin
+  FClientOptions := ManagementClientOptions.Create(DEF_ACCESS_KEY_ID, DEF_ACCESS_KEY_SECRET);
+  FClient := ManagementClient.Create(FClientOptions);
+end;
+
+destructor TManagementClientTest.Destroy;
+begin
+  inherited;
+  FreeAndNil(FClientOptions);
+  FreeAndNil(FClient);
+end;
 ```
 
 `ManagementClient` 会自动从 Authing 服务器获取  Management API Token，并通过返回的 Token 过期时间自动对 Token 进行缓存。
@@ -44,10 +79,27 @@ func main() {
 初始化完成 `ManagementClient`  之后，你可以获取 `ManagementClient` 的实例，然后调用此实例上的方法。例如：
 
 ```delphi
-func main() {
-	client := management.NewClient(userPoolId, secret)
-    resp, err := client.ExportAll()
-}
+procedure TManagementClientTest.ListUserTest;
+var
+  oRequest: ListUsersDto;
+  oOptions: ListUsersOptionsDto;
+  oResponse: UserPaginatedRespDto;
+  s: string;
+begin  
+  oRequest := ListUsersDto.Create;
+  oOptions := UserSingleRespDto.Create;
+  oResponse := UserPaginatedRespDto.Create;
+  try
+	oOptions.setPage(1);
+	oOptions.setLimit(10);
+	oRequest.setOptions(oOptions);
+    oResponse = FClient.getUser(oRequest);
+  finally
+    FreeAndNil(oRequest);
+    FreeAndNil(oOptions);
+    FreeAndNil(oResponse);
+  end;
+end;
 ```
 
 
@@ -58,11 +110,46 @@ func main() {
 
 如：
 
-```go
-func main() {
-  // 增加参数配置自定义域名
-	client := management.NewClient(userPoolId, secret, host)
-}
+```delphi
+unit ManagementClientTest;
+
+interface
+
+uses
+  System.SysUtils, System.Variants, System.Classes,
+  ManagementClientOptions, ManagementClient;
+
+type
+  TManagementClientTest = class(TObject)
+  public
+    constructor Create;
+    destructor Destroy; override;
+  private
+    FClientOptions: ManagementClientOptions;
+    FClient: ManagementClient
+  end;
+implementation
+
+const
+  DEF_ACCESS_KEY_ID = 'ACCESS_KEY_ID';
+  DEF_ACCESS_KEY_SECRET = 'ACCESS_KEY_SECRET';
+   // 您的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
+  DEF_HOST = 'YourHost';
+
+{ TManagementClientTest }
+
+constructor TManagementClientTest.Create;
+begin
+  FClientOptions := ManagementClientOptions.Create(DEF_ACCESS_KEY_ID, DEF_ACCESS_KEY_SECRET);
+  FClient := ManagementClient.Create(FClientOptions);
+end;
+
+destructor TManagementClientTest.Destroy;
+begin
+  inherited;
+  FreeAndNil(FClientOptions);
+  FreeAndNil(FClient);
+end;
 ```
 
 
