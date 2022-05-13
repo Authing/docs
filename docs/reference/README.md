@@ -44,6 +44,7 @@
 - [微信网页授权](./sdk-for-wxmp.md)
 - [Go](./sdk-for-go.md)
 - [Ruby](./sdk-for-ruby.md)
+- [Delphi](./sdk-for-delphi.md)
 
 在此之上，我们又将 SDK 进一步封装成高度定制化、通用的登录表单组件，你可以快速集成到你的项目中，详情请见：[登录组件](./guard/README.md)。
 
