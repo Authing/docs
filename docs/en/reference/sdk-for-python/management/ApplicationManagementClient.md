@@ -824,7 +824,7 @@ management.applications.refresh_application_secret("appid")
 
 ```json
 {
-  "message": "刷新应用 secret 成功！",
+  "message": "Refresh App secret Success",
   "code": 200,
   "data": {
     "oidcJWEConfig": null,

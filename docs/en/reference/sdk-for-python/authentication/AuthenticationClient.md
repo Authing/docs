@@ -273,7 +273,6 @@ Log in with a mailbox, the interface does not limit the unprecedented mailbox by
 
 ![](https://cdn.authing.cn/img/20210414145613.png)
 
-如果你的用户池配置了登录失败检测，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（code 为 2000)
 If your user pool is configured with login failure detection, when logging in with IP, the user will be required to enter graphical verification code(code is 2000)
 
 #### parameter
@@ -1160,7 +1159,6 @@ def update_email(self, email, email_code, old_email=None, old_email_code=None):
 
 If the user has binds the mailbox, by default, you need to verify the original mailbox (current account binding mailbox) and the current mailbox (the mailbox to be bound). That is, the mailbox currently binded to 123456@qq.com, wants to modify to 1234567@qq.com, then you need to verify these two mailboxes at the same time.
 
-开发者也可以选择不开启 “验证原有邮箱“ ，可以在 {{$localeConfig.brandName}} 控制台的**设置**目录下的**安全信息**模块进行关闭
 Developers can also choose not to "verify the original mailbox", you can turn off the **security information** module under the {{$localeConfig.brandName}} console **setting**
 
 ![](https://cdn.authing.cn/img/20210414105928.png)

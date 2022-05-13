@@ -38,7 +38,7 @@ Creating a grouping, a packet must contain a user pool globally unique logo (Cod
 ```python
 management_client.groups.create(
   code='group',
-  name='分组 xxx'
+  name='Group xxx'
 )
 ```
 

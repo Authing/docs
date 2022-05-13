@@ -77,11 +77,11 @@ Check **Use npm modules** option:
 > You can view your own application list in the console's **Application**.
 
 ```js
-const { AuthenticationClient } = require('authing-wxapp-sdk')
+const { AuthenticationClient } = require("authing-wxapp-sdk");
 
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-})
+  appId: "YOUR_APP_ID"
+});
 ```
 
 The full parameter list is as follows:
@@ -97,7 +97,7 @@ The full parameter list is as follows:
 
 > Complete error code, please see [this document](/reference/error-code.md)。
 
-- `host`: {{$localeConfig.brandName}} 服务器地址。如果你使用的是公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填。格式如下: `https://authing-api.mydomain.com`，最后不带 `/`。
+- `host`: {{$localeConfig.brandName}} optional, ignore for cloud users. For private users, it's required in this format: `https://authing-api.mydomain.com` without ending with `/`.
 
 ## Instructions
 
@@ -106,19 +106,19 @@ After the user completes the login, the SDK will write the user's `token` to WeC
 ![](https://cdn.authing.cn/blog/20201112165637.png)
 
 ```js
-const { code } = await wx.login()
+const { code } = await wx.login();
 // No user authorization
-const user = await authing.loginByCode(code) // Successfully logged in, write token to WeChat Storage
+const user = await authing.loginByCode(code); // Successfully logged in, write token to WeChat Storage
 
 // You can do this after logging in
-await authing.updateProfile((nickname: 'Bob'))
+await authing.updateProfile((nickname: "Bob"));
 ```
 
 Subsequent users open the applet, if the user's token is saved in the Storage of the applet, access the Authing request will automatically bring the token.
 
 ```javascript
 // This request can be successful because the user is out of the login state.
-await authing.updateProfile((nickname: 'Mick'))
+await authing.updateProfile((nickname: "Mick"));
 ```
 
 ## API Reference
@@ -147,8 +147,8 @@ await authing.updateProfile((nickname: 'Mick'))
 The Nickname in the profile of the user's registered users, Avatar will be empty because the user's avatar and nickname are not obtained.
 
 ```javascript
-const { code } = await wx.login()
-const data = await authing.loginByCode(code)
+const { code } = await wx.login();
+const data = await authing.loginByCode(code);
 ```
 
 2. User manually authorizes to get nickname avatar
@@ -169,7 +169,7 @@ getUserInfo: async function (e) {
   const { rawData } = e.detail
   const user = await authing.loginByCode(code, { rawData })
 
-  // 或者传 iv encryptedData
+  // or pass in iv encryptedData
   // const { iv, encryptedData } = e.detail
   // const user = await authing.loginByCode(code, { iv, encryptedData })
 
@@ -180,8 +180,8 @@ getUserInfo: async function (e) {
 - can then be automatically obtained by `wx.getUserInfo`
 
 ```javascript
-const { rawData } = await wx.getUserInfo()
-const user = await authing.loginByCode(code, { rawData })
+const { rawData } = await wx.getUserInfo();
+const user = await authing.loginByCode(code, { rawData });
 // or iv encryptedData
 // const { iv, encryptedData } = e.detail
 // const user = await authing.loginByCode(code, { iv, encryptedData })
@@ -263,8 +263,8 @@ Returned Data example:
 #### Example
 
 ```javascript
-const { photo } = await authing.updateAvatar()
-console.log(photo)
+const { photo } = await authing.updateAvatar();
+console.log(photo);
 ```
 
 ## Best Practices
@@ -279,10 +279,10 @@ You can use `try catch`
 
 ```js
 try {
-  const user = await authing.loginByEmail('test@example.com', 'passw0rd')
+  const user = await authing.loginByEmail("test@example.com", "passw0rd");
 } catch (error) {
-  console.log(error.code) // 2004
-  console.log(error.message) // User does not exist
+  console.log(error.code); // 2004
+  console.log(error.message); // User does not exist
 }
 ```
 
@@ -296,10 +296,10 @@ const authing = new AuthenticationClient({
   onError: (code, message) => {
     wx.showModal({
       content: message,
-      showCancel: false,
-    })
-  },
-})
+      showCancel: false
+    });
+  }
+});
 ```
 
 ## Get help
