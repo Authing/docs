@@ -3,7 +3,7 @@
     <div v-if="item.icon">
       <img :src="require(`@theme/assets/images/reference/${item.icon}.svg`)" />
     </div>
-    <div v-else class="phd">&nbsp;</div>
+    <!-- <div v-else class="phd">&nbsp;</div> -->
     <div class="title">
       {{ item.title }}
     </div>
@@ -59,9 +59,9 @@ export default {
 
   props: {
     item: {
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 
