@@ -3062,10 +3062,10 @@ const translatedZhCnNavBar = {
       title: "Ruby",
       path: "/reference/sdk-for-ruby"
     },
-    {
-      title: "Delphi",
-      path: "/reference/sdk-for-delphi"
-    },
+    // {
+    //   title: "Delphi",
+    //   path: "/reference/sdk-for-delphi"
+    // },
     {
       title: "Android",
       path: "/reference/sdk-for-android/",
