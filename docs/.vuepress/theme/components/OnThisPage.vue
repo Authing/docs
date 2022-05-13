@@ -160,6 +160,7 @@ export default {
   h3
     color #86909C
     padding-left 16px
+    font-size 16px
   a
     position: relative
     font-size 12px
