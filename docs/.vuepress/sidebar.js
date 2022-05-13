@@ -1109,6 +1109,10 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-ruby"
     },
     {
+      title: "Delphi",
+      path: "/reference/sdk-for-delphi"
+    },
+    {
       title: "Android",
       path: "/reference/sdk-for-android/",
       children: [
@@ -3038,6 +3042,10 @@ const translatedZhCnNavBar = {
     {
       title: "Ruby",
       path: "/reference/sdk-for-ruby"
+    },
+    {
+      title: "Delphi",
+      path: "/reference/sdk-for-delphi"
     },
     {
       title: "Android",
