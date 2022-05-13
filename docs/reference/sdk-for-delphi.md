@@ -12,10 +12,9 @@ meta:
 
 `ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。此模块适合在后端环境下使用。
 
-
 ## 安装
 
-安装 Delphi SDK 库，[点击此处]()获取 SDK 文件。：
+安装 Delphi SDK 库，[点击此处]()获取 SDK 文件。
 
 ## 使用管理模块
 
@@ -64,7 +63,7 @@ begin
 end;
 ```
 
-`ManagementClient` 会自动从 Authing 服务器获取  Management API Token，并通过返回的 Token 过期时间自动对 Token 进行缓存。
+`ManagementClient` 会自动从 Authing 服务器获取 Management API Token，并通过返回的 Token 过期时间自动对 Token 进行缓存。
 
 完整的参数和释义如下：
 
@@ -76,7 +75,7 @@ end;
 
 ## 快速开始
 
-初始化完成 `ManagementClient`  之后，你可以获取 `ManagementClient` 的实例，然后调用此实例上的方法。例如：
+初始化完成 `ManagementClient` 之后，你可以获取 `ManagementClient` 的实例，然后调用此实例上的方法。例如：
 
 ```delphi
 procedure TManagementClientTest.ListUserTest;
@@ -85,7 +84,7 @@ var
   oOptions: ListUsersOptionsDto;
   oResponse: UserPaginatedRespDto;
   s: string;
-begin  
+begin
   oRequest := ListUsersDto.Create;
   oOptions := UserSingleRespDto.Create;
   oResponse := UserPaginatedRespDto.Create;
@@ -101,8 +100,6 @@ begin
   end;
 end;
 ```
-
-
 
 ## 私有化部署
 
@@ -151,8 +148,6 @@ begin
   FreeAndNil(FClient);
 end;
 ```
-
-
 
 ## 获取帮助
 
