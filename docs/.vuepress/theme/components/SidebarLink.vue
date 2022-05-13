@@ -1,116 +1,116 @@
 <script>
-import { isActive, hashRE, groupHeaders } from '../util'
+import { isActive, hashRE, groupHeaders } from "../util";
 
 export default {
   functional: true,
 
-  props: ['item', 'sidebarDepth'],
+  props: ["item", "sidebarDepth"],
 
   render(
     h,
     {
       parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig },
-      props: { item, sidebarDepth },
+      props: { item, sidebarDepth }
     }
   ) {
     // use custom active class matching logic
     // due to edge case of paths ending with / + hash
-    const selfActive = isActive($route, item.path)
+    const selfActive = isActive($route, item.path);
     // for sidebar: auto pages, a hash link should be active if one of its child
     // matches
     const active =
-      item.type === 'auto'
+      item.type === "auto"
         ? selfActive ||
-          item.children.some((c) =>
-            isActive($route, item.basePath + '#' + c.slug)
+          item.children.some(c =>
+            isActive($route, item.basePath + "#" + c.slug)
           )
-        : selfActive
+        : selfActive;
     const link =
-      item.type === 'external'
+      item.type === "external"
         ? renderExternal(h, item.path, item.title || item.path)
-        : renderLink(h, item.path, item.title || item.path, active)
+        : renderLink(h, item.path, item.title || item.path, active);
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
       sidebarDepth,
       $themeLocaleConfig.sidebarDepth,
       $themeConfig.sidebarDepth,
-      1,
-    ].find((depth) => depth !== undefined)
+      1
+    ].find(depth => depth !== undefined);
 
     const displayAllHeaders =
-      $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders
+      $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
 
-    if (item.type === 'auto') {
+    if (item.type === "auto") {
       return [
         link,
-        renderChildren(h, item.children, item.basePath, $route, maxDepth),
-      ]
+        renderChildren(h, item.children, item.basePath, $route, maxDepth)
+      ];
     } else if (
       (active || displayAllHeaders) &&
       item.headers &&
       !hashRE.test(item.path)
     ) {
-      const children = groupHeaders(item.headers)
-      return [link, renderChildren(h, children, item.path, $route, maxDepth)]
+      const children = groupHeaders(item.headers);
+      return [link, renderChildren(h, children, item.path, $route, maxDepth)];
     } else {
-      return link
+      return link;
     }
-  },
-}
+  }
+};
 
 function renderLink(h, to, text, active, level) {
   const component = {
     props: {
       to,
-      activeClass: '',
-      exactActiveClass: '',
+      activeClass: "",
+      exactActiveClass: ""
     },
     class: {
       active,
-      'sidebar-link': true,
-    },
-  }
+      "sidebar-link": true
+    }
+  };
 
   if (level > 2) {
     component.style = {
-      'padding-left': level + 'rem',
-    }
+      "padding-left": level + "rem"
+    };
   }
 
-  return h('RouterLink', component, text)
+  return h("RouterLink", component, text);
 }
 
 function renderChildren(h, children, path, route, maxDepth, depth = 1) {
-  if (!children || depth > maxDepth) return null
+  if (!children || depth > maxDepth) return null;
   return h(
-    'ul',
-    { class: 'sidebar-sub-headers' },
-    children.map((c) => {
-      const active = isActive(route, path + '#' + c.slug)
-      return h('li', { class: 'sidebar-sub-header' }, [
-        renderLink(h, path + '#' + c.slug, c.title, active, c.level - 1),
-        renderChildren(h, c.children, path, route, maxDepth, depth + 1),
-      ])
+    "ul",
+    { class: "sidebar-sub-headers" },
+    children.map(c => {
+      const active = isActive(route, path + "#" + c.slug);
+      return h("li", { class: "sidebar-sub-header" }, [
+        renderLink(h, path + "#" + c.slug, c.title, active, c.level - 1),
+        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
+      ]);
     })
-  )
+  );
 }
 
 function renderExternal(h, to, text) {
   return h(
-    'a',
+    "a",
     {
       attrs: {
         href: to,
-        target: '_blank',
-        rel: 'noopener noreferrer',
+        target: "_blank",
+        rel: "noopener noreferrer"
       },
       class: {
-        'sidebar-link': true,
-      },
+        "sidebar-link": true
+      }
     },
-    [text, h('OutboundLink')]
-  )
+    [text, h("OutboundLink")]
+  );
 }
 </script>
 
@@ -123,7 +123,8 @@ a.sidebar-link
   font-size 14px
   font-weight 400
   display inline-block
-  color $textColor
+  // color $textColor
+  color #1D2129
   padding 0.40rem 1rem 0.40rem 0.8rem
   line-height 1.4
   width: 100%
