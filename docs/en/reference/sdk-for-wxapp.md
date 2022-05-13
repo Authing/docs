@@ -64,11 +64,13 @@ yarn add authing-wxapp-sdk
 
 Click on the menu bar in the developer tool: Tool --> build npm:
 
-<img src="https://cdn.authing.cn/blog/20201112141931.png" height="400px"></img>
+![](./images/20201112141931.png)
 
-Check **Use npm modules** option:
+<!-- Check **Use npm modules** option:
 
-![](https://cdn.authing.cn/blog/20201112142118.png)
+\![](https://cdn.authing.cn/blog/20201112142118.png)
+
+-->
 
 ## initialization
 

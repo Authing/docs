@@ -41,7 +41,7 @@ def register_by_email(
 
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false. If you want the user who is not verified by the mailbox, you cannot log in, can **setting** in the userpool - **Security Information** open **User Login from the Mailbox**:
 
-![](https://cdn.authing.cn/img/20210414145613.png)
+![](../../images/20210414145613.png)
 
 #### parameter
 
@@ -271,7 +271,7 @@ def login_by_email(
 
 Log in with a mailbox, the interface does not limit the unprecedented mailbox by default, if you want the user who does not verify the mailbox, if you want the user who does not verify the mailbox, you can not log in, you can **setting** userpool - **Security Information** Open **User Login to Unrecognizable Mailbox** options:
 
-![](https://cdn.authing.cn/img/20210414145613.png)
+![](../../images/20210414145613.png)
 
 If your user pool is configured with login failure detection, when logging in with IP, the user will be required to enter graphical verification code(code is 2000)
 
@@ -1001,7 +1001,7 @@ The user is bound to bind the mobile phone number, if you need to modify your mo
 
 Terminal users can also[bind mobile phone number in personal center buffet](/guides/user/manage-profile.md#绑定手机号)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### parameter
 
@@ -1029,7 +1029,7 @@ The user solves the mobile phone number. If the user does not bind other login m
 
 End users can also [in the personal center self-service mobile phone number](/guides/user/manage-profile.md#绑定手机号)
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### Example
 
@@ -1056,7 +1056,7 @@ That is, the mobile phone number currently binded to the user A is 15888888888, 
 
 Developers can also choose not to "verify the original mobile phone number", you can turn off in {{$localeConfig.brandName}} console **setting**,under the directory **security information** .
 
-![](https://cdn.authing.cn/img/20210414110024.png)
+![](../../images/20210414110024.png)
 
 The user first binds the mobile phone number, please use the [bind_phone](#绑定手机号) interface
 
@@ -1104,7 +1104,7 @@ Used for the initial binding mailbox for the user, check the mailbox verificatio
 
 Terminal users can also [in the personal center self-help mailbox](/guides/user/manage-profile.md#绑定邮箱):
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### parameter
 
@@ -1136,7 +1136,7 @@ Users solve the mailbox, if the user does not bind other login mode (mobile phon
 
 End users can also [in personal center self-help mailbox](/guides/user/manage-profile.md#绑定邮箱)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### Example
 
@@ -1161,7 +1161,7 @@ If the user has binds the mailbox, by default, you need to verify the original m
 
 Developers can also choose not to "verify the original mailbox", you can turn off the **security information** module under the {{$localeConfig.brandName}} console **setting**
 
-![](https://cdn.authing.cn/img/20210414105928.png)
+![](../../images/20210414105928.png)
 
 Use the user first binding the mailbox, please use the [bind_email](#绑定邮箱) interface
 
