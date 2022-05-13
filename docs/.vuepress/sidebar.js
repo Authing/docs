@@ -1783,7 +1783,7 @@ const zhCnNavBar = {
   ],
   "/android/": [
     {
-      title: "Get started",
+      title: "开始开发",
       path: "/android/develop"
     },
     {
