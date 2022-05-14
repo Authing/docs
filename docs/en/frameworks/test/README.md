@@ -13,7 +13,7 @@ downloadDemo:
 
 # Vue 快速开始
 
-你可以使用 Authing 快速为新开发的或已有的 Vue 应用集成**认证能力**。本教程讲述如何使用 Authing SDK 为你的 Vue 应用添加认证能力。
+你可以 Use Authing 快速为新开发的或已有的 Vue 应用集成**认证能力**。本教程讲述如何 Use Authing SDK 为你的 Vue 应用添加认证能力。
 
 系统要求：Vue 2.x
 
@@ -67,11 +67,11 @@ downloadDemo:
 
 ```js
 const authing = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://{你的域名}.authing.cn',
-  redirectUri: 'http://localhost:4000/callback',
-  tokenEndPointAuthMethod: 'none',
-})
+  appId: "APP_ID",
+  appHost: "https://{你的域名}.authing.cn",
+  redirectUri: "http://localhost:4000/callback",
+  tokenEndPointAuthMethod: "none"
+});
 ```
 
 然后运行：
@@ -85,39 +85,39 @@ $ yarn serve
 
 在你的应用项目中安装 authing-js-sdk 包。然后初始化一个 SDK 实例。
 
-我们的示例中使用的是 yarn 所以建议你也使用 yarn 来安装 authing-js-sdk
+我们的示例中 Use 的是 yarn 所以建议你也 Use yarn 来安装 authing-js-sdk
 
 ```bash
 $ yarn add authing-js-sdk
 ```
 
-如果你使用的是 npm
+如果你 Use 的是 npm
 
 ```bash
 $ npm install authing-js-sdk
 ```
 
-初始化 SDK 实例在 Vue 项目中使用。
-通过 provide 将 SDK 实例注入到 Vue 上下文中,方便其他组件使用。
+初始化 SDK 实例在 Vue 项目中 Use 。
+通过 provide 将 SDK 实例注入到 Vue 上下文中,方便其他组件 Use 。
 
 ```js
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authing = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://{你的域名}.authing.cn',
-  redirectUri: 'http://localhost:4000/callback',
-  tokenEndPointAuthMethod: 'none',
-})
-Vue.config.productionTip = false
+  appId: "APP_ID",
+  appHost: "https://{你的域名}.authing.cn",
+  redirectUri: "http://localhost:4000/callback",
+  tokenEndPointAuthMethod: "none"
+});
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   provide: {
-    $authing: authing,
+    $authing: authing
   },
-  render: (h) => h(App),
-}).$mount('#app')
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 Authing JS SDK 接收以下参数：
@@ -138,70 +138,70 @@ Authing SDK 能够让你快速集成登录到 Vue 应用。你需要生成一个
 
 <script>
 export default {
-  name: 'Login',
-  inject: ['$authing'],
+  name: "Login",
+  inject: ["$authing"],
   methods: {
     handleLogin: async function() {
-      // PKCE 场景使用示例
+      // PKCE 场景Use 示例
       // 生成一个 code_verifier
-      let codeChallenge = this.$authing.generateCodeChallenge()
-      localStorage.setItem('codeChallenge', codeChallenge)
+      let codeChallenge = this.$authing.generateCodeChallenge();
+      localStorage.setItem("codeChallenge", codeChallenge);
       // 计算 code_verifier 的 SHA256 摘要
       let codeChallengeDigest = this.$authing.getCodeChallengeDigest({
         codeChallenge,
-        method: 'S256',
-      })
+        method: "S256"
+      });
       // 构造 OIDC 授权码 + PKCE 模式登录 URL
       let url = this.$authing.buildAuthorizeUrl({
         codeChallenge: codeChallengeDigest,
-        codeChallengeMethod: 'S256',
-      })
-      window.location.href = url
-    },
-  },
-}
+        codeChallengeMethod: "S256"
+      });
+      window.location.href = url;
+    }
+  }
+};
 </script>
 ```
 
 ### 处理回调
 
-用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后使用 Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。
+用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后 Use Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。
 
 ```vue
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String,
+    msg: String
   },
-  inject: ['$authing'],
+  inject: ["$authing"],
   mounted: function() {
-    const currentQuery = this.$router.history.current.query
-    const code = currentQuery.code || ''
-    const codeChallenge = localStorage.getItem('codeChallenge')
-    this.getToken(code, codeChallenge)
+    const currentQuery = this.$router.history.current.query;
+    const code = currentQuery.code || "";
+    const codeChallenge = localStorage.getItem("codeChallenge");
+    this.getToken(code, codeChallenge);
   },
   methods: {
     getToken: async function(code, codeChallenge) {
       let tokenSet = await this.$authing.getAccessTokenByCode(code, {
-        codeVerifier: codeChallenge,
-      })
-      const { access_token, id_token } = tokenSet
+        codeVerifier: codeChallenge
+      });
+      const { access_token, id_token } = tokenSet;
       let userInfo = await this.$authing.getUserInfoByAccessToken(
         tokenSet.access_token
-      )
-      localStorage.setItem('accessToken', access_token)
-      localStorage.setItem('idToken', id_token)
-      localStorage.setItem('userInfo', JSON.stringify(userInfo))
-    },
-  },
-}
+      );
+      localStorage.setItem("accessToken", access_token);
+      localStorage.setItem("idToken", id_token);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    }
+  }
+};
 </script>
 ```
 
 ### 展示用户信息
 
-我们可以使用以下组件根据登录状态展示用户信息。
+我们可以 Use 以下组件根据登录状态展示用户信息。
 
 ```vue
 <template>
@@ -213,66 +213,66 @@ export default {
 
 <script>
 export default {
-  name: 'UserInfo',
+  name: "UserInfo",
   data: function() {
     return {
-      userInfo: '',
-    }
+      userInfo: ""
+    };
   },
-  inject: ['$authing'],
+  inject: ["$authing"],
   mounted: function() {
-    let userInfo = localStorage.getItem('userInfo')
-    this.userInfo = userInfo
+    let userInfo = localStorage.getItem("userInfo");
+    this.userInfo = userInfo;
   },
   methods: {
     handleLogout: function() {
-      let idToken = localStorage.getItem('idToken')
-      console.log(this)
+      let idToken = localStorage.getItem("idToken");
+      console.log(this);
       this.$authing.buildLogoutUrl({
         expert: true,
-        redirectUri: 'http://localhost:4000',
-        idToken,
-      })
-      localStorage.clear()
-      window.location.href = 'http://localhost:4000'
-    },
-  },
-}
+        redirectUri: "http://localhost:4000",
+        idToken
+      });
+      localStorage.clear();
+      window.location.href = "http://localhost:4000";
+    }
+  }
+};
 </script>
 ```
 
 ### 用户登出
 
-使用 buildLogoutUrl 方法构造登出地址，需要传入当前登出用户的 **Id token** 和**登出回调地址**，登出回调地址**必须配置**在控制台的应用登出回调白名单中，**随意填写一定会报错！**
+Use buildLogoutUrl 方法构造登出地址，需要传入当前登出用户的 **Id token** 和**登出回调地址**，登出回调地址**必须配置**在控制台的应用登出回调白名单中，**随意填写一定会报错！**
 
 ```vue
 <script>
 export default {
-  name: 'UserInfo',
+  name: "UserInfo",
   data: function() {
     return {
-      userInfo: '',
-    }
+      userInfo: ""
+    };
   },
-  inject: ['$authing'],
+  inject: ["$authing"],
   mounted: function() {
-    let userInfo = localStorage.getItem('userInfo')
-    this.userInfo = userInfo
+    let userInfo = localStorage.getItem("userInfo");
+    this.userInfo = userInfo;
   },
   methods: {
     handleLogout: function() {
-      let idToken = localStorage.getItem('idToken')
-      console.log(this)
+      let idToken = localStorage.getItem("idToken");
+      console.log(this);
       this.$authing.buildLogoutUrl({
         expert: true,
-        redirectUri: 'http://localhost:4000',
-        idToken,
-      })
-      localStorage.clear()
-      window.location.href = 'http://localhost:4000'
-    },
-  },
-}
+        redirectUri: "http://localhost:4000",
+        idToken
+      });
+      localStorage.clear();
+      window.location.href = "http://localhost:4000";
+    }
+  }
+};
 </script>
 ```
 
@@ -284,7 +284,7 @@ export default {
 
 ### 搭建服务端 API
 
-首先需要搭建服务端 API 接口，供 Vue 应用调用。本教程我们使用一个现成的 API Server。
+首先需要搭建服务端 API 接口，供 Vue 应用调用。本教程我们 Use 一个现成的 API Server。
 
 克隆 API Server 仓库：
 
@@ -308,14 +308,14 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://{应用域名}.authing.cn/oidc/.well-known/jwks.json`,
+    jwksUri: `https://{应用域名}.authing.cn/oidc/.well-known/jwks.json`
   }),
 
   // 验证受众和颁发者
-  audience: 'APP_ID',
+  audience: "APP_ID",
   issuer: [`https://{应用域名}.authing.cn/oidc`],
-  algorithms: ['RS256'],
-})
+  algorithms: ["RS256"]
+});
 ```
 
 启动 API Server：
@@ -367,38 +367,38 @@ Authing SDK 能够让你快速集成登录到 Vue 应用。你需要生成一个
 ```vue
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String,
+    msg: String
   },
-  inject: ['$authing'],
+  inject: ["$authing"],
   mounted: function() {
-    const currentQuery = this.$router.history.current.query
-    const code = currentQuery.code || ''
-    const codeChallenge = localStorage.getItem('codeChallenge')
-    this.getToken(code, codeChallenge)
+    const currentQuery = this.$router.history.current.query;
+    const code = currentQuery.code || "";
+    const codeChallenge = localStorage.getItem("codeChallenge");
+    this.getToken(code, codeChallenge);
   },
   methods: {
     getToken: async function(code, codeChallenge) {
       let tokenSet = await this.$authing.getAccessTokenByCode(code, {
-        codeVerifier: codeChallenge,
-      })
-      const { access_token, id_token } = tokenSet
+        codeVerifier: codeChallenge
+      });
+      const { access_token, id_token } = tokenSet;
       let userInfo = await this.$authing.getUserInfoByAccessToken(
         tokenSet.access_token
-      )
-      localStorage.setItem('accessToken', access_token)
-      localStorage.setItem('idToken', id_token)
-      localStorage.setItem('userInfo', JSON.stringify(userInfo))
-    },
-  },
-}
+      );
+      localStorage.setItem("accessToken", access_token);
+      localStorage.setItem("idToken", id_token);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    }
+  }
+};
 </script>
 ```
 
 ### 处理回调
 
-用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后使用 Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。最后跳转到应用的其他页面。
+用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后 Use Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。最后跳转到应用的其他页面。
 
 ```json
 {
@@ -406,55 +406,55 @@ export default {
     "getToken": async function(code, codeChallenge) {
       let tokenSet = await this.$authing.getAccessTokenByCode(code, {
         "codeVerifier": codeChallenge
-      })
-      const { access_token, id_token } = tokenSet
+      });
+      const { access_token, id_token } = tokenSet;
       let userInfo = await this.$authing.getUserInfoByAccessToken(
         tokenSet.access_token
-      )
-      localStorage.setItem("accessToken", access_token)
-      localStorage.setItem("idToken", id_token)
-      localStorage.setItem("userInfo", JSON.stringify(userInfo))
+      );
+      localStorage.setItem("accessToken", access_token);
+      localStorage.setItem("idToken", id_token);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
     }
   }
 }
 ```
 
-### 使用 Access token 调用资源 API
+### Use Access token 调用资源 API
 
 接下来我们在 Vue 应用中调用后端接口。你可以在**请求头中携带 Access token**，API 服务器会检查 Access token 合法性和具备的权限，然后返回数据。
 
 ```vue
 <script>
 export default {
-  name: 'UserInfo',
+  name: "UserInfo",
   data: function() {
     return {
-      userInfo: '',
-    }
+      userInfo: ""
+    };
   },
-  inject: ['$authing'],
+  inject: ["$authing"],
   mounted: function() {
-    let userInfo = localStorage.getItem('userInfo')
-    this.userInfo = userInfo
+    let userInfo = localStorage.getItem("userInfo");
+    this.userInfo = userInfo;
   },
   methods: {
     handleResource: async function() {
       try {
-        let accessToken = localStorage.getItem('accessToken')
-        let res = await fetch('http://localhost:5000/api/protected', {
+        let accessToken = localStorage.getItem("accessToken");
+        let res = await fetch("http://localhost:5000/api/protected", {
           headers: {
-            Authorization: 'Bearer ' + accessToken,
+            Authorization: "Bearer " + accessToken
           },
-          method: 'GET',
-        })
-        let data = await res.json()
-        alert(JSON.stringify(data))
+          method: "GET"
+        });
+        let data = await res.json();
+        alert(JSON.stringify(data));
       } catch (err) {
-        alert('无权访问接口')
+        alert("无权访问接口");
       }
-    },
-  },
-}
+    }
+  }
+};
 </script>
 ```
 
@@ -464,7 +464,7 @@ export default {
 
 ## 接下来你可能需要
 
-使用 Authing 保护 API 接口：
+Use Authing 保护 API 接口：
 ::: page-ref /quickstarts/apiServer/nodeJsExpress/
 :::
 

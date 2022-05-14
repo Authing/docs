@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-本文讲述如何使用 {{$localeConfig.brandName}} 控制台调试 Pipeline 函数。
+本文讲述如何 Use {{$localeConfig.brandName}} 控制台调试 Pipeline 函数。
 
 在上一步，我们已经[创建了第一个 Pipeline 函数](./write-your-first-pipeline-function.md)，同时回顾一下该函数代码为：
 
@@ -29,10 +29,10 @@ meta:
 ## 查看 log 日志
 
 ::: hint-warning
-需要使用 {{$localeConfig.brandName}} Pipeline 全局内置函数 `log` 才能查看到运行日志，不是 `console.log` !
+需要 Use {{$localeConfig.brandName}} Pipeline 全局内置函数 `log` 才能查看到运行日志，不是 `console.log` !
 :::
 
-使用函数编辑器内修改代码，在函数最前面加入一行 : 注意是 log 而非 console.log 。
+Use 函数编辑器内修改代码，在函数最前面加入一行 : 注意是 log 而非 console.log 。
 
 ```js
 log(context);

@@ -113,7 +113,7 @@ export default {
 
 <details><summary><b>What should we do after understanding user information?</b></summary>
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!
 
 </details>
 
@@ -155,13 +155,13 @@ export default {
 
 {{$localeConfig.brandName}} currently supports 4 social logins around the world, such as GitHub, Apple, etc. The following is a complete list:
 
-!!!include(common/social-connections-table.md)!!!
+!!!include(en/common/social-connections-table.md)!!!
 
 </details>
 
 ### Log out
 
-1. Initialize the [AuthenticationClient](/reference/sdk-for-node/#使用认证模块)in the project entry file.
+1. Initialize the [AuthenticationClient](/reference/sdk-for-node/#Use 认证模块)in the project entry file.
 
 ```js
 import { initAuthClient } from "@authing/vue-ui-components";

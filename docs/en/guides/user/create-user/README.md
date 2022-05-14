@@ -16,7 +16,7 @@ The similarities and differences between the account created by the administrato
 - The `phoneVerified` field of the mobile phone number account created by the administrator is `false`, and the one registered by the user is `true`;
 - Both the administrator's account creation and the user's self-registration cannot create duplicate mailboxes, phone numbers, and usernames.
 
-Administrators can create users through the [console](#使用控制台创建用户) or [SDK](#使用-sdk-创建用户).
+Administrators can create users through the [console](#Use 控制台创建用户) or [SDK](#Use -sdk-创建用户).
 
 ## Create accounts using the console
 

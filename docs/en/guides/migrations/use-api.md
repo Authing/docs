@@ -4,13 +4,13 @@
 
 {{$localeConfig.brandName}} supports SDKs in multiple languages such as Java, JavaScript/Node.js, Python, PHP, C#, Go, Ruby, etc.：
 
-- [Java/Kotlin](/reference/sdk-for-java/)
-- [JavaScript/Node.js](/reference/sdk-for-node/)
-- [Python](/reference/sdk-for-python/)
-- [PHP](/reference/sdk-for-php/)
-- [C#](/reference/sdk-for-csharp/)
-- [Go](/reference/sdk-for-go/)
-- [Ruby](/reference/sdk-for-ruby.md)
+- [Java/Kotlin](/en/reference/sdk-for-java/)
+- [JavaScript/Node.js](/en/reference/sdk-for-node/)
+- [Python](/en/reference/sdk-for-python/)
+- [PHP](/en/reference/sdk-for-php/)
+- [C#](/en/reference/sdk-for-csharp/)
+- [Go](/en/reference/sdk-for-go/)
+- [Ruby](/en/reference/sdk-for-ruby.md)
 
 This article uses Node.js as an example of how to write a script to import users. You can choose a language you are familiar with.
 
@@ -63,7 +63,7 @@ Before starting the import, you need to confirm the mapping between your user st
 
 ## Step 4: Import user data to Authing
 
-If you don't have a NodeJS environment, you need to [install NodeJS](http://nodejs.cn/download/).
+If you don't have a NodeJS environment, you need to [install NodeJS](http://nodejs.org/download/).
 
 Create an index.js file.
 
@@ -99,7 +99,7 @@ async function main() {
           emailVerified: yourUser.emailVerified,
           phone: yourUser.phone,
           loginsCount: yourUser.loginsCount,
-          // 存储原始数据，以备使用
+          // 存储原始数据，以备Use
           oauth: JSON.stringify(yourUser)
         },
         {

@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-此组件可以使用红色字体显示认证过程中的错误信息。Guard 内部所有其他组件都会尝试将错误信息设置给 ErrorTextView。
+此组件可以 Use 红色字体显示认证过程中的错误信息。Guard 内部所有其他组件都会尝试将错误信息设置给 ErrorTextView。
 
 > 给定页面只能有一个 ErrorTextView。如果出现多个，只有第一个组件有效。
 

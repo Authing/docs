@@ -8,7 +8,7 @@ Social authentication is an authentication method that allows users to use the i
 
 {{$localeConfig.brandName}} now supports social authentication from several platforms and they are shown in the lists below:
 
-!!!include(common/social-connections-table.md)!!!
+!!!include(en/common/social-connections-table.md)!!!
 
 ## Customized Social Authentication
 

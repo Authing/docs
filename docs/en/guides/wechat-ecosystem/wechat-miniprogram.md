@@ -59,11 +59,11 @@ Check the npm module option:
 > You can view your own application list in the console's **application**.
 
 ```js
-const { AuthenticationClient } = require('authing-wxapp-sdk')
+const { AuthenticationClient } = require("authing-wxapp-sdk");
 
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-})
+  appId: "YOUR_APP_ID"
+});
 ```
 
 ### Call login method
@@ -71,12 +71,12 @@ const authing = new AuthenticationClient({
 `AuthenticationClient` provides the`loginByCode` method, you can complete the silent login through WeChat authorization:
 
 ```javascript
-const { code } = await wx.login()
+const { code } = await wx.login();
 // No user authorization
-const user = await authing.loginByCode(code) // Successfully logged in, write token to WeChat Storage
+const user = await authing.loginByCode(code); // Successfully logged in, write token to WeChat Storage
 
 // You can do this after logging in
-await authing.updateProfile((nickname: 'Bob'))
+await authing.updateProfile((nickname: "Bob"));
 ```
 
 After the user completes the login, the SDK writes the user's token into the WeChat's Storage, and subsequent requests will automatically carry token access.
@@ -87,11 +87,11 @@ Subsequent users open the applet, if the user's token is saved in the Storage of
 
 ```javascript
 // This request can be successful because the user is out of the login state.
-await authing.updateProfile((nickname: 'Mick'))
+await authing.updateProfile((nickname: "Mick"));
 ```
 
 For details, please see the documentation: [Apprentrate SDK](/reference/sdk-for-wxapp.md)。
 
 ## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

@@ -8,19 +8,19 @@
 import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "YOUR_APP_ID"
 });
 
 const onScanningSuccess = async (userInfo: any, ticket: string) => {
   const { token } = userInfo;
   if (!token) {
-    // 轮询接口不会返回完整用户信息，需要使用 ticket 换取
+    // 轮询接口不会返回完整用户信息，需要Use  ticket 换取
     userInfo = await authenticationClient.wxqrcode.exchangeUserInfo(ticket);
   }
 };
 
 authenticationClient.wxqrcode.startScanning("qrcode", {
   onSuccess: onScanningSuccess,
-  onError: (message) => onFail && onFail(`${message}`),
+  onError: message => onFail && onFail(`${message}`)
 });
 ```

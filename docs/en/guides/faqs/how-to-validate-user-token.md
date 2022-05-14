@@ -48,7 +48,7 @@ If you use javascript, you can use the jose library to verify the RS256 signatur
 
 ```javascript
 const jose = require("jose");
-// 下面的参数内容是将 https://<应用域名>.Authing.cn/oidc/.well-known/jwks.json 返回的内容原封不动复制过来
+// 下面的参数内容是将 https://<应用域名>.Authing.cn/oidc/.well-known/jwks.json 返回的内容原封不动Copy过来
 const keystore = jose.JWKS.asKeyStore({
   keys: [
     {

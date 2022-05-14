@@ -11,10 +11,10 @@
 你需要输入以下字段信息：
 
 - **连接标志符**: 这是此连接的唯一标志符，设置之后不能修改。
-- **显示名称**: 如果设置，{{$localeConfig.brandName}} 登录表单将会显示一个 "使用 {displayName} 登录" 的按钮。
+- **显示名称**: 如果设置，{{$localeConfig.brandName}} 登录表单将会显示一个 "Use {displayName} 登录" 的按钮。
 - **应用 Logo**
 
-然后点击「**保存**」按钮，成功创建之后，你会得到一个 **Provisioning Ticket Url**，这个会在下面的步骤中使用：
+然后点击「**保存**」按钮，成功创建之后，你会得到一个 **Provisioning Ticket Url**，这个会在下面的步骤中 Use ：
 
 ![](https://cdn.authing.cn/blog/20201109141645.png)
 

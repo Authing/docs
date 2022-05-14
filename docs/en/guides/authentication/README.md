@@ -36,7 +36,7 @@ Authing provides front-end developers with a lightweight, developer-friendly Aut
 
 Authing also supports SDKs in multiple languages such as Java, JavaScript/Node.js, Python, PHP, C#, Swift, Go, Ruby, etc. You can choose the SDK you are familiar with:
 
-!!!include(common/sdk-list.md)!!!
+!!!include(en/common/sdk-list.md)!!!
 
 ## Authentication API
 

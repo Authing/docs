@@ -88,4 +88,4 @@ The administrator can disable the account on the user details page, and the disa
 
 Authing provides Authentication SDK/API and Management SDK/API. You can use Authentication API and complete user self-service personal account information management and use Management SDK/API to manage user information as an administrator. Operations performed by an administrator are no need to perform verification methods such as phone number verification code, email verification code, and MFA.
 
-!!!include(common/sdk-list.md)!!!
+!!!include(en/common/sdk-list.md)!!!

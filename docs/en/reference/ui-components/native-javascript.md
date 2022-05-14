@@ -70,7 +70,7 @@ guard.on("login", user => {
 
 <details><summary><b>What should we do after understanding user information?</b></summary>
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!
 
 </details>
 
@@ -90,7 +90,7 @@ Pass in the `socialConnections` list in the initialization parameter `config` to
 
 {{$localeConfig.brandName}} currently supports 4 social logins around the world, such as GitHub, Apple, etc. The following is a complete list:
 
-!!!include(common/social-connections-table.md)!!!
+!!!include(en/common/social-connections-table.md)!!!
 
 </details>
 

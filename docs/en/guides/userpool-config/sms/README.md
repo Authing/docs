@@ -24,4 +24,4 @@ We currently support the following SMS service providers:
 
 Choose SMS service provider Ali Cloud
 
-<StackSelector snippet="config-sms-provider" selectLabel="选择短信服务商" :order="['aliyun', '253']"/>
+<StackSelector snippet="config-sms-provider" selectLabel="SMS Provider" :order="['aliyun', '253']"/>

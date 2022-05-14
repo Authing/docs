@@ -4,7 +4,7 @@
 
 How to use the open capabilities of WeChat multi-scene based on WeChat ecology, how to use the open capabilities of WeChat multi-scenes, how to deal with complex [OpenID、UnionID](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html)Will be the problem you need to consider. WeChat ecology is very large, there are several ways to log in to the scene (such as PC website scan code, public account ", authorization, etc.), it needs to call completely different interfaces, for developers, undoubtedly increase And development costs.
 
-{{$localeConfig.brandName}} Aiming at the complex scene of WeChat ecology, the front end provides a simple, unified SDK for developers, and automatically handles the same identity identification, account merge, etc. based on OpenID, UNIONID, and mobile phone numbers on the backend. Developers only need to call the front end SDK without having to worry about the complex identity logic,{{$localeConfig.brandName}} Eventually return [standardized user information](/guides/user/user-profile.md).
+{{$localeConfig.brandName}} Aiming at the complex scene of WeChat ecology, the front end provides a simple, unified SDK for developers, and automatically handles the same identity identification, account merge, etc. based on OpenID, UNIONID, and mobile phone numbers on the backend. Developers only need to call the front end SDK without having to worry about the complex identity logic,{{$localeConfig.brandName}} Eventually return [standardized user information](/en/guides/user/user-profile.md).
 
 ## PC Sign in with WeChat scan code
 
@@ -18,7 +18,7 @@ WeChat PC scan code login allows users to log in to third-party applications or 
 
 ## PC Website uses a small program scan code login
 
-This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandName}} Open the scan of small login QR code to get the official real-name user information of WeChat official,T he user can authorize the real number to complete the registration or login, and create an account system based on the mobile phone number.[check the details](./wechat-miniprogram-qrcode.md)。
+This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandName}} Open the scan of small login QR code to get the official real-name user information of WeChat official,T he user can authorize the real number to complete the registration or login, and create an account system based on the mobile phone number.
 
 - Application Scene: PC website;
 - Overview: Show the applet QR code in the PC website application, then use the WeChat scan code to log in;

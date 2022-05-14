@@ -6,7 +6,7 @@ In the previous guide, you have learned how to [use the login page hosted by {{$
 
 ## Choose the SDK you are familiar with
 
-!!!include(common/sdk-list.md)!!!
+!!!include(en/common/sdk-list.md)!!!
 
 ## Initialize SDK
 

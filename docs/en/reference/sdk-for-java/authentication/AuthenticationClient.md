@@ -801,11 +801,11 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getAccessTokenByCode(code)
 
-> 使用授权码 Code 获取用户的 Token 信息。
+> Use 授权码 Code 获取用户的 Token 信息。
 
 #### parameter
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code)。
+- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[Use  OIDC 授权码模式](/federation/oidc/authorization-code)。
 
 初始化 AuthenticationClient 时的参数：
 
@@ -821,7 +821,7 @@ authenticationClient.getAccessTokenByCode(code)
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 // 你在 Authing 控制台配置的回调链接
@@ -847,11 +847,11 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getUserInfoByAccessToken('access_token')
 
-> 使用 Access token 获取用户信息。
+> Use  Access token 获取用户信息。
 
 #### parameter
 
-- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code)。
+- `access_token` \<String\> Access token，Use 授权码 Code 换取的 Access token 的内容。详情请见[Use  OIDC 授权码模式](/federation/oidc/authorization-code)。
 
 初始化 AuthenticationClient 时的参数：
 
@@ -867,7 +867,7 @@ authenticationClient.getUserInfoByAccessToken('access_token')
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 authenticationClient.setSecret("AUTHING_APP_SECRET");
@@ -915,7 +915,7 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getAccessTokenByClientCredentials(scope, options)
 
-> 使用编程访问账号获取具备权限的 Access Token。
+> Use 编程访问账号获取具备权限的 Access Token。
 
 #### parameter
 
@@ -938,7 +938,7 @@ authenticationClient.getAccessTokenByClientCredentials(scope, options)
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 authenticationClient.setSecret("AUTHING_APP_SECRET");

@@ -5,18 +5,18 @@
 - 用户成功登录之后，你可以在 `onSuccess` 回调函数中得到用户信息；如果登录失败，可以在 `onError` 回调函数中获取到错误码和错误信息。完整的错误码请见: 错误码列表。
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-// 使用 GitHub 登录
-await authenticationClient.social.authorize('wechat:pc', {
-  onSuccess: (user) => {
-    console.log(user)
+// Use  GitHub 登录
+await authenticationClient.social.authorize("wechat:pc", {
+  onSuccess: user => {
+    console.log(user);
   },
-  onError: (code, message) => {},
-})
+  onError: (code, message) => {}
+});
 ```

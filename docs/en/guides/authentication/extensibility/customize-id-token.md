@@ -4,7 +4,7 @@
 
 ## What is IdToken
 
-**id_token** is equivalent to the user's ID. The developer's front-end should carry the id_token when accessing the back-end interface, and the developer server needs to verify the id_token passed by the front-end. You can use the key of the OIDC application or the public key of the OIDC application to verify the signature, and then you can get the user ID and basic information corresponding to this token. For sample code, please see:：[Verify Token with Application Key.](/guides/basics/authenticate-first-user/how-to-validate-user-token.md#使用应用密钥验证-hs256-算法签名的-token)
+**id_token** is equivalent to the user's ID. The developer's front-end should carry the id_token when accessing the back-end interface, and the developer server needs to verify the id_token passed by the front-end. You can use the key of the OIDC application or the public key of the OIDC application to verify the signature, and then you can get the user ID and basic information corresponding to this token. For sample code, please see:：[Verify Token with Application Key.](/guides/basics/authenticate-first-user/how-to-validate-user-token.md#Use 应用密钥验证-hs256-算法签名的-token)
 
 In {{$localeConfig.brandName}}, the `token` field of [user information](/guides/user/user-profile.md) is an IdToken.
 

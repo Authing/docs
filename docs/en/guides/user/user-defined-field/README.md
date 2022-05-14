@@ -40,6 +40,6 @@ After the user has successfully registered, you can see the custom value that th
 
 ## Use API & SDK to manage user-defined data
 
-!!!include(common/sdk-list.md)!!!
+!!!include(en/common/sdk-list.md)!!!
 
 <StackSelector snippet="udf" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp', 'swift']"/>

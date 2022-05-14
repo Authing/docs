@@ -38,7 +38,7 @@ iOS 设备的设备 ID 可以通过 [identifierForVendor](https://developer.appl
 
 :::
 
-如果你的应用不属于同一 vendor，建议使用 [ASIdentifierManager](https://developer.apple.com/documentation/adsupport/asidentifiermanager)。
+如果你的应用不属于同一 vendor，建议 Use [ASIdentifierManager](https://developer.apple.com/documentation/adsupport/asidentifiermanager)。
 
 Swift 5 代码示例：
 
@@ -193,10 +193,10 @@ func createSession(userPoolId: String, token: String){
 
 ![](https://cdn.authing.cn/blog/image%20%28462%29.png)
 
-<ApiMethodSpec method="post" host="https://core.authing.cn" path="/oauth/sso/mobile/exchangeUserInfoWithTicket" summary="使用 ticket 换取用户信息">
+<ApiMethodSpec method="post" host="https://core.authing.cn" path="/oauth/sso/mobile/exchangeUserInfoWithTicket" summary="Use  ticket 换取用户信息">
 <template slot="description">
 
-使用 ticket 换取用户信息，**此接口需要用户池密钥，请在后端调用**！
+Use ticket 换取用户信息，**此接口需要用户池密钥，请在后端调用**！
 
 </template>
 <template slot="headers">

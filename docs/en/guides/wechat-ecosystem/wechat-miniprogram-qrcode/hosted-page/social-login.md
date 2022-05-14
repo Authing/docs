@@ -6,4 +6,4 @@
 
 ![](./images/example.jpg)
 
-你可以使用微信 APP 扫码登录。
+你可以 Use 微信 APP 扫码登录。

@@ -123,7 +123,7 @@ await authenticationClient.social.authorize("github", {
 
 Authing currently supports more than 20 social logins around the world, such as GitHub, Sign in with Apple, Google, etc. The following is a complete list:
 
-!!!include(common/social-connections-table.md)!!!
+!!!include(en/common/social-connections-table.md)!!!
 
 </details>
 
