@@ -10,7 +10,7 @@ This document will introduce how to quickly implement a complete user authentica
 
 [User pool](/concepts/user-pool.md)is the minimum unit of isolation of your user system. You can divide users in different scenarios into different user pools. User pool is the smallest unit of isolation of your user system. You can divide users in different scenarios into different user pools.There can be users and applications under each user pool.The permissions, applications, and organizations between different user pools are completely isolated.
 
-<img src="~@imagesZhCn/guides/basics/Xnip2021-02-27_14-58-25.png" alt="drawing"/>
+<img src="./images/Xnip2021-02-27_14-58-25.png" alt="drawing"/>
 
 After the creation is successful, you will automatically redirect to the user pool details page.
 
@@ -42,7 +42,7 @@ Go back to the login page, enter the email and password of the account you just 
 
 In actual applications, you need to change the **callback address** to your **actual business address**, which needs to be a **back-end address**.
 
-![](https://files.authing.co/authing-console/console-callback-address.png)
+![](./images/console-callback-address.png)
 
 After obtaining the `code`, you need to use the `code` in exchange for user information. The Node.js sample code is as follows:
 
