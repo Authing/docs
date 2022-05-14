@@ -34,24 +34,24 @@ Authing supports multiple [standard protocols](https://federation-poc.authing.cn
 
 ## OAuth2
 
-Authing supports a variety of [social login](/guides/connections/social.md) services, and [customize OAuth2 social login](/connections/custom-social-provider/).
+Authing supports a variety of [social login](/guides/connections/social.md) services, and [customize OAuth2 social login](/en/connections/custom-social-provider/).
 
 ![](./images/1-4.png)
 
 ## OpenID Connect
 
-Authing supports federated authentication using [OIDC](/connections/oidc/)。
+Authing supports federated authentication using [OIDC](/en/connections/oidc/)。
 
 ![](./images/1-5.png)
 
 ## SAML2
 
-Authing supports federated authentication using [SAML2](/connections/saml/).
+Authing supports federated authentication using [SAML2](/en/connections/saml/).
 
 ![](./images/1-6.png)
 
 ## CAS
 
-Authing supports the use of [CAS](/connections/cas/) for federated authentication.
+Authing supports the use of [CAS](/en/connections/cas/) for federated authentication.
 
 ![](./images/1-7.png)

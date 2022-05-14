@@ -214,7 +214,7 @@ User user = authenticationClient.loginByPhonePassword(new LoginByPhonePasswordIn
 
 authenticationClient.loginByLdap(param)
 
-> Login with an account password using the LDAP identity source. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained. Click here to view the [Connection LDAP Original](/connections/ldap/) document.
+> Login with an account password using the LDAP identity source. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained. Click here to view the [Connection LDAP Original](/en/connections/ldap/) document.
 
 #### parameter
 
@@ -236,7 +236,7 @@ User user = authenticationClient.loginByLdap(loginByLdapParam).execute();
 authenticationClient.loginByAd(username, password)
 
 > Log in with an account using the AD domain. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained.
-> Click here to view [Connection Active Directory Original Source](/connections/windows-active-directory/).
+> Click here to view [Connection Active Directory Original Source](/en/connections/windows-active-directory/).
 
 #### parameter
 

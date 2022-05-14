@@ -533,7 +533,7 @@ def login_by_ldap(self, username, password):
 
 Log in with an account password using the LDAP identity source. If this account is logged in for the first time, it will import its user information into the user directory of the user pool; after logging in again, will update this account user information based on the latest account information obtained.
 
-Click here to view[Connect the LDAP identity source](/connections/ldap/)
+Click here to view[Connect the LDAP identity source](/en/connections/ldap/)
 
 #### parameter
 
@@ -563,7 +563,7 @@ def login_by_ad(self, username, password):
 
 Log in with an account using the AD domain. If this account is logged in for the first time, it will import its user information into the user directory of the user pool; after logging in again, will update this account user information based on the latest account information obtained.
 
-Click here to view[Connect Active Directory Origin](/connections/windows-active-directory/)
+Click here to view[Connect Active Directory Origin](/en/connections/windows-active-directory/)
 
 #### parameter
 
