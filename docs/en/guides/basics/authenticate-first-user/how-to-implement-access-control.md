@@ -78,7 +78,7 @@ You can also use API & SDK to create roles. For details, see [Role Management SD
 
 On the role details page, you can grant this role to users. You can search for users by username, mobile phone number, email, or nickname:
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-03-01_15-51-01.png)
+![](./images/Xnip2021-03-01_15-51-01.png)
 
 After selecting a user, click OK, and you can view the list of users granted with this role.
 
