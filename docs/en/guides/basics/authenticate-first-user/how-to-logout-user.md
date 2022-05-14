@@ -31,7 +31,7 @@ If you need to log out an Authing user on the backend, you need to use the follo
 
 | Parameters | Type     | Required | Description    |
 | ---------- | -------- | -------- | -------------- |
-| userIds    | string[] | Yes      | User ID array  |
+| userIds    | string   | Yes      | User ID array  |
 | appId      | string   | Yes      | Application ID |
 
 - Return data：
