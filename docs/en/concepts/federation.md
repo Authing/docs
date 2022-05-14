@@ -30,28 +30,28 @@ The following is the process of Federated Authentication. The end user is redire
 
 Authing supports multiple [standard protocols](https://federation-poc.authing.cn/) for Federated Authentication.
 
-![](~@imagesZhCn/concepts/federation/1-3.png)
+![](./images/1-3.png)
 
 ## OAuth2
 
 Authing supports a variety of [social login](/guides/connections/social.md) services, and [customize OAuth2 social login](/connections/custom-social-provider/).
 
-![](~@imagesZhCn/concepts/federation/1-4.png)
+![](./images/1-4.png)
 
 ## OpenID Connect
 
 Authing supports federated authentication using [OIDC](/connections/oidc/)。
 
-![](~@imagesZhCn/concepts/federation/1-5.png)
+![](./images/1-5.png)
 
 ## SAML2
 
 Authing supports federated authentication using [SAML2](/connections/saml/).
 
-![](~@imagesZhCn/concepts/federation/1-6.png)
+![](./images/1-6.png)
 
 ## CAS
 
 Authing supports the use of [CAS](/connections/cas/) for federated authentication.
 
-![](~@imagesZhCn/concepts/federation/1-7.png)
+![](./images/1-7.png)
