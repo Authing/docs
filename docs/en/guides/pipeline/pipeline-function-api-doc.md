@@ -8,25 +8,24 @@ meta:
 
 <LastUpdated/>
 
-
 ::: hint-success
 Pipeline is a set of functions. The difference from ordinary Hooks is that the function data in the entire pipeline can be transferred to each other to achieve the same effect as an industrial pipeline. This design pattern can make the developer's custom function more modular and easy to manage.
 :::
 
 ::: hint-danger
-For security reasons， {{$localeConfig.brandName}} will use userPoolId and secret to initialize approw-js-sdk in a special way. This process will not send your user pool key to the public network. You can use the global variable **approw**，**please do not initialize the SDK again！**
+For security reasons， {{$localeConfig.brandName}} will use userPoolId and secret to initialize authing-js-sdk in a special way. This process will not send your user pool key to the public network. You can use the global variable **authing**，**please do not initialize the SDK again！**
 :::
 
 ## Pipeline function type <a id="pipeline-type"></a>
 
 Currently {{$localeConfig.brandName}} supports three types of Pipeline functions:
 
-| Name                         | Description                                                                                                                                                                                                                               |
-| :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Pre-Register Pipeline <img width=300>       | The pipeline before registration will be triggered every time the user officially enters the registration logic. Developers can use this to implement functions such as the whitelist of registered mailboxes and the whitelist of registered IP.                                                                                                                         |
-| Post-Register Pipeline       | The registered pipeline will be triggered every time the user completes the registration logic（**it has been saved to the database at this time**），Developers can use this to implement functions such as writing custom metadata to the database and new user registration webhook notification.                                                                       |
-| Post-Authentication Pipeline | The authenticated pipeline will be triggered every time the user completes the authentication. Developers can use this to implement functions such as adding custom fields to the token.                                                                                                                                      |
-| Pre-OIDCTokenIssued Pipeline | Triggered before the OIDC application code is exchanged for the token. Developers can use this to implement functions such as writing custom fields to the idToken. For details of the code-to-token part of the OIDC authentication process, please check：[Using OIDC Authorization](/federation/oidc/authorization-code/?step=2) |
+| Name                                  | Description                                                                                                                                                                                                                                                                                                                         |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pre-Register Pipeline <img width=300> | The pipeline before registration will be triggered every time the user officially enters the registration logic. Developers can use this to implement functions such as the whitelist of registered mailboxes and the whitelist of registered IP.                                                                                   |
+| Post-Register Pipeline                | The registered pipeline will be triggered every time the user completes the registration logic（**it has been saved to the database at this time**），Developers can use this to implement functions such as writing custom metadata to the database and new user registration webhook notification.                                |
+| Post-Authentication Pipeline          | The authenticated pipeline will be triggered every time the user completes the authentication. Developers can use this to implement functions such as adding custom fields to the token.                                                                                                                                            |
+| Pre-OIDCTokenIssued Pipeline          | Triggered before the OIDC application code is exchanged for the token. Developers can use this to implement functions such as writing custom fields to the idToken. For details of the code-to-token part of the OIDC authentication process, please check：[Using OIDC Authorization](/federation/oidc/authorization-code/?step=2) |
 
 ::: hint-info
 Developers must choose a Pipeline type when creating a Pipeline function.
@@ -54,11 +53,11 @@ Do not rename the pipe function!
 
 Parameter Description：
 
-| Parameter     | Type     | Description                                                            |
-| :------- | :------- | :--------------------------------------------------------------- |
-| user     | object   | The current requesting user. See the [user object](user-object.md) for detailed fields.         |
-| context  | object   | Request authentication context. See the [context object](context-object.md) for detailed fields. |
-| callback | function | The callback function, see below for usage documentation.                                       |
+| Parameter | Type     | Description                                                                                      |
+| :-------- | :------- | :----------------------------------------------------------------------------------------------- |
+| user      | object   | The current requesting user. See the [user object](user-object.md) for detailed fields.          |
+| context   | object   | Request authentication context. See the [context object](context-object.md) for detailed fields. |
+| callback  | function | The callback function, see below for usage documentation.                                        |
 
 ### callback function <a id="callback"></a>
 

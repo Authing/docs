@@ -14,7 +14,7 @@ In {{$localeConfig.brandName}}, Enterprise IdPs mainly refers to applications th
 
 ## Integrate IdPs that Support Standard Protocols
 
-Approw now provides integration with IdPs that support these protocols:
+Authing now provides integration with IdPs that support these protocols:
 
 - <router-link to="/connections/oidc/" target="_blank">OIDC</router-link>
 - <router-link to="/connections/saml/" target="_blank">SAML</router-link>

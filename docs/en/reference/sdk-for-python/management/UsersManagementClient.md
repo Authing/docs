@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-> Approw User ManagementClient
+> Authing User ManagementClient
 
 This client can create, query, update and delete users, refresh user token, manage user's group, user's role, user's policy and perform other operations.
 
@@ -34,7 +34,7 @@ UsersManagementClient().create(userInfo)
 - `userInfo.photo` \<string\> avatar
 - `userInfo.company` \<string\> company
 - `userInfo.browser` \<string\> browser
-- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `userInfo.lastLogin` \<string\> Last login time, a time string conforming to the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `userInfo.lastIP` \<string\> The last login (or other activity) IP of the user
 - `userInfo.signedUp` \<string\> Registration time, a time string in ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -100,7 +100,7 @@ UsersManagementClient \*().update(id, updates)
 - `updates.photo` \<string\> avatar
 - `updates.company` \<string\> company
 - `updates.browser` \<string\> browser
-- `updates.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `updates.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `updates.lastLogin` \<string\> Last login time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `updates.lastIP` \<string\> The IP of the user's last login (or other activity)
 - `updates.signedUp` \<string\> Registration time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -165,11 +165,11 @@ data = management_client.users.delete(
 )
 ```
 
-##  Batch delete users
+## Batch delete users
 
 UsersManagementClient().delete_many(userIds)
 
->  Delete users in bulk.
+> Delete users in bulk.
 
 #### Parameter
 
@@ -295,7 +295,7 @@ totalCount = data['totalCount'] # total amount of user group
 users = data['list'] # current page
 ```
 
-##  Join a group
+## Join a group
 
 UsersManagementClient().add_group(userId, group)
 

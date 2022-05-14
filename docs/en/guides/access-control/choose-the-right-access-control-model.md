@@ -4,17 +4,15 @@
 
 There are two permission models that are widely used by everyone:[Role-based access control (RBAC) ](#什么是基于角色的访问控制-rbac)and[Attribute-based access control (ABAC)](#什么是基于属性的访问控制-abac). Both have their own advantages and disadvantages: the RBAC model is simpler to construct, but the disadvantage is that it is impossible to achieve fine-grained authorization of resources (both are to authorize a certain type of resource rather than a specific resource); ABAC model construction is relatively complicated, and the learning cost is higher. The advantage is that it is fine-grained and can be dynamically executed according to the context.
 
-
 ## What is role-based access control (RBAC)
 
 Role-based access control (RBAC) refers to authorize related permissions through the user's role, which achieves more flexible access control. RBAC is simpler, more efficient and scalable than directly authorize user permissions.
 
 <img src="~@imagesZhCn/guides/rbac.png" alt="drawing"/>
 
-
 When using RBAC, by analyzing the actual situation of users, based on common responsibilities and needs, grant them different roles. You can grant users one or more roles, and each role has one or more permissions. This relationship between user-role and role-permission allows us to no longer need to manage a single user separately. The user inherits the required permissions from the granted role.
 
-Take Gitlab's permission system as an example. There are three roles in the user system: Admin, Maintainer, and Operator. These three roles have different permissions. For example, only Admin has the permission to create and delete code repositories. 
+Take Gitlab's permission system as an example. There are three roles in the user system: Admin, Maintainer, and Operator. These three roles have different permissions. For example, only Admin has the permission to create and delete code repositories.
 
 ![](../basics/authenticate-first-user/images/rbac.png)
 
@@ -37,7 +35,7 @@ In ABAC, whether an operation is allowed is determined based on the dynamic calc
 
 ### How ABAC make decision
 
-During the execution of ABAC's decision statement, the decision engine will dynamically calculate the decision result based on the defined decision statement, combined with attributes such as objects, resources, operations, and environment. 
+During the execution of ABAC's decision statement, the decision engine will dynamically calculate the decision result based on the defined decision statement, combined with attributes such as objects, resources, operations, and environment.
 
 Whenever an access request occurs, the ABAC decision-making system will analyze whether the attribute value matches the established policy. If there is a matching policy, the access request will be allowed.
 
@@ -72,18 +70,18 @@ There are several common points in the above logic:
 
 Condensed to one sentence, **you can grant fine-grained authorization under what circumstances to have a specific permission for a certain resource.**
 
-## Approw's permission model
+## Authing's permission model
 
-There are several concepts in Approw:
+There are several concepts in Authing:
+
 - User: End user;
 - Role: A role is a logical collection. You can authorize certain operation permissions of a role, and then grant the role to a user, and the user will inherit all the permissions in the role;
 - Resources: You can define the entity objects in your application system as resources, such as orders, commodities, documents, books, etc.. Each resource can define multiple operations, such as reading, editing, and deleting documents;
 - Authorization: Authorize certain operations of a certain type of resources to roles or users.
 
-In Approw's permission system, we have implemented the role permission inheritance of the RBAC model through the two objects of users and roles. Above this, we can also dynamically and fine-grained authorization around attributes, to achieve the ABAC permission model. At the same time, in order to meet the design requirements of complex organizational structures in large-scale systems, we combine resources, roles, and authorizations into a single [authorization group ](./resource-group.md)which is convenient for developers to manage.
+In Authing's permission system, we have implemented the role permission inheritance of the RBAC model through the two objects of users and roles. Above this, we can also dynamically and fine-grained authorization around attributes, to achieve the ABAC permission model. At the same time, in order to meet the design requirements of complex organizational structures in large-scale systems, we combine resources, roles, and authorizations into a single [authorization group ](./resource-group.md)which is convenient for developers to manage.
 
 ![](../basics/authenticate-first-user/images/permission-group.png)
-
 
 ## How do I choose permission model
 

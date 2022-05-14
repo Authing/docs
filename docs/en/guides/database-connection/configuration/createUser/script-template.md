@@ -1,4 +1,5 @@
 This script will be called when the user registers an account or someone uses console or API to create a user account. You need to save user information into your own database. This script is only required in CUSTOM_USER_STORE mode.
+
 ### Function Definition
 
 Here is the definition of the `createUser` function:
@@ -34,42 +35,40 @@ async function createUser(userinfo, context) {
   //     throw new Error("my error message")
 
   const msg =
-    'Please implement the Find User script for this database connection ';
+    "Please implement the Find User script for this database connection ";
   throw new Error(msg);
 }
-
 ```
 
-| Parameter              | Type   | Nullable | Explanation                                                                       |
-| :---------------- | :----- | :------- | :------------------------------------------------------------------------- |
-| userinfo          | object | false    | Query condition                                                                     |
-| userinfo.email    | string | ture     | User's email. This parameter can be empty.                                                       |
-| userinfo.phone    | string | true     | User's telephone number. This parameter can be empty.                                                    |
-| userinfo.username | string | true     | User's username. This parameter can be empty.                                                    |
+| Parameter         | Type   | Nullable | Explanation                                                                              |
+| :---------------- | :----- | :------- | :--------------------------------------------------------------------------------------- |
+| userinfo          | object | false    | Query condition                                                                          |
+| userinfo.email    | string | ture     | User's email. This parameter can be empty.                                               |
+| userinfo.phone    | string | true     | User's telephone number. This parameter can be empty.                                    |
+| userinfo.username | string | true     | User's username. This parameter can be empty.                                            |
 | userinfo.password | string | true     | User's password in cleartext. It is recommended to use `bcrypt` to encrypt the password. |
-| userinfo.nickname | string | true     | User's nickname. This parameter can be empty.                                                  |
-| userinfo.photo    | string | true     | User's photo. This parameter can be empty.                                                 |
-| context           | object | true     | Requiring context.                                                        |
-
+| userinfo.nickname | string | true     | User's nickname. This parameter can be empty.                                            |
+| userinfo.photo    | string | true     | User's photo. This parameter can be empty.                                               |
+| context           | object | true     | Requiring context.                                                                       |
 
 The context also includes the following information:
 
-| Property Name           | Type  | Explanation                                                                                                     |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                               |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                              |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                       |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                   |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### User is Created Successfully
 
-When the user is created successfully, you need to return the user information to Approw, the format of user information can be found in the document of [of detailed fields of the user profile](/guides/user/user-profile.md). For example:
+When the user is created successfully, you need to return the user information to Authing, the format of user information can be found in the document of [of detailed fields of the user profile](/guides/user/user-profile.md). For example:
 
 ```javascript
 async function getUser(userinfo, context) {
@@ -80,7 +79,7 @@ async function getUser(userinfo, context) {
     emailVerified: true,
     nickname: "Nick",
     photo: ""
-  }
+  };
 }
 ```
 
@@ -91,7 +90,7 @@ When the user already exists, you need to throw an error. You can design differe
 ```javascript
 async function login(query, password, context) {
   // Implement your logic here
-  throw new Error('User allready exists!');
+  throw new Error("User allready exists!");
 }
 ```
 
@@ -104,7 +103,7 @@ async function getUser(userinfo, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -113,7 +112,7 @@ async function getUser(userinfo, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -136,7 +135,7 @@ Assume we are using `postgres` as our database:
 
 - You can use `env.DB_CONNECTION_URI` to get database connection string to create database connection.
 - According to the query conditions in the `userinfo` to generate query command(`userinfo.id`, `userinfo.email`, `userinfo.username` and `userinfo.phone`, these four parameters won't be empty at the same time).
-- Check if the user exists. If the user already exists, return `User allready exists!`. 
+- Check if the user exists. If the user already exists, return `User allready exists!`.
 - Finally return users' information in valid format. The format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md).
 - Call `try/finally` in `client.end()` to disable database connection.
 
@@ -165,17 +164,17 @@ async function createUser(userinfo, context) {
       index += 1;
     }
 
-    const QUERY = `SELECT * FROM users WHERE ${queries.join(' OR ')} LIMIT 1`;
+    const QUERY = `SELECT * FROM users WHERE ${queries.join(" OR ")} LIMIT 1`;
     const result = await client.query(QUERY, parameters);
     return result;
   };
 
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -193,22 +192,22 @@ async function createUser(userinfo, context) {
     const findResult = await queryUser(client, {
       email: userinfo.email,
       phone: userinfo.phone,
-      username: userinfo.username,
+      username: userinfo.username
     });
     if (findResult.rows.length > 0) {
-      throw new Error('User allready exists!');
+      throw new Error("User allready exists!");
     }
 
     // Use bcrypt to encrypt password
     // more info here: https://github.com/kelektiv/node.bcrypt.js
-    const bcrypt = require('bcrypt');
+    const bcrypt = require("bcrypt");
     let hashedPassword = null;
 
     // Phone Code Login may not have a password
     if (userinfo.password) {
       hashedPassword = await bcrypt.hash(
         userinfo.password,
-        await bcrypt.genSalt(10),
+        await bcrypt.genSalt(10)
       );
     }
     const insertResult = await client.query(
@@ -219,8 +218,8 @@ async function createUser(userinfo, context) {
         userinfo.phone,
         hashedPassword,
         userinfo.nickname,
-        userinfo.photo,
-      ],
+        userinfo.photo
+      ]
     );
     const user = insertResult.rows[0];
     return {
@@ -240,7 +239,7 @@ async function createUser(userinfo, context) {
       address: user.address,
       company: user.company,
       birthdate: user.birthdate,
-      website: user.website,
+      website: user.website
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);
@@ -249,5 +248,4 @@ async function createUser(userinfo, context) {
     client.end();
   }
 }
-
 ```

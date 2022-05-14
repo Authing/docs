@@ -5,17 +5,17 @@
 Assume your company is responsible for social communication business, and now another company wants to develop a tool for organizing and exporting chat records by calling your business API, and also has signed a contract with your company. Now that you want to authorize user information to this company safely, what you expect as follows:
 
 11. API are only open to partner companies.
-2. Different partners have different access rights, and the business APIs they can access are also different.
-3. The partner company must **obtain the user's consent** before obtaining its own company's user data from the business API.
-4. If the cooperation is finished in the future, or any changes occur, the certain data permissions can be withdrawn or disabled completely.
+12. Different partners have different access rights, and the business APIs they can access are also different.
+13. The partner company must **obtain the user's consent** before obtaining its own company's user data from the business API.
+14. If the cooperation is finished in the future, or any changes occur, the certain data permissions can be withdrawn or disabled completely.
 
 ## Privilege Management and Distribution
 
-Firstly, create two users in Approw, which are user1@123.com and user2@123.com respectively
+Firstly, create two users in Authing, which are user1@123.com and user2@123.com respectively
 
 ![](~@imagesZhCn/guides/authorization/create-user-1.png)
 
-Create an application in Approw. Suppose our social software is called "Steam Chat", then the application name is called "Steam Chat".
+Create an application in Authing. Suppose our social software is called "Steam Chat", then the application name is called "Steam Chat".
 ![](~@imagesZhCn/guides/authorization/create-app.png)
 
 In the application details, click the Authorization tab, switch to the Data Resources tab, and then click Add.
@@ -46,12 +46,13 @@ If the programmable access account is deleted, the caller will lose the ability 
 
 ### AccessToken Expiration Time
 
-When you create a programmable access account, you need to specify the AccessToken expiration time. Approw uses the RS256 signature algorithm to sign when issuing the AccessToken to ensure that the AccessToken will not be tampered with.
+When you create a programmable access account, you need to specify the AccessToken expiration time. Authing uses the RS256 signature algorithm to sign when issuing the AccessToken to ensure that the AccessToken will not be tampered with.
+
 > Token signature is a part of JWT. For more information, please refer to [JWT Interpretation and Usage](/concepts/jwt-token.md).
 
-RS256 is an asymmetric signature algorithm. Approw holds the private key to sign the Token, and consumers of JWT use the public key to verify the signature. RS256 signature algorithm has the following benefits:
+RS256 is an asymmetric signature algorithm. Authing holds the private key to sign the Token, and consumers of JWT use the public key to verify the signature. RS256 signature algorithm has the following benefits:
 
-1. Anyone can use the application public key to verify the signature, and the signing party must be Approw.
+1. Anyone can use the application public key to verify the signature, and the signing party must be Authing.
 2. There is no risk of private key leakage. If you use HS256 but leak the application key, you need to refresh the key and redeploy all APIs. For more details on signature issues, please refer to [Verification Token](/guides/faqs/how-to-validate-user-token.md).
 
 Next, we add resource permissions for users. On the **resource authorization** card, click Add.
@@ -60,12 +61,12 @@ Next, we add resource permissions for users. On the **resource authorization** c
 
 ![](~@imagesZhCn/guides/authorization/user-consent-authz-2.png)
 
-Then we add all operation permissions for all message data for users user1@123.com and user2@123.com, and finally click OK. 
+Then we add all operation permissions for all message data for users user1@123.com and user2@123.com, and finally click OK.
 At this point, the administrator's privileges management operations are all finished.
 
 ## Obtain a AccessToken with Permission
 
-The caller needs to obtain resource authorization from the resource party through the **OIDC authorization code mode**. The user of the resource party will participate in the authorization process. After the user's authorization, Approw will issue an AccessToken with the authority scope and the subject is the resource holder. First, you need to splice the **authorization link**:
+The caller needs to obtain resource authorization from the resource party through the **OIDC authorization code mode**. The user of the resource party will participate in the authorization process. After the user's authorization, Authing will issue an AccessToken with the authority scope and the subject is the resource holder. First, you need to splice the **authorization link**:
 
 ```http
 https://{应用域名}.authing.cn/oidc/auth?client_id={应用ID}&response_type=code&scope=openid email message&redirect_uri={调用方业务地址}&state={随机字符串}
@@ -75,9 +76,9 @@ The parameter of scope can be filled with the **resources** and the **correspond
 
 ### Scope Specification for Permission Term
 
-Approw's scope permission terms are **separated by spaces**, and the format of each item is `resource identifier: resource operation`.
+Authing's scope permission terms are **separated by spaces**, and the format of each item is `resource identifier: resource operation`.
 
-The following are all scope formats supported by Approw:
+The following are all scope formats supported by Authing:
 
 `book:1:read` Read permission for book resource number 1
 
@@ -93,9 +94,9 @@ The following are all scope formats supported by Approw:
 
 `*:*:*` All operation permissions for all resources
 
-`*:*`  All operation permissions for all resources
+`*:*` All operation permissions for all resources
 
-`*`  All operation permissions for all resources
+`*` All operation permissions for all resources
 
 For example, the `message` resource and the `create` operation of the `message` resource are defined above, so `message:create` can be filled in the scope here.
 
@@ -117,34 +118,34 @@ You can see that the user's AccessToken has the message permission scope. The **
 
 ## Add Authentication Interceptor
 
-After Approw defines the API, you need to add an **API authentication interceptor** to your actual business API interface. For protected resources, only visitors who carry a legal AccessToken and have the required permissions are allowed. The code example is as follows:
+After Authing defines the API, you need to add an **API authentication interceptor** to your actual business API interface. For protected resources, only visitors who carry a legal AccessToken and have the required permissions are allowed. The code example is as follows:
 
 ```javascript
-var express = require('express');
+var express = require("express");
 var app = express();
-var jwt = require('express-jwt');
-var jwks = require('jwks-rsa');
+var jwt = require("express-jwt");
+var jwks = require("jwks-rsa");
 var port = process.env.PORT || 8080;
 var jwtCheck = jwt({
   secret: jwks.expressJwtSecret({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: 'https://{应用域名}.authing.cn/oidc/.well-known/jwks.json',
+    jwksUri: "https://{应用域名}.authing.cn/oidc/.well-known/jwks.json"
   }),
-  audience: '{编程访问账号 ID}',
-  issuer: 'https://{应用域名}.authing.cn/oidc',
-  algorithms: ['RS256'],
+  audience: "{编程访问账号 ID}",
+  issuer: "https://{应用域名}.authing.cn/oidc",
+  algorithms: ["RS256"]
 });
 // 检验 AccessToken 合法性
 app.use(jwtCheck);
 
-app.post('/article', function(req, res) {
+app.post("/article", function(req, res) {
   // 检验 AccessToken 是否具备所需要的权限项目
-  if (!req.user.scope.split(' ').incldues('write:article')) {
-    return res.status(401).json({ code: 401, message: 'Unauthorized' });
+  if (!req.user.scope.split(" ").incldues("write:article")) {
+    return res.status(401).json({ code: 401, message: "Unauthorized" });
   }
-  res.send('Secured Resource');
+  res.send("Secured Resource");
 });
 
 app.listen(port);

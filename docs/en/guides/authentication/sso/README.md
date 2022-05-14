@@ -89,9 +89,9 @@ Perform the initialization in the following way, fill in the AppId and authentic
   <script>
     let auth = new AuthingSSO({
       // OIDC app ID
-      appId: '5e7343597f905c025e99e660',
-      // OIDC app address 
-      appDomain: 'first-oidc-app.authing.cn'
+      appId: "5e7343597f905c025e99e660",
+      // OIDC app address
+      appDomain: "first-oidc-app.authing.cn"
     });
   </script>
 </body>
@@ -111,10 +111,10 @@ When the web application starts, if no one is logged in, the login button is dis
   <script src="https://cdn.jsdelivr.net/npm/@authing/sso/dist/AuthingSSO.umd.min.js"></script>
   <script>
     let auth = new AuthingSSO({
-      // OIDC app ID 
-      appId: '5e7343597f905c025e99e660',
+      // OIDC app ID
+      appId: "5e7343597f905c025e99e660",
       // OIDC app address
-      appDomain: 'first-oidc-app.authing.cn'
+      appDomain: "first-oidc-app.authing.cn"
     });
   </script>
 </body>
@@ -127,25 +127,29 @@ In order to check login status from {{$localeConfig.brandName}} before the web a
 ```html
 <script>
   let auth = new AuthingSSO({
-    appId: '5cded9bf4efab36f02fa666a',
-    appDomain: 'first-oidc-app.authing.cn',
+    appId: "5cded9bf4efab36f02fa666a",
+    appDomain: "first-oidc-app.authing.cn"
   });
-  window.onload = async function () {
+  window.onload = async function() {
     let res = await auth.trackSession();
     if (res.session !== null) {
-      document.getElementById('h1-user-info').style.display = 'block';
-      document.getElementById('user-info').innerHTML = JSON.stringify(res.userInfo, null, 4);
-      document.getElementById('btn-logout').style.display = 'inline';
+      document.getElementById("h1-user-info").style.display = "block";
+      document.getElementById("user-info").innerHTML = JSON.stringify(
+        res.userInfo,
+        null,
+        4
+      );
+      document.getElementById("btn-logout").style.display = "inline";
     } else {
-      document.getElementById('h1-login').style.display = 'block';
-      document.getElementById('btn-login').style.display = 'inline';
+      document.getElementById("h1-login").style.display = "block";
+      document.getElementById("btn-login").style.display = "inline";
     }
   };
-  document.getElementById('btn-login').addEventListener('click', function () {
+  document.getElementById("btn-login").addEventListener("click", function() {
     auth.login();
   });
-  document.getElementById('btn-logout').addEventListener('click', function () {
-    auth.logout().then((res) => {
+  document.getElementById("btn-logout").addEventListener("click", function() {
+    auth.logout().then(res => {
       alert(JSON.stringify(res));
       location.reload();
     });
@@ -172,37 +176,44 @@ In order to check login status from {{$localeConfig.brandName}} before the web a
     <script src="https://cdn.jsdelivr.net/npm/@authing/sso/dist/AuthingSSO.umd.min.js"></script>
     <script>
       let auth = new AuthingSSO({
-        appId: '5cded9bf4efab36f02fa666a',
-        appDomain: 'first-oidc-app.authing.cn',
+        appId: "5cded9bf4efab36f02fa666a",
+        appDomain: "first-oidc-app.authing.cn"
       });
-      window.onload = async function () {
+      window.onload = async function() {
         let res = await auth.trackSession();
         if (res.session !== null) {
-          document.getElementById('h1-user-info').style.display = 'block';
-          document.getElementById('user-info').innerHTML = JSON.stringify(res.userInfo, null, 4);
-          document.getElementById('btn-logout').style.display = 'inline';
+          document.getElementById("h1-user-info").style.display = "block";
+          document.getElementById("user-info").innerHTML = JSON.stringify(
+            res.userInfo,
+            null,
+            4
+          );
+          document.getElementById("btn-logout").style.display = "inline";
         } else {
-          document.getElementById('h1-login').style.display = 'block';
-          document.getElementById('btn-login').style.display = 'inline';
+          document.getElementById("h1-login").style.display = "block";
+          document.getElementById("btn-login").style.display = "inline";
         }
       };
-      document.getElementById('btn-login').addEventListener('click', function () {
-        auth.login();
-      });
-      document.getElementById('btn-logout').addEventListener('click', function () {
-        auth.logout().then((res) => {
-          alert(JSON.stringify(res));
-          location.reload();
+      document
+        .getElementById("btn-login")
+        .addEventListener("click", function() {
+          auth.login();
         });
-      });
+      document
+        .getElementById("btn-logout")
+        .addEventListener("click", function() {
+          auth.logout().then(res => {
+            alert(JSON.stringify(res));
+            location.reload();
+          });
+        });
     </script>
   </body>
 </html>
-
 ```
 
 The sample code can be found on [GitHub](https://github.com/authing/authing-sso-demo). It is recommended to download and run the code on GitHub.
-Please [see here](/reference/sdk-for-sso.md) for the complete parameter list of ApprowSSO single sign-on SDK.
+Please [see here](/reference/sdk-for-sso.md) for the complete parameter list of AuthingSSO single sign-on SDK.
 
 ### **Operation method** <a id="run-the-demo"></a>
 
@@ -245,7 +256,7 @@ The browser is redirected to the callback link we set up earlier. This example s
 User Info
 :::
 
-After logging in, we obtain user information by the `trackSession` function of the ApprowSSO SDK and display it on the page. The format of `trackSession` return data is as follows:
+After logging in, we obtain user information by the `trackSession` function of the AuthingSSO SDK and display it on the page. The format of `trackSession` return data is as follows:
 
 ```json
 {
@@ -364,15 +375,17 @@ After a successful login, the user information you get contains a token field,wh
 You can carry this `id_token` in the request sent by the client to the back-end server. Take `axios` as an example:
 
 ```js
-const axios = require('axios');
-axios.get({
-  url: 'https://yourdomain.com/api/v1/your/resources',
-  headers: {
-    'Authorization': 'Bearer ID_TOKEN'
-  }
-}).then((res) => {
- // custom codes
-})
+const axios = require("axios");
+axios
+  .get({
+    url: "https://yourdomain.com/api/v1/your/resources",
+    headers: {
+      Authorization: "Bearer ID_TOKEN"
+    }
+  })
+  .then(res => {
+    // custom codes
+  });
 ```
 
 The validity of this `token` needs to be verified in the back-end interface to verify the user's identity. For details of the verification method, please refer to [verifying user identity credentials (token)](/guides/faqs/how-to-validate-user-token). After identifying the user, you may also need to [perform permission management on the user](/guides/access-control/) to determine whether the user has operating permissions for this API.

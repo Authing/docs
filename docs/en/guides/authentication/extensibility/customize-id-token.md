@@ -12,45 +12,44 @@ In {{$localeConfig.brandName}}, the `token` field of [user information](/guides/
 
 An OIDC IdToken contains the following fields by default, refer to the [OIDC Specification](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)：
 
-| Fields | Description |
-| :--- | :--- |
-| sub | Unique id |
-| name | User name |
-| given\_name | Given name |
-| family\_name | Family name |
-| middle\_name | Middle name |
-| nickname | Display name |
-| preferred\_username | Preferred usrname |
-| profile | User profile |
-| picture | Profile image |
-| website | Website link |
-| email | Email |
-| email\_verified | If email has been verified |
-| gender | Gender |
-| birthdate | Date of birth |
-| zoneinfo | Timezone |
-| locale | Zone |
-| phone\_number | Phone number |
-| phone\_number\_verified | Verified phone number |
-| address | Address |
-| formatted | Detailed address |
-| street\_address | Street |
-| locality | Street address |
-| region | State |
-| postal\_code | Zip code |
-| country | Country |
-| updated\_at | Update time |
+| Fields                | Description                |
+| :-------------------- | :------------------------- |
+| sub                   | Unique id                  |
+| name                  | User name                  |
+| given_name            | Given name                 |
+| family_name           | Family name                |
+| middle_name           | Middle name                |
+| nickname              | Display name               |
+| preferred_username    | Preferred usrname          |
+| profile               | User profile               |
+| picture               | Profile image              |
+| website               | Website link               |
+| email                 | Email                      |
+| email_verified        | If email has been verified |
+| gender                | Gender                     |
+| birthdate             | Date of birth              |
+| zoneinfo              | Timezone                   |
+| locale                | Zone                       |
+| phone_number          | Phone number               |
+| phone_number_verified | Verified phone number      |
+| address               | Address                    |
+| formatted             | Detailed address           |
+| street_address        | Street                     |
+| locality              | Street address             |
+| region                | State                      |
+| postal_code           | Zip code                   |
+| country               | Country                    |
+| updated_at            | Update time                |
 
 ## IdToken add customize fields
 
-You can use Approw's [Pipeline Capability](/guides/pipeline/)to insert custom code snippets in the user authentication process and add custom `IdToken` fields to users. For example, in the following example, we have added the `KEY` field to the user's `id_token` with a value of `VALUE`: 
+You can use Authing's [Pipeline Capability](/guides/pipeline/)to insert custom code snippets in the user authentication process and add custom `IdToken` fields to users. For example, in the following example, we have added the `KEY` field to the user's `id_token` with a value of `VALUE`:
 
 ```javascript
 async function pipe(user, context, callback) {
-  user.addToken('KEY', 'VALUE')
-  callback(null, user, context)
+  user.addToken("KEY", "VALUE");
+  callback(null, user, context);
 }
 ```
 
 > You can parse `id_token` on this [website](https://jwt.yelexin.cn).
-

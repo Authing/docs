@@ -1,10 +1,10 @@
-# Integrate Social Authentication with Approw
+# Integrate Social Authentication with Authing
 
 <LastUpdated/>
 
 Social authentication is an authentication method that allows users to use the identity information of some common social platforms to login to a third-party application or authentic themselves in some other websites. For example, you can sign in YouTube with your gmail account. Social authentication can improve users' login experience on third-party platforms and provide an easy way for users to register new accounts in these platforms.
 
-## Platforms that Approw Support for Social Authentication 
+## Platforms that Authing Support for Social Authentication
 
 {{$localeConfig.brandName}} now supports social authentication from several platforms and they are shown in the lists below:
 
@@ -12,7 +12,7 @@ Social authentication is an authentication method that allows users to use the i
 
 ## Customized Social Authentication
 
-{{$localeConfig.brandName}} can provide integration with **customized OAuth 2.0 IdPs**. You can find more introductions in this <router-link to="/connections/custom-social-provider/" target="_blank"> document </router-link> if you need to integrate with other social platforms which are not supported by Approw now.
+{{$localeConfig.brandName}} can provide integration with **customized OAuth 2.0 IdPs**. You can find more introductions in this <router-link to="/connections/custom-social-provider/" target="_blank"> document </router-link> if you need to integrate with other social platforms which are not supported by Authing now.
 
 <!--
 ## 微信解决方案

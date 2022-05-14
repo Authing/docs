@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-Approw supports using fields such as mailbox, user name, mobile phone number, nickname, etc to do the fuzzy search to users in both [console](#使用控制台搜索) and [SDK](#使用-sdk-搜索) modes:
+Authing supports using fields such as mailbox, user name, mobile phone number, nickname, etc to do the fuzzy search to users in both [console](#使用控制台搜索) and [SDK](#使用-sdk-搜索) modes:
 
 ## Search for Users Using Console
 

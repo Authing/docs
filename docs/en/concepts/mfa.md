@@ -8,13 +8,13 @@ For companies, the cost of data breach is getting worse. On the one hand, compan
 
 Therefore, the use of MFA has become a basic solution for enterprises to prevent data leakage. MFA requires users to use at least two factors to verify their identity, and only after passing the verification can they access applications, which is rapidly spreading among enterprises.
 
-Statistics also prove the effectiveness of MFA. At the end of last year, LastPass conducted a survey of 47,000 companies and found that 57% of companies worldwide are currently using MFA, an increase of 12% over the previous year.  Earlier this year, Microsoft reported that 99.9% of its tracked offending accounts did not use MFA.
+Statistics also prove the effectiveness of MFA. At the end of last year, LastPass conducted a survey of 47,000 companies and found that 57% of companies worldwide are currently using MFA, an increase of 12% over the previous year. Earlier this year, Microsoft reported that 99.9% of its tracked offending accounts did not use MFA.
 
 ![](./images/banner-multiple.png)
 
-## The Core Functions of Approw MFA
+## The Core Functions of Authing MFA
 
-- Approw guarantees business security through multiple authentication methods;
+- Authing guarantees business security through multiple authentication methods;
 - [Customize the authentication process](/guides/pipeline/), which is simple with one-touch open;
 - Support environmental data report for equipments and multi-dimensional analysis of security levels;
 - Support configuration strategy to achieve environmental risk self-adaptation;
@@ -25,7 +25,7 @@ Statistics also prove the effectiveness of MFA. At the end of last year, LastPas
 
 ## The Methods of MFA
 
-Approw provides multiple authentication methods to improve enterprises identity security.
+Authing provides multiple authentication methods to improve enterprises identity security.
 
 ### Phone Token
 
@@ -41,7 +41,6 @@ With strong dynamic OTP password verification, it helps protect account security
 
 <img src="./images/mfa-mode-email.png" height=400 style="display:block;margin: 0 auto;">
 
-
 ### Compatible with Third-party Authenticators
 
 Compatible with third-party authenticators, including but not limited to:
@@ -49,29 +48,22 @@ Compatible with third-party authenticators, including but not limited to:
 - Google Authenticator
 - Microsoft Authenticator
 
-
 <img src="./images/mfa-mode-third.png" height=400 style="display:block;margin: 0 auto;">
-
-
 
 ### Biometrics
 
 Fingerprint/face, as key factors of human body characteristics, is widely used in the field of security authentication.
 
-
 <img src="./images/product-mfa-biology.png" height=400 style="display:block;margin: 0 auto;">
-
 
 ### Graphic lock
 
 - Simple and easy to use;
 - Security can be enhanced with more complex graphics.
 
-
 <img src="./images/mfa-solution-graphlock.png" height=400 style="display:block;margin: 0 auto;">
 
-
-## Advantages of Approw MFA
+## Advantages of Authing MFA
 
 ### Developer-friendly
 
@@ -85,7 +77,7 @@ Provides an out-of-the-box SDK to help end-to-end developers to quickly implemen
 
 Report customized data, participate in the process and initiate decision-making, and cover more complex and refined scenarios.
 
-- Support data reporting during [Approw SDK](/reference/) initialization;
+- Support data reporting during [Authing SDK](/reference/) initialization;
 - Support regular data reporting;
 - Support active data reporting when the application is running;
 
@@ -117,4 +109,3 @@ When the user is in the authentication process, the "adaptive" MFA generates mul
 - Request source: Judge the source of the current user's request, such as: hardware device information, the user's current system, etc.;
 - Biometrics: Use the user's biological information for identification, such as fingerprint information, face recognition, etc.;
 - Behavior analysis: A series of user behaviors such as whether it comes from a frequently used login location, whether the wrong password is entered multiple times, and the user's previous operation records.
-

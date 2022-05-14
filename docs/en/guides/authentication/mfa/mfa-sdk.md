@@ -144,18 +144,18 @@ Call the SDK:
 
 ```js
 try {
-  window.user = await window.authing.login({ email, password })
-  alert(`Login successfully, information:${JSON.stringify(window.user)}`)
+  window.user = await window.authing.login({ email, password });
+  alert(`Login successfully, information:${JSON.stringify(window.user)}`);
 } catch (err) {
   if (err.message.code === 1635) {
-    console.log(err.message.data.email)
-    console.log(err.message.data.nickname)
-    console.log(err.message.data.username)
-    console.log(err.message.data.avatar)
-    console.log(err.message.data.mfaToken)
-    window.mfaToken = err.message.data.mfaToken
+    console.log(err.message.data.email);
+    console.log(err.message.data.nickname);
+    console.log(err.message.data.username);
+    console.log(err.message.data.avatar);
+    console.log(err.message.data.mfaToken);
+    window.mfaToken = err.message.data.mfaToken;
   }
-  alert(err.message.message)
+  alert(err.message.message);
 }
 ```
 
@@ -384,39 +384,39 @@ $ http-server
 
 Go to 127.0.0.1:8080
 
-**You can refer to MFA demo provided by Approw [MFA Demo](https://github.com/authing/mfa-demo)**
+**You can refer to MFA demo provided by Authing [MFA Demo](https://github.com/authing/mfa-demo)**
 
 ## Multi-Factor Authentication (MFA) SDK
 
 ## Request to bind MFA authenticator：
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 await authenticationClient.mfa.assosicateMfaAuthenticator({
-  authenticatorType: 'totp',
-})
+  authenticatorType: "totp"
+});
 ```
 
 ## Verify MFA secondary password:
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 await authenticationClient.mfa.verifyTotpMfa({
-  totp: '112233',
-  mfaToken: 'xxx',
-})
+  totp: "112233",
+  mfaToken: "xxx"
+});
 ```
 
 ## Request an MFA authenticator
@@ -429,13 +429,13 @@ MfaAuthenticationClient().getMfaAuthenticators()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.getMfaAuthenticators({
-  type: 'totp',
-})
+  type: "totp"
+});
 ```
 
 #### Return Value
@@ -452,13 +452,13 @@ MfaAuthenticationClient().assosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.assosicateMfaAuthenticator(
-  { authenticatorType: 'totp' }
-)
+  { authenticatorType: "totp" }
+);
 ```
 
 #### Return Value
@@ -475,11 +475,11 @@ MfaAuthenticationClient().deleteMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator()
+const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator();
 ```
 
 #### Return Value
@@ -496,13 +496,13 @@ MfaAuthenticationClient().confirmAssosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.confirmAssosicateMfaAuthenticator(
-  { authenticatorType: 'totp', totp: '112233' }
-)
+  { authenticatorType: "totp", totp: "112233" }
+);
 ```
 
 #### Return Value
@@ -519,14 +519,14 @@ MfaAuthenticationClient().verifyTotpMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyTotpMfa({
-  authenticatorType: 'totp',
-  totp: '112233',
-})
+  authenticatorType: "totp",
+  totp: "112233"
+});
 ```
 
 #### Return Value
@@ -550,15 +550,15 @@ MfaAuthenticationClient().verifyAppSmsMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifySmsMfa({
-  mfaToken: 'xxxxxx',
-  phone: '173xxxxxxxx',
-  code: 'xxxx',
-})
+  mfaToken: "xxxxxx",
+  phone: "173xxxxxxxx",
+  code: "xxxx"
+});
 ```
 
 #### Return Value
@@ -582,15 +582,15 @@ MfaAuthenticationClient().verifyAppEmailMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyAppEmailMfa({
-  mfaToken: 'xxxxxx',
-  email: 'example@{{$themeConfig.officeSiteDomain}}',
-  code: 'xxxx',
-})
+  mfaToken: "xxxxxx",
+  email: "example@{{$themeConfig.officeSiteDomain}}",
+  code: "xxxx"
+});
 ```
 
 #### Return Value
@@ -614,14 +614,14 @@ MfaAuthenticationClient().phoneOrEmailBindable()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.phoneOrEmailBindable({
-  mfaToken: 'xxxxxx',
-  email: 'example@{{$themeConfig.officeSiteDomain}}',
-})
+  mfaToken: "xxxxxx",
+  email: "example@{{$themeConfig.officeSiteDomain}}"
+});
 ```
 
 #### Return Value
@@ -638,14 +638,14 @@ MfaAuthenticationClient().verifyTotpRecoveryCode()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyTotpRecoveryCode({
-  authenticatorType: 'totp',
-  totp: '112233',
-})
+  authenticatorType: "totp",
+  totp: "112233"
+});
 ```
 
 #### Return Value

@@ -2,11 +2,10 @@
 
 <LastUpdated/>
 
-
 As an administrator, you can**manage and assign resource privileges on the console**. Before practicing privilege management and authorization, you need to understand several concepts.
 
-1. **Application**：As an administrator, you can create an **application**. The application is a definition of the application project you are developing in Approw. For example, when you are actually developing a "web note" application, you should create a "web note" in Approw application.
-2. **Resources**：You can define some resources in Approw. For example, the resources in the "Web Notes" application may include notebooks, note content, authors, and so on.
+1. **Application**：As an administrator, you can create an **application**. The application is a definition of the application project you are developing in Authing. For example, when you are actually developing a "web note" application, you should create a "web note" in Authing application.
+2. **Resources**：You can define some resources in Authing. For example, the resources in the "Web Notes" application may include notebooks, note content, authors, and so on.
 3. **User**：You can also directly assign privileges to users. You can also divide your users into different groups, roles, and organizations, so that you can manage them when assigning privileges.
 4. **Role**：A role is a group of users, and the users in the role will automatically inherit the authorized privileges of the role.
 
@@ -46,10 +45,9 @@ After creating the role, you can add users to this role:
 
 ![](~@imagesZhCn/guides/authorization/add-role-2.png)
 
-## Privilege management 
+## Privilege management
 
 Now that you have**resources** and **users**, next you have to define 「**who**」can do what「**operations**」on which「**resources**」In the application’s resource authorization card, click the Add button on the right.
-
 
 ![](~@imagesZhCn/guides/authorization/acl-1.png)
 
@@ -65,7 +63,7 @@ If you fill in a **specific id**, such as 42, it means that the book resource nu
 
 ![](~@imagesZhCn/guides/authorization/acl-3.png)
 
-We can also add restrictions to authorization rules. For example, the rules are only valid for Windows users. If the authorization is initiated from a Linux machine, Approw will determine that the user has no permission and cannot complete the authorization of the book resource.
+We can also add restrictions to authorization rules. For example, the rules are only valid for Windows users. If the authorization is initiated from a Linux machine, Authing will determine that the user has no permission and cannot complete the authorization of the book resource.
 
 ![](~@imagesZhCn/guides/authorization/acl-4.png)
 
@@ -76,6 +74,5 @@ If you want to authorize multiple resources to users, you can continue to add au
 ## Programmatic access account
 
 The programmatic access account is a pair of AccessKey and SecretKey in the application, which is used to hand over to third-party vendors. You can use the programmatic access account in combination with the OIDC authorization code to obtain the user's AccessToken and IdToken, or use the programmatic access account to perform OIDC ClientCredentials mode as the caller itself to request authorization.
-
 
 ![](~@imagesZhCn/guides/authorization/programmatic-account-1.png)
