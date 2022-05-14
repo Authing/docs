@@ -26,7 +26,7 @@ When the user successfully logs in in Authing, the browser will jump to the Call
 
 The callback URL of this sample code is: `http://localhost:3000/auth/callback`, copy and paste it into login callback URL configuration, and click save.
 
-<img src="~@imagesZhCn/guides/authentication/Xnip2021-03-02_13-20-49.png" alt="drawing"/>
+<img src="./images/Xnip2021-03-02_13-20-49.png" alt="drawing"/>
 
 ### Configure logout callback URL
 
@@ -59,7 +59,7 @@ At the very beginning of the project, we need to initialize the `issuer` of `ope
 - client_secret: OIDC Client Secret, which is [the secret key of your application](/guides/faqs/get-app-id-and-secret.md) in Authing;
 - issuer: OIDC Issuer, you can get it from the endpoint information of the application.
 
-<img src="~@imagesZhCn/guides/authentication/Xnip2021-03-02_13-00-24.png" alt="drawing"/>
+<img src="./images/Xnip2021-03-02_13-00-24.png" alt="drawing"/>
 
 For demonstration purposes, the `user` in `passport.serializeUser` is directly passed to the callback function `done`, which will store the user information in `req.session.passport.user`. This is not recommended in a formal production environment, because if the user information is modified but the session is not updated, it will cause data inconsistency. The second parameter passed by `passport.deserializeUser` to the callback function `done` will be mounted on `req.user`. If you don't know enough about [psssport.js](http://www.passportjs.org), it is recommended to read [the official document](http://www.passportjs.org/docs/) first.
 
