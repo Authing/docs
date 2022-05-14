@@ -28,4 +28,4 @@ You can manually create an account in the **user management** -> **user list** o
 
 ## Create accounts using the SDK
 
-<StackSelector snippet="create-user" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="create-user" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>

@@ -10,19 +10,19 @@ In the previous guide, you have learned how to [use the login page hosted by {{$
 
 ## Initialize SDK
 
-<StackSelector snippet="init-sdk" selectLabel="选择语言" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
+<StackSelector snippet="init-sdk" selectLabel="Language" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
 
-##  Use SDK to authenticate users
+## Use SDK to authenticate users
 
 Take the SMS code login (if the user account does not exist, an account will be created first) as an example:
 
 First, send a SMS verification code:
 
-<StackSelector snippet="send-sms-code" selectLabel="选择语言" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
+<StackSelector snippet="send-sms-code" selectLabel="Language" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
 
 And then, use the SMS code to login.
 
-<StackSelector snippet="login-by-phone-code" selectLabel="选择语言" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
+<StackSelector snippet="login-by-phone-code" selectLabel="Language" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
 
 After successfully logging in, you can get the user's information. The `token` field in user information is the identity credential. In the following steps, you need to carry it in requests when you want to access back-end resources. The back end will verify this `token`.
 
@@ -42,7 +42,7 @@ You can decode this IdToken in [this website](https://jwt.io/):
 
 Basically all languages provide libraries for validating IdToken. You can choose the language you are familiar with:
 
-<StackSelector snippet="verify-id-token" selectLabel="选择语言" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
+<StackSelector snippet="verify-id-token" selectLabel="Language" :order="['java', 'javascript', 'swift', 'python', 'csharp']"/>
 
 If the validation is successful, you can get the user information of the `id_token`, where the `sub` field is the user ID, and the `aud` field is the application ID. You can click [here](/concepts/id-token.md) to understand the detailed definition of each field of IdToken.
 

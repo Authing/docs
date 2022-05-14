@@ -67,16 +67,16 @@ For detailed usage, please see: [Use the embedded login component to authenticat
 
 ### Register
 
-<StackSelector snippet="register-by-email-password" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="register-by-email-password" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
 
 ### Login
 
-<StackSelector snippet="login-by-email-password" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="login-by-email-password" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
 
 ### Reset password
 
-<StackSelector snippet="reset-password" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="reset-password" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
 
 ### Modify password
 
-<StackSelector snippet="update-password" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="update-password" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>

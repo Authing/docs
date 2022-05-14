@@ -2,7 +2,6 @@
 
 <LastUpdated/>
 
-
 User-defined fields are additional fields that can be added to user objects in addition to the [basic user fields](/guides/user/user-profile.md). Developers can store **a small amount of** business-related data by setting custom fields.
 
 ## Configure User-defined Fields
@@ -43,4 +42,4 @@ After the user has successfully registered, you can see the custom value that th
 
 !!!include(common/sdk-list.md)!!!
 
-<StackSelector snippet="udf" selectLabel="选择语言" :order="['java', 'javascript',  'python', 'csharp', 'swift']"/>
+<StackSelector snippet="udf" selectLabel="Language" :order="['java', 'javascript',  'python', 'csharp', 'swift']"/>

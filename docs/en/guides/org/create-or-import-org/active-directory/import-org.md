@@ -1,6 +1,6 @@
 #### 在 {{$localeConfig.brandName}} 控制台创建 AD 连接
 
-进入 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool)，按照下图指引找到  **连接身份源**/**连接 Active Directory** ：
+进入 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool)，按照下图指引找到 **连接身份源**/**连接 Active Directory** ：
 
 ![](https://cdn.authing.cn/img/20210126190459.png)
 
@@ -45,7 +45,7 @@
 
 ![](https://cdn.authing.cn/blog/image%20%28521%29.png)
 
-选择语言，点击「OK」。
+Language，点击「OK」。
 
 ![](https://cdn.authing.cn/docs/20200414213931.png)
 
@@ -73,7 +73,7 @@
 
 ![](https://cdn.authing.cn/docs/20200414214912.png)
 
-之后你可以在 Windows 的服务管理页面看到  AuthingADConnector 这个服务：
+之后你可以在 Windows 的服务管理页面看到 AuthingADConnector 这个服务：
 
 ![](https://cdn.authing.cn/blog/20201109214605.png)
 

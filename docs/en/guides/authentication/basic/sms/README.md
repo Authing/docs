@@ -33,12 +33,12 @@ The embedded login component and the online hosting login page are basically the
 
 ### Send SMS verification code
 
-<StackSelector snippet="send-sms-code" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="send-sms-code" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
 
 ### Login
 
-<StackSelector snippet="login-by-phone-code" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="login-by-phone-code" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
 
 ### Registration
 
-<StackSelector snippet="register-by-phone-code" selectLabel="选择语言" :order="['java', 'javascript', 'python', 'csharp']"/>
+<StackSelector snippet="register-by-phone-code" selectLabel="Language" :order="['java', 'javascript', 'python', 'csharp']"/>
