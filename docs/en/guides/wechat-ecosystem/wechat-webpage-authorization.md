@@ -73,7 +73,7 @@ if (ok) {
   // do with userinfo
   console.log(userinfo);
 } else if (message) {
-  // message 中包含了错误提示
+  // message contains an error message
   alert(message);
 }
 ```
