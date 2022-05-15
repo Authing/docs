@@ -6,7 +6,7 @@
 
 - Application scenario: mini program;
 - Overview: Used in WeChat applets, pop-up WeChat Authorization boxes, and you can get information on the current user after authorization;
-- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/en/dev/framework/open-ability/login.html)
 
 <img src="./images/wechat-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -28,7 +28,7 @@ Click "OK" to save information after the configuration is complete.
 ## Step 3: Start development access
 
 From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: Please see:
-From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: [npm support | WeChat open document](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html).
+From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: [npm support | WeChat open document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/npm.html).
 
 ### Install npm package
 
