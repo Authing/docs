@@ -16,16 +16,16 @@
 
 Privilege grouping can be understood as a namespace of privileges. The roles and resources in different privilege groups are independent of each other, and they will not conflict even if they have the same name.
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-02-25_20-58-50.png)
+![](./images/Xnip2021-02-25_20-58-50.png)
 
 ## Create privilege group
 
 Click the Add button in the privilege grouping menu of **Privilege Management** :
-![](~@imagesZhCn/guides/access-control/Xnip2021-02-25_21-22-41.png)
+![](./images/Xnip2021-02-25_21-22-41.png)
 
 Fill in the group name and group id in the pop-up window. The id is used as a unique id to identify the authority group in the later authentication.
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-02-25_21-24-56.png)
+![](./images/Xnip2021-02-25_21-24-56.png)
 
 In the created privilege group, you can use the ABAC or RBAC permission model to independently manage privilege resources.
 
