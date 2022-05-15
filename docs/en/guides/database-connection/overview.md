@@ -11,7 +11,7 @@ Using customized databases can satisfy these use cases:
 
 You can setup customized databases with these methods: Go to the [Authing Console](https://console.authing.cn/console/userpool) then find **Connect IdP** - **Customized Database** to setup customized database connection. More details can be found in document about [how to setup customized database](./configuration/README.md).
 
-![](~@imagesZhCn/guides/database-connection/Xnip2021-02-24_16-58-19.png)
+![](~@imagesEnUs/guides/database-connection/Xnip2022-05-15_16-20-50.jpg)
 
 ## How it Works
 
@@ -37,7 +37,7 @@ The npm module has several ways to connect databases like Client, axios, bcrypt 
 ```javascript
 const isPasswordValid = await bcrypt.compare(password, user.password);
 if (!isPasswordValid) {
-  throw new Error("密码错误");
+  throw new Error("wrong password");
 }
 ```
 

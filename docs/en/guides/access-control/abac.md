@@ -41,7 +41,7 @@ The policy "Prohibit people in department A from accessing system B before nine 
 
 When we authorize resources, we can specify restrictions. For example, in the following example, we have added a restriction: the current requesting user is required to pass MFA authentication.
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-02-25_14-18-01.png)
+![](./images/Xnip2021-02-25_14-18-01.png)
 
 In addition to the MFA authentication attribute, you can also obtain the following attributes in the context of Authing's policy engine:
 

@@ -22,7 +22,7 @@ You can use the Authing console to create roles: In **Privilege Management** - *
 
 Add three roles:
 
-![](~@imagesZhCn/guides/access-control/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
+![](./images/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
 
 You can also use API & SDK to create roles. For details, see[Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
 
@@ -30,7 +30,7 @@ You can also use API & SDK to create roles. For details, see[Role Management SDK
 
 On the role details page, you can grant this role to users. You can search for users by username, phone number, email or nickname:
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-03-01_15-51-01.png)
+![](./images/Xnip2021-03-01_15-51-01.png)
 
 After selecting the user, click OK, and you can view the list of users granted for this role.
 
@@ -75,7 +75,7 @@ You can abstract some objects of the system as resources, and some operations ca
 
 We create these resources in Authing:
 
-![](~@imagesZhCn/guides/access-control/e23be4b2-0072-4989-bdf9-e0cc7c882397.png)
+![](./images/e23be4b2-0072-4989-bdf9-e0cc7c882397.png)
 
 ## Authorized role to operate resource
 
@@ -83,7 +83,7 @@ Authing also supports authorization to users and roles at the same time. If the 
 
 In the following example, we authorize the Create and Delete permissions of the repository resource to the admin role:
 
-![](~@imagesZhCn/guides/access-control/0f443c28-85b5-4127-9177-0cdae41eb3c2.png)
+![](./images/0f443c28-85b5-4127-9177-0cdae41eb3c2.png)
 
 ## Determine whether the user has permission on the backend
 

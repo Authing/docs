@@ -13,34 +13,34 @@ Assume your company is responsible for social communication business, and now an
 
 Firstly, create two users in Authing, which are user1@123.com and user2@123.com respectively
 
-![](~@imagesZhCn/guides/authorization/create-user-1.png)
+![](./images/create-user-1.png)
 
 Create an application in Authing. Suppose our social software is called "Steam Chat", then the application name is called "Steam Chat".
-![](~@imagesZhCn/guides/authorization/create-app.png)
+![](./images/create-app.png)
 
 In the application details, click the Authorization tab, switch to the Data Resources tab, and then click Add.
 
 > There are essentially no differences among API resources, data resources, and UI resources. The types are only used for distinction on the management level. Creating a good resource classification can improve administrators ' ability to quickly focus on different resources.
 
-![](~@imagesZhCn/guides/authorization/add-resource.png)
+![](./images/add-resource.png)
 
 We create a chat data resource, define several operations for CURD (create, update, read, update), and finally click Save.
 
-![](~@imagesZhCn/guides/authorization/add-resource-action.png)
+![](./images/add-resource-action.png)
 
 Then add authorization rules in **resource authorization**.
 
-![](~@imagesZhCn/guides/authorization/create-acl-1.png)
+![](./images/create-acl-1.png)
 
 The **authorized subject** selects user1@123.com and user2@123.com, and selects chat data in the **resource type**, and then click OK.
 
-![](~@imagesZhCn/guides/authorization/create-acl-2.png)
+![](./images/create-acl-2.png)
 
 Then we create a **programmable access account**, which will be handed over to the caller in the future.
 
-![](~@imagesZhCn/guides/authorization/create-programmatic-account-1.png)
+![](./images/create-programmatic-account-1.png)
 
-![](~@imagesZhCn/guides/authorization/create-programmatic-account-2.png)
+![](./images/create-programmatic-account-2.png)
 
 If the programmable access account is deleted, the caller will lose the ability to obtain user authorization.
 
@@ -57,9 +57,9 @@ RS256 is an asymmetric signature algorithm. Authing holds the private key to sig
 
 Next, we add resource permissions for users. On the **resource authorization** card, click Add.
 
-![](~@imagesZhCn/guides/authorization/user-consent-authz-1.png)
+![](./images/user-consent-authz-1.png)
 
-![](~@imagesZhCn/guides/authorization/user-consent-authz-2.png)
+![](./images/user-consent-authz-2.png)
 
 Then we add all operation permissions for all message data for users user1@123.com and user2@123.com, and finally click OK.
 At this point, the administrator's privileges management operations are all finished.
@@ -102,11 +102,11 @@ For example, the `message` resource and the `create` operation of the `message` 
 
 The caller should guide the user to click on this link. After the user clicks, it will jump to the authentication page.
 
-![](~@imagesZhCn/guides/authorization/user-consent-authz-3.png)
+![](./images/user-consent-authz-3.png)
 
 After the user logs in, he/she will jump to the business address of the caller, and carry the **authorization code** parameter in the URL.
 
-![](~@imagesZhCn/guides/authorization/user-consent-authz-4.png)
+![](./images/user-consent-authz-4.png)
 
 Next, use the authorization code and the Key and Secret of the programmable access account to exchange for the user's AccessToken and IdToken. For more information about the OIDC authorization code mode, please check the [documentation](/authentication/oidc/oidc-authorization.md#Use 授权码模式-authorization-code-flow).
 

@@ -138,7 +138,7 @@ MFA Password
 
 ### Return MFA Token after first authentication
 
-Call the login method in authing-js-sdk, refer to[Login](/sdk/sdk-for-javascript/README.md#登录). Or call [GraphQL 接口](/sdk/open-graphql.md#登录). You need store mfaToken for future use.
+Call the login method in authing-js-sdk, refer to[Login](/sdk/sdk-for-javascript/README.md#Sign in). Or call [GraphQL Interface](/sdk/open-graphql.md#Sign in). You need store mfaToken for future use.
 
 Call the SDK:
 
@@ -293,7 +293,7 @@ If the user enables the secondary authentication and loses the MFA password, a r
 <template slot="bodyParams">
 <ApiMethodParam name="recoveryCode" type="string" required>
 
-恢复代码，在绑定 MFA 口令时返回的
+Recovery code, which is returned when Binding MFA password
 
 </ApiMethodParam>
 </template>
