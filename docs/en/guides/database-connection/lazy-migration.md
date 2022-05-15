@@ -34,11 +34,12 @@ You need to access [Authing console](https://console.authing.cn/console/userpool
 
 After you enabled the user migration function, you can test migrated users in following ways:
 
-- Use [admin API for getting user list or seraching users](/reference/sdk-for-node/management/UsersManagementClient.md#获取用户列表).
+- Use [admin API for getting user list or seraching users](/en/reference/sdk-for-node/management/UsersManagementClient.md#获取用户列表).
 - Check users in **User Management** - **User List** of the [Authing console](https://console.authing.cn/console/userpool).
 
 ## After Migration
 
 You need to disable the customized database after all migration work is done
 
-![](https://cdn.authing.cn/blog/20201130175955.png)
+<!-- ![](https://cdn.authing.cn/blog/20201130175955.png) -->
+![](~@imagesZhCn/connections/db/db_1.png)
