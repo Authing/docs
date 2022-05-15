@@ -1,235 +1,235 @@
-# 核心认证 API
+# Core Authentication API
 
 <LastUpdated/>
 
-## 邮箱注册
+## Use email registration
 
-使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```swift
 func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱
-* *password* 明文密码
+* `email` email address
+* `password` password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2003 非法邮箱地址
-* 2026 邮箱已注册
+* `2003` Illegal email address
+* `2026` Registered mailbox
 
 <br>
 
-## 用户名注册
+## Register using username
 
-通过用户名注册帐号。用户名区分大小写且用户池内唯一。
+Use the username to register, the username is case sensitive and the only user pool.
 
 ```swift
 func registerByUserName(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *username* 用户名
-* *password* 明文密码
+* `username` username
+* `password` password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().registerByUserName(username: "username", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2026 用户名已存在
+* `2026` The user name already exists
 
 <br>
 
-## 短信验证码注册
+## Use mobile phone number registration
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send verification code) method sends SMS verification code.
 
 ```swift
 func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* `phone` The phone number
+* `code` SMS verification code
+* `password` initial password, it can be null
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2001 验证码错误
-* 2026 手机号已注册
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
 
 <br>
 
-## 邮箱登录
+## Use the email to login
 
 ```swift
 func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱
-* *code* 邮箱验证码
+* `email`  email address
+* `code` email verification code
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByEmail(email: "email", code: "code") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2001 邮箱验证码错误
+* `2001` email verification code error
 
 <br>
 
-## 帐号密码登录
+## Use the username to login
 
 ```swift
 func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *account* 可以是手机号 / 邮箱 / 用户名
-* *password* 明文密码
+* `account` The phone number / email address / username
+* `password` password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByAccount(account: "account", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## 手机验证码登录
+## Use the mobile phone number verification code to login
 
-通过短信验证码登录，需要先调用 [发送短信验证码](#发送短信验证码) 接口。
+Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send verification code) sends a SMS verification code.
 
 ```swift
 func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
+* `phone` The phone number
+* `code` SMS verification code
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByPhoneCode(phone: "13012345678", code: "1234") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2001 短信验证码不正确
+* `2001` SMS verification code error
 
 <br>
 
-## LDAP 登录
+##  Log in with an LDAP username
 
 ```swift
 func loginByLDAP(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *username* ldap 用户名
-* *password* 明文密码
+* `username` ldap username
+* `password` password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByLDAP(username: "username", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## AD 登录
+## Login with an AD username
 
 ```swift
 func loginByAD(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *username* AD 用户名
-* *password* 明文密码
+* `username` AD username
+* `password` password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByAD(username: "username", password: "strong") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
+
+* `2333` The account or password is incorrect
 
 <br>
 
-## 手机号一键登录
-
-参考 [手机号一键登录开发指南](/guides/oneauth/)
+## Mobile Fast Auth
 
 ```swift
 func loginByOneAuth(token: String, accessToken: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -237,146 +237,142 @@ func loginByOneAuth(token: String, accessToken: String, completion: @escaping(In
 
 **参数**
 
-* *token* 运营商返回
-* *accessToken* 运营商返回
+* *token* Operators return
+* *accessToken* Operators return
 
 **示例**
 
 ```swift
 AuthClient().loginByOneAuth(token: "token", accessToken: "accessToken") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2333 帐号或密码错误
+* `2333` The account or password is incorrect
 
 <br>
 
-## 获取当前登录的用户信息
+## Get the user information of current login
 
-获取当前登录的用户信息，需要先登录
+Get the user information of the current login user, you need that is currently logged in to get it.
 
 ```swift
 func getCurrentUser(completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().getCurrentUser { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // userInfo
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 退出登录
+## Sign out
 
-退出登录。同时清除内存以及本地持久化的 token 和用户信息
+Log out. Clear token and user information for both memory and local persistence. Authing.getcurrentuser () returns empty after logging out.
 
 ```swift
 func logout(completion: @escaping(Int, String?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().logout { code, message in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 1010001 如果用户的 id token 非法或者过期
+* `1010001` If the user id token is invalid or expired
 
 <br>
 
-## 发送短信验证码
+## Send verification code
 
-向指定的手机发送短信验证码
+Sends an SMS verification code to the specified mobile phone.
 
 ```swift
 func sendSms(phone: String, phoneCountryCode: String? = nil, completion: @escaping(Int, String?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *phoneCountryCode* 电话国家码。可以为空，为空时默认为 +86
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().sendSms(phone: "13012345678", phoneCountryCode: "+86") { code, message in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 500 手机号码格式非法
+* `500` The mobile phone number format is invalid
 
 <br>
 
-## 发送邮件
+## Send email
 
-给指定邮箱发送邮件
+Sends an email to the specified mailbox.
 
 ```swift
 func sendEmail(email: String, scene: String, completion: @escaping(Int, String?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱地址
-* *scene* 发送场景，可选值包含：
-  - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
-  - VERIFY_EMAIL: 发送验证邮箱的邮件；
-  - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
-  - MFA_VERIFY: 发送 MFA 验证邮件。
+* `email` email address
+* `scene` Send a scene, optional value is ：
+  - `RESET_PASSWORD`: Send a reset password message, including the verification code;
+  - `VERIFY_EMAIL`: Send a message to verify the mailbox;
+  - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
+  - `MFA_VERIFY`: Send MFA verification email.
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().sendEmail(email: "cool@gmail.com", scene: "RESET_PASSWORD") { code, message in
     if (code == 200) {
-        // 发送成功
+        // success
     }
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 1020017 邮箱地址非法
+* `1020017` Invalid email address
 
 <br>
 
-## 获取用户自定义数据
+## Get custom data
 
-获取用户自定义数据，你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)
-
-用户自定义数据会添加到传入的 userInfo 对象里面
-
-调用此接口需要先登录
+Get all custom data for the user. You need to be in the user pool [Define user-defined data meta information](https://docs.authing.cn/v2/guides/users/user-defined-field/). User-defined data is added to the passed userInfo object. A login is required to invoke this interface.
 
 ```swift
 func getCustomUserData(userInfo: UserInfo, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *userInfo* 用户信息对象
+* `userInfo` 
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().getCustomUserData(userInfo: Authing.getCurrentUser()) { code, message, userInfo in
@@ -386,27 +382,25 @@ AuthClient().getCustomUserData(userInfo: Authing.getCurrentUser()) { code, messa
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 设置用户自定义数据
+## Set custom data
 
-设置用户的自定义数据。你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配。
-
-调用此接口需要先登录
+Set the user's custom field. You need to be in the userpool[Define user-defined data meta information](https://docs.authing.cn/v2/guides/users/user-defined-field/), and the type of incoming value must match the defined type. A login is required to invoke this interface.
 
 ```swift
 func setCustomUserData(customData: NSDictionary, completion: @escaping(Int, String?, NSDictionary?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *customData* key-value 形式的 JSONObject 对象
+* `customData` JSONObject in the form of key-value
 
-**示例**
+**Example**
 
 ```swift
 let object = ["your_custom_data_key": "your_custom_data_value"]
@@ -417,29 +411,27 @@ AuthClient().setCustomUserData(customData: object) { code, message, data in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 更新用户头像
+## Update user profile picture
 
-通过从系统选择一张图片来更新用户头像
-
-调用此接口需要先登录
+Update the user profile picture by selecting an image from the system. A login is required to invoke this interface.
 
 ```swift
 func uploadAvatar(image: UIImage, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *image* 图片对象。推荐使用系统默认图片选择器获取
+* `image` Image input stream. You are advised to use the default image picker
 
-**示例**
+**Example**
 
-启动系统默认图片选择器
+Start the system default image selector
 
 ```swift
 let picker = UIImagePickerController()
@@ -449,9 +441,9 @@ picker.sourceType = UIImagePickerController.SourceType.photoLibrary
 self.viewController?.present(picker, animated: true, completion: nil)
 ```
 
-启动代码中，picker.delegate 需要实现 UINavigationControllerDelegate, UIImagePickerControllerDelegate 协议
+In the startup code, picker.delegate needs to implement UINavigationControllerDelegate, UIImagePickerControllerDelegate protocol
 
-通过以下回调拿到图片，并调用更新头像接口
+Get the picture through the following callback, and call the update avatar interface
 
 ```swift
 public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -471,27 +463,27 @@ public func imagePickerController(_ picker: UIImagePickerController, didFinishPi
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 通过短信验证码重置密码
+## Reset password via SMS verification code
 
-通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码
+Reset your password by SMS verification code, you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```swift
 func resetPasswordByPhone(phone: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
-* *password* 明文密码
+* `phone` The phone number
+* `code` SMS Verification code
+* `password` New password
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().resetPasswordByPhone(phone: "13012345678", code: "1234", newPassword: "strong") { code, message in
@@ -501,15 +493,45 @@ AuthClient().resetPasswordByPhone(phone: "13012345678", code: "1234", newPasswor
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2004 用户不存在
+* `2004` User does not exist
 
 <br>
 
-## 通过首次登录的 Token 重置密码
+## Reset password via mail verification code
 
-通过首次登录的 Token 重置密码，需要在创建用户时设置“强制用户首次登录时修改密码”
+eset password by email verification code, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
+
+```swift
+func resetPasswordByEmail(email: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
+```
+
+**Parameter**
+
+* `email` Email address
+* `code` Verification code
+* `password` New password
+
+**Example**
+
+```swift
+AuthClient().resetPasswordByEmailCode(email: "me@gmail.com", code: "1234", newPassword: "strong") { code, message, in
+    if (code == 200) {
+
+    }
+}
+```
+
+**Error Code**
+
+* `2004` User does not exist
+
+<br>
+
+## Reset password through the first login Token
+
+Reset password through the first login Token. You need to set Force User to change password at first login when creating a user.
 
 ```swift
 func resetPasswordByFirstTimeLoginToken(token: String, password: String, completion: @escaping(Int, String?) -> Void)
@@ -517,8 +539,8 @@ func resetPasswordByFirstTimeLoginToken(token: String, password: String, complet
 
 **参数**
 
-* *token* 首次登录后获取的 token
-* *password* 明文密码
+* *token* token
+* *password* password
 
 **示例**
 
@@ -532,77 +554,47 @@ AuthClient().resetPasswordByFirstTimeLoginToken(token: "token", password: "stron
 
 <br>
 
-## 通过邮件验证码重置密码
+## Modify user profile
 
-通过邮件验证码重置密码，你需要先调用 [sendEmail](#发送邮件) 接口发送重置密码邮件（场景值为 `RESET_PASSWORD`）。
-
-```swift
-func resetPasswordByEmail(email: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
-```
-
-**参数**
-
-* *email* 邮箱地址
-* *code* 邮件验证码
-* *password* 明文密码
-
-**示例**
-
-```swift
-AuthClient().resetPasswordByEmailCode(email: "me@gmail.com", code: "1234", newPassword: "strong") { code, message, in
-    if (code == 200) {
-
-    }
-}
-```
-
-**错误码**
-
-* 2004 用户不存在
-
-<br>
-
-## 修改用户资料
-
-修改用户资料，此接口不能用于修改手机号、邮箱、密码
+Modify user information, this interface cannot be used to modify the mobile phone number, email, password.
 
 ```swift
 func updateProfile(_ object: NSDictionary, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *object* 需要修改的用户资料对象
+* `object` Modified user profile
 
-可以通过此接口更新资料的字段：
+Fields of data can be updated through this interface：
 
-* username
-* nickname
-* company
-* photo
-* browser
-* device
-* name
-* givenName
-* familyName
-* middleName
-* profile
-* preferredUsername
-* website
-* gender
-* birthdate
-* zoneinfo
-* locale
-* address
-* streetAddress
-* locality
-* region
-* postalCode
-* city
-* province
-* country
+* `username`
+* `nickname`
+* `company`
+* `photo`
+* `browser`
+* `device`
+* `name`
+* `givenName`
+* `familyName`
+* `middleName`
+* `profile`
+* `preferredUsername`
+* `website`
+* `gender`
+* `birthdate`
+* `zoneinfo`
+* `locale`
+* `address`
+* `streetAddress`
+* `locality`
+* `region`
+* `postalCode`
+* `city`
+* `province`
+* `country`
 
-**示例**
+**Example**
 
 ```swift
 let object = ["username": "elonmusk", "nickname": "Ironman"]
@@ -613,26 +605,26 @@ AuthClient().updateProfile(object: object) { code, message, userInfo in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 更新用户密码
+## Update user password
 
-更新用户密码。如果用户没有设置密码，如通过短信验证码、社会化登录等方式注册的，oldPassword 留空。
+Update the user password. If the user does not set a password, such as SMS verification code, social login, etc., oldPassword is left blank.
 
 ```swift
 func updatePassword(newPassword: String, oldPassword: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *newPassword* 新密码
-* *oldPassword* 旧密码。可以为空
+* `newPassword` New password
+* `oldPassword` Old password, if the user does not set a password, you can not fill
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().updatePassword(newPassword: "newStrong", oldPassword: "oldStrong") { code, message, userInfo in
@@ -642,27 +634,27 @@ AuthClient().updatePassword(newPassword: "newStrong", oldPassword: "oldStrong") 
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320011 旧密码不正确
+* `2020` Not logged in
+* `1320011` The old password is incorrect
 
 <br>
 
-## 绑定手机号
+## Binding mobile phone number
 
-为当前登录用户绑定手机号。调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+Bind the mobile phone number of the current login user.  you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```swift
 func bindPhone(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *phone* 手机号
-* *code* 短信验证码
+* `phone` Thie phone number
+* `code` SMS Verification code
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().bindPhone(phone: "13012345678", code: "1234") { code, message, userInfo in
@@ -672,21 +664,21 @@ AuthClient().bindPhone(phone: "13012345678", code: "1234") { code, message, user
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 解绑手机号
+## Solution to the mobile number
 
-用户解绑手机号，如果用户没有绑定其他登录方式（邮箱、社会化登录账号），将无法解绑手机号，会提示错误。
+The user unbinds the mobile phone number. If the user does not bind other login methods (such as email or social login account), the mobile phone number cannot be unbound and an error message is displayed.
 
 ```swift
 func unbindPhone(completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().unbindPhone { code, message, userInfo in
@@ -696,27 +688,27 @@ AuthClient().unbindPhone { code, message, userInfo in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320005 当前用户未绑定其他登录方式
+* `2020` Not logged in
+* `1320005` The current user is not bound to any other login mode
 
 <br>
 
-## 绑定邮箱
+## Binding mailbox
 
-为当前登录用户绑定邮箱。调用 [发送邮件](#发送邮件) 获取验证码。
+The mailbox is bound to the current login user. call [Send emai](#Send email) to get the verification code.
 
 ```swift
 func bindEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *email* 邮箱地址
-* *code* 邮件验证码
+* `email` Email address
+* `code` Email  verification code
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().bindEmail(email: "me@gmail.com", code: "1234") { code, message, userInfo in
@@ -726,21 +718,21 @@ AuthClient().bindEmail(email: "me@gmail.com", code: "1234") { code, message, use
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020`  Not logged in
 
 <br>
 
-## 解绑邮箱
+##  Menned mailbox
 
-用户解绑邮箱，如果用户没有绑定其他登录方式（手机号、社会化登录账号），将无法解绑邮箱，会提示错误。
+The user solves the mobile phone number. If the user does not bind other login mode (mobile phone number, social login account), it will not be able to decompose the mailbox, will prompt the error.
 
 ```swift
 func unbindEmail(completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().unbindEmail { code, message, userInfo in
@@ -750,22 +742,23 @@ AuthClient().unbindEmail { code, message, userInfo in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
-* 1320005 当前用户未绑定邮箱
+* `2020` Not logged in
+* `1320005` The current user is not bound to a mailbox
 
 <br>
 
-## 获取用户账号安全等级
 
-获取当前登录帐号的安全等级。
+## Get user account security level
+
+Get user account security level.
 
 ```swift
 func getSecurityLevel(completion: @escaping(Int, String?, NSDictionary?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().getSecurityLevel { code, message, data in
@@ -775,7 +768,7 @@ AuthClient().getSecurityLevel { code, message, data in
 }
 ```
 
-**回调 data 数据结构**
+**Callback data data structure**
 
 ```json
 {
@@ -788,19 +781,19 @@ AuthClient().getSecurityLevel { code, message, data in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 刷新当前用户的 ID Token
+## Refreshes the Token of the current user
 
 ```swift
 func updateIdToken(completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().updateIdToken { code, message, userInfo in
@@ -810,26 +803,26 @@ AuthClient().updateIdToken { code, message, userInfo in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取当前用户能够访问的应用
+## Get applications that current users can access
 
-获取当前用户能够访问的应用。注意返回的结果数据结构为 NSArray
+Get the application that the current user can access. Note that the returned result data structure is List\<Application\>.
 
 ```swift
 func listApplications(page: Int = 1, limit: Int = 10, completion: @escaping(Int, String?, NSArray?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *page* 分页序号, 默认为 `1`。
-* *limit* 每页返回的个数, 默认为 `10`。
+* `page` Page serial number, default is `1`.
+* `limit` The number of times returned per page, the default is `10`.
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().listApplications { code, message, applications in
@@ -839,12 +832,12 @@ AuthClient().listApplications { code, message, applications in
 }
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
     "code": 200,
-    "message": "获取可访问的应用列表成功",
+    "message": "Success",
     "data": {
         "list": [
             {
@@ -866,21 +859,21 @@ AuthClient().listApplications { code, message, applications in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取用户所在组织机构
+## Get list of data data in users
 
-获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 NSArray
+Obtain the organization of the user. Because the user can be in multiple independent organization trees, this interface returns a two-digit array. Note that the returned result data structure is List\<Organization[]\>.
 
 ```swift
 func listOrgs(completion: @escaping(Int, String?, NSArray?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().listOrgs { code, message, organizations in
@@ -890,12 +883,12 @@ AuthClient().listOrgs { code, message, organizations in
 }
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
     "code": 200,
-    "message": "获取用户组织机构列表成功",
+    "message": "Success",
     "data": [
         [
             {
@@ -1057,25 +1050,25 @@ AuthClient().listOrgs { code, message, organizations in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取角色
+## Get the list of roles owned by users
 
-获取当前登录用户的角色。注意返回的数据结构为 NSArray
+Get the list of roles owned by users. Note that the returned result data structure is NSArray\<Role\>.
 
 ```swift
 func listRoles(namespace: String? = nil, completion: @escaping(Int, String?, NSArray?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *namespace* 权限分组 ID，用来过滤角色数据。如果传空，则返回用户所有角色
+* `namespace` Permission group ID, used to filter role data. If empty, all roles of the user are returned
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().listRoles { code, message, roles in
@@ -1085,12 +1078,12 @@ AuthClient().listRoles { code, message, roles in
 }
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
     "code": 200,
-    "message": "获取成功",
+    "message": "Success",
     "data": [
         {
             "id": "61ada935ce061fe3476f0f09",
@@ -1108,26 +1101,26 @@ AuthClient().listRoles { code, message, roles in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 获取用户被授权的所有资源列表
+## Get all the list of users authorized to be authorized
 
-获取一个用户被授权的所有资源，用户被授权的所有资源里面包括从角色、分组、组织机构继承的资源。
+Gets all resources authorized by users, and users are authorized to include resources that are inherited from roles, packets, and organizational institutions.
 
 ```swift
 func listAuthorizedResources(namespace: String = "default", resourceType: String? = nil, completion: @escaping(Int, String?, NSArray?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *namespace* 权限分组 ID
-* *resourceType* 资源类型。可以为以下几种类型 DATA, API, MENU, UI, BUTTON。如果传空，则返回所有资源类型数据
+* `namespace` Permission group ID.
+* `resourceType` Resource type. Can be the following types of DATA, API, MENU, UI, BUTTON. If null, all resource type data is returned.
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().listAuthorizedResources { code, message, resources in
@@ -1137,7 +1130,7 @@ AuthClient().listAuthorizedResources { code, message, resources in
 }
 ```
 
-**返回结果示例**
+**Callback data data structure**
 
 ```json
 {
@@ -1155,23 +1148,24 @@ AuthClient().listAuthorizedResources { code, message, resources in
 }
 ```
 
-**错误码**
+**Error Code**
 
-* 2020 未登录
+* `2020` Not logged in
 
 <br>
 
-## 删除帐号
+## Delete the account
 
-用户自助删除当前登录帐号。
+Users can delete their current login accounts.
 
->此操作不可逆，请务必给用户足够的提示
+>This operation cannot be reversed. Therefore, you must prompt the user.
+
 
 ```swift
 func deleteAccount(completion: @escaping(Int, String?) -> Void)
 ```
 
-**示例**
+**Example**
 
 ```swift
 let cancel = NSLocalizedString("authing_cancel", bundle: Bundle(for: Self.self), comment: "")
