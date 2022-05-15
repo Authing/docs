@@ -12,29 +12,29 @@ The following is the architecture diagram of this scenario. The outsourcer first
 
 Create an application in Authing called "Big Screen Display".
 
-![](~@imagesZhCn/guides/authorization/create-app-screen-display.png)
+![](./images/create-app-screen-display.png)
 
 Define some resources under the "big screen display" application, and each resource corresponds to the actual resource in the "big screen display" application. Here we add some resources, including user-growth, customer, announcement, and revenue. The name of these resources is API scope.
 
-![](~@imagesZhCn/guides/authorization/create-resource-display-screen.png)
+![](./images/create-resource-display-screen.png)
 
-![](~@imagesZhCn/guides/authorization/create-resource-display-screen-2.png)
+![](./images/create-resource-display-screen-2.png)
 
-![](~@imagesZhCn/guides/authorization/create-resource-display-screen-3.png)
+![](./images/create-resource-display-screen-3.png)
 
-![](~@imagesZhCn/guides/authorization/create-resource-display-screen-4.png)
+![](./images/create-resource-display-screen-4.png)
 
-![](~@imagesZhCn/guides/authorization/create-resource-display-screen-5.png)
+![](./images/create-resource-display-screen-5.png)
 
 After defining the resources and operations, add a programmatic access account for the application. The programmatic access account is the caller of the API interface of the current application. The program access account has a pair of AK and SK, which are used by the outsourcer to call the "big screen display" application interface. We can hand over AK and SK with different privileges to different outsourcers, so that they have different privileges and can access different APIs.
 
-![](~@imagesZhCn/guides/authorization/create-programmatic-account-display-screen.png)
+![](./images/create-programmatic-account-display-screen.png)
 
 Create two programming access accounts, fill in the AccessToken expiration time and remarks, and click OK.
 
-![](~@imagesZhCn/guides/authorization/create-ak-sk-1.png)
+![](./images/create-ak-sk-1.png)
 
-![](~@imagesZhCn/guides/authorization/create-ak-sk-2.png)
+![](./images/create-ak-sk-2.png)
 
 If the program access account is deleted, the caller will lose the access.
 
@@ -51,37 +51,37 @@ RS256 is an asymmetric signature algorithm. Authing holds the private key to sig
    For more details on signature issues, please refer to [Verify the Token](/guides/faqs/how-to-validate-user-token.md).
    We have just created two programming access accounts, which will need to be handed over to outsourcers in the future.
 
-![](~@imagesZhCn/guides/authorization/ak-sk-result.png)
+![](./images/ak-sk-result.png)
 
 Next we need to give them resource privileges. On the Resource Authorization tab, click Add.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-1.png)
+![](./images/m2m-acl-1.png)
 
 In the authorized subject type, select programming access account, and then select the programming access account of the outsourcing company A.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-2.png)
+![](./images/m2m-acl-2.png)
 
 In the authorization rules, select announcement information as the resource type, fill \* in resource identifier to authorize all announcement resources, then choose specific operation and then select the announce:read operation. At last, click the confirm button. The function of this rule is to authorize the outsourcing company A to read access to all announcement information resources.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-3.png)
+![](./images/m2m-acl-3.png)
 
 Next, we add privileges for outsourcing company B. First select the programming access account of outsourcing company B.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-4.png)
+![](./images/m2m-acl-4.png)
 
 Then, we need to add three rules:
 
 1. Authorize all operation privileges of user growth data in 2019 to outsourcer B. Click Add Authorization Rule at the top right to add multiple rules.
 
-   ![](~@imagesZhCn/guides/authorization/m2m-acl-5.png)
+   ![](./images/m2m-acl-5.png)
 
 2. 2. Authorize the creation, reading, and modification permissions of all revenue records to outsourcer B.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-6.png)
+![](./images/m2m-acl-6.png)
 
 3. Authorize the access to read all customer records to outsourcer B.
 
-![](~@imagesZhCn/guides/authorization/m2m-acl-7.png)
+![](./images/m2m-acl-7.png)
 
 At this point, the administrator's access management operations are all over. Below we will conduct M2M authorization best practices from the perspective of the caller and the resource side.
 
