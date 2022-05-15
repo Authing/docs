@@ -20,7 +20,7 @@ You can get sample code here: [https://github.com/authing/wechat-eco-solution](h
 
 By default, the Mini Program scan code login will use the default Mini Program provided by Authing. If you need stronger brand customization capabilities, or want to connect the WeChat account of the user who logs in through the Mini Program scan code with your other WeChat public platforms , you need to apply for your own applet. If you fall into one of these two scenarios:
 
-Please go to [WeChat public platform]([)](https://mp.weixin.qq.com/wxopen/waregister?action=step1) Guide to create a WeChat applet, you need to record the **App ID** and **App Secret** of the application , which will be used later.
+Please go to [WeChat public platform](https://mp.weixin.qq.com/wxopen/waregister?action=step1) Guide to create a WeChat applet, you need to record the **App ID** and **App Secret** of the application , which will be used later.
 
 At the same time, you need to contact us to obtain the source code of the small login. For details, please consult: 176-0250-2507.
 
