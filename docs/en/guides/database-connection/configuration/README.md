@@ -111,12 +111,12 @@ After setup configuration URI, click **Save** and then **Test** button at the bo
 
 <img src="~@imagesEnUs/guides/database-connection/test-login1.jpg" height="400px" />
 
-<!-- In the jump out window, you need to fill in a user in the user list of the template userpool
+In the jump out window, you need to fill in a user in the user list of the template userpool
 
 ![](~@imagesEnUs/guides/database-connection/user-list.jpg)
 
-<img src="~@imagesEnUs/guides/database-connection/test-login2" height="400px" />
+<img src="~@imagesEnUs/guides/database-connection/test-login2.jpg" height="400px" />
 
-Click **Test** button and you will see notification about successful result.-->
+Click **Test** button and you will see notification about successful result.
 
 ![](~@imagesEnUs/guides/database-connection/test-success.jpg)
