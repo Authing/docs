@@ -8,7 +8,7 @@
 
 You can authenticate users with your customized database. For that, you need to setup database connection, prepare database operation script and setup environment variable (optional).
 
-> Please make sure that your database has following fields like `id`, `email`, `photo`,`nickname`, `username`, `phone` which are required by Authing identity profile. You can learn more about schemas of Authing user profile in the document of [Authing user profile fields and explanations](/guides/user/user-profile.md).
+> Please make sure that your database has following fields like `id`, `email`, `photo`,`nickname`, `username`, `phone` which are required by Authing identity profile. You can learn more about schemas of Authing user profile in the document of [Authing user profile fields and explanations](/en/guides/user/user-profile.md).
 
 Authing now support direct connection with these common databases and self-designed Web Service:
 
@@ -29,13 +29,13 @@ The configuration will be active immediately once you enable the customized data
 
 You need to login to the [Authing Console](https://console.authing.cn/console/userpool) and then go to **Connect IdP** - **Customized Database** to **enable** this service on the top right corner
 
-![](https://cdn.authing.cn/img/20210111180702.png)
+![](~@imagesEnUs/guides/database-connection/Xnip2022-05-15_16-20-50.jpg)
 
 ## Choose User Scenarios
 
 There are two different modes for customized databases and you can choose suitable mode according to diffferent user scenarios:
 
-- **Migrate user information to Authing with lazy migration**: In **lazy migration** mode, all user information will be stored in your database at the beginning. When a user try to login through Authing, the Authing will search and authenticate the user in the customized database with customized script and will migrate this user to Authing if authenticate succeed. When this user login Authing at the second time, he/she will be authenticated with Authing's database. After all users in your database at least login to Authing one time, the migration is completed. More details can be found in document of [achieving lazy migration with customized database](https://docs.authing.co/connections/custom-db/lazy-migrations.html).
+- **Migrate user information to Authing with lazy migration**: In **lazy migration** mode, all user information will be stored in your database at the beginning. When a user try to login through Authing, the Authing will search and authenticate the user in the customized database with customized script and will migrate this user to Authing if authenticate succeed. When this user login Authing at the second time, he/she will be authenticated with Authing's database. After all users in your database at least login to Authing one time, the migration is completed. More details can be found in document of [achieving lazy migration with customized database](/en/guides/database-connection/lazy-migration.html).
 - **Only use customized databases to store user information**: You can use your own database to store user information. In this mode, Authing won't store any user information. However you need to compile scripts for user management to make the system work normally.
 
 ## Setup Database Connection Configuration
@@ -44,7 +44,7 @@ Now you need to setup database connection configuration, you can use **Connectio
 
 ### Connection URL
 
-![](https://cdn.authing.cn/blog/20201130162731.png)
+![](~@imagesEnUs/guides/database-connection/Xnip2022-05-15_16-49-46.jpg)
 
 The Connection URL usually is the URL with following format: `protocol://username:password@host:port/database` such as: `postgres://postgres:postgres@localhost:5432/database-name`. You can import these URLs in script by using global vriable `env.DB_CONNECTION_URI` as the code shows below:
 
@@ -59,7 +59,7 @@ await client.connect();
 
 ### Programmatic
 
-![](https://cdn.authing.cn/blog/20201130162823.png)
+![](~@imagesEnUs/guides/database-connection/Xnip2022-05-15_16-53-13.jpg)
 
 In this mode, you need to declare the Host, port, username, password, and database name of your customized database. You can import these parameters with the following global variables: `env.DB_HOST`, `env.DB_PORT`, `env.DB_USERNAME`, `env.DB_PASSWORD` and `env.DB_DATABASE` as the code shows below:
 
@@ -107,16 +107,16 @@ This database is open-source for all user freely, the connection information of 
 
 After setup configuration URI, click **Save** and then **Test** button at the bottom.
 
-![](https://cdn.authing.cn/blog/20201130173258.png)
+![](~@imagesEnUs/guides/database-connection/Xnip2022-05-15_17-05-05.jpg)
 
-<img src="https://cdn.authing.cn/blog/20201130173519.png" height="400px" />
+<img src="~@imagesEnUs/guides/database-connection/test-login1.jpg" height="400px" />
 
 In the jump out window, you need to fill in a user in the user list of the template userpool
 
-![](https://cdn.authing.cn/blog/20201130173505.png)
+![](~@imagesEnUs/guides/database-connection/user-list.jpg)
 
-<img src="https://cdn.authing.cn/blog/20201130174003.png" height="400px" />
+<img src="~@imagesEnUs/guides/database-connection/test-login2" height="400px" />
 
 Click **Test** button and you will see notification about successful result.
 
-![](https://cdn.authing.cn/blog/20201130173939.png)
+![](~@imagesEnUs/guides/database-connection/test-success.jpg)
