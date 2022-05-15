@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微信移动应用登录',
-  bannerTitle: '接入微信移动应用登录',
+  title: 'Access WeChat mobile application login',
+  bannerTitle: 'Access WeChat mobile application login',
   steps:
     [
       {
-        title: '在微信开放平台创建一个移动应用',
+        title: 'Create a mobile application on the WeChat open platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入微信移动应用配置' },
+      { title: 'Fill in the WeChat mobile app configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
