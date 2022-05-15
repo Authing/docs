@@ -12,13 +12,12 @@ Managing user accounts includes completed procedures such as forgetting password
 
 Authing provides developers with a built-in, comprehensive, beautiful, and highly configurable login form. You can feel it by [clicking here](https://sample-sso.authing.cn/) (we will call this login form as `Guard` in the following paragraphs), the address is `https://< YOUR_DOMAIN>.authing.cn/`:
 
-<img src="https://cdn.authing.cn/blog/20201019174920.png" alt="drawing" height="500" style="display:block;margin: 0 auto;"/>
-
+![](./images/20201019174920.png)
 You can have functions such as login and register, forgotten password, reset your email, send SMS verification code, scan code to log in.
 
 There will be a user personal center, you can feel it by clicking [here](https://sample-sso.authing.cn/u), the address is `https://<YOUR_DOMAIN>.authing.cn/u`:
 
-![](https://cdn.authing.cn/blog/20201019175127.png)
+![](./images/20201019175127.png)
 
 With the help of the hosted login page and personal center, users can complete personal information management by themselves.
 
@@ -26,13 +25,13 @@ With the help of the hosted login page and personal center, users can complete p
 
 Authing provides a built-in user personal center page (address: `https://<YOUR_DOMAIN>.authing.cn/u`), which can modify the basic user information:
 
-![](https://cdn.authing.cn/blog/20201019175127.png)
+![](./images/20201019175127-1.png)
 
 ### Modify Passwords
 
 When users remember the current password, he/she can modify the password by verifying the current password:
 
-![](https://cdn.authing.cn/blog/20201019181257.png)
+![](./images/20201019181257.png)
 
 ### Forgotten Passwords
 
@@ -40,31 +39,31 @@ When the user forgets the current password, the password can be reset through th
 
 Click forgottten password
 
-<img src="https://cdn.authing.cn/blog/20201019181634.png" alt="drawing" height="500" style="display:block;margin: 0 auto;"/>
+![](./images/20201019181634.png)
 
 You can choose to use your email or phone number for verification:
 
-<img src="https://cdn.authing.cn/blog/20201019193540.png" alt="drawing" height="300" style="display:block;margin: 0 auto;"/>
 
-<img src="https://cdn.authing.cn/blog/20201019193845.png" alt="drawing" height="300" style="display:block;margin: 0 auto;"/>
+![](./images/20201019193540.png)
 
+![](./images/20201019193845.png)
 ### Bind Email
 
 End users can bind and unbind mailboxes in the **account binding** tab of the personal center:
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](./images/20201019200112.png)
 
 ### Bind Phone Number
 
 End users can bind and unbind their phone numbers in the **account binding** tab of the personal center:
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](./images/20201019200112-1.png)
 
 ### Bind MFA
 
 End users can bind MFA in the **MFA binding** tab of the personal center:
 
-![](https://cdn.authing.cn/blog/20201019200549.png)
+![](./images/20201019200549.png)
 
 ## Use Console
 
@@ -78,7 +77,7 @@ Administrators can use the console to manage user accounts visually.
 
 The administrator can disable the account on the user details page, and the disabled account will not be able to log in again:
 
-![](https://cdn.authing.cn/blog/20201019200707.png)
+![](./images/20201019200707.png)
 
 ### View Original User's Information
 
