@@ -81,7 +81,7 @@ There are several concepts in Authing:
 
 In Authing's permission system, we have implemented the role permission inheritance of the RBAC model through the two objects of users and roles. Above this, we can also dynamically and fine-grained authorization around attributes, to achieve the ABAC permission model. At the same time, in order to meet the design requirements of complex organizational structures in large-scale systems, we combine resources, roles, and authorizations into a single [authorization group ](./resource-group.md)which is convenient for developers to manage.
 
-![](../basics/authenticate-first-user/images/permission-group.png)
+![](./images/permission-group.png)
 
 ## How do I choose permission model
 
