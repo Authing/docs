@@ -4,16 +4,16 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: "接入移动 APP Use 小程序登录",
-  bannerTitle: "接入移动 APP Use 小程序登录",
+  title: "Access the mobile APP Use applet to log in",
+  bannerTitle: "Access the mobile APP Use applet to log in",
   steps:
     [
-      { title: "第一步：在微信开放平台创建一个微信移动应用" },
-      { title: "第二步：在微信开放平台创建一个微信小程序（可选）" },
+      { title: "Step 1: Create a WeChat mobile application on the WeChat open platform" },
+      { title: "Step 2: Create a WeChat applet on the WeChat open platform (optional)" },
       {
-        title: "第三步：在 {{$localeConfig.brandName}} 控制台配置 「App 拉起小程序登录」应用（可选）",
+        title: "Step 3: Configure the "App Launch Mini Program Login" application on the {{$localeConfig.brandName}} console (optional)",
       },
-      { title: "开始开发接入" },
+      { title: "Start developing access" },
     ],
 }
 ---
