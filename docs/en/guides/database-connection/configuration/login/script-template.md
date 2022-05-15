@@ -64,7 +64,7 @@ The context also includes the following information:
 
 #### The User Exists and the Password is Correct
 
-When the user exists and the password is correct, you need to return user information to Authing, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
+When the user exists and the password is correct, you need to return user information to Authing, the format of user information can be found in document of [detailed fields of user profile](/en/guides/user/user-profile.md). For example:
 
 ```javascript
 async function login(query, password, context) {
