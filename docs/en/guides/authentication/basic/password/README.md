@@ -14,8 +14,8 @@ When providing users with account and password authentication methods, as an IT 
 2. Modify the password: You can reset the password with the existing password.
    To use Authing to achieve these functions, we provide three different integrate methods:
 
-3. [Use {{$localeConfig.brandName}} Hosting landing page](#Use 托管登录页)，Without a line of code, you can {{$themeConfig.sampleAppDomain}} experience。
-4. [Use {{$localeConfig.brandName}} Embedded login component provided](#Use 内嵌登录组件)，It can be integrated into your web and mobile projects. You don't need to implement the login form UI yourself.
+3. [Use {{$localeConfig.brandName}} Hosting landing page](#Use Hosting landing page)，Without a line of code, you can {{$themeConfig.sampleAppDomain}} experience。
+4. [Use {{$localeConfig.brandName}} Embedded login component provided](#Use Embedded login component provided)，It can be integrated into your web and mobile projects. You don't need to implement the login form UI yourself.
 5. [Use API & SDK](#Use -api-sdk)，{{$localeConfig.brandName}} It provides restful and graphql APIs and SDKs in more than 10 languages or frameworks. You can customize the UI and authentication process based on this.
 
 6. Use Authing hosted login page. No coding work needed. You can experience it through sample-sso.authing.cn.
