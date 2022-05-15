@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微信扫码登录',
-  bannerTitle: '接入微信扫码登录',
+  title: 'Access WeChat scan code login',
+  bannerTitle: 'Access WeChat scan code login',
   steps:
     [
       {
-        title: '在微信开放平台创建一个网站应用',
+        title: 'Create a website application on the WeChat open platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入微信网站应用配置' },
+      { title: 'Fill in the WeChat website application configuration on {{$localeConfig.brandName}}'},
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an application on {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
