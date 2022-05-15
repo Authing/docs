@@ -9,4 +9,4 @@ The use of a custom database can meet the needs of the following scenarios:
 
 You can configure a custom database in the following ways: Go to the[Authing console](https://console.authing.cn/console/userpool) - **Connection** - **Custom Database ** to open a custom database connection. For details, see using a[Custom Database](/guides/database-connection/README.md).
 
-![](~@imagesZhCn/guides/database-connection/Xnip2021-02-24_16-58-19.png)
+![](../images/Xnip2021-02-24_16-58-19.png)
