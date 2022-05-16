@@ -789,6 +789,13 @@
         image2x: "gitlab-cn.svg",
         category: "devtools",
       },
+      {
+        key: "gerrit",
+        name: "Gerrit",
+        image: "gerrit.svg",
+        image2x: "gerrit.svg",
+        category: "devtools",
+      },
     ],
   categories:
     [
