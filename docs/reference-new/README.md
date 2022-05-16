@@ -87,7 +87,7 @@
               title: "iOS Swift",
               icon: "iOS",
               github: "https://github.com/Authing/guard-ios",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-ios/",
+              doc: "/v2/ios/",
             },
             {
               #
@@ -101,7 +101,7 @@
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-flutter.html",
+              doc: "/v2/flutter/",
             },
             {
               #
