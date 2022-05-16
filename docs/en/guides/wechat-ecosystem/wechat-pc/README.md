@@ -6,13 +6,13 @@ WeChat PC scan code login allows users to securely log in to third-party applica
 
 - Application scenario: PC website;
 - Overview: Jump to the WeChat QR code page in the PC website application, and then use WeChat to scan the code to log in to the application;
-- View WeChat official [documentation](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html).
+- View WeChat official [documentation](https://developers.weixin.qq.com/doc/oplatform/en/Website_App/WeChat_Login/Wechat_Login.html).
 
 <img src="../images/wechat-pc-scan-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
-## Sample Code
+<!-- ## Sample Code
 
-You can get sample code here: [https://github.com/Authing/wechat-eco-solution](https://github.com/Authing/wechat-eco-solution)。
+You can get sample code here: [https://github.com/Authing/wechat-eco-solution](https://github.com/Authing/wechat-eco-solution)。 -->
 
 ## Step 1: Create a website application on the WeChat open platform
 
