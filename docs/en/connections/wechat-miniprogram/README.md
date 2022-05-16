@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微信小程序登录',
-  bannerTitle: '接入微信小程序登录',
+  title: 'Access WeChat applet login',
+  bannerTitle: 'Access WeChat applet login',
   steps:
     [
       {
-        title: '在微信公众平台创建一个小程序',
+        title: 'Create a small program on the WeChat public platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入微信小程序配置' },
+      { title: 'Fill in the WeChat applet configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }

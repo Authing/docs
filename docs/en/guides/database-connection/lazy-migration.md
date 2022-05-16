@@ -42,4 +42,4 @@ After you enabled the user migration function, you can test migrated users in fo
 You need to disable the customized database after all migration work is done
 
 <!-- ![](https://cdn.authing.cn/blog/20201130175955.png) -->
-![](~@imagesZhCn/connections/db/db_1.png)
+![](~@imagesEnUs/connections/db/db_1.png)

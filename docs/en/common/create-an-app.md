@@ -1,8 +1,8 @@
 
 To connect the user and IdP, you need to create an application. In [**Console**](https://console.authing.cn) -> **Applications** -> click **Add App**.
 
-![](./images/selfbuild.png)
+![](~@imagesEnUs/connections/wechatMp_5.png)
 
 Fill in Application Name and Subdomain. Then **Create**.
 
-![](./images/create.png)
+![](~@imagesEnUs/connections/wechatMp_6.png)
