@@ -3180,7 +3180,27 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          children: [
+            "/reference/sdk-for-flutter/authentication/",
+            "/reference/sdk-for-flutter/protocol/",
+            "/reference/sdk-for-flutter/mfa/",
+            "/reference/sdk-for-flutter/scan/",
+            "/reference/sdk-for-flutter/social/"
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",
