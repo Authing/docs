@@ -49,9 +49,8 @@
 
       <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
+      <SwitchLocale />
       <!-- <button class="contact-us">联系我们</button> -->
-
-      <GoOldVersion class="can-hide" />
 
       <!-- <IconFont class="navbar-lang-icon" type="authing-login-language" /> -->
       <!-- <div class="navbar-lang-container">
@@ -69,13 +68,13 @@ import Divider from "@theme/components/Divider.vue";
 import SearchInput from "@theme/components/SearchInput.vue";
 import IconFont from "@theme/components/IconFont/index.vue";
 import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
-import GoOldVersion from "@theme/components/GoOldVersion.vue";
+import SwitchLocale from "@theme/components/SwitchLocale.vue";
 
 export default {
   name: "Navbar",
 
   components: {
-    GoOldVersion,
+    SwitchLocale,
     SidebarButton,
     NavLinks,
     AlgoliaSearchBox,
