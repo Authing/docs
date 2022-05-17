@@ -34,7 +34,7 @@ If it is the first time to register for {{$localeConfig.brandName}}, you can ski
 
 Go to **Console** &gt; **Applications** &gt; **Application List**, and click the "Create Application" button.
 
-![](/../images/20200927174331.png)
+![](../images/20200927174331.png)
 
 ::: img-description
 Create application
@@ -243,7 +243,7 @@ Log entry
 
 The browser will redirect to the user authentication page of the OIDC application, and input the user name and password to log in.
 
-![](/../images/20200927174427.png)
+![](../images/20200927174427.png)
 
 ::: img-description
 Login in
@@ -356,7 +356,7 @@ https://<appDomain>.authing.cn/u
 
 If the user is not logged in, the user will be required to log in before entering the personal center; for the logged-in user, it will directly enter the personal center.
 
-![](/../images/20200927174731.png)
+![](../images/20200927174731.png)
 
 ::: img-description
 Personal center
