@@ -128,18 +128,18 @@ module.exports = {
         searchInDoc: "在文档中搜索",
         oldVersion: "旧版",
         nav: [
-          { text: "快速开始", link: "/quickstarts/" },
+          // { text: "快速开始", link: "/quickstarts/" },
           { text: "概念", link: "/concepts/" },
           { text: "使用指南", link: "/guides/" },
-          { text: "开发集成", link: "/reference/" },
+          { text: "开发集成", link: "/reference-new/" },
           {
             text: "应用集成",
             link: "/integration/"
           },
-          {
-            text: "加入 APN",
-            link: "/apn/"
-          },
+          // {
+          //   text: "加入 APN",
+          //   link: "/apn/"
+          // },
           {
             link: "/tenant/",
             text: "多租户（内测版）",
