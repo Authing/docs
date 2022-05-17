@@ -1152,39 +1152,48 @@ const zhCnNavBar = {
                 },
                 {
                   title: "帐号输入框",
-                  path: "/reference/sdk-for-android/component/basic/account-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/account-edit-text"
                 },
                 {
                   title: "密码输入框",
-                  path: "/reference/sdk-for-android/component/basic/password-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-edit-text"
                 },
                 {
                   title: "密码确认输入框",
-                  path: "/reference/sdk-for-android/component/basic/password-confirm-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-confirm-edit-text"
                 },
                 {
                   title: "电话号码输入框",
-                  path: "/reference/sdk-for-android/component/basic/phonenumber-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/phonenumber-edit-text"
                 },
                 {
                   title: "验证码输入框",
-                  path: "/reference/sdk-for-android/component/basic/verifycode-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/verifycode-edit-text"
                 },
                 {
                   title: "获取短信验证码按钮",
-                  path: "/reference/sdk-for-android/component/basic/get-verifycode-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-verifycode-button"
                 },
                 {
                   title: "邮箱输入框",
-                  path: "/reference/sdk-for-android/component/basic/email-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/email-edit-text"
                 },
                 {
                   title: "获取邮箱验证码按钮",
-                  path: "/reference/sdk-for-android/component/basic/get-emailcode-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-emailcode-button"
                 },
                 {
                   title: "登录按钮",
-                  path: "/reference/sdk-for-android/component/basic/login-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-button"
                 },
                 {
                   title: "错误文本",
@@ -1192,43 +1201,53 @@ const zhCnNavBar = {
                 },
                 {
                   title: "登录方式切换栏",
-                  path: "/reference/sdk-for-android/component/basic/login-method-tab"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-method-tab"
                 },
                 {
                   title: "登录容器",
-                  path: "/reference/sdk-for-android/component/basic/login-container"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-container"
                 },
                 {
                   title: "隐私协议",
-                  path: "/reference/sdk-for-android/component/basic/privacy-confirm-box"
+                  path:
+                    "/reference/sdk-for-android/component/basic/privacy-confirm-box"
                 },
                 {
                   title: "注册按钮",
-                  path: "/reference/sdk-for-android/component/basic/register-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-button"
                 },
                 {
                   title: "注册方式切换栏",
-                  path: "/reference/sdk-for-android/component/basic/register-method-tab"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-method-tab"
                 },
                 {
                   title: "注册容器",
-                  path: "/reference/sdk-for-android/component/basic/register-container"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-container"
                 },
                 {
                   title: "跳转注册按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-register-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-register-button"
                 },
                 {
                   title: "跳转登录按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-login-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-login-button"
                 },
                 {
                   title: "跳转忘记密码按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-forgot-password-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-forgot-password-button"
                 },
                 {
                   title: "跳转问题反馈按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-feedback-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-feedback-button"
                 }
               ]
             },
@@ -1237,7 +1256,8 @@ const zhCnNavBar = {
               children: [
                 {
                   title: "社会化登录列表",
-                  path: "/reference/sdk-for-android/component/social/social-login-listview"
+                  path:
+                    "/reference/sdk-for-android/component/social/social-login-listview"
                 }
               ]
             }
@@ -1268,7 +1288,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
-            "/reference/sdk-for-android/scenario/webview",
+            "/reference/sdk-for-android/scenario/webview"
           ]
         },
         {
@@ -1335,8 +1355,7 @@ const zhCnNavBar = {
                 },
                 {
                   title: "邮箱输入框",
-                  path:
-                    "/reference/sdk-for-ios/component/basic/email-textfield"
+                  path: "/reference/sdk-for-ios/component/basic/email-textfield"
                 },
                 {
                   title: "电话号码输入框",
@@ -1483,6 +1502,31 @@ const zhCnNavBar = {
       title: "错误代码",
       path: "/reference/error-code"
     }
+  ],
+  "/reference-new/": [
+    {
+      title: "登录组件 (Guard)",
+      path: "/reference-new/guard/",
+      children: [
+        {
+          title: "React",
+          path: "/reference-new/guard/react"
+        },
+        {
+          title: "Vue",
+          path: "/reference-new/guard/vue"
+        },
+        {
+          title: "Angular",
+          path: "/reference-new/guard/angular"
+        },
+        {
+          title: "原生 JavaScript",
+          path: "/reference-new/guard/native-javascript"
+        }
+      ]
+    }
+    // 加入其他的页面边栏
   ],
   "/concepts/": [
     {
