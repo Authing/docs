@@ -2,7 +2,7 @@
   <div class="sdk-card">
     <div
       :style="{
-        borderTopColor: cardInfo.color,
+        borderTopColor: cardInfo.color
       }"
       class="sdk-card-top-bar"
     ></div>
@@ -26,10 +26,10 @@
             class="sdk-link-item"
           >
             <img
-              width="24px"
-              height="24px"
+              width="40px"
+              height="40px"
               :alt="sdk.name"
-              :src="require(`@theme/assets/images/sdk-icons/${sdk.img2x}`)"
+              :src="require(`@theme/assets/images/reference/${sdk.icon}.svg`)"
             />
           </RouterLink>
           <div class="sdk-icon-gutter"></div>
@@ -40,39 +40,39 @@
 </template>
 
 <script>
-import IconFont from '@theme/components/IconFont/index.vue'
+import IconFont from "@theme/components/IconFont/index.vue";
 
 export default {
   components: {
-    IconFont,
+    IconFont
   },
   props: {
     cardInfo: {
       type: Object,
-      required: true,
+      required: true
     },
     sdkConfig: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       mockData: [
         {
-          link: 'dd',
+          link: "dd",
           icon:
-            'https://files.authing.co/authing-website/home-logo-cnpc-new.png',
-        },
-      ],
-    }
+            "https://files.authing.co/authing-website/home-logo-cnpc-new.png"
+        }
+      ]
+    };
   },
   computed: {
     sdkData() {
-      return this.cardInfo.sdks.map((sdkKey) => this.sdkConfig[sdkKey])
-    },
-  },
-}
+      return this.cardInfo.sdks.map(sdkKey => this.sdkConfig[sdkKey]);
+    }
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -129,10 +129,12 @@ export default {
   .sdk-link-container
     display flex
     align-items center
+    flex-wrap: wrap
     a
       flex-shrink 0
       img
         vertical-align middle
+        margin-bottom: 10px
     .sdk-icon-gutter
       flex-basis 10px
       flex-shrink 1
