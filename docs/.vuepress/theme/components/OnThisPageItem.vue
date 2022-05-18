@@ -13,7 +13,7 @@
     >
       <span>{{ link.title }}</span>
     </a>
-    <ul v-if="link.children">
+    <ul v-if="link.children && (iHaveChildrenActive || imActive)">
       <OnThisPageItem
         v-for="(childLink, index) in link.children"
         :key="index"
