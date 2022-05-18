@@ -35,7 +35,7 @@ public static void markQRCodeScanned(String ticket, @NotNull AuthCallback<JSONOb
 
 **param**
 
-* *`ticket`* the random field in the QR code data
+* `ticket` the random field in the QR code data
 
 **example**
 
@@ -67,7 +67,7 @@ public static void loginByScannedTicket(String ticket, @NotNull AuthCallback<JSO
 
 **param**
 
-* *`ticket`* the random field in the QR code data
+* `ticket` the random field in the QR code data
 
 **example**
 
