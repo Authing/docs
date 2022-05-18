@@ -1,9 +1,14 @@
 <template>
   <div class="console-banner">
     <p>
-      若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing 控制台，来开启你的 Authing 之旅！
+      若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing
+      控制台，来开启你的 Authing 之旅！
     </p>
-    <a href="https://console.authing.cn" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://console.authing.cn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       进入 Authing 控制台
     </a>
   </div>
@@ -12,11 +17,12 @@
 <style lang="stylus">
 .console-banner
   width: 692px
-  height: 190px;
+  height: 160px;
+  margin: 50px auto 10px;
   background: url('~@theme/assets/images/banner.png') no-repeat center center;
-  background-size: 692px 190px;
+  background-size: 692px 160px;
   p
-    padding: 28px 35px;
+    padding: 20px 35px;
     width: 420px;
     color: #fff;
     font-weight: 600;
