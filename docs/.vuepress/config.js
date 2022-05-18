@@ -462,13 +462,14 @@ module.exports = {
         }
       },
       plugins: [
-        new webpack.optimize.LimitChunkCountPlugin({
-          maxChunks: 50
-        })
+        process.env.npm_lifecycle_event !== "docs:dev" &&
+          new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 50
+          })
         // new webpack.optimize.MinChunkSizePlugin({
         //   minChunkSize: 500000, // Minimum number of characters
         // }),
-      ]
+      ].filter(Boolean)
     };
   },
   extraWatchFiles: [

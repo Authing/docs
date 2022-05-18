@@ -1109,6 +1109,10 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-ruby"
     },
     {
+      title: "Delphi",
+      path: "/reference/sdk-for-delphi"
+    },
+    {
       title: "Android",
       path: "/reference/sdk-for-android/",
       children: [
@@ -1152,39 +1156,48 @@ const zhCnNavBar = {
                 },
                 {
                   title: "帐号输入框",
-                  path: "/reference/sdk-for-android/component/basic/account-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/account-edit-text"
                 },
                 {
                   title: "密码输入框",
-                  path: "/reference/sdk-for-android/component/basic/password-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-edit-text"
                 },
                 {
                   title: "密码确认输入框",
-                  path: "/reference/sdk-for-android/component/basic/password-confirm-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-confirm-edit-text"
                 },
                 {
                   title: "电话号码输入框",
-                  path: "/reference/sdk-for-android/component/basic/phonenumber-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/phonenumber-edit-text"
                 },
                 {
                   title: "验证码输入框",
-                  path: "/reference/sdk-for-android/component/basic/verifycode-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/verifycode-edit-text"
                 },
                 {
                   title: "获取短信验证码按钮",
-                  path: "/reference/sdk-for-android/component/basic/get-verifycode-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-verifycode-button"
                 },
                 {
                   title: "邮箱输入框",
-                  path: "/reference/sdk-for-android/component/basic/email-edit-text"
+                  path:
+                    "/reference/sdk-for-android/component/basic/email-edit-text"
                 },
                 {
                   title: "获取邮箱验证码按钮",
-                  path: "/reference/sdk-for-android/component/basic/get-emailcode-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-emailcode-button"
                 },
                 {
                   title: "登录按钮",
-                  path: "/reference/sdk-for-android/component/basic/login-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-button"
                 },
                 {
                   title: "错误文本",
@@ -1192,43 +1205,53 @@ const zhCnNavBar = {
                 },
                 {
                   title: "登录方式切换栏",
-                  path: "/reference/sdk-for-android/component/basic/login-method-tab"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-method-tab"
                 },
                 {
                   title: "登录容器",
-                  path: "/reference/sdk-for-android/component/basic/login-container"
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-container"
                 },
                 {
                   title: "隐私协议",
-                  path: "/reference/sdk-for-android/component/basic/privacy-confirm-box"
+                  path:
+                    "/reference/sdk-for-android/component/basic/privacy-confirm-box"
                 },
                 {
                   title: "注册按钮",
-                  path: "/reference/sdk-for-android/component/basic/register-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-button"
                 },
                 {
                   title: "注册方式切换栏",
-                  path: "/reference/sdk-for-android/component/basic/register-method-tab"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-method-tab"
                 },
                 {
                   title: "注册容器",
-                  path: "/reference/sdk-for-android/component/basic/register-container"
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-container"
                 },
                 {
                   title: "跳转注册按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-register-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-register-button"
                 },
                 {
                   title: "跳转登录按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-login-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-login-button"
                 },
                 {
                   title: "跳转忘记密码按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-forgot-password-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-forgot-password-button"
                 },
                 {
                   title: "跳转问题反馈按钮",
-                  path: "/reference/sdk-for-android/component/basic/go-feedback-button"
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-feedback-button"
                 }
               ]
             },
@@ -1237,7 +1260,8 @@ const zhCnNavBar = {
               children: [
                 {
                   title: "社会化登录列表",
-                  path: "/reference/sdk-for-android/component/social/social-login-listview"
+                  path:
+                    "/reference/sdk-for-android/component/social/social-login-listview"
                 }
               ]
             }
@@ -1268,7 +1292,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
-            "/reference/sdk-for-android/scenario/webview",
+            "/reference/sdk-for-android/scenario/webview"
           ]
         },
         {
@@ -1335,8 +1359,7 @@ const zhCnNavBar = {
                 },
                 {
                   title: "邮箱输入框",
-                  path:
-                    "/reference/sdk-for-ios/component/basic/email-textfield"
+                  path: "/reference/sdk-for-ios/component/basic/email-textfield"
                 },
                 {
                   title: "电话号码输入框",
@@ -1779,6 +1802,175 @@ const zhCnNavBar = {
     {
       title: "Guard Changelog",
       path: "/guard/guard-changelog"
+    }
+  ],
+  "/android/": [
+    {
+      title: "开始开发",
+      path: "/android/develop"
+    },
+    {
+      title: "快速接入",
+      path: "/android/quick"
+    },
+    {
+      title: "超组件",
+      path: "/android/component/",
+      children: [
+        {
+          title: "教程",
+          children: [
+            "/android/component/tutorial/example",
+            "/android/component/tutorial/basic-login",
+            "/android/component/tutorial/advanced-login",
+            "/android/component/tutorial/refine-login",
+            "/android/component/tutorial/basic-register",
+            "/android/component/tutorial/advanced-register",
+            "/android/component/tutorial/login-to-register",
+            "/android/component/tutorial/reset-password-by-phone",
+            "/android/component/tutorial/reset-password-by-email",
+            "/android/component/tutorial/reset-password-all"
+          ]
+        },
+        {
+          title: "基础组件",
+          children: [
+            {
+              title: "应用图标",
+              path: "/android/component/basic/app-logo"
+            },
+            {
+              title: "应用名称",
+              path: "/android/component/basic/app-name"
+            },
+            {
+              title: "帐号输入框",
+              path: "/android/component/basic/account-edit-text"
+            },
+            {
+              title: "密码输入框",
+              path: "/android/component/basic/password-edit-text"
+            },
+            {
+              title: "密码确认输入框",
+              path: "/android/component/basic/password-confirm-edit-text"
+            },
+            {
+              title: "电话号码输入框",
+              path: "/android/component/basic/phonenumber-edit-text"
+            },
+            {
+              title: "验证码输入框",
+              path: "/android/component/basic/verifycode-edit-text"
+            },
+            {
+              title: "获取短信验证码按钮",
+              path: "/android/component/basic/get-verifycode-button"
+            },
+            {
+              title: "邮箱输入框",
+              path: "/android/component/basic/email-edit-text"
+            },
+            {
+              title: "获取邮箱验证码按钮",
+              path: "/android/component/basic/get-emailcode-button"
+            },
+            {
+              title: "登录按钮",
+              path: "/android/component/basic/login-button"
+            },
+            {
+              title: "错误文本",
+              path: "/android/component/basic/error-text"
+            },
+            {
+              title: "登录方式切换栏",
+              path: "/android/component/basic/login-method-tab"
+            },
+            {
+              title: "登录容器",
+              path: "/android/component/basic/login-container"
+            },
+            {
+              title: "隐私协议",
+              path: "/android/component/basic/privacy-confirm-box"
+            },
+            {
+              title: "注册按钮",
+              path: "/android/component/basic/register-button"
+            },
+            {
+              title: "注册方式切换栏",
+              path: "/android/component/basic/register-method-tab"
+            },
+            {
+              title: "注册容器",
+              path: "/android/component/basic/register-container"
+            },
+            {
+              title: "跳转注册按钮",
+              path: "/android/component/basic/go-register-button"
+            },
+            {
+              title: "跳转登录按钮",
+              path: "/android/component/basic/go-login-button"
+            },
+            {
+              title: "跳转忘记密码按钮",
+              path: "/android/component/basic/go-forgot-password-button"
+            },
+            {
+              title: "跳转问题反馈按钮",
+              path: "/android/component/basic/go-feedback-button"
+            }
+          ]
+        },
+        {
+          title: "社会化组件",
+          children: [
+            {
+              title: "社会化登录列表",
+              path: "/android/component/social/social-login-listview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "APIs",
+      children: [
+        "/android/apis/authentication/",
+        "/android/apis/protocol/",
+        "/android/apis/mfa/",
+        "/android/apis/scan/"
+      ]
+    },
+    {
+      title: "社会化登录",
+      path: "/android/social/",
+      children: [
+        "/android/social/wechat",
+        "/android/social/wecom",
+        "/android/social/alipay",
+        "/android/social/lark"
+      ]
+    },
+    {
+      title: "典型场景",
+      children: [
+        "/android/scenario/splash",
+        "/android/scenario/tokens",
+        "/android/scenario/user-profile",
+        "/android/scenario/webview"
+      ]
+    },
+    {
+      title: "私有化部署",
+      path: "/android/onpremise"
+    },
+    {
+      title: "版本历史",
+      path: "/android/version"
     }
   ]
 };
@@ -2870,6 +3062,10 @@ const translatedZhCnNavBar = {
       title: "Ruby",
       path: "/reference/sdk-for-ruby"
     },
+    // {
+    //   title: "Delphi",
+    //   path: "/reference/sdk-for-delphi"
+    // },
     {
       title: "Android",
       path: "/reference/sdk-for-android/",

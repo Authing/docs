@@ -88,12 +88,12 @@ export default {
   border-bottom: 1px solid #eee;
   .title
     flex: 1;
-    padding: 0 1em;
     font-weight: 500;
     font-size: 16px;
   img,.phd
     width: 40px;
     height: 40px;
+    margin-right: 1em;
   a
     line-height: 20px;
     color: #000;

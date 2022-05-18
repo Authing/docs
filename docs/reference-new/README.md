@@ -94,7 +94,7 @@
               title: "Android",
               icon: "Android",
               github: "https://github.com/Authing/guard-android",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-android/",
+              doc: "/v2/android/",
             },
             {
               #
