@@ -176,7 +176,21 @@ export default {
       return this.$themeLocaleConfig.feedback;
     }
   },
+  watch: {
+    $route(a, b) {
+      if (a.name !== b.name) {
+        this.resetState();
+      }
+    }
+  },
   methods: {
+    resetState() {
+      this.status = STATUS.NONE;
+      this.badReasons = [];
+      this.customReason = "";
+      this.submitted = false;
+      this.submitDialogVisible;
+    },
     handleFeedback(status) {
       if (status === this.status) {
         return;
@@ -203,6 +217,8 @@ export default {
         reasonList: this.badReasons
       }).then(() => {
         this.submitted = true;
+        this.customReason = "";
+        this.badReasons = [];
       });
     },
     hideSubmitDialog() {
