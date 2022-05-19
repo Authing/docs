@@ -48,87 +48,87 @@
 </template>
 
 <script>
-import { resolvePage } from '../util'
-import isString from 'lodash/isString'
-import isNil from 'lodash/isNil'
+import { resolvePage } from "../util";
+import isString from "lodash/isString";
+import isNil from "lodash/isNil";
 
 export default {
-  name: 'PageNav',
+  name: "PageNav",
 
-  props: ['sidebarItems'],
+  props: ["sidebarItems"],
 
   computed: {
     prev() {
-      return resolvePageLink(LINK_TYPES.PREV, this)
+      return resolvePageLink(LINK_TYPES.PREV, this);
     },
 
     next() {
-      return resolvePageLink(LINK_TYPES.NEXT, this)
-    },
-  },
-}
+      return resolvePageLink(LINK_TYPES.NEXT, this);
+    }
+  }
+};
 
 function resolvePrev(page, items) {
-  return find(page, items, -1)
+  return find(page, items, -1);
 }
 
 function resolveNext(page, items) {
-  return find(page, items, 1)
+  return find(page, items, 1);
 }
 
 const LINK_TYPES = {
   NEXT: {
     resolveLink: resolveNext,
     getThemeLinkConfig: ({ nextLinks }) => nextLinks,
-    getPageLinkConfig: ({ frontmatter }) => frontmatter.next,
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.next
   },
   PREV: {
     resolveLink: resolvePrev,
     getThemeLinkConfig: ({ prevLinks }) => prevLinks,
-    getPageLinkConfig: ({ frontmatter }) => frontmatter.prev,
-  },
-}
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.prev
+  }
+};
 
 function resolvePageLink(
   linkType,
   { $themeConfig, $page, $route, $site, sidebarItems }
 ) {
-  const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType
+  const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType;
 
   // Get link config from theme
-  const themeLinkConfig = getThemeLinkConfig($themeConfig)
+  const themeLinkConfig = getThemeLinkConfig($themeConfig);
 
   // Get link config from current page
-  const pageLinkConfig = getPageLinkConfig($page)
+  const pageLinkConfig = getPageLinkConfig($page);
 
   // Page link config will overwrite global theme link config if defined
-  const link = isNil(pageLinkConfig) ? themeLinkConfig : pageLinkConfig
+  const link = isNil(pageLinkConfig) ? themeLinkConfig : pageLinkConfig;
 
   if (link === false) {
-    return
+    return;
   } else if (isString(link)) {
-    return resolvePage($site.pages, link, $route.path)
+    return resolvePage($site.pages, link, $route.path);
   } else {
-    return resolveLink($page, sidebarItems)
+    return resolveLink($page, sidebarItems);
   }
 }
 
 function find(page, items, offset) {
   // lxp yysd!
-  const resWithEmptyVal = []
-  flatten(items, resWithEmptyVal)
-  const res = resWithEmptyVal.filter(item => item.path)
+  const resWithEmptyVal = [];
+  flatten(items, resWithEmptyVal);
+  const res = resWithEmptyVal.filter(item => item.path);
   for (let i = 0; i < res.length; i++) {
-    const cur = res[i]
+    const cur = res[i];
     if (cur.path === decodeURIComponent(page.path)) {
       // 如果是当前页面
       // 先判断是不是最后一个或者第一个
-      if ( (i + offset) === res.length || (i + offset) < 0) {
+      if (i + offset === res.length || i + offset < 0) {
         // 如果是最后一个或者第一个，那就不显示下一个了
-        return ;
+        return;
       } else {
         // 如果不是最后一页
-        return res[i + offset]
+        return res[i + offset];
       }
     }
   }
@@ -136,14 +136,14 @@ function find(page, items, offset) {
 
 function flatten(items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === 'group') {
+    if (items[i].type === "group") {
       res.push({
         ...items[i],
         children: null
-      })
-      flatten(items[i].children || [], res)
+      });
+      flatten(items[i].children || [], res);
     } else {
-      res.push(items[i])
+      res.push(items[i]);
     }
   }
 }
@@ -162,7 +162,7 @@ function flatten(items, res) {
     font-weight normal
     font-size 14px
     &:hover
-      color #396aff
+      color #86909C
   .inner
     min-height 2rem
     margin-top 0

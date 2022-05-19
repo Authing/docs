@@ -207,7 +207,9 @@ export default {
 
     li
       margin-left 0
-      margin-bottom 16px
+      margin-bottom 24px
+      li
+        margin-bottom: 16px
       a
         text-decoration none
         display block
@@ -226,7 +228,8 @@ export default {
             // color: #C9CDD4;
             // padding-left: 0
             &:before
-              width: 12px
+              width: 4px
+              left: 16px
             // &.router-link-active
             //   margin-left -39px
             //   padding-left 39px
