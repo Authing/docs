@@ -80,8 +80,8 @@ module.exports = {
       relatedDocText: "相关文档",
       devDocText: "开发文档",
       apiDocText: "API 文档",
-      githubFeedback: "反馈",
-      githubEdit: "编辑本文",
+      githubFeedback: "在 Github 上反馈",
+      githubEdit: "编辑",
       brandName: sidebar.BRAND_NAME_ZH_CN,
       brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE
     },
@@ -93,7 +93,7 @@ module.exports = {
       relatedDocText: "Related documents",
       devDocText: "Development documents",
       apiDocText: "API documents",
-      githubFeedback: "Feedback",
+      githubFeedback: "Feedback on Github",
       githubEdit: "Edit",
       brandName: sidebar.BRAND_NAME_EN_US,
       brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE

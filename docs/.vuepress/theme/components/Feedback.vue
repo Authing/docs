@@ -132,12 +132,11 @@
 
       <div class="github-edit">
         有建议或错误，可直接
+
         <a
-          :href="
-            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
-          "
+          href="https://github.com/Authing/docs/issues/new?assignees=&labels=question&template=question.md"
         >
-          在 Github 上编辑
+          {{ $localeConfig.githubFeedback }}
         </a>
       </div>
     </div>

@@ -15,10 +15,13 @@
           fill="#2c2c2c"
         ></path>
       </svg>
+
       <a
-        href="https://github.com/Authing/docs/issues/new?assignees=&labels=question&template=question.md"
+        :href="
+          `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
+        "
       >
-        {{ $localeConfig.githubFeedback }}
+        {{ $localeConfig.githubEdit }}
       </a>
       <!-- &nbsp;
         <a :href="`https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`">
