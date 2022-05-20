@@ -15,7 +15,7 @@ The common third-party IdPs include Google, GitHub and other SAML identity servi
 
 - [Social authentication providers](./social.md), like GitHub or Apple.
 - [Enterprise IdPs](./enterprise.md), IdPs which support standard authentication or authorization protocols like OIDC, SAML, CAS, LDAP, Windows Active Directory and Azure Active Directory.
-- [Customized Database](/guides/database-connection/overview.md), you can also integrate your database with Authing using customized database script to store users' information.
+- [Customized Database](/en/guides/database-connection/overview.md), you can also integrate your database with Authing using customized database script to store users' information.
 
 ## Need More Help?
 
