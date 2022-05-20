@@ -1507,6 +1507,7 @@ const zhCnNavBar = {
       path: "/reference/error-code"
     }
   ],
+<<<<<<< Updated upstream
   "/reference-new/": [
     {
       title: "登录组件 (Guard)",
@@ -1532,6 +1533,9 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
+=======
+
+>>>>>>> Stashed changes
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,
