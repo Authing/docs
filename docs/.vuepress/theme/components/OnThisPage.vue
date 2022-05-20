@@ -5,7 +5,7 @@
   >
     <div v-show="showOnthisPage">
       <div>
-        <h3>本篇目录</h3>
+        <!-- <h3>本篇目录</h3> -->
         <ul class="links" v-if="items">
           <OnThisPageItem
             v-for="(link, index) in items"
@@ -165,19 +165,20 @@ export default {
     position: relative
     font-size 12px
     // border-left 3px solid transparent
-    color: transparent
+    // color: transparent
+    color #c9cdd4
     padding-left: 25px;
 
 
-    &:before
-      content: ' '
-      background: #E5E6EB
-      border-radius: 38px;
-      width: 20px
-      height: 4px
-      position absolute
-      left: 0
-      top: 8px
+    // &:before
+    //   content: ' '
+    //   background: #E5E6EB
+    //   border-radius: 38px;
+    //   width: 20px
+    //   height: 4px
+    //   position absolute
+    //   left: 0
+    //   top: 8px
     // &:visited
     //   color #666
     &.router-link-active:before
@@ -207,9 +208,9 @@ export default {
 
     li
       margin-left 0
-      margin-bottom 24px
-      li
-        margin-bottom: 16px
+      margin-bottom 8px
+      // li
+      //   margin-bottom: 16px
       a
         text-decoration none
         display block
@@ -221,7 +222,7 @@ export default {
           // color $accentColor
           color #86909C
       ul
-        margin-top 16px
+        margin-top 8px
         padding-left: 0
         li
           a
