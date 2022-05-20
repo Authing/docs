@@ -3,7 +3,7 @@
 <LastUpdated/>
 
 <!-- ::: hint-warning
-只有**企业版**用户能够Use 连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 176-0250-2507 或 xuziqiang@authing.cn。
+Only **Enterprise Edition** users can use the function to connect to a custom database. For details, please refer to [https://authing.cn/pricing](https://authing.cn/pricing). If you want to try it out, please contact 176-0250-2507 or xuziqiang@authing.cn.
 ::: -->
 
 You can authenticate users with your customized database. For that, you need to setup database connection, prepare database operation script and setup environment variable (optional).
