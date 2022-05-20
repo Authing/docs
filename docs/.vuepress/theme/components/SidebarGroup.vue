@@ -4,9 +4,9 @@
     :class="[
       {
         collapsable,
-        'is-sub-group': depth !== 0,
+        'is-sub-group': depth !== 0
       },
-      `depth-${depth}`,
+      `depth-${depth}`
     ]"
   >
     <RouterLink
@@ -14,7 +14,7 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        active: isActive($route, item.path),
+        active: isActive($route, item.path)
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
@@ -47,25 +47,25 @@
 </template>
 
 <script>
-import { isActive } from '../util'
-import DropdownTransition from '@theme/components/DropdownTransition.vue'
+import { isActive } from "../util";
+import DropdownTransition from "@theme/components/DropdownTransition.vue";
 
 export default {
-  name: 'SidebarGroup',
+  name: "SidebarGroup",
 
   components: {
-    DropdownTransition,
+    DropdownTransition
   },
 
-  props: ['item', 'open', 'collapsable', 'depth'],
+  props: ["item", "open", "collapsable", "depth"],
 
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
-    this.$options.components.SidebarLinks = require('@theme/components/SidebarLinks.vue').default
+    this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
   },
 
-  methods: { isActive },
-}
+  methods: { isActive }
+};
 </script>
 
 <style lang="stylus">
@@ -80,7 +80,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 16px
+      font-size 14px
       line-height 1.4
       font-weight normal
       padding-left 0.8rem
