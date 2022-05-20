@@ -92,6 +92,33 @@ AuthClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "
 
 <br>
 
+## 邮箱登录
+
+```swift
+func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**参数**
+
+* *email* 邮箱
+* *code* 邮箱验证码
+
+**示例**
+
+```swift
+AuthClient().loginByEmail(email: "email", code: "code") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+}
+```
+
+**错误码**
+
+* 2001 邮箱验证码错误
+
+<br>
+
 ## 帐号密码登录
 
 ```swift
