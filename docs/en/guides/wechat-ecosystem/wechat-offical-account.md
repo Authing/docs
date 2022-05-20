@@ -1,16 +1,16 @@
-# 关注公众号登录
+# Follow the official account to log in
 
 <LastUpdated/>
 
-「关注公众号登录」指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用「关注公众号登录」可以快速为公众号引流，提升品牌粘性。借助 Authing 的「关注公众号登录」，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。[查看详情](/connections/wechatmp-qrcode/)。
+[Following the official account login] refers to the process of generating the QR code of the WeChat official account on the PC website. The user scans the code with the WeChat APP and follows the official account to realize the process of automatic login. Using [Follow Official Account Login] can quickly attract traffic to the official account and enhance brand stickiness. With Authing's [Follow Official Account Login], you hardly need to develop any code, just simple configuration and it can be completed in a few minutes.[see details](/connections/wechatmp-qrcode/)。
 
-> 受微信平台要求限制，只有**服务号**具备[生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) API 能力，请确保你的公众号是**服务号**类型。
+> Restricted by the requirements of the WeChat platform, only the **service number** has the ability to [generate QR code with parameters](https://developers.weixin.qq.com/doc/offiaccount/en/Account_Management/Generating_a_Parametric_QR_Code.html)API capability, please make sure your official account is of the **service account** type.
 
 
-- 应用场景：PC 网站；
-- 概述：PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录；
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)。
+- Application scenario: PC website;
+- Overview: The QR code of the WeChat official account is generated on the PC website, the user scans the code with the WeChat APP, and automatically logs in after following the official account;
+- View [WeChat official document](https://developers.weixin.qq.com/doc/offiaccount/en/Account_Management/Generating_a_Parametric_QR_Code.html)。
 
 <img src="https://cdn.authing.cn/img/20220314121523.png" height="400px" style="display:block;margin: 0 auto;"/>
 
-详细指引请查看文档：[接入关注公众号登录](/connections/wechatmp-qrcode/)。
+For detailed guidelines, please check the document: [Access to follow the official account login](/connections/wechatmp-qrcode/)。
