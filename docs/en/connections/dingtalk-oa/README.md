@@ -16,4 +16,4 @@
 }
 ---
 
-<IntegrationDetail backLink="/guides/connections/enterprise"/>
+<IntegrationDetail backLink="/en/guides/connections/enterprise"/>
