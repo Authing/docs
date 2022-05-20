@@ -1,6 +1,6 @@
 ---
 {
-  title: '观远数据对接 - 单点登录配置 - 应用身份服务 - Authing 身份云',
+  title: 'Apollo 对接 - 单点登录配置 - 应用身份服务 - Authing 身份云',
   description: 'Apollo Global Management 是最大的资产管理公司之一，为世界上许多最杰出的投资者提供服务。 我们在私募股权、信贷和房地产领域采用以价值为导向的方法。',
   meta:
     [
