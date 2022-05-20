@@ -3188,13 +3188,29 @@ const translatedZhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-flutter/apis/",
           children: [
-            "/reference/sdk-for-flutter/authentication/",
-            "/reference/sdk-for-flutter/protocol/",
-            "/reference/sdk-for-flutter/mfa/",
-            "/reference/sdk-for-flutter/scan/",
-            "/reference/sdk-for-flutter/social/"
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-flutter/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-flutter/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-flutter/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-flutter/apis/scan/"
+            }
           ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-flutter/social/"
         },
         {
           title: "On-premise",
