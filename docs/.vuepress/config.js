@@ -83,7 +83,11 @@ module.exports = {
       githubFeedback: "反馈",
       githubEdit: "编辑本文",
       brandName: sidebar.BRAND_NAME_ZH_CN,
-      brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE
+      brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE,
+      back: "回到列表",
+      next: "下一步",
+      previous: "上一步",
+      lastStep: "我知道了，返回列表"
     },
     "/en/": {
       lang: "en-US",
@@ -96,7 +100,11 @@ module.exports = {
       githubFeedback: "Feedback",
       githubEdit: "Edit",
       brandName: sidebar.BRAND_NAME_EN_US,
-      brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE
+      brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE,
+      back: "Back to list",
+      next: "Next",
+      previous: "Previous",
+      lastStep: "I know, return to the list"
     }
   },
   head,
