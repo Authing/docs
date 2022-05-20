@@ -4,16 +4,16 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入关注公众号登录',
-  bannerTitle: '接入关注公众号登录',
+  title: 'Access to follow the official account login',
+  bannerTitle: 'Access to follow the official account login',
   steps:
     [
       {
-        title: '开启服务器配置',
+        title: 'Enable server configuration',
       },
-      { title: '在 Authing 创建一个应用' },
+      { title: 'Create an app in Authing' },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
