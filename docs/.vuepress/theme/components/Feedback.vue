@@ -235,7 +235,7 @@ export default {
   background #FFFFFF
   border-radius 4px
   // border 1px solid #EEEEEE
-  padding 30px 24px
+  padding 30px 0
   margin-top 34px
   .github-edit
     font-size 14px
