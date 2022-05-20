@@ -806,8 +806,8 @@
       {
         key: "apollo",
         name: "Apollo",
-        image: "Apollo_logo@2x.png",
-        image2x: "Apollo_logo@3x.png",
+        image: "apollo_logo.svg",
+        image2x: "apollo_logo.svg",
         category: "other",
       },
     ],
