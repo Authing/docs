@@ -56,43 +56,31 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-<<<<<<< Updated upstream
-              doc: "https://docs.authing.cn/v2/reference/guard/native-javascript.html",
-=======
+
               doc: "./single-page-application/native-javascript.html",
->>>>>>> Stashed changes
+
             },
             {
               #
               title: "React",
-<<<<<<< Updated upstream
-              icon: "React-Native",
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/react.html",
-=======
               icon: "React-Native",   
               doc: "./single-page-application/react.html",
->>>>>>> Stashed changes
+
             },
             {
               #
               title: "Vue",
-<<<<<<< Updated upstream
+
               icon: "Vue",
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/vue.html",
-=======
-              icon: "Vue",       
               doc: "./single-page-application/vue.html",
->>>>>>> Stashed changes
+
             },
             {
               #
               title: "Angular",
               icon: "Angular",
-<<<<<<< Updated upstream
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/angular.html",
-=======
               doc: "./single-page-application/angular.html",
->>>>>>> Stashed changes
+
             },
           ],
       },
