@@ -20,7 +20,7 @@ hotSearch:
 sdkConfig:
   ios:
     name: iOS Swift
-    link: /en/reference/sdk-for-swift.html
+    link: /en/reference/sdk-for-ios/
     img: ios.png
     img2x: ios@2x.png
   android:
@@ -30,7 +30,7 @@ sdkConfig:
     img2x: android@2x.png
   flutter:
     name: Flutter
-    link: /en/reference/sdk-for-flutter.html
+    link: /en/reference/sdk-for-flutter/
     img: flutter.png
     img2x: flutter@2x.png
   javascript:
