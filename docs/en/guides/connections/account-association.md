@@ -1,45 +1,44 @@
-# 身份源连接的账号关联
+# Account Associations for Identity Provider Connections
 
 <LastUpdated/>
 
-使用「身份源连接的账号关联」功能，让你的用户在使用你所配置的社会化身份源和企业身份源登录时，能够直接登录到已有账号。你可以在创建身份源连接时看到相关的配置项。
+Use the 'Identity Provider Connection Account Association' feature to enable your users to log in directly to existing accounts when logging in using the social and enterprise identity sources you configure. You can see the associated configuration items when creating an identity source connection.
 
-## 功能介绍
+## Features
 
-![](./images/account1.png)
+Currently, the identity source connections supported by this feature are:
 
-目前本功能支持的身份源连接有：
-
-- 微信
-  - PC 微信登录
-  - 微信公众号扫码登录
+- Wechat
+  - WeChat QR Code on PC
+  - Wechat Official Accounts QR Code
 - QQ
-- 微博
+- Weibo
 
-其他身份源的本功能正在测试中，将会逐步开放，敬请期待。
+This feature of other identity provider is being tested and will be gradually opened, please look forward to.
 
-## 使用说明
+## Instructions
 
-当 **未开启「账号身份关联」** 时，用户首次通过身份源登录时默认在用户池中创建新用户。
-![](./images/account2.png)
+When the **Account Identity Association** is not open, a new user is created in the user pool by default when the user logs in through the identity source for the first time.
+![](./images/account1.jpg)
 
-如果开启了 **「仅用于登录」**，首次使用身份源登录的用户将无法完成登录，只有老用户才能够使用身份源登录。
+If **Login Only** is turned on, the user who logged in with the identity source for the first time will not be able to complete the login, and only older users will be able to log in with the identity source.
 
-开启 **「账号身份关联」** 后，你可以对用户的“身份源账号关联方式”进行选择，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。
+When you open **Account Identity Association**, you can select the user's 'Identity Source Account Association Method', which allows the user to log in directly to an existing account via 'Field Match' or 'Ask Binding'.
 
-需要注意的是，Authing 仅对于能够获取到用户手机号和邮箱的身份源连接支持「账号匹配」功能，具体细节详见：[身份源连接的账号匹配规则 | Authing 文档](./user-mapping.md)
+It is important to note that Authing supports 'Account Matching' for identity source connections that can only be accessed to user mobile phone numbers and mailboxes, as detailed in: [Account Matching Rules for Identity Source Connections | Authing Documents](./user-mapping.md)
 
-如果选择 **「询问绑定」** 方式进行身份源的账号关联，你需要在这里配置用户在「账号询问绑定」页面能够使用的绑定方式。
+If you choose **Ask Binding** to associate with the account of the identity provider, you need to configure the binding that the user can use on the 'Ask Binding' page.
 
-## 用户旅程
+## User Journey
 
-在 Authing 控制台完成询问绑定的相关配置后，你的用户在使用身份源登录时会被提示选择是「创建新账号」还是「绑定到已有账号」。
+After the Author console completes the relevant configuration for the query binding, your user is prompted to choose whether to 'Create a New Account' or 'Bind to an Existing Account' when logging in using an identity source.
 
-![](./images/account3.png)
+![](./images/account2.jpg)
 
-如果用户选择「我想创建一个新账号」，则会在用户池内创建一个新用户。如果用户选择「我想绑定到已有账号」，则会跳转到如下页面：
-![](./images/account4.png)
+If a user chooses 'I want to create a new account', a new user is created in the user pool. If the user chooses 'I want to bind to an existing account', it jumps to the following page:
 
-你的用户可以在这里输入已存在的账号信息，点击「绑定」后，本次登录使用的身份源将作为一种登录方式绑定到已有的账号上。用户在之后的使用中可以直接通过本次的身份源登录方式登录到同一个账号。
+![](./images/account3.jpg)
 
-另外，当前应用的「登录协议」、「安全设定」等配置，在「账号绑定」页面仍将生效，持续保护用户的登录流程。
+Your user can enter existing account information here, and after clicking 'Bind', the source of identity used for this login will be bound to the existing account as a login method. Users can log in to the same account directly through this identity source login in subsequent use.
+
+In addition, the currently applied 'Login Protocol', 'Security Settings', and other configurations will still take effect on the Account Binding page, continuing to protect the user's login process.
