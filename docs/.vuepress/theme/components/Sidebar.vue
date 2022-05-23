@@ -1,76 +1,76 @@
 <template>
   <aside ref="sidebarRef" class="sidebar">
-    <NavLinks :navLinks="userNavLinks"/>
-    <go-old-version/>
+    <NavLinks :navLinks="userNavLinks" />
+    <go-old-version />
     <!-- <NavLinks :navLinks="languageNavLinks" /> -->
 
-    <slot name="top"/>
+    <slot name="top" />
     <template v-if="$frontmatter.sidebarType === 'none'" />
     <template v-else-if="$frontmatter.sidebarType === 'page'">
-      <PageSidebar/>
+      <PageSidebar />
     </template>
     <template v-else>
       <div class="current-nav-text" v-if="currentNavText">
         {{ currentNavText }}
       </div>
 
-      <SidebarLinks :depth="0" :items="items"/>
+      <SidebarLinks :depth="0" :items="items" />
     </template>
-    <slot name="bottom"/>
+    <slot name="bottom" />
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
-import {getUserNavLinks, getLanguageNavLinks} from '@theme/util/navLinks'
-import GoOldVersion from '@theme/components/GoOldVersion.vue'
-import PageSidebar from '@theme/components/PageSidebar.vue'
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
+import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
+import GoOldVersion from "@theme/components/GoOldVersion.vue";
+import PageSidebar from "@theme/components/PageSidebar.vue";
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
-  components: {SidebarLinks, NavLinks, GoOldVersion, PageSidebar},
+  components: { SidebarLinks, NavLinks, GoOldVersion, PageSidebar },
 
-  props: ['items'],
+  props: ["items"],
 
   computed: {
     currentNavText() {
-      const navLinks = this.$themeLocaleConfig.nav
+      const navLinks = this.$themeLocaleConfig.nav;
       if (!navLinks) {
-        return ''
+        return "";
       }
 
-      const path = this.$route.path
+      const path = this.$route.path;
 
-      const currNav = navLinks.find((item) => path.startsWith(item.link))
+      const currNav = navLinks.find(item => path.startsWith(item.link));
 
-      return currNav && currNav.text
+      return currNav && currNav.text;
     },
 
     userNavLinks() {
-      return getUserNavLinks(this)
+      return getUserNavLinks(this);
     },
 
     languageNavLinks() {
-      return getLanguageNavLinks(this)
-    },
+      return getLanguageNavLinks(this);
+    }
   },
 
   mounted() {
-    const sidebar = this.$refs.sidebarRef
-    const activeItem = sidebar && sidebar.querySelector('.active')
+    const sidebar = this.$refs.sidebarRef;
+    const activeItem = sidebar && sidebar.querySelector(".active");
 
     if (sidebar && activeItem) {
-      sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200
+      sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200;
     }
   },
 
   methods: {
     getUserNavLinks,
-    getLanguageNavLinks,
-  },
-}
+    getLanguageNavLinks
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -110,7 +110,7 @@ export default {
     margin-top 1rem
 
     & > li > a.sidebar-link
-      font-size 14px
+      font-size 16px
       line-height 1.7
 
     & > li:not(:first-child)
