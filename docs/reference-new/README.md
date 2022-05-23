@@ -56,7 +56,6 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-
               doc: "./single-page-application/native-javascript.html",
 
             },
@@ -70,7 +69,6 @@
             {
               #
               title: "Vue",
-
               icon: "Vue",
               doc: "./single-page-application/vue.html",
 
@@ -93,35 +91,35 @@
               title: "iOS Swift",
               icon: "iOS",
               github: "https://github.com/Authing/guard-ios",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-ios/",
+              doc: "./Mobile-and-client-applications/sdk-for-ios/",
             },
             {
               #
               title: "Android",
               icon: "Android",
               github: "https://github.com/Authing/guard-android",
-              doc: "/v2/android/",
+              doc: "./Mobile-and-client-applications/sdk-for-android/",
             },
             {
               #
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-flutter.html",
+              doc: "./Mobile-and-client-applications/sdk-for-flutter/",
             },
             {
               #
               title: "React Native",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-rn-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-react-native.html",
+              doc: "./Mobile-and-client-applications/sdk-for-react-native.html",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-csharp/",
+              doc: "./Mobile-and-client-applications/sdk-for-csharp/",
             },
           ],
       },
@@ -134,49 +132,49 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-python/",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-csharp/",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
               github: "https://github.com/Authing/authing-ruby",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-ruby.html",
             },
             {
               #
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-java/",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-go/",
             },
           ],
       },
@@ -228,6 +226,19 @@
               title: "API",
               icon: "Swagger",
               api: "https://core.authing.cn/openapi/",
+            },
+          ],
+      },
+      {
+        #
+        title: "SDK 库",
+        desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
+        list: [
+            {
+              #
+              title: "SDK",
+              icon: "Swagger",
+              api: "https://authing-open-api.readme.io/reference",
             },
           ],
       },

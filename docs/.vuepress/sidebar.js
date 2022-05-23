@@ -1507,8 +1507,8 @@ const zhCnNavBar = {
       path: "/reference/error-code"
     }
   ],
-<<<<<<< Updated upstream
-  "/reference-new/": [
+
+  "/reference-new/guard/": [
     {
       title: "登录组件 (Guard)",
       path: "/reference-new/guard/",
@@ -1533,9 +1533,33 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
-=======
 
->>>>>>> Stashed changes
+  "/reference-new/single-page-application/": [
+    {
+      title: "单页应用",
+      path: "/reference-new/single-page-application/",
+      children: [
+        {
+          title: "React",
+          path: "/reference-new/single-page-application/react"
+        },
+        {
+          title: "Vue",
+          path: "/reference-new/single-page-application/vue"
+        },
+        {
+          title: "Angular",
+          path: "/reference-new/single-page-application/angular"
+        },
+        {
+          title: "JavaScript",
+          path: "/reference-new/single-page-application/native-javascript"
+        }
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
+
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,
