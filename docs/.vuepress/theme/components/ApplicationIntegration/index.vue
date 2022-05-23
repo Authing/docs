@@ -45,7 +45,7 @@
             v-model="searchKeyword"
             :apps="allApps"
             :class="{
-              searching: mobileSearchVisible,
+              searching: mobileSearchVisible
             }"
             @blur="hideMobileSearch"
           />
@@ -87,7 +87,7 @@
         <AuthingEmpty
           description="暂无应用"
           :style="{
-            marginTop: '100px',
+            marginTop: '100px'
           }"
           v-else
         />
@@ -100,122 +100,146 @@
         />
       </div>
     </section>
+
+    <section class="apn">
+      <h3>
+        {{ langMap.apnTitle }}
+      </h3>
+      <p>
+        {{ langMap.apnSubtitle }}
+      </p>
+      <router-link to="/apn/" target="_blank">
+        {{ langMap.apnLink }} 〉
+      </router-link>
+    </section>
   </div>
 </template>
 
 <script>
-import AuthingTabs from '@theme/components/AuthingTabs/index.vue'
-import AuthingEmpty from '@theme/components/AuthingEmpty/index.vue'
-import SearchApp from '@theme/components/ApplicationIntegration/SearchApp.vue'
-import keyBy from 'lodash/keyBy'
-import IconFont from '@theme/components/IconFont/index.vue'
-import debounce from 'lodash/debounce'
-import { MQMobile } from '@theme/util/constants'
+import AuthingTabs from "@theme/components/AuthingTabs/index.vue";
+import AuthingEmpty from "@theme/components/AuthingEmpty/index.vue";
+import SearchApp from "@theme/components/ApplicationIntegration/SearchApp.vue";
+import keyBy from "lodash/keyBy";
+import IconFont from "@theme/components/IconFont/index.vue";
+import debounce from "lodash/debounce";
+import { MQMobile } from "@theme/util/constants";
 
 export default {
   components: {
     AuthingTabs,
     AuthingEmpty,
     SearchApp,
-    IconFont,
+    IconFont
   },
   data() {
     return {
       page: 1,
       pageSize: 20,
       offsetFromViewport: null,
-      searchKeyword: '',
+      searchKeyword: "",
       mobileSearchVisible: false,
-      lastRowFillCount: 0,
-    }
+      lastRowFillCount: 0
+    };
   },
   computed: {
     langMap() {
-      if (this.$lang === 'en-US') {
+      if (this.$lang === "en-US") {
         return {
-          title: 'Application integration',
+          title: "Application integration",
           subtitle:
-            'Do not worry about login, authing integrates all mainstream applications!',
-        }
-      } else if (this.$lang === 'zh-CN') {
+            "Do not worry about login, authing integrates all mainstream applications!",
+          apnTitle: "Want to join Authing APN?",
+          apnSubtitle:
+            "Authing APN is a great way to increase the number of users.",
+          apnLink: "Learn more"
+        };
+      } else if (this.$lang === "zh-CN") {
         return {
-          title: '应用集成',
-          subtitle: '不要再为登录发愁，Authing 集成了所有主流应用 ！',
-        }
+          title: "应用集成",
+          subtitle: "不要再为登录发愁，Authing 集成了所有主流应用 ！",
+          apnTitle: "想要加入 Authing 合作网络？",
+          apnSubtitle:
+            "你可以将应用加入到 Authing 合作网络，让千万客户快速集成访问",
+          apnLink: "了解更多"
+        };
       }
     },
     currentCategory() {
-      return this.$route.query.category || 'all'
+      return this.$route.query.category || "all";
     },
     tabs() {
-      return this.$frontmatter.categories.map((item) => {
-        console.log(item)
+      return this.$frontmatter.categories.map(item => {
+        console.log(item);
         return {
           label: item.name,
-          key: item.key,
-        }
-      })
+          key: item.key
+        };
+      });
     },
     appKeyMap() {
-      return keyBy(this.allApps, 'key')
+      return keyBy(this.allApps, "key");
     },
     maxPage() {
-      return Math.ceil(this.filteredApps.length / this.pageSize)
+      return Math.ceil(this.filteredApps.length / this.pageSize);
     },
     categorizedApps() {
-      if (this.currentCategory === 'all') {
+      if (this.currentCategory === "all") {
         // LDAP 协议是单独分类，不在所有应用中显示
-        return this.allApps.filter((item) => item.category !== 'ldap')
+        return this.allApps.filter(item => item.category !== "ldap");
       }
 
       return this.allApps.filter(
-        (item) => item.category === this.currentCategory
-      )
+        item => item.category === this.currentCategory
+      );
     },
     filteredApps() {
       if (!this.searchKeyword) {
-        return this.categorizedApps
+        return this.categorizedApps;
       }
 
-      if (this.currentCategory === 'ldap') {
-        return this.categorizedApps.filter((app) =>
+      if (this.currentCategory === "ldap") {
+        return this.categorizedApps.filter(app =>
+          app.name.toLowerCase().includes(this.searchKeyword.toLowerCase())
+        );
+      }
+
+      return this.allApps
+        .filter(app =>
           app.name.toLowerCase().includes(this.searchKeyword.toLowerCase())
         )
-      }
+        .filter(app =>
+          this.currentCategory === "all"
+            ? app.category !== "ldap"
+            : app.category === this.currentCategory
+        ); // Filter apps by keyword and category.
 
-      return this.allApps.filter(app =>
-        app.name.toLowerCase().includes(this.searchKeyword.toLowerCase())
-      ).filter(app =>
-        this.currentCategory === 'all'? (app.category !== 'ldap') : (app.category === this.currentCategory)
-      ); // Filter apps by keyword and category.
-
-      return apps
+      return apps;
     },
     filledApps() {
-      const apps = [...this.filteredApps]
-      let fillCount = this.lastRowFillCount
+      const apps = [...this.filteredApps];
+      let fillCount = this.lastRowFillCount;
 
       while (fillCount > 0) {
         apps.push({
-          empty: true,
-        })
-        fillCount--
+          empty: true
+        });
+        fillCount--;
       }
 
-      return apps
+      return apps;
     },
     pagedApps() {
       return this.filledApps.slice(
         this.pageSize * (this.page - 1),
         this.pageSize * this.page
-      )
+      );
     },
     allApps() {
-      return this.$frontmatter.apps.map((app) => ({
+      return this.$frontmatter.apps.map(app => ({
         ...app,
-        link: `${this.$localeConfig.path}integration/${app.key}`,
-      }))
-    },
+        link: `${this.$localeConfig.path}integration/${app.key}`
+      }));
+    }
   },
   watch: {
     page: {
@@ -225,76 +249,76 @@ export default {
           this.$router.replace({
             query: {
               ...this.$route.query,
-              page,
-            },
-          })
+              page
+            }
+          });
         }
 
         if (page > this.maxPage) {
           this.$router.replace({
             query: {
               ...this.$route.query,
-              page: this.maxPage,
-            },
-          })
+              page: this.maxPage
+            }
+          });
         }
 
         if (page < 1) {
           this.$router.replace({
             query: {
               ...this.$route.query,
-              page: 1,
-            },
-          })
+              page: 1
+            }
+          });
         }
-      },
+      }
     },
     filteredApps() {
-      this.setLastRowFillCount()
+      this.setLastRowFillCount();
     },
     searchKeyword() {
       this.page = 1; // Always show the first page of apps when searching by keyword.
     },
     currentCategory() {
       this.page = 1; // Always show the first page of apps when switching to a new category.
-    },
+    }
   },
   mounted() {
-    this.page = Number(this.$route.query.page || 1)
-    this.setLastRowFillCount()
-    window.addEventListener('resize', this.setLastRowFillCount)
+    this.page = Number(this.$route.query.page || 1);
+    this.setLastRowFillCount();
+    window.addEventListener("resize", this.setLastRowFillCount);
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.setLastRowFillCount)
+    window.removeEventListener("resize", this.setLastRowFillCount);
   },
   methods: {
     handleTabClick(tab) {
-      const tabsEl = this.$refs.tabRef.$el
-      this.offsetFromViewport = tabsEl.getBoundingClientRect().top
+      const tabsEl = this.$refs.tabRef.$el;
+      this.offsetFromViewport = tabsEl.getBoundingClientRect().top;
       this.$router.replace(
         {
           query: {
-            category: tab.key,
-          },
+            category: tab.key
+          }
         },
         () => {
           this.$nextTick(() => {
-            window.scroll(0, tabsEl.offsetTop - this.offsetFromViewport)
-          })
+            window.scroll(0, tabsEl.offsetTop - this.offsetFromViewport);
+          });
         }
-      )
+      );
     },
     showMobileSearch() {
-      this.mobileSearchVisible = true
+      this.mobileSearchVisible = true;
       this.$nextTick(() => {
-        this.$refs.searchRef.focus()
-      })
+        this.$refs.searchRef.focus();
+      });
     },
     hideMobileSearch() {
-      this.mobileSearchVisible = false
+      this.mobileSearchVisible = false;
     },
     setLastRowFillCount: debounce(function() {
-      const { appsContainerRef, appItemRef } = this.$refs
+      const { appsContainerRef, appItemRef } = this.$refs;
 
       if (
         !appsContainerRef ||
@@ -302,29 +326,29 @@ export default {
         !appItemRef.length ||
         !this.filteredApps.length
       ) {
-        this.lastRowFillCount = 0
-        return
+        this.lastRowFillCount = 0;
+        return;
       }
-      const appsCount = this.filteredApps.length
-      const containerWidth = this.$refs.appsContainerRef.clientWidth
+      const appsCount = this.filteredApps.length;
+      const containerWidth = this.$refs.appsContainerRef.clientWidth;
       // 每个 logo 之间的水平间隔，来自下面的 $appItemHorizontalSpace 和 $mobileAppItemHorizontalSpace
       const appItemHoriaontalSpace =
-        document.body.offsetWidth > MQMobile ? 20 : 5
-      const appItemWidth = appItemRef[0].$el.offsetWidth
+        document.body.offsetWidth > MQMobile ? 20 : 5;
+      const appItemWidth = appItemRef[0].$el.offsetWidth;
 
       // 每行能放多少个
       const everyRowCount = Math.floor(
         (containerWidth + appItemHoriaontalSpace) /
           (appItemWidth + appItemHoriaontalSpace)
-      )
+      );
 
       // 最后一行有多少个
-      const lastRowCount = appsCount % everyRowCount || everyRowCount
+      const lastRowCount = appsCount % everyRowCount || everyRowCount;
 
-      this.lastRowFillCount = everyRowCount - lastRowCount
-    }, 200),
-  },
-}
+      this.lastRowFillCount = everyRowCount - lastRowCount;
+    }, 200)
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -336,6 +360,9 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
 .application-integration {
   padding-top: $navbarHeight;
   padding-bottom: 100px;
+  .apn {
+    text-align: center;
+  }
   .authing-tabs {
     align-self: stretch;
     overflow: auto;
