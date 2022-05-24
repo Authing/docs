@@ -29,7 +29,7 @@
               width="24px"
               height="24px"
               :alt="sdk.name"
-              :src="require(`@theme/assets/images/sdk-icons/${sdk.img2x}`)"
+              :src="require(`@theme/assets/images/reference/${sdk.icon}.svg`)"
             />
           </RouterLink>
           <div class="sdk-icon-gutter"></div>
