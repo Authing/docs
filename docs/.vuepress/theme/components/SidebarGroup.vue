@@ -80,7 +80,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 16px
+      font-size 14px
       line-height 1.4
       font-weight normal
       padding-left 0.8rem
