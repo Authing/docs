@@ -1724,6 +1724,193 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
+  "/reference-new/api-services/": [
+    {
+      title: "后端 / API 服务",
+      path: "/reference-new/api-services/sdk-for-csharp/",
+      children: [
+        {
+          title: "C#",
+          path: "/reference-new/api-services/sdk-for-csharp/",
+          children: [
+          {
+          title: "用户认证模块",
+          path: "/reference-new/api-services/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/api-services/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/api-services/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/api-services/sdk-for-csharp/management",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/TenantManagementClient"
+              ]
+          }
+           ]
+        },
+        {
+          title: "Go",
+          path: "/reference-new/api-services/sdk-for-go/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-go/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-go/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-go/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-go/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-go/management/",
+              children: [
+                "/reference-new/api-services/sdk-for-go/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Java",
+          path: "/reference-new/api-services/sdk-for-java/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-java/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-java/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-java/authentication/StandardProtocol"
+                // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-java/management",
+              children: [
+                "/reference-new/api-services/sdk-for-java/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "JavaScript / Node.js",
+          path: "/reference-new/api-services/sdk-for-node/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-node/authentication",
+              children: [
+                "/reference-new/api-services/sdk-for-node/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-node/authentication/QrCodeAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/MfaAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/SocialAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/EnterpriseAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/PrincipalAuthentication"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-node/management",
+              children: [
+                "/reference-new/api-services/sdk-for-node/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/MFAManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Python",
+          path: "/reference-new/api-services/sdk-for-python/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-python/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-python/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-python/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-python/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-python/management",
+              children: [
+                "/reference-new/api-services/sdk-for-python/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/WhitelistManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Ruby",
+          path: "/reference-new/api-services/sdk-for-ruby"
+        },
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
   "/reference-new/single-page-application/": [
     {
       title: "单页应用",
@@ -2162,7 +2349,7 @@ const zhCnNavBar = {
         },
         {
           title: "React Native",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-react-native"
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-react-native.html"
         },
       ]
     }
