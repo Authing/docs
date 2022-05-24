@@ -80,7 +80,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 16px
+      font-size 14px
       line-height 1.4
       font-weight normal
       padding-left 0.8rem
@@ -94,12 +94,12 @@ export default {
   &.depth-2
     & > .sidebar-heading
       border-left none
-  &.depth-2
-    & > .sidebar-heading
-      font-weight 500
-  &.depth-1
-    ul a:not(.active)
-      opacity 0.5
+  // &.depth-2
+  //   & > .sidebar-heading
+  //     font-weight 500
+  // &.depth-1
+  //   ul a:not(.active)
+  //     opacity 0.5
   &.depth-0
     a
       color #1D2129
