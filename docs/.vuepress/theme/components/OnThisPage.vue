@@ -61,6 +61,7 @@ export default {
       this.captureAnchors();
       this.handleScroll();
       this.setActiveHash();
+      window.scrollTo(0, 1);
     });
 
     window.addEventListener("scroll", this.handleScroll);
@@ -128,7 +129,6 @@ export default {
                 (!pair[1] || scrollTop < pair[1] - this.paddedHeaderHeight),
               this
             );
-
       const activeAnchor = matchingPair
         ? this.anchors[this.anchorOffsetPairs.indexOf(matchingPair)]
         : this.anchors[0];

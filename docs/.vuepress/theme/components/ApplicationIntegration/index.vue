@@ -362,6 +362,9 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
   padding-bottom: 100px;
   .apn {
     text-align: center;
+    h3,p {
+      margin: 16px 0;
+    }
     h3 {
       font-style: normal;
       font-weight: 500;
@@ -377,12 +380,14 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
       color: #4e5969;
     }
     a {
+      margin-top:16px;
       display: inline-block;
       width: 160px;
       height: 40px;
       line-height: 40px;
       background: #396aff;
       color: #fff;
+      border-radius: 4px;
     }
   }
   .authing-tabs {
