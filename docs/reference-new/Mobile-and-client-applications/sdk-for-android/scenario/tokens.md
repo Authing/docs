@@ -54,6 +54,6 @@ String refreshToken = userInfo.getRefreshToken();
 
 ### 通过刷新凭证换取新的访问凭证和用户标识凭证
 
-无论是采用 WebView 还是原生的方式，都可以通过以下 API 来刷新访问凭证和用户标识凭证
+无论是采用 WebView 还是原生的方式，都可以通过 API 来刷新访问凭证和用户标识凭证
 
-[刷新凭证](https://docs.authing.cn/v2/reference/sdk-for-android/protocol/#%E9%80%9A%E8%BF%87-refresh-token-%E8%8E%B7%E5%8F%96%E6%96%B0%E7%9A%84-access-token-%E5%92%8C-id-token)
+[刷新凭证](https://core.authing.cn/openapi/)

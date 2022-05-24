@@ -12,38 +12,38 @@ meta:
 
 以下是完整的模块列表：
 
-::: page-ref /reference/sdk-for-go/management/AclManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/AclManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/ApplicationManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/ApplicationManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/GroupsManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/OrgManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/PoliciesManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/RolesManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/StatisticsManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/StatisticsManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/UdfManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/UserpoolManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/UsersManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/WhitelistManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/WhitelistManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-go/management/TenantManagementClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-go/management/TenantManagementClient.md
 :::

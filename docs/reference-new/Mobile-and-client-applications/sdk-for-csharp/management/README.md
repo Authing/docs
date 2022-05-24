@@ -13,26 +13,26 @@ ManagementClient 可以  用于管理用户、角色、策略、自定义字段
 
 以下是完整的模块列表：
 
-::: page-ref /reference/sdk-for-csharp/management/UsersManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/RolesManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/PoliciesManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/AclManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/AclManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/GroupsManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/UdfManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/UserpoolManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference/sdk-for-csharp/management/WhitelistManagementClient.md
+::: page-ref /reference-new/Mobile-and-client-applications/sdk-for-csharp/management/WhitelistManagementClient.md
 :::

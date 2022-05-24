@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-ios/develop)
+阅读此教程之前，确保已经完成了 [开发准备](/reference-new/Mobile-and-client-applications/sdk-for-ios/develop)
 
 由于很多超组件在之前的教程已经讲解，这里就不再赘述。
 

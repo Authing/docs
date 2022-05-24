@@ -164,7 +164,7 @@ $ yarn add @authing/vue-ui-components
 
 ### 监听登录事件
 
-`Guard` 组件可以使用 `@login` 事件回调函数，当用户成功登录时回调用此函数，你可以在此获取当前用户的用户信息。[查看完整事件列表](#完整参数)。
+`Guard` 组件可以使用 `@login` 事件回调函数，当用户成功登录时回调用此函数，你可以在此获取当前用户的用户信息。[查看完整事件列表](./parameters.md)。
 
 ```vue
 <template>
@@ -280,9 +280,9 @@ methods: {
 
 ## 导出 `authing-js-sdk`
 
-Guard 组件本身基于 [Authing JavaScript SDK](../sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
+Guard 组件本身基于 [Authing JavaScript SDK](../Standard-web-application/sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
 
-1. 调用 `initAuthClient` 初始化 [AuthenticationClient](/reference/sdk-for-node/authentication/AuthenticationClient.md)，多次调用此函数只会初始化一次。
+1. 调用 `initAuthClient` 初始化 [AuthenticationClient](/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)，多次调用此函数只会初始化一次。
 
 ```js
 import { initAuthClient } from "@authing/vue-ui-components";
@@ -300,7 +300,7 @@ import { getAuthClient } from "@authing/vue-ui-components";
 const authClient = getAuthClient();
 ```
 
-3. 调用 `AuthenticationClient` 实例的方法，完整方法列表请见 [AuthenticationClient 方法列表](/reference/sdk-for-node/authentication/AuthenticationClient.md)。
+3. 调用 `AuthenticationClient` 实例的方法，完整方法列表请见 [AuthenticationClient 方法列表](/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)。
 
 ```js
 authClient.getCurrentUser().then((user) => console.log(user));
@@ -321,7 +321,7 @@ authClient.getCurrentUser().then((user) => console.log(user));
 
 | 事件名                        | 事件说明                                             | 事件参数                | 事件参数说明                                                                                                  |
 | :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
-| load                          | {{$localeConfig.brandName}} appId 验证通过，加载完成 | authClient              | AuthenticationClient 对象，可直接操作 login， register，详情请查看 [authing-js-sdk](/reference/sdk-for-node/) |
+| load                          | {{$localeConfig.brandName}} appId 验证通过，加载完成 | authClient              | AuthenticationClient 对象，可直接操作 login， register，详情请查看 [authing-js-sdk](/reference-new/Standard-web-application/sdk-for-node/) |
 | load-error                    | {{$localeConfig.brandName}} appId 验证失败，加载失败 | error                   | 错误信息                                                                                                      |
 | login                         | 用户登录成功                                         | user, authClient        | <p>user: 用户信息</p><p>authClient 同上</p>                                                                   |
 | login-error                   | 用户登录失败                                         | error                   | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                |

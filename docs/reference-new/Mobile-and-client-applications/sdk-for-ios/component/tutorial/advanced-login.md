@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-ios/develop)
+阅读此教程之前，确保已经完成了 [开发准备](/reference-new/Mobile-and-client-applications/sdk-for-ios/develop)
 
 在上一个 [基础登录教程](./basic-login.md) 里面，我们构建了一个简单的登录界面，接下来我们尝试构建一个更为复杂的登录界面，它包含一个可以切换登录方式的 Tab，支持帐号+密码登录以及电话号码+验证码登录
 

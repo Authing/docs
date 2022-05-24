@@ -109,7 +109,7 @@ OIDCClient.loginByAccount(account: account, password: password) { code,  message
 
 ## OIDC 协议手机号验证码登陆
 
-通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 UserInfo 里面包含 access token , id token 和 refresh token。
+通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](reference-new/Mobile-and-client-applications/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 UserInfo 里面包含 access token , id token 和 refresh token。
 
 ```swift
 public static func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)

@@ -1511,7 +1511,7 @@ const zhCnNavBar = {
   "/reference-new/guard/": [
     {
       title: "登录组件 (Guard)",
-      path: "/reference-new/guard/",
+      path: "/reference-new/guard/react",
       children: [
         {
           title: "React",
@@ -1528,16 +1528,206 @@ const zhCnNavBar = {
         {
           title: "原生 JavaScript",
           path: "/reference-new/guard/native-javascript"
+        },
+        {
+          title: "完整参数列表",
+          path: "/reference-new/guard/parameters"
         }
       ]
     }
     // 加入其他的页面边栏
   ],
-
+  "/reference-new/Standard-web-application/": [
+    {
+      title: "标准 Web 应用",
+      path: "/reference-new/Standard-web-application/sdk-for-csharp/",
+      children: [
+        {
+          title: "C#",
+          path: "/reference-new/Standard-web-application/sdk-for-csharp/",
+          children: [
+          {
+          title: "用户认证模块",
+          path: "/reference-new/Standard-web-application/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/Standard-web-application/sdk-for-csharp/management",
+          children: [
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/Standard-web-application/sdk-for-csharp/management/TenantManagementClient"
+              ]
+          }
+           ]
+        },
+        {
+          title: "Go",
+          path: "/reference-new/Standard-web-application/sdk-for-go/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/Standard-web-application/sdk-for-go/authentication/",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-go/authentication/AuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-go/authentication/StandardProtocol",
+                "/reference-new/Standard-web-application/sdk-for-go/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/Standard-web-application/sdk-for-go/management/",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-go/management/AclManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/ApplicationManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/GroupsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/OrgManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/PoliciesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/PrincipalManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/RolesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/StatisticsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/UdfManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/UserpoolManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/UsersManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/WhitelistManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-go/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Java",
+          path: "/reference-new/Standard-web-application/sdk-for-java/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/Standard-web-application/sdk-for-java/authentication/",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-java/authentication/AuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-java/authentication/StandardProtocol"
+                // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/Standard-web-application/sdk-for-java/management",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-java/management/UsersManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/ApplicationManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/RolesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/AclManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/GroupsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/OrgManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/UdfManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/WhitelistManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/UserpoolManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/StatisticsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-java/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "JavaScript / Node.js",
+          path: "/reference-new/Standard-web-application/sdk-for-node/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/Standard-web-application/sdk-for-node/authentication",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/StandardProtocol",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/MfaAuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/SocialAuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/EnterpriseAuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-node/authentication/PrincipalAuthentication"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/Standard-web-application/sdk-for-node/management",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-node/management/UsersManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/ApplicationManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/PoliciesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/RolesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/AclManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/GroupsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/OrgManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/UdfManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/StatisticsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/WhitelistManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/UserpoolManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/MFAManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/PrincipalManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-node/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Python",
+          path: "/reference-new/Standard-web-application/sdk-for-python/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/Standard-web-application/sdk-for-python/authentication/",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-python/authentication/AuthenticationClient",
+                "/reference-new/Standard-web-application/sdk-for-python/authentication/StandardProtocol",
+                "/reference-new/Standard-web-application/sdk-for-python/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/Standard-web-application/sdk-for-python/management",
+              children: [
+                "/reference-new/Standard-web-application/sdk-for-python/management/AclManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/ApplicationManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/GroupsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/OrgManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/PoliciesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/PrincipalManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/RolesManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/StatisticsManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/UdfManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/UserpoolManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/UsersManagementClient",
+                "/reference-new/Standard-web-application/sdk-for-python/management/WhitelistManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Ruby",
+          path: "/reference-new/Standard-web-application/sdk-for-ruby"
+        },
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
   "/reference-new/single-page-application/": [
     {
       title: "单页应用",
-      path: "/reference-new/single-page-application/",
+      path: "/reference-new/single-page-application/react",
       children: [
         {
           title: "React",
@@ -1554,9 +1744,429 @@ const zhCnNavBar = {
         {
           title: "JavaScript",
           path: "/reference-new/single-page-application/native-javascript"
+        },
+        {
+          title: "完整参数列表",
+          path: "/reference-new/single-page-application/parameters"
         }
       ]
     }
+    // 加入其他的页面边栏
+  ],
+  "/reference-new/Mobile-and-client-applications/": [
+    {
+      title: "移动 / 客户端应用",
+      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/",
+      children: [
+        {
+          title: "Android",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-android/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/example",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/basic-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/refine-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/basic-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/login-to-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-phone",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-email",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/account-edit-text"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/password-edit-text"
+                    },
+                    {
+                      title: "密码确认输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/password-confirm-edit-text"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/phonenumber-edit-text"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/verifycode-edit-text"
+                    },
+                    {
+                      title: "获取短信验证码按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/email-edit-text"
+                    },
+                    {
+                      title: "获取邮箱验证码按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/get-emailcode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/error-text"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-register-button"
+                    },
+                    {
+                      title: "跳转登录按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-login-button"
+                    },
+                    {
+                      title: "跳转忘记密码按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-forgot-password-button"
+                    },
+                    {
+                      title: "跳转问题反馈按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-feedback-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/authentication/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/protocol/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/mfa/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/scan/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/social/",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/wechat",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/wecom",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/alipay",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/lark"
+              ]
+            },
+            {
+              title: "典型场景",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/splash",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/tokens",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/user-profile",
+                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/webview"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/onpremise"
+            },
+            {
+              title: "版本历史",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/version"
+            }
+          ]
+        },
+        {
+          title: "C#",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/",
+          children: [
+          {
+          title: "用户认证模块",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management",
+          children: [
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/TenantManagementClient"
+              ]
+          }
+           ]
+        },
+        {
+          title: "Flutter",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/develop"
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/authentication/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/protocol/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/mfa/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/scan/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/social/"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/onpremise"
+            }
+          ]
+        },
+        {
+          title: "iOS",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/example",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/refine-login",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/login-to-register",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-phone",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-email",
+                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/component/basic/account-textfield"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/password-textfield"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/email-textfield"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/phonenumber-textfield"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/verifycode-textfield"
+                    },
+                    {
+                      title: "获取验证码按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path: "/reference/sdk-for-ios/component/basic/error-label"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path: "/reference/sdk-for-ios/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/go-register-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/authentication/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/protocol/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/mfa/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/scan/",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/util/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/",
+              children: [
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/wechat",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/wecom",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/alipay",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/lark",
+                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/apple"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/onpremise"
+            }
+          ]
+        },
+        {
+          title: "React Native",
+          path: "/reference-new/Mobile-and-client-applications/sdk-for-react-native"
+        },
+      ]
+    }
+ 
     // 加入其他的页面边栏
   ],
 

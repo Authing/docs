@@ -395,9 +395,9 @@ managementClient.SetCurrentUser(User user)
 - `User.Photo` \<string\> 头像链接，默认为 https://usercontents.authing.cn/authing-avatar.png
 - `User.Password` \<string\>  用户密码，数据库使用密钥加 salt 进行加密，非原文密码。
 - `User.Oauth` \<string\> 用户社会化登录第三方身份提供商返回的原始用户信息，非社会化登录方式注册的用户此字段为空
-- `User.Token` \<string\>  用户登录凭证，开发者可以在后端检验该 token 的合法性，从而验证用户身份。详细文档请见：[验证 Token](https://docs.authing.co/advanced/verify-jwt-token.html)
+- `User.Token` \<string\>  用户登录凭证，开发者可以在后端检验该 token 的合法性，从而验证用户身份。详细文档请见：[验证 Token](https://authing-open-api.readme.io/reference/nodejs)
 - `User.TokenExpiredAt` \<string\> token 过期时间
-- `User.LoginsCount` \<string\>  用户登录总次数份。详细文档请见：[验证 Token](https://docs.authing.co/advanced/verify-jwt-token.html)
+- `User.LoginsCount` \<string\>  用户登录总次数份。详细文档请见：[验证 Token](https://authing-open-api.readme.io/reference/nodejs)
 - `User.LastIp` \<string\> 用户上一次登录时使用的 IP
 - `User.SignedUp` \<string\> 用户注册时间
 - `User.Blocked` \<bool\> 该账号是否被禁用

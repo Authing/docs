@@ -250,28 +250,28 @@
             {
               #
               title: "单点登录（SSO）",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-sso.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-sso.html",
             },
             {
               #
               title: "微信小程序",
               github: "https://github.com/authing/authing-wxapp-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-wxapp.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxapp.html",
             },
             {
               #
               title: "微信网页登录",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-wxmp.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxmp.html",
             },
             {
               #
               title: "Radius",
-              doc: "https://docs.authing.cn/v2/reference/radius/",
+              doc: "https://docs.authing.cn/v2/reference-new/radius/",
             },
             {
               #
               title: "错误代码",
-              doc: "https://docs.authing.cn/v2/reference/error-code.html
+              doc: "https://docs.authing.cn/v2/reference-new/error-code.html
                 ",
             },
           ],

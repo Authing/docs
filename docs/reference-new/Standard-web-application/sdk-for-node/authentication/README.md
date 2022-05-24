@@ -17,30 +17,30 @@ meta:
 
 如果你需要使用标准协议，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/StandardProtocol.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/StandardProtocol.md
 :::
 
 如果你需要使用小程序扫码登录或 APP 扫码登录，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient.md
 :::
 
 如果你需要使用 MFA，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/MfaAuthenticationClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/MfaAuthenticationClient.md
 :::
 
 如果你需要使用社会化登录功能，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/SocialAuthenticationClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/SocialAuthenticationClient.md
 :::
 
 如果你需要使用企业身份源登录功能，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/EnterpriseAuthenticationClient.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/EnterpriseAuthenticationClient.md
 :::
 
 如果你需要用户进行主体认证，请使用：
 
-::: page-ref /reference/sdk-for-node/authentication/PrincipalAuthentication.md
+::: page-ref /reference-new/Standard-web-application/sdk-for-node/authentication/PrincipalAuthentication.md
 :::
