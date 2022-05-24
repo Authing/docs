@@ -62,6 +62,9 @@ export default {
       this.handleScroll();
       this.setActiveHash();
       window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
     });
 
     window.addEventListener("scroll", this.handleScroll);
