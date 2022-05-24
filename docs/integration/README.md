@@ -803,6 +803,13 @@
         image2x: "Sangfor_logo@3x.png",
         category: "ldap",
       },
+      {
+        key: "apollo",
+        name: "Apollo",
+        image: "apollo_logo.svg",
+        image2x: "apollo_logo.svg",
+        category: "other",
+      },
     ],
   categories:
     [
