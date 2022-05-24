@@ -56,25 +56,29 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              doc: "https://docs.authing.cn/v2/reference/guard/native-javascript.html",
+              doc: "./single-page-application/native-javascript.html",
+
             },
             {
               #
               title: "React",
-              icon: "React-Native",
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/react.html",
+              icon: "React-Native",   
+              doc: "./single-page-application/react.html",
+
             },
             {
               #
               title: "Vue",
               icon: "Vue",
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/vue.html",
+              doc: "./single-page-application/vue.html",
+
             },
             {
               #
               title: "Angular",
               icon: "Angular",
-              doc: "https://docs.authing.cn/v2/quickstarts/spa/angular.html",
+              doc: "./single-page-application/angular.html",
+
             },
           ],
       },
@@ -87,35 +91,35 @@
               title: "iOS Swift",
               icon: "iOS",
               github: "https://github.com/Authing/guard-ios",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-ios/",
+              doc: "./Mobile-and-client-applications/sdk-for-ios/",
             },
             {
               #
               title: "Android",
               icon: "Android",
               github: "https://github.com/Authing/guard-android",
-              doc: "/v2/android/",
+              doc: "./Mobile-and-client-applications/sdk-for-android/",
             },
             {
               #
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-flutter.html",
+              doc: "./Mobile-and-client-applications/sdk-for-flutter/",
             },
             {
               #
               title: "React Native",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-rn-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-react-native.html",
+              doc: "./Mobile-and-client-applications/sdk-for-react-native.html",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-csharp/",
+              doc: "./Mobile-and-client-applications/sdk-for-csharp/",
             },
           ],
       },
@@ -128,49 +132,49 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-python/",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-csharp/",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
               github: "https://github.com/Authing/authing-ruby",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-ruby.html",
             },
             {
               #
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-java/",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "https://authing-open-api.readme.io",
+              doc: "./Standard-web-application/sdk-for-go/",
             },
           ],
       },
@@ -227,34 +231,47 @@
       },
       {
         #
+        title: "SDK 库",
+        desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
+        list: [
+            {
+              #
+              title: "SDK",
+              icon: "Swagger",
+              api: "https://authing-open-api.readme.io/reference",
+            },
+          ],
+      },
+      {
+        #
         title: "其他",
         desc: " ",
         list: [
             {
               #
               title: "单点登录（SSO）",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-sso.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-sso.html",
             },
             {
               #
               title: "微信小程序",
               github: "https://github.com/authing/authing-wxapp-sdk",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-wxapp.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxapp.html",
             },
             {
               #
               title: "微信网页登录",
-              doc: "https://docs.authing.cn/v2/reference/sdk-for-wxmp.html",
+              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxmp.html",
             },
             {
               #
               title: "Radius",
-              doc: "https://docs.authing.cn/v2/reference/radius/",
+              doc: "https://docs.authing.cn/v2/reference-new/radius/",
             },
             {
               #
               title: "错误代码",
-              doc: "https://docs.authing.cn/v2/reference/error-code.html
+              doc: "https://docs.authing.cn/v2/reference-new/error-code.html
                 ",
             },
           ],

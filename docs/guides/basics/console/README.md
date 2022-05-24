@@ -402,3 +402,4 @@ Webhook
 ::: img-description
 邀请管理员
 :::
+<ConsoleBanner />
