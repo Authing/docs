@@ -366,5 +366,5 @@ Join us on Gitter: [\#authing-chat](https://forum.authing.cn/)
 
 
 你还可以参考以下资料
-- [使用 SDK 集成 SSO 单点登录](../../../reference/sdk-for-sso.md)
+- [使用 SDK 集成 SSO 单点登录](/reference-new/sdk-for-sso.md)
 - [自建应用 SSO 方案](../../app/sso.md)

@@ -15,13 +15,13 @@ tags:
 
 目前 Authing 有三种可以选择的认证方式：
 
-- **基本认证**是基于 API 接口，通过发送账密、手机验证码到 Authing 后端的方式直接完成用户认证。提供 MFA、忘记密码等功能。Authing 的 [Guard 组件](/reference/guard)以及 [SDK](/reference/sdk-for-node) 都基于这些 API。
+- **基本认证**是基于 API 接口，通过发送账密、手机验证码到 Authing 后端的方式直接完成用户认证。提供 MFA、忘记密码等功能。Authing 的 [Guard 组件](/reference-new/guard)以及 [SDK](/reference-new/Standard-web-application/sdk-for-node) 都基于这些 API。
 
 - **OAuth 2.0** 协议主要用于资源授权。
 
 - **OpenID Connect** 协议，简称 **OIDC**，是 OAuth 2.0 协议的超集，能够**认证**用户并完成资源**授权**。在可以选择 OIDC 的情况下，**应该选择 OIDC**。
 
-如果你希望通过 API 的方式直接认证你的用户，你可以查看[开发集成](/reference/)部分的接口文档和 SDK 文档。
+如果你希望通过 API 的方式直接认证你的用户，你可以查看[开发集成](/reference-new/)部分的接口文档和 SDK 文档。
 
 如果你希望实现**单点登录**或先**鉴权**用户再返回资源，建议使用 **OIDC 协议**。
 
