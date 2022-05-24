@@ -49,7 +49,7 @@
 
       <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
-      <SwitchLocale />
+      <!-- <SwitchLocale /> -->
       <!-- <button class="contact-us">联系我们</button> -->
 
       <!-- <IconFont class="navbar-lang-icon" type="authing-login-language" /> -->
@@ -192,6 +192,7 @@ $navbar-horizontal-padding = 0
       vertical-align top
     .nav-link
       color $subTitleColor
+      padding: 0 20px;
   .authing-search-box
     width 200px
     margin 0

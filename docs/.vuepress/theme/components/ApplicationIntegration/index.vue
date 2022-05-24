@@ -109,7 +109,7 @@
         {{ langMap.apnSubtitle }}
       </p>
       <router-link to="/apn/" target="_blank">
-        {{ langMap.apnLink }} 〉
+        {{ langMap.apnLink }}
       </router-link>
     </section>
   </div>
@@ -362,6 +362,28 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
   padding-bottom: 100px;
   .apn {
     text-align: center;
+    h3 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 38px;
+      color: #282d3c;
+    }
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      color: #4e5969;
+    }
+    a {
+      display: inline-block;
+      width: 160px;
+      height: 40px;
+      line-height: 40px;
+      background: #396aff;
+      color: #fff;
+    }
   }
   .authing-tabs {
     align-self: stretch;
