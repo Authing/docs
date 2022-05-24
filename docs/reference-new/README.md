@@ -238,7 +238,7 @@
               #
               title: "SDK",
               icon: "Swagger",
-              api: "https://authing-open-api.readme.io/reference",
+              doc: "https://authing-open-api.readme.io/reference",
             },
           ],
       },
