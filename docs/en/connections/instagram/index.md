@@ -72,9 +72,9 @@ In the last step, Instagram needs permission to access **instagram_graph_user_pr
 
 - **Detailed access method**：
 
-  3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 On the created Instagram identity source connection details page, open and associate an app created in the Authing console
+3.2 On the created Instagram identity source connection details page, open and associate an app created in the Authing console
 
 <img src="./images/09-openapp.png" />
 
