@@ -35,7 +35,7 @@ EnterpriseAuthenticationClient().authorize(provider, identifier, options)
 - `options` \<object\>
 - `options.popup` \<boolean\> 是否通过弹窗的方式打开企业身份源登录窗口，如果设置为 false，将会以 window.open 的方式打开一个新的浏览器 tab 。 默认值为 : `true`。
 - `options.onSuccess` \<Function\> 用户同意授权事件回调函数，第一个参数为用户信息。
-- `options.onError` \<Function\> 社会化登录失败事件回调函数，第一个参数 code 为错误码，第二个参数 message 为错误提示。详细的错误码列表请见：详细说明请见：[{{$localeConfig.brandName}} 错误代码列表](/reference-new/error-code.md)
+- `options.onError` \<Function\> 社会化登录失败事件回调函数，第一个参数 code 为错误码，第二个参数 message 为错误提示。详细的错误码列表请见：详细说明请见：[{{$localeConfig.brandName}} 错误代码列表](/reference-new/other/error-code.md)
 - `options.position` \<object\> 只有当 options.popup 为 ture 的时候有效，弹出窗口的位置，默认为 { w: 585, h: 649 } 。
 
 #### 示例

@@ -22,7 +22,7 @@ meta:
 出于安全考虑， {{$localeConfig.brandName}} 会通过特殊方式，使用你的用户池 ID（userPoolId） 和用户池密钥（secret） 初始化 authing-js-sdk，此过程不会将你的用户池密钥发送到公网。你可以使用使用全局变量 **authing**，**请勿再次初始化 SDK！**
 :::
 
-开发者可以直接使用[初始化](/reference-new/Standard-web-application/sdk-for-node/README.md)过后的 authing 实例，**无需手动初始化**！{{$localeConfig.brandName}} Pipeline 会自动帮助开发者  take care 初始化过程。
+开发者可以直接使用[初始化](/reference-new/standard-web-application/sdk-for-node/README.md)过后的 authing 实例，**无需手动初始化**！{{$localeConfig.brandName}} Pipeline 会自动帮助开发者  take care 初始化过程。
 
 如下所示：
 
@@ -43,7 +43,7 @@ async function pipe(user, context, callback) {
 解释一下：
 
 * 2-4 行判断用户邮箱是否已 `@authing.cn` 结尾，如果不是，可以直接跳过此  Pipeline 函数。
-* 6-11 行调用 SDK 的[角色管理 SDK](/reference-new/Standard-web-application/sdk-for-node/management/RolesManagementClient.md#添加用户) API，授权用户角色 `ROLE`。
+* 6-11 行调用 SDK 的[角色管理 SDK](/reference-new/standard-web-application/sdk-for-node/management/RolesManagementClient.md#添加用户) API，授权用户角色 `ROLE`。
   * 在这里我们使用了 env.ROOT\_GROUP\_ID 通过环境变量来获取组 ID，这样可以避免硬编码。关于如何在 Pipelien 函数中使用环境变量，请见[使用环境变量](env.md)。
 * 13 行调用回调函数 callback，第一个参数为 null，表示没有错误抛出，可以继续执行下面的认证流程。关于如何使用 callback 以及 Pipelien 函数的完整 API，请见 [Pipeline 函数 API 文档](pipeline-function-api-doc.md)。
 

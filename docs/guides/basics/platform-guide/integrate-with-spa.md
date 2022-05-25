@@ -4,7 +4,7 @@
 
 单页应用（Single Page Application，简称 SPA）指的是一种 Web 应用或者网站的模型，它通过动态重写当前页面来与用户交互，而非传统的从服务器重新加载整个新页面。这种方法避免了页面之间切换打断用户体验，使应用程序更像一个桌面应用程序。在单页应用中，所有必要的代码（HTML、JavaScript 和 CSS）都通过单个页面的加载而检索，或者根据需要（通常是为响应用户操作）动态加载适当的资源并添加到页面。与单页应用的交互通常涉及到与后端服务器的动态通信。
 
-在 SPA 应用中接入 {{$localeConfig.brandName}} 最简单的方式是使用 {{$localeConfig.brandName}} 提供的[内嵌登录组件](/reference-new/guard/)和 [Javascript SDK](/reference-new/Standard-web-application/sdk-for-node/) 来进行登录和认证。本文以 React 项目为例。
+在 SPA 应用中接入 {{$localeConfig.brandName}} 最简单的方式是使用 {{$localeConfig.brandName}} 提供的[内嵌登录组件](/reference-new/guard/)和 [Javascript SDK](/reference-new/standard-web-application/sdk-for-node/) 来进行登录和认证。本文以 React 项目为例。
 
 ## 获取应用 ID
 

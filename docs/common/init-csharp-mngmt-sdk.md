@@ -1,4 +1,4 @@
-使用[用户池 ID（`userPoolId`）和用户池密钥（`secret`）](/guides/faqs/get-userpool-id-and-secret.md)初始化 [C# SDK](/reference/sdk-for-csharp/) 的 `ManagementClient`:
+使用[用户池 ID（`userPoolId`）和用户池密钥（`secret`）](/guides/faqs/get-userpool-id-and-secret.md)初始化 [C# SDK](/reference-new/standard-web-application/sdk-for-csharp/) 的 `ManagementClient`:
 
 ```csharp
 using Authing.ApiClient;

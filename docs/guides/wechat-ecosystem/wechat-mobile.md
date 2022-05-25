@@ -163,7 +163,7 @@ func onResp(_ resp: BaseResp) {
 
 ### 换取用户信息
 
-用户同意收取获取到 `code` 之后，你可以调用 [Swift SDK](/reference/sdk-for-swift.md) 的 `loginByWeChatCode` 方法获取用户信息：
+用户同意收取获取到 `code` 之后，你可以调用 [Swift SDK](/reference-new/sdk-for-swift.md) 的 `loginByWeChatCode` 方法获取用户信息：
 
 ```swift
 func loginByWeChatCode() {

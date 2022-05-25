@@ -155,7 +155,7 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 Authing 提供另外一种简单的前端获取用户信息的方式，无需处理回调或进行其他配置。
 
-1. 安装[单点登录 SDK](/reference-new/sdk-for-sso.md)，完成初始化，调用 `trackSession` 函数获取用户登录状态。
+1. 安装[单点登录 SDK](/reference-new/other/sdk-for-sso.md)，完成初始化，调用 `trackSession` 函数获取用户登录状态。
 
 使用 NPM 安装
 
@@ -190,7 +190,7 @@ if (res.session) {
 }
 ```
 
-详细使用方式请查看[文档](/reference-new/sdk-for-sso.md)。
+详细使用方式请查看[文档](/reference-new/other/sdk-for-sso.md)。
 
 :::
 

@@ -146,7 +146,7 @@ authentication_client = AuthenticationClient(
 - `app_host`: {{$localeConfig.brandName}} [应用地址](/guides/faqs/get-app-id-and-secret.md)（必填），格式为 `https://YOUR_DOMAIN.authing.cn`；
 - `token`: 用户的 [id_token](/concepts/id-token.md)（可选），你可以在前端 localStorage 中缓存用户 `id_token`，然后使用 `id_token` 初始化 SDK，从而实现记住登录的目的；
 - `timeout`: 请求超时时间（可选），位为毫秒，默认为 10000（10 秒）；
-- `on_error`: 错误处理函数（可选），你可以用其来全局捕捉 {{$localeConfig.brandName}} 客户端请求的所有异常。完整的错误代码请见[此文档](/reference-new/error-code.md)。函数定义为：
+- `on_error`: 错误处理函数（可选），你可以用其来全局捕捉 {{$localeConfig.brandName}} 客户端请求的所有异常。完整的错误代码请见[此文档](/reference-new/other/error-code.md)。函数定义为：
 
 ```python
 def on_error(code, message):
@@ -215,7 +215,7 @@ except AuthingException as e:
     print(e.message) # 用户不存在
 ```
 
-> 完整的错误代码请见[此文档](/reference-new/error-code.md)。
+> 完整的错误代码请见[此文档](/reference-new/other/error-code.md)。
 
 ## 私有化部署
 

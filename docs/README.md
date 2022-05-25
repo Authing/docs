@@ -20,19 +20,19 @@ hotSearch:
 sdkConfig:
   ios:
     name: iOS Swift
-    link: /reference-new/Mobile-and-client-applications/sdk-for-ios/
+    link: /reference-new/mobile-and-client-applications/sdk-for-ios/
     icon: iOS
   android:
     name: Android
-    link: /reference-new/Mobile-and-client-applications/sdk-for-android/
+    link: /reference-new/mobile-and-client-applications/sdk-for-android/
     icon: Android
   flutter:
     name: Flutter
-    link: /reference-new/Mobile-and-client-applications/sdk-for-flutter/
+    link: /reference-new/mobile-and-client-applications/sdk-for-flutter/
     icon: Flutter
   javascript:
     name: JavaScript
-    link: /reference-new/Standard-web-application/sdk-for-node/
+    link: /reference-new/standard-web-application/sdk-for-node/
     icon: JavaScript
   javascript-api:
     name: JavaScript
@@ -40,11 +40,11 @@ sdkConfig:
     icon: JavaScript
   reactNative:
     name: React Native
-    link: /reference-new/Mobile-and-client-applications/sdk-for-react-native/
+    link: /reference-new/mobile-and-client-applications/sdk-for-react-native/
     icon: React-Native
   cSharp:
     name: C Sharp
-    link: /reference-new/Mobile-and-client-applications/sdk-for-csharp/
+    link: /reference-new/mobile-and-client-applications/sdk-for-csharp/
     icon: csharp
   cSharp-api:
     name: C Sharp
@@ -56,7 +56,7 @@ sdkConfig:
     icon: React-Native
   react-Native:
     name: React
-    link: /reference-new/Mobile-and-client-applications/sdk-for-react-native.html
+    link: /reference-new/mobile-and-client-applications/sdk-for-react-native.html
     icon: React-Native
   angular:
     name: Angular
@@ -68,7 +68,7 @@ sdkConfig:
     icon: Vue
   python:
     name: Python
-    link: /reference-new/Standard-web-application/sdk-for-python/
+    link: /reference-new/standard-web-application/sdk-for-python/
     icon: Python
   python-api:
     name: Python
@@ -76,7 +76,7 @@ sdkConfig:
     icon: Python
   nodeJs:
     name: Node.js
-    link: /reference-new/Standard-web-application/sdk-for-node/
+    link: /reference-new/standard-web-application/sdk-for-node/
     icon: Nodejs
   nodeJs-api:
     name: Node.js
@@ -84,7 +84,7 @@ sdkConfig:
     icon: Nodejs
   ruby:
     name: Ruby
-    link: /reference-new/Standard-web-application/sdk-for-ruby.html
+    link: /reference-new/standard-web-application/sdk-for-ruby.html
     icon: Ruby
   ruby-api:
     name: Ruby
@@ -92,7 +92,7 @@ sdkConfig:
     icon: Ruby
   java:
     name: Java
-    link: /reference-new/Standard-web-application/sdk-for-java/
+    link: /reference-new/standard-web-application/sdk-for-java/
     icon: Java
   java-api:
     name: Java
@@ -100,12 +100,20 @@ sdkConfig:
     icon: Java
   golang:
     name: Golang
-    link: /reference-new/Standard-web-application/sdk-for-go/
+    link: /reference-new/standard-web-application/sdk-for-go/
     icon: Go
   golang-api:
     name: Golang
     link: /reference-new/api-services/sdk-for-go/
     icon: Go
+  php:
+    name: PHP
+    link: /reference-new/standard-web-application/sdk-for-php/
+    icon: php
+  php-api:
+    name: PHP
+    link: /reference-new/api-services/sdk-for-php/
+    icon: php
 applicationSdks:
   - title: 移动 / 客户端应用
     description: 在移动 / 客户端应用中快速接入认证服务
@@ -135,6 +143,7 @@ applicationSdks:
       - ruby
       - java
       - golang
+      - php
   - title: 后端 / API 服务
     description: 在后端调用 {{$localeConfig.brandName}} 并保护 API 接口
     color: "#F8BC00"
@@ -146,6 +155,7 @@ applicationSdks:
       - ruby-api
       - java-api
       - golang-api
+      - php-api
 sections:
   - title: 概念
     description: 了解 {{$localeConfig.brandName}} 体系结构基础

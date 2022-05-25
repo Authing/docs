@@ -14,7 +14,7 @@
 
 依赖规则选择 Up to Next Major Version 1.0.0
 
-> 如需使用[飞书登录](https://docs.authing.cn/v2/reference-new/Mobile-and-client-applications/sdk-for-ios/social/lark.html)则集成 swift package: https://github.com/Authing/guard-ios-lark ，其中包含 Guard 组件所有功能。（飞书 SDK 仅支持 Swift 5.3.2 (Xcode 12.3) 编译不向上兼容）
+> 如需使用[飞书登录](https://docs.authing.cn/v2/reference-new/mobile-and-client-applications/sdk-for-ios/social/lark.html)则集成 swift package: https://github.com/Authing/guard-ios-lark ，其中包含 Guard 组件所有功能。（飞书 SDK 仅支持 Swift 5.3.2 (Xcode 12.3) 编译不向上兼容）
 
 ![](./images/create_project3.png)
 

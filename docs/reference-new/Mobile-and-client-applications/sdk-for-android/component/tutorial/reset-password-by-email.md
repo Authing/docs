@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference-new/Mobile-and-client-applications/sdk-for-android/develop.md)
+阅读此教程之前，确保已经完成了 [开发准备](/reference-new/mobile-and-client-applications/sdk-for-android/develop.md)
 
 将上一个 [手机号码重置密码](./reset-password-by-phone.md) 教程的全部控件复制粘贴过来
 

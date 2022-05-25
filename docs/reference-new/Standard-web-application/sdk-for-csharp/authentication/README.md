@@ -13,7 +13,7 @@ meta:
 
 如果你需要使用基础的登录注册、修改用户资料等方法，请使用：
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-csharp/authentication/AuthenticationClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-csharp/authentication/AuthenticationClient.md
 :::
 
 <!-- 如果你需要使用标准协议，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)，请使用：

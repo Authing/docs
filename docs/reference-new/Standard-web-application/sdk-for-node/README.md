@@ -79,7 +79,7 @@ const authing = new AuthenticationClient({
 - `appHost`: {{$localeConfig.brandName}} [应用地址](/guides/faqs/get-app-id-and-secret.md)（必填），格式为 `https://YOUR_DOMAIN.authing.cn`；
 - `token`: 用户的 [id_token](/concepts/id-token.md)（可选），你可以在前端 localStorage 中缓存用户 `id_token`，然后使用 `id_token` 初始化 SDK，从而实现记住登录的目的；
 - `timeout`: 请求超时时间（可选），位为毫秒，默认为 10000（10 秒）；
-- `onError`: 错误处理函数（可选），你可以用其来全局捕捉 {{$localeConfig.brandName}} 客户端请求的所有异常。完整的错误代码请见[此文档](/reference-new/error-code.md)。函数定义为：
+- `onError`: 错误处理函数（可选），你可以用其来全局捕捉 {{$localeConfig.brandName}} 客户端请求的所有异常。完整的错误代码请见[此文档](/reference-new/other/error-code.md)。函数定义为：
 
 ```js
 (code: number, message: string, data: any) => void
@@ -166,7 +166,7 @@ authenticationClient.wxqrcode.startScanning('DOM_ID', {
 
 <img src="https://usercontents.authing.cn/wxapp-scaning-demo.gif" style="display:block;margin: 0 auto;">
 
-完整的使用方式与参数请见 [扫码登录模块](/reference-new/Standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient.md)。
+完整的使用方式与参数请见 [扫码登录模块](/reference-new/standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient.md)。
 
 ### App 扫码登录
 
@@ -221,7 +221,7 @@ const managementClient = new ManagementClient({
 (code: number, message: string, data: any) => void
 ```
 
-> 完整的错误代码请见[此文档](/reference-new/error-code.md)。
+> 完整的错误代码请见[此文档](/reference-new/other/error-code.md)。
 
 - `host`: {{$localeConfig.brandName}} 服务器地址。如果你使用的是公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填。格式如下: `https://authing-api.mydomain.com`，最后不带 `/`。
 - `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
@@ -277,7 +277,7 @@ try {
 }
 ```
 
-> 完整的错误代码请见[此文档](/reference-new/error-code.md)。
+> 完整的错误代码请见[此文档](/reference-new/other/error-code.md)。
 
 你还可以指定 `onError` 统一捕捉所有 {{$localeConfig.brandName}} 请求异常，如使用 `antd` 等前端组件显示错误提示。
 

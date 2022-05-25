@@ -34,7 +34,7 @@ Authing 支持从自定义数据库中以不停机的形式平稳迁移用户到
 
 当你开启了用户数据迁移之后，你可以通过以下方式验证已完全迁移的用户：
 
-- 使用[获取用户列表或搜索用户的管理 API](/reference-new/Standard-web-application/sdk-for-node/management/UsersManagementClient.md#获取用户列表)。
+- 使用[获取用户列表或搜索用户的管理 API](/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient.md#获取用户列表)。
 - 在[Authing 控制台](https://console.authing.cn/console/userpool) **用户管理** - **用户列表** 页面查看用户。
 
 ## 用户迁移完成之后
