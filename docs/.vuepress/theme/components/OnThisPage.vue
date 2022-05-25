@@ -237,7 +237,7 @@ export default {
           color #86909C
       ul
         margin-top 8px
-        padding-left: 0
+        padding-left: 12px
         li
           a
             // color: #C9CDD4;
