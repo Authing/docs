@@ -245,7 +245,7 @@
             {
               #
               title: "SDK",
-              icon: "Swagger",
+              icon: "SDK",
               doc: "https://authing-open-api.readme.io/reference",
             },
           ],
