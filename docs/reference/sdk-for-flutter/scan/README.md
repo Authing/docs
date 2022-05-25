@@ -4,11 +4,11 @@
 
 要使用自建 App 扫码登录能力，请在 Authing 控制台勾选 "App 扫码登录" 选项。
 
-![](../../sdk-for-ios/scan/images/1.png)
+![](../../sdk-for-flutter/scan/images/1.png)
 
 当 Web 应用需要登录时，登录界面会显示一个可供 App 扫码的二维码，如下图：
 
-![](../../sdk-for-ios/scan/images/2.png)
+![](../../sdk-for-flutter/scan/images/2.png)
 
 二维码数据结构如下：
 
