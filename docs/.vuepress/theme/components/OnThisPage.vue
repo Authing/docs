@@ -70,12 +70,19 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("scroll", this.setActiveHash);
   },
+  watch: {
+    $route(a, b) {
+      if (a.name !== b.name) {
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 100);
+      }
+    }
+  },
   updated() {
     this.captureAnchors();
-    window.scrollTo(0, 1);
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
+
     // this.handleScroll()
     // this.setActiveHash()
   },
