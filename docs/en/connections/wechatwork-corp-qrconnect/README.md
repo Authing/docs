@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入企业微信内部应用扫码登录',
-  bannerTitle: '接入企业微信内部应用扫码登录',
+  title: 'Access the enterprise WeChat internal application scan code to log in',
+  bannerTitle: 'Access the enterprise WeChat internal application scan code to log in',
   steps:
     [
       {
-        title: '在企业微信管理后台创建一个自建应用',
+        title: 'Create a self-built application in the enterprise WeChat management background',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入企业微信应用配置' },
+      { title: 'Fill in the enterprise WeChat application configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
