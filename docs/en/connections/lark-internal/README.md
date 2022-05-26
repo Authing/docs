@@ -4,18 +4,18 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入飞书企业自建应用社会化登录',
-  bannerTitle: '接入飞书企业自建应用社会化登录',
+  title: 'Access to Feishu enterprise self-built application social login',
+  bannerTitle: 'Access to Feishu enterprise self-built application social login',
   steps:
     [
       {
-        title: '在飞书开放平台创建一个企业自建应用',
+        title: 'Create an enterprise self-built application on Feishu open platform',
       },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }

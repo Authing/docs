@@ -4,18 +4,18 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入飞书应用商店应用社会化登录',
-  bannerTitle: '接入飞书应用商店应用社会化登录',
+  title: 'Access Feishu App Store App social login',
+  bannerTitle: 'Access Feishu App Store App social login',
   steps:
     [
       {
-        title: '在飞书开放平台创建一个应用商店应用',
+        title: 'Create an app store application on Feishu open platform',
       },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
