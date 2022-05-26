@@ -4,19 +4,19 @@ noSidebar: true,
 noToc: true,
 noFeedback: true,
 fullWidthPage: true,
-title: '接入企业微信内部应用移动端登录',
-bannerTitle: '接入企业微信内部应用移动端登录',
+title: 'Access enterprise WeChat internal application mobile terminal login',
+bannerTitle: 'Access enterprise WeChat internal application mobile terminal login',
 steps:
 [
 {
-title: '在企业微信管理后台创建一个自建应用',
+title: 'Create a self-built application in the enterprise WeChat management background',
 },
-{ title: '在 {{$localeConfig.brandName}} 填入企业微信应用配置' },
+{ title: 'Fill in the enterprise WeChat application configuration in {{$localeConfig.brandName}}' },
 {
-title: '在 {{$localeConfig.brandName}} 创建一个应用'
+title: 'Create an app at {{$localeConfig.brandName}}'
 },
 {
-title: '开始开发接入'
+title: 'Start developing access'
 }
 ],
 }
