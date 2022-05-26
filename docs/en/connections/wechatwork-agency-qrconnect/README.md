@@ -4,30 +4,30 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入企业微信内部应用扫码登录（代开发模式）',
-  bannerTitle: '接入企业微信内部应用扫码登录（代开发模式）',
+  title: 'Access enterprise WeChat internal application scan code login (on behalf of the development mode)',
+  bannerTitle: 'Access enterprise WeChat internal application scan code login (on behalf of the development mode)',
   steps:
     [
       {
-        title: '在服务商后台创建一个代开发模板并上线'
+        title: 'Create a proxy development template in the backend of the service provider and go online'
       },
       { 
-        title: '在 {{$localeConfig.brandName}} 填入企业微信代开发模板配置'
+        title: 'In {{$localeConfig.brandName}}, fill in the configuration of the enterprise WeChat generation development template'
       },
       {
-        title: '在服务商后台授权代开发模板并开发代开发应用'
+        title: 'Authorize agent development templates and develop agent development applications in the backend of the service provider'
       },
       {
-        title: '配置代开发应用，并在 {{$localeConfig.brandName}} 填入企业微信代开发应用配置'
+        title: 'Configure the proxy development application, and fill in the enterprise WeChat proxy development application configuration in {{$localeConfig.brandName}}'
       },
       {
-        title: '配置代开发应用可见范围及授权'
+        title: 'Configure the visible scope and authorization of the development application'
       },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
