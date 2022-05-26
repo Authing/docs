@@ -1,6 +1,6 @@
 !!!include(common/init-js-mngmt-sdk.md)!!!
 
-使用 [UsersManagementClient](/reference/sdk-for-node/management/UsersManagementClient.md) 的 `create` 方法创建用户：
+使用 [UsersManagementClient](/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient.md) 的 `create` 方法创建用户：
 
 ```javascript
 const user = await managementClient.users.create({

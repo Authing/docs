@@ -283,7 +283,7 @@ const user = await managementClient.users.update('USERID', {
 ```
 
 ## 通过 ID 获取用户信息
->通过用户 ID 获取用户详情，如果你想通过 token 获取用户详情，请使用 [AuthenticationClient SDK](/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient.md#获取当前登录的用户信息) 。
+>通过用户 ID 获取用户详情，如果你想通过 token 获取用户详情，请使用 [AuthenticationClient SDK](/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient.md#获取当前登录的用户信息) 。
 
 ```js
 UsersManagementClient().detail(userId, options)

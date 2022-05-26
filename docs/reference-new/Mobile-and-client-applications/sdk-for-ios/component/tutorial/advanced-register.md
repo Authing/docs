@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference-new/Mobile-and-client-applications/sdk-for-ios/develop)
+阅读此教程之前，确保已经完成了 [开发准备](/reference-new/mobile-and-client-applications/sdk-for-ios/develop)
 
 在上一个 [基础注册教程](./basic-register.md) 里面，我们构建了一个简单的注册界面，接下来我们尝试构建一个更为复杂的注册界面，它包含一个可以切换注册方式的 Tab，支持邮箱+密码注册以及电话号码+验证码注册
 

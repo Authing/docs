@@ -4,13 +4,13 @@
 
 {{$localeConfig.brandName}} 同时支持了 Java、JavaScript/Node.js、Python、PHP、C#、Go、Ruby 等多种语言的 SDK：
 
-- [Java/Kotlin](/reference/sdk-for-java/)
-- [JavaScript/Node.js](/reference/sdk-for-node/)
-- [Python](/reference/sdk-for-python/)
-- [PHP](/reference/sdk-for-php/)
-- [C#](/reference/sdk-for-csharp/)
-- [Go](/reference/sdk-for-go/)
-- [Ruby](/reference/sdk-for-ruby.md)
+- [Java/Kotlin](/reference-new/standard-web-application/sdk-for-java/)
+- [JavaScript/Node.js](/reference-new/standard-web-application/sdk-for-node/)
+- [Python](/reference-new/standard-web-application/sdk-for-python/)
+- [PHP](/reference-new/standard-web-application/sdk-for-php/)
+- [C#](/reference-new/standard-web-application/sdk-for-csharp/)
+- [Go](/reference-new/standard-web-application/sdk-for-go/)
+- [Ruby](/reference-new/standard-web-application/sdk-for-ruby.md)
 
 本文以 Node.js 为例，介绍如何编写脚本导入用户，你可以选择自己熟悉的语言。
 

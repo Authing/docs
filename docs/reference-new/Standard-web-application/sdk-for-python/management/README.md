@@ -12,35 +12,35 @@ meta:
 
 以下是完整的模块列表：
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/AclManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/ApplicationManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/ApplicationManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/GroupsManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/OrgManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/PoliciesManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/RolesManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/StatisticsManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/StatisticsManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/UdfManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/UserpoolManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/UsersManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-python/management/WhitelistManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-python/management/WhitelistManagementClient.md
 :::

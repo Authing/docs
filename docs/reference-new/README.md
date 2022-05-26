@@ -176,6 +176,14 @@
               github: "https://github.com/Authing/authing-go-sdk",
               doc: "./Standard-web-application/sdk-for-go/",
             },
+            {
+              #
+              title: "PHP",
+              icon: "php",
+              github: "https://github.com/Authing/authing-php-sdk",
+              doc: "./Standard-web-application/sdk-for-php/",
+            },
+          
           ],
       },
 
@@ -188,31 +196,31 @@
               #
               icon: "Spring",
               title: "Spring CAS",
-              doc: "https://docs.authing.cn/v2/frameworks/spring-security-cas/",
+              doc: "/reference-new/frameworks/spring-security-cas/",
             },
             {
               #
               icon: "Spring",
               title: "Spring OAuth",
-              doc: "https://docs.authing.cn/v2/frameworks/spring-security-oauth/",
+              doc: "/reference-new/frameworks/spring-security-oauth/",
             },
             {
               #
               icon: "Spring",
               title: "Spring OIDC",
-              doc: "https://docs.authing.cn/v2/frameworks/spring-security-oidc/",
+              doc: "/reference-new/frameworks/spring-security-oidc/",
             },
             {
               #
               icon: "Express",
               title: "Express OIDC",
-              doc: "https://docs.authing.cn/v2/frameworks/express-oidc-client/",
+              doc: "/reference-new/frameworks/express-oidc-client/",
             },
             {
               #
               icon: "Express",
               title: "Express Passport",
-              doc: "https://docs.authing.cn/v2/frameworks/express-passport-openidconnect/",
+              doc: "/reference-new/frameworks/express-passport-openidconnect/",
             },
           ],
       },
@@ -237,8 +245,8 @@
             {
               #
               title: "SDK",
-              icon: "Swagger",
-              api: "https://authing-open-api.readme.io/reference",
+              icon: "SDK",
+              doc: "https://authing-open-api.readme.io/reference",
             },
           ],
       },
@@ -250,28 +258,28 @@
             {
               #
               title: "单点登录（SSO）",
-              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-sso.html",
+              doc: "/reference-new/other/sdk-for-sso.html",
             },
             {
               #
               title: "微信小程序",
               github: "https://github.com/authing/authing-wxapp-sdk",
-              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxapp.html",
+              doc: "/reference-new/other/sdk-for-wxapp.html",
             },
             {
               #
               title: "微信网页登录",
-              doc: "https://docs.authing.cn/v2/reference-new/sdk-for-wxmp.html",
+              doc: "/reference-new/other/sdk-for-wxmp.html",
             },
             {
               #
               title: "Radius",
-              doc: "https://docs.authing.cn/v2/reference-new/radius/",
+              doc: "/reference-new/other/radius/",
             },
             {
               #
               title: "错误代码",
-              doc: "https://docs.authing.cn/v2/reference-new/error-code.html
+              doc: "/reference-new/other/error-code.html
                 ",
             },
           ],

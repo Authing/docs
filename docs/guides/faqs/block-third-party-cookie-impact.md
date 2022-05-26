@@ -12,7 +12,7 @@
 
 在浏览器发送需要携带 Cookie 的跨域请求时，浏览器会拦截 Cookie，因为用户访问的域名和 Authing 的域名不[同源](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)。
 
-具体受到影响的功能是 [trackSession](/reference/sdk-for-sso.md#authingsso-prototype-tracksession)，Authing 自研的单点登录功能。
+具体受到影响的功能是 [trackSession](/reference-new/other/sdk-for-sso.md#authingsso-prototype-tracksession)，Authing 自研的单点登录功能。
 
 ## 这些影响是什么时候发生的？
 

@@ -12,7 +12,7 @@
 
 ## Web 端生成二维码并轮询扫码状态
 
-在 Web 端，我们推荐使用 {{$localeConfig.brandName}} 提供的 [JavaScript SDK](/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md)，其提供了一键生成二维码、轮询最新状态、获取用户信息之后进行回调的接口，开发者只需要指定 `onSuccess` 回调函数即可：
+在 Web 端，我们推荐使用 {{$localeConfig.brandName}} 提供的 [JavaScript SDK](/reference-new/standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient.md)，其提供了一键生成二维码、轮询最新状态、获取用户信息之后进行回调的接口，开发者只需要指定 `onSuccess` 回调函数即可：
 
 ```js
 import { AuthenticationClient } from "authing-js-sdk"
@@ -35,7 +35,7 @@ authenticationClient.qrcode.startScanning("qrcode", {
 
 扫码成功之后，{{$localeConfig.brandName}} 将会回调开发者传入的 `onSuccess` 函数，回调的参数中包含 `userInfo` 和 `ticket`，`ticket` 可以用来[换取用户信息](./full-api-list.md#使用-ticket-换取用户信息)。
 
-如果你想自定义 UI 或者想要有更强的自定义化能力，可以查看[完整的 API 列表](./full-api-list.md) 或者[使用其他的 SDK 方法](/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md)。
+如果你想自定义 UI 或者想要有更强的自定义化能力，可以查看[完整的 API 列表](./full-api-list.md) 或者[使用其他的 SDK 方法](/reference-new/standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient.md)。
 
 
 ## 移动 APP 扫码授权用户信息

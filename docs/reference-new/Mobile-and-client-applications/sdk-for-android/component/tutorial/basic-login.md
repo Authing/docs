@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference-new/Mobile-and-client-applications/sdk-for-android/develop.md)
+阅读此教程之前，确保已经完成了 [开发准备](/reference-new/mobile-and-client-applications/sdk-for-android/develop.md)
 
 ## 在 xml 上放置超组件
 

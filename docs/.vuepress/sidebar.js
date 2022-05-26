@@ -1537,73 +1537,73 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
-  "/reference-new/Standard-web-application/": [
+  "/reference-new/standard-web-application/": [
     {
       title: "标准 Web 应用",
-      path: "/reference-new/Standard-web-application/sdk-for-csharp/",
+      path: "/reference-new/standard-web-application/sdk-for-csharp/",
       children: [
         {
           title: "C#",
-          path: "/reference-new/Standard-web-application/sdk-for-csharp/",
+          path: "/reference-new/standard-web-application/sdk-for-csharp/",
           children: [
           {
           title: "用户认证模块",
-          path: "/reference-new/Standard-web-application/sdk-for-csharp/authentication",
+          path: "/reference-new/standard-web-application/sdk-for-csharp/authentication",
           children: [
-            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/AuthenticationClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/StandardProtocol",
-            "/reference-new/Standard-web-application/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            "/reference-new/standard-web-application/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/standard-web-application/sdk-for-csharp/authentication/MfaAuthenticationClient"
             ]
           },
           {
           title: "管理模块",
-          path: "/reference-new/Standard-web-application/sdk-for-csharp/management",
+          path: "/reference-new/standard-web-application/sdk-for-csharp/management",
           children: [
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/UsersManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/ApplicationManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/RolesManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/AclManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/GroupsManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/OrgManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/UdfManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/WhitelistManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/UserpoolManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/StatisticsManagementClient",
-            "/reference-new/Standard-web-application/sdk-for-csharp/management/TenantManagementClient"
+            "/reference-new/standard-web-application/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/standard-web-application/sdk-for-csharp/management/TenantManagementClient"
               ]
           }
            ]
         },
         {
           title: "Go",
-          path: "/reference-new/Standard-web-application/sdk-for-go/",
+          path: "/reference-new/standard-web-application/sdk-for-go/",
           children: [
             {
               title: "用户认证模块",
-              path: "/reference-new/Standard-web-application/sdk-for-go/authentication/",
+              path: "/reference-new/standard-web-application/sdk-for-go/authentication/",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-go/authentication/AuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-go/authentication/StandardProtocol",
-                "/reference-new/Standard-web-application/sdk-for-go/authentication/MfaAuthenticationClient"
+                "/reference-new/standard-web-application/sdk-for-go/authentication/AuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-go/authentication/StandardProtocol",
+                "/reference-new/standard-web-application/sdk-for-go/authentication/MfaAuthenticationClient"
               ]
             },
             {
               title: "管理模块",
-              path: "/reference-new/Standard-web-application/sdk-for-go/management/",
+              path: "/reference-new/standard-web-application/sdk-for-go/management/",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-go/management/AclManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/ApplicationManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/GroupsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/OrgManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/PoliciesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/PrincipalManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/RolesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/StatisticsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/UdfManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/UserpoolManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/UsersManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/WhitelistManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-go/management/TenantManagementClient"
+                "/reference-new/standard-web-application/sdk-for-go/management/AclManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/ApplicationManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/GroupsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/OrgManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/PoliciesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/PrincipalManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/RolesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/StatisticsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/UdfManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/UserpoolManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/UsersManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/WhitelistManagementClient",
+                "/reference-new/standard-web-application/sdk-for-go/management/TenantManagementClient"
               ]
             }
           ]
@@ -1611,32 +1611,32 @@ const zhCnNavBar = {
     
         {
           title: "Java",
-          path: "/reference-new/Standard-web-application/sdk-for-java/",
+          path: "/reference-new/standard-web-application/sdk-for-java/",
           children: [
             {
               title: "用户认证模块",
-              path: "/reference-new/Standard-web-application/sdk-for-java/authentication/",
+              path: "/reference-new/standard-web-application/sdk-for-java/authentication/",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-java/authentication/AuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-java/authentication/StandardProtocol"
+                "/reference-new/standard-web-application/sdk-for-java/authentication/AuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-java/authentication/StandardProtocol"
                 // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
               ]
             },
             {
               title: "管理模块",
-              path: "/reference-new/Standard-web-application/sdk-for-java/management",
+              path: "/reference-new/standard-web-application/sdk-for-java/management",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-java/management/UsersManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/ApplicationManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/RolesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/AclManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/GroupsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/OrgManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/UdfManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/WhitelistManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/UserpoolManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/StatisticsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-java/management/TenantManagementClient"
+                "/reference-new/standard-web-application/sdk-for-java/management/UsersManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/ApplicationManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/RolesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/AclManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/GroupsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/OrgManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/UdfManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/WhitelistManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/UserpoolManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/StatisticsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-java/management/TenantManagementClient"
               ]
             }
           ]
@@ -1644,39 +1644,39 @@ const zhCnNavBar = {
     
         {
           title: "JavaScript / Node.js",
-          path: "/reference-new/Standard-web-application/sdk-for-node/",
+          path: "/reference-new/standard-web-application/sdk-for-node/",
           children: [
             {
               title: "用户认证模块",
-              path: "/reference-new/Standard-web-application/sdk-for-node/authentication",
+              path: "/reference-new/standard-web-application/sdk-for-node/authentication",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/StandardProtocol",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/MfaAuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/SocialAuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/EnterpriseAuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-node/authentication/PrincipalAuthentication"
+                "/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/StandardProtocol",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/QrCodeAuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/MfaAuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/SocialAuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/EnterpriseAuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-node/authentication/PrincipalAuthentication"
               ]
             },
             {
               title: "管理模块",
-              path: "/reference-new/Standard-web-application/sdk-for-node/management",
+              path: "/reference-new/standard-web-application/sdk-for-node/management",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-node/management/UsersManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/ApplicationManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/PoliciesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/RolesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/AclManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/GroupsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/OrgManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/UdfManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/StatisticsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/WhitelistManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/UserpoolManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/MFAManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/PrincipalManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-node/management/TenantManagementClient"
+                "/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/ApplicationManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/PoliciesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/RolesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/AclManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/GroupsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/OrgManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/UdfManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/StatisticsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/WhitelistManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/UserpoolManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/MFAManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/PrincipalManagementClient",
+                "/reference-new/standard-web-application/sdk-for-node/management/TenantManagementClient"
               ]
             }
           ]
@@ -1684,33 +1684,64 @@ const zhCnNavBar = {
     
         {
           title: "Python",
-          path: "/reference-new/Standard-web-application/sdk-for-python/",
+          path: "/reference-new/standard-web-application/sdk-for-python/",
           children: [
             {
               title: "用户认证模块",
-              path: "/reference-new/Standard-web-application/sdk-for-python/authentication/",
+              path: "/reference-new/standard-web-application/sdk-for-python/authentication/",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-python/authentication/AuthenticationClient",
-                "/reference-new/Standard-web-application/sdk-for-python/authentication/StandardProtocol",
-                "/reference-new/Standard-web-application/sdk-for-python/authentication/MfaAuthenticationClient"
+                "/reference-new/standard-web-application/sdk-for-python/authentication/AuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-python/authentication/StandardProtocol",
+                "/reference-new/standard-web-application/sdk-for-python/authentication/MfaAuthenticationClient"
               ]
             },
             {
               title: "管理模块",
-              path: "/reference-new/Standard-web-application/sdk-for-python/management",
+              path: "/reference-new/standard-web-application/sdk-for-python/management",
               children: [
-                "/reference-new/Standard-web-application/sdk-for-python/management/AclManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/ApplicationManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/GroupsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/OrgManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/PoliciesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/PrincipalManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/RolesManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/StatisticsManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/UdfManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/UserpoolManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/UsersManagementClient",
-                "/reference-new/Standard-web-application/sdk-for-python/management/WhitelistManagementClient"
+                "/reference-new/standard-web-application/sdk-for-python/management/AclManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/ApplicationManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/GroupsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/OrgManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/PoliciesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/PrincipalManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/RolesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/StatisticsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/UdfManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/UserpoolManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/UsersManagementClient",
+                "/reference-new/standard-web-application/sdk-for-python/management/WhitelistManagementClient"
+              ]
+            }
+          ]
+        },
+        {
+          title: "PHP",
+          path: "/reference-new/standard-web-application/sdk-for-php/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/standard-web-application/sdk-for-php/authentication/",
+              children: [
+                "/reference-new/standard-web-application/sdk-for-php/authentication/AuthenticationClient",
+                "/reference-new/standard-web-application/sdk-for-php/authentication/StandardProtocol",
+                "/reference-new/standard-web-application/sdk-for-php/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/standard-web-application/sdk-for-php/management/",
+              children: [
+                "/reference-new/standard-web-application/sdk-for-php/management/UsersManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/ApplicationManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/RolesManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/AclManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/GroupsManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/OrgManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/UdfManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/WhitelistManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/UserpoolManagementClient",
+                "/reference-new/standard-web-application/sdk-for-php/management/MFAManagementClient"
               ]
             }
           ]
@@ -1718,7 +1749,224 @@ const zhCnNavBar = {
     
         {
           title: "Ruby",
-          path: "/reference-new/Standard-web-application/sdk-for-ruby"
+          path: "/reference-new/standard-web-application/sdk-for-ruby"
+        },
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
+  "/reference-new/api-services/": [
+    {
+      title: "后端 / API 服务",
+      path: "/reference-new/api-services/sdk-for-csharp/",
+      children: [
+        {
+          title: "C#",
+          path: "/reference-new/api-services/sdk-for-csharp/",
+          children: [
+          {
+          title: "用户认证模块",
+          path: "/reference-new/api-services/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/api-services/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/api-services/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/api-services/sdk-for-csharp/management",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/TenantManagementClient"
+              ]
+          }
+           ]
+        },
+        {
+          title: "Go",
+          path: "/reference-new/api-services/sdk-for-go/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-go/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-go/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-go/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-go/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-go/management/",
+              children: [
+                "/reference-new/api-services/sdk-for-go/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-go/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Java",
+          path: "/reference-new/api-services/sdk-for-java/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-java/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-java/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-java/authentication/StandardProtocol"
+                // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-java/management",
+              children: [
+                "/reference-new/api-services/sdk-for-java/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-java/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "JavaScript / Node.js",
+          path: "/reference-new/api-services/sdk-for-node/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-node/authentication",
+              children: [
+                "/reference-new/api-services/sdk-for-node/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-node/authentication/QrCodeAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/MfaAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/SocialAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/EnterpriseAuthenticationClient",
+                "/reference-new/api-services/sdk-for-node/authentication/PrincipalAuthentication"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-node/management",
+              children: [
+                "/reference-new/api-services/sdk-for-node/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/MFAManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-node/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+    
+        {
+          title: "Python",
+          path: "/reference-new/api-services/sdk-for-python/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-python/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-python/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-python/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-python/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-python/management",
+              children: [
+                "/reference-new/api-services/sdk-for-python/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/PoliciesManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/PrincipalManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/StatisticsManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-python/management/WhitelistManagementClient"
+              ]
+            }
+          ]
+        },
+        {
+          title: "PHP",
+          path: "/reference-new/api-services/sdk-for-php/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/api-services/sdk-for-php/authentication/",
+              children: [
+                "/reference-new/api-services/sdk-for-php/authentication/AuthenticationClient",
+                "/reference-new/api-services/sdk-for-php/authentication/StandardProtocol",
+                "/reference-new/api-services/sdk-for-php/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/api-services/sdk-for-php/management/",
+              children: [
+                "/reference-new/api-services/sdk-for-php/management/UsersManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/ApplicationManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/RolesManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/AclManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/GroupsManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/OrgManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/UdfManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/WhitelistManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/UserpoolManagementClient",
+                "/reference-new/api-services/sdk-for-php/management/MFAManagementClient"
+              ]
+            }
+          ]
+        },
+        {
+          title: "Ruby",
+          path: "/reference-new/api-services/sdk-for-ruby"
         },
       ]
     }
@@ -1753,40 +2001,40 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
-  "/reference-new/Mobile-and-client-applications/": [
+  "/reference-new/mobile-and-client-applications/": [
     {
       title: "移动 / 客户端应用",
-      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/",
+      path: "/reference-new/mobile-and-client-applications/sdk-for-android/",
       children: [
         {
           title: "Android",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-android/",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-android/",
           children: [
             {
               title: "开始开发",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/develop"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/develop"
             },
             {
               title: "快速接入",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/quick"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/quick"
             },
             {
               title: "超组件",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/",
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/component/",
               children: [
                 {
                   title: "教程",
                   children: [
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/example",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/basic-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/refine-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/basic-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/login-to-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-phone",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-email",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-all"
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/example",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/basic-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/refine-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/basic-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/advanced-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/login-to-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile-and-client-applications/sdk-for-android/component/tutorial/reset-password-all"
                   ]
                 },
                 {
@@ -1794,110 +2042,110 @@ const zhCnNavBar = {
                   children: [
                     {
                       title: "应用图标",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/app-logo"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/app-logo"
                     },
                     {
                       title: "应用名称",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/app-name"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/app-name"
                     },
                     {
                       title: "帐号输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/account-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/account-edit-text"
                     },
                     {
                       title: "密码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/password-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/password-edit-text"
                     },
                     {
                       title: "密码确认输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/password-confirm-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/password-confirm-edit-text"
                     },
                     {
                       title: "电话号码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/phonenumber-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/phonenumber-edit-text"
                     },
                     {
                       title: "验证码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/verifycode-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/verifycode-edit-text"
                     },
                     {
                       title: "获取短信验证码按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/get-verifycode-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/get-verifycode-button"
                     },
                     {
                       title: "邮箱输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/email-edit-text"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/email-edit-text"
                     },
                     {
                       title: "获取邮箱验证码按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/get-emailcode-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/get-emailcode-button"
                     },
                     {
                       title: "登录按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/login-button"
                     },
                     {
                       title: "错误文本",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/error-text"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/error-text"
                     },
                     {
                       title: "登录方式切换栏",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-method-tab"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/login-method-tab"
                     },
                     {
                       title: "登录容器",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/login-container"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/login-container"
                     },
                     {
                       title: "隐私协议",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/privacy-confirm-box"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/privacy-confirm-box"
                     },
                     {
                       title: "注册按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/register-button"
                     },
                     {
                       title: "注册方式切换栏",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-method-tab"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/register-method-tab"
                     },
                     {
                       title: "注册容器",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/register-container"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/register-container"
                     },
                     {
                       title: "跳转注册按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-register-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/go-register-button"
                     },
                     {
                       title: "跳转登录按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-login-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/go-login-button"
                     },
                     {
                       title: "跳转忘记密码按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-forgot-password-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/go-forgot-password-button"
                     },
                     {
                       title: "跳转问题反馈按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/basic/go-feedback-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/basic/go-feedback-button"
                     }
                   ]
                 },
@@ -1907,7 +2155,7 @@ const zhCnNavBar = {
                     {
                       title: "社会化登录列表",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-android/component/social/social-login-listview"
+                        "/reference-new/mobile-and-client-applications/sdk-for-android/component/social/social-login-listview"
                     }
                   ]
                 }
@@ -1916,126 +2164,126 @@ const zhCnNavBar = {
             {
               title: "APIs",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/authentication/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/protocol/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/mfa/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/apis/scan/"
+                "/reference-new/mobile-and-client-applications/sdk-for-android/apis/authentication/",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/apis/protocol/",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/apis/mfa/",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/apis/scan/"
               ]
             },
             {
               title: "社会化登录",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/social/",
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/social/",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/wechat",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/wecom",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/alipay",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/social/lark"
+                "/reference-new/mobile-and-client-applications/sdk-for-android/social/wechat",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/social/wecom",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/social/alipay",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/social/lark"
               ]
             },
             {
               title: "典型场景",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/splash",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/tokens",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/user-profile",
-                "/reference-new/Mobile-and-client-applications/sdk-for-android/scenario/webview"
+                "/reference-new/mobile-and-client-applications/sdk-for-android/scenario/splash",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/scenario/tokens",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/scenario/user-profile",
+                "/reference-new/mobile-and-client-applications/sdk-for-android/scenario/webview"
               ]
             },
             {
               title: "私有化部署",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/onpremise"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/onpremise"
             },
             {
               title: "版本历史",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-android/version"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-android/version"
             }
           ]
         },
         {
           title: "C#",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-csharp/",
           children: [
           {
           title: "用户认证模块",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-csharp/authentication",
           children: [
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/AuthenticationClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/StandardProtocol",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/authentication/MfaAuthenticationClient"
             ]
           },
           {
           title: "管理模块",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-csharp/management",
           children: [
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UsersManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/ApplicationManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/RolesManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/AclManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/GroupsManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/OrgManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UdfManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/WhitelistManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/UserpoolManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/StatisticsManagementClient",
-            "/reference-new/Mobile-and-client-applications/sdk-for-csharp/management/TenantManagementClient"
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/mobile-and-client-applications/sdk-for-csharp/management/TenantManagementClient"
               ]
           }
            ]
         },
         {
           title: "Flutter",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-flutter/",
           children: [
             {
               title: "开始开发",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/develop"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-flutter/develop"
             },
             {
               title: "APIs",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/authentication/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/protocol/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/mfa/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/scan/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-flutter/social/"
+                "/reference-new/mobile-and-client-applications/sdk-for-flutter/authentication/",
+                "/reference-new/mobile-and-client-applications/sdk-for-flutter/protocol/",
+                "/reference-new/mobile-and-client-applications/sdk-for-flutter/mfa/",
+                "/reference-new/mobile-and-client-applications/sdk-for-flutter/scan/",
+                "/reference-new/mobile-and-client-applications/sdk-for-flutter/social/"
               ]
             },
             {
               title: "私有化部署",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-flutter/onpremise"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-flutter/onpremise"
             }
           ]
         },
         {
           title: "iOS",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/",
+          path: "/reference-new/mobile-and-client-applications/sdk-for-ios/",
           children: [
             {
               title: "开始开发",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/develop"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-ios/develop"
             },
             {
               title: "快速接入",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/quick"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-ios/quick"
             },
             {
               title: "超组件",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/",
+              path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/",
               children: [
                 {
                   title: "教程",
                   children: [
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/example",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/refine-login",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/login-to-register",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-phone",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-email",
-                    "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-all"
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/example",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/refine-login",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/basic-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/advanced-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/login-to-register",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile-and-client-applications/sdk-for-ios/component/tutorial/reset-password-all"
                   ]
                 },
                 {
@@ -2043,44 +2291,44 @@ const zhCnNavBar = {
                   children: [
                     {
                       title: "应用图标",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/app-logo"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/app-logo"
                     },
                     {
                       title: "应用名称",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/app-name"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/app-name"
                     },
                     {
                       title: "帐号输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/component/basic/account-textfield"
+                        "/reference-new/mobile-and-client-applications/component/basic/account-textfield"
                     },
                     {
                       title: "密码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/password-textfield"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/password-textfield"
                     },
                     {
                       title: "邮箱输入框",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/email-textfield"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/email-textfield"
                     },
                     {
                       title: "电话号码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/phonenumber-textfield"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/phonenumber-textfield"
                     },
                     {
                       title: "验证码输入框",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/verifycode-textfield"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/verifycode-textfield"
                     },
                     {
                       title: "获取验证码按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/get-verifycode-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/get-verifycode-button"
                     },
                     {
                       title: "登录按钮",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-button"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/login-button"
                     },
                     {
                       title: "错误文本",
@@ -2089,16 +2337,16 @@ const zhCnNavBar = {
                     {
                       title: "登录方式切换栏",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-method-tab"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/login-method-tab"
                     },
                     {
                       title: "登录容器",
-                      path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/login-container"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/login-container"
                     },
                     {
                       title: "隐私协议",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/privacy-confirm-box"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/privacy-confirm-box"
                     },
                     {
                       title: "注册按钮",
@@ -2107,17 +2355,17 @@ const zhCnNavBar = {
                     {
                       title: "注册方式切换栏",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/register-method-tab"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/register-method-tab"
                     },
                     {
                       title: "注册容器",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/register-container"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/register-container"
                     },
                     {
                       title: "跳转注册按钮",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/basic/go-register-button"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/go-register-button"
                     }
                   ]
                 },
@@ -2127,7 +2375,7 @@ const zhCnNavBar = {
                     {
                       title: "社会化登录列表",
                       path:
-                        "/reference-new/Mobile-and-client-applications/sdk-for-ios/component/social/social-login-listview"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/social/social-login-listview"
                     }
                   ]
                 }
@@ -2136,40 +2384,97 @@ const zhCnNavBar = {
             {
               title: "APIs",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/authentication/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/protocol/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/mfa/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/scan/",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/util/"
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/authentication/",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/protocol/",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/mfa/",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/scan/",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/util/"
               ]
             },
             {
               title: "社会化登录",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/",
+              path: "/reference-new/mobile-and-client-applications/sdk-for-ios/social/",
               children: [
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/wechat",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/wecom",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/alipay",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/lark",
-                "/reference-new/Mobile-and-client-applications/sdk-for-ios/social/apple"
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/social/wechat",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/social/wecom",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/social/alipay",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/social/lark",
+                "/reference-new/mobile-and-client-applications/sdk-for-ios/social/apple"
               ]
             },
             {
               title: "私有化部署",
-              path: "/reference-new/Mobile-and-client-applications/sdk-for-ios/onpremise"
+              path: "/reference-new/mobile-and-client-applications/sdk-for-ios/onpremise"
             }
           ]
         },
         {
           title: "React Native",
-          path: "/reference-new/Mobile-and-client-applications/sdk-for-react-native"
+          path: "/reference-new/mobile-and-client-applications/sdk-for-react-native.html"
         },
       ]
     }
  
     // 加入其他的页面边栏
   ],
-
+  "/reference-new/frameworks/": [
+    {
+      title: "框架集成",
+      path: "/reference-new/frameworks/spring-security-cas",
+      children: [
+        {
+          title: "Spring CAS",
+          path: "/reference-new/frameworks/spring-security-cas"
+        },
+        {
+          title: "Spring OAuth",
+          path: "/reference-new/frameworks/spring-security-oauth"
+        },
+        {
+          title: "Spring OIDC",
+          path: "/reference-new/frameworks/spring-security-oidc"
+        },
+        {
+          title: "Express OIDC",
+          path: "/reference-new/frameworks/express-oidc-client"
+        },
+        {
+          title: "Express Passport",
+          path: "/reference-new/frameworks/express-passport-openidconnect"
+        }
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
+  "/reference-new/other/": [
+    {
+      title: "其他",
+      path: "/reference-new/other/sdk-for-sso",
+      children: [
+        {
+          title: "单点登录（SSO）",
+          path: "/reference-new/other/sdk-for-sso"
+        },
+        {
+          title: "微信小程序",
+          path: "/reference-new/other/sdk-for-wxapp"
+        },
+        {
+          title: "微信网页登录",
+          path: "/reference-new/other/sdk-for-wxmp"
+        },
+        {
+          title: "Radius",
+          path: "/reference-new/other/radius/"
+        },
+        {
+          title: "错误代码",
+          path: "/reference-new/other/error-code"
+        }
+      ]
+    }
+    // 加入其他的页面边栏
+  ],
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,

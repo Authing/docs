@@ -1,4 +1,4 @@
-Use the [AppID](/guides/faqs/get-app-id-and-secret.md) to initialize the `AuthenticationClient` of the [C# SDK](/reference/sdk-for-csharp/):
+Use the [AppID](/guides/faqs/get-app-id-and-secret.md) to initialize the `AuthenticationClient` of the [C# SDK](/reference-new/standard-web-application/sdk-for-csharp/):
 
 ```csharp
 using Approw.ApiClient;

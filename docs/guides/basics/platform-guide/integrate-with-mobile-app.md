@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} 提供 [Android SDK](/reference/sdk-for-android.md) 和 [iOS SDK](/reference/sdk-for-swift.md) 帮助开发者在移动 APP 中快速集成 {{$localeConfig.brandName}}。
+{{$localeConfig.brandName}} 提供 [Android SDK](/reference-new/mobile-and-client-applications/sdk-for-android.md) 和 [iOS SDK](/reference-new/sdk-for-swift.md) 帮助开发者在移动 APP 中快速集成 {{$localeConfig.brandName}}。
 
 下面以 Android 应用的集成方式为例。
 
@@ -30,7 +30,7 @@ implementation files('libs/commons-codec-1.15-rep.jar')
 
 3. 安装 {{$localeConfig.brandName}} Java/Kotlin SDK
 
-详细的安装指引请见：[{{$localeConfig.brandName}} Java/Kotlin SDK](/reference/sdk-for-java/README.md) 。
+详细的安装指引请见：[{{$localeConfig.brandName}} Java/Kotlin SDK](/reference-new/standard-web-application/sdk-for-java/README.md) 。
 
 ## 使用示例
 
@@ -99,7 +99,7 @@ String code = "1234";
 User user = authenticationClient.loginByPhoneCode(new LoginByPhoneCodeInput(phone, code)).execute();
 ```
 
-详细文档请见：[用户注册登录 API](/reference/sdk-for-java/authentication/README.md) 。
+详细文档请见：[用户注册登录 API](/reference-new/standard-web-application/sdk-for-java/authentication/README.md) 。
 
 ## 集成微信登录
 

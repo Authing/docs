@@ -35,7 +35,7 @@
 </br>
 
 Authing Web 端 Guard 3.0 版本已于 2021.12.31 正式上线，关于本次更新主要涉及嵌入式 Guard 组件的 MFA、登录安全策略、自定义 CSS 以及登录注册协议相关功能的实现，同时对嵌入式和托管式 Guard 登录框的 UI 进行了全面翻新。
-关于本次更新的详细内容请查看：[从 Guard V1 迁移](/reference/guard/migration.md)
+关于本次更新的详细内容请查看：[从 Guard V1 迁移](/reference-new/guard/migration.md)
 
 ## 不同前端框架的接入流程
 
@@ -74,4 +74,4 @@ try {
 
 ## 详细的参数与事件列表
 
-{{$localeConfig.brandName}} 内嵌登录组件支持高度自定义化，除了自定义标题、Logo 等基础配置外，你还可以控制登录方式的显隐、通过自定义 CSS 完全自定义样式等；除了成功登录事件外，{{$localeConfig.brandName}} 内嵌登录组件还封装了成功注册、登录失败、登录注册方式切换等事件，详细文档请见 [登录组件（Guard）文档](/reference/guard/)。
+{{$localeConfig.brandName}} 内嵌登录组件支持高度自定义化，除了自定义标题、Logo 等基础配置外，你还可以控制登录方式的显隐、通过自定义 CSS 完全自定义样式等；除了成功登录事件外，{{$localeConfig.brandName}} 内嵌登录组件还封装了成功注册、登录失败、登录注册方式切换等事件，详细文档请见 [登录组件（Guard）文档](/reference-new/guard/)。

@@ -150,7 +150,7 @@ export class AppComponent {
 
 ### 退出登录
 
-1. 在项目入口文件中初始化 [AuthenticationClient](/reference-new/Standard-web-application/sdk-for-node/#使用认证模块)。
+1. 在项目入口文件中初始化 [AuthenticationClient](/reference-new/standard-web-application/sdk-for-node/#使用认证模块)。
 
 ```js
 import { initAuthClient } from "@authing/ng-ui-components";
@@ -193,9 +193,9 @@ export class AppComponent {
 
 ## 导出 `authing-js-sdk`
 
-Guard 组件本身基于 [Authing JavaScript SDK](/reference-new/Standard-web-application/sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
+Guard 组件本身基于 [Authing JavaScript SDK](/reference-new/standard-web-application/sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
 
-1. 调用 `initAuthClient` 初始化 [AuthenticationClient](/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)，多次调用此函数只会初始化一次。
+1. 调用 `initAuthClient` 初始化 [AuthenticationClient](/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)，多次调用此函数只会初始化一次。
 
 ```js
 import { initAuthClient } from "@authing/ng-ui-components";
@@ -213,7 +213,7 @@ import { getAuthClient } from "@authing/ng-ui-components";
 const authClient = getAuthClient();
 ```
 
-3. 调用 `AuthenticationClient` 实例的方法，完整方法列表请见 [AuthenticationClient 方法列表](/reference-new/Standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)。
+3. 调用 `AuthenticationClient` 实例的方法，完整方法列表请见 [AuthenticationClient 方法列表](/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)。
 
 ```js
 authClient.getCurrentUser().then((user) => console.log(user));
@@ -227,7 +227,7 @@ Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，�
 
 | 事件名                        | 事件说明                                             | 事件参数                | 事件参数说明                                                                                                  |
 | :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
-| load                          | {{$localeConfig.brandName}} appId 验证通过，加载完成 | authClient              | AuthenticationClient 对象，可直接操作 login， register，详情请查看 [authing-js-sdk](/reference-new/Standard-web-application/sdk-for-node/) |
+| load                          | {{$localeConfig.brandName}} appId 验证通过，加载完成 | authClient              | AuthenticationClient 对象，可直接操作 login， register，详情请查看 [authing-js-sdk](/reference-new/standard-web-application/sdk-for-node/) |
 | load-error                    | {{$localeConfig.brandName}} appId 验证失败，加载失败 | error                   | 错误信息                                                                                                      |
 | login                         | 用户登录成功                                         | user, authClient        | <p>user: 用户信息</p><p>authClient 同上</p>                                                                   |
 | login-error                   | 用户登录失败                                         | error                   | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                |

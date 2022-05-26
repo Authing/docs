@@ -1,6 +1,6 @@
 !!!include(common/init-python-mngmt-sdk.md)!!!
 
-使用 [UsersManagementClient](/reference/sdk-for-python/management/UsersManagementClient.md) 的 `create` 方法创建用户：
+使用 [UsersManagementClient](/reference-new/standard-web-application/sdk-for-python/management/UsersManagementClient.md) 的 `create` 方法创建用户：
 
 ```python
 user = management_client.users.create(

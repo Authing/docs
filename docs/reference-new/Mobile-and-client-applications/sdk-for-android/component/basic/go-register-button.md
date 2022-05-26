@@ -35,5 +35,5 @@
 
 那么该组件就能自动隐藏
 
-> 如果使用 [快速接入](/reference-new/Mobile-and-client-applications/sdk-for-android/quick.html) 方式，该组件可以自动跳转至注册页面；如果自定义了认证界面和流程，则需要手动处理点击事件
+> 如果使用 [快速接入](/reference-new/mobile-and-client-applications/sdk-for-android/quick.html) 方式，该组件可以自动跳转至注册页面；如果自定义了认证界面和流程，则需要手动处理点击事件
 

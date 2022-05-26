@@ -275,34 +275,34 @@ public class AuthenticationClientTest {
 
 管理模块包含以下子模块：
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/UsersManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/RolesManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/PoliciesManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/AclManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/UdfManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/GroupsManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/OrgManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/UserpoolManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/WhitelistManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/WhitelistManagementClient.md
 :::
 
-::: page-ref /reference-new/Standard-web-application/sdk-for-java/management/ApplicationManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/ApplicationManagementClient.md
 :::
 
 ## 获取帮助

@@ -23,4 +23,4 @@ ReactDOM.render(<App />, root)
 ```
 
 
-详细文档请见：[登录组件](../../../../reference/guard/README.md)。
+详细文档请见：[登录组件](/reference-new/guard/README.md)。
