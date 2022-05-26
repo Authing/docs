@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入企业微信（第三方应用）扫码授权登录',
-  bannerTitle: '接入企业微信（第三方应用）扫码授权登录',
+  title: 'Access enterprise WeChat (third-party application) scan code to authorize login',
+  bannerTitle: 'Access enterprise WeChat (third-party application) scan code to authorize login',
   steps:
     [
       {
-        title: '在企业微信服务商平台获取配置参数',
+        title: 'Obtain configuration parameters on the enterprise WeChat service provider platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入企业微信服务商网页应用配置' },
+      { title: 'In {{$localeConfig.brandName}} fill in the web application configuration of the enterprise WeChat service provider'},
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
