@@ -1308,6 +1308,7 @@ const zhCnNavBar = {
     {
       title: "iOS",
       path: "/reference/sdk-for-ios/",
+      
       children: [
         {
           title: "开始开发",
@@ -1511,7 +1512,8 @@ const zhCnNavBar = {
   "/reference-new/guard/": [
     {
       title: "登录组件 (Guard)",
-      path: "/reference-new/guard/react",
+      collapsable: false,
+  //    path: "/reference-new/guard/react",
       children: [
         {
           title: "React",
@@ -1540,7 +1542,8 @@ const zhCnNavBar = {
   "/reference-new/standard-web-application/": [
     {
       title: "标准 Web 应用",
-      path: "/reference-new/standard-web-application/sdk-for-csharp/",
+      collapsable: false,
+ //     path: "/reference-new/standard-web-application/sdk-for-csharp/",
       children: [
         {
           title: "C#",
@@ -1758,7 +1761,9 @@ const zhCnNavBar = {
   "/reference-new/api-services/": [
     {
       title: "后端 / API 服务",
-      path: "/reference-new/api-services/sdk-for-csharp/",
+      collapsable: false,
+     // initialOpenGroupIndex : 1,
+ //     path: "/reference-new/api-services/sdk-for-csharp/",
       children: [
         {
           title: "C#",
@@ -1975,7 +1980,8 @@ const zhCnNavBar = {
   "/reference-new/single-page-application/": [
     {
       title: "单页应用",
-      path: "/reference-new/single-page-application/react",
+      collapsable: false,
+ //     path: "/reference-new/single-page-application/react",
       children: [
         {
           title: "React",
@@ -2004,7 +2010,9 @@ const zhCnNavBar = {
   "/reference-new/mobile-and-client-applications/": [
     {
       title: "移动 / 客户端应用",
-      path: "/reference-new/mobile-and-client-applications/sdk-for-android/",
+  //    initialOpenGroupIndex : 1,
+      collapsable: false,
+     // path: "/reference-new/mobile-and-client-applications/sdk-for-android/",
       children: [
         {
           title: "Android",
@@ -2300,12 +2308,11 @@ const zhCnNavBar = {
                     {
                       title: "帐号输入框",
                       path:
-                        "/reference-new/mobile-and-client-applications/component/basic/account-textfield"
+                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/account-textfield"
                     },
                     {
                       title: "密码输入框",
-                      path:
-                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/password-textfield"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/password-textfield"
                     },
                     {
                       title: "邮箱输入框",
@@ -2313,18 +2320,15 @@ const zhCnNavBar = {
                     },
                     {
                       title: "电话号码输入框",
-                      path:
-                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/phonenumber-textfield"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/phonenumber-textfield"
                     },
                     {
                       title: "验证码输入框",
-                      path:
-                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/verifycode-textfield"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/verifycode-textfield"
                     },
                     {
                       title: "获取验证码按钮",
-                      path:
-                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/get-verifycode-button"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/get-verifycode-button"
                     },
                     {
                       title: "登录按钮",
@@ -2332,7 +2336,7 @@ const zhCnNavBar = {
                     },
                     {
                       title: "错误文本",
-                      path: "/reference/sdk-for-ios/component/basic/error-label"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/error-label"
                     },
                     {
                       title: "登录方式切换栏",
@@ -2345,12 +2349,11 @@ const zhCnNavBar = {
                     },
                     {
                       title: "隐私协议",
-                      path:
-                        "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/privacy-confirm-box"
+                      path:"/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/privacy-confirm-box"
                     },
                     {
                       title: "注册按钮",
-                      path: "/reference/sdk-for-ios/component/basic/register-button"
+                      path: "/reference-new/mobile-and-client-applications/sdk-for-ios/component/basic/register-button"
                     },
                     {
                       title: "注册方式切换栏",
@@ -2420,7 +2423,9 @@ const zhCnNavBar = {
   "/reference-new/frameworks/": [
     {
       title: "框架集成",
-      path: "/reference-new/frameworks/spring-security-cas",
+ //     initialOpenGroupIndex : 1,
+      collapsable: false,
+//      path: "/reference-new/frameworks/spring-security-cas",
       children: [
         {
           title: "Spring CAS",
@@ -2449,7 +2454,11 @@ const zhCnNavBar = {
   "/reference-new/other/": [
     {
       title: "其他",
-      path: "/reference-new/other/sdk-for-sso",
+ //     initialOpenGroupIndex : 1,
+      collapsable: false,
+
+
+//     path: "/reference-new/other/sdk-for-sso",
       children: [
         {
           title: "单点登录（SSO）",

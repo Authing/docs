@@ -232,24 +232,24 @@
             {
               #
               title: "API",
-              icon: "Swagger",
+              icon: "SDK",
               api: "https://core.authing.cn/openapi/",
             },
           ],
       },
-      {
+ #     {
         #
-        title: "SDK 库",
-        desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
-        list: [
-            {
+ #       title: "SDK 库",
+ #       desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
+ #       list: [
+ #           {
               #
-              title: "SDK",
-              icon: "SDK",
-              doc: "https://authing-open-api.readme.io/reference",
-            },
-          ],
-      },
+  #            title: "SDK",
+  #            icon: "SDK",
+  #            doc: "https://authing-open-api.readme.io/reference",
+  #          },
+  #        ],
+  #    },
       {
         #
         title: "其他",
