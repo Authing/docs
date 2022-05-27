@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微博社会化登录',
-  bannerTitle: '接入微博社会化登录',
+  title: 'Access Weibo social login',
+  bannerTitle: 'Access Weibo social login',
   steps:
     [
       {
-        title: '在微博开放平台创建一个网站应用',
+        title: 'Create a website application on the Weibo open platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入微博网站应用配置' },
+      { title: 'Fill in the Weibo website application configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }

@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入 Facebook 社会化登录',
-  bannerTitle: '接入 Facebook 社会化登录',
+  title: 'Access Facebook Social Login',
+  bannerTitle: 'Access Facebook Social Login',
   steps:
     [
       {
-        title: '在 Facebook 开发者平台创建一个应用',
+        title: 'Create an app on the Facebook Developer Platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入 Facebook 应用配置' },
+      { title: 'Fill in the Facebook app configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
