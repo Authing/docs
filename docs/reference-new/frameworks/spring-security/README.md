@@ -1,6 +1,6 @@
 ---
 {
-  noSidebar: true,
+ ## noSidebar: true,
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,

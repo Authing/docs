@@ -38,6 +38,10 @@ sdkConfig:
     name: JavaScript
     link: /reference-new/api-services/sdk-for-node/
     icon: JavaScript
+  javascript-single:
+    name: JavaScript
+    link: /reference-new/single-page-application/native-javascript/
+    icon: JavaScript
   reactNative:
     name: React Native
     link: /reference-new/mobile-and-client-applications/sdk-for-react-native/
@@ -49,6 +53,10 @@ sdkConfig:
   cSharp-api:
     name: C Sharp
     link: /reference-new/api-services/sdk-for-csharp/
+    icon: csharp
+  cSharp-web:
+    name: C Sharp
+    link: /reference-new/standard-web-application/sdk-for-csharp/
     icon: csharp
   react:
     name: React
@@ -128,7 +136,7 @@ applicationSdks:
     description: 在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录
     color: "#75A3FF"
     sdks:
-      - javascript
+      - javascript-single
       - react
       - angular
       - vue
@@ -138,7 +146,7 @@ applicationSdks:
     sdks:
       - javascript
       - python
-      - cSharp
+      - cSharp-web
       - nodeJs
       - ruby
       - java

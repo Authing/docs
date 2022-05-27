@@ -131,7 +131,7 @@ await authing.updateProfile((nickname: 'Mick'))
 
 ## API Reference
 
-> 你可以使用 `authing-js-sdk` [AuthenticationClient](./Standard-web-application/sdk-for-node/README.md) 中的所有方法，调用方法和 `authing-js-sdk` 完全一致。
+> 你可以使用 `authing-js-sdk` [AuthenticationClient](./standard-web-application/sdk-for-node/README.md) 中的所有方法，调用方法和 `authing-js-sdk` 完全一致。
 
 ### loginByCode
 
