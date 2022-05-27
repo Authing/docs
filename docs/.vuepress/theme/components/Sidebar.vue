@@ -37,8 +37,8 @@ export default {
   computed: {
     currentNavText() {
       const path = this.$route.path;
-      if (path.startsWith('/reference-new')) {
-        return ''
+      if (path.startsWith("/reference-new")) {
+        return "";
       }
 
       const navLinks = this.$themeLocaleConfig.nav;

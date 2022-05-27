@@ -4098,8 +4098,102 @@ const translatedZhCnNavBar = {
       ]
     },
     {
+      title: "iOS",
+      path: "/reference/sdk-for-ios/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-ios/develop"
+        },
+        {
+          title: "Quick start",
+          path: "/reference/sdk-for-ios/quick"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-ios/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-ios/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-ios/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-ios/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-ios/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-ios/social/",
+          children: [
+            {
+              title: "Wechat",
+              path: "/reference/sdk-for-ios/social/wechat"
+            },
+            {
+              title: "Alipay",
+              path: "/reference/sdk-for-ios/social/alipay"
+            },
+            {
+              title: "Apple",
+              path: "/reference/sdk-for-ios/social/apple"
+            }
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-ios/onpremise"
+        }
+      ]
+    },
+    {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-flutter/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-flutter/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-flutter/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-flutter/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-flutter/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-flutter/social/"
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",

@@ -57,28 +57,24 @@
               title: "Javascript",
               icon: "JavaScript",
               doc: "./single-page-application/native-javascript.html",
-
             },
             {
               #
               title: "React",
-              icon: "React-Native",   
+              icon: "React-Native",
               doc: "./single-page-application/react.html",
-
             },
             {
               #
               title: "Vue",
               icon: "Vue",
               doc: "./single-page-application/vue.html",
-
             },
             {
               #
               title: "Angular",
               icon: "Angular",
               doc: "./single-page-application/angular.html",
-
             },
           ],
       },
@@ -91,35 +87,35 @@
               title: "iOS Swift",
               icon: "iOS",
               github: "https://github.com/Authing/guard-ios",
-              doc: "./Mobile-and-client-applications/sdk-for-ios/",
+              doc: "./mobile-and-client-applications/sdk-for-ios/",
             },
             {
               #
               title: "Android",
               icon: "Android",
               github: "https://github.com/Authing/guard-android",
-              doc: "./Mobile-and-client-applications/sdk-for-android/",
+              doc: "./mobile-and-client-applications/sdk-for-android/",
             },
             {
               #
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "./Mobile-and-client-applications/sdk-for-flutter/",
+              doc: "./mobile-and-client-applications/sdk-for-flutter/",
             },
             {
               #
               title: "React Native",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-rn-sdk",
-              doc: "./Mobile-and-client-applications/sdk-for-react-native.html",
+              doc: "./mobile-and-client-applications/sdk-for-react-native.html",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "./Mobile-and-client-applications/sdk-for-csharp/",
+              doc: "./mobile-and-client-applications/sdk-for-csharp/",
             },
           ],
       },
@@ -183,7 +179,6 @@
               github: "https://github.com/Authing/authing-php-sdk",
               doc: "./Standard-web-application/sdk-for-php/",
             },
-          
           ],
       },
 
@@ -237,19 +232,19 @@
             },
           ],
       },
- #     {
-        #
- #       title: "SDK 库",
- #       desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
- #       list: [
- #           {
-              #
-  #            title: "SDK",
-  #            icon: "SDK",
-  #            doc: "https://authing-open-api.readme.io/reference",
-  #          },
-  #        ],
-  #    },
+      #     {
+      #
+      #       title: "SDK 库",
+      #       desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
+      #       list: [
+      #           {
+      #
+      #            title: "SDK",
+      #            icon: "SDK",
+      #            doc: "https://authing-open-api.readme.io/reference",
+      #          },
+      #        ],
+      #    },
       {
         #
         title: "其他",
