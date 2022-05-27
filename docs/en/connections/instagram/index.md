@@ -1,4 +1,4 @@
-#  Social Login of  Instagram
+# Instagram Social Login
 
 <LastUpdated/>
 
