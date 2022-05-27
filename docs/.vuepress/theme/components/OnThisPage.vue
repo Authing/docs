@@ -172,7 +172,7 @@ export default {
   overflow-y auto
   top calc(3.6rem + 36px)
   h3
-    color #86909C
+    color #215ae5
     padding-left 16px
     font-size 16px
   a
@@ -180,7 +180,7 @@ export default {
     font-size 12px
     // border-left 3px solid transparent
     // color: transparent
-    color #c9cdd4
+    color #4e5969
     padding-left: 25px;
 
 
@@ -196,7 +196,7 @@ export default {
     // &:visited
     //   color #666
     &.router-link-active:before
-      background #86909C
+      background #215ae5
 
     // & + ul a
     //   color: #999
@@ -218,7 +218,7 @@ export default {
     list-style-type none
     &:hover
       a
-        color: #C9CDD4;
+        color: #4e5969;
 
     li
       margin-left 0
@@ -229,18 +229,18 @@ export default {
         text-decoration none
         display block
         &:hover
-          color #86909C
+          color #215ae5
         &.router-link-active
           // margin-left -19px
           // padding-left 19px
           // color $accentColor
-          color #86909C
+          color #215ae5
       ul
         margin-top 8px
         padding-left: 12px
         li
           a
-            // color: #C9CDD4;
+            // color: #4e5969;
             // padding-left: 0
             &:before
               width: 4px

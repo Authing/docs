@@ -141,7 +141,7 @@ export default {
     font-size: 24px;
     line-height: 38px;
     color: #1D2129;
-    margin-top: 3em;
+    padding-top: 3em;
     padding-bottom: 0;
     border-bottom: 0
   p
