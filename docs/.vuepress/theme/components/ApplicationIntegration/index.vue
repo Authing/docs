@@ -169,7 +169,6 @@ export default {
     },
     tabs() {
       return this.$frontmatter.categories.map(item => {
-        console.log(item);
         return {
           label: item.name,
           key: item.key
