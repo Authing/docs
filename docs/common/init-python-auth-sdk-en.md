@@ -1,4 +1,4 @@
-Use the [AppID](/guides/faqs/get-app-id-and-secret.md) to initialize the `AuthenticationClient` of the [Python SDK](/reference-new/standard-web-application/sdk-for-python/):
+Use the [AppID](/guides/faqs/get-app-id-and-secret.md) to initialize the `AuthenticationClient` of the [Python SDK](/reference-new/web/sdk-for-python/):
 
 ```python
 from approw.v2.authentication import AuthenticationClient, AuthenticationClientOptions

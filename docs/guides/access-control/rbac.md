@@ -24,7 +24,7 @@
 
 ![](~@imagesZhCn/guides/access-control/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
 
-你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference-new/standard-web-application/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
 
 ## 授权用户角色
 
@@ -34,7 +34,7 @@
 
 选择用户之后点击确认，你可以查看被授权此角色的用户列表。
 
-你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference-new/standard-web-application/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
 
 ## 在后端通过用户角色控制权限
 

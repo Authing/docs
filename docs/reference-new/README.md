@@ -87,35 +87,35 @@
               title: "iOS Swift",
               icon: "iOS",
               github: "https://github.com/Authing/guard-ios",
-              doc: "./mobile-and-client-applications/sdk-for-ios/",
+              doc: "./mobile/sdk-for-ios/",
             },
             {
               #
               title: "Android",
               icon: "Android",
               github: "https://github.com/Authing/guard-android",
-              doc: "./mobile-and-client-applications/sdk-for-android/",
+              doc: "./mobile/sdk-for-android/",
             },
             {
               #
               title: "Flutter",
               icon: "Flutter",
               github: "https://github.com/Authing/sdk-flutter",
-              doc: "./mobile-and-client-applications/sdk-for-flutter/",
+              doc: "./mobile/sdk-for-flutter/",
             },
             {
               #
               title: "React Native",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-rn-sdk",
-              doc: "./mobile-and-client-applications/sdk-for-react-native.html",
+              doc: "./mobile/sdk-for-react-native.html",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "./mobile-and-client-applications/sdk-for-csharp/",
+              doc: "./mobile/sdk-for-csharp/",
             },
           ],
       },
@@ -128,56 +128,56 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "./standard-web-application/sdk-for-node/",
+              doc: "./web/sdk-for-node/",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "./standard-web-application/sdk-for-python/",
+              doc: "./web/sdk-for-python/",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "./standard-web-application/sdk-for-csharp/",
+              doc: "./web/sdk-for-csharp/",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "./standard-web-application/sdk-for-node/",
+              doc: "./web/sdk-for-node/",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
               github: "https://github.com/Authing/authing-ruby",
-              doc: "./standard-web-application/sdk-for-ruby.html",
+              doc: "./web/sdk-for-ruby.html",
             },
             {
               #
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "./standard-web-application/sdk-for-java/",
+              doc: "./web/sdk-for-java/",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "./standard-web-application/sdk-for-go/",
+              doc: "./web/sdk-for-go/",
             },
             {
               #
               title: "PHP",
               icon: "php",
               github: "https://github.com/Authing/authing-php-sdk",
-              doc: "./standard-web-application/sdk-for-php/",
+              doc: "./web/sdk-for-php/",
             },
           ],
       },

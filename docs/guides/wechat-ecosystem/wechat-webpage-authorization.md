@@ -123,7 +123,7 @@ ReactDOM.render(<App />, root)
 
 #### 使用
 
-初始化完成后在微信中打开页面会见到如下按钮，点击即可进行授权，授权完成后会跳转到应用回调链接，且可使用 [AuthenticationClient](/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient) 获取用户信息。
+初始化完成后在微信中打开页面会见到如下按钮，点击即可进行授权，授权完成后会跳转到应用回调链接，且可使用 [AuthenticationClient](/reference-new/web/sdk-for-node/authentication/AuthenticationClient) 获取用户信息。
 
 <img src="~@imagesZhCn/guides/wechat-ecosystem/wechat-webpage-authorization/1.jpeg" style="width: 400px;display: block;margin: 0 auto" class="md-img-padding" />
 

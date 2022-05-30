@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-> 推荐使用 [iOS Guard SDK](/reference-new/mobile-and-client-applications/sdk-for-ios/) 接入。它包含本 SDK 全部内容，并且提供了大量本 SDK 不具备的功能。本 SDK 只作为向下兼容进行维护
+> 推荐使用 [iOS Guard SDK](/reference-new/mobile/sdk-for-ios/) 接入。它包含本 SDK 全部内容，并且提供了大量本 SDK 不具备的功能。本 SDK 只作为向下兼容进行维护
 
 <br>
 

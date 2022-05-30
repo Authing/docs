@@ -19,7 +19,7 @@ meta:
 1. 在 Authing 控制台定义一个用户自定义字段（如 `source`），用于存储用户的来源数据，详情请见[添加自定义用户字段](/guides/users/user-defined-field/)；
 2. 访问应用域名的时候带上指定的 `query` 参数，如 `https://your-app.authing.cn?source=someWhere`；
 3. 当用户登录注册的时候，{{BRAND_NAME}} 将会将此数据写入到用户的自定义字段中；
-4. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
+4. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/web/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
 
 ## 使用嵌入登录组件
 
@@ -29,7 +29,7 @@ meta:
 
 1. 在 Authing 控制台定义一个用户自定义字段（如 `source`），用于存储用户的来源数据，详情请见[添加自定义用户字段](/guides/users/user-defined-field/)；
 2. 在 Guard 组件所在页面的 URL 上添加同样的 Query 参数，如 `?source=someWhere`。当用户使用 Guard 组件注册时，将会将这个参数写入到用户的自定义字段中；
-3. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
+3. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/web/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
 
 ## 使用 SDK
 
@@ -93,5 +93,5 @@ authing.wxqrcode.startScanning('domId', {
 ```
 
 3. 用户完成登录注册之后，{{BRAND_NAME}} 将会将此数据写入到用户的自定义字段中；
-4. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/standard-web-application/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
+4. 之后你可以使用 Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference-new/web/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
 
