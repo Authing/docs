@@ -191,31 +191,31 @@
               #
               icon: "Spring",
               title: "Spring CAS",
-              doc: "/reference-new/frameworks/spring-security-cas/",
+              doc: "./frameworks/spring-security-cas/",
             },
             {
               #
               icon: "Spring",
               title: "Spring OAuth",
-              doc: "/reference-new/frameworks/spring-security-oauth/",
+              doc: "./frameworks/spring-security-oauth/",
             },
             {
               #
               icon: "Spring",
               title: "Spring OIDC",
-              doc: "/reference-new/frameworks/spring-security-oidc/",
+              doc: "./frameworks/spring-security-oidc/",
             },
             {
               #
               icon: "Express",
               title: "Express OIDC",
-              doc: "/reference-new/frameworks/express-oidc-client/",
+              doc: "./frameworks/express-oidc-client/",
             },
             {
               #
               icon: "Express",
               title: "Express Passport",
-              doc: "/reference-new/frameworks/express-passport-openidconnect/",
+              doc: "./frameworks/express-passport-openidconnect/",
             },
           ],
       },
@@ -253,28 +253,28 @@
             {
               #
               title: "单点登录（SSO）",
-              doc: "/reference-new/other/sdk-for-sso.html",
+              doc: "./other/sdk-for-sso.html",
             },
             {
               #
               title: "微信小程序",
               github: "https://github.com/authing/authing-wxapp-sdk",
-              doc: "/reference-new/other/sdk-for-wxapp.html",
+              doc: "./other/sdk-for-wxapp.html",
             },
             {
               #
               title: "微信网页登录",
-              doc: "/reference-new/other/sdk-for-wxmp.html",
+              doc: "./other/sdk-for-wxmp.html",
             },
             {
               #
               title: "Radius",
-              doc: "/reference-new/other/radius/",
+              doc: "./other/radius/",
             },
             {
               #
               title: "错误代码",
-              doc: "/reference-new/other/error-code.html
+              doc: "./other/error-code.html
                 ",
             },
           ],
