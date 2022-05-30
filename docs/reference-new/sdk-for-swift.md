@@ -1,3 +1,9 @@
+---
+meta:
+  - name: description
+    content: Swift
+---
+
 # Authing - Swift
 
 <LastUpdated/>
@@ -156,13 +162,13 @@
 
 #### 参数
 
-- `email` <String> 邮箱
-- `password`<String> 密码
-- `RegisterProfile` <RegisterProfile> 用户资料
-- `forceLogin` <Bool> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
-- `generateToken` <Bool> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `email` \<String\> 邮箱
+- `password` \<String\> 密码
+- `RegisterProfile` \<RegisterProfile\> 用户资料
+- `forceLogin` \<Bool\> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
+- `generateToken` \<Bool\> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -180,13 +186,13 @@ AuthenticationClient.shared.registerByEmail(email: <#邮箱#>, password: <#密�
 
 #### 参数
 
-- `username` <String> 用户名
-- `password`<String> 密码
-- `RegisterProfile` <RegisterProfile> 用户资料
-- `forceLogin` <Bool> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
-- `generateToken` <Bool> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `username` \<String\> 用户名
+- `password`\<String\> 密码
+- `RegisterProfile` \<RegisterProfile\> 用户资料
+- `forceLogin` \<Bool\> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
+- `generateToken` \<Bool\> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -204,14 +210,14 @@ AuthenticationClient.shared.registerByUsername(username: <#用户名#>, password
 
 #### 参数
 
-- `code` <String> 短信验证码
-- `phone` <String> 手机号
--  password <String> 初始密码
-- `RegisterProfile` <RegisterProfile> 用户资料
-- `forceLogin` <Bool> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
-- `generateToken` <Bool> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `code` \<String\> 短信验证码
+- `phone` \<String\> 手机号
+-  password \<String\> 初始密码
+- `RegisterProfile` \<RegisterProfile\> 用户资料
+- `forceLogin` \<Bool\> 是否走遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 。
+- `generateToken` \<Bool\> 是否为该用户生成 token，不会触发登录后的完整流程，用户的累计登录次数不会加 1。默认为 false 。
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -233,12 +239,12 @@ AuthenticationClient.shared.registerByPhoneCode(phone: <#手机号#>, code: <#�
 
 #### 参数
 
-- `email` <String> 邮箱
-- `password` <String> 密码
-- `autoRegister` <Bool> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
-- `captchaCode` <String> 图形验证码
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `email` \<String\> 邮箱
+- `password` \<String\> 密码
+- `autoRegister` \<Bool\> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+- `captchaCode` \<String\> 图形验证码
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -256,12 +262,12 @@ AuthenticationClient.shared.loginByEmail(email: <#邮箱#>, password: <#密码#>
 
 #### 参数
 
-- `username` <String> 用户名
-- `password`<String> 密码
-- `autoRegister` <Bool> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
-- `captchaCode` <String> 图形验证码
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `username` \<String\> 用户名
+- `password`\<String\> 密码
+- `autoRegister` \<Bool\> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+- `captchaCode` \<String\> 图形验证码
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -279,10 +285,10 @@ AuthenticationClient.shared.loginByUsername(username: <#用户名#>, password: <
 
 #### 参数
 
-- `phone` <String> 手机号
-- `code` <String> 短信验证码，你可以通过 [sendSmsCode](https://docs.authing.cn/v2/reference-new/sdk-for-swift.html#发送短信验证码) 方法发送短信验证码。
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `phone` \<String\> 手机号
+- `code` \<String\> 短信验证码，你可以通过 [sendSmsCode](https://docs.authing.cn/v2/reference/sdk-for-swift.html#发送短信验证码) 方法发送短信验证码。
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -300,11 +306,11 @@ AuthenticationClient.shared.loginByPhoneCode(phone: <#手机号#>, code: <#验�
 
 #### 参数
 
-- `phone` <String> 手机号
-- `password` <String> 密码
-- `captchaCode` <String> 图形验证码
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
-- `context` <String> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
+- `phone` \<String\> 手机号
+- `password` \<String\> 密码
+- `captchaCode` \<String\> 图形验证码
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `context` \<String\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到。
 
 #### 示例
 
@@ -322,10 +328,10 @@ AuthenticationClient.shared.loginByPhonePassword(phone: <#手机号#>, password:
 
 #### 参数
 
-- `username` <String> 用户名
-- `password` <String> 密码
-- `captchaCode` <String> 图形验证码
-- `clientIp` <String> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
+- `username` \<String\> 用户名
+- `password` \<String\> 密码
+- `captchaCode` \<String\> 图形验证码
+- `clientIp` \<String\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP。
 
 #### 示例
 
@@ -343,8 +349,8 @@ AuthenticationClient.shared.loginBySubAccount(username: <#用户名#>, password:
 
 #### 参数
 
-- `username` <String> 用户名
-- `password` <String> 密码
+- `username` \<String\> 用户名
+- `password` \<String\> 密码
 
 #### 示例
 
@@ -362,8 +368,8 @@ AuthenticationClient.shared.loginByLdap(username: <#用户名#>, password: <#密
 
 #### 参数
 
-- `username` <String> 用户名
-- `password` <String> 密码
+- `username` \<String\> 用户名
+- `password` \<String\> 密码
 
 #### 示例
 
@@ -424,8 +430,8 @@ AuthenticationClient.shared.listUdv(completion:{ result in })
 
 #### 参数
 
-- `key` <String> 自定义数据的 Key
-- `value` <String> 自定义数据的 Value
+- `key` \<String\> 自定义数据的 Key
+- `value` \<String\> 自定义数据的 Value
 
 #### 示例
 
@@ -451,7 +457,7 @@ AuthenticationClient.shared.listOrg(completion: { result in })
 
 #### 参数
 
-- `phone` <String> 手机号
+- `phone` \<String\> 手机号
 
 #### 示例
 
@@ -465,8 +471,8 @@ AuthenticationClient.shared.sendSmsCode(phone: <#手机号#>, completion: { resu
 
 #### 参数
 
-- `email` <string> 邮箱
-- `scene`  <EmailScene> 发送场景，可选值包含：
+- `email` \<string\> 邮箱
+- `scene`  \<EmailScene\> 发送场景，可选值包含：
   - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
   - VERIFY_EMAIL: 发送验证邮箱的邮件；
   - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
@@ -493,7 +499,7 @@ AuthenticationClient.shared.listUdv(completion:{ result in })
 
 #### 参数
 
-- `key` <String> 自定义字段的 key 
+- `key` \<String\> 自定义字段的 key 
 
 #### 示例
 
@@ -515,9 +521,9 @@ AuthenticationClient.shared.checkLoginStatus(token: <#token#>, completion:{ resu
 
 #### 参数
 
-- `phone` <String> 手机号
-- `code` <String> 验证码
-- `newPassword` <String> 新的密码
+- `phone` \<String\> 手机号
+- `code` \<String\> 验证码
+- `newPassword` \<String\> 新的密码
 
 #### 示例
 
@@ -531,9 +537,9 @@ AuthenticationClient.shared.resetPasswordByPhoneCode(phone: <#手机号#>, code:
 
 #### 参数
 
-- `email` <String> 邮箱
-- `code` <String> 验证码
-- `newPassword` <String> 新的密码
+- `email` \<String\> 邮箱
+- `code` \<String\> 验证码
+- `newPassword` \<String\> 新的密码
 
 #### 示例
 
@@ -547,33 +553,33 @@ AuthenticationClient.shared.resetPasswordByEmailCode(email: <#邮箱#>, code: <#
 
 #### 参数
 
-- `username` <String> 用户名
-- `nickname` <String> 昵称
-- `photo` <String> 头像
-- `company` <String> 公司
-- `browser` <String> 浏览器
-- `device` <String> 设备
-- `lastIP` <String> 最近登录的 IP
-- `name` <String> Name
-- `givenName` <String> Given Name
-- `familyName`  <String> Family Name
-- `formatted` <String> 详细地址
-- `middleName` <String> Middle Name
-- `profile` <String> Profile Url
-- `preferredUsername` <String> Preferred Name
-- `website` <String> 个人网站
-- `gender` <String> 性别, M（Man） 表示男性、F（Female） 表示女性、未知表示 U（Unknown）
-- `birthdate` <String> 生日
-- `zoneinfo` <String> 时区
-- `locale` <String> 语言
-- `address` <String> 地址
-- `streetAddress` <String>  街道地址
-- `locality` <String> 
-- `region`  <String> 地域
-- `postalCode` <String> 邮编
-- `city` <String> 城市
-- `province` <String> 省份
-- `country` <String> 国家
+- `username` \<String\> 用户名
+- `nickname` \<String\> 昵称
+- `photo` \<String\> 头像
+- `company` \<String\> 公司
+- `browser` \<String\> 浏览器
+- `device` \<String\> 设备
+- `lastIP` \<String\> 最近登录的 IP
+- `name` \<String\> Name
+- `givenName` \<String\> Given Name
+- `familyName`  \<String\> Family Name
+- `formatted` \<String\> 详细地址
+- `middleName` \<String\> Middle Name
+- `profile` \<String\> Profile Url
+- `preferredUsername` \<String\> Preferred Name
+- `website` \<String\> 个人网站
+- `gender` \<String\> 性别, M（Man） 表示男性、F（Female） 表示女性、未知表示 U（Unknown）
+- `birthdate` \<String\> 生日
+- `zoneinfo` \<String\> 时区
+- `locale` \<String\> 语言
+- `address` \<String\> 地址
+- `streetAddress` \<String\>  街道地址
+- `locality` \<String\> 
+- `region`  \<String\> 地域
+- `postalCode` \<String\> 邮编
+- `city` \<String\> 城市
+- `province` \<String\> 省份
+- `country` \<String\> 国家
 
 #### 示例
 
@@ -585,7 +591,7 @@ AuthenticationClient.shared.updateProfile(email: <#邮箱#>, completion: { (resu
 
 #### 参数
 
-- `newPassword` <String> 新密码
+- `newPassword` \<String\> 新密码
 
 #### 示例
 
@@ -599,8 +605,8 @@ AuthenticationClient.shared.updatePassword(newPassword: <#新密码#>, completio
 
 #### 参数
 
-- `phone` <String> 手机号
-- `phoneCode` <String>短信验证码，你可以通过 [sendSmsCode](#发送短信验证码) 方法发送短信验证码
+- `phone` \<String\> 手机号
+- `phoneCode` \<String\>短信验证码，你可以通过 [sendSmsCode](#发送短信验证码) 方法发送短信验证码
 
 #### 示例
 
@@ -627,10 +633,10 @@ AuthenticationClient.shared.unbindPhone(completion: { (result) in })
 
 #### 参数
 
-- `phone` <String> 新手机号
-- `phoneCode` <String> 新手机号的验证码
-- `oldPhone` <String> 旧手机号
-- `oldPhoneCode `<String> 旧手机号的验证码
+- `phone` \<String\> 新手机号
+- `phoneCode` \<String\> 新手机号的验证码
+- `oldPhone` \<String\> 旧手机号
+- `oldPhoneCode `\<String\> 旧手机号的验证码
 
 #### 示例
 
@@ -644,8 +650,8 @@ AuthenticationClient.shared.updatePhone(phone: <#手机号#>, phoneCode: <#验�
 
 #### 参数
 
-- `email`<String> 邮箱
-- `emailCode`<String> 邮件验证码，可通过 [sendEmail](#发送邮件) 方法获得，EmailScene 为 CHANGE_EMAIL
+- `email`\<String\> 邮箱
+- `emailCode`\<String\> 邮件验证码，可通过 [sendEmail](#发送邮件) 方法获得，EmailScene 为 CHANGE_EMAIL
 
 #### 示例
 
@@ -672,10 +678,10 @@ AuthenticationClient.shared.unbindEmail(completion: { (result) in })
 
 #### 参数
 
-- `email` <String> 新邮箱
-- `emailCode` <String> 新邮箱的验证码
-- `oldEmail`<String> 旧邮箱
-- `oldEmailCode`<String> 旧邮箱的验证码
+- `email` \<String\> 新邮箱
+- `emailCode` \<String\> 新邮箱的验证码
+- `oldEmail`\<String\> 旧邮箱
+- `oldEmailCode`\<String\> 旧邮箱的验证码
 
 #### 示例
 
@@ -697,8 +703,8 @@ AuthenticationClient.shared.refreshToken(completion:{ result in })
 
 #### 参数
 
-- `primaryUserToken`<String> 主账号用户的 `id_token`；
-- `provider` <ProviderType> 你可以[在此查看支持的所有社会化登录类型](/guides/authentication/social/)。
+- `primaryUserToken`\<String\> 主账号用户的 `id_token`；
+- `provider` \<ProviderType\> 你可以[在此查看支持的所有社会化登录类型](/guides/authentication/social/)。
 
 #### 示例
 
@@ -719,7 +725,7 @@ AuthenticationClient.shared.socialUnLink(primaryUserToken: <#id_token#>, complet
 
 #### 参数
 
-- `password `<String> 密码
+- `password `\<String\> 密码
 
 #### 示例
 
@@ -731,7 +737,7 @@ AuthenticationClient.shared.checkPasswordStrength(password: <#密码#>, completi
 
 #### 参数
 
-- `password  ` <String>  需要计算的密码（明文格式），必须为 `String` 类型。
+- `password  ` \<String\>  需要计算的密码（明文格式），必须为 `String` 类型。
 
 #### 示例
 
@@ -743,8 +749,8 @@ AuthenticationClient.shared.computedPasswordSecurityLevel(proclaimedPassword: <#
 
 #### 参数
 
-- `page` <number> 分页序号, 默认为 `1`。
-- `limit`<number> 每页返回的个数, 默认为 `10`。
+- `page` \<number\> 分页序号, 默认为 `1`。
+- `limit`\<number\> 每页返回的个数, 默认为 `10`。
 
 #### 示例
 

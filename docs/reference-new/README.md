@@ -128,56 +128,56 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "./Standard-web-application/sdk-for-node/",
+              doc: "./standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "./Standard-web-application/sdk-for-python/",
+              doc: "./standard-web-application/sdk-for-python/",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "./Standard-web-application/sdk-for-csharp/",
+              doc: "./standard-web-application/sdk-for-csharp/",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "./Standard-web-application/sdk-for-node/",
+              doc: "./standard-web-application/sdk-for-node/",
             },
             {
               #
               title: "Ruby",
               icon: "Ruby",
               github: "https://github.com/Authing/authing-ruby",
-              doc: "./Standard-web-application/sdk-for-ruby.html",
+              doc: "./standard-web-application/sdk-for-ruby.html",
             },
             {
               #
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "./Standard-web-application/sdk-for-java/",
+              doc: "./standard-web-application/sdk-for-java/",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "./Standard-web-application/sdk-for-go/",
+              doc: "./standard-web-application/sdk-for-go/",
             },
             {
               #
               title: "PHP",
               icon: "php",
               github: "https://github.com/Authing/authing-php-sdk",
-              doc: "./Standard-web-application/sdk-for-php/",
+              doc: "./standard-web-application/sdk-for-php/",
             },
           ],
       },

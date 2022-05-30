@@ -1,7 +1,7 @@
 ---
-noToc: true
+##noToc: true
 lastUpdated: true
-sidebarType: page
+##sidebarType: page
 noPageNav: true
 downloadDemo:
     title: 本页资源

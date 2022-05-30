@@ -235,7 +235,7 @@ export const useInfo = () => {
 
 ## 导出 `authing-js-sdk`
 
-Guard 组件本身基于 [Authing JavaScript SDK](../Standard-web-application/sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
+Guard 组件本身基于 [Authing JavaScript SDK](../standard-web-application/sdk-for-node/) 进行封装，当你需要进行一些更高级的操作（如管理用户自定义数据、修改用户资料、退出登录）时：
 
 1. 调用 `initAuthClient` 初始化 [AuthenticationClient](/reference-new/standard-web-application/sdk-for-node/authentication/AuthenticationClient.md)，多次调用此函数只会初始化一次。
 

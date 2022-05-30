@@ -22,7 +22,7 @@ meta:
 ::: page-ref /reference-new/standard-web-application/sdk-for-java/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/standard-web-application/Standard-web-application/sdk-for-java/management/AclManagementClient.md
+::: page-ref /reference-new/standard-web-application/sdk-for-java/management/AclManagementClient.md
 :::
 
 ::: page-ref /reference-new/standard-web-application/sdk-for-java/management/UdfManagementClient.md
