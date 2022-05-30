@@ -1,6 +1,6 @@
 <template>
   <main
-    class="page content-layout-container"
+    class="page content-layout-container reference-new"
     :class="{
       'full-width': $frontmatter.fullWidthPage
     }"
@@ -158,6 +158,9 @@ export default {
   padding: 0 1em;
 
 @media (max-width: $MQMobile)
+  .reference-new
+    .on-this-page
+      display none
   .sdk-banner
     display: block
     background-position: left top;
