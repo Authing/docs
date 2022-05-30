@@ -249,6 +249,9 @@ export default {
             //   margin-left -39px
             //   padding-left 39px
 
+@media (max-width: $MQMobile)
+  .on-this-page
+    display none
 
 .mobile-on-this-page
   margin-bottom 60px
