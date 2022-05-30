@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入 Twitter 社会化登录',
-  bannerTitle: '接入 Twitter 社会化登录',
+  title: 'Access Twitter Social Login',
+  bannerTitle: 'Access Twitter Social Login',
   steps:
     [
       {
-        title: '在 Twitter 开发者平台创建一个应用',
+        title: 'Create an app on the Twitter Developer Platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入 Twitter 应用配置' },
+      { title: 'Fill in the Twitter app configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
