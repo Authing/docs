@@ -20,19 +20,19 @@ hotSearch:
 sdkConfig:
   ios:
     name: iOS Swift
-    link: /reference-new/mobile-and-client-applications/sdk-for-ios/
+    link: /reference-new/mobile/sdk-for-ios/
     icon: iOS
   android:
     name: Android
-    link: /reference-new/mobile-and-client-applications/sdk-for-android/
+    link: /reference-new/mobile/sdk-for-android/
     icon: Android
   flutter:
     name: Flutter
-    link: /reference-new/mobile-and-client-applications/sdk-for-flutter/
+    link: /reference-new/mobile/sdk-for-flutter/
     icon: Flutter
   javascript:
     name: JavaScript
-    link: /reference-new/standard-web-application/sdk-for-node/
+    link: /reference-new/web/sdk-for-node/
     icon: JavaScript
   javascript-api:
     name: JavaScript
@@ -44,11 +44,11 @@ sdkConfig:
     icon: JavaScript
   reactNative:
     name: React Native
-    link: /reference-new/mobile-and-client-applications/sdk-for-react-native/
+    link: /reference-new/mobile/sdk-for-react-native/
     icon: React-Native
   cSharp:
     name: C Sharp
-    link: /reference-new/mobile-and-client-applications/sdk-for-csharp/
+    link: /reference-new/mobile/sdk-for-csharp/
     icon: csharp
   cSharp-api:
     name: C Sharp
@@ -56,7 +56,7 @@ sdkConfig:
     icon: csharp
   cSharp-web:
     name: C Sharp
-    link: /reference-new/standard-web-application/sdk-for-csharp/
+    link: /reference-new/web/sdk-for-csharp/
     icon: csharp
   react:
     name: React
@@ -64,7 +64,7 @@ sdkConfig:
     icon: React-Native
   react-Native:
     name: React
-    link: /reference-new/mobile-and-client-applications/sdk-for-react-native.html
+    link: /reference-new/mobile/sdk-for-react-native.html
     icon: React-Native
   angular:
     name: Angular
@@ -76,7 +76,7 @@ sdkConfig:
     icon: Vue
   python:
     name: Python
-    link: /reference-new/standard-web-application/sdk-for-python/
+    link: /reference-new/web/sdk-for-python/
     icon: Python
   python-api:
     name: Python
@@ -84,7 +84,7 @@ sdkConfig:
     icon: Python
   nodeJs:
     name: Node.js
-    link: /reference-new/standard-web-application/sdk-for-node/
+    link: /reference-new/web/sdk-for-node/
     icon: Nodejs
   nodeJs-api:
     name: Node.js
@@ -92,7 +92,7 @@ sdkConfig:
     icon: Nodejs
   ruby:
     name: Ruby
-    link: /reference-new/standard-web-application/sdk-for-ruby.html
+    link: /reference-new/web/sdk-for-ruby.html
     icon: Ruby
   ruby-api:
     name: Ruby
@@ -100,7 +100,7 @@ sdkConfig:
     icon: Ruby
   java:
     name: Java
-    link: /reference-new/standard-web-application/sdk-for-java/
+    link: /reference-new/web/sdk-for-java/
     icon: Java
   java-api:
     name: Java
@@ -108,7 +108,7 @@ sdkConfig:
     icon: Java
   golang:
     name: Golang
-    link: /reference-new/standard-web-application/sdk-for-go/
+    link: /reference-new/web/sdk-for-go/
     icon: Go
   golang-api:
     name: Golang
@@ -116,7 +116,7 @@ sdkConfig:
     icon: Go
   php:
     name: PHP
-    link: /reference-new/standard-web-application/sdk-for-php/
+    link: /reference-new/web/sdk-for-php/
     icon: php
   php-api:
     name: PHP

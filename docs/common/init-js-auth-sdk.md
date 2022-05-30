@@ -1,4 +1,4 @@
-使用[应用 ID（AppID）](/guides/faqs/get-app-id-and-secret.md) 初始化 [JavaScript/Node.js SDK](/reference-new/standard-web-application/sdk-for-node/) 的 `AuthenticationClient`:
+使用[应用 ID（AppID）](/guides/faqs/get-app-id-and-secret.md) 初始化 [JavaScript/Node.js SDK](/reference-new/web/sdk-for-node/) 的 `AuthenticationClient`:
 
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'

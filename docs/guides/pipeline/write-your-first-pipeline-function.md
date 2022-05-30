@@ -60,6 +60,6 @@ Pipeline 函数是 {{$localeConfig.brandName}} 认证流程中执行的自定义
 - 详细阅读 [Pipeline 函数的开发文档](pipeline-function-api-doc.md)。
 - 了解可以在 pipe 函数中获取那些请求信息：[user 对象](user-object.md) 和 [context 对象](context-object.md)。
 - 了解如何[在 pipe 函数中使用环境变量](env.md)。
-- 了解在 pipe 函数中可以使用[哪些开箱即用的 Node Modules](available-node-modules.md)。你可以直接使用 [authing-js-sdk ](/reference-new/standard-web-application/sdk-for-node/)！
+- 了解在 pipe 函数中可以使用[哪些开箱即用的 Node Modules](available-node-modules.md)。你可以直接使用 [authing-js-sdk ](/reference-new/web/sdk-for-node/)！
 - 我们提供了很多丰富的 Pipeline 函数模板，[点击这里查看](https://github.com/authing/pipeline)。
 - 我们还提供了方便的[在线调试手段](./how-to-debug.md)，方便开发者在线调试。
