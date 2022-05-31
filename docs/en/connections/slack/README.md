@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入 Slack 社会化登录',
-  bannerTitle: '接入 Slack 社会化登录',
+  title: 'Access Slack social login',
+  bannerTitle: 'Access Slack social login',
   steps:
     [
       {
-        title: '在 Slack API 平台创建一个应用',
+        title: 'Create an app on the Slack API platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入 Slack API 应用配置' },
+      { title: 'Fill in the Slack API application configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create APP on {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start to develop'
       }
     ],
 }

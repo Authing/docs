@@ -1,45 +1,43 @@
-# 手机号一键登录
+# One-click login with mobile phone number
 
 <LastUpdated/>
 
-手机号一键登录是由三大运营商提供的一种极为便捷的认证方式。
+Mobile phone number one-click login is an extremely convenient authentication method provided by the three major operators.
 
-当前 Authing 支持通过网易易盾接入该能力，网易易盾集成了三大运营商一键登录 SDK，提供了统一的移动端应用接口。你可以通过以下三步快速完成接入。
+Currently, Authing supports access to this capability through NetEase Yidun. Netease Yidun integrates the three major operators' one-click login SDK to provide a unified mobile application interface. You can quickly complete the access through the following three steps.
 
 <br>
 
-## STEP1：易盾后台配置
+## STEP1: NetEase YIDUN Background configuration
 
-参考 [易盾文档](https://support.dun.163.com/documents/287305921855672320?docId=424413790996844544) 创建应用，设置包名、上传签名
-
-拷贝 business Id、SecretId、SecretKey
+Refer to the [YIDUN documentation](https://support.dun.163.com/documents/287305921855672320?docId=424413790996844544) to create an application, set the package name, upload the signature, and copy the business Id, SecretId, SecretKey
 
 ![](./images/yd_bizid.png)
 
 ![](./images/yd_secret.png)
 
-## STEP2：Authing 后台配置
+## STEP2: Authing Background configuration
 
-创建社会化身份源
+Create a social identity provider
 
-![](./images/add_social.png)
+![](~@imagesEnUs/connections/create-social-idp.jpg)
 
-选择易盾一键登录
+Select YIDUN One-Key Login
 
-![](./images/add_yidun.png)
+![](./images/add_yidun.jpg)
 
-将易盾后台信息填入 Authing 控制台
+Fill in the backend information of Yidun into the Authing console
 
-![](./images/yidun_setting.png)
+![](./images/yidun_setting.jpg)
 
-## STEP3：移动端集成
+## STEP3: Mobile integration
 
-通过我们提供的 SDK，开发者只需要一行代码就能集成一键登录功能，请参考：
+With the SDK we provide, developers only need one line of code to integrate the one-click login function. Please refer to:
 
-[Android 集成指导](https://github.com/Authing/guard-android/blob/master/doc/topics/oneauth.md)
+[Android Integration Guide](https://github.com/Authing/guard-android/blob/master/doc/topics/oneauth.md)
 
-[iOS 集成指导](https://github.com/Authing/guard-ios/blob/main/doc/topics/oneauth.md)
+[iOS Integration Guide](https://github.com/Authing/guard-ios/blob/main/doc/topics/oneauth.md)
 
-成功集成后效果如下
+After successful integration, the effect is as follows
 
 <img src="./images/authing_oneauth.jpg" alt="drawing" width="400"/>
