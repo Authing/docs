@@ -11,7 +11,6 @@
 | WeCom Self-built App QR Code Login(Delegated Development Mode) | Web            | <router-link to="/en/connections/wechatwork-agency-qrconnect/" target="_blank">Documentation</router-link>           |
 | WeCom Service Provider App QR Code                             | Web            | <router-link to="/en/connections/wechatwork-service-provider-qrconnect/" target="_blank">Documentation</router-link> |
 | WeCom Mobile                                                   | Mobile App     | <router-link to="/en/connections/wechatwork-mobile/" target="_blank">Documentation</router-link>                     |
-| WeCom Service Provider (Web)                                   | Wecom Browser  | <router-link to="/en/connections/wechatwork-service-provider-web/" target="_blank">Documentation</router-link>       |
 | GitHub                                                         | Web            | <router-link to="/en/connections/github/" target="_blank">Documentation</router-link>                                |
 | Google                                                         | Web            | <router-link to="/en/connections/google/" target="_blank">Documentation</router-link>                                |
 | Twitter                                                        | Web            | <router-link to="/en/connections/twitter/" target="_blank">Documentation</router-link>                               |
@@ -32,4 +31,7 @@
 | Gitee                                                          | Web            | <router-link to="/en/connections/gitee/" target="_blank">Documentation</router-link>                                 |
 | Mobile One-Click-Login                                         | Mobile App     | <router-link to="/en/guides/oneauth/" target="_blank">Documentation</router-link>                                    |
 
-<!-- | Alipay (Web)                                                   | Web            | <router-link to="/en/connections/alipay-web/" target="_blank">Documentation</router-link>                            | -->
+<!--
+| Alipay (Web)                                                   | Web            | <router-link to="/en/connections/alipay-web/" target="_blank">Documentation</router-link>                            |
+| WeCom Service Provider (Web)                                   | Wecom Browser  | <router-link to="/en/connections/wechatwork-service-provider-web/" target="_blank">Documentation</router-link>       |
+-->
