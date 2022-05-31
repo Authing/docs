@@ -105,19 +105,16 @@ export default {
 
     .nav-item, .repo-link
       display block
-      line-height 1.25rem
+      line-height 26px
       font-size 14px
       padding 0.5rem 0 0.5rem 1.5rem
 
   & > .sidebar-links
-    margin-top 1rem
+    margin-top: 16px
 
     & > li > a.sidebar-link
       font-size 16px
-      line-height 1.7
 
-    & > li:not(:first-child)
-      margin-top .75rem
 
 @media (max-width: $MQMobile)
   .sidebar

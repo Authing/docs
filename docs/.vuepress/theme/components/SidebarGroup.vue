@@ -71,7 +71,7 @@ export default {
 <style lang="stylus">
 .sidebar-group
   .sidebar-group
-    padding-left 0.5em
+    padding-left 16px
   &:not(.collapsable)
     .sidebar-heading:not(.clickable)
       cursor auto
@@ -81,13 +81,13 @@ export default {
     padding-left 0
     & > .sidebar-heading
       font-size 14px
-      line-height 1.4
+      line-height 26px
       font-weight normal
-      padding-left 0.8rem
+      padding-left 16px
       // &:not(.clickable)
       //   opacity 0.5
     & > .sidebar-group-items
-      padding-left 0.8rem
+      padding-left 16px
       & > li > .sidebar-link
         font-size: 14px
         border-left none
@@ -111,7 +111,7 @@ export default {
   cursor pointer
   font-size 16px
   // text-transform uppercase
-  padding 0.35rem 1.5rem 0.35rem 0.8rem
+  padding 0.35rem 1.5rem 0.35rem 16px
   width 100%
   box-sizing border-box
   margin 0
