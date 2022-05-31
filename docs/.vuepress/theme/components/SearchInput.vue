@@ -258,6 +258,7 @@ export default {
     li
       padding: 16px 0
       border-bottom: 1px solid #ddd
+      border-radius: 0
     &.align-right
       right 0
   .suggestion
