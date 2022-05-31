@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入 QingCloud 社会化登录',
-  bannerTitle: '接入 QingCloud 社会化登录',
+  title: 'Access QingCloud social login',
+  bannerTitle: 'Access QingCloud social login',
   steps:
     [
       {
-        title: '在 QingCloud 开发者平台创建一个应用',
+        title: 'Create an application on QingCloud developer platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入 QingCloud 应用配置' },
+      { title: 'Fill in the QingCloud application configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
