@@ -21,14 +21,15 @@
 | QQ                                                             | Web            | <router-link to="/en/connections/qq/" target="_blank">Documentation</router-link>                                    |
 | Baidu                                                          | Web            | <router-link to="/en/connections/baidu/" target="_blank">Documentation</router-link>                                 |
 | Feishu Custom App                                              | Web            | <router-link to="/en/connections/lark-internal/" target="_blank">Documentation</router-link>                         |
-| Feishu Mobile App                                              | Mobile App     | <router-link to="/en/connections/lark-internal-mobile/" target="_blank">Documentation</router-link>                  |
+| Feishu Marketplace App                                         | Web            | <router-link to="/en/connections/lark-public/" target="_blank">Documentation</router-link>                           |
 | GitLab                                                         | Web            | <router-link to="/en/connections/gitlab/" target="_blank">Documentation</router-link>                                |
 | Alipay                                                         | Mobile App     | <router-link to="/en/connections/alipay/" target="_blank">Documentation</router-link>                                |
-| Alipay (Web)                                                   | Web            | <router-link to="/en/connections/alipay-web/" target="_blank">Documentation</router-link>                            |
-| Sign in with Apple（Web）                                      | Web            | <router-link to="/en/connections/apple-web/" target="_blank">Documentation</router-link>                             |
-| Sign in with Apple（Mobile）                                   | Mobile App     | <router-link to="/en/connections/apple/" target="_blank">Documentation</router-link>                                 |
+| Sign in with Apple (Web)                                       | Web            | <router-link to="/en/connections/apple-web/" target="_blank">Documentation</router-link>                             |
+| Sign in with Apple (Mobile)                                    | Mobile App     | <router-link to="/en/connections/apple/" target="_blank">Documentation</router-link>                                 |
 | Slack                                                          | Web            | <router-link to="/en/connections/slack/" target="_blank">Documentation</router-link>                                 |
 | LinkedIn                                                       | Web            | <router-link to="/en/connections/linkedin/" target="_blank">Documentation</router-link>                              |
 | QingCloud                                                      | Web            | <router-link to="/en/connections/qingcloud/" target="_blank">Documentation</router-link>                             |
 | Gitee                                                          | Web            | <router-link to="/en/connections/gitee/" target="_blank">Documentation</router-link>                                 |
 | Mobile One-Click-Login                                         | Mobile App     | <router-link to="/en/guides/oneauth/" target="_blank">Documentation</router-link>                                    |
+
+<!-- | Alipay (Web)                                                   | Web            | <router-link to="/en/connections/alipay-web/" target="_blank">Documentation</router-link>                            | -->

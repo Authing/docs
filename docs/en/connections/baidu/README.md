@@ -4,19 +4,19 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入百度社会化登录',
-  bannerTitle: '接入百度社会化登录',
+  title: 'Access Baidu social login',
+  bannerTitle: 'Access Baidu social login',
   steps:
     [
       {
-        title: '在百度开放平台创建一个网站应用',
+        title: 'Create a website application on Baidu Open Platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入百度网站应用配置' },
+      { title: 'Fill in the Baidu website application configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app in {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
