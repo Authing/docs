@@ -18,7 +18,7 @@
 .console-banner
   width: 692px
   height: 160px;
-  margin: 50px auto 10px;
+  margin: 6px auto 0;
   background: url('~@theme/assets/images/banner.png') no-repeat center center;
   background-size: 692px 160px;
   p

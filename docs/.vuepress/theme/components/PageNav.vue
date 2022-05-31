@@ -156,7 +156,7 @@ function flatten(items, res) {
   padding-bottom 0
   width 100%
   box-size border-box
-  margin-top 34px
+  margin-top 16px
   a
     color #333333
     font-weight normal
