@@ -201,14 +201,14 @@ export default {
       this.submitted = false;
       this.status = status;
 
-      if (this.status === STATUS.GOOD) {
-        feishuFeedback({
-          helpful: status === STATUS.GOOD,
-          docTitle: this.$page.title,
-          docUrl: window.location.href,
-          customReason: ""
-        });
-      }
+      // if (this.status === STATUS.GOOD) {
+      //   feishuFeedback({
+      //     helpful: status === STATUS.GOOD,
+      //     docTitle: this.$page.title,
+      //     docUrl: window.location.href,
+      //     customReason: ""
+      //   });
+      // }
     },
     submitFeedbackWithReason() {
       feishuFeedback({
