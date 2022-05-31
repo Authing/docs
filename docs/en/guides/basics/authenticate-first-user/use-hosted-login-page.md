@@ -144,7 +144,7 @@ You can extract `id_token` from `url hash`, and then you can get user informatio
 
 Authing provides another simple method for front-end to obtain user information without processing callbacks or other configurations.
 
-1. Install the [single sign-on SDK](/reference/sdk-for-sso.md), complete the initialization, and call the trackSession function to obtain the user's login status.
+1. Install the [single sign-on SDK](/en/reference/sdk-for-sso.md), complete the initialization, and call the trackSession function to obtain the user's login status.
 
 Use NPM to install:
 
@@ -196,4 +196,4 @@ In the above process, we use the online login page of {{$localeConfig.brandName}
 
 ## Use API & SDK
 
-So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/guides/basics/authenticate-first-user/use-api-sdk/).
+So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/en/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/guides/basics/authenticate-first-user/use-api-sdk/).

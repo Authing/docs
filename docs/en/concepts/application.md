@@ -22,7 +22,7 @@ You need to enable single sign-on between applications on the application manage
 
 ![](./images/Xnip2021-02-26_10-48-40.png)
 
-After turning on this switch, the user logs into application A, the user will automatically log in when accessing application B. For further details, please refer to the implementation of [single sign-on (SSO)](/guides/authentication/sso/) guidelines and [single sign-on SDK](/reference/sdk-for-sso.md).
+After turning on this switch, the user logs into application A, the user will automatically log in when accessing application B. For further details, please refer to the implementation of [single sign-on (SSO)](/guides/authentication/sso/) guidelines and [single sign-on SDK](/en/reference/sdk-for-sso.md).
 
 ## Access the online version of the login form
 

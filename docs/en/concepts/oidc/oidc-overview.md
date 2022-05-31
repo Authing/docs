@@ -8,7 +8,7 @@ Before choosing **a mode for authentication and authorization**, it is recommend
 
 Currently, Authing has three authentication methods that can be selected:
 
-- **Basic authentication** is based on the API interface, which directly completes user authentication by sending account, password, and mobile phone verification codes to the Authing backend, which also provide functions such as MFA and forgetten password. The [Guard Component](/reference/guard) and [SDK](/reference/sdk-for-node) of Authing are both based on these APIs.
+- **Basic authentication** is based on the API interface, which directly completes user authentication by sending account, password, and mobile phone verification codes to the Authing backend, which also provide functions such as MFA and forgetten password. The [Guard Component](/reference/guard) and [SDK](/en/reference/sdk-for-node) of Authing are both based on these APIs.
 
 - The **OAuth 2.0** protocol is mainly used for resource authorization.
 

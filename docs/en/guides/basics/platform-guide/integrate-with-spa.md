@@ -4,7 +4,7 @@
 
 Single Page Application (SPA) refers to a Web application or website model that interacts with users by dynamically rewriting the current page, rather than traditionally reloading the entire new page from the server. This method avoids switching between pages to interrupt the user experience, making the application more like a desktop application. In a single-page application, all necessary codes (HTML, JavaScript, and CSS) are retrieved through the loading of a single page, or appropriate resources are dynamically loaded and added to the page as needed (usually in response to user actions). Interaction with single-page applications usually involves dynamic communication with back-end servers.
 
-The easiest way to access Authing in SPA applications is to use [the embedded login component](/reference/guard/) and [Javascript SDK](/reference/sdk-for-node/) provided by Authing for login and authentication. This article takes the React project as an example.
+The easiest way to access Authing in SPA applications is to use [the embedded login component](/reference/guard/) and [Javascript SDK](/en/reference/sdk-for-node/) provided by Authing for login and authentication. This article takes the React project as an example.
 
 ## Get APP ID
 
