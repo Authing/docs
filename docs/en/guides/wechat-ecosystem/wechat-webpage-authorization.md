@@ -40,7 +40,7 @@ First use CDN introduction `authing-wxmp-sdk`：
 <script src="https://cdn.jsdelivr.net/npm/@authing/wxmp/dist/authing-wxmp-sdk.min.js"></script>
 ```
 
-> `authing-wxmp-sdk` For detailed documentation, please see:[WeChat web page authorization login SDK](/reference/sdk-for-wxmp.md)。
+> `authing-wxmp-sdk` For detailed documentation, please see:[WeChat web page authorization login SDK](/en/reference/sdk-for-wxmp.md)。
 
 ### initialization SDK
 

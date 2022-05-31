@@ -46,11 +46,13 @@ yarn add authing-wxapp-sdk
 
 Click on the menu bar in the developer tool: Tool -> Build NPM:
 
-<img src="~@imagesZhCn/reference/wxmp-npm.png" height="400px">
-
+<img src="~@imagesEnUs/reference/build-npm.jpg" height="400px">
+<!-- 
+现在新版的微信开发者工具已经没有“使用 NPM 模块”的选项了
 Check the npm module option:
 
 ![](~@imagesZhCn/reference/wxmp-npm2.png)
+-->
 
 ### initialization SDK
 
@@ -90,7 +92,7 @@ Subsequent users open the applet, if the user's token is saved in the Storage of
 await authing.updateProfile((nickname: "Mick"));
 ```
 
-For details, please see the documentation: [Apprentrate SDK](/reference/sdk-for-wxapp.md)。
+For details, please see the documentation: [Apprentrate SDK](/en/reference/sdk-for-wxapp.md)。
 
 ## Next
 
