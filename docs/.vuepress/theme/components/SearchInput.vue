@@ -39,130 +39,130 @@
 </template>
 
 <script>
-import matchQuery from '@theme/util/matchQuery'
-import { transformInterpolation } from '@theme/util'
+import matchQuery from "@theme/util/matchQuery";
+import { transformInterpolation } from "@theme/util";
 
 /* global SEARCH_MAX_SUGGESTIONS, SEARCH_PATHS, SEARCH_HOTKEYS */
 export default {
-  name: 'SearchBox',
+  name: "SearchBox",
 
   props: {
-    placeholder: String,
+    placeholder: String
   },
 
   data() {
     return {
-      query: '',
+      query: "",
       focused: false,
-      focusIndex: 0,
-    }
+      focusIndex: 0
+    };
   },
 
   computed: {
     showSuggestions() {
-      return this.focused && this.suggestions && this.suggestions.length
+      return this.focused && this.suggestions && this.suggestions.length;
     },
 
     suggestions() {
-      const query = this.query.trim().toLowerCase()
+      const query = this.query.trim().toLowerCase();
       if (!query) {
-        return
+        return;
       }
 
-      let { pages } = this.$site
-      pages = pages.map((item) => {
+      let { pages } = this.$site;
+      pages = pages.map(item => {
         return {
           ...item,
           title: transformInterpolation(item.title, this),
           headers:
             item.headers &&
-            item.headers.map((header) => ({
+            item.headers.map(header => ({
               ...header,
-              title: transformInterpolation(header.title, this),
-            })),
-        }
-      })
+              title: transformInterpolation(header.title, this)
+            }))
+        };
+      });
       const max =
-        this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS
+        this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
 
-      const localePath = this.$localePath
-      const res = []
+      const localePath = this.$localePath;
+      const res = [];
       for (let i = 0; i < pages.length; i++) {
-        if (res.length >= max) break
-        const p = pages[i]
+        if (res.length >= max) break;
+        const p = pages[i];
         // filter out results that do not match current locale
         if (this.getPageLocalePath(p) !== localePath) {
-          continue
+          continue;
         }
 
         // filter out results that do not match searchable paths
         if (!this.isSearchable(p)) {
-          continue
+          continue;
         }
 
         if (matchQuery(query, p)) {
-          res.push(p)
+          res.push(p);
         } else if (p.headers) {
           for (let j = 0; j < p.headers.length; j++) {
-            if (res.length >= max) break
-            const h = p.headers[j]
+            if (res.length >= max) break;
+            const h = p.headers[j];
             if (h.title && matchQuery(query, p, h.title)) {
               res.push(
                 Object.assign({}, p, {
-                  path: p.path + '#' + h.slug,
-                  header: h,
+                  path: p.path + "#" + h.slug,
+                  header: h
                 })
-              )
+              );
             }
           }
         }
       }
-      return res
+      return res;
     },
 
     // make suggestions align right when there are not enough items
     alignRight() {
-      const navCount = (this.$site.themeConfig.nav || []).length
-      const repo = this.$site.repo ? 1 : 0
-      return navCount + repo <= 2
-    },
+      const navCount = (this.$site.themeConfig.nav || []).length;
+      const repo = this.$site.repo ? 1 : 0;
+      return navCount + repo <= 2;
+    }
   },
 
   mounted() {
-    document.addEventListener('keydown', this.onHotkey)
+    document.addEventListener("keydown", this.onHotkey);
   },
 
   beforeDestroy() {
-    document.removeEventListener('keydown', this.onHotkey)
+    document.removeEventListener("keydown", this.onHotkey);
   },
 
   methods: {
     getPageLocalePath(page) {
       for (const localePath in this.$site.locales || {}) {
-        if (localePath !== '/' && page.path.indexOf(localePath) === 0) {
-          return localePath
+        if (localePath !== "/" && page.path.indexOf(localePath) === 0) {
+          return localePath;
         }
       }
-      return '/'
+      return "/";
     },
 
     isSearchable(page) {
-      let searchPaths = SEARCH_PATHS
+      let searchPaths = SEARCH_PATHS;
 
       // all paths searchables
       if (searchPaths === null) {
-        return true
+        return true;
       }
 
       searchPaths = Array.isArray(searchPaths)
         ? searchPaths
-        : new Array(searchPaths)
+        : new Array(searchPaths);
 
       return (
-        searchPaths.filter((path) => {
-          return page.path.match(path)
+        searchPaths.filter(path => {
+          return page.path.match(path);
         }).length > 0
-      )
+      );
     },
 
     onHotkey(event) {
@@ -170,17 +170,17 @@ export default {
         event.srcElement === document.body &&
         SEARCH_HOTKEYS.includes(event.key)
       ) {
-        this.$refs.input.focus()
-        event.preventDefault()
+        this.$refs.input.focus();
+        event.preventDefault();
       }
     },
 
     onUp() {
       if (this.showSuggestions) {
         if (this.focusIndex > 0) {
-          this.focusIndex--
+          this.focusIndex--;
         } else {
-          this.focusIndex = this.suggestions.length - 1
+          this.focusIndex = this.suggestions.length - 1;
         }
       }
     },
@@ -188,31 +188,31 @@ export default {
     onDown() {
       if (this.showSuggestions) {
         if (this.focusIndex < this.suggestions.length - 1) {
-          this.focusIndex++
+          this.focusIndex++;
         } else {
-          this.focusIndex = 0
+          this.focusIndex = 0;
         }
       }
     },
 
     go(i) {
       if (!this.showSuggestions) {
-        return
+        return;
       }
-      this.$router.push(this.suggestions[i].path)
-      this.query = ''
-      this.focusIndex = 0
+      this.$router.push(this.suggestions[i].path);
+      this.query = "";
+      this.focusIndex = 0;
     },
 
     focus(i) {
-      this.focusIndex = i
+      this.focusIndex = i;
     },
 
     unfocus() {
-      this.focusIndex = -1
-    },
-  },
-}
+      this.focusIndex = -1;
+    }
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -253,8 +253,11 @@ export default {
     // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
     box-shadow 0 4px 10px 0 rgba(0, 0, 0, 0.04)
     border-radius 6px
-    padding 0.4rem
+    padding 0.4rem 24px
     list-style-type none
+    li
+      padding: 16px 0
+      border-bottom: 1px solid #ddd
     &.align-right
       right 0
   .suggestion
