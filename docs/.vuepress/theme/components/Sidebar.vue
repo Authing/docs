@@ -14,6 +14,8 @@
         {{ currentNavText }}
       </div>
 
+      <SidebarSearch :placeholder="$themeLocaleConfig.search" />
+
       <SidebarLinks :depth="0" :items="items" />
     </template>
     <slot name="bottom" />
@@ -26,11 +28,18 @@ import NavLinks from "@theme/components/NavLinks.vue";
 import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
 import GoOldVersion from "@theme/components/GoOldVersion.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
+import SidebarSearch from "@theme/components/SidebarSearch.vue";
 
 export default {
   name: "Sidebar",
 
-  components: { SidebarLinks, NavLinks, GoOldVersion, PageSidebar },
+  components: {
+    SidebarLinks,
+    NavLinks,
+    GoOldVersion,
+    PageSidebar,
+    SidebarSearch
+  },
 
   props: ["items"],
 
@@ -83,7 +92,10 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-
+  overflow-x: visible
+  overflow-y: auto
+  .current-nav-text
+    margin-bottom: 16px
 
   .old-version
     display none

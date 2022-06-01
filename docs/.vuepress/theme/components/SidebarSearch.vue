@@ -44,7 +44,7 @@ import { transformInterpolation } from "@theme/util";
 
 /* global SEARCH_MAX_SUGGESTIONS, SEARCH_PATHS, SEARCH_HOTKEYS */
 export default {
-  name: "SearchBox",
+  name: "SidebarSearch",
 
   props: {
     placeholder: String
@@ -214,108 +214,3 @@ export default {
   }
 };
 </script>
-
-<style lang="stylus">
-.authing-search-box
-  display inline-block
-  position relative
-  margin-right 1rem
-  height: 2rem
-  width 10rem
-  box-sizing border-box
-  input
-    cursor text
-    width 100%
-    height 100%
-    box-sizing border-box
-    color lighten($textColor, 25%)
-    display inline-block
-    border-radius 4px
-    font-size 0.9rem
-    line-height 2rem
-    padding 0 0.5rem 0 2rem
-    outline none
-    transition all .2s ease
-    background #F2F3F5 url(../assets/images/search.svg) 0.6rem 50% no-repeat
-    background-size 1rem
-    border 1px solid transparent
-    &::-webkit-input-placeholder
-      color #86909C
-    &:focus
-      border-color #215AE5
-      background-color: #fff
-      border: 1px solid #215AE5
-      cursor auto
-  .suggestions
-    background #fff
-    width 20rem
-    position absolute
-    top 2 rem
-    // border 1px solid darken(#ddd, 10%)
-    // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
-    box-shadow 0 4px 10px 0 rgba(0, 0, 0, 0.04)
-    border-radius 6px
-    padding 0.4rem 24px
-    list-style-type none
-    z-index: 9999
-    li
-      padding: 16px 0
-      border-bottom: 1px solid #ddd
-      border-radius: 0
-    &.align-right
-      right 0
-  .suggestion
-    line-height 1.4
-    padding 0.4rem 0.6rem
-    border-radius 4px
-    cursor pointer
-    a
-      white-space normal
-      color lighten($textColor, 35%)
-      .page-title
-        font-weight 600
-      .header
-        font-size 0.9em
-        margin-left 0.25em
-    &.focused
-      background-color #f3f4f5
-      a
-        color $accentColor
-
-@media (max-width: $MQNarrow)
-  .search-box
-    input
-      cursor pointer
-      width 0
-      border-color transparent
-      position relative
-      &:focus
-        cursor text
-        left 0
-        width 10rem
-
-// Match IE11
-@media all and (-ms-high-contrast: none)
-  .search-box input
-    height 2rem
-
-@media (max-width: $MQNarrow) and (min-width: $MQMobile)
-  .search-box
-    .suggestions
-      left 0
-
-@media (max-width: $MQMobile)
-  .search-box
-    margin-right 0
-    input
-      left 1rem
-    .suggestions
-      right 0
-
-@media (max-width: $MQMobileNarrow)
-  .search-box
-    .suggestions
-      width calc(100vw - 4rem)
-    input:focus
-      width 8rem
-</style>

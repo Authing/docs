@@ -125,6 +125,7 @@ module.exports = {
         knowMore: "了解更多",
         company: "公司",
         sdkAccess: "SDK 接入",
+        search: "搜索",
         searchInDoc: "在文档中搜索",
         oldVersion: "旧版",
         nav: [
@@ -295,6 +296,7 @@ module.exports = {
         knowMore: "Know More",
         company: "Company",
         sdkAccess: "SDK Access",
+        search: "Search",
         searchInDoc: "Search in Docs",
         oldVersion: "Old Version",
         nav: [
