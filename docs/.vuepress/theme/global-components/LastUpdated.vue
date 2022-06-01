@@ -3,6 +3,8 @@
     <div>
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
+
+      <FeedbackSmall />
     </div>
     <div>
       <svg
@@ -32,8 +34,11 @@
 </template>
 
 <script>
+import FeedbackSmall from "@theme/components/FeedbackSmall.vue";
+
 export default {
   name: "LastUpdated",
+  components: { FeedbackSmall },
   computed: {
     lastUpdated() {
       return this.$page.lastUpdated;
