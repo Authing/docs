@@ -15,12 +15,7 @@
       @keyup.down="onDown"
       @blur="focused = false"
     />
-    <ul
-      v-if="showSuggestions"
-      class="suggestions"
-      :class="{ 'align-right': alignRight }"
-      @mouseleave="unfocus"
-    >
+    <ul v-if="showSuggestions" class="suggestions" @mouseleave="unfocus">
       <li
         v-for="(s, i) in suggestions"
         :key="i"
@@ -47,20 +42,22 @@ export default {
   name: "SidebarSearch",
 
   props: {
-    placeholder: String
+    placeholder: String,
+    items: Array
   },
 
   data() {
     return {
       query: "",
       focused: false,
-      focusIndex: 0
+      focusIndex: 0,
+      platLinks: []
     };
   },
 
   computed: {
     showSuggestions() {
-      return this.focused && this.suggestions && this.suggestions.length;
+      return true; //this.focused && this.suggestions && this.suggestions.length;
     },
 
     suggestions() {
@@ -68,56 +65,13 @@ export default {
       if (!query) {
         return;
       }
-
-      let { pages } = this.$site;
-      pages = pages.map(item => {
-        return {
-          ...item,
-          title: transformInterpolation(item.title, this),
-          headers:
-            item.headers &&
-            item.headers.map(header => ({
-              ...header,
-              title: transformInterpolation(header.title, this)
-            }))
-        };
-      });
-      const max =
-        this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
-
-      const localePath = this.$localePath;
-      const res = [];
-      for (let i = 0; i < pages.length; i++) {
-        if (res.length >= max) break;
-        const p = pages[i];
-        // filter out results that do not match current locale
-        if (this.getPageLocalePath(p) !== localePath) {
-          continue;
-        }
-
-        // filter out results that do not match searchable paths
-        if (!this.isSearchable(p)) {
-          continue;
-        }
-
-        if (matchQuery(query, p)) {
-          res.push(p);
-        } else if (p.headers) {
-          for (let j = 0; j < p.headers.length; j++) {
-            if (res.length >= max) break;
-            const h = p.headers[j];
-            if (h.title && matchQuery(query, p, h.title)) {
-              res.push(
-                Object.assign({}, p, {
-                  path: p.path + "#" + h.slug,
-                  header: h
-                })
-              );
-            }
-          }
-        }
+      if (this.platLinks.length === 0) {
+        this.calcLinks();
       }
-      return res;
+      const result = this.platLinks.filter(item =>
+        item.keywords.includes(query)
+      );
+      return result;
     },
 
     // make suggestions align right when there are not enough items
@@ -137,32 +91,27 @@ export default {
   },
 
   methods: {
-    getPageLocalePath(page) {
-      for (const localePath in this.$site.locales || {}) {
-        if (localePath !== "/" && page.path.indexOf(localePath) === 0) {
-          return localePath;
-        }
+    calcLinks() {
+      const result = [];
+      function calcLinksWithChildren(items) {
+        items.forEach(item => {
+          if (item.path) {
+            result.push({
+              path: item.path,
+              title: item.title,
+              keywords: `${item.path
+                .split("/")
+                .pop()
+                .toLowerCase()}${item.title.toLowerCase()}`
+            });
+          }
+          if (item.children && item.children.length > 0) {
+            calcLinksWithChildren(item.children);
+          }
+        });
       }
-      return "/";
-    },
-
-    isSearchable(page) {
-      let searchPaths = SEARCH_PATHS;
-
-      // all paths searchables
-      if (searchPaths === null) {
-        return true;
-      }
-
-      searchPaths = Array.isArray(searchPaths)
-        ? searchPaths
-        : new Array(searchPaths);
-
-      return (
-        searchPaths.filter(path => {
-          return page.path.match(path);
-        }).length > 0
-      );
+      calcLinksWithChildren(this.items);
+      this.platLinks = result;
     },
 
     onHotkey(event) {

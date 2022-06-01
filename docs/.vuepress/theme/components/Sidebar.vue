@@ -14,7 +14,11 @@
         {{ currentNavText }}
       </div>
 
-      <SidebarSearch :placeholder="$themeLocaleConfig.search" />
+      <SidebarSearch
+        :placeholder="$themeLocaleConfig.search"
+        class="sidebar-search"
+        :items="items"
+      />
 
       <SidebarLinks :depth="0" :items="items" />
     </template>
@@ -92,8 +96,11 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-  overflow-x: visible
-  overflow-y: auto
+  overflow-y initial
+  .sidebar-search
+    .suggestions
+      li
+        padding: 16px;
   .current-nav-text
     margin-bottom: 16px
 
@@ -123,9 +130,12 @@ export default {
 
   & > .sidebar-links
     margin-top: 16px
+    overflow-y: scroll
+    max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
 
     & > li > a.sidebar-link
       font-size 16px
+
 
 
 @media (max-width: $MQMobile)
