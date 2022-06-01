@@ -824,6 +824,13 @@
         image2x: "Harbor_logo@3x.png",
         category: "devtools",
       },
+      {
+        key: "weaver",
+        name: "泛微 OA",
+        image: "weaver_logo@2x.png",
+        image2x: "weaver_logo@3x.png",
+        category: "office",
+      },
     ],
   categories:
     [
