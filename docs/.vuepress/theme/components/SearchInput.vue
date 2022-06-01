@@ -257,6 +257,7 @@ export default {
     border-radius 6px
     padding 0.4rem 24px
     list-style-type none
+    z-index: 9999
     li
       padding: 16px 0
       border-bottom: 1px solid #ddd

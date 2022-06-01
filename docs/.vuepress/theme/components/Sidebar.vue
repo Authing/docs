@@ -14,6 +14,12 @@
         {{ currentNavText }}
       </div>
 
+      <SidebarSearch
+        :placeholder="$themeLocaleConfig.search"
+        class="sidebar-search"
+        :items="items"
+      />
+
       <SidebarLinks :depth="0" :items="items" />
     </template>
     <slot name="bottom" />
@@ -26,11 +32,18 @@ import NavLinks from "@theme/components/NavLinks.vue";
 import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
 import GoOldVersion from "@theme/components/GoOldVersion.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
+import SidebarSearch from "@theme/components/SidebarSearch.vue";
 
 export default {
   name: "Sidebar",
 
-  components: { SidebarLinks, NavLinks, GoOldVersion, PageSidebar },
+  components: {
+    SidebarLinks,
+    NavLinks,
+    GoOldVersion,
+    PageSidebar,
+    SidebarSearch
+  },
 
   props: ["items"],
 
@@ -83,7 +96,13 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-
+  overflow-y initial
+  .sidebar-search
+    .suggestions
+      li
+        padding: 16px;
+  .current-nav-text
+    margin-bottom: 16px
 
   .old-version
     display none
@@ -111,9 +130,12 @@ export default {
 
   & > .sidebar-links
     margin-top: 16px
+    overflow-y: scroll
+    max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
 
     & > li > a.sidebar-link
       font-size 16px
+
 
 
 @media (max-width: $MQMobile)
