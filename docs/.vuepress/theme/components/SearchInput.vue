@@ -230,19 +230,21 @@ export default {
     box-sizing border-box
     color lighten($textColor, 25%)
     display inline-block
-    border-radius 8px
+    border-radius 4px
     font-size 0.9rem
     line-height 2rem
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background #fff url(../assets/images/search.svg) 0.6rem 50% no-repeat
+    background #F2F3F5 url(../assets/images/search.svg) 0.6rem 50% no-repeat
     background-size 1rem
     border 1px solid transparent
     &::-webkit-input-placeholder
-      color #9BA1A7
+      color #86909C
     &:focus
-      border-color $accentColor
+      border-color #215AE5
+      background-color: #fff
+      border: 1px solid #215AE5
       cursor auto
   .suggestions
     background #fff
