@@ -559,12 +559,164 @@ const zhCnNavBar = {
       path: "/guides/connections/",
       children: [
         {
-          title: "社会化登录",
-          path: "/guides/connections/social"
+          title: "社会化身份源",
+          path: "/guides/connections/social",
+           children: [
+            {
+              title: "微信 PC 扫码",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信 PC 小程序扫码",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信公众号关注",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信移动端",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信 APP 拉起小程序",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信网页授权",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "微信小程序",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "腾讯 QQ",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "新浪微博",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "GitHub",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Facebook",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Twitter",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Google",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Apple 移动端",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Apple Web 端",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "支付宝",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Slack",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Gitee",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "GitLab",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "百度",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "网易易盾",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "青云 QingCloud",
+              path: "/guides/connections/social/twitter/",
+             },
+            {
+              title: "Instagram",
+              path: "/guides/connections/social/instagram/",
+             },
+          ]
         },
         {
           title: "企业身份源",
-          path: "/guides/connections/enterprise"
+          path: "/guides/connections/enterprise",
+            children: [
+            {
+              title: "企业微信自建应用扫码",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "企业微信自建应用扫码（代开发模式）",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "企业微信服务商应用扫码",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "企业微信移动端",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "钉钉 H5 微应用（企业内部开发）",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "飞书应用商店应用",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "飞书企业自建应用",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "Windows AD",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "Azure AD",
+              path: "/guides/connections/enterprise/azure-ad/",
+             },
+            {
+              title: "OIDC",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "OAuth 2.0",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "LDAP",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "SAML",
+              path: "/guides/connections/social/instagram/",
+             },
+            {
+              title: "CAS",
+              path: "/guides/connections/social/instagram/",
+             }
+          ]
         },
         {
           title: "身份源连接的账号关联",
@@ -955,7 +1107,7 @@ const zhCnNavBar = {
             // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
           ]
         },
-        {
+         {
           title: "管理模块",
           path: "/reference/sdk-for-java/management",
           children: [
