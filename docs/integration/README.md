@@ -831,6 +831,13 @@
         image2x: "weaver_logo@3x.png",
         category: "office",
       },
+      {
+        key: "finebi",
+        name: "FineBI",
+        image: "finebi_logo@2x.png",
+        image2x: "finebi_logo@3x.png",
+        category: "other",
+      }
     ],
   categories:
     [
