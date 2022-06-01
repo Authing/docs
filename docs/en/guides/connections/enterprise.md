@@ -20,5 +20,5 @@ Authing now provides integration with IdPs that support these protocols:
 - <router-link to="/en/connections/saml/" target="_blank">SAML</router-link>
 - <router-link to="/en/connections/cas/" target="_blank">CAS</router-link>
 - <router-link to="/en/connections/ldap/" target="_blank">LDAP</router-link>
-- <router-link to="/en/connections/windows-active-directory/" target="_blank">Windows Active Diretcory</router-link>
+- <router-link to="/en/connections/windows-active-directory/" target="_blank">Windows Active Directory</router-link>
 - <router-link to="/en/connections/azure-active-directory/" target="_blank">Azure Active Directory</router-link>
