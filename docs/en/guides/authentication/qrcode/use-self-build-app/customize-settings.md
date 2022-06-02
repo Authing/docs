@@ -20,6 +20,6 @@ The default is 300 s.
 
 ## Whether getting user information by ticket in the browser is allowed
 
-It is not allowed by default, it needs to be called on the server side, after the user pool key is initialized. [Click to learn how to initialize the back-end SDK](/reference/sdk-for-node/README.md).
+It is not allowed by default, it needs to be called on the server side, after the user pool key is initialized. [Click to learn how to initialize the back-end SDK](/en/reference/sdk-for-node/README.md).
 
 A typical usage scenario is: after the user scans the QR code to agree to authorization, and the developer obtains the ticket, sends to backend, and gets user information by backend SDK, then redirects to the logged-in page, and writes the user information into localStroage at the same time.

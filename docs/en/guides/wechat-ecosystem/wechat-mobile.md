@@ -163,7 +163,7 @@ func onResp(_ resp: BaseResp) {
 
 ### Exchange user information
 
-The user agreed to get the `code`, you can call [Swift SDK](/reference/sdk-for-swift.md) `loginByWeChatCode` to get the user information:
+The user agreed to get the `code`, you can call [Swift SDK](/en/reference/sdk-for-swift.md) `loginByWeChatCode` to get the user information:
 
 ```swift
 func loginByWeChatCode() {

@@ -803,6 +803,27 @@
         image2x: "Sangfor_logo@3x.png",
         category: "ldap",
       },
+      {
+        key: "apollo",
+        name: "Apollo",
+        image: "apollo_logo.svg",
+        image2x: "apollo_logo.svg",
+        category: "other",
+      },
+      {
+        key: "workplace",
+        name: "Workplace",
+        image: "workplace_logo.png",
+        image2x: "workplace_logo@3x.png",
+        category: "other",
+      },
+      {
+        key: "harbor",
+        name: "Harbor",
+        image: "Harbor_logo.png",
+        image2x: "Harbor_logo@3x.png",
+        category: "devtools",
+      },
     ],
   categories:
     [

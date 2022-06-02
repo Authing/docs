@@ -4,7 +4,7 @@
 
 {{$localeConfig.brandName}} can not only configure the MFA authentication process through the console, but you can also config the MFA authentication through the SDK.
 
-This article will take [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference/sdk-for-node) as an example to guide developers to complete SDK-based MFA custom development.
+This article will take [{{$localeConfig.brandName}} - Node/JavaScript SDK](/en/reference/sdk-for-node) as an example to guide developers to complete SDK-based MFA custom development.
 This includes: binding MFA authenticator, unbinding MFA authenticator, user secondary authentication, etc.
 
 ## Prerequisites

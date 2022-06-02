@@ -14,10 +14,10 @@ When using this mode, user data is always stored in your database, and Authing w
 
 You need to write scripts on [Authing console](https://console.authing.cn/console/userpool)，**database connection** - **customize database** for **Login**、**Search user**、**Create user**、**Update user**、**elete user**、**Get user list**、**Validata password**：
 
-- [Login](./configuration/#编写数据库操作脚本)
-- [Search user](./configuration/#编写数据库操作脚本)
-- [Create user](./configuration/#编写数据库操作脚本)
-- [Update user](./configuration/#编写数据库操作脚本)
-- [Delete user](./configuration/#编写数据库操作脚本)
-- [Get user list](./configuration/#编写数据库操作脚本)
-- [Validata password](./configuration/#编写数据库操作脚本)
+- [Login](./configuration/#compile-database-operation-script)
+- [Search user](./configuration/#compile-database-operation-script)
+- [Create user](./configuration/#compile-database-operation-script)
+- [Update user](./configuration/#compile-database-operation-script)
+- [Delete user](./configuration/#compile-database-operation-script)
+- [Get user list](./configuration/#compile-database-operation-script)
+- [Validata password](./configuration/#compile-database-operation-script)

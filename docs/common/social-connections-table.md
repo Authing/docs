@@ -34,3 +34,4 @@
 | QingCloud                 | PC 网站   | <router-link to="/connections/qingcloud/" target="_blank">查看接入文档</router-link> |
 | Gitee                 | PC 网站   | <router-link to="/connections/gitee/" target="_blank">查看接入文档</router-link> |
 | 手机号一键登录                   | 移动 APP  | <router-link to="/guides/oneauth/" target="_blank">查看接入文档</router-link> |
+| Instagram                                | PC 网站        | <router-link to="/connections/instagram/" target="_blank">查看接入文档</router-link> |

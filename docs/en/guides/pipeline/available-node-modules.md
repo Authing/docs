@@ -42,7 +42,7 @@ async function pipe(user, context, callback) {
 解释一下：
 
 - 2-4 行判断用户邮箱是否已 `@authing.cn` 结尾，如果不是，可以直接跳过此 Pipeline 函数。
-- 6-11 行调用 SDK 的[角色管理 SDK](/reference/sdk-for-node/management/RolesManagementClient.md#添加用户) API，授权用户角色 `ROLE`。
+- 6-11 行调用 SDK 的[角色管理 SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md#添加用户) API，授权用户角色 `ROLE`。
   - 在这里我们 Use 了 env.ROOT_GROUP_ID 通过环境变量来获取组 ID，这样可以避免硬编码。关于如何在 Pipelien 函数中 Use 环境变量，请见[Use 环境变量](env.md)。
 - 13 行调用回调函数 callback，第一个参数为 null，表示没有错误抛出，可以继续执行下面的认证流程。关于如何 Use callback 以及 Pipelien 函数的完整 API，请见 [Pipeline 函数 API 文档](pipeline-function-api-doc.md)。
 

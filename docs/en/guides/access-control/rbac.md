@@ -24,7 +24,7 @@ Add three roles:
 
 ![](./images/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
 
-You can also use API & SDK to create roles. For details, see[Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
+You can also use API & SDK to create roles. For details, see[Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## Grant user a role
 
@@ -34,7 +34,7 @@ On the role details page, you can grant this role to users. You can search for u
 
 After selecting the user, click OK, and you can view the list of users granted for this role.
 
-You can also use API & SDK to grant roles to users. For details, see[Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
+You can also use API & SDK to grant roles to users. For details, see[Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## Control privileges through user roles on the backend
 

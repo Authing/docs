@@ -77,7 +77,7 @@ Provides an out-of-the-box SDK to help end-to-end developers to quickly implemen
 
 Report customized data, participate in the process and initiate decision-making, and cover more complex and refined scenarios.
 
-- Support data reporting during [Authing SDK](/reference/) initialization;
+- Support data reporting during [Authing SDK](/en/reference/) initialization;
 - Support regular data reporting;
 - Support active data reporting when the application is running;
 

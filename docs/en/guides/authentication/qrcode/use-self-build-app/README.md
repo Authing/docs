@@ -12,7 +12,7 @@ To implement the use of self-built mobile applications to scan QR codes to log i
 
 ## Generate a QR code on the web and poll the scanning status
 
-On the web side, we recommend using the [JavaScript SDK](/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md) provided by {{$localeConfig.brandName}}, which provides a one-click interface for generating a QR code, polling for the latest status, and obtaining user information for callbacks. Developers only need to specify the `onSuccess` callback function:
+On the web side, we recommend using the [JavaScript SDK](/en/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md) provided by {{$localeConfig.brandName}}, which provides a one-click interface for generating a QR code, polling for the latest status, and obtaining user information for callbacks. Developers only need to specify the `onSuccess` callback function:
 
 ```js
 import { AuthenticationClient } from "authing-js-sdk";
