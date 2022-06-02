@@ -30,7 +30,7 @@
 
 <img src="./images/04.png" >
 
-填写完名称后会看到 **APP Key** 和 **APP Key Secret** ，先记住这个值
+填写完名称后会看到 **APP Key** 和 **APP Key Secret** ，先记录下来，在 Authing 控制台配置时会用到
 
 <img src="./images/05.png" >
 
@@ -86,8 +86,8 @@
 
   3.2 在已创建好的 Twitter 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
 
-<img src="./images/08.png" >
+<img src="./images/15.png" >
 
 3.3 在登录页面体验 Twitter 第三方登录
 
-<img src="./images/09.png" >
+<img src="./images/16.png" >
