@@ -13,6 +13,7 @@
 ## 注意事项：
 
 - 如果您还没有微软账号，请先前往 [Microsoft 平台](https://signup.live.com/signup) 进行账号注册。
+- 如果你的微软账号没有开启 Azure，请先前往[Azure 平台](https://signup.azure.com/)进行账号注册，否则无法正常使用 Azure 相关功能。
 - 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建 Azure Active Directory 应用
