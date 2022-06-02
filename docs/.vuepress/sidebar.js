@@ -564,7 +564,7 @@ const zhCnNavBar = {
            children: [
             {
               title: "微信 PC 扫码",
-              path: "/guides/connections/social/twitter/",
+              path: "/guides/connections/social/wechat-pc/",
              },
             {
               title: "微信 PC 小程序扫码",
