@@ -250,6 +250,10 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/user-defined-field"
             },
             {
+              title: "添加部门自定义字段",
+              path: "/guides/authentication/extensibility/department-extend"
+            },
+            {
               title: "IdToken 添加自定义字段",
               path: "/guides/authentication/extensibility/customize-id-token"
             },
