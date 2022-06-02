@@ -838,6 +838,13 @@
         image2x: "finebi_logo@3x.png",
         category: "other",
       }
+      # {
+      #   key: "eteams",
+      #   name: "泛微(公有云)",
+      #   image: "weaver_logo@2x.png",
+      #   image2x: "weaver_logo@3x.png",
+      #   category: "office",
+      # }
     ],
   categories:
     [
