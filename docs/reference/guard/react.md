@@ -14,6 +14,10 @@ Guard 可以通过组件化的形式集成到你的 React 项目中，你可以�
 
 [查看旧版 react 文档](../ui-components/react.md)
 
+## 对于 React 的支持
+
+我们目前支持 React 16 以及 React 17 版本，对于 React 18 还有一些兼容问题没有解决，我们会尽快完成支持。
+
 ## 快速开始
 
 ### 使用 npm
