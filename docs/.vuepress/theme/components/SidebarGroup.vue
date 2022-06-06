@@ -106,7 +106,7 @@ export default {
 .sidebar-heading
   position relative
   // color $textColor
-  color #4E5969
+  color #1D2129
   transition color .15s ease
   cursor pointer
   font-size 16px
