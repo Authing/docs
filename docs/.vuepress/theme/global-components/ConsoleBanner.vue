@@ -37,4 +37,8 @@
     border-radius: 4px;
   a:hover
     text-decoration: none !important;
+
+@media (max-width: $MQMobile)
+  .console-banner
+    display: none
 </style>

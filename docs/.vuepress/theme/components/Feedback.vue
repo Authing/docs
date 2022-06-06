@@ -353,6 +353,8 @@ export default {
 
 @media (max-width: $MQMobile)
   .feedback
+    .github-edit
+      display: none
     .feedback-action-container
       flex-wrap wrap
       .feedback-title
