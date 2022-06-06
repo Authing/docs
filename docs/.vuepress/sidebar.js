@@ -565,11 +565,11 @@ const zhCnNavBar = {
             {
               title: "微信 PC 扫码",
               path: "/guides/connections/social/wechat-pc/",
-             },
+            },
             {
               title: "微信 PC 小程序扫码",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/",
+            },
             {
               title: "微信公众号关注",
               path: "/guides/connections/social/twitter/",
@@ -2522,6 +2522,10 @@ const translatedZhCnNavBar = {
             {
               title: "WeChat QR Code on PC",
               path: "/guides/connections/social/wechat-pc/",
+            },
+            {
+              title: "Mini Program QR Code on PC",
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/",
             },
             {
               title: "微信公众号关注",
