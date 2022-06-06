@@ -128,14 +128,14 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "./web/sdk-for-node/",
+              doc: "./sdk/node/users-management/get-user.html",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "./web/sdk-for-python/",
+              doc: "sdk/python/users-management/get-user.html",
             },
             {
               #
@@ -149,7 +149,7 @@
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "./web/sdk-for-node/",
+              doc: "./sdk/node/users-management/get-user.html",
             },
             {
               #
@@ -177,7 +177,7 @@
               title: "PHP",
               icon: "php",
               github: "https://github.com/Authing/authing-php-sdk",
-              doc: "./web/sdk-for-php/",
+              doc: "./sdk/php/users-management/get-user.html",
             },
           ],
       },

@@ -2,6 +2,7 @@
 
 <LastUpdated/>
 
+<ButtonLink href="https://willin.wang">Text</ButtonLink>
 
 当使用 {{$localeConfig.brandName}} 进行用户认证时，你不需要自己实现用户管理逻辑，所有的相关操作（如创建删除用户、配置登录流程、重置密码等）都可以通过 {{$localeConfig.brandName}} 控制台及托管登录页、API & SDK 完成。用户资料将安全地存储在 {{$localeConfig.brandName}} 云上的数据库中，你不需要额外保存一份用户资料，[点此了解详情](/guides/faqs/how-to-join-authing-user-with-your-business-data.md)。
 

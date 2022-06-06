@@ -1,0 +1,98 @@
+# 获取角色的部门列表
+
+<!--
+  警告⚠️：
+  不要直接修改该文档，
+  https://github.com/Authing/authing-docs-factory
+  使用该项目进行生成
+-->
+
+获取角色的部门列表
+
+## 请求参数
+
+| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | --- | ---- | ---- | ---- | ---- |
+| code | query | string  | \* |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
+| namespace | query | string  |  |  | 所属权限分组的 code。 示例值： `default` |
+| page | query | number  |  | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit | query | number  |  | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+
+
+## 示例代码
+
+```py
+from authing import ManagementClient
+
+management_client = ManagementClient(
+    access_key_id="AUTHING_USERPOOL_ID",
+    access_key_secret="AUTHING_USERPOOL_SECRET",
+)
+
+data = management_client.list_role_departments(
+  
+      code: "manager",
+  
+      namespace: "default",
+  
+      page: 1,
+  
+      limit: 10,
+  
+)
+```
+
+
+
+## 请求响应
+
+类型： `RoleDepartmentListPaginatedRespDto`
+
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| data | <a href="#RoleDepartmentListPagingDto">RoleDepartmentListPagingDto</a> | 数据 |
+
+
+
+示例结果：
+
+```js
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data": {
+    "list": {
+      "id": "60b49eb83fd80adb96f26e68",
+      "code": "code",
+      "name": "departmentName",
+      "description": "dd8d7stf44"
+    }
+  }
+}
+```
+
+## 数据结构
+
+
+### <a id="RoleDepartmentListPagingDto"></a> RoleDepartmentListPagingDto
+
+| 名称 | 类型 | 必填 |默认值| 描述 |
+| ---- |  ---- | ---- | --- | ---- |
+| totalCount | number | \* |  | 记录总数。   |
+  | list | array | \* |  | 数据。   |
+  
+
+### <a id="RoleDepartmentRespDto"></a> RoleDepartmentRespDto
+
+| 名称 | 类型 | 必填 |默认值| 描述 |
+| ---- |  ---- | ---- | --- | ---- |
+| id | string | \* |  | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+  | code | string | \* |  | 部门 code。 示例值： `code`  |
+  | name | string | \* |  | 部门名称。 示例值： `departmentName`  |
+  | description | string | \* |  | 部门描述信息。 示例值： `dd8d7stf44`  |
+  
+
