@@ -596,7 +596,7 @@ const zhCnNavBar = {
             },
             {
               title: "新浪微博",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/weibo/"
             },
             {
               title: "GitHub",
@@ -2548,12 +2548,12 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/twitter/"
             },
             {
-              title: "腾讯 QQ",
-              path: "/guides/connections/social/twitter/"
+              title: "Tencent QQ",
+              path: "/guides/connections/social/qq/"
             },
             {
-              title: "新浪微博",
-              path: "/guides/connections/social/twitter/"
+              title: "Sina Weibo",
+              path: "/guides/connections/social/weibo/"
             },
             {
               title: "GitHub",

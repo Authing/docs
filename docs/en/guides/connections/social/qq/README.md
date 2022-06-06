@@ -34,7 +34,7 @@ During the application creation process, you need to configure the allowed callb
 
 ## Step 2: Configure Tencent QQ in the {{$localeConfig.brandName}} console
 
-2.1 2.1 Please click the "Create Connection" button on the "Social" page of the {{$localeConfig.brandName}} console to enter the "Choosing a Social Identity Source" page.
+2.1 Please click the "Create Connection" button on the "Social" page of the {{$localeConfig.brandName}} console to enter the "Choosing a Social Identity Source" page.
 
 <img src="./images/qq_3.png" >
 
