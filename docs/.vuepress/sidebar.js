@@ -2512,7 +2512,7 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: "Connect to an external identity source (IdP)",
+      title: "Connect to an external identity provider (IdP)",
       path: "/guides/connections/",
       children: [
         {
@@ -2520,13 +2520,9 @@ const translatedZhCnNavBar = {
           path: "/guides/connections/social",
           children: [
             {
-              title: "微信 PC 扫码",
-              path: "/guides/connections/social/twitter/",
-             },
-            {
-              title: "微信 PC 小程序扫码",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "WeChat QR Code on PC",
+              path: "/guides/connections/social/wechat-pc/",
+            },
             {
               title: "微信公众号关注",
               path: "/guides/connections/social/twitter/",
