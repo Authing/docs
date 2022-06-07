@@ -5,7 +5,7 @@
     sidebarType: 'none',
     appTypes:[
         {
-            title: '移动 / 客户端应用',
+            title: '客户端应用',
             description: '在手机、桌面和其他智能设备上运行的本地应用',
             icon: 'authing-yidongduan',
             link: 'quickstarts/mobileApp',
