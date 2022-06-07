@@ -600,7 +600,7 @@ const zhCnNavBar = {
             },
             {
               title: "GitHub",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/github/"
             },
             {
               title: "Facebook",
@@ -2557,7 +2557,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "GitHub",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/github/"
             },
             {
               title: "Facebook",
