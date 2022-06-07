@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| namespace | query | string  |  |  | 所属权限分组的 code。 示例值： `default` |
-| targetType | query | string  | \* |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
-| targetIdentifier | query | string  | \* |  | 目标对象唯一标志符。 示例值： `userId1` |
-| resourceType | query | string  |  |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| targetType  string  | 是 |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
+| targetIdentifier  string  | 是 |  | 目标对象唯一标志符。 示例值： `userId1` |
+| resourceType  string  | 否 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 
 
 ## 示例代码
@@ -77,6 +77,6 @@ data = management_client.get_authorized_resources(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

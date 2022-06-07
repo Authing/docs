@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| list | body | array | \* |  | 批量分组。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| list | array | 是 |  | 批量分组。  |
 
 
 ## 示例代码
@@ -32,9 +32,9 @@ $management = new ManagementClient(
 
 $data = $management->createGroupsBatch(array(
       "list" => array(array(
-            "code" => "developer",
-          "name" => "开发者",
-          "description" => "描述内容",
+            "code" => "developer"
+          "name" => "开发者"
+          "description" => "描述内容"
       ))
  });
 ));
@@ -76,17 +76,17 @@ $data = $management->createGroupsBatch(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 分组 code。 示例值： `developer`  |
-  | name | string | \* |  | 分组名称。 示例值： `开发者`  |
-  | description | string | \* |  | 分组描述。 示例值： `描述内容`  |
-  
+| code | string | 是 |  | 分组 code。 示例值： `developer`  |
+| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
+| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+
 
 ### <a id="GroupDto"></a> GroupDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 分组 code。 示例值： `developer`  |
-  | name | string | \* |  | 分组名称。 示例值： `开发者`  |
-  | description | string | \* |  | 分组描述。 示例值： `描述内容`  |
-  
+| code | string | 是 |  | 分组 code。 示例值： `developer`  |
+| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
+| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+
 

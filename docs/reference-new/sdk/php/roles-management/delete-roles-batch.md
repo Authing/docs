@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| codeList | body | array | \* |  | 角色 code 集合。 示例值： `["code1","code2"]` |
-| namespace | body | string |  | default | 所属权限分组的 code。 示例值： `default` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| codeList | array | 是 |  | 角色 code 集合。 示例值： `["code1","code2"]` |
+| namespace | string | 否 | default | 所属权限分组的 code。 示例值： `default` |
 
 
 ## 示例代码
@@ -32,8 +32,8 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteRolesBatch(array(
-      "codeList" => "["code1","code2"]",
-    "namespace" => "default",
+      "codeList" => "["code1","code2"]"
+    "namespace" => "default"
  });
 ));
 ```
@@ -72,6 +72,6 @@ $data = $management->deleteRolesBatch(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

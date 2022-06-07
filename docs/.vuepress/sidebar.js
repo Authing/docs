@@ -2505,6 +2505,10 @@ const zhCnNavBar = {
       collapsable: false,
       children: [
         {
+          title: "安装使用",
+          path: "/reference-new/sdk/node/"
+        },
+        {
           title: "Users Management",
           children: [
             "/reference-new/sdk/node/users-management/get-user",
@@ -2638,6 +2642,10 @@ const zhCnNavBar = {
       collapsable: false,
       children: [
         {
+          title: "安装使用",
+          path: "/reference-new/sdk/php/"
+        },
+        {
           title: "Users Management",
           children: [
             "/reference-new/sdk/php/users-management/get-user",
@@ -2770,6 +2778,10 @@ const zhCnNavBar = {
       title: "Python",
       collapsable: false,
       children: [
+        {
+          title: "安装使用",
+          path: "/reference-new/sdk/python/"
+        },
         {
           title: "Users Management",
           children: [

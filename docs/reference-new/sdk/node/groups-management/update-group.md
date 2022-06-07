@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 分组 code。 示例值： `developer` |
-| name | body | string | \* |  | 分组名称。 示例值： `开发者` |
-| description | body | string | \* |  | 分组描述。 示例值： `描述内容` |
-| newCode | body | string |  |  | 分组新的 code。 示例值： `developer` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 分组 code。 示例值： `developer` |
+| name | string | 是 |  | 分组名称。 示例值： `开发者` |
+| description | string | 是 |  | 分组描述。 示例值： `描述内容` |
+| newCode | string | 否 |  | 分组新的 code。 示例值： `developer` |
 
 
 ## 示例代码
@@ -78,8 +78,8 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 分组 code。 示例值： `developer`  |
-  | name | string | \* |  | 分组名称。 示例值： `开发者`  |
-  | description | string | \* |  | 分组描述。 示例值： `描述内容`  |
-  
+| code | string | 是 |  | 分组 code。 示例值： `developer`  |
+| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
+| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+
 

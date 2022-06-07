@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | body | string | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| roles | body | array | \* |  | 角色列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| roles | array | 是 |  | 角色列表。  |
 
 
 ## 示例代码
@@ -72,14 +72,14 @@ data = management_client.has_any_role(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| namespace | string |  |  | 所属权限分组的 code。 示例值： `default`  |
-  | code | string | \* |  | 角色 code。 示例值： `admin`  |
-  
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default`  |
+| code | string | 是 |  | 角色 code。 示例值： `admin`  |
+
 
 ### <a id="HasAnyRoleDto"></a> HasAnyRoleDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| hasAnyRole | boolean | \* |  | 是否拥有其中某一个角色。 示例值： `true`  |
-  
+| hasAnyRole | boolean | 是 |  | 是否拥有其中某一个角色。 示例值： `true`  |
+
 

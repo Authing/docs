@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | body | string | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -31,7 +31,7 @@ $management = new ManagementClient(
 );
 
 $data = $management->resetUserPrincipalAuthenticationInfo(array(
-      "userId" => "6229ffaxxxxxxxxcade3e3d9",
+      "userId" => "6229ffaxxxxxxxxcade3e3d9"
  });
 ));
 ```
@@ -70,6 +70,6 @@ $data = $management->resetUserPrincipalAuthenticationInfo(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

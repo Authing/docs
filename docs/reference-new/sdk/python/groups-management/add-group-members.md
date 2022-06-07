@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 分组 code。 示例值： `developer` |
-| userIds | body | array | \* |  | 用户 ID 数组。 示例值： `["6229ffaxxxxxxxxcade3e3d9"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 分组 code。 示例值： `developer` |
+| userIds | array | 是 |  | 用户 ID 数组。 示例值： `["6229ffaxxxxxxxxcade3e3d9"]` |
 
 
 ## 示例代码
@@ -69,6 +69,6 @@ data = management_client.add_group_members(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| list | body | array | \* |  | 权限分组列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| list | array | 是 |  | 权限分组列表。  |
 
 
 ## 示例代码
@@ -32,9 +32,9 @@ $management = new ManagementClient(
 
 $data = $management->createNamespacesBatch(array(
       "list" => array(array(
-            "code" => "my-namespace",
-          "name" => "我的权限分组",
-          "description" => "我的权限分组描述",
+            "code" => "my-namespace"
+          "name" => "我的权限分组"
+          "description" => "我的权限分组描述"
       ))
  });
 ));
@@ -74,15 +74,15 @@ $data = $management->createNamespacesBatch(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 权限分组唯一标志符。 示例值： `my-namespace`  |
-  | name | string |  |  | 权限分组名称。 示例值： `我的权限分组`  |
-  | description | string |  |  | 权限分组描述信息。 示例值： `我的权限分组描述`  |
-  
+| code | string | 是 |  | 权限分组唯一标志符。 示例值： `my-namespace`  |
+| name | string | 否 |  | 权限分组名称。 示例值： `我的权限分组`  |
+| description | string | 否 |  | 权限分组描述信息。 示例值： `我的权限分组描述`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

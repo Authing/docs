@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| id | body | string | \* |  | 身份源连接 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| enabled | body | boolean | \* |  | 是否开启身份源连接。  |
-| appId | body | string | \* |  | 应用 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| tenantId | body | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| id | string | 是 |  | 身份源连接 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| enabled | boolean | 是 |  | 是否开启身份源连接。  |
+| appId | string | 是 |  | 应用 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -76,6 +76,6 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

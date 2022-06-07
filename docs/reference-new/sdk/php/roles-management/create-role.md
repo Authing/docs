@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
-| namespace | body | string |  | default | 所属权限分组的 code。 示例值： `default` |
-| description | body | string |  |  | 角色描述。 示例值： `this is manager` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
+| namespace | string | 否 | default | 所属权限分组的 code。 示例值： `default` |
+| description | string | 否 |  | 角色描述。 示例值： `this is manager` |
 
 
 ## 示例代码
@@ -33,9 +33,9 @@ $management = new ManagementClient(
 );
 
 $data = $management->createRole(array(
-      "code" => "manager",
-    "namespace" => "default",
-    "description" => "this is manager",
+      "code" => "manager"
+    "namespace" => "default"
+    "description" => "this is manager"
  });
 ));
 ```
@@ -76,8 +76,8 @@ $data = $management->createRole(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 权限分组内角色的唯一标识符。 示例值： `role1`  |
-  | description | string | \* |  | 角色描述。 示例值： `this is description`  |
-  | namespace | string | \* |  | 所属权限分组的 code。 示例值： `default`  |
-  
+| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `role1`  |
+| description | string | 是 |  | 角色描述。 示例值： `this is description`  |
+| namespace | string | 是 |  | 所属权限分组的 code。 示例值： `default`  |
+
 

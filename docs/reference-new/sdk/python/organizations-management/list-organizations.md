@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| page | query | number  |  | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | query | number  |  | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| page  number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit  number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 
 
 ## 示例代码
@@ -80,21 +80,21 @@ data = management_client.list_organizations(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 响应数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 响应数据。嵌套类型：<a href="#OrganizationDto">OrganizationDto</a>。   |
+
 
 ### <a id="OrganizationDto"></a> OrganizationDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| organizationCode | string | \* |  | 组织 code。 示例值： `steamory`  |
-  | organizationName | string | \* |  | 组织名称。 示例值： `蒸汽记忆`  |
-  | description | string |  |  | 组织描述信息。 示例值： `组织描述信息`  |
-  | departmentId | string | \* |  | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | openDepartmentId | string |  |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | hasChildren | boolean | \* |  | 是否包含子节点。 示例值： `true`  |
-  | leaderUserId | string | \* |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | membersCount | number | \* |  | 部门人数。 示例值： `150`  |
-  
+| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory`  |
+| organizationName | string | 是 |  | 组织名称。 示例值： `蒸汽记忆`  |
+| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息`  |
+| departmentId | string | 是 |  | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| hasChildren | boolean | 是 |  | 是否包含子节点。 示例值： `true`  |
+| leaderUserId | string | 是 |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| membersCount | number | 是 |  | 部门人数。 示例值： `150`  |
+
 

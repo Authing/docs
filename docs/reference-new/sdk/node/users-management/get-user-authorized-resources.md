@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | query | string  | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| namespace | query | string  |  |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType | query | string  |  |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| resourceType  string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 
 
 ## 示例代码
@@ -79,17 +79,17 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 响应数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 响应数据。嵌套类型：<a href="#AuthorizedResourceDto">AuthorizedResourceDto</a>。   |
+
 
 ### <a id="AuthorizedResourceDto"></a> AuthorizedResourceDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| resourceCode | string | \* |  | 资源标识符。 示例值： `ecs:1`  |
-  | resourceType | string |  |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-  | actions | array |  |  | 被授权的资源的操作列表。   |
-  | apiIdentifier | string |  |  | 资源对应的 API Identifier。   |
-  
+| resourceCode | string | 是 |  | 资源标识符。 示例值： `ecs:1`  |
+| resourceType | string | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| actions | array | 否 |  | 被授权的资源的操作列表。   |
+| apiIdentifier | string | 否 |  | 资源对应的 API Identifier。   |
+
 

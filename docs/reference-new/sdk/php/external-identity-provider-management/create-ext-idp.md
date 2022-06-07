@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| name | body | string | \* |  | 身份源名称。 示例值： `exampleName` |
-| type | body | string | \* |  | 身份源连接类型。 枚举值：`oidc`,`oauth2`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`wechat`,`google`,`qq`,`wechatwork`,`dingtalk`,`weibo`,`github`,`alipay`,`apple`,`baidu`,`lark`,`gitlab`,`twitter`,`facebook`,`slack`,`linkedin`,`yidun`,`qingcloud`,`gitee`,`instagram` |
-| tenantId | body | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| name | string | 是 |  | 身份源名称。 示例值： `exampleName` |
+| type | string | 是 |  | 身份源连接类型。 枚举值：`oidc`,`oauth2`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`wechat`,`google`,`qq`,`wechatwork`,`dingtalk`,`weibo`,`github`,`alipay`,`apple`,`baidu`,`lark`,`gitlab`,`twitter`,`facebook`,`slack`,`linkedin`,`yidun`,`qingcloud`,`gitee`,`instagram` |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -33,9 +33,9 @@ $management = new ManagementClient(
 );
 
 $data = $management->createExtIdp(array(
-      "name" => "exampleName",
-    "type" => "ad",
-    "tenantId" => "60b49eb83fd80adb96f26e68",
+      "name" => "exampleName"
+    "type" => "ad"
+    "tenantId" => "60b49eb83fd80adb96f26e68"
  });
 ));
 ```
@@ -77,9 +77,9 @@ $data = $management->createExtIdp(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| id | string | \* |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | name | string | \* |  | 身份源名称。 示例值： `default`  |
-  | tenantId | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | type | string | \* |  | 身份源类型。 示例值： `wechat`  |
-  
+| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 |  | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+
 

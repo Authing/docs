@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userIds | body | array | \* |  | 用户 ID 列表。 示例值： `["userId1","userId2"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userIds | array | 是 |  | 用户 ID 列表。 示例值： `["userId1","userId2"]` |
 
 
 ## 示例代码
@@ -31,7 +31,7 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteUsersBatch(array(
-      "userIds" => "["userId1","userId2"]",
+      "userIds" => "["userId1","userId2"]"
  });
 ));
 ```
@@ -70,6 +70,6 @@ $data = $management->deleteUsersBatch(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| namespace | body | string |  |  | 所属权限分组的 code。 示例值： `default` |
-| codeList | body | array | \* |  | 资源 code 列表。 示例值： `["code1","code2"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| codeList | array | 是 |  | 资源 code 列表。 示例值： `["code1","code2"]` |
 
 
 ## 示例代码
@@ -69,6 +69,6 @@ data = management_client.delete_resources_batch(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

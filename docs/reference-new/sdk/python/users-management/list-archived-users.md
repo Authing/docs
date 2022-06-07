@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| page | query | number  |  | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | query | number  |  | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| page  number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit  number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 
 
 ## 示例代码
@@ -73,14 +73,14 @@ data = management_client.list_archived_users(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 响应数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 响应数据。嵌套类型：<a href="#ListArchivedUsersRespDto">ListArchivedUsersRespDto</a>。   |
+
 
 ### <a id="ListArchivedUsersRespDto"></a> ListArchivedUsersRespDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| userId | string | \* |  | 用户 ID。 示例值： `wejfownefoweofmweomwer`  |
-  
+| userId | string | 是 |  | 用户 ID。 示例值： `wejfownefoweofmweomwer`  |
+
 

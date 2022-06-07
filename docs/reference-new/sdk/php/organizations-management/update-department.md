@@ -11,16 +11,16 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| departmentId | body | string | \* |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| description | body | string |  |  | 部门描述。 示例值： `技术研发部门` |
-| code | body | string |  |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff` |
-| leaderUserId | body | string |  |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationCode | body | string | \* |  | 组织 code。 示例值： `steamory` |
-| name | body | string |  |  | 部门名称。 示例值： `开发部` |
-| departmentIdType | body | string |  | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
-| parentDepartmentId | body | string |  |  | 父部门 id。 示例值： `6229c4deb3e4d8a20b6021ff` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
+| description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
+| code | string | 否 |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff` |
+| leaderUserId | string | 否 |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
+| name | string | 否 |  | 部门名称。 示例值： `开发部` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
+| parentDepartmentId | string | 否 |  | 父部门 id。 示例值： `6229c4deb3e4d8a20b6021ff` |
 
 
 ## 示例代码
@@ -38,14 +38,14 @@ $management = new ManagementClient(
 );
 
 $data = $management->updateDepartment(array(
-      "departmentId" => "60b49eb83fd80adb96f26e68",
-    "description" => "技术研发部门",
-    "code" => "6229c4deb3e4d8a20b6021ff",
-    "leaderUserId" => "60b49eb83fd80adb96f26e68",
-    "organizationCode" => "steamory",
-    "name" => "开发部",
-    "departmentIdType" => "department_id",
-    "parentDepartmentId" => "6229c4deb3e4d8a20b6021ff",
+      "departmentId" => "60b49eb83fd80adb96f26e68"
+    "description" => "技术研发部门"
+    "code" => "6229c4deb3e4d8a20b6021ff"
+    "leaderUserId" => "60b49eb83fd80adb96f26e68"
+    "organizationCode" => "steamory"
+    "name" => "开发部"
+    "departmentIdType" => "department_id"
+    "parentDepartmentId" => "6229c4deb3e4d8a20b6021ff"
  });
 ));
 ```
@@ -92,14 +92,14 @@ $data = $management->updateDepartment(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| departmentId | string | \* |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | openDepartmentId | string |  |  | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
-  | name | string | \* |  | 部门名称。 示例值： `开发部`  |
-  | description | string |  |  | 部门描述。 示例值： `技术研发部门`  |
-  | parentDepartmentId | string | \* |  | 父部门 id。 示例值： `6229c4deb3e4d8a20b6021ff`  |
-  | code | string |  |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
-  | leaderUserId | string |  |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | membersCount | number | \* |  | 部门人数。 示例值： `11`  |
-  | hasChildren | boolean | \* |  | 是否包含子部门。 示例值： `true`  |
-  
+| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68`  |
+| openDepartmentId | string | 否 |  | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
+| name | string | 是 |  | 部门名称。 示例值： `开发部`  |
+| description | string | 否 |  | 部门描述。 示例值： `技术研发部门`  |
+| parentDepartmentId | string | 是 |  | 父部门 id。 示例值： `6229c4deb3e4d8a20b6021ff`  |
+| code | string | 否 |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
+| leaderUserId | string | 否 |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| membersCount | number | 是 |  | 部门人数。 示例值： `11`  |
+| hasChildren | boolean | 是 |  | 是否包含子部门。 示例值： `true`  |
+
 

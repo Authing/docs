@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | body | string | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| departments | body | array | \* |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| departments | array | 是 |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
 
 
 ## 示例代码
@@ -73,15 +73,15 @@ data = management_client.set_user_departments(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| departmentId | string | \* |  | 部门 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | isLeader | boolean |  |  | 是否是部门 leader。 示例值： `true`  |
-  | isMainDepartment | boolean |  |  | 是否是主部门。 示例值： `true`  |
-  
+| departmentId | string | 是 |  | 部门 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| isLeader | boolean | 否 |  | 是否是部门 leader。 示例值： `true`  |
+| isMainDepartment | boolean | 否 |  | 是否是主部门。 示例值： `true`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

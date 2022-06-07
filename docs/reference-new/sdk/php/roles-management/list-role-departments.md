@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | query | string  | \* |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
-| namespace | query | string  |  |  | 所属权限分组的 code。 示例值： `default` |
-| page | query | number  |  | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | query | number  |  | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code  string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
+| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| page  number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit  number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 
 
 ## 示例代码
@@ -85,17 +85,17 @@ $data = $management->listRoleDepartments(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 数据。嵌套类型：<a href="#RoleDepartmentRespDto">RoleDepartmentRespDto</a>。   |
+
 
 ### <a id="RoleDepartmentRespDto"></a> RoleDepartmentRespDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| id | string | \* |  | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | code | string | \* |  | 部门 code。 示例值： `code`  |
-  | name | string | \* |  | 部门名称。 示例值： `departmentName`  |
-  | description | string | \* |  | 部门描述信息。 示例值： `dd8d7stf44`  |
-  
+| id | string | 是 |  | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| code | string | 是 |  | 部门 code。 示例值： `code`  |
+| name | string | 是 |  | 部门名称。 示例值： `departmentName`  |
+| description | string | 是 |  | 部门描述信息。 示例值： `dd8d7stf44`  |
+
 

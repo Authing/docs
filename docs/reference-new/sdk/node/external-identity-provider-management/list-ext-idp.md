@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| tenantId | query | string  |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| tenantId  string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -76,17 +76,17 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 响应数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 响应数据。嵌套类型：<a href="#ExtIdpDto">ExtIdpDto</a>。   |
+
 
 ### <a id="ExtIdpDto"></a> ExtIdpDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| id | string | \* |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | name | string | \* |  | 身份源名称。 示例值： `default`  |
-  | tenantId | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | type | string | \* |  | 身份源类型。 示例值： `wechat`  |
-  
+| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 |  | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+
 

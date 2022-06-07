@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 资源唯一标志符。 示例值： `ecs` |
-| namespace | body | string |  |  | 所属权限分组的 code。 示例值： `default` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 资源唯一标志符。 示例值： `ecs` |
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
 
 ## 示例代码
@@ -32,8 +32,8 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteResource(array(
-      "code" => "ecs",
-    "namespace" => "default",
+      "code" => "ecs"
+    "namespace" => "default"
  });
 ));
 ```
@@ -72,6 +72,6 @@ $data = $management->deleteResource(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

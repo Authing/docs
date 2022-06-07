@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| namespace | body | string |  |  | 所属权限分组的 code。 示例值： `default` |
-| list | body | array | \* |  | 资源列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| list | array | 是 |  | 资源列表。  |
 
 
 ## 示例代码
@@ -78,25 +78,25 @@ data = management_client.create_resources_batch(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 资源唯一标志符。 示例值： `ecs`  |
-  | description | string |  |  | 资源描述。 示例值： `服务器`  |
-  | type | string | \* |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-  | actions | array |  |  | 资源定义的操作类型。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]`  |
-  | apiIdentifier | string |  |  | API 资源的 URL 标识。 示例值： `https://my-awesome-api.com/api`  |
-  
+| code | string | 是 |  | 资源唯一标志符。 示例值： `ecs`  |
+| description | string | 否 |  | 资源描述。 示例值： `服务器`  |
+| type | string | 是 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| actions | array | 否 |  | 资源定义的操作类型。嵌套类型：<a href="#ResourceAction">ResourceAction</a>。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]`  |
+| apiIdentifier | string | 否 |  | API 资源的 URL 标识。 示例值： `https://my-awesome-api.com/api`  |
+
 
 ### <a id="ResourceAction"></a> ResourceAction
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| name | string | \* |  | 资源操作名称。 示例值： `ecs:Start`  |
-  | description | string | \* |  | 资源操作描述。 示例值： `ecs:Start`  |
-  
+| name | string | 是 |  | 资源操作名称。 示例值： `ecs:Start`  |
+| description | string | 是 |  | 资源操作描述。 示例值： `ecs:Start`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | query | string  | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -69,7 +69,7 @@ data = management_client.get_user_mfa_info(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totpStatus | string | \* |  | 是否绑定了 TOTP，可选值 enabled, disabled。 示例值： `true`  |
-  | faceMfaStatus | string | \* |  | 是否绑定了人脸 MFA，可选值 enabled, disabled。 示例值： `true`  |
-  
+| totpStatus | string | 是 |  | 是否绑定了 TOTP，可选值 enabled, disabled。 示例值： `true`  |
+| faceMfaStatus | string | 是 |  | 是否绑定了人脸 MFA，可选值 enabled, disabled。 示例值： `true`  |
+
 

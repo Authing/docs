@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| tenantId | query | string  |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| id | query | string  | \* |  | 身份源 id。 示例值： `6268b0e5e4b9a0e8ffa8fd60` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| tenantId  string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| id  string  | 是 |  | 身份源 id。 示例值： `6268b0e5e4b9a0e8ffa8fd60` |
 
 
 ## 示例代码
@@ -75,11 +75,11 @@ data = management_client.get_ext_idp(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| id | string | \* |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | name | string | \* |  | 身份源名称。 示例值： `default`  |
-  | tenantId | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | type | string | \* |  | 身份源类型。 示例值： `wechat`  |
-  | connections | object | \* |  | 身份源的连接列表。   |
-  | autoJoin | boolean | \* |  | 租户场景下自动加入。 示例值： `true`  |
-  
+| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 |  | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+| connections | object | 是 |  | 身份源的连接列表。   |
+| autoJoin | boolean | 是 |  | 租户场景下自动加入。 示例值： `true`  |
+
 

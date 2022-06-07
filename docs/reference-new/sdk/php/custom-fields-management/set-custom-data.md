@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| targetType | body | string | \* |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
-| targetIdentifier | body | string | \* |  | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。 示例值： `userId1` |
-| namespace | body | string |  |  | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。。 示例值： `default` |
-| list | body | array | \* |  | 自定义数据列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| targetType | string | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
+| targetIdentifier | string | 是 |  | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。 示例值： `userId1` |
+| namespace | string | 否 |  | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。。 示例值： `default` |
+| list | array | 是 |  | 自定义数据列表。  |
 
 
 ## 示例代码
@@ -34,12 +34,12 @@ $management = new ManagementClient(
 );
 
 $data = $management->setCustomData(array(
-      "targetType" => "USER",
-    "targetIdentifier" => "userId1",
-    "namespace" => "default",
+      "targetType" => "USER"
+    "targetIdentifier" => "userId1"
+    "namespace" => "default"
     "list" => array(array(
-            "key" => "school",
-          "value" => "pku",
+            "key" => "school"
+          "value" => "pku"
       ))
  });
 ));
@@ -79,14 +79,14 @@ $data = $management->setCustomData(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| key | string | \* |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
-  | value | string | \* |  | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。。 示例值： `pku`  |
-  
+| key | string | 是 |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
+| value | string | 是 |  | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。。 示例值： `pku`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

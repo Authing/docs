@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| namespace | body | string |  |  | 所属权限分组的 code。 示例值： `default` |
-| list | body | array | \* |  | 授权列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| list | array | 是 |  | 授权列表。  |
 
 
 ## 示例代码
@@ -80,24 +80,24 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| targetType | string | \* |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-  | targetIdentifiers | array | \* |  | 目标对象唯一标志符。 示例值： `["userId1","userId2"]`  |
-  | resources | array | \* |  | 授权的资源列表。   |
-  
+| targetType | string | 是 |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| targetIdentifiers | array | 是 |  | 目标对象唯一标志符。 示例值： `["userId1","userId2"]`  |
+| resources | array | 是 |  | 授权的资源列表。嵌套类型：<a href="#ResourceItemDto">ResourceItemDto</a>。   |
+
 
 ### <a id="ResourceItemDto"></a> ResourceItemDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 资源唯一标志符。 示例值： `ecs`  |
-  | actions | array | \* |  | 资源定义的操作类型。 示例值： `["ecs:Stop","ecs:Start"]`  |
-  | resourceType | string | \* |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-  
+| code | string | 是 |  | 资源唯一标志符。 示例值： `ecs`  |
+| actions | array | 是 |  | 资源定义的操作类型。 示例值： `["ecs:Stop","ecs:Start"]`  |
+| resourceType | string | 是 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

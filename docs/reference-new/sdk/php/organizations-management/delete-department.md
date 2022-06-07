@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| departmentId | body | string | \* |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationCode | body | string | \* |  | 组织 code。 示例值： `steamory` |
-| departmentIdType | body | string |  | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
+| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
 
 
 ## 示例代码
@@ -33,9 +33,9 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteDepartment(array(
-      "departmentId" => "60b49eb83fd80adb96f26e68",
-    "organizationCode" => "steamory",
-    "departmentIdType" => "department_id",
+      "departmentId" => "60b49eb83fd80adb96f26e68"
+    "organizationCode" => "steamory"
+    "departmentIdType" => "department_id"
  });
 ));
 ```
@@ -74,6 +74,6 @@ $data = $management->deleteDepartment(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

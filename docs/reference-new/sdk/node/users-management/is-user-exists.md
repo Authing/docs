@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| username | body | string |  |  | 用户名，用户池内唯一。 示例值： `bob` |
-| email | body | string |  |  | 邮箱。 示例值： `test@example.com` |
-| phone | body | string |  |  | 手机号。 示例值： `176xxxx6754` |
-| externalId | body | string |  |  | 第三方外部 ID。 示例值： `10010` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| username | string | 否 |  | 用户名，用户池内唯一。 示例值： `bob` |
+| email | string | 否 |  | 邮箱。 示例值： `test@example.com` |
+| phone | string | 否 |  | 手机号。 示例值： `176xxxx6754` |
+| externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
 
 
 ## 示例代码
@@ -76,6 +76,6 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| exists | boolean | \* |  | 用户是否存在。 示例值： `true`  |
-  
+| exists | boolean | 是 |  | 用户是否存在。 示例值： `true`  |
+
 

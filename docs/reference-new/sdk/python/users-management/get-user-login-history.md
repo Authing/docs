@@ -11,15 +11,15 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | query | string  | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| appId | query | string  |  |  | 应用 ID。  |
-| clientIp | query | string  |  |  | 客户端 IP。 示例值： `127.0.0.1` |
-| start | query | number  |  |  | 开始时间戳（毫秒）。 示例值： `1647360000000` |
-| end | query | number  |  |  | 结束时间戳（毫秒）。 示例值： `1648051199000` |
-| page | query | number  |  | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | query | number  |  | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| appId  string  | 否 |  | 应用 ID。  |
+| clientIp  string  | 否 |  | 客户端 IP。 示例值： `127.0.0.1` |
+| start  number  | 否 |  | 开始时间戳（毫秒）。 示例值： `1647360000000` |
+| end  number  | 否 |  | 结束时间戳（毫秒）。 示例值： `1648051199000` |
+| page  number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit  number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 
 
 ## 示例代码
@@ -93,20 +93,20 @@ data = management_client.get_user_login_history(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | \* |  | 记录总数。   |
-  | list | array | \* |  | 响应数据。   |
-  
+| totalCount | number | 是 |  | 记录总数。   |
+| list | array | 是 |  | 响应数据。嵌套类型：<a href="#UserLoginHistoryDto">UserLoginHistoryDto</a>。   |
+
 
 ### <a id="UserLoginHistoryDto"></a> UserLoginHistoryDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| appId | string | \* |  | App ID。 示例值： `app1`  |
-  | appName | string | \* |  | App 名称。 示例值： `App Name`  |
-  | appLogo | string | \* |  | App Logo。 示例值： `https://example.com/logo.png`  |
-  | appLoginUrl | string | \* |  | App 登录地址。 示例值： `https://example.com/login`  |
-  | clientIp | string | \* |  | 客户端 IP。 示例值： `127.0.0.1`  |
-  | userAgent | string |  |  | 登录时使用的 user agent。 示例值： `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36`  |
-  | time | string | \* |  | 登录时间。   |
-  
+| appId | string | 是 |  | App ID。 示例值： `app1`  |
+| appName | string | 是 |  | App 名称。 示例值： `App Name`  |
+| appLogo | string | 是 |  | App Logo。 示例值： `https://example.com/logo.png`  |
+| appLoginUrl | string | 是 |  | App 登录地址。 示例值： `https://example.com/login`  |
+| clientIp | string | 是 |  | 客户端 IP。 示例值： `127.0.0.1`  |
+| userAgent | string | 否 |  | 登录时使用的 user agent。 示例值： `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36`  |
+| time | string | 是 |  | 登录时间。   |
+
 

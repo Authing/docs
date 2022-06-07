@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | body | string | \* |  | 用户 ID。  |
-| appIds | body | array | \* |  | APP ID 集合。 示例值： `["62188e71cxxxx3075289c580"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。  |
+| appIds | array | 是 |  | APP ID 集合。 示例值： `["62188e71cxxxx3075289c580"]` |
 
 
 ## 示例代码
@@ -72,6 +72,6 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

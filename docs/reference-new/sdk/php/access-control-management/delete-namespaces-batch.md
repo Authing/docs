@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| codeList | body | array | \* |  | 权限分组 code 列表。 示例值： `["code1","code2"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| codeList | array | 是 |  | 权限分组 code 列表。 示例值： `["code1","code2"]` |
 
 
 ## 示例代码
@@ -31,7 +31,7 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteNamespacesBatch(array(
-      "codeList" => "["code1","code2"]",
+      "codeList" => "["code1","code2"]"
  });
 ));
 ```
@@ -70,6 +70,6 @@ $data = $management->deleteNamespacesBatch(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

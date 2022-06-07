@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| name | body | string | \* |  | 名称。 示例值： `exampleName` |
-| id | body | string | \* |  | 身份源 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| name | string | 是 |  | 名称。 示例值： `exampleName` |
+| id | string | 是 |  | 身份源 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -32,8 +32,8 @@ $management = new ManagementClient(
 );
 
 $data = $management->updateExtIdp(array(
-      "name" => "exampleName",
-    "id" => "60b49eb83fd80adb96f26e68",
+      "name" => "exampleName"
+    "id" => "60b49eb83fd80adb96f26e68"
  });
 ));
 ```
@@ -75,9 +75,9 @@ $data = $management->updateExtIdp(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| id | string | \* |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | name | string | \* |  | 身份源名称。 示例值： `default`  |
-  | tenantId | string |  |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | type | string | \* |  | 身份源类型。 示例值： `wechat`  |
-  
+| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 |  | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+
 

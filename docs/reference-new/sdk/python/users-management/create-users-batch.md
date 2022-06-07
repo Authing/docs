@@ -11,10 +11,10 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| list | body | array | \* |  | 批量用户。  |
-| options | body | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> |  |  | 附加选项。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| list | array | 是 |  | 批量用户。  |
+| options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
 ## 示例代码
@@ -141,93 +141,93 @@ data = management_client.create_users_batch(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| status | string |  | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
-  | email | string |  |  | 邮箱。 示例值： `test@example.com`  |
-  | passwordEncryptType | string |  | none | 加密类型。 枚举值：`sm2`,`rsa`,`none`  |
-  | phone | string |  |  | 手机号。 示例值： `176xxxx6754`  |
-  | phoneCountryCode | string |  |  | 手机区号。 示例值： `+86`  |
-  | username | string |  |  | 用户名，用户池内唯一。 示例值： `bob`  |
-  | name | string |  |  | 用户真实名称，不具备唯一性。 示例值： `张三`  |
-  | nickname | string |  |  | 昵称。 示例值： `张三`  |
-  | photo | string |  |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
-  | gender | string |  | U | 性别。 枚举值：`M`,`W`,`U`  |
-  | emailVerified | boolean |  |  | 邮箱是否验证。 示例值： `true`  |
-  | phoneVerified | boolean |  |  | 手机号是否验证。 示例值： `true`  |
-  | birthdate | string |  |  | 出生日期。 示例值： `2022-06-01`  |
-  | country | string |  |  | 所在国家。 示例值： `CN`  |
-  | province | string |  |  | 所在省份。 示例值： `BJ`  |
-  | city | string |  |  | 所在城市。 示例值： `BJ`  |
-  | address | string |  |  | 所处地址。 示例值： `北京朝阳`  |
-  | streetAddress | string |  |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
-  | postalCode | string |  |  | 邮政编码号。 示例值： `438100`  |
-  | externalId | string |  |  | 第三方外部 ID。 示例值： `10010`  |
-  | departmentIds | array |  |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
-  | customData | object |  |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
-  | password | string |  |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=`  |
-  | tenantIds | array |  |  | 租户 ID。   |
-  | identities | array |  |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `[object Object]`  |
-  
+| status | string | 否 | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
+| email | string | 否 |  | 邮箱。 示例值： `test@example.com`  |
+| passwordEncryptType | string | 否 | none | 加密类型。 枚举值：`sm2`,`rsa`,`none`  |
+| phone | string | 否 |  | 手机号。 示例值： `176xxxx6754`  |
+| phoneCountryCode | string | 否 |  | 手机区号。 示例值： `+86`  |
+| username | string | 否 |  | 用户名，用户池内唯一。 示例值： `bob`  |
+| name | string | 否 |  | 用户真实名称，不具备唯一性。 示例值： `张三`  |
+| nickname | string | 否 |  | 昵称。 示例值： `张三`  |
+| photo | string | 否 |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
+| gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U`  |
+| emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true`  |
+| phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true`  |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-01`  |
+| country | string | 否 |  | 所在国家。 示例值： `CN`  |
+| province | string | 否 |  | 所在省份。 示例值： `BJ`  |
+| city | string | 否 |  | 所在城市。 示例值： `BJ`  |
+| address | string | 否 |  | 所处地址。 示例值： `北京朝阳`  |
+| streetAddress | string | 否 |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
+| postalCode | string | 否 |  | 邮政编码号。 示例值： `438100`  |
+| externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010`  |
+| departmentIds | array | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
+| customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
+| password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=`  |
+| tenantIds | array | 否 |  | 租户 ID。   |
+| identities | array | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。 示例值： `[object Object]`  |
+
 
 ### <a id="CreateIdentityDto"></a> CreateIdentityDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| extIdpId | string | \* |  | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
-  | provider | string | \* |  | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
-  | type | string | \* |  | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
-  | userIdInIdp | string | \* |  | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
-  
+| extIdpId | string | 是 |  | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
+| provider | string | 是 |  | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
+| type | string | 是 |  | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
+| userIdInIdp | string | 是 |  | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+
 
 ### <a id="CreateUserOptionsDto"></a> CreateUserOptionsDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| keepPassword | boolean |  | false | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。。   |
-  | resetPasswordOnFirstLogin | boolean |  | false | 是否强制要求用户在第一次的时候重置密码。   |
-  | departmentIdType | string |  | department_id | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
-  
+| keepPassword | boolean | 否 | false | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。。   |
+| resetPasswordOnFirstLogin | boolean | 否 | false | 是否强制要求用户在第一次的时候重置密码。   |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
+
 
 ### <a id="UserDto"></a> UserDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| userId | string | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-  | createdAt | string | \* |  | 账号创建时间。   |
-  | status | string | \* |  | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
-  | email | string |  |  | 邮箱。 示例值： `test@example.com`  |
-  | phone | string |  |  | 手机号。 示例值： `176xxxx6754`  |
-  | phoneCountryCode | string |  |  | 手机区号。 示例值： `+86`  |
-  | username | string |  |  | 用户名，用户池内唯一。 示例值： `bob`  |
-  | name | string |  |  | 用户真实名称，不具备唯一性。 示例值： `张三`  |
-  | nickname | string |  |  | 昵称。 示例值： `张三`  |
-  | photo | string |  |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
-  | loginsCount | number |  |  | 历史总登录次数。 示例值： `3`  |
-  | lastLogin | string |  |  | 上次登录时间。 示例值： `2022-04-10T20:24:00.000Z`  |
-  | lastIp | string |  |  | 上次登录 IP。 示例值： `127.0.0.1`  |
-  | gender | string | \* |  | 性别。 枚举值：`M`,`W`,`U`  |
-  | emailVerified | boolean | \* |  | 邮箱是否验证。 示例值： `true`  |
-  | phoneVerified | boolean | \* |  | 手机号是否验证。 示例值： `true`  |
-  | birthdate | string |  |  | 出生日期。 示例值： `2022-06-01`  |
-  | country | string |  |  | 所在国家。 示例值： `CN`  |
-  | province | string |  |  | 所在省份。 示例值： `BJ`  |
-  | city | string |  |  | 所在城市。 示例值： `BJ`  |
-  | address | string |  |  | 所处地址。 示例值： `北京朝阳`  |
-  | streetAddress | string |  |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
-  | postalCode | string |  |  | 邮政编码号。 示例值： `438100`  |
-  | externalId | string |  |  | 第三方外部 ID。 示例值： `10010`  |
-  | departmentIds | array |  |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
-  | identities | array |  |  | 外部身份源。   |
-  | customData | object |  |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
-  
+| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
+| createdAt | string | 是 |  | 账号创建时间。   |
+| status | string | 是 |  | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
+| email | string | 否 |  | 邮箱。 示例值： `test@example.com`  |
+| phone | string | 否 |  | 手机号。 示例值： `176xxxx6754`  |
+| phoneCountryCode | string | 否 |  | 手机区号。 示例值： `+86`  |
+| username | string | 否 |  | 用户名，用户池内唯一。 示例值： `bob`  |
+| name | string | 否 |  | 用户真实名称，不具备唯一性。 示例值： `张三`  |
+| nickname | string | 否 |  | 昵称。 示例值： `张三`  |
+| photo | string | 否 |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
+| loginsCount | number | 否 |  | 历史总登录次数。 示例值： `3`  |
+| lastLogin | string | 否 |  | 上次登录时间。 示例值： `2022-04-10T20:24:00.000Z`  |
+| lastIp | string | 否 |  | 上次登录 IP。 示例值： `127.0.0.1`  |
+| gender | string | 是 |  | 性别。 枚举值：`M`,`W`,`U`  |
+| emailVerified | boolean | 是 |  | 邮箱是否验证。 示例值： `true`  |
+| phoneVerified | boolean | 是 |  | 手机号是否验证。 示例值： `true`  |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-01`  |
+| country | string | 否 |  | 所在国家。 示例值： `CN`  |
+| province | string | 否 |  | 所在省份。 示例值： `BJ`  |
+| city | string | 否 |  | 所在城市。 示例值： `BJ`  |
+| address | string | 否 |  | 所处地址。 示例值： `北京朝阳`  |
+| streetAddress | string | 否 |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
+| postalCode | string | 否 |  | 邮政编码号。 示例值： `438100`  |
+| externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010`  |
+| departmentIds | array | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
+| identities | array | 否 |  | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
+| customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
+
 
 ### <a id="IdentityDto"></a> IdentityDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| identityId | string | \* |  | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
-  | extIdpId | string | \* |  | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
-  | provider | string | \* |  | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
-  | type | string | \* |  | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
-  | userIdInIdp | string | \* |  | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
-  
+| identityId | string | 是 |  | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
+| extIdpId | string | 是 |  | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
+| provider | string | 是 |  | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
+| type | string | 是 |  | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
+| userIdInIdp | string | 是 |  | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+
 

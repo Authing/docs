@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| id | body | string | \* |  | 身份源连接 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| id | string | 是 |  | 身份源连接 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -31,7 +31,7 @@ $management = new ManagementClient(
 );
 
 $data = $management->deleteExtIdpConn(array(
-      "id" => "60b49eb83fd80adb96f26e68",
+      "id" => "60b49eb83fd80adb96f26e68"
  });
 ));
 ```
@@ -70,6 +70,6 @@ $data = $management->deleteExtIdpConn(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

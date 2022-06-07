@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
-| namespace | body | string |  |  | 所属权限分组的 code。 示例值： `default` |
-| targets | body | array | \* |  | 移除角色的目标。 示例值： `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
+| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| targets | array | 是 |  | 移除角色的目标。 示例值： `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 
 
 ## 示例代码
@@ -77,14 +77,14 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| targetType | string | \* |  | 目标类型，接受用户，部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-  | targetIdentifier | string | \* |  | 目标的 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  
+| targetType | string | 是 |  | 目标类型，接受用户，部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| targetIdentifier | string | 是 |  | 目标的 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

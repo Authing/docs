@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| list | body | array | \* |  | 自定义字段列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| list | array | 是 |  | 自定义字段列表。  |
 
 
 ## 示例代码
@@ -87,42 +87,42 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| targetType | string | \* |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-  | dataType | string | \* |  | 数据类型。 枚举值：`STRING`,`NUMBER`,`DATETIME`,`BOOLEAN`,`SELECT`  |
-  | key | string | \* |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
-  | label | string | \* |  | 前端表单展示名称。 示例值： `学校`  |
-  | description | string |  |  | 详细描述信息。 示例值： `学校`  |
-  | encrypted | boolean |  | false | 是否加密存储。   |
-  | options | array |  |  | 枚举值类型选择项。 示例值： `[{"value":"pku","label":"北京大学"}]`  |
-  
+| targetType | string | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| dataType | string | 是 |  | 数据类型。 枚举值：`STRING`,`NUMBER`,`DATETIME`,`BOOLEAN`,`SELECT`  |
+| key | string | 是 |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
+| label | string | 是 |  | 前端表单展示名称。 示例值： `学校`  |
+| description | string | 否 |  | 详细描述信息。 示例值： `学校`  |
+| encrypted | boolean | 否 | false | 是否加密存储。   |
+| options | array | 否 |  | 枚举值类型选择项。嵌套类型：<a href="#CustomFieldSelectOption">CustomFieldSelectOption</a>。 示例值： `[{"value":"pku","label":"北京大学"}]`  |
+
 
 ### <a id="CustomFieldSelectOption"></a> CustomFieldSelectOption
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| value | string | \* |  | 枚举值 value。 示例值： `hust`  |
-  | label | string | \* |  | 枚举值 label。 示例值： `华中科技大学`  |
-  
+| value | string | 是 |  | 枚举值 value。 示例值： `hust`  |
+| label | string | 是 |  | 枚举值 label。 示例值： `华中科技大学`  |
+
 
 ### <a id="CustomFieldDto"></a> CustomFieldDto
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| targetType | string | \* |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-  | createdAt | string | \* |  | 创建时间。 示例值： `2022-03-17T05:23:01.567Z`  |
-  | dataType | string | \* |  | 数据类型。 枚举值：`STRING`,`NUMBER`,`DATETIME`,`BOOLEAN`,`SELECT`  |
-  | key | string | \* |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
-  | label | string | \* |  | 前端表单展示名称。 示例值： `学校`  |
-  | description | string |  |  | 详细描述信息。 示例值： `学校`  |
-  | encrypted | boolean |  | false | 是否加密存储。   |
-  | options | array |  |  | 枚举值类型选择项。 示例值： `[{"value":"pku","label":"北京大学"}]`  |
-  
+| targetType | string | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| createdAt | string | 是 |  | 创建时间。 示例值： `2022-03-17T05:23:01.567Z`  |
+| dataType | string | 是 |  | 数据类型。 枚举值：`STRING`,`NUMBER`,`DATETIME`,`BOOLEAN`,`SELECT`  |
+| key | string | 是 |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
+| label | string | 是 |  | 前端表单展示名称。 示例值： `学校`  |
+| description | string | 否 |  | 详细描述信息。 示例值： `学校`  |
+| encrypted | boolean | 否 | false | 是否加密存储。   |
+| options | array | 否 |  | 枚举值类型选择项。嵌套类型：<a href="#CustomFieldSelectOption">CustomFieldSelectOption</a>。 示例值： `[{"value":"pku","label":"北京大学"}]`  |
+
 
 ### <a id="CustomFieldSelectOption"></a> CustomFieldSelectOption
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| value | string | \* |  | 枚举值 value。 示例值： `hust`  |
-  | label | string | \* |  | 枚举值 label。 示例值： `华中科技大学`  |
-  
+| value | string | 是 |  | 枚举值 value。 示例值： `hust`  |
+| label | string | 是 |  | 枚举值 label。 示例值： `华中科技大学`  |
+
 

@@ -11,11 +11,11 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | query | string  | \* |  | 分组 code。 示例值： `developer` |
-| namespace | query | string  |  |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType | query | string  |  |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code  string  | 是 |  | 分组 code。 示例值： `developer` |
+| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| resourceType  string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 
 
 ## 示例代码
@@ -74,9 +74,9 @@ data = management_client.get_group_authorized_resources(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| resourceCode | string | \* |  | 资源标识符。 示例值： `ecs:1`  |
-  | resourceType | string |  |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-  | actions | array |  |  | 被授权的资源的操作列表。   |
-  | apiIdentifier | string |  |  | 资源对应的 API Identifier。   |
-  
+| resourceCode | string | 是 |  | 资源标识符。 示例值： `ecs:1`  |
+| resourceType | string | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| actions | array | 否 |  | 被授权的资源的操作列表。   |
+| apiIdentifier | string | 否 |  | 资源对应的 API Identifier。   |
+
 

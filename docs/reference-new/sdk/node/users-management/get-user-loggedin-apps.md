@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| userId | query | string  | \* |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -74,9 +74,9 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| appId | string | \* |  | App ID。 示例值： `app1`  |
-  | appName | string | \* |  | App 名称。 示例值： `App Name`  |
-  | appLogo | string | \* |  | App Logo。 示例值： `https://example.com/logo.png`  |
-  | appLoginUrl | string | \* |  | App 登录地址。 示例值： `https://example.com/login`  |
-  
+| appId | string | 是 |  | App ID。 示例值： `app1`  |
+| appName | string | 是 |  | App 名称。 示例值： `App Name`  |
+| appLogo | string | 是 |  | App Logo。 示例值： `https://example.com/logo.png`  |
+| appLoginUrl | string | 是 |  | App 登录地址。 示例值： `https://example.com/login`  |
+
 

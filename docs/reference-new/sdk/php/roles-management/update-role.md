@@ -11,12 +11,12 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| code | body | string | \* |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
-| newCode | body | string | \* |  | 角色新的权限分组内唯一识别码。 示例值： `code2` |
-| namespace | body | string |  | default | 所属权限分组的 code。 示例值： `default` |
-| description | body | string |  |  | 角色描述。 示例值： `this is description` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
+| newCode | string | 是 |  | 角色新的权限分组内唯一识别码。 示例值： `code2` |
+| namespace | string | 否 | default | 所属权限分组的 code。 示例值： `default` |
+| description | string | 否 |  | 角色描述。 示例值： `this is description` |
 
 
 ## 示例代码
@@ -34,10 +34,10 @@ $management = new ManagementClient(
 );
 
 $data = $management->updateRole(array(
-      "code" => "code1",
-    "newCode" => "code2",
-    "namespace" => "default",
-    "description" => "this is description",
+      "code" => "code1"
+    "newCode" => "code2"
+    "namespace" => "default"
+    "description" => "this is description"
  });
 ));
 ```
@@ -76,6 +76,6 @@ $data = $management->updateRole(array(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| success | boolean | \* |  | 操作是否成功。 示例值： `true`  |
-  
+| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+
 

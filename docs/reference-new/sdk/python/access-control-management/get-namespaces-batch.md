@@ -11,9 +11,9 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| codeList | query | array  | \* |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| codeList  array  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
 
 
 ## 示例代码
@@ -70,8 +70,8 @@ data = management_client.get_namespaces_batch(
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| code | string | \* |  | 权限分组唯一标志符。 示例值： `my-namespace`  |
-  | name | string |  |  | 权限分组名称。 示例值： `我的权限分组`  |
-  | description | string |  |  | 权限分组描述信息。 示例值： `我的权限分组描述`  |
-  
+| code | string | 是 |  | 权限分组唯一标志符。 示例值： `my-namespace`  |
+| name | string | 否 |  | 权限分组名称。 示例值： `我的权限分组`  |
+| description | string | 否 |  | 权限分组描述信息。 示例值： `我的权限分组描述`  |
+
 

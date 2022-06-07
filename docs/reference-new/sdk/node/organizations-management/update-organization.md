@@ -11,13 +11,13 @@
 
 ## 请求参数
 
-| 名称 | 位置 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | --- | ---- | ---- | ---- | ---- |
-| organizationCode | body | string | \* |  | 组织 code。 示例值： `steamory` |
-| description | body | string |  |  | 组织描述信息。 示例值： `组织描述信息` |
-| openDepartmentId | body | string |  |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationNewCode | body | string |  |  | 新组织 code。 示例值： `steamory2` |
-| organizationName | body | string |  |  | 组织名称。 示例值： `蒸汽记忆` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
+| ---- | ---- | ---- | ---- | ---- |
+| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
+| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息` |
+| openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
+| organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
 
 
 ## 示例代码
@@ -85,13 +85,13 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 |默认值| 描述 |
 | ---- |  ---- | ---- | --- | ---- |
-| organizationCode | string | \* |  | 组织 code。 示例值： `steamory`  |
-  | organizationName | string | \* |  | 组织名称。 示例值： `蒸汽记忆`  |
-  | description | string |  |  | 组织描述信息。 示例值： `组织描述信息`  |
-  | departmentId | string | \* |  | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | openDepartmentId | string |  |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | hasChildren | boolean | \* |  | 是否包含子节点。 示例值： `true`  |
-  | leaderUserId | string | \* |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-  | membersCount | number | \* |  | 部门人数。 示例值： `150`  |
-  
+| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory`  |
+| organizationName | string | 是 |  | 组织名称。 示例值： `蒸汽记忆`  |
+| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息`  |
+| departmentId | string | 是 |  | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| hasChildren | boolean | 是 |  | 是否包含子节点。 示例值： `true`  |
+| leaderUserId | string | 是 |  | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| membersCount | number | 是 |  | 部门人数。 示例值： `150`  |
+
 
