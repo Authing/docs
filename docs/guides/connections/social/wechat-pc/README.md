@@ -59,10 +59,7 @@
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
-
-> 更多的开发接入方式请[看这里](/guides/authentication/social/#详细接入方法)。
-
-**详细接入方法**：
+- **详细接入方法**：
 
 3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app)
 
