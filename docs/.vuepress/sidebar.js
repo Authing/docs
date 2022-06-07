@@ -572,7 +572,7 @@ const zhCnNavBar = {
             },
             {
               title: "微信公众号关注",
-              path: "/guides/connections/social/twitter/",
+              path: "/guides/connections/social/wechatmp-qrcode/",
              },
             {
               title: "微信移动端",
@@ -2528,8 +2528,8 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/wechat-miniprogram-qrconnect/",
             },
             {
-              title: "微信公众号关注",
-              path: "/guides/connections/social/twitter/",
+              title: "Wechat Official Accounts QR Code",
+              path: "/guides/connections/social/wechatmp-qrcode/",
              },
             {
               title: "微信移动端",
