@@ -10,7 +10,7 @@
 
 <img src="./images/00-viewResult.png" />
 
-## Precautions：
+## Precautions:
 
 - If you do not have an Instagram account, please go to [Instagram Open Platform](https://developers.facebook.com/) to register a developer account. Because Instagram belongs to Facebook, the Instagram open platform mentioned here is Facebook's open platform;
 - Open an [Instagram account](https://www.instagram.com/) with multimedia content;

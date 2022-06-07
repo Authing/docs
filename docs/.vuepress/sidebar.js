@@ -666,11 +666,11 @@ const zhCnNavBar = {
              },
             {
               title: "企业微信自建应用扫码（代开发模式）",
-              path: "/guides/connections/social/instagram/",
+              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
              },
             {
               title: "企业微信服务商应用扫码",
-              path: "/guides/connections/social/instagram/",
+              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
              },
             {
               title: "企业微信移动端",
@@ -2623,11 +2623,11 @@ const translatedZhCnNavBar = {
              },
             {
               title: "企业微信自建应用扫码（代开发模式）",
-              path: "/guides/connections/enterprise/wechatwork-agency-qrconnect/",
+              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
              },
             {
               title: "企业微信服务商应用扫码",
-              path: "/guides/connections/social/instagram/",
+              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
              },
             {
               title: "企业微信移动端",

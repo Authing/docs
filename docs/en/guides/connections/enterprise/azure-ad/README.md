@@ -1,90 +1,90 @@
-# Azure AD 社会化登录
+# Azure AD Social Login
 
 <LastUpdated/>
 
-## 场景介绍
+## Scenario Description
 
-- **概述**：Azure AD 是 Microsoft 提供的具有集成安全性的完整标识和访问管理解决方案。在 Authing 中配置并开启 Azure AD 的企业登录，即可实现通过 Authing 快速获取 Azure AD 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：PC 网站
-- **终端用户预览图**：
+- **Overview**: Azure AD is a complete identity and access management solution with integrated security from Microsoft. Configure and enable enterprise login for Azure AD in Authing to enable quick access to Azure AD basic open information and help users to achieve password-free login functionality through Authing.
+- **Application Scenario**: PC Website
+- **End-user preview image**.
 
-<img src="./images/00.png" >
+<img src=". /images/00.png" >
 
-## 注意事项：
+## Caution.
 
-- 如果您还没有微软账号，请先前往 [Microsoft 平台](https://signup.live.com/signup) 进行账号注册。
-- 如果你的微软账号没有开启 Azure，请先前往[Azure 平台](https://signup.azure.com/)进行账号注册，否则无法正常使用 Azure 相关功能。
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
+- If you do not have a Microsoft account, please go to [Microsoft Platform](https://signup.live.com/signup) to register your account first.
+- If your Microsoft account does not have Azure enabled, please go to [Azure Platform](https://signup.azure.com/) for account registration first, otherwise you cannot use Azure related functions normally.
+- If you do not have Authing Console account enabled, please go to [Authing Console Console](https://authing.cn/) to register developer account first.
 
-## 步骤 1：创建 Azure Active Directory 应用
+## Step 1: Create Azure Active Directory application
 
-前往 [Azure 平台](https://portal.azure.com/#home)，点击**管理 Azure Active Directory**。
+Go to [Azure Platform](https://portal.azure.com/#home) and click **Manage Azure Active Directory**.
 
-<img src="./images/01.png" >
+<img src=". /images/01.png" >
 
-在概览页，选择**新注册**，找到**应用注册**按钮，注册应用。
+On the overview page, select **New Registration** and find the **Application Registration** button to register the application.
 
-<img src="./images/02.png" >
+<img src=". /images/02.png" >
 
-在应用注册页面，受支持的帐户类型，根据你的实际情况选择合适的类型。如果你希望其他组织的账号也能够使用你的应用，可以选择**任何组织目录(任何 Azure AD 目录 - 多租户)中的帐户**，如果你只希望自己组织的成员使用你的应用，请选择**仅此组织目录(仅 默认目录 - 单一租户)中的帐户**。重定向 URI 类型选择 **Web**，填入回调地址**https://core.authing.cn/connections/azure-ad/callback**
+On the app registration page, supported account types, choose the appropriate one for your situation. If you want accounts in other organizations to be able to use your app as well, you can select **Account in any organization directory (any Azure AD directory - multi-tenant) **, if you only want members of your own organization to use your app, select **Account in this organization directory only (default directory only - single tenant) **. Select **Web** for the redirect URI type and fill in the callback address **https://core.authing.cn/connections/azure-ad/callback**
 
-<img src="./images/03.png" >
+<img src=". /images/03.png" >
 
-点击**注册**。
+Click **Register**.
 
-## 步骤 2：在 Authing 控制台配置 Azure AD
+## Step 2: Configure Azure AD in Authing Console
 
-2.1 请在 Authing Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，选择「Azure AD」身份源按钮，进入 「Azure AD 登录模式」页面。
+2.1 Please click the "Create Enterprise Identity Source" button on the "Enterprise Identity Source" page of Authing Console console, go to the "Select Enterprise Identity Source" page, and select the "Azure AD" identity source button to enter the "Azure AD Login Mode" page.
 
-<img src="./images/07.png" >
+<img src=". /images/07.png" >
 
-2.2 请在 Authing Console 控制台 的「企业身份源」-「Azure AD」页面，配置相关的字段信息。
+2.2 Please configure the relevant field information on the Enterprise Identity Source - Azure AD page in the Authing Console console.
 
-<img src="./images/10.png" >
+<img src=". /images/10.png" >
 
-| 编号   | 字段/功能           | 描述                                                                                                                                                                         |
-| ------ | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2.2.1  | 唯一标识            | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。                                                                             |
-| 2.2.2  | 显示名称            | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                                 |
-| 2.2.3  | 身份源域名          | Azure AD 有两个不同的认证域名，两者之间用户数据互不相通，可以通过确认当前已有业务使用的登录认证域名，在此选择相同的认证域名，进行用户认证。                                  |
-| 2.2.4  | 目录(租户) ID       | 目录(租户) ID ，不填写默认选择为 organization，即只有组织内账号能在应用进行登录。                                                                                            |
-| 2.2.5  | 应用程序(客户端) ID | 应用程序(客户端) ID，需要在 Azure AD 平台上获取。                                                                                                                            |
-| 2.2.6  | 客户端密码（值）    | 客户端密码（值），需要在 Azure AD 平台上获取                                                                                                                                 |
-| 2.2.7  | 回调地址            | Azure AD 的重定向 URI。需要将此 URL 配置到 Azure AD 平台上，填写内容为**https://core.authing.cn/connections/azure-ad/callback**。                                            |
-| 2.2.8  | 邮箱验证同步策略    | 用户认证后，是否将用户邮箱验证状态标识为已验证                                                                                                                               |
-| 2.2.9  | 登录模式            | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                                         |
-| 2.2.10 | 账号身份关联        | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。a.关联方式：选择 |
+| number | field/function                                | description                                                                                                                                                                                                                                                                                                         |
+| ------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2.2.1  | Unique identifier                             | a. The unique identifier consists of lowercase letters, numbers, and -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be modified after it is set.                                                                                                                 | 2.2.2 |
+| 2.2.2  | Display name                                  | This name is displayed on the button in the end-user's login screen.                                                                                                                                                                                                                                                | This is a unique identifier for this connection. |
+| 2.2.3  | Identity Source Domain                        | Azure AD has two different authentication domains, and the user data between them are not connected to each other. You can select the same authentication domain here for user authentication by confirming the login authentication domain currently used by existing services.                                    | 2.2.4 |
+| 2.2.4  | Directory (Tenant) ID                         | Directory (Tenant) ID, not filled in, is selected as organization by default, that is, only accounts in the organization can login in the application.                                                                                                                                                              | The |
+| 2.2.5  | Application (Client) ID                       | The application (client) ID, which needs to be obtained on the Azure AD platform.                                                                                                                                                                                                                                   | The application (client) ID needs to be obtained on the Azure AD platform. |
+| 2.2.6  | Client password (value)                       | Client password (value), which needs to be obtained on the Azure AD platform                                                                                                                                                                                                                                        | 2.2.7 | Client password (value), which needs to be obtained on the Azure AD platform. |
+| 2.2.7  | Callback address                              | The redirect URI for Azure AD. This URL needs to be configured on the Azure AD platform with the content **https://core.authing.cn/connections/azure-ad/callback**.                                                                                                                                                 | This URL needs to be configured to the Azure AD platform. |
+| 2.2.8  | Mailbox authentication synchronization policy | Whether to mark user mailbox authentication status as authenticated after user authentication                                                                                                                                                                                                                       |
+| 2.2.9  | Login Mode                                    | When "Login Only Mode" is enabled, only existing accounts can be logged in, and no new accounts can be created, please choose carefully.                                                                                                                                                                            | Please choose carefully. |
+| 2.2.10 | Account Identity Association                  | If "Account Identity Association" is not enabled, new users will be created by default when users log in through the identity source. If you enable "Account Identity Association", you can allow users to log in to existing accounts directly by "Field Matching" or "Ask to Bind". a. Association Method: Select |
 
-2.2.1 在应用的概述页，可以找到 应用程序(客户端) ID 和 目录(租户) ID
+2.2.1 On the application overview page, you can find the application (client) ID and catalog (tenant) ID
 
-<img src="./images/04.png" >
+<img src=". /images/04.png" >
 
-2.2.2 在应用的证书和密码页，点击生成 **新客户端密码**，可以获得客户端密码值
+2.2.2 On the Credentials and Passwords page of the app, click Generate **New Client Password** to get the client password value
 
-<img src="./images/05.png" >
+<img src=". /images/05.png" >
 
-配置完成后，点击「创建」或者「保存」按钮完成创建。
+Once the configuration is complete, click the "Create" or "Save" button to finish the creation.
 
-## 步骤 3：开发接入
+## Step 3: Development Access
 
-- **推荐开发接入方式**：使用托管登录页
+- **Recommended development access method**: Using a hosted login page
 
-- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **Description of advantages and disadvantages**: Simple operation and maintenance, Authing is responsible for the operation and maintenance. Each user pool has an independent secondary domain; if you need to embed it into your application, you need to use pop-up mode login, i.e.: after clicking the login button, a window will pop up with the Authing hosted login page, or redirect your browser to the Authing hosted login page.
 
-- **详细接入方法**：
+- **Detailed access method**.
 
-  3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](./guides/app/create-app.md)
+  3.1 Create an application in Authing console, for details see: [How to create an application in Authing](. /guides/app/create-app.md)
 
-  3.2 在已创建好的 Azure AD 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
+  3.2 In the created Azure AD Identity Source connection details page, open and associate an app created in the Authing console
 
-<img src="./images/08.png" >
+<img src=". /images/08.png" >
 
-3.3 在登录页面体验 Azure AD 第三方登录
+3.3 Experience Azure AD third-party login on the login page
 
-<img src="./images/09.png" >
+<img src=". /images/09.png" >
 
-## 步骤 4：常见报错问题解决
+## Step 4: Troubleshooting common errors
 
-4.1 如果你选择的受支持的账户类型是**仅此组织目录（仅 默认目录 - 单一租户）中的账户**，当其他组织的用户尝试使用 Azure AD 登录时，会提示类似以下的错误：
+4.1 If you select a supported account type of **Accounts in this organization's directory only (Default Directory - Single Tenant only)**, when users from other organizations try to log in using Azure AD, they will be prompted with an error similar to the following.
 
-<img src="./images/11.png" >
+<img src=". /images/11.png" >

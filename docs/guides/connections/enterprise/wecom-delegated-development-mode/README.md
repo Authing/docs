@@ -44,7 +44,7 @@
 
 <img src="./images/06.png" >
 
-点击保存，Authing 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。
+点击保存，Authing 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。注意，**一定要点击保存后进行后续操作**，否则微信回调验证无法通过。
 
 <img src="./images/07.png" >
 
@@ -77,7 +77,7 @@
 <img src="./images/15.png" >
 
 3.5 在企业微信服务商后台，**服务商信息页面**，选择基本信息，**IP 白名单**需要添加上 Authing 的服务器 IP 地址，具体可点击 [Authing 服务器 IP 列表](core.authing.cn/api/v2/system/public-ips)进行获取
-<img src="./images/17.png" >
+<img src="./images/16.png" >
 
 ## 步骤 4：企业授权代开发模板并开发代开发应用
 
@@ -106,7 +106,6 @@
 
 点击**校验可信域名归属**
 
-
 <img src="./images/23.png" >
 
 在弹出窗口，选择 **下载文件**
@@ -119,7 +118,6 @@
 
 设置企业微信授权登录
 <img src="./images/26.png" >
-
 
 在 Web 网页中的授权回调域中填写 core.authing.cn
 
@@ -137,10 +135,10 @@
 点击进入待上线的应用，提交上线
 <img src="./images/35.png" >
 
-在企业管理后台，我的企业 查看企业ID
+在企业管理后台，我的企业 查看企业 ID
 <img src="./images/31.png" >
 
-在 Authing 中的 企业ID 填入企业ID
+在 Authing 中的 企业 ID 填入企业 ID
 <img src="./images/32.png" >
 
 在企业管理后台的自建应用中 将 AgentId 填入 Authing 的 AgentId 中
@@ -154,8 +152,6 @@
 <img src="./images/37.png" >
 <img src="./images/38.png" >
 <img src="./images/39.png" >
-
-<img src="./images/08-insconfig-success.png" >
 
 ## 步骤 3：开发接入
 
