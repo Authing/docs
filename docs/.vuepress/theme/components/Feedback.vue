@@ -312,7 +312,7 @@ export default {
   // background: #F8FAFC;
   padding 24px
 .feedback-success-icon
-  color #396AFF
+  color $accentColor
   margin-right 1em
   flex-shrink 0
 .authing-custom-feedback
@@ -333,8 +333,8 @@ export default {
     outline none
 .submit-feedback-btn
   float right
-  background-color #396AFF
-  background #396AFF
+  background-color $accentColor
+  background $accentColor
   border-radius 4px
   height 28px
   line-height 28px

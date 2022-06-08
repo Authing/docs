@@ -43,7 +43,7 @@ export default {
     outline: none;
   }
   &.primary {
-    background-color: #396AFF;
+    background-color: $accentColor;
     border: none;
     color: #fff;
     &:hover:not([disabled='disabled']) {

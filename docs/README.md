@@ -125,7 +125,7 @@ sdkConfig:
 applicationSdks:
   - title: 移动 / 客户端应用
     description: 在移动 / 客户端应用中快速接入认证服务
-    color: "#396AFF"
+    color: "#215AE5"
     sdks:
       - ios
       - android

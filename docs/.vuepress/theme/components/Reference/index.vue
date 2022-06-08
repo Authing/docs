@@ -110,7 +110,7 @@ export default {
 <style lang="stylus">
 .sdk-banner
   color: #fff;
-  background: #215ae5 url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
+  background: $accentColor url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
   background-size: 470px 100%;
   position: relative;
   display: flex;

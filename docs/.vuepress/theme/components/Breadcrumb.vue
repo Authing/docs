@@ -106,5 +106,5 @@ export default {
         .nav-link
           color rgba(0,0,0,0.45)
           &:hover
-            color #396aff
+            color $accentColor
 </style>

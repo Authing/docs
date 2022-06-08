@@ -20,8 +20,8 @@ export default {
 <style lang="stylus">
 .button-link
   color: #fff
-  border: 2px solid #396aff
-  background: #396aff
+  border: 2px solid $accentColor
+  background: $accentColor
   border-radius: 4px
   padding: 6px 16px
   &:hover

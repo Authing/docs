@@ -155,7 +155,7 @@ export default {
       .hot-search-item
         color #6d7278
         &:hover
-          color #396aff
+          color $accentColor
         &:not(:last-child)
           margin-right 30px
 

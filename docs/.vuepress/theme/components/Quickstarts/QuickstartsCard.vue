@@ -1,7 +1,7 @@
 <template>
 	<div class="quickstarts-card">
 		<div class="title">
-			<IconFont :type="appType.icon" style="font-size: 26px; color: #396AFF" />
+			<IconFont :type="appType.icon" style="font-size: 26px; color: #215AE5" />
 			<span>{{ appType.title }}</span>
 		</div>
 		<div class="description">
@@ -148,10 +148,10 @@ export default {
     .show-language:hover
       .header
         .span-language
-          color #396AFF
+          color $accentColor
 
       .item-language-icon
-        color #396AFF
+        color $accentColor
 @media (max-width: 1300px) {
   .quickstarts-card {
     width 100%

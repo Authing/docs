@@ -172,7 +172,7 @@ export default {
   overflow-y auto
   top calc(3.6rem + 36px)
   h3
-    color #215ae5
+    color $accentColor
     padding-left 16px
     font-size 16px
   a
@@ -196,7 +196,7 @@ export default {
     // &:visited
     //   color #666
     &.router-link-active:before
-      background #215ae5
+      background $accentColor
 
     // & + ul a
     //   color: #999
@@ -229,12 +229,12 @@ export default {
         text-decoration none
         display block
         &:hover
-          color #215ae5
+          color $accentColor
         &.router-link-active
           // margin-left -19px
           // padding-left 19px
           // color $accentColor
-          color #215ae5
+          color $accentColor
       ul
         margin-top 8px
         padding-left: 12px

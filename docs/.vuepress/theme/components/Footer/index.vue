@@ -145,7 +145,7 @@ export default {
   .footer-link
     color #4B5A78
     &:hover
-      color #396aff
+      color $accentColor
   .footer-link-wrapper, .footer-text-wrapper
     color #4B5A78
     font-weight normal

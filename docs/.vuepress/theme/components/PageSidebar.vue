@@ -154,7 +154,7 @@ export default {
       color #111111
 
     &:hover
-      color #396aff
+      color $accentColor
     & + ul a
       color: #111111
       font-size 14px

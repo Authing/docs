@@ -242,18 +242,19 @@ export default {
     &::-webkit-input-placeholder
       color #86909C
     &:focus
-      border-color #215AE5
+      border-color $accentColor
       background-color: #fff
-      border: 1px solid #215AE5
+      border: 1px solid $accentColor
       cursor auto
   .suggestions
     background #fff
     width 20rem
     position absolute
     top 2 rem
+    border: 1px solid #eeeeee
+    box-shadow: 0px 16px 32px -10px rgba(4, 24, 115, 0.1)
     // border 1px solid darken(#ddd, 10%)
     // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
-    box-shadow 0 4px 10px 0 rgba(0, 0, 0, 0.04)
     border-radius 6px
     padding 0.4rem 24px
     list-style-type none
@@ -281,6 +282,9 @@ export default {
       background-color #f3f4f5
       a
         color $accentColor
+  & .suggestion:last-child {
+    border-bottom: none
+  }
 
 @media (max-width: $MQNarrow)
   .search-box

@@ -385,7 +385,7 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
       width: 160px;
       height: 40px;
       line-height: 40px;
-      background: #396aff;
+      background: $accentColor;
       color: #fff;
       border-radius: 4px;
     }
@@ -459,7 +459,7 @@ $mobileAppItemHorizontalSpace = 5px; // 改了这里记得改 setLastRowFillCoun
       transition: transform .3s;
       &:hover {
         .app-name {
-          color: #396aff;
+          color: $accentColor;
         }
         .app-logo {
           transform: translateY(-6px);
