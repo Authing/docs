@@ -128,28 +128,28 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing.js",
-              doc: "./web/sdk-for-node/",
+              doc: "./sdk/node",
             },
             {
               #
               title: "Python",
               icon: "Python",
               github: "https://github.com/Authing/authing-py-sdk",
-              doc: "./web/sdk-for-python/",
+              doc: "./sdk/python/",
             },
             {
               #
               title: "C#",
               icon: "csharp",
               github: "https://github.com/Authing/authing-api-client-net",
-              doc: "./web/sdk-for-csharp/",
+              doc: "./sdk/csharp/",
             },
             {
               #
               title: "Node.js",
               icon: "Nodejs",
               github: "https://github.com/Authing/authing.js",
-              doc: "./web/sdk-for-node/",
+              doc: "./sdk/node",
             },
             {
               #
@@ -163,21 +163,21 @@
               title: "Java",
               icon: "Java",
               github: "https://github.com/Authing/authing-java-sdk",
-              doc: "./web/sdk-for-java/",
+              doc: "./sdk/java/",
             },
             {
               #
               title: "Golang",
               icon: "Go",
               github: "https://github.com/Authing/authing-go-sdk",
-              doc: "./web/sdk-for-go/",
+              doc: "./sdk/go/",
             },
             {
               #
               title: "PHP",
               icon: "php",
               github: "https://github.com/Authing/authing-php-sdk",
-              doc: "./web/sdk-for-php/",
+              doc: "./sdk/php/",
             },
           ],
       },
