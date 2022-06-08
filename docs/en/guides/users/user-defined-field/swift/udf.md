@@ -1,4 +1,4 @@
-!!!include(common/init-swift-auth-sdk.md)!!!
+!!!include(en/common/init-swift-auth-sdk.md)!!!
 
 设置自定义字段：
 

@@ -1,4 +1,5 @@
 This script will be called when amdin uses console or API to get a user list. This interface will require the number of total users and the list of users in the current page. This script is only required in CUSTOM_USER_STORE mode.
+
 ### Function Definition
 
 Here is the definition of the `listUsers` function:
@@ -25,36 +26,35 @@ async function listUsers(page, limit, context) {
   //    throw new Error("my error message")
 
   const msg =
-    'Please implement the List Users script for this database connection';
+    "Please implement the List Users script for this database connection";
   throw new Error(msg);
 }
 ```
 
-| Parameter    | Type   | Nullable | Explanation                |
-| :------ | :----- | :------- | :------------------ |
-| page    | number | false    | Page number. It will start at 1. |
-| limit   | number | false    | The number of users per page.          |
-| context | object | true     | Requiring context  |
-
+| Parameter | Type   | Nullable | Explanation                      |
+| :-------- | :----- | :------- | :------------------------------- |
+| page      | number | false    | Page number. It will start at 1. |
+| limit     | number | false    | The number of users per page.    |
+| context   | object | true     | Requiring context                |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                          |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                       |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                   |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### Get User List Successfully
 
-When the user list is received successfully, you need to build up user information with following formats: the returned result should be an object, the key `totalCount` represents the total number of users in this list and the key `list` represents the pages of the list. For example, 
+When the user list is received successfully, you need to build up user information with following formats: the returned result should be an object, the key `totalCount` represents the total number of users in this list and the key `list` represents the pages of the list. For example,
 
 ```javascript
 async function listUsers(id, updates, context) {
@@ -80,7 +80,7 @@ async function listUsers(id, updates, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -89,7 +89,7 @@ async function listUsers(id, updates, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -111,17 +111,17 @@ try {
 Assume we are using `postgres` as our database:
 
 - You can use `env.DB_CONNECTION_URI` to get database connection string to create database connection.
-- Build up the user information with the formats that Approw acquires.
+- Build up the user information with the formats that Authing acquires.
 - Call `try/finally` in `client.end()` to disable database connection.
 
 ```javascript
 async function listUsers(page, limit, context) {
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -135,7 +135,7 @@ async function listUsers(page, limit, context) {
 
   await client.connect();
 
-  const data = await client.query('SELECT COUNT(*) FROM users');
+  const data = await client.query("SELECT COUNT(*) FROM users");
   const totalCount = parseInt(data.rows[0].count);
   const QUERY = `SELECT * from users LIMIT ${limit} OFFSET ${(page - 1) *
     limit}`;
@@ -159,12 +159,12 @@ async function listUsers(page, limit, context) {
         address: user.address,
         company: user.company,
         birthdate: user.birthdate,
-        website: user.website,
+        website: user.website
       };
     });
     return {
       totalCount,
-      list,
+      list
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);
@@ -173,5 +173,4 @@ async function listUsers(page, limit, context) {
     client.end();
   }
 }
-
 ```

@@ -1,4 +1,5 @@
 This script will be called when the admin is using console or API to search the user vaguely.
+
 ### Function Definition
 
 Here is the definition of the `searchUser` function:
@@ -25,51 +26,50 @@ async function searchUser(keyword, context) {
   //    throw new Error("my error message")
 
   const msg =
-    'Please implement the Search User script for this database connection ';
+    "Please implement the Search User script for this database connection ";
   throw new Error(msg);
 }
-
 ```
 
-| Parameter   | Type  | Nullable | Explanation          |
-| :------ | :----- | :------- | :------------- |
-| keyword | string | false    | The keyword of the fuzzy search |
-| context        | object | true     | Requiring context                                          |
+| Parameter | Type   | Nullable | Explanation                     |
+| :-------- | :----- | :------- | :------------------------------ |
+| keyword   | string | false    | The keyword of the fuzzy search |
+| context   | object | true     | Requiring context               |
 
 The context also includes the following information:
 
-| Property Name          | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                            |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                            |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                  |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### Get User Lists Successfully
 
-When the user exists, you need to return the user list to Approw, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
+When the user exists, you need to return the user list to Authing, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
 
 ```javascript
 async function searchUser(query, context) {
   // Implement your logic here
   return {
-   totalCount: 10,
-   list: [
-       {
+    totalCount: 10,
+    list: [
+      {
         id: 1, // must not empty
         email: "test@example.com",
         emailVerified: true,
         nickname: "Nick",
         photo: ""
-       }
+      }
     ]
-  }
+  };
 }
 ```
 
@@ -82,7 +82,7 @@ async function searchUser(keyword, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -91,7 +91,7 @@ async function searchUser(keyword, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -123,39 +123,39 @@ async function searchUser(keyword, context) {
   // This example uses the "mongodb" v3.6 library
   // more info here: http://mongodb.github.io/node-mongodb-native/contents.html
 
-  const MongoClient = require('mongodb').MongoClient;
+  const MongoClient = require("mongodb").MongoClient;
   const client = await MongoClient.connect(env.DB_CONNECTION_URI, {
-    useNewUrlParser: true,
+    useNewUrlParser: true
   });
 
   if (!client) {
-    throw new Error('连接数据库失败');
+    throw new Error("连接数据库失败");
   }
 
   const queries = [
     {
       email: {
-        $regex: `.*${keyword}.*`,
-      },
+        $regex: `.*${keyword}.*`
+      }
     },
     {
       name: {
-        $regex: `.*${keyword}.*`,
-      },
+        $regex: `.*${keyword}.*`
+      }
     },
     {
       nickname: {
-        $regex: `.*${keyword}.*`,
-      },
-    },
+        $regex: `.*${keyword}.*`
+      }
+    }
   ];
 
   try {
     const db = client.db();
-    const collection = db.collection('Users');
+    const collection = db.collection("Users");
     let list = await collection
       .find({
-        $or: queries,
+        $or: queries
       })
       .toArray();
     list = list.map(user => {
@@ -171,12 +171,12 @@ async function searchUser(keyword, context) {
         country: user.country,
         firstName: user.firstName,
         lastName: user.lastName,
-        password: user.password,
+        password: user.password
       };
     });
     return {
       list,
-      totalCount: list.length,
+      totalCount: list.length
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);

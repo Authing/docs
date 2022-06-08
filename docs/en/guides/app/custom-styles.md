@@ -17,10 +17,10 @@ Social Registration/Login button will not show up in Login UI.
 
 ### Combine Registration and Login
 
-Once user enter username that does not exist in User Pool. Approw will create an account and login. User will receive account information from Approw.
+Once user enter username that does not exist in User Pool. Authing will create an account and login. User will receive account information from Authing.
 ![Auto Register](./images/Xnip2021-03-04_15-06-48.png)
 
-### Hide Forgot Password 
+### Hide Forgot Password
 
 Forgot Password button will not show up in Login UI
 
@@ -37,7 +37,7 @@ Forgot Password button will not show up in Login UI
 ![Custom CSS](./images/Xnip2021-03-04_15-14-42.png)
 
 ::: hint-warning
-Note: You can check CSS class by Chrome Developer Tool. We have labeled out dom which can be customized. 
+Note: You can check CSS class by Chrome Developer Tool. We have labeled out dom which can be customized.
 :::
 
 ![Custom CSS](./images/Xnip2021-03-04_15-40-29.png)

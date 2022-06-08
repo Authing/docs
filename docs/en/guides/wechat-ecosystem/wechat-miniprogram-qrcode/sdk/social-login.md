@@ -1,26 +1,26 @@
-实现微信小程序扫码登录，你只需要实现以下几行代码：
+To implement WeChat applet scan code login, you only need to implement the following lines of code:
 
-- 通过应用 ID 初始化 `AuthenticationClient`，你可以在控制台的应用列表页查看应用 ID。
-- 调用 `authenticationClient.wxqrcode.startScanning` 方法，第一个参数传入挂载的 DOM 元素节点 ID, 第二个参数指定 onSuccess 和 onError 回调函数。
-- 用户成功登录之后，你可以在 onSuccess 回调函数中得到用户信息；如果登录失败，可以在 onError 回调函数中获取到错误码和错误信息。完整的错误码请见: 错误码列表。
+- Initialize the `AuthenticationClient` with the application ID, you can view the application ID on the application list page of the console.
+- Call the `authenticationClient.wxqrcode.startScanning` method, the first parameter passes in the mounted DOM element node ID, and the second parameter specifies the `onSuccess` and `onError` callback functions.
+- After the user successfully logs in, you can get the user information in the `onSuccess` callback function; if the login fails, you can get the error code and error information in the `onError` callback function. For a complete list of error codes, see: Error Code List.
 
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "YOUR_APP_ID"
 });
 
 const onScanningSuccess = async (userInfo: any, ticket: string) => {
   const { token } = userInfo;
   if (!token) {
-    // 轮询接口不会返回完整用户信息，需要使用 ticket 换取
+    // The polling interface will not return complete user information, you need to use ticket in exchange
     userInfo = await authenticationClient.wxqrcode.exchangeUserInfo(ticket);
   }
 };
 
 authenticationClient.wxqrcode.startScanning("qrcode", {
   onSuccess: onScanningSuccess,
-  onError: (message) => onFail && onFail(`${message}`),
+  onError: message => onFail && onFail(`${message}`)
 });
 ```

@@ -2,9 +2,9 @@
 
 <LastUpdated/>
 
-[Previously](./README.md#什么是基于角色的访问控制-rbac) we introduced what role-based access control (RBAC) is, and then this document describes how to quickly integrate the RBAC permission model into your system based on Approw.
+[Previously](./README.md#什么是基于角色的访问控制-rbac) we introduced what role-based access control (RBAC) is, and then this document describes how to quickly integrate the RBAC permission model into your system based on Authing.
 
-First, we need to understand a few core concepts in Approw:
+First, we need to understand a few core concepts in Authing:
 
 - User: End user;
 - Role: A role is a logical collection. You can authorize certain operation permissions of a role, and then grant the role to a user, and the user will inherit all the permissions in the role;
@@ -15,26 +15,26 @@ With the combination of users, roles, resources, and authorizations, we can get 
 
 ## Add roles
 
-You can use the Approw console to create roles: In **Privilege Management** - **Role Management** Click **Add Role **:
+You can use the Authing console to create roles: In **Privilege Management** - **Role Management** Click **Add Role**:
 
-- Role code: The unique id of the role. It only allowed to contain English letters, numbers, underscore _ and hyphen -. Here we fill in `admin`。
+- Role code: The unique id of the role. It only allowed to contain English letters, numbers, underscore \_ and hyphen -. Here we fill in `admin`。
 - Role description: the description of the role, here we fill in the`administrator`。
 
 Add three roles:
 
-![](~@imagesZhCn/guides/access-control/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
+![](./images/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
 
-You can also use API & SDK to create roles. For details, see[Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
+You can also use API & SDK to create roles. For details, see[Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## Grant user a role
 
 On the role details page, you can grant this role to users. You can search for users by username, phone number, email or nickname:
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-03-01_15-51-01.png)
+![](./images/Xnip2021-03-01_15-51-01.png)
 
 After selecting the user, click OK, and you can view the list of users granted for this role.
 
-You can also use API & SDK to grant roles to users. For details, see[Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
+You can also use API & SDK to grant roles to users. For details, see[Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## Control privileges through user roles on the backend
 
@@ -49,7 +49,7 @@ import { ManagementClient } from "authing-js-sdk";
 
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 const { totalCount, list } = await managementClient.users.listRoles("USER_ID");
 ```
@@ -57,14 +57,14 @@ const { totalCount, list } = await managementClient.users.listRoles("USER_ID");
 After getting all the roles of the user, we can know whether the user has the `devops` role.
 
 ```javascript
-if (!list.map((role) => role.code).includes("devops")) {
+if (!list.map(role => role.code).includes("devops")) {
   throw new Error("无权限操作！");
 }
 ```
 
 ## Create resources
 
-In the previous step, we do privilege management based on whether the user has a certain role. This privilege management is relatively coarse-grained, because it only judges whether the user has a certain role, but does not judge whether it has a specific permission. Based on the role-based access control model (RBAC), Approw can also perform more fine-grained authorization in resources.
+In the previous step, we do privilege management based on whether the user has a certain role. This privilege management is relatively coarse-grained, because it only judges whether the user has a certain role, but does not judge whether it has a specific permission. Based on the role-based access control model (RBAC), Authing can also perform more fine-grained authorization in resources.
 
 You can abstract some objects of the system as resources, and some operations can be defined on these resources. For example, in the scenario of this document, Repository, Tag, PR, Release Notes are all resources, and these resources have corresponding operations:
 
@@ -73,17 +73,17 @@ You can abstract some objects of the system as resources, and some operations ca
 - Tag: create, delete, etc.
 - Release Notes: Create, read, edit, delete, etc.
 
-We create these resources in Approw:
+We create these resources in Authing:
 
-![](~@imagesZhCn/guides/access-control/e23be4b2-0072-4989-bdf9-e0cc7c882397.png)
+![](./images/e23be4b2-0072-4989-bdf9-e0cc7c882397.png)
 
 ## Authorized role to operate resource
 
-Approw also supports authorization to users and roles at the same time. If the user is in a role, he will also inherit the authorized permissions of this role. Therefore, Approw can not only implement the standard RBAC permission model, but also perform more fine-grained and more dynamic permission control.
+Authing also supports authorization to users and roles at the same time. If the user is in a role, he will also inherit the authorized permissions of this role. Therefore, Authing can not only implement the standard RBAC permission model, but also perform more fine-grained and more dynamic permission control.
 
 In the following example, we authorize the Create and Delete permissions of the repository resource to the admin role:
 
-![](~@imagesZhCn/guides/access-control/0f443c28-85b5-4127-9177-0cdae41eb3c2.png)
+![](./images/0f443c28-85b5-4127-9177-0cdae41eb3c2.png)
 
 ## Determine whether the user has permission on the backend
 
@@ -102,7 +102,7 @@ import { ManagementClient } from "authing-js-sdk";
 
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 const { totalCount, list } = await managementClient.acl.isAllowed(
   "USER_ID",
@@ -111,7 +111,7 @@ const { totalCount, list } = await managementClient.acl.isAllowed(
 );
 ```
 
-The Approw policy engine will dynamically execute the policy according to the permission policy you configured, and return true or false. You only need to determine whether the user has the operation privilege based on the return value.
+The Authing policy engine will dynamically execute the policy according to the permission policy you configured, and return true or false. You only need to determine whether the user has the operation privilege based on the return value.
 
 ## Next step
 
