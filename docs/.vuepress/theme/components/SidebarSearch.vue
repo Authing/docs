@@ -57,7 +57,7 @@ export default {
 
   computed: {
     showSuggestions() {
-      return true; //this.focused && this.suggestions && this.suggestions.length;
+      return this.focused && this.suggestions && this.suggestions.length;
     },
 
     suggestions() {

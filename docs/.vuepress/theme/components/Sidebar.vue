@@ -47,6 +47,14 @@ export default {
 
   props: ["items"],
 
+  watch: {
+    $route(val) {
+      setTimeout(() => {
+        this.getHighParent()
+      }, 0);
+    }
+  },
+
   computed: {
     currentNavText() {
       const path = this.$route.path;
@@ -80,11 +88,25 @@ export default {
     if (sidebar && activeItem) {
       sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200;
     }
+    this.getHighParent()
   },
 
   methods: {
     getUserNavLinks,
-    getLanguageNavLinks
+    getLanguageNavLinks,
+    getHighParent() {
+      const nodes = document.querySelectorAll('.sidebar-links .check')
+      nodes.forEach(node => {
+        node.classList.remove("check");
+      })
+      let node = document.querySelector('.sidebar-links .active')
+      while(node !== this.$refs.sidebarRef) {
+        node = node.parentNode
+        if (node.className.includes('sidebar-group ')) {
+          node.firstChild.classList.add('check')
+        }
+      }
+    }
   }
 };
 </script>
@@ -98,11 +120,16 @@ export default {
   width 250px
   overflow-y initial
   .sidebar-search
+    width: 94%
     .suggestions
       li
         padding: 16px;
   .current-nav-text
     margin-bottom: 16px
+    font-size: 20px
+    font-weight: 500
+    color: #1D2129
+    line-height: 32px
 
   .old-version
     display none

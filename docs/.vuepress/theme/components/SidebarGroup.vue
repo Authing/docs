@@ -72,6 +72,9 @@ export default {
 .sidebar-group
   .sidebar-group
     padding-left 16px
+  .check
+    font-weight: 500 !important
+    color: #1d2129 !important
   &:not(.collapsable)
     .sidebar-heading:not(.clickable)
       cursor auto
@@ -80,7 +83,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 14px
+      font-size 16px
       line-height 26px
       font-weight normal
       padding-left 16px
@@ -102,15 +105,16 @@ export default {
   //     opacity 0.5
   &.depth-0
     a
-      color #1D2129
+      color #4E5969
 .sidebar-heading
   position relative
   // color $textColor
-  color #1D2129
+  color #4E5969
   transition color .15s ease
   cursor pointer
   font-size 16px
   // text-transform uppercase
+  line-height: 26px
   padding 0.35rem 1.5rem 0.35rem 16px
   width 100%
   box-sizing border-box
@@ -125,9 +129,9 @@ export default {
   &.clickable
     &.active
       font-weight 500
-      color $accentColor
+      color $accentColor !important
     &:hover
-      color $accentColor
+      color $accentColor !important
 
 .sidebar-group-items
   transition height .1s ease-out
