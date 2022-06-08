@@ -238,7 +238,7 @@ export default {
   border-radius 4px
   // border 1px solid #EEEEEE
   padding 30px 0
-  margin-top 32px
+  margin-top 34px
   .github-edit
     font-size 14px
     flex 1

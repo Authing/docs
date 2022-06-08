@@ -4,7 +4,7 @@
 
 {{$localeConfig.brandName}} 不仅可以通过控制台来配置 MFA 认证流程，你还可以通过 SDK 的方式为 {{$localeConfig.brandName}} 的 MFA 认证流程进行定制化开发
 
-本文将以 [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference-new/web/sdk-for-node/) 为例，指引用户完成基于 SDK 的 MFA 自定义开发
+本文将以 [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference/sdk-for-node/) 为例，指引用户完成基于 SDK 的 MFA 自定义开发
 
 其中包含：绑定 MFA 认证器、解绑 MFA 认证器、用户二次认证等
 

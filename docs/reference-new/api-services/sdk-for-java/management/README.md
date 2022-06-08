@@ -13,35 +13,35 @@ meta:
 
 以下是完整的模块列表：
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/UsersManagementClient.md
+::: page-ref /reference/sdk-for-java/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/RolesManagementClient.md
+::: page-ref /reference/sdk-for-java/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/PoliciesManagementClient.md
+::: page-ref /reference/sdk-for-java/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/AclManagementClient.md
+::: page-ref /reference/sdk-for-java/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/UdfManagementClient.md
+::: page-ref /reference/sdk-for-java/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/GroupsManagementClient.md
+::: page-ref /reference/sdk-for-java/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/OrgManagementClient.md
+::: page-ref /reference/sdk-for-java/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/UserpoolManagementClient.md
+::: page-ref /reference/sdk-for-java/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/WhitelistManagementClient.md
+::: page-ref /reference/sdk-for-java/management/WhitelistManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/ApplicationManagementClient.md
+::: page-ref /reference/sdk-for-java/management/ApplicationManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-java/management/StatisticsManagementClient.md
+::: page-ref /reference/sdk-for-java/management/StatisticsManagementClient.md
 :::

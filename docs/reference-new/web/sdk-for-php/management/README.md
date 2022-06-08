@@ -13,32 +13,32 @@ meta:
 
 以下是完整的模块列表：
 
-::: page-ref /reference-new/web/sdk-for-php/management/UsersManagementClient.md
+::: page-ref /reference/sdk-for-php/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/ApplicationManagementClient.md
+::: page-ref /reference/sdk-for-php/management/ApplicationManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/RolesManagementClient.md
+::: page-ref /reference/sdk-for-php/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/AclManagementClient.md
+::: page-ref /reference/sdk-for-php/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/GroupsManagementClient.md
+::: page-ref /reference/sdk-for-php/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/OrgManagementClient.md
+::: page-ref /reference/sdk-for-php/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/UdfManagementClient.md
+::: page-ref /reference/sdk-for-php/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/WhitelistManagementClient.md
+::: page-ref /reference/sdk-for-php/management/WhitelistManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/UserpoolManagementClient.md
+::: page-ref /reference/sdk-for-php/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-php/management/MFAManagementClient.md
+::: page-ref /reference/sdk-for-php/management/MFAManagementClient.md
 :::

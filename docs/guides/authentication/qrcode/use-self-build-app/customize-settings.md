@@ -18,6 +18,6 @@
 
 ## 是否允许在浏览器使用 ticket 换取用户信息
 
-默认不允许，需要在服务器端调用，即需要使用用户池密钥初始化之后。[点击了解如何初始化后端 SDK](/reference-new/web/sdk-for-node/README.md)。
+默认不允许，需要在服务器端调用，即需要使用用户池密钥初始化之后。[点击了解如何初始化后端 SDK](/reference/sdk-for-node/README.md)。
 
 一个典型的使用场景是：用户扫码同意授权、开发者得到 ticket 之后，发送到自己的后端，使用后端 SDK 换取用户信息，之后重定向到已登录页面，同时将用户信息写入 localStroage。

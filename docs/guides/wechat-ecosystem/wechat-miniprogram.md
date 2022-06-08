@@ -94,7 +94,7 @@ await authing.updateProfile(
 )
 ```
 
-详细请查看文档：[小程序 SDK](/reference-new/other/sdk-for-wxapp.md)。
+详细请查看文档：[小程序 SDK](/reference/sdk-for-wxapp.md)。
 
 ## 接下来
 

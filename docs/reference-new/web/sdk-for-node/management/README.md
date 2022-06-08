@@ -12,41 +12,41 @@ meta:
 
 以下是完整的模块列表：
 
-::: page-ref /reference-new/web/sdk-for-node/management/UsersManagementClient.md
+::: page-ref /reference/sdk-for-node/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/RolesManagementClient.md
+::: page-ref /reference/sdk-for-node/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/AclManagementClient.md
+::: page-ref /reference/sdk-for-node/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/GroupsManagementClient.md
+::: page-ref /reference/sdk-for-node/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/OrgManagementClient.md
+::: page-ref /reference/sdk-for-node/management/OrgManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/UdfManagementClient.md
+::: page-ref /reference/sdk-for-node/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/WhitelistManagementClient.md
+::: page-ref /reference/sdk-for-node/management/WhitelistManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/UserpoolManagementClient.md
+::: page-ref /reference/sdk-for-node/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/ApplicationManagementClient.md
+::: page-ref /reference/sdk-for-node/management/ApplicationManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/PrincipalManagementClient.md
+::: page-ref /reference/sdk-for-node/management/PrincipalManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/PoliciesManagementClient.md
+::: page-ref /reference/sdk-for-node/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/StatisticsManagementClient.md
+::: page-ref /reference/sdk-for-node/management/StatisticsManagementClient.md
 :::
 
-::: page-ref /reference-new/web/sdk-for-node/management/TenantManagementClient.md
+::: page-ref /reference/sdk-for-node/management/TenantManagementClient.md
 :::

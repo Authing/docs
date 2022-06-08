@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference-new/mobile/sdk-for-ios/develop)、[基础登录示例](./basic-login.md)、[基础注册示例](./basic-register.md)
+阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-ios/develop)、[基础登录示例](./basic-login.md)、[基础注册示例](./basic-register.md)
 
 ## 修改入口以支持转场
 

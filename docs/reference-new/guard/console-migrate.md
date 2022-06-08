@@ -4,7 +4,7 @@
 
 Authing Web 端 Guard 3.0 版本已于 2021.12.31 正式上线，关于本次更新主要涉及嵌入式 Guard 组件的 MFA、登录安全策略、自定义 CSS 以及登录注册协议相关功能的实现，同时对嵌入式和托管式 Guard 登录框的 UI 进行了全面翻新。
 
-关于本次更新的详细内容请查看：[从 Guard V1 迁移](/reference-new/guard/migration.md)
+关于本次更新的详细内容请查看：[从 Guard V1 迁移](/reference/guard/migration.md)
 
 为了避免你的用户对突然的登录界面变化感到陌生，Guard 3.0 上线后并不会直接覆盖你目前使用版本的登录框。
 你可以依照如下的步骤，在控制台开启新版登录框的使用体验：
