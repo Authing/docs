@@ -75,16 +75,16 @@ const managementClient = new ManagementClient({
 
 ### <a id="TargetDto"></a> TargetDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| targetType | string | 是 |  | 目标类型，接受用户，部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-| targetIdentifier | string | 是 |  | 目标的 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| targetType | string | 是 | 目标类型，接受用户，部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| targetIdentifier | string | 是 | 目标的 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
 
 

@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -76,21 +76,21 @@ $data = $management->getUserDepartments(array(
 
 ### <a id="UserDepartmentPagingDto"></a> UserDepartmentPagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#UserDepartmentRespDto">UserDepartmentRespDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#UserDepartmentRespDto">UserDepartmentRespDto</a>。   |
 
 
 ### <a id="UserDepartmentRespDto"></a> UserDepartmentRespDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| departmentId | string | 是 |  | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-| name | string | 是 |  | 部门名称。 示例值： `dd8d7stf44`  |
-| description | string | 是 |  | 部门描述。 示例值： `dd8d7stf44`  |
-| isLeader | boolean | 是 |  | 是否是部门 Leader。 示例值： `true`  |
-| code | string | 是 |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
-| isMainDepartment | boolean | 是 |  | 是否是主部门。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| departmentId | string | 是 | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 | 部门名称。 示例值： `dd8d7stf44`  |
+| description | string | 是 | 部门描述。 示例值： `dd8d7stf44`  |
+| isLeader | boolean | 是 | 是否是部门 Leader。 示例值： `true`  |
+| code | string | 是 | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
+| isMainDepartment | boolean | 是 | 是否是主部门。 示例值： `true`  |
 
 

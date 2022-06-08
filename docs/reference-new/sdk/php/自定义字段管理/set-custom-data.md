@@ -80,16 +80,16 @@ $data = $management->setCustomData(array(
 
 ### <a id="SetCustomDataDto"></a> SetCustomDataDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| key | string | 是 |  | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
-| value | string | 是 |  | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。。 示例值： `pku`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| key | string | 是 | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
+| value | string | 是 | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。。 示例值： `pku`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
 
 

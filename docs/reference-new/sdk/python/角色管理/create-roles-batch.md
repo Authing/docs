@@ -69,17 +69,17 @@ data = management_client.create_roles_batch(
 
 ### <a id="RoleListItem"></a> RoleListItem
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `my-role-code`  |
-| description | string | 否 |  | 角色描述。 示例值： `this is a description about the role`  |
-| namespace | string | 否 | default | 所属权限分组的 code。 示例值： `default`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 权限分组内角色的唯一标识符。 示例值： `my-role-code`  |
+| description | string | 否 | 角色描述。 示例值： `this is a description about the role`  |
+| namespace | string | 否 | 所属权限分组的 code。 示例值： `default`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
 
 

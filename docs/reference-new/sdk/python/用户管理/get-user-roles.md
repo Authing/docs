@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
 
 ## 示例代码
@@ -73,18 +73,18 @@ data = management_client.get_user_roles(
 
 ### <a id="RolePagingDto"></a> RolePagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#RoleDto">RoleDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#RoleDto">RoleDto</a>。   |
 
 
 ### <a id="RoleDto"></a> RoleDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `role1`  |
-| description | string | 是 |  | 角色描述。 示例值： `this is description`  |
-| namespace | string | 是 |  | 所属权限分组的 code。 示例值： `default`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 权限分组内角色的唯一标识符。 示例值： `role1`  |
+| description | string | 是 | 角色描述。 示例值： `this is description`  |
+| namespace | string | 是 | 所属权限分组的 code。 示例值： `default`  |
 
 

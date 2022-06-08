@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -73,18 +73,18 @@ $data = $management->getUserGroups(array(
 
 ### <a id="GroupPagingDto"></a> GroupPagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#ResGroupDto">ResGroupDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#ResGroupDto">ResGroupDto</a>。   |
 
 
 ### <a id="ResGroupDto"></a> ResGroupDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer`  |
-| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
-| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 分组 code。 示例值： `developer`  |
+| name | string | 是 | 分组名称。 示例值： `开发者`  |
+| description | string | 是 | 分组描述。 示例值： `描述内容`  |
 
 

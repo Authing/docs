@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| tenantId  string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| tenantId | string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -71,19 +71,19 @@ data = management_client.list_ext_idp(
 
 ### <a id="ExtIdpListPagingDto"></a> ExtIdpListPagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#ExtIdpDto">ExtIdpDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#ExtIdpDto">ExtIdpDto</a>。   |
 
 
 ### <a id="ExtIdpDto"></a> ExtIdpDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-| name | string | 是 |  | 身份源名称。 示例值： `default`  |
-| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| id | string | 是 | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 | 身份源类型。 示例值： `wechat`  |
 
 

@@ -86,16 +86,16 @@ const managementClient = new ManagementClient({
 
 ### <a id="ExtIdpConnDetail"></a> ExtIdpConnDetail
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| id | string | 是 |  | 身份源连接 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-| type | string | 是 |  | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram`  |
-| logo | string | 是 |  | 身份源图标。 示例值： `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png`  |
-| identifier | string | 否 |  | 身份源连接标识。 示例值： `60b49eb83fd80adb96f26e68`  |
-| displayName | string | 否 |  | 身份源连接在登录页的显示名称。 示例值： `登录页`  |
-| loginOnly | boolean | 是 |  | 是否只支持登录。 示例值： `true`  |
-| associationMode | string | 是 |  | 账号关联模式。 枚举值：`none`,`field`,`challenge`  |
-| challengeBindingMethods | array | 是 |  | 账号绑定方式。 示例值： `["email-password"]`  |
-| fields | object | 是 |  | 自定义参数。 示例值： `60b49eb83fd80adb96f26e68`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| id | string | 是 | 身份源连接 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram`  |
+| logo | string | 是 | 身份源图标。 示例值： `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png`  |
+| identifier | string | 否 | 身份源连接标识。 示例值： `60b49eb83fd80adb96f26e68`  |
+| displayName | string | 否 | 身份源连接在登录页的显示名称。 示例值： `登录页`  |
+| loginOnly | boolean | 是 | 是否只支持登录。 示例值： `true`  |
+| associationMode | string | 是 | 账号关联模式。 枚举值：`none`,`field`,`challenge`  |
+| challengeBindingMethods | array | 是 | 账号绑定方式。 示例值： `["email-password"]`  |
+| fields | object | 是 | 自定义参数。 示例值： `60b49eb83fd80adb96f26e68`  |
 
 

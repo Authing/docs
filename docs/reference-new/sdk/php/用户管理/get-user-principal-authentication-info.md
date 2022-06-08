@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -75,20 +75,20 @@ $data = $management->getUserPrincipalAuthenticationInfo(array(
 
 ### <a id="PrincipalAuthenticationInfoPagingDto"></a> PrincipalAuthenticationInfoPagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#PrincipalAuthenticationInfoDto">PrincipalAuthenticationInfoDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#PrincipalAuthenticationInfoDto">PrincipalAuthenticationInfoDto</a>。   |
 
 
 ### <a id="PrincipalAuthenticationInfoDto"></a> PrincipalAuthenticationInfoDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| authenticated | boolean | 是 |  | 是否进行认证。 示例值： `true`  |
-| principalType | string | 是 |  | 用户 ID。 示例值： `认证主体类型，P 代表个人，E 代表企业`  |
-| principalCode | string | 是 |  | 认证主体证件号码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
-| principalName | string | 是 |  | 认证主体名称。 示例值： `ss`  |
-| authenticatedAt | string | 是 |  | 认证时间，标准时间字符串。 示例值： `2022-04-05T10:23:50.631Z`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| authenticated | boolean | 是 | 是否进行认证。 示例值： `true`  |
+| principalType | string | 是 | 用户 ID。 示例值： `认证主体类型，P 代表个人，E 代表企业`  |
+| principalCode | string | 是 | 认证主体证件号码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
+| principalName | string | 是 | 认证主体名称。 示例值： `ss`  |
+| authenticatedAt | string | 是 | 认证时间，标准时间字符串。 示例值： `2022-04-05T10:23:50.631Z`  |
 
 

@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -69,11 +69,11 @@ data = management_client.get_user_logged_in_identities(
 
 ### <a id="UserLoggedInIdentitiesDto"></a> UserLoggedInIdentitiesDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| identityId | string | 是 |  | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
-| idpName | string | 是 |  | 身份源名称。 示例值： `微信`  |
-| idpNameEn | string | 是 |  | Identity provider name。 示例值： `wechat`  |
-| idpLogo | string | 是 |  | 身份源 logo。 示例值： `https://example.com/logo.png`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| identityId | string | 是 | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
+| idpName | string | 是 | 身份源名称。 示例值： `微信`  |
+| idpNameEn | string | 是 | Identity provider name。 示例值： `wechat`  |
+| idpLogo | string | 是 | 身份源 logo。 示例值： `https://example.com/logo.png`  |
 
 

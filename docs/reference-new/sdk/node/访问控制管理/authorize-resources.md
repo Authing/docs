@@ -78,26 +78,26 @@ const managementClient = new ManagementClient({
 
 ### <a id="AuthorizeResourceItem"></a> AuthorizeResourceItem
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| targetType | string | 是 |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
-| targetIdentifiers | array | 是 |  | 目标对象唯一标志符。 示例值： `["userId1","userId2"]`  |
-| resources | array | 是 |  | 授权的资源列表。嵌套类型：<a href="#ResourceItemDto">ResourceItemDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| targetType | string | 是 | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT`  |
+| targetIdentifiers | array | 是 | 目标对象唯一标志符。 示例值： `["userId1","userId2"]`  |
+| resources | array | 是 | 授权的资源列表。嵌套类型：<a href="#ResourceItemDto">ResourceItemDto</a>。   |
 
 
 ### <a id="ResourceItemDto"></a> ResourceItemDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 资源唯一标志符。 示例值： `ecs`  |
-| actions | array | 是 |  | 资源定义的操作类型。 示例值： `["ecs:Stop","ecs:Start"]`  |
-| resourceType | string | 是 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 资源唯一标志符。 示例值： `ecs`  |
+| actions | array | 是 | 资源定义的操作类型。 示例值： `["ecs:Stop","ecs:Start"]`  |
+| resourceType | string | 是 | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
 
 

@@ -104,8 +104,8 @@ namespace Example
 
 ### <a id="IsUserExistsDto"></a> IsUserExistsDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| exists | boolean | 是 |  | 用户是否存在。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| exists | boolean | 是 | 用户是否存在。 示例值： `true`  |
 
 

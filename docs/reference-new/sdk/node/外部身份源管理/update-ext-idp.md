@@ -73,11 +73,11 @@ const managementClient = new ManagementClient({
 
 ### <a id="ExtIdpDto"></a> ExtIdpDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| id | string | 是 |  | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-| name | string | 是 |  | 身份源名称。 示例值： `default`  |
-| tenantId | string | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-| type | string | 是 |  | 身份源类型。 示例值： `wechat`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| id | string | 是 | 身份源 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| name | string | 是 | 身份源名称。 示例值： `default`  |
+| tenantId | string | 否 | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| type | string | 是 | 身份源类型。 示例值： `wechat`  |
 
 

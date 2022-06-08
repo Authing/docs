@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| page  number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit  number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
+| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 
 
 ## 示例代码
@@ -76,18 +76,18 @@ $data = $management->listGroups(array(
 
 ### <a id="GroupPagingDto"></a> GroupPagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#ResGroupDto">ResGroupDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#ResGroupDto">ResGroupDto</a>。   |
 
 
 ### <a id="ResGroupDto"></a> ResGroupDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer`  |
-| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
-| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 分组 code。 示例值： `developer`  |
+| name | string | 是 | 分组名称。 示例值： `开发者`  |
+| description | string | 是 | 分组描述。 示例值： `描述内容`  |
 
 

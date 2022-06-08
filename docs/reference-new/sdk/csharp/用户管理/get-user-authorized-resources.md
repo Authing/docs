@@ -13,9 +13,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType  string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| resourceType | string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 
 
 ## 示例代码
@@ -108,20 +108,20 @@ namespace Example
 
 ### <a id="AuthorizedResourcePagingDto"></a> AuthorizedResourcePagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 响应数据。嵌套类型：<a href="#AuthorizedResourceDto">AuthorizedResourceDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 响应数据。嵌套类型：<a href="#AuthorizedResourceDto">AuthorizedResourceDto</a>。   |
 
 
 ### <a id="AuthorizedResourceDto"></a> AuthorizedResourceDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| resourceCode | string | 是 |  | 资源描述符。 示例值： `ecs:1`  |
-| resourceType | string | 是 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-| apiIdentifier | string | 是 |  | API URL。 示例值： `/api/v1/example`  |
-| actions | array | 是 |  | 授权的操作列表。 示例值： `["ecs:Start","ecs:Stop"]`  |
-| effect | string | 是 | ALLOW | 允许还是拒绝。 枚举值：`ALLOW`,`DENY`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| resourceCode | string | 是 | 资源描述符。 示例值： `ecs:1`  |
+| resourceType | string | 是 | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| apiIdentifier | string | 是 | API URL。 示例值： `/api/v1/example`  |
+| actions | array | 是 | 授权的操作列表。 示例值： `["ecs:Start","ecs:Stop"]`  |
+| effect | string | 是 | 允许还是拒绝。 枚举值：`ALLOW`,`DENY`  |
 
 

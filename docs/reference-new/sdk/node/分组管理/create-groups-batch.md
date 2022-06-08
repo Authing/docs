@@ -74,19 +74,19 @@ const managementClient = new ManagementClient({
 
 ### <a id="CreateGroupReqDto"></a> CreateGroupReqDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer`  |
-| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
-| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 分组 code。 示例值： `developer`  |
+| name | string | 是 | 分组名称。 示例值： `开发者`  |
+| description | string | 是 | 分组描述。 示例值： `描述内容`  |
 
 
 ### <a id="GroupDto"></a> GroupDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer`  |
-| name | string | 是 |  | 分组名称。 示例值： `开发者`  |
-| description | string | 是 |  | 分组描述。 示例值： `描述内容`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 分组 code。 示例值： `developer`  |
+| name | string | 是 | 分组名称。 示例值： `开发者`  |
+| description | string | 是 | 分组描述。 示例值： `描述内容`  |
 
 

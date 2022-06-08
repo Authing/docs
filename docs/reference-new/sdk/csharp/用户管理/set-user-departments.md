@@ -108,17 +108,17 @@ namespace Example
 
 ### <a id="SetUserDepartmentDto"></a> SetUserDepartmentDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| departmentId | string | 是 |  | 部门 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-| isLeader | boolean | 否 |  | 是否是部门 leader。 示例值： `true`  |
-| isMainDepartment | boolean | 否 |  | 是否是主部门。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| departmentId | string | 是 | 部门 id。 示例值： `60b49eb83fd80adb96f26e68`  |
+| isLeader | boolean | 否 | 是否是部门 leader。 示例值： `true`  |
+| isMainDepartment | boolean | 否 | 是否是主部门。 示例值： `true`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| success | boolean | 是 |  | 操作是否成功。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
 
 

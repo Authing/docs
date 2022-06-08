@@ -70,16 +70,16 @@ data = management_client.has_any_role(
 
 ### <a id="HasRoleRolesDto"></a> HasRoleRolesDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default`  |
-| code | string | 是 |  | 角色 code。 示例值： `admin`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| namespace | string | 否 | 所属权限分组的 code。 示例值： `default`  |
+| code | string | 是 | 角色 code。 示例值： `admin`  |
 
 
 ### <a id="HasAnyRoleDto"></a> HasAnyRoleDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| hasAnyRole | boolean | 是 |  | 是否拥有其中某一个角色。 示例值： `true`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| hasAnyRole | boolean | 是 | 是否拥有其中某一个角色。 示例值： `true`  |
 
 

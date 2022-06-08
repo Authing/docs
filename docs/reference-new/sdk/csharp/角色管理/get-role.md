@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| code  string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
-| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| code | string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
 
 ## 示例代码
@@ -102,10 +102,10 @@ namespace Example
 
 ### <a id="RoleDto"></a> RoleDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `role1`  |
-| description | string | 是 |  | 角色描述。 示例值： `this is description`  |
-| namespace | string | 是 |  | 所属权限分组的 code。 示例值： `default`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 权限分组内角色的唯一标识符。 示例值： `role1`  |
+| description | string | 是 | 角色描述。 示例值： `this is description`  |
+| namespace | string | 是 | 所属权限分组的 code。 示例值： `default`  |
 
 

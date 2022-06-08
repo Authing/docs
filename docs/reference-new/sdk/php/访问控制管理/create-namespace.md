@@ -74,10 +74,10 @@ $data = $management->createNamespace(array(
 
 ### <a id="NamespaceDto"></a> NamespaceDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| code | string | 是 |  | 权限分组唯一标志符。 示例值： `my-namespace`  |
-| name | string | 否 |  | 权限分组名称。 示例值： `我的权限分组`  |
-| description | string | 否 |  | 权限分组描述信息。 示例值： `我的权限分组描述`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| code | string | 是 | 权限分组唯一标志符。 示例值： `my-namespace`  |
+| name | string | 否 | 权限分组名称。 示例值： `我的权限分组`  |
+| description | string | 否 | 权限分组描述信息。 示例值： `我的权限分组描述`  |
 
 

@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userId  string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 
 
 ## 示例代码
@@ -73,12 +73,12 @@ $data = $management->getUserIdentities(array(
 
 ### <a id="IdentityDto"></a> IdentityDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| identityId | string | 是 |  | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
-| extIdpId | string | 是 |  | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
-| provider | string | 是 |  | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
-| type | string | 是 |  | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
-| userIdInIdp | string | 是 |  | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| identityId | string | 是 | Identity ID。 示例值： `62299d8b866d2dab79a89dc4`  |
+| extIdpId | string | 是 | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
+| provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
+| type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
+| userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
 
 

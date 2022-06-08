@@ -13,9 +13,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| code  string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `60b49eb83fd80adb96f26e68` |
-| namespace  string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType  string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| code | string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `60b49eb83fd80adb96f26e68` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| resourceType | string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 
 
 ## 示例代码
@@ -80,19 +80,19 @@ $data = $management->getRoleAuthorizedResources(array(
 
 ### <a id="RoleAuthorizedResourcePagingDto"></a> RoleAuthorizedResourcePagingDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| totalCount | number | 是 |  | 记录总数。   |
-| list | array | 是 |  | 数据。嵌套类型：<a href="#RoleAuthorizedResourcesRespDto">RoleAuthorizedResourcesRespDto</a>。   |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 数据。嵌套类型：<a href="#RoleAuthorizedResourcesRespDto">RoleAuthorizedResourcesRespDto</a>。   |
 
 
 ### <a id="RoleAuthorizedResourcesRespDto"></a> RoleAuthorizedResourcesRespDto
 
-| 名称 | 类型 | 必填 |默认值| 描述 |
-| ---- |  ---- | ---- | --- | ---- |
-| resourceCode | string | 是 |  | 资源描述符。 示例值： `ecs`  |
-| resourceType | string | 是 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-| actions | array | 是 |  | 被授权的操作列表。 示例值： `["ecs:Start","ecs:Stop"]`  |
-| apiIdentifier | string | 是 |  | 资源对应的 API Identifier。 示例值： `dd8d7stf44`  |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| resourceCode | string | 是 | 资源描述符。 示例值： `ecs`  |
+| resourceType | string | 是 | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
+| actions | array | 是 | 被授权的操作列表。 示例值： `["ecs:Start","ecs:Stop"]`  |
+| apiIdentifier | string | 是 | 资源对应的 API Identifier。 示例值： `dd8d7stf44`  |
 
 
