@@ -1308,7 +1308,7 @@ const zhCnNavBar = {
     {
       title: "iOS",
       path: "/reference/sdk-for-ios/",
-
+      
       children: [
         {
           title: "开始开发",
@@ -1513,7 +1513,7 @@ const zhCnNavBar = {
     {
       title: "登录组件 (Guard)",
       collapsable: false,
-      //    path: "/reference-new/guard/react",
+  //    path: "/reference-new/guard/react",
       children: [
         {
           title: "原生 JavaScript",
@@ -1544,8 +1544,8 @@ const zhCnNavBar = {
     {
       title: "标准 Web 应用",
       collapsable: false,
-      //     path: "/reference-new/web/sdk-for-csharp/",
-      children: [
+ //     path: "/reference-new/web/sdk-for-csharp/",
+      children: [    
         {
           title: "JavaScript / Node.js",
           path: "/reference-new/web/sdk-for-node/",
@@ -1585,7 +1585,7 @@ const zhCnNavBar = {
             }
           ]
         },
-
+    
         {
           title: "Python",
           path: "/reference-new/web/sdk-for-python/",
@@ -1623,35 +1623,35 @@ const zhCnNavBar = {
           title: "C#",
           path: "/reference-new/web/sdk-for-csharp/",
           children: [
-            {
-              title: "用户认证模块",
-              path: "/reference-new/web/sdk-for-csharp/authentication",
-              children: [
-                "/reference-new/web/sdk-for-csharp/authentication/AuthenticationClient",
-                "/reference-new/web/sdk-for-csharp/authentication/StandardProtocol",
-                "/reference-new/web/sdk-for-csharp/authentication/MfaAuthenticationClient"
+          {
+          title: "用户认证模块",
+          path: "/reference-new/web/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/web/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/web/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/web/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/web/sdk-for-csharp/management",
+          children: [
+            "/reference-new/web/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/web/sdk-for-csharp/management/TenantManagementClient"
               ]
-            },
-            {
-              title: "管理模块",
-              path: "/reference-new/web/sdk-for-csharp/management",
-              children: [
-                "/reference-new/web/sdk-for-csharp/management/UsersManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/ApplicationManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/RolesManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/AclManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/GroupsManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/OrgManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/UdfManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/WhitelistManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/UserpoolManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/StatisticsManagementClient",
-                "/reference-new/web/sdk-for-csharp/management/TenantManagementClient"
-              ]
-            }
-          ]
+          }
+           ]
         },
-
+    
         {
           title: "Ruby",
           path: "/reference-new/web/sdk-for-ruby"
@@ -1753,7 +1753,7 @@ const zhCnNavBar = {
               ]
             }
           ]
-        }
+        },
       ]
     }
     // 加入其他的页面边栏
@@ -1762,8 +1762,8 @@ const zhCnNavBar = {
     {
       title: "后端 / API 服务",
       collapsable: false,
-      // initialOpenGroupIndex : 1,
-      //     path: "/reference-new/api-services/sdk-for-csharp/",
+     // initialOpenGroupIndex : 1,
+ //     path: "/reference-new/api-services/sdk-for-csharp/",
       children: [
         {
           title: "JavaScript / Node.js",
@@ -1810,8 +1810,7 @@ const zhCnNavBar = {
           children: [
             {
               title: "用户认证模块",
-              path:
-                "/reference-new/api-services/sdk-for-python/authentication/",
+              path: "/reference-new/api-services/sdk-for-python/authentication/",
               children: [
                 "/reference-new/api-services/sdk-for-python/authentication/AuthenticationClient",
                 "/reference-new/api-services/sdk-for-python/authentication/StandardProtocol",
@@ -1842,33 +1841,33 @@ const zhCnNavBar = {
           title: "C#",
           path: "/reference-new/api-services/sdk-for-csharp/",
           children: [
-            {
-              title: "用户认证模块",
-              path: "/reference-new/api-services/sdk-for-csharp/authentication",
-              children: [
-                "/reference-new/api-services/sdk-for-csharp/authentication/AuthenticationClient",
-                "/reference-new/api-services/sdk-for-csharp/authentication/StandardProtocol",
-                "/reference-new/api-services/sdk-for-csharp/authentication/MfaAuthenticationClient"
+          {
+          title: "用户认证模块",
+          path: "/reference-new/api-services/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/api-services/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/api-services/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/api-services/sdk-for-csharp/management",
+          children: [
+            "/reference-new/api-services/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/api-services/sdk-for-csharp/management/TenantManagementClient"
               ]
-            },
-            {
-              title: "管理模块",
-              path: "/reference-new/api-services/sdk-for-csharp/management",
-              children: [
-                "/reference-new/api-services/sdk-for-csharp/management/UsersManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/ApplicationManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/RolesManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/AclManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/GroupsManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/OrgManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/UdfManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/WhitelistManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/UserpoolManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/StatisticsManagementClient",
-                "/reference-new/api-services/sdk-for-csharp/management/TenantManagementClient"
-              ]
-            }
-          ]
+          }
+           ]
         },
         {
           title: "Ruby",
@@ -1970,7 +1969,8 @@ const zhCnNavBar = {
               ]
             }
           ]
-        }
+        },
+
       ]
     }
     // 加入其他的页面边栏
@@ -1979,7 +1979,7 @@ const zhCnNavBar = {
     {
       title: "单页应用",
       collapsable: false,
-      //     path: "/reference-new/single-page-application/react",
+ //     path: "/reference-new/single-page-application/react",
       children: [
         {
           title: "JavaScript",
@@ -2009,9 +2009,9 @@ const zhCnNavBar = {
   "/reference-new/mobile/": [
     {
       title: "移动 / 客户端应用",
-      //    initialOpenGroupIndex : 1,
+  //    initialOpenGroupIndex : 1,
       collapsable: false,
-      // path: "/reference-new/mobile/sdk-for-android/",
+     // path: "/reference-new/mobile/sdk-for-android/",
       children: [
         {
           title: "iOS",
@@ -2049,13 +2049,11 @@ const zhCnNavBar = {
                   children: [
                     {
                       title: "应用图标",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/app-logo"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/app-logo"
                     },
                     {
                       title: "应用名称",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/app-name"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/app-name"
                     },
                     {
                       title: "帐号输入框",
@@ -2064,38 +2062,31 @@ const zhCnNavBar = {
                     },
                     {
                       title: "密码输入框",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/password-textfield"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/password-textfield"
                     },
                     {
                       title: "邮箱输入框",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/email-textfield"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/email-textfield"
                     },
                     {
                       title: "电话号码输入框",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/phonenumber-textfield"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/phonenumber-textfield"
                     },
                     {
                       title: "验证码输入框",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/verifycode-textfield"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/verifycode-textfield"
                     },
                     {
                       title: "获取验证码按钮",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/get-verifycode-button"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/get-verifycode-button"
                     },
                     {
                       title: "登录按钮",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/login-button"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/login-button"
                     },
                     {
                       title: "错误文本",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/error-label"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/error-label"
                     },
                     {
                       title: "登录方式切换栏",
@@ -2104,18 +2095,15 @@ const zhCnNavBar = {
                     },
                     {
                       title: "登录容器",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/login-container"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/login-container"
                     },
                     {
                       title: "隐私协议",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/privacy-confirm-box"
+                      path:"/reference-new/mobile/sdk-for-ios/component/basic/privacy-confirm-box"
                     },
                     {
                       title: "注册按钮",
-                      path:
-                        "/reference-new/mobile/sdk-for-ios/component/basic/register-button"
+                      path: "/reference-new/mobile/sdk-for-ios/component/basic/register-button"
                     },
                     {
                       title: "注册方式切换栏",
@@ -2209,13 +2197,11 @@ const zhCnNavBar = {
                   children: [
                     {
                       title: "应用图标",
-                      path:
-                        "/reference-new/mobile/sdk-for-android/component/basic/app-logo"
+                      path: "/reference-new/mobile/sdk-for-android/component/basic/app-logo"
                     },
                     {
                       title: "应用名称",
-                      path:
-                        "/reference-new/mobile/sdk-for-android/component/basic/app-name"
+                      path: "/reference-new/mobile/sdk-for-android/component/basic/app-name"
                     },
                     {
                       title: "帐号输入框",
@@ -2264,8 +2250,7 @@ const zhCnNavBar = {
                     },
                     {
                       title: "错误文本",
-                      path:
-                        "/reference-new/mobile/sdk-for-android/component/basic/error-text"
+                      path: "/reference-new/mobile/sdk-for-android/component/basic/error-text"
                     },
                     {
                       title: "登录方式切换栏",
@@ -2369,7 +2354,7 @@ const zhCnNavBar = {
             }
           ]
         },
-
+ 
         {
           title: "Flutter",
           path: "/reference-new/mobile/sdk-for-flutter/",
@@ -2402,45 +2387,45 @@ const zhCnNavBar = {
           title: "C#",
           path: "/reference-new/mobile/sdk-for-csharp/",
           children: [
-            {
-              title: "用户认证模块",
-              path: "/reference-new/mobile/sdk-for-csharp/authentication",
-              children: [
-                "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
-                "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
-                "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient"
+          {
+          title: "用户认证模块",
+          path: "/reference-new/mobile/sdk-for-csharp/authentication",
+          children: [
+            "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
+            "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
+            "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient"
+            ]
+          },
+          {
+          title: "管理模块",
+          path: "/reference-new/mobile/sdk-for-csharp/management",
+          children: [
+            "/reference-new/mobile/sdk-for-csharp/management/UsersManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/ApplicationManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/RolesManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/AclManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/GroupsManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/OrgManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/UdfManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/WhitelistManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/UserpoolManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/StatisticsManagementClient",
+            "/reference-new/mobile/sdk-for-csharp/management/TenantManagementClient"
               ]
-            },
-            {
-              title: "管理模块",
-              path: "/reference-new/mobile/sdk-for-csharp/management",
-              children: [
-                "/reference-new/mobile/sdk-for-csharp/management/UsersManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/ApplicationManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/RolesManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/AclManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/GroupsManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/OrgManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/UdfManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/WhitelistManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/UserpoolManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/StatisticsManagementClient",
-                "/reference-new/mobile/sdk-for-csharp/management/TenantManagementClient"
-              ]
-            }
-          ]
-        }
+          }
+           ]
+        },
       ]
     }
-
+ 
     // 加入其他的页面边栏
   ],
   "/reference-new/frameworks/": [
     {
       title: "框架集成",
-      //     initialOpenGroupIndex : 1,
+ //     initialOpenGroupIndex : 1,
       collapsable: false,
-      //      path: "/reference-new/frameworks/spring-security-cas",
+//      path: "/reference-new/frameworks/spring-security-cas",
       children: [
         {
           title: "Spring CAS",
@@ -2469,10 +2454,11 @@ const zhCnNavBar = {
   "/reference-new/other/": [
     {
       title: "其他",
-      //     initialOpenGroupIndex : 1,
+ //     initialOpenGroupIndex : 1,
       collapsable: false,
 
-      //     path: "/reference-new/other/sdk-for-sso",
+
+//     path: "/reference-new/other/sdk-for-sso",
       children: [
         {
           title: "单点登录（SSO）",
@@ -2498,419 +2484,6 @@ const zhCnNavBar = {
     }
     // 加入其他的页面边栏
   ],
-  // 自动生成粘贴
-  "/reference-new/sdk/node/": [
-    {
-      title: "Node",
-      collapsable: false,
-      children: [
-        {
-          title: "安装使用",
-          path: "/reference-new/sdk/node/"
-        },
-        {
-          title: "Users Management",
-          children: [
-            "/reference-new/sdk/node/users-management/get-user",
-            "/reference-new/sdk/node/users-management/get-user-batch",
-            "/reference-new/sdk/node/users-management/list-users",
-            "/reference-new/sdk/node/users-management/get-user-identities",
-            "/reference-new/sdk/node/users-management/get-user-roles",
-            "/reference-new/sdk/node/users-management/get-user-principal-authentication-info",
-            "/reference-new/sdk/node/users-management/reset-user-principal-authentication-info",
-            "/reference-new/sdk/node/users-management/get-user-departments",
-            "/reference-new/sdk/node/users-management/set-user-departments",
-            "/reference-new/sdk/node/users-management/get-user-groups",
-            "/reference-new/sdk/node/users-management/delete-users-batch",
-            "/reference-new/sdk/node/users-management/get-user-mfa-info",
-            "/reference-new/sdk/node/users-management/list-archived-users",
-            "/reference-new/sdk/node/users-management/kick-users",
-            "/reference-new/sdk/node/users-management/is-user-exists",
-            "/reference-new/sdk/node/users-management/create-user",
-            "/reference-new/sdk/node/users-management/create-users-batch",
-            "/reference-new/sdk/node/users-management/update-user",
-            "/reference-new/sdk/node/users-management/get-user-accessible-apps",
-            "/reference-new/sdk/node/users-management/get-user-authorized-apps",
-            "/reference-new/sdk/node/users-management/has-any-role",
-            "/reference-new/sdk/node/users-management/get-user-login-history",
-            "/reference-new/sdk/node/users-management/get-user-loggedin-apps",
-            "/reference-new/sdk/node/users-management/get-user-authorized-resources"
-          ]
-        },
-        {
-          title: "Groups Management",
-          children: [
-            "/reference-new/sdk/node/groups-management/get-group",
-            "/reference-new/sdk/node/groups-management/list-groups",
-            "/reference-new/sdk/node/groups-management/create-group",
-            "/reference-new/sdk/node/groups-management/create-groups-batch",
-            "/reference-new/sdk/node/groups-management/update-group",
-            "/reference-new/sdk/node/groups-management/delete-groups-batch",
-            "/reference-new/sdk/node/groups-management/add-group-members",
-            "/reference-new/sdk/node/groups-management/remove-group-members",
-            "/reference-new/sdk/node/groups-management/list-group-members",
-            "/reference-new/sdk/node/groups-management/get-group-authorized-resources"
-          ]
-        },
-        {
-          title: "Roles Management",
-          children: [
-            "/reference-new/sdk/node/roles-management/get-role",
-            "/reference-new/sdk/node/roles-management/assign-role",
-            "/reference-new/sdk/node/roles-management/revoke-role",
-            "/reference-new/sdk/node/roles-management/get-role-authorized-resources",
-            "/reference-new/sdk/node/roles-management/list-role-members",
-            "/reference-new/sdk/node/roles-management/list-role-departments",
-            "/reference-new/sdk/node/roles-management/create-role",
-            "/reference-new/sdk/node/roles-management/list-roles",
-            "/reference-new/sdk/node/roles-management/delete-roles-batch",
-            "/reference-new/sdk/node/roles-management/create-roles-batch",
-            "/reference-new/sdk/node/roles-management/update-role"
-          ]
-        },
-        {
-          title: "Organizations Management",
-          children: [
-            "/reference-new/sdk/node/organizations-management/list-organizations",
-            "/reference-new/sdk/node/organizations-management/create-organization",
-            "/reference-new/sdk/node/organizations-management/update-organization",
-            "/reference-new/sdk/node/organizations-management/delete-organization",
-            "/reference-new/sdk/node/organizations-management/get-department",
-            "/reference-new/sdk/node/organizations-management/create-department",
-            "/reference-new/sdk/node/organizations-management/update-department",
-            "/reference-new/sdk/node/organizations-management/delete-department",
-            "/reference-new/sdk/node/organizations-management/search-departments",
-            "/reference-new/sdk/node/organizations-management/list-children-departments",
-            "/reference-new/sdk/node/organizations-management/list-department-members",
-            "/reference-new/sdk/node/organizations-management/list-department-member-ids",
-            "/reference-new/sdk/node/organizations-management/add-department-members",
-            "/reference-new/sdk/node/organizations-management/remove-department-members",
-            "/reference-new/sdk/node/organizations-management/get-parent-department"
-          ]
-        },
-        {
-          title: "Access Control Management",
-          children: [
-            "/reference-new/sdk/node/access-control-management/create-resource",
-            "/reference-new/sdk/node/access-control-management/create-resources-batch",
-            "/reference-new/sdk/node/access-control-management/get-resource",
-            "/reference-new/sdk/node/access-control-management/get-resources-batch",
-            "/reference-new/sdk/node/access-control-management/list-resources",
-            "/reference-new/sdk/node/access-control-management/update-resource",
-            "/reference-new/sdk/node/access-control-management/delete-resource",
-            "/reference-new/sdk/node/access-control-management/delete-resources-batch",
-            "/reference-new/sdk/node/access-control-management/create-namespace",
-            "/reference-new/sdk/node/access-control-management/create-namespaces-batch",
-            "/reference-new/sdk/node/access-control-management/get-namespace",
-            "/reference-new/sdk/node/access-control-management/get-namespaces-batch",
-            "/reference-new/sdk/node/access-control-management/update-namespace",
-            "/reference-new/sdk/node/access-control-management/delete-namespace",
-            "/reference-new/sdk/node/access-control-management/delete-namespaces-batch",
-            "/reference-new/sdk/node/access-control-management/authorize-resources",
-            "/reference-new/sdk/node/access-control-management/get-authorized-resources"
-          ]
-        },
-        {
-          title: "External Identity Provider Management",
-          children: [
-            "/reference-new/sdk/node/external-identity-provider-management/list-ext-idp",
-            "/reference-new/sdk/node/external-identity-provider-management/get-ext-idp",
-            "/reference-new/sdk/node/external-identity-provider-management/create-ext-idp",
-            "/reference-new/sdk/node/external-identity-provider-management/update-ext-idp",
-            "/reference-new/sdk/node/external-identity-provider-management/delete-ext-idp",
-            "/reference-new/sdk/node/external-identity-provider-management/create-ext-idp-conn",
-            "/reference-new/sdk/node/external-identity-provider-management/update-ext-idp-conn",
-            "/reference-new/sdk/node/external-identity-provider-management/delete-ext-idp-conn",
-            "/reference-new/sdk/node/external-identity-provider-management/enable-ext-idp-conn"
-          ]
-        },
-        {
-          title: "Custom Fields Management",
-          children: [
-            "/reference-new/sdk/node/custom-fields-management/get-custom-fields",
-            "/reference-new/sdk/node/custom-fields-management/set-custom-fields",
-            "/reference-new/sdk/node/custom-fields-management/set-custom-data",
-            "/reference-new/sdk/node/custom-fields-management/get-custom-data"
-          ]
-        }
-      ]
-    }
-  ],
-  "/reference-new/sdk/php/": [
-    {
-      title: "Php",
-      collapsable: false,
-      children: [
-        {
-          title: "安装使用",
-          path: "/reference-new/sdk/php/"
-        },
-        {
-          title: "Users Management",
-          children: [
-            "/reference-new/sdk/php/users-management/get-user",
-            "/reference-new/sdk/php/users-management/get-user-batch",
-            "/reference-new/sdk/php/users-management/list-users",
-            "/reference-new/sdk/php/users-management/get-user-identities",
-            "/reference-new/sdk/php/users-management/get-user-roles",
-            "/reference-new/sdk/php/users-management/get-user-principal-authentication-info",
-            "/reference-new/sdk/php/users-management/reset-user-principal-authentication-info",
-            "/reference-new/sdk/php/users-management/get-user-departments",
-            "/reference-new/sdk/php/users-management/set-user-departments",
-            "/reference-new/sdk/php/users-management/get-user-groups",
-            "/reference-new/sdk/php/users-management/delete-users-batch",
-            "/reference-new/sdk/php/users-management/get-user-mfa-info",
-            "/reference-new/sdk/php/users-management/list-archived-users",
-            "/reference-new/sdk/php/users-management/kick-users",
-            "/reference-new/sdk/php/users-management/is-user-exists",
-            "/reference-new/sdk/php/users-management/create-user",
-            "/reference-new/sdk/php/users-management/create-users-batch",
-            "/reference-new/sdk/php/users-management/update-user",
-            "/reference-new/sdk/php/users-management/get-user-accessible-apps",
-            "/reference-new/sdk/php/users-management/get-user-authorized-apps",
-            "/reference-new/sdk/php/users-management/has-any-role",
-            "/reference-new/sdk/php/users-management/get-user-login-history",
-            "/reference-new/sdk/php/users-management/get-user-loggedin-apps",
-            "/reference-new/sdk/php/users-management/get-user-authorized-resources"
-          ]
-        },
-        {
-          title: "Groups Management",
-          children: [
-            "/reference-new/sdk/php/groups-management/get-group",
-            "/reference-new/sdk/php/groups-management/list-groups",
-            "/reference-new/sdk/php/groups-management/create-group",
-            "/reference-new/sdk/php/groups-management/create-groups-batch",
-            "/reference-new/sdk/php/groups-management/update-group",
-            "/reference-new/sdk/php/groups-management/delete-groups-batch",
-            "/reference-new/sdk/php/groups-management/add-group-members",
-            "/reference-new/sdk/php/groups-management/remove-group-members",
-            "/reference-new/sdk/php/groups-management/list-group-members",
-            "/reference-new/sdk/php/groups-management/get-group-authorized-resources"
-          ]
-        },
-        {
-          title: "Roles Management",
-          children: [
-            "/reference-new/sdk/php/roles-management/get-role",
-            "/reference-new/sdk/php/roles-management/assign-role",
-            "/reference-new/sdk/php/roles-management/revoke-role",
-            "/reference-new/sdk/php/roles-management/get-role-authorized-resources",
-            "/reference-new/sdk/php/roles-management/list-role-members",
-            "/reference-new/sdk/php/roles-management/list-role-departments",
-            "/reference-new/sdk/php/roles-management/create-role",
-            "/reference-new/sdk/php/roles-management/list-roles",
-            "/reference-new/sdk/php/roles-management/delete-roles-batch",
-            "/reference-new/sdk/php/roles-management/create-roles-batch",
-            "/reference-new/sdk/php/roles-management/update-role"
-          ]
-        },
-        {
-          title: "Organizations Management",
-          children: [
-            "/reference-new/sdk/php/organizations-management/list-organizations",
-            "/reference-new/sdk/php/organizations-management/create-organization",
-            "/reference-new/sdk/php/organizations-management/update-organization",
-            "/reference-new/sdk/php/organizations-management/delete-organization",
-            "/reference-new/sdk/php/organizations-management/get-department",
-            "/reference-new/sdk/php/organizations-management/create-department",
-            "/reference-new/sdk/php/organizations-management/update-department",
-            "/reference-new/sdk/php/organizations-management/delete-department",
-            "/reference-new/sdk/php/organizations-management/search-departments",
-            "/reference-new/sdk/php/organizations-management/list-children-departments",
-            "/reference-new/sdk/php/organizations-management/list-department-members",
-            "/reference-new/sdk/php/organizations-management/list-department-member-ids",
-            "/reference-new/sdk/php/organizations-management/add-department-members",
-            "/reference-new/sdk/php/organizations-management/remove-department-members",
-            "/reference-new/sdk/php/organizations-management/get-parent-department"
-          ]
-        },
-        {
-          title: "Access Control Management",
-          children: [
-            "/reference-new/sdk/php/access-control-management/create-resource",
-            "/reference-new/sdk/php/access-control-management/create-resources-batch",
-            "/reference-new/sdk/php/access-control-management/get-resource",
-            "/reference-new/sdk/php/access-control-management/get-resources-batch",
-            "/reference-new/sdk/php/access-control-management/list-resources",
-            "/reference-new/sdk/php/access-control-management/update-resource",
-            "/reference-new/sdk/php/access-control-management/delete-resource",
-            "/reference-new/sdk/php/access-control-management/delete-resources-batch",
-            "/reference-new/sdk/php/access-control-management/create-namespace",
-            "/reference-new/sdk/php/access-control-management/create-namespaces-batch",
-            "/reference-new/sdk/php/access-control-management/get-namespace",
-            "/reference-new/sdk/php/access-control-management/get-namespaces-batch",
-            "/reference-new/sdk/php/access-control-management/update-namespace",
-            "/reference-new/sdk/php/access-control-management/delete-namespace",
-            "/reference-new/sdk/php/access-control-management/delete-namespaces-batch",
-            "/reference-new/sdk/php/access-control-management/authorize-resources",
-            "/reference-new/sdk/php/access-control-management/get-authorized-resources"
-          ]
-        },
-        {
-          title: "External Identity Provider Management",
-          children: [
-            "/reference-new/sdk/php/external-identity-provider-management/list-ext-idp",
-            "/reference-new/sdk/php/external-identity-provider-management/get-ext-idp",
-            "/reference-new/sdk/php/external-identity-provider-management/create-ext-idp",
-            "/reference-new/sdk/php/external-identity-provider-management/update-ext-idp",
-            "/reference-new/sdk/php/external-identity-provider-management/delete-ext-idp",
-            "/reference-new/sdk/php/external-identity-provider-management/create-ext-idp-conn",
-            "/reference-new/sdk/php/external-identity-provider-management/update-ext-idp-conn",
-            "/reference-new/sdk/php/external-identity-provider-management/delete-ext-idp-conn",
-            "/reference-new/sdk/php/external-identity-provider-management/enable-ext-idp-conn"
-          ]
-        },
-        {
-          title: "Custom Fields Management",
-          children: [
-            "/reference-new/sdk/php/custom-fields-management/get-custom-fields",
-            "/reference-new/sdk/php/custom-fields-management/set-custom-fields",
-            "/reference-new/sdk/php/custom-fields-management/set-custom-data",
-            "/reference-new/sdk/php/custom-fields-management/get-custom-data"
-          ]
-        }
-      ]
-    }
-  ],
-  "/reference-new/sdk/python/": [
-    {
-      title: "Python",
-      collapsable: false,
-      children: [
-        {
-          title: "安装使用",
-          path: "/reference-new/sdk/python/"
-        },
-        {
-          title: "Users Management",
-          children: [
-            "/reference-new/sdk/python/users-management/get-user",
-            "/reference-new/sdk/python/users-management/get-user-batch",
-            "/reference-new/sdk/python/users-management/list-users",
-            "/reference-new/sdk/python/users-management/get-user-identities",
-            "/reference-new/sdk/python/users-management/get-user-roles",
-            "/reference-new/sdk/python/users-management/get-user-principal-authentication-info",
-            "/reference-new/sdk/python/users-management/reset-user-principal-authentication-info",
-            "/reference-new/sdk/python/users-management/get-user-departments",
-            "/reference-new/sdk/python/users-management/set-user-departments",
-            "/reference-new/sdk/python/users-management/get-user-groups",
-            "/reference-new/sdk/python/users-management/delete-users-batch",
-            "/reference-new/sdk/python/users-management/get-user-mfa-info",
-            "/reference-new/sdk/python/users-management/list-archived-users",
-            "/reference-new/sdk/python/users-management/kick-users",
-            "/reference-new/sdk/python/users-management/is-user-exists",
-            "/reference-new/sdk/python/users-management/create-user",
-            "/reference-new/sdk/python/users-management/create-users-batch",
-            "/reference-new/sdk/python/users-management/update-user",
-            "/reference-new/sdk/python/users-management/get-user-accessible-apps",
-            "/reference-new/sdk/python/users-management/get-user-authorized-apps",
-            "/reference-new/sdk/python/users-management/has-any-role",
-            "/reference-new/sdk/python/users-management/get-user-login-history",
-            "/reference-new/sdk/python/users-management/get-user-loggedin-apps",
-            "/reference-new/sdk/python/users-management/get-user-authorized-resources"
-          ]
-        },
-        {
-          title: "Groups Management",
-          children: [
-            "/reference-new/sdk/python/groups-management/get-group",
-            "/reference-new/sdk/python/groups-management/list-groups",
-            "/reference-new/sdk/python/groups-management/create-group",
-            "/reference-new/sdk/python/groups-management/create-groups-batch",
-            "/reference-new/sdk/python/groups-management/update-group",
-            "/reference-new/sdk/python/groups-management/delete-groups-batch",
-            "/reference-new/sdk/python/groups-management/add-group-members",
-            "/reference-new/sdk/python/groups-management/remove-group-members",
-            "/reference-new/sdk/python/groups-management/list-group-members",
-            "/reference-new/sdk/python/groups-management/get-group-authorized-resources"
-          ]
-        },
-        {
-          title: "Roles Management",
-          children: [
-            "/reference-new/sdk/python/roles-management/get-role",
-            "/reference-new/sdk/python/roles-management/assign-role",
-            "/reference-new/sdk/python/roles-management/revoke-role",
-            "/reference-new/sdk/python/roles-management/get-role-authorized-resources",
-            "/reference-new/sdk/python/roles-management/list-role-members",
-            "/reference-new/sdk/python/roles-management/list-role-departments",
-            "/reference-new/sdk/python/roles-management/create-role",
-            "/reference-new/sdk/python/roles-management/list-roles",
-            "/reference-new/sdk/python/roles-management/delete-roles-batch",
-            "/reference-new/sdk/python/roles-management/create-roles-batch",
-            "/reference-new/sdk/python/roles-management/update-role"
-          ]
-        },
-        {
-          title: "Organizations Management",
-          children: [
-            "/reference-new/sdk/python/organizations-management/list-organizations",
-            "/reference-new/sdk/python/organizations-management/create-organization",
-            "/reference-new/sdk/python/organizations-management/update-organization",
-            "/reference-new/sdk/python/organizations-management/delete-organization",
-            "/reference-new/sdk/python/organizations-management/get-department",
-            "/reference-new/sdk/python/organizations-management/create-department",
-            "/reference-new/sdk/python/organizations-management/update-department",
-            "/reference-new/sdk/python/organizations-management/delete-department",
-            "/reference-new/sdk/python/organizations-management/search-departments",
-            "/reference-new/sdk/python/organizations-management/list-children-departments",
-            "/reference-new/sdk/python/organizations-management/list-department-members",
-            "/reference-new/sdk/python/organizations-management/list-department-member-ids",
-            "/reference-new/sdk/python/organizations-management/add-department-members",
-            "/reference-new/sdk/python/organizations-management/remove-department-members",
-            "/reference-new/sdk/python/organizations-management/get-parent-department"
-          ]
-        },
-        {
-          title: "Access Control Management",
-          children: [
-            "/reference-new/sdk/python/access-control-management/create-resource",
-            "/reference-new/sdk/python/access-control-management/create-resources-batch",
-            "/reference-new/sdk/python/access-control-management/get-resource",
-            "/reference-new/sdk/python/access-control-management/get-resources-batch",
-            "/reference-new/sdk/python/access-control-management/list-resources",
-            "/reference-new/sdk/python/access-control-management/update-resource",
-            "/reference-new/sdk/python/access-control-management/delete-resource",
-            "/reference-new/sdk/python/access-control-management/delete-resources-batch",
-            "/reference-new/sdk/python/access-control-management/create-namespace",
-            "/reference-new/sdk/python/access-control-management/create-namespaces-batch",
-            "/reference-new/sdk/python/access-control-management/get-namespace",
-            "/reference-new/sdk/python/access-control-management/get-namespaces-batch",
-            "/reference-new/sdk/python/access-control-management/update-namespace",
-            "/reference-new/sdk/python/access-control-management/delete-namespace",
-            "/reference-new/sdk/python/access-control-management/delete-namespaces-batch",
-            "/reference-new/sdk/python/access-control-management/authorize-resources",
-            "/reference-new/sdk/python/access-control-management/get-authorized-resources"
-          ]
-        },
-        {
-          title: "External Identity Provider Management",
-          children: [
-            "/reference-new/sdk/python/external-identity-provider-management/list-ext-idp",
-            "/reference-new/sdk/python/external-identity-provider-management/get-ext-idp",
-            "/reference-new/sdk/python/external-identity-provider-management/create-ext-idp",
-            "/reference-new/sdk/python/external-identity-provider-management/update-ext-idp",
-            "/reference-new/sdk/python/external-identity-provider-management/delete-ext-idp",
-            "/reference-new/sdk/python/external-identity-provider-management/create-ext-idp-conn",
-            "/reference-new/sdk/python/external-identity-provider-management/update-ext-idp-conn",
-            "/reference-new/sdk/python/external-identity-provider-management/delete-ext-idp-conn",
-            "/reference-new/sdk/python/external-identity-provider-management/enable-ext-idp-conn"
-          ]
-        },
-        {
-          title: "Custom Fields Management",
-          children: [
-            "/reference-new/sdk/python/custom-fields-management/get-custom-fields",
-            "/reference-new/sdk/python/custom-fields-management/set-custom-fields",
-            "/reference-new/sdk/python/custom-fields-management/set-custom-data",
-            "/reference-new/sdk/python/custom-fields-management/get-custom-data"
-          ]
-        }
-      ]
-    }
-  ],
-  // 自动生成粘贴结束
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,
