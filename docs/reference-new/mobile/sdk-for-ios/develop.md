@@ -32,7 +32,7 @@
 
 接下来，应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面。
 
-<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速接入 →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速接入 →</a>
 </span>
 
 <br>

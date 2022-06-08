@@ -57,5 +57,5 @@ if let loginButton: LoginButton = Util.findView(view, viewClass: LoginButton.sel
 此教程展示了如何在 5 分钟左右的时间构建一个简单的登录界面。接下来，我们再构建一个更为复杂的登录界面。
 
 <br>
-<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./advanced-login.html" style="color:#FFF;">复杂登录示例 →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./advanced-login.html" style="color:#FFF;">复杂登录示例 →</a>
 </span>

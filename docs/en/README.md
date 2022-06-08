@@ -77,7 +77,7 @@ sdkConfig:
 applicationSdks:
   - title: Mobile / Client Application
     description: Quick access to authentication services in mobile/client applications
-    color: "#396AFF"
+    color: "#215ae5"
     sdks:
       - ios
       - android
