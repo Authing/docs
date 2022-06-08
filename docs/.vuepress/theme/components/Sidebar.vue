@@ -100,6 +100,7 @@ export default {
         node.classList.remove("check");
       })
       let node = document.querySelector('.sidebar-links .active')
+      if (!node) return
       while(node !== this.$refs.sidebarRef) {
         node = node.parentNode
         if (node.className.includes('sidebar-group ')) {

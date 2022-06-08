@@ -124,7 +124,7 @@ a.sidebar-link
   font-weight 400
   display inline-block
   // color $textColor
-  color #1D2129
+  color #4E5969
   padding 0.40rem 1rem 0.40rem 0.8rem
   line-height 1.4
   width: 100%
