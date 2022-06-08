@@ -5,7 +5,7 @@
   "scripts": {
     "docs:dev": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888",
     "docs:no-cache": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888 --no-cache",
-    "docs:build": "vuepress build docs --max-concurrency=200 --no-cache"
+    "docs:build": "vuepress build docs --max-concurrency=100 --no-cache"
   },
   "main": "index.js",
   "author": "Authing",
