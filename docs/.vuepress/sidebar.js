@@ -612,7 +612,7 @@ const zhCnNavBar = {
             },
             {
               title: "Google",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/google/"
             },
             {
               title: "Apple 移动端",
@@ -2569,7 +2569,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Google",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/google/"
             },
             {
               title: "Apple 移动端",
