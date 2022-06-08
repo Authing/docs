@@ -10,7 +10,7 @@ meta:
 
 > GitHub 源码地址：[https://github.com/authing/authing-wxapp-sdk](https://github.com/authing/authing-wxapp-sdk)
 
-{{$localeConfig.brandName}} 小程序 SDK （`authing-wxapp-sdk`） 适用于在微信小程序环境下使用，以 [authing-js-sdk](https://github.com/authing/authing.js) 为基础，对微信小程序环境做了适配。你可以使用 `authing-js-sdk` [AuthenticationClient](/reference-new/web/sdk-for-node/authentication/AuthenticationClient.html) 中的所有方法，如获取、修改用户资料，添加用户自定义字段等。同时专门在小程序环境下使用的 **通过微信授权获取用户手机号**、 **使用微信授权登录**、**使用微信授权的手机号登录** 等方法。
+{{$localeConfig.brandName}} 小程序 SDK （`authing-wxapp-sdk`） 适用于在微信小程序环境下使用，以 [authing-js-sdk](https://github.com/authing/authing.js) 为基础，对微信小程序环境做了适配。你可以使用 `authing-js-sdk` [AuthenticationClient](/reference/sdk-for-node/authentication/AuthenticationClient.html) 中的所有方法，如获取、修改用户资料，添加用户自定义字段等。同时专门在小程序环境下使用的 **通过微信授权获取用户手机号**、 **使用微信授权登录**、**使用微信授权的手机号登录** 等方法。
 
 ## 在 {{$localeConfig.brandName}} 中配置小程序登录
 
@@ -103,7 +103,7 @@ const authing = new AuthenticationClient({
 (code: number, message: string, data: any) => void
 ```
 
-> 完整的错误代码请见[此文档](/reference-new/other/error-code.md)。
+> 完整的错误代码请见[此文档](/reference/error-code.md)。
 
 - `host`: {{$localeConfig.brandName}} 服务器地址。如果你使用的是公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填。格式如下: `https://authing-api.mydomain.com`，最后不带 `/`。
 
@@ -299,7 +299,7 @@ try {
 }
 ```
 
-> 完整的错误代码请见[此文档](/reference-new/other/error-code.md)。
+> 完整的错误代码请见[此文档](/reference/error-code.md)。
 
 你还可以指定 `onError` 统一捕捉所有 {{$localeConfig.brandName}} 请求异常，如使用 `wx.showModal` 等微信组件显示错误提示。
 

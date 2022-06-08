@@ -155,7 +155,7 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 Authing 提供另外一种简单的前端获取用户信息的方式，无需处理回调或进行其他配置。
 
-1. 安装[单点登录 SDK](/reference-new/other/sdk-for-sso.md)，完成初始化，调用 `trackSession` 函数获取用户登录状态。
+1. 安装[单点登录 SDK](/reference/sdk-for-sso.md)，完成初始化，调用 `trackSession` 函数获取用户登录状态。
 
 使用 NPM 安装
 
@@ -190,7 +190,7 @@ if (res.session) {
 }
 ```
 
-详细使用方式请查看[文档](/reference-new/other/sdk-for-sso.md)。
+详细使用方式请查看[文档](/reference/sdk-for-sso.md)。
 
 :::
 
@@ -204,8 +204,8 @@ if (res.session) {
 
 ## 使用登录组件
 
-上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference-new/guard/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
+上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference/guard/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
 
 ## 使用 API & SDK
 
-至此你已经了解了如何借助 {{$localeConfig.brandName}} 的托管登录页快速实现核心的登录注册流程，如果你想有更强的自定义需要，也可以使用 {{$localeConfig.brandName}} 提供的 [API & SDK](/reference-new/) ，详细流程请见 [使用 API & SDK 完成认证](/guides/basics/authenticate-first-user/use-api-sdk/)。
+至此你已经了解了如何借助 {{$localeConfig.brandName}} 的托管登录页快速实现核心的登录注册流程，如果你想有更强的自定义需要，也可以使用 {{$localeConfig.brandName}} 提供的 [API & SDK](/reference/) ，详细流程请见 [使用 API & SDK 完成认证](/guides/basics/authenticate-first-user/use-api-sdk/)。

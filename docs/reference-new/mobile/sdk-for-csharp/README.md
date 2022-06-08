@@ -58,28 +58,28 @@ var data = await managementClient.Users.List();
 
 ### 管理模块包含以下子模块：
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/UsersManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/RolesManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/PoliciesManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/AclManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/GroupsManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/GroupsManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/UdfManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/UserpoolManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/UserpoolManagementClient.md
 :::
 
-::: page-ref /reference-new/mobile/sdk-for-csharp/management/WhitelistManagementClient.md
+::: page-ref /reference/sdk-for-csharp/management/WhitelistManagementClient.md
 :::
 
 ## 使用认证模块

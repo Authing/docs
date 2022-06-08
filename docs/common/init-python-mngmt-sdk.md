@@ -1,4 +1,4 @@
-使用[用户池 ID（`userPoolId`）和用户池密钥（`secret`）](/guides/faqs/get-userpool-id-and-secret.md)初始化 [Python SDK](/reference-new/web/sdk-for-python/) 的 `ManagementClient`:
+使用[用户池 ID（`userPoolId`）和用户池密钥（`secret`）](/guides/faqs/get-userpool-id-and-secret.md)初始化 [Python SDK](/reference/sdk-for-python/) 的 `ManagementClient`:
 
 
 ```python

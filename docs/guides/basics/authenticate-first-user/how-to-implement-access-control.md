@@ -74,7 +74,7 @@ ABAC 属性通常来说分为四类：用户属性（如用户年龄），环境
 
 ![](./images/create-role.png)
 
-你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ### 授权用户角色
 
@@ -84,7 +84,7 @@ ABAC 属性通常来说分为四类：用户属性（如用户年龄），环境
 
 选择用户之后点击确认，你可以查看被授权此角色的用户列表。
 
-你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ### 在后端通过用户角色控制权限
 
@@ -138,7 +138,7 @@ if (!list.map((role) => role.code).includes('devops')) {
 
 首先初始化 Management SDK：
 
-> 这里已 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference-new/)。
+> 这里已 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference/)。
 
 ```javascript
 import { ManagementClient } from 'authing-js-sdk'
