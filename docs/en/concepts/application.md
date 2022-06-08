@@ -4,11 +4,11 @@
 
 Earlier we introduced that the user pool(./user-pool.md) is the smallest unit of tenant isolation in {{$localeConfig.brandName}}. This stores all user data in your user system, and the application corresponds to the business application you create in reality.
 
-A user pool may have multiple applications. For example, all students at  school are using a user pool. The school will develop multiple applications such as course selection application, email application, teacher-student service center, etc.. These applications use the same user system.
+A user pool may have multiple applications. For example, all students at school are using a user pool. The school will develop multiple applications such as course selection application, email application, teacher-student service center, etc.. These applications use the same user system.
 
 ## Where can I see all my apps
 
-You can view all your applications on the application page of the [console](https://console.approw.com)(opens new window):
+You can view all your applications on the application page of the [console](https://console.authing.cn)(opens new window):
 
 ![](./images/Xnip2021-02-26_10-46-59.png)
 
@@ -22,13 +22,12 @@ You need to enable single sign-on between applications on the application manage
 
 ![](./images/Xnip2021-02-26_10-48-40.png)
 
-After turning on this switch, the user logs into application A, the user will automatically log in when accessing application B. For further details, please refer to the implementation of [single sign-on (SSO)](/guides/authentication/sso/) guidelines and [single sign-on SDK](/reference/sdk-for-sso.md).
-
+After turning on this switch, the user logs into application A, the user will automatically log in when accessing application B. For further details, please refer to the implementation of [single sign-on (SSO)](/guides/authentication/sso/) guidelines and [single sign-on SDK](/en/reference/sdk-for-sso.md).
 
 ## Access the online version of the login form
 
 In {{$localeConfig.brandName}}, each application has an online login registration page for end users to use. You can visit:
-`https://<YOUR_APP_DOMAIN>.approw.cm/` or `https://<YOUR_APP_DOMAIN>. approw.cm/login` to access:
+`https://<YOUR_APP_DOMAIN>.authing.cm/` or `https://<YOUR_APP_DOMAIN>. authing.cm/login` to access:
 
 ![](./images/Xnip2021-02-26_11-13-39.png)
 
@@ -41,7 +40,7 @@ For details, [use the embedded login component to complete the authentication](/
 ## Visit the online version of the personal center
 
 In {{$localeConfig.brandName}}, each application has an online personal center page for end users to use, you can visit:
-`https://<YOUR_APP_DOMAIN>. approw.cm/u` to visit:
+`https://<YOUR_APP_DOMAIN>. authing.cm/u` to visit:
 
 ![](./images/Xnip2021-02-26_11-09-29.png)
 
@@ -68,5 +67,3 @@ Each application in {{$localeConfig.brandName}} has the following capabilities:
 - Application access control, control which users can access your application;
 - Sub-account, add sub-account login capability;
 - Login status management, you can [view the current online users of the application](/guides/user/login-state.md).
-
-

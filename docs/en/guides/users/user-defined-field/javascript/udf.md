@@ -1,6 +1,6 @@
-!!!include(common/init-js-auth-sdk.md)!!!
+!!!include(en/common/init-js-auth-sdk.md)!!!
 
-首先使用用户的 token 初始化 SDK：
+首先 Use 用户的 token 初始化 SDK：
 
 ```java
 authenticationClient.setToken("ID_TOKEN");

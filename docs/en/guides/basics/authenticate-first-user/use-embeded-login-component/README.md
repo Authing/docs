@@ -34,7 +34,7 @@ It has the following features:
 
 ## Integrate with different front-end frameworks
 
-<StackSelector snippet="ui-components-example" selectLabel="选择前端框架" :order="['react', 'vue', 'angular', 'native-javascript']"/>
+<StackSelector snippet="ui-components-example" selectLabel="Framework" :order="['react', 'vue', 'angular', 'native-javascript']"/>
 
 ## Validate user token in back-end
 

@@ -70,10 +70,10 @@
 
 1.支持企业微信登录
 
-2.解决使用 OIDC 方式调用 loginByAccount 登录失败问题
+2.解决 Use OIDC 方式调用 loginByAccount 登录失败问题
 
 <br>
 
-### 1.2.0 
+### 1.2.0
 
 1.支持飞书登录

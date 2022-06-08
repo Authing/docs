@@ -4,22 +4,22 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入 QQ 社会化登录',
-  bannerTitle: '接入 QQ 社会化登录',
+  title: 'Access QQ Social Login',
+  bannerTitle: 'Access QQ Social Login',
   steps:
     [
       {
-        title: '在 QQ 开放平台创建一个网站应用',
+        title: 'Create a Web Site Application on QQ Open Platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入 QQ 网站应用配置' },
+      { title: 'Fill in the QQ Web application configuration at {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Creating an Application in {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start development of access'
       }
     ],
 }
 ---
 
-<IntegrationDetail backLink="/guides/connections/social"/>
+<IntegrationDetail backLink="/en/guides/connections/social"/>

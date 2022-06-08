@@ -47,7 +47,7 @@ def create(self, name, identifier, redirect_uris, logo=None)
 management.applications.create(
     name='name',
     identifier='appcode',
-    redirect_uris=['https://www.authing.com']
+    redirect_uris=['https://www.authing.cn']
 )
 ```
 
@@ -94,7 +94,7 @@ management.applications.create(
   },
   "oauthConfig": {
     "introspection_endpoint_auth_method": "client_secret_post",
-    "redirect_uris": ["https://www.authing.com"],
+    "redirect_uris": ["https://www.authing.cn"],
     "access_token_lifetime": 1209600,
     "refresh_token_lifetime": 2592000,
     "grants": ["authorization_code"],
@@ -141,7 +141,7 @@ management.applications.create(
     "request_object_encryption_alg": null
   },
   "defaultLoginTab": "password",
-  "redirectUris": ["https://www.authing.com"],
+  "redirectUris": ["https://www.authing.cn"],
   "showAuthorizationPage": false,
   "casProviderEnabled": false,
   "identifier": "python-sdk-unittest-gllr",
@@ -232,7 +232,7 @@ management.applications.list()
       },
       "oauthConfig": {
         "introspection_endpoint_auth_method": "client_secret_post",
-        "redirect_uris": ["https://www.authing.com"],
+        "redirect_uris": ["https://www.authing.cn"],
         "access_token_lifetime": 1209600,
         "refresh_token_lifetime": 2592000,
         "grants": ["authorization_code"],
@@ -267,14 +267,14 @@ management.applications.list()
         "grant_types": ["authorization_code", "password", "refresh_token"],
         "authorization_code_expire": 600,
         "id_token_signed_response_alg": "HS256",
-        "redirect_uris": ["https://www.authing.com"],
+        "redirect_uris": ["https://www.authing.cn"],
         "response_types": ["code"],
         "client_id": "614bf4af279893d5ab64",
         "client_secret": "4e432aee82e1fb8259d808c5bdf6",
         "id_token_expire": 1209600
       },
       "defaultLoginTab": "password",
-      "redirectUris": ["https://www.authing.com"],
+      "redirectUris": ["https://www.authing.cn"],
       "showAuthorizationPage": false,
       "casProviderEnabled": false,
       "passwordTabConfig": {
@@ -824,7 +824,7 @@ management.applications.refresh_application_secret("appid")
 
 ```json
 {
-  "message": "刷新应用 secret 成功！",
+  "message": "Refresh App secret Success",
   "code": 200,
   "data": {
     "oidcJWEConfig": null,
@@ -864,7 +864,7 @@ management.applications.refresh_application_secret("appid")
     },
     "oauthConfig": {
       "introspection_endpoint_auth_method": "client_secret_post",
-      "redirect_uris": ["https://www.authing.com"],
+      "redirect_uris": ["https://www.authing.cn"],
       "access_token_lifetime": 1209600,
       "refresh_token_lifetime": 2592000,
       "grants": ["authorization_code"],
@@ -897,13 +897,13 @@ management.applications.refresh_application_secret("appid")
       "grant_types": ["authorization_code", "password", "refresh_token"],
       "authorization_code_expire": 600,
       "id_token_signed_response_alg": "HS256",
-      "redirect_uris": ["https://www.authing.com"],
+      "redirect_uris": ["https://www.authing.cn"],
       "response_types": ["code"],
       "client_id": "6139c4d24e78a4d706b7b",
       "id_token_expire": 1209600
     },
     "defaultLoginTab": "password",
-    "redirectUris": ["https://www.authing.com"],
+    "redirectUris": ["https://www.authing.cn"],
     "showAuthorizationPage": false,
     "casProviderEnabled": false,
     "passwordTabConfig": {

@@ -1,8 +1,8 @@
-# How To Join Approw User With Your Business Data?
+# How To Join Authing User With Your Business Data?
 
 <LastUpdated/>
 
-If you use  Approw, your user information will be stored securely in a database on the  Approw cloud, and you do not need to save an additional user information. You need to associate your business data with the  Approw user locally, and associate it with the user ID (User ID) and business data.
+If you use Authing, your user information will be stored securely in a database on the Authing cloud, and you do not need to save an additional user information. You need to associate your business data with the Authing user locally, and associate it with the user ID (User ID) and business data.
 For example, there is an orders table (orders) in your business system, and its own table structure is as follows:
 
 ```sql
@@ -38,13 +38,16 @@ CREATE TABLE `order` (
 ```
 
 You can create a field `owner_id` indicates the ID of the owner of the order:
+
 - The data type is varchar(32);
-- The value it stores should be the ID of the Approw user;
+- The value it stores should be the ID of the Authing user;
+
 ```sql
 ALTER TABLE orders ADD COLUMN `owner_id` varchar(32) NOT NULL COMMENT '订单所有者用户 ID',
 ```
 
 If you need to fetch all orders of one user, you can use the following `SQL` query:
+
 ```sql
 SELECT * FROM orders WHERE owner_id = '6035120c3xxxxxe890e080db'
 ```

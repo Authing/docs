@@ -1,6 +1,6 @@
 #### 在 {{$localeConfig.brandName}} 控制台创建 AD 连接
 
-进入 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool)，按照下图指引找到  **连接身份源**/**连接 Active Directory** ：
+进入 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool)，按照下图指引找到 **连接身份源**/**连接 Active Directory** ：
 
 ![](https://cdn.authing.cn/img/20210126190459.png)
 
@@ -11,10 +11,10 @@
 你需要输入以下字段信息：
 
 - **连接标志符**: 这是此连接的唯一标志符，设置之后不能修改。
-- **显示名称**: 如果设置，{{$localeConfig.brandName}} 登录表单将会显示一个 "使用 {displayName} 登录" 的按钮。
+- **显示名称**: 如果设置，{{$localeConfig.brandName}} 登录表单将会显示一个 "Use {displayName} 登录" 的按钮。
 - **应用 Logo**
 
-然后点击「**保存**」按钮，成功创建之后，你会得到一个 **Provisioning Ticket Url**，这个会在下面的步骤中使用：
+然后点击「**保存**」按钮，成功创建之后，你会得到一个 **Provisioning Ticket Url**，这个会在下面的步骤中 Use ：
 
 ![](https://cdn.authing.cn/blog/20201109141645.png)
 
@@ -45,7 +45,7 @@
 
 ![](https://cdn.authing.cn/blog/image%20%28521%29.png)
 
-选择语言，点击「OK」。
+Language，点击「OK」。
 
 ![](https://cdn.authing.cn/docs/20200414213931.png)
 
@@ -73,7 +73,7 @@
 
 ![](https://cdn.authing.cn/docs/20200414214912.png)
 
-之后你可以在 Windows 的服务管理页面看到  AuthingADConnector 这个服务：
+之后你可以在 Windows 的服务管理页面看到 AuthingADConnector 这个服务：
 
 ![](https://cdn.authing.cn/blog/20201109214605.png)
 

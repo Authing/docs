@@ -4,7 +4,7 @@
 
 阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-android/develop.md)
 
-将上一个 [手机号码重置密码](./reset-password-by-phone.md) 教程的全部控件复制粘贴过来
+将上一个 [手机号码重置密码](./reset-password-by-phone.md) 教程的全部控件 Copy 粘贴过来
 
 修改 PhoneNumberEditText 的类型为 EmailEditText
 

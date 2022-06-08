@@ -3,20 +3,20 @@
 Use `yarn` or `npm` to install:
 
 ```bash
-$ yarn add @approw/ng-ui-components
+$ yarn add @authing/ng-ui-components
 
 # OR
 
-$ npm install @approw/ng-ui-components --save
+$ npm install @authing/ng-ui-components --save
 ```
 
 Or use `CDN` to import:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@approw/ng-ui-components"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/ng-ui-components"></script>
 
 <div ng-app="">
-  <approw-guard [appId]="APPROW_APP_ID"></approw-guard>
+  <authing-guard [appId]="authing_APP_ID"></authing-guard>
 </div>
 ```
 
@@ -26,11 +26,11 @@ Or use `CDN` to import:
 // app.module.ts
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { ApprowGuardModule } from '@approw/ng-ui-components'
+import { AuthingGuardModule } from '@authing/ng-ui-components'
 import { AppComponent } from './app.component'
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ApprowGuardModule],
+  imports: [BrowserModule, AuthingGuardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
@@ -49,14 +49,14 @@ import {
 })
 export class AppComponent {
   title = 'demo'
-  appId = 'APPROW_APP_ID'
+  appId = 'authing_APP_ID'
   onLoad([e]: [AuthenticationClient]) {
     console.log('ffffff', e)
   }
 }
 
 // app.component.html
-<approw-guard [appId]="appId" (onLoad)="onLoad($event)"></approw-guard>
+<authing-guard [appId]="appId" (onLoad)="onLoad($event)"></authing-guard>
 ```
 
 ### Monitor login success event
@@ -64,13 +64,13 @@ export class AppComponent {
 It is simple. You only need to pass a callback `onLogin`.
 
 ```html
-<approw-guard [appId]="appId" (onLogin)="onLoad($event)"></approw-guard>
+<authing-guard [appId]="appId" (onLogin)="onLoad($event)"></authing-guard>
 ```
 
 ```javascript
 export class AppComponent {
   title = "demo";
-  appId = "APPROW_APP_ID";
+  appId = "authing_APP_ID";
   onLogin([user]) {
     console.log("userInfo: ", user);
   }

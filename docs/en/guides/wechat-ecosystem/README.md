@@ -2,9 +2,9 @@
 
 <LastUpdated/>
 
-How to use the open capabilities of WeChat multi-scene based on WeChat ecology, how to use the open capabilities of WeChat multi-scenes, how to deal with complex [OpenID、UnionID](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html)Will be the problem you need to consider. WeChat ecology is very large, there are several ways to log in to the scene (such as PC website scan code, public account ", authorization, etc.), it needs to call completely different interfaces, for developers, undoubtedly increase And development costs.
+How to use the open capabilities of WeChat multi-scene based on WeChat ecology, how to use the open capabilities of WeChat multi-scenes, how to deal with complex [OpenID、UnionID](https://developers.weixin.qq.com/doc/offiaccount/en/User_Management/Get_users_basic_information_UnionID.html)Will be the problem you need to consider. WeChat ecology is very large, there are several ways to log in to the scene (such as PC website scan code, public account ", authorization, etc.), it needs to call completely different interfaces, for developers, undoubtedly increase And development costs.
 
-{{$localeConfig.brandName}} Aiming at the complex scene of WeChat ecology, the front end provides a simple, unified SDK for developers, and automatically handles the same identity identification, account merge, etc. based on OpenID, UNIONID, and mobile phone numbers on the backend. Developers only need to call the front end SDK without having to worry about the complex identity logic,{{$localeConfig.brandName}} Eventually return [standardized user information](/guides/user/user-profile.md).
+{{$localeConfig.brandName}} Aiming at the complex scene of WeChat ecology, the front end provides a simple, unified SDK for developers, and automatically handles the same identity identification, account merge, etc. based on OpenID, UNIONID, and mobile phone numbers on the backend. Developers only need to call the front end SDK without having to worry about the complex identity logic,{{$localeConfig.brandName}} Eventually return [standardized user information](/en/guides/user/user-profile.md).
 
 ## PC Sign in with WeChat scan code
 
@@ -12,13 +12,13 @@ WeChat PC scan code login allows users to log in to third-party applications or 
 
 - Application scenario: PC website;
 - Overview: Jump to the WeChat QR code page in the PC website application, then use the WeChat scan code to log in;
-- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html).
+- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/en/Website_App/WeChat_Login/Wechat_Login.html).
 
 <img src="./images/wechat-pc-scan-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
 ## PC Website uses a small program scan code login
 
-This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandName}} Open the scan of small login QR code to get the official real-name user information of WeChat official,T he user can authorize the real number to complete the registration or login, and create an account system based on the mobile phone number.[check the details](./wechat-miniprogram-qrcode.md)。
+This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandName}} Open the scan of small login QR code to get the official real-name user information of WeChat official,T he user can authorize the real number to complete the registration or login, and create an account system based on the mobile phone number.
 
 - Application Scene: PC website;
 - Overview: Show the applet QR code in the PC website application, then use the WeChat scan code to log in;
@@ -31,7 +31,7 @@ This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandNa
 
 - Application Scene: WeChat web page, public number;
 - Overview: The WeChat Authorization box is popped up within the webpage within the WeChat app. After the user authorizes the current user information;
-- View [WeChat official document](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)
+- View [WeChat official document](https://developers.weixin.qq.com/doc/offiaccount/en/OA_Web_Apps/Wechat_webpage_authorization.html)
 
 <img src="./images/wechat-web-authorize.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -41,7 +41,7 @@ This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandNa
 
 - Application scenario: mini program;
 - Overview: Used in WeChat applets, pop-up WeChat Authorization boxes, and you can get information on the current user after authorization;
-- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/en/dev/framework/open-ability/login.html)
 
 <img src="./images/wechat-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -51,7 +51,7 @@ This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandNa
 
 - Application scenario: Mobile APP；
 - Overview: Pull the WeChat APP in the mobile application to log in;
-- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)
 
 <img src="./images/wechat-mobile-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -61,7 +61,7 @@ The mobile terminal pulls a small program to log in is a key way to establish a 
 
 - Application scenario: Mobile APP；
 - Overview: Pull up the WeChat applet in your mobile application for login.
-- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)
 
 <img src="./images/wechat-mobile-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
