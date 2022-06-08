@@ -24,7 +24,7 @@
 
 ![](~@imagesZhCn/guides/access-control/5186f15e-b02a-4b7b-b886-a3f26f5f07c8.png)
 
-你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 创建角色，详情请见[角色 Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## 授权用户角色
 
@@ -34,13 +34,13 @@
 
 选择用户之后点击确认，你可以查看被授权此角色的用户列表。
 
-你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference-new/web/sdk-for-node/management/RolesManagementClient.md)。
+你也可以使用 API & SDK 给用户授予角色，详情请见[角色 Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md)。
 
 ## 在后端通过用户角色控制权限
 
 当用户成功认证、获取到 Token 之后，你可以解析到当前用户的 ID，接下来你可以使用我们提供的 API & SDK 在后端获取该用户被授予的角色，这里以 Node.js 为例：
 
-> 这里以 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference-new/)。
+> 这里以 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference/)。
 
 首先获取用户的被授予的所有角色列表：
 
@@ -89,7 +89,7 @@ if (!list.map((role) => role.code).includes('devops')) {
 
 在上一步我们通过资源授权，做到了授权给某个用户（角色）对某个特定资源的特定操作权限，我们在后端进行接口鉴权的时候，就可以做更细粒度的判断了：
 
-> 这里以 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference-new/)。
+> 这里以 Node SDK 为例，我们同时还支持 Python、Java、C#、PHP 等语言的 SDK，详情[请点击此](/reference/)。
 
 调用 `managementClient.acl.isAllowed` 方法，参数分别为：
 

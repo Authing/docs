@@ -20,108 +20,76 @@ hotSearch:
 sdkConfig:
   ios:
     name: iOS Swift
-    link: /reference-new/mobile/sdk-for-ios/
+    link: /reference/sdk-for-ios/
     icon: iOS
   android:
     name: Android
-    link: /reference-new/mobile/sdk-for-android/
+    link: /reference/sdk-for-android/
     icon: Android
   flutter:
     name: Flutter
-    link: /reference-new/mobile/sdk-for-flutter/
+    link: /reference/sdk-for-flutter/
     icon: Flutter
   javascript:
     name: JavaScript
-    link: /reference-new/web/sdk-for-node/
-    icon: JavaScript
-  javascript-api:
-    name: JavaScript
-    link: /reference-new/api-services/sdk-for-node/
-    icon: JavaScript
-  javascript-single:
-    name: JavaScript
-    link: /reference-new/single-page-application/native-javascript/
+    link: /reference/sdk-for-node/
     icon: JavaScript
   reactNative:
     name: React Native
-    link: /reference-new/mobile/sdk-for-react-native/
+    link: /reference/sdk-for-react-native/
     icon: React-Native
   cSharp:
     name: C Sharp
-    link: /reference-new/mobile/sdk-for-csharp/
-    icon: csharp
-  cSharp-api:
-    name: C Sharp
-    link: /reference-new/api-services/sdk-for-csharp/
-    icon: csharp
-  cSharp-web:
-    name: C Sharp
-    link: /reference-new/web/sdk-for-csharp/
+    link: /reference/sdk-for-csharp/
     icon: csharp
   react:
     name: React
-    link: /reference-new/single-page-application/react
+    link: /reference/guard/react
     icon: React-Native
   react-Native:
     name: React
-    link: /reference-new/mobile/sdk-for-react-native.html
+    link: /reference/sdk-for-react-native.html
     icon: React-Native
   angular:
     name: Angular
-    link: /reference-new/single-page-application/angular
+    link: /reference/guard/react
     icon: Angular
   vue:
     name: Vue
-    link: /reference-new/single-page-application/vue
+    link: /reference/guard/vue
     icon: Vue
   python:
     name: Python
-    link: /reference-new/web/sdk-for-python/
-    icon: Python
-  python-api:
-    name: Python
-    link: /reference-new/api-services/sdk-for-python/
+    link: /reference/sdk-for-python/
     icon: Python
   nodeJs:
     name: Node.js
-    link: /reference-new/web/sdk-for-node/
+    link: /reference/sdk-for-node/
     icon: Nodejs
-  nodeJs-api:
-    name: Node.js
-    link: /reference-new/api-services/sdk-for-node/
-    icon: Nodejs
+
   ruby:
     name: Ruby
-    link: /reference-new/web/sdk-for-ruby.html
+    link: /reference/sdk-for-ruby.html
     icon: Ruby
   ruby-api:
     name: Ruby
-    link: /reference-new/api-services/sdk-for-ruby.html
+    link: /reference/sdk-for-ruby.html
     icon: Ruby
   java:
     name: Java
-    link: /reference-new/web/sdk-for-java/
+    link: /reference/sdk-for-java/
     icon: Java
-  java-api:
-    name: Java
-    link: /reference-new/api-services/sdk-for-java/
-    icon: Java
+
   golang:
     name: Golang
-    link: /reference-new/web/sdk-for-go/
+    link: /reference/sdk-for-go/
     icon: Go
-  golang-api:
-    name: Golang
-    link: /reference-new/api-services/sdk-for-go/
-    icon: Go
+
   php:
     name: PHP
-    link: /reference-new/web/sdk-for-php/
+    link: /reference/sdk-for-php/
     icon: php
-  php-api:
-    name: PHP
-    link: /reference-new/api-services/sdk-for-php/
-    icon: php
+
 applicationSdks:
   - title: 移动 / 客户端应用
     description: 在移动 / 客户端应用中快速接入认证服务
@@ -136,7 +104,7 @@ applicationSdks:
     description: 在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录
     color: "#75A3FF"
     sdks:
-      - javascript-single
+      - javascript
       - react
       - angular
       - vue
@@ -146,7 +114,7 @@ applicationSdks:
     sdks:
       - javascript
       - python
-      - cSharp-web
+      - cSharp
       - nodeJs
       - ruby
       - java
@@ -156,14 +124,14 @@ applicationSdks:
     description: 在后端调用 {{$localeConfig.brandName}} 并保护 API 接口
     color: "#F8BC00"
     sdks:
-      - javascript-api
-      - python-api
-      - cSharp-api
-      - nodeJs-api
-      - ruby-api
-      - java-api
-      - golang-api
-      - php-api
+      - javascript
+      - python
+      - cSharp
+      - nodeJs
+      - ruby
+      - java
+      - golang
+      - php
 sections:
   - title: 概念
     description: 了解 {{$localeConfig.brandName}} 体系结构基础

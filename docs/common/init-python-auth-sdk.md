@@ -1,4 +1,4 @@
-使用[应用 ID（AppID）](/guides/faqs/get-app-id-and-secret.md) 初始化 [Python SDK](/reference-new/web/sdk-for-python/) 的 `AuthenticationClient`:
+使用[应用 ID（AppID）](/guides/faqs/get-app-id-and-secret.md) 初始化 [Python SDK](/reference/sdk-for-python/) 的 `AuthenticationClient`:
 
 ```python
 from authing.v2.authentication import AuthenticationClient, AuthenticationClientOptions

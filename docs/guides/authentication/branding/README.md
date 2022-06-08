@@ -8,7 +8,7 @@
 
 ## 样式配置
 
-- 登录框版本选择：[如何切换至新版 Guard | Authing 文档](/reference-new/guard/console-migrate.md)
+- 登录框版本选择：[如何切换至新版 Guard | Authing 文档](/reference/guard/console-migrate.md)
 - 自定义背景：改变登录框加载和展示的背景
 - 自定义加载图标：改变登录框加载时的图标
 - 隐藏企业身份源登录

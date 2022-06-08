@@ -192,7 +192,7 @@ $navbar-horizontal-padding = 0
       vertical-align top
     .nav-link
       color $subTitleColor
-      // padding: 0 20px;
+      padding: 0 20px;
   .authing-search-box
     width 200px
     margin 0

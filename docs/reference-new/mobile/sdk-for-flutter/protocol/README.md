@@ -90,7 +90,7 @@ User user = result.user; // user info
 
 ## OIDC 协议手机号验证码登陆
 
-通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference-new/mobile/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 User 里面包含 access token , id token 和 refresh token。
+通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 User 里面包含 access token , id token 和 refresh token。
 
 ```dart
 static Future<AuthResult> loginByPhoneCode(String phone, String code) async

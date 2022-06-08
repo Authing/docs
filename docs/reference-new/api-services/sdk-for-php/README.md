@@ -88,22 +88,22 @@ $users = $management->users()->paginate();
 
 ### `管理模块` 包含以下子模块：
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/UsersManagementClient.md
+::: page-ref /reference/sdk-for-php/management/UsersManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/RolesManagementClient.md
+::: page-ref /reference/sdk-for-php/management/RolesManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/PoliciesManagementClient.md
+::: page-ref /reference/sdk-for-php/management/PoliciesManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/AclManagementClient.md
+::: page-ref /reference/sdk-for-php/management/AclManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/UdfManagementClient.md
+::: page-ref /reference/sdk-for-php/management/UdfManagementClient.md
 :::
 
-::: page-ref /reference-new/api-services/sdk-for-php/management/ApplicationManagementClient.md
+::: page-ref /reference/sdk-for-php/management/ApplicationManagementClient.md
 :::
 
 ## 使用认证模块
