@@ -217,7 +217,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .feedback-small
   display: inline-flex
   margin-left: 14px
