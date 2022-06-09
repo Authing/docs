@@ -847,14 +847,14 @@ export default {
 
 #### GuardMode 
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Modal|'modal'|模态框模式|
 |Normal|'normal'|正常模式|
 
 #### LoginMethods
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LDAP|'ldap'|LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))|
 |AppQr|'app-qrcode'|APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
@@ -866,21 +866,21 @@ export default {
 
 #### RegisterMethods
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Email|'email'|邮箱注册|
 |Phone|'phone'|手机验证码注册|
 
 #### GuardModuleType
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LOGIN|'login'|登录界面|
 |REGISTER|'register'|注册界面|
 
 #### SocialConnections
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |ALIPAY|'alipay'|支付宝登录|
 |GOOGLE|'google'|谷歌登录|
