@@ -135,7 +135,7 @@ a.sidebar-link
     font-weight 500
     color $accentColor!important
   .sidebar-group &
-    padding-left 0.8rem
+    padding-left 1rem
   .sidebar-sub-headers &
     padding-top 0.25rem
     padding-bottom 0.25rem

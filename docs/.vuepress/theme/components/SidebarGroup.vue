@@ -19,7 +19,7 @@
       :to="item.path"
       @click.native="$emit('toggle')"
     >
-      <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
       <span>{{ item.title }}</span>
     </RouterLink>
 
@@ -29,18 +29,21 @@
       :class="{ open }"
       @click="$emit('toggle')"
     >
-      <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
       <span>{{ item.title }}</span>
     </p>
 
     <DropdownTransition>
       <SidebarLinks
-        v-if="open || !collapsable"
+        v-show="open || !collapsable"
         class="sidebar-group-items"
         :items="item.children"
         :sidebar-depth="item.sidebarDepth"
         :initial-open-group-index="item.initialOpenGroupIndex"
         :depth="depth + 1"
+        :index="index"
+        @onClickMenu="onClickMenu"
+        :check-index="checkIndex"
       />
     </DropdownTransition>
   </section>
@@ -57,14 +60,19 @@ export default {
     DropdownTransition
   },
 
-  props: ["item", "open", "collapsable", "depth"],
+  props: ["item", "open", "collapsable", "depth", "index", "checkIndex"],
 
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
     this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
   },
 
-  methods: { isActive }
+  methods: {
+    isActive,
+    onClickMenu(dataIndex) {
+      this.$emit('onClickMenu', dataIndex)
+    }
+  }
 };
 </script>
 
@@ -72,9 +80,6 @@ export default {
 .sidebar-group
   .sidebar-group
     padding-left 16px
-  .check
-    font-weight: 500 !important
-    color: #1d2129 !important
   &:not(.collapsable)
     .sidebar-heading:not(.clickable)
       cursor auto

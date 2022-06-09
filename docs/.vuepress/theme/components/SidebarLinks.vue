@@ -1,6 +1,13 @@
 <template>
   <ul v-if="items.length" class="sidebar-links">
-    <li v-for="(item, i) in items" :key="i">
+    <li
+      v-for="(item, i) in items" :key="i"
+      :data-index="index ? `${index}-${i}` : `${i}`"
+      @click.stop="onClickMenu(index ? `${index}-${i}` : `${i}`, $event)"
+      :class="{
+        'menu-check': checkIndex && checkIndex.indexOf(index ? `${index}-${i}` : `${i}`) === 0
+      }"
+    >
       <SidebarGroup
         v-if="item.type === 'group'"
         :item="item"
@@ -8,6 +15,9 @@
         :collapsable="item.collapsable || item.collapsible"
         :depth="depth"
         @toggle="toggleGroup(i)"
+        :index="index ? `${index}-${i}` : `${i}`"
+        @onClickMenu="onEmitIndex"
+        :check-index="checkIndex"
       />
       <SidebarLink v-else :sidebar-depth="sidebarDepth" :item="item" />
     </li>
@@ -29,6 +39,8 @@ export default {
     'depth', // depth of current sidebar links
     'sidebarDepth', // depth of headers to be extracted
     'initialOpenGroupIndex',
+    'index',
+    'checkIndex'
   ],
 
   data() {
@@ -63,6 +75,13 @@ export default {
     isActive(page) {
       return isActive(this.$route, page.regularPath)
     },
+
+    onClickMenu(dataIndex, e) {
+      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$emit('onClickMenu', dataIndex)
+    },
+    onEmitIndex(dataIndex) {
+      this.$emit('onClickMenu', dataIndex)
+    }
   },
 }
 
@@ -92,3 +111,8 @@ function descendantIsActive(route, item) {
   return false
 }
 </script>
+<style lang="stylus">
+.menu-check, .menu-check > section > p, .menu-check > section > a
+  font-weight: 500 !important
+  color: #1d2129 !important
+</style>

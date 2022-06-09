@@ -20,7 +20,7 @@
         :items="items"
       />
 
-      <SidebarLinks :depth="0" :items="items" />
+      <SidebarLinks @onClickMenu="onClickMenu" :depth="0" :items="items" :check-index="dataIndex" />
     </template>
     <slot name="bottom" />
   </aside>
@@ -47,11 +47,9 @@ export default {
 
   props: ["items"],
 
-  watch: {
-    $route(val) {
-      setTimeout(() => {
-        this.getHighParent()
-      }, 0);
+  data() {
+    return {
+      dataIndex: ''
     }
   },
 
@@ -88,25 +86,14 @@ export default {
     if (sidebar && activeItem) {
       sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200;
     }
-    this.getHighParent()
+    this.dataIndex = activeItem.parentNode.getAttribute('data-index')
   },
 
   methods: {
     getUserNavLinks,
     getLanguageNavLinks,
-    getHighParent() {
-      const nodes = document.querySelectorAll('.sidebar-links .check')
-      nodes.forEach(node => {
-        node.classList.remove("check");
-      })
-      let node = document.querySelector('.sidebar-links .active')
-      if (!node) return
-      while(node !== this.$refs.sidebarRef) {
-        node = node.parentNode
-        if (node.className.includes('sidebar-group ')) {
-          node.firstChild.classList.add('check')
-        }
-      }
+    onClickMenu(dataIndex) {
+      this.dataIndex = dataIndex
     }
   }
 };
