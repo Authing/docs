@@ -636,7 +636,7 @@ const zhCnNavBar = {
             },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitlab/"
             },
             {
               title: "百度",
@@ -2593,7 +2593,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitlab/"
             },
             {
               title: "百度",

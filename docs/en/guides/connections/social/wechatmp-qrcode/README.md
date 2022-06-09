@@ -46,7 +46,7 @@ Since only one WeChat server configuration can be set, you need to choose two di
 ![](./images/step1-4.jpg)
 
 - **URL**: set to `https://core.authing.cn/connections/social/{Identifier}/{USERPOOL_ID}/events`, replace `{Identifier}` with the unique identifier you entered in the {{$localeConfig.brandName}} Console configuration area, and put it in Replace `{USERPOOL_ID}` with your [UserPool ID](/en/guides/faqs/get-userpool-id-and-secret).
-  > If there is no `Identifier`, you can create the identity source and modify it later.
+  > If there is no `Identifier`, you can create the identity provider and modify it later.
 - **Token**: You can set the Token in the WeChat official account to any string, it must be in English or numbers, the length is 3-32 characters, and make sure that the token you configure in the {{$localeConfig.brandName}} Console and the required access The tokens provided by the official account are the same.
 - **EncodingAESKey**: The message encryption key consists of 43 characters, which can be modified randomly. The character range is A-Z, a-z, 0-9.
 - **Message Encryption Method**: Please select it according to your business needs, it is recommended to use Security Mode.
@@ -85,7 +85,7 @@ For the specific process and sample code, please see this [Demo](https://github.
 | EncodingAESKey               | The message encryption key consists of 43 characters, which can be modified randomly, and the character range is A-Z, a-z, 0-9. If the message encryption and decryption method you choose is plaintext mode, this item can be left blank.                                                                                                                                                                                        |
 | Message Decryption Method    | Please select the same message encryption and decryption method you selected on the WeChat official account.                                                                                                                                                                                                                                                                |
 | Login Mode                   | After enabling the "**Login Only Mode**", you can only log in to an existing account and cannot create a new account. Please choose carefully.                                                                                                                                                                  |
-| Account Identity Association | When "**Account Identity Association**" is not enabled, a new user is created by default when a user logs in through an identity source. After enabling "**Account Identity Association**", you can allow users to directly log in to existing accounts through "**Field Matching**" or "**Ask Binding Mode**". |
+| Account Identity Association | When "**Account Identity Association**" is not enabled, a new user is created by default when a user logs in through an identity provider. After enabling "**Account Identity Association**", you can allow users to directly log in to existing accounts through "**Field Matching**" or "**Ask Binding Mode**". |
 
 2.5 After the configuration is complete, click the "Create" or "Save" button to complete the creation.
 
