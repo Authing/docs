@@ -1,4 +1,4 @@
-# Integrate Authing with mobile client (iOS and Andriod)
+# Integrate Authing with mobile client (iOS and Android)
 
 <LastUpdated/>
 
