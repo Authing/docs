@@ -1,10 +1,10 @@
-# WeLink 社会化登录
+# WeLink 企业身份源登录
 
 <LastUpdated/>
 
 ## 场景介绍
 
-- **概述**：WeLink 社会化登录是用户以 WeLink 为身份源安全登录第三方应用或者网站。在 Authing 中配置并开启 WeLink 的社会化登录，即可实现通过 Authing 快速获取 WeLink 基本开放的信息和帮助用户实现免密登录功能。
+- **概述**：WeLink 企业身份源登录是用户以 WeLink 为身份源安全登录第三方应用或者网站。在 Authing 中配置并开启 WeLink 的企业身份源登录，即可实现通过 Authing 快速获取 WeLink 基本开放的信息和帮助用户实现免密登录功能。
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 

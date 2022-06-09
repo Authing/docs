@@ -1,10 +1,10 @@
-# WeLink Social Login
+# WeLink Enterprise Login
 
 <LastUpdated/>
 
 ## Introduction
 
-- **Overview**：WeLink social login is a secure login for users to third-party applications or websites using WeLink as their identity source. By configuring and enabling WeLink's social login in Authing, you can quickly obtain WeLink's basic open information through Authing and help users achieve password-free login.
+- **Overview**：WeLink enterprise login is a secure login for users to third-party applications or websites using WeLink as their identity source. By configuring and enabling WeLink's enterprise login in Authing, you can quickly obtain WeLink's basic open information through Authing and help users achieve password-free login.
 - **Application scenarios**: PC Website
 - **End-User Preview**:
 
