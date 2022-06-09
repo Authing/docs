@@ -65,7 +65,7 @@
     
     <div class="feedback-help">
       <div class="text">若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing 控制台，来开启你的 Authing 之旅！</div>
-      <a class="button">部署到 Authing</a>
+      <a class="button" href="https://console.authing.cn" target="_blank">部署到 Authing</a>
       <img class="shadow-banner" src="../assets/images/banner.png" />
       <div class="shadow-bg"></div>
     </div>
