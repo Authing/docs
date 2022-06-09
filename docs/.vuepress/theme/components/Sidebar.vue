@@ -86,7 +86,10 @@ export default {
     if (sidebar && activeItem) {
       sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200;
     }
-    this.dataIndex = activeItem.parentNode.getAttribute('data-index')
+
+    if (activeItem) {
+      this.dataIndex = activeItem.parentNode.getAttribute('data-index')
+    }
   },
 
   methods: {
@@ -126,6 +129,7 @@ export default {
     padding 0
 
   ul
+    line-height 1
     margin 0
     list-style-type none
 

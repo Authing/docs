@@ -20,7 +20,7 @@
       @click.native="$emit('toggle')"
     >
       <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
-      <span>{{ item.title }}</span>
+      <span class="sidebar-heading__title">{{ item.title }}</span>
     </RouterLink>
 
     <p
@@ -30,7 +30,7 @@
       @click="$emit('toggle')"
     >
       <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
-      <span>{{ item.title }}</span>
+      <span class="sidebar-heading__title">{{ item.title }}</span>
     </p>
 
     <DropdownTransition>
@@ -89,9 +89,9 @@ export default {
     padding-left 0
     & > .sidebar-heading
       font-size 14px
-      line-height 26px
+      line-height 22px
       font-weight normal
-      padding-left 16px
+      padding-left 24px
       // &:not(.clickable)
       //   opacity 0.5
     & > .sidebar-group-items
@@ -119,18 +119,21 @@ export default {
   cursor pointer
   font-size 16px
   // text-transform uppercase
-  line-height: 26px
-  padding 0.35rem 1.5rem 0.35rem 16px
+  line-height: 22px
+  padding 0.35rem 1.5rem 0.35rem 24px
   width 100%
   box-sizing border-box
   margin 0
+  // white-space nowrap
+  // overflow hidden
+  // text-overflow ellipsis
   &.open, &:hover
     color inherit
   .arrow
     position absolute
     top: 50%;
     transform: translateY(-50%);
-    left 0
+    left 8px
   &.clickable
     &.active
       font-weight 500
@@ -145,4 +148,5 @@ export default {
 .depth-0 > ul > li
   & > .sidebar-group > .sidebar-heading, & > .sidebar-link
     font-size: 16px
+    line-height 26px
 </style>

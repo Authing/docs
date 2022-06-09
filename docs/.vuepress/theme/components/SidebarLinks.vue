@@ -2,10 +2,10 @@
   <ul v-if="items.length" class="sidebar-links">
     <li
       v-for="(item, i) in items" :key="i"
-      :data-index="index ? `${index}-${i}` : `${i}`"
-      @click.stop="onClickMenu(index ? `${index}-${i}` : `${i}`, $event)"
+      :data-index="getDataIndex(index, i)"
+      @click.stop="onClickMenu($event, getDataIndex(index, i))"
       :class="{
-        'menu-check': checkIndex && checkIndex.indexOf(index ? `${index}-${i}` : `${i}`) === 0
+        'menu-check': checkIndex && checkIndex.indexOf(getDataIndex(index, i)) === 0
       }"
     >
       <SidebarGroup
@@ -15,7 +15,7 @@
         :collapsable="item.collapsable || item.collapsible"
         :depth="depth"
         @toggle="toggleGroup(i)"
-        :index="index ? `${index}-${i}` : `${i}`"
+        :index="getDataIndex(index, i)"
         @onClickMenu="onEmitIndex"
         :check-index="checkIndex"
       />
@@ -76,12 +76,17 @@ export default {
       return isActive(this.$route, page.regularPath)
     },
 
-    onClickMenu(dataIndex, e) {
+    onClickMenu(e, dataIndex) {
       (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$emit('onClickMenu', dataIndex)
     },
+
     onEmitIndex(dataIndex) {
       this.$emit('onClickMenu', dataIndex)
-    }
+    },
+
+    getDataIndex(index, i) {
+      return index ? `${index}-${i}` : `${i}`
+    },
   },
 }
 

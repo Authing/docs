@@ -69,7 +69,13 @@ function renderLink(h, to, text, active, level) {
     class: {
       active,
       "sidebar-link": true
-    }
+    },
+    // directives: [
+    //   {
+    //     name: 'tooltip',
+    //     value: text
+    //   }
+    // ]
   };
 
   if (level > 2) {
@@ -107,7 +113,13 @@ function renderExternal(h, to, text) {
       },
       class: {
         "sidebar-link": true
-      }
+      },
+      // directives: [
+      //   {
+      //     name: 'tooltip',
+      //     value: text
+      //   }
+      // ]
     },
     [text, h("OutboundLink")]
   );
@@ -129,13 +141,16 @@ a.sidebar-link
   line-height 1.4
   width: 100%
   box-sizing: border-box
+  // white-space nowrap
+  // overflow hidden
+  // text-overflow ellipsis
   &:hover
     color $accentColor
   &.active
     font-weight 500
     color $accentColor!important
   .sidebar-group &
-    padding-left 1rem
+    padding-left 1.5rem
   .sidebar-sub-headers &
     padding-top 0.25rem
     padding-bottom 0.25rem
