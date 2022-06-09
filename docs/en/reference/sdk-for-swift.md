@@ -8,10 +8,9 @@ meta:
 
 <LastUpdated/>
 
+This is a pure Swift library for [Authing](https://authing.cn).
 
-This is a pure Swift library for [Approw](https://approw.com).
-
-> GitHub Source Code: [https://github.com/Approw/SwiftyApprow](https://github.com/Approw/SwiftyApprow)
+> GitHub Source Code: [https://github.com/Authing/SwiftyAuthing](https://github.com/Authing/SwiftyAuthing)
 
 <img src="../images/reference/Swift0.png" height="500px"></img>
 
@@ -26,7 +25,7 @@ This is a pure Swift library for [Approw](https://approw.com).
 ### Swift Package Manager
 
 1. Xcode - Project - Swift Packages
-2. Add + https://github.com/Approw/SwiftyApprow.git
+2. Add + https://github.com/Authing/SwiftyAuthing.git
 3. Select the latest version
 
 ![image](../images/reference/Swift1.png)
@@ -41,19 +40,19 @@ This is a pure Swift library for [Approw](https://approw.com).
 
 1. Clone repository
 
-2. Change **UserPoolId, Secret, and Host** in SwiftyApprowExample - ViewController.swift
+2. Change **UserPoolId, Secret, and Host** in SwiftyAuthingExample - ViewController.swift
 
-3. Run **SwiftyApprowExample** with iOS simulator or device.
+3. Run **SwiftyAuthingExample** with iOS simulator or device.
 
-4. Test and check data with web console [https://console.approw.com](https://console.approw.com)
+4. Test and check data with web console [https://console.authing.cn](https://console.authing.cn)
 
 ## How to use
 
 ```swift
-import SwiftyApprow
+import SwiftyAuthing
 
 /// Config Information, change your UserPoolId
-/// Find in https://console.approw.com Setting - Basic Information & Application.
+/// Find in https://console.authing.cn Setting - Basic Information & Application.
 let userPoolId = "userPoolId"
 let appId = "appId"
 
@@ -69,7 +68,7 @@ self.client = AuthenticationClient(userPoolId: userPoolId, appId: appId)
 
 
 /// Register by Email and Password.
-/// 
+///
 ///
 func registerByEmail() {
     //Normal
@@ -96,7 +95,7 @@ func registerByEmail() {
 }
 
 /// Register by Username and Password.
-/// 
+///
 ///
 func registerByUsername() {
     //Normal
@@ -123,7 +122,7 @@ func registerByUsername() {
 }
 
 /// Register by Phone Number and SMS Code.
-/// 
+///
 ///
 func registerByPhoneCode() {
 
@@ -162,7 +161,7 @@ func registerByPhoneCode() {
 }
 
 /// Check Password Strength.
-/// 
+///
 ///
 func checkPasswordStrength() {
     //Normal
@@ -197,7 +196,7 @@ func checkPasswordStrength() {
 }
 
 /// Send SMS Code to Phone Number.
-/// 
+///
 ///
 func sendSmsCode() {
     //Normal
@@ -213,7 +212,7 @@ func sendSmsCode() {
 
 
 /// Login by Email and Password.
-/// 
+///
 ///
 func loginByEmail() {
     //Normal
@@ -281,7 +280,7 @@ func loginByUsername() {
 }
 
 /// Login by Phone Number and SMS Code.
-/// 
+///
 ///
 func loginByPhoneCode() {
     //Normal
@@ -316,7 +315,7 @@ func loginByPhoneCode() {
 
 
 /// Login by Phone Number and Password.
-/// 
+///
 ///
 func loginByPhonePassword() {
     //Normal
@@ -351,7 +350,7 @@ func loginByPhonePassword() {
 
 
 /// Check Login Token status.
-/// 
+///
 ///
 func checkLoginStatus() {
     // Change your accessToken here
@@ -390,7 +389,7 @@ func checkLoginStatus() {
 
 
 /// Send Email.
-/// 
+///
 ///
 func sendEmail() {
     //Normal
@@ -424,7 +423,7 @@ func sendEmail() {
 }
 
 /// Reset Password by Phone Code.
-/// 
+///
 ///
 func resetPasswordByPhoneCode() {
     //Normal
@@ -458,7 +457,7 @@ func resetPasswordByPhoneCode() {
 }
 
 /// Reset Password by Email Code.
-/// 
+///
 ///
 func resetPasswordByEmailCode() {
     //Normal
@@ -493,7 +492,7 @@ func resetPasswordByEmailCode() {
 
 
 /// Update Profile.
-/// 
+///
 ///
 func updateProfile() {
     //Normal
@@ -528,7 +527,7 @@ func updateProfile() {
 
 
 /// Update Password.
-/// 
+///
 ///
 func updatePassword() {
     //Normal
@@ -563,7 +562,7 @@ func updatePassword() {
 
 
 /// Update Phone.
-/// 
+///
 ///
 func updatePhone() {
     //Normal
@@ -598,7 +597,7 @@ func updatePhone() {
 
 
 /// Update Email.
-/// 
+///
 ///
 func updateEmail() {
     //Normal
@@ -633,7 +632,7 @@ func updateEmail() {
 
 
 ///Refresh Token.
-/// 
+///
 ///
 func refreshToken() {
     //Normal
@@ -668,7 +667,7 @@ func refreshToken() {
 
 
 /// Get Current User Information.
-/// 
+///
 ///
 func getCurrentUser() {
     //Normal
@@ -703,7 +702,7 @@ func getCurrentUser() {
 
 
 /// Logout Current User.
-/// 
+///
 ///
 func logout() {
     //Normal
@@ -737,7 +736,7 @@ func logout() {
 }
 
 /// Bind phone number.
-/// 
+///
 ///
 func bindPhone() {
     //Normal
@@ -772,7 +771,7 @@ func bindPhone() {
 
 
 /// Unbind email.
-/// 
+///
 ///
 func unbindEmail() {
     //Normal
@@ -807,7 +806,7 @@ func unbindEmail() {
 
 
 /// Unbind phone number.
-/// 
+///
 ///
 func unbindPhone() {
     //Normal
@@ -841,7 +840,7 @@ func unbindPhone() {
 }
 
 /// List Udv. (current user)
-/// 
+///
 ///
 func listUdv() {
     //Normal
@@ -876,7 +875,7 @@ func listUdv() {
 
 
 /// Set Udv.
-/// 
+///
 ///
 func setUdv() {
     //Normal
@@ -910,7 +909,7 @@ func setUdv() {
 }
 
 /// Remove Udv.
-/// 
+///
 ///
 func removeUdv() {
     //Normal
@@ -945,7 +944,7 @@ func removeUdv() {
 
 
 /// List orgnization (current user)
-/// 
+///
 func listOrg() {
     //Normal
 //        self.client?.listOrg(completion: { status in
@@ -959,7 +958,7 @@ func listOrg() {
 }
 
 /// Login by LDAP username.
-/// 
+///
 func loginByLdap() {
     //Normal
 //        self.client?.loginByLdap(username: textUsername.text!, password: textPassword.text!, completion: { status in
@@ -973,7 +972,7 @@ func loginByLdap() {
 }
 
 /// Get Base64 from UIImage
-/// 
+///
 ///
 func getBase64FromImage(_ name: String) -> String{
     let imageOrigin = UIImage(named: name)

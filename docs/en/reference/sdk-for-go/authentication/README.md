@@ -21,7 +21,7 @@ If you need a standard protocol, such as [OpenID Connect](/guides/federation/oid
 :::
 
 <!--
-如果你需要使用 MFA，请使用：
+如果你需要Use  MFA，请Use ：
 
 ::: page-ref /reference/sdk-for-java/authentication/MfaAuthenticationClient.md
 :::

@@ -1,4 +1,4 @@
-This script will run when users try to login. If the user has not been migrated to Approw database, his/her account password will be validated by this script. This script is required in both LAZY_MIGRATION and CUSTOM_USER_STORE mode.
+This script will run when users try to login. If the user has not been migrated to Authing database, his/her account password will be validated by this script. This script is required in both LAZY_MIGRATION and CUSTOM_USER_STORE mode.
 
 ### Function Definition
 
@@ -33,38 +33,38 @@ async function login(query, password, context) {
   // 4. Something went wrong while trying to reach your database:
   //    throw new Error("my error message")
 
-  const msg = 'Please implement the Login script for this database connection';
+  const msg = "Please implement the Login script for this database connection";
   throw new Error(msg);
 }
 ```
 
-| Parameter           | Type   | nullable | Explanation                                         |
-| :------------- | :----- | :------- | :------------------------------------------- |
-| query          | object | false    | Query condition                                     |
-| query.email    | string | ture     | User's email. The parameter is not null when the user is using the email to login.     |
+| Parameter      | Type   | nullable | Explanation                                                                                          |
+| :------------- | :----- | :------- | :--------------------------------------------------------------------------------------------------- |
+| query          | object | false    | Query condition                                                                                      |
+| query.email    | string | ture     | User's email. The parameter is not null when the user is using the email to login.                   |
 | query.phone    | string | true     | User's telephone number. The parameter is not null when the user is using the phone number to login. |
-| query.username | string | true     | User's username. The parameter is not null when the user is using the username to login. |
-| password       | string | false    | User's password in cleartext. It is recommended to use `bcrypt` to encrypt the password.                                   |
-| context        | object | true     | Requiring context.                          |
+| query.username | string | true     | User's username. The parameter is not null when the user is using the username to login.             |
+| password       | string | false    | User's password in cleartext. It is recommended to use `bcrypt` to encrypt the password.             |
+| context        | object | true     | Requiring context.                                                                                   |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                  |
-| userPoolName     | string | The Name of the user pool.                                                                                               |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                             |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                |
-| appName          | string | The name of the current application.                                                                                          |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                 |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### The User Exists and the Password is Correct
 
-When the user exists and the password is correct, you need to return user information to Approw, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
+When the user exists and the password is correct, you need to return user information to Authing, the format of user information can be found in document of [detailed fields of user profile](/en/guides/user/user-profile.md). For example:
 
 ```javascript
 async function login(query, password, context) {
@@ -75,7 +75,7 @@ async function login(query, password, context) {
     emailVerified: true,
     nickname: "Nick",
     photo: ""
-  }
+  };
 }
 ```
 
@@ -86,7 +86,7 @@ When the user does not exist, you need to throw an error. You can design differe
 ```javascript
 async function login(query, password, context) {
   // Implement your logic here
-  throw new Error('User not exists');
+  throw new Error("User not exists");
 }
 ```
 
@@ -97,7 +97,7 @@ When the user exists but the password is wrong, you need to throw an error. You 
 ```javascript
 async function login(query, password, context) {
   // Implement your logic here
-  throw new Error('User not exists');
+  throw new Error("User not exists");
 }
 ```
 
@@ -110,7 +110,7 @@ async function login(query, password, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -119,7 +119,7 @@ async function login(query, password, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -128,18 +128,15 @@ When an unknown error occurs, we recommend throwing a standard `Error` object, A
 We recommend using `bcrypt` to encrypt user information such as:
 
 ```javascript
-const bcrypt = require('bcrypt');
-const hashedPassword = await bcrypt.hash(
-  'passw0rd',
-  await bcrypt.genSalt(10),
-);
+const bcrypt = require("bcrypt");
+const hashedPassword = await bcrypt.hash("passw0rd", await bcrypt.genSalt(10));
 ```
 
 And validate if the password is correct:
 
 ```javascript
-const bcrypt = require('bcrypt');
-const valid = await bcrypt.compare('passw0rd', user.password);
+const bcrypt = require("bcrypt");
+const valid = await bcrypt.compare("passw0rd", user.password);
 ```
 
 #### Disable the Database Connection When Exit the Function
@@ -181,10 +178,10 @@ async function login(query, password, context) {
 
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -200,7 +197,7 @@ async function login(query, password, context) {
 
   // Use bcrypt to validate password
   // more info here: https://github.com/kelektiv/node.bcrypt.js
-  const bcrypt = require('bcrypt');
+  const bcrypt = require("bcrypt");
 
   // 构建查询参数
   const queries = [];
@@ -222,18 +219,18 @@ async function login(query, password, context) {
     index += 1;
   }
 
-  const QUERY = `SELECT * FROM users WHERE ${queries.join(' OR ')}`;
+  const QUERY = `SELECT * FROM users WHERE ${queries.join(" OR ")}`;
 
   try {
     const result = await client.query(QUERY, parameters);
     if (result.rows.length === 0) {
-      throw new Error('User not exists!');
+      throw new Error("User not exists!");
     }
     const user = result.rows[0];
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      throw new Error('Password is not valid!');
+      throw new Error("Password is not valid!");
     }
 
     return {
@@ -252,7 +249,7 @@ async function login(query, password, context) {
       address: user.address,
       company: user.company,
       birthdate: user.birthdate,
-      website: user.website,
+      website: user.website
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);
@@ -261,5 +258,4 @@ async function login(query, password, context) {
     client.end();
   }
 }
-
 ```

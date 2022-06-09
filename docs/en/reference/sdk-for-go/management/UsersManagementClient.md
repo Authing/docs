@@ -14,7 +14,7 @@ This module can perform user directory to delete, search for users, refresh user
 
 management.NewClient(userPoolId, appSecret).Detail(userId)
 
-Get user details through user ID, if you want to get user details with token, use [AuthenticationClient SDK](/reference/sdk-for-java/authentication/AuthenticationClient.md#获取当前登录的用户信息) .
+Get user details through user ID, if you want to get user details with token, use [AuthenticationClient SDK](/en/reference/sdk-for-java/authentication/AuthenticationClient.md#获取当前登录的用户信息) .
 
 #### parameter
 

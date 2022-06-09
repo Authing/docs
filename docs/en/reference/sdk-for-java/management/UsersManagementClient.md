@@ -93,7 +93,7 @@ UsersManagementClient().update(id, updates)
 - `updates.photo` \<String\> Avatar
 - `updates.company` \<String\> Company
 - `updates.browser` \<String\> Browser
-- `updates.loginsCount` \<Integer\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `updates.loginsCount` \<Integer\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `updates.lastLogin` \<String\> Last login time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `updates.lastIP` \<String\> The IP of the user's last login (or other activity)
 - `updates.signedUp` \<String\> Registration time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -221,7 +221,7 @@ PaginatedUsers users = managementClient.users().list().execute();
 
 UsersManagementClient().exists(options)
 
-> Check whether the user exists. The Approw currently can check username, email, and phone number.
+> Check whether the user exists. The Authing currently can check username, email, and phone number.
 
 #### Parameters
 

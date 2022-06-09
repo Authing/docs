@@ -21,7 +21,7 @@ $ npm install @authing/sso --save
 Then it can be used in the following way
 
 ```js
-import AuthingSSO from '@authing/sso'
+import AuthingSSO from "@authing/sso";
 ```
 
 ### Install via CDN <a id="cdn-install"></a>
@@ -29,7 +29,7 @@ import AuthingSSO from '@authing/sso'
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@authing/sso/dist/AuthingSSO.umd.min.js"></script>
 <script>
-  console.log(AuthingSSO)
+  console.log(AuthingSSO);
 </script>
 ```
 
@@ -42,12 +42,12 @@ Before starting, you need to [create an application](/guides/app/create-app.md)�
 To initialize the AuthingSSO SDK, you need to pass in the [application ID](/faqs/get-app-id-and-secret.md) and application domain name. The format of the application domain name is `example-app.authing.cn` **without the protocol header and Path**. See the [initialization constructor](#初始化构造函数) for detailed parameters.
 
 ```js
-import AuthingSSO from '@authing/sso'
+import AuthingSSO from "@authing/sso";
 
 let auth = new AuthingSSO({
-  appId: 'APP_ID',
-  appDomain: 'example-app.authing.cn',
-})
+  appId: "APP_ID",
+  appDomain: "example-app.authing.cn"
+});
 ```
 
 ::: hint-info
@@ -55,12 +55,12 @@ let auth = new AuthingSSO({
 
 ```js
 let auth = new AuthingSSO({
-  appId: 'APP_ID',
-  appDomain: 'example-app.you-authing-service.cn',
+  appId: "APP_ID",
+  appDomain: "example-app.you-authing-service.cn",
   host: {
-    oauth: 'https://core.you-authing-service.com/graphql',
-  },
-})
+    oauth: "https://core.you-authing-service.com/graphql"
+  }
+});
 ```
 
 :::
@@ -72,7 +72,7 @@ let auth = new AuthingSSO({
 Initiating single sign-on, it will redirect to the login page. The relevant application needs to open the authorization code mode if use [authorization code mode](/guides/federation/oidc.html#%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F).
 
 ```js
-auth.login()
+auth.login();
 ```
 
 #### Window login
@@ -80,7 +80,7 @@ auth.login()
 Initiate single sign-on, a window will pop up,and the login page in it. The relevant application needs to open the authorization code mode if use authorization code mode.
 
 ```js
-auth.windowLogin()
+auth.windowLogin();
 ```
 
 The business domain name callback address needs to host an html file, which is used to send the obtained `code` `access_token` `id_token` and other parameters to the parent window by `postMessage`, and then close the window.
@@ -95,7 +95,7 @@ Sometimes you may want to allow users to redirect to the registration page, an e
 
 ```js
 // Call this function to redirect directly to the registration page
-auth.register()
+auth.register();
 ```
 
 ### Check login status <a id="check-login-status"></a>
@@ -109,7 +109,7 @@ This may have an impact on this method. For details, see the [impact of disablin
 :::
 
 ```js
-let res = await auth.trackSession()
+let res = await auth.trackSession();
 /**
  * {
  *    session: { appId: 'xxx', type: 'oidc/oauth', userId: 'yyy'},
@@ -139,14 +139,14 @@ let res = await auth.trackSession()
  * */
 ```
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!
 
 ### Sign out <a id="logout"></a>
 
 **This method is an asynchronous function, please make sure to use `await` to wait for the return before proceeding to the next step.**
 
 ```js
-let res = await auth.logout()
+let res = await auth.logout();
 /**
  * {
  *    message: "Single Sign out success",
@@ -253,9 +253,9 @@ Example:
 
 ```js
 let auth = new AuthingSSO({
-  appId: 'APP_ID',
-  appDomain: 'example-app.authing.cn',
-})
+  appId: "APP_ID",
+  appDomain: "example-app.authing.cn"
+});
 ```
 
 ### login
@@ -271,7 +271,7 @@ Parameter list:
 Example:
 
 ```js
-auth.login()
+auth.login();
 ```
 
 ### register
@@ -287,7 +287,7 @@ Parameter list:
 Example:
 
 ```js
-auth.register()
+auth.register();
 ```
 
 ### trackSession
@@ -295,7 +295,7 @@ auth.register()
 Example:
 
 ```js
-let res = await auth.trackSession()
+let res = await auth.trackSession();
 /**
  * {
  *    session: { appId: 'xxx', type: 'oidc/oauth', userId: 'yyy'},
@@ -332,7 +332,7 @@ let res = await auth.trackSession()
 Example:
 
 ```js
-let res = await auth.logout()
+let res = await auth.logout();
 /**
  * {
  *    message: "Single Sign out success",
