@@ -13,7 +13,7 @@
 ## 注意事项：
 
 - 如果您未开通 WeLink 开放平台账号，请先前往 [WeLink 开放平台](https://open.welink.huaweicloud.com/wecode-site/index.html#/home) 注册开发者账号。
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果您未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤1：创建 WeLink 应用
 
@@ -30,15 +30,15 @@
 
 ## 步骤2：在 Authing 控制台配置 WeLink
 
-2.1 请在 Authing Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面。
+2.1 请在 Authing 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面。
 
 <img src="./images/add-enterprise.png" >
 
-2.2 请在 Authing Console 控制台 的「企业身份源」-「选择企业身份也」页面，点击「WeLink」身份源按钮，进入 「WeLink 登录模式」页面。
+2.2 请在 Authing 控制台 的「企业身份源」-「选择企业身份也」页面，点击「WeLink」身份源按钮，进入 「WeLink 登录模式」页面。
 
 <img src="./images/add-enterprise-02.png" >
 
-2.3 请在 Authing Console 控制台 的「企业身份源」-「WeLink」页面，配置相关的字段信息。
+2.3 请在 Authing 控制台 的「企业身份源」-「WeLink」页面，配置相关的字段信息。
 
 <img src="./images/add-enterprise-03.png" >
 
@@ -63,7 +63,7 @@
 
 - **推荐开发接入方式**：使用托管登录页
 
-- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
 
 - **详细接入方法**：
 
