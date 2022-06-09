@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.IsUserExists
-          (
-              new IsUserExistsReqDto{
-                  Username= "bob" ,
+          IsUserExistsRespDto  result = await managementClient.IsUserExists
+          (  new IsUserExistsReqDto{                  Username= "bob" ,
                   Email= "test@example.com" ,
                   Phone= "176xxxx6754" ,
                   ExternalId= "10010" ,
@@ -66,8 +64,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

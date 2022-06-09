@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteResourcesBatch
-          (
-              new DeleteResourcesBatchDto{
-                  Namespace= "default" ,
+          IsSuccessRespDto  result = await managementClient.DeleteResourcesBatch
+          (  new DeleteResourcesBatchDto{                  Namespace= "default" ,
                   CodeList= new List<string>{"code1","code2",} ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

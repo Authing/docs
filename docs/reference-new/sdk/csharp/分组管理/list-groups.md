@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListGroups
-          (
-            
-             
-                page: 1                , 
-                limit: 10                
+          GroupPaginatedRespDto  result = await managementClient.ListGroups
+          (             
+                page: 1, 
+                limit: 10
           );
         }
     }
 }
-
-
 
 ```
 

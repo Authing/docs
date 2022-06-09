@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.RevokeRole
-          (
-              new RevokeRoleDto{
-                  Code= "code1" ,
+          IsSuccessRespDto  result = await managementClient.RevokeRole
+          (  new RevokeRoleDto{                  Code= "code1" ,
                   Namespace= "default" ,
                 Targets= new List<TargetDto>
                 {
@@ -71,8 +69,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

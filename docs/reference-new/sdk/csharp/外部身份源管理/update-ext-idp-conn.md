@@ -55,10 +55,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateExtIdpConn
-          (
-              new UpdateExtIdpConnDto{
-                  Id= "60b49eb83fd80adb96f26e68" ,
+          ExtIdpConnDetailSingleRespDto  result = await managementClient.UpdateExtIdpConn
+          (  new UpdateExtIdpConnDto{                  Id= "60b49eb83fd80adb96f26e68" ,
                   DisplayName= "exampleName" ,
                   Fields= new {    clientId="clientId",} ,
                   Logo= "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png" ,
@@ -68,8 +66,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

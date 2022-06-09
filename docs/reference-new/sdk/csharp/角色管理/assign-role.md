@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.AssignRole
-          (
-              new AssignRoleDto{
-                  Code= "code1" ,
+          IsSuccessRespDto  result = await managementClient.AssignRole
+          (  new AssignRoleDto{                  Code= "code1" ,
                   Namespace= "60b49eb83fd80adb96f26e68" ,
                 Targets= new List<TargetDto>
                 {
@@ -71,8 +69,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetResourcesBatch
-          (
-            
-             
-                namespace: "default"                , 
-                codeList: "code1,code2"                
+          ResourceListRespDto  result = await managementClient.GetResourcesBatch
+          (             
+                nameSpace: "default", 
+                codeList: "code1,code2"
           );
         }
     }
 }
-
-
 
 ```
 

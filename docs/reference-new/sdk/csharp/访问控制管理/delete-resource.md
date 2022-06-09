@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteResource
-          (
-              new DeleteResourceDto{
-                  Code= "ecs" ,
+          IsSuccessRespDto  result = await managementClient.DeleteResource
+          (  new DeleteResourceDto{                  Code= "ecs" ,
                   Namespace= "default" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

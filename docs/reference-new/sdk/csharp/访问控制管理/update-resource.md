@@ -56,10 +56,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateResource
-          (
-              new UpdateResourceDto{
-                  Code= "ecs" ,
+          ResourceRespDto  result = await managementClient.UpdateResource
+          (  new UpdateResourceDto{                  Code= "ecs" ,
                   Description= "服务器" ,
                 Actions= new List<ResourceAction>
                 {
@@ -77,8 +75,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

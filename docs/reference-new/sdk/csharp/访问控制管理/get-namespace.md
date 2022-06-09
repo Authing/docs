@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetNamespace
-          (
-            
-             
-                code: "my-namespace"                
+          NamespaceRespDto  result = await managementClient.GetNamespace
+          (             
+                code: "my-namespace"
           );
         }
     }
 }
-
-
 
 ```
 

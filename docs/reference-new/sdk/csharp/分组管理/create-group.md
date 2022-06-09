@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateGroup
-          (
-              new CreateGroupReqDto{
-                  Code= "developer" ,
+          GroupSingleRespDto  result = await managementClient.CreateGroup
+          (  new CreateGroupReqDto{                  Code= "developer" ,
                   Name= "开发者" ,
                   Description= "描述内容" ,
             }
@@ -64,8 +62,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

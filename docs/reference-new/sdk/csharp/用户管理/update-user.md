@@ -73,10 +73,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateUser
-          (
-              new UpdateUserReqDto{
-                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
+          UserSingleRespDto  result = await managementClient.UpdateUser
+          (  new UpdateUserReqDto{                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
                   PhoneCountryCode= "+86" ,
                   Name= "张三" ,
                   Nickname= "张三" ,
@@ -104,8 +102,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

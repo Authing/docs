@@ -76,10 +76,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateUser
-          (
-              new CreateUserReqDto{
-                  Status= CreateUserReqDto.status.ACTIVATED ,
+          UserSingleRespDto  result = await managementClient.CreateUser
+          (  new CreateUserReqDto{                  Status= CreateUserReqDto.status.ACTIVATED ,
                   Email= "test@example.com" ,
                   PasswordEncryptType= CreateUserReqDto.passwordEncryptType.NONE ,
                   Phone= "176xxxx6754" ,
@@ -124,8 +122,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

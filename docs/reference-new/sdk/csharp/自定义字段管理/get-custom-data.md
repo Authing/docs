@@ -53,19 +53,15 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetCustomData
-          (
-            
-             
-                targetType: "USER"                , 
-                targetIdentifier: "userId1"                , 
-                namespace: "default"                
+          GetCustomDataRespDto  result = await managementClient.GetCustomData
+          (             
+                targetType: "USER", 
+                targetIdentifier: "userId1", 
+                nameSpace: "default"
           );
         }
     }
 }
-
-
 
 ```
 

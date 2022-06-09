@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListExtIdp
-          (
-            
-             
-                tenantId: "60b49eb83fd80adb96f26e68"                
+          ExtIdpListPaginatedRespDto  result = await managementClient.ListExtIdp
+          (             
+                tenantId: "60b49eb83fd80adb96f26e68"
           );
         }
     }
 }
-
-
 
 ```
 

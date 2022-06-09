@@ -58,24 +58,20 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUser
-          (
-            
-             
-                withCustomData: true                , 
-                withIdentities: true                , 
-                withDepartmentIds: true                , 
-                userId: "6229ffaxxxxxxxxcade3e3d9"                , 
-                phone: "176xxxx6754"                , 
-                email: "test@example.com"                , 
-                username: "bob"                , 
-                externalId: "10010"                
+          UserSingleRespDto  result = await managementClient.GetUser
+          (             
+                withCustomData: true, 
+                withIdentities: true, 
+                withDepartmentIds: true, 
+                userId: "6229ffaxxxxxxxxcade3e3d9", 
+                phone: "176xxxx6754", 
+                email: "test@example.com", 
+                username: "bob", 
+                externalId: "10010"
           );
         }
     }
 }
-
-
 
 ```
 

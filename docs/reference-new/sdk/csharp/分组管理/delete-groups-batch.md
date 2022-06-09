@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteGroupsBatch
-          (
-              new DeleteGroupsReqDto{
-                  CodeList= new List<string>{"code1",} ,
+          IsSuccessRespDto  result = await managementClient.DeleteGroupsBatch
+          (  new DeleteGroupsReqDto{                  CodeList= new List<string>{"code1",} ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

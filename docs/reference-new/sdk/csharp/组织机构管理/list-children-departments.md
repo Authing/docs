@@ -53,19 +53,15 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListChildrenDepartments
-          (
-            
-             
-                departmentId: "60b49eb83fd80adb96f26e68"                , 
-                departmentIdType: "department_id"                , 
-                organizationCode: "steamory"                
+          DepartmentPaginatedRespDto  result = await managementClient.ListChildrenDepartments
+          (             
+                departmentId: "60b49eb83fd80adb96f26e68", 
+                departmentIdType: "department_id", 
+                organizationCode: "steamory"
           );
         }
     }
 }
-
-
 
 ```
 

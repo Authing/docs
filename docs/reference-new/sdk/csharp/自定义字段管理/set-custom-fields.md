@@ -51,10 +51,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.SetCustomFields
-          (
-              new SetCustomFieldsReqDto{
-                List= new List<SetCustomFieldDto>
+          CustomFieldListRespDto  result = await managementClient.SetCustomFields
+          (  new SetCustomFieldsReqDto{                List= new List<SetCustomFieldDto>
                 {
                     new SetCustomFieldDto
                     {
@@ -79,8 +77,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

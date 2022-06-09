@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteOrganization
-          (
-              new DeleteOrganizationReqDto{
-                  OrganizationCode= "steamory" ,
+          IsSuccessRespDto  result = await managementClient.DeleteOrganization
+          (  new DeleteOrganizationReqDto{                  OrganizationCode= "steamory" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

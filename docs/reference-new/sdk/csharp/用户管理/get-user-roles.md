@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserRoles
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                , 
-                namespace: "default"                
+          RolePaginatedRespDto  result = await managementClient.GetUserRoles
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9", 
+                nameSpace: "default"
           );
         }
     }
 }
-
-
 
 ```
 

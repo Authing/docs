@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetGroup
-          (
-            
-             
-                code: "developer"                
+          GroupSingleRespDto  result = await managementClient.GetGroup
+          (             
+                code: "developer"
           );
         }
     }
 }
-
-
 
 ```
 

@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateRole
-          (
-              new CreateRoleDto{
-                  Code= "manager" ,
+          RoleSingleRespDto  result = await managementClient.CreateRole
+          (  new CreateRoleDto{                  Code= "manager" ,
                   Namespace= "default" ,
                   Description= "this is manager" ,
             }
@@ -64,8 +62,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

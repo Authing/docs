@@ -52,10 +52,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.SetUserDepartments
-          (
-              new SetUserDepartmentsDto{
-                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
+          IsSuccessRespDto  result = await managementClient.SetUserDepartments
+          (  new SetUserDepartmentsDto{                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
                 Departments= new List<SetUserDepartmentDto>
                 {
                     new SetUserDepartmentDto
@@ -70,8 +68,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

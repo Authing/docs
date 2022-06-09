@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateNamespace
-          (
-              new CreateNamespaceDto{
-                  Code= "my-namespace" ,
+          NamespaceRespDto  result = await managementClient.CreateNamespace
+          (  new CreateNamespaceDto{                  Code= "my-namespace" ,
                   Name= "我的权限分组" ,
                   Description= "我的权限分组描述" ,
             }
@@ -64,8 +62,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

@@ -55,21 +55,17 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetAuthorizedResources
-          (
-            
-             
-                namespace: "default"                , 
-                targetType: "USER"                , 
-                targetIdentifier: "userId1"                , 
-                resourceType: "DATA"                , 
-                withDenied: undefined                
+          AuthorizedResourcePaginatedRespDto  result = await managementClient.GetAuthorizedResources
+          (             
+                nameSpace: "default", 
+                targetType: "USER", 
+                targetIdentifier: "userId1", 
+                resourceType: "DATA", 
+                withDenied: false
           );
         }
     }
 }
-
-
 
 ```
 

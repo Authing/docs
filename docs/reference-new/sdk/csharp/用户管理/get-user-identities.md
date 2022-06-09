@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserIdentities
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                
+          IdentityListRespDto  result = await managementClient.GetUserIdentities
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9"
           );
         }
     }
 }
-
-
 
 ```
 

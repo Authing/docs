@@ -55,10 +55,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateOrganization
-          (
-              new UpdateOrganizationReqDto{
-                  OrganizationCode= "steamory" ,
+          OrganizationSingleRespDto  result = await managementClient.UpdateOrganization
+          (  new UpdateOrganizationReqDto{                  OrganizationCode= "steamory" ,
                   Description= "组织描述信息" ,
                   OpenDepartmentId= "60b49eb83fd80adb96f26e68" ,
                   OrganizationNewCode= "steamory2" ,
@@ -68,8 +66,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

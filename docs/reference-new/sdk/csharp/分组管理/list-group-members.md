@@ -56,22 +56,18 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListGroupMembers
-          (
-            
-             
-                code: "developer"                , 
-                page: 1                , 
-                limit: 10                , 
-                withCustomData: true                , 
-                withIdentities: true                , 
-                withDepartmentIds: true                
+          UserPaginatedRespDto  result = await managementClient.ListGroupMembers
+          (             
+                code: "developer", 
+                page: 1, 
+                limit: 10, 
+                withCustomData: true, 
+                withIdentities: true, 
+                withDepartmentIds: true
           );
         }
     }
 }
-
-
 
 ```
 

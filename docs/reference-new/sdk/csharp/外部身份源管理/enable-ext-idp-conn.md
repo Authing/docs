@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.EnableExtIdpConn
-          (
-              new EnableExtIdpConnDto{
-                  Id= "60b49eb83fd80adb96f26e68" ,
+          IsSuccessRespDto  result = await managementClient.EnableExtIdpConn
+          (  new EnableExtIdpConnDto{                  Id= "60b49eb83fd80adb96f26e68" ,
                   Enabled= false ,
                   AppId= "60b49eb83fd80adb96f26e68" ,
                   TenantId= "60b49eb83fd80adb96f26e68" ,
@@ -66,8 +64,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

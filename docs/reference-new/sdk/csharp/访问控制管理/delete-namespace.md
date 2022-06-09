@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteNamespace
-          (
-              new DeleteNamespaceDto{
-                  Code= "my-namespace" ,
+          IsSuccessRespDto  result = await managementClient.DeleteNamespace
+          (  new DeleteNamespaceDto{                  Code= "my-namespace" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

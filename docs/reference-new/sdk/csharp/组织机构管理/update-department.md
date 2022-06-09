@@ -58,10 +58,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateDepartment
-          (
-              new UpdateDepartmentReqDto{
-                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
+          DepartmentSingleRespDto  result = await managementClient.UpdateDepartment
+          (  new UpdateDepartmentReqDto{                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
                   Description= "技术研发部门" ,
                   Code= "6229c4deb3e4d8a20b6021ff" ,
                   LeaderUserId= "60b49eb83fd80adb96f26e68" ,
@@ -74,8 +72,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

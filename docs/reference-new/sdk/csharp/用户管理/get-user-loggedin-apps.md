@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserLoggedinApps
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                
+          UserLoggedInAppsListRespDto  result = await managementClient.GetUserLoggedinApps
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9"
           );
         }
     }
 }
-
-
 
 ```
 

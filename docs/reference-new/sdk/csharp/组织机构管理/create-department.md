@@ -58,10 +58,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateDepartment
-          (
-              new CreateDepartmentReqDto{
-                  OpenDepartmentId= "ou_7dab8a3d3cdccxxxxxx777c7ad535d62" ,
+          DepartmentSingleRespDto  result = await managementClient.CreateDepartment
+          (  new CreateDepartmentReqDto{                  OpenDepartmentId= "ou_7dab8a3d3cdccxxxxxx777c7ad535d62" ,
                   Name= "开发部" ,
                   Description= "技术研发部门" ,
                   ParentDepartmentId= "6229c4deb3e4d8a20b6021ff" ,
@@ -74,8 +72,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

@@ -51,10 +51,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateRolesBatch
-          (
-              new CreateRolesBatch{
-                List= new List<RoleListItem>
+          IsSuccessRespDto  result = await managementClient.CreateRolesBatch
+          (  new CreateRolesBatch{                List= new List<RoleListItem>
                 {
                     new RoleListItem
                     {
@@ -68,8 +66,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

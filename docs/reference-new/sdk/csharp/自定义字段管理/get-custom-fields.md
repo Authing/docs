@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetCustomFields
-          (
-            
-             
-                targetType: "USER"                
+          CustomFieldListRespDto  result = await managementClient.GetCustomFields
+          (             
+                targetType: "USER"
           );
         }
     }
 }
-
-
 
 ```
 

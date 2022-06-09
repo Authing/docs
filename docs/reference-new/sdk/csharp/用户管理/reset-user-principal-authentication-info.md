@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ResetUserPrincipalAuthenticationInfo
-          (
-              new ResetUserPrincipalAuthenticationInfoDto{
-                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
+          IsSuccessRespDto  result = await managementClient.ResetUserPrincipalAuthenticationInfo
+          (  new ResetUserPrincipalAuthenticationInfoDto{                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

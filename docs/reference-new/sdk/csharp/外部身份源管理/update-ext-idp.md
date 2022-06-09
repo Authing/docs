@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateExtIdp
-          (
-              new UpdateExtIdpDto{
-                  Name= "exampleName" ,
+          ExtIdpSingleRespDto  result = await managementClient.UpdateExtIdp
+          (  new UpdateExtIdpDto{                  Name= "exampleName" ,
                   Id= "60b49eb83fd80adb96f26e68" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

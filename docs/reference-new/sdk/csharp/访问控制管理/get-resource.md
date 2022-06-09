@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetResource
-          (
-            
-             
-                code: "ecs"                , 
-                namespace: "default"                
+          ResourceRespDto  result = await managementClient.GetResource
+          (             
+                code: "ecs", 
+                nameSpace: "default"
           );
         }
     }
 }
-
-
 
 ```
 

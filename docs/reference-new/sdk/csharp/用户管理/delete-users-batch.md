@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteUsersBatch
-          (
-              new DeleteUsersBatchDto{
-                  UserIds= new List<string>{"userId1","userId2",} ,
+          IsSuccessRespDto  result = await managementClient.DeleteUsersBatch
+          (  new DeleteUsersBatchDto{                  UserIds= new List<string>{"userId1","userId2",} ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateOrganization
-          (
-              new CreateOrganizationReqDto{
-                  OrganizationCode= "steamory" ,
+          OrganizationSingleRespDto  result = await managementClient.CreateOrganization
+          (  new CreateOrganizationReqDto{                  OrganizationCode= "steamory" ,
                   OrganizationName= "蒸汽记忆" ,
                   Description= "组织描述信息" ,
                   OpenDepartmentId= "60b49eb83fd80adb96f26e68" ,
@@ -66,8 +64,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

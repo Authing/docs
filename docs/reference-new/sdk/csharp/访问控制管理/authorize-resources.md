@@ -52,10 +52,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.AuthorizeResources
-          (
-              new AuthorizeResourcesDto{
-                  Namespace= "default" ,
+          IsSuccessRespDto  result = await managementClient.AuthorizeResources
+          (  new AuthorizeResourcesDto{                  Namespace= "default" ,
                 List= new List<AuthorizeResourceItem>
                 {
                     new AuthorizeResourceItem
@@ -78,8 +76,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

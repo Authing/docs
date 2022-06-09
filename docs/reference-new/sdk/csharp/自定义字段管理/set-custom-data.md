@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.SetCustomData
-          (
-              new SetCustomDataReqDto{
-                  TargetType= SetCustomDataReqDto.targetType.USER ,
+          IsSuccessRespDto  result = await managementClient.SetCustomData
+          (  new SetCustomDataReqDto{                  TargetType= SetCustomDataReqDto.targetType.USER ,
                   TargetIdentifier= "userId1" ,
                   Namespace= "default" ,
                 List= new List<SetCustomDataDto>
@@ -73,8 +71,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

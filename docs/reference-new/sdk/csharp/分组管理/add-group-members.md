@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.AddGroupMembers
-          (
-              new AddGroupMembersReqDto{
-                  Code= "developer" ,
+          IsSuccessRespDto  result = await managementClient.AddGroupMembers
+          (  new AddGroupMembersReqDto{                  Code= "developer" ,
                   UserIds= new List<string>{"6229ffaxxxxxxxxcade3e3d9",} ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

@@ -53,19 +53,15 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserAuthorizedResources
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                , 
-                namespace: "default"                , 
-                resourceType: "undefined"                
+          AuthorizedResourcePaginatedRespDto  result = await managementClient.GetUserAuthorizedResources
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9", 
+                nameSpace: "default", 
+                resourceType: "undefined"
           );
         }
     }
 }
-
-
 
 ```
 

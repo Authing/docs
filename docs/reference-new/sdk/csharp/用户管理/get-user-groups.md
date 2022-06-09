@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserGroups
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                
+          GroupPaginatedRespDto  result = await managementClient.GetUserGroups
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9"
           );
         }
     }
 }
-
-
 
 ```
 

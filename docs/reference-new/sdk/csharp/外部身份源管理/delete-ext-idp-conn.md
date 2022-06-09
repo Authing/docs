@@ -51,17 +51,13 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.DeleteExtIdpConn
-          (
-              new DeleteExtIdpConnDto{
-                  Id= "60b49eb83fd80adb96f26e68" ,
+          IsSuccessRespDto  result = await managementClient.DeleteExtIdpConn
+          (  new DeleteExtIdpConnDto{                  Id= "60b49eb83fd80adb96f26e68" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

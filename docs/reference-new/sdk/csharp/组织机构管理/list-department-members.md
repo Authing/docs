@@ -59,25 +59,21 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListDepartmentMembers
-          (
-            
-             
-                organizationCode: "steamory"                , 
-                departmentId: "root"                , 
-                departmentIdType: "department_id"                , 
-                includeChildrenDepartments: false                , 
-                page: 1                , 
-                limit: 10                , 
-                withCustomData: true                , 
-                withIdentities: true                , 
-                withDepartmentIds: true                
+          UserListRespDto  result = await managementClient.ListDepartmentMembers
+          (             
+                organizationCode: "steamory", 
+                departmentId: "root", 
+                departmentIdType: "department_id", 
+                includeChildrenDepartments: false, 
+                page: 1, 
+                limit: 10, 
+                withCustomData: true, 
+                withIdentities: true, 
+                withDepartmentIds: true
           );
         }
     }
 }
-
-
 
 ```
 

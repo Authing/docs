@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.KickUsers
-          (
-              new KickUsersDto{
-                  UserId= "undefined" ,
+          IsSuccessRespDto  result = await managementClient.KickUsers
+          (  new KickUsersDto{                  UserId= "undefined" ,
                   AppIds= new List<string>{"62188e71cxxxx3075289c580",} ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

@@ -54,20 +54,16 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserBatch
-          (
-            
-             
-                withCustomData: true                , 
-                withIdentities: true                , 
-                withDepartmentIds: true                , 
-                userIds: "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0"                
+          UserListRespDto  result = await managementClient.GetUserBatch
+          (             
+                withCustomData: true, 
+                withIdentities: true, 
+                withDepartmentIds: true, 
+                userIds: "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0"
           );
         }
     }
 }
-
-
 
 ```
 

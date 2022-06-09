@@ -53,19 +53,15 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetGroupAuthorizedResources
-          (
-            
-             
-                code: "developer"                , 
-                namespace: "default"                , 
-                resourceType: "undefined"                
+          AuthorizedResourceListRespDto  result = await managementClient.GetGroupAuthorizedResources
+          (             
+                code: "developer", 
+                nameSpace: "default", 
+                resourceType: "undefined"
           );
         }
     }
 }
-
-
 
 ```
 

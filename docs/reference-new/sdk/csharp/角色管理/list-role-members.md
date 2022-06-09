@@ -57,23 +57,19 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListRoleMembers
-          (
-            
-             
-                page: 1                , 
-                limit: 10                , 
-                withCustomData: true                , 
-                withIdentities: true                , 
-                withDepartmentIds: true                , 
-                code: "manager"                , 
-                namespace: "default"                
+          UserPaginatedRespDto  result = await managementClient.ListRoleMembers
+          (             
+                page: 1, 
+                limit: 10, 
+                withCustomData: true, 
+                withIdentities: true, 
+                withDepartmentIds: true, 
+                code: "manager", 
+                nameSpace: "default"
           );
         }
     }
 }
-
-
 
 ```
 

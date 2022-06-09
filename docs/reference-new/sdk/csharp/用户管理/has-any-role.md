@@ -52,10 +52,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.HasAnyRole
-          (
-              new HasAnyRoleReqDto{
-                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
+          HasAnyRoleRespDto  result = await managementClient.HasAnyRole
+          (  new HasAnyRoleReqDto{                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
                 Roles= new List<HasRoleRolesDto>
                 {
                     new HasRoleRolesDto
@@ -69,8 +67,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

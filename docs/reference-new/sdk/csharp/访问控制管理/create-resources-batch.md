@@ -52,10 +52,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateResourcesBatch
-          (
-              new CreateResourcesBatchDto{
-                  Namespace= "default" ,
+          IsSuccessRespDto  result = await managementClient.CreateResourcesBatch
+          (  new CreateResourcesBatchDto{                  Namespace= "default" ,
                 List= new List<CreateResourceBatchItemDto>
                 {
                     new CreateResourceBatchItemDto
@@ -79,8 +77,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

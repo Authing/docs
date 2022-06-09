@@ -53,10 +53,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateExtIdp
-          (
-              new CreateExtIdpDto{
-                  Name= "exampleName" ,
+          ExtIdpSingleRespDto  result = await managementClient.CreateExtIdp
+          (  new CreateExtIdpDto{                  Name= "exampleName" ,
                   Type= CreateExtIdpDto.type.AD ,
                   TenantId= "60b49eb83fd80adb96f26e68" ,
             }
@@ -64,8 +62,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

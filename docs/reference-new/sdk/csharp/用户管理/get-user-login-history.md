@@ -57,23 +57,19 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetUserLoginHistory
-          (
-            
-             
-                userId: "6229ffaxxxxxxxxcade3e3d9"                , 
-                appId: "undefined"                , 
-                clientIp: "127.0.0.1"                , 
-                start: 1647360000000                , 
-                end: 1648051199000                , 
-                page: 1                , 
-                limit: 10                
+          UserLoginHistoryPaginatedRespDto  result = await managementClient.GetUserLoginHistory
+          (             
+                userId: "6229ffaxxxxxxxxcade3e3d9", 
+                appId: "undefined", 
+                clientIp: "127.0.0.1", 
+                start: 1647360000000, 
+                end: 1648051199000, 
+                page: 1, 
+                limit: 10
           );
         }
     }
 }
-
-
 
 ```
 

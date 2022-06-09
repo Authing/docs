@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.UpdateRole
-          (
-              new UpdateRoleDto{
-                  Code= "code1" ,
+          IsSuccessRespDto  result = await managementClient.UpdateRole
+          (  new UpdateRoleDto{                  Code= "code1" ,
                   NewCode= "code2" ,
                   Namespace= "default" ,
                   Description= "this is description" ,
@@ -66,8 +64,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

@@ -51,10 +51,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateGroupsBatch
-          (
-              new CreateGroupBatchReqDto{
-                List= new List<CreateGroupReqDto>
+          GroupListRespDto  result = await managementClient.CreateGroupsBatch
+          (  new CreateGroupBatchReqDto{                List= new List<CreateGroupReqDto>
                 {
                     new CreateGroupReqDto
                     {
@@ -68,8 +66,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

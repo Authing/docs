@@ -52,10 +52,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateUsersBatch
-          (
-              new CreateUserBatchReqDto{
-                List= new List<CreateUserInfoDto>
+          UserListRespDto  result = await managementClient.CreateUsersBatch
+          (  new CreateUserBatchReqDto{                List= new List<CreateUserInfoDto>
                 {
                     new CreateUserInfoDto
                     {
@@ -106,8 +104,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

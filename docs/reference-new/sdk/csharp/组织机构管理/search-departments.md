@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.SearchDepartments
-          (
-              new SearchDepartmentsReqDto{
-                  OrganizationCode= "steamory" ,
+          DepartmentListRespDto  result = await managementClient.SearchDepartments
+          (  new SearchDepartmentsReqDto{                  OrganizationCode= "steamory" ,
                   Keywords= "Authing" ,
             }
           );
         }
     }
 }
-
-
 
 ```
 

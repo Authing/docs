@@ -53,19 +53,15 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetRoleAuthorizedResources
-          (
-            
-             
-                code: "60b49eb83fd80adb96f26e68"                , 
-                namespace: "default"                , 
-                resourceType: "DATA"                
+          RoleAuthorizedResourcePaginatedRespDto  result = await managementClient.GetRoleAuthorizedResources
+          (             
+                code: "60b49eb83fd80adb96f26e68", 
+                nameSpace: "default", 
+                resourceType: "DATA"
           );
         }
     }
 }
-
-
 
 ```
 

@@ -52,18 +52,14 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.GetRole
-          (
-            
-             
-                code: "manager"                , 
-                namespace: "default"                
+          RoleSingleRespDto  result = await managementClient.GetRole
+          (             
+                code: "manager", 
+                nameSpace: "default"
           );
         }
     }
 }
-
-
 
 ```
 

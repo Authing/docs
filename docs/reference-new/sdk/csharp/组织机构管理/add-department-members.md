@@ -54,10 +54,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.AddDepartmentMembers
-          (
-              new AddDepartmentMembersReqDto{
-                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
+          IsSuccessRespDto  result = await managementClient.AddDepartmentMembers
+          (  new AddDepartmentMembersReqDto{                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
                   OrganizationCode= "steamory" ,
                   DepartmentIdType= AddDepartmentMembersReqDto.departmentIdType.DEPARTMENT_ID ,
                   UserIds= new List<string>{"623c20b2a062aaaaf41b17da",} ,
@@ -66,8 +64,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

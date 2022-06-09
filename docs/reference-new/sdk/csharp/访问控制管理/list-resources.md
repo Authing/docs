@@ -54,20 +54,16 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.ListResources
-          (
-            
-             
-                namespace: "default"                , 
-                type: "DATA"                , 
-                page: 1                , 
-                limit: 10                
+          ResourcePaginatedRespDto  result = await managementClient.ListResources
+          (             
+                nameSpace: "default", 
+                type: "DATA", 
+                page: 1, 
+                limit: 10
           );
         }
     }
 }
-
-
 
 ```
 

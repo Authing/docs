@@ -57,10 +57,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateExtIdpConn
-          (
-              new CreateExtIdpConnDto{
-                  ExtIdpId= "60b49eb83fd80adb96f26e68" ,
+          ExtIdpConnDetailSingleRespDto  result = await managementClient.CreateExtIdpConn
+          (  new CreateExtIdpConnDto{                  ExtIdpId= "60b49eb83fd80adb96f26e68" ,
                   Type= CreateExtIdpConnDto.type.AD ,
                   Identifier= "60b49eb83fd80adb96f26e68" ,
                   LoginOnly= false ,
@@ -72,8 +70,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 

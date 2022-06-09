@@ -51,10 +51,8 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          var result = await managementClient.CreateNamespacesBatch
-          (
-              new CreateNamespacesBatchDto{
-                List= new List<CreateNamespacesBatchItemDto>
+          IsSuccessRespDto  result = await managementClient.CreateNamespacesBatch
+          (  new CreateNamespacesBatchDto{                List= new List<CreateNamespacesBatchItemDto>
                 {
                     new CreateNamespacesBatchItemDto
                     {
@@ -68,8 +66,6 @@ namespace Example
         }
     }
 }
-
-
 
 ```
 
