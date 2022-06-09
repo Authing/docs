@@ -44,17 +44,17 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 
 - [账号密码认证](/guides/authentication/basic/password/)
 - [短信验证码认证](/guides/authentication/basic/sms/)
-- [连接外部身份源认证](/guides/connections/)（[社交账号登录](/guides/authentication/social/)、[企业账号登录](/guides/connections/enterprise)）
+- [连接外部身份源认证](/guides/connections/)（[社交账号登录](/guides/authentication/social/)、[企业账号登录](/guides/connections/enterprise.html)）
 - [自建 APP 扫码认证](/guides/authentication/qrcode/use-self-build-app/)
-- [手机号一键登录](//guides/oneauth/)
-- [单点登录 SSO](/reference/sdk-for-sso)
-- [多因素认证 MFA](/guides/app/mfa)
+- [手机号一键登录](/guides/oneauth/)
+- [单点登录 SSO](/reference/sdk-for-sso.html)
+- [多因素认证 MFA](/guides/app/mfa.html)
 
 ## 所有主流认证协议
 
-- [JWT](/concepts/jwt-token)
-- [OIDC、OAuth2.0](/concepts/oidc/oidc-overview)
-- [SAML](/concepts/saml/saml-overview)
+- [JWT](/concepts/jwt-token.html)
+- [OIDC、OAuth2.0](/concepts/oidc/oidc-overview.html)
+- [SAML](/concepts/saml/saml-overview.html)
 - [LDAP](/guides/org/ldap-user-directory/)
 
 ## [自定义登录框样式](/guides/authentication/branding/#样式配置)

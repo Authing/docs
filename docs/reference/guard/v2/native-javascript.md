@@ -75,10 +75,10 @@ Authing npm 发布包内的 `@authing/native-ui-components/lib` 目录下提供�
 <head>
   <meta charset="UTF-8">
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -139,10 +139,10 @@ Authing npm 发布包内的 `@authing/native-ui-components/lib` 目录下提供�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -181,13 +181,13 @@ Authing npm 发布包内的 `@authing/native-ui-components/lib` 目录下提供�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
   
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
   
   <!-- JS SDK 代码 -->
   <script src="https://cdn.jsdelivr.net/npm/authing-js-sdk/build/browser/index.min.js"></script>
   
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
   
@@ -305,13 +305,13 @@ Authing npm 发布包内的 `@authing/native-ui-components/lib` 目录下提供�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- JS SDK 代码 -->
   <script src="https://cdn.jsdelivr.net/npm/authing-js-sdk/build/browser/index.min.js"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -420,10 +420,10 @@ Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的
 <head>
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -480,10 +480,10 @@ Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -527,10 +527,10 @@ Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -571,10 +571,10 @@ Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -630,10 +630,10 @@ Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -675,10 +675,10 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -737,13 +737,13 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- JS SDK 代码 -->
   <script src="https://cdn.jsdelivr.net/npm/authing-js-sdk/build/browser/index.min.js"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -800,10 +800,10 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -851,13 +851,13 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
   <link rel="icon" href="https://cdn.authing.co/authing-fe-console/2.32.0/favicon.ico">
 
   <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
   <!-- JS SDK 代码 -->
   <script src="https://cdn.jsdelivr.net/npm/authing-js-sdk/build/browser/index.min.js"></script>
 
   <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@3.1.13-rc.10/lib/index.min.css"
+  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
     rel="stylesheet">
   </link>
 
@@ -900,7 +900,7 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
 
 ## 附录：常用的事件及参数列表
 
-### 1. 事件列表
+### 1. 常用事件列表
 
 | 名称                        | 描述                                             | 参数                | 参数描述      |
 | :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -941,7 +941,7 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
 
 #### GuardMode 
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Modal|'modal'|模态框模式|
 |Normal|'normal'|正常模式|

@@ -8,7 +8,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 npm：[@authing/ng-ui-components](https://www.npmjs.com/package/@authing/ng-ui-components)
 
-Angular 版本：React 10/11/12/13
+Angular 版本：Angular 10/11/12/13
 
 ## STEP 1: 在 Authing 控制台创建应用
 
@@ -863,14 +863,14 @@ export class AppComponent {
 
 #### GuardMode 
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Modal|'modal'|模态框模式|
 |Normal|'normal'|正常模式|
 
 #### LoginMethods
 
-| 键（Key）                        |   值（value）                      | 说明                | 
+| 键                        |   值                     | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LDAP|'ldap'|LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))|
 |AppQr|'app-qrcode'|APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
