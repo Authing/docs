@@ -584,11 +584,11 @@ const zhCnNavBar = {
             },
             {
               title: "微信网页授权",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/wechat-mp/"
             },
             {
               title: "微信小程序",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/wechat-miniprogram/"
             },
             {
               title: "腾讯 QQ",
@@ -2540,12 +2540,12 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/twitter/"
             },
             {
-              title: "微信网页授权",
-              path: "/guides/connections/social/twitter/"
+              title: "WeChat Web Page",
+              path: "/guides/connections/social/wechat-mp/"
             },
             {
-              title: "微信小程序",
-              path: "/guides/connections/social/twitter/"
+              title: "Wechat Mini Program",
+              path: "/guides/connections/social/wechat-miniprogram/"
             },
             {
               title: "Tencent QQ",
