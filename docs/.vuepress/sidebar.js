@@ -678,7 +678,7 @@ const zhCnNavBar = {
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/dingtalk/"
             },
             {
               title: "飞书应用商店应用",
@@ -2635,8 +2635,8 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/instagram/"
             },
             {
-              title: "钉钉 H5 微应用（企业内部开发）",
-              path: "/guides/connections/social/instagram/"
+              title: "DingTalk H5 Micro Application (Internal Development)",
+              path: "/guides/connections/enterprise/dingtalk/"
             },
             {
               title: "飞书应用商店应用",
