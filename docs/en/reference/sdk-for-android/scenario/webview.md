@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-使用 Web 方式登录之前，确保完成了 [开发准备](./../develop.md)
+Use Web 方式登录之前，确保完成了 [开发准备](./../develop.md)
 
 > 此功能要求 Guard 最低版本 1.2.8
 

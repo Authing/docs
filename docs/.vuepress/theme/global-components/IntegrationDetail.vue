@@ -35,20 +35,23 @@
               marginRight: '4px'
             }"
           />
-          回到列表
+          <!-- 回到列表 -->
+          {{ $localeConfig.back }}
         </RouterLink>
         <div
           class="integration-detail-btn-container"
           :style="isInConsole && { justifyContent: 'flex-start' }"
         >
-          <AuthingButton :disabled="isFirstStep" @click="handlePrev"
-            >上一步</AuthingButton
+          <AuthingButton :disabled="isFirstStep" @click="handlePrev">
+            <!-- 上一步 -->
+            {{ $localeConfig.previous }}
+          </AuthingButton
           >
           <AuthingButton
             @click="handleNext"
             :style="[{ marginLeft: '24px' }]"
             type="primary"
-            >{{ isLastStep ? "我知道了，返回列表" : "下一步" }}</AuthingButton
+            >{{ isLastStep ? $localeConfig.lastStep : $localeConfig.next }}</AuthingButton
           >
         </div>
       </div>

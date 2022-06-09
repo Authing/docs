@@ -584,11 +584,11 @@ const zhCnNavBar = {
             },
             {
               title: "微信网页授权",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/wechat-mp/"
             },
             {
               title: "微信小程序",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/wechat-miniprogram/"
             },
             {
               title: "腾讯 QQ",
@@ -636,7 +636,7 @@ const zhCnNavBar = {
             },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitlab/"
             },
             {
               title: "百度",
@@ -2188,7 +2188,7 @@ const translatedZhCnNavBar = {
               path: "/guides/basics/platform-guide/integrate-with-spa"
             },
             {
-              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_ZH_CN}`,
+              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_EN_US}`,
               path: "/guides/basics/platform-guide/integrate-with-mobile-app"
             }
             // {
@@ -2540,12 +2540,12 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/twitter/"
             },
             {
-              title: "微信网页授权",
-              path: "/guides/connections/social/twitter/"
+              title: "WeChat Web Page",
+              path: "/guides/connections/social/wechat-mp/"
             },
             {
-              title: "微信小程序",
-              path: "/guides/connections/social/twitter/"
+              title: "Wechat Mini Program",
+              path: "/guides/connections/social/wechat-miniprogram/"
             },
             {
               title: "Tencent QQ",
@@ -2593,7 +2593,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitlab/"
             },
             {
               title: "百度",
@@ -2711,7 +2711,7 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: `Migrate users to ${BRAND_NAME_ZH_CN}`,
+      title: `Migrate users to ${BRAND_NAME_EN_US}`,
       path: "/guides/migrations/",
       children: [
         {

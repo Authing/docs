@@ -8,9 +8,9 @@ meta:
 
 <LastUpdated/>
 
-> Approw User ManagementClient
+> Authing User ManagementClient
 
-This client is used to manage Approw users. It can create, query, update and delete users, refresh user token, manage user's group, user's role, user's policy and perform other operations.
+This client is used to manage Authing users. It can create, query, update and delete users, refresh user token, manage user's group, user's role, user's policy and perform other operations.
 
 ## Create a user
 
@@ -34,7 +34,7 @@ UsersManagementClient().create(userInfo)
 - `userInfo.photo` \<string\> avatar
 - `userInfo.company` \<string\> company
 - `userInfo.browser` \<string\> browser
-- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `userInfo.lastLogin` \<string\> Last login time, a time string conforming to the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `userInfo.lastIP` \<string\> The last login (or other activity) IP of the user
 - `userInfo.signedUp` \<string\> Registration time, a time string in ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -98,7 +98,7 @@ UsersManagementClient \*().update(id, updates)
 - `updates.photo` \<string\> avatar
 - `updates.company` \<string\> company
 - `updates.browser` \<string\> browser
-- `updates.loginsCount` \<number\> The number of logins. This field can be set when you migrate from the original user system to Approw.
+- `updates.loginsCount` \<number\> The number of logins. This field can be set when you migrate from the original user system to Authing.
 - `updates.lastLogin` \<string\> Last login time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `updates.lastIP` \<string\> The IP of the user's last login (or other activity)
 - `updates.signedUp` \<string\> Registration time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -128,9 +128,11 @@ UsersManagementClient \*().update(id, updates)
 #### Example
 
 ## Get user details
+
 ```csharp
 UsersManagementClient.Users.Detail("userId")
 ```
+
 > Get user details by user ID. If you want to get user details by token, please use AuthenticationClient SDK.
 
 #### Parameter
@@ -144,26 +146,29 @@ var user = await UsersManagementClient.Users.Detail("userId");
 ```
 
 ## Get user defined value
+
 ```csharp
 UsersManagementClient.Users.getUdfValue("userId", "default")
 ```
+
 > Get user defined value
 
 #### Parameter
 
 - `userId` \<String\> User ID
 
-
-
 #### Example
 
 ```csharp
 UsersManagementClient.Users.getUdfValue("userId", "default")
 ```
+
 ## Batch get user defined value
+
 ```csharp
 UsersManagementClient.Users.getUdfValueBatch(userIds)
 ```
+
 > Batch get user defined value
 
 #### Parameter
@@ -172,14 +177,15 @@ UsersManagementClient.Users.getUdfValueBatch(userIds)
 
 #### Example
 
-```csharp
+````csharp
 managementClient.users().getUdfValueBatch("userId", "default").execute();
 
 
 ## Delete a user
 ```csharp
 UsersManagementClient.Users.delete(userId)
-```
+````
+
 > Delete a user
 
 #### Parameter

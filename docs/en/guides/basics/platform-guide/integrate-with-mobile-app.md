@@ -1,8 +1,8 @@
-# Integrate Approw with mobile client (iOS and Andriod)
+# Integrate Authing with mobile client (iOS and Andriod)
 
 <LastUpdated/>
 
-Approw provides [Android SDK](/reference/sdk-for-android.md) and [iOS SDK](/reference/sdk-for-swift.md) to help developers quickly integrate Approw in mobile apps.
+Authing provides [Android SDK](/en/reference/sdk-for-android.md) and [iOS SDK](/en/reference/sdk-for-swift.md) to help developers quickly integrate Authing in mobile apps.
 
 Let's take the integration method of Android applications as an example.
 
@@ -28,9 +28,9 @@ implementation files('libs/core.jar')
 implementation files('libs/commons-codec-1.15-rep.jar')
 ```
 
-3. Install approw Java/Kotlin SDK
+3. Install authing Java/Kotlin SDK
 
-Detailed installation guide: [Approw Java/Kotlin SDK](/reference/sdk-for-java/README.md)
+Detailed installation guide: [Authing Java/Kotlin SDK](/en/reference/sdk-for-java/README.md)
 
 ## Sample of use
 
@@ -81,7 +81,7 @@ authenticationClient.registerByEmail(
 
 ## User registration and login
 
-Approw Java SDK supports multiple registration and login methods such as mobile SMS verification code, email, username, etc. Take mobile phone number verification code login as an example:
+Authing Java SDK supports multiple registration and login methods such as mobile SMS verification code, email, username, etc. Take mobile phone number verification code login as an example:
 
 1. Send SMS verification code:
 

@@ -10,7 +10,7 @@ meta:
 
 Webhook allows you to monitor user registration, login and other behaviors, so as to do some custom processing.
 
-The method of using Webhook is to configure the HTTP URL in the Approw platform. When your user logs in, registers, and changes the password, a POST request will be sent to the remote HTTP URL.
+The method of using Webhook is to configure the HTTP URL in the Authing platform. When your user logs in, registers, and changes the password, a POST request will be sent to the remote HTTP URL.
 
 ## Configuring Webhooks
 
@@ -39,14 +39,14 @@ Configuring Webhook
 
 ### Parameter Explanation
 
-| Parameter name     | Parameter explanation                                                                                                                               |
-| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| Name  | Webhook name |
-| Callback link     | The HTTP URL address for remotely receiving webhook events                                                                                                    |
-| Request key     | After setting the key (the value is set by the developer), Approw will attach this key to each request（HTTP Header：X-Authing-Token）. You can verify this key to avoid some illegal operations |
-| Request data format | Specify the data format of the Request body when initiating a Webhook request. The optional values are `application/json` and `application/x-www-form-urlencoded`                      |
-| Trigger event     | [Whether to enable this Hook](use-webhook.md#支持的事件)                                                                                            |
-| Whether to enable this Hook         | Whether to enable this Hook                                                                                                                          |
+| Parameter name              | Parameter explanation                                                                                                                                                                             |
+| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Name                        | Webhook name                                                                                                                                                                                      |
+| Callback link               | The HTTP URL address for remotely receiving webhook events                                                                                                                                        |
+| Request key                 | After setting the key (the value is set by the developer), Authing will attach this key to each request（HTTP Header：X-Authing-Token）. You can verify this key to avoid some illegal operations |
+| Request data format         | Specify the data format of the Request body when initiating a Webhook request. The optional values are `application/json` and `application/x-www-form-urlencoded`                                 |
+| Trigger event               | [Whether to enable this Hook](use-webhook.md#支持的事件)                                                                                                                                          |
+| Whether to enable this Hook | Whether to enable this Hook                                                                                                                                                                       |
 
 ## Debugging Webhook
 
@@ -69,22 +69,20 @@ The requested data
 
 After a successful test you will see detailed request and return information.
 
-
-
 ## Supported Events
 
 ### Event List
 
-| Event name                | Event description                                                                                           |
-| :-------------------- | :------------------------------------------------------------------------------------------------- |
-| login                 | Login event, this event will be triggered when the user logs in, regardless of whether the login is successful or not                               |
-| register              | Registration event, this event will be triggered when the user registers or the administrator manually creates a user, regardless of whether it is successful or not, it will be triggered                       |
-| mfaVerify             | MFA verification event, when the user logs in and triggers MFA, and enters the MFA verification code after the second login, it will be triggered regardless of success or failure      |
-| user:updated          | Password modification event, this event will be triggered when the user changes the password or the administrator manually changes the password, regardless of success or failure               |
+| Event name            | Event description                                                                                                                                                                                       |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| login                 | Login event, this event will be triggered when the user logs in, regardless of whether the login is successful or not                                                                                   |
+| register              | Registration event, this event will be triggered when the user registers or the administrator manually creates a user, regardless of whether it is successful or not, it will be triggered              |
+| mfaVerify             | MFA verification event, when the user logs in and triggers MFA, and enters the MFA verification code after the second login, it will be triggered regardless of success or failure                      |
+| user:updated          | Password modification event, this event will be triggered when the user changes the password or the administrator manually changes the password, regardless of success or failure                       |
 | user:password-changed | Modify user information time, when users modify their own information or administrators manually modify user information will trigger the word time, regardless of success or failure will be triggered |
-| user:email-verified   | User mailbox is verified event                                                                             |
-| permission:add        | Add authorization events, authorization objects can be users, roles, and organizational structures                                             |
-| permission:revoke     | Cancel authorization events. Cancel the rule of Authorization objects can be users, roles, and organizational structures                                                |
+| user:email-verified   | User mailbox is verified event                                                                                                                                                                          |
+| permission:add        | Add authorization events, authorization objects can be users, roles, and organizational structures                                                                                                      |
+| permission:revoke     | Cancel authorization events. Cancel the rule of Authorization objects can be users, roles, and organizational structures                                                                                |
 
 ### Request type
 
@@ -98,20 +96,20 @@ Each event will carry some specific request parameters.
 
 We will carry some custom header information in the HTTP POST header, as shown in the following table:
 
-| Header                     | 描述                                                                                        |
-| :------------------------- | :------------------------------------------------------------------------------------------ |
-| `user-agent`               | The value is `'authing-webhook@2.0'`，which means this request is from Approw                                    |
+| Header                     | 描述                                                                                                                                                            |
+| :------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user-agent`               | The value is `'authing-webhook@2.0'`，which means this request is from Authing                                                                                  |
 | `x-authing-webhook-secret` | The request secret key is the secret key you set in the Webhook configuration. This secret key can be verified to prevent malicious requests from third parties |
-| `x-authing-userpool-id`    | Approw user pool ID                                                                         |
+| `x-authing-userpool-id`    | Authing user pool ID                                                                                                                                            |
 
 ### Request body
 
 The request body will also carry some specific parameters
 
-| Parameter name      | Description                                                                                                    |
-| :---------- | :------------------------------------------------------------------------------------------------------ |
-| `eventName` | Event name. Possible values are `login`, `register`, `user:updated`,`user:password-changed`, `user:email-verified` |
-| `data`      | The corresponding details of the event                                                                                 |
+| Parameter name | Description                                                                                                        |
+| :------------- | :----------------------------------------------------------------------------------------------------------------- |
+| `eventName`    | Event name. Possible values are `login`, `register`, `user:updated`,`user:password-changed`, `user:email-verified` |
+| `data`         | The corresponding details of the event                                                                             |
 
 #### Request example
 
