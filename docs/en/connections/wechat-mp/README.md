@@ -4,22 +4,22 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微信网页授权登录',
-  bannerTitle: '接入微信网页授权登录',
+  title: 'Access WeChat webpage to authorize login',
+  bannerTitle: 'Access WeChat webpage to authorize login',
   steps:
     [
       {
-        title: '在微信公众平台创建一个服务号',
+        title: 'Create a service account on WeChat public platform',
       },
-      { title: '在 {{$localeConfig.brandName}} 填入微信服务号配置' },
+      { title: 'Fill in the WeChat service number configuration in {{$localeConfig.brandName}}' },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用'
+        title: 'Create an app at  {{$localeConfig.brandName}}'
       },
       {
-        title: '开始开发接入'
+        title: 'Start developing access'
       }
     ],
 }
 ---
 
-<IntegrationDetail backLink="/guides/connections/social"/>
+<IntegrationDetail backLink="/en/guides/connections/social"/>

@@ -6,7 +6,7 @@
 
 - Application scenario: mini program;
 - Overview: Used in WeChat applets, pop-up WeChat Authorization boxes, and you can get information on the current user after authorization;
-- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+- View [WeChat official document](https://developers.weixin.qq.com/miniprogram/en/dev/framework/open-ability/login.html)
 
 <img src="./images/wechat-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -28,7 +28,7 @@ Click "OK" to save information after the configuration is complete.
 ## Step 3: Start development access
 
 From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: Please see:
-From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: [npm support | WeChat open document](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html).
+From the small program base library version 2.2.1 or more, and the developer tool 1.02.1808300 or above, the applet supports the use of NPM to install a third party package, please see: [npm support | WeChat open document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/npm.html).
 
 ### Install npm package
 
@@ -46,11 +46,13 @@ yarn add authing-wxapp-sdk
 
 Click on the menu bar in the developer tool: Tool -> Build NPM:
 
-<img src="~@imagesZhCn/reference/wxmp-npm.png" height="400px">
-
+<img src="~@imagesEnUs/reference/build-npm.jpg" height="400px">
+<!-- 
+现在新版的微信开发者工具已经没有“使用 NPM 模块”的选项了
 Check the npm module option:
 
 ![](~@imagesZhCn/reference/wxmp-npm2.png)
+-->
 
 ### initialization SDK
 
@@ -59,11 +61,11 @@ Check the npm module option:
 > You can view your own application list in the console's **application**.
 
 ```js
-const { AuthenticationClient } = require('authing-wxapp-sdk')
+const { AuthenticationClient } = require("authing-wxapp-sdk");
 
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-})
+  appId: "YOUR_APP_ID"
+});
 ```
 
 ### Call login method
@@ -71,12 +73,12 @@ const authing = new AuthenticationClient({
 `AuthenticationClient` provides the`loginByCode` method, you can complete the silent login through WeChat authorization:
 
 ```javascript
-const { code } = await wx.login()
+const { code } = await wx.login();
 // No user authorization
-const user = await authing.loginByCode(code) // Successfully logged in, write token to WeChat Storage
+const user = await authing.loginByCode(code); // Successfully logged in, write token to WeChat Storage
 
 // You can do this after logging in
-await authing.updateProfile((nickname: 'Bob'))
+await authing.updateProfile((nickname: "Bob"));
 ```
 
 After the user completes the login, the SDK writes the user's token into the WeChat's Storage, and subsequent requests will automatically carry token access.
@@ -87,11 +89,11 @@ Subsequent users open the applet, if the user's token is saved in the Storage of
 
 ```javascript
 // This request can be successful because the user is out of the login state.
-await authing.updateProfile((nickname: 'Mick'))
+await authing.updateProfile((nickname: "Mick"));
 ```
 
-For details, please see the documentation: [Apprentrate SDK](/reference/sdk-for-wxapp.md)。
+For details, please see the documentation: [Apprentrate SDK](/en/reference/sdk-for-wxapp.md)。
 
 ## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

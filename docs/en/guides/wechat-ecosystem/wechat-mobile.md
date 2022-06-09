@@ -6,7 +6,7 @@
 
 - Application scenario: mobile APP；
 - Overview: Pull up the WeChat APP in the mobile application to log in;
-- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+- View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)
 
 <img src="./images/wechat-mobile-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
@@ -27,7 +27,7 @@ Click "OK" to save information after the configuration is complete.
 
 ### Configure iOS Universal Links
 
-> Starting from WeChat WeChatopensdk 1.8.6, iOS mobile apps need to fill in Universal Links information. If you want to develop Android applications or have been configured, you can skip this section. [Apple official documentation, please see this][apple please see this official documentation.](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)。
+> Starting from WeChat WeChatopensdk 1.8.6, iOS mobile apps need to fill in Universal Links information. If you want to develop Android applications or have been configured, you can skip this section.
 
 #### Configure apple-app-site-association file
 
@@ -163,7 +163,7 @@ func onResp(_ resp: BaseResp) {
 
 ### Exchange user information
 
-The user agreed to get the `code`, you can call [Swift SDK](/reference/sdk-for-swift.md) `loginByWeChatCode` to get the user information:
+The user agreed to get the `code`, you can call [Swift SDK](/en/reference/sdk-for-swift.md) `loginByWeChatCode` to get the user information:
 
 ```swift
 func loginByWeChatCode() {
@@ -177,4 +177,4 @@ func loginByWeChatCode() {
 
 ## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

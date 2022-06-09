@@ -2,15 +2,15 @@
 
 <LastUpdated/>
 
-> The core of Approw's access and authorization management model is **Resource** and **Policy**. A policy defines an operation privilege for a certain resource. By assigning the policy to a user (or role), you can know whether the user (or role) has operational privilege of a resource.
+> The core of Authing's access and authorization management model is **Resource** and **Policy**. A policy defines an operation privilege for a certain resource. By assigning the policy to a user (or role), you can know whether the user (or role) has operational privilege of a resource.
 
 Please follow the instructions below to use this client：
 
 ```javascript
-import { ManagementClient } from "approw-js-sdk";
+import { ManagementClient } from "authing-js-sdk";
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 managementClient.policies.list; // get policy list
 managementClient.policies.create; // create a policy
@@ -32,14 +32,14 @@ PoliciesManagementClient().create(code，policy statement)
 #### Example
 
 ```javascript
-import { PolicyEffect } from "approw-js-sdk";
+import { PolicyEffect } from "authing-js-sdk";
 
 const statements = [
   {
     resource: "books:123",
     effect: PolicyEffect.Allow,
-    actions: ["books:edit"],
-  },
+    actions: ["books:edit"]
+  }
 ];
 
 const policy = await managementClient.policies.create(code, statements);
@@ -53,7 +53,7 @@ const policy = await managementClient.policies.create(code, statements);
 
 PoliciesManagementClient().delete(code)
 
-> Delete a policy. System built-in policies are maintained by Approw official. They can not be updated or deleted.
+> Delete a policy. System built-in policies are maintained by Authing official. They can not be updated or deleted.
 
 #### Parameter
 
@@ -73,11 +73,11 @@ const { code, message } = await managementClient.policies.delete("CODE"); // cod
 
 PoliciesManagementClient().deleteMany(codeList)
 
-> Bulk delete policies. System built-in policies are maintained by Approw official. They can not be updated or deleted.
+> Bulk delete policies. System built-in policies are maintained by Authing official. They can not be updated or deleted.
 
 #### Parameter
 
-- `codeList` \<string\> Unique id of the policy列表
+- `codeList` \<string\> Unique id of the policy 列表
 
 #### Example
 
@@ -89,11 +89,11 @@ const { code, message } = await managementClient.policies.deleteMany(["CODE"]); 
 
 - `Promise<CommonMessage>`
 
-## Update a policy 
+## Update a policy
 
 PoliciesManagementClient().update(code, updates)
 
-> Update a policy. System built-in policies are maintained by Approw official. They can not be updated or deleted.
+> Update a policy. System built-in policies are maintained by Authing official. They can not be updated or deleted.
 
 #### Parameter
 
@@ -107,7 +107,7 @@ PoliciesManagementClient().update(code, updates)
 
 ```javascript
 const policy = await managementClient.policies.update("CODE", {
-  newCode: "NEWCODE",
+  newCode: "NEWCODE"
 });
 ```
 
@@ -150,7 +150,7 @@ PoliciesManagementClient().list(options)
 
 ```javascript
 const { list, totalCount } = await managementClient.policies.list({
-  excludeDefault: false, // include the system default policy
+  excludeDefault: false // include the system default policy
 });
 ```
 
@@ -183,13 +183,13 @@ const { totalCount, list } = await managementClient.policies.listAssignments(
   {
     code: "PolicyCode", // Unique id of the policy
     targetType: "USER", // 'USER' or 'ROLE'
-    targetIdentifier: "5f8812866795cc0026352fc5", // user ID or role code
+    targetIdentifier: "5f8812866795cc0026352fc5" // user ID or role code
   },
   {
     code: "PolicyCode", // Unique id of the policy
     targetType: "ROLE", // 'USER' or 'ROLE'
-    targetIdentifier: "ROLE_CODE", // user ID or role code
-  },
+    targetIdentifier: "ROLE_CODE" // user ID or role code
+  }
 ];
 ```
 
@@ -212,7 +212,7 @@ PoliciesManagementClient().addAssignments(policies, targetType, targetIdentifier
 #### Example
 
 ```javascript
-import { PolicyAssignmentTargetType } from "approw-js-sdk";
+import { PolicyAssignmentTargetType } from "authing-js-sdk";
 
 await managementClient.policies.addAssignments(
   ["code1", "code2"],
@@ -246,7 +246,7 @@ PoliciesManagementClient().removeAssignments(policies, targetType, targetIdentif
 #### Example
 
 ```javascript
-import { PolicyAssignmentTargetType } from "approw-js-sdk";
+import { PolicyAssignmentTargetType } from "authing-js-sdk";
 
 await managementClient.policies.removeAssignments(
   ["code1", "code2"],

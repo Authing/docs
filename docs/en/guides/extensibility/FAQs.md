@@ -4,7 +4,7 @@
 
 Yes.
 
-## **Can the Approw SDK be used in the Pipeline function?**
+## **Can the Authing SDK be used in the Pipeline function?**
 
 Yes, and no import and initialization are required.See the [available Node Modules for](https://docs.authing.cn/v2/guides/pipeline/available-node-modules.html) details.
 
@@ -12,7 +12,7 @@ Yes, and no import and initialization are required.See the [available Node Modul
 
 Not for the time being, only Node is currently supported.
 
-## *What are the precautions for writing Pipeline functions?**
+## \*What are the precautions for writing Pipeline functions?\*\*
 
 - Please do not rename the pipe function.
 
@@ -20,7 +20,7 @@ Not for the time being, only Node is currently supported.
 
 ## **What effect does refreshing the user pool secret have on the Pipeline function?**
 
-Since the Approw Pipeline function runs completely in the cloud, refreshing the user pool secret will also update all the Pipeline functions in the user pool.This means that the Approw-js-sdk will not be able to be used normally in the Pipeline function within a short period of time.
+Since the Authing Pipeline function runs completely in the cloud, refreshing the user pool secret will also update all the Pipeline functions in the user pool.This means that the Authing-js-sdk will not be able to be used normally in the Pipeline function within a short period of time.
 
 ## **What are the performance optimization methods?**
 

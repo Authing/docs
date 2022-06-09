@@ -333,7 +333,7 @@ User user = authenticationClient.updatePassword(newPassword, oldPassword).execut
 
 AuthenticationClient().updatePhone(phone, phoneCode, oldPhone, oldPhoneCode)
 
-> Update the user's phone number. Same as update the email, by default, if the user has already bound a phone number, the original phone number (the phone number bound to the current account) and the current email (the phone number to be bound) need to be verified at the same time. In other words, the phone number currently bound to user A is 15888888888, and if you want to change it to 15899999999, you need to verify both phone numbers at the same time. Developers can also choose not to turn on "Verify original phone number", which can be turned off in the security information client under the settings directory of the Approw console. To bind a phone number for the first time, please use bindPhone interface.
+> Update the user's phone number. Same as update the email, by default, if the user has already bound a phone number, the original phone number (the phone number bound to the current account) and the current email (the phone number to be bound) need to be verified at the same time. In other words, the phone number currently bound to user A is 15888888888, and if you want to change it to 15899999999, you need to verify both phone numbers at the same time. Developers can also choose not to turn on "Verify original phone number", which can be turned off in the security information client under the settings directory of the Authing console. To bind a phone number for the first time, please use bindPhone interface.
 
 #### Parameters:
 
@@ -352,7 +352,7 @@ User user = authenticationClient.updatePhone("phone number", "1234").execute();
 
 AuthenticationClient().updateEmail(email, emailCode, oldEmail, oldEmailCode)
 
-> If the user has already bound the email, by default, the original email (the email bound to the current account) and the current email (the email to be bound) need to be verified at the same time. If the currently email bound to user A is 123456@gmail.com, and user A wants to change it to 1234567@gmail.com, then both email need to be verified at the same time. Developers can also choose not to turn on "Verify original mailbox", which can be turned off in the security information client under the settings directory of the Approw console. To bind an email for the first time, please use the bindEmail interface.
+> If the user has already bound the email, by default, the original email (the email bound to the current account) and the current email (the email to be bound) need to be verified at the same time. If the currently email bound to user A is 123456@gmail.com, and user A wants to change it to 1234567@gmail.com, then both email need to be verified at the same time. Developers can also choose not to turn on "Verify original mailbox", which can be turned off in the security information client under the settings directory of the Authing console. To bind an email for the first time, please use the bindEmail interface.
 
 #### Parameters:
 
@@ -536,7 +536,7 @@ AuthenticationClient().listUdv()
 #### Example:
 
 ```java
-authenticationClient.setAppId("APPROW_APP_ID");
+authenticationClient.setAppId("authing_APP_ID");
 authenticationClient.setAccessToken("ACCESS_TOKEN");
 
 List<UserDefinedData> list = authenticationClient.listUdv().execute();
@@ -573,7 +573,7 @@ AuthenticationClient().setUdv(key, value)
 #### Example:
 
 ```java
-authenticationClient.setAppId("APPROW_APP_ID");
+authenticationClient.setAppId("authing_APP_ID");
 authenticationClient.setAccessToken("ACCESS_TOKEN");
 
 List<UserDefinedData> list = authenticationClient.setUdv('school', 'Huazhong Institute of Technology').execute();
@@ -592,7 +592,7 @@ AuthenticationClient().removeUdv(key)
 #### Example:
 
 ```java
-authenticationClient.setAppId("APPROW_APP_ID");
+authenticationClient.setAppId("authing_APP_ID");
 authenticationClient.setAccessToken("ACCESS_TOKEN");
 
 List<UserDefinedData> list = authenticationClient.removeUdv('school').execute();

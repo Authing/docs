@@ -15,9 +15,9 @@ Register from authing.cn and enter the Authing Console, create an OIDC applicati
 
 The detailed configuration is as follows:
 
-- Application name: <Application Name>
-- Certified address: https://<Application domain name>.authing.cn
-- Callback URL：Apply login post-callback address, for example：http://localhost:3004/auth/cb
+- Application name: Application Name
+- Certified address: https://App_Domain_Name.authing.cn
+- Callback URL: Apply login post-callback address, for example: http://localhost:3004/auth/cb
 - Authorized mode: default authorization_code、refresh_token、authing Token
 - return Type: default code
 - token Calculation mode: default client_secret_post
@@ -25,11 +25,11 @@ The detailed configuration is as follows:
 
 After the configuration, the OIDC valid information is saved, which is Express to use.
 
-- App ID：5f34e94bece50b891729e345
-- App Secret：8226514d6740e5a9cd94fad4991e02e9
-- Issuer：https://aj00.authing.cn/oauth/oidc
-- Configuration information：https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
-- Callback address：http://localhost:3004/auth/cb
+- App ID: 5f34e94bece50b891729e345
+- App Secret: 8226514d6740e5a9cd94fad4991e02e9
+- Issuer: https://aj00.authing.cn/oauth/oidc
+- Configuration information: https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
+- Callback address: http://localhost:3004/auth/cb
 
 <img src="@imagesZhCn/integration/express/step.png" height=400 style="display:block;margin:50px auto;">
 
@@ -44,7 +44,7 @@ npm install --save passport passport-openidconnect
 ```
 
 ### 2. Config Passport
-ref `routes/auth.js`：
+ref `routes/auth.js`: 
 
 ```js
 passport.use(new OpenIDConnectStrategy({
@@ -67,7 +67,7 @@ function verify(issuer, profile, cb) {
 
 ### 3. Config session
 
-ref `app.js`：
+ref `app.js`: 
 
 ```js
 // FIXME: Passport session config
@@ -76,7 +76,7 @@ app.use(passport.authenticate('session'));
 
 ### 4. Config routes
 
-ref `routes/auth.js`：
+ref `routes/auth.js`: 
 
 ```js
 router.get('/login', passport.authenticate('openidconnect'));
@@ -100,7 +100,7 @@ serializeUser:
 ```js
 passport.serializeUser(function(user, cb) {
   process.nextTick(function() {
-    // 详细字段参考： https://docs.authing.cn/v2/guides/user/user-profile.html
+    // Field reference:  https://docs.authing.cn/v2/guides/user/user-profile.html
     cb(null, { id: user.id, username: user.username, name: user.nickname });
   });
 });

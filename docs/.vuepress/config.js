@@ -83,7 +83,11 @@ module.exports = {
       githubFeedback: "反馈",
       githubEdit: "编辑本文",
       brandName: sidebar.BRAND_NAME_ZH_CN,
-      brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE
+      brandNameLowerCase: sidebar.BRAND_NAME_ZH_CN_LOWER_CASE,
+      back: "回到列表",
+      next: "下一步",
+      previous: "上一步",
+      lastStep: "我知道了，返回列表"
     },
     "/en/": {
       lang: "en-US",
@@ -96,7 +100,11 @@ module.exports = {
       githubFeedback: "Feedback",
       githubEdit: "Edit",
       brandName: sidebar.BRAND_NAME_EN_US,
-      brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE
+      brandNameLowerCase: sidebar.BRAND_NAME_EN_US_LOWER_CASE,
+      back: "Back to list",
+      next: "Next",
+      previous: "Previous",
+      lastStep: "I know, return to the list"
     }
   },
   head,
@@ -151,6 +159,8 @@ module.exports = {
           title: "评价此文档",
           useful: "有帮助",
           useless: "无帮助",
+          editTip: "有建议或错误，可直接",
+          editLink: "有建议或错误，可直接在 Github 上编辑",
           help: `如果遇到其他问题，你可以在 <a href="https://forum.authing.cn/" target="_blank">authing-chat/community</a> 联系我们。`,
           successTip: `提交成功！非常感谢您的反馈，我们会继续努力做到更好！`,
           uselessConfig: {
@@ -311,6 +321,8 @@ module.exports = {
           title: "Does this article solve your problem?",
           useful: "Useful",
           useless: "Useless",
+          editTip: "",
+          editLink: "Edit on github",
           help: `If you encounter other problems, you can contact us at <a href="https://forum.authing.cn/" target="_blank">authing-chat/community</a>.`,
           successTip: `Submitted successfully! Thank you very much for your feedback, we will continue to work hard to do better!`,
           uselessConfig: {

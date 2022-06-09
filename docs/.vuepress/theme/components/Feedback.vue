@@ -37,7 +37,7 @@
         :href="
           `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
         "
-      >有建议或错误，可直接在 Github 上反馈
+      >{{feedbackConfig.editLink}}
       </a>
     </div>
     <div v-if="submited" class="feedback-success">

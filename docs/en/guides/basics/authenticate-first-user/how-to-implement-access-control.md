@@ -20,7 +20,6 @@ Role-based access control (RBAC) refers to the authorizing related privilege thr
 
 <img src="~@imagesZhCn/guides/rbac.png" alt="drawing"/>
 
-
 When using RBAC, by analyzing the actual situation of system users, based on common responsibilities and needs, they are granted different roles. You can grant users one or more roles, and each role has one or more privileges. This relationship between user-role and role-privilege allows us to no longer need to manage every single user separately, and the user inherits the required privileges from the granted role.
 
 Take a simple scenario (Gitlab's privilege system) as an example. There are three roles in the user system: Admin, Maintainer, and Operator. These three roles have different privileges. For example, only Admin has the privilege to create code warehouses and delete code warehouses. Other roles do not.
@@ -36,6 +35,7 @@ Attribute-Based Access Control (ABAC) is a flexible authorization model that use
 <img src="./images/abac.png" height="400" style="display:block; margin:40px auto">
 
 Under the ABAC authorization model, you can easily implement the following privilege control logic:
+
 1. Authorize (a user) the editing privilege to edit a specific book.
 2. When the department of a document belongs to is the same as the department of a user, the user can access the document.
 3. If the user is the owner of a document and the status of the document is draft, the user can edit the document.
@@ -43,6 +43,7 @@ Under the ABAC authorization model, you can easily implement the following privi
 5. It is forbidden to access system A as an administrator in places other than Shanghai.
 
 There are several common points in the above logic:
+
 1. Specific to a certain resource rather than a certain type of resource.
 2. Specific to a certain operation.
 3. Dynamically executed the policy through the requested context (such as time, geographic location, resource tag).
@@ -52,34 +53,36 @@ In one word, **you can fine-grained authorization under which circumstances have
 ## Authorization model introduction
 
 {{$localeConfig.brandName}} supports two authorization modes:
+
 1. Through the [authorization code mode](/v2/concepts/oidc/choose-flow#授权码模式) based on the OAuth 2.0 process.
 2. Authorize and manage users through the privilege API.
 
-## Implement the privilege model with the help of {{$localeConfig.brandName}} 
+## Implement the privilege model with the help of {{$localeConfig.brandName}}
 
 Let's take the mode of calling the privilege API as an example.
 
 ### Create roles
 
-You can use the {{$localeConfig.brandName}}  console to create roles: In Privilege Management - Role Management, click the Add Role button:
-- Role code: The unique identifier of the role, only allowed to use English letters, numbers, underscore _, dash -, here we fill in "admin".
+You can use the {{$localeConfig.brandName}} console to create roles: In Privilege Management - Role Management, click the Add Role button:
+
+- Role code: The unique identifier of the role, only allowed to use English letters, numbers, underscore \_, dash -, here we fill in "admin".
 - Role description: the description of the role, here we fill in "administrator".
 
 Create three roles:
 
 ![](./images/create-role.png)
 
-You can also use API & SDK to create roles. For details, see [Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md).
+You can also use API & SDK to create roles. For details, see [Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md).
 
 ### Grant role to users
 
 On the role details page, you can grant this role to users. You can search for users by username, mobile phone number, email, or nickname:
 
-![](~@imagesZhCn/guides/access-control/Xnip2021-03-01_15-51-01.png)
+![](./images/Xnip2021-03-01_15-51-01.png)
 
 After selecting a user, click OK, and you can view the list of users granted with this role.
 
-You can also use API & SDK to grant roles to users. For details, see [Role Management SDK](/reference/sdk-for-node/management/RolesManagementClient.md).
+You can also use API & SDK to grant roles to users. For details, see [Role Management SDK](/en/reference/sdk-for-node/management/RolesManagementClient.md).
 
 ### User-role management on the backend in back-end
 
@@ -88,19 +91,19 @@ After the user is successfully authenticated and the Token is obtained, you can 
 First get a list of all the roles that the user has been granted:
 
 ```javascript
-import { ManagementClient } from "approw-js-sdk";
+import { ManagementClient } from "authing-js-sdk";
 
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 const { totalCount, list } = await managementClient.users.listRoles("USER_ID");
 ```
 
- After getting all the roles of the user, we can determine whether the user has the role of "devops":
+After getting all the roles of the user, we can determine whether the user has the role of "devops":
 
 ```javascript
-if (!list.map((role) => role.code).includes("devops")) {
+if (!list.map(role => role.code).includes("devops")) {
   throw new Error("not authorized");
 }
 ```
@@ -111,9 +114,9 @@ In the previous step, we managed privileges based on whether the user has a cert
 
 You can abstract some objects of the system as resources, and some operations can be defined using these resources. For example, in the scenario of this article, Repository, Tag, PR, Release Notes are all resources, and these resources have corresponding operations:
 
-- Repository: create, delete, etc. 
-- PR: Enable, comment, merge, etc. 
-- Tag: create, delete, etc. Release 
+- Repository: create, delete, etc.
+- PR: Enable, comment, merge, etc.
+- Tag: create, delete, etc. Release
 - Notes: Create, read, edit, delete, etc.
 
 We can create these resources in {{$localeConfig.brandName}}:
@@ -139,14 +142,14 @@ import { ManagementClient } from "authing-js-sdk";
 
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 ```
 
- Call the `managementClient.acl.isAllowed` method, the three parameters are:
+Call the `managementClient.acl.isAllowed` method, the three parameters are:
 
-- userId: User ID, the user can be directly authorized to operate on a specific resource, or can inherit the authorized permissions of the role. 
-- resource: Resource identifier. For example, `repository:123` represents the code repository with ID 123, and `repository:\*` represents the resource of the code repository. 
+- userId: User ID, the user can be directly authorized to operate on a specific resource, or can inherit the authorized permissions of the role.
+- resource: Resource identifier. For example, `repository:123` represents the code repository with ID 123, and `repository:\*` represents the resource of the code repository.
 - action: a specific operation, such as `repository:Delete` means deleting the code warehouse.
 
 ```javascript

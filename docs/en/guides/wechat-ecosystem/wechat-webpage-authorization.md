@@ -40,7 +40,7 @@ First use CDN introduction `authing-wxmp-sdk`：
 <script src="https://cdn.jsdelivr.net/npm/@authing/wxmp/dist/authing-wxmp-sdk.min.js"></script>
 ```
 
-> `authing-wxmp-sdk` For detailed documentation, please see:[WeChat web page authorization login SDK](/reference/sdk-for-wxmp.md)。
+> `authing-wxmp-sdk` For detailed documentation, please see:[WeChat web page authorization login SDK](/en/reference/sdk-for-wxmp.md)。
 
 ### initialization SDK
 
@@ -48,8 +48,8 @@ Use the userpool ID to initialize SDK:
 
 ```javascript
 const authingWx = new AuthingWxmp({
-  userPoolId: 'YOUR_USERPOOLID',
-})
+  userPoolId: "YOUR_USERPOOLID"
+});
 ```
 
 ### Launched WeChat Authorization
@@ -58,7 +58,7 @@ Call the `getAuthorizationUrl` method Get the WeChat Authorized Login link, modi
 
 ```javascript
 // Jump to WeChat Authorization page
-window.location = authingWx.getAuthorizationUrl()
+window.location = authingWx.getAuthorizationUrl();
 ```
 
 ### Get user information
@@ -68,16 +68,16 @@ Jump back to the business callback link After getting user information by `getUs
 ```javascript
 // If the callback page authingWx is not initialized, it is necessary to initialize first, and the specific initialization method reference is
 
-const { ok, userinfo, message } = authingWx.getUserInfo()
+const { ok, userinfo, message } = authingWx.getUserInfo();
 if (ok) {
   // do with userinfo
-  console.log(userinfo)
+  console.log(userinfo);
 } else if (message) {
-  // message 中包含了错误提示
-  alert(message)
+  // message contains an error message
+  alert(message);
 }
 ```
 
 ## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!
