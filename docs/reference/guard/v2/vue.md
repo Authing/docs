@@ -1,8 +1,14 @@
-# Vue Guard 快速开始
+# 将 Guard 接入到 Vue 项目
 
 Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的 SPA（Single Page Application）应用中，一站式处理复杂的用户认证流程。
 
 准备好你的 Vue 项目，跟随引导将 Authing Guard 接入到你的 Vue 项目中吧！
+
+### 开始前的准备
+
+npm：[@authing/vue-ui-components](https://www.npmjs.com/package/@authing/vue-ui-components)
+
+Vue 版本：Vue 2/3
 
 ## STEP 1: 在 Authing 控制台创建应用
 
@@ -24,14 +30,6 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
 
 无论使用哪一种安装方式，你都需要用到应用的 `appId` ，请先[前往控制台获取](/guides/faqs/get-app-id-and-secret.md)。
-
-### 版本
-
-稳定版本：[![](https://img.shields.io/npm/v/@authing/vue-ui-components.svg?style=flat-square)](https://www.npmjs.com/package/@authing/vue-ui-components)
-
-### 对于 Vue 版本的支持
-
-目前支持 Vue 2/3 版本。
 
 ### 方法一：安装 Authing library
 
@@ -69,7 +67,7 @@ export default {
   },
   data: () => ({
     // 替换你的 AppId
-    appId: "5d70d0e991fdd597019df70d",
+    appId: "your_appId_at_authing_console",
   }),
   methods: {
     onLogin(userInfo) {
@@ -107,7 +105,7 @@ Authing npm 发布包内的 `@authing/vue-components/lib` 目录下提供了 `in
 
     <script>
         // 这可以替换你的 AppId
-        const appId = '5d70d0e991fdd597019df70d'
+        const appId = 'your_appId_at_authing_console'
 
         const app = new Vue({
             el: '#app',
@@ -125,6 +123,10 @@ Authing npm 发布包内的 `@authing/vue-components/lib` 目录下提供了 `in
 
 </html>
 ```
+
+**无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
+
+接下来，你可以根据实际的需要，直接阅读对应的使用指南和代码示例。
 
 ## STPE 3:  常用操作
 
@@ -145,7 +147,7 @@ Authing npm 发布包内的 `@authing/vue-components/lib` 目录下提供了 `in
 
 ### 1. 登录并获取用户信息
 
-用户在登录成功后会触发 onLogin 事件，并且在事件中会返回用户的详细信息。onLogin 具体的使用方法如下：
+用户在登录成功后会触发 `onLogin` 事件，并且在事件中会返回用户的详细信息。`onLogin` 具体的使用方法如下：
 
 ```vue
 <template>
@@ -179,7 +181,7 @@ export default {
 
 用户登录成功后，在二次会话的时候，我们之前已经将 token 进行了缓存。在判断用户登录状态时，首先需要对这个 token 进行登录状态校验，校验成功后在进行用户详细信息的获取。
 
-你可以使用 authClient 中的 checkLoginStatus 方法检测 Token 登录状态。下方代码是优先检测登录态，如果用户处于登录态，则显示用户的头像。
+你可以使用 `authClient` 中的 `checkLoginStatus` 方法检测 token 登录状态。下方代码是优先检测登录态，如果用户处于登录态，则显示用户的头像。
 
 ```vue
 <template>
@@ -271,7 +273,7 @@ export default {
 
 ### 3. 退出登录
 
-你可以使用 authClient 中的 logout 方法完成退出登录的操作：
+你可以使用 `authClient` 中的 `logout` 方法完成退出登录的操作：
 
 ```vue
 <template>
@@ -370,7 +372,7 @@ export default {
 
 ### 4. 用户注册
 
-Guard 初始化参数 config 字段，主要用于控制 Guard 具体渲染的配置。可以在 config 中传入 defaultScenes 字段，来控制 Guard 渲染的默认场景。如果只使用注册场景的话，传入 register 即可。具体的使用方法如下：
+Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的配置。可以在 `config` 中传入 `defaultScenes` 字段，来控制 Guard 渲染的默认场景。如果只使用注册场景的话，传入 `register` 即可。具体的使用方法如下：
 
 ```vue
 <template>
@@ -404,18 +406,18 @@ export default {
 </script>
 ```
 
-
-
 ### 5. 第三方身份源登录
 
 **Authing 目前支持 20+ 种第三方身份源登录方式，基本囊括所有常用的身份源：**
-  - **社会化身份源：** Google、GitHub、微信、QQ、微博...
-  - **企业身份源：** 飞书、企业微信、钉钉、AD、Azure AD...
-  - **基于认证协议的身份服务：** OIDC、OAuth2.0、SAML、CAS...
+
+- [**社会化身份源**](/docs/guides/authentication/social/)： Google、GitHub、微信、QQ、微博、 飞书、企业微信、钉钉、AD、Azure AD...
+
+- [**基于认证协议的身份服务**](/docs/connections/custom-social-provider/)： OIDC、OAuth2.0、SAML、CAS...
 
 你可以点击上面的链接查看 Authing 支持的所有第三方身份源，并根据你的实际需要进行选择。选好你需要使用的身份源后，请根据下面的引导完成接入。
 
 **首先**，你需要根据在 Authing 控制台完成你所需的身份源的配置。
+
 **然后**，使用下面的方法来控制配置完成的身份源的展示与隐藏。
 
 此处以 Github 身份源为例：
@@ -437,7 +439,7 @@ export default {
   },
   data: () => ({
     // 替换你的 AppId
-    appId: "5d70d0e991fdd597019df70d",
+    appId: "your_appId_at_authing_console",
     config: {
       // 设置需要显示的 第三方身份源
       socialConnections: ["github"],
@@ -454,7 +456,7 @@ export default {
 
 ### 6. 实现单点登录
 
-为你的 Guard 设置 isSSO 参数，让用户能够在所有接入 Authing 的应用之间单点登录，即：一次登录，即可使用所有应用。具体实现方法如下：
+为你的 Guard 设置 `isSSO` 参数，让用户能够在所有接入 Authing 的应用之间单点登录，即：一次登录，即可使用所有应用。具体实现方法如下：
 
 ```vue
 <template>
@@ -530,7 +532,7 @@ export default {
 
 ### 8. 自定义样式
 
-你可以通过编写 CSS 代码注入到 Guard，原理是改变 config 中的 contentCss 属性，以此实现更个性化的登录框样式。
+你可以通过编写 CSS 代码注入到 Guard，原理是改变 `config` 中的 `contentCss` 属性，以此实现更个性化的登录框样式。
 
 在这里以 「隐藏应用 Logo」为例：
 
@@ -622,9 +624,9 @@ export default {
 
 ### 10. 使用 AuthClient 管理用户登录态
 
-AuthClient 可以帮助你更加方便的管理已经登录成功的用户，比如判断 **用户登录状态、退出登录、刷新用户 Token** 等。在使用 AuthClientProvider 管理用户登录态时， 你在初始化时可以不用传入 appId。
+`AuthClient` 可以帮助你更加方便的管理已经登录成功的用户，比如判断 **用户登录状态、退出登录、刷新用户 Token** 等。在使用 `AuthClient` 管理用户登录态时， 你在初始化时可以不用传入 `appId`。
 
-在使用 Guard 组件时，通过 Props 传入初始化完成的 AuthClient，使用需要你单独进行维护。
+在使用 Guard 组件时，通过 Props 传入初始化完成的 `AuthClient`，使用需要你单独进行维护。
 
 代码示例如下：
 
@@ -715,10 +717,6 @@ export default {
 }
 </style>
 ```
-
-如果你还有其他疑问，请直接在你的**私有化服务群**中联系相应的 Authing 工作人员，他们将为你提供直接支持。
-
-
 ### 11. 私有化部署
 
 如果你是通过「私有化部署」的方式使用 Authing 服务，需要指定你私有化的端点（**不带 Path**），具体方式如下：
@@ -753,6 +751,8 @@ export default {
 };
 </script>
 ```
+
+如果你还有其他疑问，请直接在你的**私有化服务群**中联系相应的 Authing 工作人员，他们将为你提供直接支持。
 
 ### 12. 高级功能
 
@@ -807,6 +807,7 @@ export default {
 ## 附录：常用的事件及参数列表
 
 ### 1. 常用事件列表
+
 | 事件名                        | 事件说明                                             | 事件参数                | 事件参数说明                                                                                                  |
 | :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
 |load|Guard 初始化完成，开始渲染页面|authClient|AuthenticationClient 对象，详情请查看 [authing-js-sdk](/reference/sdk-for-node/)|
@@ -872,8 +873,6 @@ export default {
 
 #### GuardModuleType
 
-此外还有很多的场景可以灵活的使用，需要搭配 `defaultInitData` 使用。`defaultInitData` 是此场景的初始值，如果没有初始值 某些场景无法正常使用。
-
 | key                        |   value                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LOGIN|'login'|登录界面|
@@ -883,21 +882,21 @@ export default {
 
 | key                        |   value                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
-|ALIPAY|"alipay"|支付宝登录|
-|GOOGLE|"google"|谷歌登录|
-|WECHATPC|"wechat:pc"|微信 PC 登录|
-|WECHATMP|"wechat:webpage-authorization"|微信网页授权|
-|WECHATMOBILE|"wechat:mobile"|微信移动端扫码登录|
-|WECHATWORK_ADDRESS_BOOK|"wechatwork:addressbook"|企业微信通讯录|
-|WECHATWORK_CORP_QRCONNECT|"wechatwork:corp:qrconnect"|企业微信内部应用|
-|DINGTALK|"dingtalk"|钉钉登录|
-|WEIBO|"weibo"|微博登录|
-|APPLE|"apple"|Apple 登录|
-|LARK_PUBLIC|"lark-public"|飞书应用商店登录|
-|LARK_INTERNAL|"lark-internal"|飞书企业自建应用登录|
-|BAIDU|"baidu"|百度登录|
-|LINKEDIN|"linkedin"|领英登录|
-|SLACK|"slack"|Slack 登录|
-|YIDUN|"yidun"|网易易盾登录|
-|QINGCLOUD|"qingcloud"|青云 QingCloud 登录|
-|FACEBOOK|"facebook"|FaceBook 登录|
+|ALIPAY|'alipay'|支付宝登录|
+|GOOGLE|'google'|谷歌登录|
+|WECHATPC|'wechat:pc'|微信 PC 登录|
+|WECHATMP|'wechat:webpage-authorization'|微信网页授权|
+|WECHATMOBILE|'wechat:mobile'|微信移动端扫码登录|
+|WECHATWORK_ADDRESS_BOOK|'wechatwork:addressbook'|企业微信通讯录|
+|WECHATWORK_CORP_QRCONNECT|'wechatwork:corp:qrconnect'|企业微信内部应用|
+|DINGTALK|'dingtalk'|钉钉登录|
+|WEIBO|'weibo'|微博登录|
+|APPLE|'apple'|Apple 登录|
+|LARK_PUBLIC|'lark-public'|飞书应用商店登录|
+|LARK_INTERNAL|'lark-internal'|飞书企业自建应用登录|
+|BAIDU|'baidu'|百度登录|
+|LINKEDIN|'linkedin'|领英登录|
+|SLACK|'slack'|Slack 登录|
+|YIDUN|'yidun'|网易易盾登录|
+|QINGCLOUD|'qingcloud'|青云 QingCloud 登录|
+|FACEBOOK|'facebook'|FaceBook 登录|
