@@ -243,6 +243,8 @@ export default {
     font-size 14px
     flex 1
     text-align right
+    & a:hover
+      text-decoration: underline
   .feedback-action-container
     display flex
     align-items center

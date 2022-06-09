@@ -256,13 +256,23 @@ export default {
     // border 1px solid darken(#ddd, 10%)
     // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
     border-radius 6px
-    padding 0.4rem 24px
+    padding 0.4rem 0
     list-style-type none
     z-index: 9999
     li
-      padding: 16px 0
-      border-bottom: 1px solid #ddd
+      position: relative
+      padding: 16px 24px !important
       border-radius: 0
+      &::after
+        content: ''
+        position: absolute
+        left: 24px
+        right: 24px
+        bottom: 0
+        height: 1px
+        display: inline-block
+        background: #ddd
+
     &.align-right
       right 0
   .suggestion
@@ -282,8 +292,8 @@ export default {
       background-color #f3f4f5
       a
         color $accentColor
-  & .suggestion:last-child {
-    border-bottom: none
+  & .suggestion:last-child::after {
+    display: none
   }
 
 @media (max-width: $MQNarrow)
