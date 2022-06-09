@@ -3,22 +3,26 @@
         {
             name: 'JavaScript',
             link: 'reference/guard/v2/native-javascript.html',
-            img: 'javascript@2x.png'
+            img: 'javascript@2x.png',
+            github: "https://github.com/Authing/authing-ui-components",
         },
         {
             name: 'React',
             link: 'reference/guard/v2/react.html',
-            img: 'react@2x.png'
+            img: 'react@2x.png',
+            github: "https://github.com/Authing/authing-ui-components",
         },
         {
             name: 'Vue',
             link: 'reference/guard/v2/vue.html',
-            img: 'vue@2x.png'
+            img: 'vue@2x.png',
+            github: "https://github.com/Authing/authing-ui-components",
         },
         {
             name: 'Angular',
             link: 'reference/guard/v2/angular.html',
-            img: 'angular@2x.png'
+            img: 'angular@2x.png',
+            github: "https://github.com/Authing/authing-ui-components",
         }
     ]
 ---
