@@ -3,7 +3,7 @@
 {{$localeConfig.brandName}} has always been devoting to bring developers a highly customized development experience. Therefore, we provide the following custom configuration items. Developers can balance security and convenience according to their business needs. Developers can customize the configuration in the [{{$localeConfig.brandName}} console](https://console.authing.cn/console/userpool) **Settings** -&gt; **Security Information** -&gt; **App Scan Code Login Web Custom Configuration**.
 
 
-![](~@imagesZhCn/reference/Xnip2021-02-27_14-06-27.png)
+![](../../images/Xnip2021-02-27_14-06-27.png)
 
 
 ## QR code valid time
@@ -20,6 +20,6 @@ The default is 300 s.
 
 ## Whether getting user information by ticket in the browser is allowed
 
-It is not allowed by default, it needs to be called on the server side, after the user pool key is initialized. [Click to learn how to initialize the back-end SDK](/reference/sdk-for-node/README.md).
+It is not allowed by default, it needs to be called on the server side, after the user pool key is initialized. [Click to learn how to initialize the back-end SDK](/en/reference/sdk-for-node/README.md).
 
 A typical usage scenario is: after the user scans the QR code to agree to authorization, and the developer obtains the ticket, sends to backend, and gets user information by backend SDK, then redirects to the logged-in page, and writes the user information into localStroage at the same time.

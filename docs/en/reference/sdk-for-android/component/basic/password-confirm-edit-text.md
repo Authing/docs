@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-此组件此组件为辅助类型控件，和 PasswordEditText 搭配使用，errorEnabled 属性控制是否显示错误信息。
+此组件此组件为辅助类型控件，和 PasswordEditText 搭配 Use ，errorEnabled 属性控制是否显示错误信息。
 
 常用场景：注册、重置密码
 

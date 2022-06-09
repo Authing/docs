@@ -1,6 +1,6 @@
-!!!include(common/init-csharp-auth-sdk.md)!!!
+!!!include(en/common/init-csharp-auth-sdk.md)!!!
 
-使用 `LoginByEmail` 方法：
+Use `LoginByEmail` 方法：
 
 ```csharp
 var email = "test@example.com";

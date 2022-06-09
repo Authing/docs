@@ -1,11 +1,10 @@
-The script will be used in these user cases: 
+The script will be used in these user cases:
 
-- When a user tries to register, if your database script finds this user's information, it will reject the registration requirement. 
-- When OIDC protocol needs to exchange user information. 
-- When someone uses console or API to check user information. 
+- When a user tries to register, if your database script finds this user's information, it will reject the registration requirement.
+- When OIDC protocol needs to exchange user information.
+- When someone uses console or API to check user information.
 
 This script is required in both LAZY_MIGRATION and CUSTOM_USER_STORE mode.
-
 
 ### Function Definition
 
@@ -37,38 +36,38 @@ async function getUser(query, context) {
   //     throw new Error("my error message")
 
   const msg =
-    'Please implement the Find User script for this database connection ';
+    "Please implement the Find User script for this database connection ";
   throw new Error(msg);
 }
 ```
 
-| Parameter         | Type   | Nullable | Explanation                                                      |
-| :------------- | :----- | :------- | :--------------------------------------------------------- |
-| query          | object | false    | Query condition                                                  |
-| query.id       | string | ture     | User's ID. This parameter can be empty.                                |
-| query.email    | string | ture     | User's email. This parameter can be empty.                                     |
-| query.phone    | string | true     | User's telephone number. This parameter can be empty.                                   |
-| query.username | string | true     | User's username. This parameter can be empty.                                   |
-| context        | object | true     | Requiring context                                          |
+| Parameter      | Type   | Nullable | Explanation                                           |
+| :------------- | :----- | :------- | :---------------------------------------------------- |
+| query          | object | false    | Query condition                                       |
+| query.id       | string | ture     | User's ID. This parameter can be empty.               |
+| query.email    | string | ture     | User's email. This parameter can be empty.            |
+| query.phone    | string | true     | User's telephone number. This parameter can be empty. |
+| query.username | string | true     | User's username. This parameter can be empty.         |
+| context        | object | true     | Requiring context                                     |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                 |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                             |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                |
-| appName          | string | The name of the current application.                                                                                            |
-| appMetadata      | object | Configurations of the current application.                                                                                         |
-| application      | string | The ID of the user pool.                                                                                                    |
-| request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement.  |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
+| request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### The User Exists
 
-When the user exists, you need to return user information to Approw, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
+When the user exists, you need to return user information to Authing, the format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md). For example:
 
 ```javascript
 async function getUser(query, context) {
@@ -79,14 +78,13 @@ async function getUser(query, context) {
     emailVerified: true,
     nickname: "Nick",
     photo: ""
-  }
+  };
 }
 ```
 
 #### The User Does not Exist
 
 When the user does not exist, you need to return `null`. Please do not throw an error.
-
 
 #### Other Abnormal Errors
 
@@ -97,7 +95,7 @@ async function getUser(query, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -106,7 +104,7 @@ async function getUser(query, context) {
 
 ### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -148,10 +146,10 @@ async function getUser(query, context) {
 
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -190,7 +188,7 @@ async function getUser(query, context) {
     index += 1;
   }
 
-  const QUERY = `SELECT * FROM users WHERE ${queries.join(' OR ')}`;
+  const QUERY = `SELECT * FROM users WHERE ${queries.join(" OR ")}`;
 
   try {
     const result = await client.query(QUERY, parameters);
@@ -215,7 +213,7 @@ async function getUser(query, context) {
       address: user.address,
       company: user.company,
       birthdate: user.birthdate,
-      website: user.website,
+      website: user.website
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);

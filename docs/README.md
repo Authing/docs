@@ -89,8 +89,8 @@ sdkConfig:
     img: golang.png
     img2x: golang@2x.png
 applicationSdks:
-  - title: 移动 / 客户端应用
-    description: 在移动 / 客户端应用中快速接入认证服务
+  - title: 客户端应用
+    description: 在手机、桌面和其他智能设备上运行的本地应用
     color: "#396AFF"
     sdks:
       - ios
@@ -99,7 +99,7 @@ applicationSdks:
       - reactNative
       - cSharp
   - title: 单页应用
-    description: 在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录
+    description: 只有单个页面的纯前端网页应用
     color: "#75A3FF"
     sdks:
       - javascript
@@ -107,7 +107,7 @@ applicationSdks:
       - angular
       - vue
   - title: 标准 Web 应用
-    description: 在服务器上运行的传统 Web 应用，实现统一认证和授权
+    description: 多页面并支持跳转的网页应用
     color: "#28B1B0"
     sdks:
       - javascript
@@ -118,7 +118,7 @@ applicationSdks:
       - java
       - golang
   - title: 后端 / API 服务
-    description: 在后端调用 {{$localeConfig.brandName}} 并保护 API 接口
+    description: 无前端界面，只提供后端服务的应用
     color: "#F8BC00"
     sdks:
       - javascript

@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-This article introduces how to make Approw an OIDC identity resource, other systems can connect to Approw as identity providers through OIDC protocol.
+This article introduces how to make Authing an OIDC identity resource, other systems can connect to Authing as identity providers through OIDC protocol.
 
 OpenID Connect protocol (OIDC) is a lightweight and secure identity authentication and authorization protocol. OIDC is a superset of the OAuth 2.0 protocol.
 
@@ -20,17 +20,17 @@ You can understand the OIDC protocol in depth [here](/concepts/oidc/oidc-overvie
 
 ## Create an Application
 
-In order for your application to have identity authentication capabilities, you need to create an application in Approw. It is recommended to fill in the name of your actual application project. In **Console** > **Applications** > **Application List**, click “Create Application”.
+In order for your application to have identity authentication capabilities, you need to create an application in Authing. It is recommended to fill in the name of your actual application project. In **Console** > **Applications** > **Application List**, click “Create Application”.
 
 ![](~@imagesZhCn/guides/federation/oidc/1-1.png)
 
-Fill in the **application name**, for example, Web Note Project, specify an **authentication address** for your project, where your users will complete authentication. Fill in the **callback address** as the **back-end route** of your project. Approw will send user information (authorization code actually) to this address. Finally, click “Create”.
+Fill in the **application name**, for example, Web Note Project, specify an **authentication address** for your project, where your users will complete authentication. Fill in the **callback address** as the **back-end route** of your project. Authing will send user information (authorization code actually) to this address. Finally, click “Create”.
 
 ![](~@imagesZhCn/guides/federation/oidc/1-2.png)
 
 ## Authorization code mode
 
-If your application project has a **back-end service** that can store secret key safety, the **authorization code mode** is recommended. 
+If your application project has a **back-end service** that can store secret key safety, the **authorization code mode** is recommended.
 
 In **Console** > **Applications**, find your application, in the application details page, in the "Configuration" card below, check `authorization_code` in the authorization mode, check `code` in the return type, and then click Save.
 
@@ -38,10 +38,10 @@ In **Console** > **Applications**, find your application, in the application det
 
 There are the following processes.
 
-1. In your application, let the user visit the login link, the browser redirects to Approw, the user completes **authentication** in Approw.
-2. The browser receives an **authorization code** from Approw service.
+1. In your application, let the user visit the login link, the browser redirects to Authing, the user completes **authentication** in Authing.
+2. The browser receives an **authorization code** from Authing service.
 3. The browser sends the **authorization code** to your application **back-end** using redirection.
-4. Your application service sends the **authorization code** to Approw to obtain **AccessToken** and **IdToken**, refresh token also will be returned if necessary.
+4. Your application service sends the **authorization code** to Authing to obtain **AccessToken** and **IdToken**, refresh token also will be returned if necessary.
 5. Now your application back-end knows the user’s identity and can save user information later, redirect to other front-end pages, use AccessTokan to call other resources’ API, etc.
 
 Below is the workflow:
@@ -64,8 +64,8 @@ In **Console** > **Applications**, find your application, in the application det
 
 There are the following processes.
 
-1. In your application, let the user visit the login link, the browser redirects to Approw, the user completes **authentication** in Approw.
-2. Approw redirects the browser to your application callback address. AccessToken and IdToken are sent as **URL hash**.
+1. In your application, let the user visit the login link, the browser redirects to Authing, the user completes **authentication** in Authing.
+2. Authing redirects the browser to your application callback address. AccessToken and IdToken are sent as **URL hash**.
 3. Your application retrieves token from URL.
 4. Your application can save AccessToken and IdToken for further use. Such as carrying AccessToken to access the resource service, carrying IdToken to request the service so that the server can identify the user's identity.
 
@@ -85,8 +85,8 @@ In **Console** > **Applications**, find your application, in the application det
 
 There are the following processes.
 
-1. In your application, let the user visit the login link, the browser redirects to Approw, the user completes **authentication** in Approw.
-2. Approw redirects the browser to your application callback address. Code, AccessToken and IdToken are sent as **URL hash**.
+1. In your application, let the user visit the login link, the browser redirects to Authing, the user completes **authentication** in Authing.
+2. Authing redirects the browser to your application callback address. Code, AccessToken and IdToken are sent as **URL hash**.
 3. Your application retrieves code and token from URL.
 4. Your application can save AccessToken and IdToken for further use. Such as carrying AccessToken to access the resource service, carrying IdToken to request the service so that the server can identify the user's identity.
 5. Your application can send code to the back-end.
@@ -108,8 +108,8 @@ In **Console** > **Applications**, find your application, in the application det
 
 There are the following processes.
 
-1. Resource caller sends his credentials AK, SK, and the requested permission scope to the Approw authorization endpoint.
-2. If the credentials are correct and the caller has resource permissions, Approw issues an AccessToken for it.
+1. Resource caller sends his credentials AK, SK, and the requested permission scope to the Authing authorization endpoint.
+2. If the credentials are correct and the caller has resource permissions, Authing issues an AccessToken for it.
 
 Below is the workflow:
 
@@ -128,8 +128,8 @@ In **Console** > **Applications**, find your application, in the application det
 There are the following processes.
 
 1. Your application asks the user to enter credential information.
-2. Your application sends user credential to Approw.
-3. If the credential is correct, Approw returns token.
+2. Your application sends user credential to Authing.
+3. If the credential is correct, Authing returns token.
 
 Below is the workflow:
 
@@ -143,24 +143,24 @@ Refresh Token is required to refresh Access Token. You can learn about Refresh T
 
 ### Obtain Refresh Token
 
-If you want to obtain  [Refresh Token](/concepts/refresh-token.md), you need to send the request to Approw to get [Refresh Token](/concepts/refresh-token.md).
+If you want to obtain [Refresh Token](/concepts/refresh-token.md), you need to send the request to Authing to get [Refresh Token](/concepts/refresh-token.md).
 
 Only **authorization code mode** and **password mode** can support [Refresh Token](/concepts/refresh-token.md).
 
-When the combination of authorization mode and Scope shown in the following table is sent to the Token endpoint, Approw will return Refresh Token.
+When the combination of authorization mode and Scope shown in the following table is sent to the Token endpoint, Authing will return Refresh Token.
 
-| Authroization mode      | Scope          |
-| ------------- | -------------- |
-| refresh_token | offline_access |
-| password      | offline_access |
+| Authroization mode | Scope          |
+| ------------------ | -------------- |
+| refresh_token      | offline_access |
+| password           | offline_access |
 
 ::: hint-warning
-Warning : When using the **authorization code mode**, you must carry the scope when requesting the **authorization endpoint**(`/oidc/auth`), scope value **must** include `offline_access`, and the prompt parameter **must** be included, which value must be `consent`. Otherwise, Approw **will not return any Refresh Token**.
+Warning : When using the **authorization code mode**, you must carry the scope when requesting the **authorization endpoint**(`/oidc/auth`), scope value **must** include `offline_access`, and the prompt parameter **must** be included, which value must be `consent`. Otherwise, Authing **will not return any Refresh Token**.
 :::
 
 #### Obtain Refresh Token in Authorization Code Mode
 
-When using the authorization code mode, you must carry the scope to access **authorization endpoint**(`/oidc/auth`), scope **must** include `offline_access`, and the prompt parameter **must** be included, which value must be `consent`. Obtaining an authorization code and send it to **Token Endopoint**, Approw will return Access Token, Id Token and Refresh Token. Check [using OIDC authorization code mode](/federation/oidc/authorization-code/) to get further information.
+When using the authorization code mode, you must carry the scope to access **authorization endpoint**(`/oidc/auth`), scope **must** include `offline_access`, and the prompt parameter **must** be included, which value must be `consent`. Obtaining an authorization code and send it to **Token Endopoint**, Authing will return Access Token, Id Token and Refresh Token. Check [using OIDC authorization code mode](/federation/oidc/authorization-code/) to get further information.
 
 #### Obtain authorization code and refresh token example
 
