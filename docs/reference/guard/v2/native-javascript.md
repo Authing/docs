@@ -902,7 +902,7 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
 
 ### 1. 事件列表
 
-| 事件名                        | 事件说明                                             | 事件参数                | 事件参数说明                                                                                                  |
+| 名称                        | 描述                                             | 参数                | 参数描述      |
 | :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
 |load|Guard 初始化完成，开始渲染页面|authClient|AuthenticationClient 对象，详情请查看 [authing-js-sdk](/reference/sdk-for-node/)|
 |load-error|Guard 初始化失败|error|错误信息|
@@ -914,40 +914,41 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
 
 ### 2. Config 参数列表
 
-| 参数名                        |   参数说明                                           | 类型                | 默认值                                                                                                  |
-| :---------------------------- | :--------------------------------------------------- | :---------------------- | :-----------------------------|
-|target|指定 Guard 表单的挂载点，接受 [querySelector (opens new window)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面|String|-|
-|mode|Guard 展示模式|[GuardMode](#guardmode)|GuardMode.Normal|
-|title|产品名称|String|Authing 控制台中的配置|
-|logo|产品 logo|String|Authing 控制台中的配置|
-|contentCss|**自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 节点。如 body {background:#6699 !important;}|String|-|
-|loginMethods|需要使用的普通登录(包括 LDAP)方式列表|[LoginMethods](#loginmethods)[]|Authing 控制台中的配置|
-|registerMethods|需要使用的注册方式|[RegisterMethods](#registermethods)[]|Authing 控制台中的配置|
-|defaultRegisterMethod|默认展示的注册方式|[RegisterMethods](#registermethods)|Authing 控制台中的配置|
-|defaultScenes|打开组件时展示的界面|[GuardModuleType](#guardmoduletype)|GuardModuleType.LOGIN|
-|socialConnections|需要使用的社会化登录列表，**如果在 Authing 控制台中没有配置，则不会显示**|[SocialConnections](#socialconnections)[]|Authing 控制台中的配置|
-|enterpriseConnections|**需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用，**如果在 Authing 控制台中没有配置，则不会显示**|Array|Authing 控制台中的配置|
-|defaultLoginMethod|**默认显示的登录方式**。可选值为 options.loginMethods 中的某一项|String|Authing 控制台中的配置|
-|autoRegister|**是否将注册和登录合并**，合并后如果用户不存在将自动注册|Boolean|Authing 控制台中的配置|
-|disableRegister|**是否禁止注册**，禁止的话会隐藏「注册」入口|Boolean|Authing 控制台中的配置|
-|disableResetPwd|**是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口|Boolean|Authing 控制台中的配置|
-|clickCloseable|**Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框|Boolean|Authing 控制台中的配置|
-|escCloseable|**Modal 模式时是否可以通过键盘 ESC 键关闭登录框**|Boolean|Authing 控制台中的配置|
-|isSSO|是否是单点登录|Boolean|Authing 控制台中的配置|
-|lang|使用语言，可选值为 zh-CN、en-US|'zh-CN' | 'en-US'|'zh-CN'|
-|langRange|语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮|('zh-CN'｜ 'en-US')[]|['zh-CN', 'en-US']|
-|host|私有部署时的 API 请求地址|String|-|
+| 名称 | 类型 | 描述 | 默认值 |
+|:---|:---|:---|:---|
+| target | String | 指定 Guard 表单的挂载点，接受 [querySelector (opens new window)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面 | - |
+| mode | [GuardMode](../parameters.md#guardmode) | Guard 展示模式 | GuardMode.Normal |
+| title | String | 产品名称 | Authing 控制台中的配置 |
+| logo | String | 产品 logo | Authing 控制台中的配置 |
+| contentCss | String | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 节点。如 body {background:#6699 !important;} | - |
+| loginMethods | [LoginMethods](../parameters.md#loginmethods)[] | 需要使用的普通登录(包括 LDAP)方式列表 | Authing 控制台中的配置 |
+| registerMethods | [RegisterMethods](../parameters.md#registermethods)[] | 需要使用的注册方式 | Authing 控制台中的配置 |
+| defaultRegisterMethod | [RegisterMethods](../parameters.md#registermethods) | 默认展示的注册方式 | Authing 控制台中的配置 |
+| defaultScenes | GuardModuleType | 打开组件时展示的界面 | GuardModuleType.LOGIN |
+| socialConnections | [SocialConnections](../parameters.md#socialconnections)[] | 需要使用的社会化登录列表，**如果在 Authing 控制台中没有配置，则不会显示** | Authing 控制台中的配置 |
+| enterpriseConnections | Array | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用，**如果在 Authing 控制台中没有配置，则不会显示** | Authing 控制台中的配置 |
+| defaultLoginMethod | String | **默认显示的登录方式**。可选值为 options.loginMethods 中的某一项 | Authing 控制台中的配置 |
+| autoRegister | Boolean | **是否将注册和登录合并**，合并后如果用户不存在将自动注册 | Authing 控制台中的配置 |
+| disableRegister | Boolean | **是否禁止注册**，禁止的话会隐藏「注册」入口 | Authing 控制台中的配置 |
+| disableResetPwd | Boolean | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口 | Authing 控制台中的配置 |
+| clickCloseable | Boolean | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框 | Authing 控制台中的配置 |
+| escCloseable | Boolean | **Modal 模式时是否可以通过键盘 ESC 键关闭登录框** | Authing 控制台中的配置 |
+| isSSO | Boolean | 是否是单点登录 | Authing 控制台中的配置 |
+| lang | 'zh-CN' | 使用语言，可选值为 zh-CN、en-US | 'en-US' |
+| langRange | ('zh-CN'｜ 'en-US')[] | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮 | ['zh-CN', 'en-US'] |
+| host | String | 私有部署时的 API 请求地址 | - |
+
 
 #### GuardMode 
 
-| key                        |   value                      | 说明                | 
+| 键（Key）                        |   值（value）                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Modal|'modal'|模态框模式|
 |Normal|'normal'|正常模式|
 
 #### LoginMethods
 
-| key                        |   value                      | 说明                | 
+| 键（Key）                        |   值（value）                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LDAP|'ldap'|LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))|
 |AppQr|'app-qrcode'|APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
@@ -959,21 +960,21 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
 
 #### RegisterMethods
 
-| key                        |   value                      | 说明                | 
+| 键（Key）                        |   值（value）                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |Email|'email'|邮箱注册|
 |Phone|'phone'|手机验证码注册|
 
 #### GuardModuleType
 
-| key                        |   value                      | 说明                | 
+| 键（Key）                        |   值（value）                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |LOGIN|'login'|登录界面|
 |REGISTER|'register'|注册界面|
 
 #### SocialConnections
 
-| key                        |   value                      | 说明                | 
+| 键（Key）                        |   值（value）                      | 说明                | 
 | :--------------------------| :----------------------------| :------------------|
 |ALIPAY|'alipay'|支付宝登录|
 |GOOGLE|'google'|谷歌登录|
