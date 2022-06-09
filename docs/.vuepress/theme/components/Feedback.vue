@@ -30,17 +30,15 @@
         <IconFont v-else type="authing-good" />
         {{ feedbackConfig.useless }}
       </button>
-
-      <div class="github-edit">
-        有什么建议或错别字吗？
-        <a
-          :href="
-            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
-          "
-        >
-          在 Github 上编辑
-        </a>
-      </div>
+    </div>
+    <div class="github-edit">
+      <a
+        class="link"
+        :href="
+          `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
+        "
+      >有建议或错误，可直接在 Github 上反馈
+      </a>
     </div>
     <div v-if="submited" class="feedback-success">
       <IconFont type="authing-tijiaochenggong" class="feedback-success-icon" />
@@ -64,7 +62,13 @@
         立即提交
       </button>
     </div>
-    <p class="feedback-help" v-html="feedbackConfig.help"></p>
+    
+    <div class="feedback-help">
+      <div class="text">若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing 控制台，来开启你的 Authing 之旅！</div>
+      <a class="button">部署到 Authing</a>
+      <img class="shadow-banner" src="../assets/images/banner.png" />
+      <div class="shadow-bg"></div>
+    </div>
   </div>
 </template>
 
@@ -135,23 +139,22 @@ export default {
 
 <style lang="stylus">
 .feedback
-  background #FFFFFF
-  border-radius 4px
-  border 1px solid #EEEEEE
-  padding 30px 24px
   margin-top 34px
   .github-edit
+    margin-bottom 36px
     font-size 14px
     flex 1
-    text-align right
+    color #215AE5
+    .link
+      color #215AE5
   .feedback-action-container
     display flex
     align-items center
-    margin-bottom 18px
+    margin-bottom 24px
     .feedback-btn
       width 88px
       height 34px
-      background #FFFFFF
+      background #F2F3F5
       border-radius 0px 4px 4px 0px
       border 1px solid #EEEEEE
       cursor pointer
@@ -180,15 +183,46 @@ export default {
     width auto
   .feedback-title
     font-size 16px
-    font-weight 400
-    color #333333
-    line-height 22px
+    font-weight 500
+    color #1D2129
+    line-height 26px
     margin 0
   .feedback-help
-    color #6D7278
-    margin-top 14px
-    margin-bottom 0
+    position relative
+    margin 0 auto 23px auto
+    width 100%
+    height 154px
+    border-radius 4px
+    background #215AE5
     font-size 14px
+    font-family PingFang SC
+    line-height 22px
+    color #fff
+    overflow hidden
+    .text
+      position absolute
+      z-index 1
+      width 263px
+      height 66px
+      left 22px
+      top 20px
+    .button
+      display flex
+      flex-direction row
+      align-items flex-start
+      padding 5px 24px
+      gap 10px
+      position absolute
+      z-index 2
+      width 145px
+      height 32px
+      left 21px
+      top 104px
+      background #FFFFFF
+      border-radius 4px
+      box-sizing border-box
+      color #215AE5
+      font-size 14px
   .bad-reason
     background: #F8FAFC;
     padding 24px
@@ -247,7 +281,25 @@ export default {
       .feedback-title
         width 100%
       .feedback-btn
-        margin-top 14px
+        margin-top 8px
         &:first-of-type
           margin-left 0
+    .shadow-bg
+      position absolute
+      background #215AE5
+      border-radius 4px
+      width 503px
+      height 125px
+      top 21px
+      background linear-gradient(270.24deg, rgba(33, 90, 229, 0) 12.25%, rgba(41, 143, 252, 0.3) 58%, rgba(33, 90, 229, 0) 92.84%)
+      transform matrix(-0.68, 0.81, -0.66, -0.68, 0, 0)
+    .shadow-banner
+      display none
+@media (min-width: $MQMobile)
+  .shadow-bg
+    display none
+  .shadow-banner
+    position absolute
+    width 100%
+    height 154px
 </style>

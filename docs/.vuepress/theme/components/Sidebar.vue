@@ -85,9 +85,6 @@ export default {
   .old-version
     display none
 
-  ul:not(.sidebar-group-items)
-    padding 0
-
   ul
     margin 0
     list-style-type none

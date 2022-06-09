@@ -86,8 +86,6 @@ export default {
       padding-left 0.8rem
       // &:not(.clickable)
       //   opacity 0.5
-    & > .sidebar-group-items
-      padding-left 0.8rem
       & > li > .sidebar-link
         font-size: 14px
         border-left none
@@ -130,4 +128,5 @@ export default {
   transition height .1s ease-out
   font-size 0.95em
   overflow hidden
+  padding-left 1em
 </style>

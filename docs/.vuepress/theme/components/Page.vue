@@ -14,11 +14,11 @@
         <slot name="breadcrumb"></slot>
         <Content class="theme-default-content" />
         <downloadDemoPage v-if="showDownloadDemo" />
+        <Feedback v-if="!$page.frontmatter.noFeedback" />
         <PageNav
           v-show="!$page.frontmatter.noPageNav"
           v-bind="{ sidebarItems }"
         />
-        <Feedback v-if="!$page.frontmatter.noFeedback" />
       </div>
       <div v-if="!$page.frontmatter.noToc" class="on-this-page">
         <OnThisPage :isInConsole="isInConsole" />

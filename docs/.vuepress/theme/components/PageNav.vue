@@ -156,9 +156,8 @@ function flatten(items, res) {
   padding-bottom 0
   width 100%
   box-size border-box
-  margin-top 34px
   a
-    color #333333
+    color #4E5969
     font-weight normal
     font-size 14px
     &:hover
@@ -166,11 +165,9 @@ function flatten(items, res) {
   .inner
     min-height 2rem
     margin-top 0
-    border-top 1px solid $borderColor
-    padding-top 1rem
+    border-radius 4px
+    text-align center
     overflow auto // clear float
-  .next
-    float right
   .arrow-outline
     display inline-block
     height .6em
@@ -186,4 +183,31 @@ function flatten(items, res) {
     .arrow-outline
       transform rotate(-135deg)
       margin-left 5px
+
+@media only screen and (max-width: 650px)
+  .inner
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+  .prev
+    display block
+    width 100%
+    height 32px
+    line-height 32px
+    background #F2F3F5
+  .next
+    display block
+    width 100%
+    height 32px
+    line-height 32px
+    background #F2F3F5
+    margin-top 16px
+  .arrow-outline
+    display none !important
+
+@media only screen and (min-width: 651px)
+  .inner
+    display flex
+    flex-wrap wrap
+    justify-content space-between
 </style>
