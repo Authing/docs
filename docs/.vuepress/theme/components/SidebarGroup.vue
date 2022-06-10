@@ -147,8 +147,5 @@ export default {
   transition height .1s ease-out
   font-size 0.95em
   overflow hidden
-.depth-0 > ul > li
-  & > .sidebar-group > .sidebar-heading, & > .sidebar-link
-    font-size: 16px
-    line-height 26px
+
 </style>
