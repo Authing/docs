@@ -251,6 +251,8 @@ export default {
     width 20rem
     position absolute
     top 2 rem
+    max-height 396px
+    overflow-y auto
     border: 1px solid #eeeeee
     box-shadow: 0px 16px 32px -10px rgba(4, 24, 115, 0.1)
     // border 1px solid darken(#ddd, 10%)
