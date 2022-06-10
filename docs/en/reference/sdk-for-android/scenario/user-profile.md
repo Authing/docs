@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-Guard 提供默认的个人中心界面，包括个人信息修改。分两种常见场景使用：
+Guard 提供默认的个人中心界面，包括个人信息修改。分两种常见场景 Use ：
 
 ## Activity
 
@@ -29,7 +29,7 @@ public class MeActivity extends UserProfileActivity {
 
 ## Fragment
 
-在需要使用个人中心的布局文件里面增加：
+在需要 Use 个人中心的布局文件里面增加：
 
 ```xml
 <fragment
@@ -48,7 +48,7 @@ private UserProfileFragment fragment;
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // replace with your activity layout
-    setContentView(R.layout.authing_activity_user_profile); 
+    setContentView(R.layout.authing_activity_user_profile);
     fragment = (UserProfileFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_user_profile);
 }
 

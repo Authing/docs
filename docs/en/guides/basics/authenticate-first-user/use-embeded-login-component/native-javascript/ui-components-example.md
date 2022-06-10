@@ -3,32 +3,32 @@
 Use `yarn` or `npm` to install:
 
 ```bash
-$ yarn add @approw/native-js-ui-components
+$ yarn add @authing/native-js-ui-components
 
 # OR
 
-$ npm install @approw/native-js-ui-components --save
+$ npm install @authing/native-js-ui-components --save
 ```
 
 Or use `CDN` to import:
 
 ```html
 // JavaScript 代码
-<script src="https://cdn.jsdelivr.net/npm/@approw/native-js-ui-components"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
 
 ...
 // CSS 文件
-<link href="https://cdn.jsdelivr.net/npm/@approw/native-js-ui-components/lib/index.min.css" rel="stylesheet"></link>
+<link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css" rel="stylesheet"></link>
 ```
 
 ### Initialize
 
 ```html
 <script>
-  var guard = new ApprowNativeJsUIComponents.ApprowGuard("APPROW_APP_ID");
+  var guard = new AuthingNativeJsUIComponents.AuthingGuard("authing_APP_ID");
 
   // event monitor
-  guard.on("load", (authClient) => console.log(authClient));
+  guard.on("load", authClient => console.log(authClient));
 </script>
 ```
 
@@ -37,7 +37,7 @@ Or use `CDN` to import:
 It is simple. You only need to pass a callback `onLogin`.
 
 ```javascript
-guard.on("login", (user) => {
+guard.on("login", user => {
   console.log(user);
 });
 ```

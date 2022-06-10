@@ -1,4 +1,4 @@
-# 在移动端（iOS、Andriod）中集成 {{$localeConfig.brandName}}
+# 在移动端（iOS、Android）中集成 {{$localeConfig.brandName}}
 
 <LastUpdated/>
 

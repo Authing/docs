@@ -5,8 +5,8 @@
     sidebarType: 'none',
     appTypes:[
         {
-            title: '移动 / 客户端应用',
-            description: '在移动 / 客户端应用中快速接入认证服务',
+            title: '客户端应用',
+            description: '在手机、桌面和其他智能设备上运行的本地应用',
             icon: 'authing-yidongduan',
             link: 'quickstarts/mobileApp',
 			language: [
@@ -18,7 +18,7 @@
         },
         {
             title: '单页应用',
-            description: '在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录',
+            description: '只有单个页面的纯前端网页应用',
             icon: 'authing-danye',
             link: 'quickstarts/spa',
             language: [
@@ -30,7 +30,7 @@
         },
         {
             title: '标准 Web 应用',
-            description: '在服务器上运行的传统 Web 应用，实现统一认证和授权',
+            description: '多页面并支持跳转的网页应用',
             icon: 'authing-web',
             link: 'quickstarts/webApp',
 			language: [	
@@ -44,7 +44,7 @@
         },
         {
             title: '后端 / API 服务',
-            description: '在后端使用 Authing 保护 API 接口',
+            description: '无前端界面，只提供后端服务的应用',
             icon: 'authing-api',
             link: 'quickstarts/apiServer',
 			language: [	

@@ -17,7 +17,7 @@ static func buildAuthorizeUrl(authRequest: AuthRequest, completion: @escaping (U
 
 ```swift
 let authRequest = AuthRequest()
-OIDCClient.buildAuthorizeUrl(authRequest: authRequest) { url in
+OIDCClient().buildAuthorizeUrl(authRequest: authRequest) { url in
     if url != nil {
         // self is your view controller
         // webView is a WKWebView object
@@ -63,7 +63,7 @@ func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigatio
     }
     
     if let authCode = Util.getQueryStringParameter(url: url, param: "code") {
-        OIDCClient.authByCode(code: authCode, authRequest: authRequest) { code, message, userInfo in
+        OIDCClient().authByCode(code: authCode, authRequest: authRequest) { code, message, userInfo in
             if (code == 200) {
                 
             }
@@ -91,7 +91,7 @@ public static func loginByAccount(account: String, password: String, completion:
 **example**
 
 ```swift
-OIDCClient.loginByAccount(account: account, password: password) { code,  message,  userInfo in
+OIDCClient().loginByAccount(account: account, password: password) { code,  message,  userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -116,7 +116,7 @@ public static func loginByPhoneCode(phone: String, code: String, completion: @es
 **example**
 
 ```swift
-OIDCClient.loginByPhoneCode(phone: phone, code: code) { code, message, userInfo in
+OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -140,7 +140,7 @@ static func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(
 **example**
 
 ```swift
-OIDCClient.getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
+OIDCClient().getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
     if (code == 200) {
         // data
     }
@@ -164,13 +164,13 @@ static func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @es
 **example**
 
 ```swift
-OIDCClient.getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
+OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
     if (code == 200) {
         
     }
     self.goHome()
 }
-OIDCClient.getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
+OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")

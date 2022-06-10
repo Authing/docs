@@ -12,28 +12,28 @@ To implement the use of self-built mobile applications to scan QR codes to log i
 
 ## Generate a QR code on the web and poll the scanning status
 
-On the web side, we recommend using the [JavaScript SDK](/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md) provided by {{$localeConfig.brandName}}, which provides a one-click interface for generating a QR code, polling for the latest status, and obtaining user information for callbacks. Developers only need to specify the `onSuccess` callback function:
+On the web side, we recommend using the [JavaScript SDK](/en/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md) provided by {{$localeConfig.brandName}}, which provides a one-click interface for generating a QR code, polling for the latest status, and obtaining user information for callbacks. Developers only need to specify the `onSuccess` callback function:
 
 ```js
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-authenticationClient.qrcode.startScanning('qrcode', {
+authenticationClient.qrcode.startScanning("qrcode", {
   onSuccess: (userInfo, ticket) => {
-    console.log(userInfo, ticket)
+    console.log(userInfo, ticket);
   },
-  onError: (message) => onFail && onFail(`${message}`),
-})
+  onError: message => onFail && onFail(`${message}`)
+});
 ```
 
 After running, it will automatically generate a QR code for APP scanning login:
 
 <img src="https://cdn.authing.cn/blog/image%20%28619%29.png" style="display:block;margin: 0 auto;" height="250">
 
-After the code is scanned successfully, {{$localeConfig.brandName}} will call back the `onSuccess` function passed in by the developer. The callback parameters include `userInfo` and `ticket`, and the `ticket` can be used to [get user information](./full-api-list.md#使用-ticket-换取用户信息).
+After the code is scanned successfully, {{$localeConfig.brandName}} will call back the `onSuccess` function passed in by the developer. The callback parameters include `userInfo` and `ticket`, and the `ticket` can be used to [get user information](./full-api-list.md#Use -ticket-换取用户信息).
 
 If you want to customize the UI or want more customization capabilities, you can view the [complete API list](./full-api-list.md) or [use other SDK methods](/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.md).
 
@@ -61,7 +61,7 @@ The meanings of the fields are as follows:
 - expireAt: the expiration time of the QR code.
 - customData: User-defined fields. To learn how to add custom data, please see the complete interface list page.
 
-> For how to scan and parse the QR code in iOS, you can view [this article](https://github.com/darkjoin/Learning/wiki/使用AVFoundation读取二维码).
+> For how to scan and parse the QR code in iOS, you can view [this article](https://github.com/darkjoin/Learning/wiki/Use AVFoundation 读取二维码).
 
 To implement APP scanning and logging in to the Web, the APP user is required to be in the login state (it is of course possible), and the end user's token is required when calling the relevant interface. A total of three interfaces are required for the mobile terminal:
 
@@ -127,12 +127,12 @@ At this time, the entire login process is complete, and developers can use the t
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
-const user = await authenticationClient.qrcode.exchangeUserInfo('TICKET')
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
+const user = await authenticationClient.qrcode.exchangeUserInfo("TICKET");
 ```
 
 ## Then
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

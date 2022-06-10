@@ -14,7 +14,7 @@ Moving App Pull A Small Program Login is a key way to establish a mobile phone n
 
 Please go to [WeChat open platform](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)Guide creates a WeChat mobile app, and[WeChat open platform](https://open.weixin.qq.com/) **control center - Mobile Applications - Application details - Associate small program information** page, To initiate an associated small program operation by an auditing mobile application. Required applet- **Small login** `AppID` is `wxa0435021fd7a3af2`.
 
-<img src="https://cdn.authing.cn/blog/image%20%28363%29.png" height="400px" style="display:block;margin: 0 auto;">
+<img src="./images/miniprogram_on_openplatform.png" height="400px" style="display:block;margin: 0 auto;"/>
 
 ## Step 2: Create a WeChat applet in the WeChat open platform (optional)
 
@@ -109,15 +109,15 @@ User agrees that the developer can use Ticket to exchange user information, Tick
 ```js
 {
   emailVerified: false,
-  username: '廖长江',
-  nickname: '廖长江',
+  username: 'Liao Changjiang',
+  nickname: 'Liao Changjiang',
   company: '',
   photo: 'https://usercontents.authing.cn/avatar-5e57540f84622ae263294a42-1582781455906',
   loginsCount: 2,
   registerMethod: 'oauth:app2wxapp',
   blocked: false,
   isDeleted: false,
-  oauth: '{"nickName":"廖长江","gender":1,"language":"zh_CN","city":"Haidian","province":"Beijing","country":"China","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/8INxh2bxDMiaU05jLqvWBszALu2u8Qw4iaxV58v4fERaDWV8yunE7icNiahJdxkOCNfGosqXcQ2SyScAcdyibv8uWWQ/132","phone":"17670416754","openid":"o1p9H4wAgb9uTqpxG5Z1g0pIr3FE","unionid":"o0pqE6Fbr5M-exSu_PeL_sjwN44U"}',
+  oauth: '{"nickName":"Liang Changjiang","gender":1,"language":"zh_CN","city":"Haidian","province":"Beijing","country":"China","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/8INxh2bxDMiaU05jLqvWBszALu2u8Qw4iaxV58v4fERaDWV8yunE7icNiahJdxkOCNfGosqXcQ2SyScAcdyibv8uWWQ/132","phone":"17670416754","openid":"o1p9H4wAgb9uTqpxG5Z1g0pIr3FE","unionid":"o0pqE6Fbr5M-exSu_PeL_sjwN44U"}',
   metadata: '""',
   _id: "5e57540f84622ae263294a42",
   unionid: 'o0pqE6Fbr5M-exSu_PeL_sjwN44U',
@@ -157,4 +157,4 @@ AF.request(
 
 ## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

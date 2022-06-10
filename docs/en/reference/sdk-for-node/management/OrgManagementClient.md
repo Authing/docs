@@ -1,27 +1,21 @@
-
 # OrgManagementClient
 
 <LastUpdated/>
 
-
-> An Approw user pool can create multiple organizations. This client is used to manage the Approw organization. It can create/query/update/delete organizations, create/update/delete nodes, and import organizations.
-
-
+> An Authing user pool can create multiple organizations. This client is used to manage the Authing organization. It can create/query/update/delete organizations, create/update/delete nodes, and import organizations.
 
 Please follow the instructions below to use this client:
+
 ```javascript
-import { ManagementClient } from "approw-js-sdk"
+import { ManagementClient } from "authing-js-sdk";
 const managementClient = new ManagementClient({
-   userPoolId: "YOUR_USERPOOL_ID",
-   secret: "YOUR_USERPOOL_SECRET",
-})
-managementClient.org.list // get organization list of user pool
-managementClient.org.moveNode // get detail of organization
-managementClient.org.listMembers // get userlist of the node
+  userPoolId: "YOUR_USERPOOL_ID",
+  secret: "YOUR_USERPOOL_SECRET"
+});
+managementClient.org.list; // get organization list of user pool
+managementClient.org.moveNode; // get detail of organization
+managementClient.org.listMembers; // get userlist of the node
 ```
-
-
-
 
 ## Create an organization
 
@@ -29,25 +23,23 @@ OrgManagementClient().create(name, description, code)
 
 > Create an organization with only one node. If you want to import a complete organization tree, please use the importByJson method.
 
-
 #### Parameter
 
 - `name` \<string\> The name of the organization, which also will be the name of the root node of the organization.
-- `description` \<string\> Root node description. 
-- `code` \<string\> The unique id of the root node, which must be English characters. 
+- `description` \<string\> Root node description.
+- `code` \<string\> The unique id of the root node, which must be English characters.
 
 #### Example
 
 ```javascript
-const org = await managementClient.org.create('Beijing Feifan Tech', 'Beijing Feifan Technology LLC', 'feifan');
+const org = await managementClient.org.create(
+  "Beijing Feifan Tech",
+  "Beijing Feifan Technology LLC",
+  "feifan"
+);
 ```
 
 #### Return value
-
-
-
-
-      
 
 ## Delete an Organization
 
@@ -55,21 +47,15 @@ OrgManagementClient().deleteById(id)
 
 > Delete the organization tree
 
-
 #### Parameter
 
-- `id` \<string\> Orgranization ID 
+- `id` \<string\> Orgranization ID
 
 #### Example
 
-
-
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
-      
+- `Promise<CommonMessage>`
 
 ## Get user pool organizations list
 
@@ -77,24 +63,20 @@ OrgManagementClient().list(page, limit)
 
 > Get user pool organizations list.
 
-
 #### Parameter
 
-- `page` \<number\>  Default value: `1`.
-- `limit` \<number\>  Default value: `10`.
+- `page` \<number\> Default value: `1`.
+- `limit` \<number\> Default value: `10`.
 
 #### Example
 
 ```javascript
-const { totalCount, list } = await managementClient.org.list()
+const { totalCount, list } = await managementClient.org.list();
 ```
 
 #### Return value
 
--  `null` 
-
-
-      
+- `null`
 
 ## Add a node
 
@@ -102,30 +84,32 @@ OrgManagementClient().addNode(orgId, parentNodeId, data)
 
 > Add a node in the organization
 
-
 #### Parameter
 
-- `orgId` \<string\> Organization ID 
+- `orgId` \<string\> Organization ID
 - `parentNodeId` \<string\> Parent node ID
 - `data` \<Object\> Node data
 - `data.name` \<string\> Node name
 - `data.code` \<string\> The unique identifier of the node
-- `data.description` \<string\> Node description information 
+- `data.description` \<string\> Node description information
 
 #### Example
 
 ```javascript
-const org = await managementClient.org.create('Beijing Feifan Tech', 'Beijing Feifan Technology LLC', 'feifan');
-const { id: orgId, rootNode } = org
-const node = await managementClient.org.addNode(orgId, rootNode.id, { name: 'operation department' })
+const org = await managementClient.org.create(
+  "Beijing Feifan Tech",
+  "Beijing Feifan Technology LLC",
+  "feifan"
+);
+const { id: orgId, rootNode } = org;
+const node = await managementClient.org.addNode(orgId, rootNode.id, {
+  name: "operation department"
+});
 ```
 
 #### Return value
 
--  `Promise<Org>` 
-
-
-      
+- `Promise<Org>`
 
 ## Update a node
 
@@ -133,29 +117,25 @@ OrgManagementClient().updateNode(id, updates)
 
 > Update node data
 
-
 #### Parameter
 
-- `id` \<string\> Node ID 
-- `updates` \<Object\> Updated data 
+- `id` \<string\> Node ID
+- `updates` \<Object\> Updated data
 - `updates.name` \<string\> Node name
 - `updates.code` \<string\> Unique id of node
-- `updates.description` \<string\> Node description 
+- `updates.description` \<string\> Node description
 
 #### Example
 
 ```javascript
 await managementClient.org.updateNode("NDOEID", {
-   name: 'newNodeName'
-})
+  name: "newNodeName"
+});
 ```
 
 #### Return value
 
--  `Promise<Org>` 
-
-
-      
+- `Promise<Org>`
 
 ## Get Organization details
 
@@ -163,21 +143,15 @@ OrgManagementClient().findById(id)
 
 > Get Organization details by organization id.
 
-
 #### Parameter
 
-- `id` \<string\> Organization ID 
+- `id` \<string\> Organization ID
 
 #### Example
 
-
-
 #### Return value
 
--  `Promise<Org>` 
-
-
-      
+- `Promise<Org>`
 
 ## Delete a node
 
@@ -185,27 +159,26 @@ OrgManagementClient().deleteNode(orgId, nodeId)
 
 > Delete a node in the organization tree.
 
-
 #### Parameter
 
-- `orgId` \<string\> Organization ID 
-- `nodeId` \<string\> Node ID 
+- `orgId` \<string\> Organization ID
+- `nodeId` \<string\> Node ID
 
 #### Example
 
 ```javascript
-const org = await managementClient.org.create('Beijing Feifan Tech', 'Beijing Feifan Technology LLC', 'feifan');
-const { id: orgId, rootNode } = org
-const node = await managementClient.org.deleteNode(orgId, rootNode.id)
+const org = await managementClient.org.create(
+  "Beijing Feifan Tech",
+  "Beijing Feifan Technology LLC",
+  "feifan"
+);
+const { id: orgId, rootNode } = org;
+const node = await managementClient.org.deleteNode(orgId, rootNode.id);
 ```
-
 
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
-      
+- `Promise<CommonMessage>`
 
 ## Move a node
 
@@ -213,25 +186,21 @@ OrgManagementClient().moveNode(orgId, nodeId, targetParentId)
 
 > When moving a node, you need to specify the node's new parent node. You cannot move a node under its child nodes.
 
-
 #### Parameter
 
-- `orgId` \<string\> Organization ID 
+- `orgId` \<string\> Organization ID
 - `nodeId` \<string\> The ID of the node that needs to be moved.
 - `targetParentId` \<string\> Target parent node ID
 
 #### Example
 
 ```javascript
-await managementClient.org.moveNode("ORGID", "NODEID", "TRAGET_NODE_ID")
+await managementClient.org.moveNode("ORGID", "NODEID", "TRAGET_NODE_ID");
 ```
 
 #### Return value
 
--  `Promise<Org>` The latest tree sturcture.
-
-
-      
+- `Promise<Org>` The latest tree sturcture.
 
 ## Check whether it is the root node
 
@@ -239,22 +208,16 @@ OrgManagementClient().isRootNode(orgId, nodeId)
 
 > Check whether a node is the root node of the organization tree.
 
-
 #### Parameter
 
-- `orgId` \<string\> Organization ID 
-- `nodeId` \<string\> Node ID 
+- `orgId` \<string\> Organization ID
+- `nodeId` \<string\> Node ID
 
 #### Example
 
-
-
 #### Return value
 
--  `Promise<boolean>` 
-
-
-      
+- `Promise<boolean>`
 
 ## Get child nodes list
 
@@ -262,24 +225,20 @@ OrgManagementClient().listChildren(nodeId)
 
 > Get the child nodes list of a node.
 
-
 #### Parameter
 
-- `nodeId` \<string\> Node ID 
+- `nodeId` \<string\> Node ID
 
 #### Example
 
 ```javascript
 // children node list
-const children = await managementClient.org.listChildren("nodeId")
+const children = await managementClient.org.listChildren("nodeId");
 ```
 
 #### Return value
 
--  `Promise<Node[]>` 
-
-
-      
+- `Promise<Node[]>`
 
 ## Get the root node
 
@@ -287,30 +246,25 @@ OrgManagementClient().rootNode(orgId)
 
 > Get the root node of the organization.
 
-
 #### Parameter
 
-- `orgId` \<string\> Organization ID 
+- `orgId` \<string\> Organization ID
 
 #### Example
 
 ```javascript
-const rootNode = await managementClient.org.rootNode("ORGID")
+const rootNode = await managementClient.org.rootNode("ORGID");
 ```
 
 #### Return value
 
--  `Promise<Node[]>` 
-
-
-      
+- `Promise<Node[]>`
 
 ## Import by JSON
 
 OrgManagementClient().importByJson(json)
 
 > Import organization through a JSON tree.
-
 
 #### Parameter
 
@@ -320,37 +274,34 @@ OrgManagementClient().importByJson(json)
 
 ```javascript
 const tree = {
-  name: 'Beijing Feifan Technology',
-  code: 'feifan',
+  name: "Beijing Feifan Technology",
+  code: "feifan",
   children: [
-     {
-         code: 'operation',
-         name: 'operating',
-         description: 'business department'
-      },
-      {
-        code: 'dev',
-        name: 'research',
-        description: 'research department',
-        children: [
-          {
-            code: 'backend',
-            name: 'backend',
-            description: 'backend research department'
-          }
-        ]
-      }
-    ]
-  };
+    {
+      code: "operation",
+      name: "operating",
+      description: "business department"
+    },
+    {
+      code: "dev",
+      name: "research",
+      description: "research department",
+      children: [
+        {
+          code: "backend",
+          name: "backend",
+          description: "backend research department"
+        }
+      ]
+    }
+  ]
+};
 const org = await managementClient.org.importByJson(tree);
 ```
 
 #### Return value
 
--  `Promise<Node[]>` 
-
-
-      
+- `Promise<Node[]>`
 
 ## Add members
 
@@ -358,25 +309,22 @@ OrgManagementClient().addMembers(nodeId, userIds)
 
 > Add a member to the node.
 
-
 #### Parameter
 
 - `nodeId` \<string\> Node ID
-- `userIds` \<string[]\> User ID list 
+- `userIds` \<string[]\> User ID list
 
 #### Example
 
 ```javascript
-const { totalCount, list } = await managementClient.org.addMembers("NODE_ID", ["USER_ID"])
+const { totalCount, list } = await managementClient.org.addMembers("NODE_ID", [
+  "USER_ID"
+]);
 ```
-
 
 #### Return value
 
--  `Promise<PaginatedUsers>` 
-
-
-      
+- `Promise<PaginatedUsers>`
 
 ## Get node members
 
@@ -384,13 +332,12 @@ OrgManagementClient().listMembers(nodeId, options)
 
 > Get the node members. You can get the users directly added to the node, and you can get the users of the child nodes.
 
-
 #### Parameter
 
 - `nodeId` \<string\> Node ID
-- `options` \<Object\> Query parameter 
-- `options.page` \<number\>  Default value: `1`.
-- `options.limit` \<number\>  Default value: `10`.
+- `options` \<Object\> Query parameter
+- `options.page` \<number\> Default value: `1`.
+- `options.limit` \<number\> Default value: `10`.
 - `options.includeChildrenNodes` \<boolean\> Whether to get the members of all child nodes. Default value: `false`.
 
 #### Example
@@ -401,17 +348,13 @@ const { totalCount, list } = await managementClient.org.listMembers("NODE_ID");
 
 #### Return value
 
--  `Promise<PaginatedUsers>` 
-
-
-      
+- `Promise<PaginatedUsers>`
 
 ## Delete members
 
 OrgManagementClient().removeMembers(nodeId, userIds)
 
 > Delete members of the node.
-
 
 #### Parameter
 
@@ -421,13 +364,12 @@ OrgManagementClient().removeMembers(nodeId, userIds)
 #### Example
 
 ```javascript
-await managementClient.org.removeMembers("NODEID", ["USER_ID"])
+await managementClient.org.removeMembers("NODEID", ["USER_ID"]);
 ```
 
 #### Return value
 
--  `Promise<PaginatedUsers>` 
-
+- `Promise<PaginatedUsers>`
 
 ## Export all organization data
 
@@ -438,7 +380,7 @@ OrgManagementClient().exportAll()
 #### Example
 
 ```javascript
-const data = await managementClient.org.exportAll()
+const data = await managementClient.org.exportAll();
 ```
 
 #### Sample data
@@ -482,14 +424,14 @@ const data = await managementClient.org.exportAll()
             "isRoot": true,
             "status": "Activated",
             "oauth": null,
-            "email": "root@approw.com",
+            "email": "root@authing.cn",
             "phone": null,
             "username": "root",
             "unionid": null,
             "openid": null,
             "nickname": null,
             "company": null,
-            "photo": "https://files.approw.co/approw-console/default-user-avatar.png",
+            "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
             "browser": null,
             "device": null,
             "token": "",
@@ -604,13 +546,12 @@ OrgManagementClient().exportByOrgId()
 #### Example
 
 ```javascript
-const data = await managementClient.org.exportByOrgId("ORG_ID")
+const data = await managementClient.org.exportByOrgId("ORG_ID");
 ```
 
 #### Sample data
 
 ```json
-
 {
   "id": "601f59578308478a692a71ea",
   "createdAt": "2021-02-07T03:07:03.822Z",
@@ -648,14 +589,14 @@ const data = await managementClient.org.exportByOrgId("ORG_ID")
           "isRoot": true,
           "status": "Activated",
           "oauth": null,
-          "email": "root@approw.com",
+          "email": "root@authing.cn",
           "phone": null,
           "username": "root",
           "unionid": null,
           "openid": null,
           "nickname": null,
           "company": null,
-          "photo": "https://files.approw.co/approw-console/default-user-avatar.png",
+          "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
           "browser": null,
           "device": null,
           "token": "",

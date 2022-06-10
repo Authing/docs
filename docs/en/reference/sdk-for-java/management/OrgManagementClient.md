@@ -14,7 +14,7 @@ meta:
 
 OrgManagementClient().create(createOrgParam)
 
-> Create an organization with only one node. 
+> Create an organization with only one node.
 > If you want to import a complete organization tree, please use the importByJson method.
 
 #### Parameters
@@ -38,7 +38,7 @@ OrgManagementClient().deleteById(id)
 
 #### Parameter
 
-- `id` \<String\> Organization ID 
+- `id` \<String\> Organization ID
 
 #### Example
 
@@ -80,7 +80,6 @@ OrgManagementClient().findNodeById(nodeId)
 ```java
 Node node = managementClient.org().findNodeById("nodeId").execute();
 ```
-
 
 ## Add a node
 
@@ -140,7 +139,7 @@ OrgManagementClient().findById(id)
 
 #### Parameter
 
-- `id` \<String\> Organization ID 
+- `id` \<String\> Organization ID
 
 #### Example
 
@@ -417,14 +416,14 @@ List<OrgNode> nodes = this.orgManagementClient.exportAll().execute();
             "isRoot": true,
             "status": "Activated",
             "oauth": null,
-            "email": "root@approw.com",
+            "email": "root@authing.cn",
             "phone": null,
             "username": "root",
             "unionid": null,
             "openid": null,
             "nickname": null,
             "company": null,
-            "photo": "https://files.approw.co/approw-console/default-user-avatar.png",
+            "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
             "browser": null,
             "device": null,
             "token": "",
@@ -583,14 +582,14 @@ OrgNode node = this.orgManagementClient.exportByOrgId(orgId).execute();
           "isRoot": true,
           "status": "Activated",
           "oauth": null,
-          "email": "root@approw.com",
+          "email": "root@authing.cn",
           "phone": null,
           "username": "root",
           "unionid": null,
           "openid": null,
           "nickname": null,
           "company": null,
-          "photo": "https://files.approw.co/approw-console/default-user-avatar.png",
+          "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
           "browser": null,
           "device": null,
           "token": "",
