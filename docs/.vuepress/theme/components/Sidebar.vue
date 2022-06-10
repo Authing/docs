@@ -158,8 +158,9 @@ export default {
     & > .sidebar-group > .sidebar-heading, & > .sidebar-link
       font-size: 16px
       line-height 26px
-
-
+  & > .sidebar-links > li > a {
+    padding-left 1.5rem
+  }
 
 @media (max-width: $MQMobile)
   .sidebar
