@@ -162,7 +162,6 @@ function flatten(items, res) {
     margin-top 0
     border-radius 4px
     text-align center
-    overflow auto // clear float
   .arrow-outline
     display inline-block
     height .6em

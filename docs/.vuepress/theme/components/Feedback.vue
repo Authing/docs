@@ -1,44 +1,46 @@
 <template>
   <div class="feedback">
-    <div class="feedback-action-container">
-      <h5 class="feedback-title">{{ feedbackConfig.title }}</h5>
-      <button
-        @click="handleFeedback(STATUS.GOOD)"
-        :class="[
-          'feedback-btn',
-          'good',
-          {
-            active: status === STATUS.GOOD
-          }
-        ]"
-      >
-        <IconFont v-if="status === STATUS.GOOD" type="authing-good-" />
-        <IconFont v-else type="authing-good" />
-        {{ feedbackConfig.useful }}
-      </button>
-      <button
-        @click="handleFeedback(STATUS.BAD)"
-        :class="[
-          'feedback-btn',
-          'bad',
-          {
-            active: status === STATUS.BAD
-          }
-        ]"
-      >
-        <IconFont v-if="status === STATUS.BAD" type="authing-good-" />
-        <IconFont v-else type="authing-good" />
-        {{ feedbackConfig.useless }}
-      </button>
-    </div>
-    <div class="github-edit">
-      <a
-        class="link"
-        :href="
-          `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
-        "
-      >{{feedbackConfig.editLink}}
-      </a>
+    <div class="feedback-action">
+      <div class="feedback-action-container">
+        <h5 class="feedback-title">{{ feedbackConfig.title }}</h5>
+        <button
+          @click="handleFeedback(STATUS.GOOD)"
+          :class="[
+            'feedback-btn',
+            'good',
+            {
+              active: status === STATUS.GOOD
+            }
+          ]"
+        >
+          <IconFont v-if="status === STATUS.GOOD" type="authing-good-" />
+          <IconFont v-else type="authing-good" />
+          {{ feedbackConfig.useful }}
+        </button>
+        <button
+          @click="handleFeedback(STATUS.BAD)"
+          :class="[
+            'feedback-btn',
+            'bad',
+            {
+              active: status === STATUS.BAD
+            }
+          ]"
+        >
+          <IconFont v-if="status === STATUS.BAD" type="authing-good-" />
+          <IconFont v-else type="authing-good" />
+          {{ feedbackConfig.useless }}
+        </button>
+      </div>
+      <div class="github-edit">
+        <a
+          class="link"
+          :href="
+            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
+          "
+        >{{feedbackConfig.editLink}}
+        </a>
+      </div>
     </div>
     <div v-if="submited" class="feedback-success">
       <IconFont type="authing-tijiaochenggong" class="feedback-success-icon" />
@@ -138,6 +140,9 @@ export default {
 <style lang="stylus" scoped>
 .feedback
   margin-top 34px
+  .feedback-action
+    overflow hidden
+    clear both
   .github-edit
     margin-bottom 32px
     font-size 14px
@@ -203,6 +208,7 @@ export default {
     .text
       position absolute
       z-index 1
+      width 400px
       height 66px
       left 22px
       top 20px
@@ -219,7 +225,6 @@ export default {
       width 145px
       height 32px
       left 21px
-      top 104px
       background #FFFFFF
       border-radius 4px
       box-sizing border-box
@@ -298,6 +303,15 @@ export default {
       display none
     .github-edit
       float left
+    .feedback-help
+      .text
+        width 90%
+        height 66px
+        left 50%
+        transform translateX(-50%)
+        font-size 14px
+      .button
+        top 108px
 @media (min-width: $MQMobile)
   .feedback-action-container
     float left
@@ -307,13 +321,13 @@ export default {
     position absolute
     width 100%
     height 154px
-  .text
-    width 401px
-    font-size 14px
   .github-edit
     float right
     .link
       display block
       height 32px
       line-height 32px
+  .feedback-help
+    .button
+      top 96px
 </style>
