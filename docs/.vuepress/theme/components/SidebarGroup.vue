@@ -127,8 +127,10 @@ export default {
   // white-space nowrap
   // overflow hidden
   // text-overflow ellipsis
-  &.open, &:hover
-    color inherit
+  // &.open, &:hover
+  //   color inherit
+  &:hover
+    color $accentColor
   .arrow
     position absolute
     top: 50%;
