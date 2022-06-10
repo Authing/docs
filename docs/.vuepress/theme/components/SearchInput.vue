@@ -15,26 +15,28 @@
       @keyup.down="onDown"
       @blur="focused = false"
     />
-    <ul
+    <div
       v-if="showSuggestions"
       class="suggestions"
       :class="{ 'align-right': alignRight }"
       @mouseleave="unfocus"
     >
-      <li
-        v-for="(s, i) in suggestions"
-        :key="i"
-        class="suggestion"
-        :class="{ focused: i === focusIndex }"
-        @mousedown="go(i)"
-        @mouseenter="focus(i)"
-      >
-        <a :href="s.path" @click.prevent>
-          <span class="page-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
-        </a>
-      </li>
-    </ul>
+      <ul>
+        <li
+          v-for="(s, i) in suggestions"
+          :key="i"
+          class="suggestion"
+          :class="{ focused: i === focusIndex }"
+          @mousedown="go(i)"
+          @mouseenter="focus(i)"
+        >
+          <a :href="s.path" @click.prevent>
+            <span class="page-title">{{ s.title || s.path }}</span>
+            <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -250,17 +252,23 @@ export default {
     background #fff
     width 20rem
     position absolute
-    top 2 rem
-    max-height 396px
-    overflow-y auto
+    top 2.5rem
+    max-height 300px
     border: 1px solid #eeeeee
     box-shadow: 0px 16px 32px -10px rgba(4, 24, 115, 0.1)
+    overflow hidden
     // border 1px solid darken(#ddd, 10%)
     // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
     border-radius 6px
     padding 0.4rem 0
-    list-style-type none
     z-index: 9999
+    ul
+      margin 0
+      padding 0
+      max-height 300px
+      // width 100%
+      overflow-y auto
+      list-style-type none
     li
       position: relative
       padding: 16px 24px !important
