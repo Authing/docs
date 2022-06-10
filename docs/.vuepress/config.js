@@ -161,7 +161,7 @@ module.exports = {
           useful: "有帮助",
           useless: "无帮助",
           editTip: "有建议或错误，可直接",
-          editLink: "在 Github 上编辑",
+          editLink: "有建议或错误，可直接在 Github 上反馈",
           help: `如果遇到其他问题，立即 <a href="https://forum.authing.cn/" target="_blank">联系我们</a>`,
           successTip: `提交成功，感谢您的反馈`,
           uselessConfig: {

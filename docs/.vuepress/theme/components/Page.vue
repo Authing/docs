@@ -27,7 +27,7 @@
         <DownloadDemo />
       </div>
     </div>
-    <PageEdit />
+    <!-- <PageEdit /> -->
 
     <slot name="bottom" />
   </main>

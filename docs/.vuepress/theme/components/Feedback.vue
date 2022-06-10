@@ -139,7 +139,7 @@ export default {
 .feedback
   margin-top 34px
   .github-edit
-    margin-bottom 36px
+    margin-bottom 32px
     font-size 14px
     flex 1
     text-align right
@@ -190,7 +190,7 @@ export default {
     margin 0
   .feedback-help
     position relative
-    margin 0 auto 23px auto
+    margin 0 auto 32px auto
     width 100%
     height 154px
     border-radius 4px
@@ -203,10 +203,11 @@ export default {
     .text
       position absolute
       z-index 1
-      width 263px
       height 66px
       left 22px
       top 20px
+      font-size 16px
+      line-height 26px
     .button
       display flex
       flex-direction row
@@ -295,11 +296,24 @@ export default {
       transform matrix(-0.68, 0.81, -0.66, -0.68, 0, 0)
     .shadow-banner
       display none
+    .github-edit
+      float left
 @media (min-width: $MQMobile)
+  .feedback-action-container
+    float left
   .shadow-bg
     display none
   .shadow-banner
     position absolute
     width 100%
     height 154px
+  .text
+    width 401px
+    font-size 14px
+  .github-edit
+    float right
+    .link
+      display block
+      height 32px
+      line-height 32px
 </style>
