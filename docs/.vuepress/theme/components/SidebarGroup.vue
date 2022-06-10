@@ -41,7 +41,6 @@
         :sidebar-depth="item.sidebarDepth"
         :initial-open-group-index="item.initialOpenGroupIndex"
         :depth="depth + 1"
-        :index="index"
         :check-index="checkIndex"
       />
     </DropdownTransition>

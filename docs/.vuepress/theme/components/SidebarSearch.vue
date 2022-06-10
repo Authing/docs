@@ -106,7 +106,8 @@ export default {
               keywords: `${item.path
                 .split("/")
                 .pop()
-                .toLowerCase()}${item.title.toLowerCase()}`
+                .toLowerCase()}${item.title.toLowerCase()}`,
+              dataIndex: item.dataIndex
             });
           }
           if (item.children && item.children.length > 0) {
@@ -152,6 +153,7 @@ export default {
       if (!this.showSuggestions) {
         return;
       }
+      this.$eventBus.$emit('onChangeIndex', this.suggestions[i].dataIndex)
       this.$router.push(this.suggestions[i].path);
       this.query = "";
       this.focusIndex = 0;

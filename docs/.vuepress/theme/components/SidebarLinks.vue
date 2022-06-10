@@ -2,10 +2,10 @@
   <ul v-if="items.length" class="sidebar-links">
     <li
       v-for="(item, i) in items" :key="i"
-      :data-index="getDataIndex(index, i)"
-      @click.stop="onClickMenu($event, getDataIndex(index, i))"
+      :data-index="item.dataIndex"
+      @click.stop="onClickMenu($event, item.dataIndex)"
       :class="{
-        'menu-check': checkIndex && checkIndex.indexOf(getDataIndex(index, i)) === 0
+        'menu-check': checkIndex && checkIndex.indexOf(item.dataIndex) === 0
       }"
     >
       <SidebarGroup
@@ -15,7 +15,6 @@
         :collapsable="item.collapsable || item.collapsible"
         :depth="depth"
         @toggle="toggleGroup(i)"
-        :index="getDataIndex(index, i)"
         :check-index="checkIndex"
       />
       <SidebarLink v-else :sidebar-depth="sidebarDepth" :item="item" />
@@ -38,7 +37,6 @@ export default {
     'depth', // depth of current sidebar links
     'sidebarDepth', // depth of headers to be extracted
     'initialOpenGroupIndex',
-    'index',
     'checkIndex'
   ],
 
