@@ -307,8 +307,7 @@ export default {
       .text
         width 90%
         height 66px
-        left 50%
-        transform translateX(-50%)
+        left 21px
         font-size 14px
       .button
         top 108px
