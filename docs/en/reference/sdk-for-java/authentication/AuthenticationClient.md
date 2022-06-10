@@ -15,7 +15,7 @@ authenticationClient.registerByEmail(param)
 
 > Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, and the emailVerified field will be false after the user registration. If you want the user who does not verify the mailbox cannot be logged in,you can open **setting** - **security information** in the userpool**Users who have not verified mailboxes from logging in** option:
 
-![](https://cdn.authing.cn/img/20210414145613.png)
+![](../../images/20210414145613.png)
 
 #### parameter
 
@@ -94,7 +94,7 @@ authenticationClient.loginByEmail(param)
 
 > Use the email to log in, the interface does not limit the unprecedented mailbox by default, if you want the user who does not authenticate the mailbox, you can use pipeline to intercept this kind of request.
 
-![](https://cdn.authing.cn/img/20210414145613.png)
+![](../../images/20210414145613.png)
 
 If your user pool is configured with login failure detection, the user will be required to enter graphic verification code (2000) when logging in multiple times in IP.
 
@@ -214,7 +214,7 @@ User user = authenticationClient.loginByPhonePassword(new LoginByPhonePasswordIn
 
 authenticationClient.loginByLdap(param)
 
-> Login with an account password using the LDAP identity source. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained. Click here to view the [Connection LDAP Original](/connections/ldap/) document.
+> Login with an account password using the LDAP identity source. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained. Click here to view the [Connection LDAP Original](/en/connections/ldap/) document.
 
 #### parameter
 
@@ -236,7 +236,7 @@ User user = authenticationClient.loginByLdap(loginByLdapParam).execute();
 authenticationClient.loginByAd(username, password)
 
 > Log in with an account using the AD domain. If this account is logged in, it will import its user information into the user directory of the user pool; after logging in again, the user information of this account will be updated based on the latest account information obtained.
-> Click here to view [Connection Active Directory Original Source](/connections/windows-active-directory/).
+> Click here to view [Connection Active Directory Original Source](/en/connections/windows-active-directory/).
 
 #### parameter
 
@@ -568,7 +568,7 @@ authenticationClient.bindPhone(phone, phoneCode)
 
 > Terminal users can also[Bind mobile phone number in personal center buffet](/guides/user/manage-profile.md#绑定手机号)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### parameter
 
@@ -589,7 +589,7 @@ authenticationClient.unbindPhone()
 
 > End users can also [in the personal center self-service mobile phone number](/guides/user/manage-profile.md#绑定手机号)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### Example
 
@@ -603,7 +603,7 @@ authenticationClient.updatePhone(phone, phoneCode, oldPhone, oldPhoneCode)
 
 > Update the user mobile phone number. As with the modification of the mailbox, by default, if the user is currently bound to the mobile phone number, you need to verify the original mobile phone number (current account binding mobile phone number) and the current mailbox (the mobile phone number to be bound). User A currently binding mobile phone number is 15888888888, want to modify to 1589999999, then you need to verify the two mobile phone numbers at the same time. Developers can also choose to "verify the original mobile number", you can turn of **setting** - **security information** in {{$localeConfig.brandName}} console.
 
-![](https://cdn.authing.cn/img/20210414110024.png)
+![](../../images/20210414110024.png)
 
 Users bind the mobile phone number for the first time, please use the[bindPhone](#绑定手机号) interface.
 
@@ -627,7 +627,7 @@ authenticationClient.bindEmail(email, emailCode)
 > Used for the user's first binding mailbox, you need to verify the mailbox verification code. If you need to modify the mailbox, please use it[updateEmail](#更新用户邮箱). If the mailbox has been bound, it will bind failed. Send an email verification code, please use [sendEmail](#发送邮件).
 > Terminal users can also[Binding mailbox in personal center buffet](/guides/user/manage-profile.md#绑定邮箱)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### parameter
 
@@ -648,7 +648,7 @@ authenticationClient.unbindEmail()
 
 > End users can also [in personal center self-help mailbox](/guides/user/manage-profile.md#绑定邮箱)：
 
-![](https://cdn.authing.cn/blog/20201019200112.png)
+![](../../images/20201019200112.png)
 
 #### Example
 
@@ -662,7 +662,7 @@ authenticationClient.updateEmail(email, emailCode, oldEmail, oldEmailCode)
 
 > AuthenticationClient().updateEmail(email, emailCode, oldEmail, oldEmailCode)If the user has bind the mailbox, by default, you need to verify the original mailbox (current account binding mailbox) and the current mailbox (the mailbox to be bound).User A The currently bound mailbox is 123456@qq.com, want to modify to 1234567@qq.com, then you need to verify these two mailboxes. Developers can also choose to "verify the original mailbox", you can turn off **setting** - **Security Information** in {{$localeConfig.brandName}} console.
 
-![](https://cdn.authing.cn/img/20210414105928.png)
+![](../../images/20210414105928.png)
 
 Users bind the mailbox for the first time please use [bindEmail](#绑定邮箱).
 
@@ -801,11 +801,11 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getAccessTokenByCode(code)
 
-> 使用授权码 Code 获取用户的 Token 信息。
+> Use 授权码 Code 获取用户的 Token 信息。
 
 #### parameter
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code)。
+- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[Use  OIDC 授权码模式](/federation/oidc/authorization-code)。
 
 初始化 AuthenticationClient 时的参数：
 
@@ -821,7 +821,7 @@ authenticationClient.getAccessTokenByCode(code)
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 // 你在 Authing 控制台配置的回调链接
@@ -847,11 +847,11 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getUserInfoByAccessToken('access_token')
 
-> 使用 Access token 获取用户信息。
+> Use  Access token 获取用户信息。
 
 #### parameter
 
-- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code)。
+- `access_token` \<String\> Access token，Use 授权码 Code 换取的 Access token 的内容。详情请见[Use  OIDC 授权码模式](/federation/oidc/authorization-code)。
 
 初始化 AuthenticationClient 时的参数：
 
@@ -867,7 +867,7 @@ authenticationClient.getUserInfoByAccessToken('access_token')
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 authenticationClient.setSecret("AUTHING_APP_SECRET");
@@ -915,7 +915,7 @@ Assert.assertNotNull(result !=null);
 
 authenticationClient.getAccessTokenByClientCredentials(scope, options)
 
-> 使用编程访问账号获取具备权限的 Access Token。
+> Use 编程访问账号获取具备权限的 Access Token。
 
 #### parameter
 
@@ -938,7 +938,7 @@ authenticationClient.getAccessTokenByClientCredentials(scope, options)
 #### Example
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
+// Use  AppId 和 appHost 进行初始化
 AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
 
 authenticationClient.setSecret("AUTHING_APP_SECRET");

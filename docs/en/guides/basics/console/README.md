@@ -8,9 +8,9 @@ meta:
 
 <LastUpdated/>
 
-The console is where you can manage manage all aspects of your Approw resource and configuration.
+The console is where you can manage manage all aspects of your Authing resource and configuration.
 
-In [Approw Console](https://console.authing.cn/console/userpool), you can configure and modify Approw's resources, users and other information.
+In [Authing Console](https://console.authing.cn/console/userpool), you can configure and modify Authing's resources, users and other information.
 
 ![](./images/console-1.png)
 
@@ -178,7 +178,7 @@ Application Details
 
 ## Connections
 
-Approw can connect to Social Logins, Enterprise Connections and Custom Databases Connections.
+Authing can connect to Social Logins, Enterprise Connections and Custom Databases Connections.
 
 ### Social Login
 
@@ -269,7 +269,7 @@ SDK
 
 ## Rules & Hooks
 
-Approw's Pipeline, Webhook, and custom password functions can greatly enhance the flexibility in the authentication process and empower users to automate complex scenarios.
+Authing's Pipeline, Webhook, and custom password functions can greatly enhance the flexibility in the authentication process and empower users to automate complex scenarios.
 
 ### Pipeline
 
@@ -359,7 +359,7 @@ Basic Settings
 5. Limitation of failed logins.
 6. Set New Registered Email Default To be Verified.
 
-The security domain is the URL that allows requests from JavaScript to the Approw API (usually used with CORS). By default, the system will allow you to use all URLs (). If required, this field allows you to enter other sources. You can separate multiple valid URLs line by line, and use wildcards at the subdomain level（For example：[https://\*.sample.com）。](https://*.sample.com）) to verify these URLs without considering the query string and hash information, if you bring the query The string and hash information system will automatically ignore the entire domain name.
+The security domain is the URL that allows requests from JavaScript to the Authing API (usually used with CORS). By default, the system will allow you to use all URLs (). If required, this field allows you to enter other sources. You can separate multiple valid URLs line by line, and use wildcards at the subdomain level（For example：[https://\*.sample.com）。](https://*.sample.com）) to verify these URLs without considering the query string and hash information, if you bring the query The string and hash information system will automatically ignore the entire domain name.
 
 ![](./images/console-26.png)
 

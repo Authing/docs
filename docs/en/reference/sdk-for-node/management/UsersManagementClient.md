@@ -2,17 +2,17 @@
 
 <LastUpdated/>
 
-> Approw User ManagementClient
+> Authing User ManagementClient
 
 This client can create, query, update and delete users, refresh user token, manage user's group, user's role, user's policy and perform other operations.
 
 Please follow the instructions below to use this client:
 
 ```javascript
-import { ManagementClient } from "approw-js-sdk";
+import { ManagementClient } from "authing-js-sdk";
 const managementClient = new ManagementClient({
   userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET",
+  secret: "YOUR_USERPOOL_SECRET"
 });
 
 managementClient.users.list; // create user list
@@ -43,7 +43,7 @@ UsersManagementClient().create(userInfo)
 - `userInfo.photo` \<string\> avatar
 - `userInfo.company` \<string\> company
 - `userInfo.browser` \<string\> browser
-- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `userInfo.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `userInfo.lastLogin` \<string\> Last login time, a time string conforming to the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `userInfo.lastIP` \<string\> The last login (or other activity) IP of the user.
 - `userInfo.signedUp` \<string\> Registration time, a time string in ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -76,7 +76,7 @@ UsersManagementClient().create(userInfo)
 ```javascript
 const user = await managementClient.users.create({
   username: "bob",
-  password: "passw0rd",
+  password: "passw0rd"
 });
 ```
 
@@ -117,7 +117,7 @@ UsersManagementClient \*().update(id, updates)
 - `updates.photo` \<string\> avatar
 - `updates.company` \<string\> comapny
 - `updates.browser` \<string\> browser
-- `updates.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Approw.
+- `updates.loginsCount` \<number\> The number of login times. This field can be set when you migrate from the original user system to Authing.
 - `updates.lastLogin` \<string\> Last login time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
 - `updates.lastIP` \<string\> The IP of the user's last login (or other activity)
 - `updates.signedUp` \<string\> Registration time, a time string in the ISO8601 format. (E.g. "2017-06-07T14:34:08.700Z", "2017-06-07T14:34:08.700 or "2017-06-07T14:34:08+04:00")
@@ -148,7 +148,7 @@ UsersManagementClient \*().update(id, updates)
 
 ```javascript
 const user = await managementClient.users.update("USERID", {
-  nickname: "Nick",
+  nickname: "Nick"
 });
 ```
 
@@ -156,7 +156,7 @@ const user = await managementClient.users.update("USERID", {
 const user = await managementClient.users.update("USERID", {
   nickname: "Nick",
   phone: "176xxxx6754", // since this is an admin operation, SMS code verification is required. If you need it, please use AuthenticationClient
-  tokenExpiredAt: "2020-10-15T17:55:37+08:00",
+  tokenExpiredAt: "2020-10-15T17:55:37+08:00"
 });
 ```
 
@@ -258,7 +258,7 @@ UsersManagementClient().setUdfValue(userId, data)
 
 ```javascript
 await managementClient.users.setUdfValue(userId, {
-  school: 'Huazhong Institute of Technology',
+  school: "Huazhong Institute of Technology",
   age: 20
 });
 ```
@@ -278,15 +278,15 @@ UsersManagementClient().setUdfValueBatch(input)
 ```javascript
 await managementClient.users.setUdfValueBatch([
   {
-    userId: 'USER_ID1',
+    userId: "USER_ID1",
     data: {
-      school: 'Huazhong Institute of Technology'
+      school: "Huazhong Institute of Technology"
     }
   },
   {
-    userId: 'USER_ID2',
+    userId: "USER_ID2",
     data: {
-      school: 'Tsinghua University',
+      school: "Tsinghua University",
       age: 100
     }
   }
@@ -307,9 +307,8 @@ UsersManagementClient().removeUdfValue(userId, key)
 #### Example
 
 ```javascript
-await authenticationClient.removeUdfValue('USER_ID', 'school')
+await authenticationClient.removeUdfValue("USER_ID", "school");
 ```
-
 
 ## Delete a user
 
@@ -409,7 +408,7 @@ UsersManagementClient().exists(options)
 
 ```javascript
 const exists = await managementClient.users.exists({
-  username: "bob",
+  username: "bob"
 });
 ```
 
@@ -476,7 +475,7 @@ const { token } = await managementClient.users.refreshToken("USERID");
 // check the latest status of the token. It can get user's token
 
 const data = await managementClient.checkLoginStatus(token, {
-  fetchUserDetail: true,
+  fetchUserDetail: true
 });
 ```
 
@@ -587,7 +586,7 @@ UsersManagementClient().addRoles(userId, roles)
 
 ```javascript
 const { code, message } = await managementClient.users.addRoles("USERID", [
-  "ROLEA",
+  "ROLEA"
 ]);
 ```
 
@@ -610,14 +609,13 @@ UsersManagementClient().removeRoles(userId, roles)
 
 ```javascript
 const { code, message } = await managementClient.users.removeRoles("USERID", [
-  "ROLEA",
+  "ROLEA"
 ]);
 ```
 
 #### Return value
 
 - `Promise<CommonMessage>`
-
 
 ## Get the list of authorized resources of the user
 
@@ -633,7 +631,7 @@ UsersManagementClient.listAuthorizedResources(userId, namespace)
 #### Example
 
 ```javascript
-managementClient.users.listAuthorizedResources('USERID', 'code')
+managementClient.users.listAuthorizedResources("USERID", "code");
 ```
 
 #### Sample data
@@ -648,24 +646,21 @@ managementClient.users.listAuthorizedResources('USERID', 'code')
 
 ```json
 {
-   "totalCount": 12,
-   "list": [
-      {
-         "code": "menu_a",
-         "type": "MENU",
-      },
-      {
-         "code": "menu_b",
-         "type": "MENU",
-      },
-      {
-         "code": "books:1",
-         "type": "DATA",
-         "actions": [
-            "books:delete",
-            "books:update"
-         ]
-      }
-   ]
+  "totalCount": 12,
+  "list": [
+    {
+      "code": "menu_a",
+      "type": "MENU"
+    },
+    {
+      "code": "menu_b",
+      "type": "MENU"
+    },
+    {
+      "code": "books:1",
+      "type": "DATA",
+      "actions": ["books:delete", "books:update"]
+    }
+  ]
 }
 ```

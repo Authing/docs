@@ -7,25 +7,25 @@
 Sample code:
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn"
+});
 
-authenticationClient.mfa.getMfaAuthenticators
-authenticationClient.mfa.assosicateMfaAuthenticator
-authenticationClient.mfa.verifyTotpMfa
-authenticationClient.mfa.verifyFaceMfa
-authenticationClient.mfa.associateFaceByLocalFile
-authenticationClient.mfa.associateFaceByBlob
-authenticationClient.mfa.associateFaceByUrl
-authenticationClient.mfa.verifyTotpRecoveryCode
-authenticationClient.mfa.phoneOrEmailBindable
-authenticationClient.mfa.verifyAppEmailMfa
-authenticationClient.mfa.verifyAppSmsMfa
-authenticationClient.mfa.confirmAssosicateMfaAuthenticator
-authenticationClient.mfa.deleteMfaAuthenticator
+authenticationClient.mfa.getMfaAuthenticators;
+authenticationClient.mfa.assosicateMfaAuthenticator;
+authenticationClient.mfa.verifyTotpMfa;
+authenticationClient.mfa.verifyFaceMfa;
+authenticationClient.mfa.associateFaceByLocalFile;
+authenticationClient.mfa.associateFaceByBlob;
+authenticationClient.mfa.associateFaceByUrl;
+authenticationClient.mfa.verifyTotpRecoveryCode;
+authenticationClient.mfa.phoneOrEmailBindable;
+authenticationClient.mfa.verifyAppEmailMfa;
+authenticationClient.mfa.verifyAppSmsMfa;
+authenticationClient.mfa.confirmAssosicateMfaAuthenticator;
+authenticationClient.mfa.deleteMfaAuthenticator;
 ```
 
 ## Get MFA certifiers
@@ -54,7 +54,7 @@ authentication.get_mfa_authenticators(mfa_token=tt['token'])
 
 ```json
 {
-  "message": "获取 MFA Authenticator 成功",
+  "message": "Get MFA Authenticator Success",
   "code": 200,
   "data": []
 }

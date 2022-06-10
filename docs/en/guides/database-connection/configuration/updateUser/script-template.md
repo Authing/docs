@@ -1,4 +1,5 @@
 This script will be called when the admin updates user information or users want to update their information by themselves.This script is only required in CUSTOM_USER_STORE mode.
+
 ### Function Definition
 
 Here is the definition of the `updateUser` function:
@@ -34,47 +35,46 @@ async function updateUser(id, updates, context) {
   //     throw new Error("my error message")
 
   const msg =
-    'Please implement the Find User script for this database connection ';
+    "Please implement the Find User script for this database connection ";
   throw new Error(msg);
 }
 ```
 
-| Parameter                 | Type           | Nullable | Explanation                                                                                 |
-| :-------------------- | :-------------- | :------- | :----------------------------------------------------------------------------------- |
-| id                    | string / number | false    | User's ID.                                                                             |
-| updates               | object          | false    | Fields that need updating.                                                                  |
-| updates.email         | string          | ture     | User's email. This parameter can be empty.                                                              |
-| updates.phone         | string          | true     | User's telephone number. This parameter can be empty.                                                             |
-| updates.username      | string          | true     | User's username. This parameter can be empty.                                                            |
-| updates.password      | string          | true     | User's password in cleartext. It is recommended to use bcrypt to encrypt the password.           |
-| updates.nickname      | string          | true     | User's nickname. This parameter can be empty.                                                           |
-| updates.photo         | string          | true     | User's photo. This parameter can be empty.                                                           |
-| updates.token         | string          | true     | User's token. This parameter can be empty.                                                         |
-| updates.emailVerified | bool            | true     | If the user's email is verified. This parameter can be empty.                                                       |
-| updates.phoneVerified | bool            | true     | If the user's telephone number is verified. This parameter can be empty.                                                    |
-| updates.loginsCount   | number          | true     | User's login counts. This parameter can be empty.                                                       |
+| Parameter             | Type            | Nullable | Explanation                                                                                                                                           |
+| :-------------------- | :-------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                    | string / number | false    | User's ID.                                                                                                                                            |
+| updates               | object          | false    | Fields that need updating.                                                                                                                            |
+| updates.email         | string          | ture     | User's email. This parameter can be empty.                                                                                                            |
+| updates.phone         | string          | true     | User's telephone number. This parameter can be empty.                                                                                                 |
+| updates.username      | string          | true     | User's username. This parameter can be empty.                                                                                                         |
+| updates.password      | string          | true     | User's password in cleartext. It is recommended to use bcrypt to encrypt the password.                                                                |
+| updates.nickname      | string          | true     | User's nickname. This parameter can be empty.                                                                                                         |
+| updates.photo         | string          | true     | User's photo. This parameter can be empty.                                                                                                            |
+| updates.token         | string          | true     | User's token. This parameter can be empty.                                                                                                            |
+| updates.emailVerified | bool            | true     | If the user's email is verified. This parameter can be empty.                                                                                         |
+| updates.phoneVerified | bool            | true     | If the user's telephone number is verified. This parameter can be empty.                                                                              |
+| updates.loginsCount   | number          | true     | User's login counts. This parameter can be empty.                                                                                                     |
 | updates.xxxx          | any             | true     | Other user's fields. The format of user information can be found in the document [detailed fields of the user profile](/guides/user/user-profile.md). |
-| context               | object          | true     | Requiring context.                                                                  |
-
+| context               | object          | true     | Requiring context.                                                                                                                                    |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                          |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                       |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                   |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
 
 #### User's Profile is Updated Successfully
 
-When the user's profile is updated successfully, you need to return the latest user information to Approw, the format of user information can be found in the document of [detailed fields of the user profile](/guides/user/user-profile.md). For example:
+When the user's profile is updated successfully, you need to return the latest user information to Authing, the format of user information can be found in the document of [detailed fields of the user profile](/guides/user/user-profile.md). For example:
 
 ```javascript
 async function updateUser(id, updates, context) {
@@ -85,7 +85,7 @@ async function updateUser(id, updates, context) {
     emailVerified: true,
     nickname: "Nick",
     photo: ""
-  }
+  };
 }
 ```
 
@@ -96,7 +96,7 @@ When the user does not exist, you need to throw an error. You can design differe
 ```javascript
 async function updateUser(id, updates, context) {
   // Implement your logic here
-  throw new Error('User not exists!');
+  throw new Error("User not exists!");
 }
 ```
 
@@ -109,7 +109,7 @@ async function updateUser(id, updates, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -118,7 +118,7 @@ async function updateUser(id, updates, context) {
 
 ### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -140,7 +140,7 @@ try {
 Assume we are using `postgres` as our database:
 
 - You can use `env.DB_CONNECTION_URI` to get database connection string to create database connection.
-- According to the query conditions in the `updates` to generate `update` `SQL`  command(`updates.id`, `updates.email`, `updates.username` and `updates.phone`, these four parameters won't be empty at the same time).
+- According to the query conditions in the `updates` to generate `update` `SQL` command(`updates.id`, `updates.email`, `updates.username` and `updates.phone`, these four parameters won't be empty at the same time).
 - If `insertResult.rowCount` is 0 which means the user does not exist, then throw error with error message `User not exists!`.
 - Finally return users' information in valid format. The format of user information can be found in document of [detailed fields of user profile](/guides/user/user-profile.md).
 - Call `try/finally` in `client.end()` to disable database connection.
@@ -149,10 +149,10 @@ Assume we are using `postgres` as our database:
 async function updateUser(id, updates, context) {
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -168,24 +168,24 @@ async function updateUser(id, updates, context) {
 
   // Authing user attribute to database column
   const userColumnMap = {
-    id: 'id',
-    email: 'email',
-    name: 'name',
-    username: 'username',
-    phone: 'phone',
-    nickname: 'nickname',
-    gender: 'gender',
-    address: 'address',
-    company: 'company',
-    birthdate: 'birthdate',
-    website: 'website',
-    token: 'token',
-    password: 'password',
-    photo: 'photo',
-    emailVerified: 'email_verified',
-    phoneVerified: 'phone_verified',
-    loginsCount: 'logins_count',
-    lastIp: 'last_ip',
+    id: "id",
+    email: "email",
+    name: "name",
+    username: "username",
+    phone: "phone",
+    nickname: "nickname",
+    gender: "gender",
+    address: "address",
+    company: "company",
+    birthdate: "birthdate",
+    website: "website",
+    token: "token",
+    password: "password",
+    photo: "photo",
+    emailVerified: "email_verified",
+    phoneVerified: "phone_verified",
+    loginsCount: "logins_count",
+    lastIp: "last_ip"
   };
 
   // Make sure to delete cols not exists in your table,
@@ -202,10 +202,10 @@ async function updateUser(id, updates, context) {
   }
 
   function generateQuery(id, cols) {
-    const _ = require('lodash');
+    const _ = require("lodash");
     // Setup static beginning of query
-    var query = ['UPDATE users'];
-    query.push('SET');
+    var query = ["UPDATE users"];
+    query.push("SET");
 
     // Create another array storing each set command
     // and assigning a number value for parameterized query
@@ -213,23 +213,23 @@ async function updateUser(id, updates, context) {
     Object.keys(cols)
       .filter(col => !!userColumnMap[col])
       .forEach(function(key, i) {
-        set.push(userColumnMap[key] + ' = ($' + (i + 1) + ')');
+        set.push(userColumnMap[key] + " = ($" + (i + 1) + ")");
       });
-    query.push(set.join(', '));
+    query.push(set.join(", "));
 
     // Add the WHERE statement to look up by id
-    query.push('WHERE id = ' + id);
+    query.push("WHERE id = " + id);
 
     // Return all fields
-    query.push('RETURNING *');
+    query.push("RETURNING *");
 
     // Return a complete query string
-    return query.join(' ');
+    return query.join(" ");
   }
 
   // Use bcrypt to encrypt password
   // more info here: https://github.com/kelektiv/node.bcrypt.js
-  const bcrypt = require('bcrypt');
+  const bcrypt = require("bcrypt");
 
   try {
     const query = generateQuery(id, updates);
@@ -239,15 +239,15 @@ async function updateUser(id, updates, context) {
         .filter(col => !!userColumnMap[col])
         .map(key => {
           const val = updates[key];
-          if (key === 'password') {
+          if (key === "password") {
             // If key is password, use bcrypt to encrypt it
             return bcrypt.hashSync(val, bcrypt.genSaltSync(10));
           }
           return val;
-        }),
+        })
     );
     if (insertResult.rowCount === 0) {
-      throw new Error('User not exists!');
+      throw new Error("User not exists!");
     }
     const user = insertResult.rows[0];
     return {
@@ -267,7 +267,7 @@ async function updateUser(id, updates, context) {
       address: user.address,
       company: user.company,
       birthdate: user.birthdate,
-      website: user.website,
+      website: user.website
     };
   } catch (error) {
     throw new Error(`Execute query failed: ${error.message}`);
@@ -276,5 +276,4 @@ async function updateUser(id, updates, context) {
     client.end();
   }
 }
-
 ```

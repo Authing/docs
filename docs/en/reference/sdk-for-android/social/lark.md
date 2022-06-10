@@ -18,8 +18,6 @@
 
    ![](./images/lark/2.png)
 
-
-
 ## STEP 2 ：在 [Authing 管理控制台](https://console.authing.cn/)配置应用
 
 1. 选择或者创建一个用户池—>身份源管理—>企业身份源—>创建企业身份源
@@ -39,8 +37,6 @@
    AppSecret：飞书开放平台注册的应用 AppSecret
 
    ![](./images/lark/4.png)
-
-
 
 ## STEP 3 ：集成 Android SDK
 
@@ -64,16 +60,9 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 Authing.init(context, appId);
 ```
 
-
-
-
-
 **通过以上 3 步即可简单快速的通过 Authing 管理控制台配置后自动获取飞书身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
-
-
-
-- 接下来，如果使用我们提供的飞书登录按钮，则在布局文件里面加上（或者代码初始化添加）
+- 接下来，如果 Use 我们提供的飞书登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
 <cn.authing.guard.social.LarkLoginButton
@@ -95,9 +84,8 @@ button.setOnLoginListener((ok, data) -> {
 });
 ```
 
+- 如果不想 Use 我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 飞书登录 API
 
-
-- 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 飞书登录 API
 ```java
 Lark.login(appContext, ((ok, data) -> {
     if (ok) {
@@ -108,8 +96,6 @@ Lark.login(appContext, ((ok, data) -> {
 }));
 ```
 
-
-
 - 如果想完全自己实现飞书登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息
 
 ```java
@@ -118,7 +104,7 @@ public static void loginByLark(String authCode, @NotNull AuthCallback<UserInfo> 
 
 **参数**
 
-* *authCode* 飞书授权码
+- _authCode_ 飞书授权码
 
 **示例**
 

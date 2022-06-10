@@ -786,7 +786,7 @@ OrgManagementClient->listAuthorizedResources($orgCode, $namespace, array )
 #### parameter
 
 - `groupCode` \<string\> 组织机构 code；
-- `namespace` \<string\> 权限分组的 code，详情请见[使用权限分组管理权限资源](/guides/access-control/resource-group.md)
+- `namespace` \<string\> 权限分组的 code，详情请见[Use 权限分组管理权限资源](/guides/access-control/resource-group.md)
 - `resourceType` \<string\> 可选，资源类型，默认会返回所有有权限的资源，现有资源类型如下：
   - `DATA`: 数据类型；
   - `API`: API 类型数据；

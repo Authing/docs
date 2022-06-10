@@ -75,9 +75,9 @@ sdkConfig:
     link: /en/reference/sdk-for-go/
     icon: Go
 applicationSdks:
-  - title: Mobile / Client Application
-    description: Quick access to authentication services in mobile/client applications
-    color: "#215ae5"
+  - title: Client Application
+    description: Applications on mobile, destop and other smart devices
+    color: '#396AFF'
     sdks:
       - ios
       - android
@@ -85,16 +85,16 @@ applicationSdks:
       - reactNative
       - cSharp
   - title: Single Page Application
-    description: Access the authentication service and realize single sign-on in the web application running in the browser
-    color: "#75A3FF"
+    description: Modern Single-page Web Applications
+    color: '#75A3FF'
     sdks:
       - javascript
       - react
       - angular
       - vue
   - title: Standard Web Application
-    description: Traditional Web applications running on the server to achieve unified authentication and authorization
-    color: "#28B1B0"
+    description: Traditional Multi-page Web Applications
+    color: '#28B1B0'
     sdks:
       - javascript
       - python
@@ -104,8 +104,8 @@ applicationSdks:
       - java
       - golang
   - title: Backend / API service
-    description: Call {{$localeConfig.brandName}} on the backend and protect the API interface
-    color: "#F8BC00"
+    description: Backend Services and Applications without Web UI
+    color: '#F8BC00'
     sdks:
       - javascript
       - python

@@ -8,8 +8,7 @@ meta:
 
 <LastUpdated/>
 
-
-> This client is used to manage Approw roles. It can create, query, update and delete roles, add/delete users to/from roles, add/delete role's policy and perform other operations.
+> This client is used to manage Authing roles. It can create, query, update and delete roles, add/delete users to/from roles, add/delete role's policy and perform other operations.
 
 ## Create a role
 
@@ -169,11 +168,11 @@ totalCount = data['totalCount']
 _list = data['list']
 ```
 
-##  Remove a user
+## Remove a user
 
 RolesManagementClient().remove_users(code, userIds)
 
->  Remove a user.
+> Remove a user.
 
 #### Parameter
 

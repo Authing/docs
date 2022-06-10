@@ -2591,7 +2591,7 @@ const translatedZhCnNavBar = {
               path: "/guides/basics/platform-guide/integrate-with-spa"
             },
             {
-              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_ZH_CN}`,
+              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_EN_US}`,
               path: "/guides/basics/platform-guide/integrate-with-mobile-app"
             }
             // {
@@ -2961,7 +2961,7 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: `Migrate users to ${BRAND_NAME_ZH_CN}`,
+      title: `Migrate users to ${BRAND_NAME_EN_US}`,
       path: "/guides/migrations/",
       children: [
         {

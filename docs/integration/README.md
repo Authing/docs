@@ -824,6 +824,27 @@
         image2x: "Harbor_logo@3x.png",
         category: "devtools",
       },
+      {
+        key: "weaver",
+        name: "泛微 OA",
+        image: "weaver_logo@2x.png",
+        image2x: "weaver_logo@3x.png",
+        category: "office",
+      },
+      {
+        key: "finebi",
+        name: "FineBI",
+        image: "finebi_logo@2x.png",
+        image2x: "finebi_logo@3x.png",
+        category: "other",
+      }
+      # {
+      #   key: "eteams",
+      #   name: "泛微(公有云)",
+      #   image: "weaver_logo@2x.png",
+      #   image2x: "weaver_logo@3x.png",
+      #   category: "office",
+      # }
     ],
   categories:
     [

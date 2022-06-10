@@ -12,7 +12,7 @@
 - <router-link to="/connections/dingtalk-oa/" target="_blank">钉钉</router-link>
 - <router-link to="/connections/wechatwork/" target="_blank">企业微信</router-link>
 - <router-link to="/connections/lark/" target="_blank">飞书</router-link>
-
+- <router-link to="/connections/welink/" target="_blank">WeLink</router-link>
 
 ## 连接标准协议身份源
 
@@ -22,6 +22,6 @@
 - <router-link to="/connections/saml/" target="_blank">SAML</router-link>
 - <router-link to="/connections/cas/" target="_blank">CAS</router-link>
 - <router-link to="/connections/ldap/" target="_blank">LDAP</router-link>
-- <router-link to="/connections/windows-active-directory/" target="_blank">Windows Active Diretcory</router-link>
-- <router-link to="/connections/active-directory-federation-system/" target="_blank">Active Diretcory Federation System</router-link>
+- <router-link to="/connections/windows-active-directory/" target="_blank">Windows Active Directory</router-link>
+- <router-link to="/connections/active-directory-federation-system/" target="_blank">Active Directory Federation System</router-link>
 - <router-link to="/connections/azure-active-directory/" target="_blank">Azure Active Directory</router-link>

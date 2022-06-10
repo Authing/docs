@@ -1,6 +1,6 @@
-!!!include(common/init-python-auth-sdk.md)!!!
+!!!include(en/common/init-python-auth-sdk.md)!!!
 
-首先调用发送短信验证码接口发送短信验证码，然后使用 `login_by_phone_code` 方法：
+首先调用发送短信验证码接口发送短信验证码，然后 Use `login_by_phone_code` 方法：
 
 ```python
 phone = '176xxxx6754'
