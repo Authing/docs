@@ -20,7 +20,7 @@
         :items="items"
       />
 
-      <SidebarLinks @onClickMenu="onClickMenu" :depth="0" :items="items" :check-index="dataIndex" />
+      <SidebarLinks :depth="0" :items="items" :check-index="dataIndex" />
     </template>
     <slot name="bottom" />
   </aside>
@@ -78,7 +78,6 @@ export default {
       return getLanguageNavLinks(this);
     }
   },
-
   mounted() {
     const sidebar = this.$refs.sidebarRef;
     const activeItem = sidebar && sidebar.querySelector(".active");
@@ -88,16 +87,23 @@ export default {
     }
 
     if (activeItem) {
-      this.dataIndex = activeItem.parentNode.getAttribute('data-index')
+      let parentNode = activeItem.parentNode
+      while(parentNode) {
+        if (parentNode.getAttribute('data-index')) {
+          this.dataIndex = parentNode.getAttribute('data-index')
+          parentNode = null
+        } else {
+          parentNode = parentNode.parentNode
+        }
+      }
     }
+    this.$eventBus.$on('onChangeIndex', (index) => {
+      this.dataIndex = index || ''
+    })
   },
-
   methods: {
     getUserNavLinks,
     getLanguageNavLinks,
-    onClickMenu(dataIndex) {
-      this.dataIndex = dataIndex
-    }
   }
 };
 </script>

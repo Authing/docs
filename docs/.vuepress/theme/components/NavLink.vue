@@ -5,6 +5,7 @@
     :to="link"
     :exact="exact"
     @focusout.native="focusoutAction"
+    @click.native="onRouter"
   >
     <slot>
       {{ item.text }}
@@ -91,6 +92,9 @@ export default {
     focusoutAction() {
       this.$emit('focusout')
     },
+    onRouter() {
+      this.$eventBus.$emit('onChangeIndex')
+    }
   },
 }
 </script>

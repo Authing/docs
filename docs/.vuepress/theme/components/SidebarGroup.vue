@@ -42,7 +42,6 @@
         :initial-open-group-index="item.initialOpenGroupIndex"
         :depth="depth + 1"
         :index="index"
-        @onClickMenu="onClickMenu"
         :check-index="checkIndex"
       />
     </DropdownTransition>
@@ -69,9 +68,6 @@ export default {
 
   methods: {
     isActive,
-    onClickMenu(dataIndex) {
-      this.$emit('onClickMenu', dataIndex)
-    }
   }
 };
 </script>

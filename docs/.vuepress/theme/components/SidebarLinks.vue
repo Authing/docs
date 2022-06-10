@@ -16,7 +16,6 @@
         :depth="depth"
         @toggle="toggleGroup(i)"
         :index="getDataIndex(index, i)"
-        @onClickMenu="onEmitIndex"
         :check-index="checkIndex"
       />
       <SidebarLink v-else :sidebar-depth="sidebarDepth" :item="item" />
@@ -77,11 +76,7 @@ export default {
     },
 
     onClickMenu(e, dataIndex) {
-      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$emit('onClickMenu', dataIndex)
-    },
-
-    onEmitIndex(dataIndex) {
-      this.$emit('onClickMenu', dataIndex)
+      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$eventBus.$emit('onChangeIndex', dataIndex)
     },
 
     getDataIndex(index, i) {
