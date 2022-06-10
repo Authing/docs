@@ -154,6 +154,10 @@ export default {
 
     & > li > a.sidebar-link
       font-size 16px
+  .depth-0 > ul > li
+    & > .sidebar-group > .sidebar-heading, & > .sidebar-link
+      font-size: 16px
+      line-height 26px
 
 
 
