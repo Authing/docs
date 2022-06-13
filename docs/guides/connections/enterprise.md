@@ -12,7 +12,7 @@
 - <router-link to="/connections/dingtalk-oa/" target="_blank">钉钉</router-link>
 - <router-link to="/connections/wechatwork/" target="_blank">企业微信</router-link>
 - <router-link to="/connections/lark/" target="_blank">飞书</router-link>
-
+- <router-link to="/connections/welink/" target="_blank">WeLink</router-link>
 
 ## 连接标准协议身份源
 

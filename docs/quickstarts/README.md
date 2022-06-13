@@ -22,7 +22,7 @@
             icon: 'authing-danye',
             link: 'quickstarts/spa',
             language: [
-			{'key':'javascript','link':'reference/guard/native-javascript.html'},
+			{'key':'javascript','link':'reference/guard/v2/native-javascript.html'},
 			{'key':'react','link':'quickstarts/spa/react.html'},
 			{'key':'vue','link':'quickstarts/spa/vue.html'},
 			{'key':'angular','link':'quickstarts/spa/angular.html'}],
