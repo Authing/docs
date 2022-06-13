@@ -50,17 +50,17 @@ sdkConfig:
     img2x: c-sharp@2x.png
   react:
     name: React
-    link: /en/reference/guard/react
+    link: /en/reference/guard/v2/react
     img: react.png
     img2x: react@2x.png
   angular:
     name: Angular
-    link: /en/reference/guard/angular
+    link: /en/reference/guard/v2/angular
     img: angular.png
     img2x: angular@2x.png
   vue:
     name: Vue
-    link: /en/reference/guard/vue
+    link: /en/reference/guard/v2/vue
     img: vue.png
     img2x: vue@2x.png
   python:

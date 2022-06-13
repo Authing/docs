@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-如果你使用[托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md)或者[嵌入登录组件](/reference/guard/)，{{BRAND_NAME}} 支持自动识别请求参数将用户来源写入到用户的自定义字段；同时 {{BRAND_NAME}} 提供的 SDK 也可以在登录注册时将注册来源信息写入到用户的自定义字段，从而达到识别用户来源的目的。
+如果你使用[托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md)或者[嵌入登录组件](/reference/guard/v2/)，{{BRAND_NAME}} 支持自动识别请求参数将用户来源写入到用户的自定义字段；同时 {{BRAND_NAME}} 提供的 SDK 也可以在登录注册时将注册来源信息写入到用户的自定义字段，从而达到识别用户来源的目的。
 
 ## 使用托管登录页面
 
@@ -23,7 +23,7 @@ meta:
 
 ## 使用嵌入登录组件
 
-[Authing 登录组件（Guard）](/reference/guard/)是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。Guard 可以集成到你的 React、Vue.js、Angular 以及原生 JavaScript 项目中，你可以借助此组件快速实现登录认证流程。
+[Authing 登录组件（Guard）](/reference/guard/v2/)是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。Guard 可以集成到你的 React、Vue.js、Angular 以及原生 JavaScript 项目中，你可以借助此组件快速实现登录认证流程。
 
 在嵌入登录组件中识别用户来源，可以分为以下几步。
 
