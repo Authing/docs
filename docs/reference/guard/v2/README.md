@@ -1,15 +1,15 @@
 ---
     directoryList: [
         {
-            name: 'JavaScript',
-            link: 'reference/guard/v2/native-javascript.html',
-            img: 'javascript@2x.png',
-            github: "https://github.com/Authing/authing-ui-components",
-        },
-        {
             name: 'React',
             link: 'reference/guard/v2/react.html',
             img: 'react@2x.png',
+            github: "https://github.com/Authing/authing-ui-components",
+        },
+        {
+            name: 'JavaScript',
+            link: 'reference/guard/v2/native-javascript.html',
+            img: 'javascript@2x.png',
             github: "https://github.com/Authing/authing-ui-components",
         },
         {

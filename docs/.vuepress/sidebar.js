@@ -842,24 +842,24 @@ const zhCnNavBar = {
           path: "/reference/guard/v2/react.md"
         },
         {
-          title:"原生 JavaScript",
-          path:"/reference/guard/v2/native-javascript.md"
+          title: "原生 JavaScript",
+          path: "/reference/guard/v2/native-javascript.md"
         },
         {
-          title:"Vue",
-          path:"/reference/guard/v2/vue.md"
+          title: "Vue",
+          path: "/reference/guard/v2/vue.md"
         },
         {
-          title:"Angular",
-          path:"/reference/guard/v2/angular.md"
+          title: "Angular",
+          path: "/reference/guard/v2/angular.md"
         },
         {
           title: "迁移指南",
-          path: "/reference/guard/migration"
+          path: "/reference/guard/v2/migration"
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog"
+          path: "/reference/guard/v2/guard-changelog"
         }
       ]
     },
@@ -1789,11 +1789,11 @@ const zhCnNavBar = {
     },
     {
       title: "迁移指南",
-      path: "/guard/migration"
+      path: "/guard/v2/migration"
     },
     {
       title: "Guard Changelog",
-      path: "/guard/guard-changelog"
+      path: "/guard/v2/guard-changelog"
     }
   ],
   "/android/": [
