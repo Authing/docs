@@ -14,7 +14,7 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        active: isActive($route, item.path)
+        active: active
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
@@ -65,14 +65,16 @@ export default {
     this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
   },
 
+  computed: {
+    active() {
+      const active =  isActive(this.$route, this.item.path)
+      if (active) this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+      return active
+    }
+  },
+
   methods: {
     isActive,
-    // onRouter() {
-    //   this.$emit('toggle')
-    //   setTimeout(() => {
-    //     this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
-    //   }, 500);
-    // }
   }
 };
 </script>
