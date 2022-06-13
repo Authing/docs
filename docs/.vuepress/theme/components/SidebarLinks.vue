@@ -5,7 +5,7 @@
       :data-index="item.dataIndex"
       @click.stop="onClickMenu($event, item.dataIndex)"
       :class="{
-        'menu-check': checkIndex && checkIndex.indexOf(item.dataIndex) === 0
+        'menu-check': checkIndex && `${checkIndex}-`.indexOf(`${item.dataIndex}-`) === 0
       }"
     >
       <SidebarGroup
