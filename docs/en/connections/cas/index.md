@@ -16,7 +16,7 @@
 - This example will take the CAS IdP that comes with Authing as an example. The user pool connecting to the CAS identity source and the user pool serving as the CAS identity source cannot be the same.
 - If you do not have an Authing console account, please go to the [Authing Console](https://authing.cn/) to register a developer account;
 
-## Step 1: Create an Identity Source Of CAS
+## Step 1: Create An CAS Identity Source
 
 You need to configure your own CAS identity source (i.e. Identity Provider IDP) and get the relevant information. This example will take the CAS IdP that comes with Authing as an example. If you already have a CAS identity source, you can go directly to step 2 to configure it.
 

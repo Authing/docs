@@ -66,7 +66,7 @@
 
 最后一步，Instagram 需要获得访问 **instagram_graph_user_profile** 的权限，所以需要增加此权限。然后点击并保存更改，即创建 instagram 应用成功。
 
-<img src="./images/08-insconfig-success.png" >
+<img src="./images/08-insconfig-success.png" />
 
 ## 步骤3：开发接入
 
@@ -80,9 +80,9 @@
 
 3.2 在已创建好的 Instagram 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
 
-<img src="./images/09-openapp.png" >
+<img src="./images/09-openapp.png" />
 
 3.3 在登录页面体验 Instagram 第三方登录
 
-<img src="./images/10-login.png" >
+<img src="./images/10-login.png" />
 
