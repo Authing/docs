@@ -1,1 +1,1 @@
-!!!include(common/init-python-auth-sdk-en.md)!!!
+!!!include(en/common/init-python-auth-sdk-en.md)!!!

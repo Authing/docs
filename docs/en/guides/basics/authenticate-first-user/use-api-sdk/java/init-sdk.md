@@ -1,1 +1,1 @@
-!!!include(common/init-java-auth-sdk-en.md)!!!
+!!!include(en/common/init-java-auth-sdk-en.md)!!!

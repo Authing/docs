@@ -20,17 +20,17 @@ hotSearch:
 sdkConfig:
   ios:
     name: iOS Swift
-    link: /en/reference/sdk-for-swift.html
+    link: /en/reference/sdk-for-ios/
     img: ios.png
     img2x: ios@2x.png
   android:
     name: Android
-    link: /en/reference/sdk-for-android.html
+    link: /en/reference/sdk-for-android/
     img: android.png
     img2x: android@2x.png
   flutter:
     name: Flutter
-    link: /en/reference/sdk-for-flutter.html
+    link: /en/reference/sdk-for-flutter/
     img: flutter.png
     img2x: flutter@2x.png
   javascript:
@@ -50,17 +50,17 @@ sdkConfig:
     img2x: c-sharp@2x.png
   react:
     name: React
-    link: /en/reference/guard/react
+    link: /en/reference/guard/v2/react
     img: react.png
     img2x: react@2x.png
   angular:
     name: Angular
-    link: /en/reference/guard/angular
+    link: /en/reference/guard/v2/angular
     img: angular.png
     img2x: angular@2x.png
   vue:
     name: Vue
-    link: /en/reference/guard/vue
+    link: /en/reference/guard/v2/vue
     img: vue.png
     img2x: vue@2x.png
   python:
@@ -89,8 +89,8 @@ sdkConfig:
     img: golang.png
     img2x: golang@2x.png
 applicationSdks:
-  - title: Mobile / Client Application
-    description: Quick access to authentication services in mobile/client applications
+  - title: Client Application
+    description: Applications on mobile, destop and other smart devices
     color: '#396AFF'
     sdks:
       - ios
@@ -99,7 +99,7 @@ applicationSdks:
       - reactNative
       - cSharp
   - title: Single Page Application
-    description: Access the authentication service and realize single sign-on in the web application running in the browser
+    description: Modern Single-page Web Applications
     color: '#75A3FF'
     sdks:
       - javascript
@@ -107,7 +107,7 @@ applicationSdks:
       - angular
       - vue
   - title: Standard Web Application
-    description: Traditional Web applications running on the server to achieve unified authentication and authorization
+    description: Traditional Multi-page Web Applications
     color: '#28B1B0'
     sdks:
       - javascript
@@ -118,7 +118,7 @@ applicationSdks:
       - java
       - golang
   - title: Backend / API service
-    description: Call {{$localeConfig.brandName}} on the backend and protect the API interface
+    description: Backend Services and Applications without Web UI
     color: '#F8BC00'
     sdks:
       - javascript

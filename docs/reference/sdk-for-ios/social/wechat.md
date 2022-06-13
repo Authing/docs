@@ -125,6 +125,16 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 WechatLoginButton
 ```
 
+如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
+
+```swift
+WechatLogin.login(viewController: <#承载视图的ViewController#>) { code, message, userInfo in
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+}
+```
+
 所有的逻辑由我们语义化引擎自动处理。如果想自己实现微信登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
 
 ```swift

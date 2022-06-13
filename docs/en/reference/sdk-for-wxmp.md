@@ -20,7 +20,7 @@ For security verification, the WeChat server needs to be verified by the {{$loca
 
 Finally in {{$localeConfig.brandName}} console **connection identity source** -> **Social login** Open **WeChat web page authorization login**:
 
-<img src="~@imagesZhCn/reference/Xnip2021-02-27_14-03-15.png" alt="drawing"/>
+![](./images/Xnip2021-02-27_14-03-15.png)
 
 Fill in the pop-up form:
 
@@ -57,7 +57,7 @@ yarn add @authing/wxmp
 Then introduced in the following ways:
 
 ```javascript
-import AuthingWxmp from '@authing/wxmp'
+import AuthingWxmp from "@authing/wxmp";
 ```
 
 ## Launched WeChat Authorization
@@ -66,11 +66,11 @@ import AuthingWxmp from '@authing/wxmp'
 
 ```javascript
 const authingWx = new AuthingWxmp({
-  userPoolId: 'YOUR_USERPOOLID',
-})
+  userPoolId: "YOUR_USERPOOLID"
+});
 
 // Jump to WeChat Authorization page
-window.location = authingWx.getAuthorizationUrl()
+window.location = authingWx.getAuthorizationUrl();
 ```
 
 ## Get user information
@@ -79,13 +79,13 @@ window.location = authingWx.getAuthorizationUrl()
 // Jump back to the business callback link to get user information
 // If the callback page AuthingWx is not initialized, it is necessary to initialize first, and the specific initialization method reference is
 
-const { ok, userinfo, message } = authingWx.getUserInfo()
+const { ok, userinfo, message } = authingWx.getUserInfo();
 if (ok) {
   // do with userinfo
-  console.log(userinfo)
+  console.log(userinfo);
 } else if (message) {
   // message contains error tips
-  alert(message)
+  alert(message);
 }
 ```
 
@@ -109,8 +109,8 @@ parameter:
 
 ```javascript
 const authingWx = new AuthingWxmp({
-  userPoolId: 'YOUR_USERPOOLID',
-})
+  userPoolId: "YOUR_USERPOOLID"
+});
 ```
 
 ### checkWechatUA
@@ -121,7 +121,7 @@ Example:
 
 ```javascript
 if (!authingWx.checkWechatUA()) {
-  alert('Please open in the WeChat client!')
+  alert("Please open in the WeChat client!");
 }
 ```
 
@@ -134,8 +134,8 @@ Example:
 ```javascript
 // Click the login button to jump to the WeChat web authorization page
 loginBtn.onclick = function() {
-  window.location = authingWx.getAuthorizationUrl()
-}
+  window.location = authingWx.getAuthorizationUrl();
+};
 ```
 
 ### getUserInfo
@@ -149,13 +149,13 @@ parameter:
 Example:
 
 ```javascript
-const { ok, userinfo, message } = authingWx.getUserInfo()
+const { ok, userinfo, message } = authingWx.getUserInfo();
 if (ok) {
   // do with userinfo
-  console.log(userinfo)
+  console.log(userinfo);
 } else if (message) {
   // message contains error tips
-  alert(message)
+  alert(message);
 }
 ```
 
@@ -221,9 +221,9 @@ If you are using Nodejs [axios](https://github.com/axios/axios), you can write t
 ```javascript
 axios.get(SOME_SERVICE_URL, {
   headers: {
-    Authorization: `Bearer ${userinfo.token}`,
-  },
-})
+    Authorization: `Bearer ${userinfo.token}`
+  }
+});
 ```
 
 When the end user carries this Toekn to access the developer's interface, **developers need to judge whether this token is legal and in the login status**, Authing provides several ways: [Verify the user token](/guides/faqs/how-to-validate-user-token.md). The data returned by Authing contains information such as the user ID, the user ID, the user ID, after which the developer can process the request according to the needs of the specific service.

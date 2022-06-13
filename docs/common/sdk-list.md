@@ -5,7 +5,7 @@
 - [Python](/reference/sdk-for-python/)
 - [PHP](/reference/sdk-for-php/)
 - [C#](/reference/sdk-for-csharp/)
-- [Swift](/reference/sdk-for-swift.md)
+- [Swift](/reference/sdk-for-swift/)
 - [Go](/reference/sdk-for-go/)
 - [Ruby](/reference/sdk-for-ruby.md)
 - [微信小程序](/reference/sdk-for-wxapp.md)

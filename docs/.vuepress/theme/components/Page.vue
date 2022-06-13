@@ -2,7 +2,8 @@
   <main
     class="page content-layout-container"
     :class="{
-      'full-width': $frontmatter.fullWidthPage
+      'full-width': $frontmatter.fullWidthPage,
+      isInConsole: isInConsole
     }"
   >
     <slot name="top" />
@@ -20,7 +21,7 @@
         <Feedback v-if="!$page.frontmatter.noFeedback" />
       </div>
       <div v-if="!$page.frontmatter.noToc" class="on-this-page">
-        <OnThisPage />
+        <OnThisPage :isInConsole="isInConsole" />
       </div>
       <div v-else-if="showDownloadDemo">
         <DownloadDemo />
@@ -33,12 +34,12 @@
 </template>
 
 <script>
-import PageEdit from '@theme/components/PageEdit.vue'
-import PageNav from '@theme/components/PageNav.vue'
-import OnThisPage from '@theme/components/OnThisPage.vue'
-import Feedback from '@theme/components/Feedback.vue'
-import DownloadDemo from '@theme/components/DownloadDemo'
-import DownloadDemoPage from '@theme/components/DownloadDemo/DownloadDemoPage'
+import PageEdit from "@theme/components/PageEdit.vue";
+import PageNav from "@theme/components/PageNav.vue";
+import OnThisPage from "@theme/components/OnThisPage.vue";
+import Feedback from "@theme/components/Feedback.vue";
+import DownloadDemo from "@theme/components/DownloadDemo";
+import DownloadDemoPage from "@theme/components/DownloadDemo/DownloadDemoPage";
 
 export default {
   components: {
@@ -49,15 +50,15 @@ export default {
     DownloadDemo,
     DownloadDemoPage
   },
-  props: ['sidebarItems'],
+  props: ["sidebarItems", "isInConsole"],
   computed: {
     showDownloadDemo() {
-      const download = this.$frontmatter.downloadDemo
+      const download = this.$frontmatter.downloadDemo;
 
-      return !!(download && (download.downloadUrl || download.jumpUrl))
+      return !!(download && (download.downloadUrl || download.jumpUrl));
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -69,13 +70,18 @@ export default {
   margin 0 auto 2rem auto
   padding 0 24px
   box-sizing border-box
+  &.isInConsole
+    padding: 0
+    .main-content
+      margin-top 0
+    .breadcrumb-content-container
+      margin: 0
   &.full-width
     max-width unset
     padding-right 0
     padding-left 0
     .breadcrumb-content-container
       margin 0
-    .feedback
       max-width $mainContentWidthWithSideBar
       margin 0 auto
   .main-content

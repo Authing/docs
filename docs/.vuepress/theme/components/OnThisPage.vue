@@ -1,5 +1,5 @@
 <template>
-  <aside class="on-this-page-navigation">
+  <aside class="on-this-page-navigation" :style="[isInConsole && { display: 'block' } ]">
     <div v-show="showOnthisPage">
       <div>
         <ul class="links" v-if="items">
@@ -31,7 +31,7 @@ export default {
   components: {
     OnThisPageItem: () => import('../components/OnThisPageItem.vue'),
   },
-  props: ['items'],
+  props: ['items', 'isInConsole'],
   data() {
     return {
       activeAnchor: null,
@@ -152,7 +152,7 @@ export default {
   overflow-y auto
   top calc(3.6rem + 36px)
   a
-    font-size 14px
+    font-size 12px
     border-left 3px solid transparent
     color: #666
     &:visited

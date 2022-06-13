@@ -1,1 +1,1 @@
-!!!include(common/init-php-auth-sdk.md)!!!
+!!!include(en/common/init-php-auth-sdk.md)!!!

@@ -1,107 +1,39 @@
-# Authing doc
+# Authing 
+![](/docs/images/concepts/what-is-authing/authing-connect.png)
 
-## 使用
+Authing 在云上为企业和开发者提供专业的身份认证和授权服务。<br>
+你可以将任意平台的应用接入到 Authing ，同时还可以自定义应用程序的登录方式（如：邮箱/密码、短信/验证码、社会化登录等）。<br>
+你可以根据你使用的技术，来选择我们的 SDK 或调用相关 API 来接入你的应用。当用户发起授权请求时，Authing 会帮助你认证他们的身份和返回必要的用户信息到你的应用中。<br>
+为方便你的快速接入，我们提供以下指引。
 
-```bash
-# start dev server
-npm run docs:dev
+## 网站地址
+- [https://www.authing.cn](https://www.authing.cn)
 
-# delete cache then build
-npm run docs:no-cache
-
-# build to static HTMLs in docs/.vuepress/dist
-npm run docs:build
-```
-
-## 常用组件
-
-`page-ref`:
-
-```bash
-# 普通 md: 绝对路径 
-
-::: page-ref /quickstart/hello-world.md
-:::
-
-# README.md 可省略
-::: page-ref /scan-qrcode/wxapp-qrcode/
-:::
-
-```
-
-`embed`:
-
-```bash
-::: embed
-[title](link)
-:::
-```
-
-`hints`:
-
-```bash
-::: hint-success
-text
-:::
-
-::: hint-info
-::: hint-warning
-::: hint-danger
-```
-
-`api-method`:
-
-````markdown
-<!-- 组件的 prop 都可以用 slot 代替，纯字符串时可以用 prop，有 Markdown 时用 slot -->
-
-<ApiMethodSpec method="get" host="https://core.authing.cn" path="/oauth/me" summary="使用 access_token 换取用户信息">
-<template slot="queryParams">
-<ApiMethodParam name="access_token" type="string" required description="access_token" />
-</template>
-<template slot="response">
-<ApiMethodResponse httpCode="200" description="请求结果">
-
-```json
-{
-  "a": "1"
-}
-```
-
-</ApiMethodResponse>
-</template>
-</ApiMethodSpec>
-````
-
-## 插值
-
-按 vue 语法使用插值，可以在具体 md 文件的头部定义，也可使用全局变量（即 config 中的所有配置），常用的全局插值如下：
-
-- \$localeConfig.brandName，品牌名，如 Authing
-- \$themeConfig.apiDomain，api 地址
-- \$themeConfig.sampleAppDomain，体验地址
-- \$themeConfig.consoleDomain，控制台地址
-
-## 注意！！！
-
-写好的文档发布完后要去线上看一眼，刷新页面，然后点击菜单看能否跳到其他页面。很多情况会报以下错，会导致后续 vue 代码无法执行，跳转不了页面：
-
-```
-DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method.
-```
-
-### 加粗内容不能有中文标点符号
-
-### 链接无法加粗
-
-如：
-
-```markdown
-[**百度**](https://baidu.com)
-**[百度](https://baidu.com)**
-```
-
-都会导致报错，可用如下方法实现
-
-```html
-<a class="strong" href="https://baidu.com" target="_blank">百度</a>
-```
+## 开发者资源
+- [开放 API 门户](https://www.apifox.cn/apidoc/project-548164/doc-422080)
+- [SDK 文档](https://docs.authing.cn/v2/)
+- [快速开始](https://docs.authing.cn/v2/quickstarts/)
+- [使用指南](https://docs.authing.cn/v2/guides/)
+## 开发者社区
+- [开发者论坛](https://forum.authing.cn/) 
+- [博客](https://www.authing.cn/blog) 
+## 推荐阅读
+- [认证你的第一个用户](https://docs.authing.cn/v2/guides/basics/authenticate-first-user/)
+- [授权](https://docs.authing.cn/v2/guides/authorization/)
+- [迁移用户到 Authing](https://docs.authing.cn/v2/guides/migrations/)
+- [管理用户目录](https://docs.authing.cn/v2/guides/users/)
+- [管理用户权限](https://docs.authing.cn/v2/guides/access-control/)
+## 建议贡献步骤
+1. Fork 该项目
+3. 在自己项目中创建分支
+4. 用 markdown 改动项目
+5. 提交改动
+6. 创建 pull request
+## 更新记录
+|  版本号  | 更新时间  |  更新内容   |
+|  ------  | ------  |  ---------  |
+| V1.3  | 2022.4.22 | 1.添加 docs 链接<br>2.修复内容问题|
+| V1.2  | 2021.5.20 | 文档翻新 |
+| V1.1 | 2021.1.25 | 初始化项目 |
+## 联系我们
+如果遇到问题，你可以在 [authing-chat/community](https://forum.authing.cn/) 联系我们。

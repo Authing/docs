@@ -71,7 +71,7 @@ management.auditLog.list_audit_logs(app_ids=["appid"])
         "resourceType": "data",
         "@version": "1",
         "originValue": "null",
-        "eventDetails": "创建「 shxbxpbodj 」共 1 个用户",
+        "eventDetails": "Create「 shxbxpbodj 」Total 1 users",
         "geoip": {
           "region_code": "BJ",
           "region_name": "Beijing",

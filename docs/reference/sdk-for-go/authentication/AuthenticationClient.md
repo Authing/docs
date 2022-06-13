@@ -8,7 +8,6 @@ meta:
 
 <LastUpdated/>
 
-
 此模块包含注册登录、重置手机号邮箱、修改账号信息等方法，是以你的终端用户（End User）的身份进行请求，适合在需要验证用户身份的情况下使用。如果你倾向于以管理员的身份管理用户，请使用 [UsersManagementClient - 用户管理模块](../management/UsersManagementClient.md)。
 
 ```go
@@ -21,7 +20,7 @@ import (
 )
 
 authenticationClient := NewClient(AppId, Secret)
- 
+
 authenticationClient.LoginByEmail # 使用邮箱登录
 authenticationClient.SendSmsCode # 发送验证码
 authenticationClient.GetAccessTokenByCode # 使用授权码 Code 获取用户的 Token 信息
@@ -32,7 +31,7 @@ authenticationClient.GetAccessTokenByCode # 使用授权码 Code 获取用户的
 ```go
 // RegisterByEmail
 // 使用邮箱注册
-func (c *Client) RegisterByEmail(request *model.RegisterByEmailInput) (*model.User, error) 
+func (c *Client) RegisterByEmail(request *model.RegisterByEmailInput) (*model.User, error)
 ```
 
 使用邮箱注册，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 EmailVerified 字段会为 false 。如果你希望邮箱未验证的用户不能进行登录，可以在用户池的**设置** - **安全信息** 中开启**禁止未验证邮箱的用户登录**选项：
@@ -41,14 +40,14 @@ func (c *Client) RegisterByEmail(request *model.RegisterByEmailInput) (*model.Us
 
 #### 参数
 
-- `request` \<RegisterByEmailInput\>  
+- `request` \<RegisterByEmailInput\>
 - `RegisterByEmailInput.Email` \<string\> 邮箱
 - `RegisterByEmailInput.Password` \<string\> 密码
-- `RegisterByEmailInput.Profile` \<*RegisterProfile\> 用户资料
-- `RegisterByEmailInput.ForceLogin` \<*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 
-- `RegisterByEmailInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `RegisterByEmailInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `RegisterByEmailInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
+- `RegisterByEmailInput.Profile` \<\*RegisterProfile\> 用户资料
+- `RegisterByEmailInput.ForceLogin` \<\*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false
+- `RegisterByEmailInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `RegisterByEmailInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `RegisterByEmailInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
 
@@ -69,7 +68,7 @@ resp, err := authenticationClient.RegisterByEmail(req)
 ```go
 authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
- 
+
 company:="company"
 nickName:="nickName"
 req := &model.RegisterByEmailInput{
@@ -113,23 +112,24 @@ func (c *Client) RegisterByUsername(request *model.RegisterByUsernameInput) (*mo
 使用用户名注册，用户名区分大小写且用户池内唯一
 
 #### 参数
-- `request` \<RegisterByUsernameInput\>  
+
+- `request` \<RegisterByUsernameInput\>
 - `RegisterByUsernameInput.Username` \<string\> 用户名
 - `RegisterByUsernameInput.Password` \<string\> 密码
-- `RegisterByUsernameInput.Profile` \<*RegisterProfile\> 用户资料
-- `RegisterByUsernameInput.ForceLogin` \<*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 
-- `RegisterByUsernameInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `RegisterByUsernameInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `RegisterByUsernameInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
+- `RegisterByUsernameInput.Profile` \<\*RegisterProfile\> 用户资料
+- `RegisterByUsernameInput.ForceLogin` \<\*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false
+- `RegisterByUsernameInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `RegisterByUsernameInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `RegisterByUsernameInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
- 
+
 ```go
 authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 
 company:="company"
-nickName:="nickName" 
+nickName:="nickName"
 req := &model.RegisterByUsernameInput{
 	Username: "gosdk",
 	Password: "123456",
@@ -156,7 +156,6 @@ req := &model.RegisterByUsernameInput{
 resp, err := authenticationClient.RegisterByUsername(req)
 ```
 
-
 #### 返回值
 
 - [用户信息](/guides/user/user-profile.md)
@@ -172,16 +171,16 @@ func (c *Client) RegisterByPhoneCode(request *model.RegisterByPhoneCodeInput) (*
 使用手机号注册，你可以同时设置该账号的初始密码。你可以通过 [SendSmsCode](#发送短信验证码) 方法发送短信验证码
 
 #### 参数
-- `request` \<RegisterByPhoneCodeInput\>  
+
+- `request` \<RegisterByPhoneCodeInput\>
 - `RegisterByPhoneCodeInput.Phone` \<string\> 手机号
 - `RegisterByPhoneCodeInput.Code` \<string\> 短信验证码
-- `RegisterByPhoneCodeInput.Password` \<*string\> 密码
-- `RegisterByPhoneCodeInput.Profile` \<*RegisterProfile\> 用户资料
-- `RegisterByPhoneCodeInput.ForceLogin` \<*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false 
-- `RegisterByPhoneCodeInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `RegisterByPhoneCodeInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `RegisterByPhoneCodeInput.Context`: \<*string\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
-
+- `RegisterByPhoneCodeInput.Password` \<\*string\> 密码
+- `RegisterByPhoneCodeInput.Profile` \<\*RegisterProfile\> 用户资料
+- `RegisterByPhoneCodeInput.ForceLogin` \<\*bool\> 是否走一遍完整的登录的，会触发登录前后的 pipeline 函数以及登录事件 webhook ，同时该用户的累计登录次数会加 1 。默认为 false
+- `RegisterByPhoneCodeInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `RegisterByPhoneCodeInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `RegisterByPhoneCodeInput.Context`: \<\*string\> 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
 
@@ -213,13 +212,12 @@ resp, err := authenticationClient.RegisterByPhoneCode(req)
 
 - 注册的同时设置用户资料（昵称和公司）
 
-
 ```go
 authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 
 company:="company"
-nickName:="nickName" 
+nickName:="nickName"
 req := &model.RegisterByPhoneCodeInput{
 	Phone:  "1586xxxx492",
     Code:   "123456",
@@ -232,7 +230,6 @@ resp, err := authenticationClient.RegisterByPhoneCode(req)
 ```
 
 - 注册的同时添加设置自定义数据，你需要先给用户定义一个 `source` 自定义字段
-
 
 ```go
 authenticationClient := NewClient(AppId, Secret)
@@ -251,7 +248,6 @@ resp, err := authenticationClient.RegisterByPhoneCode(req)
 
 - [用户信息](/guides/user/user-profile.md)
 
-
 ## 使用邮箱登录
 
 ```go
@@ -267,15 +263,15 @@ func (c *Client) LoginByEmail(request model.LoginByEmailInput) (*model.User, err
 如果你的用户池配置了登录失败检测，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（code 为 2000)
 
 #### 参数
+
 - `request` \<LoginByEmailInput\> 请求
 - `LoginByEmailInput.Email` \<string\> 邮箱
 - `LoginByEmailInput.Password` \<string\> 密码
-- `LoginByEmailInput.CaptchaCode` \<*string\> 图形验证码
-- `LoginByEmailInput.AutoRegister` \<*bool\> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号
-- `LoginByEmailInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `LoginByEmailInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `LoginByEmailInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
-
+- `LoginByEmailInput.CaptchaCode` \<\*string\> 图形验证码
+- `LoginByEmailInput.AutoRegister` \<\*bool\> 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号
+- `LoginByEmailInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `LoginByEmailInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `LoginByEmailInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
 
@@ -320,7 +316,6 @@ resp, err := authenticationClient.LoginByEmail(req)
 
 - [用户信息](/guides/user/user-profile.md)
 
-
 ## 使用用户名登录
 
 ```go
@@ -332,15 +327,15 @@ func (c *Client) LoginByUserName(request model.LoginByUsernameInput) (*model.Use
 使用用户名登录。如果你的用户池开启了[登录失败检测](/guides/security/config-login-fail-limit.md)，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（错误码 为 2000)
 
 #### 参数
- 
+
 - `request` \<LoginByUsernameInput\> 请求
 - `LoginByUsernameInput.username` \<string\> 用户名
 - `LoginByUsernameInput.Password` \<string\> 密码
-- `LoginByUsernameInput.CaptchaCode` \<*string\> 图形验证码
-- `LoginByUsernameInput.AutoRegister` \<*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
-- `LoginByUsernameInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `LoginByUsernameInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `LoginByUsernameInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
+- `LoginByUsernameInput.CaptchaCode` \<\*string\> 图形验证码
+- `LoginByUsernameInput.AutoRegister` \<\*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
+- `LoginByUsernameInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `LoginByUsernameInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `LoginByUsernameInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
 
@@ -381,27 +376,25 @@ req := model.LoginByUsernameInput{
 resp, err := authenticationClient.LoginByUserName(req)
 ```
 
-
 ## 使用手机号验证码登录
 
 ```go
 // LoginByPhoneCode
 // 使用手机号验证码登录
-func (c *Client) LoginByPhoneCode(req *model.LoginByPhoneCodeInput) (*model.User, error) 
+func (c *Client) LoginByPhoneCode(req *model.LoginByPhoneCodeInput) (*model.User, error)
 ```
 
 使用手机号验证码登录。你需要先使用 [SendSmsCode](#发送短信验证码) 方法发送短信验证码
 
 #### 参数
- 
+
 - `req` \<LoginByPhoneCodeInput\> 请求
 - `LoginByPhoneCodeInput.Phone` \<string\> 手机号
 - `LoginByPhoneCodeInput.Code` \<string\> 验证码
-- `LoginByPhoneCodeInput.AutoRegister` \<*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
-- `LoginByPhoneCodeInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `LoginByPhoneCodeInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `LoginByPhoneCodeInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
-
+- `LoginByPhoneCodeInput.AutoRegister` \<\*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
+- `LoginByPhoneCodeInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `LoginByPhoneCodeInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `LoginByPhoneCodeInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
 
 #### 示例
 
@@ -447,12 +440,12 @@ func (c *Client) LoginByPhonePassword(request model.LoginByPhonePasswordInput) (
 - `request` \<LoginByPhonePasswordInput\> 请求
 - `LoginByPhonePasswordInput.Phone` \<string\> 手机号
 - `LoginByPhonePasswordInput.Password` \<string\> 密码
-- `LoginByPhonePasswordInput.CaptchaCode` \<*string\> 图形验证码
-- `LoginByPhonePasswordInput.AutoRegister` \<*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
-- `LoginByPhonePasswordInput.ClientIp` \<*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
-- `LoginByPhonePasswordInput.Params` \<*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
-- `LoginByPhonePasswordInput.Context`: \<*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
- 
+- `LoginByPhonePasswordInput.CaptchaCode` \<\*string\> 图形验证码
+- `LoginByPhonePasswordInput.AutoRegister` \<\*bool\> 是否自动注册，如果检测到用户不存在，会根据登录账密自动创建一个账号
+- `LoginByPhonePasswordInput.ClientIp` \<\*string\> 客户端真实 IP，如果你在服务器端调用此接口，请务必将此参数设置为终端用户的真实 IP
+- `LoginByPhonePasswordInput.Params` \<\*string\> 用户自定义数据，你需要先在用户池定义用户自定义数据元信息，且传入值的类型必须和定义的类型匹配
+- `LoginByPhonePasswordInput.Context`: \<\*string\> 请求上下文，这里设置的 `Context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到
+
 #### 示例
 
 - 使用手机号密码登录
@@ -466,7 +459,7 @@ req := model.LoginByPhonePasswordInput{
 }
 resp, err := authenticationClient.LoginByPhonePassword(req)
 ```
- 
+
 - 登录的同时设置自定义数据
 
 ```go
@@ -524,7 +517,7 @@ func (c *Client) LoginByAd(username, password string) (*struct {
 	Code    int64      `json:"code"`
 	Message string     `json:"message"`
 	Data    model.User `json:"data"`
-}, error) 
+}, error)
 ```
 
 使用 AD 域的账号登录。如果此账号第一次登录，将会将其用户信息导入到用户池的用户目录中；之后再次登录，将会根据获取到的最新的账号资料更新此账号的用户信息
@@ -553,10 +546,11 @@ resp, err := authenticationClient.LoginByAd("185xxxx6338", "123456")
 ```go
 // GetCurrentUser
 // 获取资源列表
-func (c *Client) GetCurrentUser(token *string) (*model.User, error) 
+func (c *Client) GetCurrentUser(token *string) (*model.User, error)
 ```
 
 获取当前登录用户的用户信息，需要 authenticationClient 当前处于已登录状态才能获取到。你可以通过两种方式设置 authenticationClient 的登录状态：
+
 1. 调用登录接口（如密码登录、手机号验证码登录、社会化登录）之后，authentication_client 会缓存用户的 [id_token](/concepts/id-token.md)，从而记住登录状态
 2. 通过用户的 [id_token](/concepts/id-token.md) 初始化 authentication_client
 
@@ -564,7 +558,7 @@ func (c *Client) GetCurrentUser(token *string) (*model.User, error)
 
 #### 参数
 
-- `token` \<*string\> 用户的 [id_token](/concepts/id-token.md)，可选
+- `token` \<\*string\> 用户的 [id_token](/concepts/id-token.md)，可选
 
 #### 示例
 
@@ -593,7 +587,6 @@ resp, err := authenticationClient.GetCurrentUser(&token)
 #### 返回值
 
 - [用户信息](/guides/user/user-profile.md)
-
 
 ## 退出登录
 
@@ -628,7 +621,7 @@ resp, err := authenticationClient.Logout()
 func (c *Client) SendSmsCode(phone string) (*struct {
 	Message string `json:"message"`
 	Code    int64  `json:"code"`
-}, error) 
+}, error)
 ```
 
 发送短信验证码, 目前仅支持国内手机号；该接口有接口频率限制，请勿频繁请求
@@ -650,7 +643,7 @@ resp, err := authenticationClient.SendSmsCode("189xxxx1835")
 ```go
 // SendEmail
 // 发送邮件
-func (c *Client) SendEmail(email string, scene model.EnumEmailScene) (*model.CommonMessageAndCode, error) 
+func (c *Client) SendEmail(email string, scene model.EnumEmailScene) (*model.CommonMessageAndCode, error)
 ```
 
 主动发送邮件给用户，目前支持的 4 类邮件包含：重置密码邮件、验证邮箱邮件、修改邮箱验证码邮件、MFA 验证邮件。同时你可以[自定义邮件模版和配置第三方邮件服务商](/guides/userpool-config/email/)
@@ -663,6 +656,7 @@ func (c *Client) SendEmail(email string, scene model.EnumEmailScene) (*model.Com
   - EnumEmailSceneVerifyEmail: 发送验证邮箱的邮件
   - EnumEmailSceneChangeEmail: 发送修改邮箱邮件，邮件中包含验证码
   - EnumEmailSceneMfaVerify: 发送 MFA 验证邮件
+
 #### 示例
 
 - 发送重置密码邮件，会将包含验证码的邮件发送到用户的邮箱
@@ -674,7 +668,6 @@ resp, err := authenticationClient.SendEmail(" mail@qq.com", model.EnumEmailScene
 ```
 
 - 之后用户可以使用邮箱验证码重置密码
-
 
 ```go
 authenticationClient.ResetPasswordByEmailCode(
@@ -721,7 +714,7 @@ func (c *Client) ListUdv() (*[]model.UserDefinedData, error)
 ```go
 // SetUdv
 // 添加自定义数据
-func (c *Client) SetUdv(udvList []model.KeyValuePair) (*[]model.UserDefinedData, error) 
+func (c *Client) SetUdv(udvList []model.KeyValuePair) (*[]model.UserDefinedData, error)
 ```
 
 设置用户的自定义字段。你需要先在用户池[定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配。如果设置失败，会抛出异常，你需要对异常进行捕捉
@@ -746,8 +739,9 @@ func (c *Client) SetUdv(udvList []model.KeyValuePair) (*[]model.UserDefinedData,
 ```
 
 #### 返回值
+
 ```json
-[{"key":"age","dataType":"NUMBER","value":"18","label":"学校"}]
+[{ "key": "age", "dataType": "NUMBER", "value": "18", "label": "学校" }]
 ```
 
 ## 删除自定义数据
@@ -755,14 +749,14 @@ func (c *Client) SetUdv(udvList []model.KeyValuePair) (*[]model.UserDefinedData,
 ```go
 // RemoveUdv
 // 删除自定义数据
-func (c *Client) RemoveUdv(key string) (*[]model.UserDefinedData, error) 
+func (c *Client) RemoveUdv(key string) (*[]model.UserDefinedData, error)
 ```
 
 删除用户的某一个自定义数据
 
 #### 参数
 
-- `key` \<string\> 自定义字段的 key 
+- `key` \<string\> 自定义字段的 key
 
 #### 示例
 
@@ -782,7 +776,7 @@ func (c *Client) RemoveUdv(key string) (*[]model.UserDefinedData, error)
 ```go
 // CheckLoginStatus
 // 检测 Token 登录状态
-func (c *Client) CheckLoginStatus(token string) (*model.CheckLoginStatusResponse, error) 
+func (c *Client) CheckLoginStatus(token string) (*model.CheckLoginStatusResponse, error)
 ```
 
 检测用户 [id_token](/concepts/id-token.md) 的登录状态
@@ -813,11 +807,11 @@ authenticationClient.CheckLoginStatus(nil)
 
 ```json
 {
-    "code": 200,
-    "message": "已登录",
-    "status": true,
-    "exp": 1620732833,
-    "iat": 1619523233
+  "code": 200,
+  "message": "已登录",
+  "status": true,
+  "exp": 1620732833,
+  "iat": 1619523233
 }
 ```
 
@@ -861,11 +855,10 @@ authenticationClient.ResetPasswordByPhoneCode(
 
 ## 通过邮件验证码重置密码
 
-
 ```go
 // ResetPasswordByEmailCode
 // 通过邮件验证码重置密码
-func (c *Client) ResetPasswordByEmailCode(email, code, newPassword string) (*model.CommonMessageAndCode, error) 
+func (c *Client) ResetPasswordByEmailCode(email, code, newPassword string) (*model.CommonMessageAndCode, error)
 ```
 
 通过邮件验证码重置密码，你需要先调用 [SendEmail](#发送邮件) 接口发送重置密码邮件（场景值为 `RESET_PASSWORD`）
@@ -899,32 +892,32 @@ func (c *Client) UpdateProfile(req *model.UpdateUserInput) (*model.User, error)
 #### 参数
 
 - `req` \<UpdateUserInput\> 修改的用户资料
-- `UpdateUserInput.Username` \<*string\> 用户名
-- `UpdateUserInput.Nickname` \<*string\> 昵称
-- `UpdateUserInput.Photo` \<*string\> 头像
-- `UpdateUserInput.Company` \<*string\> 公司
-- `UpdateUserInput.Browser` \<*string\> 浏览器
-- `UpdateUserInput.Device` \<*string\> 设备
-- `UpdateUserInput.LastIP` \<*string\> 最近登录的 IP
-- `UpdateUserInput.Name` \<*string\> Name
-- `UpdateUserInput.GivenName` \<*string\> Given Name
-- `UpdateUserInput.FamilyName` \<*string\> Family Name
-- `UpdateUserInput.MiddleName` \<*string\> Middle Name
-- `UpdateUserInput.Profile` \<*string\> Profile Url
-- `UpdateUserInput.PreferredUsername` \<*string\> Preferred Name
-- `UpdateUserInput.Website` \<*string\> 个人网站
-- `UpdateUserInput.Gender` \<*string\> 性别, M（Man） 表示男性、F（Female） 表示女性、未知表示 U（Unknown）
-- `UpdateUserInput.Birthdate` \<*string\> 生日
-- `UpdateUserInput.Zoneinfo` \<*string\> 时区
-- `UpdateUserInput.Locale` \<*string\> 语言
-- `UpdateUserInput.Address` \<*string\> 地址
-- `UpdateUserInput.StreetAddress` \<*string\> 街道地址
-- `UpdateUserInput.Locality` \<*string\>
-- `UpdateUserInput.Region` \<*string\> 地域
-- `UpdateUserInput.PostalCode` \<*string\> 邮编
-- `UpdateUserInput.City` \<*string\> 城市
-- `UpdateUserInput.Province` \<*string\> 省份
-- `UpdateUserInput.Country` \<*string\> 国家
+- `UpdateUserInput.Username` \<\*string\> 用户名
+- `UpdateUserInput.Nickname` \<\*string\> 昵称
+- `UpdateUserInput.Photo` \<\*string\> 头像
+- `UpdateUserInput.Company` \<\*string\> 公司
+- `UpdateUserInput.Browser` \<\*string\> 浏览器
+- `UpdateUserInput.Device` \<\*string\> 设备
+- `UpdateUserInput.LastIP` \<\*string\> 最近登录的 IP
+- `UpdateUserInput.Name` \<\*string\> Name
+- `UpdateUserInput.GivenName` \<\*string\> Given Name
+- `UpdateUserInput.FamilyName` \<\*string\> Family Name
+- `UpdateUserInput.MiddleName` \<\*string\> Middle Name
+- `UpdateUserInput.Profile` \<\*string\> Profile Url
+- `UpdateUserInput.PreferredUsername` \<\*string\> Preferred Name
+- `UpdateUserInput.Website` \<\*string\> 个人网站
+- `UpdateUserInput.Gender` \<\*string\> 性别, M（Man） 表示男性、F（Female） 表示女性、未知表示 U（Unknown）
+- `UpdateUserInput.Birthdate` \<\*string\> 生日
+- `UpdateUserInput.Zoneinfo` \<\*string\> 时区
+- `UpdateUserInput.Locale` \<\*string\> 语言
+- `UpdateUserInput.Address` \<\*string\> 地址
+- `UpdateUserInput.StreetAddress` \<\*string\> 街道地址
+- `UpdateUserInput.Locality` \<\*string\>
+- `UpdateUserInput.Region` \<\*string\> 地域
+- `UpdateUserInput.PostalCode` \<\*string\> 邮编
+- `UpdateUserInput.City` \<\*string\> 城市
+- `UpdateUserInput.Province` \<\*string\> 省份
+- `UpdateUserInput.Country` \<\*string\> 国家
 
 #### 示例
 
@@ -937,19 +930,17 @@ func (c *Client) UpdateProfile(req *model.UpdateUserInput) (*model.User, error)
 	}
 	resp1, err := authenticationClient.UpdateProfile(updateReq)
 ```
- 
 
 #### 返回值
 
 - [用户信息](/guides/user/user-profile.md)
-
 
 ## 更新用户密码
 
 ```go
 // UpdatePassword
 // 更新用户密码
-func (c *Client) UpdatePassword(oldPassword *string, newPassword string) (*model.User, error) 
+func (c *Client) UpdatePassword(oldPassword *string, newPassword string) (*model.User, error)
 ```
 
 更新用户密码，需要提供原始密码
@@ -957,7 +948,7 @@ func (c *Client) UpdatePassword(oldPassword *string, newPassword string) (*model
 #### 参数
 
 - `newPassword` \<string\> 新密码
-- `oldPassword` \<*string\> 旧密码，如果用户没有设置密码，可以不填
+- `oldPassword` \<\*string\> 旧密码，如果用户没有设置密码，可以不填
 
 #### 示例
 
@@ -983,7 +974,7 @@ resp, err := authenticationClient.UpdatePassword(&oldPassword, "654321")
 ```go
 // BindPhone
 // 绑定手机号
-func (c *Client) BindPhone(phone, phoneCode string) (*model.User, error) 
+func (c *Client) BindPhone(phone, phoneCode string) (*model.User, error)
 ```
 
 用户初次绑定手机号，如果需要修改手机号请使用 [UpdatePhone](#更新用户手机号) 方法。如果该手机号已被绑定，将会绑定失败。发送验证码请使用 [SendSmsCode](#发送短信验证码) 方法
@@ -1008,7 +999,7 @@ resp, err := authenticationClient.BindPhone("185xxxx6338", "1453")
 ```go
 // UnBindPhone
 // 绑定手机号
-func (c *Client) UnBindPhone() (*model.User, error) 
+func (c *Client) UnBindPhone() (*model.User, error)
 ```
 
 用户解绑手机号，如果用户没有绑定其他登录方式（邮箱、社会化登录账号），将无法解绑手机号，会提示错误
@@ -1028,7 +1019,6 @@ resp, err := authenticationClient.UnBindPhone()
 该接口会返回最新的用户信息
 
 - [用户信息](/guides/user/user-profile.md)
-
 
 ## 更新用户手机号
 
@@ -1052,8 +1042,8 @@ func (c *Client) UpdatePhone(phone, code string, oldPhone, oldPhoneCode *string)
 
 - `phone` \<string\> 新手机号
 - `code` \<string\> 新手机号的验证码
-- `oldPhone` \<*string\> 旧手机号
-- `oldPhoneCode` \<*string\> 旧手机号的验证码
+- `oldPhone` \<\*string\> 旧手机号
+- `oldPhoneCode` \<\*string\> 旧手机号的验证码
 
 #### 示例
 
@@ -1110,7 +1100,7 @@ resp, err := authenticationClient.BindEmail("email", "code")
 ```go
 // UnBindEmail
 // 解绑邮箱号
-func (c *Client) UnBindEmail() (*model.User, error) 
+func (c *Client) UnBindEmail() (*model.User, error)
 ```
 
 用户解绑邮箱，如果用户没有绑定其他登录方式（手机号、社会化登录账号），将无法解绑邮箱，会提示错误
@@ -1129,7 +1119,6 @@ resp, err := authenticationClient.UnBindEmail()
 
 - [用户信息](/guides/user/user-profile.md)
 
-
 ## 更新用户邮箱
 
 ```go
@@ -1137,7 +1126,6 @@ resp, err := authenticationClient.UnBindEmail()
 // 更新用户邮箱
 func (c *Client) UpdateEmail(email, code string, oldEmail, oldEmailCode *string) (*model.User, error)
 ```
-
 
 如果用户已经绑定了邮箱，默认情况下，需要同时验证原有邮箱（目前账号绑定的邮箱）和当前邮箱（将要绑定的邮箱）。也就是说，用户 A 当前绑定的邮箱为 123456@qq.com，想修改为 1234567@qq.com，那么就需要同时验证这两个邮箱
 
@@ -1151,8 +1139,8 @@ func (c *Client) UpdateEmail(email, code string, oldEmail, oldEmailCode *string)
 
 - `email` \<string\> 新邮箱
 - `code` \<string\> 新邮箱的验证码
-- `oldEmail` \<*string\> 旧邮箱
-- `oldEmailCode` \<*string\> 旧邮箱的验证码
+- `oldEmail` \<\*string\> 旧邮箱
+- `oldEmailCode` \<\*string\> 旧邮箱的验证码
 
 #### 示例
 
@@ -1167,12 +1155,11 @@ resp, err := authenticationClient.UpdateEmail("email@qq.com", "7757", nil, nil)
 ```go
 oldEmail:="email@qq.com"
 oldCode:="code"
-resp, err := authenticationClient.UpdateEmail("email@authing.com", "7757", &oldEmail, &oldCode)
+resp, err := authenticationClient.UpdateEmail("email@authing.cn", "7757", &oldEmail, &oldCode)
 
 ```
 
 ## 合并账号身份信息
-
 
 ```go
 // LinkAccount
@@ -1207,7 +1194,7 @@ resp, err := authenticationClient.LinkAccount(Token, "qqwe")
 ```go
 // UnLinkAccount
 // 主账号解绑社会化登录账号
-func (c *Client) UnLinkAccount(primaryUserToken string, provider constant.SocialProviderType) (*model.CommonMessageAndCode, error) 
+func (c *Client) UnLinkAccount(primaryUserToken string, provider constant.SocialProviderType) (*model.CommonMessageAndCode, error)
 ```
 
 主账号解绑社会化登录账号
@@ -1251,12 +1238,12 @@ resp, err := authenticationClient.GetSecurityLevel()
 
 ```json
 {
-    "score": 65,
-    "email": true,
-    "phone": false,
-    "password": true,
-    "passwordSecurityLevel": 1,
-    "mfa": false
+  "score": 65,
+  "email": true,
+  "phone": false,
+  "password": true,
+  "passwordSecurityLevel": 1,
+  "mfa": false
 }
 ```
 
@@ -1272,9 +1259,7 @@ resp, err := authenticationClient.GetSecurityLevel()
   - `3`: 高
 - `score`: \<int\>，账户安全等级总体评分，最高 100 分
 
-
 ## 获取用户被授权的所有资源列表
-
 
 ```go
 // ListAuthorizedResources
@@ -1299,6 +1284,7 @@ resp, err := authenticationClient.ListAuthorizedResources("default", model.EnumR
 ```
 
 #### 示例数据
+
 ```json
 {
   "totalCount": 12,
@@ -1339,8 +1325,8 @@ func (c *Client) ListApplications(page, limit int) (*struct {
 
 #### 参数
 
--  `page` \<int\> 分页序号, 默认为 `1`
--  `limit` \<int\> 每页返回的个数, 默认为 `10`
+- `page` \<int\> 分页序号, 默认为 `1`
+- `limit` \<int\> 每页返回的个数, 默认为 `10`
 
 #### 示例
 
@@ -1349,24 +1335,24 @@ resp, err := authenticationClient.ListApplications(1, 10)
 ```
 
 #### 示例数据
+
 ```json
 {
   "list": [
     {
-          "id": "5f97fb40d352ecf69ffe6d98",
-          "name": "oo",
-          "logo": "https://files.authing.co/authing-console/default-app-logo.png",
-          "domain": "okokiohutuyfrtd",
-          "description": null,
-          "createdAt": "2020-10-27T10:49:36.817Z",
-          "updatedAt": "2021-03-17T10:39:53.650Z",
-          "protocol": "oidc"
-      }
+      "id": "5f97fb40d352ecf69ffe6d98",
+      "name": "oo",
+      "logo": "https://files.authing.co/authing-console/default-app-logo.png",
+      "domain": "okokiohutuyfrtd",
+      "description": null,
+      "createdAt": "2020-10-27T10:49:36.817Z",
+      "updatedAt": "2021-03-17T10:39:53.650Z",
+      "protocol": "oidc"
+    }
   ],
   "totalCount": 1
 }
 ```
-
 
 ## 检查密码强度
 
@@ -1376,13 +1362,15 @@ resp, err := authenticationClient.ListApplications(1, 10)
 func (c *Client) CheckPasswordStrength(password string) (*struct {
 	Valid   bool   `json:"valid"`
 	Message string `json:"message"`
-}, error) 
+}, error)
 ```
 
 检查密码强度，详情请见 [https://docs.authing.co/v2/guides/security/config-password.html](https://docs.authing.co/v2/guides/security/config-password.html)
 
 #### 参数
--  `password` \<string\> 密码
+
+- `password` \<string\> 密码
+
 #### 示例
 
 ```go
@@ -1390,15 +1378,13 @@ resp, err := authenticationClient.CheckPasswordStrength("12345678")
 ```
 
 #### 示例数据
+
 ```json
 {
   "message": "密码验证成功",
   "valid": true
 }
 ```
-
-
-
 
 ## 刷新当前用户的 Token
 
@@ -1411,7 +1397,9 @@ func (c *Client) RefreshToken(token *string) (*model.RefreshToken, error)
 刷新当前用户的 Token
 
 #### 参数
--  `token` \<*string\> 用户 Token
+
+- `token` \<\*string\> 用户 Token
+
 #### 示例
 
 ```go
@@ -1426,6 +1414,7 @@ func (c *Client) RefreshToken(token *string) (*model.RefreshToken, error)
 ```
 
 #### 示例数据
+
 ```json
 {
   "iat": 1632467937,
@@ -1433,7 +1422,7 @@ func (c *Client) RefreshToken(token *string) (*model.RefreshToken, error)
   "exp": 1633677537
 }
 ```
- 
+
 ## 获取用户所在组织机构
 
 ```go
@@ -1447,7 +1436,7 @@ func (c *Client) ListOrg() (*struct {
 ```
 
 获取用户所在组织机构
- 
+
 #### 示例
 
 ```go
@@ -1462,10 +1451,10 @@ func (c *Client) ListOrg() (*struct {
 ```
 
 #### 示例数据
+
 ```json
 []
 ```
-
 
 ## 获取用户拥有的角色列表
 
@@ -1475,12 +1464,15 @@ func (c *Client) ListOrg() (*struct {
 func (c *Client) ListRole(namespace string) (*struct {
 	TotalCount int               `json:"totalCount"`
 	List       []model.RoleModel `json:"list"`
-}, error) 
+}, error)
 ```
 
 获取用户拥有的角色列表
+
 #### 参数
+
 - `namespace` \<string\> 命名空间
+
 #### 示例
 
 ```go
@@ -1488,37 +1480,40 @@ resp, err := authenticationClient.ListRole("default")
 ```
 
 #### 示例数据
+
 ```json
 {
   "totalCount": 1,
-  "list": [{
-    "code": "rdvienjquv",
-    "description": null,
-    "parent": null,
-    "namespace": "default",
-    "arn": "arn:cn:authing:61384d3e302f1f75e69ce95a:role:614d7e6fba71103fcf5af5df",
-    "updatedAt": "2021-09-24T07:29:51+00:00",
-    "id": "614d7e6fba71103fcf5af5df",
-    "createdAt": "2021-09-24T07:29:51+00:00"
-  }]
+  "list": [
+    {
+      "code": "rdvienjquv",
+      "description": null,
+      "parent": null,
+      "namespace": "default",
+      "arn": "arn:cn:authing:61384d3e302f1f75e69ce95a:role:614d7e6fba71103fcf5af5df",
+      "updatedAt": "2021-09-24T07:29:51+00:00",
+      "id": "614d7e6fba71103fcf5af5df",
+      "createdAt": "2021-09-24T07:29:51+00:00"
+    }
+  ]
 }
 ```
-
- 
-
 
 ## 判断当前用户是否有某个角色
 
 ```go
 // HasRole
 // 判断当前用户是否有某个角色
-func (c *Client) HasRole(code, namespace string) (*bool, error) 
+func (c *Client) HasRole(code, namespace string) (*bool, error)
 ```
 
 获取用户拥有的角色列表
+
 #### 参数
+
 - `code` \<string\> 角色 Code
 - `namespace` \<string\> 命名空间
+
 #### 示例
 
 ```go
@@ -1526,6 +1521,7 @@ resp, err := authenticationClient.HasRole("NewCode", "default")
 ```
 
 #### 示例数据
+
 ```go
 bool
 ```
@@ -1539,6 +1535,7 @@ func (c *Client) LoginBySubAccount(req *model.LoginBySubAccountRequest) (*model.
 ```
 
 登录子账号
+
 #### 参数
 
 - `req` \<LoginBySubAccountRequest\> 请求
@@ -1546,6 +1543,7 @@ func (c *Client) LoginBySubAccount(req *model.LoginBySubAccountRequest) (*model.
 - `LoginBySubAccountRequest.Password` \<string\> 密码
 - `LoginBySubAccountRequest.CaptchaCode` \<string\> 验证码
 - `LoginBySubAccountRequest.ClientIp` \<string\> 登录客户端 IP
+
 #### 示例
 
 ```go
@@ -1559,62 +1557,61 @@ func (c *Client) LoginBySubAccount(req *model.LoginBySubAccountRequest) (*model.
 ```
 
 #### 示例数据
+
 ```json
 {
-	"username": "123456789",
-	"preferredUsername": null,
-	"tokenExpiredAt": "2021-10-08T07:43:04+00:00",
-	"locale": null,
-	"photo": "https://files.authing.co/authing-console/default-user-avatar.png",
-	"updatedAt": "2021-09-24T07:43:04+00:00",
-	"formatted": null,
-	"device": null,
-	"gender": "U",
-	"id": "613872b19c90be7d4da6",
-	"arn": "arn:cn:authing:61384d3e302f1f75e:user:613872b19c90be7d4da",
-	"blocked": false,
-	"loginsCount": 23,
-	"city": null,
-	"province": null,
-	"userPoolId": "61384d3e302f1f75e",
-	"locality": null,
-	"middleName": null,
-	"country": null,
-	"zoneinfo": null,
-	"lastIP": "111.202.167.54",
-	"website": null,
-	"streetAddress": null,
-	"externalId": null,
-	"isDeleted": false,
-	"postalCode": null,
-	"email": "",
-	"status": "Activated",
-	"openid": null,
-	"company": null,
-	"familyName": null,
-	"phone": "18515",
-	"registerSource": ["basic:phone-code"],
-	"profile": null,
-	"address": null,
-	"oauth": null,
-	"password": "cfdf0fee5f3d1b8f27a507ad98d0",
-	"nickname": "子账号",
-	"createdAt": "2021-09-08T08:22:09+00:00",
-	"givenName": null,
-	"name": null,
-	"emailVerified": false,
-	"region": null,
-	"birthdate": null,
-	"token": "eyJhbGciOiJIUNDY5Mzg0LCJpc3MiOiJodHRwczovL24xc2o2OC1kZW1vLmF1dGhpbmcuY24vb2lkYyJ9.1-e7ZJfJgRAZeDyGHalqbBUjJ76qUeJzGtzxSfPCCsE",
-	"phoneVerified": true,
-	"lastLogin": "2021-09-24T07:43:04+00:00",
-	"unionid": null,
-	"browser": null,
-	"signedUp": "2021-09-08T08:22:09+00:00"
+  "username": "123456789",
+  "preferredUsername": null,
+  "tokenExpiredAt": "2021-10-08T07:43:04+00:00",
+  "locale": null,
+  "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
+  "updatedAt": "2021-09-24T07:43:04+00:00",
+  "formatted": null,
+  "device": null,
+  "gender": "U",
+  "id": "613872b19c90be7d4da6",
+  "arn": "arn:cn:authing:61384d3e302f1f75e:user:613872b19c90be7d4da",
+  "blocked": false,
+  "loginsCount": 23,
+  "city": null,
+  "province": null,
+  "userPoolId": "61384d3e302f1f75e",
+  "locality": null,
+  "middleName": null,
+  "country": null,
+  "zoneinfo": null,
+  "lastIP": "111.202.167.54",
+  "website": null,
+  "streetAddress": null,
+  "externalId": null,
+  "isDeleted": false,
+  "postalCode": null,
+  "email": "",
+  "status": "Activated",
+  "openid": null,
+  "company": null,
+  "familyName": null,
+  "phone": "18515",
+  "registerSource": ["basic:phone-code"],
+  "profile": null,
+  "address": null,
+  "oauth": null,
+  "password": "cfdf0fee5f3d1b8f27a507ad98d0",
+  "nickname": "子账号",
+  "createdAt": "2021-09-08T08:22:09+00:00",
+  "givenName": null,
+  "name": null,
+  "emailVerified": false,
+  "region": null,
+  "birthdate": null,
+  "token": "eyJhbGciOiJIUNDY5Mzg0LCJpc3MiOiJodHRwczovL24xc2o2OC1kZW1vLmF1dGhpbmcuY24vb2lkYyJ9.1-e7ZJfJgRAZeDyGHalqbBUjJ76qUeJzGtzxSfPCCsE",
+  "phoneVerified": true,
+  "lastLogin": "2021-09-24T07:43:04+00:00",
+  "unionid": null,
+  "browser": null,
+  "signedUp": "2021-09-08T08:22:09+00:00"
 }
 ```
-
-
 
 ## 通过首次登录的 Token 重置密码
 
@@ -1625,16 +1622,17 @@ func (c *Client) ResetPasswordByFirstLoginToken(token, password string) (*model.
 ```
 
 通过首次登录的 Token 重置密码
+
 #### 参数
+
 - `token` \<string\> 首次登录的 Token
 - `password` \<string\> 密码
- 
+
 #### 示例
 
 ```go
 authentication.ResetPasswordByFirstLoginToken("token",password)
 ```
-
 
 ## 通过密码强制更新临时 Token 修改密码
 
@@ -1645,64 +1643,72 @@ func (c *Client) ResetPasswordByForceResetToken(token, password, newPassword str
 ```
 
 通过密码强制更新临时 Token 修改密码
+
 #### 参数
+
 - `token` \<string\> 首次登录的 Token
 - `password` \<string\> 旧密码
 - `newPassword` \<string\> 新密码
+
 #### 示例
 
 ```go
 authentication.ResetPasswordByForceResetToken("token",password,newPassword)
 ```
 
-
 ## 获取用户所有部门
 
 ```go
 // ListDepartments
 // 获取用户所有部门
-func (c *Client) ListDepartments() (*model.PaginatedDepartments, error) 
+func (c *Client) ListDepartments() (*model.PaginatedDepartments, error)
 ```
 
 获取用户所有部门
- 
+
 #### 示例
 
 ```go
 resp, err := authenticationClient.ListDepartments()
 ```
+
 #### 示例数据
+
 ```json
 {
   "departments": {
     "totalCount": 1,
-    "list": [{
-      "department": {
-        "code": null,
-        "description": null,
-        "updatedAt": "2021-09-16T06:46:11+00:00",
-        "children": [],
-        "namePath": ["xx2", "qqqx", "q2"],
-        "order": null,
-        "descriptionI18n": null,
-        "depth": null,
-        "orgId": "6142c2c41c6e6c6cc3edf",
-        "path": ["6142c2c4f8abf18c6c978b", "6142c32360021c1a05081579", "6142e833716601219e93d813"],
-        "nameI18n": null,
-        "codePath": ["codes", null, null],
-        "root": false,
-        "id": "6142e833716601219e93d3",
-        "createdAt": "2021-09-16T06:46:11+00:00",
-        "name": "q2"
-      },
-      "joinedAt": "2021-09-16T08:48:23+00:00",
-      "isMainDepartment": false
-    }]
+    "list": [
+      {
+        "department": {
+          "code": null,
+          "description": null,
+          "updatedAt": "2021-09-16T06:46:11+00:00",
+          "children": [],
+          "namePath": ["xx2", "qqqx", "q2"],
+          "order": null,
+          "descriptionI18n": null,
+          "depth": null,
+          "orgId": "6142c2c41c6e6c6cc3edf",
+          "path": [
+            "6142c2c4f8abf18c6c978b",
+            "6142c32360021c1a05081579",
+            "6142e833716601219e93d813"
+          ],
+          "nameI18n": null,
+          "codePath": ["codes", null, null],
+          "root": false,
+          "id": "6142e833716601219e93d3",
+          "createdAt": "2021-09-16T06:46:11+00:00",
+          "name": "q2"
+        },
+        "joinedAt": "2021-09-16T08:48:23+00:00",
+        "isMainDepartment": false
+      }
+    ]
   }
 }
 ```
-
-
 
 ## 判断用户是否存在
 
@@ -1713,12 +1719,15 @@ func (c *Client) IsUserExists(req *model.IsUserExistsRequest) (*bool, error)
 ```
 
 判断用户是否存在
+
 #### 参数
+
 - `req` \<IsUserExistsRequest\> 请求
-- `IsUserExistsRequest.Username` \<*string\> 用户名
-- `IsUserExistsRequest.Email`  \<*string\> 邮箱
-- `IsUserExistsRequest.Phone`  \<*string\> 电话
-- `IsUserExistsRequest.ExternalId`  \<*string\> 数据源ID
+- `IsUserExistsRequest.Username` \<\*string\> 用户名
+- `IsUserExistsRequest.Email` \<\*string\> 邮箱
+- `IsUserExistsRequest.Phone` \<\*string\> 电话
+- `IsUserExistsRequest.ExternalId` \<\*string\> 数据源 ID
+
 #### 示例
 
 ```go
@@ -1727,11 +1736,12 @@ resp, err := authenticationClient.IsUserExists(&model.IsUserExistsRequest{
 		Username: &userName,
 })
 ```
+
 #### 示例数据
+
 ```go
 bool
 ```
-
 
 ## 通过远端服务验证票据合法性
 
@@ -1746,18 +1756,18 @@ func (c *Client) ValidateTicketV2(ticket, service string, format constant.Ticket
 ```
 
 通过远端服务验证票据合法性
+
 #### 参数
+
 - `ticket` \<string\> 票据
-- `service`  \<string\> 验证服务地址
-- `format`  \<TicketFormat\> 数据格式 取值仅 XML,JSON
- 
+- `service` \<string\> 验证服务地址
+- `format` \<TicketFormat\> 数据格式 取值仅 XML,JSON
+
 #### 示例
 
 ```go
 resp, err := authenticationClient.ValidateTicketV2("ss", "http://localhost:3000", constant.XML)
 ```
-
-
 
 ## SSO 检测登录态
 
@@ -1772,7 +1782,6 @@ func (c *Client) TrackSession(code string, country, lang, state *string) (*struc
 ```
 
 SSO 检测登录态
- 
 
 #### 示例
 
@@ -1781,6 +1790,7 @@ authentication.TrackSession("cccq","bj",nil)
 ```
 
 #### 示例数据
+
 ```json
-{"session": null}
+{ "session": null }
 ```

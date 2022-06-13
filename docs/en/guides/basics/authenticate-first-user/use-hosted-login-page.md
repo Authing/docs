@@ -1,4 +1,4 @@
-# use Approw hosted login page to authenticate
+# use Authing hosted login page to authenticate
 
 <LastUpdated/>
 
@@ -10,7 +10,7 @@ This document will introduce how to quickly implement a complete user authentica
 
 [User pool](/concepts/user-pool.md)is the minimum unit of isolation of your user system. You can divide users in different scenarios into different user pools. User pool is the smallest unit of isolation of your user system. You can divide users in different scenarios into different user pools.There can be users and applications under each user pool.The permissions, applications, and organizations between different user pools are completely isolated.
 
-<img src="~@imagesZhCn/guides/basics/Xnip2021-02-27_14-58-25.png" alt="drawing"/>
+<img src="./images/Xnip2021-02-27_14-58-25.png" alt="drawing"/>
 
 After the creation is successful, you will automatically redirect to the user pool details page.
 
@@ -42,7 +42,7 @@ Go back to the login page, enter the email and password of the account you just 
 
 In actual applications, you need to change the **callback address** to your **actual business address**, which needs to be a **back-end address**.
 
-![](https://files.authing.co/authing-console/console-callback-address.png)
+![](./images/console-callback-address.png)
 
 After obtaining the `code`, you need to use the `code` in exchange for user information. The Node.js sample code is as follows:
 
@@ -57,12 +57,12 @@ const code2tokenResponse = await axios.post(
     client_id: "APP_ID",
     client_secret: "APP_SECRET",
     grant_type: "authorization_code",
-    redirect_uri: "REDIRECT_URI",
+    redirect_uri: "REDIRECT_URI"
   }),
   {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
   }
 );
 const { id_token, access_token } = code2tokenResponse.data;
@@ -80,7 +80,7 @@ There are [id_token](/concepts/id-token.md) and [access_token](/concepts/access-
 }
 ```
 
- After [decoding](https://jwt.yelexin.cn) `id_token`, the sample data is as follows:
+After [decoding](https://jwt.yelexin.cn) `id_token`, the sample data is as follows:
 
 ```json
 {
@@ -118,7 +118,6 @@ console.log(token2UserInfoResponse.data);
 
 After that, you need to pass the `id_token` back to the front end. The front end should save the id_token and carry it every time when it send requests the back end interface. The back end interface should validate the id_token sent from the front end before processing the user request. Please refer to the [document](/guides/faqs/how-to-validate-user-token.md) for how to validate the token.
 
-
 ::: hint-info
 
 ### How to deal with none-back-end senario
@@ -130,10 +129,10 @@ The process "exchange the token with code" mentioned before should be done in ba
 In console > Application, find your application, enable "implicit mode" in "authorization mode" and check the return token type "id_token", and then ask the users to login through this address:
 
 ```
-GET https://sample-app.Approw.com/oidc/auth?client_id=Approw_APP_ID&redirect_uri={callBackAddress}&scope=openid%20profile&response_type=id_token%20token&state={randomString}&nonce={randonString}
+GET https://sample-app.authing.cn/oidc/auth?client_id=Authing_APP_ID&redirect_uri={callBackAddress}&scope=openid%20profile&response_type=id_token%20token&state={randomString}&nonce={randonString}
 ```
 
-Approw directly returns id_token and access_token to the callback address in the form of URL hash, for example:
+Authing directly returns id_token and access_token to the callback address in the form of URL hash, for example:
 
 ```
 https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiI4YzgzN2I5My01OTNlLTQzZjctYWMzNC0yYjRmZDU3ZGFhMTciLCJhdF9oYXNoIjoiVFFtbFlEVTVPZGF1Zjl0U0VKdHY5USIsInNfaGFzaCI6Ind3SDNXclV2b0hiSUp5TWVZVHU4bHciLCJhdWQiOiI1ZDAxZTM4OTk4NWY4MWM2YzFkZDMxZGUiLCJleHAiOjE1NjA0MDkzNjgsImlhdCI6MTU2MDQwNTc2OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5hdXRoaW5nLmNuL29hdXRoL29pZGMifQ.T9M0s6rk4Teq6VOOBRIElgHK9KyM3q0ZJj2aS0VD_Fw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OE9XcVJNVXJEUXpMMXpHVzVtUWoiLCJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJpc3MiOiJodHRwczovL29hdXRoLmF1dGhpbmcuY24vb2F1dGgvb2lkYyIsImlhdCI6MTU2MDQwNTc2OCwiZXhwIjoxNTYwNDA5MzY4LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiYXVkIjoiNWQwMWUzODk5ODVmODFjNmMxZGQzMWRlIn0.mR0MZDwlZWGRMsAZjQ27sDFFqYoDgZ6WHTK4C7JbML4&expires_in=3600&token_type=Bearer&state=jazz&session_state=26ec053be9f47d68dc430f84b97efb1095469fe10169a9e00ef4092718714b8b
@@ -143,9 +142,9 @@ You can extract `id_token` from `url hash`, and then you can get user informatio
 
 #### Use trackSession
 
-Approw provides another simple method for front-end to obtain user information without processing callbacks or other configurations.
+Authing provides another simple method for front-end to obtain user information without processing callbacks or other configurations.
 
-1. Install the [single sign-on SDK](/reference/sdk-for-sso.md), complete the initialization, and call the trackSession function to obtain the user's login status.
+1. Install the [single sign-on SDK](/en/reference/sdk-for-sso.md), complete the initialization, and call the trackSession function to obtain the user's login status.
 
 Use NPM to install:
 
@@ -164,7 +163,7 @@ useCDN:
 ```javascript
 const authing = new AuthingSSO({
   appId: "AUTHING_APP_ID",
-  appDomain: "sample-app",
+  appDomain: "sample-app"
 });
 ```
 
@@ -179,14 +178,13 @@ if (res.session) {
 }
 ```
 
- Please check the [document](/reference/sdk-for-sso.md) for detailed usage.
+Please check the [document](/reference/sdk-for-sso.md) for detailed usage.
 
 :::
 
 ## Visit personal center
 
-Every application created in {{$localeConfig.brandName}} has a built-in personal center page for end users, <span v-pre>the address is {{YOUR_APP_DOMAIN}}/u</span>, such as https://sample-app.Approw.com/u.You can directly access the address through the browser:
-
+Every application created in {{$localeConfig.brandName}} has a built-in personal center page for end users, <span v-pre>the address is {{YOUR_APP_DOMAIN}}/u</span>, such as https://sample-app.authing.cn/u.You can directly access the address through the browser:
 
 ![](./images/personal-central.png)
 
@@ -198,4 +196,4 @@ In the above process, we use the online login page of {{$localeConfig.brandName}
 
 ## Use API & SDK
 
-So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/guides/basics/authenticate-first-user/use-api-sdk/).
+So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/en/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/guides/basics/authenticate-first-user/use-api-sdk/).

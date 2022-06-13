@@ -8,12 +8,13 @@
           'feedback-btn',
           'good',
           {
-            active: status === STATUS.GOOD,
-          },
+            active: status === STATUS.GOOD
+          }
         ]"
       >
         <IconFont v-if="status === STATUS.GOOD" type="authing-good-" />
         <IconFont v-else type="authing-good" />
+        {{ feedbackConfig.useful }}
       </button>
       <button
         @click="handleFeedback(STATUS.BAD)"
@@ -21,13 +22,25 @@
           'feedback-btn',
           'bad',
           {
-            active: status === STATUS.BAD,
-          },
+            active: status === STATUS.BAD
+          }
         ]"
       >
         <IconFont v-if="status === STATUS.BAD" type="authing-good-" />
         <IconFont v-else type="authing-good" />
+        {{ feedbackConfig.useless }}
       </button>
+
+      <div class="github-edit">
+        {{ feedbackConfig.editTip }}
+        <a
+          :href="
+            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
+          "
+        >
+          {{feedbackConfig.editLink}}
+        </a>
+      </div>
     </div>
     <div v-if="submited" class="feedback-success">
       <IconFont type="authing-tijiaochenggong" class="feedback-success-icon" />
@@ -56,55 +69,55 @@
 </template>
 
 <script>
-import IconFont from '@theme/components/IconFont/index.vue'
-import { feishuFeedback } from '@theme/util/feishu'
-import CheckboxGroup from '@theme/components/CheckboxGroup.vue'
+import IconFont from "@theme/components/IconFont/index.vue";
+import { feishuFeedback } from "@theme/util/feishu";
+import CheckboxGroup from "@theme/components/CheckboxGroup.vue";
 
 const STATUS = {
   NONE: 0,
   GOOD: 1,
-  BAD: 2,
-}
+  BAD: 2
+};
 export default {
   components: {
     IconFont,
-    CheckboxGroup,
+    CheckboxGroup
   },
   data() {
     return {
       status: STATUS.NONE,
       badReasons: [],
-      customReason: '',
-      submited: false,
-    }
+      customReason: "",
+      submited: false
+    };
   },
   computed: {
     STATUS() {
-      return STATUS
+      return STATUS;
     },
     feedbackConfig() {
-      return this.$themeLocaleConfig.feedback
-    },
+      return this.$themeLocaleConfig.feedback;
+    }
   },
   methods: {
     submitFeedback(params) {
-      feishuFeedback(params).then(() => {})
-      this.submited = true
+      feishuFeedback(params).then(() => {});
+      this.submited = true;
     },
     handleFeedback(status) {
       if (status === this.status) {
-        return
+        return;
       }
-      this.submited = false
-      this.status = status
+      this.submited = false;
+      this.status = status;
 
       if (this.status === STATUS.GOOD) {
         this.submitFeedback({
           helpful: status === STATUS.GOOD,
           docTitle: this.$page.title,
           docUrl: window.location.href,
-          customReason: '',
-        })
+          customReason: ""
+        });
       }
     },
     submitFeedbackWithReason() {
@@ -113,11 +126,11 @@ export default {
         docTitle: this.$page.title,
         docUrl: window.location.href,
         customReason: this.customReason,
-        reasonList: this.badReasons,
-      })
-    },
-  },
-}
+        reasonList: this.badReasons
+      });
+    }
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -127,19 +140,24 @@ export default {
   border 1px solid #EEEEEE
   padding 30px 24px
   margin-top 34px
+  .github-edit
+    font-size 14px
+    flex 1
+    text-align right
   .feedback-action-container
     display flex
     align-items center
     margin-bottom 18px
     .feedback-btn
-      width 52px
+      width 88px
       height 34px
       background #FFFFFF
       border-radius 0px 4px 4px 0px
       border 1px solid #EEEEEE
       cursor pointer
-      font-size 16px
+      font-size 14px
       color #6D7278
+      margin-right: 17px;
       &.active
         color $accentColor
       &.bad

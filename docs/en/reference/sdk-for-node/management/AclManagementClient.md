@@ -9,13 +9,13 @@
 Please follow the instructions below to use this client. Do not initialize this client directly.
 
 ```javascript
-import { ManagementClient } from 'approw-js-sdk'
+import { ManagementClient } from "authing-js-sdk";
 const managementClient = new ManagementClient({
-  userPoolId: 'YOUR_USERPOOL_ID',
-  secret: 'YOUR_USERPOOL_SECRET',
-})
-managementClient.acl.allow // allow a user to perfomr operation on some resource
-managementClient.acl.isAllowed // judge if a user has the privilege to operate on some resource
+  userPoolId: "YOUR_USERPOOL_ID",
+  secret: "YOUR_USERPOOL_SECRET"
+});
+managementClient.acl.allow; // allow a user to perfomr operation on some resource
+managementClient.acl.isAllowed; // judge if a user has the privilege to operate on some resource
 ```
 
 ## Allow a user to perform an operation on a resource
@@ -33,15 +33,15 @@ AclManagementClient().allow(userId, action, resource)
 #### Example
 
 ```javascript
-managementClient.acl.allow('USERID1', 'books:123', 'books:read')
-managementClient.acl.isAllowed('USERID1', 'books:123', 'books:read') // true
-managementClient.acl.isAllowed('USERID1', 'books:123', 'books:edit') // false
+managementClient.acl.allow("USERID1", "books:123", "books:read");
+managementClient.acl.isAllowed("USERID1", "books:123", "books:read"); // true
+managementClient.acl.isAllowed("USERID1", "books:123", "books:edit"); // false
 ```
 
 ```javascript
-managementClient.acl.allow('USERID2', 'books:*', 'books:*')
-managementClient.acl.isAllowed('USERID2', 'books:123', 'books:read') // true
-managementClient.acl.isAllowed('USERID2', 'books:124', 'books:edit') // true
+managementClient.acl.allow("USERID2", "books:*", "books:*");
+managementClient.acl.isAllowed("USERID2", "books:123", "books:read"); // true
+managementClient.acl.isAllowed("USERID2", "books:124", "books:edit"); // true
 ```
 
 #### Return value
@@ -63,7 +63,7 @@ AclManagementClient().isAllowed(userId, action, resource)
 #### Example
 
 ```javascript
-managementClient.acl.isAllowed('USERID', 'books:*', 'books:edit')
+managementClient.acl.isAllowed("USERID", "books:*", "books:edit");
 ```
 
 #### Return value
@@ -84,7 +84,7 @@ UsersManagementClient.listAuthorizedResources(userId, namespace)
 #### Example
 
 ```javascript
-managementClient.users.listAuthorizedResources('USERID', 'code')
+managementClient.users.listAuthorizedResources("USERID", "code");
 ```
 
 #### Sample data

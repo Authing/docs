@@ -1,120 +1,168 @@
 <template>
-	<div class="integration-detail">
-		<section class="integration-detail-banner">
-			<img class="no-zoom" src="~@theme/assets/images/integration/detail-banner.png" />
-			<h1>{{ this.$frontmatter.bannerTitle }}</h1>
-		</section>
+  <div class="integration-detail">
+    <section
+      class="integration-detail-banner"
+      :style="[isInConsole && { marginTop: 24 }]"
+    >
+      <img
+        class="no-zoom"
+        src="~@theme/assets/images/integration/detail-banner.png"
+      />
+      <h1>{{ this.$frontmatter.bannerTitle }}</h1>
+    </section>
 
-		<div class="integration-detail-main-content content-layout-container content-layout-container__without-sidebar">
-			<AuthingSteps @step-click="setStep" :steps="steps" :currentStep="currStep" />
+    <div
+      class="integration-detail-main-content content-layout-container content-layout-container__without-sidebar"
+    >
+      <AuthingSteps
+        @step-click="setStep"
+        :steps="steps"
+        :currentStep="currStep"
+      />
 
-			<Content
-				:style="{
-					minHeight: '500px'
-				}"
-				:pageKey="stepComponentKey"
-			/>
+      <Content
+        :style="{
+          minHeight: '500px'
+        }"
+        :pageKey="stepComponentKey"
+      />
 
-			<div class="integration-detail-footer">
-				<RouterLink :to="backLink">
-					<ArrowRight
-						:style="{
-							transform: 'rotate(180deg)',
-							marginRight: '4px'
-						}"
-					/>
-					回到列表
-				</RouterLink>
-				<div class="integration-detail-btn-container">
-					<AuthingButton :disabled="isFirstStep" @click="handlePrev">上一步</AuthingButton>
-					<AuthingButton
-						@click="handleNext"
-						:style="{
-							marginLeft: '24px'
-						}"
-						type="primary"
-						>{{ isLastStep ? '我知道了，返回列表' : '下一步' }}</AuthingButton
-					>
-				</div>
-			</div>
-		</div>
-	</div>
+      <div class="integration-detail-footer">
+        <RouterLink v-if="!isInConsole" :to="backLink">
+          <ArrowRight
+            :style="{
+              transform: 'rotate(180deg)',
+              marginRight: '4px'
+            }"
+          />
+          <!-- 回到列表 -->
+          {{ $localeConfig.back }}
+        </RouterLink>
+        <div
+          class="integration-detail-btn-container"
+          :style="isInConsole && { justifyContent: 'flex-start' }"
+        >
+          <AuthingButton :disabled="isFirstStep" @click="handlePrev">
+            <!-- 上一步 -->
+            {{ $localeConfig.previous }}
+          </AuthingButton
+          >
+          <AuthingButton
+            @click="handleNext"
+            :style="[{ marginLeft: '24px' }]"
+            type="primary"
+            >{{ isLastStep ? $localeConfig.lastStep : $localeConfig.next }}</AuthingButton
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import AuthingSteps from '@theme/components/AuthingSteps/index.vue';
-import AuthingButton from '@theme/components/AuthingButton/index.vue';
-import ArrowRight from '@theme/components/Icons/ArrowRight.vue';
+import AuthingSteps from "@theme/components/AuthingSteps/index.vue";
+import AuthingButton from "@theme/components/AuthingButton/index.vue";
+import ArrowRight from "@theme/components/Icons/ArrowRight.vue";
 
 export default {
-	name: 'IntegrationDetail',
-	props: {
-		backLink: {
-			type: String,
-			default: '/integration/'
-		}
-	},
-	components: {
-		ArrowRight,
-		AuthingSteps,
-		AuthingButton
-	},
-	data() {
-		return {
-			currStep: 0
-		};
-	},
-	computed: {
-		steps() {
-			return this.$frontmatter.steps;
-		},
-		isFirstStep() {
-			return this.currStep === 0;
-		},
-		isLastStep() {
-			return this.currStep === this.steps.length - 1;
-		},
-		stepComponentKey() {
-			return this.$site.pages.find(item => {
-				return item.regularPath === `${this.$page.regularPath}${this.currStep}.html`;
-			}).key;
-		}
-	},
-	watch: {
-		$route: {
-			immediate: true,
-			handler() {
-				const queryStep = Number(this.$route.query.step) || 0;
+  name: "IntegrationDetail",
+  props: {
+    backLink: {
+      type: String,
+      default: "/integration/"
+    }
+  },
+  components: {
+    ArrowRight,
+    AuthingSteps,
+    AuthingButton
+  },
+  data() {
+    return {
+      currStep: 0,
+      isInConsole: ""
+    };
+  },
+  computed: {
+    steps() {
+      return this.$frontmatter.steps;
+    },
+    isFirstStep() {
+      return this.currStep === 0;
+    },
+    isLastStep() {
+      return this.currStep === this.steps.length - 1;
+    },
+    stepComponentKey() {
+      return this.$site.pages.find(item => {
+        return (
+          item.regularPath === `${this.$page.regularPath}${this.currStep}.html`
+        );
+      }).key;
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        const queryStep = Number(this.$route.query.step) || 0;
 
-				this.currStep = Math.min(queryStep, this.steps.length - 1);
-			}
-		}
-	},
-	methods: {
-		handlePrev() {
-			if (this.isFirstStep) {
-				return;
-			}
+        this.currStep = Math.min(queryStep, this.steps.length - 1);
+      }
+    }
+  },
+  mounted() {
+    this.registerMessage();
+  },
+  methods: {
+    // 注册消息事件来自 fe console
+    registerMessage() {
+      if (window) {
+        let _this = this;
+        window.addEventListener("message", evt => {
+          try {
+            const { event } = JSON.parse(evt.data);
+            if (event.source === "authing-fe-console") {
+              _this.isInConsole = event.eventType;
+            }
+          } catch (e) {}
+        });
+      }
+    },
+    handlePrev() {
+      if (this.isFirstStep) {
+        return;
+      }
 
-			this.setStep(this.currStep - 1);
-		},
-		handleNext() {
-			if (this.isLastStep) {
-				this.$router.push(this.backLink);
-				return;
-			}
+      this.setStep(this.currStep - 1);
+    },
+    handleNext() {
+      if (this.isLastStep) {
+        // 如果是控制台注入，不允许返回列表，直接打开文档
+        if (this.isInConsole) {
+          window.open(
+            window.location.protocol +
+              "//" +
+              window.location.host +
+              "/v2/integration/"
+          );
+          return;
+        }
+        this.$router.push(this.backLink);
+        return;
+      }
 
-			this.setStep(this.currStep + 1);
-		},
+      this.setStep(this.currStep + 1);
+    },
 
-		setStep(step) {
-			this.$router.replace({
-				query: {
-					step
-				}
-			});
-		}
-	}
+    setStep(step) {
+      this.$router.replace({
+        query: {
+          step
+        }
+      });
+    }
+  }
 };
 </script>
 

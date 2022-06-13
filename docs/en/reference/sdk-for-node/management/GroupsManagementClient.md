@@ -1,28 +1,21 @@
-
 # GroupsManagementClient
 
 <LastUpdated/>
 
-
-
-> This client is used to manage Approw groups. It can create/query/update/delete groups, add/delete users to/from groups, add/delete group's policy and perform other operations.
-
-
+> This client is used to manage Authing groups. It can create/query/update/delete groups, add/delete users to/from groups, add/delete group's policy and perform other operations.
 
 Please follow the instructions below to use this client. Do not initialize directly:
+
 ```javascript
-import { ManagementClient } from "approw-js-sdk"
+import { ManagementClient } from "authing-js-sdk";
 const managementClient = new ManagementClient({
-   userPoolId: "YOUR_USERPOOL_ID",
-   secret: "YOUR_USERPOOL_SECRET",
-})
-managementClient.groups.list // get group list
-managementClient.groups.create // create a group
-managementClient.groups.listUsers // get group user list
+  userPoolId: "YOUR_USERPOOL_ID",
+  secret: "YOUR_USERPOOL_SECRET"
+});
+managementClient.groups.list; // get group list
+managementClient.groups.create; // create a group
+managementClient.groups.listUsers; // get group user list
 ```
-
-
-
 
 ## Create a group
 
@@ -30,25 +23,21 @@ GroupsManagementClient().create(code, name, description)
 
 > Create a group.
 
-
 #### Parameter
 
 - `code` \<string\> Group unique id
-- `name` \<string\> Group name 
-- `description` \<string\> Description 
+- `name` \<string\> Group name
+- `description` \<string\> Description
 
 #### Example
 
 ```javascript
-managementClient.groups.create('group', 'Group xxx')
+managementClient.groups.create("group", "Group xxx");
 ```
 
 #### Return value
 
--  `Promise<DeepPartial<Group>>` 
-
-
-      
+- `Promise<DeepPartial<Group>>`
 
 ## Delete a group
 
@@ -56,7 +45,6 @@ GroupsManagementClient().delete(code)
 
 > Delete a group
 
-
 #### Parameter
 
 - `code` \<string\> Group unique id
@@ -64,15 +52,12 @@ GroupsManagementClient().delete(code)
 #### Example
 
 ```javascript
-managementClient.groups.delete('rolea')
+managementClient.groups.delete("rolea");
 ```
 
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
-      
+- `Promise<CommonMessage>`
 
 ## Update a group
 
@@ -80,11 +65,10 @@ GroupsManagementClient().update(code, input)
 
 > Update a group
 
-
 #### Parameter
 
 - `code` \<string\> Group unique id
-- `input` \<Object\>  
+- `input` \<Object\>
 - `input.name` \<string\> New group name
 - `input.description` \<string\> New description
 - `input.newCode` \<string\> New unique id
@@ -92,22 +76,18 @@ GroupsManagementClient().update(code, input)
 #### Example
 
 ```javascript
-managementClient.groups.update('group', {newCode: 'newcode'})
+managementClient.groups.update("group", { newCode: "newcode" });
 ```
 
 #### Return value
 
--  `Promise<DeepPartial<Group>>` 
-
-
-      
+- `Promise<DeepPartial<Group>>`
 
 ## Get group details
 
 GroupsManagementClient().detail(code)
 
 > Get group details
-
 
 #### Parameter
 
@@ -116,22 +96,18 @@ GroupsManagementClient().detail(code)
 #### Example
 
 ```javascript
-managementClient.groups.detail('manager')
+managementClient.groups.detail("manager");
 ```
 
 #### Return value
 
--  `Promise<DeepPartial<Group>>` Detailed information of the group
-
-
-      
+- `Promise<DeepPartial<Group>>` Detailed information of the group
 
 ## Get group list
 
 GroupsManagementClient().list(page, limit)
 
 > Get group list
-
 
 #### Parameter
 
@@ -141,22 +117,18 @@ GroupsManagementClient().list(page, limit)
 #### Example
 
 ```javascript
-managementClient.groups.list(1, 10)
+managementClient.groups.list(1, 10);
 ```
 
 #### Return value
 
--  `Promise<DeepPartial<PaginatedGroups>>` 
-
-
-      
+- `Promise<DeepPartial<PaginatedGroups>>`
 
 ## Bulk delete groups
 
 GroupsManagementClient().deleteMany(codeList)
 
 > Bulk delete groups
-
 
 #### Parameter
 
@@ -165,22 +137,18 @@ GroupsManagementClient().deleteMany(codeList)
 #### Example
 
 ```javascript
-managementClient.groups.deleteMany(['groupa', 'groupb'])
+managementClient.groups.deleteMany(["groupa", "groupb"]);
 ```
 
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
-      
+- `Promise<CommonMessage>`
 
 ## Get users list of the group
 
 GroupsManagementClient().listUsers(code, page, limit)
 
 > Get users list of the group
-
 
 #### Parameter
 
@@ -191,15 +159,12 @@ GroupsManagementClient().listUsers(code, page, limit)
 #### Example
 
 ```javascript
-managementClient.groups.listUsers(code)
+managementClient.groups.listUsers(code);
 ```
 
 #### Return value
 
--  `Promise<DeepPartial<PaginatedUsers>>` 
-
-
-      
+- `Promise<DeepPartial<PaginatedUsers>>`
 
 ## Add users to a group
 
@@ -207,7 +172,6 @@ GroupsManagementClient().addUsers(code, userIds)
 
 > Add users to a group.
 
-
 #### Parameter
 
 - `code` \<string\> Group unique id
@@ -216,15 +180,12 @@ GroupsManagementClient().addUsers(code, userIds)
 #### Example
 
 ```javascript
-managementClient.groups.addUsers(code, ['USERID1', 'USERID2'])
+managementClient.groups.addUsers(code, ["USERID1", "USERID2"]);
 ```
 
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
-      
+- `Promise<CommonMessage>`
 
 ## Remove users from a group
 
@@ -232,7 +193,6 @@ GroupsManagementClient().removeUsers(code, userIds)
 
 > Remove users from a group
 
-
 #### Parameter
 
 - `code` \<string\> Group unique id
@@ -241,11 +201,9 @@ GroupsManagementClient().removeUsers(code, userIds)
 #### Example
 
 ```javascript
-managementClient.groups.removeUsers(code, ['USERID1', 'USERID2'])
+managementClient.groups.removeUsers(code, ["USERID1", "USERID2"]);
 ```
 
 #### Return value
 
--  `Promise<CommonMessage>` 
-
-
+- `Promise<CommonMessage>`

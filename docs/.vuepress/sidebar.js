@@ -835,35 +835,31 @@ const zhCnNavBar = {
   "/reference/": [
     {
       title: "登录组件 (Guard)",
-      path: "/reference/guard/",
+      path: "/reference/guard/v2/",
       children: [
         {
           title: "React",
-          path: "/reference/guard/react"
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/vue"
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/angular"
+          path: "/reference/guard/v2/react.md"
         },
         {
           title: "原生 JavaScript",
-          path: "/reference/guard/native-javascript"
+          path: "/reference/guard/v2/native-javascript.md"
         },
         {
-          title: "完整参数列表",
-          path: "/reference/guard/parameters"
+          title: "Vue",
+          path: "/reference/guard/v2/vue.md"
+        },
+        {
+          title: "Angular",
+          path: "/reference/guard/v2/angular.md"
         },
         {
           title: "迁移指南",
-          path: "/reference/guard/migration"
+          path: "/reference/guard/v2/migration"
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog"
+          path: "/reference/guard/v2/guard-changelog"
         }
       ]
     },
@@ -1109,6 +1105,10 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-ruby"
     },
     {
+      title: "Delphi",
+      path: "/reference/sdk-for-delphi"
+    },
+    {
       title: "Android",
       path: "/reference/sdk-for-android/",
       children: [
@@ -1121,16 +1121,159 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/quick"
         },
         {
-          title: "APIs",
+          title: "超组件",
+          path: "/reference/sdk-for-android/component/",
           children: [
-            "/reference/sdk-for-android/authentication/",
-            "/reference/sdk-for-android/protocol/",
-            "/reference/sdk-for-android/mfa/",
-            "/reference/sdk-for-android/scan/"
+            {
+              title: "教程",
+              children: [
+                "/reference/sdk-for-android/component/tutorial/example",
+                "/reference/sdk-for-android/component/tutorial/basic-login",
+                "/reference/sdk-for-android/component/tutorial/advanced-login",
+                "/reference/sdk-for-android/component/tutorial/refine-login",
+                "/reference/sdk-for-android/component/tutorial/basic-register",
+                "/reference/sdk-for-android/component/tutorial/advanced-register",
+                "/reference/sdk-for-android/component/tutorial/login-to-register",
+                "/reference/sdk-for-android/component/tutorial/reset-password-by-phone",
+                "/reference/sdk-for-android/component/tutorial/reset-password-by-email",
+                "/reference/sdk-for-android/component/tutorial/reset-password-all"
+              ]
+            },
+            {
+              title: "基础组件",
+              children: [
+                {
+                  title: "应用图标",
+                  path: "/reference/sdk-for-android/component/basic/app-logo"
+                },
+                {
+                  title: "应用名称",
+                  path: "/reference/sdk-for-android/component/basic/app-name"
+                },
+                {
+                  title: "帐号输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/account-edit-text"
+                },
+                {
+                  title: "密码输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-edit-text"
+                },
+                {
+                  title: "密码确认输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/password-confirm-edit-text"
+                },
+                {
+                  title: "电话号码输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/phonenumber-edit-text"
+                },
+                {
+                  title: "验证码输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/verifycode-edit-text"
+                },
+                {
+                  title: "获取短信验证码按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-verifycode-button"
+                },
+                {
+                  title: "邮箱输入框",
+                  path:
+                    "/reference/sdk-for-android/component/basic/email-edit-text"
+                },
+                {
+                  title: "获取邮箱验证码按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/get-emailcode-button"
+                },
+                {
+                  title: "登录按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-button"
+                },
+                {
+                  title: "错误文本",
+                  path: "/reference/sdk-for-android/component/basic/error-text"
+                },
+                {
+                  title: "登录方式切换栏",
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-method-tab"
+                },
+                {
+                  title: "登录容器",
+                  path:
+                    "/reference/sdk-for-android/component/basic/login-container"
+                },
+                {
+                  title: "隐私协议",
+                  path:
+                    "/reference/sdk-for-android/component/basic/privacy-confirm-box"
+                },
+                {
+                  title: "注册按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-button"
+                },
+                {
+                  title: "注册方式切换栏",
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-method-tab"
+                },
+                {
+                  title: "注册容器",
+                  path:
+                    "/reference/sdk-for-android/component/basic/register-container"
+                },
+                {
+                  title: "跳转注册按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-register-button"
+                },
+                {
+                  title: "跳转登录按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-login-button"
+                },
+                {
+                  title: "跳转忘记密码按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-forgot-password-button"
+                },
+                {
+                  title: "跳转问题反馈按钮",
+                  path:
+                    "/reference/sdk-for-android/component/basic/go-feedback-button"
+                }
+              ]
+            },
+            {
+              title: "社会化组件",
+              children: [
+                {
+                  title: "社会化登录列表",
+                  path:
+                    "/reference/sdk-for-android/component/social/social-login-listview"
+                }
+              ]
+            }
           ]
         },
         {
-          title: "社会化登录模块",
+          title: "APIs",
+          children: [
+            "/reference/sdk-for-android/apis/authentication/",
+            "/reference/sdk-for-android/apis/protocol/",
+            "/reference/sdk-for-android/apis/mfa/",
+            "/reference/sdk-for-android/apis/scan/"
+          ]
+        },
+        {
+          title: "社会化登录",
           path: "/reference/sdk-for-android/social/",
           children: [
             "/reference/sdk-for-android/social/wechat",
@@ -1140,8 +1283,21 @@ const zhCnNavBar = {
           ]
         },
         {
+          title: "典型场景",
+          children: [
+            "/reference/sdk-for-android/scenario/splash",
+            "/reference/sdk-for-android/scenario/tokens",
+            "/reference/sdk-for-android/scenario/user-profile",
+            "/reference/sdk-for-android/scenario/webview"
+          ]
+        },
+        {
           title: "私有化部署",
           path: "/reference/sdk-for-android/onpremise"
+        },
+        {
+          title: "版本历史",
+          path: "/reference/sdk-for-android/version"
         }
       ]
     },
@@ -1196,6 +1352,10 @@ const zhCnNavBar = {
                   title: "密码输入框",
                   path:
                     "/reference/sdk-for-ios/component/basic/password-textfield"
+                },
+                {
+                  title: "邮箱输入框",
+                  path: "/reference/sdk-for-ios/component/basic/email-textfield"
                 },
                 {
                   title: "电话号码输入框",
@@ -1296,7 +1456,27 @@ const zhCnNavBar = {
     },
     {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "开始开发",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          children: [
+            "/reference/sdk-for-flutter/authentication/",
+            "/reference/sdk-for-flutter/protocol/",
+            "/reference/sdk-for-flutter/mfa/",
+            "/reference/sdk-for-flutter/scan/",
+            "/reference/sdk-for-flutter/social/"
+          ]
+        },
+        {
+          title: "私有化部署",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",
@@ -1313,6 +1493,10 @@ const zhCnNavBar = {
     {
       title: "框架集成",
       path: "/reference/frameworks"
+    },
+    {
+      title: "Radius",
+      path: "/reference/radius/"
     },
     {
       title: "错误代码",
@@ -1585,35 +1769,200 @@ const zhCnNavBar = {
   "/guard/": [
     {
       title: "概览",
-      path: "/guard/"
+      path: "/guard/v2/"
     },
     {
       title: "React",
-      path: "/guard/react"
+      path: "/guard/v2/react"
     },
     {
       title: "Vue",
-      path: "/guard/vue"
+      path: "/guard/v2/vue"
     },
     {
       title: "Angular",
-      path: "/guard/angular"
+      path: "/guard/v2/angular"
     },
     {
       title: "原生 JavaScript",
-      path: "/guard/native-javascript"
-    },
-    {
-      title: "完整参数列表",
-      path: "/guard/parameters"
+      path: "/guard/v2/native-javascript"
     },
     {
       title: "迁移指南",
-      path: "/guard/migration"
+      path: "/guard/v2/migration"
     },
     {
       title: "Guard Changelog",
-      path: "/guard/guard-changelog"
+      path: "/guard/v2/guard-changelog"
+    }
+  ],
+  "/android/": [
+    {
+      title: "开始开发",
+      path: "/android/develop"
+    },
+    {
+      title: "快速接入",
+      path: "/android/quick"
+    },
+    {
+      title: "超组件",
+      path: "/android/component/",
+      children: [
+        {
+          title: "教程",
+          children: [
+            "/android/component/tutorial/example",
+            "/android/component/tutorial/basic-login",
+            "/android/component/tutorial/advanced-login",
+            "/android/component/tutorial/refine-login",
+            "/android/component/tutorial/basic-register",
+            "/android/component/tutorial/advanced-register",
+            "/android/component/tutorial/login-to-register",
+            "/android/component/tutorial/reset-password-by-phone",
+            "/android/component/tutorial/reset-password-by-email",
+            "/android/component/tutorial/reset-password-all"
+          ]
+        },
+        {
+          title: "基础组件",
+          children: [
+            {
+              title: "应用图标",
+              path: "/android/component/basic/app-logo"
+            },
+            {
+              title: "应用名称",
+              path: "/android/component/basic/app-name"
+            },
+            {
+              title: "帐号输入框",
+              path: "/android/component/basic/account-edit-text"
+            },
+            {
+              title: "密码输入框",
+              path: "/android/component/basic/password-edit-text"
+            },
+            {
+              title: "密码确认输入框",
+              path: "/android/component/basic/password-confirm-edit-text"
+            },
+            {
+              title: "电话号码输入框",
+              path: "/android/component/basic/phonenumber-edit-text"
+            },
+            {
+              title: "验证码输入框",
+              path: "/android/component/basic/verifycode-edit-text"
+            },
+            {
+              title: "获取短信验证码按钮",
+              path: "/android/component/basic/get-verifycode-button"
+            },
+            {
+              title: "邮箱输入框",
+              path: "/android/component/basic/email-edit-text"
+            },
+            {
+              title: "获取邮箱验证码按钮",
+              path: "/android/component/basic/get-emailcode-button"
+            },
+            {
+              title: "登录按钮",
+              path: "/android/component/basic/login-button"
+            },
+            {
+              title: "错误文本",
+              path: "/android/component/basic/error-text"
+            },
+            {
+              title: "登录方式切换栏",
+              path: "/android/component/basic/login-method-tab"
+            },
+            {
+              title: "登录容器",
+              path: "/android/component/basic/login-container"
+            },
+            {
+              title: "隐私协议",
+              path: "/android/component/basic/privacy-confirm-box"
+            },
+            {
+              title: "注册按钮",
+              path: "/android/component/basic/register-button"
+            },
+            {
+              title: "注册方式切换栏",
+              path: "/android/component/basic/register-method-tab"
+            },
+            {
+              title: "注册容器",
+              path: "/android/component/basic/register-container"
+            },
+            {
+              title: "跳转注册按钮",
+              path: "/android/component/basic/go-register-button"
+            },
+            {
+              title: "跳转登录按钮",
+              path: "/android/component/basic/go-login-button"
+            },
+            {
+              title: "跳转忘记密码按钮",
+              path: "/android/component/basic/go-forgot-password-button"
+            },
+            {
+              title: "跳转问题反馈按钮",
+              path: "/android/component/basic/go-feedback-button"
+            }
+          ]
+        },
+        {
+          title: "社会化组件",
+          children: [
+            {
+              title: "社会化登录列表",
+              path: "/android/component/social/social-login-listview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "APIs",
+      children: [
+        "/android/apis/authentication/",
+        "/android/apis/protocol/",
+        "/android/apis/mfa/",
+        "/android/apis/scan/"
+      ]
+    },
+    {
+      title: "社会化登录",
+      path: "/android/social/",
+      children: [
+        "/android/social/wechat",
+        "/android/social/wecom",
+        "/android/social/alipay",
+        "/android/social/lark"
+      ]
+    },
+    {
+      title: "典型场景",
+      children: [
+        "/android/scenario/splash",
+        "/android/scenario/tokens",
+        "/android/scenario/user-profile",
+        "/android/scenario/webview"
+      ]
+    },
+    {
+      title: "私有化部署",
+      path: "/android/onpremise"
+    },
+    {
+      title: "版本历史",
+      path: "/android/version"
     }
   ]
 };
@@ -1679,7 +2028,7 @@ const translatedZhCnNavBar = {
               path: "/guides/basics/platform-guide/integrate-with-spa"
             },
             {
-              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_ZH_CN}`,
+              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_EN_US}`,
               path: "/guides/basics/platform-guide/integrate-with-mobile-app"
             }
             // {
@@ -2049,7 +2398,7 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: `Migrate users to ${BRAND_NAME_ZH_CN}`,
+      title: `Migrate users to ${BRAND_NAME_EN_US}`,
       path: "/guides/migrations/",
       children: [
         {
@@ -2705,13 +3054,161 @@ const translatedZhCnNavBar = {
       title: "Ruby",
       path: "/reference/sdk-for-ruby"
     },
+    // {
+    //   title: "Delphi",
+    //   path: "/reference/sdk-for-delphi"
+    // },
     {
       title: "Android",
-      path: "/reference/sdk-for-android"
+      path: "/reference/sdk-for-android/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-android/develop"
+        },
+        {
+          title: "Quick start",
+          path: "/reference/sdk-for-android/quick"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-android/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-android/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-android/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-android/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-android/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-android/social/",
+          children: [
+            {
+              title: "Wechat",
+              path: "/reference/sdk-for-android/social/wechat"
+            },
+            {
+              title: "Alipay",
+              path: "/reference/sdk-for-android/social/alipay"
+            }
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-android/onpremise"
+        }
+      ]
+    },
+    {
+      title: "iOS",
+      path: "/reference/sdk-for-ios/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-ios/develop"
+        },
+        {
+          title: "Quick start",
+          path: "/reference/sdk-for-ios/quick"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-ios/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-ios/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-ios/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-ios/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-ios/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-ios/social/",
+          children: [
+            {
+              title: "Wechat",
+              path: "/reference/sdk-for-ios/social/wechat"
+            },
+            {
+              title: "Alipay",
+              path: "/reference/sdk-for-ios/social/alipay"
+            },
+            {
+              title: "Apple",
+              path: "/reference/sdk-for-ios/social/apple"
+            }
+          ]
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-ios/onpremise"
+        }
+      ]
     },
     {
       title: "Flutter",
-      path: "/reference/sdk-for-flutter"
+      path: "/reference/sdk-for-flutter/",
+      children: [
+        {
+          title: "Get started",
+          path: "/reference/sdk-for-flutter/develop"
+        },
+        {
+          title: "APIs",
+          path: "/reference/sdk-for-flutter/apis/",
+          children: [
+            {
+              title: "Authentication",
+              path: "/reference/sdk-for-flutter/apis/authentication/"
+            },
+            {
+              title: "OIDC",
+              path: "/reference/sdk-for-flutter/apis/protocol/"
+            },
+            {
+              title: "MFA",
+              path: "/reference/sdk-for-flutter/apis/mfa/"
+            },
+            {
+              title: "Scan to login",
+              path: "/reference/sdk-for-flutter/apis/scan/"
+            }
+          ]
+        },
+        {
+          title: "Social login",
+          path: "/reference/sdk-for-flutter/social/"
+        },
+        {
+          title: "On-premise",
+          path: "/reference/sdk-for-flutter/onpremise"
+        }
+      ]
     },
     {
       title: "React Native",
