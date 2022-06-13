@@ -15,7 +15,7 @@ export default {
   ) {
     // use custom active class matching logic
     // due to edge case of paths ending with / + hash
-    const selfActive = isActive($route, item.path);
+    const selfActive = isActive($route, item.path || "");
     // for sidebar: auto pages, a hash link should be active if one of its child
     // matches
     const active =
@@ -69,7 +69,7 @@ function renderLink(h, to, text, active, level) {
     class: {
       active,
       "sidebar-link": true
-    },
+    }
     // directives: [
     //   {
     //     name: 'tooltip',
@@ -113,7 +113,7 @@ function renderExternal(h, to, text) {
       },
       class: {
         "sidebar-link": true
-      },
+      }
       // directives: [
       //   {
       //     name: 'tooltip',

@@ -1515,7 +1515,8 @@ const zhCnNavBar = {
       collapsable: false,
       children: [
         {
-          title: "CSHARP",
+          title: "C#",
+          path: "/reference-new/sdk/v5/csharp/",
           children: [
             {
               title: "安装使用",
@@ -1523,7 +1524,7 @@ const zhCnNavBar = {
             },
             {
               title: "用户认证模块",
-              path: "/reference-new/sdk/v5/csharp/authentication/"
+              path: "/reference-new/sdk/v5/csharp/authentication.md"
             },
             {
               title: "管理模块",
@@ -1659,7 +1660,7 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "NODE",
+          title: "Node.js",
           path: "/reference-new/sdk/v5/node/",
           children: [
             {
@@ -1668,7 +1669,7 @@ const zhCnNavBar = {
             },
             {
               title: "用户认证模块",
-              path: "/reference-new/sdk/v5/node/authentication/"
+              path: "/reference-new/sdk/v5/node/authentication.md"
             },
             {
               title: "管理模块",
@@ -1805,6 +1806,7 @@ const zhCnNavBar = {
         },
         {
           title: "PHP",
+          path: "/reference-new/sdk/v5/php/",
           children: [
             {
               title: "安装使用",
@@ -1812,7 +1814,7 @@ const zhCnNavBar = {
             },
             {
               title: "用户认证模块",
-              path: "/reference-new/sdk/v5/php/authentication/"
+              path: "/reference-new/sdk/v5/php/authentication.md"
             },
             {
               title: "管理模块",
@@ -1948,7 +1950,8 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "PYTHON",
+          title: "Python",
+          path: "/reference-new/sdk/v5/python/",
           children: [
             {
               title: "安装使用",
@@ -1956,7 +1959,7 @@ const zhCnNavBar = {
             },
             {
               title: "用户认证模块",
-              path: "/reference-new/sdk/v5/python/authentication/"
+              path: "/reference-new/sdk/v5/python/authentication.md"
             },
             {
               title: "管理模块",
