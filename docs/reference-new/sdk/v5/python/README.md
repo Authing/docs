@@ -8,7 +8,7 @@ pip install authing
 
 初始化 `ManagementClient` 需要使用 `accessKeyId` 和 `accessKeySecret` 参数:
 
-```typescript
+```python
 from authing import ManagementClient
 
 management_client = ManagementClient(
@@ -34,17 +34,20 @@ management_client = ManagementClient(
 
 - 获取用户列表
 
-```typescript
-data = management_client.list_users((page = 1), (limit = 10));
+```python
+data = management_client.list_users(
+    page=1,
+    limit=10
+)
 ```
 
 - 创建角色
 
-```typescript
+```python
 data = management_client.create_role(
-  (code = "admin"),
-  (description = "管理员"),
-  (namespace = "default")
+  code='admin',
+  description='管理员',
+  namespace='default'
 );
 ```
 
