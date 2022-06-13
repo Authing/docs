@@ -24,28 +24,27 @@ async function deleteUser(id, context) {
   //    throw new Error("my error message")
 
   const msg =
-    'Please implement the Delete Account script for this database connection';
+    "Please implement the Delete Account script for this database connection";
   throw new Error(msg);
 }
 ```
 
-| Parameter               | Type          | Nullable | Explanation                                                                             |
-| :-------------------- | :-------------- | :------- | :----------------------------------------------------------------------------------- |
-| id                    | string / number | false    | User's ID.                                                                              |
-| context               | object          | true     | Requiring context                                                                   |
-
+| Parameter | Type            | Nullable | Explanation       |
+| :-------- | :-------------- | :------- | :---------------- |
+| id        | string / number | false    | User's ID.        |
+| context   | object          | true     | Requiring context |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                          |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                       |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                   |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
@@ -68,7 +67,7 @@ When the user does not exist, you need to throw an error. You can design differe
 ```javascript
 async function deleteUser(id, updates, context) {
   // Implement your logic here
-  throw new Error('User not exists!');
+  throw new Error("User not exists!");
 }
 ```
 
@@ -81,7 +80,7 @@ async function deleteUser(id, updates, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -90,7 +89,7 @@ async function deleteUser(id, updates, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -120,10 +119,10 @@ Assume we are using `postgres` as our database:
 async function deleteUser(id, context) {
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -137,11 +136,11 @@ async function deleteUser(id, context) {
 
   await client.connect();
 
-  const QUERY = 'DELETE FROM users WHERE id = $1';
+  const QUERY = "DELETE FROM users WHERE id = $1";
   try {
     const result = await client.query(QUERY, [id]);
     if (result.effected === 0) {
-      throw new Error('User not exists!');
+      throw new Error("User not exists!");
     }
     return true;
   } catch (error) {

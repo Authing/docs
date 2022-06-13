@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-当用户点击此组件时，它会根据当前页面的其他 Guard 组件信息来决定发起哪种认证请求。假设当前页面有 AccountEditText 和 PasswordEditText 的组合，该组件就会使用帐号密码进行登录。
+当用户点击此组件时，它会根据当前页面的其他 Guard 组件信息来决定发起哪种认证请求。假设当前页面有 AccountEditText 和 PasswordEditText 的组合，该组件就会 Use 帐号密码进行登录。
 
 ## 示例
 
@@ -10,13 +10,11 @@
 
 发起登录时，此组件会处于禁用状态并自动播放加载动画。
 
-
-
 <img style="margin-top:-20px" src="./../gif/loginbutton.gif" alt="drawing" width="350"/>
 
 ## 创建
 
-放置一个  LoginButton
+放置一个 LoginButton
 
 ```xml
 <cn.authing.guard.LoginButton

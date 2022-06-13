@@ -7,22 +7,22 @@ This module contains authentication of OIDC, OAUTH 2.0, SAML, CAS standard proto
 Instructions:
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'oidc',
-})
-authenticationClient.buildAuthorizeUrl // Texture front end login link
-authenticationClient.getAccessTokenByCode // Code change Token
-authenticationClient.getAccessTokenByClientCredentials // Machine license Access Token
-authenticationClient.getUserInfoByAccessToken // Token change user information
-authenticationClient.getNewAccessTokenByRefreshToken // Refresh Token
-authenticationClient.introspectToken // Test Token legality
-authenticationClient.revokeToken // Withdraw Token
-authenticationClient.validateTicketV1 // Test CAS 1.0 ticket
-authenticationClient.buildLogoutUrl // Texture front end logout link
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "oidc"
+});
+authenticationClient.buildAuthorizeUrl; // Texture front end login link
+authenticationClient.getAccessTokenByCode; // Code change Token
+authenticationClient.getAccessTokenByClientCredentials; // Machine license Access Token
+authenticationClient.getUserInfoByAccessToken; // Token change user information
+authenticationClient.getNewAccessTokenByRefreshToken; // Refresh Token
+authenticationClient.introspectToken; // Test Token legality
+authenticationClient.revokeToken; // Withdraw Token
+authenticationClient.validateTicketV1; // Test CAS 1.0 ticket
+authenticationClient.buildLogoutUrl; // Texture front end logout link
 ```
 
 ## OIDC
@@ -46,11 +46,11 @@ Parameters when initializing AuthenticationClient:
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 ```
 
 ### A user login link to generate an OIDC protocol
@@ -76,25 +76,25 @@ OIDC agreement generated user login link, the user can access the login page Aut
 ```javascript
 // Splicing OIDC authorization link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
-let url = client.buildAuthorizeUrl({ scope: 'openid profile offline_access' })
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
+let url = client.buildAuthorizeUrl({ scope: "openid profile offline_access" });
 
 // PKCE scene using the example
 // Generate a code_verifier
-let codeChallenge = client.generateCodeChallenge()
+let codeChallenge = client.generateCodeChallenge();
 // SHA256 digest calculation of code_verifier
 let codeChallengeDigest = client.getCodeChallengeDigest({
   codeChallenge,
-  method: 'S256',
-})
+  method: "S256"
+});
 // Construction OIDC authorization code + PKCE mode login URL
 let url2 = client.buildAuthorizeUrl({
   codeChallenge: codeChallengeDigest,
-  codeChallengeMethod: 'S256',
-})
+  codeChallengeMethod: "S256"
+});
 ```
 
 #### Sample Data
@@ -119,15 +119,15 @@ Use the authorization code Code to get the user's token information.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
-let res = await authenticationClient.getAccessTokenByCode('授权码 code')
-let res2 = await authenticationClient.getAccessTokenByCode('授权码 code', {
-  codeVerifier: 'code_challenge 原始值',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
+let res = await authenticationClient.getAccessTokenByCode("授权码 code");
+let res2 = await authenticationClient.getAccessTokenByCode("授权码 code", {
+  codeVerifier: "code_challenge 原始值"
+});
 ```
 
 #### Sample Data
@@ -166,12 +166,12 @@ Use Access token to get user information.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
-let res = await authenticationClient.getUserInfoByAccessToken('Access token')
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
+let res = await authenticationClient.getUserInfoByAccessToken("Access token");
 ```
 
 #### Sample data
@@ -251,14 +251,14 @@ Get new Access Token with Refresh Token.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.getNewAccessTokenByRefreshToken(
-  'Access token'
-)
+  "Access token"
+);
 ```
 
 #### Sample data
@@ -288,14 +288,14 @@ Check the status of Access Token or Refresh token.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.introspectToken(
-  'Access token or Refresh token'
-)
+  "Access token or Refresh token"
+);
 ```
 
 #### Sample data
@@ -341,9 +341,9 @@ Online Interface Verify Id token or Access Token via Authing. A network request 
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-})
-let res = await authing.validateToken({ idToken: 'ID Token' })
+  appId: "Application ID"
+});
+let res = await authing.validateToken({ idToken: "ID Token" });
 ```
 
 #### Sample data
@@ -428,14 +428,14 @@ Access token withdrawal or Refresh token. Access token or Refresh token holder m
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.revokeToken(
-  'Access token or Refresh token'
-)
+  "Access token or Refresh token"
+);
 ```
 
 #### Sample data
@@ -464,32 +464,32 @@ Use the front universal logout link Log :
 ```javascript
 // Use the front universal logout link Log :
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let url = authenticationClient.buildLogoutUrl({
-  redirectUri: 'https://authing.cn',
-})
+  redirectUri: "https://authing.cn"
+});
 ```
 
-使用 OIDC 协议标准链接退出登录，需要传入当前用户的 **Id token**，且登出回调地址**必须与控制台配置的一致**：
+Use OIDC 协议标准链接退出登录，需要传入当前用户的 **Id token**，且登出回调地址**必须与控制台配置的一致**：
 Use OIDC protocol standard link Log , need to pass the current user **Id token** ,and logout callback address **must be configured with the same console** :
 
 ```js
 // OIDC stitching line with protocol standards logout link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-  protocol: 'oidc',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address",
+  protocol: "oidc"
+});
 let url = authenticationClient.buildLogoutUrl({
   expert: true,
-  idToken: 'idToken to be quit the user',
-  redirectUri: 'https://authing.cn',
-})
+  idToken: "idToken to be quit the user",
+  redirectUri: "https://authing.cn"
+});
 ```
 
 ### Client Credentials Pattern Get Access Token
@@ -509,17 +509,17 @@ Access token with [program access account](/guides/authorization/m2m-authz.html#
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.getAccessTokenByClientCredentials(
-  'email openid profile phone',
+  "email openid profile phone",
   {
-    accessKey: 'Programming Access Account AK',
-    secretKey: 'Programming Access Account SK',
+    accessKey: "Programming Access Account AK",
+    secretKey: "Programming Access Account SK"
   }
-)
+);
 ```
 
 #### Sample data
@@ -546,7 +546,7 @@ without
 #### Explanation
 
 ```javascript
-let codeChallenge = client.generateCodeChallenge()
+let codeChallenge = client.generateCodeChallenge();
 ```
 
 #### Sample data
@@ -571,12 +571,12 @@ Generate a PKCE check code.
 
 ```javascript
 // Generate a code_verifier
-let codeChallenge = client.generateCodeChallenge()
+let codeChallenge = client.generateCodeChallenge();
 // SHA256 digest calculation of code_verifier
 let codeChallengeDigest = client.getCodeChallengeDigest({
   codeChallenge,
-  method: 'S256',
-})
+  method: "S256"
+});
 ```
 
 #### Sample data
@@ -606,12 +606,12 @@ Parameters when initializing AuthenticationClient:
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-  protocol: 'oauth',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address",
+  protocol: "oauth"
+});
 ```
 
 ### User login link to generate OAuth 2.0 protocol
@@ -633,13 +633,13 @@ A user login link to the OAuth 2.0 protocol, the user can access the an Authing 
 ```javascript
 // Splicing OAUTH 2.0 Authorization Link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Applicaiton ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-  protocol: 'oauth',
-})
-let url = authenticationClient.buildAuthorizeUrl({ scope: 'user' })
+  appId: "Applicaiton ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address",
+  protocol: "oauth"
+});
+let url = authenticationClient.buildAuthorizeUrl({ scope: "user" });
 ```
 
 #### Sample data
@@ -662,12 +662,12 @@ Use the authorization code Code to get the user's Token information.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
-let res = await authenticationClient.getAccessTokenByCode('授权码 code')
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
+let res = await authenticationClient.getAccessTokenByCode("授权码 code");
 ```
 
 #### Sample data
@@ -705,12 +705,12 @@ Use Access token to get user information.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Applicaiton ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
-let res = await authenticationClient.getUserInfoByAccessToken('Access token')
+  appId: "Applicaiton ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
+let res = await authenticationClient.getUserInfoByAccessToken("Access token");
 ```
 
 #### Sample data
@@ -790,14 +790,14 @@ Get new Access Token with Refresh Token.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.getNewAccessTokenByRefreshToken(
-  'Access token'
-)
+  "Access token"
+);
 ```
 
 #### Sample data
@@ -826,14 +826,14 @@ Check the status of Access Token or Refresh token.
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  secret: 'Application key',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-})
+  appId: "Application ID",
+  secret: "Application key",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address"
+});
 let res = await authenticationClient.introspectToken(
-  'Access token or Refresh token'
-)
+  "Access token or Refresh token"
+);
 ```
 
 #### Sample data
@@ -878,14 +878,14 @@ withdraw Access token or Refresh token. Access token or Refresh token holder may
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
-})
+  appId: "应用 ID",
+  secret: "应用密钥",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "业务回调地址"
+});
 let res = await authenticationClient.revokeToken(
-  'Access token 或 Refresh token'
-)
+  "Access token 或 Refresh token"
+);
 ```
 
 #### Sample data
@@ -910,14 +910,14 @@ Stitching up URL.
 ```javascript
 // Splicing out the front universal link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-  protocol: 'oauth',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address",
+  protocol: "oauth"
+});
 let url = authenticationClient.buildLogoutUrl({
-  redirectUri: 'https://authing.cn',
-})
+  redirectUri: "https://authing.cn"
+});
 ```
 
 ## SAML2
@@ -936,10 +936,10 @@ Parameters when initializing AuthenticationClient:
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'saml',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "saml"
+});
 ```
 
 ### SAML2 generated user login link protocol
@@ -957,11 +957,11 @@ without
 ```javascript
 // Splicing SAML2 login link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'saml',
-})
-let url = authenticationClient.buildAuthorizeUrl()
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "saml"
+});
+let url = authenticationClient.buildAuthorizeUrl();
 ```
 
 #### Sample data
@@ -986,14 +986,14 @@ Stitching up URL.
 ```javascript
 // Splicing front end universal logout link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: 'Business callback address',
-  protocol: 'saml',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  redirectUri: "Business callback address",
+  protocol: "saml"
+});
 let url = authenticationClient.buildLogoutUrl({
-  redirectUri: 'https://authing.cn',
-})
+  redirectUri: "https://authing.cn"
+});
 ```
 
 #### Sample data
@@ -1018,10 +1018,10 @@ Parameters when initializing AuthenticationClient:
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'cas',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "cas"
+});
 ```
 
 ### User login link to generate a CAS protocol
@@ -1040,11 +1040,11 @@ User login link to generate a CAS protocol
 ```js
 // CAS Registry stitching link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'cas',
-})
-let url = authenticationClient.buildAuthorizeUrl({ service: 'service 地址' })
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "cas"
+});
+let url = authenticationClient.buildAuthorizeUrl({ service: "service 地址" });
 ```
 
 #### Sample data
@@ -1068,13 +1068,13 @@ Inspection CAS 1.0 Ticket legitimacy
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn"
+});
 let res = await authenticationClient.validateTicketV1(
-  'ticket 内容',
-  'service 地址'
-)
+  "ticket 内容",
+  "service 地址"
+);
 ```
 
 #### Sample data
@@ -1112,13 +1112,13 @@ Inspection CAS 2.0 Ticket legitimacy , and returns user attributes, data format 
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn"
+});
 let res = await authenticationClient.validateTicketV2(
-  'ticket content',
-  'service address'
-)
+  "ticket content",
+  "service address"
+);
 ```
 
 #### Sample data
@@ -1230,13 +1230,13 @@ Stitching up URL.
 ```javascript
 // Splicing cas logout link
 const authenticationClient = new AuthenticationClient({
-  appId: 'Application ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  protocol: 'cas',
-})
+  appId: "Application ID",
+  appHost: "https://{YOUR_DOMAIN}.authing.cn",
+  protocol: "cas"
+});
 let url = authenticationClient.buildLogoutUrl({
-  redirectUri: 'https://authing.cn',
-})
+  redirectUri: "https://authing.cn"
+});
 ```
 
 #### Sample data

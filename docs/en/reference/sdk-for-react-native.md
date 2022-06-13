@@ -59,13 +59,13 @@ Access Guard is very simple, in the simplest, you only need to specify the callb
 > If you don't know very well about the concept of Authing Userpool, you can read the foundation concept document. The userpool ID can be obtained from the Authing Console.
 
 ```js
-import { Guard } from '@authing/rn'
+import { Guard } from "@authing/rn";
 ```
 
 ```js
-const onLogin = (userInfo) => {
+const onLogin = userInfo => {
   // deal with userInfo
-}
+};
 ```
 
 ```html
@@ -75,19 +75,19 @@ const onLogin = (userInfo) => {
 Here is a simple complete example:
 
 ```js
-import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
-import { Guard } from '@authing/rn'
+import React from "react";
+import { SafeAreaView, StatusBar } from "react-native";
+import { Guard } from "@authing/rn";
 
 const App = () => {
-  const userPoolId = '5dd77e6efa26f000d18101ca'
+  const userPoolId = "5dd77e6efa26f000d18101ca";
   const options = {
-    title: 'Authing Guard SDK',
-    forceLogin: true, // Combine the registration and login, automatically register when the user does not exist
-  }
+    title: "Authing Guard SDK",
+    forceLogin: true // Combine the registration and login, automatically register when the user does not exist
+  };
   const onLogin = (loginMethod, userInfo) => {
-    alert(JSON.stringify(userInfo))
-  }
+    alert(JSON.stringify(userInfo));
+  };
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -95,10 +95,10 @@ const App = () => {
         <Guard userPoolId={userPoolId} options={options} onLogin={onLogin} />
       </SafeAreaView>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```
 
 Run through the following instructions: iOS:
@@ -146,32 +146,32 @@ Set the `Authorization` request head to "Bearer" + token, for example:
 > Notice Bearer and token space between space.
 
 ```js
-Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ'
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ";
 ```
 
 If you are using axios, you can write this:
 
 ```js
-axios.get('https://mywebsite.com/endpoint/', {
+axios.get("https://mywebsite.com/endpoint/", {
   headers: {
-    Authorization: `Bearer ${userInfo.token}`,
-  },
-})
+    Authorization: `Bearer ${userInfo.token}`
+  }
+});
 ```
 
 If you are using fetch, you can write this:
 
 ```js
-fetch('https://mywebsite.com/endpoint/', {
-  method: 'POST',
+fetch("https://mywebsite.com/endpoint/", {
+  method: "POST",
   headers: {
-    Authorization: `Bearer ${userInfo.token}`,
+    Authorization: `Bearer ${userInfo.token}`
   },
   body: JSON.stringify({
-    firstParam: 'yourValue',
-    secondParam: 'yourOtherValue',
-  }),
-})
+    firstParam: "yourValue",
+    secondParam: "yourOtherValue"
+  })
+});
 ```
 
 ### How to check Token in backend
@@ -185,8 +185,8 @@ Developers can package this method into a function, such as check_authing_token_
 ```python
 def check_authing_token_status(token: str) -> bool:
     """
-    :param token: Authing 返回用户信息中携带的 token
-    :return: 布尔值，表示是否处于登录状态
+    :param token: token within the User info
+    :return: isLoggedIn (boolean)
     """
     # Calling the method provided by Authing, the specific implementation method is omitted, please see the document mentioned above.
     pass
@@ -228,14 +228,14 @@ Guard supports highly customized, can be incorporated by options parameters, suc
 <Guard
   userPoolId={userPoolId}
   options={{
-    title: 'Your application name',
-    logo: 'Your application icon',
+    title: "Your application name",
+    logo: "Your application icon",
     // Merge with registration and login, if the user does not exist automatically and log in
     forceLogin: true,
     placeholder: {
       // Customize the placeholder of the username input box
-      username: 'xxxxx',
-    },
+      username: "xxxxx"
+    }
   }}
   onLogin={onLogin}
 />

@@ -4,24 +4,24 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '配置自定义社会化登录',
-  bannerTitle: '配置自定义社会化登录',
+  title: 'Configuring Custom Social Logins',
+  bannerTitle: 'Configuring Custom Social Logins',
   steps:
     [
       {
-        title: '创建自定义社会化登录连接',
+        title: 'Creating a Custom Social Login Connection',
       },
       {
-        title: '在 {{$localeConfig.brandName}} 创建一个应用',
+        title: 'Creating an Application in {{$localeConfig.brandName}}',
       },
       {
-        title: '测试连接'
+        title: 'Test Connection'
       },
       {
-        title: '开始开发接入'
+        title: 'Start development of access'
       },
     ],
 }
 ---
 
-<IntegrationDetail backLink="/guides/connections/social"/>
+<IntegrationDetail backLink="/en/guides/connections/social"/>

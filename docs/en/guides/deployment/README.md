@@ -1,7 +1,7 @@
 # Private Deployment Plan
 
 ::: description
-Approw has been providing many famous companies with authentication and user management solutions, as well as public cloud/private cloud/mixed cloud. Private deployment plan can deploy the platform inside client's intranet server, where all data store are encrypted with individual occupation of cloud resources. It's faster, safer and more stable.
+Authing has been providing many famous companies with authentication and user management solutions, as well as public cloud/private cloud/mixed cloud. Private deployment plan can deploy the platform inside client's intranet server, where all data store are encrypted with individual occupation of cloud resources. It's faster, safer and more stable.
 :::
 
 ### Advantages Of Private Deployment
@@ -14,7 +14,6 @@ Data privatization isolation; disaster recovery backup mechanism; double insuran
 
 Enterprises can fully control themselves, easily realize member management, authentication configuration, and identity source management; user information and key information are stored locally.
 
-
 #### High-availability architecture
 
 Supports high-availability architecture, supports horizontal expansion, and can autonomously scale capacity based on your business scenarios.
@@ -22,6 +21,7 @@ Supports high-availability architecture, supports horizontal expansion, and can 
 #### Modification
 
 You can configure independent second-level domain names, corporate logos, brand colors, etc. for your IDaaS services to demonstrate brand characteristics.
+
 ### Service details
 
 1. Understand the business scenarios of the enterprise and customize exclusive solutions.
@@ -30,7 +30,7 @@ You can configure independent second-level domain names, corporate logos, brand 
 
 ### Supported platform
 
-#### Bare machine or VM 
+#### Bare machine or VM
 
 In simple (non-highly available) scenarios can be deployed in the bare machine or VM.
 
@@ -49,6 +49,7 @@ If your business scenario has a certain scale of 20-2000 people, the IDaaS platf
 <img src="./images/private-deployment-2.png" width="400"/>
 
 #### Kubernetes
+
 If your business scenario carries a relatively high number of users, with ammount of 2,000 or more, you need to consider performance and reliability when deploying privatization. We recommend that you use the Kubernetes cloud native model to operate and maintain your IDaaS platform.
 
 - Required environment: Kubernetes 1.16 and above.
@@ -58,12 +59,12 @@ If your business scenario carries a relatively high number of users, with ammoun
 
 ### Resource planning
 
-| Supported user number         | Scenario             | Server             | DB        | Cache Redis   | Elastic Search             |
-| ---------------- | ---------------- | ------------------ | ------------- | ------------ | ------------------------- |
-| <=20       | Small team and POC     | 4 core 8G memory \* 1  | -             | -            | -                         |
-| 20 - 2000  | SMEs     | 4 core 16G memory \* 1 | 2 co re 8G \* 1  | 1 core 2G \* 1 | 4 core 8G \* 1 + 500G storage  |
-| 2000 -20000  | Large-scale enterprise      | 4 core 16G memory \* 1 | 4 core 16G \* 1 | 1 core 4G \* 1 | 4 core 8G \* 1 + 500G storage  |
-| >20000      | Large company | 4 core 16G memory \* 3 | 8 core 32G \* 1 | 2 core 8G \* 1 | 8 core 16G \* 1 + 500G storage |
+| Supported user number | Scenario               | Server                 | DB              | Cache Redis    | Elastic Search                 |
+| --------------------- | ---------------------- | ---------------------- | --------------- | -------------- | ------------------------------ |
+| <=20                  | Small team and POC     | 4 core 8G memory \* 1  | -               | -              | -                              |
+| 20 - 2000             | SMEs                   | 4 core 16G memory \* 1 | 2 co re 8G \* 1 | 1 core 2G \* 1 | 4 core 8G \* 1 + 500G storage  |
+| 2000 -20000           | Large-scale enterprise | 4 core 16G memory \* 1 | 4 core 16G \* 1 | 1 core 4G \* 1 | 4 core 8G \* 1 + 500G storage  |
+| >20000                | Large company          | 4 core 16G memory \* 3 | 8 core 32G \* 1 | 2 core 8G \* 1 | 8 core 16G \* 1 + 500G storage |
 
 ### Notice
 

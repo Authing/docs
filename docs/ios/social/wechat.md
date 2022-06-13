@@ -45,7 +45,21 @@
 
 ### 初始化 Guard SDK
 
-通过 Swift Package Manager 引入 Guard 依赖并调用初始化函数。[详细步骤](/reference/sdk-for-ios/develop.html)
+通过 Swift Package Manager 引入 Guard 依赖并调用初始化函数。[详细步骤](/ios/develop.html)
+
+<br>
+
+### 初始化 Guard-iOS-Wechat SDK
+
+> Guard-iOS-Wechat 依赖于 Guard 组件（Version 1.1.7 之后）
+
+- 在 swift package 搜索栏输入：https://github.com/Authing/guard-ios-wechat
+
+- 依赖规则选择 Up to Next Major Version 1.0.0
+
+- Add Package 后勾选 Wechat
+
+![](./images/wechat/8.png)
 
 <br>
 
@@ -81,7 +95,9 @@ value: weixin, weixinULAPI
 
 ```swift
 import Guard
-Authing.setupWechat("your_wechat_appid", universalLink: "your_deep_link")
+import Wechat
+Authing.start(<#Authing AppId#>);
+WechatLogin.registerApp(appId: "your_wechat_appid", universalLink: "your_deep_link")
  ```
 
 >第一个参数为微信应用 id；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
@@ -124,6 +140,8 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 ```swift
 WechatLoginButton
 ```
+设置 Module 为 Wechat
+![](./images/wechat/9.png)
 
 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
 
