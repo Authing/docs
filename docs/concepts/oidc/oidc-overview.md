@@ -15,7 +15,7 @@ tags:
 
 目前 Authing 有三种可以选择的认证方式：
 
-- **基本认证**是基于 API 接口，通过发送账密、手机验证码到 Authing 后端的方式直接完成用户认证。提供 MFA、忘记密码等功能。Authing 的 [Guard 组件](/reference/guard)以及 [SDK](/reference/sdk-for-node) 都基于这些 API。
+- **基本认证**是基于 API 接口，通过发送账密、手机验证码到 Authing 后端的方式直接完成用户认证。提供 MFA、忘记密码等功能。Authing 的 [Guard 组件](/reference/guard/v2)以及 [SDK](/reference/sdk-for-node) 都基于这些 API。
 
 - **OAuth 2.0** 协议主要用于资源授权。
 
