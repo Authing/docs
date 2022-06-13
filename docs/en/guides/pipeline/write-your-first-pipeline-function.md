@@ -20,22 +20,22 @@ First, select the Console's**Extention Capabilities** - **Custom Pipeline** page
 
 Select a trigger scene and click the 「+」 button. We have more than 20 templates to choose:
 
-![](~@imagesEnUs/pipeline/pipeline-en-01.png)
+![](../../images/pipeline/pipeline_create_scene_en.png)
 
 Select "Registered Email Suffix White List" in Access Control.
-![](~@imagesEnUs/pipeline/pipeline-en-02.png)
+![](../../images/pipeline/pipeline_create_template_en.png)
 
 ## Create a pipeline function
 
 The domain name whitelist we set here is "example.com", you can also change it to your own.
 
-![](../../images/pipeline/pipeline_create_scene_en.png)
+![](~@imagesEnUs/pipeline/pipeline-en-03.png)
 
 Click the "Save" button in the lower left corner, we will deploy this function to the cloud, it will take some time, please be patient.
 
 Back to the Pipeline function list page, you can see the function we just added.
 
-![](../../images/pipeline/pipeline_create_template_en.png)
+![](~@imagesEnUs/pipeline/pipeline-en-04.png)
 
 ::: hint-success
 If you have multiple Pipeline functions, you can drag to sort them.
