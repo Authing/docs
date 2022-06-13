@@ -57,14 +57,14 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 - [SAML](/concepts/saml/saml-overview.html)
 - [LDAP](/guides/org/ldap-user-directory/)
 
-## [自定义登录框样式](/guides/authentication/branding/#样式配置)
+## [**自定义登录框样式**](/guides/authentication/branding/#样式配置)
 
 - 可视化配置界面
 - 自定义加载图标和背景
 - 登录框内部组件布局
 - 自定义 CSS
 
-## [登录相关的辅助能力](/guides/authentication/branding/#功能配置)
+## [**登录相关的辅助能力**](/guides/authentication/branding/#功能配置)
 
 - 忘记密码时用户可重置密码
 - 登录注册协议
