@@ -118,7 +118,6 @@ export default {
   },
   methods: {
     submitFeedback(params) {
-      console.log('params: ', params)
       feishuFeedback(params).then(() => {
         this.isShowFeedbackSuccessToast = true
 
