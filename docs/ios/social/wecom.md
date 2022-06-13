@@ -94,9 +94,8 @@ import WeCom
 
 Authing.start(<#Authing AppId#>);
 WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>)
-
  ```
-
+ 
 <br>
 
 ### 添加回调
@@ -129,6 +128,9 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 ```swift
 WeComLoginButton
 ```
+设置 Module 为 WeCom
+
+![](./images/wecom/9.png)
 
 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录 API：
 
