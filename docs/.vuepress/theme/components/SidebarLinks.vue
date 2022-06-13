@@ -4,6 +4,9 @@
       v-for="(item, i) in items" :key="i"
       :data-index="item.dataIndex"
       @click.stop="onClickMenu($event, item.dataIndex)"
+      :class="{
+        'menu-check': checkIndex && checkIndex.indexOf(item.dataIndex) === 0
+      }"
     >
       <SidebarGroup
         v-if="item.type === 'group'"
@@ -71,12 +74,17 @@ export default {
     },
 
     onClickMenu(e, dataIndex) {
-      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$eventBus.$emit('onChangeIndex', dataIndex)
+      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a')
+      // && this.$eventBus.$emit('onChangeIndex', dataIndex)
     },
 
     getDataIndex(index, i) {
       return index ? `${index}-${i}` : `${i}`
     },
+
+    routerLink(dataIndex) {
+      this.$eventBus.$emit('onChangeIndex', dataIndex)
+    }
   },
 }
 

@@ -909,7 +909,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "用户认证模块",
-          path: "/reference/sdk-for-node/authentication",
+          path: "/reference/sdk-for-node/authentication/",
           children: [
             "/reference/sdk-for-node/authentication/AuthenticationClient",
             "/reference/sdk-for-node/authentication/StandardProtocol",
@@ -922,7 +922,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-node/management",
+          path: "/reference/sdk-for-node/management/",
           children: [
             "/reference/sdk-for-node/management/UsersManagementClient",
             "/reference/sdk-for-node/management/ApplicationManagementClient",
@@ -957,7 +957,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-java/management",
+          path: "/reference/sdk-for-java/management/",
           children: [
             "/reference/sdk-for-java/management/UsersManagementClient",
             "/reference/sdk-for-java/management/ApplicationManagementClient",
@@ -989,7 +989,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-python/management",
+          path: "/reference/sdk-for-python/management/",
           children: [
             "/reference/sdk-for-python/management/AclManagementClient",
             "/reference/sdk-for-python/management/ApplicationManagementClient",
@@ -1013,7 +1013,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "用户认证模块",
-          path: "/reference/sdk-for-csharp/authentication",
+          path: "/reference/sdk-for-csharp/authentication/",
           children: [
             "/reference/sdk-for-csharp/authentication/AuthenticationClient",
             "/reference/sdk-for-csharp/authentication/StandardProtocol",
@@ -1022,7 +1022,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-csharp/management",
+          path: "/reference/sdk-for-csharp/management/",
           children: [
             "/reference/sdk-for-csharp/management/UsersManagementClient",
             "/reference/sdk-for-csharp/management/ApplicationManagementClient",

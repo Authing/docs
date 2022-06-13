@@ -17,7 +17,7 @@
         active: isActive($route, item.path)
       }"
       :to="item.path"
-      @click.native="$emit('toggle')"
+      @click.native="onRouter"
     >
       <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
       <span class="sidebar-heading__title">{{ item.title }}</span>
@@ -67,6 +67,12 @@ export default {
 
   methods: {
     isActive,
+    onRouter() {
+      this.$emit('toggle')
+      setTimeout(() => {
+        this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+      }, 500);
+    }
   }
 };
 </script>
