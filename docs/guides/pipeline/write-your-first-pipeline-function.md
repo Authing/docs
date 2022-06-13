@@ -21,11 +21,11 @@ Pipeline 函数是 {{$localeConfig.brandName}} 认证流程中执行的自定义
 
 选择某个触发场景：
 
-![](~@imagesZhCn/pipeline/pipeline-zh-01.png)
+![选择某个触发场景](../../images/pipeline/pipeline_create_scene_zh.png)
 
 这里，我们选择访问控制中的 "注册邮箱后缀白名单"。
 
-![](~@imagesZhCn/pipeline/pipeline-zh-01.png)
+![注册邮箱后缀白名单](../../images/pipeline/pipeline_create_template_zh.png)
 
 ## 创建一个 Pipeline 函数
 
