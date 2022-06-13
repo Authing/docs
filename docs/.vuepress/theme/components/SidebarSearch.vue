@@ -15,21 +15,25 @@
       @keyup.down="onDown"
       @blur="focused = false"
     />
-    <ul v-if="showSuggestions" class="suggestions" @mouseleave="unfocus">
-      <li
-        v-for="(s, i) in suggestions"
-        :key="i"
-        class="suggestion"
-        :class="{ focused: i === focusIndex }"
-        @mousedown="go(i)"
-        @mouseenter="focus(i)"
-      >
-        <a :href="s.path" @click.prevent>
-          <span class="page-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
-        </a>
-      </li>
-    </ul>
+    <div
+      v-if="showSuggestions" class="suggestions" @mouseleave="unfocus"
+    >
+      <ul>
+        <li
+          v-for="(s, i) in suggestions"
+          :key="i"
+          class="suggestion"
+          :class="{ focused: i === focusIndex }"
+          @mousedown="go(i)"
+          @mouseenter="focus(i)"
+        >
+          <a :href="s.path" @click.prevent>
+            <span class="page-title">{{ s.title || s.path }}</span>
+            <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -102,7 +106,8 @@ export default {
               keywords: `${item.path
                 .split("/")
                 .pop()
-                .toLowerCase()}${item.title.toLowerCase()}`
+                .toLowerCase()}${item.title.toLowerCase()}`,
+              dataIndex: item.dataIndex
             });
           }
           if (item.children && item.children.length > 0) {
@@ -148,6 +153,7 @@ export default {
       if (!this.showSuggestions) {
         return;
       }
+      // this.$eventBus.$emit('onChangeIndex', this.suggestions[i].dataIndex)
       this.$router.push(this.suggestions[i].path);
       this.query = "";
       this.focusIndex = 0;

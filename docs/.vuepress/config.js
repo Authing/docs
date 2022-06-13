@@ -133,7 +133,7 @@ module.exports = {
         knowMore: "了解更多",
         company: "公司",
         sdkAccess: "SDK 接入",
-        search: "搜索",
+        search: "搜索标题",
         searchInDoc: "在文档中搜索",
         oldVersion: "旧版",
         nav: [

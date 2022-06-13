@@ -2,11 +2,8 @@
   <ul v-if="items.length" class="sidebar-links">
     <li
       v-for="(item, i) in items" :key="i"
-      :data-index="getDataIndex(index, i)"
-      @click.stop="onClickMenu($event, getDataIndex(index, i))"
-      :class="{
-        'menu-check': checkIndex && checkIndex.indexOf(getDataIndex(index, i)) === 0
-      }"
+      :data-index="item.dataIndex"
+      @click.stop="onClickMenu($event, item.dataIndex)"
     >
       <SidebarGroup
         v-if="item.type === 'group'"
@@ -15,8 +12,6 @@
         :collapsable="item.collapsable || item.collapsible"
         :depth="depth"
         @toggle="toggleGroup(i)"
-        :index="getDataIndex(index, i)"
-        @onClickMenu="onEmitIndex"
         :check-index="checkIndex"
       />
       <SidebarLink v-else :sidebar-depth="sidebarDepth" :item="item" />
@@ -39,7 +34,6 @@ export default {
     'depth', // depth of current sidebar links
     'sidebarDepth', // depth of headers to be extracted
     'initialOpenGroupIndex',
-    'index',
     'checkIndex'
   ],
 
@@ -77,16 +71,17 @@ export default {
     },
 
     onClickMenu(e, dataIndex) {
-      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a') && this.$emit('onClickMenu', dataIndex)
-    },
-
-    onEmitIndex(dataIndex) {
-      this.$emit('onClickMenu', dataIndex)
+      (e.target.tagName.toLowerCase() === 'a' || e.target.parentNode.tagName.toLowerCase() === 'a')
+      // && this.$eventBus.$emit('onChangeIndex', dataIndex)
     },
 
     getDataIndex(index, i) {
       return index ? `${index}-${i}` : `${i}`
     },
+
+    routerLink(dataIndex) {
+      // this.$eventBus.$emit('onChangeIndex', dataIndex)
+    }
   },
 }
 

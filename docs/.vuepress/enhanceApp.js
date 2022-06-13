@@ -9,6 +9,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(VTooltip);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
+  Vue.prototype.$eventBus = new Vue()
 
   if (typeof process === "undefined" || process.env.VUE_ENV !== "server") {
     router.onReady(() => {

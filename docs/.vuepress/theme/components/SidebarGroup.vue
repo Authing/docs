@@ -41,8 +41,6 @@
         :sidebar-depth="item.sidebarDepth"
         :initial-open-group-index="item.initialOpenGroupIndex"
         :depth="depth + 1"
-        :index="index"
-        @onClickMenu="onClickMenu"
         :check-index="checkIndex"
       />
     </DropdownTransition>
@@ -69,9 +67,12 @@ export default {
 
   methods: {
     isActive,
-    onClickMenu(dataIndex) {
-      this.$emit('onClickMenu', dataIndex)
-    }
+    // onRouter() {
+    //   this.$emit('toggle')
+    //   setTimeout(() => {
+    //     this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+    //   }, 500);
+    // }
   }
 };
 </script>
