@@ -9,13 +9,13 @@ export default {
   render(
     h,
     {
-      parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig },
-      props: { item, sidebarDepth }
+      parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig, routerLink },
+      props: { item, sidebarDepth },
     }
   ) {
     // use custom active class matching logic
     // due to edge case of paths ending with / + hash
-    const selfActive = isActive($route, item.path || "");
+    const selfActive = isActive($route, item.path);
     // for sidebar: auto pages, a hash link should be active if one of its child
     // matches
     const active =
@@ -28,7 +28,7 @@ export default {
     const link =
       item.type === "external"
         ? renderExternal(h, item.path, item.title || item.path)
-        : renderLink(h, item.path, item.title || item.path, active);
+        : renderLink(h, item.path, item.title || item.path, active, null, item.dataIndex, routerLink);
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
@@ -44,7 +44,7 @@ export default {
     if (item.type === "auto") {
       return [
         link,
-        renderChildren(h, item.children, item.basePath, $route, maxDepth)
+        renderChildren(h, item.children, item.basePath, $route, maxDepth, routerLink)
       ];
     } else if (
       (active || displayAllHeaders) &&
@@ -52,14 +52,17 @@ export default {
       !hashRE.test(item.path)
     ) {
       const children = groupHeaders(item.headers);
-      return [link, renderChildren(h, children, item.path, $route, maxDepth)];
+      return [link, renderChildren(h, children, item.path, $route, maxDepth, routerLink)];
     } else {
       return link;
     }
   }
 };
 
-function renderLink(h, to, text, active, level) {
+function renderLink(h, to, text, active, level, dataIndex, routerLink) {
+  // if (active) {
+  //   routerLink(dataIndex)
+  // }
   const component = {
     props: {
       to,
@@ -87,7 +90,7 @@ function renderLink(h, to, text, active, level) {
   return h("RouterLink", component, text);
 }
 
-function renderChildren(h, children, path, route, maxDepth, depth = 1) {
+function renderChildren(h, children, path, route, maxDepth, routerLink, depth = 1) {
   if (!children || depth > maxDepth) return null;
   return h(
     "ul",
@@ -95,8 +98,8 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
     children.map(c => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
-        renderLink(h, path + "#" + c.slug, c.title, active, c.level - 1),
-        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
+        renderLink(h, path + "#" + c.slug, c.title, active, c.level - 1, c.dataIndex, routerLink),
+        renderChildren(h, c.children, path, route, maxDepth, routerLink, depth + 1)
       ]);
     })
   );

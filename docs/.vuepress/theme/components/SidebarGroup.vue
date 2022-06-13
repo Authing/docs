@@ -67,6 +67,12 @@ export default {
 
   methods: {
     isActive,
+    // onRouter() {
+    //   this.$emit('toggle')
+    //   setTimeout(() => {
+    //     this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+    //   }, 500);
+    // }
   }
 };
 </script>
