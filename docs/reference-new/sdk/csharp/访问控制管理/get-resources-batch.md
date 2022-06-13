@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 | codeList | array  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
 
 ## 示例代码
@@ -54,8 +54,8 @@ namespace Example
         
           ResourceListRespDto  result = await managementClient.GetResourcesBatch
           (             
-                nameSpace: "default", 
-                codeList: "code1,code2"
+                codeList: "code1,code2", 
+                nameSpace: "default"
           );
         }
     }

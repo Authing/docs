@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| targetType | string  | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
 | targetIdentifier | string  | 是 |  | 目标对象唯一标志符。 示例值： `userId1` |
+| targetType | string  | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
 | namespace | string  | 否 |  | 所属权限分组的 code，当 targetType 为角色的时候需要填写，否则可以忽略。。 示例值： `default` |
 
 
@@ -55,8 +55,8 @@ namespace Example
         
           GetCustomDataRespDto  result = await managementClient.GetCustomData
           (             
-                targetType: "USER", 
                 targetIdentifier: "userId1", 
+                targetType: "USER", 
                 nameSpace: "default"
           );
         }

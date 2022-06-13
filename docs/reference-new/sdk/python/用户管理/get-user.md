@@ -13,10 +13,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
+| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 | withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
 | withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
 | withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
-| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
 | phone | string  | 否 |  | 手机号。 示例值： `176xxxx6754` |
 | email | string  | 否 |  | 邮箱。 示例值： `test@example.com` |
 | username | string  | 否 |  | 用户名。 示例值： `bob` |
@@ -35,13 +35,13 @@ management_client = ManagementClient(
 
 data = management_client.get_user(
   
+      user_id: "6229ffaxxxxxxxxcade3e3d9",
+  
       with_custom_data: true,
   
       with_identities: true,
   
       with_department_ids: true,
-  
-      user_id: "6229ffaxxxxxxxxcade3e3d9",
   
       phone: "176xxxx6754",
   

@@ -13,10 +13,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
+| userIds | array  | 是 |  | 用户 ID 数组。 示例值： `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
 | withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
 | withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
 | withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
-| userIds | array  | 是 |  | 用户 ID 数组。 示例值： `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
 
 
 ## 示例代码
@@ -35,13 +35,13 @@ $management = new ManagementClient(
 
 $data = $management->getUserBatch(array(
   
+    "userIds" => "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0",
+
     "withCustomData" => true,
 
     "withIdentities" => true,
 
     "withDepartmentIds" => true,
-
-    "userIds" => "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0",
 
 ));
 ```

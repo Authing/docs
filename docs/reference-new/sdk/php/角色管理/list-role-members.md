@@ -13,12 +13,12 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
+| code | string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
 | withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
 | withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
 | withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
-| code | string  | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
 | namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
 
@@ -38,6 +38,8 @@ $management = new ManagementClient(
 
 $data = $management->listRoleMembers(array(
   
+    "code" => "manager",
+
     "page" => 1,
 
     "limit" => 10,
@@ -47,8 +49,6 @@ $data = $management->listRoleMembers(array(
     "withIdentities" => true,
 
     "withDepartmentIds" => true,
-
-    "code" => "manager",
 
     "namespace" => "default",
 

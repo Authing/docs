@@ -13,9 +13,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 | targetType | string  | 是 |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
 | targetIdentifier | string  | 是 |  | 目标对象唯一标志符。 示例值： `userId1` |
+| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
 | resourceType | string  | 否 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
 | withDenied | boolean  | 否 | false | 是否获取被拒绝的资源。  |
 
@@ -32,11 +32,11 @@ management_client = ManagementClient(
 
 data = management_client.get_authorized_resources(
   
-      namespace: "default",
-  
       target_type: "USER",
   
       target_identifier: "userId1",
+  
+      namespace: "default",
   
       resource_type: "DATA",
   

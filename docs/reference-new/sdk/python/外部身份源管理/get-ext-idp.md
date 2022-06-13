@@ -13,8 +13,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| tenantId | string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 | id | string  | 是 |  | 身份源 id。 示例值： `6268b0e5e4b9a0e8ffa8fd60` |
+| tenantId | string  | 否 |  | 租户 ID。 示例值： `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码
@@ -29,9 +29,9 @@ management_client = ManagementClient(
 
 data = management_client.get_ext_idp(
   
-      tenant_id: "60b49eb83fd80adb96f26e68",
-  
       id: "6268b0e5e4b9a0e8ffa8fd60",
+  
+      tenant_id: "60b49eb83fd80adb96f26e68",
   
 )
 ```
