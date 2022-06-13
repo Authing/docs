@@ -116,17 +116,6 @@ import PageSidebar from "@theme/components/PageSidebar.vue";
 import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
 
-const getLevel = (arr, list) => {
-  if (!arr || !arr.length) return
-  arr.forEach((item, index) => {
-    const levels = list ? `${list}-${index}` : `${index}`
-    item.dataIndex = levels
-    if (item.children && item.children.length) {
-      getLevel(item.children, levels)
-    }
-  })
-}
-
 export default {
   name: "Layout",
   components: {
@@ -181,7 +170,6 @@ export default {
         this.$site,
         this.$localePath
       );
-      getLevel(list, '')
       return list
     },
 
