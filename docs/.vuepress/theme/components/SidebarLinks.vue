@@ -4,9 +4,6 @@
       v-for="(item, i) in items" :key="i"
       :data-index="item.dataIndex"
       @click.stop="onClickMenu($event, item.dataIndex)"
-      :class="{
-        'menu-check': checkIndex && checkIndex.indexOf(item.dataIndex) === 0
-      }"
     >
       <SidebarGroup
         v-if="item.type === 'group'"
