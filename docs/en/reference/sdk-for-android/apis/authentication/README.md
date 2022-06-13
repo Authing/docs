@@ -32,6 +32,36 @@ AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->
 
 <br>
 
+## Use email code registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false. You need to use it first [sendEmail](#send-email) sends a SMS verification code.
+
+```java
+public static void registerByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `code` email verification code
+
+**Example**
+
+```java
+AuthClient.registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
 ## Register using username
 
 Use the username to register, the username is case sensitive and the only user pool.
@@ -63,14 +93,15 @@ AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
 
 ## Use mobile phone number registration
 
-Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send verification code) method sends SMS verification code.
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#send-verification-code) method sends SMS verification code.
 
 ```java
-public static void registerByPhoneCode(String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
 * `phone` The phone number
 * `code` SMS verification code
 * `password` initial password, it can be null
@@ -78,7 +109,7 @@ public static void registerByPhoneCode(String phone, String code, String passwor
 **Example**
 
 ```java
-AuthClient.registerByPhoneCode("13012345678", "1234", "strong", (code, message, userInfo)->{
+AuthClient.registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -89,33 +120,6 @@ AuthClient.registerByPhoneCode("13012345678", "1234", "strong", (code, message, 
 
 * `2001` SMS verification code error
 * `2026` Cell phone number registered
-
-<br>
-
-## Use the email to login
-
-```java
-public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**Parameter**
-
-* `email`  email address
-* `code` email verification code
-
-**Example**
-
-```java
-AuthClient.loginByEmailCode("email", "strong", (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo
-    }
-});
-```
-
-**Error Code**
-
-* `2001` email verification code error
 
 <br>
 
@@ -146,23 +150,53 @@ AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
 
 <br>
 
-## Use the mobile phone number verification code to login
+## Use the email code to login
 
-Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send verification code) sends a SMS verification code.
+Use the email verification code to log in. You need to use it first [sendEmail](#send-email) sends a email verification code.
 
 ```java
-public static void loginByPhoneCode(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
+* `email`  email address
+* `code` email verification code
+
+**Example**
+
+```java
+AuthClient.loginByEmailCode("email", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2001` email verification code error
+
+<br>
+
+## Use the mobile phone number verification code to login
+
+Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#send-verification-code) sends a SMS verification code.
+
+```java
+public static void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
 * `phone` The phone number
 * `code` SMS verification code
 
 **Example**
 
 ```java
-AuthClient.loginByPhoneCode("13012345678", "1234", (code, message, userInfo)->{
+AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -314,7 +348,8 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
   - `RESET_PASSWORD`: Send a reset password message, including the verification code;
   - `VERIFY_EMAIL`: Send a message to verify the mailbox;
   - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
-  - `MFA_VERIFY`: Send MFA verification email.
+  - `MFA_VERIFY`: Send MFA verification email;
+  - VERIFY_CODE:  Send verification code.
 
 **Example**
 
@@ -630,18 +665,19 @@ AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234"
 Bind the mobile phone number of the current login user.  you can send SMS verification code by [sendSmsCode](#Send verification code) method.
 
 ```java
-public static void bindPhone(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void bindPhone(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
+* `phoneCountryCode` New mobile phone country code，It must start with a +, for example, +86 in mainland China
 * `phone` Thie phone number
 * `code` SMS Verification code
 
 **Example**
 
 ```java
-AuthClient.bindPhone("13012345678", "1234", (code, message, data)->{
+AuthClient.bindPhone("+86", "13012345678", "1234", (code, message, data)->{
     if (code == 200) {
     }
 });
