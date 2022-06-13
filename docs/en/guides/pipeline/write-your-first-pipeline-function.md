@@ -29,13 +29,13 @@ Select "Registered Email Suffix White List" in Access Control.
 
 The domain name whitelist we set here is "example.com", you can also change it to your own.
 
-![](~@imagesEnUs/pipeline/pipeline-en-03.png)
+![](../../images/pipeline/pipeline_create_scene_en.png)
 
 Click the "Save" button in the lower left corner, we will deploy this function to the cloud, it will take some time, please be patient.
 
 Back to the Pipeline function list page, you can see the function we just added.
 
-![](~@imagesEnUs/pipeline/pipeline-en-04.png)
+![](../../images/pipeline/pipeline_create_template_en.png)
 
 ::: hint-success
 If you have multiple Pipeline functions, you can drag to sort them.
