@@ -27,7 +27,7 @@
 
 <img src="./images/dingtalk_4.png" >
 
-- In login and sharing, fill in the callback domain name as：https://core.authing.cn/connection/social/dingtalk/:userPoolId/callback
+- In login and sharing, fill in the callback domain name as：https://core.authing.cn/connections/social/dingtalk/:userPoolId/callback
 
 > Please replace :userPoolId with your user pool ID
 

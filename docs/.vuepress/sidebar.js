@@ -698,7 +698,7 @@ const zhCnNavBar = {
             },
             {
               title: "OIDC",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oidc/"
             },
             {
               title: "OAuth 2.0",
@@ -2656,7 +2656,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "OIDC",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oidc/"
             },
             {
               title: "OAuth 2.0",
