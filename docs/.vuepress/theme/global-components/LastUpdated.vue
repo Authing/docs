@@ -57,7 +57,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .authing-last-updated
   color #999
   margin-bottom 24px

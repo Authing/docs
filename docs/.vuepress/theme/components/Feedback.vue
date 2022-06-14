@@ -46,12 +46,14 @@
     <FeedbackToast 
       :type="feedbackType"
       v-model="isShowFeedbackFormToast" 
-      @success="submitFeedback">
+      @success="submitFeedback"
+      :styles="feedbackToastStyles">
     </FeedbackToast>
 
     <FeedbackSuccess 
       v-model="isShowFeedbackSuccessToast"
-      @hide="hideFeedbackSuccessToast">
+      @hide="hideFeedbackSuccessToast"
+      :styles="feedbackToastStyles">
     </FeedbackSuccess>
 
     <div class="feedback-help">
@@ -99,6 +101,12 @@ export default {
     },
     feedbackConfig() {
       return this.$themeLocaleConfig.feedback;
+    },
+    feedbackToastStyles () {
+      const clientWidth = document.documentElement.clientWidth
+      return clientWidth >= 1060
+        ? 'top: 40px; left: 110px'
+        : 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)'
     }
   },
   watch: {
@@ -148,6 +156,7 @@ export default {
 
 <style lang="stylus" scoped>
 .feedback
+  position relative
   margin-top 34px
   .feedback-action
     overflow hidden
@@ -227,6 +236,7 @@ export default {
       display flex
       flex-direction row
       align-items flex-start
+      justify-content center
       padding 5px 24px
       gap 10px
       position absolute

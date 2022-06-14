@@ -1,5 +1,5 @@
 <template>
-  <div class="feedback-success-container" v-if="value">
+  <div v-if="value" class="feedback-success-container" :style="styles">
     <img src="../assets/images/feedback-success.png" class="feedback-success-icon" />
     <div class="tips-box">
       <img src="../assets/images/checkbox-circle-fill.svg" class="tips-icon" />
@@ -15,6 +15,12 @@ export default {
       type: Boolean,
       default () {
         return false
+      }
+    },
+    styles: {
+      type: String,
+      default () {
+        return ''
       }
     }
   },
@@ -37,12 +43,11 @@ export default {
 
 <style lang="stylus" scoped>
 .feedback-success-container
-  position fixed
+  position absolute
   z-index 10
   width 352px
-  left 50%
-  top 50%
-  transform translate(-50%, -50%)
+  left 0
+  top 0
   background #fff
   border 1px solid #E5E6EB
   box-shadow 0px 16px 32px -10px rgba(4, 24, 115, 0.1)

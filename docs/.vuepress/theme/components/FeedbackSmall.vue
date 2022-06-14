@@ -1,5 +1,5 @@
 <template>
-  <div class="feedback-small">
+  <div class="feedback-small" ref="feedbackSmall">
     <v-popover placement="bottom-end">
       <button
         @click="handleFeedback(STATUS.GOOD)"
@@ -16,50 +16,6 @@
           :type="status === STATUS.GOOD ? 'authing-good-' : 'authing-good'"
         />
       </button>
-
-      <!-- This will be the content of the popover -->
-      <template slot="popover">
-        <div style="position:relative">
-          <div v-if="submitted" class="feedback-success">
-            <!-- <div class="feedback-success"> -->
-            <div>
-              <img
-                width="122px"
-                src="~@theme/assets/images/feedback-success.png"
-                alt="Feedback Success"
-                style="display:block;margin: 10px auto;"
-              />
-            </div>
-            <div style="text-align: center">
-              <IconFont
-                type="authing-tijiaochenggong"
-                class="feedback-success-icon"
-              />
-              {{ feedbackConfig.successTip }}
-            </div>
-          </div>
-
-          <div v-else class="bad-reason">
-            <h4 class="bad-reason-title">
-              感谢反馈请问还有其他建议吗？
-            </h4>
-
-            <textarea
-              v-model="customReason"
-              class="authing-custom-feedback"
-              placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
-            />
-
-            <button
-              @click="submitFeedbackWithReason"
-              class="submit-feedback-btn"
-            >
-              提交
-            </button>
-            <p class="feedback-help" v-html="feedbackConfig.help"></p>
-          </div>
-        </div>
-      </template>
     </v-popover>
 
     <v-popover placement="bottom-end">
@@ -78,56 +34,20 @@
           :type="status === STATUS.BAD ? 'authing-good-' : 'authing-good'"
         />
       </button>
-
-      <!-- This will be the content of the popover -->
-      <template slot="popover">
-        <div style="position:relative">
-          <div v-if="submitted" class="feedback-success">
-            <!-- <div class="feedback-success"> -->
-            <div>
-              <img
-                width="122px"
-                src="~@theme/assets/images/feedback-success.png"
-                alt="Feedback Success"
-              />
-            </div>
-            <div>
-              <IconFont
-                type="authing-tijiaochenggong"
-                class="feedback-success-icon"
-              />
-              {{ feedbackConfig.successTip }}
-            </div>
-          </div>
-
-          <div v-else class="bad-reason">
-            <h4 class="bad-reason-title">
-              <span style="color: red">*</span>
-              {{ feedbackConfig.uselessConfig.title }}
-            </h4>
-
-            <CheckboxGroup
-              v-model="badReasons"
-              :options="feedbackConfig.uselessConfig.reasons"
-            />
-
-            <textarea
-              v-model="customReason"
-              class="authing-custom-feedback"
-              placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
-            />
-
-            <button
-              @click="submitFeedbackWithReason"
-              class="submit-feedback-btn"
-            >
-              提交
-            </button>
-            <p class="feedback-help" v-html="feedbackConfig.help"></p>
-          </div>
-        </div>
-      </template>
     </v-popover>
+
+    <FeedbackToast 
+      :type="feedbackType"
+      v-model="isShowFeedbackFormToast" 
+      @success="submitFeedback"
+      :styles="feedbackToastStyles">
+    </FeedbackToast>
+
+    <FeedbackSuccess 
+      v-model="isShowFeedbackSuccessToast"
+      @hide="hideFeedbackSuccessToast"
+      :styles="feedbackToastStyles">
+    </FeedbackSuccess>
   </div>
 </template>
 
@@ -135,6 +55,8 @@
 import IconFont from "@theme/components/IconFont/index.vue";
 import { feishuFeedback } from "@theme/util/feishu";
 import CheckboxGroup from "@theme/components/CheckboxGroup.vue";
+import FeedbackToast from './FeedbackFormToast.vue'
+import FeedbackSuccess from './FeedbackSuccessToast.vue'
 
 const STATUS = {
   NONE: 0,
@@ -144,7 +66,9 @@ const STATUS = {
 export default {
   components: {
     IconFont,
-    CheckboxGroup
+    CheckboxGroup,
+    FeedbackToast,
+    FeedbackSuccess
   },
   data() {
     return {
@@ -152,7 +76,10 @@ export default {
       badReasons: [],
       customReason: "",
       submitted: false,
-      submitDialogVisible: false
+      submitDialogVisible: false,
+      isShowFeedbackFormToast: false,
+      isShowFeedbackSuccessToast: false,
+      feedbackType: 'good'
     };
   },
   computed: {
@@ -161,57 +88,55 @@ export default {
     },
     feedbackConfig() {
       return this.$themeLocaleConfig.feedback;
+    },
+    feedbackToastStyles () {
+      const clientWidth = document.documentElement.clientWidth
+      return clientWidth >= 1060
+        ? 'top: 20px; left: 5px'
+        : 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)'
     }
   },
   watch: {
-    $route(a, b) {
-      if (a.name !== b.name) {
-        this.resetState();
-      }
+    $route: {
+      handler () {
+        const status = window.localStorage.getItem('feedback:' + window.location.href)
+        if (['1', '2'].includes(status)) {
+          this.status = +status
+        }
+      },
+      immediate: true,
+      deep: true
     }
   },
+  mounted () {
+    this.registToastStatusEvent()
+  },
   methods: {
-    resetState() {
-      this.status = STATUS.NONE;
-      this.badReasons = [];
-      this.customReason = "";
-      this.submitted = false;
-      this.submitDialogVisible;
+    submitFeedback(params) {
+      feishuFeedback(params).then(() => {
+        this.isShowFeedbackSuccessToast = true
+
+        window.localStorage.setItem('feedback:' + window.location.href, this.status)
+      });
+      this.isShowFeedbackFormToast = false;
     },
     handleFeedback(status) {
-      if (status === this.status) {
-        return;
-      }
-      this.submitDialogVisible = true;
-      this.submitted = false;
-      this.status = status;
-
-      // if (this.status === STATUS.GOOD) {
-      //   feishuFeedback({
-      //     helpful: status === STATUS.GOOD,
-      //     docTitle: this.$page.title,
-      //     docUrl: window.location.href,
-      //     customReason: ""
-      //   });
-      // }
+      this.status = status
+      this.feedbackType = status === 1 ? 'good' : 'bad'
+      this.isShowFeedbackFormToast = true
     },
-    submitFeedbackWithReason() {
-      feishuFeedback({
-        helpful: this.status === STATUS.GOOD,
-        docTitle: this.$page.title,
-        docUrl: window.location.href,
-        customReason: this.customReason,
-        reasonList: this.badReasons
-      }).then(() => {
-        this.submitted = true;
-        this.customReason = "";
-        this.badReasons = [];
-      });
+    hideFeedbackSuccessToast () {
+      this.isShowFeedbackSuccessToast = false
     },
-    hideSubmitDialog() {
-      if (this.submitDialogVisible) {
-        this.submitDialogVisible = false;
-      }
+    registToastStatusEvent () {
+      document.addEventListener('click', e => {
+        console.log(e)
+        this.isShowFeedbackFormToast = false
+        this.isShowFeedbackSuccessToast = false
+      })
+      this.$refs.feedbackSmall.addEventListener('click', e => {
+        e.stopPropagation()
+      })
     }
   }
 };
@@ -219,6 +144,7 @@ export default {
 
 <style lang="stylus" scoped>
 .feedback-small
+  position relative
   display: inline-flex
   margin-left: 14px
   .feedback-btn

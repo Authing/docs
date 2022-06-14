@@ -1,5 +1,5 @@
 <template>
-  <div class="feedback-toast-container" v-if="value">
+  <div v-if="value" class="feedback-toast-container" :style="styles">
     <div class="title">
       <div v-if="type === 'good'">感谢反馈请问还有其他建议吗？</div>
       <div v-else-if="type === 'bad'"><span class="highlight">*</span><span>你是否遇到以下问题？</span></div>
@@ -8,7 +8,7 @@
     <div class="content">
       <div class="reasons" v-if="type === 'bad'">
         <div class="option" v-for="reason in reasons" :key="reason.value">
-          <input type="checkbox" :id="reason.value" :value="reason.desc" v-model="selectedReasons">
+          <input type="checkbox" :id="reason.value" :value="reason.desc" v-model="selectedReasons" class="checkbox">
           <label :for="reason.value">{{ reason.desc }}</label>
         </div>
       </div>
@@ -18,7 +18,7 @@
 
     <div class="feedback-footer">
       <div class="submit" @click="submit">提交</div>
-      <div class="tips">如果遇到其他问题，立即<a href="" target="_blank">联系我们</a></div>
+      <div class="tips">如果遇到其他问题，立即<a href="https://forum.authing.cn/" target="_blank">联系我们</a></div>
     </div>
   </div>
 </template>
@@ -56,6 +56,12 @@ export default {
       default () {
         return false
       }
+    },
+    styles: {
+      type: String,
+      default () {
+        return ''
+      }
     }
   },
   watch: {
@@ -74,7 +80,7 @@ export default {
     textareaPlaceholder () {
       const map = {
         good: '你的建议会让我们做的更好...',
-        bad: '描述具体问题'
+        bad: '描述具体问题...'
       }
       return map[this.type] || ''
     }
@@ -116,12 +122,11 @@ export default {
 
 <style lang="stylus" scoped>
 .feedback-toast-container
-  position fixed
+  position absolute
   z-index 10
   width 352px
-  left 50%
-  top 50%
-  transform translate(-50%, -50%)
+  left 0
+  top 0
   background #fff
   border 1px solid #E5E6EB
   box-shadow 0px 16px 32px -10px rgba(4, 24, 115, 0.1)
@@ -133,6 +138,7 @@ export default {
     font-weight 500
     font-size 14px
     line-height 22px
+    color #000
     .highlight
       padding-right 10px
       box-sizing border-box
@@ -148,6 +154,36 @@ export default {
         line-height 22px
         font-size 14px
         color #1D2129
+        input[type="checkbox"]
+          position relative
+          margin-right 8px
+          &:focus
+            outline none
+            border none
+          &::before
+            position absolute
+            topp 0
+            left 0
+            width 100%
+            height 100%
+            content ""
+            background #FFFFFF
+            border 1px solid #E5E6EB
+            border-radius 2px
+          &:checked::before
+            position absolute
+            top 0
+            left 0
+            content "\2713"
+            display flex
+            align-items center
+            justify-content center
+            background-color #fff
+            width 100%
+            border 1px solid #EFEFEF
+            color #fff
+            font-size 12px
+            background-color #165DFF
     .textarea
       max-width 320px
       width 320px
@@ -159,6 +195,10 @@ export default {
       background #F2F3F5
       border-radius 2px
       border none
+      color #86909C
+      &:focus
+        outline none
+        border none
   .feedback-footer
     display flex
     flex-direction column
