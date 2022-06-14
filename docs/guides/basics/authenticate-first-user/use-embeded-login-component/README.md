@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-内嵌登录组件（Guard）被认为是灵活性和集成之间的最佳平衡。如果集成需要更深入的自定义级别或一些前后端分离的场景中无法使用[托管模式](../use-hosted-login-page.md)，则建议使用组此模式。内嵌登录组件由 Authing 构建和更新，使用行业最佳实践安全性设计，仅需要几行 JavaScript 代码就可以集成到你开发的项目中。它可以直接从 CDN 或 NPM 加载，也可以从源代码构建。Authing 登录组件同时提供 Javascript 原生、React、Vue 和 Angular 的多种集成模式，在你的任何项目中都可以无缝集成并享有高度自定义灵活性。
+内嵌登录组件（Guard）被认为是灵活性和集成之间的最佳平衡。如果集成需要更深入的自定义级别或一些前后端分离的场景中无法使用[托管模式](../use-hosted-login-page.md)，则建议使用组此模式。内嵌登录组件由 Authing 构建和更新，使用行业最佳实践安全性设计，仅需要几行 JavaScript 代码就可以集成到你开发的项目中。它可以直接从 CDN 或 NPM 加载，也可以从源代码构建。Authing 登录组件同时提供 Javascript 原生、React、Vue 和 Angular 的多种集成模式，在你的任何项目中都可以无缝集成并享有高度自定义灵活性。更加详细的介绍请见 [登录组件 （Guard）文档](/reference/guard/v2/)。
 
 > 你可以[点此](/concepts/embeded-vs-hosted.md)了解 {{$localeConfig.brandName}} 托管的登录页（Hosted）和内嵌登录组件（Embedded）的区别。
 
