@@ -28,9 +28,7 @@ Angular 版本：Angular 10/11/12/13
 
 ## STEP 2:  安装和初始化
 
-有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
-
-无论使用哪一种安装方式，你都需要用到应用的 `appid` ，请先[前往控制台获取](/guides/faqs/get-app-id-and-secret.md)。
+在使用之前需要用到应用的 `appid` ，请先[前往控制台获取](/guides/faqs/get-app-id-and-secret.md)。
 
 ### 安装 Authing library
 
