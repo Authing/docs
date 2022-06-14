@@ -14,7 +14,7 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        active: isActive($route, item.path)
+        active: active
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
@@ -63,6 +63,14 @@ export default {
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
     this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
+  },
+
+  computed: {
+    active() {
+      const active =  isActive(this.$route, this.item.path)
+      if (active) this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+      return active
+    }
   },
 
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="feedback">
+  <div class="feedback" ref="feedback">
     <div class="feedback-action">
       <div class="feedback-action-container">
         <h5 class="feedback-title">{{ feedbackConfig.title }}</h5>
@@ -42,32 +42,21 @@
         </a>
       </div>
     </div>
-    <div v-if="submited" class="feedback-success">
-      <IconFont type="authing-tijiaochenggong" class="feedback-success-icon" />
-      {{ feedbackConfig.successTip }}
-    </div>
-    <div v-if="status === STATUS.BAD && !submited" class="bad-reason">
-      <h4 class="bad-reason-title">{{ feedbackConfig.uselessConfig.title }}</h4>
 
-      <CheckboxGroup
-        v-model="badReasons"
-        :options="feedbackConfig.uselessConfig.reasons"
-      />
+    <FeedbackToast 
+      :type="feedbackType"
+      v-model="isShowFeedbackFormToast" 
+      @success="submitFeedback">
+    </FeedbackToast>
 
-      <textarea
-        v-model="customReason"
-        class="authing-custom-feedback"
-        placeholder="请详细描述在文档使用中遇到的问题或改进建议（选填）"
-      />
-
-      <button @click="submitFeedbackWithReason" class="submit-feedback-btn">
-        立即提交
-      </button>
-    </div>
+    <FeedbackSuccess 
+      v-model="isShowFeedbackSuccessToast"
+      @hide="hideFeedbackSuccessToast">
+    </FeedbackSuccess>
 
     <div class="feedback-help">
       <div class="text">若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing 控制台，来开启你的 Authing 之旅！</div>
-      <a class="button" href="https://console.authing.cn" target="_blank">部署到 Authing</a>
+      <a class="button" href="https://console.authing.cn" target="_blank">进入 Authing</a>
       <img class="shadow-banner" src="../assets/images/banner.png" />
       <div class="shadow-bg"></div>
     </div>
@@ -78,6 +67,9 @@
 import IconFont from "@theme/components/IconFont/index.vue";
 import { feishuFeedback } from "@theme/util/feishu";
 import CheckboxGroup from "@theme/components/CheckboxGroup.vue";
+import FeedbackToast from './FeedbackFormToast.vue'
+import FeedbackSuccess from './FeedbackSuccessToast.vue'
+
 const STATUS = {
   NONE: 0,
   GOOD: 1,
@@ -86,14 +78,19 @@ const STATUS = {
 export default {
   components: {
     IconFont,
-    CheckboxGroup
+    CheckboxGroup,
+    FeedbackToast,
+    FeedbackSuccess
   },
   data() {
     return {
       status: STATUS.NONE,
       badReasons: [],
       customReason: "",
-      submited: false
+      submited: false,
+      isShowFeedbackFormToast: false,
+      isShowFeedbackSuccessToast: false,
+      feedbackType: 'good'
     };
   },
   computed: {
@@ -104,34 +101,46 @@ export default {
       return this.$themeLocaleConfig.feedback;
     }
   },
+  watch: {
+    $route: {
+      handler () {
+        const status = window.localStorage.getItem('feedback:' + window.location.href)
+        if (['1', '2'].includes(status)) {
+          this.status = +status
+        }
+      },
+      immediate: true,
+      deep: true
+    }
+  },
+  mounted () {
+    this.registToastStatusEvent()
+  },
   methods: {
     submitFeedback(params) {
-      feishuFeedback(params).then(() => {});
-      this.submited = true;
+      feishuFeedback(params).then(() => {
+        this.isShowFeedbackSuccessToast = true
+
+        window.localStorage.setItem('feedback:' + window.location.href, this.status)
+      });
+      this.isShowFeedbackFormToast = false;
     },
     handleFeedback(status) {
-      if (status === this.status) {
-        return;
-      }
-      this.submited = false;
-      this.status = status;
-      if (this.status === STATUS.GOOD) {
-        this.submitFeedback({
-          helpful: status === STATUS.GOOD,
-          docTitle: this.$page.title,
-          docUrl: window.location.href,
-          customReason: ""
-        });
-      }
+      this.status = status
+      this.feedbackType = status === 1 ? 'good' : 'bad'
+      this.isShowFeedbackFormToast = true
     },
-    submitFeedbackWithReason() {
-      this.submitFeedback({
-        helpful: status === STATUS.GOOD,
-        docTitle: this.$page.title,
-        docUrl: window.location.href,
-        customReason: this.customReason,
-        reasonList: this.badReasons
-      });
+    hideFeedbackSuccessToast () {
+      this.isShowFeedbackSuccessToast = false
+    },
+    registToastStatusEvent () {
+      document.addEventListener('click', e => {
+        this.isShowFeedbackFormToast = false
+        this.isShowFeedbackSuccessToast = false
+      })
+      this.$refs.feedback.addEventListener('click', e => {
+        e.stopPropagation()
+      })
     }
   }
 };
@@ -304,6 +313,7 @@ export default {
     .github-edit
       float left
     .feedback-help
+      display none
       .text
         width 90%
         height 66px

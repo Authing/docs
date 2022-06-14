@@ -153,7 +153,7 @@ export default {
       if (!this.showSuggestions) {
         return;
       }
-      this.$eventBus.$emit('onChangeIndex', this.suggestions[i].dataIndex)
+      // this.$eventBus.$emit('onChangeIndex', this.suggestions[i].dataIndex)
       this.$router.push(this.suggestions[i].path);
       this.query = "";
       this.focusIndex = 0;
