@@ -259,10 +259,15 @@ static Future<AuthResult> sendEmail(String email, String scene) async
 
 * *email* 邮箱地址
 * *scene* 发送场景，可选值包含：
-  - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
-  - VERIFY_EMAIL: 发送验证邮箱的邮件；
-  - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
-  - MFA_VERIFY: 发送 MFA 验证邮件。
+  - RESET_PASSWORD_VERIFY_CODE: 发送重置密码验证码邮件；
+  - FIRST_EMAIL_LOGIN_VERIFY: 发送首次邮箱登录验证邮件；
+  - CONSOLE_CONDUCTED_VERIFY: 发送控制台发起的验证邮件；
+  - EMAIL_BIND_VERIFY_CODE: 发送邮箱绑定验证码邮件；
+  - EMAIL_UNBIND_VERIFY_CODE: 发送邮箱解绑验证码邮件；
+  - REGISTER_VERIFY_CODE: 发送注册验证码邮件；
+  - LOGIN_VERIFY_CODE: 发送登录验证码邮件；
+  - MFA_VERIFY_CODE: 发送 MFA 验证码邮件；
+  - INFORMATION_COMPLETION_VERIFY_CODE: 发送信息补全验证码邮件；
 
 **示例**
 
