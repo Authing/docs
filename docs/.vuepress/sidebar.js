@@ -632,7 +632,7 @@ const zhCnNavBar = {
             },
             {
               title: "Gitee",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitee/"
             },
             {
               title: "GitLab",
@@ -2581,7 +2581,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Gitee",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/gitee/"
             },
             {
               title: "GitLab",
