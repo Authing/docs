@@ -160,7 +160,7 @@ export default {
   max-width 180px
   flex 0 0 auto
   color #999
-  margin-top -12px
+  margin-top -6px
 
 
 
