@@ -22,7 +22,7 @@
 | status | string | 否 | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived` |
 | emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
 | phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-07` |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-13` |
 | country | string | 否 |  | 所在国家。 示例值： `CN` |
 | province | string | 否 |  | 所在省份。 示例值： `BJ` |
 | city | string | 否 |  | 所在城市。 示例值： `BJ` |
@@ -83,7 +83,7 @@ namespace Example
                   Status= UpdateUserReqDto.status.ACTIVATED ,
                   EmailVerified= true ,
                   PhoneVerified= true ,
-                  Birthdate= "2022-06-07" ,
+                  Birthdate= "2022-06-13" ,
                   Country= "CN" ,
                   Province= "BJ" ,
                   City= "BJ" ,
@@ -96,7 +96,7 @@ namespace Example
                   Email= "test@example.com" ,
                   Phone= "176xxxx6754" ,
                   Password= "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-                  CustomData= new {    school="北京大学",    age=22,} ,
+                  CustomData= new UpdateUserReqDto{    school="北京大学",    age=22,} ,
             }
           );
         }
@@ -122,7 +122,7 @@ namespace Example
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -143,7 +143,7 @@ namespace Example
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-07",
+    "birthdate": "2022-06-13",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -190,7 +190,7 @@ namespace Example
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-07`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

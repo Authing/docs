@@ -59,7 +59,7 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          UserListRespDto  result = await managementClient.ListDepartmentMembers
+          UserPaginatedRespDto  result = await managementClient.ListDepartmentMembers
           (             
                 departmentId: "root", 
                 organizationCode: "steamory", 
@@ -81,65 +81,75 @@ namespace Example
 
 ## 请求响应
 
-类型： `UserListRespDto`
+类型： `UserPaginatedRespDto`
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
 | statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | array | 用户列表 |
+| data | <a href="#UserPagingDto">UserPagingDto</a> | 响应数据 |
 
 
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
   "apiCode": 20001,
   "data": {
-    "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "status": "Activated",
-    "email": "test@example.com",
-    "phone": "176xxxx6754",
-    "phoneCountryCode": "+86",
-    "username": "bob",
-    "name": "张三",
-    "nickname": "张三",
-    "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
-    "loginsCount": 3,
-    "lastLogin": "2022-04-10T20:24:00.000Z",
-    "lastIp": "127.0.0.1",
-    "gender": "M",
-    "emailVerified": true,
-    "phoneVerified": true,
-    "birthdate": "2022-06-07",
-    "country": "CN",
-    "province": "BJ",
-    "city": "BJ",
-    "address": "北京朝阳",
-    "streetAddress": "北京朝阳区 xxx 街道",
-    "postalCode": "438100",
-    "externalId": "10010",
-    "departmentIds": "[\"624d930c3xxxx5c08dd4986e\",\"624d93102xxxx012f33cd2fe\"]",
-    "identities": {
-      "identityId": "62299d8b866d2dab79a89dc4",
-      "extIdpId": "6076bacxxxxxxxxd80d993b5",
-      "provider": "wechat",
-      "type": "openid",
-      "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
-    },
-    "customData": {
-      "school": "北京大学",
-      "age": 22
+    "list": {
+      "userId": "6229ffaxxxxxxxxcade3e3d9",
+      "status": "Activated",
+      "email": "test@example.com",
+      "phone": "176xxxx6754",
+      "phoneCountryCode": "+86",
+      "username": "bob",
+      "name": "张三",
+      "nickname": "张三",
+      "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
+      "loginsCount": 3,
+      "lastLogin": "2022-04-10T20:24:00.000Z",
+      "lastIp": "127.0.0.1",
+      "gender": "M",
+      "emailVerified": true,
+      "phoneVerified": true,
+      "birthdate": "2022-06-13",
+      "country": "CN",
+      "province": "BJ",
+      "city": "BJ",
+      "address": "北京朝阳",
+      "streetAddress": "北京朝阳区 xxx 街道",
+      "postalCode": "438100",
+      "externalId": "10010",
+      "departmentIds": "[\"624d930c3xxxx5c08dd4986e\",\"624d93102xxxx012f33cd2fe\"]",
+      "identities": {
+        "identityId": "62299d8b866d2dab79a89dc4",
+        "extIdpId": "6076bacxxxxxxxxd80d993b5",
+        "provider": "wechat",
+        "type": "openid",
+        "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
+      },
+      "customData": {
+        "school": "北京大学",
+        "age": 22
+      }
     }
   }
 }
 ```
 
 ## 数据结构
+
+
+### <a id="UserPagingDto"></a> UserPagingDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| totalCount | number | 是 | 记录总数。   |
+| list | array | 是 | 数据列表。嵌套类型：<a href="#UserDto">UserDto</a>。   |
 
 
 ### <a id="UserDto"></a> UserDto
@@ -162,7 +172,7 @@ namespace Example
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-07`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

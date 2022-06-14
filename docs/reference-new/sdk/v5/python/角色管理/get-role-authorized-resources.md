@@ -56,7 +56,7 @@ data = management_client.get_role_authorized_resources(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

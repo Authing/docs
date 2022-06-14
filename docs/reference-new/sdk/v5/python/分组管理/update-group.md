@@ -55,7 +55,7 @@ data = management_client.update_group(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

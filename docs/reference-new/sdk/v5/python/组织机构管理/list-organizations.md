@@ -15,6 +15,7 @@
 | ---- | ---- | ---- | ---- | ---- |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| fetchAll | boolean  | 否 | false | 拉取所有。  |
 
 
 ## 示例代码
@@ -32,6 +33,8 @@ data = management_client.list_organizations(
       page: 1,
   
       limit: 10,
+  
+      fetch_all: false,
   
 )
 ```
@@ -53,7 +56,7 @@ data = management_client.list_organizations(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -66,8 +69,20 @@ data = management_client.list_organizations(
       "departmentId": "60b49eb83fd80adb96f26e68",
       "openDepartmentId": "60b49eb83fd80adb96f26e68",
       "hasChildren": true,
-      "leaderUserId": "60b49eb83fd80adb96f26e68",
-      "membersCount": 150
+      "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
+      "membersCount": 150,
+      "i18n": {
+        "organizationName": {
+          "zh-CN": {
+            "enabled": false,
+            "value": "中文"
+          },
+          "en-US": {
+            "enabled": false,
+            "value": "English"
+          }
+        }
+      }
     }
   }
 }
@@ -94,7 +109,31 @@ data = management_client.list_organizations(
 | departmentId | string | 是 | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | openDepartmentId | string | 否 | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | hasChildren | boolean | 是 | 是否包含子节点。 示例值： `true`  |
-| leaderUserId | string | 是 | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
+
+
+### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangObject"></a> LangObject
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangUnit"></a> LangUnit
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。   |
+| value | boolean | 是 | 多语言内容。   |
 
 

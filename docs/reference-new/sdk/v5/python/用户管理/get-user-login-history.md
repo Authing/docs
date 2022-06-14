@@ -68,7 +68,7 @@ data = management_client.get_user_login_history(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

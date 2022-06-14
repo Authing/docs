@@ -53,7 +53,7 @@ data = management_client.list_archived_users(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

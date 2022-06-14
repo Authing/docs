@@ -55,7 +55,7 @@ data = management_client.enable_ext_idp_conn(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

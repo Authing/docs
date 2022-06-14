@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | extIdpId | string | 是 |  | 身份源连接 id。 示例值： `60b49eb83fd80adb96f26e68` |
-| type | string | 是 |  | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram` |
+| type | string | 是 |  | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram`,`welink` |
 | identifier | string | 是 |  | 身份源连接标识。 示例值： `60b49eb83fd80adb96f26e68` |
 | loginOnly | boolean | 否 |  | 是否只支持登录。  |
 | logo | string | 否 |  | 身份源图标。 示例值： `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
@@ -67,7 +67,7 @@ $data = $management->createExtIdpConn(array(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -94,7 +94,7 @@ $data = $management->createExtIdpConn(array(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | id | string | 是 | 身份源连接 id。 示例值： `60b49eb83fd80adb96f26e68`  |
-| type | string | 是 | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram`  |
+| type | string | 是 | 身份源连接类型。 枚举值：`oidc`,`oauth`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`alipay`,`facebook`,`twitter`,`google`,`wechat:pc`,`wechat:mobile`,`wechat:webpage-authorization`,`wechatmp-qrcode`,`wechat:miniprogram:default`,`wechat:miniprogram:qrconnect`,`wechat:miniprogram:app-launch`,`github`,`qq`,`wechatwork:corp:qrconnect`,`wechatwork:agency:qrconnect`,`wechatwork:service-provider:qrconnect`,`wechatwork:mobile`,`dingtalk`,`dingtalk:provider`,`weibo`,`apple`,`apple:web`,`baidu`,`lark-internal`,`lark-public`,`gitlab`,`linkedin`,`slack`,`yidun`,`qingcloud`,`gitee`,`instagram`,`welink`  |
 | logo | string | 是 | 身份源图标。 示例值： `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png`  |
 | identifier | string | 否 | 身份源连接标识。 示例值： `60b49eb83fd80adb96f26e68`  |
 | displayName | string | 否 | 身份源连接在登录页的显示名称。 示例值： `登录页`  |

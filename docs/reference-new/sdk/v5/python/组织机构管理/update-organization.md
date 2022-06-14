@@ -14,8 +14,10 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息` |
+| description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 | organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
 | organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
 
@@ -32,8 +34,21 @@ management_client = ManagementClient(
 
 data = management_client.update_organization(
      organization_code: "steamory",
-     description: "组织描述信息",
+     description: "技术研发部门",
      open_department_id: "60b49eb83fd80adb96f26e68",
+     leader_user_ids: ["60b49eb83fd80adb96f26e68"],
+     i18n: {
+         organization_name: {
+         zh-_c_n: {
+         enabled: false,
+       value: false,
+    },
+       en-_u_s: {
+         enabled: false,
+       value: false,
+    },
+    },
+    },
      organization_new_code: "steamory2",
      organization_name: "蒸汽记忆",
   
@@ -57,7 +72,7 @@ data = management_client.update_organization(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -69,13 +84,48 @@ data = management_client.update_organization(
     "departmentId": "60b49eb83fd80adb96f26e68",
     "openDepartmentId": "60b49eb83fd80adb96f26e68",
     "hasChildren": true,
-    "leaderUserId": "60b49eb83fd80adb96f26e68",
-    "membersCount": 150
+    "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
+    "membersCount": 150,
+    "i18n": {
+      "organizationName": {
+        "zh-CN": {
+          "enabled": false,
+          "value": "中文"
+        },
+        "en-US": {
+          "enabled": false,
+          "value": "English"
+        }
+      }
+    }
   }
 }
 ```
 
 ## 数据结构
+
+
+### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangObject"></a> LangObject
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangUnit"></a> LangUnit
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。   |
+| value | boolean | 是 | 多语言内容。   |
 
 
 ### <a id="OrganizationDto"></a> OrganizationDto
@@ -88,7 +138,31 @@ data = management_client.update_organization(
 | departmentId | string | 是 | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | openDepartmentId | string | 否 | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | hasChildren | boolean | 是 | 是否包含子节点。 示例值： `true`  |
-| leaderUserId | string | 是 | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
+
+
+### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangObject"></a> LangObject
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangUnit"></a> LangUnit
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。   |
+| value | boolean | 是 | 多语言内容。   |
 
 

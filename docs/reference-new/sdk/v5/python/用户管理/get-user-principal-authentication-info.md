@@ -50,7 +50,7 @@ data = management_client.get_user_principal_authentication_info(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

@@ -50,7 +50,7 @@ data = management_client.get_custom_fields(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

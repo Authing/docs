@@ -88,7 +88,7 @@ namespace Example
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -110,7 +110,7 @@ namespace Example
       "gender": "M",
       "emailVerified": true,
       "phoneVerified": true,
-      "birthdate": "2022-06-07",
+      "birthdate": "2022-06-13",
       "country": "CN",
       "province": "BJ",
       "city": "BJ",
@@ -166,7 +166,7 @@ namespace Example
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-07`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

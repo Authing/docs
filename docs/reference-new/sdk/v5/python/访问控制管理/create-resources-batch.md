@@ -60,7 +60,7 @@ data = management_client.create_resources_batch(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

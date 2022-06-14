@@ -14,8 +14,10 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息` |
+| description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
+| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 | organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
 | organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
 
@@ -57,8 +59,25 @@ namespace Example
         
           OrganizationSingleRespDto  result = await managementClient.UpdateOrganization
           (  new UpdateOrganizationReqDto{                  OrganizationCode= "steamory" ,
-                  Description= "组织描述信息" ,
+                  Description= "技术研发部门" ,
                   OpenDepartmentId= "60b49eb83fd80adb96f26e68" ,
+                  LeaderUserIds= new List<string>{"60b49eb83fd80adb96f26e68",} ,
+                I18n= new OrganizationNameI18nDto
+                {
+                        OrganizationName= new LangObject
+                {
+                        Zh-CN= new LangUnit
+                {
+                          Enabled= false ,
+          Value= false ,
+        },
+        En-US= new LangUnit
+                {
+                          Enabled= false ,
+          Value= false ,
+        },
+        },
+        },
                   OrganizationNewCode= "steamory2" ,
                   OrganizationName= "蒸汽记忆" ,
             }
@@ -86,7 +105,7 @@ namespace Example
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -98,13 +117,48 @@ namespace Example
     "departmentId": "60b49eb83fd80adb96f26e68",
     "openDepartmentId": "60b49eb83fd80adb96f26e68",
     "hasChildren": true,
-    "leaderUserId": "60b49eb83fd80adb96f26e68",
-    "membersCount": 150
+    "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
+    "membersCount": 150,
+    "i18n": {
+      "organizationName": {
+        "zh-CN": {
+          "enabled": false,
+          "value": "中文"
+        },
+        "en-US": {
+          "enabled": false,
+          "value": "English"
+        }
+      }
+    }
   }
 }
 ```
 
 ## 数据结构
+
+
+### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangObject"></a> LangObject
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangUnit"></a> LangUnit
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。   |
+| value | boolean | 是 | 多语言内容。   |
 
 
 ### <a id="OrganizationDto"></a> OrganizationDto
@@ -117,7 +171,31 @@ namespace Example
 | departmentId | string | 是 | 根节点 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | openDepartmentId | string | 否 | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
 | hasChildren | boolean | 是 | 是否包含子节点。 示例值： `true`  |
-| leaderUserId | string | 是 | 部门负责人 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
+| leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
+
+
+### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangObject"></a> LangObject
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+
+
+### <a id="LangUnit"></a> LangUnit
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。   |
+| value | boolean | 是 | 多语言内容。   |
 
 

@@ -54,7 +54,7 @@ data = management_client.has_any_role(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

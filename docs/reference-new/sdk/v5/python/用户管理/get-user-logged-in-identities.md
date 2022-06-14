@@ -50,7 +50,7 @@ data = management_client.get_user_logged_in_identities(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

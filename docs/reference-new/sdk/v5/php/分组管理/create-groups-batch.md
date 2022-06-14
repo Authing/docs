@@ -59,7 +59,7 @@ $data = $management->createGroupsBatch(array(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

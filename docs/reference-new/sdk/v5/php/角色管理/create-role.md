@@ -56,7 +56,7 @@ $data = $management->createRole(array(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

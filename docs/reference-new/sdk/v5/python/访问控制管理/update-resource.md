@@ -62,7 +62,7 @@ data = management_client.update_resource(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

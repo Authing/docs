@@ -53,7 +53,7 @@ data = management_client.create_groups_batch(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

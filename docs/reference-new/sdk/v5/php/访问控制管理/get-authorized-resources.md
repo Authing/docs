@@ -65,7 +65,7 @@ $data = $management->getAuthorizedResources(array(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -73,6 +73,12 @@ $data = $management->getAuthorizedResources(array(
   "data": {
     "list": {
       "resourceCode": "ecs:1",
+      "description": "服务器",
+      "condition": {
+        "param": "AppId",
+        "operator": "StringEquals",
+        "value": "1"
+      },
       "resourceType": "API",
       "apiIdentifier": "/api/v1/example",
       "actions": "[\"ecs:Start\",\"ecs:Stop\"]",
@@ -98,9 +104,20 @@ $data = $management->getAuthorizedResources(array(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | resourceCode | string | 是 | 资源描述符。 示例值： `ecs:1`  |
+| description | string | 否 | 资源描述信息。 示例值： `服务器`  |
+| condition | array | 否 | 策略 Condition。嵌套类型：<a href="#PolicyCondition">PolicyCondition</a>。   |
 | resourceType | string | 是 | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
 | apiIdentifier | string | 是 | API URL。 示例值： `/api/v1/example`  |
 | actions | array | 是 | 授权的操作列表。 示例值： `["ecs:Start","ecs:Stop"]`  |
 | effect | string | 是 | 允许还是拒绝。 枚举值：`ALLOW`,`DENY`  |
+
+
+### <a id="PolicyCondition"></a> PolicyCondition
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| param | string | 是 | Condition Param。 枚举值：`UserPoolId`,`AppId`,`RequestFrom`,`UserId`,`UserArn`,`CurrentTime`,`EpochTime`,`SourceIp`,`User`,`MultiFactorAuthPresent`,`MultiFactorAuthAge`,`UserAgent`,`Referer`,`Device`,`OS`,`Country`,`Province`,`City`,`DeviceChanged`,`DeviceUntrusted`,`ProxyUntrusted`,`LoggedInApps`,`Namespace`  |
+| operator | string | 是 | Condition Operator。 枚举值：`Bool`,`DateEquals`,`DateNotEquals`,`DateLessThan`,`DateLessThanEquals`,`DateGreaterThan`,`DateGreaterThanEquals`,`IpAddress`,`NotIpAddress`,`NumericEquals`,`NumericNotEquals`,`NumericLessThan`,`NumericLessThanEquals`,`NumericGreaterThan`,`NumericGreaterThanEquals`,`StringEquals`,`StringNotEquals`,`StringEqualsIgnoreCase`,`StringNotEqualsIgnoreCase`,`StringLike`,`StringNotLike`,`ListContains`  |
+| value | string | 是 | Condition Value。 示例值： `1`  |
 
 

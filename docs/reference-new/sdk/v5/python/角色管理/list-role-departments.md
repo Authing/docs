@@ -59,7 +59,7 @@ data = management_client.list_role_departments(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

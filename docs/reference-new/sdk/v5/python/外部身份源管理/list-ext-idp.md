@@ -50,7 +50,7 @@ data = management_client.list_ext_idp(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

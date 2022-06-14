@@ -69,7 +69,7 @@ namespace Example
             Gender= CreateUserInfoDto.gender.M ,
             EmailVerified= true ,
             PhoneVerified= true ,
-            Birthdate= "2022-06-07" ,
+            Birthdate= "2022-06-13" ,
             Country= "CN" ,
             Province= "BJ" ,
             City= "BJ" ,
@@ -78,7 +78,7 @@ namespace Example
             PostalCode= "438100" ,
             ExternalId= "10010" ,
             DepartmentIds= new List<string>{"624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",} ,
-            CustomData= new {    school="北京大学",    age=22,} ,
+            CustomData= new CreateUserInfoDto{    school="北京大学",    age=22,} ,
             Password= "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
             TenantIds= new List<string>{} ,
           Identities= new List<CreateIdentityDto>
@@ -124,7 +124,7 @@ namespace Example
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
@@ -145,7 +145,7 @@ namespace Example
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-07",
+    "birthdate": "2022-06-13",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -188,7 +188,7 @@ namespace Example
 | gender | string | 否 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 否 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 否 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-07`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -242,7 +242,7 @@ namespace Example
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-07`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

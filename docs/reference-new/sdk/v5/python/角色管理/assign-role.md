@@ -56,7 +56,7 @@ data = management_client.assign_role(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",

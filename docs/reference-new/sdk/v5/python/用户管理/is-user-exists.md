@@ -55,7 +55,7 @@ data = management_client.is_user_exists(
 
 示例结果：
 
-```js
+```json
 {
   "statusCode": 200,
   "message": "操作成功",
