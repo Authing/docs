@@ -19,7 +19,7 @@
 | loginOnly | boolean | 否 |  | 是否只支持登录。  |
 | logo | string | 否 |  | 身份源图标。 示例值： `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 | displayName | string | 是 |  | 连接在登录页的显示名称。 示例值： `登录页` |
-| fields | object | 是 |  | 连接的自定义配置信息。 示例值： `[object Object]` |
+| fields | object | 是 |  | 连接的自定义配置信息。 示例值： `{"clientId":"身份源上的 clientId","clientSecret":"身份源上的 clientSecret"}` |
 
 
 ## 示例代码

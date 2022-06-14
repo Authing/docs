@@ -60,9 +60,9 @@ export default {
 };
 
 function renderLink(h, to, text, active, level, dataIndex, routerLink) {
-  // if (active) {
-  //   routerLink(dataIndex)
-  // }
+  if (active) {
+    routerLink(dataIndex)
+  }
   const component = {
     props: {
       to,
