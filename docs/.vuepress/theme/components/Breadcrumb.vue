@@ -3,7 +3,7 @@
     <ol>
       <template v-for="(item, index) of crumbs">
         <li :key="`link-${index}`">
-          <NavLink :item="item" />
+          <NavLink :item="item" :type="'bread'" />
         </li>
         <li
           class="crumbs-gutter"
@@ -20,19 +20,26 @@
 <script>
 import NavLink from '@theme/components/NavLink.vue'
 
+function findChildren(list, routePath) {
+  return list.find(item => {
+    if (item.path === '/concepts/') {
+      // concepts 特殊处理
+      return routePath === '/concepts/'
+    } else if (routePath.startsWith(item.path)) {
+      return true
+    } else if (item.children) {
+      return findChildren(item.children, routePath)
+    } else {
+      return false
+    }
+  })
+}
+
 function findSideBarPath(sidebars, routePath, parentPath) {
   if (!sidebars) {
     return []
   }
-  const finded = sidebars.find((item) => {
-    if (item.path === '/concepts/') {
-      // concepts 特殊处理
-      return routePath === '/concepts/'
-    }
-
-    return routePath.startsWith(item.path)
-  })
-
+  const finded = findChildren(sidebars, routePath)
   if (!finded) {
     return []
   }
@@ -96,6 +103,7 @@ export default {
     align-items center
     padding 0em
     margin 0
+    line-height 2rem
     li
       color rgba(0,0,0,0.45)
       font-size 14px
