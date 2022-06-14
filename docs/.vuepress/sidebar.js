@@ -632,7 +632,7 @@ const zhCnNavBar = {
             },
             {
               title: "Slack",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/slack/"
             },
             {
               title: "Gitee",
@@ -2581,7 +2581,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Slack",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/slack/"
             },
             {
               title: "Gitee",
