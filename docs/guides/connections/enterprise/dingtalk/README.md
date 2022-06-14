@@ -27,7 +27,7 @@
 
 <img src="./images/dingtalk_4.png" >
 
-- 在登录与分享中，填写回调域名为：https://core.authing.cn/connection/social/dingtalk/:userPoolId/callback
+- 在登录与分享中，填写回调域名为：https://core.authing.cn/connections/social/dingtalk/:userPoolId/callback
 
 > 请将 :userPoolId 替换为你的用户池 ID
 
