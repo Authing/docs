@@ -14,7 +14,9 @@
         <slot name="breadcrumb"></slot>
         <Content class="theme-default-content" />
         <downloadDemoPage v-if="showDownloadDemo" />
-        <Feedback v-if="!$page.frontmatter.noFeedback" />
+        <ClientOnly>
+          <Feedback v-if="!$page.frontmatter.noFeedback" />
+        </ClientOnly>
         <PageNav
           v-show="!$page.frontmatter.noPageNav"
           v-bind="{ sidebarItems }"
