@@ -22,24 +22,26 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.updateRole(
-          new UpdateRoleDto(
-         "code1" ,
-         "code2" ,
-         "default" ,
-         "this is description" ,
-        )
-        ).execute();
+        UpdateRoleDto request = new UpdateRoleDto();
+        request.setCode("code1");
+        request.setNewCode("code2");
+        request.setNamespace("default");
+        request.setDescription("this is description");
+        
+        IsSuccessRespDto response = managementClient.updateRole(request);
+        System.out.println(response);
     }
 }
 ```

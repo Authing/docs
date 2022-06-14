@@ -20,36 +20,38 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.authorizeResources(
-          new AuthorizeResourcesDto(
-         "default" ,
+        AuthorizeResourcesDto request = new AuthorizeResourcesDto();
+        request.setNamespace("default");
             List= new List<AuthorizeResourceItem>(
-                    new AuthorizeResourceItem
-                    (
-                AuthorizeResourceItem.targetType.USER ,
-       new List<String>("userId1","userId2",) ,
+                    new AuthorizeResourceItem().set
+
+               request.setTargetType(AuthorizeResourceItem.targetType.USER);
+      request.setTargetIdentifiers(new List<String>("userId1","userId2",));
           Resources= new List<ResourceItemDto>(
-                    new ResourceItemDto
-                    (
-                "ecs" ,
-       new List<String>("ecs:Stop","ecs:Start",) ,
-       ResourceItemDto.resourceType.DATA ,
-                )
+                    new ResourceItemDto().set
+
+               request.setCode("ecs");
+      request.setActions(new List<String>("ecs:Stop","ecs:Start",));
+      request.setResourceType(ResourceItemDto.resourceType.DATA);
+      
                   ),
-                )
+      
                   ),
-        )
-        ).execute();
+        
+        IsSuccessRespDto response = managementClient.authorizeResources(request);
+        System.out.println(response);
     }
 }
 ```

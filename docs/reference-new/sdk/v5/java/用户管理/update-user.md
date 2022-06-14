@@ -41,43 +41,45 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.updateUser(
-          new UpdateUserReqDto(
-         "6229ffaxxxxxxxxcade3e3d9" ,
-         "+86" ,
-         "张三" ,
-         "张三" ,
-         "https://files.authing.co/authing-console/default-user-avatar.png" ,
-         "10010" ,
-         UpdateUserReqDto.status.ACTIVATED ,
-         true ,
-         true ,
-         "2022-06-13" ,
-         "CN" ,
-         "BJ" ,
-         "BJ" ,
-         "北京朝阳" ,
-         "北京朝阳区 xxx 街道" ,
-         "438100" ,
-         UpdateUserReqDto.gender.M ,
-         "bob" ,
-         UpdateUserReqDto.passwordEncryptType.NONE ,
-         "test@example.com" ,
-         "176xxxx6754" ,
-         "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-         new UpdateUserReqDto(    "北京大学",    22,) ,
-        )
-        ).execute();
+        UpdateUserReqDto request = new UpdateUserReqDto();
+        request.setUserId("6229ffaxxxxxxxxcade3e3d9");
+        request.setPhoneCountryCode("+86");
+        request.setName("张三");
+        request.setNickname("张三");
+        request.setPhoto("https://files.authing.co/authing-console/default-user-avatar.png");
+        request.setExternalId("10010");
+        request.setStatus(UpdateUserReqDto.status.ACTIVATED);
+        request.setEmailVerified(true);
+        request.setPhoneVerified(true);
+        request.setBirthdate("2022-06-13");
+        request.setCountry("CN");
+        request.setProvince("BJ");
+        request.setCity("BJ");
+        request.setAddress("北京朝阳");
+        request.setStreetAddress("北京朝阳区 xxx 街道");
+        request.setPostalCode("438100");
+        request.setGender(UpdateUserReqDto.gender.M);
+        request.setUsername("bob");
+        request.setPasswordEncryptType(UpdateUserReqDto.passwordEncryptType.NONE);
+        request.setEmail("test@example.com");
+        request.setPhone("176xxxx6754");
+        request.setPassword("oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=");
+        request.setCustomData(new UpdateUserReqDto.setSchool("北京大学",.setAge(age22,));
+        
+        UserSingleRespDto response = managementClient.updateUser(request);
+        System.out.println(response);
     }
 }
 ```

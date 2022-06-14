@@ -27,29 +27,31 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.listDepartmentMembers(
         
          
-            "root"            , 
-            "steamory"            , 
-            "department_id"            , 
-            false            , 
-            1            , 
-            10            , 
-            true            , 
-            true            , 
-            true            
-        ).execute();
+        request.setDepartmentId("root"); 
+        request.setOrganizationCode("steamory"); 
+        request.setDepartmentIdType("department_id"); 
+        request.setIncludeChildrenDepartments(false); 
+        request.setPage(1); 
+        request.setLimit(10); 
+        request.setWithCustomData(true); 
+        request.setWithIdentities(true); 
+        request.setWithDepartmentIds(true);
+        UserPaginatedRespDto response = managementClient.listDepartmentMembers(request);
+        System.out.println(response);
     }
 }
 ```

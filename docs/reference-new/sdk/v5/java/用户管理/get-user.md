@@ -26,28 +26,30 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.getUser(
         
          
-            "6229ffaxxxxxxxxcade3e3d9"            , 
-            true            , 
-            true            , 
-            true            , 
-            "176xxxx6754"            , 
-            "test@example.com"            , 
-            "bob"            , 
-            "10010"            
-        ).execute();
+        request.setUserId("6229ffaxxxxxxxxcade3e3d9"); 
+        request.setWithCustomData(true); 
+        request.setWithIdentities(true); 
+        request.setWithDepartmentIds(true); 
+        request.setPhone("176xxxx6754"); 
+        request.setEmail("test@example.com"); 
+        request.setUsername("bob"); 
+        request.setExternalId("10010");
+        UserSingleRespDto response = managementClient.getUser(request);
+        System.out.println(response);
     }
 }
 ```

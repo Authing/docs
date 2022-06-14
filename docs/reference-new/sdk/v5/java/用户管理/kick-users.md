@@ -20,22 +20,24 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.kickUsers(
-          new KickUsersDto(
-         "undefined" ,
-         new List<String>("62188e71cxxxx3075289c580",) ,
-        )
-        ).execute();
+        KickUsersDto request = new KickUsersDto();
+        request.setUserId("undefined");
+        request.setAppIds(new List<String>("62188e71cxxxx3075289c580",));
+        
+        IsSuccessRespDto response = managementClient.kickUsers(request);
+        System.out.println(response);
     }
 }
 ```

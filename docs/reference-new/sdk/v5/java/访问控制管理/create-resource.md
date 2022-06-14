@@ -24,32 +24,34 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createResource(
-          new CreateResourceDto(
-         "ecs" ,
-         "服务器" ,
-         CreateResourceDto.type.API ,
+        CreateResourceDto request = new CreateResourceDto();
+        request.setCode("ecs");
+        request.setDescription("服务器");
+        request.setType(CreateResourceDto.type.API);
             Actions= new List<ResourceAction>(
-                    new ResourceAction
-                    (
-                "ecs:Start" ,
-       "ecs:Start" ,
-                )
+                    new ResourceAction().set
+
+               request.setName("ecs:Start");
+      request.setDescription("ecs:Start");
+      
                   ),
-         "https://my-awesome-api.com/api" ,
-         "default" ,
-        )
-        ).execute();
+        request.setApiIdentifier("https://my-awesome-api.com/api");
+        request.setNamespace("default");
+        
+        ResourceRespDto response = managementClient.createResource(request);
+        System.out.println(response);
     }
 }
 ```

@@ -19,38 +19,40 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.setCustomFields(
-          new SetCustomFieldsReqDto(
+        SetCustomFieldsReqDto request = new SetCustomFieldsReqDto();
             List= new List<SetCustomFieldDto>(
-                    new SetCustomFieldDto
-                    (
-                SetCustomFieldDto.targetType.USER ,
-       SetCustomFieldDto.dataType.STRING ,
-       "school" ,
-       "学校" ,
-       "学校" ,
-       false ,
+                    new SetCustomFieldDto().set
+
+               request.setTargetType(SetCustomFieldDto.targetType.USER);
+      request.setDataType(SetCustomFieldDto.dataType.STRING);
+      request.setKey("school");
+      request.setLabel("学校");
+      request.setDescription("学校");
+      request.setEncrypted(false);
           Options= new List<CustomFieldSelectOption>(
-                    new CustomFieldSelectOption
-                    (
-                "hust" ,
-       "华中科技大学" ,
-                )
+                    new CustomFieldSelectOption().set
+
+               request.setValue("hust");
+      request.setLabel("华中科技大学");
+      
                   ),
-                )
+      
                   ),
-        )
-        ).execute();
+        
+        CustomFieldListRespDto response = managementClient.setCustomFields(request);
+        System.out.println(response);
     }
 }
 ```

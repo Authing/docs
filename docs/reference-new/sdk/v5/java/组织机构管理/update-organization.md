@@ -25,38 +25,40 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.updateOrganization(
-          new UpdateOrganizationReqDto(
-         "steamory" ,
-         "技术研发部门" ,
-         "60b49eb83fd80adb96f26e68" ,
-         new List<String>("60b49eb83fd80adb96f26e68",) ,
+        UpdateOrganizationReqDto request = new UpdateOrganizationReqDto();
+        request.setOrganizationCode("steamory");
+        request.setDescription("技术研发部门");
+        request.setOpenDepartmentId("60b49eb83fd80adb96f26e68");
+        request.setLeaderUserIds(new List<String>("60b49eb83fd80adb96f26e68",));
             I18n= new OrganizationNameI18nDto(
                         OrganizationName= new LangObject(
                         Zh-CN= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         En-US= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         ),
         ),
-         "steamory2" ,
-         "蒸汽记忆" ,
-        )
-        ).execute();
+        request.setOrganizationNewCode("steamory2");
+        request.setOrganizationName("蒸汽记忆");
+        
+        OrganizationSingleRespDto response = managementClient.updateOrganization(request);
+        System.out.println(response);
     }
 }
 ```

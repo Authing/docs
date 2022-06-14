@@ -22,24 +22,26 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.addDepartmentMembers(
-          new AddDepartmentMembersReqDto(
-         "60b49eb83fd80adb96f26e68" ,
-         "steamory" ,
-         AddDepartmentMembersReqDto.departmentIdType.DEPARTMENT_ID ,
-         new List<String>("623c20b2a062aaaaf41b17da",) ,
-        )
-        ).execute();
+        AddDepartmentMembersReqDto request = new AddDepartmentMembersReqDto();
+        request.setDepartmentId("60b49eb83fd80adb96f26e68");
+        request.setOrganizationCode("steamory");
+        request.setDepartmentIdType(AddDepartmentMembersReqDto.departmentIdType.DEPARTMENT_ID);
+        request.setUserIds(new List<String>("623c20b2a062aaaaf41b17da",));
+        
+        IsSuccessRespDto response = managementClient.addDepartmentMembers(request);
+        System.out.println(response);
     }
 }
 ```

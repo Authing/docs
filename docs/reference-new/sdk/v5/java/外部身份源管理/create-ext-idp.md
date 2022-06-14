@@ -21,23 +21,25 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createExtIdp(
-          new CreateExtIdpDto(
-         "exampleName" ,
-         CreateExtIdpDto.type.AD ,
-         "60b49eb83fd80adb96f26e68" ,
-        )
-        ).execute();
+        CreateExtIdpDto request = new CreateExtIdpDto();
+        request.setName("exampleName");
+        request.setType(CreateExtIdpDto.type.AD);
+        request.setTenantId("60b49eb83fd80adb96f26e68");
+        
+        ExtIdpSingleRespDto response = managementClient.createExtIdp(request);
+        System.out.println(response);
     }
 }
 ```

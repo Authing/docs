@@ -22,30 +22,32 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.setCustomData(
-          new SetCustomDataReqDto(
-         SetCustomDataReqDto.targetType.USER ,
-         "userId1" ,
-         "default" ,
+        SetCustomDataReqDto request = new SetCustomDataReqDto();
+        request.setTargetType(SetCustomDataReqDto.targetType.USER);
+        request.setTargetIdentifier("userId1");
+        request.setNamespace("default");
             List= new List<SetCustomDataDto>(
-                    new SetCustomDataDto
-                    (
-                "school" ,
-       "pku" ,
-                )
+                    new SetCustomDataDto().set
+
+               request.setKey("school");
+      request.setValue("pku");
+      
                   ),
-        )
-        ).execute();
+        
+        IsSuccessRespDto response = managementClient.setCustomData(request);
+        System.out.println(response);
     }
 }
 ```
