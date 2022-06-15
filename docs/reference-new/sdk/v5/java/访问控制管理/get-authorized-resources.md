@@ -41,7 +41,7 @@ class ManagementClientTest {
         request.setTargetType("USER"); 
         request.setNamespace("default"); 
         request.setResourceType("DATA"); 
-        request.setWithDenied(undefined);
+        request.setWithDenied(false);
         AuthorizedResourcePaginatedRespDto response = managementClient.getAuthorizedResources(request);
         System.out.println(response);
     }

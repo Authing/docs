@@ -50,7 +50,7 @@ func main() {
         targetIdentifier: "userId1"        , 
         namespace: "default"        , 
         resourceType: "DATA"        , 
-        withDenied: undefined        
+        withDenied: false        
   )
 }
 ```

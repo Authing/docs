@@ -43,7 +43,7 @@ const managementClient = new ManagementClient({
 
     resourceType: 'DATA',
 
-    withDenied: undefined,
+    withDenied: false,
  });
 })();
 ```
