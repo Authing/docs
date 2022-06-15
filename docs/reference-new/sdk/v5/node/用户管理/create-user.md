@@ -10,7 +10,8 @@
 创建用户，邮箱、手机号、用户名必须包含其中一个
 
 ## 请求参数
-| 名称 | 类型 | <div style="width: 40px;">必填</div> | 默认值 | 描述 |
+
+| 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | status | string | 否 | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived` |
 | email | string | 否 |  | 邮箱。 示例值： `test@example.com` |
@@ -38,6 +39,7 @@
 | tenantIds | string[] | 否 |  | 租户 ID。  |
 | identities | <a href="#CreateIdentityDto">CreateIdentityDto[]</a> | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
+
 
 ## 示例代码
 
@@ -172,7 +174,7 @@ const managementClient = new ManagementClient({
 
 ### <a id="CreateUserOptionsDto"></a> CreateUserOptionsDto
 
-| 名称 | 类型 | <div style="width: 40px;">必填</div> | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | keepPassword | boolean | 否 | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。。   |
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码。   |
@@ -181,7 +183,7 @@ const managementClient = new ManagementClient({
 
 ### <a id="UserDto"></a> UserDto
 
-| 名称 | 类型 | <div style="width: 40px;">必填</div> | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
 | createdAt | string | 是 | 账号创建时间。   |

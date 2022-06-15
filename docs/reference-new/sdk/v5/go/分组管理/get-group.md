@@ -22,19 +22,19 @@
 package main
 
 import (
-    "authing-go-sdk/client"
+    "authing-go-sdk/management"
     "authing-go-sdk/dto"
 
     "fmt"
 )
 
 func main() {
-    options := client.ManagementClientOptions {
+    options := client.ClientOptions {
         AccessKeyId:     "AUTHING_USERPOOL_ID",
         AccessKeySecret: "AUTHING_USERPOOL_SECRET",
     }
 
-    client, err := client.NewClient(&options)
+    client, err := management.NewClient(&options)
     if err != nil {
         // The exception needs to be handled by the developer.
     }
