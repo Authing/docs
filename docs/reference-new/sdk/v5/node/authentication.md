@@ -8,12 +8,12 @@
 // 使用 AppId 、APP_SECRET 、 appHost、redirectUri 进行初始化
 import { AuthenticationClient } from "authing-node-sdk";
 
-const authentication = new AuthenticationClient(
-  APP_ID,
-  APP_SECRET,
-  APP_HOST,
-  redirectUri
-);
+const authenticationClient = new AuthenticationClient({
+  host: "APP_HOST",
+  appId: "APP_ID",
+  appSecret: "APP_SECRET",
+  redirectUri: "redirectUri"
+});
 ```
 
 ```javascript
@@ -46,12 +46,12 @@ authenticationClient.parseIDToken; // 验证并解析 ID Token
 
 ```javascript
 // 使用 AppId、 AppSecret、AppHost、redirectUri 进行初始化
-const authingClient = new AuthenticationClient(
-  APP_ID,
-  APP_SECRET,
-  APP_HOST,
-  redirectUri
-);
+const authenticationClient = new AuthenticationClient({
+  host: "APP_HOST",
+  appId: "APP_ID",
+  appSecret: "APP_SECRET",
+  redirectUri: "redirectUri"
+});
 ```
 
 ### 将用户浏览器重定向到 Authing 的认证发起 URL 进行认证
@@ -74,7 +74,9 @@ authenticationClient.loginWithRedirect(options);
 
 ### 生成用户登录链接
 
-authenticationClient.buildAuthUrl(options)
+```js
+authenticationClient.buildAuthUrl(options);
+```
 
 > 调用方法，生成用户登录链接返回给客户端，在合适的时机触发登录认证流程
 
@@ -185,7 +187,9 @@ const result = authenticationClient.handleRedirectCallback(req, res);
 
 ### 用授权码获取用户登录态
 
-authenticationClient.getLoginStateByAuthCode(code, redirectUri)
+```js
+authenticationClient.getLoginStateByAuthCode(code, redirectUri);
+```
 
 > 使用授权码 Code 获取用户的登录态信息。
 
@@ -197,7 +201,10 @@ authenticationClient.getLoginStateByAuthCode(code, redirectUri)
 #### 示例
 
 ```javascript
-const res = authenticationClient.getLoginStateByAuthCode(code, redirectUri);
+const res = await authenticationClient.getLoginStateByAuthCode(
+  code,
+  redirectUri
+);
 ```
 
 #### 示例数据
@@ -245,7 +252,9 @@ const res = authenticationClient.getLoginStateByAuthCode(code, redirectUri);
 
 ### Token 换用户信息
 
-authenticationClient.getUserInfo(accessToken)
+```js
+authenticationClient.getUserInfo(accessToken);
+```
 
 > 使用 Access token 获取用户信息。
 
@@ -256,7 +265,7 @@ authenticationClient.getUserInfo(accessToken)
 #### 示例
 
 ```javascript
-const res = authenticationClient.getUserInfo("Access token");
+const res = await authenticationClient.getUserInfo("Access token");
 ```
 
 #### 示例数据
@@ -303,7 +312,9 @@ const res = authenticationClient.getUserInfo("Access token");
 
 ### 刷新登录态
 
-authenticationClient.refreshLoginState(refreshToken)
+```js
+authenticationClient.refreshLoginState(refreshToken);
+```
 
 > 使用 Refresh token 刷新登录态，并延长 accessToken 有效时间。
 
@@ -362,7 +373,9 @@ const res = authenticationClient.refreshLoginState(refreshToken);
 
 ### 将浏览器重定向到 Authing 的登出发起 URL 进行登出
 
-authenticationClient.logoutWithRedirect(res, options)
+```js
+authenticationClient.logoutWithRedirect(res, options);
+```
 
 > 将浏览器重定向到 Authing 的登出发起 URL 进行登出。
 
@@ -415,7 +428,9 @@ authing.cn/oidc/session/end?${createQueryParams(params)}
 
 ### 验证并解析 ID Token
 
-authenticationClient.parseIDToken(IDToken)
+```js
+authenticationClient.parseIDToken(IDToken);
+```
 
 > 验证并解析 ID Token, 获取部分用户信息。
 
@@ -484,7 +499,9 @@ authenticationClient.parseIDToken(IDToken);
 
 ### 验证并解析 Access Token
 
-authenticationClient.parseAccessToken(accessToken)
+```js
+authenticationClient.parseAccessToken(accessToken);
+```
 
 > 验证并解析 Access Token
 
