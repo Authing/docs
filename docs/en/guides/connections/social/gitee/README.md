@@ -53,7 +53,7 @@ Finally, click "**Create Application**". After the creation is complete, you nee
 
 2.4 After the configuration is complete, click the "Create" or "Save" button to complete the creation.
 
-## Step 3：Development access
+## Step 3: Development access
 
 - **Recommended development access method**: Use a hosted login page
 - **Description of advantages and disadvantages**: The operation and maintenance are simple, and {{$localeConfig.brandName}} is responsible for the operation and maintenance. Each user pool has an independent second-level domain name; if you need to embed it into your application, you need to use the pop-up mode to log in, that is: after clicking the login button, a window will pop up, the content is the login page hosted by {{$localeConfig.brandName}}, or the browser The server redirects to the login page hosted by {{$localeConfig.brandName}}.

@@ -2572,7 +2572,7 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/twitter/"
             },
             {
-              title: "Apple Web 端",
+              title: "Apple Web",
               path: "/guides/connections/social/apple-web/"
             },
             {
