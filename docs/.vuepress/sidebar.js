@@ -624,7 +624,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple Web 端",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/apple-web/"
             },
             {
               title: "支付宝",
@@ -2573,7 +2573,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Apple Web 端",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/apple-web/"
             },
             {
               title: "支付宝",
