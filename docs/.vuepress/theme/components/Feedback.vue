@@ -35,28 +35,36 @@
       <div class="github-edit">
         <a
           class="link"
+          target="_blank"
           href="https://github.com/Authing/docs/issues/new?assignees=&labels=question&template=question.md"
         >{{feedbackConfig.editLink}}
         </a>
       </div>
     </div>
 
-    <FeedbackToast 
+    <FeedbackToast
       :type="feedbackType"
-      v-model="isShowFeedbackFormToast" 
+      v-model="isShowFeedbackFormToast"
       @success="submitFeedback"
-      :styles="feedbackToastStyles">
+      :styles="feedbackToastStyles"
+    >
     </FeedbackToast>
 
-    <FeedbackSuccess 
+    <FeedbackSuccess
       v-model="isShowFeedbackSuccessToast"
       @hide="hideFeedbackSuccessToast"
-      :styles="feedbackToastStyles">
+      :styles="feedbackToastStyles"
+    >
     </FeedbackSuccess>
 
     <div class="feedback-help">
-      <div class="text">若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing 控制台，来开启你的 Authing 之旅！</div>
-      <a class="button" href="https://console.authing.cn" target="_blank">进入 Authing</a>
+      <div class="text">
+        若你已对系统有基本了解，并且感兴趣的话，点击跳转 Authing
+        控制台，来开启你的 Authing 之旅！
+      </div>
+      <a class="button" href="https://console.authing.cn" target="_blank"
+        >进入 Authing</a
+      >
       <img class="shadow-banner" src="../assets/images/banner.png" />
       <div class="shadow-bg"></div>
     </div>
@@ -67,8 +75,8 @@
 import IconFont from "@theme/components/IconFont/index.vue";
 import { feishuFeedback } from "@theme/util/feishu";
 import CheckboxGroup from "@theme/components/CheckboxGroup.vue";
-import FeedbackToast from './FeedbackFormToast.vue'
-import FeedbackSuccess from './FeedbackSuccessToast.vue'
+import FeedbackToast from "./FeedbackFormToast.vue";
+import FeedbackSuccess from "./FeedbackSuccessToast.vue";
 
 const STATUS = {
   NONE: 0,
@@ -90,7 +98,7 @@ export default {
       submited: false,
       isShowFeedbackFormToast: false,
       isShowFeedbackSuccessToast: false,
-      feedbackType: 'good'
+      feedbackType: "good"
     };
   },
   computed: {
@@ -100,11 +108,11 @@ export default {
     feedbackConfig() {
       return this.$themeLocaleConfig.feedback;
     },
-    feedbackToastStyles () {
-      const clientWidth = document.documentElement.clientWidth
+    feedbackToastStyles() {
+      const clientWidth = document.documentElement.clientWidth;
       return clientWidth >= 1060
-        ? 'top: 40px; left: 110px'
-        : 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)'
+        ? "top: 40px; left: 110px"
+        : "position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)";
     }
   },
   watch: {
@@ -116,8 +124,8 @@ export default {
       deep: true
     }
   },
-  mounted () {
-    this.registToastStatusEvent()
+  mounted() {
+    this.registToastStatusEvent();
   },
   methods: {
     submitFeedback(params) {
@@ -127,21 +135,21 @@ export default {
       this.isShowFeedbackFormToast = false;
     },
     handleFeedback(status) {
-      this.status = status
-      this.feedbackType = status === 1 ? 'good' : 'bad'
-      this.isShowFeedbackFormToast = true
+      this.status = status;
+      this.feedbackType = status === 1 ? "good" : "bad";
+      this.isShowFeedbackFormToast = true;
     },
-    hideFeedbackSuccessToast () {
-      this.isShowFeedbackSuccessToast = false
+    hideFeedbackSuccessToast() {
+      this.isShowFeedbackSuccessToast = false;
     },
-    registToastStatusEvent () {
-      document.addEventListener('click', e => {
-        this.isShowFeedbackFormToast = false
-        this.isShowFeedbackSuccessToast = false
-      })
-      this.$refs.feedback.addEventListener('click', e => {
-        e.stopPropagation()
-      })
+    registToastStatusEvent() {
+      document.addEventListener("click", e => {
+        this.isShowFeedbackFormToast = false;
+        this.isShowFeedbackSuccessToast = false;
+      });
+      this.$refs.feedback.addEventListener("click", e => {
+        e.stopPropagation();
+      });
     }
   }
 };

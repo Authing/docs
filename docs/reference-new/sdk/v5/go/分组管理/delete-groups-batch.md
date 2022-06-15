@@ -13,12 +13,14 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| codeList | array | 是 |  | 分组 code 列表。 示例值： `["code1"]` |
+| codeList | string[] | 是 |  | 分组 code 列表。 示例值： `["code1"]` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

@@ -13,27 +13,29 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| codeList | array | 是 |  | 权限分组 code 列表。 示例值： `["code1","code2"]` |
+| codeList | string[] | 是 |  | 权限分组 code 列表。 示例值： `["code1","code2"]` |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.deleteNamespacesBatch(
-          new DeleteNamespacesBatchDto(
-         new List<String>("code1","code2",) ,
-        )
-        ).execute();
+        DeleteNamespacesBatchDto request = new DeleteNamespacesBatchDto();
+        request.setCodeList(new List<String>("code1","code2",));
+        
+        IsSuccessRespDto response = managementClient.deleteNamespacesBatch(request);
+        System.out.println(response);
     }
 }
 ```

@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userIds | array  | 是 |  | 用户 ID 数组。 示例值： `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
+| userIds | string[]  | 是 |  | 用户 ID 数组。 示例值： `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
 | withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
 | withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
 | withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
@@ -22,24 +22,26 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.getUserBatch(
         
          
-            "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0"            , 
-            true            , 
-            true            , 
-            true            
-        ).execute();
+        request.setUserIds("6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0"); 
+        request.setWithCustomData(true); 
+        request.setWithIdentities(true); 
+        request.setWithDepartmentIds(true);
+        UserListRespDto response = managementClient.getUserBatch(request);
+        System.out.println(response);
     }
 }
 ```
@@ -82,7 +84,7 @@ class ManagementClientTest {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-13",
+    "birthdate": "2022-06-15",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -129,7 +131,7 @@ class ManagementClientTest {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

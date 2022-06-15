@@ -40,7 +40,7 @@ data = management_client.get_authorized_resources(
   
       resource_type: "DATA",
   
-      with_denied: undefined,
+      with_denied: false,
   
 )
 ```

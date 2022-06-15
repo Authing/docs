@@ -14,12 +14,14 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | userId | string | 是 |  | 用户 ID。  |
-| appIds | array | 是 |  | APP ID 集合。 示例值： `["62188e71cxxxx3075289c580"]` |
+| appIds | string[] | 是 |  | APP ID 集合。 示例值： `["62188e71cxxxx3075289c580"]` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

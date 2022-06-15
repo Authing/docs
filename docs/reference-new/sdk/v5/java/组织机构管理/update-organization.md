@@ -16,7 +16,7 @@
 | organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
 | description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| leaderUserIds | string[] | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 | organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
 | organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
@@ -25,38 +25,40 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.updateOrganization(
-          new UpdateOrganizationReqDto(
-         "steamory" ,
-         "技术研发部门" ,
-         "60b49eb83fd80adb96f26e68" ,
-         new List<String>("60b49eb83fd80adb96f26e68",) ,
+        UpdateOrganizationReqDto request = new UpdateOrganizationReqDto();
+        request.setOrganizationCode("steamory");
+        request.setDescription("技术研发部门");
+        request.setOpenDepartmentId("60b49eb83fd80adb96f26e68");
+        request.setLeaderUserIds(new List<String>("60b49eb83fd80adb96f26e68",));
             I18n= new OrganizationNameI18nDto(
                         OrganizationName= new LangObject(
                         Zh-CN= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         En-US= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         ),
         ),
-         "steamory2" ,
-         "蒸汽记忆" ,
-        )
-        ).execute();
+        request.setOrganizationNewCode("steamory2");
+        request.setOrganizationName("蒸汽记忆");
+        
+        OrganizationSingleRespDto response = managementClient.updateOrganization(request);
+        System.out.println(response);
     }
 }
 ```

@@ -13,34 +13,36 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 角色列表。 示例值： `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 |  | 角色列表。 示例值： `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createRolesBatch(
-          new CreateRolesBatch(
+        CreateRolesBatch request = new CreateRolesBatch();
             List= new List<RoleListItem>(
-                    new RoleListItem
-                    (
-                "my-role-code" ,
-       "this is a description about the role" ,
-       "default" ,
-                )
+                    new RoleListItem().set
+
+               request.setCode("my-role-code");
+      request.setDescription("this is a description about the role");
+      request.setNamespace("default");
+      
                   ),
-        )
-        ).execute();
+        
+        IsSuccessRespDto response = managementClient.createRolesBatch(request);
+        System.out.println(response);
     }
 }
 ```

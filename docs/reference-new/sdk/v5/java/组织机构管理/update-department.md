@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| leaderUserIds | string[] | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
 | description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | code | string | 否 |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff` |
 | i18n | <a href="#I18nDto">I18nDto</a> | 否 |  | 多语言设置。 示例值： `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
@@ -27,40 +27,42 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.updateDepartment(
-          new UpdateDepartmentReqDto(
-         "60b49eb83fd80adb96f26e68" ,
-         new List<String>("60b49eb83fd80adb96f26e68",) ,
-         "技术研发部门" ,
-         "6229c4deb3e4d8a20b6021ff" ,
+        UpdateDepartmentReqDto request = new UpdateDepartmentReqDto();
+        request.setDepartmentId("60b49eb83fd80adb96f26e68");
+        request.setLeaderUserIds(new List<String>("60b49eb83fd80adb96f26e68",));
+        request.setDescription("技术研发部门");
+        request.setCode("6229c4deb3e4d8a20b6021ff");
             I18n= new I18nDto(
                         Name= new LangObject(
                         Zh-CN= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         En-US= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         ),
         ),
-         "steamory" ,
-         "开发部" ,
-         UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID ,
-         "6229c4deb3e4d8a20b6021ff" ,
-        )
-        ).execute();
+        request.setOrganizationCode("steamory");
+        request.setName("开发部");
+        request.setDepartmentIdType(UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID);
+        request.setParentDepartmentId("6229c4deb3e4d8a20b6021ff");
+        
+        DepartmentSingleRespDto response = managementClient.updateDepartment(request);
+        System.out.println(response);
     }
 }
 ```

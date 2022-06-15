@@ -16,7 +16,7 @@
 | organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
 | description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| leaderUserIds | string[] | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 | organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
 | organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
@@ -25,6 +25,8 @@
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

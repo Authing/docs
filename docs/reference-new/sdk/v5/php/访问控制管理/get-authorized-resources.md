@@ -44,7 +44,7 @@ $data = $management->getAuthorizedResources(array(
 
     "resourceType" => "DATA",
 
-    "withDenied" => undefined,
+    "withDenied" => false,
 
 ));
 ```

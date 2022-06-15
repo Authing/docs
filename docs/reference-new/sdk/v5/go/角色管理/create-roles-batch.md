@@ -13,12 +13,14 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 角色列表。 示例值： `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 |  | 角色列表。 示例值： `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

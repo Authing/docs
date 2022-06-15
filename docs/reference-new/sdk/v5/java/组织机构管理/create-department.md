@@ -26,39 +26,41 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createDepartment(
-          new CreateDepartmentReqDto(
-         "ou_7dab8a3d3cdccxxxxxx777c7ad535d62" ,
-         "开发部" ,
-         "技术研发部门" ,
-         "6229c4deb3e4d8a20b6021ff" ,
-         "6229c4deb3e4d8a20b6021ff" ,
+        CreateDepartmentReqDto request = new CreateDepartmentReqDto();
+        request.setOpenDepartmentId("ou_7dab8a3d3cdccxxxxxx777c7ad535d62");
+        request.setName("开发部");
+        request.setDescription("技术研发部门");
+        request.setParentDepartmentId("6229c4deb3e4d8a20b6021ff");
+        request.setCode("6229c4deb3e4d8a20b6021ff");
             I18n= new I18nDto(
                         Name= new LangObject(
                         Zh-CN= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         En-US= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         ),
         ),
-         "steamory" ,
-         CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID ,
-        )
-        ).execute();
+        request.setOrganizationCode("steamory");
+        request.setDepartmentIdType(CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID);
+        
+        DepartmentSingleRespDto response = managementClient.createDepartment(request);
+        System.out.println(response);
     }
 }
 ```

@@ -25,27 +25,29 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createExtIdpConn(
-          new CreateExtIdpConnDto(
-         "60b49eb83fd80adb96f26e68" ,
-         CreateExtIdpConnDto.type.AD ,
-         "60b49eb83fd80adb96f26e68" ,
-         false ,
-         "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png" ,
-         "登录页" ,
-         new CreateExtIdpConnDto(    "身份源上的 clientId",    "身份源上的 clientSecret",) ,
-        )
-        ).execute();
+        CreateExtIdpConnDto request = new CreateExtIdpConnDto();
+        request.setExtIdpId("60b49eb83fd80adb96f26e68");
+        request.setType(CreateExtIdpConnDto.type.AD);
+        request.setIdentifier("60b49eb83fd80adb96f26e68");
+        request.setLoginOnly(false);
+        request.setLogo("https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png");
+        request.setDisplayName("登录页");
+        request.setFields(new CreateExtIdpConnDto.setClientId("身份源上的 clientId",.setClientSecret("身份源上的 clientSecret",));
+        
+        ExtIdpConnDetailSingleRespDto response = managementClient.createExtIdpConn(request);
+        System.out.println(response);
     }
 }
 ```

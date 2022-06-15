@@ -4,7 +4,9 @@
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
 
-      <FeedbackSmall />
+      <ClientOnly>
+        <FeedbackSmall />
+      </ClientOnly>
     </div>
     <div>
       <svg

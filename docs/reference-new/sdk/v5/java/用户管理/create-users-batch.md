@@ -13,70 +13,72 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 批量用户。  |
+| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 |  | 批量用户。  |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createUsersBatch(
-          new CreateUserBatchReqDto(
+        CreateUserBatchReqDto request = new CreateUserBatchReqDto();
             List= new List<CreateUserInfoDto>(
-                    new CreateUserInfoDto
-                    (
-                CreateUserInfoDto.status.ACTIVATED ,
-       "test@example.com" ,
-       CreateUserInfoDto.passwordEncryptType.NONE ,
-       "176xxxx6754" ,
-       "+86" ,
-       "bob" ,
-       "张三" ,
-       "张三" ,
-       "https://files.authing.co/authing-console/default-user-avatar.png" ,
-       CreateUserInfoDto.gender.M ,
-       true ,
-       true ,
-       "2022-06-13" ,
-       "CN" ,
-       "BJ" ,
-       "BJ" ,
-       "北京朝阳" ,
-       "北京朝阳区 xxx 街道" ,
-       "438100" ,
-       "10010" ,
-       new List<String>("624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",) ,
-       new CreateUserInfoDto(    "北京大学",    22,) ,
-       "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-       new List<String>() ,
+                    new CreateUserInfoDto().set
+
+               request.setStatus(CreateUserInfoDto.status.ACTIVATED);
+      request.setEmail("test@example.com");
+      request.setPasswordEncryptType(CreateUserInfoDto.passwordEncryptType.NONE);
+      request.setPhone("176xxxx6754");
+      request.setPhoneCountryCode("+86");
+      request.setUsername("bob");
+      request.setName("张三");
+      request.setNickname("张三");
+      request.setPhoto("https://files.authing.co/authing-console/default-user-avatar.png");
+      request.setGender(CreateUserInfoDto.gender.M);
+      request.setEmailVerified(true);
+      request.setPhoneVerified(true);
+      request.setBirthdate("2022-06-15");
+      request.setCountry("CN");
+      request.setProvince("BJ");
+      request.setCity("BJ");
+      request.setAddress("北京朝阳");
+      request.setStreetAddress("北京朝阳区 xxx 街道");
+      request.setPostalCode("438100");
+      request.setExternalId("10010");
+      request.setDepartmentIds(new List<String>("624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",));
+      request.setCustomData(new CreateUserInfoDto.setSchool("北京大学",.setAge(age22,));
+      request.setPassword("oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=");
+      request.setTenantIds(new List<String>());
           Identities= new List<CreateIdentityDto>(
-                    new CreateIdentityDto
-                    (
-                "6076bacxxxxxxxxd80d993b5" ,
-       "wechat" ,
-       "openid" ,
-       "oj7Nq05R-RRaqak0_YlMLnnIwsvg" ,
-                )
+                    new CreateIdentityDto().set
+
+               request.setExtIdpId("6076bacxxxxxxxxd80d993b5");
+      request.setProvider("wechat");
+      request.setType("openid");
+      request.setUserIdInIdp("oj7Nq05R-RRaqak0_YlMLnnIwsvg");
+      
                   ),
-                )
+      
                   ),
             Options= new CreateUserOptionsDto(
-                     false ,
-     false ,
-     CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID ,
+                    request.setKeepPassword(false);
+    request.setResetPasswordOnFirstLogin(false);
+    request.setDepartmentIdType(CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID);
         ),
-        )
-        ).execute();
+        
+        UserListRespDto response = managementClient.createUsersBatch(request);
+        System.out.println(response);
     }
 }
 ```
@@ -119,7 +121,7 @@ class ManagementClientTest {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-13",
+    "birthdate": "2022-06-15",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -162,7 +164,7 @@ class ManagementClientTest {
 | gender | string | 否 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 否 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 否 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -216,7 +218,7 @@ class ManagementClientTest {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

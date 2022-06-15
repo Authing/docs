@@ -14,12 +14,14 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| list | array | 是 |  | 授权列表。  |
+| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 |  | 授权列表。  |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

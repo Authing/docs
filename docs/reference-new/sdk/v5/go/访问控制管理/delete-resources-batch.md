@@ -14,12 +14,14 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| codeList | array | 是 |  | 资源 code 列表。 示例值： `["code1","code2"]` |
+| codeList | string[] | 是 |  | 资源 code 列表。 示例值： `["code1","code2"]` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

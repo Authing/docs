@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | code | string | 是 |  | 分组 code。 示例值： `developer` |
-| userIds | array | 是 |  | 用户 ID 数组。 示例值： `["6229ffaxxxxxxxxcade3e3d9"]` |
+| userIds | array[] | 是 |  | 用户 ID 数组。 示例值： `["6229ffaxxxxxxxxcade3e3d9"]` |
 
 
 ## 示例代码

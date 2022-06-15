@@ -22,24 +22,26 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.isUserExists(
-          new IsUserExistsReqDto(
-         "bob" ,
-         "test@example.com" ,
-         "176xxxx6754" ,
-         "10010" ,
-        )
-        ).execute();
+        IsUserExistsReqDto request = new IsUserExistsReqDto();
+        request.setUsername("bob");
+        request.setEmail("test@example.com");
+        request.setPhone("176xxxx6754");
+        request.setExternalId("10010");
+        
+        IsUserExistsRespDto response = managementClient.isUserExists(request);
+        System.out.println(response);
     }
 }
 ```

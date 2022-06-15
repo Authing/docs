@@ -23,6 +23,8 @@
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"
@@ -48,7 +50,7 @@ func main() {
         targetIdentifier: "userId1"        , 
         namespace: "default"        , 
         resourceType: "DATA"        , 
-        withDenied: undefined        
+        withDenied: false        
   )
 }
 ```

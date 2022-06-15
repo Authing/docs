@@ -25,27 +25,29 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.getUserLoginHistory(
         
          
-            "6229ffaxxxxxxxxcade3e3d9"            , 
-            "undefined"            , 
-            "127.0.0.1"            , 
-            1647360000000            , 
-            1648051199000            , 
-            1            , 
-            10            
-        ).execute();
+        request.setUserId("6229ffaxxxxxxxxcade3e3d9"); 
+        request.setAppId("undefined"); 
+        request.setClientIp("127.0.0.1"); 
+        request.setStart(1647360000000); 
+        request.setEnd(1648051199000); 
+        request.setPage(1); 
+        request.setLimit(10);
+        UserLoginHistoryPaginatedRespDto response = managementClient.getUserLoginHistory(request);
+        System.out.println(response);
     }
 }
 ```

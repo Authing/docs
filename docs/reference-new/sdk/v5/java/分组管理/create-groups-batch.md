@@ -13,34 +13,36 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 批量分组。  |
+| list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 |  | 批量分组。  |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createGroupsBatch(
-          new CreateGroupBatchReqDto(
+        CreateGroupBatchReqDto request = new CreateGroupBatchReqDto();
             List= new List<CreateGroupReqDto>(
-                    new CreateGroupReqDto
-                    (
-                "developer" ,
-       "开发者" ,
-       "描述内容" ,
-                )
+                    new CreateGroupReqDto().set
+
+               request.setCode("developer");
+      request.setName("开发者");
+      request.setDescription("描述内容");
+      
                   ),
-        )
-        ).execute();
+        
+        GroupListRespDto response = managementClient.createGroupsBatch(request);
+        System.out.println(response);
     }
 }
 ```

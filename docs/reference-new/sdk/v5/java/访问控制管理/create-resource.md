@@ -16,7 +16,7 @@
 | code | string | 是 |  | 资源唯一标志符。 示例值： `ecs` |
 | description | string | 否 |  | 资源描述。 示例值： `服务器` |
 | type | string | 是 |  | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
-| actions | array | 否 |  | 资源定义的操作类型。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
+| actions | <a href="#ResourceAction">ResourceAction[]</a> | 否 |  | 资源定义的操作类型。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
 | apiIdentifier | string | 否 |  | API 资源的 URL 标识。 示例值： `https://my-awesome-api.com/api` |
 | namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
 
@@ -24,32 +24,34 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createResource(
-          new CreateResourceDto(
-         "ecs" ,
-         "服务器" ,
-         CreateResourceDto.type.API ,
+        CreateResourceDto request = new CreateResourceDto();
+        request.setCode("ecs");
+        request.setDescription("服务器");
+        request.setType(CreateResourceDto.type.API);
             Actions= new List<ResourceAction>(
-                    new ResourceAction
-                    (
-                "ecs:Start" ,
-       "ecs:Start" ,
-                )
+                    new ResourceAction().set
+
+               request.setName("ecs:Start");
+      request.setDescription("ecs:Start");
+      
                   ),
-         "https://my-awesome-api.com/api" ,
-         "default" ,
-        )
-        ).execute();
+        request.setApiIdentifier("https://my-awesome-api.com/api");
+        request.setNamespace("default");
+        
+        ResourceRespDto response = managementClient.createResource(request);
+        System.out.println(response);
     }
 }
 ```

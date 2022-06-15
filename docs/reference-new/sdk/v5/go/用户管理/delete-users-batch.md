@@ -13,12 +13,14 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| userIds | array | 是 |  | 用户 ID 列表。 示例值： `["userId1","userId2"]` |
+| userIds | string[] | 是 |  | 用户 ID 列表。 示例值： `["userId1","userId2"]` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

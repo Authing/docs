@@ -25,7 +25,7 @@
 | gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` |
 | emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
 | phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-13` |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-15` |
 | country | string | 否 |  | 所在国家。 示例值： `CN` |
 | province | string | 否 |  | 所在省份。 示例值： `BJ` |
 | city | string | 否 |  | 所在城市。 示例值： `BJ` |
@@ -33,17 +33,19 @@
 | streetAddress | string | 否 |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道` |
 | postalCode | string | 否 |  | 邮政编码号。 示例值： `438100` |
 | externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
-| departmentIds | array | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
+| departmentIds | string[] | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
 | customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `{"school":"北京大学","age":22}` |
 | password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
-| tenantIds | array | 否 |  | 租户 ID。  |
-| identities | array | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
+| tenantIds | string[] | 否 |  | 租户 ID。  |
+| identities | <a href="#CreateIdentityDto">CreateIdentityDto[]</a> | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"
@@ -76,7 +78,7 @@ func main() {
           Gender: CreateUserReqDto.gender.M,
           EmailVerified: true,
           PhoneVerified: true,
-          Birthdate: "2022-06-13",
+          Birthdate: "2022-06-15",
           Country: "CN",
           Province: "BJ",
           City: "BJ",
@@ -145,7 +147,7 @@ func main() {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-13",
+    "birthdate": "2022-06-15",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -211,7 +213,7 @@ func main() {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |

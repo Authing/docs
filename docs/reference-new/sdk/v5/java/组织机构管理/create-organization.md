@@ -23,36 +23,38 @@
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createOrganization(
-          new CreateOrganizationReqDto(
-         "steamory" ,
-         "蒸汽记忆" ,
-         "组织描述信息" ,
-         "60b49eb83fd80adb96f26e68" ,
+        CreateOrganizationReqDto request = new CreateOrganizationReqDto();
+        request.setOrganizationCode("steamory");
+        request.setOrganizationName("蒸汽记忆");
+        request.setDescription("组织描述信息");
+        request.setOpenDepartmentId("60b49eb83fd80adb96f26e68");
             I18n= new OrganizationNameI18nDto(
                         OrganizationName= new LangObject(
                         Zh-CN= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         En-US= new LangUnit(
-                     false ,
-     false ,
+                    request.setEnabled(false);
+    request.setValue(false);
         ),
         ),
         ),
-        )
-        ).execute();
+        
+        OrganizationSingleRespDto response = managementClient.createOrganization(request);
+        System.out.println(response);
     }
 }
 ```

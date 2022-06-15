@@ -14,35 +14,37 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| departments | array | 是 |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.setUserDepartments(
-          new SetUserDepartmentsDto(
-         "6229ffaxxxxxxxxcade3e3d9" ,
+        SetUserDepartmentsDto request = new SetUserDepartmentsDto();
+        request.setUserId("6229ffaxxxxxxxxcade3e3d9");
             Departments= new List<SetUserDepartmentDto>(
-                    new SetUserDepartmentDto
-                    (
-                "60b49eb83fd80adb96f26e68" ,
-       true ,
-       true ,
-                )
+                    new SetUserDepartmentDto().set
+
+               request.setDepartmentId("60b49eb83fd80adb96f26e68");
+      request.setIsLeader(true);
+      request.setIsMainDepartment(true);
+      
                   ),
-        )
-        ).execute();
+        
+        IsSuccessRespDto response = managementClient.setUserDepartments(request);
+        System.out.println(response);
     }
 }
 ```

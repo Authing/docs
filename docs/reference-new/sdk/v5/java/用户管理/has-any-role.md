@@ -14,34 +14,36 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| roles | array | 是 |  | 角色列表。  |
+| roles | <a href="#HasRoleRolesDto">HasRoleRolesDto[]</a> | 是 |  | 角色列表。  |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.hasAnyRole(
-          new HasAnyRoleReqDto(
-         "6229ffaxxxxxxxxcade3e3d9" ,
+        HasAnyRoleReqDto request = new HasAnyRoleReqDto();
+        request.setUserId("6229ffaxxxxxxxxcade3e3d9");
             Roles= new List<HasRoleRolesDto>(
-                    new HasRoleRolesDto
-                    (
-                "default" ,
-       "admin" ,
-                )
+                    new HasRoleRolesDto().set
+
+               request.setNamespace("default");
+      request.setCode("admin");
+      
                   ),
-        )
-        ).execute();
+        
+        HasAnyRoleRespDto response = managementClient.hasAnyRole(request);
+        System.out.println(response);
     }
 }
 ```

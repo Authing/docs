@@ -13,12 +13,14 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| codeList | array  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
+| codeList | string[]  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
 
 
 ## 示例代码
 
 ```go
+package main
+
 import (
     "authing-go-sdk/client"
     "authing-go-sdk/dto"

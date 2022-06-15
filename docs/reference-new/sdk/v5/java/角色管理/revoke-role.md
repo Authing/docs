@@ -15,35 +15,37 @@
 | ---- | ---- | ---- | ---- | ---- |
 | code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
 | namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| targets | array | 是 |  | 移除角色的目标。 示例值： `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
+| targets | <a href="#TargetDto">TargetDto[]</a> | 是 |  | 移除角色的目标。 示例值： `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.revokeRole(
-          new RevokeRoleDto(
-         "code1" ,
-         "default" ,
+        RevokeRoleDto request = new RevokeRoleDto();
+        request.setCode("code1");
+        request.setNamespace("default");
             Targets= new List<TargetDto>(
-                    new TargetDto
-                    (
-                TargetDto.targetType.DEPARTMENT ,
-       "60b49eb83fd80adb96f26e68" ,
-                )
+                    new TargetDto().set
+
+               request.setTargetType(TargetDto.targetType.DEPARTMENT);
+      request.setTargetIdentifier("60b49eb83fd80adb96f26e68");
+      
                   ),
-        )
-        ).execute();
+        
+        IsSuccessRespDto response = managementClient.revokeRole(request);
+        System.out.println(response);
     }
 }
 ```

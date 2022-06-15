@@ -25,7 +25,7 @@
 | gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` |
 | emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
 | phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-13` |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-15` |
 | country | string | 否 |  | 所在国家。 示例值： `CN` |
 | province | string | 否 |  | 所在省份。 示例值： `BJ` |
 | city | string | 否 |  | 所在城市。 示例值： `BJ` |
@@ -33,69 +33,71 @@
 | streetAddress | string | 否 |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道` |
 | postalCode | string | 否 |  | 邮政编码号。 示例值： `438100` |
 | externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
-| departmentIds | array | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
+| departmentIds | string[] | 否 |  | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
 | customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `{"school":"北京大学","age":22}` |
 | password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
-| tenantIds | array | 否 |  | 租户 ID。  |
-| identities | array | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
+| tenantIds | string[] | 否 |  | 租户 ID。  |
+| identities | <a href="#CreateIdentityDto">CreateIdentityDto[]</a> | 否 |  | 第三方身份源（建议调用绑定接口进行绑定）。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
 ## 示例代码
 
 ```java
-
-import cn.authing.core.mgmt.ManagementClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.model.ManagementClientOptions;
 
 class ManagementClientTest {
-    private static String ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
+    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
-    public static void main(String[] args){
-        ManagementClient managementClient = new ManagementClient(ACCESS_Key_ID, ACCESS_KEY_SECRET);
+    public static void main(String[] args) {
+        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
+        ManagementClient managementClient = new ManagementClient(clientOptions);
     
-        managementClient.createUser(
-          new CreateUserReqDto(
-         CreateUserReqDto.status.ACTIVATED ,
-         "test@example.com" ,
-         CreateUserReqDto.passwordEncryptType.NONE ,
-         "176xxxx6754" ,
-         "+86" ,
-         "bob" ,
-         "张三" ,
-         "张三" ,
-         "https://files.authing.co/authing-console/default-user-avatar.png" ,
-         CreateUserReqDto.gender.M ,
-         true ,
-         true ,
-         "2022-06-13" ,
-         "CN" ,
-         "BJ" ,
-         "BJ" ,
-         "北京朝阳" ,
-         "北京朝阳区 xxx 街道" ,
-         "438100" ,
-         "10010" ,
-         new List<String>("624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",) ,
-         new CreateUserReqDto(    "北京大学",    22,) ,
-         "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-         new List<String>() ,
+        CreateUserReqDto request = new CreateUserReqDto();
+        request.setStatus(CreateUserReqDto.status.ACTIVATED);
+        request.setEmail("test@example.com");
+        request.setPasswordEncryptType(CreateUserReqDto.passwordEncryptType.NONE);
+        request.setPhone("176xxxx6754");
+        request.setPhoneCountryCode("+86");
+        request.setUsername("bob");
+        request.setName("张三");
+        request.setNickname("张三");
+        request.setPhoto("https://files.authing.co/authing-console/default-user-avatar.png");
+        request.setGender(CreateUserReqDto.gender.M);
+        request.setEmailVerified(true);
+        request.setPhoneVerified(true);
+        request.setBirthdate("2022-06-15");
+        request.setCountry("CN");
+        request.setProvince("BJ");
+        request.setCity("BJ");
+        request.setAddress("北京朝阳");
+        request.setStreetAddress("北京朝阳区 xxx 街道");
+        request.setPostalCode("438100");
+        request.setExternalId("10010");
+        request.setDepartmentIds(new List<String>("624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",));
+        request.setCustomData(new CreateUserReqDto.setSchool("北京大学",.setAge(age22,));
+        request.setPassword("oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=");
+        request.setTenantIds(new List<String>());
             Identities= new List<CreateIdentityDto>(
-                    new CreateIdentityDto
-                    (
-                "6076bacxxxxxxxxd80d993b5" ,
-       "wechat" ,
-       "openid" ,
-       "oj7Nq05R-RRaqak0_YlMLnnIwsvg" ,
-                )
+                    new CreateIdentityDto().set
+
+               request.setExtIdpId("6076bacxxxxxxxxd80d993b5");
+      request.setProvider("wechat");
+      request.setType("openid");
+      request.setUserIdInIdp("oj7Nq05R-RRaqak0_YlMLnnIwsvg");
+      
                   ),
             Options= new CreateUserOptionsDto(
-                     false ,
-     false ,
-     CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID ,
+                    request.setKeepPassword(false);
+    request.setResetPasswordOnFirstLogin(false);
+    request.setDepartmentIdType(CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID);
         ),
-        )
-        ).execute();
+        
+        UserSingleRespDto response = managementClient.createUser(request);
+        System.out.println(response);
     }
 }
 ```
@@ -138,7 +140,7 @@ class ManagementClientTest {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-13",
+    "birthdate": "2022-06-15",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -204,7 +206,7 @@ class ManagementClientTest {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
