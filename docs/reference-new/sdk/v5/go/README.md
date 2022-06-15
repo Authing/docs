@@ -1,7 +1,7 @@
 # 安装
 
 ```bash
-go get -u github.com/Authing/authing-go-sdk
+go get -u github.com/Authing/authing-golang-sdk
 ```
 
 ## 初始化
