@@ -22,7 +22,7 @@
 | status | string | 否 | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived` |
 | emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
 | phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-13` |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-15` |
 | country | string | 否 |  | 所在国家。 示例值： `CN` |
 | province | string | 否 |  | 所在省份。 示例值： `BJ` |
 | city | string | 否 |  | 所在城市。 示例值： `BJ` |
@@ -72,7 +72,7 @@ func main() {
           Status: UpdateUserReqDto.status.ACTIVATED,
           EmailVerified: true,
           PhoneVerified: true,
-          Birthdate: "2022-06-13",
+          Birthdate: "2022-06-15",
           Country: "CN",
           Province: "BJ",
           City: "BJ",
@@ -129,7 +129,7 @@ func main() {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-13",
+    "birthdate": "2022-06-15",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -176,7 +176,7 @@ func main() {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-13`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
