@@ -29,7 +29,7 @@ export default {
       if (newVal) {
         setTimeout(() => {
           this.hide()
-        }, 2000)
+        }, 1000)
       }
     }
   },

@@ -177,7 +177,7 @@ export default {
     font-size 16px
   a
     position: relative
-    font-size 12px
+    font-size 14px
     // border-left 3px solid transparent
     // color: transparent
     color #4e5969
