@@ -35,9 +35,7 @@
       <div class="github-edit">
         <a
           class="link"
-          :href="
-            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
-          "
+          href="https://github.com/Authing/docs/issues/new?assignees=&labels=question&template=question.md"
         >{{feedbackConfig.editLink}}
         </a>
       </div>
@@ -112,10 +110,7 @@ export default {
   watch: {
     $route: {
       handler () {
-        const status = window.localStorage.getItem('feedback:' + window.location.href)
-        if (['1', '2'].includes(status)) {
-          this.status = +status
-        }
+        this.status = 0
       },
       immediate: true,
       deep: true
@@ -128,8 +123,6 @@ export default {
     submitFeedback(params) {
       feishuFeedback(params).then(() => {
         this.isShowFeedbackSuccessToast = true
-
-        window.localStorage.setItem('feedback:' + window.location.href, this.status)
       });
       this.isShowFeedbackFormToast = false;
     },

@@ -99,10 +99,7 @@ export default {
   watch: {
     $route: {
       handler () {
-        const status = window.localStorage.getItem('feedback:' + window.location.href)
-        if (['1', '2'].includes(status)) {
-          this.status = +status
-        }
+        this.status = 0
       },
       immediate: true,
       deep: true
@@ -115,8 +112,6 @@ export default {
     submitFeedback(params) {
       feishuFeedback(params).then(() => {
         this.isShowFeedbackSuccessToast = true
-
-        window.localStorage.setItem('feedback:' + window.location.href, this.status)
       });
       this.isShowFeedbackFormToast = false;
     },
@@ -130,7 +125,6 @@ export default {
     },
     registToastStatusEvent () {
       document.addEventListener('click', e => {
-        console.log(e)
         this.isShowFeedbackFormToast = false
         this.isShowFeedbackSuccessToast = false
       })
