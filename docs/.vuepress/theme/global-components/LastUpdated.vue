@@ -61,7 +61,7 @@ export default {
 
 <style lang="stylus" scoped>
 .authing-last-updated
-  color #999
+  color #86909C
   margin-bottom 24px
   font-size 14px
   display: flex;
