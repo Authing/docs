@@ -71,20 +71,20 @@ export default {
     window.addEventListener("scroll", this.setActiveHash);
   },
   watch: {
-    $route(a, b) {
-      if (a.name !== b.name) {
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 100);
-      }
-    }
+    // $route(a, b) {
+    //   if (a.name !== b.name) {
+    //     window.scrollTo(0, 1);
+    //     setTimeout(() => {
+    //       window.scrollTo(0, 0);
+    //     }, 100);
+    //   }
+    // }
   },
   updated() {
     this.captureAnchors();
 
-    // this.handleScroll()
-    // this.setActiveHash()
+    this.handleScroll()
+    this.setActiveHash()
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
