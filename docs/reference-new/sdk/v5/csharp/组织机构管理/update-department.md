@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | array | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
+| leaderUserIds | string[] | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
 | description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
 | code | string | 否 |  | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff` |
 | i18n | <a href="#I18nDto">I18nDto</a> | 否 |  | 多语言设置。 示例值： `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |

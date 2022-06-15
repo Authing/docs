@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| list | array | 是 |  | 资源列表。  |
+| list | <a href="#CreateResourceBatchItemDto">CreateResourceBatchItemDto[]</a> | 是 |  | 资源列表。  |
 
 
 ## 示例代码

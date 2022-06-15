@@ -16,7 +16,7 @@
 | targetType | string | 是 |  | 主体类型，目前支持用户、角色、分组和部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
 | targetIdentifier | string | 是 |  | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。 示例值： `userId1` |
 | namespace | string | 否 |  | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。。 示例值： `default` |
-| list | array | 是 |  | 自定义数据列表。  |
+| list | <a href="#SetCustomDataDto">SetCustomDataDto[]</a> | 是 |  | 自定义数据列表。  |
 
 
 ## 示例代码

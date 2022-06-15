@@ -14,7 +14,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
 | userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| roles | array | 是 |  | 角色列表。  |
+| roles | <a href="#HasRoleRolesDto">HasRoleRolesDto[]</a> | 是 |  | 角色列表。  |
 
 
 ## 示例代码

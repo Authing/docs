@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 权限分组列表。  |
+| list | <a href="#CreateNamespacesBatchItemDto">CreateNamespacesBatchItemDto[]</a> | 是 |  | 权限分组列表。  |
 
 
 ## 示例代码

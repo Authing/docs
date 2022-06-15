@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 批量分组。  |
+| list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 |  | 批量分组。  |
 
 
 ## 示例代码

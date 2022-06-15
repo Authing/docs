@@ -13,7 +13,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
-| list | array | 是 |  | 批量用户。  |
+| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 |  | 批量用户。  |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
