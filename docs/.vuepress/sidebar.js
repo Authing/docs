@@ -1510,29 +1510,30 @@ const zhCnNavBar = {
   ],
   "/reference-new/": [
     {
-      title: "开发集成",
+      title: "标准 Web 应用",
       collapsable: false,
       path: "/reference-new/",
       // 自动生成粘贴开始
       children: [
         {
-          "title": "C#",
-          "path": "/reference-new/sdk-v5/csharp/",
-          "children": [
+          title: "C#",
+          path: "/reference-new/sdk-v5/csharp/",
+          redirect: "/reference-new/sdk-v5/csharp/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/csharp/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/csharp/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/csharp/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/csharp/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/用户管理/get-user",
                     "/reference-new/sdk-v5/csharp/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/csharp/用户管理/list-users",
@@ -1561,8 +1562,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/分组管理/get-group",
                     "/reference-new/sdk-v5/csharp/分组管理/list-groups",
                     "/reference-new/sdk-v5/csharp/分组管理/create-group",
@@ -1576,8 +1577,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/角色管理/get-role",
                     "/reference-new/sdk-v5/csharp/角色管理/assign-role",
                     "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
@@ -1592,8 +1593,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/csharp/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/csharp/组织机构管理/update-organization",
@@ -1612,8 +1613,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/csharp/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/csharp/访问控制管理/get-resource",
@@ -1634,8 +1635,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/csharp/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp",
@@ -1648,8 +1649,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-data",
@@ -1661,23 +1662,24 @@ const zhCnNavBar = {
           ]
         },
         {
-          "title": "Go",
-          "path": "/reference-new/sdk-v5/go/",
-          "children": [
+          title: "Go",
+          path: "/reference-new/sdk-v5/go/",
+          redirect: "/reference-new/sdk-v5/go/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/go/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/go/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/go/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/go/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/go/用户管理/get-user",
                     "/reference-new/sdk-v5/go/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/go/用户管理/list-users",
@@ -1706,8 +1708,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/go/分组管理/get-group",
                     "/reference-new/sdk-v5/go/分组管理/list-groups",
                     "/reference-new/sdk-v5/go/分组管理/create-group",
@@ -1721,8 +1723,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/go/角色管理/get-role",
                     "/reference-new/sdk-v5/go/角色管理/assign-role",
                     "/reference-new/sdk-v5/go/角色管理/revoke-role",
@@ -1737,8 +1739,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/go/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/go/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/go/组织机构管理/update-organization",
@@ -1757,8 +1759,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/go/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/go/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/go/访问控制管理/get-resource",
@@ -1779,8 +1781,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/go/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/go/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp",
@@ -1793,8 +1795,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/go/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/go/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/go/自定义字段管理/set-custom-data",
@@ -1806,23 +1808,24 @@ const zhCnNavBar = {
           ]
         },
         {
-          "title": "Java",
-          "path": "/reference-new/sdk-v5/java/",
-          "children": [
+          title: "Java",
+          path: "/reference-new/sdk-v5/java/",
+          redirect: "/reference-new/sdk-v5/java/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/java/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/java/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/java/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/java/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/java/用户管理/get-user",
                     "/reference-new/sdk-v5/java/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/java/用户管理/list-users",
@@ -1851,8 +1854,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/java/分组管理/get-group",
                     "/reference-new/sdk-v5/java/分组管理/list-groups",
                     "/reference-new/sdk-v5/java/分组管理/create-group",
@@ -1866,8 +1869,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/java/角色管理/get-role",
                     "/reference-new/sdk-v5/java/角色管理/assign-role",
                     "/reference-new/sdk-v5/java/角色管理/revoke-role",
@@ -1882,8 +1885,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/java/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/java/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/java/组织机构管理/update-organization",
@@ -1902,8 +1905,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/java/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/java/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/java/访问控制管理/get-resource",
@@ -1924,8 +1927,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/java/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/java/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp",
@@ -1938,8 +1941,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/java/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/java/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/java/自定义字段管理/set-custom-data",
@@ -1951,23 +1954,24 @@ const zhCnNavBar = {
           ]
         },
         {
-          "title": "Node.js",
-          "path": "/reference-new/sdk-v5/node/",
-          "children": [
+          title: "Node.js",
+          path: "/reference-new/sdk-v5/node/",
+          redirect: "/reference-new/sdk-v5/node/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/node/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/node/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/node/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/node/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/node/用户管理/get-user",
                     "/reference-new/sdk-v5/node/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/node/用户管理/list-users",
@@ -1996,8 +2000,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/node/分组管理/get-group",
                     "/reference-new/sdk-v5/node/分组管理/list-groups",
                     "/reference-new/sdk-v5/node/分组管理/create-group",
@@ -2011,8 +2015,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/node/角色管理/get-role",
                     "/reference-new/sdk-v5/node/角色管理/assign-role",
                     "/reference-new/sdk-v5/node/角色管理/revoke-role",
@@ -2027,8 +2031,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/node/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/node/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/node/组织机构管理/update-organization",
@@ -2047,8 +2051,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/node/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/node/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/node/访问控制管理/get-resource",
@@ -2069,8 +2073,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/node/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/node/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp",
@@ -2083,8 +2087,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/node/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/node/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/node/自定义字段管理/set-custom-data",
@@ -2096,23 +2100,24 @@ const zhCnNavBar = {
           ]
         },
         {
-          "title": "PHP",
-          "path": "/reference-new/sdk-v5/php/",
-          "children": [
+          title: "PHP",
+          path: "/reference-new/sdk-v5/php/",
+          redirect: "/reference-new/sdk-v5/php/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/php/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/php/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/php/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/php/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/php/用户管理/get-user",
                     "/reference-new/sdk-v5/php/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/php/用户管理/list-users",
@@ -2141,8 +2146,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/php/分组管理/get-group",
                     "/reference-new/sdk-v5/php/分组管理/list-groups",
                     "/reference-new/sdk-v5/php/分组管理/create-group",
@@ -2156,8 +2161,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/php/角色管理/get-role",
                     "/reference-new/sdk-v5/php/角色管理/assign-role",
                     "/reference-new/sdk-v5/php/角色管理/revoke-role",
@@ -2172,8 +2177,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/php/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/php/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/php/组织机构管理/update-organization",
@@ -2192,8 +2197,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/php/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/php/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/php/访问控制管理/get-resource",
@@ -2214,8 +2219,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/php/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/php/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp",
@@ -2228,8 +2233,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/php/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/php/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/php/自定义字段管理/set-custom-data",
@@ -2241,23 +2246,24 @@ const zhCnNavBar = {
           ]
         },
         {
-          "title": "Python",
-          "path": "/reference-new/sdk-v5/python/",
-          "children": [
+          title: "Python",
+          path: "/reference-new/sdk-v5/python/",
+          redirect: "/reference-new/sdk-v5/python/install.html",
+          children: [
             {
-              "title": "安装使用",
-              "path": "/reference-new/sdk-v5/python/"
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/python/install.md"
             },
             {
-              "title": "用户认证模块",
-              "path": "/reference-new/sdk-v5/python/authentication.md"
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/python/authentication.md"
             },
             {
-              "title": "管理模块",
-              "children": [
+              title: "管理模块",
+              children: [
                 {
-                  "title": "用户管理",
-                  "children": [
+                  title: "用户管理",
+                  children: [
                     "/reference-new/sdk-v5/python/用户管理/get-user",
                     "/reference-new/sdk-v5/python/用户管理/get-user-batch",
                     "/reference-new/sdk-v5/python/用户管理/list-users",
@@ -2286,8 +2292,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "分组管理",
-                  "children": [
+                  title: "分组管理",
+                  children: [
                     "/reference-new/sdk-v5/python/分组管理/get-group",
                     "/reference-new/sdk-v5/python/分组管理/list-groups",
                     "/reference-new/sdk-v5/python/分组管理/create-group",
@@ -2301,8 +2307,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "角色管理",
-                  "children": [
+                  title: "角色管理",
+                  children: [
                     "/reference-new/sdk-v5/python/角色管理/get-role",
                     "/reference-new/sdk-v5/python/角色管理/assign-role",
                     "/reference-new/sdk-v5/python/角色管理/revoke-role",
@@ -2317,8 +2323,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "组织机构管理",
-                  "children": [
+                  title: "组织机构管理",
+                  children: [
                     "/reference-new/sdk-v5/python/组织机构管理/list-organizations",
                     "/reference-new/sdk-v5/python/组织机构管理/create-organization",
                     "/reference-new/sdk-v5/python/组织机构管理/update-organization",
@@ -2337,8 +2343,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "访问控制管理",
-                  "children": [
+                  title: "访问控制管理",
+                  children: [
                     "/reference-new/sdk-v5/python/访问控制管理/create-resource",
                     "/reference-new/sdk-v5/python/访问控制管理/create-resources-batch",
                     "/reference-new/sdk-v5/python/访问控制管理/get-resource",
@@ -2359,8 +2365,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "外部身份源管理",
-                  "children": [
+                  title: "外部身份源管理",
+                  children: [
                     "/reference-new/sdk-v5/python/外部身份源管理/list-ext-idp",
                     "/reference-new/sdk-v5/python/外部身份源管理/get-ext-idp",
                     "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp",
@@ -2373,8 +2379,8 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  "title": "自定义字段管理",
-                  "children": [
+                  title: "自定义字段管理",
+                  children: [
                     "/reference-new/sdk-v5/python/自定义字段管理/get-custom-fields",
                     "/reference-new/sdk-v5/python/自定义字段管理/set-custom-fields",
                     "/reference-new/sdk-v5/python/自定义字段管理/set-custom-data",

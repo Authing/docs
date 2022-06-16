@@ -3,7 +3,7 @@
   "version": "1.2.6",
   "description": "Authing 文档",
   "scripts": {
-    "docs:dev": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888",
+    "docs:dev": "vuepress dev docs -p 8888",
     "docs:no-cache": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888 --no-cache",
     "docs:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build docs --max-concurrency=50"
   },

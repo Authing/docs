@@ -150,6 +150,11 @@ module.exports = {
             link: "/apn/"
           },
           {
+            link: "/reference-new/",
+            text: "开发集成",
+            hidden: true
+          },
+          {
             link: "/tenant/",
             text: "多租户（内测版）",
             hidden: true
