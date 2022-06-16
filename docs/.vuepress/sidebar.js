@@ -2512,7 +2512,7 @@ const zhCnNavBar = {
   "/apn/": [
     {
       title: "概览",
-      path: "/apn/"
+      path: "/apn/overview/"
     },
     {
       title: "将你的应用集成 OIDC",
