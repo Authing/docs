@@ -219,9 +219,8 @@ export default {
 
 <style lang="stylus">
 .authing-search-box
-  display inline-block
   position relative
-  margin-right 1rem
+  margin 0 auto
   height: 2rem
   width 10rem
   box-sizing border-box

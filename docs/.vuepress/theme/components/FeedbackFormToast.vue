@@ -196,6 +196,7 @@ export default {
       border-radius 2px
       border none
       color #86909C
+      resize none
       &:focus
         outline none
         border none

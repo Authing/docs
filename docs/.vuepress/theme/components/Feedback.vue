@@ -3,7 +3,7 @@
     <div class="feedback-action">
       <div class="feedback-action-container">
         <h5 class="feedback-title">{{ feedbackConfig.title }}</h5>
-        <button
+        <div
           @click="handleFeedback(STATUS.GOOD)"
           :class="[
             'feedback-btn',
@@ -15,9 +15,9 @@
         >
           <IconFont v-if="status === STATUS.GOOD" type="authing-good-" />
           <IconFont v-else type="authing-good" />
-          {{ feedbackConfig.useful }}
-        </button>
-        <button
+          <span class="feedback-text-tip">{{ feedbackConfig.useful }}</span>
+        </div>
+        <div
           @click="handleFeedback(STATUS.BAD)"
           :class="[
             'feedback-btn',
@@ -29,8 +29,8 @@
         >
           <IconFont v-if="status === STATUS.BAD" type="authing-good-" />
           <IconFont v-else type="authing-good" />
-          {{ feedbackConfig.useless }}
-        </button>
+          <span class="feedback-text-tip">{{ feedbackConfig.useless }}</span>
+        </div>
       </div>
       <div class="github-edit">
         <a
@@ -177,11 +177,14 @@ export default {
     align-items center
     margin-bottom 24px
     .feedback-btn
+      display inline-flex
+      align-items center
+      justify-content center
       width 88px
       height 34px
       background #F2F3F5
       border-radius 0px 4px 4px 0px
-      border 1px solid #EEEEEE
+      border 1px solid #F2F3F5
       cursor pointer
       font-size 14px
       color #6D7278
@@ -202,6 +205,9 @@ export default {
       &:not(:last-of-type)
         border-bottom-right-radius 0
         border-top-right-radius 0
+      .feedback-text-tip
+        padding-left 3px
+        box-sizing border-box
   .authing-checkbox-item
     flex-grow 0
     margin-right 49px

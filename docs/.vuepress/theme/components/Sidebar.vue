@@ -115,7 +115,7 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-  overflow-y initial
+  overflow-y auto
   .sidebar-search
     width: 94%
     .suggestions
@@ -180,6 +180,9 @@ export default {
     transform translateX(100%)
     border-right none
     border-left 1px solid #eee
+
+    .sidebar-search
+      width 90%
 
     .nav-links
       display block
