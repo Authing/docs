@@ -7,6 +7,8 @@
   使用该项目进行生成
 -->
 
+<LastUpdated />
+
 获取身份源列表
 
 ## 请求参数
@@ -22,14 +24,14 @@
 package main
 
 import (
-    "authing-golang-sdk/management"
-    "authing-golang-sdk/dto"
+    "github.com/Authing/authing-golang-sdk/management"
+    "github.com/Authing/authing-golang-sdk/dto"
 
     "fmt"
 )
 
 func main() {
-    options := client.ClientOptions {
+    options := management.ClientOptions {
         AccessKeyId:     "AUTHING_USERPOOL_ID",
         AccessKeySecret: "AUTHING_USERPOOL_SECRET",
     }

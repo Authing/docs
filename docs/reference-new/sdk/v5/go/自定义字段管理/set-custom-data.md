@@ -7,6 +7,8 @@
   使用该项目进行生成
 -->
 
+<LastUpdated />
+
 给用户、角色、部门设置自定义字段的值，如果存在则更新，不存在则创建。
 
 ## 请求参数
@@ -25,14 +27,14 @@
 package main
 
 import (
-    "authing-golang-sdk/management"
-    "authing-golang-sdk/dto"
+    "github.com/Authing/authing-golang-sdk/management"
+    "github.com/Authing/authing-golang-sdk/dto"
 
     "fmt"
 )
 
 func main() {
-    options := client.ClientOptions {
+    options := management.ClientOptions {
         AccessKeyId:     "AUTHING_USERPOOL_ID",
         AccessKeySecret: "AUTHING_USERPOOL_SECRET",
     }

@@ -7,6 +7,8 @@
   使用该项目进行生成
 -->
 
+<LastUpdated />
+
 此接口将以管理员身份批量创建用户，不需要进行手机号验证码检验等安全检测。用户的手机号、邮箱、用户名、externalId 用户池内唯一。
 
 ## 请求参数
@@ -23,14 +25,14 @@
 package main
 
 import (
-    "authing-golang-sdk/management"
-    "authing-golang-sdk/dto"
+    "github.com/Authing/authing-golang-sdk/management"
+    "github.com/Authing/authing-golang-sdk/dto"
 
     "fmt"
 )
 
 func main() {
-    options := client.ClientOptions {
+    options := management.ClientOptions {
         AccessKeyId:     "AUTHING_USERPOOL_ID",
         AccessKeySecret: "AUTHING_USERPOOL_SECRET",
     }

@@ -7,6 +7,8 @@
   使用该项目进行生成
 -->
 
+<LastUpdated />
+
 通过 id、username、email、phone、email、externalId 获取用户详情
 
 ## 请求参数
