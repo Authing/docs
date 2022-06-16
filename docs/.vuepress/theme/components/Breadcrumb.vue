@@ -36,10 +36,12 @@ function findChildren(list, routePath) {
 }
 
 function findSideBarPath(sidebars, routePath, parentPath) {
+  routePath = decodeURIComponent(routePath)
+  
   if (!sidebars) {
     return [];
   }
-  const finded = findChildren(sidebars, decodeURIComponent(routePath));
+  const finded = findChildren(sidebars, routePath);
   if (!finded) {
     return [];
   }
@@ -49,13 +51,13 @@ function findSideBarPath(sidebars, routePath, parentPath) {
     text: finded.title || finded.path
   });
   // 当前菜单路由已经和路由相等，已找完
-  if (finded.path === decodeURIComponent(routePath)) {
+  if (finded.path === routePath) {
     return allPath;
   }
 
   return findSideBarPath(
     finded.children,
-    decodeURIComponent(routePath),
+    routePath,
     allPath
   );
 }
