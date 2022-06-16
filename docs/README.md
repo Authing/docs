@@ -90,7 +90,7 @@ applicationSdks:
       - ios
       - android
       - flutter
-      - react-Native
+      - reactNative
       - cSharp
   - title: 单页应用
     description: 只有单个页面的纯前端网页应用
