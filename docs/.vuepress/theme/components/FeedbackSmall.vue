@@ -36,14 +36,14 @@
       </button>
     </v-popover>
 
-    <FeedbackToast 
+    <FeedbackToast
       :type="feedbackType"
-      v-model="isShowFeedbackFormToast" 
+      v-model="isShowFeedbackFormToast"
       @success="submitFeedback"
       :styles="feedbackToastStyles">
     </FeedbackToast>
 
-    <FeedbackSuccess 
+    <FeedbackSuccess
       v-model="isShowFeedbackSuccessToast"
       @hide="hideFeedbackSuccessToast"
       :styles="feedbackToastStyles">

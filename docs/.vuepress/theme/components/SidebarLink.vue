@@ -135,13 +135,13 @@ function renderExternal(h, to, text) {
   font-size 0.95em
 
 a.sidebar-link
-  font-size 14px
+  // font-size 14px
   font-weight 400
   display inline-block
   // color $textColor
   color #4E5969
-  padding 0.40rem 1rem 0.40rem 0.8rem
-  line-height 1.4
+  padding 8px 16px 8px 0.8rem
+  line-height 22px
   width: 100%
   box-sizing: border-box
   // white-space nowrap

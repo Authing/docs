@@ -62,6 +62,9 @@ export default {
   font-weight 600
   font-family PingFang SC
   color #1D2129
+  img {
+    border none
+  }
   .feedback-success-icon
     margin-bottom 19px
     width 120px

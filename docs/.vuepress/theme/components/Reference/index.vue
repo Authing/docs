@@ -43,7 +43,7 @@
         <div class="sdk-content">
           <div v-for="cat of $frontmatter.data">
             <h2 :id="cat.title">
-              <a :href="`#${cat.title}`" class="header-anchor">¶</a>
+              <a :href="`#${cat.title}`" class="header-anchor"></a>
               {{ cat.title }}
             </h2>
             <p>

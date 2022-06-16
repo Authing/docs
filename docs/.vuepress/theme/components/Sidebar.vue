@@ -159,11 +159,12 @@ export default {
     max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
 
     & > li > a.sidebar-link
-      font-size 16px
+      // font-size 14px
   .depth-0 > ul > li
     & > .sidebar-group > .sidebar-heading, & > .sidebar-link
-      font-size: 16px
-      line-height 26px
+      // font-size: 14px
+      line-height 22px
+      padding 10px 1.5rem
   & > .sidebar-links > li > a {
     padding-left 1.5rem
   }

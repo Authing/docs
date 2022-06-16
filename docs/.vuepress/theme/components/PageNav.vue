@@ -9,7 +9,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
 
@@ -17,7 +18,8 @@
         </a>
 
         <RouterLink v-else class="prev" :to="prev.path">
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
         </RouterLink>
@@ -32,7 +34,8 @@
         >
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
 
           <OutboundLink />
         </a>
@@ -40,7 +43,8 @@
         <RouterLink v-else :to="next.path">
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
         </RouterLink>
       </span>
     </p>
@@ -155,6 +159,8 @@ function flatten(items, res) {
     color #4E5969
     font-weight normal
     font-size 14px
+    display flex
+    align-items center
     &:hover
       color #396aff
   .inner
@@ -164,18 +170,24 @@ function flatten(items, res) {
     text-align center
   .arrow-outline
     display inline-block
-    height .6em
-    width .6em
-    border 1px solid #999
-    border-left-color transparent
-    border-bottom-color transparent
+    height 1rem
+    width 1rem
+    img
+      width 100%
+    // border 1px solid #999
+    // border-left-color transparent
+    // border-bottom-color transparent
   .next
     .arrow-outline
-      transform rotate(45deg)
+      // transform rotate(45deg)
       margin-right 5px
+      background url('../assets/images/arrow-right-s-line.svg')
+      background-size 100% 100%
   .prev
     .arrow-outline
-      transform rotate(-135deg)
+      background url('../assets/images/arrow-left-s-line.svg')
+      background-size 100% 100%
+      // transform rotate(-135deg)
       margin-left 5px
 
 @media only screen and (max-width: 650px)
