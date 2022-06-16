@@ -72,18 +72,21 @@ export default {
       }
 
       let { pages } = this.$site;
-      pages = pages.map(item => {
-        return {
-          ...item,
-          title: transformInterpolation(item.title, this),
-          headers:
-            item.headers &&
-            item.headers.map(header => ({
-              ...header,
-              title: transformInterpolation(header.title, this)
-            }))
-        };
-      });
+      pages = pages
+        // TODO: 暂时隐藏开发集成 新版页面 reference-new
+        .filter(item => !item.path.includes("reference-new/"))
+        .map(item => {
+          return {
+            ...item,
+            title: transformInterpolation(item.title, this),
+            headers:
+              item.headers &&
+              item.headers.map(header => ({
+                ...header,
+                title: transformInterpolation(header.title, this)
+              }))
+          };
+        });
       const max =
         this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
 

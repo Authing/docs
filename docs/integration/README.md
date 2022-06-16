@@ -34,6 +34,13 @@
         category: "cloud",
       },
       {
+        key: "ali-cloud-yun-sso",
+        name: "阿里云（云 SSO）",
+        image: "ali-cloud.png",
+        image2x: "ali-cloud@2x.png",
+        category: "cloud",
+      },
+      {
         key: "ali-cloud-intl",
         name: "阿里云（国际区）",
         image: "ali-cloud.png",
@@ -837,15 +844,29 @@
         image: "finebi_logo@2x.png",
         image2x: "finebi_logo@3x.png",
         category: "other",
-      }
-      # {
-      #   key: "eteams",
-      #   name: "泛微(公有云)",
-      #   image: "weaver_logo@2x.png",
-      #   image2x: "weaver_logo@3x.png",
-      #   category: "office",
-      # }
+      },
+      {
+        key: "zadig",
+        name: "Zadig",
+        image: "Zadig_logo@2x.png",
+        image2x: "Zadig_logo@3x.png",
+        category: "other",
+      },
+      {
+        key: "tita",
+        name: "Tita",
+        image: "Tita_logo@2x.png",
+        image2x: "Tita_logo@3x.png",
+        category: "office",
+      },
     ],
+  # {
+  #   key: "eteams",
+  #   name: "泛微(公有云)",
+  #   image: "weaver_logo@2x.png",
+  #   image2x: "weaver_logo@3x.png",
+  #   category: "office",
+  # }
   categories:
     [
       { key: "all", name: "全部" },

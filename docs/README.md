@@ -44,19 +44,15 @@ sdkConfig:
     icon: csharp
   react:
     name: React
-    link: /reference/guard/react
-    icon: React-Native
-  react-Native:
-    name: React
-    link: /reference/sdk-for-react-native.html
+    link: /reference/guard/v2/react
     icon: React-Native
   angular:
     name: Angular
-    link: /reference/guard/react
+    link: /reference/guard/v2/angular
     icon: Angular
   vue:
     name: Vue
-    link: /reference/guard/vue
+    link: /reference/guard/v2/vue
     icon: Vue
   python:
     name: Python
@@ -66,7 +62,6 @@ sdkConfig:
     name: Node.js
     link: /reference/sdk-for-node/
     icon: Nodejs
-
   ruby:
     name: Ruby
     link: /reference/sdk-for-ruby.html
@@ -79,17 +74,14 @@ sdkConfig:
     name: Java
     link: /reference/sdk-for-java/
     icon: Java
-
   golang:
     name: Golang
     link: /reference/sdk-for-go/
     icon: Go
-
   php:
     name: PHP
     link: /reference/sdk-for-php/
     icon: php
-
 applicationSdks:
   - title: 客户端应用
     description: 在手机、桌面和其他智能设备上运行的本地应用
@@ -98,7 +90,7 @@ applicationSdks:
       - ios
       - android
       - flutter
-      - react-Native
+      - reactNative
       - cSharp
   - title: 单页应用
     description: 只有单个页面的纯前端网页应用

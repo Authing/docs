@@ -23,28 +23,14 @@
               title: "Javascript",
               icon: "JavaScript",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "./guard/native-javascript.html",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
             },
             {
               #
               title: "React",
               icon: "React-Native",
               github: "https://github.com/Authing/authing-ui-components",
-              doc: "./guard/react.html",
-            },
-            {
-              #
-              title: "Vue",
-              icon: "Vue",
-              github: "https://github.com/Authing/authing-ui-components",
-              doc: "./guard/vue.html",
-            },
-            {
-              #
-              title: "Angular",
-              icon: "Angular",
-              github: "https://github.com/Authing/authing-ui-components",
-              doc: "./guard/angular.html",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/react.html",
             },
           ],
       },
@@ -56,7 +42,7 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              doc: "./single-page-application/native-javascript.html",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
             },
             {
               #

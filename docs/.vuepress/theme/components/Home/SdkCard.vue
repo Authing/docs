@@ -19,6 +19,7 @@
       <div class="sdk-link-container">
         <template v-for="(sdk, index) of sdkData">
           <RouterLink
+            v-if="sdk"
             :data-css-tips="sdk.name"
             :key="index"
             :title="sdk.name"
