@@ -44,20 +44,19 @@ sdkConfig:
     icon: csharp
   react:
     name: React
-    link: /reference/guard/react
-    icon: React-Native
-  react-Native:
-    name: React
-    link: /reference/sdk-for-react-native.html
-    icon: React-Native
+    link: /reference/guard/v2/react
+    img: react.png
+    img2x: react@2x.png
   angular:
     name: Angular
-    link: /reference/guard/react
-    icon: Angular
+    link: /reference/guard/v2/angular
+    img: angular.png
+    img2x: angular@2x.png
   vue:
     name: Vue
-    link: /reference/guard/vue
-    icon: Vue
+    link: /reference/guard/v2/vue
+    img: vue.png
+    img2x: vue@2x.png
   python:
     name: Python
     link: /reference/sdk-for-python/

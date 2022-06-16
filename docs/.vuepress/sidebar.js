@@ -250,6 +250,10 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/user-defined-field"
             },
             {
+              title: "添加部门自定义字段",
+              path: "/guides/authentication/extensibility/department-extend"
+            },
+            {
               title: "IdToken 添加自定义字段",
               path: "/guides/authentication/extensibility/customize-id-token"
             },
@@ -835,35 +839,31 @@ const zhCnNavBar = {
   "/reference/": [
     {
       title: "登录组件 (Guard)",
-      path: "/reference/guard/",
+      path: "/reference/guard/v2/",
       children: [
         {
           title: "React",
-          path: "/reference/guard/react"
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/vue"
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/angular"
+          path: "/reference/guard/v2/react.md"
         },
         {
           title: "原生 JavaScript",
-          path: "/reference/guard/native-javascript"
+          path: "/reference/guard/v2/native-javascript.md"
         },
         {
-          title: "完整参数列表",
-          path: "/reference/guard/parameters"
+          title: "Vue",
+          path: "/reference/guard/v2/vue.md"
+        },
+        {
+          title: "Angular",
+          path: "/reference/guard/v2/angular.md"
         },
         {
           title: "迁移指南",
-          path: "/reference/guard/migration"
+          path: "/reference/guard/v2/migration"
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog"
+          path: "/reference/guard/v2/guard-changelog"
         }
       ]
     },
@@ -2661,35 +2661,31 @@ const zhCnNavBar = {
   "/guard/": [
     {
       title: "概览",
-      path: "/guard/"
+      path: "/guard/v2/"
     },
     {
       title: "React",
-      path: "/guard/react"
+      path: "/guard/v2/react"
     },
     {
       title: "Vue",
-      path: "/guard/vue"
+      path: "/guard/v2/vue"
     },
     {
       title: "Angular",
-      path: "/guard/angular"
+      path: "/guard/v2/angular"
     },
     {
       title: "原生 JavaScript",
-      path: "/guard/native-javascript"
-    },
-    {
-      title: "完整参数列表",
-      path: "/guard/parameters"
+      path: "/guard/v2/native-javascript"
     },
     {
       title: "迁移指南",
-      path: "/guard/migration"
+      path: "/guard/v2/migration"
     },
     {
       title: "Guard Changelog",
-      path: "/guard/guard-changelog"
+      path: "/guard/v2/guard-changelog"
     }
   ],
   "/android/": [

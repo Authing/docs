@@ -27,6 +27,7 @@
    - [如何集成多因素认证](/guides/authentication/mfa/)
    - 对认证流程进行扩展：
      - [添加用户自定义字段](/guides/authentication/extensibility/user-defined-field/)
+     - [添加部门自定义字段](/guides/authentication/extensibility/depart`ment-extend/)
      - [IdToken 添加自定义字段](/guides/authentication/extensibility/customize-id-token.md)
      - [使用自定义数据库对用户进行认证](/guides/authentication/extensibility/database-connection.md)
      - [使用 Pipeline 对认证流程进行扩展](/guides/authentication/extensibility/pipeline.md)
