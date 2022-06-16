@@ -45,7 +45,7 @@ This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandNa
 
 <img src="./images/wechat-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
-## Mobile app Use WeChat Login
+## Mobile App Use WeChat Login
 
 {{$localeConfig.brandName}} Providing developers with a way to quickly jump WeChat login to obtain user information in the mobile terminal (iOS or Android) application, Simple call {{$localeConfig.brandName}} Mobile SDK can complete WeChat account access.
 
@@ -55,12 +55,12 @@ This is {{$localeConfig.brandName}} A pioneering design, {{$localeConfig.brandNa
 
 <img src="./images/wechat-mobile-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
-## Mobile App Use a small program to log in
+## Mobile App Use Mini Program Login
 
-The mobile terminal pulls a small program to log in is a key way to establish a mobile phone number-centered user system.{{$localeConfig.brandName}} Through SDK, the developer greatly reduces the development of complexity, one line of code can obtain the mobile phone number authorized in the applet by the mobile terminal, establish an account system based on the mobile phone number.
+Launching the WeChat Mini Program on the mobile terminal is a key way to establish a mobile phone number-centric user system. {{$localeConfig.brandName}} greatly reduces the development complexity for developers through the SDK, and one line of code can obtain users through the mobile terminal in the applet. Authorized mobile phone number, establish an account system based on mobile phone number.
 
 - Application scenario: Mobile APP；
-- Overview: Pull up the WeChat applet in your mobile application for login.
+- Overview: Launch the WeChat Mini Program in the mobile app to log in.
 - View [WeChat official document](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)
 
 <img src="./images/wechat-mobile-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>

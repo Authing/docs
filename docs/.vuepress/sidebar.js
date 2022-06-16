@@ -580,11 +580,11 @@ const zhCnNavBar = {
             },
             {
               title: "微信移动端",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/wechat-mobile/"
             },
             {
-              title: "微信 APP 拉起小程序",
-              path: "/guides/connections/social/twitter/"
+              title: "APP 拉起微信小程序",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
             },
             {
               title: "微信网页授权",
@@ -736,36 +736,36 @@ const zhCnNavBar = {
     {
       title: "打通微信生态",
       path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "关注公众号登录",
-          path: "/guides/wechat-ecosystem/wechat-offical-account"
-        },
-        {
-          title: "PC 网站使用微信扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC 网站使用小程序扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title: "微信内网页使用微信授权登录",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "小程序内使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "移动 APP 使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "移动 APP 使用小程序登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      // children: [
+      //   {
+      //     title: "关注公众号登录",
+      //     path: "/guides/wechat-ecosystem/wechat-offical-account"
+      //   },
+      //   {
+      //     title: "PC 网站使用微信扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC 网站使用小程序扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title: "微信内网页使用微信授权登录",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "小程序内使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "移动 APP 使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "移动 APP 使用小程序登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
       title: `迁移用户到 ${BRAND_NAME_ZH_CN}`,
@@ -2524,23 +2524,23 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/wechat-miniprogram-qrconnect/"
             },
             {
-              title: "Wechat Official Accounts QR Code",
+              title: "WeChat Official Accounts QR Code",
               path: "/guides/connections/social/wechatmp-qrcode/"
             },
             {
-              title: "微信移动端",
-              path: "/guides/connections/social/twitter/"
+              title: "Mobile App Use WeChat Login",
+              path: "/guides/connections/social/wechat-mobile/"
             },
             {
-              title: "微信 APP 拉起小程序",
-              path: "/guides/connections/social/twitter/"
+              title: "Mobile App Use WeChat Mini Program Login",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
             },
             {
               title: "WeChat Web Page",
               path: "/guides/connections/social/wechat-mp/"
             },
             {
-              title: "Wechat Mini Program",
+              title: "WeChat Mini Program",
               path: "/guides/connections/social/wechat-miniprogram/"
             },
             {
@@ -2678,33 +2678,33 @@ const translatedZhCnNavBar = {
     {
       title: "Open up WeChat ecology",
       path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "PC website uses WeChat scan code to log in",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC website use small program to scan code login",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title:
-            "Use WeChat authorization to log in to the web page within WeChat",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "Log in with WeChat in the Mini Program",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "Mobile APP use WeChat login",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "Mobile APP use applet to log in",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      // children: [
+      //   {
+      //     title: "PC website uses WeChat scan code to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC website use small program to scan code login",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title:
+      //       "Use WeChat authorization to log in to the web page within WeChat",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "Log in with WeChat in the Mini Program",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "Mobile APP use WeChat login",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "Mobile APP use applet to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
       title: `Migrate users to ${BRAND_NAME_EN_US}`,
