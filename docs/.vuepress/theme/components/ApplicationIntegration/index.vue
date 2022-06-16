@@ -108,7 +108,7 @@
       <p>
         {{ langMap.apnSubtitle }}
       </p>
-      <router-link to="/apn/" target="_blank">
+      <router-link to="/apn/overview/" target="_blank">
         {{ langMap.apnLink }}
       </router-link>
     </section>
