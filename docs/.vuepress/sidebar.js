@@ -1508,150 +1508,152 @@ const zhCnNavBar = {
       path: "/reference/error-code"
     }
   ],
-  // 自动生成粘贴开始
-  "/reference-new/sdk/v5/": [
+  "/reference-new/": [
     {
-      title: "SDK 参考",
+      title: "开发集成",
       collapsable: false,
+      path: "/reference-new/",
+      // 自动生成粘贴开始
       children: [
         {
-          title: "C#",
-          children: [
+          "title": "C#",
+          "path": "/reference-new/sdk-v5/csharp/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/csharp/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/csharp/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/csharp/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/csharp/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/csharp/用户管理/list-users",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/csharp/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/csharp/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/csharp/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/csharp/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/csharp/用户管理/kick-users",
-                    "/reference-new/sdk/v5/csharp/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/csharp/用户管理/create-user",
-                    "/reference-new/sdk/v5/csharp/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/csharp/用户管理/update-user",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/csharp/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/csharp/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/list-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/csharp/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/csharp/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/kick-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/csharp/用户管理/create-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/update-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/分组管理/get-group",
-                    "/reference-new/sdk/v5/csharp/分组管理/list-groups",
-                    "/reference-new/sdk/v5/csharp/分组管理/create-group",
-                    "/reference-new/sdk/v5/csharp/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/csharp/分组管理/update-group",
-                    "/reference-new/sdk/v5/csharp/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/csharp/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/csharp/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/csharp/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/csharp/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/分组管理/get-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/list-groups",
+                    "/reference-new/sdk-v5/csharp/分组管理/create-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/csharp/分组管理/update-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/csharp/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/角色管理/get-role",
-                    "/reference-new/sdk/v5/csharp/角色管理/assign-role",
-                    "/reference-new/sdk/v5/csharp/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/csharp/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/csharp/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/csharp/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/csharp/角色管理/create-role",
-                    "/reference-new/sdk/v5/csharp/角色管理/list-roles",
-                    "/reference-new/sdk/v5/csharp/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/csharp/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/csharp/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/角色管理/get-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/assign-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/csharp/角色管理/create-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-roles",
+                    "/reference-new/sdk-v5/csharp/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/csharp/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/csharp/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/csharp/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/csharp/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/csharp/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/csharp/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/csharp/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/csharp/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/csharp/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -1659,143 +1661,144 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "Go",
-          children: [
+          "title": "Go",
+          "path": "/reference-new/sdk-v5/go/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/go/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/go/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/go/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/go/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/用户管理/get-user",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/go/用户管理/list-users",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/go/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/go/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/go/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/go/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/go/用户管理/kick-users",
-                    "/reference-new/sdk/v5/go/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/go/用户管理/create-user",
-                    "/reference-new/sdk/v5/go/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/go/用户管理/update-user",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/go/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/go/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/用户管理/get-user",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/go/用户管理/list-users",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/go/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/go/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/go/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/go/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/go/用户管理/kick-users",
+                    "/reference-new/sdk-v5/go/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/go/用户管理/create-user",
+                    "/reference-new/sdk-v5/go/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/go/用户管理/update-user",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/go/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/分组管理/get-group",
-                    "/reference-new/sdk/v5/go/分组管理/list-groups",
-                    "/reference-new/sdk/v5/go/分组管理/create-group",
-                    "/reference-new/sdk/v5/go/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/go/分组管理/update-group",
-                    "/reference-new/sdk/v5/go/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/go/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/go/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/go/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/go/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/分组管理/get-group",
+                    "/reference-new/sdk-v5/go/分组管理/list-groups",
+                    "/reference-new/sdk-v5/go/分组管理/create-group",
+                    "/reference-new/sdk-v5/go/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/go/分组管理/update-group",
+                    "/reference-new/sdk-v5/go/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/go/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/角色管理/get-role",
-                    "/reference-new/sdk/v5/go/角色管理/assign-role",
-                    "/reference-new/sdk/v5/go/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/go/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/go/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/go/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/go/角色管理/create-role",
-                    "/reference-new/sdk/v5/go/角色管理/list-roles",
-                    "/reference-new/sdk/v5/go/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/go/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/go/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/角色管理/get-role",
+                    "/reference-new/sdk-v5/go/角色管理/assign-role",
+                    "/reference-new/sdk-v5/go/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/go/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/go/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/go/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/go/角色管理/create-role",
+                    "/reference-new/sdk-v5/go/角色管理/list-roles",
+                    "/reference-new/sdk-v5/go/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/go/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/go/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/go/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/go/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/go/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/go/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/go/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/go/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/go/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/go/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/go/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/go/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/go/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/go/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/go/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/go/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/go/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/go/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/go/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/go/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/go/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/go/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/go/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/go/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/go/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/go/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/go/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/go/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/go/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/go/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/go/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/go/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/go/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/go/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/go/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/go/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/go/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/go/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/go/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/go/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/go/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/go/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/go/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/go/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/go/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/go/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -1803,143 +1806,144 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "Java",
-          children: [
+          "title": "Java",
+          "path": "/reference-new/sdk-v5/java/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/java/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/java/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/java/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/java/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/用户管理/get-user",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/java/用户管理/list-users",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/java/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/java/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/java/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/java/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/java/用户管理/kick-users",
-                    "/reference-new/sdk/v5/java/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/java/用户管理/create-user",
-                    "/reference-new/sdk/v5/java/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/java/用户管理/update-user",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/java/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/java/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/用户管理/get-user",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/java/用户管理/list-users",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/java/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/java/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/java/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/java/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/java/用户管理/kick-users",
+                    "/reference-new/sdk-v5/java/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/java/用户管理/create-user",
+                    "/reference-new/sdk-v5/java/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/java/用户管理/update-user",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/java/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/分组管理/get-group",
-                    "/reference-new/sdk/v5/java/分组管理/list-groups",
-                    "/reference-new/sdk/v5/java/分组管理/create-group",
-                    "/reference-new/sdk/v5/java/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/java/分组管理/update-group",
-                    "/reference-new/sdk/v5/java/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/java/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/java/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/java/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/java/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/分组管理/get-group",
+                    "/reference-new/sdk-v5/java/分组管理/list-groups",
+                    "/reference-new/sdk-v5/java/分组管理/create-group",
+                    "/reference-new/sdk-v5/java/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/java/分组管理/update-group",
+                    "/reference-new/sdk-v5/java/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/java/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/角色管理/get-role",
-                    "/reference-new/sdk/v5/java/角色管理/assign-role",
-                    "/reference-new/sdk/v5/java/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/java/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/java/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/java/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/java/角色管理/create-role",
-                    "/reference-new/sdk/v5/java/角色管理/list-roles",
-                    "/reference-new/sdk/v5/java/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/java/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/java/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/角色管理/get-role",
+                    "/reference-new/sdk-v5/java/角色管理/assign-role",
+                    "/reference-new/sdk-v5/java/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/java/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/java/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/java/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/java/角色管理/create-role",
+                    "/reference-new/sdk-v5/java/角色管理/list-roles",
+                    "/reference-new/sdk-v5/java/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/java/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/java/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/java/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/java/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/java/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/java/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/java/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/java/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/java/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/java/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/java/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/java/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/java/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/java/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/java/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/java/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/java/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/java/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/java/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/java/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/java/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/java/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/java/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/java/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/java/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/java/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/java/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/java/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/java/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/java/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/java/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/java/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/java/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/java/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/java/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/java/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/java/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/java/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/java/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/java/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/java/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/java/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/java/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/java/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/java/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/java/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -1947,143 +1951,144 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "Node.js",
-          children: [
+          "title": "Node.js",
+          "path": "/reference-new/sdk-v5/node/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/node/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/node/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/node/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/node/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/用户管理/get-user",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/node/用户管理/list-users",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/node/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/node/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/node/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/node/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/node/用户管理/kick-users",
-                    "/reference-new/sdk/v5/node/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/node/用户管理/create-user",
-                    "/reference-new/sdk/v5/node/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/node/用户管理/update-user",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/node/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/node/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/用户管理/get-user",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/node/用户管理/list-users",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/node/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/node/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/node/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/node/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/node/用户管理/kick-users",
+                    "/reference-new/sdk-v5/node/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/node/用户管理/create-user",
+                    "/reference-new/sdk-v5/node/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/node/用户管理/update-user",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/node/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/分组管理/get-group",
-                    "/reference-new/sdk/v5/node/分组管理/list-groups",
-                    "/reference-new/sdk/v5/node/分组管理/create-group",
-                    "/reference-new/sdk/v5/node/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/node/分组管理/update-group",
-                    "/reference-new/sdk/v5/node/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/node/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/node/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/node/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/node/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/分组管理/get-group",
+                    "/reference-new/sdk-v5/node/分组管理/list-groups",
+                    "/reference-new/sdk-v5/node/分组管理/create-group",
+                    "/reference-new/sdk-v5/node/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/node/分组管理/update-group",
+                    "/reference-new/sdk-v5/node/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/node/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/角色管理/get-role",
-                    "/reference-new/sdk/v5/node/角色管理/assign-role",
-                    "/reference-new/sdk/v5/node/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/node/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/node/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/node/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/node/角色管理/create-role",
-                    "/reference-new/sdk/v5/node/角色管理/list-roles",
-                    "/reference-new/sdk/v5/node/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/node/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/node/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/角色管理/get-role",
+                    "/reference-new/sdk-v5/node/角色管理/assign-role",
+                    "/reference-new/sdk-v5/node/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/node/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/node/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/node/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/node/角色管理/create-role",
+                    "/reference-new/sdk-v5/node/角色管理/list-roles",
+                    "/reference-new/sdk-v5/node/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/node/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/node/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/node/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/node/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/node/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/node/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/node/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/node/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/node/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/node/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/node/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/node/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/node/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/node/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/node/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/node/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/node/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/node/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/node/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/node/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/node/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/node/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/node/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/node/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/node/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/node/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/node/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/node/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/node/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/node/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/node/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/node/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/node/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/node/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/node/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/node/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/node/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/node/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/node/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/node/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/node/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/node/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/node/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/node/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/node/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/node/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -2091,143 +2096,144 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "PHP",
-          children: [
+          "title": "PHP",
+          "path": "/reference-new/sdk-v5/php/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/php/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/php/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/php/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/php/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/用户管理/get-user",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/php/用户管理/list-users",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/php/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/php/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/php/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/php/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/php/用户管理/kick-users",
-                    "/reference-new/sdk/v5/php/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/php/用户管理/create-user",
-                    "/reference-new/sdk/v5/php/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/php/用户管理/update-user",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/php/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/php/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/用户管理/get-user",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/php/用户管理/list-users",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/php/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/php/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/php/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/php/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/php/用户管理/kick-users",
+                    "/reference-new/sdk-v5/php/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/php/用户管理/create-user",
+                    "/reference-new/sdk-v5/php/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/php/用户管理/update-user",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/php/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/分组管理/get-group",
-                    "/reference-new/sdk/v5/php/分组管理/list-groups",
-                    "/reference-new/sdk/v5/php/分组管理/create-group",
-                    "/reference-new/sdk/v5/php/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/php/分组管理/update-group",
-                    "/reference-new/sdk/v5/php/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/php/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/php/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/php/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/php/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/分组管理/get-group",
+                    "/reference-new/sdk-v5/php/分组管理/list-groups",
+                    "/reference-new/sdk-v5/php/分组管理/create-group",
+                    "/reference-new/sdk-v5/php/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/php/分组管理/update-group",
+                    "/reference-new/sdk-v5/php/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/php/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/角色管理/get-role",
-                    "/reference-new/sdk/v5/php/角色管理/assign-role",
-                    "/reference-new/sdk/v5/php/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/php/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/php/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/php/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/php/角色管理/create-role",
-                    "/reference-new/sdk/v5/php/角色管理/list-roles",
-                    "/reference-new/sdk/v5/php/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/php/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/php/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/角色管理/get-role",
+                    "/reference-new/sdk-v5/php/角色管理/assign-role",
+                    "/reference-new/sdk-v5/php/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/php/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/php/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/php/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/php/角色管理/create-role",
+                    "/reference-new/sdk-v5/php/角色管理/list-roles",
+                    "/reference-new/sdk-v5/php/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/php/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/php/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/php/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/php/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/php/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/php/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/php/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/php/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/php/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/php/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/php/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/php/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/php/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/php/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/php/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/php/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/php/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/php/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/php/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/php/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/php/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/php/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/php/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/php/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/php/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/php/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/php/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/php/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/php/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/php/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/php/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/php/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/php/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/php/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/php/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/php/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/php/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/php/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/php/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/php/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/php/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/php/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/php/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/php/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/php/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/php/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -2235,143 +2241,144 @@ const zhCnNavBar = {
           ]
         },
         {
-          title: "Python",
-          children: [
+          "title": "Python",
+          "path": "/reference-new/sdk-v5/python/",
+          "children": [
             {
-              title: "安装使用",
-              path: "/reference-new/sdk/v5/python/"
+              "title": "安装使用",
+              "path": "/reference-new/sdk-v5/python/"
             },
             {
-              title: "用户认证模块",
-              path: "/reference-new/sdk/v5/python/authentication.md"
+              "title": "用户认证模块",
+              "path": "/reference-new/sdk-v5/python/authentication.md"
             },
             {
-              title: "管理模块",
-              children: [
+              "title": "管理模块",
+              "children": [
                 {
-                  title: "用户管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/用户管理/get-user",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-batch",
-                    "/reference-new/sdk/v5/python/用户管理/list-users",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-identities",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-roles",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/python/用户管理/reset-user-principal-authentication-info",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-departments",
-                    "/reference-new/sdk/v5/python/用户管理/set-user-departments",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-groups",
-                    "/reference-new/sdk/v5/python/用户管理/delete-users-batch",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-mfa-info",
-                    "/reference-new/sdk/v5/python/用户管理/list-archived-users",
-                    "/reference-new/sdk/v5/python/用户管理/kick-users",
-                    "/reference-new/sdk/v5/python/用户管理/is-user-exists",
-                    "/reference-new/sdk/v5/python/用户管理/create-user",
-                    "/reference-new/sdk/v5/python/用户管理/create-users-batch",
-                    "/reference-new/sdk/v5/python/用户管理/update-user",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-accessible-apps",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-authorized-apps",
-                    "/reference-new/sdk/v5/python/用户管理/has-any-role",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-login-history",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-loggedin-apps",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-logged-in-identities",
-                    "/reference-new/sdk/v5/python/用户管理/get-user-authorized-resources"
+                  "title": "用户管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/用户管理/get-user",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/python/用户管理/list-users",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/python/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/python/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/python/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/python/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/python/用户管理/kick-users",
+                    "/reference-new/sdk-v5/python/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/python/用户管理/create-user",
+                    "/reference-new/sdk-v5/python/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/python/用户管理/update-user",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/python/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-authorized-resources"
                   ]
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/分组管理/get-group",
-                    "/reference-new/sdk/v5/python/分组管理/list-groups",
-                    "/reference-new/sdk/v5/python/分组管理/create-group",
-                    "/reference-new/sdk/v5/python/分组管理/create-groups-batch",
-                    "/reference-new/sdk/v5/python/分组管理/update-group",
-                    "/reference-new/sdk/v5/python/分组管理/delete-groups-batch",
-                    "/reference-new/sdk/v5/python/分组管理/add-group-members",
-                    "/reference-new/sdk/v5/python/分组管理/remove-group-members",
-                    "/reference-new/sdk/v5/python/分组管理/list-group-members",
-                    "/reference-new/sdk/v5/python/分组管理/get-group-authorized-resources"
+                  "title": "分组管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/分组管理/get-group",
+                    "/reference-new/sdk-v5/python/分组管理/list-groups",
+                    "/reference-new/sdk-v5/python/分组管理/create-group",
+                    "/reference-new/sdk-v5/python/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/python/分组管理/update-group",
+                    "/reference-new/sdk-v5/python/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/python/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/get-group-authorized-resources"
                   ]
                 },
                 {
-                  title: "角色管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/角色管理/get-role",
-                    "/reference-new/sdk/v5/python/角色管理/assign-role",
-                    "/reference-new/sdk/v5/python/角色管理/revoke-role",
-                    "/reference-new/sdk/v5/python/角色管理/get-role-authorized-resources",
-                    "/reference-new/sdk/v5/python/角色管理/list-role-members",
-                    "/reference-new/sdk/v5/python/角色管理/list-role-departments",
-                    "/reference-new/sdk/v5/python/角色管理/create-role",
-                    "/reference-new/sdk/v5/python/角色管理/list-roles",
-                    "/reference-new/sdk/v5/python/角色管理/delete-roles-batch",
-                    "/reference-new/sdk/v5/python/角色管理/create-roles-batch",
-                    "/reference-new/sdk/v5/python/角色管理/update-role"
+                  "title": "角色管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/角色管理/get-role",
+                    "/reference-new/sdk-v5/python/角色管理/assign-role",
+                    "/reference-new/sdk-v5/python/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/python/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/python/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/python/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/python/角色管理/create-role",
+                    "/reference-new/sdk-v5/python/角色管理/list-roles",
+                    "/reference-new/sdk-v5/python/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/python/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/python/角色管理/update-role"
                   ]
                 },
                 {
-                  title: "组织机构管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/组织机构管理/list-organizations",
-                    "/reference-new/sdk/v5/python/组织机构管理/create-organization",
-                    "/reference-new/sdk/v5/python/组织机构管理/update-organization",
-                    "/reference-new/sdk/v5/python/组织机构管理/delete-organization",
-                    "/reference-new/sdk/v5/python/组织机构管理/get-department",
-                    "/reference-new/sdk/v5/python/组织机构管理/create-department",
-                    "/reference-new/sdk/v5/python/组织机构管理/update-department",
-                    "/reference-new/sdk/v5/python/组织机构管理/delete-department",
-                    "/reference-new/sdk/v5/python/组织机构管理/search-departments",
-                    "/reference-new/sdk/v5/python/组织机构管理/list-children-departments",
-                    "/reference-new/sdk/v5/python/组织机构管理/list-department-members",
-                    "/reference-new/sdk/v5/python/组织机构管理/list-department-member-ids",
-                    "/reference-new/sdk/v5/python/组织机构管理/add-department-members",
-                    "/reference-new/sdk/v5/python/组织机构管理/remove-department-members",
-                    "/reference-new/sdk/v5/python/组织机构管理/get-parent-department"
+                  "title": "组织机构管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/python/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/python/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/get-parent-department"
                   ]
                 },
                 {
-                  title: "访问控制管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/访问控制管理/create-resource",
-                    "/reference-new/sdk/v5/python/访问控制管理/create-resources-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/get-resource",
-                    "/reference-new/sdk/v5/python/访问控制管理/get-resources-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/list-resources",
-                    "/reference-new/sdk/v5/python/访问控制管理/update-resource",
-                    "/reference-new/sdk/v5/python/访问控制管理/delete-resource",
-                    "/reference-new/sdk/v5/python/访问控制管理/delete-resources-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/create-namespace",
-                    "/reference-new/sdk/v5/python/访问控制管理/create-namespaces-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/get-namespace",
-                    "/reference-new/sdk/v5/python/访问控制管理/get-namespaces-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/update-namespace",
-                    "/reference-new/sdk/v5/python/访问控制管理/delete-namespace",
-                    "/reference-new/sdk/v5/python/访问控制管理/delete-namespaces-batch",
-                    "/reference-new/sdk/v5/python/访问控制管理/authorize-resources",
-                    "/reference-new/sdk/v5/python/访问控制管理/get-authorized-resources"
+                  "title": "访问控制管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/python/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-authorized-resources"
                   ]
                 },
                 {
-                  title: "外部身份源管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/外部身份源管理/list-ext-idp",
-                    "/reference-new/sdk/v5/python/外部身份源管理/get-ext-idp",
-                    "/reference-new/sdk/v5/python/外部身份源管理/create-ext-idp",
-                    "/reference-new/sdk/v5/python/外部身份源管理/update-ext-idp",
-                    "/reference-new/sdk/v5/python/外部身份源管理/delete-ext-idp",
-                    "/reference-new/sdk/v5/python/外部身份源管理/create-ext-idp-conn",
-                    "/reference-new/sdk/v5/python/外部身份源管理/update-ext-idp-conn",
-                    "/reference-new/sdk/v5/python/外部身份源管理/delete-ext-idp-conn",
-                    "/reference-new/sdk/v5/python/外部身份源管理/enable-ext-idp-conn"
+                  "title": "外部身份源管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/enable-ext-idp-conn"
                   ]
                 },
                 {
-                  title: "自定义字段管理",
-                  children: [
-                    "/reference-new/sdk/v5/python/自定义字段管理/get-custom-fields",
-                    "/reference-new/sdk/v5/python/自定义字段管理/set-custom-fields",
-                    "/reference-new/sdk/v5/python/自定义字段管理/set-custom-data",
-                    "/reference-new/sdk/v5/python/自定义字段管理/get-custom-data"
+                  "title": "自定义字段管理",
+                  "children": [
+                    "/reference-new/sdk-v5/python/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/python/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/python/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/python/自定义字段管理/get-custom-data"
                   ]
                 }
               ]
@@ -2379,9 +2386,9 @@ const zhCnNavBar = {
           ]
         }
       ]
+      // 自动生成粘贴结束
     }
   ],
-  // 自动生成粘贴结束
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,
@@ -2512,7 +2519,7 @@ const zhCnNavBar = {
   "/apn/": [
     {
       title: "概览",
-      path: "/apn/"
+      path: "/apn/overview/"
     },
     {
       title: "将你的应用集成 OIDC",

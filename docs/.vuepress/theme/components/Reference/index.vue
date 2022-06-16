@@ -8,7 +8,7 @@
     <slot name="top" />
 
     <div class="main-content">
-      <slot name="sidebar"></slot>
+      <!-- <slot name="sidebar"></slot> -->
       <div class="breadcrumb-content-container">
         <slot name="breadcrumb"></slot>
         <div class="sdk-banner">
