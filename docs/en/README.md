@@ -45,18 +45,15 @@ sdkConfig:
   react:
     name: React
     link: /en/reference/guard/v2/react
-    img: react.png
-    img2x: react@2x.png
+    icon: React-Native
   angular:
     name: Angular
     link: /en/reference/guard/v2/angular
-    img: angular.png
-    img2x: angular@2x.png
+    icon: Angular
   vue:
     name: Vue
     link: /en/reference/guard/v2/vue
-    img: vue.png
-    img2x: vue@2x.png
+    icon: Vue
   python:
     name: Python
     link: /en/reference/sdk-for-python/
@@ -80,7 +77,7 @@ sdkConfig:
 applicationSdks:
   - title: Client Application
     description: Applications on mobile, destop and other smart devices
-    color: '#396AFF'
+    color: "#396AFF"
     sdks:
       - ios
       - android
@@ -89,7 +86,7 @@ applicationSdks:
       - cSharp
   - title: Single Page Application
     description: Modern Single-page Web Applications
-    color: '#75A3FF'
+    color: "#75A3FF"
     sdks:
       - javascript
       - react
@@ -97,7 +94,7 @@ applicationSdks:
       - vue
   - title: Standard Web Application
     description: Traditional Multi-page Web Applications
-    color: '#28B1B0'
+    color: "#28B1B0"
     sdks:
       - javascript
       - python
@@ -108,7 +105,7 @@ applicationSdks:
       - golang
   - title: Backend / API service
     description: Backend Services and Applications without Web UI
-    color: '#F8BC00'
+    color: "#F8BC00"
     sdks:
       - javascript
       - python

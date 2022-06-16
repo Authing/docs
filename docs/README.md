@@ -45,18 +45,15 @@ sdkConfig:
   react:
     name: React
     link: /reference/guard/v2/react
-    img: react.png
-    img2x: react@2x.png
+    icon: React-Native
   angular:
     name: Angular
     link: /reference/guard/v2/angular
-    img: angular.png
-    img2x: angular@2x.png
+    icon: Angular
   vue:
     name: Vue
     link: /reference/guard/v2/vue
-    img: vue.png
-    img2x: vue@2x.png
+    icon: Vue
   python:
     name: Python
     link: /reference/sdk-for-python/
