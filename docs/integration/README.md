@@ -851,6 +851,13 @@
         image: "Tita_logo@2x.png",
         image2x: "Tita_logo@3x.png",
         category: "office",
+      },
+      {
+        key: "codimd",
+        name: "CodiMD",
+        image: "CodiMD_logo@2x.png",
+        image2x: "CodiMD_logo@3x.png",
+        category: "office",
       }
       # {
       #   key: "eteams",
