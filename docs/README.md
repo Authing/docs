@@ -62,7 +62,6 @@ sdkConfig:
     name: Node.js
     link: /reference/sdk-for-node/
     icon: Nodejs
-
   ruby:
     name: Ruby
     link: /reference/sdk-for-ruby.html
@@ -75,17 +74,14 @@ sdkConfig:
     name: Java
     link: /reference/sdk-for-java/
     icon: Java
-
   golang:
     name: Golang
     link: /reference/sdk-for-go/
     icon: Go
-
   php:
     name: PHP
     link: /reference/sdk-for-php/
     icon: php
-
 applicationSdks:
   - title: 客户端应用
     description: 在手机、桌面和其他智能设备上运行的本地应用
