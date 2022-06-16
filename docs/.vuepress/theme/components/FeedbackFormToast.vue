@@ -1,7 +1,7 @@
 <template>
   <div v-if="value" class="feedback-toast-container" :style="styles">
     <div class="title">
-      <div v-if="type === 'good'">感谢反馈请问还有其他建议吗？</div>
+      <div v-if="type === 'good'">感谢反馈！请问还有其他建议吗？</div>
       <div v-else-if="type === 'bad'"><span class="highlight">*</span><span>你是否遇到以下问题？</span></div>
     </div>
 
@@ -97,7 +97,7 @@ export default {
       if (this.type === 'bad') {
         params.reasonList = this.selectedReasons
       }
-      
+
       this.$emit('success', params)
     },
     resetStates () {

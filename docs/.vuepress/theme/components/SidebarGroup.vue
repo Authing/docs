@@ -19,7 +19,9 @@
       :to="item.redirect || item.path"
       @click.native="$emit('toggle')"
     >
-      <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-show="collapsable" class="arrow" :class="open ? 'down-arrow' : 'right-arrow'">
+        <img :src="require(`@theme/assets/images/arrow-${open ? 'down' : 'right'}-s-fill.svg`)" />
+      </span>
       <span class="sidebar-heading__title">{{ item.title }}</span>
     </RouterLink>
 
@@ -29,7 +31,9 @@
       :class="{ open }"
       @click="$emit('toggle')"
     >
-      <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-show="collapsable" class="arrow" :class="open ? 'down-arrow' : 'right-arrow'">
+        <img :src="require(`@theme/assets/images/arrow-${open ? 'down' : 'right'}-s-fill.svg`)" />
+      </span>
       <span class="sidebar-heading__title">{{ item.title }}</span>
     </p>
 
@@ -91,7 +95,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 14px
+      // font-size 14px
       line-height 22px
       font-weight normal
       padding-left 24px
@@ -100,7 +104,7 @@ export default {
     & > .sidebar-group-items
       padding-left 16px
       & > li > .sidebar-link
-        font-size: 14px
+        // font-size: 14px
         border-left none
   &.depth-2
     & > .sidebar-heading
@@ -120,10 +124,10 @@ export default {
   color #4E5969
   transition color .15s ease
   cursor pointer
-  font-size 16px
+  // font-size 14px
   // text-transform uppercase
   line-height: 22px
-  padding 0.35rem 1.5rem 0.35rem 24px
+  padding 10px 1rem 10px 24px
   width 100%
   box-sizing border-box
   margin 0
@@ -136,9 +140,15 @@ export default {
     color $accentColor
   .arrow
     position absolute
-    top: 50%;
-    transform: translateY(-50%);
-    left 8px
+    top: 12px;
+    // transform: translateY(-50%);
+    left 4px
+    display inline-block
+    width 16px
+    height 16px
+    img {
+      width 100%
+    }
   &.clickable
     &.active
       font-weight 500
@@ -148,7 +158,7 @@ export default {
 
 .sidebar-group-items
   transition height .1s ease-out
-  font-size 0.95em
+  font-size 1em
   overflow hidden
 
 </style>
