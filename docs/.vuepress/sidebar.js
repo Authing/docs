@@ -657,6 +657,10 @@ const zhCnNavBar = {
             {
               title: "Instagram",
               path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
             }
           ]
         },
@@ -2606,6 +2610,10 @@ const translatedZhCnNavBar = {
             {
               title: "Instagram",
               path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
             }
           ]
         },
