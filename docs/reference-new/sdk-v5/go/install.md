@@ -10,7 +10,7 @@ go get -u github.com/Authing/authing-golang-sdk
 
 ```go
 import (
-    "authing-go-sdk/client"
+    "authing-golang-sdk/client"
 )
 
 options := client.ManagementClientOptions{
@@ -44,8 +44,8 @@ if err != nil {
 package main
 
 import (
-	"authing-go-sdk/client"
-	"authing-go-sdk/dto"
+	"authing-golang-sdk/client"
+	"authing-golang-sdk/dto"
 	"fmt"
 )
 
@@ -70,8 +70,8 @@ func main() {
 package main
 
 import (
-	"authing-go-sdk/client"
-	"authing-go-sdk/dto"
+	"authing-golang-sdk/client"
+	"authing-golang-sdk/dto"
 	"fmt"
 )
 
@@ -108,8 +108,8 @@ func main() {
 package main
 
 import (
-	"authing-go-sdk/client"
-	"authing-go-sdk/dto"
+	"authing-golang-sdk/client"
+	"authing-golang-sdk/dto"
 	"fmt"
 )
 
@@ -141,8 +141,8 @@ func main() {
 package main
 
 import (
-	"authing-go-sdk/client"
-	"authing-go-sdk/dto"
+	"authing-golang-sdk/client"
+	"authing-golang-sdk/dto"
 	"fmt"
 )
 
