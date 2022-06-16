@@ -252,7 +252,7 @@ export default {
       cursor auto
   .suggestions
     background #fff
-    width 20rem
+    width 100%
     position absolute
     top 2.5rem
     max-height 300px
@@ -264,6 +264,7 @@ export default {
     border-radius 6px
     padding 0.4rem 0
     z-index: 9999
+    box-sizing border-box
     ul
       margin 0
       padding 0
@@ -340,8 +341,6 @@ export default {
 
 @media (max-width: $MQMobileNarrow)
   .search-box
-    .suggestions
-      width calc(100vw - 4rem)
     input:focus
       width 8rem
 </style>
