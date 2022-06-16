@@ -32,6 +32,7 @@
               github: "https://github.com/Authing/authing-ui-components",
               doc: "https://docs.authing.cn/v2/reference/guard/v2/react.html",
             },
+          ],
       },
       {
         title: "单页应用",
