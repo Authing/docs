@@ -153,12 +153,17 @@ export default {
     &.active
       font-weight 500
       color $accentColor !important
-    &:hover
-      color $accentColor !important
+    // &:hover
+    //   color $accentColor
 
 .sidebar-group-items
   transition height .1s ease-out
   font-size 1em
   overflow hidden
-
+@media (max-width: $MQMobile)
+  .sidebar-heading:hover, a.sidebar-link:hover
+      color #4E5969 !important
+@media (min-width: $MQMobile)
+  a.sidebar-link:hover, .sidebar-heading:hover
+    color $accentColor !important
 </style>

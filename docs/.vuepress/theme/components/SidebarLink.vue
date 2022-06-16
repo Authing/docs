@@ -160,4 +160,7 @@ a.sidebar-link
     border-left none
     &.active
       font-weight 500
+@media (max-width: $MQMobile)
+  a.sidebar-link:hover
+    color #4E5969 !important
 </style>
