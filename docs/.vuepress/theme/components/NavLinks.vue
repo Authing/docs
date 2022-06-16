@@ -73,6 +73,8 @@ export default {
 
 @media (max-width: $MQMobile)
   .nav-links
+    & a:hover
+      color inherit
     .nav-item, .repo-link
       margin-left 0
 

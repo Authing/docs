@@ -233,6 +233,10 @@ $accentColor: #215AE5;
     nav {
       flex: 1;
       background-color: white;
+      cursor: pointer;
+      div, input {
+        cursor: pointer;
+      }
     }
     .instructions-label {
       flex: 0;
