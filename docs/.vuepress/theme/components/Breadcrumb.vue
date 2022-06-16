@@ -18,78 +18,82 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue'
+import NavLink from "@theme/components/NavLink.vue";
 
 function findChildren(list, routePath) {
   return list.find(item => {
-    if (item.path === '/concepts/') {
+    if (item.path === "/concepts/") {
       // concepts 特殊处理
-      return routePath === '/concepts/'
+      return routePath === "/concepts/";
     } else if (routePath.startsWith(item.path)) {
-      return true
+      return true;
     } else if (item.children) {
-      return findChildren(item.children, routePath)
+      return findChildren(item.children, routePath);
     } else {
-      return false
+      return false;
     }
-  })
+  });
 }
 
 function findSideBarPath(sidebars, routePath, parentPath) {
   if (!sidebars) {
-    return []
+    return [];
   }
-  const finded = findChildren(sidebars, routePath)
+  const finded = findChildren(sidebars, decodeURIComponent(routePath));
   if (!finded) {
-    return []
+    return [];
   }
 
   const allPath = parentPath.concat({
     link: finded.redirect ?? finded.path,
-    text: finded.title || finded.path,
-  })
+    text: finded.title || finded.path
+  });
   // 当前菜单路由已经和路由相等，已找完
-  if (finded.path === routePath) {
-    return allPath
+  if (finded.path === decodeURIComponent(routePath)) {
+    return allPath;
   }
 
-  return findSideBarPath(finded.children, routePath, allPath)
+  return findSideBarPath(
+    finded.children,
+    decodeURIComponent(routePath),
+    allPath
+  );
 }
 
 export default {
   components: {
-    NavLink,
+    NavLink
   },
   props: {
     sidebars: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     crumbs() {
-      const navLinks = this.$themeLocaleConfig.nav
+      const navLinks = this.$themeLocaleConfig.nav;
       if (!navLinks) {
-        return []
+        return [];
       }
 
-      const path = this.$route.path
+      const path = this.$route.path;
 
-      const currNav = navLinks.find((item) => path.startsWith(item.link))
+      const currNav = navLinks.find(item => path.startsWith(item.link));
 
       if (!currNav) {
-        return []
+        return [];
       }
 
       return findSideBarPath(this.sidebars, path, [
         {
           link: currNav.link,
-          text: currNav.text,
-        },
-      ])
-    },
-  },
-}
+          text: currNav.text
+        }
+      ]);
+    }
+  }
+};
 </script>
 
 <style lang="stylus">

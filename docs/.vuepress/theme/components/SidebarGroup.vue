@@ -16,7 +16,7 @@
         open,
         active: active
       }"
-      :to="item.path"
+      :to="item.redirect || item.path"
       @click.native="$emit('toggle')"
     >
       <span v-show="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
