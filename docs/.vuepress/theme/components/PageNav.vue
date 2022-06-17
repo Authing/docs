@@ -200,6 +200,7 @@ function flatten(items, res) {
     height 32px
     line-height 32px
     background #F2F3F5
+    border-radius 4px
   .next
     display flex
     justify-content center
@@ -209,6 +210,7 @@ function flatten(items, res) {
     line-height 32px
     background #F2F3F5
     margin-top 16px
+    border-radius 4px
   .arrow-outline
     display none !important
 
