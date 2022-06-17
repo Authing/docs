@@ -115,7 +115,7 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-  overflow-y auto
+  overflow-y unset
   .sidebar-search
     width: 94%
     .suggestions
@@ -199,4 +199,7 @@ export default {
 
     .old-version
       margin-top 1rem
+@media (max-width: $MQMobile)
+  .sidebar
+    overflow-y auto
 </style>

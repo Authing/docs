@@ -343,4 +343,7 @@ export default {
   .search-box
     input:focus
       width 8rem
+@media (min-width: $MQMobile)
+  .suggestions
+    width 300px !important
 </style>
