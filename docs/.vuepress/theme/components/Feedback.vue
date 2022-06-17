@@ -183,7 +183,7 @@ export default {
       width 88px
       height 34px
       background #F2F3F5
-      border-radius 0px 4px 4px 0px
+      border-radius 4px
       border 1px solid #F2F3F5
       cursor pointer
       font-size 14px
@@ -198,13 +198,13 @@ export default {
         outline none
       &:first-of-type
         margin-left 15px
-      &:not(:first-of-type)
-        border-left none
-        border-bottom-left-radius 0
-        border-top-left-radius 0
-      &:not(:last-of-type)
-        border-bottom-right-radius 0
-        border-top-right-radius 0
+      // &:not(:first-of-type)
+      //   border-left none
+      //   border-bottom-left-radius 0
+      //   border-top-left-radius 0
+      // &:not(:last-of-type)
+      //   border-bottom-right-radius 0
+      //   border-top-right-radius 0
       .feedback-text-tip
         padding-left 3px
         box-sizing border-box

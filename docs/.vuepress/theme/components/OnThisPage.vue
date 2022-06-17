@@ -181,7 +181,7 @@ export default {
     // border-left 3px solid transparent
     // color: transparent
     color #4e5969
-    padding-left: 25px;
+    padding-left: 10px;
 
 
     // &:before
@@ -211,7 +211,7 @@ export default {
   //   font-weight 600
   .links
     // border-left 3px solid #eee
-    padding-left 16px
+    padding-left 0
 
   ul
     list-style none
