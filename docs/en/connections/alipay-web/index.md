@@ -1,5 +1,7 @@
 ## Alipay Social Login
 
+<LastUpdated/>
+
 ## Introduction
 
 - **Overview**：Alipay social login means that users can securely log in to third-party applications or websites with Alipay as the identity source. By configuring and enabling Alipay's social login in Authing, you can quickly obtain basic open information of Alipay through Authing and help users achieve password-free login.
