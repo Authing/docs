@@ -1,7 +1,7 @@
 <template>
   <div v-if="prev || next" class="page-nav">
-    <p class="inner">
-      <span v-if="prev" class="prev">
+    <div class="inner">
+      <template v-if="prev">
         <a
           v-if="prev.type === 'external'"
           class="prev"
@@ -9,11 +9,9 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="arrow-outline">
-          </span>
+          <span class="arrow-outline"></span>
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
-
           <OutboundLink />
         </a>
 
@@ -23,31 +21,30 @@
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
         </RouterLink>
-      </span>
+      </template>
 
-      <span v-if="next" class="next">
+      <template v-if="next">
         <a
           v-if="next.type === 'external'"
+          class="next"
           :href="next.path"
           target="_blank"
           rel="noopener noreferrer"
         >
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
-          <span class="arrow-outline">
-          </span>
-
+          <span class="arrow-outline"></span>
           <OutboundLink />
         </a>
 
-        <RouterLink v-else :to="next.path">
+        <RouterLink v-else :to="next.path" class="next">
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
           <span class="arrow-outline">
           </span>
         </RouterLink>
-      </span>
-    </p>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -153,7 +150,7 @@ function flatten(items, res) {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .page-nav
   a
     color #4E5969
