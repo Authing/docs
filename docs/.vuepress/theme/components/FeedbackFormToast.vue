@@ -67,6 +67,9 @@ export default {
   watch: {
     value (newVal) {
       newVal && this.resetStates()
+    },
+    type () {
+      this.resetStates()
     }
   },
   data () {
