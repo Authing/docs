@@ -8,12 +8,24 @@
     <div class="content">
       <div class="reasons" v-if="type === 'bad'">
         <div class="option" v-for="reason in reasons" :key="reason.value">
-          <input type="checkbox" :id="reason.value" :value="reason.desc" v-model="selectedReasons" class="checkbox">
+          <input
+            type="checkbox"
+            :id="reason.value"
+            :value="reason.desc"
+            v-model="selectedReasons"
+            class="checkbox"
+          >
           <label :for="reason.value">{{ reason.desc }}</label>
         </div>
       </div>
 
-      <textarea class="textarea" :placeholder="textareaPlaceholder" v-model="customReason"></textarea>
+      <textarea
+        class="textarea"
+        :placeholder="textareaPlaceholder"
+        v-model="customReason"
+        :class="{ focused: focused }"
+        @focus="focused = true"
+        @blur="focused = false"></textarea>
     </div>
 
     <div class="feedback-footer">
@@ -76,7 +88,8 @@ export default {
     return {
       reasons: createReasons(),
       selectedReasons: [],
-      customReason: ''
+      customReason: '',
+      focused: false,
     }
   },
   computed: {
@@ -200,9 +213,14 @@ export default {
       border none
       color #86909C
       resize none
+      border 1px solid #F2F3F5
       &:focus
         outline none
         border none
+      &.focused
+        background-color #fff
+        border 1px solid #165DFF
+
   .feedback-footer
     display flex
     flex-direction column
