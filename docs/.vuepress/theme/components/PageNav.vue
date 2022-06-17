@@ -196,13 +196,17 @@ function flatten(items, res) {
     flex-wrap wrap
     justify-content space-between
   .prev
-    display block
+    display flex
+    justify-content center
+    align-items center
     width 100%
     height 32px
     line-height 32px
     background #F2F3F5
   .next
-    display block
+    display flex
+    justify-content center
+    align-items center
     width 100%
     height 32px
     line-height 32px
