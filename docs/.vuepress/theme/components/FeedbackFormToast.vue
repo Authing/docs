@@ -211,7 +211,7 @@ export default {
       background #F2F3F5
       border-radius 2px
       border none
-      color #86909C
+      color #1d2129
       resize none
       border 1px solid #F2F3F5
       &:focus
