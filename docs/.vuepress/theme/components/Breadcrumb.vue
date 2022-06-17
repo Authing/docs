@@ -37,7 +37,7 @@ function findChildren(list, routePath) {
 
 function findSideBarPath(sidebars, routePath, parentPath) {
   routePath = decodeURIComponent(routePath)
-  
+
   if (!sidebars) {
     return [];
   }
@@ -118,7 +118,8 @@ export default {
         font-size 12px
       &:not(:last-child)
         .nav-link
-          color rgba(0,0,0,0.45)
+          // color rgba(0,0,0,0.45)
+          color #86909c
           &:hover
             color $accentColor
 </style>
