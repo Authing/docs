@@ -64,7 +64,7 @@
 
 3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)。
 
-3.2 在已创建好的支付宝身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
+3.2 在已创建好的易盾身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
 <img src="./images/09openapp.png" />
 
