@@ -1,5 +1,7 @@
 # 安装
 
+<LastUpdated/>
+
 ### Nuget
 
 ```powershell

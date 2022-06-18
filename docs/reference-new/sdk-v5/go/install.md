@@ -1,5 +1,7 @@
 # 安装
 
+<LastUpdated/>
+
 ```bash
 go get -u github.com/Authing/authing-golang-sdk
 ```
