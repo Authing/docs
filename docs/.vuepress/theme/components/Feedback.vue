@@ -187,7 +187,7 @@ export default {
       border 1px solid #F2F3F5
       cursor pointer
       font-size 14px
-      color #6D7278
+      color #4E597B
       margin-right: 17px;
       &.active
         color $accentColor
