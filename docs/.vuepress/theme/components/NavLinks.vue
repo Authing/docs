@@ -1,8 +1,8 @@
 <template>
-  <nav v-if="navLinks.length" class="nav-links">
+  <nav v-if="links.length" class="nav-links">
     <!-- user links -->
     <div
-      v-for="item in navLinks"
+      v-for="item in links"
       :key="item.link"
       :class="[
         'nav-item',
@@ -39,7 +39,16 @@ export default {
     NavLink,
     DropdownLink,
   },
-}
+
+  computed: {
+    links() {
+      return this.navLinks.filter((item) => {
+        console.log(item.link !== "/reference/");
+        return !this.$isMobile || item.link !== "/reference-new/";
+      });
+    },
+  },
+};
 </script>
 
 <style lang="stylus">

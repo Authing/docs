@@ -9,7 +9,7 @@
     <template v-else-if="$frontmatter.sidebarType === 'page'">
       <PageSidebar />
     </template>
-    <template v-else>
+    <template v-else-if="!$frontmatter.noSidebar">
       <div class="current-nav-text" v-if="currentNavText">
         {{ currentNavText }}
       </div>
@@ -202,4 +202,7 @@ export default {
 @media (max-width: $MQMobile)
   .sidebar
     overflow-y auto
+  .current-nav-text
+    padding-bottom 0 !important
+    margin-bottom 0.67rem !important
 </style>
