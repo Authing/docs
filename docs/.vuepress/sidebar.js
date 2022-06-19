@@ -644,7 +644,7 @@ const zhCnNavBar = {
             },
             {
               title: "百度",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/baidu/"
             },
             {
               title: "网易易盾",
@@ -657,6 +657,10 @@ const zhCnNavBar = {
             {
               title: "Instagram",
               path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
             }
           ]
         },
@@ -735,7 +739,7 @@ const zhCnNavBar = {
     },
     {
       title: "打通微信生态",
-      path: "/guides/wechat-ecosystem/",
+      path: "/guides/wechat-ecosystem/"
       // children: [
       //   {
       //     title: "关注公众号登录",
@@ -2592,8 +2596,8 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/gitlab/"
             },
             {
-              title: "百度",
-              path: "/guides/connections/social/twitter/"
+              title: "Baidu",
+              path: "/guides/connections/social/baidu/"
             },
             {
               title: "网易易盾",
@@ -2606,6 +2610,10 @@ const translatedZhCnNavBar = {
             {
               title: "Instagram",
               path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
             }
           ]
         },
@@ -2677,7 +2685,7 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Open up WeChat ecology",
-      path: "/guides/wechat-ecosystem/",
+      path: "/guides/wechat-ecosystem/"
       // children: [
       //   {
       //     title: "PC website uses WeChat scan code to log in",
