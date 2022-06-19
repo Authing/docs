@@ -1,5 +1,7 @@
 # Configure SMS Authentication (MFA)
 
+<LastUpdated/>
+
 ## Overview
 
 MFA is a security system that is a secondary identity verification for verifying the legitimacy of an operation. For example, remote login requires SMS verification. This article introduces the multi-factor authentication method based on SMS verification code.

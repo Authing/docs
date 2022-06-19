@@ -6,6 +6,8 @@ meta:
 
 # Error Code
 
+<LastUpdated/>
+
 The error code message format is as follows:
 
 ```js

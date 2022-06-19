@@ -1,5 +1,7 @@
 # Introduction of SAML2
 
+<LastUpdated/>
+
 Security Assertion Markup Language (SAML) is an **XML** based open standard. It's allows identity providers (IdP) to pass authorization credentials to service providers (SP). SAML 2.0 enables Cross Domain Single Sign On (CDSSO), which means users can log in once, and those login credentials can be reused to log into other service providers.
 
 ## What is SAML

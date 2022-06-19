@@ -55,11 +55,7 @@ function findSideBarPath(sidebars, routePath, parentPath) {
     return allPath;
   }
 
-  return findSideBarPath(
-    finded.children,
-    routePath,
-    allPath
-  );
+  return findSideBarPath(finded.children, routePath, allPath);
 }
 
 export default {
@@ -111,8 +107,10 @@ export default {
     margin 0
     line-height 2rem
     li
-      color rgba(0,0,0,0.45)
+      color #86909c
       font-size 14px
+      p
+        line-height 1
       &.crumbs-gutter
         margin: 0 8px
         font-size 12px

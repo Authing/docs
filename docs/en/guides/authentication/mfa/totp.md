@@ -1,5 +1,7 @@
 # MFA: Time-Based One-time Password (TOTP) Authentication 
 
+<LastUpdated/>
+
 ## Summary 
 
 Multi-factor authentication (MFA) is a security system that is a secondary identity verification for verifying the legitimacy of an operation. For example, remote login requires mobile phone SMS verification. Time-Based One-time Password (TOTP) authentication is a way of MFA that constantly generates a new 6-digit password based on a time interval by device.

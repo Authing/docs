@@ -6,6 +6,8 @@ meta:
 
 # Use environment variables in pipeline
 
+<LastUpdated/>
+
 ::: hint-success
 The environment variables in the Pipeline function are consistent with the concept of environment variables in the operating system, and developers can get them through the global variable env. Environment variables are visible to all Pipelien functions in the application pool.
 :::

@@ -1,5 +1,7 @@
 # SAML Flow
 
+<LastUpdated/>
+
 In this section, we will introduce the data flow between SP, IdP and Browser.
 
 ## Roles in SAML Protocol

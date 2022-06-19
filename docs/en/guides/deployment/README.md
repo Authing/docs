@@ -1,5 +1,7 @@
 # Private Deployment Plan
 
+<LastUpdated/>
+
 ::: description
 Authing has been providing many famous companies with authentication and user management solutions, as well as public cloud/private cloud/mixed cloud. Private deployment plan can deploy the platform inside client's intranet server, where all data store are encrypted with individual occupation of cloud resources. It's faster, safer and more stable.
 :::

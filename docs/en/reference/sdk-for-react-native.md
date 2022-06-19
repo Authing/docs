@@ -6,6 +6,8 @@ meta:
 
 # SDK for React Native
 
+<LastUpdated/>
+
 #### 🏠 [Homepage](https://github.com/Authing/authing-rn-sdk)
 
 Authing supports React Native mobile development mobile, making developers quickly access Alipay, WeChat, etc. App login, and code development support mailbox password, username password, mobile verification code login.

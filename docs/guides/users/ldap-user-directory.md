@@ -6,6 +6,8 @@ meta:
 
 # 使用 {{$localeConfig.brandName}} 的 LDAP 用户目录
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} 支持使用 LDAP 协议查看、修改、增加和删除用户信息。本页面包含了一些基础信息和使用教程。如果你还不了解 LDAP 协议是什么，可以先阅读概念 - [什么是 LDAP](/concepts/ldap.md)。
 
 ## 基本信息

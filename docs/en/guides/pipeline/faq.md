@@ -6,6 +6,8 @@ meta:
 
 # 常见问题
 
+<LastUpdated/>
+
 ## Pipeline 函数支持 async await 语法吗？
 
 支持。
