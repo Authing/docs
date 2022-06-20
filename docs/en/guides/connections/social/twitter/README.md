@@ -13,36 +13,36 @@
 ## Caution.
 
 - If you do not have a Twitter account, please go to [Twitter Platform](https://twitter.com/) to register your account.
-- Go to [Twitter Developer Platform](https://developer.twitter.com/en/portal/) to complete your account information and [request Elevated access](https://developer.twitter.com/en/portal) for your account. /petition/standard/basic-info).
+- Go to [Twitter Developer Platform](https://developer.twitter.com/en/portal/) to complete your account information and [request Elevated access](https://developer.twitter.com/en/portal) for your account./petition/standard/basic-info).
 - If you do not have an Authing Console account, please go to [Authing Console](https://authing.cn/) to register for a developer account.
 
 ## Step 1: Create Twitter Application
 
 1.1 To create a project, in the sidebar **Projects & Apps**, select **Overview**, and under the **Elevated** directory, click **+New Project**.
 
-<img src=". /images/02.png" >
+<img src="./images/02.png" >
 
 Fill in **project name**, **usage scenario**, **project description** in order to start the app creation.
 
-<img src=". /images/03.png" >
+<img src="./images/03.png" >
 
 During the development phase, the application environment is first selected as **Development** and switched to **Production** after debugging is complete
 
-<img src=". /images/04.png" >
+<img src="./images/04.png" >
 
 After filling in the name, you will see **APP Key** and **APP Key Secret**, record them first, they will be used in the Authing console configuration
 
-<img src=". /images/05.png" >
+<img src="./images/05.png" >
 
 ## Step 2: Configure Twitter in Authing Console
 
 2.1 Please click the "Create Social Identity" button on the "Social Identity" page of Authing Console, then enter the "Select Social Identity" page, select the "Twitter" identity button, and enter the "Twitter Login Mode" page.
 
-<img src=". /images/11.png" >
+<img src="./images/11.png" >
 
 2.3 Please configure the relevant field information in the "Social Identity Sources" - "Twitter" page of the Authing Console console.
 
-<img src=". /images/13.png" >
+<img src="./images/13.png" >
 
 | number | field/function | description |
 | ----- | -------------- | ------------------------------------------------------------------------------------------------ |
@@ -57,22 +57,22 @@ After filling in the name, you will see **APP Key** and **APP Key Secret**, reco
 Once the configuration is complete, click the "Create" or "Save" button to complete the creation.
 
 In the Twitter created project, select the app you just created, scroll to the bottom, and under **User authentication settings**, click the **Set Up** button to enter the authentication settings page
-<img src=". /images/06.png" >
+<img src="./images/06.png" >
 
 Turn on OAuth 1.0a
-<img src=". /images/07.png" >
+<img src="./images/07.png" >
 
 Select App permissions as needed, by default **Read** is sufficient for authentication, **Callback URI / Redirect URL** fills in the callback address displayed after the Twitter identity feed is created in the Authing console.
-<img src=". /images/08.png" >
+<img src="./images/08.png" >
 
 **Website URL** Just fill in your site's homepage and click Save
-<img src=". /images/09.png" >
+<img src="./images/09.png" >
 
 If you forget the application key, you can click **Keys and tokens** on the application page and select **Regenerate** to regenerate it.
-<img src=". /images/10.png" >
+<img src="./images/10.png" >
 
 When you're done configuring the app, go back to the app settings page and click **Edit** to switch the app environment to **Production**.
-<img src=". /images/14.png" >
+<img src="./images/14.png" >
 
 ## Step 3: Development Access
 
@@ -82,12 +82,12 @@ When you're done configuring the app, go back to the app settings page and click
 
 - **Detailed access method**.
 
-  3.1 Create an application in Authing console, for details see: [How to create an application in Authing](. /guides/app/create-app.md)
+  3.1 Create an application in Authing console, for details see: [How to create an application in Authing](./guides/app/create-app.md)
 
   3.2 Open and associate an app created in Authing console in the created Twitter identity connection details page
 
-<img src=". /images/15.png" >
+<img src="./images/15.png" >
 
 3.3 Experience Twitter third-party login on the login page
 
-<img src=". /images/16.png" >
+<img src="./images/16.png" >
