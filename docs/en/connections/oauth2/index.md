@@ -37,7 +37,7 @@ If there is no available identity source, Authing can also be used as an OAuth2.
 
 <img src="./images/03inputoauth.png" />
 
-| 编号   | 字段/功能                    | 描述                                                         |
+| NO.   | Fields/Function                    | Description                                                         |
 | ------ | ---------------------------- | ------------------------------------------------------------ |
 | 2.3.1  | Uniquely Identifies          | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting. |
 | 2.3.2  | Display Name                 | This name will be displayed on the button on the end user's login screen. |
