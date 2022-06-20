@@ -7,8 +7,8 @@
       :class="[
         'nav-item',
         {
-          'nav-item-hidden': item.hidden,
-        },
+          'nav-item-hidden': item.hidden
+        }
       ]"
     >
       <DropdownLink v-if="item.type === 'links'" :item="item">
@@ -22,32 +22,32 @@
 </template>
 
 <script>
-import DropdownLink from '@theme/components/DropdownLink.vue'
-import NavLink from '@theme/components/NavLink.vue'
+import DropdownLink from "@theme/components/DropdownLink.vue";
+import NavLink from "@theme/components/NavLink.vue";
 
 export default {
-  name: 'NavLinks',
+  name: "NavLinks",
 
   props: {
     navLinks: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
 
   components: {
     NavLink,
-    DropdownLink,
+    DropdownLink
   },
 
   computed: {
     links() {
-      return this.navLinks.filter((item) => {
+      return this.navLinks.filter(item => {
         console.log(item.link !== "/reference/");
         return !this.$isMobile || item.link !== "/reference-new/";
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -65,7 +65,7 @@ export default {
     margin-left 1.5rem
     line-height 2rem
     &.nav-item-hidden
-      display none
+      display none !important
     &:first-child
       margin-left 0
   .repo-link
