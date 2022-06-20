@@ -204,7 +204,7 @@ if (res.session) {
 
 ## 使用登录组件
 
-上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference/guard/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
+上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference/guard/v2/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
 
 ## 使用 API & SDK
 
