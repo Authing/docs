@@ -59,14 +59,17 @@ export default {
 
 <style lang="stylus" scoped>
 .authing-last-updated
+  display flex
   color #86909C
   margin-bottom 50px
   font-size 14px
   clear both
   .left
     float left
+    width 210px
   .right
     float right
+    flex-grow 1
     display flex
     align-items center
     justify-content space-between
@@ -92,12 +95,12 @@ export default {
         fill: #C9CDD4;
 @media (max-width: 440px)
   .authing-last-updated
+    display block
     margin-bottom 24px
     .left
       float none
     .right
       float none
-      justify-content flex-start
       margin-top 10px
       .feedback-small
         margin-left 0
