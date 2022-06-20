@@ -24,7 +24,7 @@ Go to [Azure Platform](https://portal.azure.com/#home) and click **Manage Azure 
 
 On the overview page, select **New Registration** and find the **Application Registration** button to register the application.
 
-<img src=". /images/02.png" >
+<img src="./images/02.png" >
 
 On the app registration page, supported account types, choose the appropriate one for your situation. If you want accounts in other organizations to be able to use your app as well, you can select **Account in any organization directory (any Azure AD directory - multi-tenant) **, if you only want members of your own organization to use your app, select **Account in this organization directory only (default directory only - single tenant) **. Select **Web** for the redirect URI type and fill in the callback address **https://core.authing.cn/connections/azure-ad/callback**
 
