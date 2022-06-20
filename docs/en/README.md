@@ -201,14 +201,14 @@ explores:
         text: Extended user attributes
     knowMore:
       link: /en/guides/user/
-  - title: Connect to an external identity source (IdP)
+  - title: Connect to an external identity provider (IdP)
     links:
       - icon: authing-wechat-mobile
         link: /en/guides/connections/social.html
         text: Social login configuration document
       - icon: authing-oidc_logo
         link: /en/guides/connections/enterprise.html
-        text: Enterprise Identity Source Configuration Document
+        text: Enterprise Identity Provider Configuration Document
       - icon: authing-database
         link: /en/guides/database-connection/overview.html
         text: Use a custom database
