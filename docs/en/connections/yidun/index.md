@@ -72,4 +72,4 @@ After the configuration is complete, click the "Create" or "Save" button to comp
 
 - [iOS Integration Guide](https://github.com/Authing/guard-ios/blob/main/doc/topics/oneauth.md)
 
-<img src="/Users/jasenyang/Documents/gitAuthing/docs/docs/connections/yidun/images/loginsuccess.jpg" alt="drawing" width="300" />
+<img src="./images/loginsuccess.jpg" alt="drawing" width="300" />
