@@ -6,7 +6,7 @@ meta:
 
 # Authing - PHP
 
-The Approw Python SDK is comprised of two parts: `ManagementClient` and `AuthenticationClient`. All operations in `ManagementClient` are performed as an administrator, including managing users, managing roles, managing authority policies, and managing user pool configuration. All operations in `AuthenticationClient` are performed as the current terminal user, including login, registration, modification of user information, and logout.
+The Authing Python SDK is comprised of two parts: `ManagementClient` and `AuthenticationClient`. All operations in `ManagementClient` are performed as an administrator, including managing users, managing roles, managing authority policies, and managing user pool configuration. All operations in `AuthenticationClient` are performed as the current terminal user, including login, registration, modification of user information, and logout.
 
 You should set the initialized `ManagementClient` instance to a global variable (initialize only once), and the `AuthenticationClient` should be initialized for each request.
 
@@ -120,7 +120,7 @@ try {
 
 ## Privatization deployment
 
-**The privatization deployment** scenario needs to specify the GraphQL endpoint of your privatized Approw service (**without protocol header and Path**). If you are not sure, you can contact the Approw IDaaS service administrator.
+**The privatization deployment** scenario needs to specify the GraphQL endpoint of your privatized Authing service (**without protocol header and Path**). If you are not sure, you can contact the Authing IDaaS service administrator.
 
 ## Interface index
 

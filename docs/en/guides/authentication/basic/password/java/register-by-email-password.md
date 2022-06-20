@@ -1,7 +1,6 @@
-!!!include(common/init-java-auth-sdk.md)!!!
+!!!include(en/common/init-java-auth-sdk.md)!!!
 
-
-使用 `registerByEmail` 方法：
+Use `registerByEmail` 方法：
 
 ```java
 String email = "test@example.com";

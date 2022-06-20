@@ -100,7 +100,7 @@ func printJSON(v interface{}) {
 }
 ```
 
-[如何获取 UserPool ID 和 UserPool Secret ？](/guides/faqs/get-userpool-id-and-secret.md)
+[How to get UserPool ID and UserPool Secret ？](/guides/faqs/get-userpool-id-and-secret.md)
 
 ## API use case
 

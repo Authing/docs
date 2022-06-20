@@ -54,4 +54,4 @@ The aforementioned managed login page, embedded login component, and the underly
 
 ## Single Sign On
 
-Single Sign On (SSO) is one of the more popular solutions for enterprise business integration. The definition of SSO is that in multiple application systems, users only need to log in once to access all mutually trusted application systems. We provide [SSO SDK](/reference/sdk-for-sso.md) for developers to quickly implement single sign-on between applications.
+Single Sign On (SSO) is one of the more popular solutions for enterprise business integration. The definition of SSO is that in multiple application systems, users only need to log in once to access all mutually trusted application systems. We provide [SSO SDK](/en/reference/sdk-for-sso.md) for developers to quickly implement single sign-on between applications.

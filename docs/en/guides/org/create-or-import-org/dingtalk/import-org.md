@@ -20,12 +20,12 @@
 
 ![](https://cdn.authing.cn/blog/20201019215016.png)
 
-由于钉钉平台限制，同一个IP只能被一个企业使用，所以你需要在**服务器出口 IP 对应的服务器**上部署一个具备 https 转发能力的代理，{{$localeConfig.brandName}} 会通过这个代理与钉钉服务器进行通信 。你可以使用 [goproxy](https://github.com/snail007/goproxy/blob/master/README_ZH.md) 等开源代理方案，或者购买匿名代理 IP。如果你不知道怎么部署，请见：
+由于钉钉平台限制，同一个 IP 只能被一个企业 Use ，所以你需要在**服务器出口 IP 对应的服务器**上部署一个具备 https 转发能力的代理，{{$localeConfig.brandName}} 会通过这个代理与钉钉服务器进行通信 。你可以 Use [goproxy](https://github.com/snail007/goproxy/blob/master/README_ZH.md) 等开源代理方案，或者购买匿名代理 IP。如果你不知道怎么部署，请见：
 
 ::: page-ref /guides/faqs/how-to-build-a-proxy.md
 :::
 
-#### 在 {{$localeConfig.brandName}}  控制台配置
+#### 在 {{$localeConfig.brandName}} 控制台配置
 
 在**连接身份源** - **企业身份源**页面找到**钉钉通讯录**：
 
@@ -54,12 +54,11 @@
 
 <img src="https://cdn.authing.cn/blog/20201019215342.png" height="400px">
 
-
 在 {{$localeConfig.brandName}} 控制台用户管理 - 组织架构页面点击右上角的 导入组织机构 - 从钉钉导入：
 
 ![](https://cdn.authing.cn/blog/20201019215351.png)
 
-一小段时间之后，钉钉的组织机构将会被导入 {{$localeConfig.brandName}}  组织机构：
+一小段时间之后，钉钉的组织机构将会被导入 {{$localeConfig.brandName}} 组织机构：
 
 ![](https://cdn.authing.cn/blog/20201019215400.png)
 

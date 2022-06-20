@@ -1,5 +1,5 @@
-你可以在控制台的 **用户管理** - **组织机构** 中手动创建组织机构：
+You can manually create an organization in **User Management** - **Organizations** in the console:
 
-![](~@imagesZhCn/guides/org/Xnip2021-02-24_19-52-07.png)
+![](~@imagesEnUs/guides/org/create-new-department.jpg)
 
-输入组织机构名称、组织机构代码（必须是唯一的合法的英文标志符）、组织机构描述信息即可。
+Enter the organization name, organization code (must be the only legal English identifier), and organization description information.

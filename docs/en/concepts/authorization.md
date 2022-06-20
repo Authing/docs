@@ -2,7 +2,6 @@
 
 <LastUpdated/>
 
-
 ## The meaning of Authorization
 
 In the general field, Authorization is the process by which leaders achieve organizational goals, by providing employees and subordinates with autonomy.
@@ -19,7 +18,6 @@ For enterprises, authorization can clarify the relationship between organization
 
 From the product point of view, authorization can ensure the safety of product system use and data security, and prevent illegal operations and data leakage. Authorization can also improve the operability of the system and enhance user experience. In addition, a good authorization function will enhance the value of the product. Make it more competitive in the market.
 
-
 ## Authorization model
 
 There are mainly two Authorization modes:
@@ -34,7 +32,7 @@ You can use OAuth2.0's client_credentials to simulate issuing an access_token wi
 
 ```shell
 curl --request POST \
-  --url https://${YOUR_APPROW_DOMAIN}/oidc/token \
+  --url https://${YOUR_authing_DOMAIN}/oidc/token \
   --header 'accept: application/json' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/x-www-form-urlencoded' \
@@ -42,6 +40,7 @@ curl --request POST \
 ```
 
 - {{$localeConfig.brandName}} will dynamically determine which permissions to issue the AccessTokens, based on the resource and context requested by the caller. It can return the denied scope.
+
 ```json
 {
   "access_token": "...",
@@ -57,7 +56,7 @@ Where scope is the list of permissions possessed by the access_token, separated 
 When the authorization process involves the resource owners, the owner needs to participate in the resource of the authorization process. The authorization code mode in the OAuth2.0 framework can be used. You need to put the permission item in the scope parameter of the link that initiates the authorization, for example:
 
 ```sh
-https://${YOUR_APPROW_DOMAIN}/oidc/auth?client_id={ID}&scope=openid book:read book:delete&redirect_uri={url}&state={spring}&response_type=code
+https://${YOUR_authing_DOMAIN}/oidc/auth?client_id={ID}&scope=openid book:read book:delete&redirect_uri={url}&state={spring}&response_type=code
 ```
 
 The resource owner needs to click the link, and then go to the login page. The resource owner authenticates their identity and authorizes the resource to the caller. After completing the authentication and authorization, the browser will jump to the service callback address and pass the code authorization code through the URL. The caller can use this code authorization code to {{$localeConfig.brandName}} in exchange for a permissioned AccessToken, which is used to obtain the resources of the resource party.
@@ -66,7 +65,7 @@ The code to exchange for Token is as follows:
 
 ```sh
 curl --request POST \
-  --url https://${YOUR_APPROW_DOMAIN}/oidc/token \
+  --url https://${YOUR_authing_DOMAIN}/oidc/token \
   --header 'Content-Type: application/x-www-form-urlencoded' \
   --data client_id={ID} \
   --data client_secret= {encryption key} \

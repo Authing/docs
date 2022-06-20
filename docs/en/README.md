@@ -50,17 +50,17 @@ sdkConfig:
     img2x: c-sharp@2x.png
   react:
     name: React
-    link: /en/reference/guard/react
+    link: /en/reference/guard/v2/react
     img: react.png
     img2x: react@2x.png
   angular:
     name: Angular
-    link: /en/reference/guard/angular
+    link: /en/reference/guard/v2/angular
     img: angular.png
     img2x: angular@2x.png
   vue:
     name: Vue
-    link: /en/reference/guard/vue
+    link: /en/reference/guard/v2/vue
     img: vue.png
     img2x: vue@2x.png
   python:
@@ -89,8 +89,8 @@ sdkConfig:
     img: golang.png
     img2x: golang@2x.png
 applicationSdks:
-  - title: Mobile / Client Application
-    description: Quick access to authentication services in mobile/client applications
+  - title: Client Application
+    description: Applications on mobile, destop and other smart devices
     color: '#396AFF'
     sdks:
       - ios
@@ -99,7 +99,7 @@ applicationSdks:
       - reactNative
       - cSharp
   - title: Single Page Application
-    description: Access the authentication service and realize single sign-on in the web application running in the browser
+    description: Modern Single-page Web Applications
     color: '#75A3FF'
     sdks:
       - javascript
@@ -107,7 +107,7 @@ applicationSdks:
       - angular
       - vue
   - title: Standard Web Application
-    description: Traditional Web applications running on the server to achieve unified authentication and authorization
+    description: Traditional Multi-page Web Applications
     color: '#28B1B0'
     sdks:
       - javascript
@@ -118,7 +118,7 @@ applicationSdks:
       - java
       - golang
   - title: Backend / API service
-    description: Call {{$localeConfig.brandName}} on the backend and protect the API interface
+    description: Backend Services and Applications without Web UI
     color: '#F8BC00'
     sdks:
       - javascript
@@ -215,14 +215,14 @@ explores:
         text: Extended user attributes
     knowMore:
       link: /en/guides/user/
-  - title: Connect to an external identity source (IdP)
+  - title: Connect to an external identity provider (IdP)
     links:
       - icon: authing-wechat-mobile
         link: /en/guides/connections/social.html
         text: Social login configuration document
       - icon: authing-oidc_logo
         link: /en/guides/connections/enterprise.html
-        text: Enterprise Identity Source Configuration Document
+        text: Enterprise Identity Provider Configuration Document
       - icon: authing-database
         link: /en/guides/database-connection/overview.html
         text: Use a custom database

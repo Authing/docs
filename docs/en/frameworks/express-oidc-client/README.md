@@ -21,9 +21,9 @@ Register from authing.cn and enter the Authing Console, create an OIDC applicati
 
 The detailed configuration is as follows:
 
-- Application name: <Application Name>
-- Certified address: https://<Application domain name>.authing.cn
-- Callback URL：Apply login post-callback address, for example：http://localhost:3004/auth/cb
+- Application name: Application Name
+- Certified address: https://App_Domain_Name.authing.cn
+- Callback URL: Apply login post-callback address, for example: http://localhost:3004/auth/cb
 - Authorized mode: default authorization_code、refresh_token、authing Token
 - return Type: default code
 - token Calculation mode: default client_secret_post
@@ -31,11 +31,11 @@ The detailed configuration is as follows:
 
 After the configuration, the OIDC valid information is saved, which is Express to use.
 
-- App ID：5f34e94bece50b891729e345
-- App Secret：8226514d6740e5a9cd94fad4991e02e9
-- Issuer：https://aj00.authing.cn/oauth/oidc
-- Configuration information：https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
-- Callback address：http://localhost:3004/auth/cb
+- App ID: 5f34e94bece50b891729e345
+- App Secret: 8226514d6740e5a9cd94fad4991e02e9
+- Issuer: https://aj00.authing.cn/oauth/oidc
+- Configuration information: https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
+- Callback address: http://localhost:3004/auth/cb
 
 <img src="@imagesZhCn/integration/express/step.png" height=400 style="display:block;margin:50px auto;">
 
@@ -53,7 +53,7 @@ After the configuration, the OIDC valid information is saved, which is Express t
    const passport = require('passport')
    const { Strategy, Issuer } = require('openid-client')
    const config = {
-     // oidc 配置信息
+     // oidc configuration
      appID: '5f34e94bece50b891729e345',
      appSecret: '8226514d6740e5a9cd94fad4991e02e9',
      issuer: 'https://aj00.authing.cn/oauth/oidc',
@@ -61,9 +61,9 @@ After the configuration, the OIDC valid information is saved, which is Express t
        'https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration',
      callbackUrl: 'http://localhost:3004/auth/cb',
    }(async () => {
-     const issuer = await Issuer.discover(config.configInfo) // 连接 oidc 应用
+     const issuer = await Issuer.discover(config.configInfo) // connect oidc app
      const client = new issuer.Client({
-       // 初始化 issuer 信息
+       // initial issuer
        client_id: config.appID,
        client_secret: config.appSecret,
        id_token_signed_response_alg: 'HS256',

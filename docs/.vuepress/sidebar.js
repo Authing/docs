@@ -250,6 +250,10 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/user-defined-field"
             },
             {
+              title: "添加部门自定义字段",
+              path: "/guides/authentication/extensibility/department-extend"
+            },
+            {
               title: "IdToken 添加自定义字段",
               path: "/guides/authentication/extensibility/customize-id-token"
             },
@@ -561,109 +565,113 @@ const zhCnNavBar = {
         {
           title: "社会化身份源",
           path: "/guides/connections/social",
-           children: [
+          children: [
             {
               title: "微信 PC 扫码",
-              path: "/guides/connections/social/wechat-pc/",
-             },
+              path: "/guides/connections/social/wechat-pc/"
+            },
             {
               title: "微信 PC 小程序扫码",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/"
+            },
             {
               title: "微信公众号关注",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechatmp-qrcode/"
+            },
             {
               title: "微信移动端",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechat-mobile/"
+            },
             {
-              title: "微信 APP 拉起小程序",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "APP 拉起微信小程序",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
+            },
             {
               title: "微信网页授权",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechat-mp/"
+            },
             {
               title: "微信小程序",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/wechat-miniprogram/"
+            },
             {
               title: "腾讯 QQ",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/qq/"
+            },
             {
               title: "新浪微博",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/weibo/"
+            },
             {
               title: "GitHub",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/github/"
+            },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Twitter",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Google",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/google/"
+            },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Apple Web 端",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/apple-web/"
+            },
             {
               title: "支付宝",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Slack",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/slack/"
+            },
             {
               title: "Gitee",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/gitee/"
+            },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/gitlab/"
+            },
             {
               title: "百度",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/baidu/"
+            },
             {
               title: "网易易盾",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Instagram",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
+            }
           ]
         },
         {
           title: "企业身份源",
           path: "/guides/connections/enterprise",
-            children: [
+          children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "企业微信自建应用扫码（代开发模式）",
               path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
@@ -674,48 +682,48 @@ const zhCnNavBar = {
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/enterprise/dingtalk/"
+            },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "Azure AD",
-              path: "/guides/connections/enterprise/azure-ad/",
-             },
+              path: "/guides/connections/enterprise/azure-ad/"
+            },
             {
               title: "OIDC",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/enterprise/oidc/"
+            },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/",
-             }
+              path: "/guides/connections/social/instagram/"
+            }
           ]
         },
         {
@@ -731,37 +739,37 @@ const zhCnNavBar = {
     },
     {
       title: "打通微信生态",
-      path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "关注公众号登录",
-          path: "/guides/wechat-ecosystem/wechat-offical-account"
-        },
-        {
-          title: "PC 网站使用微信扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC 网站使用小程序扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title: "微信内网页使用微信授权登录",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "小程序内使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "移动 APP 使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "移动 APP 使用小程序登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      path: "/guides/wechat-ecosystem/"
+      // children: [
+      //   {
+      //     title: "关注公众号登录",
+      //     path: "/guides/wechat-ecosystem/wechat-offical-account"
+      //   },
+      //   {
+      //     title: "PC 网站使用微信扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC 网站使用小程序扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title: "微信内网页使用微信授权登录",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "小程序内使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "移动 APP 使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "移动 APP 使用小程序登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
       title: `迁移用户到 ${BRAND_NAME_ZH_CN}`,
@@ -987,35 +995,31 @@ const zhCnNavBar = {
   "/reference/": [
     {
       title: "登录组件 (Guard)",
-      path: "/reference/guard/",
+      path: "/reference/guard/v2/",
       children: [
         {
           title: "React",
-          path: "/reference/guard/react"
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/vue"
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/angular"
+          path: "/reference/guard/v2/react.md"
         },
         {
           title: "原生 JavaScript",
-          path: "/reference/guard/native-javascript"
+          path: "/reference/guard/v2/native-javascript.md"
         },
         {
-          title: "完整参数列表",
-          path: "/reference/guard/parameters"
+          title: "Vue",
+          path: "/reference/guard/v2/vue.md"
+        },
+        {
+          title: "Angular",
+          path: "/reference/guard/v2/angular.md"
         },
         {
           title: "迁移指南",
-          path: "/reference/guard/migration"
+          path: "/reference/guard/v2/migration"
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog"
+          path: "/reference/guard/v2/guard-changelog"
         }
       ]
     },
@@ -1107,7 +1111,7 @@ const zhCnNavBar = {
             // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
           ]
         },
-         {
+        {
           title: "管理模块",
           path: "/reference/sdk-for-java/management",
           children: [
@@ -1925,35 +1929,31 @@ const zhCnNavBar = {
   "/guard/": [
     {
       title: "概览",
-      path: "/guard/"
+      path: "/guard/v2/"
     },
     {
       title: "React",
-      path: "/guard/react"
+      path: "/guard/v2/react"
     },
     {
       title: "Vue",
-      path: "/guard/vue"
+      path: "/guard/v2/vue"
     },
     {
       title: "Angular",
-      path: "/guard/angular"
+      path: "/guard/v2/angular"
     },
     {
       title: "原生 JavaScript",
-      path: "/guard/native-javascript"
-    },
-    {
-      title: "完整参数列表",
-      path: "/guard/parameters"
+      path: "/guard/v2/native-javascript"
     },
     {
       title: "迁移指南",
-      path: "/guard/migration"
+      path: "/guard/v2/migration"
     },
     {
       title: "Guard Changelog",
-      path: "/guard/guard-changelog"
+      path: "/guard/v2/guard-changelog"
     }
   ],
   "/android/": [
@@ -2188,7 +2188,7 @@ const translatedZhCnNavBar = {
               path: "/guides/basics/platform-guide/integrate-with-spa"
             },
             {
-              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_ZH_CN}`,
+              title: `Integrate in mobile terminal (iOS, Andriod) ${BRAND_NAME_EN_US}`,
               path: "/guides/basics/platform-guide/integrate-with-mobile-app"
             }
             // {
@@ -2512,7 +2512,7 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: "Connect to an external identity source (IdP)",
+      title: "Connect to an external identity provider (IdP)",
       path: "/guides/connections/",
       children: [
         {
@@ -2520,97 +2520,101 @@ const translatedZhCnNavBar = {
           path: "/guides/connections/social",
           children: [
             {
-              title: "微信 PC 扫码",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "WeChat QR Code on PC",
+              path: "/guides/connections/social/wechat-pc/"
+            },
             {
-              title: "微信 PC 小程序扫码",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Mini Program QR Code on PC",
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/"
+            },
             {
-              title: "微信公众号关注",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "WeChat Official Accounts QR Code",
+              path: "/guides/connections/social/wechatmp-qrcode/"
+            },
             {
-              title: "微信移动端",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Mobile App Use WeChat Login",
+              path: "/guides/connections/social/wechat-mobile/"
+            },
             {
-              title: "微信 APP 拉起小程序",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Mobile App Use WeChat Mini Program Login",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
+            },
             {
-              title: "微信网页授权",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "WeChat Web Page",
+              path: "/guides/connections/social/wechat-mp/"
+            },
             {
-              title: "微信小程序",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "WeChat Mini Program",
+              path: "/guides/connections/social/wechat-miniprogram/"
+            },
             {
-              title: "腾讯 QQ",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Tencent QQ",
+              path: "/guides/connections/social/qq/"
+            },
             {
-              title: "新浪微博",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Sina Weibo",
+              path: "/guides/connections/social/weibo/"
+            },
             {
               title: "GitHub",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/github/"
+            },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Twitter",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Google",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/google/"
+            },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
-              title: "Apple Web 端",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Apple Web",
+              path: "/guides/connections/social/apple-web/"
+            },
             {
               title: "支付宝",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Slack",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/slack/"
+            },
             {
               title: "Gitee",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/gitee/"
+            },
             {
               title: "GitLab",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/gitlab/"
+            },
             {
-              title: "百度",
-              path: "/guides/connections/social/twitter/",
-             },
+              title: "Baidu",
+              path: "/guides/connections/social/baidu/"
+            },
             {
               title: "网易易盾",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/",
-             },
+              path: "/guides/connections/social/twitter/"
+            },
             {
               title: "Instagram",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
+            }
           ]
         },
         {
@@ -2619,8 +2623,8 @@ const translatedZhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "企业微信自建应用扫码（代开发模式）",
               path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
@@ -2631,48 +2635,48 @@ const translatedZhCnNavBar = {
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
-              title: "钉钉 H5 微应用（企业内部开发）",
-              path: "/guides/connections/social/instagram/",
-             },
+              title: "DingTalk H5 Micro Application (Internal Development)",
+              path: "/guides/connections/enterprise/dingtalk/"
+            },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "Azure AD",
-              path: "/guides/connections/enterprise/azure-ad/",
-             },
+              path: "/guides/connections/enterprise/azure-ad/"
+            },
             {
               title: "OIDC",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/enterprise/oidc/"
+            },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/",
-             },
+              path: "/guides/connections/social/instagram/"
+            },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/",
-             }
+              path: "/guides/connections/social/instagram/"
+            }
           ]
         },
         DATABASE_CONNECTION_MENU_EN
@@ -2680,37 +2684,37 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Open up WeChat ecology",
-      path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "PC website uses WeChat scan code to log in",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC website use small program to scan code login",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title:
-            "Use WeChat authorization to log in to the web page within WeChat",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "Log in with WeChat in the Mini Program",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "Mobile APP use WeChat login",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "Mobile APP use applet to log in",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      path: "/guides/wechat-ecosystem/"
+      // children: [
+      //   {
+      //     title: "PC website uses WeChat scan code to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC website use small program to scan code login",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title:
+      //       "Use WeChat authorization to log in to the web page within WeChat",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "Log in with WeChat in the Mini Program",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "Mobile APP use WeChat login",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "Mobile APP use applet to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
-      title: `Migrate users to ${BRAND_NAME_ZH_CN}`,
+      title: `Migrate users to ${BRAND_NAME_EN_US}`,
       path: "/guides/migrations/",
       children: [
         {

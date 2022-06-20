@@ -3,50 +3,50 @@
 Use `yarn` or `npm` to install:
 
 ```bash
-$ yarn add @approw/vue-ui-components
+$ yarn add @authing/vue-ui-components
 
 # OR
 
-$ npm install @approw/vue-ui-components --save
+$ npm install @authing/vue-ui-components --save
 ```
 
 Or use `CDN` to import:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@approw/vue-ui-components"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/vue-ui-components"></script>
 
-<link href="https://cdn.jsdelivr.net/npm/@approw/vue-ui-components/lib/index.min.css" rel="stylesheet"></link>
+<link href="https://cdn.jsdelivr.net/npm/@authing/vue-ui-components/lib/index.min.css" rel="stylesheet"></link>
 ```
 
 ### Initialize
 
-You need to import `ApprowGuard` from `@approw/react-ui-components`. Initializing `ApprowGuard` requires only one parameter-your application ID (appId). You can get the appId of the application on the application list page of the console.
+You need to import `AuthingGuard` from `@authing/react-ui-components`. Initializing `AuthingGuard` requires only one parameter-your application ID (appId). You can get the appId of the application on the application list page of the console.
 
 ```vue
 <template>
-  <ApprowGuard :appId="appId" :config="config" />
+  <AuthingGuard :appId="appId" :config="config" />
 </template>
 
 <script>
-import { ApprowGuard } from '@approw/vue-ui-components'
-import '@approw/vue-ui-components/lib/index.min.css'
+import { AuthingGuard } from "@authing/vue-ui-components";
+import "@authing/vue-ui-components/lib/index.min.css";
 
 export default {
   components: {
-    ApprowGuard,
+    AuthingGuard
   },
   data() {
     return {
-      appId: 'APPROW\_APP\_ID',
+      appId: "authing\_APP\_ID",
       config: {
-        socialConnections: ['github'],
-        logo: 'https://usercontents.approw.com/client/logo@2.png',
-        title: '{{$localeConfig.brandName}}',
-      },
-    }
+        socialConnections: ["github"],
+        logo: "https://usercontents.authing.cn/client/logo@2.png",
+        title: "{{$localeConfig.brandName}}"
+      }
+    };
   },
-  methods: {},
-}
+  methods: {}
+};
 </script>
 ```
 
@@ -56,32 +56,32 @@ You only need to monitor the `@login` event.
 
 ```vue
 <template>
-  <ApprowGuard :appId="appId" :config="config" @login="handleLogin" />
+  <AuthingGuard :appId="appId" :config="config" @login="handleLogin" />
 </template>
 
 <script>
-import { ApprowGuard } from '@approw/vue-ui-components'
+import { AuthingGuard } from "@authing/vue-ui-components";
 
 export default {
   components: {
-    ApprowGuard,
+    AuthingGuard
   },
   data() {
     return {
-      appId: 'APPROW\_APP\_ID',
+      appId: "authing\_APP\_ID",
       config: {
-        socialConnections: ['github'],
-        logo: 'https://usercontents.approw.com/client/logo@2.png',
-        title: '{{$localeConfig.brandName}}',
-      },
-    }
+        socialConnections: ["github"],
+        logo: "https://usercontents.authing.cn/client/logo@2.png",
+        title: "{{$localeConfig.brandName}}"
+      }
+    };
   },
   methods: {
     handleLogin(userInfo) {
-      console.log(userInfo)
-    },
-  },
-}
+      console.log(userInfo);
+    }
+  }
+};
 </script>
 ```
 

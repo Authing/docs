@@ -32,13 +32,13 @@
       </button>
 
       <div class="github-edit">
-        有什么建议或错别字吗？
+        {{ feedbackConfig.editTip }}
         <a
           :href="
             `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
           "
         >
-          在 Github 上编辑
+          {{feedbackConfig.editLink}}
         </a>
       </div>
     </div>

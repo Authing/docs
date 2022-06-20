@@ -21,7 +21,7 @@ Some authentication scenarios include:
 Basically, all the operations you perform in the {{$localeConfig.brandName}} console can be done using the Management SDK, thus realizing automated operation and maintenance management.
 Some typical management scenarios include:
 
-- Manage your role in Approw;
+- Manage your role in Authing;
 - View audit logs and user behavior logs;
 - Manage user directories, etc.
 
