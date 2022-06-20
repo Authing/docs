@@ -9,21 +9,21 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(VTooltip);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
-  Vue.prototype.$eventBus = new Vue();
+  // Vue.prototype.$eventBus = new Vue();
 
-  // 移动端判断
-  let isMobile = false;
-  if (
-    navigator.userAgent.match(
-      /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
-    )
-  ) {
-    isMobile = true;
-  }
-  if (document.body.clientWidth < 1060) {
-    isMobile = true;
-  }
-  Vue.prototype.$isMobile = isMobile;
+  // // 移动端判断
+  // let isMobile = false;
+  // if (
+  //   navigator.userAgent.match(
+  //     /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+  //   )
+  // ) {
+  //   isMobile = true;
+  // }
+  // if (document.body.clientWidth < 1060) {
+  //   isMobile = true;
+  // }
+  // Vue.prototype.$isMobile = isMobile;
 
   if (typeof process === "undefined" || process.env.VUE_ENV !== "server") {
     router.onReady(() => {
