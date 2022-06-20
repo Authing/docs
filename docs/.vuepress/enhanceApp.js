@@ -9,7 +9,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(VTooltip);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
-  // Vue.prototype.$eventBus = new Vue();
+  Vue.prototype.$eventBus = new Vue();
 
   // // 移动端判断
   // let isMobile = false;
