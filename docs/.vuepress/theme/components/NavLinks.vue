@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="links.length" class="nav-links">
+  <nav v-if="navLinks.length" class="nav-links">
     <!-- user links -->
     <div
       v-for="item in navLinks"
