@@ -33,7 +33,7 @@ Authing supports viewing, modifying, adding and deleting user information using 
 
 2.3 According to the LDAP configuration requirements, fill in the configuration content required by the LDAP protocol.
 
-![image-20220620191832484](/Users/jasenyang/Documents/gitAuthing/docs/docs/en/connections/ldap/images/03inputconfig.png)
+<img src="./images/03inputconfig.png" />
 
 | NO.    | Fields/Function | Description                                                  |
 | ------ | --------------- | ------------------------------------------------------------ |
