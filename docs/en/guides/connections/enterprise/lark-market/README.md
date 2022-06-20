@@ -75,7 +75,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 <img src="./images/03.png" >
 
-<img src="./images/10.png" >
+<img src="./images/14.png" >
 
 2.4 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
@@ -83,7 +83,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 <img src="./images/05.png" >
 
-<img src="./images/10.png" >
+<img src="./images/11.png" >
 
 ## 步骤 3：在飞书后台配置事件订阅
 

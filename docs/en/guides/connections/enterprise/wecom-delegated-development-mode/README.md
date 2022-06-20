@@ -1,83 +1,172 @@
-# Instagram Social Login
+# 企业微信内部应用扫码登录（代开发模式） 企业登录
 
 <LastUpdated/>
 
-## Scenario introduction
+## 场景介绍
 
-- **Overview**: Enterprise WeChat internal application sweep code login (proxy development mode) is to realize secure login to third-party applications or websites with enterprise WeChat as the identity source for third-party enterprises by providing proxy development applications by service providers and sweep code authorization by third-party enterprises. By configuring and enabling Instagram social login in Authing, you can quickly access Instagram basic open information and help users to achieve password-free login function through Authing.
-- **Application Scenario**: PC website
-- **End-user preview image**.
+- **概述**：企业微信内部应用扫码登录（代开发模式）是通过服务商提供代开发应用，第三方企业扫码授权的形式，为第三企业实现以企业微信为身份源安全登录第三方应用或者网站。在 Authing 中配置并开启 企业微信内部应用扫码登录（代开发模式） 的企业登录，即可实现通过 Authing 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
+- **应用场景**：PC 网站
+- **终端用户预览图**：
 
-<img src=". /images/00-viewResult.png" >
+<img src="./images/40.png" >
 
-## Caution.
+## 注意事项：
 
-- If you do not have an Instagram Open Platform account, please go to [Instagram Open Platform](https://developers.facebook.com/) to register a developer account first. Since Instagram is owned by Facebook, the Instagram Open Platform here is the Facebook Open Platform.
-- Open an [Instagram account](https://www.instagram.com/) that contains multimedia material.
-- If you do not have an Authing Console account, go to [Authing Console Console](https://authing.cn/) to register a developer account first.
+- 如果您未开通 企业微信服务商 账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为**企业微信服务商**；
+- 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，您可以在[企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role)进行管理员权限的修改；
+- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## Step 1: Create Facebook Application
+## 步骤 1：创建代开发应用
 
-Go to [developers.facebook.com](https://developers.facebook.com/), click on **My Apps**, then create a new app and select **Consumer** or **No App Type** and fill in the app name.
+前往 [企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)，点击**应用代开发**，选择**创建代开发应用模板**，填写相应内容。进入配置开发信息页面
 
-<img src=". /images/01-createapp.png" >
+<img src="./images/01.png" >
 
-<img src=". /images/02-saveapp.png" >
+<img src="./images/02.png" >
 
-In the Control Panel, find the **Instagram Basic Display** product and click Settings to add it to your app.
+在配置开发信息页面，点击**随机获取**生成 Token 和 EncodingAESKey；代开发模板回调 URL，需要在 Authing 控制台创建应用后才能生成，并通过微信服务器校验，因此我们先把页面保留在这里，打开 Authing 控制台。
 
-<img src=". /images/03-addinstagram.png" >
+<img src="./images/03.png" >
 
-Scroll to the bottom of the page, then click **Create New App**.
+## 步骤 2：在 Authing 控制台配置 企业微信内部应用扫码登录（代开发模式）
 
-<img src=". /images/04-saveins.png" >
+2.1 请在 Authing Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
-## Step 2: Configure Instagram in Authing Console
+<img src="./images/04.png" >
 
-2.1 Please click the "Create Social Identity Source" button on the "Social Identity Source" page of Authing Console console to enter the "Select Social Identity Source" page.
+2.2 选择 「企业微信内部应用扫码登录（代开发模式）」。
 
-<img src=". /images/05-addSocial.png" >
+<img src="./images/05.png" >
 
-2.2 Please click the "Instagram" identity source button on the "Social Identity Sources" - "Select Social Identity Also" page in the Authing Console console to enter the "Instagram Login Mode" page.
+2.3 请在「企业微信内部应用扫码登录（代开发模式）」页面，填写在 **企业微信服务商后台配置开发信息页面** 获取的 Token 和 EncodingAESKey。
 
-<img src=". /images/06-choiceIns.png" >
+<img src="./images/03.png" >
 
-2.3 Please configure the relevant field information in the "Social Identity Source" - "Instagram" page of the Authing Console console.
+<img src="./images/06.png" >
 
-<img src=". /images/07-insconfig.png" >
+点击保存，Authing 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。注意，**一定要点击保存后进行后续操作**，否则微信回调验证无法通过。
 
-| Number | Field/Function               | Description                                                                                                                                                                                                                                                                                                                |
-| ------ | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2.3.1  | Unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be changed after it is set.                                                                                                                         | 2.3.2 |
-| 2.3.2  | Display name                 | This name is displayed on the button in the end-user's login screen.                                                                                                                                                                                                                                                       | This is a unique identifier for this connection. |
-| 2.3.3  | App number                   | The app number, which needs to be obtained on the Instagram Open Platform.                                                                                                                                                                                                                                                 |
-| 2.3.4  | App key                      | The app number, which needs to be obtained on the Instagram Open Platform                                                                                                                                                                                                                                                  |
-| 2.3.5  | Callback address             | A valid OAuth jump URI for Instagram.                                                                                                                                                                                                                                                                                      | This URL needs to be configured to the Instagram Open Platform. |
-| 2.3.6  | Login Mode                   | When "Login Only Mode" is enabled, you can only login to your existing account and cannot create a new one, so please choose carefully.                                                                                                                                                                                    | Please choose carefully. |
-| 2.3.7  | Account Identity Association | When "Account Identity Association" is not enabled, new users will be created by default when users log in through the identity source. If you enable "Account Identity Association", you can allow users to log in to existing accounts directly through "Field Matching" or "Ask to Bind". a. Association Method: Select | . |
+<img src="./images/07.png" >
 
-After the configuration is finished, click "Create" or "Save" button to complete the creation.
+将在 Authing 控制台获取到的**事件地址**的 URL，填写到企业微信服务商后台，配置开发信息中的**代开发模板回调 URL** 中，然后点击保存
 
-After creating the Instagram identity source on the Authing console, you need to configure the callback address into the Instagram app on Instagram's open platform **OAuth client authorization settings**.
+<img src="./images/08.png" >
 
-In the final step, Instagram needs to gain access to the **instagram_graph_user_profile**, so this needs to be added. Then click and save the changes to create the instagram app successfully.
+## 步骤 3：上线企业微信代开发应用模板
 
-<img src=". /images/08-insconfig-success.png" >
+3.1 在企业微信服务商后台，选择应用管理，在**代开发应用上线**中，点击**提交上线按钮**，提交刚创建的代开发模板
 
-## Step 3: Development Access
+<img src="./images/10.png" >
 
-- **Recommended development access**: Use a hosted login page
+<img src="./images/11.png" >
 
-- **Description of advantages and disadvantages**: Simple to operate and maintain, with Authing taking care of the operation and maintenance. Each user pool has an independent secondary domain; if you need to embed it into your application, you need to use pop-up mode login, i.e.: after clicking the login button, a window will pop up with the Authing hosted login page, or redirect your browser to the Authing hosted login page.
+3.2 企业微信会对代开发模板进行审核，审核通过后，点击模板，进入代开发模板审核详情，选择**提交上线**
+<img src="./images/11-1.png" >
 
-- **Detailed access method**.
+<img src="./images/11-2.png" >
 
-  3.1 Create an application in Authing console, for more details see: [How to create an application in Authing](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.3 在企业微信**应用开发**页面，选择**应用代开发**，选择需要被授权的代开发应用模板，点击**查看模板信息**
 
-  3.2 Open and associate an app created in Authing console in the created Instagram identity connection details page
+<img src="./images/12.png" >
 
-<img src=". /images/09-openapp.png" >
+<img src="./images/13.png" >
 
-3.3 Experience Instagram third-party login on the login page
+3.4 分别将模板 ID 和 模板 Secret 填写到 Authing 控制台的身份源信息中
+<img src="./images/14.png" >
 
-<img src=". /images/10-login.png" >
+<img src="./images/15.png" >
+
+3.5 在企业微信服务商后台，**服务商信息页面**，选择基本信息，**IP 白名单**需要添加上 Authing 的服务器 IP 地址，具体可点击 [Authing 服务器 IP 列表](core.authing.cn/api/v2/system/public-ips)进行获取
+<img src="./images/16.png" >
+
+## 步骤 4：企业授权代开发模板并开发代开发应用
+
+4.1 在应用代开发页面，点击刚才创建的应用代开发模板，企业管理员扫描授权二维码.
+
+<img src="./images/18.png" >
+
+刷新页面
+
+在页面下出现代开发应用，点击**开始代开发应用**
+<img src="./images/19.png" >
+
+确认基础信息后，配置开发信息，在可信域名中填写 core.authing.cn
+
+<img src="./images/20.png" >
+
+## 步骤 5：配置并上线代开发应用
+
+点击完成后，回到代开发应用模板详情页面，点击**查看**
+
+<img src="./images/21.png" >
+
+编辑使用配置
+
+<img src="./images/22.png" >
+
+点击**校验可信域名归属**
+
+<img src="./images/23.png" >
+
+在弹出窗口，选择 **下载文件**
+<img src="./images/24.png" >
+
+将文件名和内容填入 Authing 的 **Txt Filename** 和 **Txt Content** 中，点击保存
+<img src="./images/25.png" >
+
+点击微信平台上的**使用配置**上的保存按钮进行保存。
+
+设置企业微信授权登录
+<img src="./images/26.png" >
+
+在 Web 网页中的授权回调域中填写 core.authing.cn
+
+<img src="./images/27.png" >
+<img src="./images/28.png" >
+
+配置完成后在代开发应用提交上线并审核
+
+<img src="./images/29.png" >
+<img src="./images/30.png" >
+
+审核通过后，代开发应用状态变更为待上线
+<img src="./images/34.png" >
+
+点击进入待上线的应用，提交上线
+<img src="./images/35.png" >
+
+在企业管理后台，我的企业 查看企业 ID
+<img src="./images/31.png" >
+
+在 Authing 中的 企业 ID 填入企业 ID
+<img src="./images/32.png" >
+
+在企业管理后台的自建应用中 将 AgentId 填入 Authing 的 AgentId 中
+<img src="./images/33.png" >
+
+点击编辑按钮，添加可见范围，只有选择的组织成员可使用 Authing 进行登录
+<img src="./images/36.png" >
+
+点击授权信息，选择自定义权限，添加允许的成员敏感信息
+
+<img src="./images/37.png" >
+<img src="./images/38.png" >
+<img src="./images/39.png" >
+
+## 步骤 3：开发接入
+
+- **推荐开发接入方式**：使用托管登录页
+
+- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+
+- **详细接入方法**：
+
+  3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+
+  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
+
+<img src="./images/42.png" >
+
+3.3 在登录页面体验 企业微信内部应用扫码登录（代开发模式） 第三方登录
+
+<img src="./images/41.png" >

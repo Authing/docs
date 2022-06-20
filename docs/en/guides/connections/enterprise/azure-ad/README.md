@@ -8,7 +8,7 @@
 - **Application Scenario**: PC Website
 - **End-user preview image**.
 
-<img src=". /images/00.png" >
+<img src="./images/00.png" >
 
 ## Caution.
 
@@ -20,7 +20,7 @@
 
 Go to [Azure Platform](https://portal.azure.com/#home) and click **Manage Azure Active Directory**.
 
-<img src=". /images/01.png" >
+<img src="./images/01.png" >
 
 On the overview page, select **New Registration** and find the **Application Registration** button to register the application.
 
@@ -28,7 +28,7 @@ On the overview page, select **New Registration** and find the **Application Reg
 
 On the app registration page, supported account types, choose the appropriate one for your situation. If you want accounts in other organizations to be able to use your app as well, you can select **Account in any organization directory (any Azure AD directory - multi-tenant) **, if you only want members of your own organization to use your app, select **Account in this organization directory only (default directory only - single tenant) **. Select **Web** for the redirect URI type and fill in the callback address **https://core.authing.cn/connections/azure-ad/callback**
 
-<img src=". /images/03.png" >
+<img src="./images/03.png" >
 
 Click **Register**.
 
@@ -36,11 +36,11 @@ Click **Register**.
 
 2.1 Please click the "Create Enterprise Identity Source" button on the "Enterprise Identity Source" page of Authing Console console, go to the "Select Enterprise Identity Source" page, and select the "Azure AD" identity source button to enter the "Azure AD Login Mode" page.
 
-<img src=". /images/07.png" >
+<img src="./images/07.png" >
 
 2.2 Please configure the relevant field information on the Enterprise Identity Source - Azure AD page in the Authing Console console.
 
-<img src=". /images/10.png" >
+<img src="./images/10.png" >
 
 | number | field/function                                | description                                                                                                                                                                                                                                                                                                         |
 | ------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,11 +57,11 @@ Click **Register**.
 
 2.2.1 On the application overview page, you can find the application (client) ID and catalog (tenant) ID
 
-<img src=". /images/04.png" >
+<img src="./images/04.png" >
 
 2.2.2 On the Credentials and Passwords page of the app, click Generate **New Client Password** to get the client password value
 
-<img src=". /images/05.png" >
+<img src="./images/05.png" >
 
 Once the configuration is complete, click the "Create" or "Save" button to finish the creation.
 
@@ -73,18 +73,18 @@ Once the configuration is complete, click the "Create" or "Save" button to finis
 
 - **Detailed access method**.
 
-  3.1 Create an application in Authing console, for details see: [How to create an application in Authing](. /guides/app/create-app.md)
+  3.1 Create an application in Authing console, for details see: [How to create an application in Authing](./guides/app/create-app.md)
 
   3.2 In the created Azure AD Identity Source connection details page, open and associate an app created in the Authing console
 
-<img src=". /images/08.png" >
+<img src="./images/08.png" >
 
 3.3 Experience Azure AD third-party login on the login page
 
-<img src=". /images/09.png" >
+<img src="./images/09.png" >
 
 ## Step 4: Troubleshooting common errors
 
 4.1 If you select a supported account type of **Accounts in this organization's directory only (Default Directory - Single Tenant only)**, when users from other organizations try to log in using Azure AD, they will be prompted with an error similar to the following.
 
-<img src=". /images/11.png" >
+<img src="./images/11.png" >
