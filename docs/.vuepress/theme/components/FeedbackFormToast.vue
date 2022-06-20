@@ -2,7 +2,9 @@
   <div v-if="value" class="feedback-toast-container" :style="styles">
     <div class="title">
       <div v-if="type === 'good'">感谢反馈！请问还有其他建议吗？</div>
-      <div v-else-if="type === 'bad'"><span class="highlight">*</span><span>你是否遇到以下问题？</span></div>
+      <div v-else-if="type === 'bad'">
+        <span class="highlight">*</span><span>你是否遇到以下问题？</span>
+      </div>
     </div>
 
     <div class="content">
@@ -14,7 +16,7 @@
             :value="reason.desc"
             v-model="selectedReasons"
             class="checkbox"
-          >
+          />
           <label :for="reason.value">{{ reason.desc }}</label>
         </div>
       </div>
@@ -25,116 +27,132 @@
         v-model="customReason"
         :class="{ focused: focused }"
         @focus="focused = true"
-        @blur="focused = false"></textarea>
+        @blur="focused = false"
+      ></textarea>
     </div>
 
     <div class="feedback-footer">
       <div class="submit" @click="submit">提交</div>
-      <div class="tips">如果遇到其他问题，立即<a href="https://forum.authing.cn/" target="_blank">联系我们</a></div>
+      <div class="tips">
+        如果遇到其他问题，立即<a
+          href="https://forum.authing.cn/"
+          target="_blank"
+          >联系我们</a
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script scoped>
-function createReasons () {
-  return [{
-    value: 'A',
-    desc: '没找到想了解的信息'
-  }, {
-    value: 'B',
-    desc: '步骤说明不清晰/看不懂'
-  }, {
-    value: 'C',
-    desc: '内容有错'
-  }, {
-    value: 'D',
-    desc: '其他'
-  }]
+function createReasons() {
+  return [
+    {
+      value: "A",
+      desc: "没找到想了解的信息"
+    },
+    {
+      value: "B",
+      desc: "步骤说明不清晰/看不懂"
+    },
+    {
+      value: "C",
+      desc: "内容有错"
+    },
+    {
+      value: "D",
+      desc: "其他"
+    }
+  ];
 }
 
 export default {
   props: {
     type: {
       type: String,
-      default () {
-        return 'good'
+      default() {
+        return "good";
       },
-      validator (value) {
-        return ['good', 'bad'].includes(value)
+      validator(value) {
+        return ["good", "bad"].includes(value);
       }
     },
     value: {
       type: Boolean,
-      default () {
-        return false
+      default() {
+        return false;
       }
     },
     styles: {
       type: String,
-      default () {
-        return ''
+      default() {
+        return "";
       }
     }
   },
   watch: {
-    value (newVal) {
-      console.log('newVal: ', newVal)
-      newVal && this.resetStates()
+    value(newVal) {
+      newVal && this.resetStates();
     },
-    type () {
-      this.resetStates()
+    type() {
+      this.resetStates();
     }
   },
-  data () {
+  data() {
     return {
       reasons: createReasons(),
       selectedReasons: [],
-      customReason: '',
-      focused: false,
-    }
+      customReason: "",
+      focused: false
+    };
   },
   computed: {
-    textareaPlaceholder () {
+    textareaPlaceholder() {
       const map = {
-        good: '你的建议会让我们做的更好...',
-        bad: '描述具体问题...'
-      }
-      return map[this.type] || ''
+        good: "你的建议会让我们做的更好...",
+        bad: "描述具体问题..."
+      };
+      return map[this.type] || "";
     }
   },
   methods: {
-    submit () {
+    submit() {
       const params = {
-        helpful: this.type === 'good',
+        helpful: this.type === "good",
         docTitle: this.$page.title,
         docUrl: window.location.href,
         customReason: this.xssCheck(this.customReason)
+      };
+
+      if (this.type === "bad") {
+        params.reasonList = this.selectedReasons;
       }
 
-      if (this.type === 'bad') {
-        params.reasonList = this.selectedReasons
-      }
-
-      this.$emit('success', params)
+      this.$emit("success", params);
     },
-    resetStates () {
-      this.selectedReasons = []
-      this.customReason = ''
+    resetStates() {
+      this.selectedReasons = [];
+      this.customReason = "";
     },
-    xssCheck (str, reg) {
+    xssCheck(str, reg) {
       const map = {
-        '<': '&lt;',
-        '&':'&amp;',
-        '"':'&quot;',
-        '>':'&gt;',
-        "'":'&#39;'
-      }
-      return str ? str.replace(reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp|#\d+);)?/g, ($0, $1) => {
-        return $1 ? $0 : map[$0]
-      }) : ''
+        "<": "&lt;",
+        "&": "&amp;",
+        '"': "&quot;",
+        ">": "&gt;",
+        "'": "&#39;"
+      };
+      return str
+        ? str.replace(
+            reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp|#\d+);)?/g,
+            ($0, $1) => {
+              return $1 ? $0 : map[$0];
+            }
+          )
+        : "";
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
