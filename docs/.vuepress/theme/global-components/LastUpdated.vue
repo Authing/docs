@@ -66,7 +66,6 @@ export default {
   clear both
   .left
     float left
-    width 210px
   .right
     float right
     flex-grow 1
