@@ -74,13 +74,13 @@
 
 - **推荐开发接入方式**：使用托管登录页
 
-- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
 - **详细接入方法**：
 
-  3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
+  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/04.png" >
 

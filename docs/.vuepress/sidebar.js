@@ -670,7 +670,7 @@ const zhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/social/wocom--app/"
             },
             {
               title: "企业微信自建应用扫码（代开发模式）",
@@ -682,7 +682,7 @@ const zhCnNavBar = {
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/social/wecom-mobile/"
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -690,15 +690,15 @@ const zhCnNavBar = {
             },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/social/lark-market/"
             },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/social/lark-custom/"
             },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/social/windows-ad/"
             },
             {
               title: "Azure AD",
