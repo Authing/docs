@@ -1,172 +1,172 @@
-# 企业微信内部应用扫码登录（代开发模式） 企业登录
+# Enterprise WeChat internal app code sweep login (proxy development mode) Enterprise login
 
 <LastUpdated/>
 
-## 场景介绍
+## Scenario Introduction
 
-- **概述**：企业微信内部应用扫码登录（代开发模式）是通过服务商提供代开发应用，第三方企业扫码授权的形式，为第三企业实现以企业微信为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 企业微信内部应用扫码登录（代开发模式） 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：PC 网站
-- **终端用户预览图**：
+- **Overview**: Enterprise WeChat internal application code login (proxy development mode) is to provide proxy development application by the service provider, and third-party enterprise code authorization form, for the third enterprise to achieve the enterprise WeChat as the identity source to securely login to third-party applications or websites. By configuring {{$localeConfig.brandName}} and enabling the enterprise login in {{$localeConfig.brandName}}, you can quickly get the basic open information of enterprise WeChat and help users to realize the password-free login function.
+- **Application Scenario**: PC website
+- **End-user preview image**.
 
 <img src="./images/40.png" >
 
-## 注意事项：
+## Caution.
 
-- 如果您未开通 企业微信服务商 账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为**企业微信服务商**；
-- 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，您可以在[企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role)进行管理员权限的修改；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- If you do not have an Enterprise Wechat Service Provider account, please go to [Enterprise Wechat Service Provider website](https://open.work.weixin.qq.com/) and click on Become a **Enterprise Wechat Service Provider** first.
+- During the development process, you also need an Enterprise Wechat enterprise administrator account to authorize the operation of the application template developed on your behalf, you can modify the administrator rights at [Enterprise Wechat rights management page](https://work.weixin.qq.com/wework_admin/frame#profile/role).
+- If you do not have a {{$localeConfig.brandName}} console account, please go to [{{$localeConfig.brandName}} Console console](https://authing.cn/) to register a developer account first.
 
-## 步骤 1：创建代开发应用
+## Step 1: Create a surrogate application
 
-前往 [企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)，点击**应用代开发**，选择**创建代开发应用模板**，填写相应内容。进入配置开发信息页面
+Go to [Enterprise WeChat Service Provider Backend](https://open.work.weixin.qq.com/wwopen/developer#/index), click **Application Generation Development**, select **Create Generation Development Application Template**, and fill in the corresponding content. Go to the Configure Development Information page
 
 <img src="./images/01.png" >
 
 <img src="./images/02.png" >
 
-在配置开发信息页面，点击**随机获取**生成 Token 和 EncodingAESKey；代开发模板回调 URL，需要在 {{$localeConfig.brandName}} 控制台创建应用后才能生成，并通过微信服务器校验，因此我们先把页面保留在这里，打开 {{$localeConfig.brandName}} 控制台。
+On the Configure Development Information page, click **Random Get** to generate the Token and EncodingAESKey; the callback URL for the development template needs to be generated after the app is created in the {{$localeConfig.brandName}} console and verified by the WeChat server, so let's keep the page here first and open the {{$ localeConfig.brandName}} console.
 
 <img src="./images/03.png" >
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信内部应用扫码登录（代开发模式）
+## Step 2: Configure Enterprise WeChat internal app sweep login (proxy development mode) in {{$localeConfig.brandName}} console
 
-2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
+2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
 
 <img src="./images/04.png" >
 
-2.2 选择 「企业微信内部应用扫码登录（代开发模式）」。
+2.2 Select "Enterprise WeChat Internal App Sweep Login (Surrogate Development Mode)".
 
 <img src="./images/05.png" >
 
-2.3 请在「企业微信内部应用扫码登录（代开发模式）」页面，填写在 **企业微信服务商后台配置开发信息页面** 获取的 Token 和 EncodingAESKey。
+2.3 Please fill in the Token and EncodingAESKey obtained from **Enterprise WeChat service provider backend configuration development information page** on the "Enterprise WeChat internal app code login (proxy development mode)" page.
 
 <img src="./images/03.png" >
 
 <img src="./images/06.png" >
 
-点击保存，{{$localeConfig.brandName}} 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。注意，**一定要点击保存后进行后续操作**，否则微信回调验证无法通过。
+Click Save and the {{$localeConfig.brandName}} console will automatically jump to the identity source details page, copying the URL displayed in the **event address** at the bottom of the page. note that **must click Save and follow up**, otherwise the WeChat callback verification will not pass.
 
 <img src="./images/07.png" >
 
-将在 {{$localeConfig.brandName}} 控制台获取到的**事件地址**的 URL，填写到企业微信服务商后台，配置开发信息中的**代开发模板回调 URL** 中，然后点击保存
+Fill in the URL of the **event address** obtained from the {{$localeConfig.brandName}} console into the **generation development template callback URL** in the enterprise WeChat service provider backend, configuration development information, and then click Save
 
 <img src="./images/08.png" >
 
-## 步骤 3：上线企业微信代开发应用模板
+## Step 3: Go live with the Enterprise WeChat Generation Development Application Template
 
-3.1 在企业微信服务商后台，选择应用管理，在**代开发应用上线**中，点击**提交上线按钮**，提交刚创建的代开发模板
+3.1 In the Enterprise WeChat service provider backend, select Application Management, and in **Online Application Development**, click the **Submit Online button** to submit the development template you just created
 
 <img src="./images/10.png" >
 
 <img src="./images/11.png" >
 
-3.2 企业微信会对代开发模板进行审核，审核通过后，点击模板，进入代开发模板审核详情，选择**提交上线**
+3.2 Enterprise Wechat will review the development templates, after the review, click on the template, enter the development template review details, and select **Submit to go live**
 <img src="./images/11-1.png" >
 
 <img src="./images/11-2.png" >
 
-3.3 在企业微信**应用开发**页面，选择**应用代开发**，选择需要被授权的代开发应用模板，点击**查看模板信息**
+3.3 On the Enterprise WeChat **App Development** page, select **App Development**, select the app template that needs to be authorized, and click **View Template Information**
 
 <img src="./images/12.png" >
 
 <img src="./images/13.png" >
 
-3.4 分别将模板 ID 和 模板 Secret 填写到 {{$localeConfig.brandName}} 控制台的身份源信息中
+3.4 Fill the template ID and template Secret into the {{$localeConfig.brandName}} console's identity source information separately
 <img src="./images/14.png" >
 
 <img src="./images/15.png" >
 
-3.5 在企业微信服务商后台，**服务商信息页面**，选择基本信息，**IP 白名单**需要添加上 {{$localeConfig.brandName}} 的服务器 IP 地址，具体可点击 [{{$localeConfig.brandName}} 服务器 IP 列表](core.authing.cn/api/v2/system/public-ips)进行获取
+3.5 In the backend of Enterprise WeChat service provider, **Service provider information page**, select basic information, **IP whitelist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](core. authing.cn/api/v2/system/public-ips) to get it
 <img src="./images/16.png" >
 
-## 步骤 4：企业授权代开发模板并开发代开发应用
+## Step 4: Enterprise license surrogate development template and develop the surrogate application
 
-4.1 在应用代开发页面，点击刚才创建的应用代开发模板，企业管理员扫描授权二维码.
+4.1 On the app development page, click on the app development template you just created and the enterprise administrator scans the authorization QR code.
 
 <img src="./images/18.png" >
 
-刷新页面
+Refresh the page
 
-在页面下出现代开发应用，点击**开始代开发应用**
+Under the Modern Application Development page, click **Start Application Development**
 <img src="./images/19.png" >
 
-确认基础信息后，配置开发信息，在可信域名中填写 core.authing.cn
+After confirming the base information, configure the development information and fill in core.authing.cn in the trusted domain
 
 <img src="./images/20.png" >
 
-## 步骤 5：配置并上线代开发应用
+## Step 5: Configure and bring the surrogate app online
 
-点击完成后，回到代开发应用模板详情页面，点击**查看**
+After clicking Finish, go back to the surrogate app template details page and click **View**
 
 <img src="./images/21.png" >
 
-编辑使用配置
+Edit the usage configuration
 
 <img src="./images/22.png" >
 
-点击**校验可信域名归属**
+Click **Verify Trusted Domain Attribution**
 
 <img src="./images/23.png" >
 
-在弹出窗口，选择 **下载文件**
+In the pop-up window, select **Download File**
 <img src="./images/24.png" >
 
-将文件名和内容填入 {{$localeConfig.brandName}} 的 **Txt Filename** 和 **Txt Content** 中，点击保存
+Fill in the **Txt Filename** and **Txt Content** of {{$localeConfig.brandName}} with the filename and content, and click Save
 <img src="./images/25.png" >
 
-点击微信平台上的**使用配置**上的保存按钮进行保存。
+Click the Save button on the **Use Configuration** on the WeChat platform to save.
 
-设置企业微信授权登录
+Set up Enterprise WeChat Authorized Login
 <img src="./images/26.png" >
 
-在 Web 网页中的授权回调域中填写 core.authing.cn
+Fill in core.authing.cn in the authorization callback field in the web page
 
 <img src="./images/27.png" >
 <img src="./images/28.png" >
 
-配置完成后在代开发应用提交上线并审核
+After the configuration is complete, the app is submitted live and reviewed on behalf of the developer
 
 <img src="./images/29.png" >
 <img src="./images/30.png" >
 
-审核通过后，代开发应用状态变更为待上线
+After the review, the app status changes to Pending
 <img src="./images/34.png" >
 
-点击进入待上线的应用，提交上线
+Click into the pending app and submit it to go live
 <img src="./images/35.png" >
 
-在企业管理后台，我的企业 查看企业 ID
+In the Enterprise Admin backend, My Enterprise View Enterprise ID
 <img src="./images/31.png" >
 
-在 {{$localeConfig.brandName}} 中的 企业 ID 填入企业 ID
+Fill in the Enterprise ID in {{$localeConfig.brandName}} with the Enterprise ID
 <img src="./images/32.png" >
 
-在企业管理后台的自建应用中 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
+Fill in the AgentId in {{$localeConfig.brandName}} in the self-built application in the enterprise admin backend
 <img src="./images/33.png" >
 
-点击编辑按钮，添加可见范围，只有选择的组织成员可使用 {{$localeConfig.brandName}} 进行登录
+Click the edit button to add a visible scope so that only members of the selected organization can log in using {{$localeConfig.brandName}}
 <img src="./images/36.png" >
 
-点击授权信息，选择自定义权限，添加允许的成员敏感信息
+Click Authorization Information, select Custom Permissions, and add sensitive information about the allowed members
 
 <img src="./images/37.png" >
 <img src="./images/38.png" >
 <img src="./images/39.png" >
 
-## 步骤 3：开发接入
+## Step 3: Development Access
 
-- **推荐开发接入方式**：使用托管登录页
+- **Recommended Development Access Method**: Using a hosted login page
 
-- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
+- **Description of advantages and disadvantages**: Simple operation and maintenance by {{$localeConfig.brandName}}. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
 
-- **详细接入方法**：
+- **Detailed access method**.
 
-  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
 
-  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+  3.2 In the created Enterprise WeChat internal app sweep login (proxy development mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
 <img src="./images/42.png" >
 
-3.3 在登录页面体验 企业微信内部应用扫码登录（代开发模式） 第三方登录
+3.3 Experience the Enterprise WeChat internal app swipe login on the login page (proxy development mode) Third-party login
 
 <img src="./images/41.png" >

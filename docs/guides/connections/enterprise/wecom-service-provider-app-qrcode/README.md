@@ -1,89 +1,89 @@
-# Enterprise WeChat Service Provider App Sweep
+# 企业微信服务商应用扫码
 
 <LastUpdated/>
 
-## Scenario Introduction
+## 场景介绍
 
-- **Overview**: Enterprise WeChat Service Provider App Sweep is a form of application authorization by a third-party enterprise sweep service provider to enable secure login to third-party applications or websites using Enterprise WeChat as the identity source for third enterprises. In {{$localeConfig.brandName}}, you can configure and enable the enterprise login of enterprise WeChat service provider application sweep code to quickly get the basic open information of enterprise WeChat and help users to realize the function of password-free login through {{$localeConfig.brandName}}.
-- **Application Scenario**: PC website sweep login and Enterprise WeChat Workbench no-login scenario for any enterprise
-- **End-user preview image**.
+- **概述**：企业微信服务商应用扫码是通过，第三方企业扫码服务商的应用授权的形式，为第三企业实现以企业微信为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 企业微信服务商应用扫码 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
+- **应用场景**：任意企业的 PC 网站扫码登录和企业微信工作台免登场景
+- **终端用户预览图**：
 
-<img src=". /images/07.png" >
+<img src="./images/07.png" >
 
-## Caution.
+## 注意事项：
 
-- If you do not have an Enterprise Wechat Service Provider account, please go to the [Enterprise Wechat Service Provider website](https://open.work.weixin.qq.com/) and click on Become a **Enterprise Wechat Service Provider**.
-- If you do not have a {{$localeConfig.brandName}} Console account, please go to [{{$localeConfig.brandName}} Console](https://authing.cn/) to register a developer account first.
+- 如果您未开通 企业微信服务商 账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为**企业微信服务商**；
+- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## Step 1: Configure Enterprise WeChat Service Provider App Sweep in {{$localeConfig.brandName}} Console
+## 步骤 1：在 {{$localeConfig.brandName}} 控制台配置 企业微信服务商应用扫码
 
-2.1 Please click the "Create Enterprise Identity Source" button on the "Enterprise Identity Source" page of {{$localeConfig.brandName}} Console, enter the "Select Enterprise Identity Source" page, select the "Enterprise WeChat" identity source button, and click "Enterprise WeChat Service Provider App Sweep" to enter the "Enterprise WeChat Service Provider App Sweep Login Mode" page. page.
+2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，选择「企业微信」身份源按钮，点击「企业微信服务商应用扫码」，进入 「企业微信服务商应用扫码 登录模式」页面。
 
-<img src=". /images/04.png" >
+<img src="./images/04.png" >
 
-<img src=". /images/05.png" >
+<img src="./images/05.png" >
 
-2.3 Please configure the relevant field information on the "Enterprise Identity Source" - "Enterprise WeChat Service Provider App Sweep" page in {{$localeConfig.brandName}} Console console.
+2.3 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」-「企业微信服务商应用扫码」页面，配置相关的字段信息。
 
-<img src=". /images/06.png" >
+<img src="./images/06.png" >
 
-| Number | Field/Function | Description |
-| ----- | -------------- | ------------------------------------------------------------------------------------------------------------ ---------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------- |
-| 2.3.1 | Unique identifier | a. The unique identifier consists of lowercase letters, numbers, and -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be modified after it is set.                                                                                                                                                                                                                                                      | 2.3.2
-| 2.3.2 | Display name | This name is displayed on the button in the end-user's login screen.                                                                                                                                                                                                                                                                                                          | This is a unique identifier for this connection.
-| 2.3.3 | CorpID | The parameter Corp ID in the generic development on the Enterprise WeChat platform |
-| 2.3.4 | ProviderSecret | The parameter ProviderSecret in the Enterprise Wechat Platform generic development.
-| 2.3.5 | Callback URL | This is your business callback domain name, which is not the same concept as the callback link configured by the self-built application, nor is it related to the callback address configuration of the third-party social login console. For example, if your website domain name is https://example.com and the url for handling {{$localeConfig.brandName}} callback requests is /auth/callback, then you should fill in https://example.com/auth/callback. This parameter has been It is not recommended to use this parameter, and it is recommended to configure the callback link separately in the application, where the address can be filled in #. |The
-| 2.3.7 | Login mode | When "Login only mode" is enabled, only existing accounts can be logged in, no new accounts can be created, please choose carefully.                                                                                                                                                                                                                                                                                  |Please choose carefully.
+| 编号  | 字段/功能      | 描述                                                                                                                                                                                                                                                                                                                                                  |
+| ----- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2.3.1 | 唯一标识       | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。                                                                                                                                                                                                                                                      |
+| 2.3.2 | 显示名称       | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                                                                                                                                                                                                          |
+| 2.3.3 | CorpID         | 企业微信平台上通用开发中的参数 Corp ID                                                                                                                                                                                                                                                                                                                |
+| 2.3.4 | ProviderSecret | 企业微信平台上通用开发中的参数 ProviderSecret                                                                                                                                                                                                                                                                                                         |
+| 2.3.5 | Callback URL   | 这是你的业务回调域名，和自建应用配置的回调链接不是一个概念，也和第三方社会化登录控制台的回调地址配置无关。比如你的网站域名是 https://example.com ， 处理 {{$localeConfig.brandName}} 回调请求的 url 为 /auth/callback ， 那么你应该填写为 https://example.com/auth/callback。这个参数已经不推荐使用，建议在应用中单独配置回调链接，此处地址可填入 #。 |
+| 2.3.7 | 登录模式       | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                                                                                                                                                                                                                  |
 
-In the Enterprise Wechat service provider backend, select **Application Management**, click **General Development Parameters**, and copy the CorpID and ProviderSecret to the {{$localeConfig.brandName}} console
+在企业微信服务商后台，选择**应用管理**，点击**通用开发参数**，将 CorpID 和 ProviderSecret 复制到 {{$localeConfig.brandName}} 控制台中
 
-<img src=". /images/02.png" >
+<img src="./images/02.png" >
 
-<img src=". /images/06.png" >
+<img src="./images/06.png" >
 
-Once the configuration is done, click the "Create" or "Save" button to complete the creation.
+配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## Step 2: Add Enterprise Wechat IP Whitelist
+## 步骤 2：增加企业微信 IP 白名单
 
-2.1 In the background of Enterprise WeChat service provider, **Service provider information page**, select **Basic information**, add the server IP address of {{$localeConfig.brandName}} to the **IP whitelist**, click [{{$localeConfig.brandName}} server IP list] ( core.authing.cn/api/v2/system/public-ips) to get it
+2.1 在企业微信服务商后台，**服务商信息页面**，选择**基本信息**，在**IP 白名单**添加上 {{$localeConfig.brandName}} 的服务器 IP 地址，具体可点击 [{{$localeConfig.brandName}} 服务器 IP 列表](core.authing.cn/api/v2/system/public-ips)进行获取
 
-<img src=". /images/01.png" >
+<img src="./images/01.png" >
 
-## Step 3: Perform login authorization
+## 步骤 3：进行登录授权
 
-- Enterprise WeChat needs to verify the authorization of the address that initiates the login. The following is an example of how to add login authorization by **hosting login page** login
+- 企业微信需要对发起登录的地址进行授权校验，下面以通过**托管登录页**登录的方式，说明如何增加登录授权
 
-  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 In the created Enterprise WeChat Service Provider App Sweep Source Connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
+  3.2 在已创建好的 企业微信服务商应用扫码 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
-<img src=". /images/09.png" >
+<img src="./images/09.png" >
 
-3.3 In the **Apps**, **Build your own app** section, click on the app you just opened, go to the app details, and copy the **Authentication address**
+3.3 在 **应用**，**自建应用** 栏目，点击刚刚开启的应用，进入应用详情，复制**认证地址**
 
-<img src=". /images/10.png" >
+<img src="./images/10.png" >
 
-<img src=". /images/11.png" >
+<img src="./images/11.png" >
 
-3.4 Fill in the authentication address from the app details to the WeChat service provider backend **application management**, **login authorization** in **login authorization launch domain**, **authorization completion callback domain** fill in core.authing.cn
+3.4 把从应用详情中认证地址，填写到 微信服务商后台**应用管理**，**登录授权**中的**登录授权发起域名**，**授权完成回调域名**填写 core.authing.cn
 
-<img src=". /images/03.png" >
+<img src="./images/03.png" >
 
-## Step 3: Development Access
+## 步骤 3：开发接入
 
-- **Recommended development access**: Use hosted login page
+- **推荐开发接入方式**：使用托管登录页
 
-- **Description of advantages and disadvantages**: Simple O&M, with {{$localeConfig.brandName}} in charge of O&M. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
+- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
-- **Detailed access method**.
+- **详细接入方法**：
 
-  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 In the created Enterprise WeChat Service Provider App Sweep Source Connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
+  3.2 在已创建好的 企业微信服务商应用扫码 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
-<img src=". /images/09.png" >
+<img src="./images/09.png" >
 
-3.3 Experience the Enterprise WeChat Service Provider app sweep on the login page
+3.3 在登录页面体验 企业微信服务商应用扫码
 
-<img src=". /images/07.png" >
+<img src="./images/07.png" >

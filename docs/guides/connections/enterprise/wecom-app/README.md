@@ -1,89 +1,89 @@
-# Enterprise WeChat Mobile
+# 企业微信移动端
 
 <LastUpdated/>
 
-## Scenario introduction
+## 场景介绍
 
-- **Overview**: a no-login scenario where Enterprise WeChat is pulled up in a web page for users to log in. Enables secure login to third-party applications or websites using Enterprise WeChat as the identity source for enterprises. Configure and enable enterprise login in {{$localeConfig.brandName}} to quickly get the basic open information of enterprise WeChat and help users to achieve the no-sign-in function through {{$localeConfig.brandName}}.
-- **Application Scenario**: PC-side application
-- **End-user preview image**.
+- **概述**：在网页中拉起企业微信让用户进行登录的免登录场景。为企业实现以企业微信为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 企业微信移动端 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
+- **应用场景**：PC 端应用
+- **终端用户预览图**：
 
 <img src="./images/00.png" >
 
-## Caution.
+## 注意事项：
 
-- If you do not have an Enterprise WeChat Developer account, please go to [Enterprise WeChat Developer Backend](https://work.weixin.qq.com/) to register first.
-- If you do not have a {{$localeConfig.brandName}} console account, please go to [{{$localeConfig.brandName}} Console](https://{{$localeConfig.brandName}}.cn/) to register for a developer account.
+- 如果您未开通 企业微信开发者 账号，请先前往 [企业微信开发者后台](https://work.weixin.qq.com/) 进行注册；
+- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://{{$localeConfig.brandName}}.cn/) 注册开发者账号；
 
-## Step 1: Create Enterprise Self-Built App
+## 步骤 1：创建企业自建应用
 
-Go to [Enterprise WeChat Developer Backend](https://work.weixin.qq.com/wework_admin/frame#profile) and
+前往 [企业微信开发者后台](https://work.weixin.qq.com/wework_admin/frame#profile)，
 
-In the **App Management** - **App** page, create a self-built app
+在**应用管理** - **应用** 页面，创建一个自建应用：
 
 <img src="./images/create-app.png" >
 
-On the app details page, click Set Enterprise Wechat Authorized Login:.
+在应用详情页，点击设置企业微信授权登录：
 
 <img src="./images/click-wechat-work-authz.png" >
 
-Set the authorization callback domain to core.authing.cn .
+设置授权回调域为 core.authing.cn 。
 <img src="./images/configure-authz-domain.png" >
 
-On the application details page, set the web authorization and JS-SDK domain name to `core.authing.cn`.
+在应用详情页，设置网页授权及 JS-SDK 域名，域名地址填写 `core.authing.cn`
 <img src="./images/configure-sdk-domain.png" >
 
-## Step 2: Configure Enterprise WeChat Mobile in {{$localeConfig.brandName}} Console
+## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端
 
-2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
+2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
 <img src="./images/01.png" >
 
-2.2 Select "Enterprise WeChat Mobile".
+2.2 选择 「企业微信移动端」。
 
 <img src="./images/02.png" >
 
-2.3 Please fill in the relevant field information on the "Enterprise WeChat Mobile" page.
+2.3 请在「企业微信移动端」页面，填写相关的字段信息。
 <img src="./images/03.png" >
 
-| 字段 | 描述 |
-| ------------ | -------------------------------------------------------------------------------------------------------------------- ---------------------------------------- |
-| Unique Identifier | a. The unique identifier consists of lowercase letters, numbers, -, and is less than 32 bits long.  <br />b. This is a unique identifier for this connection and cannot be modified after it is set.                                                    |
-| Show name | This name is displayed on the button on the end-user's login screen.                                                                                                                | Enterprise ID
-| Enterprise ID | The App ID and App Secret can be found in the backend of the Enterprise Wechat application, under **Credentials and Basic Information**.                                                                                                                                                              |
-| AgentID | You can see the App ID and App Secret in the backend of Enterprise Wechat application, **Credentials and Basic Information**.                                                                                |Secret
-| App ID and App Secret can be found in **Credentials and Basic Information** in the backend of Enterprise Wechat application.                                                                                |Secret
-| Login Mode | After you turn on "Login Only Mode", you can only login to your existing account, you cannot create new account, please choose carefully.                                                                                        |Sign In Mode
-| Account Identity Association | If "Account Identity Association" is not enabled, users can create new users by default when they log in through the identity source. If "Account Identity Association" is enabled, you can allow users to log in to existing accounts directly by "Field Matching" or "Ask to Bind". |
+| 字段         | 描述                                                                                                                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 唯一标识     | a. 唯一标识由小写字母、数字、- 组成，且长度小于 32 位。<br />b. 这是此连接的唯一标识，设置之后不能修改。                                                     |
+| 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                 |
+| 企业 ID      | 在企业微信应用的后台， **凭证与基础信息** 中可以看到 App ID 和 App Secret 。                                                                                 |
+| AgentID      | 在企业微信应用的后台， **凭证与基础信息** 中可以看到 App ID 和 App Secret 。                                                                                 |
+| Secret       | 在企业微信应用的后台， **凭证与基础信息** 中可以看到 App ID 和 App Secret 。                                                                                 |
+| 登录模式     | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                         |
+| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
 
-You can get the Enterprise ID on the My Enterprise - Enterprise Information page.
+在我的企业 - 企业信息页面，可以获取企业 ID。
 
 <img src="./images/get-corp-id.png" >
 
-On the app details page, you can get the **AgentId** and **Secret** for the app at.
+在应用详情页，你可以获取该应用的 **AgentId** 和 **Secret**：
 
-! [](./images/get-agentid-secret.png)
+![](./images/get-agentid-secret.png)
 
-## Step 3: Development Access
+## 步骤 3：开发接入
 
-- **Recommended development access**: Use hosted login page
+- **推荐开发接入方式**：使用托管登录页
 
-- **Description of advantages and disadvantages**: Simple operation and maintenance by {{$localeConfig.brandName}}. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} hosted login page.
+- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
-## Step 3: Development Access
+## 步骤 3：开发接入
 
-- **Recommended development access method**: Use hosted login page
+- **推荐开发接入方式**：使用托管登录页
 
-- **Description of advantages and disadvantages**: Simple operation and maintenance by {{$localeConfig.brandName}}. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
+- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
-- **Detailed access method**.
+- **详细接入方法**：
 
-  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 In the created Enterprise WeChat internal app sweep login (proxy development mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
+  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/04.png" >
 
-3.3 Experience the Enterprise WeChat internal app swipe login on the login page (proxy development mode) Third-party login
+3.3 在登录页面体验 企业微信内部应用扫码登录（代开发模式） 第三方登录
 
 <img src="./images/05.png" >
