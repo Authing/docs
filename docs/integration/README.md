@@ -859,7 +859,21 @@
         image2x: "Tita_logo@3x.png",
         category: "office",
       },
+      {
+        key: "codimd",
+        name: "CodiMD",
+        image: "CodiMD_logo@2x.png",
+        image2x: "CodiMD_logo@3x.png",
+        category: "office",
+      },
     ],
+  # {
+  #   key: "eteams",
+  #   name: "泛微(公有云)",
+  #   image: "weaver_logo@2x.png",
+  #   image2x: "weaver_logo@3x.png",
+  #   category: "office",
+  # }
   # {
   #   key: "eteams",
   #   name: "泛微(公有云)",
