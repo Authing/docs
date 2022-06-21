@@ -61,7 +61,7 @@ export default {
 .authing-last-updated
   display flex
   color #86909C
-  margin-bottom 50px
+  margin-bottom 24px
   font-size 14px
   clear both
   .left

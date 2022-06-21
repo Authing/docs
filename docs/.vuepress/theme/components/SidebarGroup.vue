@@ -9,21 +9,20 @@
       `depth-${depth}`
     ]"
   >
-    <RouterLink
+    <p
       v-if="item.path"
       class="sidebar-heading clickable"
       :class="{
         open,
         active: active
       }"
-      :to="item.redirect || item.path"
-      @click.native="$emit('toggle')"
+      @click="goLink(item.redirect || item.path)"
     >
-      <span v-show="collapsable" class="arrow" :class="open ? 'down-arrow' : 'right-arrow'">
+      <span @click.stop="$emit('toggle')" v-show="collapsable" class="arrow" :class="open ? 'down-arrow' : 'right-arrow'">
         <img :src="require(`@theme/assets/images/arrow-${open ? 'down' : 'right'}-s-fill.svg`)" />
       </span>
       <span class="sidebar-heading__title">{{ item.title }}</span>
-    </RouterLink>
+    </p>
 
     <p
       v-else
@@ -79,6 +78,10 @@ export default {
 
   methods: {
     isActive,
+    goLink(path) {
+      this.$emit('toggle')
+      this.$router.push(path)
+    }
   }
 };
 </script>
