@@ -1,5 +1,7 @@
 # 配置登录失败次数限制
 
+<LastUpdated/>
+
 你可以在控制台的 设置 - 安全信息 中开启登录失败次数限制开关，限制同一账号在多少秒内不能超过多少次失败登录：
 
 ![](./images/config-login-fail-limit.jpg)
