@@ -23,4 +23,4 @@
 
 ## 获取帮助
 
-如有任何问题，可在[Authing 论坛](https://forum.authing.cn/)进行反馈。
+如有任何问题，可在[Authing 论坛](https://forum.authing.cn/) 进行反馈。
