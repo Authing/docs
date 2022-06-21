@@ -4,7 +4,7 @@
 
 ## 场景介绍
 
-- **概述**：飞书企业自建应用适用于自己企业的 PC 网站扫码登录和飞书工作台的免登录场景。为企业实现以飞书为身份源安全登录第三方应用或者网站。在 Authing 中配置并开启 飞书企业自建应用 的企业登录，即可实现通过 Authing 快速获取 飞书 基本开放的信息和帮助用户实现免密登录功能。
+- **概述**：飞书企业自建应用适用于自己企业的 PC 网站扫码登录和飞书工作台的免登录场景。为企业实现以飞书为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 飞书企业自建应用 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 飞书 基本开放的信息和帮助用户实现免密登录功能。
 - **应用场景**：PC 网站、飞书工作台、移动端应用
 - **终端用户预览图**：
 
@@ -13,7 +13,7 @@
 ## 注意事项：
 
 - 如果您未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建企业自建应用
 
@@ -26,7 +26,7 @@
 进入创建的应用，点击**应用功能**，选择**网页**，开启**启用网页**功能。
 <img src="./images/04.png" >
 
-点击**凭证与基础信息**，查看 App ID 和 App Secret ，打开 Authing 控制台。
+点击**凭证与基础信息**，查看 App ID 和 App Secret ，打开 {{$localeConfig.brandName}} 控制台。
 
 如果你需要 **接入移动应用登录能力**，点击**应用功能**，选择**移动应用登录**，开启**飞书登录**功能，在下方的飞书登录配置中，用户登录协议选项 ** OAuth 2.0**，并填写移动端应用的配置。
 
@@ -49,9 +49,9 @@
 <img src="./images/06.png" >
 
 
-## 步骤 2：在 Authing 控制台配置 飞书企业自建应用
+## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 飞书企业自建应用
 
-2.1 请在 Authing Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「飞书」身份源按钮
+2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「飞书」身份源按钮
 
 <img src="./images/12.png" >
 
@@ -79,7 +79,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 2.4 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-在飞书开发者后台，打开应用管理页面，选择**安全设置**，将 Authing 后台的 回调地址，添加到 **重定向 URL** 中
+在飞书开发者后台，打开应用管理页面，选择**安全设置**，将 {{$localeConfig.brandName}} 后台的 回调地址，添加到 **重定向 URL** 中
 
 <img src="./images/05.png" >
 
@@ -100,13 +100,13 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 - **推荐开发接入方式**：使用托管登录页
 
-- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
 - **详细接入方法**：
 
-3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-3.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
+3.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/15.png" >
 
