@@ -110,6 +110,7 @@ export default {
       color #86909c
       font-size 14px
       p
+        margin 9px 0
         line-height 1
       &.crumbs-gutter
         margin: 0 8px
