@@ -206,7 +206,7 @@
 
 1. 依旧是打开 `服务器管理器`
 
-<img src="./images/1.服务器管理器.png" class="md-img-padding" />
+<img src="./images/1-server-manager.png" class="md-img-padding" />
 
 2. 选择 `添加角色和功能`
 
@@ -222,7 +222,7 @@
 
 5. 增加对应的 `服务器角色`
 
-<img src="./images/3-AD证书服务选择.png" class="md-img-padding" />
+<img src="./images/3-AD-证书服务选择.png" class="md-img-padding" />
 
 6. 选择 `添加功能`
 
@@ -268,7 +268,7 @@
 
 4. 指定 `CA 的设置类型`
 
-<img src="./images/3-1-设置CA类型.png" class="md-img-padding" />
+<img src="./images/3-1-设置-CA-类型.png" class="md-img-padding" />
 
 5. 指定 `CA 的类型`
 
@@ -288,7 +288,7 @@
 
 9. 指定 `CA 有效期`
 
-<img src="./images/3-1-选择CA有效期.png" class="md-img-padding" />
+<img src="./images/3-1-选择-CA-有效期.png" class="md-img-padding" />
 
 10. 指定 `CA 数据库`
 
@@ -440,6 +440,7 @@
 请在 {{$localeConfig.brandName}}Console 控制台 的「企业身份源」-「Windows AD」页面，配置相关的字段信息。
 
 <img src="./images/windowsAD02.png" >
+
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 | 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。
 | 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在  {{$localeConfig.brandName}}的密码

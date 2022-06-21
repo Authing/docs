@@ -195,17 +195,17 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 1. Select the `ldaps` protocol and test
 
-<img src="./images/2-ADldaps测试连接.png" class="md-img-padding" />
+<img src="./images/2-AD-ldaps-测试连接.png" class="md-img-padding" />
 
 2. View `connection test` results
 
-<img src="./images/2-ADldaps连接不能打开.png" class="md-img-padding" />
+<img src="./images/2-AD-ldaps-连接不能打开.png" class="md-img-padding" />
 
 ### Install **AD CS**
 
 1. still open `Server Manager`
 
-<img src="./images/1.服务器管理器.png" class="md-img-padding" />
+<img src="./images/1-server-manager.png" class="md-img-padding" />
 
 2. Select `Add Roles and Features`
 
@@ -221,7 +221,7 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 5. Add the corresponding `server role
 
-<img src="./images/3-AD证书服务选择.png" class="md-img-padding" />
+<img src="./images/3-AD-证书服务选择.png" class="md-img-padding" />
 
 6. Select `Add Functionality`
 
@@ -264,7 +264,7 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 4. Specify the `CA setting type`
 
-<img src="./images/3-1-设置CA类型.png" class="md-img-padding" />
+<img src="./images/3-1-设置-CA-类型.png" class="md-img-padding" />
 
 5. specify `CA's type`
 
@@ -284,7 +284,7 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 9. Specify the `CA expiration date
 
-<img src="./images/3-1-选择CA有效期.png" class="md-img-padding" />
+<img src="./images/3-1-选择-CA-有效期.png" class="md-img-padding" />
 
 10. specify `CA database`
 
