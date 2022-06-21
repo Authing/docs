@@ -36,23 +36,23 @@
 
 1. 打开 Windows Server 中的 `服务管理器`
 
-<img src="./images/1. 服务器管理器.png" class="md-img-padding" />
+<img src="./images/1-server-manager.png" class="md-img-padding" />
 
 2. 选择 `添加角色和功能`
 
-<img src="./images/2. 添加角色和功能.png" class="md-img-padding" />
+<img src="./images/2-add-roles-and-features.png" class="md-img-padding" />
 
 3. 选择 `安装类型`
 
-<img src="./images/3.安装类型.png" class="md-img-padding" />
+<img src="./images/3-installation-type.png" class="md-img-padding" />
 
 4. `服务器选择`
 
-<img src="./images/4.服务器选择.png" class="md-img-padding" />
+<img src="./images/4-server-selection.png" class="md-img-padding" />
 
 5. 选择 `服务器角色`
 
-<img src="./images/2.服务器角色-AD 域服务.png" class="md-img-padding" />
+<img src="./images/2-server-role-AD-domain-services.png" class="md-img-padding" />
 
 6. 选择 `功能`
 
@@ -116,19 +116,19 @@
 
 <img src="./images/18.分配管理权限.png" class="md-img-padding" />
 
-9. 倒入对应的 `LDIF`
+10. 倒入对应的 `LDIF`
 
-<img src="./images/19.导入对应的 LDIF.png" class="md-img-padding" />
+<img src="./images/19.导入对应的LDIF.png" class="md-img-padding" />
 
-10. 安装确认
+11. 安装确认
 
 <img src="./images/20.安装确认.png" class="md-img-padding" />
 
-11. 安装中
+12. 安装中
 
 <img src="./images/21.安装中.png" class="md-img-padding" />
 
-12. 安装完成
+13. 安装完成
 
 <img src="./images/22.安装完成.png" class="md-img-padding" />
 
@@ -174,7 +174,7 @@
 
 1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
 
-<img src="./images/2-打开  ldp.png" class="md-img-padding" />
+<img src="./images/2-打开ldp.png" class="md-img-padding" />
 
 2. 选择连接， 打开一个连接
 
@@ -184,11 +184,11 @@
 
 1. 选择 `ldap` 协议， 进行测试
 
-<img src="./images/2-检查 AD 连接.png" class="md-img-padding" />
+<img src="./images/2-检查AD连接.png" class="md-img-padding" />
 
 2. 查看 `连接测试` 结果
 
-<img src="./images/2- AD 连接测试结果.png" class="md-img-padding" />
+<img src="./images/2-AD连接测试结果.png" class="md-img-padding" />
 
 #### 通过 **ldaps** 连接 Active Directory
 
@@ -196,17 +196,17 @@
 
 1. 选择 `ldaps` 协议， 进行测试
 
-<img src="./images/2-AD ldaps 测试连接.png" class="md-img-padding" />
+<img src="./images/2-AD-ldaps-测试连接.png" class="md-img-padding" />
 
 2. 查看 `连接测试` 结果
 
-<img src="./images/2-AD ldaps 连接不能打开.png" class="md-img-padding" />
+<img src="./images/2-AD-ldaps-连接不能打开.png" class="md-img-padding" />
 
 ### 安装 **AD CS**
 
 1. 依旧是打开 `服务器管理器`
 
-<img src="./images/1. 服务器管理器.png" class="md-img-padding" />
+<img src="./images/1.服务器管理器.png" class="md-img-padding" />
 
 2. 选择 `添加角色和功能`
 
@@ -222,7 +222,7 @@
 
 5. 增加对应的 `服务器角色`
 
-<img src="./images/3-AD 证书服务选择.png" class="md-img-padding" />
+<img src="./images/3-AD证书服务选择.png" class="md-img-padding" />
 
 6. 选择 `添加功能`
 
@@ -234,7 +234,7 @@
 
 8. **AD CS**
 
-<img src="./images/3- AD CS 服务.png" class="md-img-padding" />
+<img src="./images/3-AD-CS服务.png" class="md-img-padding" />
 
 9. 选择对应的 `角色服务`
 
@@ -268,11 +268,11 @@
 
 4. 指定 `CA 的设置类型`
 
-<img src="./images/3-1-设置 CA 类型.png" class="md-img-padding" />
+<img src="./images/3-1-设置CA类型.png" class="md-img-padding" />
 
 5. 指定 `CA 的类型`
 
-<img src="./images/3-1-CA 类型.png" class="md-img-padding" />
+<img src="./images/3-1-CA类型.png" class="md-img-padding" />
 
 6. 配置 `私钥`
 
@@ -284,11 +284,11 @@
 
 8. 指定 `CA 名称`
 
-<img src="./images/3-1-CA 名称.png" class="md-img-padding" />
+<img src="./images/3-1-CA名称.png" class="md-img-padding" />
 
 9. 指定 `CA 有效期`
 
-<img src="./images/3-1-选择 CA 有效期.png" class="md-img-padding" />
+<img src="./images/3-1-选择CA有效期.png" class="md-img-padding" />
 
 10. 指定 `CA 数据库`
 
@@ -296,7 +296,7 @@
 
 11. 确认当前选项
 
-<img src="./images/3-1- CA 确认.png" class="md-img-padding" />
+<img src="./images/3-1-CA确认.png" class="md-img-padding" />
 
 12. 查看配置结果
 
@@ -306,7 +306,7 @@
 
 1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
 
-<img src="./images/2-打开  ldp.png" class="md-img-padding" />
+<img src="./images/2-打开ldp.png" class="md-img-padding" />
 
 2. 选择连接， 打开一个连接
 
@@ -314,41 +314,41 @@
 
 3. 打开测试应用
 
-<img src="./images/3-1-ldaps 测试连接.png" class="md-img-padding" />
+<img src="./images/3-1-ldaps测试连接.png" class="md-img-padding" />
 
 4. 查看测试结果
 
-<img src="./images/3-1-ldaps 测试连接成功.png" class="md-img-padding" />
+<img src="./images/3-1-ldaps测试连接成功.png" class="md-img-padding" />
 
 ### **`AD 相关策略`** 的修改与测试
 
 1. 打开 `AD 管理中心`
 
-<img src="./images/打开 AD 管理中心-1.png" class="md-img-padding" />
+<img src="./images/打开AD管理中心-1.png" class="md-img-padding" />
 
 或者
 
-<img src="./images/打开 AD 管理中心-2.png" class="md-img-padding" />
+<img src="./images/打开AD管理中心-2.png" class="md-img-padding" />
 
 2. 通过 `AD 管理中心` 新增一个用户
 
-<img src="./images/4-在 AD 编辑器中增加一个用户.png" class="md-img-padding" />
+<img src="./images/4-在AD编辑器中增加一个用户.png" class="md-img-padding" />
 
 3. `增加` 一个用户
 
-<img src="./images/4-新增一个 authing-user 用户.png" class="md-img-padding" />
+<img src="./images/4-新增一个authing-user用户.png" class="md-img-padding" />
 
 4. 查看 `新增结果`
 
-<img src="./images/4-新增 authing-test 密码不符合域长度而报错.png" class="md-img-padding" />
+<img src="./images/4-新增authing-test密码不符合域长度而报错.png" class="md-img-padding" />
 
 5. 打开 `AD 策略修改器`
 
-<img src="./images/4- AD 密码策略修改器.png" class="md-img-padding" />
+<img src="./images/4-AD密码策略修改器.png" class="md-img-padding" />
 
 6. 编辑 `AD 策略`
 
-<img src="./images/4-编辑 AD 策略.png" class="md-img-padding" />
+<img src="./images/4-编辑AD策略.png" class="md-img-padding" />
 
 7. 进入 `计算机配置`
 
@@ -360,7 +360,7 @@
 
 9. 进入 `windows 设置`
 
-<img src="./images/4-组策略管理编辑器- windows 设置.png" class="md-img-padding" />
+<img src="./images/4-组策略管理编辑器-windows设置.png" class="md-img-padding" />
 
 10. 进入 `安全设置`
 

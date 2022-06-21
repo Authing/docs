@@ -2,63 +2,63 @@
 
 <LastUpdated/>
 
-## 场景介绍
+## Introduction to the scenario
 
-- **概述**：Windows AD 是 Microsoft 提供的本地化用户目录管理服务。在 {{$localeConfig.brandName}}中配置并开启 Windows AD 服务商应用扫码 的企业登录，即可实现通过 {{$localeConfig.brandName}}快速获取 Windows AD 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：企业 PC 免登场景
-- **终端用户预览图**：
+- **Overview**: Windows AD is a localized user directory management service provided by Microsoft. You can configure and enable the enterprise login of Windows AD service provider application sweep code in {{$localeConfig.brandName}} to quickly get the basic open information of Windows AD and help users to achieve the password-free login function through {{$localeConfig.brandName}}.
+- **Application scenario**: Enterprise PC no-login scenario
+- **End-user preview image**.
 
 <img src="./images/windowsAD00.png" >
 
-## 注意事项：
+## Caution.
 
-- 使用 Windows AD 你需要 Windows 服务器；
-- 服务器安装了 Active Directory；
-- 运行 Authing AD Connector 的机器上，能够连通 Active Directory；
-- 一个具有 Active Directory 的读取权限的用户账密。
-- 如果您未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
+- To use Windows AD you need a Windows server.
+- A server with Active Directory installed.
+- A machine running the Authing AD Connector that is able to connect to Active Directory.
+- A user account with read access to Active Directory.
+- If you do not have a {{$localeConfig.brandName}} console account, go to [ {{$localeConfig.brandName}}Console console](https://authing.cn/) to register for a developer account first.
 
-## 本文包含以下章节：
+## This article contains the following sections.
 
-- **Windows Active Directory** 在 Windows Server 下的安装
-- 安装 **AD LDS**
-- 配置 **AD 域服务**
-- 检查 **Active Directory** 服务连接
-- 安装 **AD CS**
-- 配置 **AD CS**
-- 测试通过 **`ldaps`** 连接 Active Directory
-- **`AD 相关策略`** 的 `修改` 与 `测试`
-- 相关 **`服务`** 以及 **`配置`** 的目的
+- **Windows Active Directory** Installation under Windows Server
+- Installing **AD LDS**
+- Configuring **AD Domain Services**
+- Checking **Active Directory** Service Connections
+- Installing **AD CS**
+- Configure **AD CS**
+- Test pass **`ldaps`** to connect to Active Directory
+- **`AD Related Policies`** `Modification` and `Testing`
+- Related **`services`** and **`configuration`** purposes
 
-## Windows Active Directory 在 Windows Server 下的安装
+## Windows Active Directory installation under Windows Server
 
-### 安装 **AD 域服务**
+### Installing **AD Domain Services** 1.
 
-1. 打开 Windows Server 中的 `服务管理器`
+1. Open the `Service Manager` in Windows Server
 
-<img src="./images/1. 服务器管理器.png" class="md-img-padding" />
+<img src="./images/1-server-manager.png" class="md-img-padding" /> 2.
 
-2. 选择 `添加角色和功能`
+2. Select `Add Roles and Features`
 
-<img src="./images/2. 添加角色和功能.png" class="md-img-padding" />
+<img src="./images/2-add-roles-and-features.png" class="md-img-padding" />
 
-3. 选择 `安装类型`
+3. Select `installation type`
 
-<img src="./images/3.安装类型.png" class="md-img-padding" />
+<img src="./images/3-installation-type.png" class="md-img-padding" />
 
-4. `服务器选择`
+4. `Server selection
 
-<img src="./images/4.服务器选择.png" class="md-img-padding" />
+<img src="./images/4-server-selection.png" class="md-img-padding" />
 
-5. 选择 `服务器角色`
+5. select `server-role`
 
-<img src="./images/2.服务器角色-AD 域服务.png" class="md-img-padding" />
+<img src="./images/2-server-role-AD-domain-services.png" class="md-img-padding" />
 
-6. 选择 `功能`
+6. Select `featured`
 
 <img src="./images/6.功能.png" class="md-img-padding" />
 
-7. 确认
+7. Confirm
 
 <img src="./images/7.确认.png" class="md-img-padding" />
 
@@ -66,657 +66,656 @@
 
 <img src="./images/7.ADLDS.png" class="md-img-padding" />
 
-9. 安装中
+9. Installation in progress
 
 <img src="./images/9.结果.png" class="md-img-padding" />
 
-10. 安装成功
+10. Installing successfully
 
 <img src="./images/10.运行安装向导.png" class="md-img-padding" />
 
-### 安装 **AD LDS**
+### Installing **AD LDS**
 
-> **AD LDS** 并不是必须要安装的，您也可以选择不进行安装，直接进行 **`配置 AD 域服务`** 的安装， 此处只是提供安装过程，以及需要注意的点。
+> You can also choose not to do the installation and go directly to the **`Configure AD Domain Services`** installation, this is just to provide the installation process and points to note.
 
-1. 运行 `安装向导`
+1. Run the `Installation Wizard
 
 <img src="./images/10.运行安装向导.png" class="md-img-padding" />
 
-2. 安装向导
+2. Installation Wizard
 
 <img src="./images/11.安装向导.png" class="md-img-padding" />
 
-3. 创建 AD LDS 实例
+3. Create the AD LDS instance
 
 <img src="./images/12.创建实例.png" class="md-img-padding" />
 
-4. 设置 `实例名字`
+4. Set the `instance name
 
 <img src="./images/13.实例名称.png" class="md-img-padding" />
 
-5. 设置 `默认端口`
+5. Set the `default port
 
-> 如果该默认端口与 `AD 默认端口` 出现冲突，将导致 `AD 域服务` 的 `先决条件检查` 失败
+> If this default port conflicts with the `AD default port`, it will cause the `AD domain service` `prerequisite check` to fail
 
 <img src="./images/14.默认端口.png" class="md-img-padding" />
 
-6. 创建应用程序目录分区
+6. Create the application directory partition
 
 <img src="./images/15.创建应用程序目录分区.png" class="md-img-padding" />
 
-7. 选择存储位置
+7. Choose a storage location
 
 <img src="./images/16.选择存储位置.png" class="md-img-padding" />
 
-8. 选择账户关联
+8. Select account association
 
 <img src="./images/17.选择账户关联.png" class="md-img-padding" />
 
-9. 分配管理权限
+9. Assign administrative privileges
 
 <img src="./images/18.分配管理权限.png" class="md-img-padding" />
 
-9. 倒入对应的 `LDIF`
+10. Pour in the corresponding `LDIF`
 
-<img src="./images/19.导入对应的 LDIF.png" class="md-img-padding" />
+<img src="./images/19.导入对应的LDIF.png" class="md-img-padding" />
 
-10. 安装确认
+11. Installation confirmation
 
 <img src="./images/20.安装确认.png" class="md-img-padding" />
 
-11. 安装中
+12. Installation in progress
 
 <img src="./images/21.安装中.png" class="md-img-padding" />
 
-12. 安装完成
+13. Installation complete
 
 <img src="./images/22.安装完成.png" class="md-img-padding" />
 
-### 配置 **AD 域服务**
+### Configuring **AD Domain Services** 1.
 
-1. 在 `服务管理器` 上， 将此服务提升为 `域控制器`
+On `Service Manager`, elevate this service to `Domain Controller`
 
 <img src="./images/2-将此服务提升为域控制器.png" class="md-img-padding" />
 
-2. 部署配置
+2. Deployment configuration
 
 <img src="./images/2-部署配置.png" class="md-img-padding" />
 
-3. `域控制器` 选项
+3. `Domain Controller` Options
 
 <img src="./images/2-域控制器选项.png" class="md-img-padding" />
 
-4. `DNS` 选型
+4. `DNS` Options
 
 <img src="./images/2-DNS选型.png" class="md-img-padding" />
 
-5. 其他选项
+5. Other options
 
 <img src="./images/2-其他选项.png" class="md-img-padding" />
 
-6. 路径
+6. Paths
 
 <img src="./images/2-路径.png" class="md-img-padding" />
 
-7. 查看选项
+7. View options
 
 <img src="./images/2-查看选项.png" class="md-img-padding" />
 
-8. 先决条件检查
+8. prerequisites check
 
 <img src="./images/2-先决条件检查.png" class="md-img-padding" />
 
-9. 执行安装即可
+9. Just execute the installation
 
-### 检查 **Active Directory** 服务连接
+### Checking **Active Directory** service connections
 
-> 此处使用 `ldp` 进行连接测试， 无需输入更多 `ldap` 连接相关信息即可获取响应结果， 您也可以使用一些客户端（如 Apache Ldap Studio 等）来完成连接测试。当然 `AD 管理中心` 可以打开也意味着 `当前` 您的连接测试是没有问题的。
+> Here you can use `ldp` for connection testing and get a response without entering more information about the `ldap` connection, or you can use some client (e.g. Apache Ldap Studio) for connection testing. Of course, the fact that `AD Admin Center` is open means that `currently` your connection test is OK.
 
-1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
+1. `Win + r` opens the `CMD execution window`, type `ldp`
 
-<img src="./images/2-打开  ldp.png" class="md-img-padding" />
+<img src="./images/2-打开ldp.png" class="md-img-padding" />
 
-2. 选择连接， 打开一个连接
+2. Select the link to open a link
 
 <img src="./images/2-打开连接.png" class="md-img-padding" />
 
-#### 通过 **ldap** 连接 Active Directory
+#### Connecting to Active Directory via **ldap**
 
-1. 选择 `ldap` 协议， 进行测试
+1. Select the `ldap` protocol and test it
+   <img src="./images/2-检查AD连接.png" class="md-img-padding" />
 
-<img src="./images/2-检查 AD 连接.png" class="md-img-padding" />
+2. View `connection test` results
 
-2. 查看 `连接测试` 结果
+<img src="./images/2-AD连接测试结果.png" class="md-img-padding" />
 
-<img src="./images/2- AD 连接测试结果.png" class="md-img-padding" />
+#### Connecting to Active Directory via **ldaps**
 
-#### 通过 **ldaps** 连接 Active Directory
+> For the `ldaps` protocol to work, you need to `install` and `configure` **Active Directory Certificate Service**, but there is no installation and configuration, the `connection result` should be `failed`.
 
-> `ldaps` 协议的开启， 需要 `安装` 并 `配置` **Active Directory 证书服务**， 而现在并没有进行相关安装及配置， `连接结果` 应该是 `失败的`。
+1. Select the `ldaps` protocol and test
 
-1. 选择 `ldaps` 协议， 进行测试
+<img src="./images/2-ADldaps测试连接.png" class="md-img-padding" />
 
-<img src="./images/2-AD ldaps 测试连接.png" class="md-img-padding" />
+2. View `connection test` results
 
-2. 查看 `连接测试` 结果
+<img src="./images/2-ADldaps连接不能打开.png" class="md-img-padding" />
 
-<img src="./images/2-AD ldaps 连接不能打开.png" class="md-img-padding" />
+### Install **AD CS**
 
-### 安装 **AD CS**
+1. still open `Server Manager`
 
-1. 依旧是打开 `服务器管理器`
+<img src="./images/1.服务器管理器.png" class="md-img-padding" />
 
-<img src="./images/1. 服务器管理器.png" class="md-img-padding" />
-
-2. 选择 `添加角色和功能`
+2. Select `Add Roles and Features`
 
 <img src="./images/3-添加角色和功能.png" class="md-img-padding" />
 
-3. 选择 `安装类型`
+3. Select `installation type`
 
 <img src="./images/3-安装类型.png" class="md-img-padding" />
 
-4. 进行 `服务器选择`
+4. Make `server selection
 
 <img src="./images/3-服务器选择.png" class="md-img-padding" />
 
-5. 增加对应的 `服务器角色`
+5. Add the corresponding `server role
 
-<img src="./images/3-AD 证书服务选择.png" class="md-img-padding" />
+<img src="./images/3-AD证书服务选择.png" class="md-img-padding" />
 
-6. 选择 `添加功能`
+6. Select `Add Functionality`
 
 <img src="./images/3-添加证书功能.png" class="md-img-padding" />
-
-7. 选择对应的功能
-
+7. Select the corresponding function
 <img src="./images/3-功能下一步.png" class="md-img-padding" />
 
 8. **AD CS**
+   <img src="./images/3-AD-CS服务.png" class="md-img-padding" />
 
-<img src="./images/3- AD CS 服务.png" class="md-img-padding" />
-
-9. 选择对应的 `角色服务`
+9. Select the corresponding `Role Service
 
 <img src="./images/3-角色服务证书颁发机构.png" class="md-img-padding" />
 
-10. 确认安装
+10. Confirm the installation
 
 <img src="./images/3-确认安装.png" class="md-img-padding" />
 
-11. 安装中
+11. Installation in progress
 
 <img src="./images/3-安装中.png" class="md-img-padding" />
 
-12. 安装完成
+12. Installation complete
 
 <img src="./images/3-1-安装完成.png" class="md-img-padding" />
 
-### 配置 **AD CS**
+### Configure **AD CS**
 
-1. 进入配置目标服务器 `AD CS` 的界面
+1. Go to the interface for configuring the target server `AD CS`
 
 <img src="./images/3-1-安装完成.png" class="md-img-padding" />
 
-2. 指定 `凭据`
+2. Specify the `credentials`
 
 <img src="./images/3-1-制定凭据.png" class="md-img-padding" />
 
-3. 选择 `角色服务`
+3. Select `Role Service`
 
 <img src="./images/3-1-角色服务.png" class="md-img-padding" />
 
-4. 指定 `CA 的设置类型`
+4. Specify the `CA setting type`
 
-<img src="./images/3-1-设置 CA 类型.png" class="md-img-padding" />
+<img src="./images/3-1-设置CA类型.png" class="md-img-padding" />
 
-5. 指定 `CA 的类型`
+5. specify `CA's type`
 
-<img src="./images/3-1-CA 类型.png" class="md-img-padding" />
+<img src="./images/3-1-CA类型.png" class="md-img-padding" />
 
-6. 配置 `私钥`
+6. Configure the `private key
 
 <img src="./images/3-1-私钥.png" class="md-img-padding" />
 
-7. 指定 `加密选项`
+7. Specify `encryption options
 
 <img src="./images/3-1-指定加密选项.png" class="md-img-padding" />
 
-8. 指定 `CA 名称`
+8. specify `CA name`
 
-<img src="./images/3-1-CA 名称.png" class="md-img-padding" />
+<img src="./images/3-1-CA名称.png" class="md-img-padding" />
 
-9. 指定 `CA 有效期`
+9. Specify the `CA expiration date
 
-<img src="./images/3-1-选择 CA 有效期.png" class="md-img-padding" />
+<img src="./images/3-1-选择CA有效期.png" class="md-img-padding" />
 
-10. 指定 `CA 数据库`
+10. specify `CA database`
 
 <img src="./images/3-1-证书数据库.png" class="md-img-padding" />
 
-11. 确认当前选项
+11. Confirm the current options
 
-<img src="./images/3-1- CA 确认.png" class="md-img-padding" />
+<img src="./images/3-1-CA确认.png" class="md-img-padding" />
 
-12. 查看配置结果
+12. View configuration results
 
 <img src="./images/3-1-配置成功.png" class="md-img-padding" />
 
-### 测试 `ldaps` 连接 Active Directory
+### Test `ldaps` connection to Active Directory
 
-1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
+1. `Win + r` open `CMD execution window`, type `ldp`
 
-<img src="./images/2-打开  ldp.png" class="md-img-padding" />
+<img src="./images/2-打开ldp.png" class="md-img-padding" />
 
-2. 选择连接， 打开一个连接
+2. Select the link to open a link
 
 <img src="./images/2-打开连接.png" class="md-img-padding" />
 
-3. 打开测试应用
+3. Open the test application
 
-<img src="./images/3-1-ldaps 测试连接.png" class="md-img-padding" />
+<img src="./images/3-1-ldaps测试连接.png" class="md-img-padding" />
 
-4. 查看测试结果
+4. View the test results
 
-<img src="./images/3-1-ldaps 测试连接成功.png" class="md-img-padding" />
+<img src="./images/3-1-ldaps测试连接成功.png" class="md-img-padding" />
 
-### **`AD 相关策略`** 的修改与测试
+### **`AD related policies`** modification and testing
 
-1. 打开 `AD 管理中心`
+1. open `AD Admin Center`
 
-<img src="./images/打开 AD 管理中心-1.png" class="md-img-padding" />
+<img src="./images/打开AD管理中心-1.png" class="md-img-padding" />
 
-或者
+or
+<img src="./images/打开AD管理中心-2.png" class="md-img-padding" />
 
-<img src="./images/打开 AD 管理中心-2.png" class="md-img-padding" />
+2. Add a new user via `AD Admin Center`
 
-2. 通过 `AD 管理中心` 新增一个用户
+<img src="./images/4-在AD编辑器中增加一个用户.png" class="md-img-padding" />
 
-<img src="./images/4-在 AD 编辑器中增加一个用户.png" class="md-img-padding" />
+3. `Add` a user
 
-3. `增加` 一个用户
+<img src="./images/4-新增一个authing-user用户.png" class="md-img-padding" />
 
-<img src="./images/4-新增一个 authing-user 用户.png" class="md-img-padding" />
+4. View `Added results`
 
-4. 查看 `新增结果`
+<img src="./images/4-新增authing-test密码不符合域长度而报错.png" class="md-img-padding" />
 
-<img src="./images/4-新增 authing-test 密码不符合域长度而报错.png" class="md-img-padding" />
+5. open `AD Policy Modifier`
 
-5. 打开 `AD 策略修改器`
+<img src="./images/4-AD密码策略修改器.png" class="md-img-padding" />
 
-<img src="./images/4- AD 密码策略修改器.png" class="md-img-padding" />
+6. Edit the `AD Policy
 
-6. 编辑 `AD 策略`
+<img src="./images/4-编辑AD策略.png" class="md-img-padding" />
 
-<img src="./images/4-编辑 AD 策略.png" class="md-img-padding" />
-
-7. 进入 `计算机配置`
+7. Go to `Computer Configuration
 
 <img src="./images/4-组策略管理编辑器-计算机配置.png" class="md-img-padding" />
 
-8. 进入 `策略`
+8. Go to `Policy`
 
 <img src="./images/4-组策略管理编辑器-策略.png" class="md-img-padding" />
 
-9. 进入 `windows 设置`
+9. go to `windows settings`
 
-<img src="./images/4-组策略管理编辑器- windows 设置.png" class="md-img-padding" />
+<img src="./images/4-组策略管理编辑器-windows设置.png" class="md-img-padding" />
 
-10. 进入 `安全设置`
+10. go to `security settings`
 
 <img src="./images/4-组策略管理编辑器-安全设置.png" class="md-img-padding" />
 
-11. 进入 `账户策略`
+11. Go to `Account Policies`
 
 <img src="./images/4-组策略管理编辑器-账户策略.png" class="md-img-padding" />
 
-12. 进入 `密码策略`
+12. Go to `Password Policy`
 
 <img src="./images/4-组策略管理编辑器-密码策略.png" class="md-img-padding" />
 
-13. 修改 `密码长度最小值`
+13. modify `password-length-minimum
 
 <img src="./images/4-组策略管理编辑器-密码长度最小值.png" class="md-img-padding" />
 
-14. 点击 `应用`， 点击 `确认`
+14. Click `Apply`, click `Confirm` 15.
 
-15. 再次尝试新增一个 `密码强度不够` 的用户
+15. Try again to add a user with `not strong enough` password
 
 <img src="./images/4-再次尝试创建密码强度不够的用户.png" class="md-img-padding" />
 
-16. 查看新增结果
+16. View added results
 
 <img src="./images/4-添加弱密码用户成功.png" class="md-img-padding" />
 
-### 相关 **`服务`** 以及 **`配置`** 的目的
+### Purpose of related **`services`** and **`configuration`**
 
-此节主要讲解以上服务安装以及相关配置的目的：
+This section focuses on the installation of the above services and the related configuration for the following purposes.
 
-- **Windows Active Directory** 在 Windows Server 下的安装
+- **Windows Active Directory** installation under Windows Server
 
-  > 对于 AD 的相关操作， 前提就是构建一个 AD 服务， 而安装 AD 域服务就是在构建一个 AD 服务
+  > For AD related operations, the prerequisite is to build an AD service, and the installation of AD domain services is building an AD service.
 
-- 安装 **AD LDS**
-  > **AD LDS** 的安装并不是必须的
+- Installing **AD LDS**
+  > **AD LDS** installation is not required
 
-正如文档介绍： AD LDS 为应用程序特定的数据以及启用目录的应用程序（不需要 AD 域服务基础架构）提供存储. 一个服务器上可以存在多个 AD LDS 实例， 其中每个实例都可以有自己的架构
+As described in the documentation: AD LDS provides storage for application-specific data as well as for directory-enabled applications (which do not require an AD Domain Services infrastructure). Multiple instances of AD LDS can exist on a single server, each of which can have its own architecture
 
-- 配置 **AD 域服务**
+- Configuring **AD Domain Services**
 
-  > 配置 **AD 域服务** 是为了完成 AD 域服务的初始化工作， 以完成后续核心功能的构建
+  > The **AD Domain Services** are configured to initialize the AD Domain Services for subsequent core functionality building
 
-- 检查 **Active Directory** 服务连接
+- Checking **Active Directory** service connectivity
 
-  > 检查 **Active Directory** 服务是否可用， 是否可以通过 ldap 进行连接， 这意味着是否可以将 AD 的管理映射为 ldap 的相关操作
+  > Check if the **Active Directory** service is available and can be connected via ldap, which means that AD administration can be mapped to ldap-related operations
 
-- 安装 **AD CS**
+- Install **AD CS**
 
-  > **AD CS** 为 AD 的传输提供了安全的加密套件， 支持 ldaps 协议， 既能保证信息安全传输， 以及不可篡改等。 一些对于信息数据极其敏感的操作需要在 ldsps 下完成， 比如 新增一个用户并设置密码， 调整一个用户状态为启用 等. 该项功能的缺失， 会导致 {{$localeConfig.brandName}}数据同步的用户信息的状态是不可用的
+  **AD CS** provides a secure encryption suite for AD transmissions, supporting the ldaps protocol, both for secure transmissions and for non-tampering, etc. Some operations that are extremely sensitive to information data need to be done under ldsps, such as adding a new user and setting a password, adjusting a user's status to enabled, etc. The absence of this feature will result in the status of the {{$localeConfig.brandName}} data synchronization of the user information is not available
 
-- 配置 **AD CS**
+- Configure **AD CS**
 
-  > 配置 **AD CS** 是为了完成 AD CS 的初始化工作， 以完成后续功能的构建。
+  > Configure **AD CS** to complete the initialization of AD CS to build the subsequent functionality.
 
-- 测试通过 **`ldaps`** 连接 Active Directory
+- Test connecting to Active Directory via **`ldaps`**
 
-  > 测试 **AD CS** 的相关配置是否出现问题， 是否是可用的。
+  > Test if the configuration of **AD CS** is faulty and available.
 
-- **`AD 相关策略`** 的 `修改` 与 `测试`
-  > 此项行为主要为了引导用户注意 AD 服务中的密码相关策略， 因为可能导致在 {{$localeConfig.brandName}}中新增的用户在同步到 AD 的过程中， 出现一些问题。
+- **`AD-related policy`** `modification` and `testing`
+  > This action is intended to direct the user's attention to the password-related policies in the AD service, as it may cause problems with users added in {{$localeConfig.brandName}} during synchronization to AD.
 
-场景如下：
+The scenario is as follows.
 
-- {{$localeConfig.brandName}}中的当前密码强度等级较低， 用户新增加了一个弱密码账户， 而 AD 中的密码当前设置状态要求一定的复杂度， 当用户同步过去的时候， 就会因为这些问题造成同步状态异常（用户虽然可以同步， 但是状态一直是禁用状态，因为密码会设置不成功，不符合 AD 的策略，会导致用户启用不成功）。
-- {{$localeConfig.brandName}}中的用户名现在并没有存在设置特殊的规则进行验证筛选， 也就是默认 {{$localeConfig.brandName}}中的用户的 username 可以是任何字符串。但是 AD 中的用户名却不是， AD 中的 sAMAccountName 属性， 有一定的限制， 这样就导致了 {{$localeConfig.brandName}}到 AD 的数据需要处理这些差异性， 而这些差异性的导致来自于不同的系统， 又是较为合理常见的， 我们假设增加一个 {{$localeConfig.brandName}}用户 username 为 `authing@gmail.com`， 当进行同步的时候， 常规意义下 `username` 与 `sAMAccountName` 意义相同的， 这两个字段应该作为映射双方， 但是 `authing@gmail.com` 赋值给 `sAMAccountName` 是非法的， 必会引起错误。
+- The current password strength level in {{$localeConfig.brandName}} is low, the user adds a new weak password account, and the current password setting state in AD requires a certain complexity, when the user syncs over, the sync state will be abnormal due to these issues (the user can sync, but the state is always disabled because the password This will not match the AD policy and will cause the user to be unsuccessful in enabling it).
+- The username in {{$localeConfig.brandName}} does not now have special rules for authentication filtering, i.e. by default the username in {{$localeConfig.brandName}} can be any string. However, the username in AD is not, and the sAMAccountName property in AD has certain restrictions, so that the data from {{$localeConfig.brandName}} to AD needs to deal with these differences, and it is reasonably common for these differences to come from different systems. {{localeConfig.brandName}} user username as `authing@gmail.com`, when synchronizing, `username` and `sAMAccountName` have the same meaning in the normal sense, and these two fields should be used as mapping sides, but `authing@ gmail.com` is illegal to assign to `sAMAccountName` and will cause an error.
 
-## 在 Windows 服务器安装 AD Connector
+## Install AD Connector on Windows server
 
-### 在 {{$localeConfig.brandName}}控制台配置 Windows AD
+### Configure Windows AD in {{$localeConfig.brandName}} console
 
-请在 {{$localeConfig.brandName}}Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「Windows AD」，进入 「Windows AD 登录模式」页面。
+On the "Enterprise Identity Source" page of {{$localeConfig.brandName}}Console, click the "Create Enterprise Identity Source" button to enter the "Select Enterprise Identity Source" page, then click "Windows AD" to enter the "Windows AD Login Mode" page.
 
 <img src="./images/windowsAD01.png" >
 
-请在 {{$localeConfig.brandName}}Console 控制台 的「企业身份源」-「Windows AD」页面，配置相关的字段信息。
+Please configure the relevant field information in the {{$localeConfig.brandName}}Console console on the "Enterprise Identity Source" - "Windows AD" page.
 
 <img src="./images/windowsAD02.png" >
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-| 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。
-| 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在  {{$localeConfig.brandName}}的密码
-|  {{$localeConfig.brandName}}用户密码修改之后，同步修改到 AD
-| 如果设置，当用户在  {{$localeConfig.brandName}}的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。
-| 登录模式 | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------- 
+| Unique identifier | a. The unique identifier consists of lowercase letters, numbers, -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be changed after it is set.
+| Synchronize AD domain password | If set, when AD authentication succeeds, the user's password in the AD domain will be synchronized to their password in {{$localeConfig.brandName}}
+| Synchronize the user's password in {{$localeConfig.brandName}} to AD after the user's password is changed
+| If set, when a user's password in {{$localeConfig.brandName}} is changed (both when the administrator changes the password and when the user resets the password manually), the user's password in AD will be changed as well.
+| Login Mode | When "Login Only Mode" is enabled, only existing accounts can be logged in, and no new accounts can be created, please choose carefully. |Please choose carefully.
 
-配置完成后，点击「创建」按钮完成创建。
+After the configuration is completed, click the "Create" button to complete the creation.
 
-成功创建之后，自动跳转到应用详情页，你会得到一个 **Provisioning Ticket Url**，这个会在下面的步骤中使用：
+After successful creation, you will be automatically redirected to the application details page, and you will get a **Provisioning Ticket Url**, which will be used in the following steps.
 
-![](./images/windowsAD02.png)
+! [](./images/windowsAD02.png)
 
-之后你需要为你的应用开启此 AD 连接：
+After that you need to enable this AD connection for your application: !
 
-![](./images/windowsAD04.png)
+! [](./images/windowsAD04.png)
 
-#### 在 Windows 运行 {{$localeConfig.brandName}} AD Connector
+#### Running {{$localeConfig.brandName}} AD Connector on Windows
 
-在安装 {{$localeConfig.brandName}} AD Connector 之前，请先确保满足以上条件：
+Before installing the {{$localeConfig.brandName}} AD Connector, make sure the following conditions are met.
 
-- Windows 服务器；
-- 服务器安装了 Active Directory；
-- 运行 {{$localeConfig.brandName}} AD Connector 的机器上，能够连通 Active Directory；
-- 一个具有 Active Directory 的读取权限的用户账密。
+- A Windows server.
+- The server has Active Directory installed.
+- The machine running {{$localeConfig.brandName}} AD Connector is able to connect to Active Directory.
+- A user account with read access to Active Directory.
 
-首先你需要[下载](https://files.authing.co/packages/authing-ad-connector-latest.exe) {{$localeConfig.brandName}} AD Connector，这是一个 exe 文件，需要运行在你的 Windows AD 服务器，负责和 {{$localeConfig.brandName}} 进行通信。{{$localeConfig.brandName}} AD Connector 需要**安装在局域网 AD 域环境**中，但不一定要安装到运行 AD 服务的服务器上，只要保证 {{$localeConfig.brandName}} AD Connector 能够访问到 AD 用户目录。
+First you need to [download](https://files.authing.co/packages/authing-ad-connector-latest.exe) the {{$localeConfig.brandName}} AD Connector, which is an exe file that needs to run on Your Windows AD server, which is responsible for communicating with {{$localeConfig.brandName}}. The {{$localeConfig.brandName}} AD Connector needs to be **installed in the LAN AD domain environment**, but not necessarily on the server running the AD service, as long as the {{$localeConfig.brandName}} AD Connector has access to the AD user directory .
 
-##### 安装 {{$localeConfig.brandName}} AD Connector
+##### Install {{$localeConfig.brandName}} AD Connector
 
-点击[这里](https://files.authing.co/packages/authing-ad-connector-latest.exe)下载最新的 {{$localeConfig.brandName}} AD Connector。
+Click [here](https://files.authing.co/packages/authing-ad-connector-latest.exe) to download the latest {{$localeConfig.brandName}} AD Connector.
 
-将下载的文件上传到 AD 域环境的机器上，双击应用，进行安装。
+Upload the downloaded file to the AD domain environment machine, double click on the application and install it.
 
-![](https://cdn.authing.cn/docs/20200414213654.png)
+! [](https://cdn.authing.cn/docs/20200414213654.png)
 
-系统可能提出警告，点击「仍要运行」。
+The system may raise a warning, click "Still running".
 
-![](https://cdn.authing.cn/blog/image%20%28521%29.png)
+! [](https://cdn.authing.cn/blog/image%20%28521%29.png)
 
-选择语言，点击「OK」。
+Select the language and click "OK".
 
-![](https://cdn.authing.cn/docs/20200414213931.png)
+! [](https://cdn.authing.cn/docs/20200414213931.png)
 
-点击「下一步」。
+Click on "Next".
 
-![](https://cdn.authing.cn/blog/20201109213415.png)
+! [](https://cdn.authing.cn/blog/20201109213415.png)
 
-接受许可协议并点击「下一步」。
+Accept the license agreement and click on "Next".
 
-![](https://cdn.authing.cn/blog/20201109213443.png)
+! [](https://cdn.authing.cn/blog/20201109213443.png)
 
-选择软件安装目录，然后点击「安装」。
+Select the software installation directory and click "Install".
 
-![](https://cdn.authing.cn/blog/20201109213500.png)
+! [](https://cdn.authing.cn/blog/20201109213500.png)
 
-等待安装完成。
+Wait for the installation to complete.
 
-![](https://cdn.authing.cn/blog/20201109213517.png)
+! [](https://cdn.authing.cn/blog/20201109213517.png)
 
-点击「完成」，会弹出命令行窗口，等待安装完成。
+Click "Finish", a command line window will pop up and wait for the installation to complete.
 
-![](https://cdn.authing.cn/docs/20200414214751.png)
+! [](https://cdn.authing.cn/docs/20200414214751.png)
 
-中途可能会出现缺少可选依赖的报错信息，可以忽略。看到以下界面说明安装成功，可按任意键退出：
+There may be an error message about missing optional dependencies, you can ignore it. When you see the following screen, the installation is successful and you can exit by pressing any key.
 
-![](https://cdn.authing.cn/docs/20200414214912.png)
+! [](https://cdn.authing.cn/docs/20200414214912.png)
 
-之后你可以在 Windows 的服务管理页面看到 AuthingADConnector 这个服务：
+Afterwards you can see the AuthingADConnector service in the Windows service management page: !
 
-![](https://cdn.authing.cn/blog/20201109214605.png)
+! [](https://cdn.authing.cn/blog/20201109214605.png)
 
-接下来，打开浏览器，访问 http://127.0.0.1:9743，会看到以下界面：
+Next, open your browser and go to http://127.0.0.1:9743 and you will see the following screen.
 
-![](./images/adconnector01.png)
+! ! [](./images/adconnector01.png)
 
-将你的 Provisioning Ticket Url、AD 服务器链接地址、Base DN、域用户名、密码填入，然后点击「**保存**」按钮。
+Fill in your Provisioning Ticket Url, AD Server Link Address, Base DN, Domain Username, Password, and click the "**Save**" button.
 
-![](./images/adconnector02.png)
+! [](./images/adconnector02.png)
 
 ::: hint-info
-如果遇到 Connector 与 {{$localeConfig.brandName}} 链接测试失败问题，请稍等一会儿，可能因为网络延迟问题，Connector 与 {{$localeConfig.brandName}} 握手尚未完成。
+If you encounter a problem with the Connector linking to {{$localeConfig.brandName}} and the test fails, please wait for a while as the Connector handshake with {{$localeConfig.brandName}} has not yet completed due to network latency.
 :::
 
 ::: hint-info
-如果遇到 AD 相关的错误，请检查 AD 服务器链接、账密信息是否正确。
+If you encounter AD-related errors, please check if the AD server link and hint information are correct.
 :::
 
-## 可选操作：Windows Active Directory 用户目录双向同步"
+## Optional Action: Windows Active Directory User Directory Bi-directional Synchronization"
 
-本部分包含以下章节：
+This section contains the following sections.
 
-- **`AD 双向同步`** 的开启时间
-- **`AD 双向同步`** 的功能点
-- **`AD 同步到 Authing`**
-- **`{{$localeConfig.brandName}}同步到 AD`**
-- **`用户验证相关同步`**
-- **`一个完整的双向同步过程`**
+- **`AD Two-Way Synchronization`** for the on time
+- Function points for **`AD Two-Way Synchronization`**
+- **`AD Synchronization to Authing`**
+- **`{{$localeConfig.brandName}} sync to AD`**
+- **`User authentication related sync`**
+- **`A complete two-way sync process`**
 
-### **`AD 双向同步`** 的开启时间
+### **`AD two-way sync`** for the on time
 
-配置好之后，你可以选择对应的导入方式导入组织机构。
+Once configured, you can select the corresponding import method to import the organization.
 
-> 默认情况下，当您使用 AD 导入组织机构的之后， 并且您已经完成前面相关步骤， 此时 AD 的双向同步已经开启
+> By default, after you import an organization using AD and you have completed the previous steps, AD's two-way synchronization is turned on
 
-![](~@imagesZhCn/guides/org/import-org.jpg)
+! [](~@imagesZhCn/guides/org/import-org.jpg)
 
-### **`AD 双向同步`** 的功能点
+### Function point of **`AD two-way synchronization`**
 
-1. 从 AD 同步到 Authing
+1. Sync from AD to Authing
 
-- 新增用户信息
-- 改动用户信息
-- 删除用户信息
-- 增加组织节点
-- 变更组织节点信息
-- 增加组织成员
-- 删除组织成员
-- 删除组织节点
+- Add user information
+- Change user information
+- Delete user information
+- Add organization node
+- Change organization node information
+- Add organization members
+- Delete organization members
+- Deleting organization nodes
 
-2. 从 {{$localeConfig.brandName}}同步到 AD
+2. Sync from {{$localeConfig.brandName}} to AD
 
-- 用户新增（增加组织成员）
-- 用户更改
-- 用户删除
-- 增加组织成员
-- 删除组织成员
-- 组织节点删除
-- 组织节点信息变更
-- 组织节点新增
+- User add (add organization member)
+- User change
+- User Deletion
+- Add organization member
+- Deleting organization members
+- Organization node deletion
+- Organization node information change
+- Organization node addition
 
-3. 用户认证
+3. User Authentication
 
-- AD 用户导入
-- {{$localeConfig.brandName}}用户同步到 AD
+- AD user import
+- {{$localeConfig.brandName}} user synchronization to AD
 
-### 初始化测试环境
+### Initialize the test environment
 
-1. 进入 `AD 根节点`， 新建一个 **组织单位**
+1. Go to the `AD root node` and create a new **organizational unit**
 
 <img src="./images/5-1-在根节点新建一个组织单位.png" class="md-img-padding" />
 
-2. 创建 `authing-test` **组织单位**
+2. create `authing-test` **organizational unit**
 
 <img src="./images/5-2-创建 authing-test 组织单位.png" class="md-img-padding" />
 
-3. 查看该 `组织单位` 的 `属性`
+3. View the `properties` of this `organizational unit`
 
 <img src="./images/5-3-查看该组织单位的属性.png" class="md-img-padding" />
 
-4. 进入 `属性编辑器`
+4. Go to the `attribute editor`
 
 <img src="./images/5-4-打开属性编辑器.png" class="md-img-padding" />
 
-5. 复制 `该组织单位` 的 `DN`
+5. Copy the `DN` of `this organizational unit`
 
 <img src="./images/5-4-复制该组织单位的dn.png" class="md-img-padding" />
 
-6. 在 {{$localeConfig.brandName}}控制台，进入同步中心，创建同步任务，选择 **创建 Windows AD 同步任务**，填写 唯一标识后 保存。
+6. In the {{$localeConfig.brandName}} console, go to Sync Center, create a sync task, select **Create Windows AD Sync Task**, fill in the unique identifier and save.
    <img src="./images/adconnector04.png" class="md-img-padding" />
 
-7. 填写 `AD-Connector` 相关配置，并进行保存。注意：只有 `AD-Connector` 和 `{{$localeConfig.brandName}}控制台` 都**保存后**，控制台的同步任务的**测试连通才是可用的**
+Fill in the `AD-Connector` related configuration and save it. Note: Only after `AD-Connector` and `{{$localeConfig.brandName}} console` are **saved**, the **test connection** for the console's sync task is available
 
 <img src="./images/adconnector02.png" class="md-img-padding" />
 
-### **`AD 同步到 Authing`**
+### **`AD Sync to Authing`**
 
-#### 新增用户信息
+#### Add user information
 
-#### 改动用户信息
+#### Change user information
 
-#### 删除用户信息
+#### Delete user information
 
-#### 增加组织节点
+#### Add organization node
 
-#### 变更组织节点信息
+#### Change organization node information
 
-#### 增加组织成员
+#### Add organization members
 
-#### 删除组织成员
+#### Delete organization members
 
-#### 删除组织节点
+#### Delete organization node
 
-### **`{{$localeConfig.brandName}}同步到 AD`**
+### **`{{$localeConfig.brandName}} sync to AD`**
 
-#### 用户新增（增加组织成员）
+#### User addition (add organization members)
 
-1. 在 {{$localeConfig.brandName}}中新增一个 `用户`
+1. Add a new `user` in {{$localeConfig.brandName}}
 
 <img src="./images/6-Authing2AD-新建用户.png" class="md-img-padding" />
 
-2. 新增 `用户信息`
+2. add `user information`
 
 <img src="./images/6-Authing2AD-创建用户.png" class="md-img-padding" />
 
-3. 确保存在 `来自 AD` 导入的 `组织机构`
+3. Ensure the existence of `Organization` imported from `AD`
 
 <img src="./images/6-Authing2AD-确保拥有 AD 同步组织机构.png" class="md-img-padding" />
 
-4. 将新增的 `用户` 导入到对应的 `组织机构`
+4. Import the new `user` to the corresponding `organization`
 
 <img src="./images/6-Authing2AD-添加成员.png" class="md-img-padding" />
 
-5. `用户导入` 之前的 `AD 数据状态`
+5. `AD data state` before `user import`
 
 <img src="./images/6-Authing2AD-增加用户之前的AD 状态.png" class="md-img-padding" />
 
-6. `用户导入` 之后的 `AD 数据状态`
+6. `AD data state` after `user import`
 
 <img src="./images/6-Authing2AD-新增用户成功后的 AD 状态.png" class="md-img-padding" />
 
-#### 用户更改
+#### User Changes
 
-1. `修改` 该用户的信息
-
-<!-- <img src="./images/6-Authing2AD-新增用户成功后的 AD 状态.png" class="md-img-padding" /> -->
-
-2. `修改` 之前的 `AD 数据状态`
-
-<!-- <img src="./images/" class="md-img-padding" /> -->
-
-3. `修改` 之后的 `AD 数据状态`
-
-<!-- <img src="./images/" class="md-img-padding" /> -->
-
-#### 用户删除
-
-1. `删除` 该用户的信息
+1. `Modify` the user's information
 
 <!-- <img src="./images/6-Authing2AD-新增用户成功后的 AD 状态.png" class="md-img-padding" /> -->
 
-2. `删除` 之前的 `AD 数据状态`
+2. `Modify` the previous `AD data state`
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
 
-3. `删除` 之后的 `AD 数据状态`
+
+3. `AD data state` after `modification`
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
 
-#### 增加组织成员
 
-> `等同于` 用户新增（增加组织成员）
+#### User Deletion
 
-#### 删除组织成员
+1. `Delete` the user's information
 
-1. `删除` 一个 `组织节点` 的 **成员**
+<!-- <img src="./images/6-Authing2AD-新增用户成功后的 AD 状态.png" class="md-img-padding" /> -->
 
-2. `删除组织成员` 之前的 `AD 数据状态`
+2. `Delete` the previous `AD data state`
 
-3. `删除组织成员` 之后的 `AD 数据状态`
+<!-- <img src="./images/" class="md-img-padding" /> -->
 
-#### 组织节点新增
 
-1. `新增` 一个组织节点
+3. `AD data state` after `deletion`
 
-2. `新增组织节点` 之前的 `AD 数据状态`
+<!-- <img src="./images/" class="md-img-padding" /> -->
 
-3. `新增组织节点` 之后的 `AD 数据状态`
 
-#### 组织节点信息变更
+#### Add organization members
 
-1. `变更` 组织节点 `信息`
+> `Equivalent to` User add (add organization member)
 
-2. `变更` 之前的 `AD 数据状态`
+#### Deleting organization members
 
-3. `变更` 之后的 `AD 数据状态`
+1. `Remove` an **member** of an `organization node`
 
-#### 组织节点删除
+2. `Delete the`AD data state`before the`Delete Organization Member`
 
-1. `删除` 组织节点
+3. `AD data state` after `deleting organization members`
 
-2. `删除` 之前的 `AD 数据状态`
+#### Organization Node Additions
 
-3. `删除` 之后的 `AD 数据状态`
+1. `Add` an organization node
 
-### **用户认证**
+2. `AD data state` before `Added organization node` 3.
 
-#### AD 用户导入
+3. `AD Data Status` after `Added Organization Node`
 
-#### {{$localeConfig.brandName}}用户同步到 AD
+#### Organization node information change
+
+1. `Change` organization node `information` 2.
+
+2. `AD data status` before `Change` 3.
+
+3. `AD data state` after `change`
+
+#### Organization node deletion
+
+1. `Delete` organization node
+
+2. `Delete` the previous `AD data state` 3.
+
+3. `AD data state` after `deletion`
+
+### **User Authentication**
+
+#### AD user import
+
+#### {{$localeConfig.brandName}} user sync to AD
