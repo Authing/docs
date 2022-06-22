@@ -8,7 +8,7 @@
 - **Application Scenario**: Mobile application
 - **End-user preview image**.
 
-<img src=". /images/00.png" >
+<img src="./images/00.png" >
 
 ## Caution.
 
@@ -36,11 +36,11 @@ Click on the IOS or Android option, get the schema and fill in the application s
 
 2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
 
-<img src=". /images/01.png" >
+<img src="./images/01.png" >
 
 2.2 Select "Enterprise WeChat Mobile".
 
-<img src=". /images/02.png" >
+<img src="./images/02.png" >
 
 2.3 Please fill in the relevant fields on the "Enterprise WeChat Mobile" page.
 <img src="./images/03.png" >

@@ -187,7 +187,7 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 2. View `connection test` results
 
-<img src="./images/2-AD连接测试结果.png" class="md-img-padding" />
+<img src="./images/2-AD-连接测试结果.png" class="md-img-padding" />
 
 #### Connecting to Active Directory via **ldaps**
 
@@ -314,7 +314,7 @@ On `Service Manager`, elevate this service to `Domain Controller`
 
 4. View the test results
 
-<img src="./images/3-1-ldaps测试连接成功.png" class="md-img-padding" />
+<img src="./images/3-1-ldaps-测试连接成功.png" class="md-img-padding" />
 
 ### **`AD related policies`** modification and testing
 
@@ -579,7 +579,7 @@ Once configured, you can select the corresponding import method to import the or
 
 2. create `authing-test` **organizational unit**
 
-<img src="./images/5-2-创建 authing-test 组织单位.png" class="md-img-padding" />
+<img src="./images/5-2-创建authing-test组织单位.png" class="md-img-padding" />
 
 3. View the `properties` of this `organizational unit`
 
@@ -656,11 +656,9 @@ Fill in the `AD-Connector` related configuration and save it. Note: Only after `
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
 
-
 3. `AD data state` after `modification`
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
-
 
 #### User Deletion
 
@@ -672,11 +670,9 @@ Fill in the `AD-Connector` related configuration and save it. Note: Only after `
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
 
-
 3. `AD data state` after `deletion`
 
 <!-- <img src="./images/" class="md-img-padding" /> -->
-
 
 #### Add organization members
 
