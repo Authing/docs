@@ -40,7 +40,7 @@ Click **Register**.
 
 2.2 Please configure the relevant field information on the Enterprise Identity Source - Azure AD page in the {{$localeConfig.brandName}} Console console.
 
-<img src="./images/10.png" >
+<img src="./images/05.png" >
 
 | field/function                                | description                                                                                                                                                                                                                                                                                                         |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

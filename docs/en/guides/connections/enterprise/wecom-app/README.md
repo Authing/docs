@@ -21,30 +21,32 @@ Go to [Enterprise WeChat Developer Backend](https://work.weixin.qq.com/wework_ad
 
 In the **App Management** - **App** page, create a self-built app
 
-<img src="./images/create-app.png" >
+<img src="./images/02.png" >
 
 On the app details page, click Set Enterprise Wechat Authorized Login:.
 
-<img src="./images/click-wechat-work-authz.png" >
+<img src="./images/04.png" >
 
 Set the authorization callback domain to core.authing.cn .
-<img src="./images/configure-authz-domain.png" >
+<img src="./images/05.png" >
 
 On the application details page, set the web authorization and JS-SDK domain name to `core.authing.cn`.
-<img src="./images/configure-sdk-domain.png" >
+<img src="./images/06.png" >
+
+<img src="./images/07.png" >
 
 ## Step 2: Configure Enterprise WeChat Mobile in {{$localeConfig.brandName}} Console
 
 2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
 
-<img src="./images/01.png" >
+<img src="./images/09.png" >
 
 2.2 Select "Enterprise WeChat Mobile".
 
-<img src="./images/02.png" >
+<img src="./images/11.png" >
 
 2.3 Please fill in the relevant field information on the "Enterprise WeChat Mobile" page.
-<img src="./images/03.png" >
+<img src="./images/10.png" >
 
 | 字段 | 描述 |
 | ------------ | -------------------------------------------------------------------------------------------------------------------- ---------------------------------------- |
@@ -58,11 +60,11 @@ On the application details page, set the web authorization and JS-SDK domain nam
 
 You can get the Enterprise ID on the My Enterprise - Enterprise Information page.
 
-<img src="./images/get-corp-id.png" >
+<img src="./images/01.png" >
 
 On the app details page, you can get the **AgentId** and **Secret** for the app at.
 
-! [](./images/get-agentid-secret.png)
+! [](./images/03.png)
 
 ## Step 3: Development Access
 
@@ -82,8 +84,8 @@ On the app details page, you can get the **AgentId** and **Secret** for the app 
 
   3.2 In the created Enterprise WeChat internal app sweep login (proxy development mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
-<img src="./images/04.png" >
+<img src="./images/15.png" >
 
 3.3 Experience the Enterprise WeChat internal app swipe login on the login page (proxy development mode) Third-party login
 
-<img src="./images/05.png" >
+<img src="./images/16.png" >

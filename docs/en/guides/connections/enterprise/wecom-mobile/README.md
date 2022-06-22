@@ -21,29 +21,29 @@ Go to [Enterprise WeChat Developer Backend](https://work.weixin.qq.com/wework_ad
 
 In the **App Management** - **App** page, create a self-built app
 
-<img src="./images/create-app.png" >
+<img src="./images/02.png" >
 
 
 On the app details page, click Set Enterprise Wechat Authorized Login:.
 
-<img src="./images/click-wechat-work-authz.png" >
+<img src="./images/04.png" >
 
 Click on the IOS or Android option, get the schema and fill in the application signature and package name of the application
-<img src="./images/schema.png" >
+<img src="./images/05.png" >
 
 
 ## Step 2: Configure Enterprise WeChat Mobile in {{$localeConfig.brandName}} Console
 
 2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
 
-<img src="./images/01.png" >
+<img src="./images/09.png" >
 
 2.2 Select "Enterprise WeChat Mobile".
 
-<img src="./images/02.png" >
+<img src="./images/10.png" >
 
 2.3 Please fill in the relevant fields on the "Enterprise WeChat Mobile" page.
-<img src="./images/03.png" >
+<img src="./images/11.png" >
 
 | Field | Description |
 | ------------- | ------------------------------------------------------------------------------------------------------------------- ----------------------------------------- |
@@ -58,11 +58,11 @@ Click on the IOS or Android option, get the schema and fill in the application s
 
 You can get the Enterprise ID on the My Enterprise - Enterprise Information page.
 
-<img src="./images/get-corp-id.png" >
+<img src="./images/01.png" >
 
 On the app details page, you can get the **AgentId** and **Secret** for the app at.
 
-! [](./images/get-agentid-secret.png)
+! [](./images/03.png)
 
 ## Step 3: Development Access
 

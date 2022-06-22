@@ -8,7 +8,7 @@
 - **Application Scenario**: PC website sweep login and Enterprise WeChat Workbench no-login scenario for any enterprise
 - **End-user preview image**.
 
-<img src="./images/07.png" >
+<img src="./images/08.png" >
 
 ## Caution.
 
@@ -19,13 +19,13 @@
 
 2.1 Please click the "Create Enterprise Identity Source" button on the "Enterprise Identity Source" page of {{$localeConfig.brandName}} Console, enter the "Select Enterprise Identity Source" page, select the "Enterprise WeChat" identity source button, and click "Enterprise WeChat Service Provider App Sweep" to enter the "Enterprise WeChat Service Provider App Sweep Login Mode" page. page.
 
-<img src="./images/04.png" >
+<img src="./images/001.png" >
 
-<img src="./images/05.png" >
+<img src="./images/002.png" >
 
 2.3 Please configure the relevant field information on the "Enterprise Identity Source" - "Enterprise WeChat Service Provider App Sweep" page in {{$localeConfig.brandName}} Console console.
 
-<img src="./images/06.png" >
+<img src="./images/03.png" >
 
 | Field/Function    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ In the Enterprise Wechat service provider backend, select **Application Manageme
 
 <img src="./images/02.png" >
 
-<img src="./images/06.png" >
+<img src="./images/004.png" >
 
 Once the configuration is done, click the "Create" or "Save" button to complete the creation.
 
@@ -58,13 +58,13 @@ Once the configuration is done, click the "Create" or "Save" button to complete 
 
   3.2 In the created Enterprise WeChat Service Provider App Sweep Source Connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
-<img src="./images/09.png" >
+<img src="./images/004.png" >
 
 3.3 In the **Apps**, **Build your own app** section, click on the app you just opened, go to the app details, and copy the **Authentication address**
 
-<img src="./images/10.png" >
+<img src="./images/005.png" >
 
-<img src="./images/11.png" >
+<img src="./images/006.png" >
 
 3.4 Fill in the authentication address from the app details to the WeChat service provider backend **application management**, **login authorization** in **login authorization launch domain**, **authorization completion callback domain** fill in core.authing.cn
 
@@ -82,7 +82,7 @@ Once the configuration is done, click the "Create" or "Save" button to complete 
 
   3.2 In the created Enterprise WeChat Service Provider App Sweep Source Connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
-<img src="./images/09.png" >
+<img src="./images/004.png" >
 
 3.3 Experience the Enterprise WeChat Service Provider app sweep on the login page
 
