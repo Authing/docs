@@ -24,6 +24,7 @@
 <img src="./images/02.png" >
 
 进入创建的应用，点击**应用功能**，选择**网页**，开启**启用网页**功能。
+
 <img src="./images/04.png" >
 
 点击**凭证与基础信息**，查看 App ID 和 App Secret ，打开 {{$localeConfig.brandName}} 控制台。

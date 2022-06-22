@@ -18,7 +18,7 @@
 - 一个具有 Active Directory 的读取权限的用户账密。
 - 如果您未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## 本文包含以下章节：
+## 本章节包含以下内容：
 
 - **Windows Active Directory** 在 Windows Server 下的安装
 - 安装 **AD LDS**
@@ -426,26 +426,26 @@
 
 场景如下：
 
-- {{$localeConfig.brandName}}中的当前密码强度等级较低， 用户新增加了一个弱密码账户， 而 AD 中的密码当前设置状态要求一定的复杂度， 当用户同步过去的时候， 就会因为这些问题造成同步状态异常（用户虽然可以同步， 但是状态一直是禁用状态，因为密码会设置不成功，不符合 AD 的策略，会导致用户启用不成功）。
-- {{$localeConfig.brandName}}中的用户名现在并没有存在设置特殊的规则进行验证筛选， 也就是默认 {{$localeConfig.brandName}}中的用户的 username 可以是任何字符串。但是 AD 中的用户名却不是， AD 中的 sAMAccountName 属性， 有一定的限制， 这样就导致了 {{$localeConfig.brandName}}到 AD 的数据需要处理这些差异性， 而这些差异性的导致来自于不同的系统， 又是较为合理常见的， 我们假设增加一个 {{$localeConfig.brandName}}用户 username 为 `authing@gmail.com`， 当进行同步的时候， 常规意义下 `username` 与 `sAMAccountName` 意义相同的， 这两个字段应该作为映射双方， 但是 `authing@gmail.com` 赋值给 `sAMAccountName` 是非法的， 必会引起错误。
+- {{$localeConfig.brandName}} 中的当前密码强度等级较低， 用户新增加了一个弱密码账户， 而 AD 中的密码当前设置状态要求一定的复杂度， 当用户同步过去的时候， 就会因为这些问题造成同步状态异常（用户虽然可以同步， 但是状态一直是禁用状态，因为密码会设置不成功，不符合 AD 的策略，会导致用户启用不成功）。
+- {{$localeConfig.brandName}} 中的用户名现在并没有存在设置特殊的规则进行验证筛选， 也就是默认 {{$localeConfig.brandName}} 中的用户的 username 可以是任何字符串。但是 AD 中的用户名却不是， AD 中的 sAMAccountName 属性， 有一定的限制， 这样就导致了 {{$localeConfig.brandName}} 到 AD 的数据需要处理这些差异性， 而这些差异性的导致来自于不同的系统， 又是较为合理常见的， 我们假设增加一个 {{$localeConfig.brandName}} 用户 username 为 `authing@gmail.com`， 当进行同步的时候， 常规意义下 `username` 与 `sAMAccountName` 意义相同的， 这两个字段应该作为映射双方， 但是 `authing@gmail.com` 赋值给 `sAMAccountName` 是非法的， 必会引起错误。
 
 ## 在 Windows 服务器安装 AD Connector
 
 ### 在 {{$localeConfig.brandName}}控制台配置 Windows AD
 
-请在 {{$localeConfig.brandName}}Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「Windows AD」，进入 「Windows AD 登录模式」页面。
+请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「Windows AD」，进入 「Windows AD 登录模式」页面。
 
 <img src="./images/windowsAD01.png" >
 
-请在 {{$localeConfig.brandName}}Console 控制台 的「企业身份源」-「Windows AD」页面，配置相关的字段信息。
+请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」-「Windows AD」页面，配置相关的字段信息。
 
 <img src="./images/windowsAD02.png" >
 
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。
-| 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在 {{$localeConfig.brandName}}的密码
-| {{$localeConfig.brandName}}用户密码修改之后，同步修改到 AD
-| 如果设置，当用户在 {{$localeConfig.brandName}}的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。
+| 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在 {{$localeConfig.brandName}} 的密码
+| {{$localeConfig.brandName}} 用户密码修改之后，同步修改到 AD
+| 如果设置，当用户在 {{$localeConfig.brandName}} 的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。
 | 登录模式 | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
 
 配置完成后，点击「创建」按钮完成创建。
@@ -458,20 +458,20 @@
 
 ![](./images/windowsAD04.png)
 
-#### 在 Windows 运行 {{$localeConfig.brandName}} AD Connector
+#### 在 Windows 运行 Authing AD Connector
 
-在安装 {{$localeConfig.brandName}} AD Connector 之前，请先确保满足以上条件：
+在安装 Authing AD Connector 之前，请先确保满足以上条件：
 
 - Windows 服务器；
 - 服务器安装了 Active Directory；
-- 运行 {{$localeConfig.brandName}} AD Connector 的机器上，能够连通 Active Directory；
+- 运行 Authing AD Connector 的机器上，能够连通 Active Directory；
 - 一个具有 Active Directory 的读取权限的用户账密。
 
-首先你需要[下载](https://files.authing.co/packages/authing-ad-connector-latest.exe) {{$localeConfig.brandName}} AD Connector，这是一个 exe 文件，需要运行在你的 Windows AD 服务器，负责和 {{$localeConfig.brandName}} 进行通信。{{$localeConfig.brandName}} AD Connector 需要**安装在局域网 AD 域环境**中，但不一定要安装到运行 AD 服务的服务器上，只要保证 {{$localeConfig.brandName}} AD Connector 能够访问到 AD 用户目录。
+首先你需要[下载](https://files.authing.co/packages/authing-ad-connector-latest.exe) Authing AD Connector，这是一个 exe 文件，需要运行在你的 Windows AD 服务器，负责和 {{$localeConfig.brandName}} 进行通信。Authing AD Connector 需要**安装在局域网 AD 域环境**中，但不一定要安装到运行 AD 服务的服务器上，只要保证 Authing AD Connector 能够访问到 AD 用户目录。
 
-##### 安装 {{$localeConfig.brandName}} AD Connector
+##### 安装 Authing AD Connector
 
-点击[这里](https://files.authing.co/packages/authing-ad-connector-latest.exe)下载最新的 {{$localeConfig.brandName}} AD Connector。
+点击[这里](https://files.authing.co/packages/authing-ad-connector-latest.exe)下载最新的 Authing AD Connector。
 
 将下载的文件上传到 AD 域环境的机器上，双击应用，进行安装。
 
@@ -720,4 +720,4 @@
 
 #### AD 用户导入
 
-#### {{$localeConfig.brandName}}用户同步到 AD
+#### {{$localeConfig.brandName}} 用户同步到 AD

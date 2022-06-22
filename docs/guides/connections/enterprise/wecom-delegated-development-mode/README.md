@@ -1,10 +1,10 @@
-# 企业微信内部应用扫码登录（代开发模式） 企业登录
+# 企业微信自建应用扫码（代开发模式）
 
 <LastUpdated/>
 
 ## 场景介绍
 
-- **概述**：企业微信内部应用扫码登录（代开发模式）是通过服务商提供代开发应用，第三方企业扫码授权的形式，为第三企业实现以企业微信为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 企业微信内部应用扫码登录（代开发模式） 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
+- **概述**：企业微信自建应用扫码（代开发模式）是通过服务商提供代开发应用，第三方企业扫码授权的形式，为第三企业实现以企业微信为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 企业微信自建应用扫码（代开发模式） 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 企业微信 基本开放的信息和帮助用户实现免密登录功能。
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
@@ -28,23 +28,23 @@
 
 <img src="./images/03.png" >
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信内部应用扫码登录（代开发模式）
+## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信自建应用扫码（代开发模式）
 
 2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
 <img src="./images/04.png" >
 
-2.2 选择 「企业微信内部应用扫码登录（代开发模式）」。
+2.2 选择 「企业微信自建应用扫码（代开发模式）」。
 
 <img src="./images/05.png" >
 
-2.3 请在「企业微信内部应用扫码登录（代开发模式）」页面，填写在 **企业微信服务商后台配置开发信息页面** 获取的 Token 和 EncodingAESKey。
+2.3 请在「企业微信自建应用扫码（代开发模式）」页面，填写在 **企业微信服务商后台配置开发信息页面** 获取的 Token 和 EncodingAESKey。
 
 <img src="./images/03.png" >
 
 <img src="./images/06.png" >
 
-点击保存，{{$localeConfig.brandName}} 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。注意，**一定要点击保存后进行后续操作**，否则微信回调验证无法通过。
+点击保存，{{$localeConfig.brandName}} 控制台会自动跳转到身份源详情页，复制页面下方的**事件地址**所展示的 URL。注意：由于企业微信需要进行回调验证，**必须点击保存后进行后续操作**，否则微信回调验证无法通过。
 
 <img src="./images/07.png" >
 
@@ -61,6 +61,7 @@
 <img src="./images/11.png" >
 
 3.2 企业微信会对代开发模板进行审核，审核通过后，点击模板，进入代开发模板审核详情，选择**提交上线**
+
 <img src="./images/11-1.png" >
 
 <img src="./images/11-2.png" >
@@ -88,6 +89,7 @@
 刷新页面
 
 在页面下出现代开发应用，点击**开始代开发应用**
+
 <img src="./images/19.png" >
 
 确认基础信息后，配置开发信息，在可信域名中填写 core.authing.cn
@@ -139,12 +141,15 @@
 <img src="./images/31.png" >
 
 在 {{$localeConfig.brandName}} 中的 企业 ID 填入企业 ID
+
 <img src="./images/32.png" >
 
 在企业管理后台的自建应用中 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
+
 <img src="./images/33.png" >
 
 点击编辑按钮，添加可见范围，只有选择的组织成员可使用 {{$localeConfig.brandName}} 进行登录
+
 <img src="./images/36.png" >
 
 点击授权信息，选择自定义权限，添加允许的成员敏感信息
@@ -163,10 +168,10 @@
 
   3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 在已创建好的 企业微信内部应用扫码登录（代开发模式） 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+  3.2 在已创建好的 企业微信自建应用扫码（代开发模式） 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/42.png" >
 
-3.3 在登录页面体验 企业微信内部应用扫码登录（代开发模式） 第三方登录
+3.3 在登录页面体验 企业微信自建应用扫码（代开发模式） 第三方登录
 
 <img src="./images/41.png" >

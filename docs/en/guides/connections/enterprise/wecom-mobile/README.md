@@ -8,7 +8,7 @@
 - **Application Scenario**: Mobile application
 - **End-user preview image**.
 
-<img src="./images/00.png" >
+<img src="./images/01.png" >
 
 ## Caution.
 

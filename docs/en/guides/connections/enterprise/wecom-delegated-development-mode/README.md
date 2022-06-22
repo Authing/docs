@@ -24,7 +24,7 @@ Go to [Enterprise WeChat Service Provider Backend](https://open.work.weixin.qq.c
 
 <img src="./images/02.png" >
 
-On the Configure Development Information page, click **Random Get** to generate the Token and EncodingAESKey; the callback URL for the development template needs to be generated after the app is created in the {{$localeConfig.brandName}} console and verified by the WeChat server, so let's keep the page here first and open the {{$ localeConfig.brandName}} console.
+On the Configure Development Information page, click **Random Get** to generate the Token and EncodingAESKey; the callback URL for the development template needs to be generated after the app is created in the {{$localeConfig.brandName}} console and verified by the WeChat server, so let's keep the page here first and open the {{$localeConfig.brandName}} console.
 
 <img src="./images/03.png" >
 
