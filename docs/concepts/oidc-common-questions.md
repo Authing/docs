@@ -99,7 +99,7 @@ OIDC 的全称是 OpenID Connect，是一个基于 OAuth 2.0 的轻量级认证 
 
 ## IdToken 与 AccessToken 的区别
 
-**IdToken** 相当于用户的身份证，开发者的前端访问后端接口时应当携带 **IdToken**，**开发者服务器**应该校验用户的 **IdToken**，验证通过后返回相关资源，可用 OIDC 应用的密钥或 OIDC 应用公钥验签，然后可以得到此 token 对应的用户 ID 以及基本信息。示例代码请见：[使用应用密钥验证 Token](/guides/basics/authenticate-first-user/how-to-validate-user-token.md#使用应用密钥验证-hs256-算法签名的-token)。
+**IdToken** 相当于用户的身份证，开发者的前端访问后端接口时应当携带 **IdToken**，**开发者服务器**应该校验用户的 **IdToken**，验证通过后返回相关资源，可用 OIDC 应用的密钥或 OIDC 应用公钥验签，然后可以得到此 token 对应的用户 ID 以及基本信息。示例代码请见：[使用应用密钥验证 Token](/guides/faqs/how-to-validate-user-token.md#使用应用密钥验证-hs256-算法签名的-token)。
 
 **AccessToken** 用于请求 {{$localeConfig.brandName}} 服务器上该用户持有的资源。你访问 {{$localeConfig.brandName}} 服务器的请求需要在 Authorization 请求头中携带此 **AccessToken**，示例代码如下：
 
