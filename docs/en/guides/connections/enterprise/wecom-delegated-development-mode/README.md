@@ -8,7 +8,7 @@
 - **Application Scenario**: PC website
 - **End-user preview image**.
 
-<img src="./images/40.png" >
+<img src="./images/014.png" >
 
 ## Caution.
 
@@ -32,21 +32,21 @@ On the Configure Development Information page, click **Random Get** to generate 
 
 2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
 
-<img src="./images/04.png" >
+<img src="./images/001.png" >
 
 2.2 Select "Enterprise WeChat Internal App Sweep Login (Surrogate Development Mode)".
 
-<img src="./images/05.png" >
+<img src="./images/002.png" >
 
 2.3 Please fill in the Token and EncodingAESKey obtained from **Enterprise WeChat service provider backend configuration development information page** on the "Enterprise WeChat internal app code login (proxy development mode)" page.
 
 <img src="./images/03.png" >
 
-<img src="./images/06.png" >
+<img src="./images/003.png" >
 
 Click Save and the {{$localeConfig.brandName}} console will automatically jump to the identity source details page, copying the URL displayed in the **event address** at the bottom of the page. note that **must click Save and follow up**, otherwise the WeChat callback verification will not pass.
 
-<img src="./images/07.png" >
+<img src="./images/004.png" >
 
 Fill in the URL of the **event address** obtained from the {{$localeConfig.brandName}} console into the **generation development template callback URL** in the enterprise WeChat service provider backend, configuration development information, and then click Save
 
@@ -74,7 +74,7 @@ Fill in the URL of the **event address** obtained from the {{$localeConfig.brand
 3.4 Fill the template ID and template Secret into the {{$localeConfig.brandName}} console's identity source information separately
 <img src="./images/14.png" >
 
-<img src="./images/15.png" >
+<img src="./images/005.png" >
 
 3.5 In the backend of Enterprise WeChat service provider, **Service provider information page**, select basic information, **IP whitelist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](core. authing.cn/api/v2/system/public-ips) to get it
 <img src="./images/16.png" >
@@ -112,7 +112,7 @@ In the pop-up window, select **Download File**
 <img src="./images/24.png" >
 
 Fill in the **Txt Filename** and **Txt Content** of {{$localeConfig.brandName}} with the filename and content, and click Save
-<img src="./images/25.png" >
+<img src="./images015.png" >
 
 Click the Save button on the **Use Configuration** on the WeChat platform to save.
 
@@ -136,22 +136,22 @@ Click into the pending app and submit it to go live
 <img src="./images/35.png" >
 
 In the Enterprise Admin backend, My Enterprise View Enterprise ID
-<img src="./images/31.png" >
+<img src="./images/006.png" >
 
 Fill in the Enterprise ID in {{$localeConfig.brandName}} with the Enterprise ID
-<img src="./images/32.png" >
+<img src="./images/007.png" >
 
 Fill in the AgentId in {{$localeConfig.brandName}} in the self-built application in the enterprise admin backend
-<img src="./images/33.png" >
+<img src="./images/008.png" >
 
 Click the edit button to add a visible scope so that only members of the selected organization can log in using {{$localeConfig.brandName}}
-<img src="./images/36.png" >
+<img src="./images/009.png" >
 
 Click Authorization Information, select Custom Permissions, and add sensitive information about the allowed members
 
-<img src="./images/37.png" >
-<img src="./images/38.png" >
-<img src="./images/39.png" >
+<img src="./images/010.png" >
+<img src="./images/011.png" >
+<img src="./images/012.png" >
 
 ## Step 3: Development Access
 
@@ -165,8 +165,8 @@ Click Authorization Information, select Custom Permissions, and add sensitive in
 
   3.2 In the created Enterprise WeChat internal app sweep login (proxy development mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
-<img src="./images/42.png" >
+<img src="./images/013.png" >
 
 3.3 Experience the Enterprise WeChat internal app swipe login on the login page (proxy development mode) Third-party login
 
-<img src="./images/41.png" >
+<img src="./images/014.png" >
