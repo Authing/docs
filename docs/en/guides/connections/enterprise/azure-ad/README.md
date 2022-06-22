@@ -1,8 +1,8 @@
-# Azure AD Social Login
+# Azure AD
 
 <LastUpdated/>
 
-## Scenario Description
+## Introduction
 
 - **Overview**: Azure AD is a complete identity and access management solution with integrated security from Microsoft. Configure and enable enterprise login for Azure AD in {{$localeConfig.brandName}} to enable quick access to Azure AD basic open information and help users to achieve password-free login functionality through {{$localeConfig.brandName}}.
 - **Application Scenario**: PC Website
@@ -46,7 +46,7 @@ Click **Register**.
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Unique identifier                             | a. The unique identifier consists of lowercase letters, numbers, and -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be modified after it is set.                                                                                                               |
  | Display name                                  | This name is displayed on the button in the end-user's login screen.                                                                                                                                                                                                                                                | This is a unique identifier for this connection. |
-| Identity Source Domain                        | Azure AD has two different authentication domains, and the user data between them are not connected to each other. You can select the same authentication domain here for user authentication by confirming the login authentication domain currently used by existing services.                                    | 2.2.4 |
+| Authorization Domain                        | Azure AD has two different authentication domains, and the user data between them are not connected to each other. You can select the same authentication domain here for user authentication by confirming the login authentication domain currently used by existing services.                                    | 2.2.4 |
 | Directory (Tenant) ID                         | Directory (Tenant) ID, not filled in, is selected as organization by default, that is, only accounts in the organization can login in the application.                                                                                                                                                              | The |
 | Application (Client) ID                       | The application (client) ID, which needs to be obtained on the Azure AD platform.                                                                                                                                                                                                                                   | The application (client) ID needs to be obtained on the Azure AD platform. |
 | Client password (value)                       | Client password (value), which needs to be obtained on the Azure AD platform                                                                                                                                                                                                                                        | 2.2.7 | Client password (value), which needs to be obtained on the Azure AD platform. |

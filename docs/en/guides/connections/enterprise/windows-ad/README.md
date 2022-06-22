@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## Introduction to the scenario
+## Introduction
 
 - **Overview**: Windows AD is a localized user directory management service provided by Microsoft. You can configure and enable the enterprise login of Windows AD service provider application sweep code in {{$localeConfig.brandName}} to quickly get the basic open information of Windows AD and help users to achieve the password-free login function through {{$localeConfig.brandName}}.
 - **Application scenario**: Enterprise PC no-login scenario

@@ -1,10 +1,9 @@
-# Enterprise WeChat internal app code sweep login (proxy development mode) Enterprise login
-
+WeCom Self-built App QR Code Login(Delegated Development Mode)
 <LastUpdated/>
 
-## Scenario Introduction
+## Introduction
 
-- **Overview**: Enterprise WeChat internal application code login (proxy development mode) is to provide proxy development application by the service provider, and third-party enterprise code authorization form, for the third enterprise to achieve the enterprise WeChat as the identity source to securely login to third-party applications or websites. By configuring {{$localeConfig.brandName}} and enabling the enterprise login in {{$localeConfig.brandName}}, you can quickly get the basic open information of enterprise WeChat and help users to realize the password-free login function.
+- **Overview**: WeCom internal application code login (proxy development mode) is to provide proxy development application by the service provider, and third-party enterprise code authorization form, for the third enterprise to achieve the WeCom as the identity source to securely login to third-party applications or websites. By configuring {{$localeConfig.brandName}} and enabling the enterprise login in {{$localeConfig.brandName}}, you can quickly get the basic open information of WeCom and help users to realize the password-free login function.
 - **Application Scenario**: PC website
 - **End-user preview image**.
 
@@ -12,13 +11,13 @@
 
 ## Caution.
 
-- If you do not have an Enterprise Wechat Service Provider account, please go to [Enterprise Wechat Service Provider website](https://open.work.weixin.qq.com/) and click on Become a **Enterprise Wechat Service Provider** first.
-- During the development process, you also need an Enterprise Wechat enterprise administrator account to authorize the operation of the application template developed on your behalf, you can modify the administrator rights at [Enterprise Wechat rights management page](https://work.weixin.qq.com/wework_admin/frame#profile/role).
+- If you do not have an WeCom Service Provider account, please go to [WeCom Service Provider website](https://open.work.weixin.qq.com/) and click on Become a **WeCom Service Provider** first.
+- During the development process, you also need an WeCom enterprise administrator account to authorize the operation of the application template developed on your behalf, you can modify the administrator rights at [WeCom rights management page](https://work.weixin.qq.com/wework_admin/frame#profile/role).
 - If you do not have a {{$localeConfig.brandName}} console account, please go to [{{$localeConfig.brandName}} Console console](https://authing.cn/) to register a developer account first.
 
 ## Step 1: Create a surrogate application
 
-Go to [Enterprise WeChat Service Provider Backend](https://open.work.weixin.qq.com/wwopen/developer#/index), click **Application Generation Development**, select **Create Generation Development Application Template**, and fill in the corresponding content. Go to the Configure Development Information page
+Go to [WeCom Service Provider Backend](https://open.work.weixin.qq.com/wwopen/developer#/index), click **Application Generation Development**, select **Create Generation Development Application Template**, and fill in the corresponding content. Go to the Configure Development Information page
 
 <img src="./images/01.png" >
 
@@ -28,17 +27,17 @@ On the Configure Development Information page, click **Random Get** to generate 
 
 <img src="./images/03.png" >
 
-## Step 2: Configure Enterprise WeChat internal app sweep login (proxy development mode) in {{$localeConfig.brandName}} console
+## Step 2: ConfigureWeCom Self-built App QR Code Login(Delegated Development Mode) in {{$localeConfig.brandName}} console
 
-2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "Enterprise WeChat" identity source button
+2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "WeCom" identity source button
 
 <img src="./images/001.png" >
 
-2.2 Select "Enterprise WeChat Internal App Sweep Login (Surrogate Development Mode)".
+2.2 Select "WeCom Internal App Sweep Login (Surrogate Development Mode)".
 
 <img src="./images/002.png" >
 
-2.3 Please fill in the Token and EncodingAESKey obtained from **Enterprise WeChat service provider backend configuration development information page** on the "Enterprise WeChat internal app code login (proxy development mode)" page.
+2.3 Please fill in the Token and EncodingAESKey obtained from **WeCom service provider backend configuration development information page** on the "WeCom internal app code login (proxy development mode)" page.
 
 <img src="./images/03.png" >
 
@@ -48,24 +47,24 @@ Click Save and the {{$localeConfig.brandName}} console will automatically jump t
 
 <img src="./images/004.png" >
 
-Fill in the URL of the **event address** obtained from the {{$localeConfig.brandName}} console into the **generation development template callback URL** in the enterprise WeChat service provider backend, configuration development information, and then click Save
+Fill in the URL of the **event address** obtained from the {{$localeConfig.brandName}} console into the **generation development template callback URL** in the WeCom service provider backend, configuration development information, and then click Save
 
 <img src="./images/08.png" >
 
-## Step 3: Go live with the Enterprise WeChat Generation Development Application Template
+## Step 3: Go live with the WeCom Generation Development Application Template
 
-3.1 In the Enterprise WeChat service provider backend, select Application Management, and in **Online Application Development**, click the **Submit Online button** to submit the development template you just created
+3.1 In the WeCom service provider backend, select Application Management, and in **Online Application Development**, click the **Submit Online button** to submit the development template you just created
 
 <img src="./images/10.png" >
 
 <img src="./images/11.png" >
 
-3.2 Enterprise Wechat will review the development templates, after the review, click on the template, enter the development template review details, and select **Submit to go live**
+3.2 WeCom will review the development templates, after the review, click on the template, enter the development template review details, and select **Submit to go live**
 <img src="./images/11-1.png" >
 
 <img src="./images/11-2.png" >
 
-3.3 On the Enterprise WeChat **App Development** page, select **App Development**, select the app template that needs to be authorized, and click **View Template Information**
+3.3 On the WeCom **App Development** page, select **App Development**, select the app template that needs to be authorized, and click **View Template Information**
 
 <img src="./images/12.png" >
 
@@ -76,7 +75,7 @@ Fill in the URL of the **event address** obtained from the {{$localeConfig.brand
 
 <img src="./images/005.png" >
 
-3.5 In the backend of Enterprise WeChat service provider, **Service provider information page**, select basic information, **IP whitelist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](core. authing.cn/api/v2/system/public-ips) to get it
+3.5 In the backend of WeCom service provider, **Service provider information page**, select basic information, **IP allowlist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](core.authing.cn/api/v2/system/public-ips) to get it
 <img src="./images/16.png" >
 
 ## Step 4: Enterprise license surrogate development template and develop the surrogate application
@@ -116,7 +115,7 @@ Fill in the **Txt Filename** and **Txt Content** of {{$localeConfig.brandName}} 
 
 Click the Save button on the **Use Configuration** on the WeChat platform to save.
 
-Set up Enterprise WeChat Authorized Login
+Set up WeCom Authorized Login
 <img src="./images/26.png" >
 
 Fill in core.authing.cn in the authorization callback field in the web page
@@ -163,10 +162,10 @@ Click Authorization Information, select Custom Permissions, and add sensitive in
 
   3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
 
-  3.2 In the created Enterprise WeChat internal app sweep login (proxy development mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
+  3.2 In the createdWeCom Self-built App QR Code Login(Delegated Development Mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
 <img src="./images/013.png" >
 
-3.3 Experience the Enterprise WeChat internal app swipe login on the login page (proxy development mode) Third-party login
+3.3 Experience the WeCom internal app swipe login on the login page (proxy development mode) Third-party login
 
 <img src="./images/014.png" >

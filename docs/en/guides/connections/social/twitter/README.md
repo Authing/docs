@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## Scenario Description
+## Introduction
 
 - **Overview** Twitter social login is a secure login to a third-party application or website using Twitter as the user's identity source. Configure and enable Twitter social login in {{$localeConfig.brandName}} to enable quick access to basic open Twitter information and help users to achieve password-free login via {{$localeConfig.brandName}}.
 - **Application Scenario**: PC website
