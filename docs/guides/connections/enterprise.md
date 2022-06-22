@@ -11,6 +11,7 @@
 ## 企业身份源登录列表
 
 以下是目前平台支持的企业登录完整列表及相关使用文档：
+
 !!!include(common/enterprise-connections-table.md)!!!
 
 ## 企业登录关联方式
