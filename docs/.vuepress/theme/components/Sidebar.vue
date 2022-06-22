@@ -155,6 +155,7 @@ export default {
 
   & > .sidebar-links
     margin-top: 16px
+    margin-left -8px
     overflow-y: scroll
     max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
 
@@ -182,7 +183,8 @@ export default {
     border-left 1px solid #eee
 
     .sidebar-search
-      width 90%
+      margin-left 1.5rem
+      width 82%
 
     .nav-links
       display block

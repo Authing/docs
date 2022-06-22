@@ -223,7 +223,6 @@ export default {
 <style lang="stylus">
 .authing-search-box
   position relative
-  margin 0 auto
   height: 2rem
   width 10rem
   box-sizing border-box
