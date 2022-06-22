@@ -66,6 +66,7 @@ export default {
   clear both
   .left
     float left
+    line-height 24px
   .right
     float right
     flex-grow 1

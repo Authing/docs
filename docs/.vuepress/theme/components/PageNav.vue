@@ -219,4 +219,7 @@ function flatten(items, res) {
     display flex
     flex-wrap wrap
     justify-content space-between
+@media (max-width: $MQMobile)
+  a:hover
+    color #4E5969 !important
 </style>

@@ -233,6 +233,7 @@ export default {
       color #1d2129
       resize none
       border 1px solid #F2F3F5
+      font-size 14px
       &:focus
         outline none
         border none
