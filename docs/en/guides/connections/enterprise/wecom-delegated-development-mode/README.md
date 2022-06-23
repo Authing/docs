@@ -75,7 +75,7 @@ Fill in the URL of the **event address** obtained from the {{$localeConfig.brand
 
 <img src="./images/005.png" >
 
-3.5 In the backend of WeCom service provider, **Service provider information page**, select basic information, **IP allowlist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](core.authing.cn/api/v2/system/public-ips) to get it
+3.5 In the backend of WeCom service provider, **Service provider information page**, select basic information, **IP allowlist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](https://core.authing.cn/api/v2/system/public-ips) to get it
 <img src="./images/16.png" >
 
 ## Step 4: Enterprise license surrogate development template and develop the surrogate application
@@ -111,7 +111,7 @@ In the pop-up window, select **Download File**
 <img src="./images/24.png" >
 
 Fill in the **Txt Filename** and **Txt Content** of {{$localeConfig.brandName}} with the filename and content, and click Save
-<img src="./images015.png" >
+<img src="./images/015.png" >
 
 Click the Save button on the **Use Configuration** on the WeChat platform to save.
 

@@ -46,7 +46,7 @@ Once the configuration is done, click the "Create" or "Save" button to complete 
 
 ## Step 2: Add WeCom IP Whitelist
 
-2.1 In the background of WeCom service provider, **Service provider information page**, select **Basic information**, add the server IP address of {{$localeConfig.brandName}} to the **IP whitelist**, click [{{$localeConfig.brandName}} server IP list](core.authing.cn/api/v2/system/public-ips) to get it
+2.1 In the background of WeCom service provider, **Service provider information page**, select **Basic information**, add the server IP address of {{$localeConfig.brandName}} to the **IP whitelist**, click [{{$localeConfig.brandName}} server IP list](https://core.authing.cn/api/v2/system/public-ips) to get it
 
 <img src="./images/01.png" >
 

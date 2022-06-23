@@ -620,7 +620,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/apple/"
+              path: "/guides/connections/social/apple-web/"
             },
             {
               title: "Apple Web 端",
@@ -710,19 +710,19 @@ const zhCnNavBar = {
             },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/oauth2/"
+              path: "/guides/connections/enterprise/oauth2/"
             },
             {
               title: "LDAP",
-              path: "/guides/connections/social/ldap/"
+              path: "/guides/connections/enterprise/ldap/"
             },
             {
               title: "SAML",
-              path: "/guides/connections/social/saml/"
+              path: "/guides/connections/enterprise/saml/"
             },
             {
               title: "CAS",
-              path: "/guides/connections/social/cas/"
+              path: "/guides/connections/enterprise/cas/"
             }
           ]
         },
@@ -2581,7 +2581,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "支付宝",
-              path: "/guides/connections/social/zhifubao-web/"
+              path: "/guides/connections/social/alipay-web/"
             },
             {
               title: "Slack",
