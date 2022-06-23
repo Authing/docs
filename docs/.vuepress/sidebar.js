@@ -670,15 +670,15 @@ const zhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/enterprise/wecom-app/"
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
             },
             {
               title: "企业微信自建应用扫码（代开发模式）",
-              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
              },
             {
               title: "企业微信服务商应用扫码",
-              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
              },
             {
               title: "企业微信移动端",
@@ -690,11 +690,11 @@ const zhCnNavBar = {
             },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/enterprise/lark-market/"
+              path: "/guides/connections/enterprise/lark-public/"
             },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/enterprise/lark-custom/"
+              path: "/guides/connections/enterprise/lark-internal/"
             },
             {
               title: "Windows AD",
@@ -2516,7 +2516,7 @@ const translatedZhCnNavBar = {
       path: "/guides/connections/",
       children: [
         {
-          title: "Social Login",
+          title: "Social Identity Provider",
           path: "/guides/connections/social",
           children: [
             {
@@ -2618,20 +2618,20 @@ const translatedZhCnNavBar = {
           ]
         },
         {
-          title: "Corporate Identity Source",
+          title: "Enterprise Identity Provider",
           path: "/guides/connections/enterprise",
           children: [
             {
               title: "WeCom Self-built App QR Code",
-              path: "/guides/connections/enterprise/wecom-app/"
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
             },
             {
               title: "WeCom Self-built App QR Code Login(Delegated Development Mode)",
-              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
              },
             {
               title: "WeCom Service Provider App QR Code",
-              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
              },
             {
               title: "WeCom Mobile",
@@ -2643,11 +2643,11 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Feishu Marketplace App",
-              path: "/guides/connections/enterprise/lark-market/"
+              path: "/guides/connections/enterprise/lark-public/"
             },
             {
               title: "Feishu Custom App",
-              path: "/guides/connections/enterprise/lark-custom/"
+              path: "/guides/connections/enterprise/lark-internal/"
             },
             {
               title: "Windows AD",
