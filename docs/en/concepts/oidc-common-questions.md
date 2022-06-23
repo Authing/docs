@@ -81,7 +81,7 @@ Refer to [OIDC Protocol](https://openid.net/specs/openid-connect-core-1_0.html#S
 ## ID Token and Access Token
 
 When calling Back End, ID Token should be sent with the request. Developer Server should validate ID Token and decrypt ID Token by OIDC Secret Key or Public Key
-Refer to [How to Verify Token](/guides/basics/authenticate-first-user/how-to-validate-user-token.md#Use 应用密钥验证-hs256-算法签名的-token).
+Refer to [How to Verify Token](/en/guides/faqs/how-to-validate-user-token.md#use-the-application-key-to-verify-the-token-signed-by-the-hs256-algorithm).
 
 When requesting resources, Access Token should be sent within the Authorization Header. Eg:
 
