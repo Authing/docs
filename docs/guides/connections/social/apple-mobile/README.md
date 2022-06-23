@@ -1,4 +1,4 @@
-# Apple 社会化登录（Web 端）
+# Apple 移动端
 
 <LastUpdated />
 
@@ -8,23 +8,23 @@
 - **应用场景**：IOS 移动端
 - **终端用户预览图**：
 
-![](./images/login.jpg)
+![](./images/login.png)
 
 ## 注意事项
 
-- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。申请个人、公司账号地址：[https://developer.apple.com/programs/](https://developer.apple.com/programs/) ， 申请企业账号地址：[https://developer.apple.com/programs/enterprise/](https://developer.apple.com/programs/enterprise/)
+- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/);
 - 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
 
 ## 步骤 1：在 Apple 开发者中心进行配置
 
-### 获取 Team ID
+### 1.1 获取 Team ID
 
 前往 [Apple Developer Portal](https://developer.apple.com/account/#) 的 [Membership 页面](https://developer.apple.com/account/#/membership)，记录下`Team ID`：
 ![](~@imagesZhCn/guides/connections/apple/step1-1.jpg)
 
-### 创建一个 App ID
+### 1.2 创建一个 App ID
 
-1. 在 Apple Developer Portal, **Certificates, Identifiers & Profiles** > **Identifiers** 页面，点击 ➕ 图标创建应用：
+1. 在  **Apple Developer Portal**, **Certificates, Identifiers & Profiles** > **Identifiers** 页面，点击 ➕ 图标创建应用：
 
 ![](~@imagesZhCn/guides/connections/apple/step1-2.jpg)
 
@@ -46,7 +46,7 @@
 
 ![](~@imagesZhCn/guides/connections/apple/step1-7.jpg)
 
-### 创建一个 Service ID
+### 1.3 创建一个 Service ID
 
 1. 回到 **Certificates, Identifiers & Profiles** > **Identifiers** 页面，点击 ➕ 图标，选择 **Services IDs** 然后点击 **Continue** 按钮继续：
 
@@ -65,11 +65,13 @@
 4. 填写 **Domains and Subdomains** 和 **Return URLs**:
 
 - **Domains and Subdomains**：请填入`core.authing.cn`
-- **Return URLs**：请填入`https://core.authing.cn/connection/social/{Unique Identifier}/{YOUR_USER_POOL_ID}/callback`，并将 `{Unique Identifier}` 替换成你正在 Authing 创建的身份源所填写的`唯一标识`，`{YOUR_USER_POOL_ID}` 替换成你的[用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
+- **Return URLs**：请填入在 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 上获取的**回调地址**字段信息：
+ ![](./images/Return_URLS.png)
+
 
 5. 点击 **Save**，**Continue**，最后点击 **Register**，并记录下该 **Service ID**。
 
-### 配置 Signing Key
+### 1.4 配置 Signing Key
 
 1. 回到 **Certificates, Identifiers & Profiles** 页面，切换到 **Keys** Tab，点击 ➕ 图标：
 
@@ -98,20 +100,21 @@
 2.2 在「选择社会化身份源」页面，点击「Apple」卡片。
 ![](./images/add-app-1.jpg)
 
-2.3 继续点击「Apple Web 端」登录模式，或者点击「**… 添加**」打开「Apple Web 端」配置页面。
+2.3 继续点击「Apple 移动端」登录模式，或者点击「**… 添加**」打开「Apple Web 端」配置页面。
 ![](./images/add-app-2.jpg)
 
-2.4 在「Apple Web 端」配置页面，填写相关的字段信息。
-![](./images/add-app-3.jpg)
+2.4 在「Apple 移动端」配置页面，填写相关的字段信息。
+![](./images/add_app_3.png)
 
 | 字段                | 描述                                                                                                                                                         |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 唯一标识            | a. 唯一标识由小写字母、数字、- 组成，且长度小于 32 位。<br />b. 这是此连接的唯一标识，设置之后不能修改。                                                     |
 | 显示名称            | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                 |
-| Services Identifier | Apple Service 的 ID。                                                                                                                                          |
+| Bundle ID | 请输入 Apple 的 Bundle ID。                                                                                                                                          |
 | Team ID             | Apple 开发者团队 ID。                                                                                                                                          |
-| Key ID              | Apple Signing Key 的 ID。                                                                                                                                      |
-| Key                 | Apple Signing Key 的内容。                                                                                                                                     |
+| Key ID              | Apple Signing Key 的 ID。                                                                                                                                   |
+| Key                 | Apple Signing Key 的内容。                                                                                        
+| 回调地址            | a.请在苹果开发者平台的创建应用页面，粘贴该回调地址；<br />b.确认该回调地址中的唯一标识部分要与创建后的身份源中的唯一标识部分保持一致；                              |                                                         |
 | Scopes              | 可以勾选 `Name` 和 `Email Address`。                                                                                                                               |
 | 登录模式            | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                         |
 | 账号身份关联        | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
@@ -126,10 +129,9 @@
 
   3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
 
-  3.2 在已创建好的「Apple」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+  3.2 在已创建好的「Apple」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用
   ![](./images/step3.2.jpg)
 
-  3.3 点击 {{$localeConfig.brandName}} 控制台的应用「体验登录」按钮，在弹出的登录窗口体验「Apple」登录
-  ![](./images/step3.3-1.jpg)
+  3.3 前往相关联的移动端 APP，体验 APP 登录功能。
 
-![](./images/step3.3-2.jpg)
+  ![](./images/login.png)
