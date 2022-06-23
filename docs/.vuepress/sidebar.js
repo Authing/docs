@@ -2580,7 +2580,7 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/apple-web/"
             },
             {
-              title: "支付宝",
+              title: "alipay",
               path: "/guides/connections/social/alipay-web/"
             },
             {
@@ -2622,19 +2622,19 @@ const translatedZhCnNavBar = {
           path: "/guides/connections/enterprise",
           children: [
             {
-              title: "企业微信自建应用扫码",
+              title: "WeCom Self-built App QR Code",
               path: "/guides/connections/enterprise/wecom-app/"
             },
             {
-              title: "企业微信自建应用扫码（代开发模式）",
+              title: "WeCom Self-built App QR Code Login(Delegated Development Mode)",
               path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
              },
             {
-              title: "企业微信服务商应用扫码",
+              title: "WeCom Service Provider App QR Code",
               path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
              },
             {
-              title: "企业微信移动端",
+              title: "WeCom Mobile",
               path: "/guides/connections/enterprise/wecom-mobile/"
             },
             {
@@ -2642,11 +2642,11 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/enterprise/dingtalk/"
             },
             {
-              title: "飞书应用商店应用",
+              title: "Feishu Marketplace App",
               path: "/guides/connections/enterprise/lark-market/"
             },
             {
-              title: "飞书企业自建应用",
+              title: "Feishu Custom App",
               path: "/guides/connections/enterprise/lark-custom/"
             },
             {
@@ -2656,6 +2656,10 @@ const translatedZhCnNavBar = {
             {
               title: "Azure AD",
               path: "/guides/connections/enterprise/azure-ad/"
+            },
+            {
+              title: "welink",
+              path: "/guides/connections/enterprise/welink/"
             },
             {
               title: "OIDC",
