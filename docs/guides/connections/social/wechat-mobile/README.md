@@ -1,4 +1,4 @@
-# 移动APP使用微信登录
+# 微信移动端
 
 <LastUpdated />
 
@@ -16,11 +16,11 @@
 
 ## 步骤 1：在微信开放平台创建一个微信移动应用
 前往 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)创建一个 **微信移动应用**。
-![](./images/create-account.jpg)
+![](./images/open1.png)
 
 创建完成之后，你需要记录下该应用的 `AppID` 和 `AppSecret`，后面需要用到。
 
-![](./images/open1.png)
+
 ![](./images/open2.png)
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信移动端登录
