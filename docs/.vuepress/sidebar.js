@@ -712,7 +712,7 @@ const zhCnNavBar = {
         DATABASE_CONNECTION_MENU,
         {
           title: "配置自定义密码函数",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },
@@ -3882,7 +3882,7 @@ const translatedZhCnNavBar = {
         DATABASE_CONNECTION_MENU_EN,
         {
           title: "Configure custom password function",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },
