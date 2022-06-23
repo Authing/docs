@@ -620,7 +620,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/apple-web/"
+              path: "/guides/connections/social/apple/"
             },
             {
               title: "Apple Web 端",
@@ -648,7 +648,7 @@ const zhCnNavBar = {
             },
             {
               title: "网易易盾",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/yidun/"
             },
             {
               title: "青云 QingCloud",
@@ -2572,15 +2572,15 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/google/"
             },
             {
-              title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/"
+              title: "Apple Mobile",
+              path: "/guides/connections/social/apple/"
             },
             {
               title: "Apple Web",
               path: "/guides/connections/social/apple-web/"
             },
             {
-              title: "alipay",
+              title: "Alipay",
               path: "/guides/connections/social/alipay-web/"
             },
             {
@@ -2600,11 +2600,11 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/baidu/"
             },
             {
-              title: "网易易盾",
-              path: "/guides/connections/social/twitter/"
+              title: "NetEase YIDUN",
+              path: "/guides/connections/social/yidun/"
             },
             {
-              title: "青云 QingCloud",
+              title: "QingCloud",
               path: "/guides/connections/social/qingcloud/"
             },
             {
@@ -2656,10 +2656,6 @@ const translatedZhCnNavBar = {
             {
               title: "Azure AD",
               path: "/guides/connections/enterprise/azure-ad/"
-            },
-            {
-              title: "welink",
-              path: "/guides/connections/enterprise/welink/"
             },
             {
               title: "OIDC",
