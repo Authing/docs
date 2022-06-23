@@ -1,4 +1,4 @@
-# GitLab 社会化登录
+# GitLab
 
 <LastUpdated />
 

@@ -1,4 +1,4 @@
-# Facebook 社会化登录
+# Facebook 
 
 <LastUpdated/>
 

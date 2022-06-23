@@ -1,4 +1,4 @@
-# APP 拉起小程序
+# APP 拉起微信小程序
 
 <LastUpdated />
 

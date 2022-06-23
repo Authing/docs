@@ -1,4 +1,4 @@
-# Gitee 社会化登录
+# Gitee 
 
 <LastUpdated />
 

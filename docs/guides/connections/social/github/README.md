@@ -1,4 +1,4 @@
-# Github 社会化登录
+# Github
 
 <LastUpdated/>
 

@@ -1,4 +1,4 @@
-# 腾讯 QQ 社会化登录
+# 腾讯 QQ 
 
 <LastUpdated/>
 
