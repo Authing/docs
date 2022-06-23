@@ -1,115 +1,109 @@
-# 飞书企业自建应用
+# Feishu Custom App
 
 <LastUpdated/>
 
-## 场景介绍
+## Introduction
 
-- **概述**：飞书企业自建应用适用于自己企业的 PC 网站扫码登录和飞书工作台的免登录场景。为企业实现以飞书为身份源安全登录第三方应用或者网站。在 Authing 中配置并开启 飞书企业自建应用 的企业登录，即可实现通过 Authing 快速获取 飞书 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：PC 网站、飞书工作台、移动端应用
-- **终端用户预览图**：
+- **Overview**: Feishu Custom App is suitable for your own enterprise PC website sweep login and Feishu Workbench no-login scenario. For enterprises to achieve secure login to third-party applications or websites with Feishu as the identity source. In {{$localeconfig.brandname}}, you can configure and turn on the enterprise login of Feishu Enterprise custom Application to quickly get the basic open information of Feishu and help users to achieve password-free login through {{$localeconfig.brandname}}.
+- **Application Scenario**: PC website, Feishu workbench, mobile application
+- **End-user preview image**.
 
 <img src="./images/00.png" >
 
-## 注意事项：
+## Caution.
 
-- 如果您未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
+- If you do not have a Feishu developer account, please go to [Feishu Open Platform](https://open.feishu.cn/app) to register first.
+- If you do not have a {{$localeconfig.brandname}} Console account, please go to [{{$localeconfig.brandname}} Console](https://authing.cn/) to register your developer account first.
 
-## 步骤 1：创建企业自建应用
+## Step 1: Create Enterprise custom Application
 
-前往 [飞书开发者后台](https://open.feishu.cn/app)，点击**创建企业自建应用**，填写相应内容，创建应用。
+Go to [Feishu Developer Console](https://open.feishu.cn/app), click **Create Enterprise custom App**, fill in the appropriate content and create the app.
 
 <img src="./images/01.png" >
 
 <img src="./images/02.png" >
 
-进入创建的应用，点击**应用功能**，选择**网页**，开启**启用网页**功能。
+Go to the created app, click **Application Features**, select **Web App** and turn on the **Enable web app** feature.
 <img src="./images/04.png" >
 
-点击**凭证与基础信息**，查看 App ID 和 App Secret ，打开 Authing 控制台。
+Click **Credentials and Basic Info** to view the App ID and App Secret and open the {{localeconfig.brandname}} console.
 
-如果你需要 **接入移动应用登录能力**，点击**应用功能**，选择**移动应用登录**，开启**飞书登录**功能，在下方的飞书登录配置中，用户登录协议选项 ** OAuth 2.0**，并填写移动端应用的配置。
+If you need **Mobile App Login**, click **Features**, select **Mobile App Login**, turn on the **Feishu Login** feature, and in the Feishu login configuration below, user login protocol option **OAuth 2.0**, and fill in the mobile app configuration.
 
 <img src="./images/09.png" >
 
-为了能够正常获取到飞书的用户信息，完成认证流程，需要在**权限管理**页面，完成**权限配置**，搜索以下权限，并开启：
+In order to normally obtain the user information of the feishu and complete the authentication process, you need to complete **Permissions & Scopes** page, search the following permissions, and open:
 
-* 以应用身份读取通讯录
-
-* 获取用户基本信息
-
-* 通过手机号或邮箱获取用户 ID
-
-* 获取用户手机号
-
-* 获取用户邮箱信息
-
-* 查询用户的企业邮箱
+- Read contacts as app
+- Get basic user information
+- Get user ID through mobile number or email
+- Get user mobile number
+- Get user mailbox information
+- Query the user's enterprise mailbox
 
 <img src="./images/06.png" >
 
+##Step 2: configure the feishu custom application on the {{$localeconfig.brandname}} console
 
-## 步骤 2：在 Authing 控制台配置 飞书企业自建应用
-
-2.1 请在 Authing Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「飞书」身份源按钮
+2.1 please click the "create enterprise identity source" button on the "enterprise identity source" page of the {{$localeconfig.brandname}} console to enter the "select enterprise identity source" page and click the "feishu" identity source button
 
 <img src="./images/12.png" >
 
-2.2 选择 「飞书企业自建应用」。
+2.2 select "feishu custom app".
 
 <img src="./images/13.png" >
 
-2.3 请在「飞书企业自建应用」页面，填写相关的字段信息。
+2.3 please fill in the relevant field information on the "feishu custom app" page.
+
 <img src="./images/14.png" >
 
-| 字段          | 描述                                                                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 唯一标识      | a. 唯一标识由小写字母、数字、- 组成，且长度小于 32 位。<br />b. 这是此连接的唯一标识，设置之后不能修改。                                                     |
-| 显示名称      | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                 |
-| App ID     | 在飞书应用的后台， **凭证与基础信息** 中可以看到 App ID 和 App Secret 。                                                                                                                             |
-| App Secret | 在飞书应用的后台， **凭证与基础信息** 中可以看到 App ID 和 App Secret 。                                                                                                                         |
-| 登录模式      | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                         |
-| 账号身份关联  | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
+| Field                        | description                                                                                                                                                                                                                                                                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unique identifier            | a. the unique identifier is composed of lowercase letters, numbers, -, and the length is less than 32 bits< Br />b. this is the unique identifier of this connection and cannot be modified after setting                                                                               |
+| Display name                 | this name will be displayed on the button of the terminal user's login interface                                                                                                                                                                                                        |
+| App ID                       | The App ID and App Secret can be found in the backend of the FeiShu app, under **Credentials and Basic Info**.                                                                                                                                                                   | App Secret |
+| App Secret                   | The App ID and App Secret can be found in the backend of the Feishu application, **Credentials and Basic Info**.                                                                                                                                                                 | Login Mode |
+| Login Mode                   | After you turn on "Login Only Mode", you can only login to your existing account, you cannot create a new account.                                                                                                                                                                      | Sign In Mode |
+| Account Identity Association | When "Account Identity Association" is not enabled, users can create new users by default when they log in through the identity source. If "Account Identity Association" is enabled, you can allow users to log in to existing accounts directly by "Field Matching" or "Ask to Bind". | App ID |
 
-App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信息** 中的 App ID 和 App Secret 。
+App ID and App Secret, fill in the App ID and App Secret in **Credentials and Basic Info** in the backend of Feishu app.
 
 <img src="./images/03.png" >
 
 <img src="./images/10.png" >
 
-2.4 配置完成后，点击「创建」或者「保存」按钮完成创建。
+2.4 Once the configuration is done, click the "Create" or "Save" button to complete the creation.
 
-在飞书开发者后台，打开应用管理页面，选择**安全设置**，将 Authing 后台的 回调地址，添加到 **重定向 URL** 中
+In the Feishu Open Platform, open the app management page, select **Security Settings**, add the {{$localeconfig.brandname}} backend callback address to the **Redirect URL**
 
 <img src="./images/05.png" >
 
 <img src="./images/10.png" >
 
+## Step 3: Go live with Feishu's custom app in Feishu Open Platform
 
-## 步骤 3：在飞书后台上线飞书自建应用
-
-3.1 在飞书开发者后台，选择应用发布，在**版本管理与发布**中，点击**创建版本**，将创建好的应用进行发布，
+3.1 In the Feishu Open Platform, select app publishing, and in **Version Management & Release**, click **Create a version**, and publish the created app
 
 <img src="./images/07.png" >
 
 <img src="./images/08.png" >
 
-3.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业自建应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
+3.2 After submitting the application, your business administrator will review it and the review result will be sent to you via FeiBook and developer backend. For more details, please refer to [Feishu Documentation - Developing Enterprise custom Applications](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
 
-## 步骤 3：开发接入
+## Step 3: Development Access
 
-- **推荐开发接入方式**：使用托管登录页
+- **Recommended development access method**: Use hosted login page
 
-- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **Description of advantages and disadvantages**: Simple operation and maintenance, by {{$localeconfig.brandname}} is responsible for operation and maintenance. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeconfig.brandname}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
 
-- **详细接入方法**：
+- **Detailed access method**.
 
-3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeconfig.brandname}} console, for details see: [How to create an app in {{$localeconfig.brandname}}](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-3.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
+  3.2 In the created FeiShu enterprise app identity source connection details page, open and associate an app created in the {{$localeconfig.brandname}} console
 
 <img src="./images/15.png" >
 
-3.3 在登录页面体验 飞书企业自建应用 第三方登录
+3.3 Experience the Feishu enterprise built app on the login page Third-party login
 
 <img src="./images/16.png" >

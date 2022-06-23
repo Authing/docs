@@ -608,7 +608,7 @@ const zhCnNavBar = {
             },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/facebook/"
             },
             {
               title: "Twitter",
@@ -620,7 +620,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/apple-web/"
             },
             {
               title: "Apple Web 端",
@@ -628,7 +628,7 @@ const zhCnNavBar = {
             },
             {
               title: "支付宝",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/alipay-web/"
             },
             {
               title: "Slack",
@@ -652,7 +652,7 @@ const zhCnNavBar = {
             },
             {
               title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/qingcloud/"
             },
             {
               title: "Instagram",
@@ -670,7 +670,7 @@ const zhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-app/"
             },
             {
               title: "企业微信自建应用扫码（代开发模式）",
@@ -682,7 +682,7 @@ const zhCnNavBar = {
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-mobile/"
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -690,15 +690,15 @@ const zhCnNavBar = {
             },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-market/"
             },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-custom/"
             },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/windows-ad/"
             },
             {
               title: "Azure AD",
@@ -710,19 +710,19 @@ const zhCnNavBar = {
             },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oauth2/"
             },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/ldap/"
             },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/saml/"
             },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/cas/"
             }
           ]
         },
@@ -2561,7 +2561,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/facebook/"
             },
             {
               title: "Twitter",
@@ -2581,7 +2581,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "支付宝",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/alipay-web/"
             },
             {
               title: "Slack",
@@ -2605,7 +2605,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/qingcloud/"
             },
             {
               title: "Instagram",
@@ -2623,7 +2623,7 @@ const translatedZhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-app/"
             },
             {
               title: "企业微信自建应用扫码（代开发模式）",
@@ -2635,7 +2635,7 @@ const translatedZhCnNavBar = {
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-mobile/"
             },
             {
               title: "DingTalk H5 Micro Application (Internal Development)",
@@ -2643,15 +2643,15 @@ const translatedZhCnNavBar = {
             },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-market/"
             },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-custom/"
             },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/windows-ad/"
             },
             {
               title: "Azure AD",
@@ -2663,19 +2663,19 @@ const translatedZhCnNavBar = {
             },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oauth2/"
             },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/ldap/"
             },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/saml/"
             },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/cas/"
             }
           ]
         },

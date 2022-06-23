@@ -1,83 +1,171 @@
-# Instagram Social Login
-
+WeCom Self-built App QR Code Login(Delegated Development Mode)
 <LastUpdated/>
 
-## Scenario introduction
+## Introduction
 
-- **Overview**: Enterprise WeChat internal application sweep code login (proxy development mode) is to realize secure login to third-party applications or websites with enterprise WeChat as the identity source for third-party enterprises by providing proxy development applications by service providers and sweep code authorization by third-party enterprises. By configuring and enabling Instagram social login in Authing, you can quickly access Instagram basic open information and help users to achieve password-free login function through Authing.
+- **Overview**: WeCom internal application code login (proxy development mode) is to provide proxy development application by the service provider, and third-party enterprise code authorization form, for the third enterprise to achieve the WeCom as the identity source to securely login to third-party applications or websites. By configuring {{$localeConfig.brandName}} and enabling the enterprise login in {{$localeConfig.brandName}}, you can quickly get the basic open information of WeCom and help users to realize the password-free login function.
 - **Application Scenario**: PC website
 - **End-user preview image**.
 
-<img src=". /images/00-viewResult.png" >
+<img src="./images/014.png" >
 
 ## Caution.
 
-- If you do not have an Instagram Open Platform account, please go to [Instagram Open Platform](https://developers.facebook.com/) to register a developer account first. Since Instagram is owned by Facebook, the Instagram Open Platform here is the Facebook Open Platform.
-- Open an [Instagram account](https://www.instagram.com/) that contains multimedia material.
-- If you do not have an Authing Console account, go to [Authing Console Console](https://authing.cn/) to register a developer account first.
+- If you do not have an WeCom Service Provider account, please go to [WeCom Service Provider website](https://open.work.weixin.qq.com/) and click on Become a **WeCom Service Provider** first.
+- During the development process, you also need an WeCom enterprise administrator account to authorize the operation of the application template developed on your behalf, you can modify the administrator rights at [WeCom rights management page](https://work.weixin.qq.com/wework_admin/frame#profile/role).
+- If you do not have a {{$localeConfig.brandName}} console account, please go to [{{$localeConfig.brandName}} Console console](https://authing.cn/) to register a developer account first.
 
-## Step 1: Create Facebook Application
+## Step 1: Create a surrogate application
 
-Go to [developers.facebook.com](https://developers.facebook.com/), click on **My Apps**, then create a new app and select **Consumer** or **No App Type** and fill in the app name.
+Go to [WeCom Service Provider Backend](https://open.work.weixin.qq.com/wwopen/developer#/index), click **Application Generation Development**, select **Create Generation Development Application Template**, and fill in the corresponding content. Go to the Configure Development Information page
 
-<img src=". /images/01-createapp.png" >
+<img src="./images/01.png" >
 
-<img src=". /images/02-saveapp.png" >
+<img src="./images/02.png" >
 
-In the Control Panel, find the **Instagram Basic Display** product and click Settings to add it to your app.
+On the Configure Development Information page, click **Random Get** to generate the Token and EncodingAESKey; the callback URL for the development template needs to be generated after the app is created in the {{$localeConfig.brandName}} console and verified by the WeChat server, so let's keep the page here first and open the {{$localeConfig.brandName}} console.
 
-<img src=". /images/03-addinstagram.png" >
+<img src="./images/03.png" >
 
-Scroll to the bottom of the page, then click **Create New App**.
+## Step 2: ConfigureWeCom Self-built App QR Code Login(Delegated Development Mode) in {{$localeConfig.brandName}} console
 
-<img src=". /images/04-saveins.png" >
+2.1 In the {{$localeConfig.brandName}} Console, on the "Enterprise Identity Source" page, click the "Create Enterprise Identity Source" button, go to the "Select Enterprise Identity Source" page, and click the "WeCom" identity source button
 
-## Step 2: Configure Instagram in Authing Console
+<img src="./images/001.png" >
 
-2.1 Please click the "Create Social Identity Source" button on the "Social Identity Source" page of Authing Console console to enter the "Select Social Identity Source" page.
+2.2 Select "WeCom Internal App Sweep Login (Surrogate Development Mode)".
 
-<img src=". /images/05-addSocial.png" >
+<img src="./images/002.png" >
 
-2.2 Please click the "Instagram" identity source button on the "Social Identity Sources" - "Select Social Identity Also" page in the Authing Console console to enter the "Instagram Login Mode" page.
+2.3 Please fill in the Token and EncodingAESKey obtained from **WeCom service provider backend configuration development information page** on the "WeCom internal app code login (proxy development mode)" page.
 
-<img src=". /images/06-choiceIns.png" >
+<img src="./images/03.png" >
 
-2.3 Please configure the relevant field information in the "Social Identity Source" - "Instagram" page of the Authing Console console.
+<img src="./images/003.png" >
 
-<img src=". /images/07-insconfig.png" >
+Click Save and the {{$localeConfig.brandName}} console will automatically jump to the identity source details page, copying the URL displayed in the **event address** at the bottom of the page. note that **must click Save and follow up**, otherwise the WeChat callback verification will not pass.
 
-| Number | Field/Function               | Description                                                                                                                                                                                                                                                                                                                |
-| ------ | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2.3.1  | Unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be changed after it is set.                                                                                                                         | 2.3.2 |
-| 2.3.2  | Display name                 | This name is displayed on the button in the end-user's login screen.                                                                                                                                                                                                                                                       | This is a unique identifier for this connection. |
-| 2.3.3  | App number                   | The app number, which needs to be obtained on the Instagram Open Platform.                                                                                                                                                                                                                                                 |
-| 2.3.4  | App key                      | The app number, which needs to be obtained on the Instagram Open Platform                                                                                                                                                                                                                                                  |
-| 2.3.5  | Callback address             | A valid OAuth jump URI for Instagram.                                                                                                                                                                                                                                                                                      | This URL needs to be configured to the Instagram Open Platform. |
-| 2.3.6  | Login Mode                   | When "Login Only Mode" is enabled, you can only login to your existing account and cannot create a new one, so please choose carefully.                                                                                                                                                                                    | Please choose carefully. |
-| 2.3.7  | Account Identity Association | When "Account Identity Association" is not enabled, new users will be created by default when users log in through the identity source. If you enable "Account Identity Association", you can allow users to log in to existing accounts directly through "Field Matching" or "Ask to Bind". a. Association Method: Select | . |
+<img src="./images/004.png" >
 
-After the configuration is finished, click "Create" or "Save" button to complete the creation.
+Fill in the URL of the **event address** obtained from the {{$localeConfig.brandName}} console into the **generation development template callback URL** in the WeCom service provider backend, configuration development information, and then click Save
 
-After creating the Instagram identity source on the Authing console, you need to configure the callback address into the Instagram app on Instagram's open platform **OAuth client authorization settings**.
+<img src="./images/08.png" >
 
-In the final step, Instagram needs to gain access to the **instagram_graph_user_profile**, so this needs to be added. Then click and save the changes to create the instagram app successfully.
+## Step 3: Go live with the WeCom Generation Development Application Template
 
-<img src=". /images/08-insconfig-success.png" >
+3.1 In the WeCom service provider backend, select Application Management, and in **Online Application Development**, click the **Submit Online button** to submit the development template you just created
+
+<img src="./images/10.png" >
+
+<img src="./images/11.png" >
+
+3.2 WeCom will review the development templates, after the review, click on the template, enter the development template review details, and select **Submit to go live**
+<img src="./images/11-1.png" >
+
+<img src="./images/11-2.png" >
+
+3.3 On the WeCom **App Development** page, select **App Development**, select the app template that needs to be authorized, and click **View Template Information**
+
+<img src="./images/12.png" >
+
+<img src="./images/13.png" >
+
+3.4 Fill the template ID and template Secret into the {{$localeConfig.brandName}} console's identity source information separately
+<img src="./images/14.png" >
+
+<img src="./images/005.png" >
+
+3.5 In the backend of WeCom service provider, **Service provider information page**, select basic information, **IP allowlist** you need to add the server IP address of {{$localeConfig.brandName}}, click [{{$localeConfig.brandName}} server IP list](https://core.authing.cn/api/v2/system/public-ips) to get it
+<img src="./images/16.png" >
+
+## Step 4: Enterprise license surrogate development template and develop the surrogate application
+
+4.1 On the app development page, click on the app development template you just created and the enterprise administrator scans the authorization QR code.
+
+<img src="./images/18.png" >
+
+Refresh the page
+
+Under the Modern Application Development page, click **Start Application Development**
+<img src="./images/19.png" >
+
+After confirming the base information, configure the development information and fill in core.authing.cn in the trusted domain
+
+<img src="./images/20.png" >
+
+## Step 5: Configure and bring the surrogate app online
+
+After clicking Finish, go back to the surrogate app template details page and click **View**
+
+<img src="./images/21.png" >
+
+Edit the usage configuration
+
+<img src="./images/22.png" >
+
+Click **Verify Trusted Domain Attribution**
+
+<img src="./images/23.png" >
+
+In the pop-up window, select **Download File**
+<img src="./images/24.png" >
+
+Fill in the **Txt Filename** and **Txt Content** of {{$localeConfig.brandName}} with the filename and content, and click Save
+<img src="./images/015.png" >
+
+Click the Save button on the **Use Configuration** on the WeChat platform to save.
+
+Set up WeCom Authorized Login
+<img src="./images/26.png" >
+
+Fill in core.authing.cn in the authorization callback field in the web page
+
+<img src="./images/27.png" >
+<img src="./images/28.png" >
+
+After the configuration is complete, the app is submitted live and reviewed on behalf of the developer
+
+<img src="./images/29.png" >
+<img src="./images/30.png" >
+
+After the review, the app status changes to Pending
+<img src="./images/34.png" >
+
+Click into the pending app and submit it to go live
+<img src="./images/35.png" >
+
+In the Enterprise Admin backend, My Enterprise View Enterprise ID
+<img src="./images/006.png" >
+
+Fill in the Enterprise ID in {{$localeConfig.brandName}} with the Enterprise ID
+<img src="./images/007.png" >
+
+Fill in the AgentId in {{$localeConfig.brandName}} in the self-built application in the enterprise admin backend
+<img src="./images/008.png" >
+
+Click the edit button to add a visible scope so that only members of the selected organization can log in using {{$localeConfig.brandName}}
+<img src="./images/009.png" >
+
+Click Authorization Information, select Custom Permissions, and add sensitive information about the allowed members
+
+<img src="./images/010.png" >
+<img src="./images/011.png" >
+<img src="./images/012.png" >
 
 ## Step 3: Development Access
 
-- **Recommended development access**: Use a hosted login page
+- **Recommended Development Access Method**: Using a hosted login page
 
-- **Description of advantages and disadvantages**: Simple to operate and maintain, with Authing taking care of the operation and maintenance. Each user pool has an independent secondary domain; if you need to embed it into your application, you need to use pop-up mode login, i.e.: after clicking the login button, a window will pop up with the Authing hosted login page, or redirect your browser to the Authing hosted login page.
+- **Description of advantages and disadvantages**: Simple operation and maintenance by {{$localeConfig.brandName}}. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
 
 - **Detailed access method**.
 
-  3.1 Create an application in Authing console, for more details see: [How to create an application in Authing](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create- app.html)
 
-  3.2 Open and associate an app created in Authing console in the created Instagram identity connection details page
+  3.2 In the createdWeCom Self-built App QR Code Login(Delegated Development Mode) identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
-<img src=". /images/09-openapp.png" >
+<img src="./images/013.png" >
 
-3.3 Experience Instagram third-party login on the login page
+3.3 Experience the WeCom internal app swipe login on the login page (proxy development mode) Third-party login
 
-<img src=". /images/10-login.png" >
+<img src="./images/014.png" >

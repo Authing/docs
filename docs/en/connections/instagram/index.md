@@ -38,7 +38,7 @@ Scroll to the bottom of the page and click **Create new app**.
 
 <img src="./images/05-addSocial.png" />
 
-2.2 请在 Authing Console 控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「Instagram」身份源按钮，进入 「Instagram 登录模式」页面。
+2.2 Please go to the 「Social Identity Source」 - 「Select Social Identity」 page of the Authing Console, and click the 「Instagram」 identity source button to enter the 「Instagram Login Mode」 page.
 
 <img src="./images/06-choiceIns.png" />
 
@@ -46,14 +46,14 @@ Scroll to the bottom of the page and click **Create new app**.
 
 <img src="./images/07-insconfig.png" />
 
-| 编号  | 字段/功能                    | 描述                                                                                                                                                                                                                                                                                                     |
-| ----- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2.3.1 | unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting.                                                                                                 |
-| 2.3.2 | display name                 | This name will be displayed on the button on the end user's login screen.                                                                                                                                                                                                                                |
-| 2.3.3 | application number           | application number，Requires access on Instagram Open Platform                                                                                                                                                                                                                                           |
-| 2.3.4 | application secret           | application secret，Requires access on Instagram Open Platform                                                                                                                                                                                                                                           |
-| 2.3.5 | redirect url                 | Instagram valid OAuth redirect URI. This URL needs to be configured on the Instagram Open Platform.                                                                                                                                                                                                      |
-| 2.3.6 | login mode                   | After enabling 「Login Only Mode」, you can only log in to an existing account and cannot create a new account. Please choose carefully.                                                                                                                                                                 |
+| No    | Field/Function               | Description                                                  |
+| ----- | ---------------------------- | ------------------------------------------------------------ |
+| 2.3.1 | unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting. |
+| 2.3.2 | display name                 | This name will be displayed on the button on the end user's login screen. |
+| 2.3.3 | application number           | application number，Requires access on Instagram Open Platform |
+| 2.3.4 | application secret           | application secret，Requires access on Instagram Open Platform |
+| 2.3.5 | redirect url                 | Instagram valid OAuth redirect URI. This URL needs to be configured on the Instagram Open Platform. |
+| 2.3.6 | login mode                   | After enabling 「Login Only Mode」, you can only log in to an existing account and cannot create a new account. Please choose carefully. |
 | 2.3.7 | Account identity association | When 「Account Identity Association」is not enabled, a new user is created by default when a user logs in through an identity source. After enabling 「Account Identity Association」, you can allow users to log in to existing accounts directly through 「Field Matching」 or 「Asking for Binding」. |
 
 After the configuration is complete, click the "Create" or "Save" button to complete the creation.
@@ -64,7 +64,7 @@ In the last step, Instagram needs permission to access **instagram_graph_user_pr
 
 <img src="./images/08-insconfig-success.png" />
 
-## Step 3：Development access
+## Step 3：Development Access
 
 - **Recommended development access method**：Use a hosted login page
 
