@@ -1,4 +1,4 @@
-# OAuth2.0 身份源
+# OAuth2.0
 
 <LastUpdated/>
 
