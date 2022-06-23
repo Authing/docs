@@ -95,7 +95,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 3.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业自建应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
 
-## 步骤 3：开发接入
+## 步骤 4：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 
@@ -103,12 +103,12 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 - **详细接入方法**：
 
-  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  4.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+  4.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/15.png" >
 
-3.3 在登录页面体验 飞书企业自建应用 第三方登录
+4.3 在登录页面体验 飞书企业自建应用 第三方登录
 
 <img src="./images/16.png" >

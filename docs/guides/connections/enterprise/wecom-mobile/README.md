@@ -8,7 +8,7 @@
 - **应用场景**：移动端应用
 - **终端用户预览图**：
 
-<img src="./images/01.png" >
+<img src="./images/MobileLogin.png" >
 
 ## 注意事项：
 
