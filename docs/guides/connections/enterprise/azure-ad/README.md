@@ -50,7 +50,7 @@
 | 目录(租户) ID       | 目录(租户) ID ，不填写默认选择为 organization，即只有组织内账号能在应用进行登录。                                                                                            |
 | 应用程序(客户端) ID | 应用程序(客户端) ID，需要在 Azure AD 平台上获取。                                                                                                                            |
 | 客户端密码（值）    | 客户端密码（值），需要在 Azure AD 平台上获取                                                                                                                                 |
-| 回调地址            | Azure AD 的重定向 URI。需要将此 URL 配置到 Azure AD 平台上，填写内容为**https://core.{{$localeConfig.brandName}}.cn/connections/azure-ad/callback**。                        |
+| 回调地址            | Azure AD 的重定向 URI。需要将此 URL 配置到 Azure AD 平台上，填写内容为**https://core.authing.cn/connections/azure-ad/callback**。                        |
 | 邮箱验证同步策略    | 用户认证后，是否将用户邮箱验证状态标识为已验证                                                                                                                               |
 | 登录模式            | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                                         |
 | 账号身份关联        | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。a.关联方式：选择 |
