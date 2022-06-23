@@ -6,8 +6,6 @@
 
 ![](./images/add_enterprise.png)
 
-
-
 ## 企业身份源登录列表
 
 以下是目前平台支持的企业登录完整列表及相关使用文档：
@@ -23,7 +21,3 @@
 以下是目前平台支持的企业身份源支持关联账号的方式：
 
 !!!include(common/enterprise-connections-associated.md)!!!
-
-
-
-
