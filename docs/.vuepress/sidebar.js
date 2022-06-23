@@ -647,7 +647,7 @@ const zhCnNavBar = {
               path: "/guides/connections/social/baidu/"
             },
             {
-              title: "网易易盾",
+              title: "网易易盾（一键登录）",
               path: "/guides/connections/social/yidun/"
             },
             {
@@ -726,14 +726,14 @@ const zhCnNavBar = {
             }
           ]
         },
-        {
-          title: "身份源连接的账号关联",
-          path: "/guides/connections/account-association"
-        },
-        {
-          title: "身份源连接的账号匹配规则",
-          path: "/guides/connections/user-mapping"
-        },
+       // {
+        //  title: "身份源连接的账号关联",
+        //  path: "/guides/connections/account-association"
+        //},
+        //{
+        //  title: "身份源连接的账号匹配规则",
+         // path: "/guides/connections/user-mapping"
+        //},
         DATABASE_CONNECTION_MENU
       ]
     },
