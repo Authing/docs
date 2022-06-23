@@ -608,7 +608,7 @@ const zhCnNavBar = {
             },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/facebook/"
             },
             {
               title: "Twitter",
@@ -620,7 +620,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/apple-mobile/"
             },
             {
               title: "Apple Web 端",
@@ -628,7 +628,7 @@ const zhCnNavBar = {
             },
             {
               title: "支付宝",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/alipay-web/"
             },
             {
               title: "Slack",
@@ -648,11 +648,11 @@ const zhCnNavBar = {
             },
             {
               title: "网易易盾",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/yidun/"
             },
             {
               title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/qingcloud/"
             },
             {
               title: "Instagram",
@@ -670,19 +670,19 @@ const zhCnNavBar = {
           children: [
             {
               title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
             },
             {
               title: "企业微信自建应用扫码（代开发模式）",
-              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
              },
             {
               title: "企业微信服务商应用扫码",
-              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
              },
             {
               title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/wecom-mobile/"
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -690,15 +690,15 @@ const zhCnNavBar = {
             },
             {
               title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-public/"
             },
             {
               title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/lark-internal/"
             },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/windows-ad/"
             },
             {
               title: "Azure AD",
@@ -710,19 +710,19 @@ const zhCnNavBar = {
             },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oauth2/"
             },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/ldap/"
             },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/saml/"
             },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/cas/"
             }
           ]
         },
@@ -2516,7 +2516,7 @@ const translatedZhCnNavBar = {
       path: "/guides/connections/",
       children: [
         {
-          title: "Social Login",
+          title: "Social Identity Provider",
           path: "/guides/connections/social",
           children: [
             {
@@ -2561,7 +2561,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Facebook",
-              path: "/guides/connections/social/twitter/"
+              path: "/guides/connections/social/facebook/"
             },
             {
               title: "Twitter",
@@ -2572,16 +2572,16 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/google/"
             },
             {
-              title: "Apple 移动端",
-              path: "/guides/connections/social/twitter/"
+              title: "Apple Mobile",
+              path: "/guides/connections/social/apple-mobile/"
             },
             {
               title: "Apple Web",
               path: "/guides/connections/social/apple-web/"
             },
             {
-              title: "支付宝",
-              path: "/guides/connections/social/twitter/"
+              title: "Alipay",
+              path: "/guides/connections/social/alipay-web/"
             },
             {
               title: "Slack",
@@ -2600,12 +2600,12 @@ const translatedZhCnNavBar = {
               path: "/guides/connections/social/baidu/"
             },
             {
-              title: "网易易盾",
-              path: "/guides/connections/social/twitter/"
+              title: "NetEase YIDUN",
+              path: "/guides/connections/social/yidun/"
             },
             {
-              title: "青云 QingCloud",
-              path: "/guides/connections/social/twitter/"
+              title: "QingCloud",
+              path: "/guides/connections/social/qingcloud/"
             },
             {
               title: "Instagram",
@@ -2618,40 +2618,40 @@ const translatedZhCnNavBar = {
           ]
         },
         {
-          title: "Corporate Identity Source",
+          title: "Enterprise Identity Provider",
           path: "/guides/connections/enterprise",
           children: [
             {
-              title: "企业微信自建应用扫码",
-              path: "/guides/connections/social/instagram/"
+              title: "WeCom Self-built App QR Code",
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
             },
             {
-              title: "企业微信自建应用扫码（代开发模式）",
-              path: "/guides/connections/enterprise/wecom-delegated-development-mode/",
+              title: "WeCom Self-built App QR Code Login(Delegated Development Mode)",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
              },
             {
-              title: "企业微信服务商应用扫码",
-              path: "/guides/connections/enterprise/wecom-service-provider-app-qrcode/",
+              title: "WeCom Service Provider App QR Code",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
              },
             {
-              title: "企业微信移动端",
-              path: "/guides/connections/social/instagram/"
+              title: "WeCom Mobile",
+              path: "/guides/connections/enterprise/wecom-mobile/"
             },
             {
               title: "DingTalk H5 Micro Application (Internal Development)",
               path: "/guides/connections/enterprise/dingtalk/"
             },
             {
-              title: "飞书应用商店应用",
-              path: "/guides/connections/social/instagram/"
+              title: "Feishu Marketplace App",
+              path: "/guides/connections/enterprise/lark-public/"
             },
             {
-              title: "飞书企业自建应用",
-              path: "/guides/connections/social/instagram/"
+              title: "Feishu Custom App",
+              path: "/guides/connections/enterprise/lark-internal/"
             },
             {
               title: "Windows AD",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/windows-ad/"
             },
             {
               title: "Azure AD",
@@ -2663,19 +2663,19 @@ const translatedZhCnNavBar = {
             },
             {
               title: "OAuth 2.0",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/oauth2/"
             },
             {
               title: "LDAP",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/ldap/"
             },
             {
               title: "SAML",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/saml/"
             },
             {
               title: "CAS",
-              path: "/guides/connections/social/instagram/"
+              path: "/guides/connections/enterprise/cas/"
             }
           ]
         },
