@@ -1,4 +1,4 @@
-# Ldap 身份源
+# LDAP
 
 <LastUpdated/>
 

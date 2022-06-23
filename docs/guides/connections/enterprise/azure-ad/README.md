@@ -1,4 +1,4 @@
-# Azure AD 社会化登录
+# Azure AD 
 
 <LastUpdated/>
 
