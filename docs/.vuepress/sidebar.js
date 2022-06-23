@@ -620,7 +620,7 @@ const zhCnNavBar = {
             },
             {
               title: "Apple 移动端",
-              path: "/guides/connections/social/apple/"
+              path: "/guides/connections/social/apple-mobile/"
             },
             {
               title: "Apple Web 端",
@@ -2573,7 +2573,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Apple Mobile",
-              path: "/guides/connections/social/apple/"
+              path: "/guides/connections/social/apple-mobile/"
             },
             {
               title: "Apple Web",

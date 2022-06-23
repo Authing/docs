@@ -14,7 +14,7 @@
 | Twitter                          | Web            | <router-link to="/en/guides/connections/social/twitter/" target="_blank">Documentation</router-link>                      |
 | Google                           | Web            | <router-link to="/en/guides/connections/social/google/" target="_blank">Documentation</router-link>                       |
 | Apple (Web)                      | Web            | <router-link to="/en/guides/connections/social/apple-web/" target="_blank">Documentation</router-link>                    |
-| Apple (Mobile)                   | Mobile App     | <router-link to="/en/guides/connections/social/apple/" target="_blank">Documentation</router-link>                        |
+| Apple (Mobile)                   | Mobile App     | <router-link to="/en/guides/connections/social/apple-mobile/" target="_blank">Documentation</router-link>                        |
 | Alipay                           | Mobile App     | <router-link to="/en/guides/connections/social/alipay/" target="_blank">Documentation</router-link>                       |
 | Slack                            | Web            | <router-link to="/en/guides/connections/social/slack/" target="_blank">Documentation</router-link>                        |
 | Gitee                            | Web            | <router-link to="/en/guides/connections/social/gitee/" target="_blank">Documentation</router-link>                        |
