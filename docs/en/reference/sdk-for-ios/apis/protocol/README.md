@@ -185,12 +185,6 @@ public func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @es
 
 ```swift
 OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
-    if (code == 200) {
-        
-    }
-    self.goHome()
-}
-OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
