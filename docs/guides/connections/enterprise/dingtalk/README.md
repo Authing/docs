@@ -27,9 +27,7 @@
 
 <img src="./images/dingtalk_4.png" >
 
-- 在登录与分享中，填写回调域名为：https://core.authing.cn/connections/social/dingtalk/:userPoolId/callback
-
-> 请将 :userPoolId 替换为你的用户池 ID
+- 在登录与分享中，填写回调域名为：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
 
 ## 步骤2：在 {{$localeConfig.brandName}} 控制台配置钉钉 H5 微应用（企业内部开发）

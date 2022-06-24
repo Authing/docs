@@ -28,9 +28,8 @@
 
 <img src="./images/baidu_3.png">
 
-在安全设置页面，设置授权回调页地址为：https://core.authing.cn/connection/social/baidu/<YOUR_USERPOOL_ID>/callback
+在安全设置页面，设置授权回调页地址为：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
-> 将其中的 <YOUR_USERPOOL_ID> 替换为你的用户池 ID。
 
 <img src="./images/baidu_4.png">
 

@@ -16,7 +16,7 @@
 | Apple Web 端               | PC 网站    | <router-link to="/guides/connections/social/apple-web/" target="_blank">使用文档</router-link>                    |
 | Apple 移动端               | 移动 APP   | <router-link to="/guides/connections/social/apple-mobile/" target="_blank">使用文档</router-link>                        |
 | 支付宝 Web 端              | PC 网站    | <router-link to="/guides/connections/social/alipay-web/" target="_blank">使用文档</router-link>                   |
-| 支付宝移动端               | 移动 APP   | <router-link to="/guides/connections/social/alipay/" target="_blank">使用文档</router-link>                       |
+| 支付宝移动端               | 移动 APP   | <router-link to="/guides/connections/social/alipay-web/" target="_blank">使用文档</router-link>                       |
 | Slack                      | PC 网站    | <router-link to="/guides/connections/social/slack/" target="_blank">使用文档</router-link>                        |
 | Gitee                      | PC 网站    | <router-link to="/guides/connections/social/gitee/" target="_blank">使用文档</router-link>                        |
 | GitLab                     | PC 网站    | <router-link to="/guides/connections/social/gitlab/" target="_blank">使用文档</router-link>                       |

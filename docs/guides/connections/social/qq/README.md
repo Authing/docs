@@ -27,9 +27,8 @@
 
 <img src="./images/qq_2.png" >
 
-创建应用过程中，需要配置允许的回调地址，请使用以下设置： https://core.authing.cn/connection/social/qq/:userPoolId/callback
+创建应用过程中，需要配置允许的回调地址，请使用以下设置：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
-> 请将 :userPoolId 替换为你的 {{$localeConfig.brandName}}控制台的用户池 ID 
 
 
 ## 步骤2：在 {{$localeConfig.brandName}} 控制台配置腾讯 QQ
