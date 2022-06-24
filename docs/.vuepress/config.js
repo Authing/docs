@@ -60,7 +60,7 @@ module.exports = {
   feedbackUrl: `https://open.feishu.cn/open-apis/bot/v2/hook/f5e7517d-07cb-4519-ab6c-577ad8653ca2`,
   markdown: {
     anchor: {
-      permalinkSymbol: ""
+      permalinkSymbol: "¶"
     },
     toc: {
       includeLevel: [2, 3, 4, 5]

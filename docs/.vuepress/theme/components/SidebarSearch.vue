@@ -15,9 +15,7 @@
       @keyup.down="onDown"
       @blur="focused = false"
     />
-    <div
-      v-if="showSuggestions" class="suggestions" @mouseleave="unfocus"
-    >
+    <div v-if="showSuggestions" class="suggestions" @mouseleave="unfocus">
       <ul>
         <li
           v-for="(s, i) in suggestions"
@@ -29,7 +27,9 @@
         >
           <a :href="s.path" @click.prevent>
             <span class="page-title">{{ s.title || s.path }}</span>
-            <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+            <span v-if="s.header" class="header"
+              >&gt; {{ s.header.title }}</span
+            >
           </a>
         </li>
       </ul>
@@ -57,6 +57,16 @@ export default {
       focusIndex: 0,
       platLinks: []
     };
+  },
+  watch: {
+    $route: {
+      handler() {
+        this.query = [];
+        this.calcLinks();
+      },
+      immediate: true,
+      deep: true
+    }
   },
 
   computed: {

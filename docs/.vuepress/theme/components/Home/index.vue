@@ -140,8 +140,9 @@ export default {
         padding-left 48px
         background-color: #fff
       .suggestions
-        top 3em
+        top 100%
         width 100%
+        transform translateY(4px)
         box-sizing border-box
 
     .hot-search

@@ -712,7 +712,7 @@ const zhCnNavBar = {
         DATABASE_CONNECTION_MENU,
         {
           title: "配置自定义密码函数",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },
@@ -1510,9 +1510,455 @@ const zhCnNavBar = {
   ],
   "/reference-new/": [
     {
+      title: "单页应用",
+      path: "/reference-new/single-page-application/",
+      redirect: "/reference-new/single-page-application/native-javascript",
+      children: [
+        {
+          title: "Javascript",
+          path: "/reference-new/single-page-application/native-javascript"
+        },
+        {
+          title: "React",
+          path: "/reference-new/single-page-application/react"
+        },
+        {
+          title: "Vue",
+          path: "/reference-new/single-page-application/vue"
+        },
+        {
+          title: "Angular",
+          path: "/reference-new/single-page-application/angular"
+        }
+      ]
+    },
+    {
+      title: "移动、客户端应用",
+      path: "/reference-new/mobile/",
+      redirect: "/reference-new/mobile/sdk-for-android/",
+      children: [
+        {
+          title: "Android",
+          path: "/reference-new/mobile/sdk-for-android/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-android/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-android/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/mobile/sdk-for-android/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/example",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/basic-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/advanced-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/refine-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/basic-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/advanced-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/login-to-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/account-edit-text"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/password-edit-text"
+                    },
+                    {
+                      title: "密码确认输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/password-confirm-edit-text"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/phonenumber-edit-text"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/verifycode-edit-text"
+                    },
+                    {
+                      title: "获取短信验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/email-edit-text"
+                    },
+                    {
+                      title: "获取邮箱验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/get-emailcode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/error-text"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-register-button"
+                    },
+                    {
+                      title: "跳转登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-login-button"
+                    },
+                    {
+                      title: "跳转忘记密码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-forgot-password-button"
+                    },
+                    {
+                      title: "跳转问题反馈按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-feedback-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-android/apis/authentication/",
+                "/reference-new/mobile/sdk-for-android/apis/protocol/",
+                "/reference-new/mobile/sdk-for-android/apis/mfa/",
+                "/reference-new/mobile/sdk-for-android/apis/scan/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/mobile/sdk-for-android/social/",
+              children: [
+                "/reference-new/mobile/sdk-for-android/social/wechat",
+                "/reference-new/mobile/sdk-for-android/social/wecom",
+                "/reference-new/mobile/sdk-for-android/social/alipay",
+                "/reference-new/mobile/sdk-for-android/social/lark"
+              ]
+            },
+            {
+              title: "典型场景",
+              children: [
+                "/reference-new/mobile/sdk-for-android/scenario/splash",
+                "/reference-new/mobile/sdk-for-android/scenario/tokens",
+                "/reference-new/mobile/sdk-for-android/scenario/user-profile",
+                "/reference-new/mobile/sdk-for-android/scenario/webview"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-android/onpremise"
+            },
+            {
+              title: "版本历史",
+              path: "/reference-new/mobile/sdk-for-android/version"
+            }
+          ]
+        },
+        {
+          title: "C#",
+          path: "/reference-new/mobile/sdk-for-csharp/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/mobile/sdk-for-csharp/authentication/",
+              children: [
+                "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
+                "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
+                "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/mobile/sdk-for-csharp/management/",
+              children: [
+                "/reference-new/mobile/sdk-for-csharp/management/UsersManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/ApplicationManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/RolesManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/AclManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/GroupsManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/OrgManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/UdfManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/WhitelistManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/UserpoolManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/StatisticsManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+        {
+          title: "Flutter",
+          path: "/reference-new/mobile/sdk-for-flutter/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-flutter/develop"
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-flutter/authentication/",
+                "/reference-new/mobile/sdk-for-flutter/protocol/",
+                "/reference-new/mobile/sdk-for-flutter/mfa/",
+                "/reference-new/mobile/sdk-for-flutter/scan/",
+                "/reference-new/mobile/sdk-for-flutter/social/"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-flutter/onpremise"
+            }
+          ]
+        },
+        {
+          title: "iOS",
+          path: "/reference-new/mobile/sdk-for-ios/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-ios/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-ios/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/mobile/sdk-for-ios/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/example",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/basic-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/advanced-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/refine-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/basic-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/advanced-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/login-to-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/account-textfield"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/password-textfield"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/email-textfield"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/phonenumber-textfield"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/verifycode-textfield"
+                    },
+                    {
+                      title: "获取验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/error-label"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/go-register-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/authentication/",
+                "/reference-new/mobile/sdk-for-ios/protocol/",
+                "/reference-new/mobile/sdk-for-ios/mfa/",
+                "/reference-new/mobile/sdk-for-ios/scan/",
+                "/reference-new/mobile/sdk-for-ios/util/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/mobile/sdk-for-ios/social/",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/social/wechat",
+                "/reference-new/mobile/sdk-for-ios/social/wecom",
+                "/reference-new/mobile/sdk-for-ios/social/alipay",
+                "/reference-new/mobile/sdk-for-ios/social/lark",
+                "/reference-new/mobile/sdk-for-ios/social/apple"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-ios/onpremise"
+            }
+          ]
+        },
+        {
+          title: "React Native",
+          path: "/reference-new/mobile/sdk-for-react-native"
+        }
+      ]
+    },
+    {
       title: "标准 Web 应用",
-      collapsable: false,
-      path: "/reference-new/",
+      path: "/reference-new/sdk-v5/",
+      redirect: "/reference-new/sdk-v5/csharp/install.html",
       // 自动生成粘贴开始
       children: [
         {
@@ -2393,6 +2839,54 @@ const zhCnNavBar = {
         }
       ]
       // 自动生成粘贴结束
+    },
+    {
+      title: "框架集成",
+      path: "/reference-new/framework/",
+      redirect: "/reference-new/frameworks/spring-security-cas/",
+      children: [
+        {
+          title: "Spring CAS",
+          path: "/reference-new/frameworks/spring-security-cas/"
+        },
+        {
+          title: "Spring OAuth",
+          path: "/reference-new/frameworks/spring-security-oauth/"
+        },
+        {
+          title: "Spring OIDC",
+          path: "/reference-new/frameworks/spring-security-oidc/"
+        },
+        {
+          title: "Express OIDC",
+          path: "/reference-new/frameworks/express-oidc-client/"
+        },
+        {
+          title: "Express Passport",
+          path: "/reference-new/frameworks/express-passport-openidconnect/"
+        }
+      ]
+    },
+    {
+      title: " 其他",
+      path: "/reference-new/other/",
+      redirect: "/reference-new/other/sdk-for-sso.html",
+      children: [
+        {
+          title: "单点登录（SSO）",
+          path: "/reference-new/other/sdk-for-sso.html"
+        },
+        {
+          title: "微信小程序",
+          path: "/reference-new/other/sdk-for-wxapp.html"
+        },
+        {
+          title: "微信网页登录",
+          path: "/reference-new/other/sdk-for-wxmp.html"
+        },
+        { title: "Radius", path: "/reference-new/other/radius/" },
+        { title: "错误代码", path: "/reference-new/other/error-code.html" }
+      ]
     }
   ],
   "/concepts/": [
@@ -3388,7 +3882,7 @@ const translatedZhCnNavBar = {
         DATABASE_CONNECTION_MENU_EN,
         {
           title: "Configure custom password function",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },

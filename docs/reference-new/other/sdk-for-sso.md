@@ -24,7 +24,7 @@ Authing SSO SDK 为开发者提供了简单易用的函数来实现 Web 端的�
 
 找到刚刚配置好的应用，进入**配置**页面
 
-![](./../images/sso-sdk01.png)
+![](./images/sso-sdk01.png)
 
 - 找到**应用配置**下的**认证配置**，配置登录回调 URL 并进行保存
 - 授权配置中，授权模式开启 implicit
@@ -34,7 +34,7 @@ Authing SSO SDK 为开发者提供了简单易用的函数来实现 Web 端的�
 
 如下图所示：
 
-![](./../images/sso-sdk02.png)
+![](./images/sso-sdk02.png)
 
 至此，配置完成
 
@@ -62,10 +62,10 @@ $ yarn add @authing/sso
 
 <script>
   var authingSSO = new AuthingSSO.AuthingSSO({
-    appId: '应用 ID',
-    origin: 'https://{用户池域名}.authing.cn',
-    redirectUri: '你的业务软件路由地址',
-  })
+    appId: "应用 ID",
+    origin: "https://{用户池域名}.authing.cn",
+    redirectUri: "你的业务软件路由地址"
+  });
 </script>
 ```
 
@@ -92,19 +92,19 @@ $ yarn add @authing/sso
 为了使用 Authing SSO SDK，你需要填写应用 ID、用户池域名、回调地址等参数，如下示例：
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 ```
 
 如果你想兼容低版本浏览器，也可以
 
 ```js
-import { AuthingSSO } from '@authing/sso/es5'
+import { AuthingSSO } from "@authing/sso/es5";
 ```
 
 ## 注册
@@ -112,15 +112,15 @@ import { AuthingSSO } from '@authing/sso/es5'
 如果你希望为用户展示 Authing 托管的注册页，可以按以下方式调用：
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
-authing.register()
+authing.register();
 ```
 
 ## 登录
@@ -135,46 +135,46 @@ Authing SSO SDK 可以向 Authing 发起认证授权请求，目前支持两种�
 运行下面的代码，浏览器会跳转到 Authing 托管的登录页：
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
-authing.login()
+authing.login();
 ```
 
 如果你想自定义参数，也可以对以下参数进行自定义传参，如不传参将使用默认参数
 
 ```js
 authing.login({
-  scope: 'openid profile email phone',
-  responseMode: 'fragment',
-  responseType: 'id_token token',
+  scope: "openid profile email phone",
+  responseMode: "fragment",
+  responseType: "id_token token",
   state: Math.random().toString(),
-  nonce: Math.random().toString(),
-})
+  nonce: Math.random().toString()
+});
 ```
 
 用户完成登录后，Authing 会将用户重定向到你的业务软件回调地址。 Id Token、Access Token 会以 URL hash 的形式发到回调地址。你可以在你的业务软件前端路由对应的页面使用 Authing SSO SDK 的方法将它们从 URL hash 中取出：
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
 // authing.cn/#id_token=123123&access_token=547567
 // 返回 { id_token: 123123, access_token: 547567 }
-const { access_token, id_token } = authing.getTokenSetFromUrlHash()
+const { access_token, id_token } = authing.getTokenSetFromUrlHash();
 
 // 之后可以使用 Access Token 获取用户信息
-const userInfo = await authing.getUserInfoByAccessToken(access_token)
+const userInfo = await authing.getUserInfoByAccessToken(access_token);
 ```
 
 ### 弹出窗口登录
@@ -182,30 +182,30 @@ const userInfo = await authing.getUserInfoByAccessToken(access_token)
 你可以在你的业务软件页面调用下面的方法，通过弹出一个新窗口的方式让用户在新窗口登录：
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
-authing.popUpLogin()
+authing.popUpLogin();
 
 // 登录成功回调
 authing.onPopUpLoginSuccess(async ({ access_token, id_token }) => {
   // 可以存储 token
   // 可以使用 token 获取用户的信息
-  const userInfo = await authing.getUserInfoByAccessToken(access_token)
-})
+  const userInfo = await authing.getUserInfoByAccessToken(access_token);
+});
 // 登录失败回调
 authing.onPopUpLoginFail(async ({ error, error_description }) => {
-  console.log(error, error_description)
-})
+  console.log(error, error_description);
+});
 // 登录取消回调
 authing.onPopUpLoginCancel(async () => {
   // 可根据业务逻辑进行处理
-})
+});
 ```
 
 ### 高级使用
@@ -213,33 +213,33 @@ authing.onPopUpLoginCancel(async () => {
 每次发起登录本质是访问一个 URL 地址，可以携带许多参数。AuthingSSO SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
-import { AuthingSSO } from '@authing/sso'
+import { AuthingSSO } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
 // 发起认证请求
 authing.login({
-  scope: 'openid profile email phone',
-  responseMode: 'fragment',
-  responseType: 'id_token token',
+  scope: "openid profile email phone",
+  responseMode: "fragment",
+  responseType: "id_token token",
   state: Math.random().toString(),
   nonce: Math.random().toString(),
-  prompt: 'consent',
-})
+  prompt: "consent"
+});
 
 // 使用弹窗登录
 authing.popUpLogin({
-  scope: 'openid email phone profile',
-  responseMode: 'web_message',
-  responseType: 'id_token token',
+  scope: "openid email phone profile",
+  responseMode: "web_message",
+  responseType: "id_token token",
   state: Math.random().toString(),
   nonce: Math.random().toString(),
-  prompt: 'consent',
-})
+  prompt: "consent"
+});
 ```
 
 更多参数请参考 [文档](/federation/oidc/authorization-code/?build-url=curl) 。
@@ -252,33 +252,33 @@ authing.popUpLogin({
 import {
   AuthingSSO,
   AuthenticationError,
-  InvalidParamsError,
-} from '@authing/sso'
+  InvalidParamsError
+} from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
 async function main() {
   try {
-    const { id_token, access_token } = await authing.getAccessTokenSilently()
+    const { id_token, access_token } = await authing.getAccessTokenSilently();
     // 无需在前端验证 token，统一在资源服务器验证即可
     // 后续可以存储 token
   } catch (err) {
     if (err instanceof AuthenticationError) {
       // 用户未登录，引导用户去登录页
-      authing.login()
+      authing.login();
     } else if (err instanceof InvalidParamsError) {
       // 可以根据自己的业务进行逻辑处理
     } else {
       // 发生未知错误
-      throw err
+      throw err;
     }
   }
 }
-main()
+main();
 ```
 
 ## 获取用户信息
@@ -292,21 +292,21 @@ main()
 import {
   AuthingSSO,
   AuthenticationError,
-  InvalidParamsError,
-} from '@authing/sso'
+  InvalidParamsError
+} from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
 async function main() {
   try {
     // 获取用户的 token
-    const { id_token, access_token } = await authing.getAccessTokenSilently()
+    const { id_token, access_token } = await authing.getAccessTokenSilently();
     // 可以使用 token 获取用户的信息
-    const userInfo = await authing.getUserInfoByAccessToken(access_token)
+    const userInfo = await authing.getUserInfoByAccessToken(access_token);
   } catch (err) {
     if (err instanceof AuthenticationError) {
       // 可以根据自己的业务进行逻辑处理
@@ -314,25 +314,25 @@ async function main() {
       // 可以根据自己的业务进行逻辑处理
     } else {
       // 发生未知错误
-      throw err
+      throw err;
     }
   }
 }
-main()
+main();
 ```
 
 ## 退出登录
 
 ```js
-import { AuthingSSO, AuthenticationError } from '@authing/sso'
+import { AuthingSSO, AuthenticationError } from "@authing/sso";
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
+  appId: "应用 ID",
+  origin: "https://{用户池域名}.authing.cn",
+  redirectUri: "你的业务软件路由地址"
+});
 
-await authing.logout()
+await authing.logout();
 // 需要业务软件清除本地保存的所有 token 和用户信息
 ```
 
@@ -343,7 +343,7 @@ await authing.logout()
 示例：
 
 ```js
-let res = await auth.trackSession()
+let res = await auth.trackSession();
 /**
  * {
  *    session: { appId: 'xxx', type: 'oidc/oauth', userId: 'yyy'},

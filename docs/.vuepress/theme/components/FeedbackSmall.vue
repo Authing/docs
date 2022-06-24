@@ -140,7 +140,7 @@ export default {
 .feedback-small
   position relative
   display: inline-flex
-  margin-left: 14px
+  margin-left: 16px
   .feedback-btn
     display inline
     cursor pointer
