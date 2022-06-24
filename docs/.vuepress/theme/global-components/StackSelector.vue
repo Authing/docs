@@ -208,6 +208,7 @@ $border-color: #dfe2e5;
 $text-color: #5c6971;
 $gray-000: #fafafa;
 $small-spacing: 0.55rem;
+$accentColor: #215AE5;
 
 .stack-selector {
   border: 1px solid $border-color;
@@ -232,6 +233,10 @@ $small-spacing: 0.55rem;
     nav {
       flex: 1;
       background-color: white;
+      cursor: pointer;
+      div, input {
+        cursor: pointer;
+      }
     }
     .instructions-label {
       flex: 0;
@@ -315,11 +320,11 @@ $small-spacing: 0.55rem;
         &--highlight {
           background: inherit;
           color: inherit;
-          border: 1px solid #396aff;
+          border: 1px solid $accentColor;
           box-sizing: border-box;
 
           &:last-child {
-            border: 1px solid #396aff;
+            border: 1px solid $accentColor;
             border-radius: 0 0 4px 4px;
             box-sizing: border-box;
           }

@@ -43,7 +43,7 @@ export default {
       margin-left: 1.5rem;
     }
     &.active {
-      color: #396aff;
+      color: $accentColor;
       font-weight: 500;
     }
   }

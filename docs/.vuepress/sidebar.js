@@ -872,7 +872,7 @@ const zhCnNavBar = {
         DATABASE_CONNECTION_MENU,
         {
           title: "配置自定义密码函数",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },
@@ -1069,7 +1069,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "用户认证模块",
-          path: "/reference/sdk-for-node/authentication",
+          path: "/reference/sdk-for-node/authentication/",
           children: [
             "/reference/sdk-for-node/authentication/AuthenticationClient",
             "/reference/sdk-for-node/authentication/StandardProtocol",
@@ -1082,7 +1082,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-node/management",
+          path: "/reference/sdk-for-node/management/",
           children: [
             "/reference/sdk-for-node/management/UsersManagementClient",
             "/reference/sdk-for-node/management/ApplicationManagementClient",
@@ -1117,7 +1117,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-java/management",
+          path: "/reference/sdk-for-java/management/",
           children: [
             "/reference/sdk-for-java/management/UsersManagementClient",
             "/reference/sdk-for-java/management/ApplicationManagementClient",
@@ -1149,7 +1149,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-python/management",
+          path: "/reference/sdk-for-python/management/",
           children: [
             "/reference/sdk-for-python/management/AclManagementClient",
             "/reference/sdk-for-python/management/ApplicationManagementClient",
@@ -1173,7 +1173,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "用户认证模块",
-          path: "/reference/sdk-for-csharp/authentication",
+          path: "/reference/sdk-for-csharp/authentication/",
           children: [
             "/reference/sdk-for-csharp/authentication/AuthenticationClient",
             "/reference/sdk-for-csharp/authentication/StandardProtocol",
@@ -1182,7 +1182,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理模块",
-          path: "/reference/sdk-for-csharp/management",
+          path: "/reference/sdk-for-csharp/management/",
           children: [
             "/reference/sdk-for-csharp/management/UsersManagementClient",
             "/reference/sdk-for-csharp/management/ApplicationManagementClient",
@@ -1468,6 +1468,7 @@ const zhCnNavBar = {
     {
       title: "iOS",
       path: "/reference/sdk-for-ios/",
+
       children: [
         {
           title: "开始开发",
@@ -1667,6 +1668,1387 @@ const zhCnNavBar = {
       path: "/reference/error-code"
     }
   ],
+  "/reference-new/": [
+    {
+      title: "单页应用",
+      path: "/reference-new/single-page-application/",
+      redirect: "/reference-new/single-page-application/native-javascript",
+      children: [
+        {
+          title: "Javascript",
+          path: "/reference-new/single-page-application/native-javascript"
+        },
+        {
+          title: "React",
+          path: "/reference-new/single-page-application/react"
+        },
+        {
+          title: "Vue",
+          path: "/reference-new/single-page-application/vue"
+        },
+        {
+          title: "Angular",
+          path: "/reference-new/single-page-application/angular"
+        }
+      ]
+    },
+    {
+      title: "移动、客户端应用",
+      path: "/reference-new/mobile/",
+      redirect: "/reference-new/mobile/sdk-for-android/",
+      children: [
+        {
+          title: "Android",
+          path: "/reference-new/mobile/sdk-for-android/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-android/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-android/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/mobile/sdk-for-android/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/example",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/basic-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/advanced-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/refine-login",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/basic-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/advanced-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/login-to-register",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile/sdk-for-android/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/account-edit-text"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/password-edit-text"
+                    },
+                    {
+                      title: "密码确认输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/password-confirm-edit-text"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/phonenumber-edit-text"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/verifycode-edit-text"
+                    },
+                    {
+                      title: "获取短信验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/email-edit-text"
+                    },
+                    {
+                      title: "获取邮箱验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/get-emailcode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/error-text"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-register-button"
+                    },
+                    {
+                      title: "跳转登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-login-button"
+                    },
+                    {
+                      title: "跳转忘记密码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-forgot-password-button"
+                    },
+                    {
+                      title: "跳转问题反馈按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/basic/go-feedback-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/mobile/sdk-for-android/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-android/apis/authentication/",
+                "/reference-new/mobile/sdk-for-android/apis/protocol/",
+                "/reference-new/mobile/sdk-for-android/apis/mfa/",
+                "/reference-new/mobile/sdk-for-android/apis/scan/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/mobile/sdk-for-android/social/",
+              children: [
+                "/reference-new/mobile/sdk-for-android/social/wechat",
+                "/reference-new/mobile/sdk-for-android/social/wecom",
+                "/reference-new/mobile/sdk-for-android/social/alipay",
+                "/reference-new/mobile/sdk-for-android/social/lark"
+              ]
+            },
+            {
+              title: "典型场景",
+              children: [
+                "/reference-new/mobile/sdk-for-android/scenario/splash",
+                "/reference-new/mobile/sdk-for-android/scenario/tokens",
+                "/reference-new/mobile/sdk-for-android/scenario/user-profile",
+                "/reference-new/mobile/sdk-for-android/scenario/webview"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-android/onpremise"
+            },
+            {
+              title: "版本历史",
+              path: "/reference-new/mobile/sdk-for-android/version"
+            }
+          ]
+        },
+        {
+          title: "C#",
+          path: "/reference-new/mobile/sdk-for-csharp/",
+          children: [
+            {
+              title: "用户认证模块",
+              path: "/reference-new/mobile/sdk-for-csharp/authentication/",
+              children: [
+                "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
+                "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
+                "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient"
+              ]
+            },
+            {
+              title: "管理模块",
+              path: "/reference-new/mobile/sdk-for-csharp/management/",
+              children: [
+                "/reference-new/mobile/sdk-for-csharp/management/UsersManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/ApplicationManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/RolesManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/AclManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/GroupsManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/OrgManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/UdfManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/WhitelistManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/UserpoolManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/StatisticsManagementClient",
+                "/reference-new/mobile/sdk-for-csharp/management/TenantManagementClient"
+              ]
+            }
+          ]
+        },
+        {
+          title: "Flutter",
+          path: "/reference-new/mobile/sdk-for-flutter/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-flutter/develop"
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-flutter/authentication/",
+                "/reference-new/mobile/sdk-for-flutter/protocol/",
+                "/reference-new/mobile/sdk-for-flutter/mfa/",
+                "/reference-new/mobile/sdk-for-flutter/scan/",
+                "/reference-new/mobile/sdk-for-flutter/social/"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-flutter/onpremise"
+            }
+          ]
+        },
+        {
+          title: "iOS",
+          path: "/reference-new/mobile/sdk-for-ios/",
+          children: [
+            {
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-ios/develop"
+            },
+            {
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-ios/quick"
+            },
+            {
+              title: "超组件",
+              path: "/reference-new/mobile/sdk-for-ios/component/",
+              children: [
+                {
+                  title: "教程",
+                  children: [
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/example",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/basic-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/advanced-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/refine-login",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/basic-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/advanced-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/login-to-register",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-by-phone",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-by-email",
+                    "/reference-new/mobile/sdk-for-ios/component/tutorial/reset-password-all"
+                  ]
+                },
+                {
+                  title: "基础组件",
+                  children: [
+                    {
+                      title: "应用图标",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/app-logo"
+                    },
+                    {
+                      title: "应用名称",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/app-name"
+                    },
+                    {
+                      title: "帐号输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/account-textfield"
+                    },
+                    {
+                      title: "密码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/password-textfield"
+                    },
+                    {
+                      title: "邮箱输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/email-textfield"
+                    },
+                    {
+                      title: "电话号码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/phonenumber-textfield"
+                    },
+                    {
+                      title: "验证码输入框",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/verifycode-textfield"
+                    },
+                    {
+                      title: "获取验证码按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/get-verifycode-button"
+                    },
+                    {
+                      title: "登录按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-button"
+                    },
+                    {
+                      title: "错误文本",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/error-label"
+                    },
+                    {
+                      title: "登录方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-method-tab"
+                    },
+                    {
+                      title: "登录容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/login-container"
+                    },
+                    {
+                      title: "隐私协议",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/privacy-confirm-box"
+                    },
+                    {
+                      title: "注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-button"
+                    },
+                    {
+                      title: "注册方式切换栏",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-method-tab"
+                    },
+                    {
+                      title: "注册容器",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/register-container"
+                    },
+                    {
+                      title: "跳转注册按钮",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/basic/go-register-button"
+                    }
+                  ]
+                },
+                {
+                  title: "社会化组件",
+                  children: [
+                    {
+                      title: "社会化登录列表",
+                      path:
+                        "/reference-new/mobile/sdk-for-ios/component/social/social-login-listview"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              title: "APIs",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/authentication/",
+                "/reference-new/mobile/sdk-for-ios/protocol/",
+                "/reference-new/mobile/sdk-for-ios/mfa/",
+                "/reference-new/mobile/sdk-for-ios/scan/",
+                "/reference-new/mobile/sdk-for-ios/util/"
+              ]
+            },
+            {
+              title: "社会化登录",
+              path: "/reference-new/mobile/sdk-for-ios/social/",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/social/wechat",
+                "/reference-new/mobile/sdk-for-ios/social/wecom",
+                "/reference-new/mobile/sdk-for-ios/social/alipay",
+                "/reference-new/mobile/sdk-for-ios/social/lark",
+                "/reference-new/mobile/sdk-for-ios/social/apple"
+              ]
+            },
+            {
+              title: "私有化部署",
+              path: "/reference-new/mobile/sdk-for-ios/onpremise"
+            }
+          ]
+        },
+        {
+          title: "React Native",
+          path: "/reference-new/mobile/sdk-for-react-native"
+        }
+      ]
+    },
+    {
+      title: "标准 Web 应用",
+      path: "/reference-new/sdk-v5/",
+      redirect: "/reference-new/sdk-v5/csharp/install.html",
+      // 自动生成粘贴开始
+      children: [
+        {
+          title: "C#",
+          path: "/reference-new/sdk-v5/csharp/",
+          redirect: "/reference-new/sdk-v5/csharp/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/csharp/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/csharp/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/list-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/csharp/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/csharp/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/csharp/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/kick-users",
+                    "/reference-new/sdk-v5/csharp/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/csharp/用户管理/create-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/csharp/用户管理/update-user",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/分组管理/get-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/list-groups",
+                    "/reference-new/sdk-v5/csharp/分组管理/create-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/csharp/分组管理/update-group",
+                    "/reference-new/sdk-v5/csharp/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/csharp/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/csharp/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/角色管理/get-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/assign-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/csharp/角色管理/create-role",
+                    "/reference-new/sdk-v5/csharp/角色管理/list-roles",
+                    "/reference-new/sdk-v5/csharp/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/csharp/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/csharp/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/csharp/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/csharp/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/csharp/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Go",
+          path: "/reference-new/sdk-v5/go/",
+          redirect: "/reference-new/sdk-v5/go/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/go/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/go/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/用户管理/get-user",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/go/用户管理/list-users",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/go/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/go/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/go/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/go/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/go/用户管理/kick-users",
+                    "/reference-new/sdk-v5/go/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/go/用户管理/create-user",
+                    "/reference-new/sdk-v5/go/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/go/用户管理/update-user",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/go/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/go/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/分组管理/get-group",
+                    "/reference-new/sdk-v5/go/分组管理/list-groups",
+                    "/reference-new/sdk-v5/go/分组管理/create-group",
+                    "/reference-new/sdk-v5/go/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/go/分组管理/update-group",
+                    "/reference-new/sdk-v5/go/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/go/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/go/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/角色管理/get-role",
+                    "/reference-new/sdk-v5/go/角色管理/assign-role",
+                    "/reference-new/sdk-v5/go/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/go/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/go/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/go/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/go/角色管理/create-role",
+                    "/reference-new/sdk-v5/go/角色管理/list-roles",
+                    "/reference-new/sdk-v5/go/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/go/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/go/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/go/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/go/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/go/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/go/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/go/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/go/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/go/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/go/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/go/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/go/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/go/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/go/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/go/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/go/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Java",
+          path: "/reference-new/sdk-v5/java/",
+          redirect: "/reference-new/sdk-v5/java/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/java/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/java/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/用户管理/get-user",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/java/用户管理/list-users",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/java/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/java/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/java/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/java/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/java/用户管理/kick-users",
+                    "/reference-new/sdk-v5/java/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/java/用户管理/create-user",
+                    "/reference-new/sdk-v5/java/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/java/用户管理/update-user",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/java/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/java/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/分组管理/get-group",
+                    "/reference-new/sdk-v5/java/分组管理/list-groups",
+                    "/reference-new/sdk-v5/java/分组管理/create-group",
+                    "/reference-new/sdk-v5/java/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/java/分组管理/update-group",
+                    "/reference-new/sdk-v5/java/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/java/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/java/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/角色管理/get-role",
+                    "/reference-new/sdk-v5/java/角色管理/assign-role",
+                    "/reference-new/sdk-v5/java/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/java/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/java/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/java/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/java/角色管理/create-role",
+                    "/reference-new/sdk-v5/java/角色管理/list-roles",
+                    "/reference-new/sdk-v5/java/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/java/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/java/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/java/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/java/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/java/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/java/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/java/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/java/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/java/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/java/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/java/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/java/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/java/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/java/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/java/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/java/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Node.js",
+          path: "/reference-new/sdk-v5/node/",
+          redirect: "/reference-new/sdk-v5/node/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/node/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/node/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/用户管理/get-user",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/node/用户管理/list-users",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/node/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/node/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/node/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/node/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/node/用户管理/kick-users",
+                    "/reference-new/sdk-v5/node/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/node/用户管理/create-user",
+                    "/reference-new/sdk-v5/node/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/node/用户管理/update-user",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/node/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/node/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/分组管理/get-group",
+                    "/reference-new/sdk-v5/node/分组管理/list-groups",
+                    "/reference-new/sdk-v5/node/分组管理/create-group",
+                    "/reference-new/sdk-v5/node/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/node/分组管理/update-group",
+                    "/reference-new/sdk-v5/node/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/node/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/node/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/角色管理/get-role",
+                    "/reference-new/sdk-v5/node/角色管理/assign-role",
+                    "/reference-new/sdk-v5/node/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/node/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/node/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/node/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/node/角色管理/create-role",
+                    "/reference-new/sdk-v5/node/角色管理/list-roles",
+                    "/reference-new/sdk-v5/node/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/node/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/node/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/node/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/node/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/node/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/node/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/node/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/node/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/node/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/node/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/node/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/node/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/node/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/node/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/node/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/node/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "PHP",
+          path: "/reference-new/sdk-v5/php/",
+          redirect: "/reference-new/sdk-v5/php/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/php/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/php/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/用户管理/get-user",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/php/用户管理/list-users",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/php/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/php/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/php/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/php/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/php/用户管理/kick-users",
+                    "/reference-new/sdk-v5/php/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/php/用户管理/create-user",
+                    "/reference-new/sdk-v5/php/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/php/用户管理/update-user",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/php/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/php/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/分组管理/get-group",
+                    "/reference-new/sdk-v5/php/分组管理/list-groups",
+                    "/reference-new/sdk-v5/php/分组管理/create-group",
+                    "/reference-new/sdk-v5/php/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/php/分组管理/update-group",
+                    "/reference-new/sdk-v5/php/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/php/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/php/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/角色管理/get-role",
+                    "/reference-new/sdk-v5/php/角色管理/assign-role",
+                    "/reference-new/sdk-v5/php/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/php/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/php/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/php/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/php/角色管理/create-role",
+                    "/reference-new/sdk-v5/php/角色管理/list-roles",
+                    "/reference-new/sdk-v5/php/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/php/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/php/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/php/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/php/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/php/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/php/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/php/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/php/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/php/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/php/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/php/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/php/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/php/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/php/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/php/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/php/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Python",
+          path: "/reference-new/sdk-v5/python/",
+          redirect: "/reference-new/sdk-v5/python/install.html",
+          children: [
+            {
+              title: "安装使用",
+              path: "/reference-new/sdk-v5/python/install.md"
+            },
+            {
+              title: "用户认证模块",
+              path: "/reference-new/sdk-v5/python/authentication.md"
+            },
+            {
+              title: "管理模块",
+              children: [
+                {
+                  title: "用户管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/用户管理/get-user",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-batch",
+                    "/reference-new/sdk-v5/python/用户管理/list-users",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-identities",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-roles",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/python/用户管理/reset-user-principal-authentication-info",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-departments",
+                    "/reference-new/sdk-v5/python/用户管理/set-user-departments",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-groups",
+                    "/reference-new/sdk-v5/python/用户管理/delete-users-batch",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-mfa-info",
+                    "/reference-new/sdk-v5/python/用户管理/list-archived-users",
+                    "/reference-new/sdk-v5/python/用户管理/kick-users",
+                    "/reference-new/sdk-v5/python/用户管理/is-user-exists",
+                    "/reference-new/sdk-v5/python/用户管理/create-user",
+                    "/reference-new/sdk-v5/python/用户管理/create-users-batch",
+                    "/reference-new/sdk-v5/python/用户管理/update-user",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-accessible-apps",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-authorized-apps",
+                    "/reference-new/sdk-v5/python/用户管理/has-any-role",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-login-history",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-loggedin-apps",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-logged-in-identities",
+                    "/reference-new/sdk-v5/python/用户管理/get-user-authorized-resources"
+                  ]
+                },
+                {
+                  title: "分组管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/分组管理/get-group",
+                    "/reference-new/sdk-v5/python/分组管理/list-groups",
+                    "/reference-new/sdk-v5/python/分组管理/create-group",
+                    "/reference-new/sdk-v5/python/分组管理/create-groups-batch",
+                    "/reference-new/sdk-v5/python/分组管理/update-group",
+                    "/reference-new/sdk-v5/python/分组管理/delete-groups-batch",
+                    "/reference-new/sdk-v5/python/分组管理/add-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/remove-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/list-group-members",
+                    "/reference-new/sdk-v5/python/分组管理/get-group-authorized-resources"
+                  ]
+                },
+                {
+                  title: "角色管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/角色管理/get-role",
+                    "/reference-new/sdk-v5/python/角色管理/assign-role",
+                    "/reference-new/sdk-v5/python/角色管理/revoke-role",
+                    "/reference-new/sdk-v5/python/角色管理/get-role-authorized-resources",
+                    "/reference-new/sdk-v5/python/角色管理/list-role-members",
+                    "/reference-new/sdk-v5/python/角色管理/list-role-departments",
+                    "/reference-new/sdk-v5/python/角色管理/create-role",
+                    "/reference-new/sdk-v5/python/角色管理/list-roles",
+                    "/reference-new/sdk-v5/python/角色管理/delete-roles-batch",
+                    "/reference-new/sdk-v5/python/角色管理/create-roles-batch",
+                    "/reference-new/sdk-v5/python/角色管理/update-role"
+                  ]
+                },
+                {
+                  title: "组织机构管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/组织机构管理/list-organizations",
+                    "/reference-new/sdk-v5/python/组织机构管理/create-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/update-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/delete-organization",
+                    "/reference-new/sdk-v5/python/组织机构管理/get-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/create-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/update-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/delete-department",
+                    "/reference-new/sdk-v5/python/组织机构管理/search-departments",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-children-departments",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/list-department-member-ids",
+                    "/reference-new/sdk-v5/python/组织机构管理/add-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/remove-department-members",
+                    "/reference-new/sdk-v5/python/组织机构管理/get-parent-department"
+                  ]
+                },
+                {
+                  title: "访问控制管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/访问控制管理/create-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/list-resources",
+                    "/reference-new/sdk-v5/python/访问控制管理/update-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-resource",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-resources-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/create-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/update-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-namespace",
+                    "/reference-new/sdk-v5/python/访问控制管理/delete-namespaces-batch",
+                    "/reference-new/sdk-v5/python/访问控制管理/authorize-resources",
+                    "/reference-new/sdk-v5/python/访问控制管理/get-authorized-resources"
+                  ]
+                },
+                {
+                  title: "外部身份源管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/外部身份源管理/list-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/get-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp",
+                    "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp-conn",
+                    "/reference-new/sdk-v5/python/外部身份源管理/enable-ext-idp-conn"
+                  ]
+                },
+                {
+                  title: "自定义字段管理",
+                  children: [
+                    "/reference-new/sdk-v5/python/自定义字段管理/get-custom-fields",
+                    "/reference-new/sdk-v5/python/自定义字段管理/set-custom-fields",
+                    "/reference-new/sdk-v5/python/自定义字段管理/set-custom-data",
+                    "/reference-new/sdk-v5/python/自定义字段管理/get-custom-data"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      // 自动生成粘贴结束
+    },
+    {
+      title: "框架集成",
+      path: "/reference-new/framework/",
+      redirect: "/reference-new/frameworks/spring-security-cas/",
+      children: [
+        {
+          title: "Spring CAS",
+          path: "/reference-new/frameworks/spring-security-cas/"
+        },
+        {
+          title: "Spring OAuth",
+          path: "/reference-new/frameworks/spring-security-oauth/"
+        },
+        {
+          title: "Spring OIDC",
+          path: "/reference-new/frameworks/spring-security-oidc/"
+        },
+        {
+          title: "Express OIDC",
+          path: "/reference-new/frameworks/express-oidc-client/"
+        },
+        {
+          title: "Express Passport",
+          path: "/reference-new/frameworks/express-passport-openidconnect/"
+        }
+      ]
+    },
+    {
+      title: " 其他",
+      path: "/reference-new/other/",
+      redirect: "/reference-new/other/sdk-for-sso.html",
+      children: [
+        {
+          title: "单点登录（SSO）",
+          path: "/reference-new/other/sdk-for-sso.html"
+        },
+        {
+          title: "微信小程序",
+          path: "/reference-new/other/sdk-for-wxapp.html"
+        },
+        {
+          title: "微信网页登录",
+          path: "/reference-new/other/sdk-for-wxmp.html"
+        },
+        { title: "Radius", path: "/reference-new/other/radius/" },
+        { title: "错误代码", path: "/reference-new/other/error-code.html" }
+      ]
+    }
+  ],
   "/concepts/": [
     {
       title: `什么是 ${BRAND_NAME_ZH_CN}`,
@@ -1797,7 +3179,7 @@ const zhCnNavBar = {
   "/apn/": [
     {
       title: "概览",
-      path: "/apn/"
+      path: "/apn/overview/"
     },
     {
       title: "将你的应用集成 OIDC",
@@ -2820,7 +4202,7 @@ const translatedZhCnNavBar = {
         DATABASE_CONNECTION_MENU_EN,
         {
           title: "Configure custom password function",
-          path: "/guides/migrations/custom-password-script/"
+          path: "/guides/extensibility/custom-password-script"
         }
       ]
     },

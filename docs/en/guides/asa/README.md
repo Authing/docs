@@ -1,5 +1,7 @@
 # ASA 表单代填
 
+<LastUpdated/>
+
 Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发的功能，可为不支持标准认证协议（OAuth2.0、OIDC、SAML、CAS）的外部 Web 应用程序提供单点登录 (SSO) 功能。
 
 管理员可以给用户分配应用账密。 {{$localeConfig.brandName}} 将账密加密存储在数据库中。在用户访问被分配了账号密码的应用的登录界面时，{{$localeConfig.brandName}} 会自动填充账号密码，并进行登录。最终用户只需登录 {{$localeConfig.brandName}}，就可直接访问被分配的应用。

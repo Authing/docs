@@ -6,6 +6,8 @@ meta:
 
 # 在 Pipeline 中使用环境变量
 
+<LastUpdated/>
+
 ::: hint-success
 Pipeline 函数中的环境变量和操作系统里环境变量的概念一致，开发者可以通过全局变量 env 获取。环境变量对应用池内所有 Pipelien 函数全部可见。
 :::

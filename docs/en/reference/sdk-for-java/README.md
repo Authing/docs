@@ -6,6 +6,8 @@ meta:
 
 # {{$localeConfig.brandName}} - Java / Kotlin
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} Java SDK is comprised of two parts：`ManagementClient` and `AuthenticationClient`. All operations in `ManagementClient` are performed as an administrator, including managing users, managing roles, managing authority policies, and managing user pool configuration. All operations in `AuthenticationClient` are performed as the current terminal user, including login, registration, modification of user information, and logout.
 
 You should set the initialized `ManagementClient` instance to a global variable (initialize only once), and the `AuthenticationClient` should be initialized for each request.

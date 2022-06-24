@@ -6,6 +6,8 @@ meta:
 
 # 错误代码
 
+<LastUpdated/>
+
 错误代码消息格式如下：
 
 ```js

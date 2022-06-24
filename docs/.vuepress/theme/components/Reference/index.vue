@@ -1,6 +1,6 @@
 <template>
   <main
-    class="page content-layout-container"
+    class="page content-layout-container reference-new"
     :class="{
       'full-width': $frontmatter.fullWidthPage
     }"
@@ -8,7 +8,7 @@
     <slot name="top" />
 
     <div class="main-content">
-      <slot name="sidebar"></slot>
+      <!-- <slot name="sidebar"></slot> -->
       <div class="breadcrumb-content-container">
         <slot name="breadcrumb"></slot>
         <div class="sdk-banner">
@@ -43,7 +43,7 @@
         <div class="sdk-content">
           <div v-for="cat of $frontmatter.data">
             <h2 :id="cat.title">
-              <a :href="`#${cat.title}`" class="header-anchor">¶</a>
+              <a :href="`#${cat.title}`" class="header-anchor"></a>
               {{ cat.title }}
             </h2>
             <p>
@@ -110,7 +110,7 @@ export default {
 <style lang="stylus">
 .sdk-banner
   color: #fff;
-  background: #215ae5 url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
+  background: $accentColor url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
   background-size: 470px 100%;
   position: relative;
   display: flex;
@@ -141,7 +141,7 @@ export default {
     font-size: 24px;
     line-height: 38px;
     color: #1D2129;
-    margin-top: 3em;
+    padding-top: 3em;
     padding-bottom: 0;
     border-bottom: 0
   p

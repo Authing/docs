@@ -4,6 +4,8 @@ tags:
 ---
 # SAML2 综述
 
+<LastUpdated/>
+
 安全断言标记语言（英语：Security Assertion Markup Language，简称SAML，发音 sam-el）是一个基于 **XML** 的开源标准数据格式，它在当事方之间交换身份验证和授权数据，尤其是在身份提供者和服务提供者之间交换。SAML2.0 可以实现基于网络跨域的单点登录（SSO）， 以便于减少向一个用户分发多个身份验证令牌的管理开销。
 
 ## SAML 主体

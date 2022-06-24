@@ -6,6 +6,8 @@ meta:
 
 # LDAP User Directory in {{$localeConfig.brandName}}
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} support LDAP read, modify, add and delete user information. This page will introduce basic information and guidance for LDAP. If you are not familiar with LDAP protocol, here is a pre-introduction: [What is LDAP](/concepts/ldap.md).
 
 ## Basic Information

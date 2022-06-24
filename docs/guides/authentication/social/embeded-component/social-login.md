@@ -3,25 +3,30 @@
 Guard 支持 React、Vue、Angular 三种前端框架以及原生 JS 调用，以 React 组件为例：你可以传入 socialConnections 指定需要显示的社会化登录方式，如果不传的话，默认会显示所有已配置的。
 
 ```javascript
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { AuthingGuard } from '@authing/react-ui-components'
+import React from "react";
+import ReactDOM from "react-dom";
+import { AuthingGuard } from "@authing/react-ui-components";
 // 引入 css 文件
-import '@authing/react-ui-components/lib/index.min.css'
+import "@authing/react-ui-components/lib/index.min.css";
 
 const App = () => {
-  const appId = 'AUTHING_APP_ID'
-  const onLogin = (userInfo) => {
-    console.log(userInfo)
-  }
-  return <Guard appId={appId} config={{
-    title: '{{$localeConfig.brandName}}',
-    socialConnections: ['github'],
-  }} onLogin ={onLogin} />
-}
+  const appId = "AUTHING_APP_ID";
+  const onLogin = userInfo => {
+    console.log(userInfo);
+  };
+  return (
+    <Guard
+      appId={appId}
+      config={{
+        title: "{{$localeConfig.brandName}}",
+        socialConnections: ["github"]
+      }}
+      onLogin={onLogin}
+    />
+  );
+};
 
-ReactDOM.render(<App />, root)
+ReactDOM.render(<App />, root);
 ```
-
 
 详细文档请见：[登录组件](../../../../reference/guard/v2/README.md)。

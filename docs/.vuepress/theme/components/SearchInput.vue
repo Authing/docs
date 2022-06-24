@@ -15,26 +15,28 @@
       @keyup.down="onDown"
       @blur="focused = false"
     />
-    <ul
+    <div
       v-if="showSuggestions"
       class="suggestions"
       :class="{ 'align-right': alignRight }"
       @mouseleave="unfocus"
     >
-      <li
-        v-for="(s, i) in suggestions"
-        :key="i"
-        class="suggestion"
-        :class="{ focused: i === focusIndex }"
-        @mousedown="go(i)"
-        @mouseenter="focus(i)"
-      >
-        <a :href="s.path" @click.prevent>
-          <span class="page-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
-        </a>
-      </li>
-    </ul>
+      <ul>
+        <li
+          v-for="(s, i) in suggestions"
+          :key="i"
+          class="suggestion"
+          :class="{ focused: i === focusIndex }"
+          @mousedown="go(i)"
+          @mouseenter="focus(i)"
+        >
+          <a :href="s.path" @click.prevent>
+            <span class="page-title">{{ s.title || s.path }}</span>
+            <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -220,9 +222,7 @@ export default {
 
 <style lang="stylus">
 .authing-search-box
-  display inline-block
   position relative
-  margin-right 1rem
   height: 2rem
   width 10rem
   box-sizing border-box
@@ -233,31 +233,58 @@ export default {
     box-sizing border-box
     color lighten($textColor, 25%)
     display inline-block
-    border-radius 8px
+    border-radius 4px
     font-size 0.9rem
     line-height 2rem
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background #fff url(../assets/images/search.svg) 0.6rem 50% no-repeat
+    background #F2F3F5 url(../assets/images/search.svg) 0.6rem 50% no-repeat
     background-size 1rem
     border 1px solid transparent
     &::-webkit-input-placeholder
-      color #9BA1A7
+      color #86909C
     &:focus
       border-color $accentColor
+      background-color: #fff
+      border: 1px solid $accentColor
       cursor auto
   .suggestions
     background #fff
-    width 20rem
+    width 300px
     position absolute
-    top 2 rem
+    top 2.5rem
+    max-height 300px
+    border: 1px solid #eeeeee
+    box-shadow: 0px 16px 32px -10px rgba(4, 24, 115, 0.1)
+    overflow hidden
     // border 1px solid darken(#ddd, 10%)
     // box-shadow 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%)
-    box-shadow 0 4px 10px 0 rgba(0, 0, 0, 0.04)
     border-radius 6px
-    padding 0.4rem
-    list-style-type none
+    padding 0.4rem 0
+    z-index: 9999
+    box-sizing border-box
+    ul
+      margin 0
+      padding 0
+      max-height 300px
+      // width 100%
+      overflow-y auto
+      list-style-type none
+    li
+      position: relative
+      padding: 16px 24px !important
+      border-radius: 0
+      &::after
+        content: ''
+        position: absolute
+        left: 24px
+        right: 24px
+        bottom: 0
+        height: 1px
+        display: inline-block
+        background: #ddd
+
     &.align-right
       right 0
   .suggestion
@@ -277,6 +304,9 @@ export default {
       background-color #f3f4f5
       a
         color $accentColor
+  & .suggestion:last-child::after {
+    display: none
+  }
 
 @media (max-width: $MQNarrow)
   .search-box
@@ -310,8 +340,9 @@ export default {
 
 @media (max-width: $MQMobileNarrow)
   .search-box
-    .suggestions
-      width calc(100vw - 4rem)
     input:focus
       width 8rem
+@media (max-width: $MQMobile)
+  .suggestions
+    width 100% !important
 </style>

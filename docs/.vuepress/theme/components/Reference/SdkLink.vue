@@ -8,7 +8,7 @@
       {{ item.title }}
     </div>
     <div v-if="item.github">
-      <a :href="item.github || '#'">
+      <a :href="item.github || '#'" target="_blank">
         <svg
           viewBox="0 0 1024 1024"
           version="1.1"
@@ -24,7 +24,15 @@
       </a>
     </div>
     <div v-if="item.doc">
-      <a :href="item.doc || '#'">
+      <a
+        :href="item.doc || '#'"
+        :target="
+          !(item.doc || '').includes(hostname) &&
+          (item.doc || '').startsWith('http')
+            ? '_blank'
+            : ''
+        "
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path
             d="M19 22H5a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12h4v4a3 3 0 0 1-3 3zm-1-5v2a1 1 0 0 0 2 0v-2h-2zM6 7v2h8V7H6zm0 4v2h8v-2H6zm0 4v2h5v-2H6z"
@@ -35,7 +43,7 @@
       </a>
     </div>
     <div v-if="item.api">
-      <a :href="item.api || '#'">
+      <a :href="item.api || '#'" target="_blank">
         <svg
           viewBox="0 0 1024 1024"
           version="1.1"
@@ -61,6 +69,12 @@ export default {
     item: {
       required: true
     }
+  },
+  data() {
+    return {
+      hostname:
+        (typeof window !== "undefined" && window.location.hostname) || ""
+    };
   }
 };
 </script>

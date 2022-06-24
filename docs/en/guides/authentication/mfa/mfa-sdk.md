@@ -1,5 +1,7 @@
 # Configure MFA through SDK
 
+<LastUpdated/>
+
 ## Overview
 
 {{$localeConfig.brandName}} can not only configure the MFA authentication process through the console, but you can also config the MFA authentication through the SDK.
