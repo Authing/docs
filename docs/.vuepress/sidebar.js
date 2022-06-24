@@ -723,6 +723,10 @@ const zhCnNavBar = {
             {
               title: "CAS",
               path: "/guides/connections/enterprise/cas/"
+            },
+            {
+              title: "WeLink",
+              path: "/guides/connections/enterprise/welink/"
             }
           ]
         },
@@ -2676,6 +2680,10 @@ const translatedZhCnNavBar = {
             {
               title: "CAS",
               path: "/guides/connections/enterprise/cas/"
+            },
+            {
+              title: "WeLink",
+              path: "/guides/connections/enterprise/welink/"
             }
           ]
         },
