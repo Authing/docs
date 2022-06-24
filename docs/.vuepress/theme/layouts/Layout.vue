@@ -175,11 +175,11 @@ export default {
       // return list
 
       const regularPath = this.$page.regularPath;
-      const matchedNavPath = regularPath.startsWith("/en/")
-        ? `/en/${regularPath
-            .replace("/en/", "")
-            .slice(0, regularPath.replace("/en/", "").indexOf("/", 1) + 1)}`
-        : regularPath.slice(0, regularPath.indexOf("/", 1) + 1);
+      const matchedNavPath = regularPath.slice(
+        0,
+        regularPath.indexOf("/", regularPath.startsWith("/en/") ? 4 : 1) + 1
+      );
+
       return sidebarList?.[matchedNavPath]?.list || [];
     },
 
