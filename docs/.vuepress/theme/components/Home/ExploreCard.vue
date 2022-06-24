@@ -73,7 +73,7 @@ export default {
     a
       color #6d7278
       &:hover
-        color #396aff
+        color $accentColor
     .link-description
       color: #6D7278
       margin 0

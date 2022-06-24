@@ -1,5 +1,7 @@
 # 自定义配置项
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} 一直以来都致力于带给开发者高度自定义的开发体验，所以我们提供以下自定义配置项，开发者可以根据自己业务的需要，在安全性和便捷性之间权衡。开发者可在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) **安全设置** -&gt; **基础设置** -&gt; **登录设置** -&gt; **App 扫码登录 Web 自定义配置** 处自定义配置。
 
 ![](../../images/qrcode-setting.png)

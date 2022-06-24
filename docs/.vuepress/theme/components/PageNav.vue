@@ -1,7 +1,7 @@
 <template>
   <div v-if="prev || next" class="page-nav">
-    <p class="inner">
-      <span v-if="prev" class="prev">
+    <div class="inner">
+      <template v-if="prev">
         <a
           v-if="prev.type === 'external'"
           class="prev"
@@ -12,20 +12,21 @@
           <span class="arrow-outline"></span>
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
-
           <OutboundLink />
         </a>
 
         <RouterLink v-else class="prev" :to="prev.path">
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
           {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
         </RouterLink>
-      </span>
+      </template>
 
-      <span v-if="next" class="next">
+      <template v-if="next">
         <a
           v-if="next.type === 'external'"
+          class="next"
           :href="next.path"
           target="_blank"
           rel="noopener noreferrer"
@@ -33,17 +34,17 @@
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
           <span class="arrow-outline"></span>
-
           <OutboundLink />
         </a>
 
-        <RouterLink v-else :to="next.path">
+        <RouterLink v-else :to="next.path" class="next">
           {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
-          <span class="arrow-outline"></span>
+          <span class="arrow-outline">
+          </span>
         </RouterLink>
-      </span>
-    </p>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -149,41 +150,76 @@ function flatten(items, res) {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
 .page-nav
-  padding-top 1rem
-  padding-bottom 0
-  width 100%
-  box-size border-box
-  margin-top 34px
   a
-    color #333333
+    color #4E5969
     font-weight normal
     font-size 14px
+    display flex
+    align-items center
     &:hover
       color #396aff
   .inner
     min-height 2rem
     margin-top 0
-    border-top 1px solid $borderColor
-    padding-top 1rem
-    overflow auto // clear float
-  .next
-    float right
+    border-radius 4px
+    text-align center
   .arrow-outline
     display inline-block
-    height .6em
-    width .6em
-    border 1px solid #999
-    border-left-color transparent
-    border-bottom-color transparent
+    height 1rem
+    width 1rem
+    img
+      width 100%
+    // border 1px solid #999
+    // border-left-color transparent
+    // border-bottom-color transparent
   .next
     .arrow-outline
-      transform rotate(45deg)
+      // transform rotate(45deg)
       margin-right 5px
+      background url('../assets/images/arrow-right-s-line.svg')
+      background-size 100% 100%
   .prev
     .arrow-outline
-      transform rotate(-135deg)
+      background url('../assets/images/arrow-left-s-line.svg')
+      background-size 100% 100%
+      // transform rotate(-135deg)
       margin-left 5px
+
+@media only screen and (max-width: 650px)
+  .inner
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+  .prev
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 32px
+    line-height 32px
+    background #F2F3F5
+    border-radius 4px
+  .next
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 32px
+    line-height 32px
+    background #F2F3F5
+    margin-top 16px
+    border-radius 4px
+  .arrow-outline
+    display none !important
+
+@media only screen and (min-width: 651px)
+  .inner
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+@media (max-width: $MQMobile)
+  a:hover
+    color #4E5969 !important
 </style>

@@ -6,6 +6,8 @@ meta:
 
 # Configure SMS Service
 
+<LastUpdated/>
+
 SMS verification allows users to log in using a one-time password sent to their mobile phone as a text message. Authing uses the SMS service provided by the platform by default. At the same time, we also support the configuration of custom Chuanglan SMS and Alibaba Cloud SMS.
 
 ## Use default SMS service

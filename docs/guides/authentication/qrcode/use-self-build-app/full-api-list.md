@@ -1,5 +1,7 @@
 # APP 扫码登录完整接口列表
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} 提供基于 REST 的扫码登录接口，开发者可以直接调用。
 
 ## 生成二维码

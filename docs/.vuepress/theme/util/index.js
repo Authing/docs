@@ -55,7 +55,7 @@ export function isActive(route, path) {
   return routePath === pagePath
 }
 
-export function resolvePage(pages, rawPath, base) {
+export function resolvePage(pages, rawPath, base, dataIndex) {
   if (isExternal(rawPath)) {
     return {
       type: 'external',
@@ -68,9 +68,11 @@ export function resolvePage(pages, rawPath, base) {
   const path = normalize(rawPath)
   for (let i = 0; i < pages.length; i++) {
     if (normalize(pages[i].regularPath) === path) {
+      pages[i].dataIndex = dataIndex
       return Object.assign({}, pages[i], {
         type: 'page',
         path: ensureExt(pages[i].path),
+        dataIndex: dataIndex
       })
     }
   }
@@ -147,7 +149,7 @@ export function resolveSidebarItems(page, regularPath, site, localePath) {
     if (config === 'auto') {
       return resolveHeaders(page)
     }
-    return config ? config.map((item) => resolveItem(item, pages, base)) : []
+    return config ? config.map((item, index) => resolveItem(item, pages, base, 1, `${index}`)) : []
   }
 }
 
@@ -221,17 +223,17 @@ function ensureEndingSlash(path) {
   return /(\.html|\/)$/.test(path) ? path : path + '/'
 }
 
-function resolveItem(item, pages, base, groupDepth = 1) {
+function resolveItem(item, pages, base, groupDepth = 1, dataIndex = '') {
   if (typeof item === 'string') {
-    return resolvePage(pages, item, base)
+    return resolvePage(pages, item, base, dataIndex)
   } else if (Array.isArray(item)) {
-    return Object.assign(resolvePage(pages, item[0], base), {
+    return Object.assign(resolvePage(pages, item[0], base, dataIndex), {
       title: item[1],
     })
   } else {
     const children = item.children || []
     if (children.length === 0 && item.path) {
-      return Object.assign(resolvePage(pages, item.path, base), {
+      return Object.assign(resolvePage(pages, item.path, base, dataIndex), {
         title: item.title,
       })
     }
@@ -242,8 +244,9 @@ function resolveItem(item, pages, base, groupDepth = 1) {
       sidebarDepth: item.sidebarDepth,
       initialOpenGroupIndex: item.initialOpenGroupIndex,
       redirect: item.redirect,
-      children: children.map((child) =>
-        resolveItem(child, pages, base, groupDepth + 1)
+      dataIndex: dataIndex,
+      children: children.map((child, index) =>
+        resolveItem(child, pages, base, groupDepth + 1, `${dataIndex}-${index}`)
       ),
       collapsable: item.collapsable !== false,
     }

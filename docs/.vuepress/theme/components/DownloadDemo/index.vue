@@ -13,7 +13,7 @@
         :download="data.downloadFileName || fileName(data.downloadUrl)"
         target="_Blank"
         class="download-demo-button nav-link"
-        style="background: #396aff; color: #ffffff"
+        style="background: #215AE5; color: #ffffff"
       >
         下载
       </a>
@@ -22,7 +22,7 @@
         :href="data.jumpUrl"
         target="_Blank"
         class="download-demo-button nav-link"
-        style="background: #ffffff; color: #396aff"
+        style="background: #ffffff; color: #215AE5"
       >
         在 GitHub 查看
       </a>
@@ -84,7 +84,7 @@ export default {
   .download-demo-button {
     width: 156px;
     height: 27px;
-    border: 2px solid #396AFF;
+    border: 2px solid $accentColor;
     opacity: 1;
     border-radius: 4px;
     display: flex;

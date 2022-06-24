@@ -1,5 +1,7 @@
 # Configure Email Authentication (MFA)
 
+<LastUpdated/>
+
 ## Overview
 
 MFA is a security system that is a secondary identity verification for verifying the legitimacy of an operation. For example, remote login requires email verification. This article introduces the multi-factor authentication method based on email verification code.

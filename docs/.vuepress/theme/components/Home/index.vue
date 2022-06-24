@@ -74,36 +74,36 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue'
-import SdkCard from '@theme/components/Home/SdkCard.vue'
-import SectionCard from '@theme/components/Home/SectionCard.vue'
-import ExploreCard from '@theme/components/Home/ExploreCard.vue'
-import SearchInput from '@theme/components/SearchInput.vue'
+import NavLink from "@theme/components/NavLink.vue";
+import SdkCard from "@theme/components/Home/SdkCard.vue";
+import SectionCard from "@theme/components/Home/SectionCard.vue";
+import ExploreCard from "@theme/components/Home/ExploreCard.vue";
+import SearchInput from "@theme/components/SearchInput.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
 
   components: {
     NavLink,
     SdkCard,
     SearchInput,
     SectionCard,
-    ExploreCard,
+    ExploreCard
   },
 
   computed: {
     data() {
-      return this.$page.frontmatter
+      return this.$page.frontmatter;
     },
 
     actionLink() {
       return {
         link: this.data.actionLink,
-        text: this.data.actionText,
-      }
-    },
-  },
-}
+        text: this.data.actionText
+      };
+    }
+  }
+};
 </script>
 
 <style lang="stylus">
@@ -138,6 +138,7 @@ export default {
       input
         background-position-x 24px
         padding-left 48px
+        background-color: #fff
       .suggestions
         top 3em
         width 100%
@@ -154,7 +155,7 @@ export default {
       .hot-search-item
         color #6d7278
         &:hover
-          color #396aff
+          color $accentColor
         &:not(:last-child)
           margin-right 30px
 

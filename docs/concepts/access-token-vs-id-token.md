@@ -1,5 +1,7 @@
 # Access Token vs Id Token
 
+<LastUpdated/>
+
 与身份相关的 Token 有两种：Access Token 和 Id Token。
 
 ## Access Token

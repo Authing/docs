@@ -1,5 +1,7 @@
 # Overview of Integrating Customized Databases
 
+<LastUpdated/>
+
 <!-- ::: hint-warning
 Only **Enterprise Edition** users can use the function to connect to a custom database. For details, please refer to [https://authing.cn/pricing](https://authing.cn/pricing). If you want to try it out, please contact 176-0250-2507 or xuziqiang@authing.cn.
 ::: -->
