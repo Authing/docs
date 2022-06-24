@@ -5,7 +5,7 @@
 ## 场景介绍
 
 - **概述**：LinkedIn 社会化登录是用户以 LinkedIn 为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 LinkedIn 的社会化登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 LinkedIn 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：创建应用程序
+- **应用场景**：PC 网站
 - **终端用户预览图**：
 
 <img src="./images/linkedin_0.png" >
