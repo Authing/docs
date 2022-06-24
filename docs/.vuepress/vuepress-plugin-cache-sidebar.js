@@ -1,217 +1,230 @@
-module.exports = function cacheSidebarPlugin (options, ctx) {
-  const navMap = {}
-  const customPageRegularPathMap = {}
-  const pageRegularPathMap = {}
-  const regularPaths = []
+module.exports = function cacheSidebarPlugin(options, ctx) {
+  const navMap = {};
+  const customPageRegularPathMap = {};
+  const pageRegularPathMap = {};
+  const regularPaths = [];
 
   return {
-    ready () {
+    ready() {
       ctx.pages.forEach(page => {
-        pageRegularPathMap[page.regularPath] = page
-        regularPaths.push(page.regularPath)
-      })
+        pageRegularPathMap[page.regularPath] = page;
+        regularPaths.push(page.regularPath);
+      });
 
-      ctx.themeConfig.locales['/'].nav.forEach(nav => {
-        customPageRegularPathMap[nav.link] = {}
+      regularPaths.forEach(path => {
+        ctx.themeConfig.locales[
+          path.startsWith("/en/") ? "/en/" : "/"
+        ].nav.forEach(nav => {
+          if (!customPageRegularPathMap[nav.link])
+            customPageRegularPathMap[nav.link] = {};
 
-        regularPaths.forEach(path => {
           if (path.indexOf(nav.link) === 0) {
             if (!navMap[nav.link]) {
-              navMap[nav.link] = resolveSidebarItems(pageRegularPathMap[path], path, ctx.getSiteData(), '/')
+              navMap[nav.link] = resolveSidebarItems(
+                pageRegularPathMap[path],
+                path,
+                ctx.getSiteData(),
+                path.startsWith("/en/") ? "/en/" : "/"
+              );
             } else {
-              customPageRegularPathMap[nav.link].list = navMap[nav.link]
+              customPageRegularPathMap[nav.link].list = navMap[nav.link];
             }
           }
-        })
-      })
+        });
+      });
     },
     clientDynamicModules() {
       return {
-        name: 'sidebarCaches.js',
-        content: `export const sidebarList = '${JSON.stringify(customPageRegularPathMap)}'`
-      }
+        name: "sidebarCaches.js",
+        content: `export const sidebarList = ${JSON.stringify(
+          customPageRegularPathMap
+        )}`
+      };
     }
-  }
-}
+  };
+};
 
-const hashRE = /#.*$/
-const extRE = /\.(md|html)$/
-const endingSlashRE = /\/$/
-const outboundRE = /^[a-z]+:/i
+const hashRE = /#.*$/;
+const extRE = /\.(md|html)$/;
+const endingSlashRE = /\/$/;
+const outboundRE = /^[a-z]+:/i;
 
 function resolveSidebarItems(page, regularPath, site, localePath) {
-  const { pages, themeConfig } = site
+  const { pages, themeConfig } = site;
 
   const localeConfig =
     localePath && themeConfig.locales
       ? themeConfig.locales[localePath] || themeConfig
-      : themeConfig
+      : themeConfig;
 
   const pageSidebarConfig =
-    page.frontmatter.sidebar || localeConfig.sidebar || themeConfig.sidebar
-  if (pageSidebarConfig === 'auto') {
-    return resolveHeaders(page)
+    page.frontmatter.sidebar || localeConfig.sidebar || themeConfig.sidebar;
+  if (pageSidebarConfig === "auto") {
+    return resolveHeaders(page);
   }
 
-  const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar
+  const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar;
   if (!sidebarConfig) {
-    return []
+    return [];
   } else {
-    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
-    if (config === 'auto') {
-      return resolveHeaders(page)
+    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig);
+    if (config === "auto") {
+      return resolveHeaders(page);
     }
-    return config ? config.map((item, index) => resolveItem(item, pages, base, 1, `${index}`)) : []
+    return config
+      ? config.map((item, index) =>
+          resolveItem(item, pages, base, 1, `${index}`)
+        )
+      : [];
   }
 }
 
 function resolveHeaders(page) {
-  const headers = groupHeaders(page.headers || [])
+  const headers = groupHeaders(page.headers || []);
   return [
     {
-      type: 'group',
+      type: "group",
       collapsable: false,
       title: page.title,
       path: null,
-      children: headers.map((h) => ({
-        type: 'auto',
+      children: headers.map(h => ({
+        type: "auto",
         title: h.title,
         basePath: page.path,
-        path: page.path + '#' + h.slug,
-        children: h.children || [],
-      })),
-    },
-  ]
+        path: page.path + "#" + h.slug,
+        children: h.children || []
+      }))
+    }
+  ];
 }
 
-
- function resolveMatchingConfig(regularPath, config) {
+function resolveMatchingConfig(regularPath, config) {
   if (Array.isArray(config)) {
     return {
-      base: '/',
-      config: config,
-    }
+      base: "/",
+      config: config
+    };
   }
   for (const base in config) {
     if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0) {
       return {
         base,
-        config: config[base],
-      }
+        config: config[base]
+      };
     }
   }
-  return {}
+  return {};
 }
 
 function ensureEndingSlash(path) {
-  return /(\.html|\/)$/.test(path) ? path : path + '/'
+  return /(\.html|\/)$/.test(path) ? path : path + "/";
 }
 
 function isExternal(path) {
-  return outboundRE.test(path)
+  return outboundRE.test(path);
 }
 
- function resolvePage(pages, rawPath, base, dataIndex) {
+function resolvePage(pages, rawPath, base, dataIndex) {
   if (isExternal(rawPath)) {
     return {
-      type: 'external',
-      path: rawPath,
-    }
+      type: "external",
+      path: rawPath
+    };
   }
   if (base) {
-    rawPath = resolvePath(rawPath, base)
+    rawPath = resolvePath(rawPath, base);
   }
-  const path = normalize(rawPath)
+  const path = normalize(rawPath);
   for (let i = 0; i < pages.length; i++) {
     if (normalize(pages[i].regularPath) === path) {
-      pages[i].dataIndex = dataIndex
+      pages[i].dataIndex = dataIndex;
       return Object.assign({}, pages[i], {
-        type: 'page',
+        type: "page",
         path: ensureExt(pages[i].path),
         dataIndex: dataIndex
-      })
+      });
     }
   }
   console.error(
     `[vuepress] No matching page found for sidebar item "${rawPath}"`
-  )
-  return {}
+  );
+  return {};
 }
 
 function ensureExt(path) {
   if (isExternal(path)) {
-    return path
+    return path;
   }
-  const hashMatch = path.match(hashRE)
-  const hash = hashMatch ? hashMatch[0] : ''
-  const normalized = normalize(path)
+  const hashMatch = path.match(hashRE);
+  const hash = hashMatch ? hashMatch[0] : "";
+  const normalized = normalize(path);
 
   if (endingSlashRE.test(normalized)) {
-    return path
+    return path;
   }
-  return normalized + '.html' + hash
+  return normalized + ".html" + hash;
 }
 
 function normalize(path) {
   return decodeURI(path)
-    .replace(hashRE, '')
-    .replace(extRE, '')
+    .replace(hashRE, "")
+    .replace(extRE, "");
 }
 
 function resolvePath(relative, base, append) {
-  const firstChar = relative.charAt(0)
-  if (firstChar === '/') {
-    return relative
+  const firstChar = relative.charAt(0);
+  if (firstChar === "/") {
+    return relative;
   }
 
-  if (firstChar === '?' || firstChar === '#') {
-    return base + relative
+  if (firstChar === "?" || firstChar === "#") {
+    return base + relative;
   }
 
-  const stack = base.split('/')
+  const stack = base.split("/");
 
   // remove trailing segment if:
   // - not appending
   // - appending to trailing slash (last segment is empty)
   if (!append || !stack[stack.length - 1]) {
-    stack.pop()
+    stack.pop();
   }
 
   // resolve relative path
-  const segments = relative.replace(/^\//, '').split('/')
+  const segments = relative.replace(/^\//, "").split("/");
   for (let i = 0; i < segments.length; i++) {
-    const segment = segments[i]
-    if (segment === '..') {
-      stack.pop()
-    } else if (segment !== '.') {
-      stack.push(segment)
+    const segment = segments[i];
+    if (segment === "..") {
+      stack.pop();
+    } else if (segment !== ".") {
+      stack.push(segment);
     }
   }
 
   // ensure leading slash
-  if (stack[0] !== '') {
-    stack.unshift('')
+  if (stack[0] !== "") {
+    stack.unshift("");
   }
 
-  return stack.join('/')
+  return stack.join("/");
 }
 
-function resolveItem(item, pages, base, groupDepth = 1, dataIndex = '') {
-  if (typeof item === 'string') {
-    return resolvePage(pages, item, base, dataIndex)
+function resolveItem(item, pages, base, groupDepth = 1, dataIndex = "") {
+  if (typeof item === "string") {
+    return resolvePage(pages, item, base, dataIndex);
   } else if (Array.isArray(item)) {
     return Object.assign(resolvePage(pages, item[0], base, dataIndex), {
-      title: item[1],
-    })
+      title: item[1]
+    });
   } else {
-    const children = item.children || []
+    const children = item.children || [];
     if (children.length === 0 && item.path) {
       return Object.assign(resolvePage(pages, item.path, base, dataIndex), {
-        title: item.title,
-      })
+        title: item.title
+      });
     }
     return {
-      type: 'group',
+      type: "group",
       path: item.path,
       title: item.title,
       sidebarDepth: item.sidebarDepth,
@@ -221,7 +234,7 @@ function resolveItem(item, pages, base, groupDepth = 1, dataIndex = '') {
       children: children.map((child, index) =>
         resolveItem(child, pages, base, groupDepth + 1, `${dataIndex}-${index}`)
       ),
-      collapsable: item.collapsable !== false,
-    }
+      collapsable: item.collapsable !== false
+    };
   }
 }
