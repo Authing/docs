@@ -10,7 +10,7 @@
 
 <img src="./images/MobileLogin.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 企业微信管理 账号，请先前往 [企业微信管理后台](https://work.weixin.qq.com/) 进行注册；
 - 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；

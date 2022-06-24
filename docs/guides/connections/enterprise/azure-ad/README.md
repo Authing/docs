@@ -10,7 +10,7 @@
 
 <img src="./images/00.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您还没有微软账号，请先前往 [Microsoft 平台](https://signup.live.com/signup) 进行账号注册。
 - 您的微软账号需要注册 Azure 账号，请先前往 [Azure 平台](https://signup.azure.com/signup) 进行账号注册。

@@ -10,7 +10,7 @@
 
 <img src="./images/oidc_0.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 

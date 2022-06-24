@@ -10,7 +10,7 @@
 
 <img src="./images/40.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 企业微信服务商 账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为**企业微信服务商**；
 - 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，您可以在[企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role)进行管理员权限的修改；

@@ -12,7 +12,7 @@
 
 
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 QingCloud 账号，请先前往 [QingCloud](https://www.qingcloud.com/) 平台注册一个账号。
 - 需在 QingCloud 上的[应用开发](https://appcenter.qingcloud.com/developer/)中创建一个可支持协议认证应用。

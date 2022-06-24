@@ -10,7 +10,7 @@
 
 <img src="./images/05loginpage.png" />
 
-## 注意事项：
+## 注意事项
 
 - 需要一个支持 OAuth2.0 协议能力的服务；
 - 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；

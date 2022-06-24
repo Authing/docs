@@ -10,7 +10,7 @@
 
 <img src="./images/github_1.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 Github 账号，请先前往 [GitHub](https://www.github.com) 注册开发者账号。
 - 请按照 [GitHub 文档](https://docs.github.com/cn/developers/apps/building-oauth-apps/creating-an-oauth-app)指引创建一个 GitHub OAuth 应用，并记录应用的 Client ID 和 Client Secret。

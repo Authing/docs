@@ -10,7 +10,7 @@
 
 <img src="./images/0-viewResult.png" />
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 Facebook 开放平台账号，请先前往 [Facebook 开放平台](https://developers.facebook.com/) 注册开发者账号。
 - 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。

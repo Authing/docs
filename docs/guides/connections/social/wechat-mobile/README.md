@@ -56,11 +56,11 @@
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。
 - **详细接入方法**：
  
- 3.1 请根据[微信登录 SDK 接入文档（安卓）](https://docs.authing.cn/v2/reference/sdk-for-android/social/wechat.html)，接入您的安卓应用；请根据[微信登录 SDK 接入文档（IOS）](https://docs.authing.cn/v2/reference/sdk-for-ios/social/wechat.html)，接入您的 IOS 应用；
+ 3.1 请根据[微信登录 SDK 接入文档（安卓）](https://docs.authing.cn/v2/reference/sdk-for-android/social/wechat.html)，接入您的安卓应用；请根据[微信登录 SDK 接入文档（iOS）](https://docs.authing.cn/v2/reference/sdk-for-ios/social/wechat.html)，接入您的 IOS 应用；
  
  3.2 在 {{$localeConfig.brandName}} 控制台创建一个移动应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
 
- 3.3 在已创建好的「微信移动」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
+ 3.3 在已创建好的「微信移动」身份源连接详情页面，开启并关联一个在 {{ $localeConfig.brandName}} 控制台创建的移动端应用；
  ![](./images/wechatmobile3.jpg)
 
  3.4 前往相关联的移动端 APP，体验 APP 登录功能。

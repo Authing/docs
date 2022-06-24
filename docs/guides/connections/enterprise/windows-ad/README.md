@@ -10,7 +10,7 @@
 
 <img src="./images/windowsAD00.png" >
 
-## 注意事项：
+## 注意事项
 
 - 使用 Windows AD 你需要 Windows 服务器；
 - 服务器安装了 Active Directory；

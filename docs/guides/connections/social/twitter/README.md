@@ -10,7 +10,7 @@
 
 <img src="./images/00.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您还没有 Twitter 账号，请先前往 [Twitter 平台](https://twitter.com/) 进行账号注册。
 - 前往 [Twitter 开发者平台](https://developer.twitter.com/en/portal/)完善账号信息， 并为账号[申请 Elevated access 权限](https://developer.twitter.com/en/portal/petition/standard/basic-info)。

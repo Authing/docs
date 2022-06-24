@@ -10,7 +10,7 @@
 
 <img src="./images/baidu_0.png" >
 
-## 注意事项：
+## 注意事项
 
 
 - 如果您未注册百度开发者账号，请先前往 [百度开发者中心](https://developer.baidu.com/) 注册开发者账号。

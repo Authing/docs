@@ -10,7 +10,7 @@
 
 <img src="./images/overview.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 WeLink 开放平台账号，请先前往 [WeLink 开放平台](https://open.welink.huaweicloud.com/wecode-site/index.html#/home) 注册开发者账号。
 - 如果您未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/) 注册开发者账号；

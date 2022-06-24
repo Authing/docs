@@ -10,7 +10,7 @@
 
 <img src='./images/11loginpage.png' >
 
-## 注意事项：
+## 注意事项
 
 1. 前往[支付宝开放平台](https://open.alipay.com/)注册一个支付宝开放账号；
 2. 前往[开发者中心控制台](https://open.alipay.com/dev/workspace)按照指引创建一个**网站应用**。请确保你的应用获取了 **获取会员信息** 能力，否则将无法使用支付宝登录；

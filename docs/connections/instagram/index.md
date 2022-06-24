@@ -10,7 +10,7 @@
 
 <img src="./images/00-viewResult.png" >
 
-## 注意事项：
+## 注意事项
 
 - 如果您未开通 Instagram 开放平台账号，请先前往 [Instagram 开放平台](https://developers.facebook.com/) 注册开发者账号。因 Instagram 是属于 facebook 的，所以此处所说的 Instagram 开放平台就是 Facebook 的开放平台；
 - 开通一个包含多媒体素材的 [Instagram 账户](https://www.instagram.com/)；

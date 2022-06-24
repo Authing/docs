@@ -5,15 +5,15 @@
 ## 场景介绍
 
 - **概述**：Apple 社会化登录是用户以 Apple 为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 Apple 的社会化登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 Apple 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：IOS 移动端
+- **应用场景**：iOS 移动端
 - **终端用户预览图**：
 
 ![](./images/login.jpg)
 
 ## 注意事项
 
-- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/);
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
+- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/)；
+- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：在 Apple 开发者中心进行配置
 
@@ -127,8 +127,8 @@
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。
 - **详细接入方法**：
 
-  3.1 请根据 [苹果登录 SDK 接入文档 ](https://docs.authing.cn/v2/reference/sdk-for-ios/social/apple.html)接入您的 IOS 应用；
-
+  3.1 请根据 [苹果登录 SDK 接入文档 ](https://docs.authing.cn/v2/reference/sdk-for-ios/social/apple.html)接入您的 iOS 应用；
+ 
   3.2 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
 
   3.3 在已创建好的「Apple」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
