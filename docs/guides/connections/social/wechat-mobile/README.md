@@ -16,12 +16,12 @@
 
 ## 步骤 1：在微信开放平台创建一个微信移动应用
 前往 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)创建一个 **微信移动应用**。
-![](./images/open1.png)
+![](./images/open1.jpg)
 
 创建完成之后，你需要记录下该应用的 `AppID` 和 `AppSecret`，后面需要用到。
 
 
-![](./images/open2.png)
+![](./images/open2.jpg)
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信移动端登录
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
@@ -32,11 +32,11 @@
 ![](../wechat-pc/images/add-app-1.jpg)
 
 2.3  点击「微信移动端」登录模式，或者点击 **… 添加** 打开「微信移动端」配置页面。
-![](./images/wechatmobile1.png)
+![](./images/wechatmobile1.jpg)
 
 2.4 在「微信移动端」配置页面，填写相关的字段信息。
 
-![](./images/wechatmobile2.png)
+![](./images/wechatmobile2.jpg)
 
 
 | 字段         | 描述                                                                                                    |
@@ -61,7 +61,7 @@
  3.2 在 {{$localeConfig.brandName}} 控制台创建一个移动应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
 
  3.3 在已创建好的「微信移动」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
- ![](./images/wechatmobile3.png)
+ ![](./images/wechatmobile3.jpg)
 
  3.4 前往相关联的移动端 APP，体验 APP 登录功能。
 

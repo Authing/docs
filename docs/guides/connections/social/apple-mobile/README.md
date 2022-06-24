@@ -8,7 +8,7 @@
 - **应用场景**：IOS 移动端
 - **终端用户预览图**：
 
-![](./images/login.png)
+![](./images/login.jpg)
 
 ## 注意事项
 
@@ -66,7 +66,7 @@
 
 - **Domains and Subdomains**：请填入`core.authing.cn`
 - **Return URLs**：请填入在 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 上获取的**回调地址**字段信息：
- ![](./images/Return_URLS.png)
+ ![](./images/Return_URLS.jpg)
 
 
 5. 点击 **Save**，**Continue**，最后点击 **Register**，并记录下该 **Service ID**。
@@ -100,11 +100,11 @@
 2.2 在「选择社会化身份源」页面，点击「Apple」卡片。
 ![](./images/add-app-1.jpg)
 
-2.3 继续点击「Apple 移动端」登录模式，或者点击「**… 添加**」打开「Apple Web 端」配置页面。
+2.3 继续点击「Apple 移动端」登录模式，或者点击「**… 添加**」打开「Apple 移动端」配置页面。
 ![](./images/add-app-2.jpg)
 
 2.4 在「Apple 移动端」配置页面，填写相关的字段信息。
-![](./images/add_app_3.png)
+![](./images/add-app-3.jpg)
 
 | 字段                | 描述                                                                                                                                                         |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -136,6 +136,6 @@
 
   3.4 前往相关联的移动端 APP，体验 APP 登录功能。
 
-  ![](./images/login.png)
+  ![](./images/login.jpg)
 
   

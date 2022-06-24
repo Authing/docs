@@ -17,7 +17,7 @@
 
 ## 步骤 1：在微信开放平台创建一个微信移动应用
 前往 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)创建一个 **微信移动应用**。
-![](./images/open2.png)
+![](./images/open2.jpg)
 
 创建完成之后，你需要记录下该应用的 `AppID` 和 `AppSecret`，后面需要用到。
 
@@ -38,11 +38,11 @@
 ![](../wechat-pc/images/add-app-1.jpg)
 
 4.3 点击「APP 拉起小程序」登录模式，或者点击 **… 添加** 打开「APP 拉起小程序」配置页面。
-![](./images/miniprogram4.png)
+![](./images/miniprogram4.jpg)
 
 4.4 在「APP 拉起小程序」配置页面，填写相关的字段信息。
 
-![](./images/miniprogram2.png)
+![](./images/miniprogram2.jpg)
 
 
 | 字段         | 描述                                                                                                    |
@@ -66,7 +66,7 @@
 
  5.2 在已创建好的「APP 拉起小程序」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
  
- ![](./images/miniprogram3.png)
+ ![](./images/miniprogram3.jpg)
 
  5.3 前往相关联的移动端 APP，体验 APP 登录功能。
 
