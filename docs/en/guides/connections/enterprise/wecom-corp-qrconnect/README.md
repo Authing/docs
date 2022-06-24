@@ -5,7 +5,7 @@
 ## Introduction
 
 - **Overview**: a no-login scenario where WeCom is pulled up in a web page for users to log in. Enables secure login to third-party applications or websites using WeCom as the identity source for enterprises. Configure and enable enterprise login in {{$localeConfig.brandName}} to quickly get the basic open information of WeCom and help users to achieve the no-sign-in function through {{$localeConfig.brandName}}.
-- **Application Scenario**: PC-side application
+- **Application Scenario**: PC website
 - **End-user preview image**.
 
 <img src="./images/00.png" >

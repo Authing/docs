@@ -5,7 +5,7 @@
 ## Introduction
 
 - **Overview**: WeCom Service Provider App QR Code is a form of application authorization by a third-party enterprise sweep service provider to enable secure login to third-party applications or websites using WeCom as the identity source for third enterprises. In {{$localeConfig.brandName}}, you can configure and enable the enterprise login of WeCom service provider application sweep code to quickly get the basic open information of WeCom and help users to realize the function of password-free login through {{$localeConfig.brandName}}.
-- **Application Scenario**: PC website sweep login and WeCom Workbench no-login scenario for any enterprise
+- **Application Scenario**: PC website and WeCom Workbench no-login scenario for any enterprise
 - **End-user preview image**.
 
 <img src="./images/08.png" >

@@ -64,10 +64,17 @@ On the app details page, you can get the **AgentId** and **Secret** for the app 
 
 ## Step 3: Development Access
 
-- **Recommended development access**: Use hosted login page
-
-- **Description of advantages and disadvantages**: Simple operation and maintenance by {{$localeConfig.brandName}}. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
-
+- **Recommended development access method**: SDK 
+- **Description of advantages and disadvantages**: Simple access, only a few lines of code required. The highest degree of customizability.
 - **Detailed access method**.
+ 
+ 3.1 Please access your Android application according to [WeCom Login SDK Access Document (Android)](https://docs.authing.cn/v2/en/reference/sdk-for-android/social/wecom.html); Please access your Android application according to [WeCom Login SDK Access Document (IOS)](https://docs.authing.cn/v2/en/reference/sdk-for-android/social/wecom.html) (https://docs.authing.cn/v2/reference/sdk-for-ios/social/wecom.html) to access your IOS application.
+ 
+ 3.2 Create a mobile app in the {{$localeConfig.brandName}} console, see: [How to create an app in {{$localeConfig.brandName}}](/guides/app/create-app.md)
 
-## Mobile access sdk
+ 3.3 Open and associate a mobile app created in {{$localeConfig.brandName}} console in the created "WeCom Mobile" identity source connection details page.
+ ![](./images/15.png)
+
+ 3.4 Go to the associated mobile APP and experience the APP login function.
+
+  !![](./images/MobileLogin.png)
