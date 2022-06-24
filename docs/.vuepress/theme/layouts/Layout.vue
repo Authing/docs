@@ -116,7 +116,7 @@ import PageSidebar from "@theme/components/PageSidebar.vue";
 import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
 
-import { sidebarList } from "@dynamic/sidebarCaches";
+import { sidebarList } from "@dynamic/sidebar-caches";
 
 export default {
   name: "Layout",
@@ -166,21 +166,11 @@ export default {
     },
 
     sidebarItems() {
-      // const list = resolveSidebarItems(
-      //   this.$page,
-      //   this.$page.regularPath,
-      //   this.$site,
-      //   this.$localePath
-      // );
-      // return list
-
-      const regularPath = this.$page.regularPath;
-      const matchedNavPath = regularPath.startsWith("/en/")
-        ? `/en/${regularPath
-            .replace("/en/", "")
-            .slice(0, regularPath.replace("/en/", "").indexOf("/", 1) + 1)}`
-        : regularPath.slice(0, regularPath.indexOf("/", 1) + 1);
-      return sidebarList?.[matchedNavPath]?.list || [];
+      const regularPath = this.$page.regularPath
+      const indexEndPosition = regularPath.startsWith('/en/') ? 4 : 1
+      const regularPathEndPosition = regularPath.indexOf('/', indexEndPosition) + 1
+      const matchedNavPath = regularPath.slice(0, regularPathEndPosition)
+      return sidebarList?.[matchedNavPath]?.list || []
     },
 
     pageClasses() {
