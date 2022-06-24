@@ -116,6 +116,8 @@ import PageSidebar from "@theme/components/PageSidebar.vue";
 import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
 
+import { sidebarList } from '@dynamic/sidebarCaches'
+
 export default {
   name: "Layout",
   components: {
@@ -164,13 +166,22 @@ export default {
     },
 
     sidebarItems() {
-      const list = resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
-      );
-      return list
+      // const list = resolveSidebarItems(
+      //   this.$page,
+      //   this.$page.regularPath,
+      //   this.$site,
+      //   this.$localePath
+      // );
+      // return list
+
+      const sideBarObj = JSON.parse(sidebarList)
+      const regularPath = this.$page.regularPath
+
+      const matchedNavPath = regularPath.slice(0, regularPath.indexOf('/', 1) + 1)
+      if (matchedNavPath && sideBarObj[matchedNavPath] && sideBarObj[matchedNavPath].list) {
+        return sideBarObj[matchedNavPath].list
+      }
+      return []
     },
 
     pageClasses() {
