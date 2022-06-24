@@ -8,7 +8,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/0-viewResult.png" />
+![](./images/0-viewResult.png)
 
 ## 注意事项
 
@@ -19,29 +19,29 @@
 
 前往 [developers.facebook.com](https://developers.facebook.com/)，点击**我的应用**，然后创建新应用并选择**消费者**或**无应用类型**，填写应用名称。
 
-<img src="./images/1-metaCreateApp.png" />
+![](./images/1-metaCreateApp.png)
 
-<img src="./images/2-metaSaveApp.png" />
+![](./images/2-metaSaveApp.png)
 
 在控制面板中，找到 **Facebook 登录** 产品，然后点击设置，将其添加至您的应用。之后在左侧的菜单中设置>基本中找到该应用编号和应用密钥，并记录下。
 
-<img src="./images/3-metaAddFacebook.png" />
+![](./images/3-metaAddFacebook.png)
 
-<img src="./images/6-appidSecret.png" />
+![](./images/6-appidSecret.png)
 
 ## 步骤2: 在 Authing 控制台配置 Facebook
 
 2.1 请在 Authing Console 控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
-<img src="./images/4-addSocial.png" />
+![](./images/4-addSocial.png)
 
 2.2 请在 Authing  控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「Facebook」身份源按钮，进入 「Facebook 登录模式」页面。
 
-<img src="./images/5-choiceMeta.png" />
+![](./images/5-choiceMeta.png)
 
 2.3 请在 Authing  控制台 的「社会化身份源」-「Facebook」页面，配置相关的字段信息。
 
-<img src="./images/7-savefacebook.png" />
+![](./images/7-savefacebook.png)
 
 | 编号  | 字段/功能    | 描述                                                         |
 | ----- | ------------ | ------------------------------------------------------------ |
@@ -58,7 +58,7 @@
 
 在 Authing 控制台上创建完 Facebook 身份源后，需要将回调地址配置到 Facebook 的开放平台上的 Facebook 应用中**OAuth 客户端授权设置**。
 
-<img src="./images/9-oauthUrl.png" />
+![](./images/9-oauthUrl.png)
 
 ## 步骤3：开发接入
 
@@ -72,9 +72,9 @@
 
 3.2 在已创建好的 Facebook 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/8-openApp.png" />
+![](./images/8-openApp.png)
 
 3.3 在登录页面体验 Facebook 第三方登录
 
-<img src="./images/10-loginpage.png" />
+![](./images/10-loginpage.png)
 

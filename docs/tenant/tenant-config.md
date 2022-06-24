@@ -6,7 +6,7 @@
 
 该配置在**应用**页面的**租户配置**中：
 
-<img src="./images/tenant-config.png" />
+![](./images/tenant-config.png)
 
 以下是三种用户配置的具体说明：
 

@@ -9,7 +9,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/06loginpage.png" />
+![](./images/06loginpage.png)
 
 ## 注意事项
 
@@ -26,15 +26,15 @@ Authing 支持使用 LDAP 协议查看、修改、增加和删除用户信息。
 
 2.1 打开 **Authing 控制台**，进入想要连接 LDAP 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 在右侧面板找到「 LDAP」，点击进去。
 
-<img src="./images/02chooseldap.png" />
+![](./images/02chooseldap.png)
 
 2.3 根据 LDAP 的配置要求，填入  LDAP 协议所要求的配置内容。
 
-<img src="./images/03inputconfig.png" />
+![](./images/03inputconfig.png)
 
 | 编号  | 字段/功能    | 描述                                                         |
 | ----- | ------------ | ------------------------------------------------------------ |
@@ -52,7 +52,7 @@ Authing 支持使用 LDAP 协议查看、修改、增加和删除用户信息。
 
 Authing 也提供对 LDAP 连接的测试，测试 LDAP 服务的连通性和账号密码是否正确，帮助你检查参数是否填写正确了。
 
-<img src="./images/04testuseful.png" />
+![](./images/04testuseful.png)
 
 ## 步骤3: 开发接入
 
@@ -66,8 +66,8 @@ Authing 也提供对 LDAP 连接的测试，测试 LDAP 服务的连通性和账
 
 3.2 在已创建好的 LDAP 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/05openldapapp.png" />
+![](./images/05openldapapp.png)
 
 3.3 在登录页面体验 LDAP  的企业化登录。
 
-<img src="./images/06loginpage.png" />
+![](./images/06loginpage.png)

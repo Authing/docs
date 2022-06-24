@@ -24,23 +24,23 @@ Log in to the Yidun service management background to create a business; then log
 
 After creating the application, setting the package name, uploading the signature and other operations, you need to record the business ID (business Id) and the product key SecretId and SecretKey of the number authentication service access credential. This data is required for subsequent configuration of the Yidun identity source in the Authing console.
 
-<img src="./images/yd_bizid.png" />
+![](./images/yd_bizid.png)
 
-<img src="./images/yd_secret.png" />
+![](./images/yd_secret.png)
 
 ## Step 2: Configure Yidun in the Authing console
 
 2.1 On the "Social Identity Source" page of the Authing Console, click the "Create Social Identity Source" button to enter the "Select Social Identity Source" page.
 
-<img src="./images/addSocial.png" />
+![](./images/addSocial.png)
 
 2.2 On the "Social Identity Source" - "Select Social Identity Source" page of the Authing Console, click the "Easy Shield" identity source button to enter the "Easy Shield Login Mode" page.
 
-<img src="./images/choiceyidun.png" />
+![](./images/choiceyidun.png)
 
 2.3 Please configure the relevant field information on the "Social Identity Source" - "Easy Shield" page of the Authing console.
 
-<img src="./images/openapp.png" />
+![](./images/openapp.png)
 
 | No.   | Field/Function               | Description                                                  |
 | ----- | ---------------------------- | ------------------------------------------------------------ |
@@ -64,7 +64,7 @@ After the configuration is complete, click the "Create" or "Save" button to comp
 
 3.2 On the created YiDun identity source connection details page, open and associate an application created in the Authing console.
 
-<img src="./images/openapp.png" />
+![](./images/openapp.png)
 
 3.3 Refer to the integration guide provided by Authing, complete the integration work, and then experience the one-click login of the mobile phone number on the mobile terminal.
 

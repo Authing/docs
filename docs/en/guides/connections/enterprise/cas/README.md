@@ -8,7 +8,7 @@
 - **Application scenarios**：PC WebSite
 - **End-User Perview **：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## Precautions：
 
@@ -22,25 +22,25 @@ You need to configure your own CAS identity source (i.e. Identity Provider IDP) 
 
 1.1 Open the **Authing console** and enter the user pool that you want to use as the identity source, here called **"User Pool A"**. Click the "Apps" option on the left menu, find the app you want to enable CAS IdP capability on the right panel, and click to enter the app configuration page.
 
-<img src="./images/06casapp.png" />
+![](./images/06casapp.png)
 
 1.2 Find "Other Configurations" in the "App Configuration" tab, turn on the "Enable CAS IdP" switch, and click the "Save" button in the upper right corner. Record the contents of "Login Endpoint" and "Service Ticket Verification Endpoint (CAS 2.0)", which will be used in subsequent configurations.
 
-<img src="./images/07opencas.png" />
+![](./images/07opencas.png)
 
 ## Step2: Configure CAS identity Source in the Authing console
 
 2.1 Open the **Authing console** and enter the user pool that you want to connect to the CAS identity source, here called **"User Pool B"**. On the left menu, select Connect to Identity Source > Enterprise Identity Source, and select Create Enterprise Identity Source on the right panel.
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 Find "CAS" in the right panel and click it.
 
-<img src="./images/02choicecas.png" />
+![](./images/02choicecas.png)
 
 2.3 According to the configuration requirements of CAS, fill in the configuration content required by the CAS protocol.
 
-<img src="./images/03inputcas.png" />
+![](./images/03inputcas.png)
 
 | Code  | Field/Function               | Description                                                  |
 | ----- | ---------------------------- | ------------------------------------------------------------ |
@@ -64,9 +64,9 @@ After the configuration is complete, click the "Save" button to complete the cre
 
 3.2 On the created CAS identity source connection details page, open and associate an app created in the Authing console.
 
-<img src="./images/04opencasapp.png" />
+![](./images/04opencasapp.png)
 
 3.3 Experience the enterprise login of CAS on the login page.
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 

@@ -9,20 +9,20 @@ Authing 认为，删除操作可能由于人为因素或系统因素等造成管
 
 进入用户管理页面，选中一个用户，点击**删除**。
 
-<img src="./images/deleteUser.png" />
+![](./images/deleteUser.png)
 
 <br/>
 
 在**控制台**进入同步中心的**风险操作**页面。
 
-<img src="./images/performManualActions-1.png" />
+![](./images/performManualActions-1.png)
 
 <br/>
 
 点击**执行**
 
 
-<img src="./images/performManualActions-2.png" />
+![](./images/performManualActions-2.png)
 
 <br/>
 
