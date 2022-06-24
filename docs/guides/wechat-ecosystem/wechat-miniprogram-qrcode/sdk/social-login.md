@@ -1,4 +1,4 @@
-实现微信小程序扫码登录，你只需要实现以下几行代码：
+实现微信 PC 小程序扫码登录，你只需要实现以下几行代码：
 
 - 通过应用 ID 初始化 `AuthenticationClient`，你可以在控制台的应用列表页查看应用 ID。
 - 调用 `authenticationClient.wxqrcode.startScanning` 方法，第一个参数传入挂载的 DOM 元素节点 ID, 第二个参数指定 onSuccess 和 onError 回调函数。

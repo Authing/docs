@@ -3,9 +3,9 @@
 | 微信 PC 扫码               | PC 网站    | <router-link to="/guides/connections/social/wechat-pc/" target="_blank">使用文档</router-link>                    |
 | 微信移动端                 | 移动 APP   | <router-link to="/guides/connections/social/wechat-mobile/" target="_blank">使用文档</router-link>                |
 | 微信网页授权               | 微信内网页 | <router-link to="/guides/connections/social/wechat-mp/" target="_blank">使用文档</router-link>                    |
-| 微信关注公众号                 | PC 网站    | <router-link to="/guides/connections/social/wechatmp-qrcode/" target="_blank">使用文档</router-link>              |
+| 微信公众号关注                 | PC 网站    | <router-link to="/guides/connections/social/wechatmp-qrcode/" target="_blank">使用文档</router-link>              |
 | 微信小程序                 | 微信小程序 | <router-link to="/guides/connections/social/wechat-miniprogram/" target="_blank">使用文档</router-link>           |
-| 微信小程序扫码             | PC 网站    | <router-link to="/guides/connections/social/wechat-miniprogram-qrconnect/" target="_blank">使用文档</router-link> |
+| 微信 PC 小程序扫码             | PC 网站    | <router-link to="/guides/connections/social/wechat-miniprogram-qrconnect/" target="_blank">使用文档</router-link> |
 | App 拉起小程序             | 移动 APP   | <router-link to="/guides/connections/social/wechat-miniprogram-applaunch/" target="_blank">使用文档</router-link> |
 | 腾讯 QQ                    | PC 网站    | <router-link to="/guides/connections/social/qq/" target="_blank">使用文档</router-link>                           |
 | 新浪微博                   | PC 网站    | <router-link to="/guides/connections/social/weibo/" target="_blank">使用文档</router-link>                        |
