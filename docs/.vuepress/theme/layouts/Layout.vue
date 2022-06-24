@@ -166,11 +166,12 @@ export default {
     },
 
     sidebarItems() {
-      const regularPath = this.$page.regularPath
-      const indexEndPosition = regularPath.startsWith('/en/') ? 4 : 1
-      const regularPathEndPosition = regularPath.indexOf('/', indexEndPosition) + 1
-      const matchedNavPath = regularPath.slice(0, regularPathEndPosition)
-      return sidebarList?.[matchedNavPath]?.list || []
+      const regularPath = this.$page.regularPath;
+      const matchedNavPath = regularPath.slice(
+        0,
+        regularPath.indexOf("/", regularPath.startsWith("/en/") ? 4 : 1) + 1
+      );
+      return sidebarList?.[matchedNavPath]?.list || [];
     },
 
     pageClasses() {
