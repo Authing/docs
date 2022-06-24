@@ -1,10 +1,12 @@
 # Configure MFA through SDK
 
+<LastUpdated/>
+
 ## Overview
 
 {{$localeConfig.brandName}} can not only configure the MFA authentication process through the console, but you can also config the MFA authentication through the SDK.
 
-This article will take [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference/sdk-for-node) as an example to guide developers to complete SDK-based MFA custom development.
+This article will take [{{$localeConfig.brandName}} - Node/JavaScript SDK](/en/reference/sdk-for-node) as an example to guide developers to complete SDK-based MFA custom development.
 This includes: binding MFA authenticator, unbinding MFA authenticator, user secondary authentication, etc.
 
 ## Prerequisites
@@ -138,24 +140,24 @@ MFA Password
 
 ### Return MFA Token after first authentication
 
-Call the login method in authing-js-sdk, refer to[Login](/sdk/sdk-for-javascript/README.md#登录). Or call [GraphQL 接口](/sdk/open-graphql.md#登录). You need store mfaToken for future use.
+Call the login method in authing-js-sdk, refer to[Login](/sdk/sdk-for-javascript/README.md#Sign in). Or call [GraphQL Interface](/sdk/open-graphql.md#Sign in). You need store mfaToken for future use.
 
 Call the SDK:
 
 ```js
 try {
-  window.user = await window.authing.login({ email, password })
-  alert(`Login successfully, information:${JSON.stringify(window.user)}`)
+  window.user = await window.authing.login({ email, password });
+  alert(`Login successfully, information:${JSON.stringify(window.user)}`);
 } catch (err) {
   if (err.message.code === 1635) {
-    console.log(err.message.data.email)
-    console.log(err.message.data.nickname)
-    console.log(err.message.data.username)
-    console.log(err.message.data.avatar)
-    console.log(err.message.data.mfaToken)
-    window.mfaToken = err.message.data.mfaToken
+    console.log(err.message.data.email);
+    console.log(err.message.data.nickname);
+    console.log(err.message.data.username);
+    console.log(err.message.data.avatar);
+    console.log(err.message.data.mfaToken);
+    window.mfaToken = err.message.data.mfaToken;
   }
-  alert(err.message.message)
+  alert(err.message.message);
 }
 ```
 
@@ -293,7 +295,7 @@ If the user enables the secondary authentication and loses the MFA password, a r
 <template slot="bodyParams">
 <ApiMethodParam name="recoveryCode" type="string" required>
 
-恢复代码，在绑定 MFA 口令时返回的
+Recovery code, which is returned when Binding MFA password
 
 </ApiMethodParam>
 </template>
@@ -384,39 +386,39 @@ $ http-server
 
 Go to 127.0.0.1:8080
 
-**You can refer to MFA demo provided by Approw [MFA Demo](https://github.com/authing/mfa-demo)**
+**You can refer to MFA demo provided by Authing [MFA Demo](https://github.com/authing/mfa-demo)**
 
 ## Multi-Factor Authentication (MFA) SDK
 
 ## Request to bind MFA authenticator：
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 await authenticationClient.mfa.assosicateMfaAuthenticator({
-  authenticatorType: 'totp',
-})
+  authenticatorType: "totp"
+});
 ```
 
 ## Verify MFA secondary password:
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 await authenticationClient.mfa.verifyTotpMfa({
-  totp: '112233',
-  mfaToken: 'xxx',
-})
+  totp: "112233",
+  mfaToken: "xxx"
+});
 ```
 
 ## Request an MFA authenticator
@@ -429,13 +431,13 @@ MfaAuthenticationClient().getMfaAuthenticators()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.getMfaAuthenticators({
-  type: 'totp',
-})
+  type: "totp"
+});
 ```
 
 #### Return Value
@@ -452,13 +454,13 @@ MfaAuthenticationClient().assosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.assosicateMfaAuthenticator(
-  { authenticatorType: 'totp' }
-)
+  { authenticatorType: "totp" }
+);
 ```
 
 #### Return Value
@@ -475,11 +477,11 @@ MfaAuthenticationClient().deleteMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator()
+const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator();
 ```
 
 #### Return Value
@@ -496,13 +498,13 @@ MfaAuthenticationClient().confirmAssosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.confirmAssosicateMfaAuthenticator(
-  { authenticatorType: 'totp', totp: '112233' }
-)
+  { authenticatorType: "totp", totp: "112233" }
+);
 ```
 
 #### Return Value
@@ -519,14 +521,14 @@ MfaAuthenticationClient().verifyTotpMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyTotpMfa({
-  authenticatorType: 'totp',
-  totp: '112233',
-})
+  authenticatorType: "totp",
+  totp: "112233"
+});
 ```
 
 #### Return Value
@@ -550,15 +552,15 @@ MfaAuthenticationClient().verifyAppSmsMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifySmsMfa({
-  mfaToken: 'xxxxxx',
-  phone: '173xxxxxxxx',
-  code: 'xxxx',
-})
+  mfaToken: "xxxxxx",
+  phone: "173xxxxxxxx",
+  code: "xxxx"
+});
 ```
 
 #### Return Value
@@ -582,15 +584,15 @@ MfaAuthenticationClient().verifyAppEmailMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyAppEmailMfa({
-  mfaToken: 'xxxxxx',
-  email: 'example@{{$themeConfig.officeSiteDomain}}',
-  code: 'xxxx',
-})
+  mfaToken: "xxxxxx",
+  email: "example@{{$themeConfig.officeSiteDomain}}",
+  code: "xxxx"
+});
 ```
 
 #### Return Value
@@ -614,14 +616,14 @@ MfaAuthenticationClient().phoneOrEmailBindable()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.phoneOrEmailBindable({
-  mfaToken: 'xxxxxx',
-  email: 'example@{{$themeConfig.officeSiteDomain}}',
-})
+  mfaToken: "xxxxxx",
+  email: "example@{{$themeConfig.officeSiteDomain}}"
+});
 ```
 
 #### Return Value
@@ -638,14 +640,14 @@ MfaAuthenticationClient().verifyTotpRecoveryCode()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
 const authenticators = await authenticationClient.mfa.verifyTotpRecoveryCode({
-  authenticatorType: 'totp',
-  totp: '112233',
-})
+  authenticatorType: "totp",
+  totp: "112233"
+});
 ```
 
 #### Return Value

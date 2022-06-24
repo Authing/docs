@@ -16,7 +16,7 @@ downloadDemo:
 
 示例应用使用的是 Angular12，node < 15
 
-> 如果您只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/angular.html)
+> 如果您只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/v2/angular.html)
 
 ## 配置 Authing
 

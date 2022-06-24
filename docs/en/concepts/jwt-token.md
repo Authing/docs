@@ -6,6 +6,8 @@ meta:
 
 # Definition and Utilization of JWT Token
 
+<LastUpdated/>
+
 How to verify token in the {{$localeConfig.brandName}} system:
 
 ::: page-ref /en/guides/faqs/how-to-validate-user-token.md

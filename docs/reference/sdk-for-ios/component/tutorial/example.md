@@ -35,5 +35,5 @@
 接下来，我们看一个稍微复杂一点的例子：如何通过超组件快速实现一个经典的登录界面。
 
 <br>
-<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./basic-login.html" style="color:#FFF;">基础登录示例 →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./basic-login.html" style="color:#FFF;">基础登录示例 →</a>
 </span>

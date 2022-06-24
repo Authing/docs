@@ -1,6 +1,6 @@
-!!!include(common/init-python-auth-sdk.md)!!!
+!!!include(en/common/init-python-auth-sdk.md)!!!
 
-使用手机号验证码重置密码：
+Use 手机号验证码重置密码：
 
 ```python
 authentication_client.reset_password_by_phone_code(
@@ -10,7 +10,7 @@ authentication_client.reset_password_by_phone_code(
 )
 ```
 
-使用邮箱验证码重置密码：
+Use 邮箱验证码重置密码：
 
 ```python
 authentication_client.reset_password_by_email_code(

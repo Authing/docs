@@ -32,6 +32,36 @@ AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->
 
 <br>
 
+## 邮箱验证码注册
+
+使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮箱 ](#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+
+```java
+public static void registerByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `email` 邮箱
+* `code` 验证码
+
+**示例**
+
+```java
+AuthClient.registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2003` 非法邮箱地址
+* `2026` 邮箱已注册
+
+<br>
+
 ## 用户名注册
 
 通过用户名注册帐号。用户名区分大小写且用户池内唯一。
@@ -66,10 +96,12 @@ AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
 通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
 
 ```java
-public static void registerByPhoneCode(String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
+
+- `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
 
 * `phone` 手机号
 * `code` 短信验证码
@@ -78,7 +110,7 @@ public static void registerByPhoneCode(String phone, String code, String passwor
 **示例**
 
 ```java
-AuthClient.registerByPhoneCode("13012345678", "1234", "strong", (code, message, userInfo)->{
+AuthClient.registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -119,15 +151,46 @@ AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
 
 <br>
 
-## 手机验证码登录
+## 邮箱验证码登录
+
+通过邮箱验证码登录，需要先调用 [发送邮箱](#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+
+```java
+public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `email` 邮箱
+* `code` 验证码
+
+**示例**
+
+```java
+AuthClient.loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2001` 验证码不正确
+
+<br>
+
+## 短信验证码登录
 
 通过短信验证码登录，需要先调用 [发送短信验证码](#发送短信验证码) 接口。
 
 ```java
-public static void loginByPhoneCode(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
+
+- `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
 
 * `phone` 手机号
 * `code` 短信验证码
@@ -135,7 +198,7 @@ public static void loginByPhoneCode(String phone, String code, @NotNull AuthCall
 **示例**
 
 ```java
-AuthClient.loginByPhoneCode("13012345678", "1234", (code, message, userInfo)->{
+AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -263,7 +326,7 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 **示例**
 
 ```java
-AuthClient.sendSms("13012345678", "+86", (code, message, data)->{});
+AuthClient.sendSms("+86", "13012345678", (code, message, data)->{});
 ```
 
 **错误码**
@@ -284,10 +347,15 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 
 * `email` 邮箱地址
 * `scene` 发送场景，可选值包含：
-  - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码；
-  - VERIFY_EMAIL: 发送验证邮箱的邮件；
-  - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码；
-  - MFA_VERIFY: 发送 MFA 验证邮件。
+  - RESET_PASSWORD_VERIFY_CODE: 发送重置密码验证码邮件；
+  - FIRST_EMAIL_LOGIN_VERIFY: 发送首次邮箱登录验证邮件；
+  - CONSOLE_CONDUCTED_VERIFY: 发送控制台发起的验证邮件；
+  - EMAIL_BIND_VERIFY_CODE: 发送邮箱绑定验证码邮件；
+  - EMAIL_UNBIND_VERIFY_CODE: 发送邮箱解绑验证码邮件；
+  - REGISTER_VERIFY_CODE: 发送注册验证码邮件；
+  - LOGIN_VERIFY_CODE: 发送登录验证码邮件；
+  - MFA_VERIFY_CODE: 发送 MFA 验证码邮件；
+  - INFORMATION_COMPLETION_VERIFY_CODE: 发送信息补全验证码邮件；
 
 **示例**
 
@@ -428,10 +496,12 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码
 
 ```java
-public static void resetPasswordByPhoneCode(String phone, String code, String newPassword, @NotNull AuthCallback<JSONObject> callback)
+public static void resetPasswordByPhoneCode(String phoneCountryCode, String phone, String code, String newPassword, @NotNull AuthCallback<JSONObject> callback)
 ```
 
 **参数**
+
+- `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
 
 * `phone` 手机号
 * `code` 短信验证码
@@ -440,7 +510,7 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 **示例**
 
 ```java
-AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -611,11 +681,12 @@ AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234"
 为当前登录用户绑定手机号。调用 [发送短信验证码](#发送短信验证码) 获取验证码。
 
 ```java
-public static void bindPhone(String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void bindPhone(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
 * `phone` 手机号
 * `code` 短信验证码
 

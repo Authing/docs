@@ -6,6 +6,8 @@ meta:
 
 # SDK for React Native
 
+<LastUpdated/>
+
 #### 🏠 [Homepage](https://github.com/Authing/authing-rn-sdk)
 
 <!-- Authing 支持 React Native 移动端开发移动端，使得开发者可以快速接入支付宝、微信等 APP 登录，以及免代码开发支持邮箱密码、用户名密码、手机验证码登录。

@@ -10,7 +10,7 @@ Use this API to generate login url, then pass this url to Webview
 public static String buildAuthorizeUrl(Config config, AuthRequest authRequest)
 ```
 
-**param**
+**Parameter**
 * `config` application configuration, obtained by Authing.getPublicConfig
 * `authRequest` auth request object
 
@@ -52,7 +52,7 @@ This API returns token(s) by auth code. Note that in order to return *refresh to
 public static void authByCode(String code, AuthRequest authRequest, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**param**
+**Parameter**
 
 * `code` OIDC auth code
 * `authRequest` auth request object
@@ -92,7 +92,7 @@ Get detailed user info by access token. The returned UserInfo object is the same
 public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**param**
+**Parameter**
 
 * `userInfo` includes access token
 * `callback` returns detailed user info if succeeds
@@ -117,7 +117,7 @@ the valid duration of an access token is usually short. After it expires, instea
 public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull AuthCallback<UserInfo> callback)
 ```
 
-**param**
+**Parameter**
 
 * `refreshToken` refresh token
 * `callback` includes new access token and id token
@@ -135,5 +135,373 @@ OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
 ```
 
 >Note: refresh token will also be refreshed
+
+<br>
+
+## Get Access Token、ID Token 和 Refresh Token
+
+### Use email registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
+
+```java
+public void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `password` password
+
+**example**
+
+```java
+new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Use email code registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false. You need to use it first [sendEmail](./authentication/#send-email) sends a email verification code.（scene is `VERIFY_CODE`）.
+
+```java
+public void registerByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `vCode` code
+
+**example**
+
+```java
+new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026`  Registered mailbox
+
+<br>
+
+### Use mobile phone number registration
+
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#send-verification-code) method sends SMS verification code.
+
+```java
+public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
+* `code` SMS verification code
+* `password` initial password, it can be null
+
+**example**
+
+```java
+new OIDCClient().registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
+
+<br>
+
+### Use the username to login
+
+```java
+public void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `account`  The phone number / email address / username
+* `password` password
+
+**Example**
+
+```java
+new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2333` The account or password is incorrect
+
+<br>
+
+### Use email code  to login
+
+Use the email verification code to log in. You need to use it first [sendEmail](./authentication/#send-email) sends a email verification code.（scene is`VERIFY_CODE`）。
+
+```java
+public void loginByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `vCode` code
+
+**Example**
+
+```java
+new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2001` email verification code error
+
+<br>
+
+### Use the mobile phone number verification code to login
+
+Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#send-verification-code) sends a SMS verification code.
+
+```java
+public void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
+* `code` SMS verification code
+
+**Example**
+
+```java
+new OIDCClient().loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
+
+<br>
+
+## Get Authorization Code
+
+### Use email registration
+
+```java
+public void authCodeByEmailRegister(String email, String password, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `password` password
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByEmailRegister("me@gmail.com", "strong", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Use email code registration
+
+```java
+public void authCodeByEmailCodeRegister(String email, String vCode, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `vCode` code
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByEmailCodeRegister("me@gmail.com", "1234", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Use mobile phone number registration
+
+```java
+public void authCodeByPhoneCodeRegister(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
+* `code` SMS verification code
+* `password` initial password, it can be null
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByPhoneCodeRegister("+86", "13012345678", "1234", "strong", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
+
+<br>
+
+### Use the username to login
+
+```java
+public void authCodeByAccountLogin(String account, String password, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `account`  The phone number / email address / username
+* `password` password
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByAccountLogin("account", "strong", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2333` The account or password is incorrect
+
+<br>
+
+### Use email code  to login
+
+```java
+public void authCodeByEmailCodeLogin(String email, String code, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `email` email address
+* `vCode` code
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByEmailCodeLogin("me@gmail.com", "1234", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2001` email verification code error
+
+<br>
+
+### Use the mobile phone number verification code to login
+
+```java
+public void authCodeByPhoneCodeLogin(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<AuthResult> callback)
+```
+
+**Parameter**
+
+* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phone` The phone number
+* `code` SMS verification code
+
+**Example**
+
+```java
+AuthRequest authRequest = new AuthRequest();
+authRequest.setScope("custom scope");
+
+new OIDCClient(authRequest).authCodeByPhoneCodeLogin("+86, ""13012345678", "1234", (code, message, data)->{
+    if (code == 200) {
+        // data：authorization code
+    }
+});
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
 
 <br>

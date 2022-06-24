@@ -23,7 +23,7 @@ tags:
 - 支持设备环境数据上报，多维度分析安全级别；
 - 支持配置策略，实现环境风险自适应；
 - 同时适用于[应用内权限控制场景](/guides/access-control/)；
-- 默认集成于[通用登录组件（Guard）](/reference/guard/)；
+- 默认集成于[通用登录组件（Guard）](/reference/guard/v2/)；
 - [用户数据管理、行为日志查询](/guides/audit/)；
 - 提供 [SDK 与开放接口](/reference/)，助力开发者快速调用相关能力，并构建自定义的用户管理页面。
 
@@ -89,7 +89,7 @@ Authing 提供多种认证方式，提高企业身份安全性。
 
 提供开箱即用的端 SDK，方便端上开发者快速实现 MFA。
 
-- 支持多端：[Web](/reference/guard/)、[iOS](/reference/sdk-for-swift.md)、[Android](/reference/sdk-for-android.md)；
+- 支持多端：[Web](/reference/guard/v2/)、[iOS](/reference/sdk-for-swift.md)、[Android](/reference/sdk-for-android.md)；
 - 内置多种多因素认证端组件，如 OTP、验证码、指纹解锁、面部识别、图形锁等；
 - 仅需调用一个方法，就可唤起 MFA 认证组件，拿到认证结果，完成认证流程。
 

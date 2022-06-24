@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-When a user successfully logs in, Approw will issue an [OIDC IdToken](/concepts/id-token.md) for the user as an identity credential.Please refer to the [Validate Token document](/guides/faqs/how-to-validate-user-token.md) for the validation method.
+When a user successfully logs in, Authing will issue an [OIDC IdToken](/concepts/id-token.md) for the user as an identity credential.Please refer to the [Validate Token document](/guides/faqs/how-to-validate-user-token.md) for the validation method.
 
 An example of decoded `OIDC IdToken` is as follows:
 

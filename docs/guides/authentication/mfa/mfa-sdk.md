@@ -1,5 +1,7 @@
 # 通过 SDK 接入 MFA
 
+<LastUpdated/>
+
 ## 概述
 
 {{$localeConfig.brandName}} 不仅可以通过控制台来配置 MFA 认证流程，你还可以通过 SDK 的方式为 {{$localeConfig.brandName}} 的 MFA 认证流程进行定制化开发

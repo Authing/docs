@@ -34,6 +34,13 @@
         category: "cloud",
       },
       {
+        key: "ali-cloud-yun-sso",
+        name: "阿里云（云 SSO）",
+        image: "ali-cloud.png",
+        image2x: "ali-cloud@2x.png",
+        category: "cloud",
+      },
+      {
         key: "ali-cloud-intl",
         name: "阿里云（国际区）",
         image: "ali-cloud.png",

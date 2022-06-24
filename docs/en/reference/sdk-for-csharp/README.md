@@ -95,7 +95,7 @@ await authenticationClient.UpdateProfile(new UpdateUserInput() {
 
 ## Privatization deployment
 
-**The privatization deployment** scenario needs to specify the GraphQL endpoint of your privatized Approw service (**without protocol header and Path**). If you are not sure, you can contact the Approw IDaaS service administrator.
+**The privatization deployment** scenario needs to specify the GraphQL endpoint of your privatized Authing service (**without protocol header and Path**). If you are not sure, you can contact the Authing IDaaS service administrator.
 
 ## Interface index
 

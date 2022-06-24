@@ -108,8 +108,8 @@ export default {
         -webkit-transition: all .3s;
         transition: all .3s;
       input:checked+.authing-checkbox-inner
-        background-color: #396aff;
-        border-color: #396aff;
+        background-color: $accentColor;
+        border-color: $accentColor;
         &::after
           position: absolute;
           top: 45%;

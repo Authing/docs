@@ -7,17 +7,13 @@
 Use this API to generate login url, then pass this url to Webview
 
 ```swift
-static func buildAuthorizeUrl(authRequest: AuthRequest, completion: @escaping (URL?) -> Void)
+public func buildAuthorizeUrl(completion: @escaping (URL?) -> Void)
 ```
-
-**param**
-* `authRequest` auth request object
 
 **example**
 
 ```swift
-let authRequest = AuthRequest()
-OIDCClient.buildAuthorizeUrl(authRequest: authRequest) { url in
+OIDCClient().buildAuthorizeUrl() { url in
     if url != nil {
         // self is your view controller
         // webView is a WKWebView object
@@ -32,7 +28,9 @@ use this API to set OIDC scope.
 Default scope is: openid profile email phone username address offline_access role extended_fields
 
 ```swift
+let authRequest = AuthRequest()
 authRequest.scope = "openid"
+OIDCClient(authRequest).buildAuthorizeUrl() { url in }
 ```
 
 <br>
@@ -42,13 +40,12 @@ authRequest.scope = "openid"
 This API returns token(s) by auth code. Note that in order to return *refresh token* make sure the scope includes *offline_access*, which is included by default.
 
 ```swift
-static func authByCode(code: String, authRequest: AuthRequest, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func authByCode(code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **param**
 
 * `code` OIDC auth code
-* `authRequest` auth request object
 
 **example**
 
@@ -63,7 +60,7 @@ func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigatio
     }
     
     if let authCode = Util.getQueryStringParameter(url: url, param: "code") {
-        OIDCClient.authByCode(code: authCode, authRequest: authRequest) { code, message, userInfo in
+        OIDCClient(authRequest).authByCode(code: authCode) { code, message, userInfo in
             if (code == 200) {
                 
             }
@@ -80,7 +77,7 @@ func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigatio
 OIDC Use the username to login，The returned UserInfo contains the Access token, ID token, and Refresh token.
 
 ```swift
-public static func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **param**
@@ -91,7 +88,7 @@ public static func loginByAccount(account: String, password: String, completion:
 **example**
 
 ```swift
-OIDCClient.loginByAccount(account: account, password: password) { code,  message,  userInfo in
+OIDCClient().loginByAccount(account: account, password: password) { code,  message,  userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -105,7 +102,7 @@ OIDCClient.loginByAccount(account: account, password: password) { code,  message
 login by phone number and a verification code. Must call [sendSms](#send-sms-code) method to get an SMS verification code before calling this method.
 
 ```swift
-public static func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **params**
@@ -116,7 +113,30 @@ public static func loginByPhoneCode(phone: String, code: String, completion: @es
 **example**
 
 ```swift
-OIDCClient.loginByPhoneCode(phone: phone, code: code) { code, message, userInfo in
+OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInfo in
+    print("\(userInfo?.accessToken ?? "")")
+    print("\(userInfo?.idToken ?? "")")
+    print("\(userInfo?.refreshToken ?? "")")
+}
+```
+
+<br>
+
+## OIDC Login by email code
+
+```swift
+public func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
+```
+
+**params**
+
+* *email* email
+* *code* code
+
+**example**
+
+```swift
+OIDCClient().loginByEmail(phone: phone, code: code) { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -130,7 +150,7 @@ OIDCClient.loginByPhoneCode(phone: phone, code: code) { code, message, userInfo 
 Get detailed user info by access token. The returned UserInfo object is the same as the UserInfo object in parameter.
 
 ```swift
-static func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **param**
@@ -140,7 +160,7 @@ static func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(
 **example**
 
 ```swift
-OIDCClient.getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
+OIDCClient().getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
     if (code == 200) {
         // data
     }
@@ -154,7 +174,7 @@ OIDCClient.getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
 the valid duration of an access token is usually short. After it expires, instead of pop up login dialog, which is not very user friendly, we should use refresh token to get new access token. Only show login page when refresh token is expired.
 
 ```swift
-static func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **param**
@@ -164,13 +184,7 @@ static func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @es
 **example**
 
 ```swift
-OIDCClient.getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
-    if (code == 200) {
-        
-    }
-    self.goHome()
-}
-OIDCClient.getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
+OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")

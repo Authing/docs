@@ -7,13 +7,13 @@
 How to use it:
 
 ```javascript
-import { AuthenticationClient } from 'authing-js-sdk'
+import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
-authenticationClient.registerByEmail // register by email
-authenticationClient.loginByEmail // login by email
+  appId: "YOUR_APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
+authenticationClient.registerByEmail; // register by email
+authenticationClient.loginByEmail; // login by email
 ```
 
 ## Register by email
@@ -36,19 +36,19 @@ AuthenticationClient().registerByEmail(email, password, profile, options)
 
 ```javascript
 authenticationClient.registerByEmail(
-  'test@example.com',
-  'passw0rd',
+  "test@example.com",
+  "passw0rd",
   {
-    nickname: 'Nick',
+    nickname: "Nick"
   },
   {
-    generateToken: true,
+    generateToken: true
   }
-)
+);
 ```
 
 ```javascript
-authenticationClient.registerByEmail('test@example.com', 'passw0rd')
+authenticationClient.registerByEmail("test@example.com", "passw0rd");
 ```
 
 #### Return value
@@ -75,19 +75,19 @@ AuthenticationClient().registerByUsername(username, password, profile, options)
 
 ```javascript
 authenticationClient.registerByUsername(
-  'bob',
-  'passw0rd',
+  "bob",
+  "passw0rd",
   {
-    nickname: 'Nick',
+    nickname: "Nick"
   },
   {
-    generateToken: true,
+    generateToken: true
   }
-)
+);
 ```
 
 ```javascript
-authenticationClient.registerByUsername('bob', 'passw0rd')
+authenticationClient.registerByUsername("bob", "passw0rd");
 ```
 
 #### Return value
@@ -115,20 +115,20 @@ AuthenticationClient().registerByPhoneCode(phone, code, password, profile, optio
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  '176xxxx6754',
-  '1234',
-  'passw0rd',
+  "176xxxx6754",
+  "1234",
+  "passw0rd",
   {
-    nickname: 'Nick',
+    nickname: "Nick"
   },
   {
-    generateToken: true,
+    generateToken: true
   }
-)
+);
 ```
 
 ```javascript
-authenticationClient.registerByPhoneCode('176xxxx6754', '1234')
+authenticationClient.registerByPhoneCode("176xxxx6754", "1234");
 ```
 
 #### Return value
@@ -148,11 +148,11 @@ AuthenticationClient().checkPasswordStrength(password)
 #### Example
 
 ```javascript
-authenticationClient.checkPasswordStrength('weak')
+authenticationClient.checkPasswordStrength("weak");
 ```
 
 ```javascript
-authenticationClient.checkPasswordStrength('strongPassw0rd!')
+authenticationClient.checkPasswordStrength("strongPassw0rd!");
 ```
 
 #### Return value
@@ -172,7 +172,7 @@ AuthenticationClient().sendSmsCode(phone)
 #### Example
 
 ```javascript
-authenticationClient.sendSmsCode('176xxxx6754')
+authenticationClient.sendSmsCode("176xxxx6754");
 ```
 
 #### 返 Return value
@@ -210,7 +210,7 @@ authenticationClient.loginByEmail(
 ```
 
 ```javascript
-authenticationClient.loginByEmail('test@example.com', 'passw0rd')
+authenticationClient.loginByEmail("test@example.com", "passw0rd");
 ```
 
 #### Return value
@@ -248,7 +248,7 @@ authenticationClient.loginByUsername(
 ```
 
 ```javascript
-authenticationClient.loginByUsername('test', 'passw0rd')
+authenticationClient.loginByUsername("test", "passw0rd");
 ```
 
 #### Return value
@@ -270,7 +270,7 @@ AuthenticationClient().loginByPhoneCode(phone, code)
 #### Example
 
 ```javascript
-authenticationClient.loginByPhoneCode('176xxxx6754', '1234')
+authenticationClient.loginByPhoneCode("176xxxx6754", "1234");
 ```
 
 #### Return value
@@ -294,13 +294,13 @@ AuthenticationClient().loginByPhonePassword(phone, password, options)
 #### Example
 
 ```javascript
-authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd', {
-  captchaCode: 'xj72',
-})
+authenticationClient.loginByPhonePassword("176xxxx6754", "passw0rd", {
+  captchaCode: "xj72"
+});
 ```
 
 ```javascript
-authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd')
+authenticationClient.loginByPhonePassword("176xxxx6754", "passw0rd");
 ```
 
 #### Return value
@@ -317,12 +317,12 @@ AuthenticationClient().getUdfValue()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // use user's token to initialize SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // use user's token to initialize SDK
+});
 
-const data = await authenticationClient.getUdfValue()
+const data = await authenticationClient.getUdfValue();
 ```
 
 #### Sample data
@@ -348,15 +348,15 @@ AuthenticationClient().setUdfValue(data)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // use user's token to initialize SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // use user's token to initialize SDK
+});
 
 await authenticationClient.setUdfValue({
-  school: 'Huazhong Institute of Techonology',
-  age: 20,
-})
+  school: "Huazhong Institute of Techonology",
+  age: 20
+});
 ```
 
 ## Delete user-defined data
@@ -373,12 +373,12 @@ AuthenticationClient().removeUdfValue(key)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // use user's token to initialize SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // use user's token to initialize SDK
+});
 
-await authenticationClient.removeUdfValue('school')
+await authenticationClient.removeUdfValue("school");
 ```
 
 ## Check Token and login status
@@ -394,7 +394,7 @@ AuthenticationClient().checkLoginStatus(token)
 #### Example
 
 ```javascript
-authenticationClient.checkLoginStatus('TOKEN')
+authenticationClient.checkLoginStatus("TOKEN");
 ```
 
 #### Return value
@@ -411,8 +411,8 @@ If you need to use your own image storage service, or the image has already been
 
 ```javascript
 authenticationClient.updateProfile({
-  photo: 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=bob',
-})
+  photo: "https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=bob"
+});
 ```
 
 #### Parameters
@@ -423,17 +423,17 @@ authenticationClient.updateProfile({
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // Use the user's token to initialize the SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // Use the user's token to initialize the SDK
+});
 
-const user = await authing.uploadAvatar()
+const user = await authing.uploadAvatar();
 
 // Only select pictures in png format
 const user = await authing.uploadAvatar({
-  accept: '.png',
-})
+  accept: ".png"
+});
 ```
 
 #### Demo example
@@ -458,8 +458,8 @@ AuthenticationClient().sendEmail(email, scene)
 #### Example
 
 ```javascript
-import { EmailScene } from 'authing-js-sdk'
-authenticationClient.sendEmail('test@example.com', EmailScene.RESET_PASSWORD)
+import { EmailScene } from "authing-js-sdk";
+authenticationClient.sendEmail("test@example.com", EmailScene.RESET_PASSWORD);
 ```
 
 #### Return value
@@ -481,7 +481,11 @@ AuthenticationClient().resetPasswordByPhoneCode(phone, code, newPassword)
 #### Example
 
 ```javascript
-authenticationClient.resetPasswordByPhoneCode('176xxxx6754', '1234', 'passw0rd')
+authenticationClient.resetPasswordByPhoneCode(
+  "176xxxx6754",
+  "1234",
+  "passw0rd"
+);
 ```
 
 #### Return value
@@ -504,10 +508,10 @@ AuthenticationClient().resetPasswordByEmailCode(phone, code, newPassword)
 
 ```javascript
 authenticationClient.resetPasswordByEmailCode(
-  'test@example.com',
-  '1234',
-  'passw0rd'
-)
+  "test@example.com",
+  "1234",
+  "passw0rd"
+);
 ```
 
 #### Return value
@@ -554,9 +558,9 @@ AuthenticationClient().updateProfile(updates)
 
 ```javascript
 authenticationClient.updateProfile({
-  nickname: 'Nick',
-  lastIp: '111.111.111.111',
-})
+  nickname: "Nick",
+  lastIp: "111.111.111.111"
+});
 ```
 
 #### Return value
@@ -577,11 +581,11 @@ AuthenticationClient().updatePassword(newPassword, oldPassword)
 #### Example
 
 ```javascript
-authenticationClient.updatePassword('passw0rd') // oldPassword should be empty for those accounts registered by social login or phone number because they don't set password in first login
+authenticationClient.updatePassword("passw0rd"); // oldPassword should be empty for those accounts registered by social login or phone number because they don't set password in first login
 ```
 
 ```javascript
-authenticationClient.updatePassword('passw0rd', 'oldPassw0rd') // user set a password before
+authenticationClient.updatePassword("passw0rd", "oldPassw0rd"); // user set a password before
 ```
 
 #### Return value
@@ -594,7 +598,7 @@ AuthenticationClient().updatePhone(phone, phoneCode, oldPhone, oldPhoneCode)
 
 > Update the user's phone number. Same as update the email, by default, if the user has already bound a phone number, the original phone number (the phone number bound to the current account) and the current email (the phone number to be bound) need to be verified at the same time.
 > In other words, the phone number currently bound to user A is 15888888888, and if you want to change it to 15899999999, you need to verify both phone numbers at the same time.
-> Developers can also choose not to turn on "Verify original phone number", which can be turned off in the security information client under the settings directory of the Approw console.
+> Developers can also choose not to turn on "Verify original phone number", which can be turned off in the security information client under the settings directory of the Authing console.
 > To bind a phone number for the first time, please use bindPhone interface.
 
 #### Parameter
@@ -607,11 +611,11 @@ AuthenticationClient().updatePhone(phone, phoneCode, oldPhone, oldPhoneCode)
 #### Example
 
 ```javascript
-authenticationClient.updatePhone('176xxxx6754', '1234') // verify old phone number function disabled
+authenticationClient.updatePhone("176xxxx6754", "1234"); // verify old phone number function disabled
 ```
 
 ```javascript
-authenticationClient.updatePhone('176xxxx6754', '1234', '156xxxx9876', '1234') // verify old phone number function enabled
+authenticationClient.updatePhone("176xxxx6754", "1234", "156xxxx9876", "1234"); // verify old phone number function enabled
 ```
 
 #### Return value
@@ -636,16 +640,16 @@ AuthenticationClient().updateEmail(email, emailCode, oldEmail, oldEmailCode)
 #### Example
 
 ```javascript
-authenticationClient.updateEmail('test@example.com', '1234') // verify old email disabled
+authenticationClient.updateEmail("test@example.com", "1234"); // verify old email disabled
 ```
 
 ```javascript
 authenticationClient.updateEmail(
-  'test@example.com',
-  '1234',
-  'test2@example.com',
-  '1234'
-) // verify old email enabled
+  "test@example.com",
+  "1234",
+  "test2@example.com",
+  "1234"
+); // verify old email enabled
 ```
 
 #### Return value
@@ -668,8 +672,8 @@ AuthenticationClient().linkAccount(options)
 ```javascript
 authenticationClient.linkAccount({
   primaryUserToken: primaryUser.token,
-  secondaryUserToken: secondaryUser.token,
-})
+  secondaryUserToken: secondaryUser.token
+});
 ```
 
 #### Return value
@@ -692,7 +696,7 @@ AuthenticationClient().refreshToken()
 #### Example
 
 ```javascript
-authenticationClient.updateEmail()
+authenticationClient.updateEmail();
 ```
 
 #### Return value
@@ -713,7 +717,7 @@ AuthenticationClient().bindPhone(phone, phoneCode)
 #### Example
 
 ```javascript
-authenticationClient.bindPhone('176xxxx6754', '1234')
+authenticationClient.bindPhone("176xxxx6754", "1234");
 ```
 
 #### Return value
@@ -731,7 +735,7 @@ AuthenticationClient().unbindPhone()
 #### Example
 
 ```javascript
-authenticationClient.unbindPhone()
+authenticationClient.unbindPhone();
 ```
 
 #### Return value
@@ -749,7 +753,7 @@ AuthenticationClient().getCurrentUser()
 #### Example
 
 ```javascript
-authenticationClient.getCurrentUser()
+authenticationClient.getCurrentUser();
 ```
 
 #### Return value
@@ -767,7 +771,7 @@ AuthenticationClient().logout()
 #### Example
 
 ```javascript
-authenticationClient.logout()
+authenticationClient.logout();
 ```
 
 #### Return value
@@ -795,11 +799,11 @@ If your user pool is configured with login failure detection, the user will be a
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-authenticationClient.loginByLdap('admin', 'admin')
+authenticationClient.loginByLdap("admin", "admin");
 ```
 
 #### Return value
@@ -821,11 +825,11 @@ AuthenticationClient().loginByAd(username, password)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn"
+});
 
-authenticationClient.loginByAd('admin', 'admin')
+authenticationClient.loginByAd("admin", "admin");
 ```
 
 #### Return value
@@ -846,14 +850,14 @@ AuthenticationClient().computedPasswordSecurityLevel()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // use user's token to initialize SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // use user's token to initialize SDK
+});
 
 const securityLevel = authenticationClient.computedPasswordSecurityLevel(
-  'xxxxxxxx'
-)
+  "xxxxxxxx"
+);
 ```
 
 #### sample
@@ -876,12 +880,12 @@ null
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'APP_ID',
-  appHost: 'https://xxx.authing.cn',
-  token: 'ID_TOKEN', // use user's token to initialize SDK
-})
+  appId: "APP_ID",
+  appHost: "https://xxx.authing.cn",
+  token: "ID_TOKEN" // use user's token to initialize SDK
+});
 
-const securityLevel = await authenticationClient.getSecurityLevel()
+const securityLevel = await authenticationClient.getSecurityLevel();
 ```
 
 #### sample data
@@ -909,7 +913,7 @@ AuthenticationClient.listAuthorizedResources(namespace)
 #### Example
 
 ```javascript
-managementClient.users.listAuthorizedResources('namespace_code')
+managementClient.users.listAuthorizedResources("namespace_code");
 ```
 
 #### sample data

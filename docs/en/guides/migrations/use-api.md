@@ -4,13 +4,13 @@
 
 {{$localeConfig.brandName}} supports SDKs in multiple languages such as Java, JavaScript/Node.js, Python, PHP, C#, Go, Ruby, etc.：
 
-- [Java/Kotlin](/reference/sdk-for-java/)
-- [JavaScript/Node.js](/reference/sdk-for-node/)
-- [Python](/reference/sdk-for-python/)
-- [PHP](/reference/sdk-for-php/)
-- [C#](/reference/sdk-for-csharp/)
-- [Go](/reference/sdk-for-go/)
-- [Ruby](/reference/sdk-for-ruby.md)
+- [Java/Kotlin](/en/reference/sdk-for-java/)
+- [JavaScript/Node.js](/en/reference/sdk-for-node/)
+- [Python](/en/reference/sdk-for-python/)
+- [PHP](/en/reference/sdk-for-php/)
+- [C#](/en/reference/sdk-for-csharp/)
+- [Go](/en/reference/sdk-for-go/)
+- [Ruby](/en/reference/sdk-for-ruby.md)
 
 This article uses Node.js as an example of how to write a script to import users. You can choose a language you are familiar with.
 
@@ -59,36 +59,36 @@ Please export your user data to JSON format, the content is an array. Each eleme
 
 ## Step 3: Confirm the user field mapping relationship
 
-Before starting the import, you need to confirm the mapping between your user structure and the {{$localeConfig.brandName}} user field. You can get all the fields and their definitions of the Approw user [here](/guides/user/user-profile.md).
+Before starting the import, you need to confirm the mapping between your user structure and the {{$localeConfig.brandName}} user field. You can get all the fields and their definitions of the Authing user [here](/guides/user/user-profile.md).
 
-## Step 4: Import user data to Approw
+## Step 4: Import user data to Authing
 
-If you don't have a NodeJS environment, you need to [install NodeJS](http://nodejs.cn/download/).
+If you don't have a NodeJS environment, you need to [install NodeJS](http://nodejs.org/download/).
 
 Create an index.js file.
 
 Paste the following js script into index.js:
 
 ```js
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs");
+const path = require("path");
 
-const { ManagementClient } = require('authing-js-sdk')
-const userPoolId = 'xxxxxxxxxxxxxxxxxxx'
-const secret = 'xxxxxxxxxxxxxxxxxxx'
+const { ManagementClient } = require("authing-js-sdk");
+const userPoolId = "xxxxxxxxxxxxxxxxxxx";
+const secret = "xxxxxxxxxxxxxxxxxxx";
 
 // 如果文件较大建议分批次读入
 // 请将用户信息与本文件保存在同一个目录，文件内容为用户数据的数组 JSON，一个元素为一个用户的信息对象
-let users = fs.readFileSync(path.resolve('users.json'), { encoding: 'utf8' })
-users = JSON.parse(users)
+let users = fs.readFileSync(path.resolve("users.json"), { encoding: "utf8" });
+users = JSON.parse(users);
 async function main() {
   const managementClient = new ManagementClient({
     userPoolId,
-    secret,
-  })
+    secret
+  });
 
   for (let i = 0; i < users.length; i++) {
-    let yourUser = users[i]
+    let yourUser = users[i];
     try {
       // 在此完成字段对齐
       await managementClient.users.create(
@@ -99,32 +99,32 @@ async function main() {
           emailVerified: yourUser.emailVerified,
           phone: yourUser.phone,
           loginsCount: yourUser.loginsCount,
-          // 存储原始数据，以备使用
-          oauth: JSON.stringify(yourUser),
+          // 存储原始数据，以备Use
+          oauth: JSON.stringify(yourUser)
         },
         {
           /**
            * 开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段
            * 如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算
            */
-          keepPassword: true,
+          keepPassword: true
         }
-      )
+      );
     } catch (err) {
-      console.log(err)
+      console.log(err);
       // 将导入失败的用户写入文件
       fs.writeFileSync(
-        path.resolve('users_failed.json'),
-        JSON.stringify(yourUser) + '\n',
+        path.resolve("users_failed.json"),
+        JSON.stringify(yourUser) + "\n",
         {
-          flag: 'a',
+          flag: "a"
         }
-      )
+      );
     }
   }
 }
 
-main()
+main();
 ```
 
 Please **align the fields** after copying, and then execute

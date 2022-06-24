@@ -27,29 +27,28 @@ async function validatePassword(id, password, context) {
   //     throw new Error("my error message")
 
   const msg =
-    'Please implement the Validate Password script for this database connection';
+    "Please implement the Validate Password script for this database connection";
   throw new Error(msg);
 }
 ```
 
-| Parameter    | Parameter         | Nullable | Explanation              |
-| :------- | :-------------- | :------- | :----------------- |
-| id       | number / string | false    | User's ID.          |
-| password | string          | false    | User's password in cleartext.     |
-| context  | object          | true     | Requiring context. |
-
+| Parameter | Parameter       | Nullable | Explanation                   |
+| :-------- | :-------------- | :------- | :---------------------------- |
+| id        | number / string | false    | User's ID.                    |
+| password  | string          | false    | User's password in cleartext. |
+| context   | object          | true     | Requiring context.            |
 
 The context also includes the following information:
 
-| Property Name           | Type   | Explanation                                                                                                        |
-| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------- |
-| userPoolId       | string | The ID of the user pool.                                                                                                   |
-| userPoolName     | string | The Name of the user pool.                                                                                                |
-| userPoolMetadata | object | Configurations of the user pool.                                                                                          |
-| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                               |
-| appName          | string | The name of the current application.                                                                                       |
-| appMetadata      | object | Configurations of the current application.                                                                                        |
-| application      | string | The ID of the user pool.                                                                                                   |
+| Property Name    | Type   | Explanation                                                                                                                                                                                                                   |
+| :--------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userPoolId       | string | The ID of the user pool.                                                                                                                                                                                                      |
+| userPoolName     | string | The Name of the user pool.                                                                                                                                                                                                    |
+| userPoolMetadata | object | Configurations of the user pool.                                                                                                                                                                                              |
+| appId            | string | The ID of the current user, **you can use appId to distinguish the source application of the user requirement**.                                                                                                              |
+| appName          | string | The name of the current application.                                                                                                                                                                                          |
+| appMetadata      | object | Configurations of the current application.                                                                                                                                                                                    |
+| application      | string | The ID of the user pool.                                                                                                                                                                                                      |
 | request          | object | The detailed information of current requirement, including: <br> `ip`: The IP of the client. <br> `geo`: The geographic location of the client which is parsed from the IP address. <br> `body`: The body of the requirement. |
 
 ### The Rule of the Script's Return Value
@@ -61,7 +60,7 @@ When users' password is validated successfullt, you need to return `true`:
 ```javascript
 async function validatePassword(id, password, context) {
   // Implement your logic here
-  return true
+  return true;
 }
 ```
 
@@ -72,7 +71,7 @@ When users' password is validated failed, you need to return `false`:
 ```javascript
 async function validatePassword(id, password, context) {
   // Implement your logic here
-  return false
+  return false;
 }
 ```
 
@@ -85,7 +84,7 @@ async function validatePassword(id, password, context) {
   try {
     // Implement your logic here
   } catch (error) {
-    throw new Error('Something went wrong ...')
+    throw new Error("Something went wrong ...");
   }
 }
 ```
@@ -94,7 +93,7 @@ async function validatePassword(id, password, context) {
 
 #### Provide Friendly Error Annoncements
 
-When an unknown error occurs, we recommend throwing a standard `Error` object, Approw will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
+When an unknown error occurs, we recommend throwing a standard `Error` object, Authing will catch this error and return it to the end user. For example, using `throw new Error("My nice error message")` and you will find this error log in the **History Log** of the customized database.
 
 ![](https://cdn.authing.cn/img/20210111163154.png)
 
@@ -124,10 +123,10 @@ Assume we are using `postgres` as our database:
 async function validatePassword(id, password, context) {
   // This example uses the "pg" library
   // more info here: https://github.com/brianc/node-postgres
-  const { Client } = require('pg');
+  const { Client } = require("pg");
 
   const client = new Client({
-    connectionString: env.DB_CONNECTION_URI,
+    connectionString: env.DB_CONNECTION_URI
   });
 
   // Or you can:
@@ -143,13 +142,13 @@ async function validatePassword(id, password, context) {
 
   // Use bcrypt to validate password
   // more info here: https://github.com/kelektiv/node.bcrypt.js
-  const bcrypt = require('bcrypt');
+  const bcrypt = require("bcrypt");
 
-  const QUERY = 'SELECT password FROM users WHERE id = $1';
+  const QUERY = "SELECT password FROM users WHERE id = $1";
   try {
     const result = await client.query(QUERY, [id]);
     if (result.rows.length === 0) {
-      throw new Error('User not exists!');
+      throw new Error("User not exists!");
     }
     const user = result.rows[0];
     const isPasswordValid = await bcrypt.compare(password, user.password);

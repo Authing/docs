@@ -10,9 +10,9 @@
 
 ![](./images/login2register1.png)
 
-## 使用 AuthFlow 启动登录界面
+## Use AuthFlow 启动登录界面
 
-使用 AuthFlow 设置自定义的登录布局启动，并设置自定义的注册布局
+Use AuthFlow 设置自定义的登录布局启动，并设置自定义的注册布局
 
 ```java
 AuthFlow authFlow = AuthFlow.start(this, R.layout.login);
@@ -22,7 +22,5 @@ authFlow.setRegisterLayoutId(R.layout.register);
 ## 运行
 
 <img src="./../gif/login2register.gif" alt="drawing" width="400"/>
-
-
 
 GoRegisterButton 除了提供默认的视觉效果以及国际化的文字，还可以根据控制台设置自动隐藏。[查看详情](./../basic/go-register-button.md)

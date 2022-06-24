@@ -6,7 +6,7 @@ You may face this scenario: your user registered an account with a phone number,
 
 You can bind the user's social account to his main account (phone number, email account) by calling the following interface:
 
-<ApiMethodSpec method="post" host="https://core.authing.cn" path="/api/v2/users/link" summary="将社交账号绑定到主账号">
+<ApiMethodSpec method="post" host="https://core.authing.cn" path="/api/v2/users/link" summary="Bind social account to master account">
 <template slot="description">
 
 If you want to bind a social account to a main account, the end user must provide the credentials of the **social account** and the **main account** to prove that he is the owner of the two accounts, and then perform binding.
@@ -16,8 +16,8 @@ If you want to bind a social account to a main account, the end user must provid
 <ApiMethodParam name="Content-Type" type="string" required description="application/x-www-form-urlencoded" />
 </template>
 <template slot="formDataParams">
-<ApiMethodParam name="primaryUserToken" type="string" required description="主账号 Token" />
-<ApiMethodParam name="secondaryUserToken" type="string" required description="社交账号 Token" />
+<ApiMethodParam name="primaryUserToken" type="string" required description="master account Token" />
+<ApiMethodParam name="secondaryUserToken" type="string" required description="social account Token" />
 </template>
 <template slot="response">
 <ApiMethodResponse>

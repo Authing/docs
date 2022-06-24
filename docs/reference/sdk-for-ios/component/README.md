@@ -22,5 +22,5 @@ Guard 提供了认证领域相关、功能齐全的超组件集合，开发者�
 如果使用超组件，开发就变得非常简单。
 
 <br>
-<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./tutorial/example.html" style="color:#FFF;">超组件入门示例 →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./tutorial/example.html" style="color:#FFF;">超组件入门示例 →</a>
 </span>

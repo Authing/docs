@@ -1,5 +1,7 @@
 # The Selection of OIDC Authorization Mode
 
+<LastUpdated/>
+
 You need to choose an appropriate authorization mode according to your scenario and the type of application you are developing. This article will assist you in choosing the appropriate OIDC authorization mode.
 
 ## Recommended Authorization Mode

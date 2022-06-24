@@ -1,52 +1,53 @@
-## PC 网站使用小程序扫码登录
+## PC website using WeChat scan code to log in
 
 <LastUpdated/>
 
-这是 {{$localeConfig.brandName}} 的一个开创性的设计，在 {{$localeConfig.brandName}} 中开启扫描小登录二维码登录后可以获得微信官方的实名用户信息， 用户一键授权即可以真实号码完成注册或者登录，为开发者建立以手机号码为基础的账号体系。
+This is a pioneering design of Authing. After opening the scan small login QR code in Authing, the official real-name user information of WeChat can be obtained. The user can complete the registration or login with the real number with one-click authorization, and establish a mobile phone for developers. Number-based account system.
 
-- 应用场景：PC 网站；
-- 概述：在 PC 网站应用中展示小程序二维码，然后使用微信扫码登录应用；
-- 优势：可以获取到微信用户的手机号与实名信息；
+- Application scenario: PC website;
+- Overview: Display the QR code of the applet in the PC website application, and then use WeChat to scan the code to log in to the application;
+- Advantages: The mobile phone number and real-name information of WeChat users can be obtained;
 
-你可以[点击此处体验小程序扫码登录](https://authing.cn/developer/)。
+You can [click here to experience the mini program scan code login](https://authing.cn/developer/).
 
 ![Sample](../images/wxapp-scaning-demo.gif)
 
-## 示例代码
+## Sample Code
 
-你可以在此获取示例代码：[https://github.com/authing/wechat-eco-solution](https://github.com/authing/wechat-eco-solution)。
+You can get sample code here: [https://github.com/authing/wechat-eco-solution](https://github.com/authing/wechat-eco-solution)。
 
-## 第一步：在微信公众平台创建一个小程序（可选）
+## Step 1: Create a mini program on the WeChat public platform (optional)
 
-默认情况下，小程序扫码登录会使用 {{$localeConfig.brandName}} 提供的默认小程序，如果你需要有更强的品牌定制能力，或者想让通过小程序扫码登录的用户微信账号和自己的其他微信公众平台打通，你需要申请自己的小程序。如果你属于这两种场景的一种：
+By default, the Mini Program scan code login will use the default Mini Program provided by Authing. If you need stronger brand customization capabilities, or want to connect the WeChat account of the user who logs in through the Mini Program scan code with your other WeChat public platforms , you need to apply for your own applet. If you fall into one of these two scenarios:
 
-请前往 [微信公众平台](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN)指引创建一个微信小程序，你需要记录下该应用的 **App ID** 和 **App Secret**，后面需要用到。
+Please go to [WeChat public platform](https://mp.weixin.qq.com/wxopen/waregister?action=step1) Guide to create a WeChat applet, you need to record the **App ID** and **App Secret** of the application , which will be used later.
 
-同时你需要联系我们获取小登录的源码，详情请咨询：176-0250-2507。
+At the same time, you need to contact us to obtain the source code of the small login. For details, please consult: 176-0250-2507.
 
-## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信小程序扫码应用
+## Configure the WeChat applet scan code application in the Authing console
 
-在控制台的社会化登录配置页面，找到**微信小程序扫码登录**，填入以下配置：
+On the social login configuration page of the console, find **the WeChat applet to scan the code to log in**, and fill in the following configuration:
 
-- Logo: 上传后的 Logo，将作为小程序二维码中央的 Logo；
-- 登录后回调链接: 此链接一般填你的业务地址，如果配置了这个链接，用户在完成登录之后，浏览器将会携带用户信息跳转到该页面；
-- AppID: 小程序的 AppID，选择私有化小程序的用户填；
-- AppSecret: 小程序的 AppSecret，选择私有化小程序的用户填。
+- Logo: The uploaded logo will be used as the logo in the center of the QR code of the applet;
+- Callback link after login: This link usually fills in your business address. If this link is configured, after the user completes the login, the browser will jump to this page with the user information;
+- AppID: AppID of the applet, filled in by the user who selects the privatized applet;
+- AppSecret: AppSecret of the applet, filled in by users who choose to privatize the applet.
 
-## 第三步：开始开发接入
+## Step 3: Start developing access
 
-小程序扫码登录支持三种接入方式：使用 JavaScript SDK、使用嵌入登录组件、 使用托管登录页。每种不同的接入方式各有优劣点，你可以根据自己的业务需求来选择合适的方式。
+The Mini Program scan code login supports three access methods: using the JavaScript SDK, using the embedded login component, and using the hosted login page. Each access method has its own advantages and disadvantages. You can choose the appropriate method according to your business needs.
 
-以下是各种方式的优劣对比：
+Here's a comparison of the pros and cons of each approach:
 
-| 接入方式            | 优势                                                                              | 劣势                 |
-| ------------------- | --------------------------------------------------------------------------------- | -------------------- |
-| 使用 JavaScript SDK | 接入简单，只需要几行代码。可自定义程度最高。                                      |                      |
-| 使用嵌入登录组件    | 接入简单，只需要几行代码。可以将该组件集成到你的应用。自定义程度相对较高          |                      |
-| 使用托管登录页      | 运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名。 | 如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。 |
+| Access method                | Advantage                                                                                                                                               | disadvantage                                                                                                                                                                                                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| JavaScript SDK               | Access is simple and only requires a few lines of code. The most customizable.                                                                          |                                                                                                                                                                                                                                                                                    |
+| the embedded login component | Access is simple and only requires a few lines of code. This component can be integrated into your application. Relatively high degree of customization |                                                                                                                                                                                                                                                                                    |
+| hosted login page            | Simple operation and maintenance, Authing is responsible for operation and maintenance. Each user pool has an independent second-level domain name.     | If you need to embed into your application, you need to use the pop-up mode to log in, that is: after clicking the login button, a window will pop up with the content of the login page hosted by Authing, or the browser will be redirected to the login page hosted by Authing. |
+|                              |
 
-<StackSelector snippet="social-login" selectLabel="选择接入方式" :order="['sdk', 'embeded-component', 'hosted-page']"/>
+<StackSelector snippet="social-login" selectLabel="Type" :order="['sdk', 'embeded-component', 'hosted-page']"/>
 
-## 接下来
+## Next
 
-!!!include(common/what-to-do-when-you-get-userinfo.md)!!!
+!!!include(en/common/what-to-do-when-you-get-userinfo.md)!!!

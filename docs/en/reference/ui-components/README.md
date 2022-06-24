@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-The Approw login component (Guard) is an embeddable login form that can be configured according to your needs and is recommended for single-page applications. It allows you to easily add various social login methods so that your users can log in seamlessly and have a consistent login experience on different platforms. Guard shields many implementation details of low-level authentication for developers, as well as cumbersome UI development.
+The Authing login component (Guard) is an embeddable login form that can be configured according to your needs and is recommended for single-page applications. It allows you to easily add various social login methods so that your users can log in seamlessly and have a consistent login experience on different platforms. Guard shields many implementation details of low-level authentication for developers, as well as cumbersome UI development.
 
 Guard can be integrated into your React, Vue.js, Angular, and native JavaScript projects. You can use this component to quickly implement the login authentication process.
 
@@ -49,27 +49,27 @@ Responsive layout, perfectly compatible with mobile and PC terminals, and you ca
 
 <iframe src="https://codesandbox.io/embed/red-microservice-6613h?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="approw-react-guard"
+     title="authing-react-guard"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
 ## Use in React project
 
-You can include the `@approw/react-ui-components` package in your React project. For details, please refer to the[React login component usage documentation](./react.md).
+You can include the `@authing/react-ui-components` package in your React project. For details, please refer to the[React login component usage documentation](./react.md).
 
 ## Use in Vue.js project
 
-You can include the `@approw/vue-ui-components` package in your Vue.js project. For details, please refer to the [ Vue.js login component usage documentation](./vue.md).
+You can include the `@authing/vue-ui-components` package in your Vue.js project. For details, please refer to the [ Vue.js login component usage documentation](./vue.md).
 
 ## Use in Angular project
 
-You can include the `@approw/ng-ui-components` package in your Vue.js project. For details, please refer to the [Angular login component usage documentation](./angular.md).
+You can include the `@authing/ng-ui-components` package in your Vue.js project. For details, please refer to the [Angular login component usage documentation](./angular.md).
 
 ## Use in native JavaScript projects
 
-You can include the `@approw/native-js-ui-components` package in your native JavaScript project. For details, please refer to the [Native JavaScript login component usage documentation](./native-javascript.md).
+You can include the `@authing/native-js-ui-components` package in your native JavaScript project. For details, please refer to the [Native JavaScript login component usage documentation](./native-javascript.md).
 
 ## Get help
 
-Join us on forum: [#approw-chat](https://forum.authing.cn/)
+Join us on forum: [#authing-chat](https://forum.authing.cn/)

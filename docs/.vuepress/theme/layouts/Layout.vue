@@ -164,12 +164,13 @@ export default {
     },
 
     sidebarItems() {
-      return resolveSidebarItems(
+      const list = resolveSidebarItems(
         this.$page,
         this.$page.regularPath,
         this.$site,
         this.$localePath
       );
+      return list
     },
 
     pageClasses() {

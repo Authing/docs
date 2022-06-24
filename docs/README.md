@@ -3,9 +3,9 @@ home: true
 noSidebar: true
 mainTitle: "文档中心"
 subTitle: "在这里，开启激动人心的第一步！学习如何使用 {{$localeConfig.brandName}} 及 {{$localeConfig.brandName}} 提供的 API。"
-searchPlaceholder: 请输入关键词搜索产品文档 
+searchPlaceholder: 请输入关键词搜索产品文档
 hotSearchText: 热门搜索
-exploreUse: 探索使用 {{$localeConfig.brandName}} 
+exploreUse: 探索使用 {{$localeConfig.brandName}}
 hotSearch:
   - text: 如何对用户进行认证
     link: /guides/authentication/
@@ -21,76 +21,70 @@ sdkConfig:
   ios:
     name: iOS Swift
     link: /reference/sdk-for-ios/
-    img: ios.png
-    img2x: ios@2x.png
+    icon: iOS
   android:
     name: Android
     link: /reference/sdk-for-android/
-    img: android.png
-    img2x: android@2x.png
+    icon: Android
   flutter:
     name: Flutter
     link: /reference/sdk-for-flutter/
-    img: flutter.png
-    img2x: flutter@2x.png
+    icon: Flutter
   javascript:
     name: JavaScript
     link: /reference/sdk-for-node/
-    img: javascript.png
-    img2x: javascript@2x.png
+    icon: JavaScript
   reactNative:
     name: React Native
     link: /reference/sdk-for-react-native/
-    img: react-native.svg
-    img2x: react-native.svg
+    icon: React-Native
   cSharp:
     name: C Sharp
     link: /reference/sdk-for-csharp/
-    img: c-sharp.png
-    img2x: c-sharp@2x.png
+    icon: csharp
   react:
     name: React
-    link: /reference/guard/react
-    img: react.png
-    img2x: react@2x.png
+    link: /reference/guard/v2/react
+    icon: React-Native
   angular:
     name: Angular
-    link: /reference/guard/angular
-    img: angular.png
-    img2x: angular@2x.png
+    link: /reference/guard/v2/angular
+    icon: Angular
   vue:
     name: Vue
-    link: /reference/guard/vue
-    img: vue.png
-    img2x: vue@2x.png
+    link: /reference/guard/v2/vue
+    icon: Vue
   python:
     name: Python
     link: /reference/sdk-for-python/
-    img: python.png
-    img2x: python@2x.png
+    icon: Python
   nodeJs:
     name: Node.js
     link: /reference/sdk-for-node/
-    img: nodejs.png
-    img2x: nodejs@2x.png
+    icon: Nodejs
   ruby:
     name: Ruby
     link: /reference/sdk-for-ruby.html
-    img: ruby.png
-    img2x: ruby@2x.png
+    icon: Ruby
+  ruby-api:
+    name: Ruby
+    link: /reference/sdk-for-ruby.html
+    icon: Ruby
   java:
     name: Java
     link: /reference/sdk-for-java/
-    img: java.png
-    img2x: java@2x.png
+    icon: Java
   golang:
     name: Golang
     link: /reference/sdk-for-go/
-    img: golang.png
-    img2x: golang@2x.png
+    icon: Go
+  php:
+    name: PHP
+    link: /reference/sdk-for-php/
+    icon: php
 applicationSdks:
-  - title: 移动 / 客户端应用
-    description: 在移动 / 客户端应用中快速接入认证服务
+  - title: 客户端应用
+    description: 在手机、桌面和其他智能设备上运行的本地应用
     color: "#396AFF"
     sdks:
       - ios
@@ -99,7 +93,7 @@ applicationSdks:
       - reactNative
       - cSharp
   - title: 单页应用
-    description: 在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录
+    description: 只有单个页面的纯前端网页应用
     color: "#75A3FF"
     sdks:
       - javascript
@@ -107,7 +101,7 @@ applicationSdks:
       - angular
       - vue
   - title: 标准 Web 应用
-    description: 在服务器上运行的传统 Web 应用，实现统一认证和授权
+    description: 多页面并支持跳转的网页应用
     color: "#28B1B0"
     sdks:
       - javascript
@@ -117,8 +111,9 @@ applicationSdks:
       - ruby
       - java
       - golang
+      - php
   - title: 后端 / API 服务
-    description: 在后端调用 {{$localeConfig.brandName}} 并保护 API 接口
+    description: 无前端界面，只提供后端服务的应用
     color: "#F8BC00"
     sdks:
       - javascript
@@ -128,6 +123,7 @@ applicationSdks:
       - ruby
       - java
       - golang
+      - php
 sections:
   - title: 概念
     description: 了解 {{$localeConfig.brandName}} 体系结构基础

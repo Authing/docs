@@ -1,5 +1,7 @@
 # APP Full Interface List For APP QR Code Login
 
+<LastUpdated/>
+
 {{$localeConfig.brandName}} provides a REST-based QR code login interface, which developers can call directly.
 
 ## Generate QR code

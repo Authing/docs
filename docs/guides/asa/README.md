@@ -1,5 +1,7 @@
 # ASA 表单代填
 
+<LastUpdated/>
+
 Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发的功能，可为不支持标准认证协议（OAuth2.0、OIDC、SAML、CAS）的外部 Web 应用程序提供单点登录 (SSO) 功能。
 
 管理员可以给用户分配应用账密。 {{$localeConfig.brandName}} 将账密加密存储在数据库中。在用户访问被分配了账号密码的应用的登录界面时，{{$localeConfig.brandName}} 会自动填充账号密码，并进行登录。最终用户只需登录 {{$localeConfig.brandName}}，就可直接访问被分配的应用。
@@ -79,7 +81,7 @@ Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发�
 
 ### 创建自定义 ASA 应用
 
-下面以「石墨文档」为例进行说明。首先在应用市场中找到 **自定义 ASA 应用**。
+下面以「石墨文档」为例进行说明。首先在应用市场中找到 **自定义 ASA 应用**
 
 ![](~@imagesZhCn/guides/asa/custom-1.png)
 
@@ -103,7 +105,7 @@ Authing Secure Authentication(ASA) 是一项 {{$localeConfig.brandName}} 开发�
     - 在 **type** 操作中使用时，值为字符串，可用 <code><span v-pre>{{account}}</span></code> 表示绑定的账号，<code><span v-pre>{{password}}</span></code> 表示绑定的密码
     - 在 **wait** 操作中使用时，值为数字，单位为毫秒，如 1000 表示等待 1 秒
 
-* 账号分配方式目前只支持**管理员设置账号和密码**
+* 账号分配方式目前只支持 **管理员设置账号和密码**
 
 ![](~@imagesZhCn/guides/asa/custom-3.png)
 
