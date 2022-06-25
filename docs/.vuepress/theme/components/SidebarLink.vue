@@ -9,7 +9,7 @@ export default {
   render(
     h,
     {
-      parent: { $page, $site, $route, $themeConfig, $themelocaleConfig, routerLink },
+      parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig, routerLink },
       props: { item, sidebarDepth },
     }
   ) {
@@ -33,13 +33,13 @@ export default {
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
       sidebarDepth,
-      $themelocaleConfig.sidebarDepth,
+      $themeLocaleConfig.sidebarDepth,
       $themeConfig.sidebarDepth,
       1
     ].find(depth => depth !== undefined);
 
     const displayAllHeaders =
-      $themelocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
+      $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
 
     if (item.type === "auto") {
       return [

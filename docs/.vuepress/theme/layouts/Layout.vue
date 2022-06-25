@@ -150,7 +150,7 @@ export default {
         themeConfig.logo ||
         themeConfig.repo ||
         themeConfig.nav ||
-        this.$themelocaleConfig.nav
+        this.$themeLocaleConfig.nav
       );
     },
 

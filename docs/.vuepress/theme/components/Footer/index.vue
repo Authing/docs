@@ -34,33 +34,33 @@
       <div>
         <FooterCollapse
           :sectionInfo="{
-            title: $themelocaleConfig.company,
+            title: $themeLocaleConfig.company,
           }"
         >
           <template #collapseContent>
             <div
-              v-if="footerlocaleConfig.contactPhone"
+              v-if="footerLocaleConfig.contactPhone"
               class="footer-text-wrapper"
             >
-              {{ footerlocaleConfig.contactPhone }}
+              {{ footerLocaleConfig.contactPhone }}
             </div>
             <div
-              v-if="footerlocaleConfig.contactEmail"
+              v-if="footerLocaleConfig.contactEmail"
               class="footer-text-wrapper"
             >
-              {{ footerlocaleConfig.contactEmail }}
+              {{ footerLocaleConfig.contactEmail }}
             </div>
             <div
-              v-if="footerlocaleConfig.contactAddress"
+              v-if="footerLocaleConfig.contactAddress"
               class="footer-text-wrapper"
             >
-              {{ footerlocaleConfig.contactAddress }}
+              {{ footerLocaleConfig.contactAddress }}
             </div>
             <div
-              v-if="footerlocaleConfig.contactChenduAddress"
+              v-if="footerLocaleConfig.contactChenduAddress"
               class="footer-text-wrapper"
             >
-              {{ footerlocaleConfig.contactChenduAddress }}
+              {{ footerLocaleConfig.contactChenduAddress }}
             </div>
           </template></FooterCollapse
         >
@@ -68,16 +68,16 @@
 
       <div class="footer-last-right-container">
         <!-- <LangSelectOutline /> -->
-        <p v-if="footerlocaleConfig.icp" class="footer-icp-record">
-          {{ footerlocaleConfig.icp }}
+        <p v-if="footerLocaleConfig.icp" class="footer-icp-record">
+          {{ footerLocaleConfig.icp }}
         </p>
-        <p v-if="footerlocaleConfig.beian" class="footer-icp-record">
+        <p v-if="footerLocaleConfig.beian" class="footer-icp-record">
           <img
             src="//files.authing.co/authing-website/icon-beian-gov.png"
             alt="beian"
-          />{{ footerlocaleConfig.beian }}
+          />{{ footerLocaleConfig.beian }}
         </p>
-        <p class="footer-company-name">{{ footerlocaleConfig.companyName }}</p>
+        <p class="footer-company-name">{{ footerLocaleConfig.companyName }}</p>
         <div v-if="socials && socials.length" class="footer-social-container">
           <a
             :title="item.title"
@@ -112,14 +112,14 @@ export default {
     return {}
   },
   computed: {
-    footerlocaleConfig() {
-      return this.$themelocaleConfig.footer
+    footerLocaleConfig() {
+      return this.$themeLocaleConfig.footer
     },
     sections() {
-      return this.footerlocaleConfig.sections
+      return this.footerLocaleConfig.sections
     },
     socials() {
-      return this.footerlocaleConfig.socials
+      return this.footerLocaleConfig.socials
     },
   },
   methods: {},

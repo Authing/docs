@@ -1,7 +1,7 @@
 <template>
   <a class="old-version" :href="$site.themeConfig.oldDocUrl">
     <IconFont type="authing-fanhuijiuban" />
-    {{ $themelocaleConfig.oldVersion }}
+    {{ $themeLocaleConfig.oldVersion }}
   </a>
 </template>
 

@@ -15,7 +15,7 @@
       </div>
 
       <SidebarSearch
-        :placeholder="$themelocaleConfig.search"
+        :placeholder="$themeLocaleConfig.search"
         class="sidebar-search"
         :items="items"
       />
@@ -60,7 +60,7 @@ export default {
         return "";
       }
 
-      const navLinks = this.$themelocaleConfig.nav;
+      const navLinks = this.$themeLocaleConfig.nav;
       if (!navLinks) {
         return "";
       }

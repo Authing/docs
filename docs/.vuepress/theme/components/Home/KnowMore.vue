@@ -1,6 +1,6 @@
 <template>
   <NavLink class="know-more" :item="link">
-    {{ $themelocaleConfig.knowMore }}
+    {{ $themeLocaleConfig.knowMore }}
     <ArrowRight
       :style="{
         marginLeft: '4px',

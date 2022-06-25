@@ -45,8 +45,8 @@ export default {
     },
 
     lastUpdatedText() {
-      if (typeof this.$themelocaleConfig.lastUpdated === "string") {
-        return this.$themelocaleConfig.lastUpdated;
+      if (typeof this.$themeLocaleConfig.lastUpdated === "string") {
+        return this.$themeLocaleConfig.lastUpdated;
       }
       if (typeof this.$site.themeConfig.lastUpdated === "string") {
         return this.$site.themeConfig.lastUpdated;

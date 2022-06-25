@@ -10,7 +10,7 @@
           rel="noopener noreferrer"
         >
           <span class="arrow-outline"></span>
-          {{ $themelocaleConfig.prevDoc }}:
+          {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
           <OutboundLink />
         </a>
@@ -18,7 +18,7 @@
         <RouterLink v-else class="prev" :to="prev.path">
           <span class="arrow-outline">
           </span>
-          {{ $themelocaleConfig.prevDoc }}:
+          {{ $themeLocaleConfig.prevDoc }}:
           {{ prev.title || prev.path }}
         </RouterLink>
       </template>
@@ -31,14 +31,14 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          {{ $themelocaleConfig.nextDoc }}:
+          {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
           <span class="arrow-outline"></span>
           <OutboundLink />
         </a>
 
         <RouterLink v-else :to="next.path" class="next">
-          {{ $themelocaleConfig.nextDoc }}:
+          {{ $themeLocaleConfig.nextDoc }}:
           {{ next.title || next.path }}
           <span class="arrow-outline">
           </span>

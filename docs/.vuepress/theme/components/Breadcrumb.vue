@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     crumbs() {
-      const navLinks = this.$themelocaleConfig.nav;
+      const navLinks = this.$themeLocaleConfig.nav;
       if (!navLinks) {
         return [];
       }

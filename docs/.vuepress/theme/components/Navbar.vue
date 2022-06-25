@@ -45,7 +45,7 @@
       </div>
 
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
-      <SearchInput :placeholder="$themelocaleConfig.searchInDoc" />
+      <SearchInput :placeholder="$themeLocaleConfig.searchInDoc" />
 
       <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
@@ -92,7 +92,7 @@ export default {
   computed: {
     algolia() {
       return (
-        this.$themelocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+        this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
       );
     },
 

@@ -14,7 +14,7 @@
         {{ cardInfo.description }}
       </p>
 
-      <p class="sdk-access">{{ $themelocaleConfig.sdkAccess }}</p>
+      <p class="sdk-access">{{ $themeLocaleConfig.sdkAccess }}</p>
 
       <div class="sdk-link-container">
         <template v-for="(sdk, index) of sdkData">
@@ -150,7 +150,7 @@ export default {
         {{ cardInfo.description }}
       </p>
 
-      <p class="sdk-access">{{ $themelocaleConfig.sdkAccess }}</p>
+      <p class="sdk-access">{{ $themeLocaleConfig.sdkAccess }}</p>
 
       <div class="sdk-link-container">
         <template v-for="(sdk, index) of sdkData">
