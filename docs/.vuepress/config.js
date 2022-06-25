@@ -7,6 +7,8 @@ const webpack = require("webpack");
 const gaEnabled = config && config.ga && config.ga.enabled;
 const gTrackingId = config && config.ga && config.ga.gTrackingId;
 
+const cacheSidebarPlugin = require('./vuepress-plugin-cache-sidebar')
+
 const head = [
   [
     "link",
@@ -54,7 +56,7 @@ module.exports = {
   shouldPrefetch: () => false,
   title: "文档",
   description: "Authing 文档",
-  plugins,
+  plugins: plugins.concat(cacheSidebarPlugin),
   feedbackUrl: `https://open.feishu.cn/open-apis/bot/v2/hook/f5e7517d-07cb-4519-ab6c-577ad8653ca2`,
   markdown: {
     anchor: {
