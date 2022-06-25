@@ -738,7 +738,29 @@ const zhCnNavBar = {
         //  title: "身份源连接的账号匹配规则",
          // path: "/guides/connections/user-mapping"
         //},
-        DATABASE_CONNECTION_MENU
+        // DATABASE_CONNECTION_MENU
+        {
+          title: "自定义数据库",
+          path: "/guides/database-connection/",
+          children: [
+            {
+              title: "配置数据库连接和编写脚本",
+              path: "/guides/database-connection/configuration/"
+            },
+            {
+              title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
+              path: "/guides/database-connection/lazy-migration"
+            },
+            {
+              title: "完全使用自定义数据库保存用户数据",
+              path: "/guides/database-connection/custom-user-store.md"
+            },
+            {
+              title: "最佳实践",
+              path: "/guides/database-connection/best-practices.md"
+            }
+          ]
+        }
       ]
     },
     {
@@ -869,7 +891,29 @@ const zhCnNavBar = {
             }
           ]
         },
-        DATABASE_CONNECTION_MENU,
+        // DATABASE_CONNECTION_MENU,
+        {
+          title: "自定义数据库",
+          path: "/guides/extensibility/database-connection/",
+          children: [
+            {
+              title: "配置数据库连接和编写脚本",
+              path: "/guides/extensibility/database-connection/configuration/"
+            },
+            {
+              title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
+              path: "/guides/extensibility/database-connection/lazy-migration"
+            },
+            {
+              title: "完全使用自定义数据库保存用户数据",
+              path: "/guides/extensibility/database-connection/custom-user-store.md"
+            },
+            {
+              title: "最佳实践",
+              path: "/guides/extensibility/database-connection/best-practices.md"
+            }
+          ]
+        },
         {
           title: "配置自定义密码函数",
           path: "/guides/extensibility/custom-password-script"
