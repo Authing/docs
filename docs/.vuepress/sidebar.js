@@ -5,7 +5,7 @@ const BRAND_NAME_EN_US_LOWER_CASE = "authing";
 
 const DATABASE_CONNECTION_MENU = {
   title: "自定义数据库",
-  path: "/guides/database-connection/overview",
+  path: "/guides/database-connection/overview.html",
   children: [
     {
       title: "配置数据库连接和编写脚本",
@@ -564,7 +564,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "社会化身份源",
-          path: "/guides/connections/social",
+          path: "/guides/connections/social/",
           children: [
             {
               title: "微信 PC 扫码",
@@ -666,7 +666,7 @@ const zhCnNavBar = {
         },
         {
           title: "企业身份源",
-          path: "/guides/connections/enterprise",
+          path: "/guides/connections/enterprise/",
           children: [
             {
               title: "企业微信自建应用扫码",

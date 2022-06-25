@@ -5,7 +5,7 @@
 
 社会化身份源登录，是指用户使用第三方社交平台的身份认证信息在当前网址进行认证登录的流程。社会化登录不仅有助于简化用户的登录体验，同时也为用户提供了一种更为简单便捷的注册登录方式。在 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) ，目前一共支持国内外将近 20 余种社会化登录，比如个人微信、腾讯 QQ、Facebook、Google、Twitter 等。
 
-![](./images/add_social.png)
+![](../images/add_social.png)
 
 
 ## 社会化登录列表
