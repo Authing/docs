@@ -55,7 +55,7 @@
         />
       </div>
 
-      <h3 class="explore-authing">{{ $themeLocaleConfig.expolreUse }}</h3>
+      <h3 class="explore-authing">{{ $themelocaleConfig.expolreUse }}</h3>
 
       <div class="explore-card-container layout-container">
         <ExploreCard

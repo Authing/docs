@@ -10,7 +10,7 @@ export const formatNavLinks = (links) => {
 
 export const getUserNavLinks = (vm) => {
   return formatNavLinks(
-    vm.$themeLocaleConfig.nav || vm.$site.themeConfig.nav || []
+    vm.$themelocaleConfig.nav || vm.$site.themeConfig.nav || []
   )
 }
 
@@ -22,8 +22,8 @@ export const getLanguageNavLinks = (vm) => {
     const routes = vm.$router.options.routes
     const themeLocales = vm.$site.themeConfig.locales || {}
     const languageDropdown = {
-      text: vm.$themeLocaleConfig.selectText || 'Languages',
-      ariaLabel: vm.$themeLocaleConfig.ariaLabel || 'Select language',
+      text: vm.$themelocaleConfig.selectText || 'Languages',
+      ariaLabel: vm.$themelocaleConfig.ariaLabel || 'Select language',
       items: Object.keys(locales).map((path) => {
         const locale = locales[path]
         const text =

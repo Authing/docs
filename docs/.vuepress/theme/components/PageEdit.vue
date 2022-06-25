@@ -43,7 +43,7 @@ export default {
 
     editLinkText() {
       return (
-        this.$themeLocaleConfig.editLinkText ||
+        this.$themelocaleConfig.editLinkText ||
         this.$site.themeConfig.editLinkText ||
         `Edit this page`
       )

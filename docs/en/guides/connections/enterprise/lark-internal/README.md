@@ -4,7 +4,7 @@
 
 ## Introduction
 
-- **Overview**: Feishu Custom App is suitable for your own enterprise PC website sweep login and Feishu Workbench no-login scenario. For enterprises to achieve secure login to third-party applications or websites with Feishu as the identity source. In {{$loCaleconfig.brandName}}, you can configure and turn on the enterprise login of Feishu Enterprise custom Application to quickly get the basic open information of Feishu and help users to achieve password-free login through {{$loCaleconfig.brandName}}.
+- **Overview**: Feishu Custom App is suitable for your own enterprise PC website sweep login and Feishu Workbench no-login scenario. For enterprises to achieve secure login to third-party applications or websites with Feishu as the identity source. In {{$localeConfig.brandName}}, you can configure and turn on the enterprise login of Feishu Enterprise custom Application to quickly get the basic open information of Feishu and help users to achieve password-free login through {{$localeConfig.brandName}}.
 - **Application Scenario**: PC website, Feishu workbench, mobile application
 - **End-user preview image**.
 
@@ -13,7 +13,7 @@
 ## Caution.
 
 - If you do not have a Feishu developer account, please go to [Feishu Open Platform](https://open.feishu.cn/app) to register first.
-- If you do not have a {{$loCaleconfig.brandName}} Console account, please go to [{{$loCaleconfig.brandName}} Console](https://authing.cn/) to register your developer account first.
+- If you do not have a {{$localeConfig.brandName}} Console account, please go to [{{$localeConfig.brandName}} Console](https://authing.cn/) to register your developer account first.
 
 ## Step 1: Create Enterprise custom Application
 
@@ -26,7 +26,7 @@ Go to [Feishu Developer Console](https://open.feishu.cn/app), click **Create Ent
 Go to the created app, click **Application Features**, select **Web App** and turn on the **Enable web app** feature.
 <img src="./images/04.png" >
 
-Click **Credentials and Basic Info** to view the App ID and App Secret and open the {{$loCaleconfig.brandName}} console.
+Click **Credentials and Basic Info** to view the App ID and App Secret and open the {{$localeConfig.brandName}} console.
 
 If you need **Mobile App Login**, click **Features**, select **Mobile App Login**, turn on the **Feishu Login** feature, and in the Feishu login configuration below, user login protocol option **OAuth 2.0**, and fill in the mobile app configuration.
 
@@ -43,9 +43,9 @@ In order to normally obtain the user information of the feishu and complete the 
 
 <img src="./images/06.png" >
 
-##Step 2: configure the feishu custom application on the {{$loCaleconfig.brandName}} console
+##Step 2: configure the feishu custom application on the {{$localeConfig.brandName}} console
 
-2.1 please click the "create enterprise identity source" button on the "enterprise identity source" page of the {{$loCaleconfig.brandName}} console to enter the "select enterprise identity source" page and click the "feishu" identity source button
+2.1 please click the "create enterprise identity source" button on the "enterprise identity source" page of the {{$localeConfig.brandName}} console to enter the "select enterprise identity source" page and click the "feishu" identity source button
 
 <img src="./images/12.png" >
 
@@ -74,7 +74,7 @@ App ID and App Secret, fill in the App ID and App Secret in **Credentials and Ba
 
 2.4 Once the configuration is done, click the "Create" or "Save" button to complete the creation.
 
-In the Feishu Open Platform, open the app management page, select **Security Settings**, add the {{$loCaleconfig.brandName}} backend callback address to the **Redirect URL**
+In the Feishu Open Platform, open the app management page, select **Security Settings**, add the {{$localeConfig.brandName}} backend callback address to the **Redirect URL**
 
 <img src="./images/05.png" >
 
@@ -94,13 +94,13 @@ In the Feishu Open Platform, open the app management page, select **Security Set
 
 - **Recommended development access method**: Use hosted login page
 
-- **Description of advantages and disadvantages**: Simple operation and maintenance, by {{$loCaleconfig.brandName}} is responsible for operation and maintenance. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$loCaleconfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
+- **Description of advantages and disadvantages**: Simple operation and maintenance, by {{$localeConfig.brandName}} is responsible for operation and maintenance. Each user pool has a separate secondary domain; if you need to embed it in your application, you need to use the popup mode login, i.e.: after clicking the login button, a window will pop up with {{$localeConfig.brandName}} hosted login page, or redirect the browser to {{$localeConfig.brandName }} to the hosted login page.
 
 - **Detailed access method**.
 
-  3.1 Create an app in the {{$loCaleconfig.brandName}} console, for details see: [How to create an app in {{$loCaleconfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-  3.2 In the created FeiShu enterprise app identity source connection details page, open and associate an app created in the {{$loCaleconfig.brandName}} console
+  3.2 In the created FeiShu enterprise app identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
 <img src="./images/15.png" >
 

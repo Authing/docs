@@ -23,8 +23,8 @@ export default {
       const routes = this.$router.options.routes
 
       return {
-        text: this.$themeLocaleConfig.selectText || 'Languages',
-        ariaLabel: this.$themeLocaleConfig.ariaLabel || 'Select language',
+        text: this.$themelocaleConfig.selectText || 'Languages',
+        ariaLabel: this.$themelocaleConfig.ariaLabel || 'Select language',
         items: Object.keys(locales).map((path) => {
           const locale = locales[path]
           const text =

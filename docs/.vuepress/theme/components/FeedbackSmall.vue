@@ -87,7 +87,7 @@ export default {
       return STATUS;
     },
     feedbackConfig() {
-      return this.$themeLocaleConfig.feedback;
+      return this.$themelocaleConfig.feedback;
     },
     feedbackToastStyles () {
       const clientWidth = document.documentElement.clientWidth
