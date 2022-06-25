@@ -8,7 +8,7 @@ In the applet, in addition to obtaining, modifying user information, mailbox mob
 
 In order to use in a small program {{$localeConfig.brandName}} Applets SDK, you need to be in [WeChat open platform](https://mp.weixin.qq.com/) apply for a small program while [{{$localeConfig.brandName}} console](https://console.authing.cn/console/userpool) Fill in the configuration of the applet.
 
-For details, please see:[In {{$localeConfig.brandName}} configuring a small program login](../../../reference/sdk-for-wxapp.md#在-localeconfig-brandName-中配置小程序登录).
+For details, please see:[In {{$localeConfig.brandName}} configuring a small program login](../../../reference/sdk-for-wxapp.md#在-localeConfig-brandName-中配置小程序登录).
 
 ## Introduce {{$localeConfig.brandName}} Applets SDK
 

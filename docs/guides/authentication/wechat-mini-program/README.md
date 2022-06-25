@@ -8,7 +8,7 @@
 
 为了在小程序中使用 {{$localeConfig.brandName}} 小程序 SDK，你需要先在[微信开放平台](https://mp.weixin.qq.com/)申请一个小程序，同时在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool)内填入该小程序的配置。
 
-详情请见：[在 {{$localeConfig.brandName}} 中配置小程序登录](/reference/sdk-for-wxapp.md#在-localeconfig-brandName-中配置小程序登录)。
+详情请见：[在 {{$localeConfig.brandName}} 中配置小程序登录](/reference/sdk-for-wxapp.md#在-localeConfig-brandName-中配置小程序登录)。
 
 ## 引入 {{$localeConfig.brandName}} 小程序 SDK
 
