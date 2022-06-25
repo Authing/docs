@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## Precautions：
 
@@ -27,15 +27,15 @@ If there is no available identity source, Authing can also be used as an OAuth2.
 
 2.1 Open the **Authing console** and enter the user pool that you want to connect to the OAuth2.0 identity source, here called **"User Pool B"**. On the left menu, select Connect to Identity Source > Enterprise Identity Source, and select Create Enterprise Identity Source on the right panel.
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 Find "OAuth2.0" in the right panel and click it.
 
-<img src="./images/02choiceoauth.png" />
+![](./images/02choiceoauth.png)
 
 2.3 According to the configuration requirements of OAuth2.0, fill in the configuration content required by the OAuth2.0 protocol.
 
-<img src="./images/03inputoauth.png" />
+![](./images/03inputoauth.png)
 
 | NO.   | Fields/Function                    | Description                                                         |
 | ------ | ---------------------------- | ------------------------------------------------------------ |
@@ -67,8 +67,8 @@ After the configuration is complete, click the "Save" button to complete the cre
 
 3.2 On the created OAuth2.0 identity source connection details page, open and associate an application created in the Authing console.
 
-<img src="./images/04openoauthapp.png" />
+![](./images/04openoauthapp.png)
 
 3.3 Experience OAuth2.0 enterprise login on the login page.
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)

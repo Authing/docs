@@ -8,7 +8,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## 注意事项
 
@@ -22,27 +22,27 @@
 
 1.1  打开 **Authing 控制台**，进入想要作为身份源的用户池，这里称其为 **「用户池 A」**。单击左侧菜单的「应用」选项，在右侧面板找到想要启用 CAS IdP 能力的应用，点击进入应用配置页面。
 
-<img src="./images/06casapp.png" />
+![](./images/06casapp.png)
 
 1.2 在「应用配置」选项卡中找到「其他配置」，打开「启用 CAS IdP」开关，并单击右上角的「保存」按钮。记录下「登录端点」和「service ticket 检验端点（CAS 2.0）」两项的内容，之后的配置中会用到。
 
-<img src="./images/07opencas.png" />
+![](./images/07opencas.png)
 
 ## 步骤2：在 Authing 控制台配置 CAS 身份源
 
 2.1 打开 **Authing 控制台**，进入想要连接 CAS 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 在右侧面板找到「CAS」，点击进去。
 
-<img src="./images/02choicecas.png" />
+![](./images/02choicecas.png)
 
 2.3 根据 CAS 的配置要求，填入 CAS 协议所要求的配置内容。
 
 
 
-<img src="./images/03inputcas.png" />
+![](./images/03inputcas.png)
 
 | 编号  | 字段/功能           | 描述                                                         |
 | ----- | ------------------- | ------------------------------------------------------------ |
@@ -68,9 +68,9 @@
 
 3.2 在已创建好的 CAS 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/04opencasapp.png" />
+![](./images/04opencasapp.png)
 
 3.3 在登录页面体验 CAS 的企业化登录
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 

@@ -8,7 +8,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## 注意事项
 
@@ -19,21 +19,21 @@
 
 在 Authing 开启 SAML2 身份提供商，为其他服务商提供**身份断言**。让 Authing 成为 SAML 身份源，其他系统可以通过 SAML 协议接入 Authing 作为身份提供商。详细可以参考：[成为 SAML 身份源](https://docs.authing.cn/v2/guides/federation/saml.html)。
 
-<img src="./images/opensaml.png" />
+![](./images/opensaml.png)
 
 ## 步骤2：在 Authing 控制台配置 SAML 身份源
 
 2.1 打开 **Authing 控制台**，进入想要连接 SAML 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 在右侧面板找到「 SAML」，点击进去。
 
-<img src="./images/02choosesaml.png" />
+![](./images/02choosesaml.png)
 
 2.3 根据 SAML 的配置要求，填入  SAML 协议所要求的配置内容。
 
-<img src="./images/03inputconfig.png" />
+![](./images/03inputconfig.png)
 
 | 编号   | 字段/功能         | 描述                                                         |
 | ------ | ----------------- | ------------------------------------------------------------ |
@@ -64,9 +64,9 @@
 
 3.2 在已创建好的 SAML 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/04opensamlapp.png" />
+![](./images/04opensamlapp.png)
 
 3.3 在登录页面体验 SAML 的企业化登录
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 

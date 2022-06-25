@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/06loginpage.png" />
+![](./images/06loginpage.png)
 
 ## Precautions:
 
@@ -25,15 +25,15 @@ Authing supports viewing, modifying, adding and deleting user information using 
 
 2.1 Open the **Authing console** and enter the user pool that you want to connect to the LDAP identity source, here called **"User Pool A"**. On the left menu, select Connect to Identity Source > Enterprise Identity Source, and select Create Enterprise Identity Source on the right panel.
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 Find "LDAP" in the right panel and click it.
 
-<img src="./images/02chooseldap.png" />
+![](./images/02chooseldap.png)
 
 2.3 According to the LDAP configuration requirements, fill in the configuration content required by the LDAP protocol.
 
-<img src="./images/03inputconfig.png" />
+![](./images/03inputconfig.png)
 
 | NO.    | Fields/Function | Description                                                  |
 | ------ | --------------- | ------------------------------------------------------------ |
@@ -51,7 +51,7 @@ After the configuration is complete, click the "Save" button to complete the cre
 
 Authing also provides a test for LDAP connection to test the connectivity of the LDAP service and whether the account password is correct, helping you to check whether the parameters are filled in correctly.
 
-<img src="./images/04testuseful.png" />
+![](./images/04testuseful.png)
 
 ## Step 3: Development Access
 
@@ -65,8 +65,8 @@ Authing also provides a test for LDAP connection to test the connectivity of the
 
 3.2 On the created LDAP identity source connection details page, open and associate an application created in the Authing console.
 
-<img src="./images/05openldapapp.png" />
+![](./images/05openldapapp.png)
 
 3.3 Experience the enterprise login of LDAP on the login page.
 
-<img src="./images/06loginpage.png" />
+![](./images/06loginpage.png)

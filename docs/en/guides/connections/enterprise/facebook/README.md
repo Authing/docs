@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/00-viewResult.png" />
+![](./images/00-viewResult.png)
 
 ## Precautions：
 
@@ -20,29 +20,29 @@
 
 Go to [developers.facebook.com](https://developers.facebook.com/), click **My Apps**, then create a new app and select **Consumer** or **No App Type** , fill in the application name.
 
-<img src="./images/1-metaCreateApp.png" />
+![](./images/1-metaCreateApp.png)
 
-<img src="./images/2-metaSaveApp.png" />
+![](./images/2-metaSaveApp.png)
 
 In the control panel, find the **Facebook Login** product and click Settings to add it to your app. Then find the app ID and app key in Settings > Basic in the menu on the left, and record it.
 
-<img src="./images/3-metaAddFacebook.png" />
+![](./images/3-metaAddFacebook.png)
 
-<img src="./images/6-appidSecret.png" />
+![](./images/6-appidSecret.png)
 
 ## Step 2：Configure Instagram in the Authing console
 
 2.1 On the 「Social Identity Source」 page of the Authing Console, click the 「Create Social Identity Source」button to enter the 「Select Social Identity Source」page.
 
-<img src="./images/4-addMeta.png" />
+![](./images/4-addMeta.png)
 
 2.2 Please go to the 「Social Identity Source」 - 「Select Social Identity」 page of the Authing Console, and click the 「Facebook」 identity source button to enter the 「Facebook Login Mode」 page.
 
-<img src="./images/5-choiceMeta.png" />
+![](./images/5-choiceMeta.png)
 
 2.3 Please configure the relevant field information on the 「Social Identity Sources」 - 「Facebook」 page of the Authing Console.
 
-<img src="./images/7-savefacebook.png" />
+![](./images/7-savefacebook.png)
 
 | No    | Field/Function               | Description                                                  |
 | ----- | ---------------------------- | ------------------------------------------------------------ |
@@ -59,7 +59,7 @@ After the configuration is complete, click the "Create" or "Save" button to comp
 
 After the Facebook identity source is created on the Authing console, the callback address needs to be configured in the Facebook app on Facebook's open platform **OAuth Client Authorization Settings**.
 
-<img src="./images/9-oauthUrl.png" />
+![](./images/9-oauthUrl.png)
 
 ## Step3: Development Access
 
@@ -73,9 +73,9 @@ After the Facebook identity source is created on the Authing console, the callba
 
 3.2 On the created Facebook'= identity source connection details page, open and associate an app created in the Authing console.
 
-<img src="./images/8-openapp.png" />
+![](./images/8-openapp.png)
 
 3.3 Experience third-party login for Facebook on the login page.
 
-<img src="./images/10-loginpage.png" />
+![](./images/10-loginpage.png)
 

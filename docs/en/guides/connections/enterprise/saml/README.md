@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## Precautions:
 
@@ -19,21 +19,21 @@
 
 Enable SAML2 identity provider in Authing to provide **identity assertion** for other service providers. Let Authing be the SAML identity source, and other systems can access Authing as the identity provider through the SAML protocol. For details, please refer to: [Becoming a SAML Identity Source](https://docs.authing.cn/v2/guides/federation/saml.html).
 
-<img src="./images/opensaml.png" />
+![](./images/opensaml.png)
 
 ## Step 2: Configure the SAML identity source in the Authing console
 
 2.1 Open the **Authing console** and enter the user pool that you want to connect to the SAML identity source, here called **"User Pool B"**. On the left menu, select Connect to Identity Source > Enterprise Identity Source, and select Create Enterprise Identity Source on the right panel.
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 Find "SAML" in the right panel and click it.
 
-<img src="./images/02choosesaml.png" />
+![](./images/02choosesaml.png)
 
 2.3 According to the configuration requirements of SAML, fill in the configuration content required by the SAML protocol.
 
-<img src="./images/03inputconfig.png" />
+![](./images/03inputconfig.png)
 
 | NO.    | Fields/Function                  | Description                                                                                                                                                                                              |
 | ------ | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,8 +64,8 @@ After the configuration is complete, click the "Save" button to complete the cre
 
   3.2 On the created SAML identity source connection details page, open and associate an application created in the Authing console.
 
-<img src="./images/04opensamlapp.png" />
+![](./images/04opensamlapp.png)
 
 3.3 Experience SAML enterprise login on login page.
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)

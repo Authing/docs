@@ -26,23 +26,23 @@
 
 创建完应用，设置包名，上传签名等操作完成后，需要记录下业务 ID (business Id) 和号码认证服务接入凭证的产品密钥 SecretId、SecretKey。后续在 Authing 控制台配置易盾身份源时需要该数据。
 
-<img src="./images/yd_bizid.png" />
+![](./images/yd_bizid.png)
 
-<img src="./images/yd_secret.png" />
+![](./images/yd_secret.png)
 
 ## 步骤2：在 Authing 控制台配置易盾
 
 2.1 请在 Authing Console 控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
-<img src="./images/06addSocial.png" />
+![](./images/06addSocial.png)
 
 2.2 请在 Authing Console 控制台 的「社会化身份源」-「选择社会化身份源」页面，点击「易盾」身份源按钮，进入 「易盾登录模式」页面。
 
-<img src="./images/07chooseyidun.png" />
+![](./images/07chooseyidun.png)
 
 2.3 请在 Authing  控制台 的「社会化身份源」-「易盾」页面，配置相关的字段信息。
 
-<img src="./images/08inputconfig.png" />
+![](./images/08inputconfig.png)
 
 | 编号  | 字段/功能    | 描述                                                         |
 | ----- | ------------ | ------------------------------------------------------------ |
@@ -66,7 +66,7 @@
 
 3.2 在已创建好的易盾身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/09openapp.png" />
+![](./images/09openapp.png)
 
 3.3 参考 Authing 提供的集成指导，完成集成工作，然后在移动端上体验手机号一键登录。
 

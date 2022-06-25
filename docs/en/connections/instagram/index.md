@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/00-viewResult.png" />
+![](./images/00-viewResult.png)
 
 ## Precautions：
 
@@ -20,31 +20,31 @@
 
 Go to [developers.facebook.com](https://developers.facebook.com/), click **My Apps**, then create a new app and select **Consumer** or **No App Type** , fill in the application name.
 
-<img src="./images/01-createapp.png" />
+![](./images/01-createapp.png)
 
-<img src="./images/02-saveapp.png" />
+![](./images/02-saveapp.png)
 
 In the control panel, find the **Instagram Basic Display** product and click Settings to add it to your app.
 
-<img src="./images/03-addinstagram.png" />
+![](./images/03-addinstagram.png)
 
 Scroll to the bottom of the page and click **Create new app**.
 
-<img src="./images/04-saveins.png" />
+![](./images/04-saveins.png)
 
 ## Step 2：Configure Instagram in the Authing console
 
 2.1 On the 「Social Identity Source」 page of the Authing Console, click the 「Create Social Identity Source」button to enter the 「Select Social Identity Source」page.
 
-<img src="./images/05-addSocial.png" />
+![](./images/05-addSocial.png)
 
 2.2 Please go to the 「Social Identity Source」 - 「Select Social Identity」 page of the Authing Console, and click the 「Instagram」 identity source button to enter the 「Instagram Login Mode」 page.
 
-<img src="./images/06-choiceIns.png" />
+![](./images/06-choiceIns.png)
 
 2.3 Please configure the relevant field information on the 「Social Identity Sources」 - 「Instagram」 page of the Authing Console.
 
-<img src="./images/07-insconfig.png" />
+![](./images/07-insconfig.png)
 
 | No    | Field/Function               | Description                                                  |
 | ----- | ---------------------------- | ------------------------------------------------------------ |
@@ -62,7 +62,7 @@ After creating the Instagram identity source on the Authing console, you need to
 
 In the last step, Instagram needs permission to access **instagram_graph_user_profile**, so this permission needs to be increased. Then click and save the changes, the instagram application is created successfully.
 
-<img src="./images/08-insconfig-success.png" />
+![](./images/08-insconfig-success.png)
 
 ## Step 3：Development Access
 
@@ -76,8 +76,8 @@ In the last step, Instagram needs permission to access **instagram_graph_user_pr
 
 3.2 On the created Instagram identity source connection details page, open and associate an app created in the Authing console
 
-<img src="./images/09-openapp.png" />
+![](./images/09-openapp.png)
 
 3.3 Experience third-party login for Instagram on the login page
 
-<img src="./images/10-login.png" />
+![](./images/10-login.png)

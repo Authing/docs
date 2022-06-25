@@ -8,7 +8,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)
 
 ## 注意事项
 
@@ -25,15 +25,15 @@
 
 2.1 打开 **Authing 控制台**，进入想要连接 OAuth2.0 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 
-<img src="./images/01opensource.png" />
+![](./images/01opensource.png)
 
 2.2 在右侧面板找到「 OAuth2.0」，点击进去。
 
-<img src="./images/02choiceoauth.png" />
+![](./images/02choiceoauth.png)
 
 2.3 根据 OAuth2.0 的配置要求，填入  OAuth2.0 协议所要求的配置内容。
 
-<img src="./images/03inputoauth.png" />
+![](./images/03inputoauth.png)
 
 | 编号   | 字段/功能            | 描述                                                         |
 | ------ | -------------------- | ------------------------------------------------------------ |
@@ -65,8 +65,8 @@
 
 3.2 在已创建好的 OAuth2.0 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-<img src="./images/04opencasapp.png" />
+![](./images/04opencasapp.png)
 
 3.3 在登录页面体验 OAuth2.0  的企业化登录
 
-<img src="./images/05loginpage.png" />
+![](./images/05loginpage.png)

@@ -8,7 +8,7 @@
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
-<img src="./images/00Result.png" />
+![](./images/00Result.png)
 
 
 
