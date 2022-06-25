@@ -108,13 +108,15 @@ import ApplicationIntegration from "@theme/components/ApplicationIntegration/ind
 import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
-import { resolveSidebarItems, setCookie, delCookie } from "@theme/util";
+import { setCookie, delCookie } from "@theme/util";
 import Footer from "@theme/components/Footer/index.vue";
 import Breadcrumb from "@theme/components/Breadcrumb.vue";
 import Quickstarts from "@theme/components/Quickstarts/index.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
 import Reference from "@theme/components/Reference/index.vue";
 import querystring from "query-string";
+
+import { sidebarList } from "@dynamic/sidebar-caches";
 
 export default {
   name: "Layout",
@@ -164,13 +166,12 @@ export default {
     },
 
     sidebarItems() {
-      const list = resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
+      const regularPath = this.$page.regularPath;
+      const matchedNavPath = regularPath.slice(
+        0,
+        regularPath.indexOf("/", regularPath.startsWith("/en/") ? 4 : 1) + 1
       );
-      return list
+      return sidebarList?.[matchedNavPath]?.list || [];
     },
 
     pageClasses() {
