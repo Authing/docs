@@ -5,7 +5,7 @@ const BRAND_NAME_EN_US_LOWER_CASE = "authing";
 
 const DATABASE_CONNECTION_MENU = {
   title: "自定义数据库",
-  path: "/guides/database-connection/overview.html",
+  path: "/guides/database-connection/",
   children: [
     {
       title: "配置数据库连接和编写脚本",
