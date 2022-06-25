@@ -26,7 +26,7 @@ Go to [Feishu Developer Console](https://open.feishu.cn/app), click **Create Ent
 Go to the created app, click **Application Features**, select **Web App** and turn on the **Enable web app** feature.
 <img src="./images/04.png" >
 
-Click **Credentials and Basic Info** to view the App ID and App Secret and open the {{localeConfig.brandName}} console.
+Click **Credentials and Basic Info** to view the App ID and App Secret and open the {{$localeConfig.brandName}} console.
 
 If you need **Mobile App Login**, click **Features**, select **Mobile App Login**, turn on the **Feishu Login** feature, and in the Feishu login configuration below, user login protocol option **OAuth 2.0**, and fill in the mobile app configuration.
 
