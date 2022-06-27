@@ -4,7 +4,7 @@
 
 企业身份源登录，是指用户使用企业的身份认证信息在公司内部应用或第三方应用进行认证登录的流程。在 {{$localeConfig.brandName}} 控制台中，企业身份源包含两类：办公应用（比如飞书、企业微信、钉钉）与标准协议应用（比如 OIDC、SAML、CAS 等标准协议），你可以通过配置企业身份源连接，实现使用第三方身份源登录 {{$localeConfig.brandName}} 应用 及[从第三方身份源导入组织机构和用户](/guides/org/create-or-import-org/#导入组织机构)。
 
-![](../images/add_enterprise.png)
+![](./images/add_enterprise.png)
 
 ## 企业身份源登录列表
 
