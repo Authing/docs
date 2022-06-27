@@ -4,23 +4,23 @@
 
 1. 进入[飞书开放平台](https://open.feishu.cn/)，打开开发者后台。
 
-<img src="../../images/getConfigLark-1.png" />
+![](../../images/getConfigLark-1.png)
 
 <br/>
 
 2. 创建一个**企业自建应用**。
 
-<img src="../../images/getConfigLark-2.png" />
+![](../../images/getConfigLark-2.png)
 
 <br/>
 
 3. 获取 App ID、App Secret、Encrypt Key(实时同步必填) 和 Verification Token(实时同步必填)。
 
-<img src="../../images/getConfigLark-3.png" />
+![](../../images/getConfigLark-3.png)
 
 <br/>
 
-<img src="../../images/getConfigLark-4.png" />
+![](../../images/getConfigLark-4.png)
 
 <br/>
 
@@ -43,9 +43,9 @@
 
 <br/>
 
-<img src="../../images/getConfigLark-7.png" />
+![](../../images/getConfigLark-7.png)
 <br/>
-<img src="../../images/getConfigLark-8.png" />
+![](../../images/getConfigLark-8.png)
 
 
 <br/>
@@ -62,27 +62,27 @@
 
 设置**权限范围**为全部成员
 
-<img src="../../images/getConfigLark-10.png" />
+![](../../images/getConfigLark-10.png)
 
 <br/>
 
-<img src="../../images/getConfigLark-11.png" />
+![](../../images/getConfigLark-11.png)
 
 
 设置权限之后，如果有**需审核权限**，你需要发布最新版本。**免审权限**开通即生效，无需发布版本。
 
-<img src="../../images/getConfigLark-5.png" />
+![](../../images/getConfigLark-5.png)
 
 <br/>
 
-<img src="../../images/getConfigLark-6.png" />
+![](../../images/getConfigLark-6.png)
 
 <br/>
 
 创建新版本时，注意**可用范围**选择**所有员工**和通讯录权限保持一致。
 
-<img src="../../images/getConfigLark-9.png" />
+![](../../images/getConfigLark-9.png)
 
 <br/>
 
-<img src="../../images/getConfigLark-12.png" />
+![](../../images/getConfigLark-12.png)

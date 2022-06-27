@@ -12,4 +12,4 @@
 
 <img src="../../../wechat-ecosystem/images/wxapp-scaning-demo.gif" style="display:block;margin: 0 auto;">
 
-完整接入流程请见：[PC 网站使用小程序扫码登录](/guides/wechat-ecosystem/wechat-miniprogram-qrcode/README.md)。
+完整接入流程请见：[PC 网站使用小程序扫码登录](/guides/connections/social/wechat-miniprogram-qrconnect/README.md)。

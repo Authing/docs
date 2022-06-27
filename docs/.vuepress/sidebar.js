@@ -3,32 +3,9 @@ const BRAND_NAME_ZH_CN_LOWER_CASE = "authing";
 const BRAND_NAME_EN_US = "Authing";
 const BRAND_NAME_EN_US_LOWER_CASE = "authing";
 
-const DATABASE_CONNECTION_MENU = {
-  title: "自定义数据库",
-  path: "/guides/database-connection/overview",
-  children: [
-    {
-      title: "配置数据库连接和编写脚本",
-      path: "/guides/database-connection/configuration/"
-    },
-    {
-      title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
-      path: "/guides/database-connection/lazy-migration"
-    },
-    {
-      title: "完全使用自定义数据库保存用户数据",
-      path: "/guides/database-connection/custom-user-store.md"
-    },
-    {
-      title: "最佳实践",
-      path: "/guides/database-connection/best-practices.md"
-    }
-  ]
-};
-
 const DATABASE_CONNECTION_MENU_EN = {
   title: "Custom database",
-  path: "/guides/database-connection/overview",
+  path: "/guides/database-connection/overview.html",
   children: [
     {
       title: "Configure database connection and scripting",
@@ -563,57 +540,239 @@ const zhCnNavBar = {
       path: "/guides/connections/",
       children: [
         {
-          title: "社会化登录",
-          path: "/guides/connections/social"
+          title: "社会化身份源",
+          path: "/guides/connections/social.html",
+          children: [
+            {
+              title: "微信 PC 扫码",
+              path: "/guides/connections/social/wechat-pc/"
+            },
+            {
+              title: "微信 PC 小程序扫码",
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/"
+            },
+            {
+              title: "微信公众号关注",
+              path: "/guides/connections/social/wechatmp-qrcode/"
+            },
+            {
+              title: "微信移动端",
+              path: "/guides/connections/social/wechat-mobile/"
+            },
+            {
+              title: "APP 拉起微信小程序",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
+            },
+            {
+              title: "微信网页授权",
+              path: "/guides/connections/social/wechat-mp/"
+            },
+            {
+              title: "微信小程序",
+              path: "/guides/connections/social/wechat-miniprogram/"
+            },
+            {
+              title: "腾讯 QQ",
+              path: "/guides/connections/social/qq/"
+            },
+            {
+              title: "新浪微博",
+              path: "/guides/connections/social/weibo/"
+            },
+            {
+              title: "GitHub",
+              path: "/guides/connections/social/github/"
+            },
+            {
+              title: "Facebook",
+              path: "/guides/connections/social/facebook/"
+            },
+            {
+              title: "Twitter",
+              path: "/guides/connections/social/twitter/"
+            },
+            {
+              title: "Google",
+              path: "/guides/connections/social/google/"
+            },
+            {
+              title: "Apple 移动端",
+              path: "/guides/connections/social/apple-mobile/"
+            },
+            {
+              title: "Apple Web 端",
+              path: "/guides/connections/social/apple-web/"
+            },
+            {
+              title: "支付宝",
+              path: "/guides/connections/social/alipay-web/"
+            },
+            {
+              title: "Slack",
+              path: "/guides/connections/social/slack/"
+            },
+            {
+              title: "Gitee",
+              path: "/guides/connections/social/gitee/"
+            },
+            {
+              title: "GitLab",
+              path: "/guides/connections/social/gitlab/"
+            },
+            {
+              title: "百度",
+              path: "/guides/connections/social/baidu/"
+            },
+            {
+              title: "网易易盾（一键登录）",
+              path: "/guides/connections/social/yidun/"
+            },
+            {
+              title: "青云 QingCloud",
+              path: "/guides/connections/social/qingcloud/"
+            },
+            {
+              title: "Instagram",
+              path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
+            }
+          ]
         },
         {
           title: "企业身份源",
-          path: "/guides/connections/enterprise"
+          path: "/guides/connections/enterprise.html",
+          children: [
+            {
+              title: "企业微信自建应用扫码",
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
+            },
+            {
+              title: "企业微信自建应用扫码（代开发模式）",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
+             },
+            {
+              title: "企业微信服务商应用扫码",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
+             },
+            {
+              title: "企业微信移动端",
+              path: "/guides/connections/enterprise/wecom-mobile/"
+            },
+            {
+              title: "钉钉 H5 微应用（企业内部开发）",
+              path: "/guides/connections/enterprise/dingtalk/"
+            },
+            {
+              title: "飞书应用商店应用",
+              path: "/guides/connections/enterprise/lark-public/"
+            },
+            {
+              title: "飞书企业自建应用",
+              path: "/guides/connections/enterprise/lark-internal/"
+            },
+            {
+              title: "Windows AD",
+              path: "/guides/connections/enterprise/windows-ad/"
+            },
+            {
+              title: "Azure AD",
+              path: "/guides/connections/enterprise/azure-ad/"
+            },
+            {
+              title: "OIDC",
+              path: "/guides/connections/enterprise/oidc/"
+            },
+            {
+              title: "OAuth 2.0",
+              path: "/guides/connections/enterprise/oauth2/"
+            },
+            {
+              title: "LDAP",
+              path: "/guides/connections/enterprise/ldap/"
+            },
+            {
+              title: "SAML",
+              path: "/guides/connections/enterprise/saml/"
+            },
+            {
+              title: "CAS",
+              path: "/guides/connections/enterprise/cas/"
+            },
+            {
+              title: "WeLink",
+              path: "/guides/connections/enterprise/welink/"
+            }
+          ]
         },
+       // {
+        //  title: "身份源连接的账号关联",
+        //  path: "/guides/connections/account-association"
+        //},
+        //{
+        //  title: "身份源连接的账号匹配规则",
+         // path: "/guides/connections/user-mapping"
+        //},
+        // DATABASE_CONNECTION_MENU
         {
-          title: "身份源连接的账号关联",
-          path: "/guides/connections/account-association"
-        },
-        {
-          title: "身份源连接的账号匹配规则",
-          path: "/guides/connections/user-mapping"
-        },
-        DATABASE_CONNECTION_MENU
+          title: "自定义数据库",
+          path: "/guides/database-connection/overview.html",
+          children: [
+            {
+              title: "配置数据库连接和编写脚本",
+              path: "/guides/database-connection/configuration/"
+            },
+            {
+              title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
+              path: "/guides/database-connection/lazy-migration"
+            },
+            {
+              title: "完全使用自定义数据库保存用户数据",
+              path: "/guides/database-connection/custom-user-store.md"
+            },
+            {
+              title: "最佳实践",
+              path: "/guides/database-connection/best-practices.md"
+            }
+          ]
+        }
       ]
     },
     {
       title: "打通微信生态",
-      path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "关注公众号登录",
-          path: "/guides/wechat-ecosystem/wechat-offical-account"
-        },
-        {
-          title: "PC 网站使用微信扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC 网站使用小程序扫码登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title: "微信内网页使用微信授权登录",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "小程序内使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "移动 APP 使用微信登录",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "移动 APP 使用小程序登录",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      path: "/guides/wechat-ecosystem/"
+      // children: [
+      //   {
+      //     title: "关注公众号登录",
+      //     path: "/guides/wechat-ecosystem/wechat-offical-account"
+      //   },
+      //   {
+      //     title: "PC 网站使用微信扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC 网站使用小程序扫码登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title: "微信内网页使用微信授权登录",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "小程序内使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "移动 APP 使用微信登录",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "移动 APP 使用小程序登录",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
       title: `迁移用户到 ${BRAND_NAME_ZH_CN}`,
@@ -709,7 +868,7 @@ const zhCnNavBar = {
             }
           ]
         },
-        DATABASE_CONNECTION_MENU,
+        // DATABASE_CONNECTION_MENU,
         {
           title: "配置自定义密码函数",
           path: "/guides/extensibility/custom-password-script"
@@ -3738,50 +3897,210 @@ const translatedZhCnNavBar = {
       ]
     },
     {
-      title: "Connect to an external identity source (IdP)",
+      title: "Connect to an external identity provider (IdP)",
       path: "/guides/connections/",
       children: [
         {
-          title: "Social Login",
-          path: "/guides/connections/social"
+          title: "Social Identity Provider",
+          path: "/guides/connections/social.html",
+          children: [
+            {
+              title: "WeChat QR Code on PC",
+              path: "/guides/connections/social/wechat-pc/"
+            },
+            {
+              title: "Mini Program QR Code on PC",
+              path: "/guides/connections/social/wechat-miniprogram-qrconnect/"
+            },
+            {
+              title: "WeChat Official Accounts QR Code",
+              path: "/guides/connections/social/wechatmp-qrcode/"
+            },
+            {
+              title: "Mobile App Use WeChat Login",
+              path: "/guides/connections/social/wechat-mobile/"
+            },
+            {
+              title: "Mobile App Use WeChat Mini Program Login",
+              path: "/guides/connections/social/wechat-miniprogram-applaunch/"
+            },
+            {
+              title: "WeChat Web Page",
+              path: "/guides/connections/social/wechat-mp/"
+            },
+            {
+              title: "WeChat Mini Program",
+              path: "/guides/connections/social/wechat-miniprogram/"
+            },
+            {
+              title: "Tencent QQ",
+              path: "/guides/connections/social/qq/"
+            },
+            {
+              title: "Sina Weibo",
+              path: "/guides/connections/social/weibo/"
+            },
+            {
+              title: "GitHub",
+              path: "/guides/connections/social/github/"
+            },
+            {
+              title: "Facebook",
+              path: "/guides/connections/social/facebook/"
+            },
+            {
+              title: "Twitter",
+              path: "/guides/connections/social/twitter/"
+            },
+            {
+              title: "Google",
+              path: "/guides/connections/social/google/"
+            },
+            {
+              title: "Apple Mobile",
+              path: "/guides/connections/social/apple-mobile/"
+            },
+            {
+              title: "Apple Web",
+              path: "/guides/connections/social/apple-web/"
+            },
+            {
+              title: "Alipay",
+              path: "/guides/connections/social/alipay-web/"
+            },
+            {
+              title: "Slack",
+              path: "/guides/connections/social/slack/"
+            },
+            {
+              title: "Gitee",
+              path: "/guides/connections/social/gitee/"
+            },
+            {
+              title: "GitLab",
+              path: "/guides/connections/social/gitlab/"
+            },
+            {
+              title: "Baidu",
+              path: "/guides/connections/social/baidu/"
+            },
+            {
+              title: "NetEase YIDUN",
+              path: "/guides/connections/social/yidun/"
+            },
+            {
+              title: "QingCloud",
+              path: "/guides/connections/social/qingcloud/"
+            },
+            {
+              title: "Instagram",
+              path: "/guides/connections/social/instagram/"
+            },
+            {
+              title: "LinkedIn",
+              path: "/guides/connections/social/linkedin/"
+            }
+          ]
         },
         {
-          title: "Corporate Identity Source",
-          path: "/guides/connections/enterprise"
+          title: "Enterprise Identity Provider",
+          path: "/guides/connections/enterprise.html",
+          children: [
+            {
+              title: "WeCom Self-built App QR Code",
+              path: "/guides/connections/enterprise/wecom-corp-qrconnect/"
+            },
+            {
+              title: "WeCom Self-built App QR Code Login(Delegated Development Mode)",
+              path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
+             },
+            {
+              title: "WeCom Service Provider App QR Code",
+              path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
+             },
+            {
+              title: "WeCom Mobile",
+              path: "/guides/connections/enterprise/wecom-mobile/"
+            },
+            {
+              title: "DingTalk H5 Micro Application (Internal Development)",
+              path: "/guides/connections/enterprise/dingtalk/"
+            },
+            {
+              title: "Feishu Marketplace App",
+              path: "/guides/connections/enterprise/lark-public/"
+            },
+            {
+              title: "Feishu Custom App",
+              path: "/guides/connections/enterprise/lark-internal/"
+            },
+            {
+              title: "Windows AD",
+              path: "/guides/connections/enterprise/windows-ad/"
+            },
+            {
+              title: "Azure AD",
+              path: "/guides/connections/enterprise/azure-ad/"
+            },
+            {
+              title: "OIDC",
+              path: "/guides/connections/enterprise/oidc/"
+            },
+            {
+              title: "OAuth 2.0",
+              path: "/guides/connections/enterprise/oauth2/"
+            },
+            {
+              title: "LDAP",
+              path: "/guides/connections/enterprise/ldap/"
+            },
+            {
+              title: "SAML",
+              path: "/guides/connections/enterprise/saml/"
+            },
+            {
+              title: "CAS",
+              path: "/guides/connections/enterprise/cas/"
+            },
+            {
+              title: "WeLink",
+              path: "/guides/connections/enterprise/welink/"
+            }
+          ]
         },
         DATABASE_CONNECTION_MENU_EN
       ]
     },
     {
       title: "Open up WeChat ecology",
-      path: "/guides/wechat-ecosystem/",
-      children: [
-        {
-          title: "PC website uses WeChat scan code to log in",
-          path: "/guides/wechat-ecosystem/wechat-pc/"
-        },
-        {
-          title: "PC website use small program to scan code login",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
-        },
-        {
-          title:
-            "Use WeChat authorization to log in to the web page within WeChat",
-          path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
-        },
-        {
-          title: "Log in with WeChat in the Mini Program",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram"
-        },
-        {
-          title: "Mobile APP use WeChat login",
-          path: "/guides/wechat-ecosystem/wechat-mobile"
-        },
-        {
-          title: "Mobile APP use applet to log in",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
-        }
-      ]
+      path: "/guides/wechat-ecosystem/"
+      // children: [
+      //   {
+      //     title: "PC website uses WeChat scan code to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-pc/"
+      //   },
+      //   {
+      //     title: "PC website use small program to scan code login",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-qrcode/"
+      //   },
+      //   {
+      //     title:
+      //       "Use WeChat authorization to log in to the web page within WeChat",
+      //     path: "/guides/wechat-ecosystem/wechat-webpage-authorization"
+      //   },
+      //   {
+      //     title: "Log in with WeChat in the Mini Program",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram"
+      //   },
+      //   {
+      //     title: "Mobile APP use WeChat login",
+      //     path: "/guides/wechat-ecosystem/wechat-mobile"
+      //   },
+      //   {
+      //     title: "Mobile APP use applet to log in",
+      //     path: "/guides/wechat-ecosystem/wechat-miniprogram-applaunch"
+      //   }
+      // ]
     },
     {
       title: `Migrate users to ${BRAND_NAME_EN_US}`,
@@ -3879,7 +4198,7 @@ const translatedZhCnNavBar = {
             }
           ]
         },
-        DATABASE_CONNECTION_MENU_EN,
+        // DATABASE_CONNECTION_MENU_EN,
         {
           title: "Configure custom password function",
           path: "/guides/extensibility/custom-password-script"

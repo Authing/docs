@@ -5,7 +5,7 @@
 在[控制台](https://console.authing.cn/)点击**同步中心**即可进入同步中心管理页面 ，在这里您可以看到所有您已经创建的同步任务，也可以创建新的同步任务。
 点击右上角的**创建同步任务**，选择您要创建的上游或下游，然后根据提示填写配置信息。点击[这里](./get-config)获取配置信息。
 
-<img src="../images/createSyncTask.png" />
+![](../images/createSyncTask.png)
 
 <br/>
 

@@ -4,7 +4,7 @@
 
 在[控制台](https://console.authing.cn/)点击**多租户**即可进入多租户管理页面 ，在这里你可以看到所有你已经创建的租户，并且可以创建新的租户。
 
-<img src="./images/tenant-list.png" />
+![](./images/tenant-list.png)
 
 
 

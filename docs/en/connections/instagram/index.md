@@ -8,7 +8,7 @@
 - **Application scenarios**：PC Website
 - **End-User Preview**：
 
-<img src="./images/00-viewResult.png" />
+![](./images/00-viewResult.png)
 
 ## Precautions：
 
@@ -20,40 +20,40 @@
 
 Go to [developers.facebook.com](https://developers.facebook.com/), click **My Apps**, then create a new app and select **Consumer** or **No App Type** , fill in the application name.
 
-<img src="./images/01-createapp.png" />
+![](./images/01-createapp.png)
 
-<img src="./images/02-saveapp.png" />
+![](./images/02-saveapp.png)
 
 In the control panel, find the **Instagram Basic Display** product and click Settings to add it to your app.
 
-<img src="./images/03-addinstagram.png" />
+![](./images/03-addinstagram.png)
 
 Scroll to the bottom of the page and click **Create new app**.
 
-<img src="./images/04-saveins.png" />
+![](./images/04-saveins.png)
 
 ## Step 2：Configure Instagram in the Authing console
 
 2.1 On the 「Social Identity Source」 page of the Authing Console, click the 「Create Social Identity Source」button to enter the 「Select Social Identity Source」page.
 
-<img src="./images/05-addSocial.png" />
+![](./images/05-addSocial.png)
 
-2.2 请在 Authing Console 控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「Instagram」身份源按钮，进入 「Instagram 登录模式」页面。
+2.2 Please go to the 「Social Identity Source」 - 「Select Social Identity」 page of the Authing Console, and click the 「Instagram」 identity source button to enter the 「Instagram Login Mode」 page.
 
-<img src="./images/06-choiceIns.png" />
+![](./images/06-choiceIns.png)
 
 2.3 Please configure the relevant field information on the 「Social Identity Sources」 - 「Instagram」 page of the Authing Console.
 
-<img src="./images/07-insconfig.png" />
+![](./images/07-insconfig.png)
 
-| 编号  | 字段/功能                    | 描述                                                                                                                                                                                                                                                                                                     |
-| ----- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2.3.1 | unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting.                                                                                                 |
-| 2.3.2 | display name                 | This name will be displayed on the button on the end user's login screen.                                                                                                                                                                                                                                |
-| 2.3.3 | application number           | application number，Requires access on Instagram Open Platform                                                                                                                                                                                                                                           |
-| 2.3.4 | application secret           | application secret，Requires access on Instagram Open Platform                                                                                                                                                                                                                                           |
-| 2.3.5 | redirect url                 | Instagram valid OAuth redirect URI. This URL needs to be configured on the Instagram Open Platform.                                                                                                                                                                                                      |
-| 2.3.6 | login mode                   | After enabling 「Login Only Mode」, you can only log in to an existing account and cannot create a new account. Please choose carefully.                                                                                                                                                                 |
+| No    | Field/Function               | Description                                                  |
+| ----- | ---------------------------- | ------------------------------------------------------------ |
+| 2.3.1 | unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting. |
+| 2.3.2 | display name                 | This name will be displayed on the button on the end user's login screen. |
+| 2.3.3 | application number           | application number，Requires access on Instagram Open Platform |
+| 2.3.4 | application secret           | application secret，Requires access on Instagram Open Platform |
+| 2.3.5 | redirect url                 | Instagram valid OAuth redirect URI. This URL needs to be configured on the Instagram Open Platform. |
+| 2.3.6 | login mode                   | After enabling 「Login Only Mode」, you can only log in to an existing account and cannot create a new account. Please choose carefully. |
 | 2.3.7 | Account identity association | When 「Account Identity Association」is not enabled, a new user is created by default when a user logs in through an identity source. After enabling 「Account Identity Association」, you can allow users to log in to existing accounts directly through 「Field Matching」 or 「Asking for Binding」. |
 
 After the configuration is complete, click the "Create" or "Save" button to complete the creation.
@@ -62,9 +62,9 @@ After creating the Instagram identity source on the Authing console, you need to
 
 In the last step, Instagram needs permission to access **instagram_graph_user_profile**, so this permission needs to be increased. Then click and save the changes, the instagram application is created successfully.
 
-<img src="./images/08-insconfig-success.png" />
+![](./images/08-insconfig-success.png)
 
-## Step 3：Development access
+## Step 3：Development Access
 
 - **Recommended development access method**：Use a hosted login page
 
@@ -76,8 +76,8 @@ In the last step, Instagram needs permission to access **instagram_graph_user_pr
 
 3.2 On the created Instagram identity source connection details page, open and associate an app created in the Authing console
 
-<img src="./images/09-openapp.png" />
+![](./images/09-openapp.png)
 
 3.3 Experience third-party login for Instagram on the login page
 
-<img src="./images/10-login.png" />
+![](./images/10-login.png)
