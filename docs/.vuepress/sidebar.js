@@ -3,32 +3,9 @@ const BRAND_NAME_ZH_CN_LOWER_CASE = "authing";
 const BRAND_NAME_EN_US = "Authing";
 const BRAND_NAME_EN_US_LOWER_CASE = "authing";
 
-const DATABASE_CONNECTION_MENU = {
-  title: "自定义数据库",
-  path: "/guides/database-connection/",
-  children: [
-    {
-      title: "配置数据库连接和编写脚本",
-      path: "/guides/database-connection/configuration/"
-    },
-    {
-      title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
-      path: "/guides/database-connection/lazy-migration"
-    },
-    {
-      title: "完全使用自定义数据库保存用户数据",
-      path: "/guides/database-connection/custom-user-store.md"
-    },
-    {
-      title: "最佳实践",
-      path: "/guides/database-connection/best-practices.md"
-    }
-  ]
-};
-
 const DATABASE_CONNECTION_MENU_EN = {
   title: "Custom database",
-  path: "/guides/database-connection/overview",
+  path: "/guides/database-connection/overview/",
   children: [
     {
       title: "Configure database connection and scripting",
@@ -741,7 +718,7 @@ const zhCnNavBar = {
         // DATABASE_CONNECTION_MENU
         {
           title: "自定义数据库",
-          path: "/guides/database-connection/",
+          path: "/guides/database-connection/overview/",
           children: [
             {
               title: "配置数据库连接和编写脚本",
@@ -892,28 +869,6 @@ const zhCnNavBar = {
           ]
         },
         // DATABASE_CONNECTION_MENU,
-        {
-          title: "自定义数据库",
-          path: "/guides/extensibility/database-connection/",
-          children: [
-            {
-              title: "配置数据库连接和编写脚本",
-              path: "/guides/extensibility/database-connection/configuration/"
-            },
-            {
-              title: `惰性迁移用户到 ${BRAND_NAME_ZH_CN}`,
-              path: "/guides/extensibility/database-connection/lazy-migration"
-            },
-            {
-              title: "完全使用自定义数据库保存用户数据",
-              path: "/guides/extensibility/database-connection/custom-user-store.md"
-            },
-            {
-              title: "最佳实践",
-              path: "/guides/extensibility/database-connection/best-practices.md"
-            }
-          ]
-        },
         {
           title: "配置自定义密码函数",
           path: "/guides/extensibility/custom-password-script"
@@ -3947,7 +3902,7 @@ const translatedZhCnNavBar = {
       children: [
         {
           title: "Social Identity Provider",
-          path: "/guides/connections/social",
+          path: "/guides/connections/social/",
           children: [
             {
               title: "WeChat QR Code on PC",
@@ -4049,7 +4004,7 @@ const translatedZhCnNavBar = {
         },
         {
           title: "Enterprise Identity Provider",
-          path: "/guides/connections/enterprise",
+          path: "/guides/connections/enterprise/",
           children: [
             {
               title: "WeCom Self-built App QR Code",
@@ -4243,7 +4198,7 @@ const translatedZhCnNavBar = {
             }
           ]
         },
-        DATABASE_CONNECTION_MENU_EN,
+        // DATABASE_CONNECTION_MENU_EN,
         {
           title: "Configure custom password function",
           path: "/guides/extensibility/custom-password-script"
