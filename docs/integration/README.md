@@ -866,21 +866,21 @@
         image2x: "CodiMD_logo@3x.png",
         category: "office",
       },
+      {
+        key: "aliyun-role-sso",
+        name: "阿里云（角色 SSO）",
+        image: "ali-cloud.png",
+        image2x: "ali-cloud@2x.png",
+        category: "cloud",
+      },
+      # {
+      #   key: "eteams",
+      #   name: "泛微(公有云)",
+      #   image: "weaver_logo@2x.png",
+      #   image2x: "weaver_logo@3x.png",
+      #   category: "office",
+      # }
     ],
-  # {
-  #   key: "eteams",
-  #   name: "泛微(公有云)",
-  #   image: "weaver_logo@2x.png",
-  #   image2x: "weaver_logo@3x.png",
-  #   category: "office",
-  # }
-  # {
-  #   key: "eteams",
-  #   name: "泛微(公有云)",
-  #   image: "weaver_logo@2x.png",
-  #   image2x: "weaver_logo@3x.png",
-  #   category: "office",
-  # }
   categories:
     [
       { key: "all", name: "全部" },

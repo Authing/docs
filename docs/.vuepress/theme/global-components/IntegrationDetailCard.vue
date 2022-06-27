@@ -12,8 +12,7 @@ export default {
   name: 'IntegrationDetailCard',
   props: {
     title: {
-      type: String,
-      required: true,
+      type: String
     },
   },
   computed: {
