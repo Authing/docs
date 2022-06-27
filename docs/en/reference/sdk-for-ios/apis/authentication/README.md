@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## Use email registration
+## Use email and password registration
 
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
@@ -19,6 +19,36 @@ func registerByEmail(email: String, password: String, completion: @escaping(Int,
 
 ```swift
 AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+## Use email and verification code registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `VERIFY_CODE`).
+
+```swift
+func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `email` email address
+* `code` code
+
+**Example**
+
+```swift
+AuthClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
     if (code == 200) {
         // userInfo
     }
@@ -343,6 +373,7 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
   - `VERIFY_EMAIL`: Send a message to verify the mailbox;
   - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
   - `MFA_VERIFY`: Send MFA verification email.
+  - `VERIFY_CODE`: Send verification email.
 
 **Example**
 
@@ -501,7 +532,7 @@ AuthClient().resetPasswordByPhone(phone: "13012345678", code: "1234", newPasswor
 
 ## Reset password via mail verification code
 
-eset password by email verification code, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
+Reset password by email verification code, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
 
 ```swift
 func resetPasswordByEmail(email: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)

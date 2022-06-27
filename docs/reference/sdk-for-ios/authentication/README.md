@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## 邮箱注册
+## 邮箱密码注册
 
 使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
 
@@ -19,6 +19,36 @@ func registerByEmail(email: String, password: String, completion: @escaping(Int,
 
 ```swift
 AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+}
+```
+
+**错误码**
+
+* 2003 非法邮箱地址
+* 2026 邮箱已注册
+
+<br>
+
+## 邮箱验证码注册
+
+使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](#发送邮件) 接口以获取邮箱验证码
+
+```swift
+func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**参数**
+
+* *email* 邮箱
+* *password* 明文密码
+
+**示例**
+
+```swift
+AuthClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -339,15 +369,11 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
 
 * *email* 邮箱地址
 * *scene* 发送场景，可选值包含：
-  - RESET_PASSWORD_VERIFY_CODE: 发送重置密码验证码邮件；
-  - FIRST_EMAIL_LOGIN_VERIFY: 发送首次邮箱登录验证邮件；
-  - CONSOLE_CONDUCTED_VERIFY: 发送控制台发起的验证邮件；
-  - EMAIL_BIND_VERIFY_CODE: 发送邮箱绑定验证码邮件；
-  - EMAIL_UNBIND_VERIFY_CODE: 发送邮箱解绑验证码邮件；
-  - REGISTER_VERIFY_CODE: 发送注册验证码邮件；
-  - LOGIN_VERIFY_CODE: 发送登录验证码邮件；
-  - MFA_VERIFY_CODE: 发送 MFA 验证码邮件；
-  - INFORMATION_COMPLETION_VERIFY_CODE: 发送信息补全验证码邮件；
+  - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码
+  - VERIFY_EMAIL: 发送验证邮箱的邮件
+  - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码
+  - MFA_VERIFY: 发送 MFA 验证邮件
+  - VERIFY_CODE: 发送验证码
 
 **示例**
 
