@@ -20,7 +20,7 @@
 
 ## 本章节包含以下内容：
 
-- **Windows Active Directory** 在 Windows Server 下的安装
+- **Windows AD** 在 Windows Server 下的安装
 - 安装 **AD LDS**
 - 配置 **AD 域服务**
 - 检查 **Active Directory** 服务连接
@@ -30,299 +30,299 @@
 - **`AD 相关策略`** 的 `修改` 与 `测试`
 - 相关 **`服务`** 以及 **`配置`** 的目的
 
-## Windows Active Directory 在 Windows Server 下的安装
+## Windows AD 在 Windows Server 下的安装
 
-### 安装 **AD 域服务**
+### 1. 安装 **AD 域服务**
 
-1. 打开 Windows Server 中的 `服务管理器`
+1.1 打开 Windows Server 中的 `服务管理器`
 
 <img src="./images/1-server-manager.png" class="md-img-padding" />
 
-2. 选择 `添加角色和功能`
+1.2 选择 `添加角色和功能`
 
 <img src="./images/2-add-roles-and-features.png" class="md-img-padding" />
 
-3. 选择 `安装类型`
+1.3 选择 `安装类型`
 
 <img src="./images/3-installation-type.png" class="md-img-padding" />
 
-4. `服务器选择`
+1.4 `服务器选择`
 
 <img src="./images/4-server-selection.png" class="md-img-padding" />
 
-5. 选择 `服务器角色`
+1.5 选择 `服务器角色`
 
 <img src="./images/2-server-role-AD-domain-services.png" class="md-img-padding" />
 
-6. 选择 `功能`
+1.6 选择 `功能`
 
 <img src="./images/6.功能.png" class="md-img-padding" />
 
-7. 确认
+1.7 确认
 
 <img src="./images/7.确认.png" class="md-img-padding" />
 
-8. AD LDS
+1.8 AD LDS
 
 <img src="./images/7.ADLDS.png" class="md-img-padding" />
 
-9. 安装中
+1.9 安装中
 
 <img src="./images/9.结果.png" class="md-img-padding" />
 
-10. 安装成功
+1.10 安装成功
 
 <img src="./images/10.运行安装向导.png" class="md-img-padding" />
 
-### 安装 **AD LDS**
+### 2. 安装 **AD LDS**
 
 > **AD LDS** 并不是必须要安装的，您也可以选择不进行安装，直接进行 **`配置 AD 域服务`** 的安装， 此处只是提供安装过程，以及需要注意的点。
 
-1. 运行 `安装向导`
+2.1 运行 `安装向导`
 
 <img src="./images/10.运行安装向导.png" class="md-img-padding" />
 
-2. 安装向导
+2.2 安装向导
 
 <img src="./images/11.安装向导.png" class="md-img-padding" />
 
-3. 创建 AD LDS 实例
+2.3 创建 AD LDS 实例
 
 <img src="./images/12.创建实例.png" class="md-img-padding" />
 
-4. 设置 `实例名字`
+2.4 设置 `实例名字`
 
 <img src="./images/13.实例名称.png" class="md-img-padding" />
 
-5. 设置 `默认端口`
+2.5 设置 `默认端口`
 
 > 如果该默认端口与 `AD 默认端口` 出现冲突，将导致 `AD 域服务` 的 `先决条件检查` 失败
 
 <img src="./images/14.默认端口.png" class="md-img-padding" />
 
-6. 创建应用程序目录分区
+2.6 创建应用程序目录分区
 
 <img src="./images/15.创建应用程序目录分区.png" class="md-img-padding" />
 
-7. 选择存储位置
+2.7 选择存储位置
 
 <img src="./images/16.选择存储位置.png" class="md-img-padding" />
 
-8. 选择账户关联
+2.8 选择账户关联
 
 <img src="./images/17.选择账户关联.png" class="md-img-padding" />
 
-9. 分配管理权限
+2.9 分配管理权限
 
 <img src="./images/18.分配管理权限.png" class="md-img-padding" />
 
-10. 倒入对应的 `LDIF`
+2.10 倒入对应的 `LDIF`
 
 <img src="./images/19.导入对应的LDIF.png" class="md-img-padding" />
 
-11. 安装确认
+2.11 安装确认
 
 <img src="./images/20.安装确认.png" class="md-img-padding" />
 
-12. 安装中
+2.12 安装中
 
 <img src="./images/21.安装中.png" class="md-img-padding" />
 
-13. 安装完成
+2.13 安装完成
 
 <img src="./images/22.安装完成.png" class="md-img-padding" />
 
-### 配置 **AD 域服务**
+### 3. 配置 **AD 域服务**
 
-1. 在 `服务管理器` 上， 将此服务提升为 `域控制器`
+3.1 在 `服务管理器` 上， 将此服务提升为 `域控制器`
 
 <img src="./images/2-将此服务提升为域控制器.png" class="md-img-padding" />
 
-2. 部署配置
+3.2 部署配置
 
 <img src="./images/2-部署配置.png" class="md-img-padding" />
 
-3. `域控制器` 选项
+3.3 `域控制器` 选项
 
 <img src="./images/2-域控制器选项.png" class="md-img-padding" />
 
-4. `DNS` 选型
+3.4 `DNS` 选型
 
 <img src="./images/2-DNS选型.png" class="md-img-padding" />
 
-5. 其他选项
+3.5 其他选项
 
 <img src="./images/2-其他选项.png" class="md-img-padding" />
 
-6. 路径
+3.6 路径
 
 <img src="./images/2-路径.png" class="md-img-padding" />
 
-7. 查看选项
+3.7 查看选项
 
 <img src="./images/2-查看选项.png" class="md-img-padding" />
 
-8. 先决条件检查
+3.8 先决条件检查
 
 <img src="./images/2-先决条件检查.png" class="md-img-padding" />
 
-9. 执行安装即可
+3.9 执行安装即可
 
-### 检查 **Active Directory** 服务连接
+###4. 检查 **Active Directory** 服务连接
 
 > 此处使用 `ldp` 进行连接测试， 无需输入更多 `ldap` 连接相关信息即可获取响应结果， 您也可以使用一些客户端（如 Apache Ldap Studio 等）来完成连接测试。当然 `AD 管理中心` 可以打开也意味着 `当前` 您的连接测试是没有问题的。
 
-1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
+4.1 `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
 
 <img src="./images/2-打开ldp.png" class="md-img-padding" />
 
-2. 选择连接， 打开一个连接
+4.2 选择连接， 打开一个连接
 
 <img src="./images/2-打开连接.png" class="md-img-padding" />
 
-#### 通过 **ldap** 连接 Active Directory
+4.3 通过 **ldap** 连接 Active Directory
 
-1. 选择 `ldap` 协议， 进行测试
+4.3.1 选择 `ldap` 协议， 进行测试
 
 <img src="./images/2-检查AD连接.png" class="md-img-padding" />
 
-2. 查看 `连接测试` 结果
+4.3.2 查看 `连接测试` 结果
 
 <img src="./images/2-AD-连接测试结果.png" class="md-img-padding" />
 
-#### 通过 **ldaps** 连接 Active Directory
+连接失败情况：
 
 > `ldaps` 协议的开启， 需要 `安装` 并 `配置` **Active Directory 证书服务**， 而现在并没有进行相关安装及配置， `连接结果` 应该是 `失败的`。
 
-1. 选择 `ldaps` 协议， 进行测试
+4.3.3 选择 `ldaps` 协议， 进行测试
 
 <img src="./images/2-AD-ldaps-测试连接.png" class="md-img-padding" />
 
-2. 查看 `连接测试` 结果
+4.3.4 查看 `连接测试` 结果
 
 <img src="./images/2-AD-ldaps-连接不能打开.png" class="md-img-padding" />
 
-### 安装 **AD CS**
+###5. 安装 **AD CS**
 
-1. 依旧是打开 `服务器管理器`
+5.1 依旧是打开 `服务器管理器`
 
 <img src="./images/1-server-manager.png" class="md-img-padding" />
 
-2. 选择 `添加角色和功能`
+5.2 选择 `添加角色和功能`
 
 <img src="./images/3-添加角色和功能.png" class="md-img-padding" />
 
-3. 选择 `安装类型`
+5.3 选择 `安装类型`
 
 <img src="./images/3-安装类型.png" class="md-img-padding" />
 
-4. 进行 `服务器选择`
+5.4 进行 `服务器选择`
 
 <img src="./images/3-服务器选择.png" class="md-img-padding" />
 
-5. 增加对应的 `服务器角色`
+5.5 增加对应的 `服务器角色`
 
 <img src="./images/3-AD-证书服务选择.png" class="md-img-padding" />
 
-6. 选择 `添加功能`
+5.6 选择 `添加功能`
 
 <img src="./images/3-添加证书功能.png" class="md-img-padding" />
 
-7. 选择对应的功能
+5.7 选择对应的功能
 
 <img src="./images/3-功能下一步.png" class="md-img-padding" />
 
-8. **AD CS**
+5.8 **AD CS**
 
 <img src="./images/3-AD-CS服务.png" class="md-img-padding" />
 
-9. 选择对应的 `角色服务`
+5.9 选择对应的 `角色服务`
 
 <img src="./images/3-角色服务证书颁发机构.png" class="md-img-padding" />
 
-10. 确认安装
+5.10 确认安装
 
 <img src="./images/3-确认安装.png" class="md-img-padding" />
 
-11. 安装中
+5.11 安装中
 
 <img src="./images/3-安装中.png" class="md-img-padding" />
 
-12. 安装完成
+5.12 安装完成
 
 <img src="./images/3-1-安装完成.png" class="md-img-padding" />
 
-### 配置 **AD CS**
+###6. 配置 **AD CS**
 
-1. 进入配置目标服务器 `AD CS` 的界面
+6.1 进入配置目标服务器 `AD CS` 的界面
 
 <img src="./images/3-1-安装完成.png" class="md-img-padding" />
 
-2. 指定 `凭据`
+6.2 指定 `凭据`
 
 <img src="./images/3-1-制定凭据.png" class="md-img-padding" />
 
-3. 选择 `角色服务`
+6.3 选择 `角色服务`
 
 <img src="./images/3-1-角色服务.png" class="md-img-padding" />
 
-4. 指定 `CA 的设置类型`
+6.4 指定 `CA 的设置类型`
 
 <img src="./images/3-1-设置-CA-类型.png" class="md-img-padding" />
 
-5. 指定 `CA 的类型`
+6.5 指定 `CA 的类型`
 
 <img src="./images/3-1-CA类型.png" class="md-img-padding" />
 
-6. 配置 `私钥`
+6.6 配置 `私钥`
 
 <img src="./images/3-1-私钥.png" class="md-img-padding" />
 
-7. 指定 `加密选项`
+6.7 指定 `加密选项`
 
 <img src="./images/3-1-指定加密选项.png" class="md-img-padding" />
 
-8. 指定 `CA 名称`
+6.8 指定 `CA 名称`
 
 <img src="./images/3-1-CA名称.png" class="md-img-padding" />
 
-9. 指定 `CA 有效期`
+6.9 指定 `CA 有效期`
 
 <img src="./images/3-1-选择-CA-有效期.png" class="md-img-padding" />
 
-10. 指定 `CA 数据库`
+6.10 指定 `CA 数据库`
 
 <img src="./images/3-1-证书数据库.png" class="md-img-padding" />
 
-11. 确认当前选项
+6.11 确认当前选项
 
 <img src="./images/3-1-CA确认.png" class="md-img-padding" />
 
-12. 查看配置结果
+6.12 查看配置结果
 
 <img src="./images/3-1-配置成功.png" class="md-img-padding" />
 
-### 测试 `ldaps` 连接 Active Directory
+###7. 测试 `ldaps` 连接 Active Directory
 
-1. `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
+7.1 `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
 
 <img src="./images/2-打开ldp.png" class="md-img-padding" />
 
-2. 选择连接， 打开一个连接
+7.2 选择连接， 打开一个连接
 
 <img src="./images/2-打开连接.png" class="md-img-padding" />
 
-3. 打开测试应用
+7.3 打开测试应用
 
 <img src="./images/3-1-ldaps测试连接.png" class="md-img-padding" />
 
-4. 查看测试结果
+7.4 查看测试结果
 
 <img src="./images/3-1-ldaps-测试连接成功.png" class="md-img-padding" />
 
-### **`AD 相关策略`** 的修改与测试
+### **8. `AD 相关策略`** 的修改与测试
 
-1. 打开 `AD 管理中心`
+8.1 打开 `AD 管理中心`
 
 <img src="./images/打开AD管理中心-1.png" class="md-img-padding" />
 
@@ -330,65 +330,65 @@
 
 <img src="./images/打开AD管理中心-2.png" class="md-img-padding" />
 
-2. 通过 `AD 管理中心` 新增一个用户
+8.2 通过 `AD 管理中心` 新增一个用户
 
 <img src="./images/4-在AD编辑器中增加一个用户.png" class="md-img-padding" />
 
-3. `增加` 一个用户
+8.3 `增加` 一个用户
 
 <img src="./images/4-新增一个authing-user用户.png" class="md-img-padding" />
 
-4. 查看 `新增结果`
+8.4 查看 `新增结果`
 
 <img src="./images/4-新增authing-test密码不符合域长度而报错.png" class="md-img-padding" />
 
-5. 打开 `AD 策略修改器`
+8.5 打开 `AD 策略修改器`
 
 <img src="./images/4-AD密码策略修改器.png" class="md-img-padding" />
 
-6. 编辑 `AD 策略`
+8.6 编辑 `AD 策略`
 
 <img src="./images/4-编辑AD策略.png" class="md-img-padding" />
 
-7. 进入 `计算机配置`
+8.7 进入 `计算机配置`
 
 <img src="./images/4-组策略管理编辑器-计算机配置.png" class="md-img-padding" />
 
-8. 进入 `策略`
+8.8 进入 `策略`
 
 <img src="./images/4-组策略管理编辑器-策略.png" class="md-img-padding" />
 
-9. 进入 `windows 设置`
+8.9 进入 `windows 设置`
 
 <img src="./images/4-组策略管理编辑器-windows设置.png" class="md-img-padding" />
 
-10. 进入 `安全设置`
+8.10 进入 `安全设置`
 
 <img src="./images/4-组策略管理编辑器-安全设置.png" class="md-img-padding" />
 
-11. 进入 `账户策略`
+8.11 进入 `账户策略`
 
 <img src="./images/4-组策略管理编辑器-账户策略.png" class="md-img-padding" />
 
-12. 进入 `密码策略`
+8.12 进入 `密码策略`
 
 <img src="./images/4-组策略管理编辑器-密码策略.png" class="md-img-padding" />
 
-13. 修改 `密码长度最小值`
+8.13 修改 `密码长度最小值`
 
 <img src="./images/4-组策略管理编辑器-密码长度最小值.png" class="md-img-padding" />
 
-14. 点击 `应用`， 点击 `确认`
+8.14 点击 `应用`， 点击 `确认`
 
-15. 再次尝试新增一个 `密码强度不够` 的用户
+8.15 再次尝试新增一个 `密码强度不够` 的用户
 
 <img src="./images/4-再次尝试创建密码强度不够的用户.png" class="md-img-padding" />
 
-16. 查看新增结果
+8.16 查看新增结果
 
 <img src="./images/4-添加弱密码用户成功.png" class="md-img-padding" />
 
-### 相关 **`服务`** 以及 **`配置`** 的目的
+9. ### 相关 **`服务`** 以及 **`配置`** 的目的
 
 此节主要讲解以上服务安装以及相关配置的目的：
 
@@ -429,9 +429,7 @@
 - {{$localeConfig.brandName}} 中的当前密码强度等级较低， 用户新增加了一个弱密码账户， 而 AD 中的密码当前设置状态要求一定的复杂度， 当用户同步过去的时候， 就会因为这些问题造成同步状态异常（用户虽然可以同步， 但是状态一直是禁用状态，因为密码会设置不成功，不符合 AD 的策略，会导致用户启用不成功）。
 - {{$localeConfig.brandName}} 中的用户名现在并没有存在设置特殊的规则进行验证筛选， 也就是默认 {{$localeConfig.brandName}} 中的用户的 username 可以是任何字符串。但是 AD 中的用户名却不是， AD 中的 sAMAccountName 属性， 有一定的限制， 这样就导致了 {{$localeConfig.brandName}} 到 AD 的数据需要处理这些差异性， 而这些差异性的导致来自于不同的系统， 又是较为合理常见的， 我们假设增加一个 {{$localeConfig.brandName}} 用户 username 为 `authing@gmail.com`， 当进行同步的时候， 常规意义下 `username` 与 `sAMAccountName` 意义相同的， 这两个字段应该作为映射双方， 但是 `authing@gmail.com` 赋值给 `sAMAccountName` 是非法的， 必会引起错误。
 
-## 在 Windows 服务器安装 AD Connector
-
-### 在 {{$localeConfig.brandName}}控制台配置 Windows AD
+## 步骤 2：在 {{$localeConfig.brandName}}控制台配置 Windows AD
 
 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「Windows AD」，进入 「Windows AD 登录模式」页面。
 
@@ -441,8 +439,8 @@
 
 <img src="./images/windowsAD02.png" >
 
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。|
 | 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在 {{$localeConfig.brandName}} 的密码
 | {{$localeConfig.brandName}} 用户密码修改之后，同步修改到 AD
 | 如果设置，当用户在 {{$localeConfig.brandName}} 的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。
