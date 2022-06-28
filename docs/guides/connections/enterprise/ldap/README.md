@@ -16,13 +16,13 @@
 - 需要一个 LDAP 服务；
 - 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
 
-## 步骤1：创建 LDAP 身份源
+## 步骤 1：创建 LDAP 身份源
 
 Authing 支持使用 LDAP 协议查看、修改、增加和删除用户信息。所以如果没有自己的 LDAP，可以[使用 Authing 的 LDAP 用户目录](https://docs.authing.cn/v2/guides/users/ldap-user-directory.html)。
 
 
 
-## 步骤2：在 Authing 控制台配置 LDAP 身份源
+## 步骤 2：在 Authing 控制台配置 LDAP 身份源
 
 2.1 打开 **Authing 控制台**，进入想要连接 LDAP 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 
@@ -54,7 +54,7 @@ Authing 也提供对 LDAP 连接的测试，测试 LDAP 服务的连通性和账
 
 ![](./images/04testuseful.png)
 
-## 步骤3: 开发接入
+## 步骤 3: 开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 
