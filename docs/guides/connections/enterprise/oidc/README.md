@@ -14,7 +14,7 @@
 
 - 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤1：在 OIDC 身份服务商中创建一个 OIDC Client
+## 步骤 1：在 OIDC 身份服务商中创建一个 OIDC Client
 
 不同的 OIDC 身份服务商创建 OIDC Client 的过程可能会有所不同，你需要参考你的 OIDC 身份服务商的文档指引创建 OIDC Client。
 
@@ -23,7 +23,7 @@
 Authing 的 OIDC 回调链接为：https://core.authing.cn/connections/oidc/callback。
 
 
-## 步骤2：在 {{$localeConfig.brandName}} 控制台配置 OIDC Client
+## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 OIDC Client
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「企业化身份源」页面，点击「创建企业化身份源」按钮，进入「选择企业化身份源」页面。
 
@@ -52,14 +52,14 @@ Authing 的 OIDC 回调链接为：https://core.authing.cn/connections/oidc/call
 
 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 连接 OIDC 的两种模式
+## 步骤 3：选择 OIDC 的连接模式
 - 前端模式：这种模式下，用户信息的交换会全部在浏览器前端完成，会使用 response_mode=form_post 和 response_type=id_token 模式，请确保你的 OIDC 应用打开了 implicit 模式，并且返回类型勾选上了 id_token
 - 后端模式: 这种模式下，用户信息的交换会在 Authing 的服务器进行，会使用 response_type=code 授权码模式，所以需要提供你 OIDC 应用的密钥。
 
 <img src="./images/oidc_4.png" >
 <img src="./images/oidc_5.png" >
 
-## 步骤3：开发接入
+## 步骤 4：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 
