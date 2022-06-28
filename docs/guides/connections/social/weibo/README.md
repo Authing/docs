@@ -17,7 +17,7 @@
 - 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
-## 步骤1：在微博开放平台创建一个应用
+## 步骤 1：在微博开放平台创建一个应用
 
 前往[微博开放平台](https://open.weibo.com/connect)按照官方指引创建一个网站应用。
 
@@ -32,7 +32,7 @@
 创建应用过程中，需要配置允许的回调地址，请使用以下设置：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
 
-## 步骤2：在 {{$localeConfig.brandName}} 控制台配置新浪微博
+## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置新浪微博
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -65,7 +65,7 @@
 <img src="./images/weibo_6.png" >
 
 
-## 步骤3：开发接入
+## 步骤 3：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 
