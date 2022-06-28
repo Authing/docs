@@ -435,12 +435,16 @@ On the "Enterprise Identity Source" page of {{$localeConfig.brandName}}Console, 
 Please configure the relevant field information in the {{$localeConfig.brandName}}Console console on the "Enterprise Identity Source" - "Windows AD" page.
 
 <img src="./images/windowsAD02.png" >
-| -------------- | ------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------- 
-| Unique identifier | a. The unique identifier consists of lowercase letters, numbers, -, and is less than 32 bits long. b. This is the unique identifier for this connection and cannot be changed after it is set.
-| Synchronize AD domain password | If set, when AD authentication succeeds, the user's password in the AD domain will be synchronized to their password in {{$localeConfig.brandName}}
-| Synchronize the user's password in {{$localeConfig.brandName}} to AD after the user's password is changed
-| If set, when a user's password in {{$localeConfig.brandName}} is changed (both when the administrator changes the password and when the user resets the password manually), the user's password in AD will be changed as well.
-| Login Mode | When "Login Only Mode" is enabled, only existing accounts can be logged in, and no new accounts can be created, please choose carefully. |Please choose carefully.
+
+
+ | Field                    | Description                                                                                                                          
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| unique identifier            | a. The unique identifier consists of lowercase letters, numbers, and -, and the length is less than 32 digits. b. This is the unique identifier of this connection and cannot be modified after setting.                                                                                                 |
+| display name                 | This name will be displayed on the button on the end user's login screen.                                                                                                                                                                                                                                |
+| Synchronize AD domain password | If set, when AD authentication succeeds, the user's password in the AD domain will be synchronized to their password in {{$localeConfig.brandName}} |
+| Synchronize the user's password in {{$localeConfig.brandName}} to AD after the user's password is changed | If set, when a user's password in {{$localeConfig.brandName}} is changed (both when the administrator changes the password and when the user resets the password manually), the user's password in AD will be changed as well.
+| Login Mode | When "Login Only Mode" is enabled, only existing accounts can be logged in, and no new accounts can be created, please choose carefully. |Please choose carefully.|
+| Account identity association | When 「Account Identity Association」is not enabled, a new user is created by default when a user logs in through an identity source. After enabling 「Account Identity Association」, you can allow users to log in to existing accounts directly through 「Field Matching」 or 「Asking for Binding」. |
 
 After the configuration is completed, click the "Create" button to complete the creation.
 
