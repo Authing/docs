@@ -30,7 +30,7 @@
 - **`AD 相关策略`** 的 `修改` 与 `测试`
 - 相关 **`服务`** 以及 **`配置`** 的目的
 
-## Windows AD 在 Windows Server 下的安装
+## 步骤 1：Windows AD 在 Windows Server 下的安装
 
 ### 1. 安装 **AD 域服务**
 
@@ -527,7 +527,7 @@
 如果遇到 AD 相关的错误，请检查 AD 服务器链接、账密信息是否正确。
 :::
 
-## 可选操作：Windows Active Directory 用户目录双向同步"
+## 步骤 3：可选操作：Windows Active Directory 用户目录双向同步"
 
 本部分包含以下章节：
 
