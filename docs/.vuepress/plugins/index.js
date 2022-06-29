@@ -1,4 +1,7 @@
-const { basePath } = require('./env')
+const { basePath } = require('../env')
+
+const cacheSidebarPlugin = require('./vuepress-plugin-cache-sidebar')
+const compressHtmlPlugin = require('./vuepress-plugin-compress-html')
 
 const parsePath = (path) => {
   const urlPath = path.includes('.md') ? path.slice(0, -3) + '.html' : path
@@ -334,6 +337,13 @@ const plugins = [
 
   // nav 过长的时候 自动调整位置 使高亮位置呈现在视觉范围
   // "@vuepress/active-header-links",
+
+  [
+    compressHtmlPlugin
+  ],
+  [
+    cacheSidebarPlugin
+  ]
 ]
 
 module.exports = plugins
