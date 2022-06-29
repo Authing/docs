@@ -491,6 +491,10 @@ const zhCnNavBar = {
           path: "/guides/lark-sso/"
         },
         {
+          title: "企业微信 SSO 方案",
+          path: "/guides/qiwei-sso/"
+        },
+        {
           title: "集成应用 SSO 方案",
           path: "/guides/apn/",
           children: []
