@@ -1,33 +1,32 @@
-const { minify } = require('html-minifier-terser')
-const fs = require('fs')
-const async = require('async')
-const chalk = require('chalk')
+const { minify } = require("html-minifier-terser");
+const fs = require("fs");
+const async = require("async");
 
-module.exports = function compressHtmlPlugin () {
+module.exports = function compressHtmlPlugin() {
   return {
-    async generated (pagePaths) {
-      const tasks = pagePaths.map(page => {
+    async generated(pagePaths) {
+      const tasks = pagePaths.map((page) => {
         return async () => {
-          const res = await minify(fs.readFileSync(page, 'utf8'), {
+          const res = await minify(fs.readFileSync(page, "utf8"), {
             collapseWhitespace: true,
             removeComments: true,
             removeTagWhitespace: true,
-            removeEmptyElements: true
-          })
+            removeEmptyElements: true,
+          });
 
-          fs.writeFile(page, res, 'utf-8', () => {})
-        }
-      })
+          fs.writeFile(page, res, "utf-8", () => {});
+        };
+      });
 
-      async.parallel(tasks, error => {
-        const message = 'Compressed html !!!'
+      async.parallel(tasks, (error) => {
+        const message = "Compressed html !!!";
 
         if (!error) {
-          return console.log(chalk.green('success'), message)
+          return console.log(message);
         }
 
-        console.log(chalk.red('fail'), message)
-      })
-    }
-  }
-}
+        console.log(message);
+      });
+    },
+  };
+};
