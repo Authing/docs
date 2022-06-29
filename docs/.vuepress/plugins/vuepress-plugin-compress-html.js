@@ -22,7 +22,7 @@ module.exports = function compressHtmlPlugin() {
         const message = "Compressed html !!!";
 
         if (!error) {
-          return console.log(message);
+          return console.error(error);
         }
 
         console.log(message);
