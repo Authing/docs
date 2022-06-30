@@ -21,10 +21,10 @@
 | nickname | string | 否 |  | 昵称。 示例值： `张三` |
 | photo | string | 否 |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png` |
 | externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
-| status | string | 否 | Activated | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived` |
+| status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` |
 | emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
 | phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-15` |
+| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-30` |
 | country | string | 否 |  | 所在国家。 示例值： `CN` |
 | province | string | 否 |  | 所在省份。 示例值： `BJ` |
 | city | string | 否 |  | 所在城市。 示例值： `BJ` |
@@ -38,6 +38,7 @@
 | phone | string | 否 |  | 手机号。 示例值： `176xxxx6754` |
 | password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
 | customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `{"school":"北京大学","age":22}` |
+| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 |  | 附加选项。  |
 
 
 ## 示例代码
@@ -64,7 +65,7 @@ $data = $management->updateUser(array(
     "status" => "Activated",
     "emailVerified" => true,
     "phoneVerified" => true,
-    "birthdate" => "2022-06-15",
+    "birthdate" => "2022-06-30",
     "country" => "CN",
     "province" => "BJ",
     "city" => "BJ",
@@ -81,6 +82,14 @@ $data = $management->updateUser(array(
    "school"=> "北京大学",
    "age"=> 22
 ),
+    "options" => array(
+          "resetPasswordOnNextLogin" => false,
+        "sendEmailOrPhoneNotification" => array(
+          "sendEmailNotification" => "test@example.com",
+        "sendPhoneNotification" => "176xxxx6754",
+        "appId" => "app1",
+    ),
+    ),
 
 ));
 ```
@@ -108,6 +117,7 @@ $data = $management->updateUser(array(
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
+    "createdAt": "2022-06-30T13:54:56.396Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -117,12 +127,13 @@ $data = $management->updateUser(array(
     "nickname": "张三",
     "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
     "loginsCount": 3,
-    "lastLogin": "2022-04-10T20:24:00.000Z",
+    "lastLogin": "2022-04-10T12:24:00.000Z",
     "lastIp": "127.0.0.1",
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "birthdate": "2022-06-15",
+    "passwordLastSetAt": "2022-06-30T13:54:56.396Z",
+    "birthdate": "2022-06-30",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -149,13 +160,30 @@ $data = $management->updateUser(array(
 ## 数据结构
 
 
+### <a id="UpdateUserOptionsDto"></a> UpdateUserOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
+| sendEmailOrPhoneNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendEmailOrPhoneNotificationDto">SendEmailOrPhoneNotificationDto</a>。 示例值： `[object Object]`  |
+
+
+### <a id="SendEmailOrPhoneNotificationDto"></a> SendEmailOrPhoneNotificationDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| sendEmailNotification | string | 否 | 邮箱。 示例值： `test@example.com`  |
+| sendPhoneNotification | string | 否 | 手机号。 示例值： `176xxxx6754`  |
+| appId | string | 否 | 应用 id。 示例值： `app1`  |
+
+
 ### <a id="UserDto"></a> UserDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。   |
-| status | string | 是 | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
@@ -164,12 +192,13 @@ $data = $management->updateUser(array(
 | nickname | string | 否 | 昵称。 示例值： `张三`  |
 | photo | string | 否 | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
 | loginsCount | number | 否 | 历史总登录次数。 示例值： `3`  |
-| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T20:24:00.000Z`  |
+| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T12:24:00.000Z`  |
 | lastIp | string | 否 | 上次登录 IP。 示例值： `127.0.0.1`  |
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-30`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -177,9 +206,10 @@ $data = $management->updateUser(array(
 | streetAddress | string | 否 | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
 | postalCode | string | 否 | 邮政编码号。 示例值： `438100`  |
 | externalId | string | 否 | 第三方外部 ID。 示例值： `10010`  |
+| resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
-| customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
+| customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

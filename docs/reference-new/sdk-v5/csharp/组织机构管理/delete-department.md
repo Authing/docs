@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 |
 | ---- | ---- | ---- | ---- | ---- |
+| organizationCode | string | 是 |  | 组织 Code（organizationCode）。 示例值： `steamory` |
 | departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
 
 
@@ -56,8 +56,8 @@ namespace Example
           ManagementClient managementClient = new ManagementClient(options);
         
           IsSuccessRespDto  result = await managementClient.DeleteDepartment
-          (  new DeleteDepartmentReqDto{                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
-                  OrganizationCode= "steamory" ,
+          (  new DeleteDepartmentReqDto{                  OrganizationCode= "steamory" ,
+                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
                   DepartmentIdType= DeleteDepartmentReqDto.departmentIdType.DEPARTMENT_ID ,
             }
           );

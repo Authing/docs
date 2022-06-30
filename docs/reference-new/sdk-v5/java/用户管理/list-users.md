@@ -17,6 +17,9 @@
 | ---- | ---- | ---- | ---- | ---- |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
+| status | string  | 否 |  | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` |
+| updatedAtStart | number  | 否 |  | 用户创建、修改开始时间，为精确到秒的 UNIX 时间戳；支持获取从某一段时间之后的增量数据。。 示例值： `1655714763890` |
+| updatedAtEnd | number  | 否 |  | 用户创建、修改终止时间，为精确到秒的 UNIX 时间戳；支持获取某一段时间内的增量数据。默认为当前时间。。 示例值： `1655714763890` |
 | withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
 | withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
 | withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
@@ -41,6 +44,9 @@ class ManagementClientTest {
          
         request.setPage(1); 
         request.setLimit(10); 
+        request.setStatus("Activated"); 
+        request.setUpdatedAtStart(1655714763890); 
+        request.setUpdatedAtEnd(1655714763890); 
         request.setWithCustomData(true); 
         request.setWithIdentities(true); 
         request.setWithDepartmentIds(true);
@@ -75,6 +81,7 @@ class ManagementClientTest {
   "data": {
     "list": {
       "userId": "6229ffaxxxxxxxxcade3e3d9",
+      "createdAt": "2022-06-30T13:54:56.396Z",
       "status": "Activated",
       "email": "test@example.com",
       "phone": "176xxxx6754",
@@ -84,12 +91,13 @@ class ManagementClientTest {
       "nickname": "张三",
       "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
       "loginsCount": 3,
-      "lastLogin": "2022-04-10T20:24:00.000Z",
+      "lastLogin": "2022-04-10T12:24:00.000Z",
       "lastIp": "127.0.0.1",
       "gender": "M",
       "emailVerified": true,
       "phoneVerified": true,
-      "birthdate": "2022-06-15",
+      "passwordLastSetAt": "2022-06-30T13:54:56.396Z",
+      "birthdate": "2022-06-30",
       "country": "CN",
       "province": "BJ",
       "city": "BJ",
@@ -130,8 +138,8 @@ class ManagementClientTest {
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。   |
-| status | string | 是 | 账户当前状态。 枚举值：`Deleted`,`Suspended`,`Resigned`,`Activated`,`Archived`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
@@ -140,12 +148,13 @@ class ManagementClientTest {
 | nickname | string | 否 | 昵称。 示例值： `张三`  |
 | photo | string | 否 | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
 | loginsCount | number | 否 | 历史总登录次数。 示例值： `3`  |
-| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T20:24:00.000Z`  |
+| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T12:24:00.000Z`  |
 | lastIp | string | 否 | 上次登录 IP。 示例值： `127.0.0.1`  |
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-15`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-30`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -153,9 +162,10 @@ class ManagementClientTest {
 | streetAddress | string | 否 | 所处街道地址。 示例值： `北京朝阳区 xxx 街道`  |
 | postalCode | string | 否 | 邮政编码号。 示例值： `438100`  |
 | externalId | string | 否 | 第三方外部 ID。 示例值： `10010`  |
+| resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
-| customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
+| customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

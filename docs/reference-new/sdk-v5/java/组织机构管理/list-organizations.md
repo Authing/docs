@@ -118,6 +118,7 @@ class ManagementClientTest {
 | hasChildren | boolean | 是 | 是否包含子节点。 示例值： `true`  |
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
+| isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
 
 
