@@ -3,6 +3,12 @@
 此模块是基于 OIDC 标准协议进行认证的，支持获取认证地址、认证、获取令牌、检查令牌、登出等方法。本模块只支持在服务端调用。
 
 ```php
+require "vendor/autoload.php";
+
+use Authing\AuthenticationClient;
+
+$authentication = new AuthenticationClient(options);//初始化
+
 $authentication->buildAuthUrl(); //生成用户登录链接
 $authentication->getLoginStateByAuthCode(); //用授权码获取用户登录态
 $authentication->getUserInfo(); //通过 Access Token 获取用户身份信息
