@@ -7,7 +7,7 @@ require "vendor/autoload.php";
 
 use Authing\AuthenticationClient;
 
-$authentication = new AuthenticationClient(options);//进行初始化
+$authentication = new AuthenticationClient(options);//初始化
 
 $authentication->buildAuthUrl(); //生成用户登录链接
 $authentication->getLoginStateByAuthCode(); //用授权码获取用户登录态
