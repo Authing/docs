@@ -24,7 +24,7 @@ OIDCClient(authRequest).buildAuthorizeUrl() { url in }
 生成登录 URL，传给 WebView 加载
 
 ```swift
-public func buildAuthorizeUrl(completion: @escaping (URL?) -> Void)
+func buildAuthorizeUrl(completion: @escaping (URL?) -> Void)
 ```
 
 **示例**
@@ -66,7 +66,7 @@ OIDCClient(authRequest).buildAuthorizeUrl() { url in }
 通过 OIDC 授权码认证，返回的 UserInfo 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token
 
 ```swift
-public func authByCode(code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func authByCode(code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -224,7 +224,7 @@ OIDCClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "
 通过 OIDC 账号密码登录，返回的 UserInfo 里面包含 access token , id token 和 refresh token。
 
 ```swift
-public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -249,7 +249,7 @@ OIDCClient().loginByAccount(account: account, password: password) { code,  messa
 通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 UserInfo 里面包含 access token , id token 和 refresh token。
 
 ```swift
-public func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -272,7 +272,7 @@ OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInf
 ### 邮箱验证码登录
 
 ```swift
-public func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
+func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
 ```
 
 **参数**
@@ -295,7 +295,7 @@ OIDCClient().loginByEmail(phone: phone, code: code) { code, message, userInfo in
 ### 微信授权码登录
 
 ```swift
-public func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -319,7 +319,7 @@ OIDCClient().loginByWechat(authCode) { code, message, userInfo in
 通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
 
 ```swift
-public func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -343,7 +343,7 @@ OIDCClient().getUserInfoByAccessToken(userInfo: userInfo) { code, message, data 
 access token 的有效期通常较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
 
 ```swift
-public func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
