@@ -862,7 +862,7 @@ export default {
 |AppQr|'app-qrcode'|APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
 |Password|'password'|账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码。)|
 |PhoneCode|'phone-code'|手机验证码登录|
-|WxMinQr|'wechat-miniprogram-qrcode'|微信小程序扫码登录|
+|WxMinQr|'wechat-miniprogram-qrcode'|微信 PC 小程序扫码登录|
 |AD|'ad'|AD 用户目录登录|
 
 

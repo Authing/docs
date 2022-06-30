@@ -231,7 +231,7 @@ explores:
         link: /guides/connections/enterprise.html
         text: 企业身份源配置文档
       - icon: authing-database
-        link: /guides/database-connection/overview.html
+        link: /guides/database-connection/overview/
         text: 使用自定义数据库
     knowMore:
       link: /guides/connections/
