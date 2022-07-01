@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。  |  |
-| appIds | string[] | 是 |  | APP ID 集合。  | `["62188e71cxxxx3075289c580"]` |
+| userId | string | 是 | - | 用户 ID。  |  |
+| appIds | string[] | 是 | - | APP ID 集合。  | `["62188e71cxxxx3075289c580"]` |
 
 
 ## 示例代码

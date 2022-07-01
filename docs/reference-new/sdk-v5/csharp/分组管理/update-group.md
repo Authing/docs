@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 分组 code。  | `developer` |
-| name | string | 是 |  | 分组名称。  | `开发者` |
-| description | string | 是 |  | 分组描述。  | `描述内容` |
-| newCode | string | 否 |  | 分组新的 code。  | `developer` |
+| code | string | 是 | - | 分组 code。  | `developer` |
+| name | string | 是 | - | 分组名称。  | `开发者` |
+| description | string | 是 | - | 分组描述。  | `描述内容` |
+| newCode | string | 否 | - | 分组新的 code。  | `developer` |
 
 
 ## 示例代码

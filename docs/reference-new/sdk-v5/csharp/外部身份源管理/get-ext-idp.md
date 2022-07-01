@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | string  | 是 |  | 身份源 id。  | `6268b0e5e4b9a0e8ffa8fd60` |
-| tenantId | string  | 否 |  | 租户 ID。  | `60b49eb83fd80adb96f26e68` |
+| id | string  | 是 | - | 身份源 id。  | `6268b0e5e4b9a0e8ffa8fd60` |
+| tenantId | string  | 否 | - | 租户 ID。  | `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码

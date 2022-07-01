@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。  | `code1` |
-| newCode | string | 是 |  | 角色新的权限分组内唯一识别码。  | `code2` |
+| code | string | 是 | - | 权限分组内角色的唯一标识符。  | `code1` |
+| newCode | string | 是 | - | 角色新的权限分组内唯一识别码。  | `code2` |
 | namespace | string | 否 | default | 所属权限分组的 code。  | `default` |
-| description | string | 否 |  | 角色描述。  | `this is description` |
+| description | string | 否 | - | 角色描述。  | `this is description` |
 
 
 ## 示例代码

@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| namespace | string  | 否 |  | 所属权限分组的 code。  | `default` |
-| type | string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `DATA` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+| type | string  | 否 | - | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `DATA` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 

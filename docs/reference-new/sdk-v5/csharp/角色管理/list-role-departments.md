@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 |  | 权限分组内角色的唯一标识符。  | `manager` |
-| namespace | string  | 否 |  | 所属权限分组的 code。  | `default` |
+| code | string  | 是 | - | 权限分组内角色的唯一标识符。  | `manager` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 

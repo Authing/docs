@@ -15,14 +15,14 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。  | `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。  | `true` |
-| userId | string  | 否 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| phone | string  | 否 |  | 手机号。  | `176xxxx6754` |
-| email | string  | 否 |  | 邮箱。  | `test@example.com` |
-| username | string  | 否 |  | 用户名。  | `bob` |
-| externalId | string  | 否 |  | 原系统 ID。  | `10010` |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
+| userId | string  | 否 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| phone | string  | 否 | - | 手机号。  | `176xxxx6754` |
+| email | string  | 否 | - | 邮箱。  | `test@example.com` |
+| username | string  | 否 | - | 用户名。  | `bob` |
+| externalId | string  | 否 | - | 原系统 ID。  | `10010` |
 
 
 ## 示例代码

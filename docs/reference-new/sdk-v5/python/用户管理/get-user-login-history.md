@@ -15,11 +15,11 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| appId | string  | 否 |  | 应用 ID。  |  |
-| clientIp | string  | 否 |  | 客户端 IP。  | `127.0.0.1` |
-| start | number  | 否 |  | 开始时间戳（毫秒）。  | `1647360000000` |
-| end | number  | 否 |  | 结束时间戳（毫秒）。  | `1648051199000` |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| appId | string  | 否 | - | 应用 ID。  |  |
+| clientIp | string  | 否 | - | 客户端 IP。  | `127.0.0.1` |
+| start | number  | 否 | - | 开始时间戳（毫秒）。  | `1647360000000` |
+| end | number  | 否 | - | 结束时间戳（毫秒）。  | `1648051199000` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 

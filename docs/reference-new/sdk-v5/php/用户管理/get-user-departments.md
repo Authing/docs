@@ -17,10 +17,10 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | orderBy | string  | 是 | Desc | 增序还是倒序。 枚举值：`Asc`,`Desc` | `Desc` |
 | sortBy | string  | 是 | JoinDepartmentAt | 排序依据。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` | `JoinDepartmentAt` |
-| userId | string  | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
 
 
 ## 示例代码

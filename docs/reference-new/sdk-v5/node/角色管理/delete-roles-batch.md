@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[] | 是 |  | 角色 code 集合。  | `["code1","code2"]` |
+| codeList | string[] | 是 | - | 角色 code 集合。  | `["code1","code2"]` |
 | namespace | string | 否 | default | 所属权限分组的 code。  | `default` |
 
 

@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 |  | 分组 code。  | `developer` |
+| code | string  | 是 | - | 分组 code。  | `developer` |
 
 
 ## 示例代码

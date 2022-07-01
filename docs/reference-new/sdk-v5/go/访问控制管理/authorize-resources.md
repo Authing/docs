@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| namespace | string | 否 |  | 所属权限分组的 code。  | `default` |
-| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 |  | 授权列表。  |  |
+| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
+| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 | - | 授权列表。  |  |
 
 
 ## 示例代码

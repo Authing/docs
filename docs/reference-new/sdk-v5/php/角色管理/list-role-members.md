@@ -15,13 +15,13 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 |  | 权限分组内角色的唯一标识符。  | `manager` |
+| code | string  | 是 | - | 权限分组内角色的唯一标识符。  | `manager` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。  | `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。  | `true` |
-| namespace | string  | 否 |  | 所属权限分组的 code。  | `default` |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
 
 
 ## 示例代码

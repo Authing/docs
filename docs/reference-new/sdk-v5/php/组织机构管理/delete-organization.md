@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 |  | 组织 code。  | `steamory` |
+| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
 
 
 ## 示例代码

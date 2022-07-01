@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 |  | 分组 code。  | `developer` |
-| namespace | string  | 否 |  | 所属权限分组的 code。  | `default` |
-| resourceType | string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |  |
+| code | string  | 是 | - | 分组 code。  | `developer` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+| resourceType | string  | 否 | - | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |  |
 
 
 ## 示例代码

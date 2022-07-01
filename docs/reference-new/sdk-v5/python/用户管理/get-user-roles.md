@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| namespace | string  | 否 |  | 所属权限分组的 code。  | `default` |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
 
 
 ## 示例代码

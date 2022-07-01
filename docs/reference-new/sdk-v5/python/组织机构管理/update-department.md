@@ -15,16 +15,16 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 |  | 组织 Code（organizationCode）。  | `steamory` |
-| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | array[] | 否 |  | 部门负责人 ID。  | `["60b49eb83fd80adb96f26e68"]` |
-| description | string | 否 |  | 部门描述。  | `技术研发部门` |
-| code | string | 否 |  | 部门识别码。  | `6229c4deb3e4d8a20b6021ff` |
-| i18n | <a href="#I18nDto">I18nDto</a> | 否 |  | 多语言设置。  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| name | string | 否 |  | 部门名称。  | `开发部` |
+| organizationCode | string | 是 | - | 组织 Code（organizationCode）。  | `steamory` |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
+| leaderUserIds | array[] | 否 | - | 部门负责人 ID。  | `["60b49eb83fd80adb96f26e68"]` |
+| description | string | 否 | - | 部门描述。  | `技术研发部门` |
+| code | string | 否 | - | 部门识别码。  | `6229c4deb3e4d8a20b6021ff` |
+| i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| name | string | 否 | - | 部门名称。  | `开发部` |
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
-| parentDepartmentId | string | 否 |  | 父部门 id。  | `6229c4deb3e4d8a20b6021ff` |
-| customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"icon":"https://example.com/icon"}` |
+| parentDepartmentId | string | 否 | - | 父部门 id。  | `6229c4deb3e4d8a20b6021ff` |
+| customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"icon":"https://example.com/icon"}` |
 
 
 ## 示例代码

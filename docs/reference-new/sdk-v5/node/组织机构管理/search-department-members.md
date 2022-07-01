@@ -15,16 +15,16 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string  | 是 |  | 组织 code。  | `steamory` |
-| departmentId | string  | 是 |  | 部门 id，根部门传 `root`。  | `root` |
-| keywords | string  | 是 |  | 搜索关键词。  | `张三` |
+| organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
+| departmentId | string  | 是 | - | 部门 id，根部门传 `root`。  | `root` |
+| keywords | string  | 是 | - | 搜索关键词。  | `张三` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
-| includeChildrenDepartments | boolean  | 否 | false | 是否包含子部门的成员。  |  |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。  | `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。  | `true` |
+| includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门的成员。  |  |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
 
 
 ## 示例代码
