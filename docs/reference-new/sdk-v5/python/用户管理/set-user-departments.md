@@ -13,10 +13,10 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 |  | 部门信息。  | `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
 
 
 ## 示例代码

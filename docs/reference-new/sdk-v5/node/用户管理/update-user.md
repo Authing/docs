@@ -13,32 +13,32 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| phoneCountryCode | string | 否 |  | 手机区号。 示例值： `+86` |
-| name | string | 否 |  | 用户真实名称，不具备唯一性。 示例值： `张三` |
-| nickname | string | 否 |  | 昵称。 示例值： `张三` |
-| photo | string | 否 |  | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png` |
-| externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
-| status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` |
-| emailVerified | boolean | 否 |  | 邮箱是否验证。 示例值： `true` |
-| phoneVerified | boolean | 否 |  | 手机号是否验证。 示例值： `true` |
-| birthdate | string | 否 |  | 出生日期。 示例值： `2022-06-30` |
-| country | string | 否 |  | 所在国家。 示例值： `CN` |
-| province | string | 否 |  | 所在省份。 示例值： `BJ` |
-| city | string | 否 |  | 所在城市。 示例值： `BJ` |
-| address | string | 否 |  | 所处地址。 示例值： `北京朝阳` |
-| streetAddress | string | 否 |  | 所处街道地址。 示例值： `北京朝阳区 xxx 街道` |
-| postalCode | string | 否 |  | 邮政编码号。 示例值： `438100` |
-| gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` |
-| username | string | 否 |  | 用户名，用户池内唯一。 示例值： `bob` |
-| passwordEncryptType | string | 否 | none | 加密类型。 枚举值：`sm2`,`rsa`,`none` |
-| email | string | 否 |  | 邮箱。 示例值： `test@example.com` |
-| phone | string | 否 |  | 手机号。 示例值： `176xxxx6754` |
-| password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
-| customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `{"school":"北京大学","age":22}` |
-| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 |  | 附加选项。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| phoneCountryCode | string | 否 |  | 手机区号。  | `+86` |
+| name | string | 否 |  | 用户真实名称，不具备唯一性。  | `张三` |
+| nickname | string | 否 |  | 昵称。  | `张三` |
+| photo | string | 否 |  | 头像链接。  | `https://files.authing.co/authing-console/default-user-avatar.png` |
+| externalId | string | 否 |  | 第三方外部 ID。  | `10010` |
+| status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
+| emailVerified | boolean | 否 |  | 邮箱是否验证。  | `true` |
+| phoneVerified | boolean | 否 |  | 手机号是否验证。  | `true` |
+| birthdate | string | 否 |  | 出生日期。  | `2022-06-30` |
+| country | string | 否 |  | 所在国家。  | `CN` |
+| province | string | 否 |  | 所在省份。  | `BJ` |
+| city | string | 否 |  | 所在城市。  | `BJ` |
+| address | string | 否 |  | 所处地址。  | `北京朝阳` |
+| streetAddress | string | 否 |  | 所处街道地址。  | `北京朝阳区 xxx 街道` |
+| postalCode | string | 否 |  | 邮政编码号。  | `438100` |
+| gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` | `M` |
+| username | string | 否 |  | 用户名，用户池内唯一。  | `bob` |
+| passwordEncryptType | string | 否 | none | 加密类型。 枚举值：`sm2`,`rsa`,`none` | `none` |
+| email | string | 否 |  | 邮箱。  | `test@example.com` |
+| phone | string | 否 |  | 手机号。  | `176xxxx6754` |
+| password | string | 否 |  | 密码。可选加密方式进行加密，默认为未加密。  | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
+| customData | object | 否 |  | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"school":"北京大学","age":22}` |
+| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 |  | 附加选项。  |  |
 
 
 ## 示例代码

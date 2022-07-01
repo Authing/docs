@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| username | string | 否 |  | 用户名，用户池内唯一。 示例值： `bob` |
-| email | string | 否 |  | 邮箱。 示例值： `test@example.com` |
-| phone | string | 否 |  | 手机号。 示例值： `176xxxx6754` |
-| externalId | string | 否 |  | 第三方外部 ID。 示例值： `10010` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| username | string | 否 |  | 用户名，用户池内唯一。  | `bob` |
+| email | string | 否 |  | 邮箱。  | `test@example.com` |
+| phone | string | 否 |  | 手机号。  | `176xxxx6754` |
+| externalId | string | 否 |  | 第三方外部 ID。  | `10010` |
 
 
 ## 示例代码

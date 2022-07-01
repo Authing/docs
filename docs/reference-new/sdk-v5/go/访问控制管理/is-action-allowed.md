@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| userId | string | 是 |  | 用户 ID。 示例值： `userId1` |
-| resource | string | 是 |  | 资源标识符。 示例值： `ecs:1` |
-| action | string | 是 |  | 资源对应的操作。 示例值： `ecs:Start` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| namespace | string | 否 |  | 所属权限分组的 code。  | `default` |
+| userId | string | 是 |  | 用户 ID。  | `userId1` |
+| resource | string | 是 |  | 资源标识符。  | `ecs:1` |
+| action | string | 是 |  | 资源对应的操作。  | `ecs:Start` |
 
 
 ## 示例代码

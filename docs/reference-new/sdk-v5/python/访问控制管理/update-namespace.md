@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 权限分组唯一标志符。 示例值： `my-namespace` |
-| description | string | 否 |  | 权限分组描述信息。 示例值： `我的权限分组描述` |
-| name | string | 否 |  | 权限分组名称。 示例值： `我的权限分组` |
-| newCode | string | 否 |  | 权限分组新的唯一标志符。 示例值： `my-new-namespace` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组唯一标志符。  | `my-namespace` |
+| description | string | 否 |  | 权限分组描述信息。  | `我的权限分组描述` |
+| name | string | 否 |  | 权限分组名称。  | `我的权限分组` |
+| newCode | string | 否 |  | 权限分组新的唯一标志符。  | `my-new-namespace` |
 
 
 ## 示例代码

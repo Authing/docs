@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| sortBy | string  | 是 | JoinDepartmentAt | 排序依据。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` |
-| orderBy | string  | 是 | Desc | 增序还是倒序。 枚举值：`Asc`,`Desc` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string  | 是 |  | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| sortBy | string  | 是 | JoinDepartmentAt | 排序依据。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` | `JoinDepartmentAt` |
+| orderBy | string  | 是 | Desc | 增序还是倒序。 枚举值：`Asc`,`Desc` | `Desc` |
+| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
+| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
 
 
 ## 示例代码

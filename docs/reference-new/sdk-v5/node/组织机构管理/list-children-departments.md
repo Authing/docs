@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string  | 是 |  | 组织 code。 示例值： `steamory` |
-| departmentId | string  | 是 |  | 需要获取的部门 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
-| excludeVirtualNode | boolean  | 否 | false | 是否要排除虚拟组织。  |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| organizationCode | string  | 是 |  | 组织 code。  | `steamory` |
+| departmentId | string  | 是 |  | 需要获取的部门 ID。  | `60b49eb83fd80adb96f26e68` |
+| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
+| excludeVirtualNode | boolean  | 否 | false | 是否要排除虚拟组织。  |  |
+| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
 
 
 ## 示例代码

@@ -13,11 +13,11 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `code1` |
-| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `60b49eb83fd80adb96f26e68` |
-| targets | <a href="#TargetDto">TargetDto[]</a> | 是 |  | 目标对象。 示例值： `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组内角色的唯一标识符。  | `code1` |
+| namespace | string | 否 |  | 所属权限分组的 code。  | `60b49eb83fd80adb96f26e68` |
+| targets | <a href="#TargetDto">TargetDto[]</a> | 是 |  | 目标对象。  | `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 
 
 ## 示例代码

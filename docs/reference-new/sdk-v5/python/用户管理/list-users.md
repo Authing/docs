@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
-| status | string  | 否 |  | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` |
-| updatedAtStart | number  | 否 |  | 用户创建、修改开始时间，为精确到秒的 UNIX 时间戳；支持获取从某一段时间之后的增量数据。。 示例值： `1655714763890` |
-| updatedAtEnd | number  | 否 |  | 用户创建、修改终止时间，为精确到秒的 UNIX 时间戳；支持获取某一段时间内的增量数据。默认为当前时间。。 示例值： `1655714763890` |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
+| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+| status | string  | 否 |  | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
+| updatedAtStart | number  | 否 |  | 用户创建、修改开始时间，为精确到秒的 UNIX 时间戳；支持获取从某一段时间之后的增量数据。。  | `1655714763890` |
+| updatedAtEnd | number  | 否 |  | 用户创建、修改终止时间，为精确到秒的 UNIX 时间戳；支持获取某一段时间内的增量数据。默认为当前时间。。  | `1655714763890` |
+| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | false | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。  | `true` |
 
 
 ## 示例代码

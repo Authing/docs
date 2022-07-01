@@ -13,11 +13,11 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 权限分组内角色的唯一标识符。 示例值： `manager` |
-| namespace | string | 否 | default | 所属权限分组的 code。 示例值： `default` |
-| description | string | 否 |  | 角色描述。 示例值： `this is manager` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| code | string | 是 |  | 权限分组内角色的唯一标识符。  | `manager` |
+| namespace | string | 否 | default | 所属权限分组的 code。  | `default` |
+| description | string | 否 |  | 角色描述。  | `this is manager` |
 
 
 ## 示例代码

@@ -13,10 +13,10 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| codeList | array[] | 是 |  | 资源 code 列表。 示例值： `["code1","code2"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| namespace | string | 否 |  | 所属权限分组的 code。  | `default` |
+| codeList | array[] | 是 |  | 资源 code 列表。  | `["code1","code2"]` |
 
 
 ## 示例代码

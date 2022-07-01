@@ -13,18 +13,18 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| keywords | string  | 是 |  | 搜索关键词。 示例值： `张三` |
-| departmentId | string  | 是 |  | 部门 id，根部门传 `root`。 示例值： `root` |
-| organizationCode | string  | 是 |  | 组织 code。 示例值： `steamory` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
-| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
-| includeChildrenDepartments | boolean  | 否 | false | 是否包含子部门的成员。  |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| keywords | string  | 是 |  | 搜索关键词。  | `张三` |
+| departmentId | string  | 是 |  | 部门 id，根部门传 `root`。  | `root` |
+| organizationCode | string  | 是 |  | 组织 code。  | `steamory` |
+| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
+| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
+| includeChildrenDepartments | boolean  | 否 | false | 是否包含子部门的成员。  |  |
+| withCustomData | boolean  | 否 | false | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | false | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。  | `true` |
 
 
 ## 示例代码

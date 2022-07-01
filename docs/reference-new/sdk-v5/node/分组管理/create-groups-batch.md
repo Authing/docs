@@ -13,9 +13,9 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 |  | 批量分组。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 |  | 批量分组。  |  |
 
 
 ## 示例代码
