@@ -44,7 +44,7 @@ dotnet add package Authing.Library --version 0.0.22
 > 你可以在此[了解如何获取 UserPoolId 和 Secret](/guides/faqs/get-userpool-id-and-secret.md) .
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.ManagementBaseClient;
 
 var managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
 ```
@@ -89,7 +89,7 @@ var data = await managementClient.Users.List();
 > 你可以在控制台的 **应用** 中查看自己的应用列表。
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(opt =>
             {
@@ -119,7 +119,7 @@ await authenticationClient.UpdateProfile(new UpdateUserInput() {
 你也可以在初始化后设置 `Token` 参数, 不需要每次都调用 `LoginByXXX` 方法:
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(
   opt =>
