@@ -10,7 +10,7 @@ meta:
 > 此模块包含注册登录、重置手机号邮箱、修改账号信息等方法，是以你的终端用户（End User）的身份进行请求，适合在需要验证用户身份的情况下使用。
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var managementClient = new managementClient(
   opt =>
