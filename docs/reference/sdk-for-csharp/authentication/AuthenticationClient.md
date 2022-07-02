@@ -12,7 +12,7 @@ meta:
 ```csharp
 using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
-var managementClient = new managementClient(
+var authenticationClient = new AuthenticationClient(
   opt =>
         {
           opt.AppId = "AUTHING_APP_ID",
@@ -29,7 +29,7 @@ var managementClient = new managementClient(
 ## 使用邮箱注册
 
 ```csharp
-managementClient.RegisterByEmail(string email, string password, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
+authenticationClient.RegisterByEmail(string email, string password, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
 ```
 
 使用邮箱注册，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。如果你希望邮箱未验证的用户不能进行登录，可以在用户池的**设置** - **安全信息** 中开启**禁止未验证邮箱的用户登录**选项：
@@ -53,13 +53,13 @@ managementClient.RegisterByEmail(string email, string password, RegisterProfile 
 ```csharp
 var email = "test@example.com";
 var password = "123456";
-var user = await managementClient.RegisterByEmail(email, password);
+var user = await authenticationClient.RegisterByEmail(email, password);
 ```
 
 ## 使用用户名注册
 
 ```csharp
-managementClient.RegisterByUsername(string username, string password, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
+authenticationClient.RegisterByUsername(string username, string password, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
 ```
 
 使用用户名注册
@@ -81,13 +81,13 @@ managementClient.RegisterByUsername(string username, string password, RegisterPr
 ```csharp
 var username = "test";
 var password = "123456";
-var user = await managementClient.RegisterByUsername(email, password);
+var user = await authenticationClient.RegisterByUsername(email, password);
 ```
 
 ## 使用手机号注册
 
 ```csharp
-managementClient.RegisterByPhoneCode(string phone, string code, string password = null, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
+authenticationClient.RegisterByPhoneCode(string phone, string code, string password = null, RegisterProfile profile = null, RegisterAndLoginOptions options = null)
 ```
 
 使用手机号注册，你可以同时设置该账号的初始密码。发送短信的接口请见 [sendSmsCode](#发送短信验证码)
@@ -111,13 +111,13 @@ managementClient.RegisterByPhoneCode(string phone, string code, string password 
 var phone = "phone number";
 var code = "1234";
 var password = "123456";
-var user = await managementClient.RegisterByPhoneCode(phone, code, password);
+var user = await authenticationClient.RegisterByPhoneCode(phone, code, password);
 ```
 
 ## 使用邮箱登录
 
 ```csharp
-managementClient.LoginByEmail(string email, string  password, RegisterAndLoginOptions options = null)
+authenticationClient.LoginByEmail(string email, string  password, RegisterAndLoginOptions options = null)
 ```
 
 使用邮箱登录，该接口默认不会限制未验证的邮箱进行登录，如果你希望邮箱未验证的用户不能进行登录，可以使用 pipeline 对此类请求进行拦截。
@@ -143,13 +143,13 @@ managementClient.LoginByEmail(string email, string  password, RegisterAndLoginOp
 ```csharp
 var email = "test@example.com";
 var password = "123456";
-var user = await managementClient.LoginByEmail(email, password);
+var user = await authenticationClient.LoginByEmail(email, password);
 ```
 
 ## 使用用户名登录
 
 ```csharp
-managementClient.LoginByUsername(string username, string password, RegisterAndLoginOptions options = null)
+authenticationClient.LoginByUsername(string username, string password, RegisterAndLoginOptions options = null)
 ```
 
 使用用户名登录。如果你的用户池开启了[登录失败检测](/guides/security/config-login-fail-limit.md)，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（错误码 为 2000)。
@@ -169,13 +169,13 @@ managementClient.LoginByUsername(string username, string password, RegisterAndLo
 ```csharp
 var username = "username";
 var password = "123456";
-var user = await managementClient.LoginByUsername(username, password);
+var user = await authenticationClient.LoginByUsername(username, password);
 ```
 
 ## 使用手机号验证码登录
 
 ```csharp
-managementClient.LoginByPhoneCode(string phone, string  code, RegisterAndLoginOptions options = null)
+authenticationClient.LoginByPhoneCode(string phone, string  code, RegisterAndLoginOptions options = null)
 ```
 
 使用手机号验证码登录。你需要先使用 [sendSmsCode](#发送短信验证码) 方法发送短信验证码。
@@ -195,13 +195,13 @@ managementClient.LoginByPhoneCode(string phone, string  code, RegisterAndLoginOp
 ```csharp
 var phone = "phone number";
 var code = "1234";
-var user = await managementClient.LoginByPhoneCode(phone, code);
+var user = await authenticationClient.LoginByPhoneCode(phone, code);
 ```
 
 ## 使用手机号密码登录
 
 ```csharp
-managementClient.LoginByPhonePassword(string phone, string password, RegisterAndLoginOptions options = null)
+authenticationClient.LoginByPhonePassword(string phone, string password, RegisterAndLoginOptions options = null)
 ```
 
 如果用户绑定了手机号且设置了密码，可以使用手机号 + 密码的方式登录。如果你的用户池开启了[登录失败检测](/guides/security/config-login-fail-limit.md)，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（错误码 为 2000)。
@@ -221,13 +221,13 @@ managementClient.LoginByPhonePassword(string phone, string password, RegisterAnd
 ```csharp
 var phone = "phone number";
 var password = "123456";
-var user = await managementClient.LoginByPhonePassword("phone", "password");
+var user = await authenticationClient.LoginByPhonePassword("phone", "password");
 ```
 
 ## 使用子账户登录
 
 ```csharp
-managementClient.LoginBySubAccount(string account, string password, RegisterAndLoginOptions options = null)
+authenticationClient.LoginBySubAccount(string account, string password, RegisterAndLoginOptions options = null)
 ```
 
 使用子账户登录。
@@ -245,13 +245,13 @@ managementClient.LoginBySubAccount(string account, string password, RegisterAndL
 ```csharp
 var account = "account";
 var password = "1234";
-var user = await managementClient.LoginBySubAccount(phone,  code);
+var user = await authenticationClient.LoginBySubAccount(phone,  code);
 ```
 
 ## 使用 LDAP 用户名登录
 
 ```csharp
-managementClient.LoginByLdap(string username, string password,)
+authenticationClient.LoginByLdap(string username, string password,)
 ```
 
 使用 LDAP 身份源的账号密码登录。如果此账号第一次登录，将会将其用户信息导入到用户池的用户目录中；之后再次登录，将会根据获取到的最新的账号资料更新此账号的用户信息。
@@ -266,13 +266,13 @@ managementClient.LoginByLdap(string username, string password,)
 #### 示例
 
 ```csharp
-var user = await managementClient.LoginByLdap("username", "password");
+var user = await authenticationClient.LoginByLdap("username", "password");
 ```
 
 ## 使用 AD 用户名登录
 
 ```csharp
-managementClient.LoginByAd(string username, string password)
+authenticationClient.LoginByAd(string username, string password)
 ```
 
 使用 AD 域的账号登录。如果此账号第一次登录，将会将其用户信息导入到用户池的用户目录中；之后再次登录，将会根据获取到的最新的账号资料更新此账号的用户信息。
@@ -288,16 +288,16 @@ managementClient.LoginByAd(string username, string password)
 #### 示例
 
 ```csharp
-var user = await managementClient.LoginByAd("admin", "admin");
+var user = await authenticationClient.LoginByAd("admin", "admin");
 ```
 
 ## 获取当前登录的用户信息
 
 ```csharp
-managementClient.GetCurrentUser()
+authenticationClient.GetCurrentUser()
 ```
 
-获取当前登录用户的用户信息，需要 managementClient 当前处于已登录状态才能获取到。你可以通过两种方式设置 managementClient 的登录状态：
+获取当前登录用户的用户信息，需要 authenticationClient 当前处于已登录状态才能获取到。你可以通过两种方式设置 authenticationClient 的登录状态：
 
 1. 调用登录接口（如密码登录、手机号验证码登录、社会化登录）之后，managementClient 会缓存用户的 [id_token](/concepts/id-token.md)，从而记住登录状态；
 2. 通过用户的 [id_token](/concepts/id-token.md) 初始化 managementClient。
@@ -305,11 +305,11 @@ managementClient.GetCurrentUser()
 #### 示例
 
 ```csharp
-var user = await managementClient.GetCurrentUser();
+var user = await authenticationClient.GetCurrentUser();
 ```
 ## 判断是否登录
 ```csharp
-   managementClient.CheckLoggedIn()
+   authenticationClient.CheckLoggedIn()
 ```
 > 判断是否登录
 > 1. 调用登录接口（如密码登录、手机号验证码登录、社会化登录）之后，managementClient 会缓存用户的 [id_token](/concepts/id-token.md)，从而记住登录状态。
@@ -318,13 +318,13 @@ var user = await managementClient.GetCurrentUser();
 #### 示例
 
 ```csharp
- managementClient.CheckLoggedIn();
+ authenticationClient.CheckLoggedIn();
 ```
 
 ## 获取当前用户的自定义数据列表
 
 ```csharp
-managementClient.ListUdv()
+authenticationClient.ListUdv()
 ```
 
 > 获取当前用户的自定义数据列表 需要用户先登录
@@ -335,13 +335,13 @@ managementClient.ListUdv()
 #### 示例
 
 ```csharp
-managementClient.ListUdv()
+authenticationClient.ListUdv()
 ```
 
 ## 添加用户自定义数据
 
 ```csharp
-managementClient.SetUdv(string key, object value)
+authenticationClient.SetUdv(string key, object value)
 ```
 
 > 添加用户自定义数据 需要用户先登录
@@ -354,12 +354,12 @@ managementClient.SetUdv(string key, object value)
 #### 示例
 
 ```csharp
-managementClient.SetUdv("key", "value)
+authenticationClient.SetUdv("key", "value)
 ```
 ## 获取用户所在组织机构数据列表
 
 ```csharp
-managementClient.ListOrgs(string userId)
+authenticationClient.ListOrgs(string userId)
 ```
 
 > 获取用户所在组织机构数据列表 需要用户先登录
@@ -368,7 +368,7 @@ managementClient.ListOrgs(string userId)
 #### 示例
 
 ```csharp
-managementClient.ListOrgs("userId")
+authenticationClient.ListOrgs("userId")
 ```
 
 
@@ -376,7 +376,7 @@ managementClient.ListOrgs("userId")
 ## 设置当前用户信息
 
 ```csharp
-managementClient.SetCurrentUser(User user)
+authenticationClient.SetCurrentUser(User user)
 ```
 #### 参数
 
@@ -409,12 +409,12 @@ var user = new User(){
   Id = "Id"
   UserPoolId = "UserPoolId"
 }
-managementClient.SetCurrentUser(user)
+authenticationClient.SetCurrentUser(user)
 ```
 ## 设置当前 AccessToken
 
 ```csharp
-managementClient.SetToken(string token)
+authenticationClient.SetToken(string token)
 ```
 #### 参数
 - `token` \<string\> 用户 ID
@@ -426,12 +426,12 @@ managementClient.SetToken(string token)
 #### 示例
 
 ```csharp
-managementClient.SetToken("TOKEN")
+authenticationClient.SetToken("TOKEN")
 ```
 ## 设置当前用户信息
 
 ```csharp
-managementClient.ListOrgs(string userId)
+authenticationClient.ListOrgs(string userId)
 ```
 #### 参数
 - `userId` \<string\> 用户 ID
@@ -443,13 +443,13 @@ managementClient.ListOrgs(string userId)
 #### 示例
 
 ```csharp
-managementClient.ListOrgs("userId")
+authenticationClient.ListOrgs("userId")
 ```
 
 ## 退出登录
 
 ```csharp
-managementClient.Logout(LogoutParam logoutParam)
+authenticationClient.Logout(LogoutParam logoutParam)
 ```
 
 > 用于用户退出登录
@@ -469,13 +469,13 @@ var option = new LogoutParam(){
   AppId = "AppId",
   UserId = "UserId"
 }
-await managementClient.Logout(option);
+await authenticationClient.Logout(option);
 ```
 
 ## 发送短信验证码
 
 ```csharp
-managementClient.SendSmsCode(string phone)
+authenticationClient.SendSmsCode(string phone)
 ```
 
 > 发送短信验证码, 短信验证码的有效时间为 60 s。
@@ -488,13 +488,13 @@ managementClient.SendSmsCode(string phone)
 
 ```csharp
 var phone = "phone number";
-await managementClient.SendSmsCode(phone);
+await authenticationClient.SendSmsCode(phone);
 ```
 
 ## 发送邮件
 
 ```csharp
-managementClient.SendEmail(string email, EmailScene scene)
+authenticationClient.SendEmail(string email, EmailScene scene)
 ```
 
 主动发送邮件给用户，目前支持的 4 类邮件包含：重置密码邮件、验证邮箱邮件、修改邮箱验证码邮件、MFA 验证邮件。同时你可以[自定义邮件模版和配置第三方邮件服务商](/guides/userpool-config/email/)。
@@ -512,13 +512,13 @@ managementClient.SendEmail(string email, EmailScene scene)
 
 ```csharp
 using Authing.ApiClient.Types;
-var message = await managementClient.SendEmail("test@example.com", EmailScene.RESET_PASSWORD);
+var message = await authenticationClient.SendEmail("test@example.com", EmailScene.RESET_PASSWORD);
 ```
 
 ## 获取自定义数据
 
 ```csharp
-managementClient.GetUdfValue()
+authenticationClient.GetUdfValue()
 ```
 
 获取用户的所有自定义数据。你需要先在用户池[定义用户自定义数据元信息](/guides/users/user-defined-field/)。
@@ -526,13 +526,13 @@ managementClient.GetUdfValue()
 #### 示例
 
 ```csharp
-var udfValue = await managementClient.GetUdfValue();
+var udfValue = await authenticationClient.GetUdfValue();
 ```
 
 ## 设置自定义数据
 
 ```csharp
-managementClient.SetUdfValue(KeyValueDictionary data)
+authenticationClient.SetUdfValue(KeyValueDictionary data)
 ```
 
 设置用户的自定义字段。你需要先在用户池[定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配。如果设置失败，会抛出异常，你需要对异常进行捕捉。
@@ -555,13 +555,13 @@ var data = new KeyValueDictionary()
     value: "your value2"
   },
 };
-var udfValue = await managementClient.SetUdfValue(data);
+var udfValue = await authenticationClient.SetUdfValue(data);
 ```
 
 ## 删除自定义数据
 
 ```csharp
-managementClient.RemoveUdfValue(string key);
+authenticationClient.RemoveUdfValue(string key);
 ```
 
 > 删除自定义数据。
@@ -574,13 +574,13 @@ managementClient.RemoveUdfValue(string key);
 
 ```csharp
 var key = "key";
-var flag = await managementClient.RemoveUdfValue(key);
+var flag = await authenticationClient.RemoveUdfValue(key);
 ```
 
 ## 检测 Token 登录状态
 
 ```csharp
-managementClient.CheckLoginStatus(string token)
+authenticationClient.CheckLoginStatus(string token)
 ```
 
 #### 参数
@@ -591,7 +591,7 @@ managementClient.CheckLoginStatus(string token)
 
 ```csharp
 var token = "TOKEN";
-var status = await managementClient.CheckLoginStatus(token);
+var status = await authenticationClient.CheckLoginStatus(token);
 ```
 
 #### 示例数据
@@ -624,7 +624,7 @@ var status = await managementClient.CheckLoginStatus(token);
 ## 通过短信验证码重置密码
 
 ```csharp
-managementClient.ResetPasswordByPhoneCode(string phone, string code, string newPassword)
+authenticationClient.ResetPasswordByPhoneCode(string phone, string code, string newPassword)
 ```
 
 > 通过短信验证码重置密码，你可以通过 [sendSmsCode](#发送短信验证码) 方法发送短信验证码。
@@ -642,13 +642,13 @@ managementClient.ResetPasswordByPhoneCode(string phone, string code, string newP
 var phone = "phone number";
 var code = "1234";
 var password = "123456";
-var message = await managementClient.ResetPasswordByPhoneCode(phone, code, password);
+var message = await authenticationClient.ResetPasswordByPhoneCode(phone, code, password);
 ```
 
 ## 通过邮件验证码重置密码
 
 ```csharp
-managementClient.ResetPasswordByEmailCode(string phone, string code, string newPassword)
+authenticationClient.ResetPasswordByEmailCode(string phone, string code, string newPassword)
 ```
 
 > 通过邮件验证码重置密码，你需要先调用 [sendEmail](#发送邮件) 接口发送重置密码邮件（场景值为 `RESET_PASSWORD`）。
@@ -665,13 +665,13 @@ managementClient.ResetPasswordByEmailCode(string phone, string code, string newP
 var email = "test@example.com";
 var code = "1234";
 var password = "123456";
-var message = await managementClient.ResetPasswordByEmailCode(email, code, password);
+var message = await authenticationClient.ResetPasswordByEmailCode(email, code, password);
 ```
 
 ## 修改用户资料
 
 ```csharp
-managementClient.UpdateProfile(UpdateUserInput updates)
+authenticationClient.UpdateProfile(UpdateUserInput updates)
 ```
 
 修改用户资料，此接口不能用于修改手机号、邮箱、密码，如果需要请调用 [updatePhone](#更新用户手机号)、[updateEmail](#更新用户邮箱)、[updatePassword](#更新用户密码) 接口。
@@ -709,7 +709,7 @@ managementClient.UpdateProfile(UpdateUserInput updates)
 #### 示例
 
 ```csharp
-var user = await managementClient.UpdateProfile
+var user = await authenticationClient.UpdateProfile
 (
   new UpdateUserInput()
   {
@@ -722,7 +722,7 @@ var user = await managementClient.UpdateProfile
 ## 更新用户密码
 
 ```csharp
-managementClient.UpdatePassword(string newPassword, string oldPassword)
+authenticationClient.UpdatePassword(string newPassword, string oldPassword)
 ```
 
 > 更新用户密码
@@ -737,13 +737,13 @@ managementClient.UpdatePassword(string newPassword, string oldPassword)
 ```csharp
 var oldPassword = "111111";
 var newPassword = "123456";
-await managementClient.UpdatePassword(newPassword, oldPassword);
+await authenticationClient.UpdatePassword(newPassword, oldPassword);
 ```
 
 ## 绑定手机号
 
 ```csharp
-managementClient.BindPhone(string phone, string phoneCode)
+authenticationClient.BindPhone(string phone, string phoneCode)
 ```
 
 用户初次绑定手机号，如果需要修改手机号请使用 [updatePhone](#更新用户手机号) 方法。如果该手机号已被绑定，将会绑定失败。发送验证码请使用 [sendSmsCode](#发送短信验证码) 方法。
@@ -762,13 +762,13 @@ managementClient.BindPhone(string phone, string phoneCode)
 ```csharp
 var phone = "phone number";
 var phoneCode = "1234"
-await managementClient.BindPhone(phone, phoneCode);
+await authenticationClient.BindPhone(phone, phoneCode);
 ```
 
 ## 解绑手机号
 
 ```csharp
-managementClient.UnbindPhone(CancellationToken cancellationToken = default);
+authenticationClient.UnbindPhone(CancellationToken cancellationToken = default);
 ```
 
 用户解绑手机号，如果用户没有绑定其他登录方式（邮箱、社会化登录账号），将无法解绑手机号，会提示错误。
@@ -781,13 +781,13 @@ managementClient.UnbindPhone(CancellationToken cancellationToken = default);
 #### 示例
 
 ```csharp
-var user = await managementClient.UnbindPhone("CancellationToken");
+var user = await authenticationClient.UnbindPhone("CancellationToken");
 ```
 
 ## 更新用户手机号
 
 ```csharp
-managementClient.UpdatePhone(string phone, string phoneCode, string oldPhone = null, string oldPhoneCode = null)
+authenticationClient.UpdatePhone(string phone, string phoneCode, string oldPhone = null, string oldPhoneCode = null)
 ```
 
 更新用户手机号。和修改邮箱一样，默认情况下，如果用户当前已经绑定了手机号，需要同时验证原有手机号（目前账号绑定的手机号）和当前邮箱（将要绑定的手机号）。 也就是说，用户 A 当前绑定的手机号为 15888888888，想修改为 15899999999，那么就需要同时验证这两个手机号。 开发者也可以选择不开启 “验证原有手机号“ ，可以在 {{$localeConfig.brandName}} 控制台的**设置**目录下的**安全信息**模块进行关闭。
@@ -806,13 +806,13 @@ managementClient.UpdatePhone(string phone, string phoneCode, string oldPhone = n
 #### 示例
 
 ```csharp
-await managementClient.UpdatePhone("newPhone", "newPhoneCode");
+await authenticationClient.UpdatePhone("newPhone", "newPhoneCode");
 ```
 
 ## 绑定邮箱
 
 ```csharp
-managementClient.BindEmail(string email, string emailCode)
+authenticationClient.BindEmail(string email, string emailCode)
 ```
 
 > 用于用户初次绑定邮箱，需检验邮箱验证码。如果需要修改邮箱请使用 [updateEmail](#更新用户邮箱) 方法。如果该邮箱已被绑定，将会绑定失败。发送邮件验证码请使用 [sendEmail](#发送邮件) 方法。
@@ -828,13 +828,13 @@ managementClient.BindEmail(string email, string emailCode)
 #### 示例
 
 ```csharp
-var user = await managementClient.BindEmail("demo@authing.cn", "1234");
+var user = await authenticationClient.BindEmail("demo@authing.cn", "1234");
 ```
 
 ## 解绑邮箱
 
 ```csharp
-managementClient.UnbindEmail()
+authenticationClient.UnbindEmail()
 ```
 
 > 用户解绑手机号，如果用户没有绑定其他登录方式（手机号、社会化登录账号），将无法解绑邮箱，会提示错误。
@@ -847,16 +847,16 @@ managementClient.UnbindEmail()
 #### 示例
 
 ```csharp
-var user = await managementClient.UnbindEmail();
+var user = await authenticationClient.UnbindEmail();
 ```
 
 ## 更新用户邮箱
 
 ```csharp
-managementClient.UpdateEmail(string email, string emailCode, string oldEmail = null, string oldEmailCode = null)
+authenticationClient.UpdateEmail(string email, string emailCode, string oldEmail = null, string oldEmailCode = null)
 ```
 
-managementClient().updateEmail(email, emailCode, oldEmail, oldEmailCode)如果用户已经绑定了邮箱，默认情况下，需要同时验证原有邮箱（目前账号绑定的邮箱）和当前邮箱（将要绑定的邮箱）。也就是说，用户 A 当前绑定的邮箱为 123456@qq.com，想修改为 1234567@qq.com，那么就需要同时验证这两个邮箱。 开发者也可以选择不开启 “验证原有邮箱“ ，可以在 {{$localeConfig.brandName}} 控制台的**设置**目录下的**安全信息**模块进行关闭。
+authenticationClient.updateEmail(email, emailCode, oldEmail, oldEmailCode)如果用户已经绑定了邮箱，默认情况下，需要同时验证原有邮箱（目前账号绑定的邮箱）和当前邮箱（将要绑定的邮箱）。也就是说，用户 A 当前绑定的邮箱为 123456@qq.com，想修改为 1234567@qq.com，那么就需要同时验证这两个邮箱。 开发者也可以选择不开启 “验证原有邮箱“ ，可以在 {{$localeConfig.brandName}} 控制台的**设置**目录下的**安全信息**模块进行关闭。
 
 ![](https://cdn.authing.cn/img/20210414105928.png)
 
@@ -874,13 +874,13 @@ managementClient().updateEmail(email, emailCode, oldEmail, oldEmailCode)如果�
 ```csharp
 var newEmail = "new@example.com";
 var emailCode = "1234"
-await managementClient.UpdateEmail(newEmail, emailCode);
+await authenticationClient.UpdateEmail(newEmail, emailCode);
 ```
 
 ## 刷新当前用户的 token
 
 ```csharp
-managementClient.RefreshToken()
+authenticationClient.RefreshToken()
 ```
 
 > 刷新当前用户的 token，调用此接口要求先登录。
@@ -888,13 +888,13 @@ managementClient.RefreshToken()
 #### 示例
 
 ```csharp
-managementClient.RefreshToken()
+authenticationClient.RefreshToken()
 ```
 
 ## 合并账号身份信息
 
 ```csharp
-managementClient.LinkAccount(string primaryUserToken, string secondaryUserToken)
+authenticationClient.LinkAccount(string primaryUserToken, string secondaryUserToken)
 ```
 
 将一个 Authing 子账号的外部身份源（如微信、GitHub、自定义 OIDC 身份源等）身份信息合并到一个 Authing 主账号上，同时**删除子账号**。
@@ -913,13 +913,13 @@ managementClient.LinkAccount(string primaryUserToken, string secondaryUserToken)
 ```csharp
 var primaryUserToken = "test";
 var secondaryUserToken = "test";
-var message = await managementClient.LinkAccount(primaryUserToken, secondaryUserToken);
+var message = await authenticationClient.LinkAccount(primaryUserToken, secondaryUserToken);
 ```
 
 <!-- ## 解绑社交账号
 
 ```csharp
-managementClient.UnLinkAccount(string primaryUserToken, ProviderType provider)
+authenticationClient.UnLinkAccount(string primaryUserToken, ProviderType provider)
 ```
 
 主账号解绑社会化登录账号。
@@ -932,7 +932,7 @@ managementClient.UnLinkAccount(string primaryUserToken, ProviderType provider)
 #### 示例
 
 ```csharp
-await managementClient.unLinkAccount(
+await authenticationClient.unLinkAccount(
     "primaryUserToken", ProviderType.QQ
 );
 ``` -->
@@ -940,7 +940,7 @@ await managementClient.unLinkAccount(
 ## 检查密码强度
 
 ```csharp
-managementClient.CheckPasswordStrength(string password)
+authenticationClient.CheckPasswordStrength(string password)
 ```
 
 > 检查密码强度，[点此查看详情](/guides/security/config-password.md)。
@@ -959,13 +959,13 @@ managementClient.CheckPasswordStrength(string password)
 #### 示例
 
 ```csharp
-var result = await managementClient.CheckPasswordStrength("******");
+var result = await authenticationClient.CheckPasswordStrength("******");
 ```
 
 ## 计算密码安全等级
 
 ```csharp
-managementClient.ComputedPasswordSecurityLevel(string password)
+authenticationClient.ComputedPasswordSecurityLevel(string password)
 ```
 
 > 计算密码安全等级。
@@ -977,7 +977,7 @@ managementClient.ComputedPasswordSecurityLevel(string password)
 #### 示例
 
 ```csharp
-var securityLevel = managementClient.ComputedPasswordSecurityLevel(
+var securityLevel = authenticationClient.ComputedPasswordSecurityLevel(
   "xxxxxxxx"
 );
 ```
@@ -985,7 +985,7 @@ var securityLevel = managementClient.ComputedPasswordSecurityLevel(
 ## 获取用户账号安全等级
 
 ```csharp
-managementClient.GetSecurityLevel(CancellationToken cancellationToken)
+authenticationClient.GetSecurityLevel(CancellationToken cancellationToken)
 ```
 
 > 获取用户账号安全等级。
@@ -993,13 +993,13 @@ managementClient.GetSecurityLevel(CancellationToken cancellationToken)
 #### 示例
 
 ```csharp
-var result = managementClient.GetSecurityLevel("cancellationToken");
+var result = authenticationClient.GetSecurityLevel("cancellationToken");
 ```
 
 ## 获取当前用户能够访问的应用
 
 ```csharp
-managementClient.ListApplications(ListParams _params = null)
+authenticationClient.ListApplications(ListParams _params = null)
 ```
 
 > 获取当前用户能够访问的应用。
@@ -1013,7 +1013,7 @@ managementClient.ListApplications(ListParams _params = null)
 #### 示例
 
 ```csharp
-var resData = await managementClient.ListApplications(
+var resData = await authenticationClient.ListApplications(
   new ListParams()
   {
     Page = 1,
@@ -1025,7 +1025,7 @@ var resData = await managementClient.ListApplications(
 ## 获取用户被授权的所有资源列表
 
 ```csharp
-managementClient.ListAuthorizedResources(string namespace)
+authenticationClient.ListAuthorizedResources(string namespace)
 ```
 
 > 获取一个用户被授权的所有资源，用户被授权的所有资源里面包括从角色、分组、组织机构继承的资源。
@@ -1037,19 +1037,19 @@ managementClient.ListAuthorizedResources(string namespace)
 #### 示例
 
 ```csharp
-var res = managementClient.ListAuthorizedResources("namespace");
+var res = authenticationClient.ListAuthorizedResources("namespace");
 ```
 ## 生成一个 PKCE 校验码
 
 ```csharp
-managementClient.GenerateCodeChallenge()
+authenticationClient.GenerateCodeChallenge()
 ```
 > 生成一个 PKCE 校验码，长度必须大于等于 43
 
 ## 生成一个 PKCE 校验码摘要值
 
 ```csharp
-managementClient.GetCodeChallengeDigest("param")
+authenticationClient.GetCodeChallengeDigest("param")
 ```
 
 > 生成一个 PKCE 校验码摘要值
@@ -1062,7 +1062,7 @@ managementClient.GetCodeChallengeDigest("param")
 
 ## 判断当前用户是否有某个角色
 ```csharp
-managementClient.hasRole(string userId, string roleCode, string  _namespace = null)
+authenticationClient.hasRole(string userId, string roleCode, string  _namespace = null)
 ```
 > 判断当前用户是否有某个角色
 
@@ -1076,12 +1076,12 @@ managementClient.hasRole(string userId, string roleCode, string  _namespace = nu
 #### 示例
 
 ```csharp
-managementClient.hasRole("roleCode", "default");
+authenticationClient.hasRole("roleCode", "default");
 ```
 ## 判断用户是否存在
 
 ```csharp
-managementClient.Exists(ExistsOption options)
+authenticationClient.Exists(ExistsOption options)
 ```
 > 判断用户是否存在
 
@@ -1095,13 +1095,13 @@ managementClient.Exists(ExistsOption options)
 #### 示例
 
 ```csharp
-  managementClient.Exists("username", "email", "phone", "externalId")
+  authenticationClient.Exists("username", "email", "phone", "externalId")
 ```
 
 ## 检验 CAS 1.0 Ticket 合法性
 
 ```csharp
-managementClient.ValidateTicketV1(ticket, service)
+authenticationClient.ValidateTicketV1(ticket, service)
 ```
 > 检验 CAS 1.0 Ticket 合法性
 
@@ -1114,13 +1114,13 @@ managementClient.ValidateTicketV1(ticket, service)
 #### 示例
 
 ```csharp
-  managementClient.validateTicketV1("ticket", "service");
+  authenticationClient.validateTicketV1("ticket", "service");
 ```
 
 ## 获取当前用户
 
 ```csharp
-managementClient.GetCurrentUser( string token)
+authenticationClient.GetCurrentUser( string token)
 ```
 #### 参数
 - `token` \<string\> 用户 ID
@@ -1128,12 +1128,12 @@ managementClient.GetCurrentUser( string token)
 #### 示例
 
 ```csharp
-managementClient.GetCurrentUser("token")
+authenticationClient.GetCurrentUser("token")
 ```
 ## 通过首次登录的 Token 重置密码
 
 ```csharp
-managementClient.ResetPasswordByFirstLoginToken(string token, string password)
+authenticationClient.ResetPasswordByFirstLoginToken(string token, string password)
                                                 
 ```
 #### 参数
@@ -1142,13 +1142,13 @@ managementClient.ResetPasswordByFirstLoginToken(string token, string password)
 #### 示例
 
 ```csharp
-managementClient.ResetPasswordByFirstLoginToken("token","password")
+authenticationClient.ResetPasswordByFirstLoginToken("token","password")
 ```
 
 ## 通过密码强制跟临时 Token 修改密码
 
 ```csharp
-managementClient.ResetPasswordByForceResetToken(string token, string oldPassword, string newPassword)
+authenticationClient.ResetPasswordByForceResetToken(string token, string oldPassword, string newPassword)
                                                 
 ```
 #### 参数
@@ -1158,12 +1158,12 @@ managementClient.ResetPasswordByForceResetToken(string token, string oldPassword
 #### 示例
 
 ```csharp
-managementClient.ResetPasswordByFirstLoginToken("token","old_password","new_password")
+authenticationClient.ResetPasswordByFirstLoginToken("token","old_password","new_password")
 ```
 ## 移除用户自定义字段的值
 
 ```csharp
-managementClient.RemoveUdv(string key)
+authenticationClient.RemoveUdv(string key)
 ```
 
 > 移除用户自定义字段的值
@@ -1175,24 +1175,24 @@ managementClient.RemoveUdv(string key)
 #### 示例
 
 ```csharp
-var flag = await managementClient.RemoveUdv("key");
+var flag = await authenticationClient.RemoveUdv("key");
 ```
 
 ## 获取当前用户所有部门
 
 ```csharp
-managementClient.ListDepartment()
+authenticationClient.ListDepartment()
 ```
 
 #### 示例
 
 ```csharp
-var result = await managementClient.ListDepartment();
+var result = await authenticationClient.ListDepartment();
 ```
 ## 判断用户是否存在
 
 ```csharp
-managementClient.IsUserExists(string userName = null, string email = null, string phone = null, string externalId = null)
+authenticationClient.IsUserExists(string userName = null, string email = null, string phone = null, string externalId = null)
                                                 
 ```
 #### 参数
@@ -1203,13 +1203,13 @@ managementClient.IsUserExists(string userName = null, string email = null, strin
 #### 示例
 
 ```csharp
-managementClient.IsUserExists("userName","email")
+authenticationClient.IsUserExists("userName","email")
 ```
 
 ## 检测密码是否合法
 
 ```csharp
-managementClient.isPasswordValid(string password)
+authenticationClient.isPasswordValid(string password)
                                                 
 ```
 #### 参数
@@ -1218,13 +1218,13 @@ managementClient.isPasswordValid(string password)
 #### 示例
 
 ```csharp
-managementClient.isPasswordValid("password")
+authenticationClient.isPasswordValid("password")
 ```
 
 ## 通过微信登录
 
 ```csharp
-managementClient.LoginByWechat(string code)
+authenticationClient.LoginByWechat(string code)
 ```
 #### 参数
 
@@ -1233,15 +1233,15 @@ managementClient.LoginByWechat(string code)
 #### 示例
 
 ```csharp
-managementClient.LoginByWechat("code")
+authenticationClient.LoginByWechat("code")
 ```
 ## 获取Token
 
 ```csharp
-managementClient.GetToken()
+authenticationClient.GetToken()
 ```
 #### 示例
 
 ```csharp
-managementClient.GetToken()
+authenticationClient.GetToken()
 ```
