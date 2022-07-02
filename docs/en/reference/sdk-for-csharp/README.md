@@ -17,7 +17,7 @@ You should set the initialized `ManagementClient` instance to a global variable 
 Install via Nuget:
 
 ```
-Install-Package Authing.ApiClient
+Install-Package Authing.Library
 ```
 
 ## Use ManagementClient

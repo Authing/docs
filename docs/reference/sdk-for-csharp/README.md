@@ -20,22 +20,22 @@ meta:
 | 条目     | 说明                                        |
 | -------- | ------------------------------------------- |
 | 支持版本 | 所有版本                                    |
-| 仓库地址 | [https://github.com/Authing/authing-api-client-net](https://github.com/Authing/authing-api-client-net) |
+| 仓库地址 | [https://github.com/Authing/authing-csharp-library](https://github.com/Authing/authing-csharp-library) |
 
 ## 安装
 
-安装 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)：
+安装 [Authing.Library](https://www.nuget.org/packages/Authing.Library)：
 
 ```sh
 # 包管理器
-Install-Package Authing.ApiClient -Version 4.2.2
+Install-Package Authing.Library -Version 0.0.22
 # .Net Cli
-dotnet add package Authing.ApiClient --version 4.2.2
+dotnet add package Authing.Library --version 0.0.22
 # packagereference 
-<PackageReference Include="Authing.ApiClient" Version="4.2.2" />
+<PackageReference Include="Authing.Library" Version="0.0.22" />
 ```
 
-其他方式，请参考 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)
+如果您想要获取最新版本，请查阅 [Authing.Library](https://www.nuget.org/packages/Authing.Library)
 
 ## 使用管理模块
 
