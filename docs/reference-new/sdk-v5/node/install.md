@@ -25,7 +25,7 @@ import { ManagementClient } from "authing-node-sdk";
 
 const managementClient = new ManagementClient({
   accessKeyId: "YOUR_ACCESS_KEY_ID",
-  accessKeySecret: "YOUR_ACCESS_KEY_SECRET"
+  accessKeySecret: "YOUR_ACCESS_KEY_SECRET",
 });
 ```
 
@@ -49,7 +49,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const { data } = await managementClient.listUsers({
     page: 1,
-    limit: 10
+    limit: 10,
   });
 })();
 ```
@@ -61,7 +61,7 @@ const managementClient = new ManagementClient({
   const { data } = await managementClient.createRole({
     code: "admin",
     description: "管理员",
-    namespace: "default"
+    namespace: "default",
   });
 })();
 ```
@@ -80,7 +80,7 @@ import { AuthenticationClient } from "authing-node-sdk";
 const authenticationClient = new AuthenticationClient({
   appId: "YOUR_APP_ID",
   appSecret: "YOUR_APP_SECRET",
-  host: "YOUR_USERPOOL_HOST"
+  host: "YOUR_USERPOOL_HOST",
 });
 ```
 
@@ -95,7 +95,7 @@ const authenticationClient = new AuthenticationClient({
 - `serverJWKS`: 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 - `cookieKey`: 存储认证上下文的 Cookie 名称。
 
-认证侧相关的使用和方法说明，你可以在 [Authing Nodejs SDK](https://docs.authing.cn/v2/reference-new/sdk/v5/node/authentication.html) 中查看。
+认证侧相关的使用和方法说明，你可以在 [Authing Nodejs SDK](./authentication.html) 中查看。
 
 ## 私有化部署
 
@@ -107,7 +107,7 @@ import { ManagementClient } from "authing-node-sdk";
 const managementClient = new ManagementClient({
   accessKeyId: "YOUR_ACCESS_KEY_ID",
   accessKeySecret: "YOUR_ACCESS_KEY_SECRET",
-  host: "https://authing-api.my-authing-service.com"
+  host: "https://authing-api.my-authing-service.com",
 });
 ```
 
