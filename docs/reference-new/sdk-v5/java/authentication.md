@@ -5,9 +5,9 @@
 认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
 
 使用方法：
-使用 AppId 、APP_SECRET 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
+使用 AppId 、 appSecret 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
 
-<流程图>
+![](./auth-flow.jpg)
 
 ```java
 // 使用 AppId 、APP_SECRET 、 appHost、redirectUri 进行初始化
@@ -34,7 +34,7 @@ authenticationClient.parseIDToken; // 验证并解析 ID Token
 - `host` \<String\> 用户池域名， Authing 应用所在的用户池域名，例如 https://pool.authing.cn;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和 Authing 控制台中应用所设置的 登录回调 URL 保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 
 #### 示例
@@ -55,7 +55,7 @@ authenticationClient.buildAuthUrl
 #### 参数
 
 - `buildAuthUrlParams` \<buildAuthUrlParams\> 发起授权登录时需要填写的参数。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限）。，覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -331,29 +331,29 @@ authenticationClient.parseIDToken(IDToken);
 
 字段解释：
 
-| 字段名             | 翻译                                                               |
-| :----------------- | :----------------------------------------------------------------- |
-| sub                | subject 的缩写，唯一标识，一般为用户 ID                            |
-| name               | 姓名                                                               |
-| given_name         | 名字                                                               |
-| family_name        | 姓氏                                                               |
-| middle_name        | 中间名                                                             |
-| nickname           | 昵称                                                               |
-| preferred_username | 希望被称呼的名字                                                   |
-| profile            | 基础资料                                                           |
-| picture            | 头像                                                               |
-| website            | 网站链接                                                           |
-| gender             | 性别                                                               |
-| birthdate          | 生日                                                               |
-| zoneinfo           | 时区                                                               |
-| locale             | 区域                                                               |
-| updated_at         | 信息更新时间                                                       |
-| nonce              | 发起认证时携带的随机字符串                                         |
-| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID               |
-| exp                | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| iat                | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| iss                | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                           |
-| at_hash            | Access Token 的 hash 值                                            |
+| 字段名             | 翻译                                                            |
+| :----------------- | :-------------------------------------------------------------- |
+| sub                | subject 的缩写，唯一标识，一般为用户 ID                         |
+| name               | 姓名                                                            |
+| given_name         | 名字                                                            |
+| family_name        | 姓氏                                                            |
+| middle_name        | 中间名                                                          |
+| nickname           | 昵称                                                            |
+| preferred_username | 希望被称呼的名字                                                |
+| profile            | 基础资料                                                        |
+| picture            | 头像                                                            |
+| website            | 网站链接                                                        |
+| gender             | 性别                                                            |
+| birthdate          | 生日                                                            |
+| zoneinfo           | 时区                                                            |
+| locale             | 区域                                                            |
+| updated_at         | 信息更新时间                                                    |
+| nonce              | 发起认证时携带的随机字符串                                      |
+| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |
+| exp                | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| iat                | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| iss                | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
+| at_hash            | Access Token 的 hash 值                                         |
 
 ### 验证并解析 Access Token
 
@@ -387,13 +387,12 @@ authenticationClient.parseAccessToken(accessToken);
 
 字段解释：
 
-| 字段名 | 翻译                                                               |
-| :----- | :----------------------------------------------------------------- |
-| jti    | 令牌标识符声明                                                     |
-| sub    | subject 的缩写，唯一标识，一般为用户 ID                            |
-| iat    | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| scope  | 应用侧向 Authing 请求的权限                                        |
-| iss    | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                                                                |
-| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID |
-
+| 字段名 | 翻译                                                            |
+| :----- | :-------------------------------------------------------------- |
+| jti    | 令牌唯一标识符                                                  |
+| sub    | subject 的缩写，唯一标识，一般为用户 ID                         |
+| iat    | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| exp    | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| scope  | 令牌具备的资源权限（应用侧向 Authing 请求的权限）。             |
+| iss    | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
+| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |
