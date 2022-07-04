@@ -5,7 +5,7 @@
 认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
 
 使用方法：
-使用 AppId 、APP_SECRET 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refesh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
+使用 AppId 、APP_SECRET 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
 
 <流程图>
 
@@ -31,12 +31,11 @@ authenticationClient.parseIDToken; // 验证并解析 ID Token
 
 - `appId` \<String\> Authing 应用 ID ;
 - `appSecret` \<String\> Authing 应用 Secret;
-- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
-- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
+- `host` \<String\> 用户池域名， Authing 应用所在的用户池域名，例如 https://pool.authing.cn;
+- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和 Authing 控制台中应用所设置的 登录回调 URL 保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
-- `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
 
 #### 示例
 
@@ -155,7 +154,7 @@ authenticationClient.getUserInfo(accessToken)
 #### 示例
 
 ```java
-UserInfo getUserinfo = authenticationClient.getUserInfo('accessToken');
+UserInfo getUserInfo = authenticationClient.getUserInfo('accessToken');
 ```
 
 #### 示例数据
@@ -195,7 +194,6 @@ UserInfo getUserinfo = authenticationClient.getUserInfo('accessToken');
 | picture            | 头像                                    |
 | website            | 网站链接                                |
 | gender             | 性别                                    |
-| birthdate          | 生日                                    |
 | zoneinfo           | 时区                                    |
 | locale             | 区域                                    |
 | updated_at         | 信息更新时间                            |
@@ -351,10 +349,10 @@ authenticationClient.parseIDToken(IDToken);
 | locale             | 区域                                                               |
 | updated_at         | 信息更新时间                                                       |
 | nonce              | 发起认证时携带的随机字符串                                         |
-| aud                | 标识令牌的目标接收方                                               |
+| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID               |
 | exp                | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
 | iat                | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| iss                | 标识构造并返回令牌的安全令牌服务 (STS)。                           |
+| iss                | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                           |
 | at_hash            | Access Token 的 hash 值                                            |
 
 ### 验证并解析 Access Token
@@ -396,5 +394,6 @@ authenticationClient.parseAccessToken(accessToken);
 | iat    | “Issued At”表示针对此令牌进行身份验证的时间。                      |
 | exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
 | scope  | 应用侧向 Authing 请求的权限                                        |
-| iss    | 标识构造并返回令牌的安全令牌服务 (STS)。                           |
-| aud    | 标识令牌的目标接收方                                               |
+| iss    | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                                                                |
+| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID |
+

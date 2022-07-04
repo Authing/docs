@@ -1,6 +1,9 @@
 # 认证模块
 
-此模块是基于 OIDC 标准协议进行认证的，支持获取认证地址、认证、获取令牌、检查令牌、登出等方法。本模块只支持在服务端调用。
+认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
+
+使用方法：
+使用 AppId 、 appSecret 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
 
 使用方法：
 
@@ -35,12 +38,12 @@ authenticationClient.parseIDToken; // 验证并解析 ID Token
 
 - `appId` \<String\> Authing 应用 ID ;
 - `appSecret` \<String\> Authing 应用 Secret;
-- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
-- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
+- `host` \<String\> 用户池域名， Authing 应用所在的用户池域名，例如 https://pool.authing.cn;
+- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和 Authing 控制台中应用所设置的 登录回调 URL 保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
-- `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
+- `cookieKey` \<String\> 存储认证上下文的 Cookie 名称,用于 方法 loginWithRedirect 和 handleRedirectCallback 上存储用户的认证状态。
 
 #### 示例
 
@@ -60,7 +63,7 @@ const authenticationClient = new AuthenticationClient({
 authenticationClient.loginWithRedirect(options);
 ```
 
-> 用户发起认证请求，你可以在服务端直接调用这个方法，通过操作请求的 response 对象，把用户的浏览器重定向到 Authing 的认证发起 URL 进行认证
+> 用户发起认证请求，你可以在服务端直接调用这个方法，通过操作请求的 response 对象，把用户的浏览器重定向到 Authing 的认证发起 URL 进行认证。
 
 #### 参数
 
@@ -78,7 +81,7 @@ authenticationClient.loginWithRedirect(options);
 authenticationClient.buildAuthUrl(options);
 ```
 
-> 调用方法，生成用户登录链接返回给客户端，在合适的时机触发登录认证流程
+> 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存 生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
 
 #### 参数
 
@@ -118,7 +121,7 @@ const authUrl = authenticationClient.buildAuthUrl({
 authenticationClient.handleRedirectCallback(req， res)
 ```
 
-> 用户完成认证后，跳转到回调地址，通过调用本方法，校验 state 值，并消费 code 获取相应的登录信息
+> 用户完成认证后，跳转到回调地址，通过调用本方法，校验 state 值，并消费 code 获取相应的登录信息。
 
 #### 参数
 
@@ -160,7 +163,7 @@ const result = authenticationClient.handleRedirectCallback(req, res);
     "aud": "625fa4682e45fc2546331f2",
     "exp": 1656417801,
     "iat": 1655208201,
-    "iss": "https://test.mysql.authing-inc.co/oidc"
+    "iss": "https://test.authing.co/oidc"
   },
   "parsedAccessToken": {
     "jti": "ilQBs3fITiJTyPzPX7XtR",
@@ -168,7 +171,7 @@ const result = authenticationClient.handleRedirectCallback(req, res);
     "iat": 1655208201,
     "exp": 1656417801,
     "scope": "openid profile",
-    "iss": "https://test.mysql.authing-inc.co/oidc",
+    "iss": "https://test.authing.co/oidc",
     "aud": "625fa4682e45fc2546331f25"
   }
 }
@@ -191,7 +194,7 @@ const result = authenticationClient.handleRedirectCallback(req, res);
 authenticationClient.getLoginStateByAuthCode(code, redirectUri);
 ```
 
-> 使用授权码 Code 获取用户的登录态信息。
+> 用户登录完成后，使用获得的授权码 Code 获取用户的登录态信息，如果初始化时 scope 字段中包含 profile ，登录流程到这里就可以结束了，用户信息包含在解析出来的 ID Token 中； 登录态信息包括 ID Token、 Access Token、 Refresh Token、Access Token 过期时间、 解析出来的 ID Token 中包含的（用户）信息，解析出来的 Access Token 中的信息。注意：1. 调用前需要对 认证完成后的 state 值进行比对校验。2. 获取到用户登录态信息后，需要比对解析出来的 ID Token 中的 nonce 值， 是否和本地缓存的保持一致。
 
 #### 参数
 
@@ -236,7 +239,7 @@ const res = await authenticationClient.getLoginStateByAuthCode(
     "aud": "625fa4682e45fc2546331f2",
     "exp": 1656417801,
     "iat": 1655208201,
-    "iss": "https://test.mysql.authing-inc.co/oidc"
+    "iss": "https://test.authing.co/oidc"
   },
   "parsedAccessToken": {
     "jti": "ilQBs3fITiJTyPzPX7XtR",
@@ -244,7 +247,7 @@ const res = await authenticationClient.getLoginStateByAuthCode(
     "iat": 1655208201,
     "exp": 1656417801,
     "scope": "openid profile",
-    "iss": "https://test.mysql.authing-inc.co/oidc",
+    "iss": "https://test.authing.co/oidc",
     "aud": "625fa4682e45fc2546331f25"
   }
 }
@@ -256,7 +259,7 @@ const res = await authenticationClient.getLoginStateByAuthCode(
 authenticationClient.getUserInfo(accessToken);
 ```
 
-> 使用 Access token 获取用户信息。
+> 调用 getLoginStateByAuthCode 后可以获取到 Access Token ， 通过 getUserInfo 使用 Access Token 获取用户信息。
 
 #### 参数
 
@@ -357,7 +360,7 @@ const res = authenticationClient.refreshLoginState(refreshToken);
     "aud": "625fa4682e45fc2546331f2",
     "exp": 1656417801,
     "iat": 1655208201,
-    "iss": "https://test.mysql.authing-inc.co/oidc"
+    "iss": "https://test.authing.co/oidc"
   },
   "parsedAccessToken": {
     "jti": "ilQBs3fITiJTyPzPX7XtR",
@@ -365,7 +368,7 @@ const res = authenticationClient.refreshLoginState(refreshToken);
     "iat": 1655208201,
     "exp": 1656417801,
     "scope": "openid profile",
-    "iss": "https://test.mysql.authing-inc.co/oidc",
+    "iss": "https://test.authing.co/oidc",
     "aud": "625fa4682e45fc2546331f25"
   }
 }
@@ -492,10 +495,10 @@ authenticationClient.parseIDToken(IDToken);
 | locale             | 区域                                                                             |
 | updated_at         | 信息更新时间                                                                     |
 | nonce              | 发起认证时携带的随机字符串                                                       |
-| aud                | 标识令牌的目标接收方                                                             |
+| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID                             |
 | exp                | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。               |
 | iat                | “Issued At”表示针对此令牌进行身份验证的时间。                                    |
-| iss                | 标识构造并返回令牌的安全令牌服务 (STS)，以及对用户进行身份验证的 Azure AD 租户。 |
+| iss                |  OIDC 认证信息者的唯一标识。一般是一个 https 的 url。 |
 
 ### 验证并解析 Access Token
 
@@ -524,19 +527,19 @@ authenticationClient.parseAccessToken(accessToken);
   "iat": 1655208201,
   "exp": 1656417801,
   "scope": "openid profile",
-  "iss": "https://test.mysql.authing-inc.co/oidc",
+  "iss": "https://test.authing.co/oidc",
   "aud": "625fa4682e45fc2546331f25"
 }
 ```
 
 字段解释：
 
-| 字段名 | 翻译                                                                             |
-| :----- | :------------------------------------------------------------------------------- |
-| jti    | 令牌标识符声明                                                                   |
-| sub    | subject 的缩写，唯一标识，一般为用户 ID                                          |
-| iat    | “Issued At”表示针对此令牌进行身份验证的时间。                                    |
-| exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。               |
-| scope  | 应用侧向 Authing 请求的权限                                                      |
-| iss    | 标识构造并返回令牌的安全令牌服务 (STS)，以及对用户进行身份验证的 Azure AD 租户。 |
-| aud    | 标识令牌的目标接收方                                                             |
+| 字段名 | 翻译                                                                                 |
+| :----- | :----------------------------------------------------------------------------------- |
+| jti    | 令牌标识符声明                                                                       |
+| sub    | subject 的缩写，唯一标识，一般为用户 ID                                              |
+| iat    | “Issued At”表示针对此令牌进行身份验证的时间。                                        |
+| exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。                   |
+| scope  | 应用侧向 Authing 请求的权限                                                          |
+| iss    | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                                                                |
+| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID |
