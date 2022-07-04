@@ -77,7 +77,7 @@
 
 <img src="./images/15.png" >
 
-3.5 在企业微信服务商后台，**服务商信息页面**，选择基本信息，**IP 白名单**需要添加上 {{$localeConfig.brandName}} 的服务器 IP 地址，具体可点击 [{{$localeConfig.brandName}} 服务器 IP 列表](core.authing.cn/api/v2/system/public-ips)进行获取
+3.5 在企业微信服务商后台，**服务商信息页面**，选择基本信息，**IP 白名单**需要添加上 {{$localeConfig.brandName}} 的服务器 IP 地址，具体可点击 [{{$localeConfig.brandName}} 服务器 IP 列表](https://core.authing.cn/api/v2/system/public-ips)进行获取
 <img src="./images/16.png" >
 
 ## 步骤 4：企业授权代开发模板并开发代开发应用
@@ -137,14 +137,14 @@
 点击进入待上线的应用，提交上线
 <img src="./images/35.png" >
 
-在企业管理后台，我的企业 查看企业 ID
+在授权企业的企业管理后台（注意：不是服务商管理后台），我的企业 查看企业 ID
 <img src="./images/31.png" >
 
 在 {{$localeConfig.brandName}} 中的 企业 ID 填入企业 ID
 
 <img src="./images/32.png" >
 
-在企业管理后台的自建应用中 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
+在授权企业的企业管理后台（注意：不是服务商管理后台）的自建应用中找到新建的应用，进入应用详情， 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
 
 <img src="./images/33.png" >
 
