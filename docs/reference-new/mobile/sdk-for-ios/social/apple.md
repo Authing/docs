@@ -10,7 +10,7 @@
 
 ## 步骤二：初始化 Guard SDK
 
-通过 Swift Package Manager 引入 Guard 依赖并调用初始化函数。[详细步骤](/reference/sdk-for-ios)
+通过 Swift Package Manager 引入 Guard 依赖并调用初始化函数。[详细步骤](/reference-new/mobile/sdk-for-ios/develop.html)
 
 <br>
 
