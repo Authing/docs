@@ -2280,6 +2280,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/csharp/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/csharp/组织机构管理/get-department",
                     },
@@ -2326,6 +2330,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/csharp/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/csharp/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -2707,6 +2715,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/go/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/go/组织机构管理/get-department",
                     },
@@ -2753,6 +2765,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/go/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/go/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3134,6 +3150,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/java/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/java/组织机构管理/get-department",
                     },
@@ -3180,6 +3200,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/java/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/java/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3561,6 +3585,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/node/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/node/组织机构管理/get-department",
                     },
@@ -3607,6 +3635,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/node/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/node/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3988,6 +4020,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/php/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/php/组织机构管理/get-department",
                     },
@@ -4034,6 +4070,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/php/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/php/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -4415,6 +4455,10 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/组织机构管理/delete-organization",
                     },
                     {
+                      title: "搜索顶层组织机构列表",
+                      path: "/reference-new/sdk-v5/python/组织机构管理/search-organizations",
+                    },
+                    {
                       title: "获取部门信息",
                       path: "/reference-new/sdk-v5/python/组织机构管理/get-department",
                     },
@@ -4461,6 +4505,10 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/python/组织机构管理/get-parent-department",
+                    },
+                    {
+                      title: "判断用户是否在某个部门下",
+                      path: "/reference-new/sdk-v5/python/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
