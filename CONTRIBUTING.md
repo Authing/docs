@@ -141,3 +141,9 @@ DOMException: Failed to execute 'appendChild' on 'Node': This node type does not
 ```html
 <a class="strong" href="https://baidu.com" target="_blank">百度</a>
 ```
+
+## 更新 SDK v5 文档
+
+- 1、执行文档生成 Github Actions： https://github.com/Authing/authing-docs-factory/actions
+- 2、执行脚本： `sh sdk-v5.sh`
+- 3、提交代码更新
