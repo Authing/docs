@@ -146,4 +146,5 @@ DOMException: Failed to execute 'appendChild' on 'Node': This node type does not
 
 - 1、执行文档生成 Github Actions： https://github.com/Authing/authing-docs-factory/actions
 - 2、执行脚本： `sh sdk-v5.sh`
-- 3、提交代码更新
+- 3、如有内容更新需要调整边栏，手动复制 Sidebar 配置到对应注释说明位置
+- 4、提交代码更新
