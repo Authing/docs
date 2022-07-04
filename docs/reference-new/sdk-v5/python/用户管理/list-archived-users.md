@@ -66,7 +66,7 @@ data = management_client.list_archived_users(
   "data": {
     "list": {
       "userId": "userId",
-      "archivedAt": "2022-06-30T13:54:57.526Z"
+      "archivedAt": "2022-07-03T05:30:34.301Z"
     }
   }
 }
@@ -88,6 +88,6 @@ data = management_client.list_archived_users(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `userId`  |
-| archivedAt | string | 是 | 归档时间。 示例值： `2022-06-30T13:54:57.526Z`  |
+| archivedAt | string | 是 | 归档时间。 示例值： `2022-07-03T05:30:34.301Z`  |
 
 

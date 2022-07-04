@@ -76,14 +76,14 @@ data = management_client.get_user_departments(
     "list": {
       "organizationCode": "steamory",
       "departmentId": "60b49eb83fd80adb96f26e68",
-      "createdAt": "2022-06-30T13:54:57.521Z",
+      "createdAt": "2022-07-03T05:30:34.297Z",
       "name": "dd8d7stf44",
       "description": "dd8d7stf44",
       "openDepartmentId": "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
       "isLeader": true,
       "code": "6229c4deb3e4d8a20b6021ff",
       "isMainDepartment": true,
-      "joinedAt": "2022-06-30T13:54:57.522Z",
+      "joinedAt": "2022-07-03T05:30:34.297Z",
       "i18n": {
         "name": {
           "zh-CN": {
@@ -121,14 +121,14 @@ data = management_client.get_user_departments(
 | ---- |  ---- | ---- | ---- |
 | organizationCode | string | 是 | 组织 Code（organizationCode）。 示例值： `steamory`  |
 | departmentId | string | 是 | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-| createdAt | string | 是 | 部门创建时间。 示例值： `2022-06-30T13:54:57.521Z`  |
+| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-03T05:30:34.297Z`  |
 | name | string | 是 | 部门名称。 示例值： `dd8d7stf44`  |
 | description | string | 是 | 部门描述。 示例值： `dd8d7stf44`  |
 | openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
 | isLeader | boolean | 是 | 是否是部门 Leader。 示例值： `true`  |
 | code | string | 是 | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
 | isMainDepartment | boolean | 是 | 是否是主部门。 示例值： `true`  |
-| joinedAt | string | 是 | 加入部门时间。 示例值： `2022-06-30T13:54:57.522Z`  |
+| joinedAt | string | 是 | 加入部门时间。 示例值： `2022-07-03T05:30:34.297Z`  |
 | isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
 | customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |

@@ -27,7 +27,7 @@
 | gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` | `M` |
 | emailVerified | boolean | 否 | - | 邮箱是否验证。  | `true` |
 | phoneVerified | boolean | 否 | - | 手机号是否验证。  | `true` |
-| birthdate | string | 否 | - | 出生日期。  | `2022-06-30` |
+| birthdate | string | 否 | - | 出生日期。  | `2022-07-03` |
 | country | string | 否 | - | 所在国家。  | `CN` |
 | province | string | 否 | - | 所在省份。  | `BJ` |
 | city | string | 否 | - | 所在城市。  | `BJ` |
@@ -66,7 +66,7 @@ data = management_client.create_user(
      gender: "M",
      email_verified: true,
      phone_verified: true,
-     birthdate: "2022-06-30",
+     birthdate: "2022-07-03",
      country: "CN",
      province: "BJ",
      city: "BJ",
@@ -120,7 +120,7 @@ data = management_client.create_user(
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-06-30T13:54:56.396Z",
+    "createdAt": "2022-07-03T05:30:32.484Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -135,8 +135,8 @@ data = management_client.create_user(
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-06-30T13:54:56.396Z",
-    "birthdate": "2022-06-30",
+    "passwordLastSetAt": "2022-07-03T05:30:32.484Z",
+    "birthdate": "2022-07-03",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -187,7 +187,7 @@ data = management_client.create_user(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-03T05:30:32.484Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -202,8 +202,8 @@ data = management_client.create_user(
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-06-30T13:54:56.396Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-30`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-03T05:30:32.484Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-03`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
