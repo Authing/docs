@@ -38,7 +38,7 @@
 
     <DropdownTransition>
       <SidebarLinks
-        v-show="open || !collapsable"
+        v-if="open || !collapsable"
         class="sidebar-group-items"
         :items="item.children"
         :sidebar-depth="item.sidebarDepth"
