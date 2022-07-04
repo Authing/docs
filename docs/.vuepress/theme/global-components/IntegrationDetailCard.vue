@@ -9,37 +9,37 @@
 
 <script>
 export default {
-  name: 'IntegrationDetailCard',
+  name: "IntegrationDetailCard",
   props: {
     title: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
-    integrationData() {},
+    integrationData() {}
   },
   mounted() {
     // 如果是直接进入类似 /v2/connections/wechatwork-corp-qrconnect/1.html 的页面，要重定向到 /v2/connections/wechatwork-corp-qrconnect/?step=1
-    const currPath = this.$page.path
+    const currPath = this.$page.path;
     if (/\d+.html$/.test(currPath)) {
-      const pathArr = currPath.split('/')
+      const pathArr = currPath.split("/");
       // 父级页面路由
-      const parentPath = `${pathArr.slice(0, -1).join('/')}/`
+      const parentPath = `${pathArr.slice(0, -1).join("/")}/`;
       // 第几步
-      const step = pathArr.slice(-1)[0].replace('.html', '')
+      const step = pathArr.slice(-1)[0].replace(".html", "");
 
-      if (this.$site.pages.find((item) => item.path === parentPath)) {
+      if (this.$site.pages.find(item => item.path === parentPath)) {
         this.$router.replace({
           path: parentPath,
           query: {
-            step,
-          },
-        })
+            step
+          }
+        });
       }
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="stylus">

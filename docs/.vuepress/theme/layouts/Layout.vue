@@ -4,6 +4,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
+    :key="appId"
   >
     <notifications
       classes="top-center-vue-notification vue-notification"
@@ -134,7 +135,8 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
-      isInConsole: ""
+      isInConsole: "",
+      appId: ""
     };
   },
 
@@ -201,8 +203,29 @@ export default {
       let v = search[k];
       setCookie(k, v);
     });
-
     this.registerMessage();
+    if (this.$route.query.appId) {
+      this.$nextTick(() => {
+        const html = document.body.innerHTML;
+        document.body.innerHTML = html.replace(
+          "AUTHING_APP_ID",
+          this.$route.query.appId
+        );
+      });
+    }
+    if (this.$route.query.userPoolId) {
+      this.$nextTick(() => {
+        const html = document.body.innerHTML;
+        document.body.innerHTML = html.replace(
+          "AUTHING_USERPOOL_ID",
+          this.$route.query.userPoolId
+        );
+      });
+    }
+    if (this.$route.query.isInConsoleAppDetail) {
+      console.log(313131231);
+      this.$themeConfig.isInConsoleAppDetail = true;
+    }
   },
 
   beforeDestroy() {
@@ -221,6 +244,7 @@ export default {
               // 1. 隐藏头部和顶部区域
               _this.hiddenModule();
               _this.isInConsole = event.eventType;
+
               // if (event.eventType === 'console-protocol-common') {
 
               // } else if (event.eventType === "console-protocol-asa") {
