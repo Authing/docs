@@ -1815,7 +1815,7 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-android/social/wecom",
                 "/reference-new/mobile/sdk-for-android/social/alipay",
                 "/reference-new/mobile/sdk-for-android/social/lark",
-                "/reference/sdk-for-android/social/oneauth",
+                "/reference-new/mobile/sdk-for-android/social/oneauth",
               ],
             },
             {
