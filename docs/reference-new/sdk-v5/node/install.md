@@ -14,6 +14,8 @@ npm install authing-node-sdk
 yarn add authing-node-sdk
 ```
 
+Github 仓库： <https://github.com/Authing/authing-node-sdk>
+
 ## 使用 管理模块
 
 ### 初始化
