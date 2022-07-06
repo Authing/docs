@@ -90,7 +90,7 @@ data = management_client.update_department(
   "data": {
     "organizationCode": "steamory",
     "departmentId": "60b49eb83fd80adb96f26e68",
-    "createdAt": "2022-07-03T05:30:32.199Z",
+    "createdAt": "2022-07-06T01:04:42.702Z",
     "openDepartmentId": "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
     "name": "开发部",
     "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
@@ -150,7 +150,7 @@ data = management_client.update_department(
 | ---- |  ---- | ---- | ---- |
 | organizationCode | string | 是 | 组织 Code（organizationCode）。 示例值： `steamory`  |
 | departmentId | string | 是 | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68`  |
-| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-03T05:30:32.199Z`  |
+| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-06T01:04:42.702Z`  |
 | openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
 | name | string | 是 | 部门名称。 示例值： `开发部`  |
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
