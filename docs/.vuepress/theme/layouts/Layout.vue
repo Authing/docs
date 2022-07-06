@@ -206,24 +206,15 @@ export default {
     this.registerMessage();
     if (this.$route.query.appId) {
       this.$nextTick(() => {
-        const html = document.body.innerHTML;
-        document.body.innerHTML = html.replace(
-          "AUTHING_APP_ID",
-          this.$route.query.appId
-        );
+        this.findDom("pre[class*='language-']", "AUTHING_APP_ID");
       });
     }
     if (this.$route.query.userPoolId) {
       this.$nextTick(() => {
-        const html = document.body.innerHTML;
-        document.body.innerHTML = html.replace(
-          "AUTHING_USERPOOL_ID",
-          this.$route.query.userPoolId
-        );
+        this.findDom("pre[class*='language-']", "AUTHING_USERPOOL_ID");
       });
     }
     if (this.$route.query.isInConsoleAppDetail) {
-      console.log(313131231);
       this.$themeConfig.isInConsoleAppDetail = true;
     }
   },
@@ -233,6 +224,26 @@ export default {
   },
 
   methods: {
+    findDom(domClass, rgExp) {
+      document.querySelectorAll(domClass).forEach(item => {
+        if (item.innerText.indexOf(rgExp) > -1) {
+          const res = this.replaceString(
+            item.innerHTML,
+            rgExp,
+            this.$route.query.appId
+          );
+          item.innerHTML = res;
+        }
+      });
+    },
+    // 进行字符串替换方法
+    replaceString(repStr, rgExp, replaceText) {
+      var str = repStr.replace(rgExp, replaceText);
+      if (str.indexOf(rgExp) != -1) {
+        str = this.replaceString(str, rgExp, replaceText);
+      }
+      return str;
+    },
     // 注册消息事件来自 fe console
     registerMessage() {
       if (window) {
@@ -251,11 +262,40 @@ export default {
 
               // }
             }
+            if (event.isQuickDocs) {
+              _this.quickDocsStyle();
+            }
           } catch (e) {}
         });
       }
     },
+    quickDocsStyle() {
+      let pageNav = document.querySelector("[class*='page-nav']");
+      let feedBack = document.querySelector("[class*='feedback']");
+      let breadcrumbContainer = document.querySelector(
+        "[class*='breadcrumb-container']"
+      );
+      let lastUpdated = document.querySelector(
+        "[class*='authing-last-updated']"
+      );
+      let mainContent = document.querySelector("[class*='main-content']");
+      let lauoutContent = document.querySelector("[class*='page']");
+      let breadcrumbContent = document.querySelector(
+        "[class*='breadcrumb-content-container']"
+      );
+      let themeDefault = document.querySelector(
+        "[class*='theme-default-content"
+      );
 
+      pageNav.style = "display:none;";
+      feedBack.style = "display:none;";
+      breadcrumbContainer.style = "display:none;";
+      lastUpdated.style = "display:none;";
+      mainContent.style = "margin-top: 0;";
+      lauoutContent.style = "padding: 0;";
+      breadcrumbContent.style = "margin: 0;";
+      themeDefault.style = "margin-top: -3.5rem;";
+    },
     // 1. 移除模块
     hiddenModule() {
       let aside = document.querySelector("aside[class='sidebar']");
