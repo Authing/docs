@@ -91,7 +91,7 @@ value: weixin, weixinULAPI
 import Guard
 import Wechat
 Authing.start(<#Authing AppId#>);
-WechatLogin.registerApp(appId: "your_wechat_appid", universalLink: "your_deep_link")
+WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep_link#>)
  ```
 
 >第一个参数为微信应用 id；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
