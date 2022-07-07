@@ -1,10 +1,10 @@
 ---
 meta:
   - name: description
-    content: 实现单点登录（SSO）
+    content: 单点登录（SSO）
 ---
 
-# 实现单点登录（SSO）
+# 单点登录（SSO）
 
 <LastUpdated/>
 

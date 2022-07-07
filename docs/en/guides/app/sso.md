@@ -8,30 +8,31 @@ After enabling single sign-on between applications, the login status between dif
 
 At first you can create two applications follow the [guidelines](./create-app.md).
 
-## Enable Single Sign-on for Applications
+## Configure SSO
 
-On the console’s **Applications** page, turn on the application single sign-on switch.
+Go to the menu **Applications** > **SSO**, click **Add Application** in the upper left corner, then select **Self-built App**, find the application you just created in the list below, click **+**, the configuration of multi-application SSO is completed.
 
-![](https://cdn.authing.cn/docs/20201216143359.png)
+![](./images/self-built-app-sso-1.png)
+
+![](./images/self-built-app-sso-2.png)
 
 ## Experience the Single Sign-on
 
-In console > applications, click the application’s login button.
-
-![](https://cdn.authing.cn/docs/20201216143536.png)
+Enter the **SSO** app list page, select an app, and click **Experience Login**
+![](./images/self-built-app-sso-3.png)
 
 Finish login on the login page:
-![](https://cdn.authing.cn/docs/20201216143744.png)
+![](./images/self-built-app-sso-4.png)
 
 After login success, it will redirect to the application callback address:
-![](https://cdn.authing.cn/docs/20201216143917.png)
+![](./images/self-built-app-sso-success.png)
 
 Next click another application’s login button:
-![](https://cdn.authing.cn/docs/20201216144049.png)
+![](./images/self-built-app-sso-5.png)
 
 The user doesn’t need to enter the password again, the user can directly enter the application callback address:
-![](https://cdn.authing.cn/docs/20201216144215.png)
+![](./images/self-built-app-sso-success.png)
 
 ## Using SDK for Single Sign-on
 
-For the details about access process, please refer to the documents which introduces the implementation of [single sign-on (SSO)](/guides/authentication/sso/) and [single sign-on SDK](/en/reference/sdk-for-sso.md).
+For the detailed access procedure, please refer to the [Single Sign-On (SSO)](/reference/sdk-for-sso-spa.md) document.
