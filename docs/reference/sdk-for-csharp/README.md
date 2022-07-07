@@ -20,22 +20,22 @@ meta:
 | 条目     | 说明                                        |
 | -------- | ------------------------------------------- |
 | 支持版本 | 所有版本                                    |
-| 仓库地址 | [https://github.com/Authing/authing-api-client-net](https://github.com/Authing/authing-api-client-net) |
+| 仓库地址 | [https://github.com/Authing/authing-csharp-library](https://github.com/Authing/authing-csharp-library) |
 
 ## 安装
 
-安装 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)：
+安装 [Authing.Library](https://www.nuget.org/packages/Authing.Library)：
 
 ```sh
 # 包管理器
-Install-Package Authing.ApiClient -Version 4.2.2
+Install-Package Authing.Library -Version 0.0.22
 # .Net Cli
-dotnet add package Authing.ApiClient --version 4.2.2
+dotnet add package Authing.Library --version 0.0.22
 # packagereference 
-<PackageReference Include="Authing.ApiClient" Version="4.2.2" />
+<PackageReference Include="Authing.Library" Version="0.0.22" />
 ```
 
-其他方式，请参考 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)
+如果您想要获取最新版本，请查阅 [Authing.Library](https://www.nuget.org/packages/Authing.Library)
 
 ## 使用管理模块
 
@@ -44,7 +44,7 @@ dotnet add package Authing.ApiClient --version 4.2.2
 > 你可以在此[了解如何获取 UserPoolId 和 Secret](/guides/faqs/get-userpool-id-and-secret.md) .
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.ManagementBaseClient;
 
 var managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
 ```
@@ -89,7 +89,7 @@ var data = await managementClient.Users.List();
 > 你可以在控制台的 **应用** 中查看自己的应用列表。
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(opt =>
             {
@@ -119,7 +119,7 @@ await authenticationClient.UpdateProfile(new UpdateUserInput() {
 你也可以在初始化后设置 `Token` 参数, 不需要每次都调用 `LoginByXXX` 方法:
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(
   opt =>

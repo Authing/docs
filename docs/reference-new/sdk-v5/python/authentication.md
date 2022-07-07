@@ -10,7 +10,7 @@ authentication = AuthenticationClient(options) #初始化
 authentication.buildAuthUrl() # 生成用户登录链接
 authentication.getLoginStateByAuthCode() # 用授权码获取用户登录态
 authentication.getUserInfo() # 通过 Access Token 获取用户身份信息
-authentication.refreshToken() # 通过 Refresh Token 刷新用户的登录态，延长过期时间
+authentication.refreshLoginState() # 通过 Refresh Token 刷新用户的登录态，延长过期时间
 authentication.buildLogoutUrl() # 生成登出 URL
 ```
 
@@ -88,7 +88,7 @@ authentication.getLoginStateByAuthCode(code, redirectUri)
 ### 示例
 
 ```python
-data = authentication.getLoginStateByAuthCode("H5Sm-cxxxHVTbqqcOO", "https://xxx.com");
+data = authentication.getLoginStateByAuthCode("H5Sm-cxxxHVTbqqcOO", "https://xxx.com")
 ```
 
 ### 示例数据
@@ -145,7 +145,7 @@ data = authentication.getUserInfo("xxxxx")
 ## 通过 Refresh Token 刷新用户的登录态，延长过期时间
 
 ```python
-authentication.refreshToken(refreshToken)
+authentication.refreshLoginState(refreshToken)
 ```
 
 > 使用 Refresh token 刷新登录态，并延长 accessToken 有效时间。
@@ -157,7 +157,7 @@ authentication.refreshToken(refreshToken)
 ### 示例
 
 ```python
-data = authentication.refreshToken("w7_gPfxxxxxovbv00")
+data = authentication.refreshLoginState("w7_gPfxxxxxovbv00")
 ```
 
 ### 示例数据
