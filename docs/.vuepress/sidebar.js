@@ -1057,7 +1057,7 @@ const zhCnNavBar = {
     // },
     {
       title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso",
+      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript / Node.js",
@@ -5957,7 +5957,7 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Single Sign-On (SSO)",
-      path: "/reference/sdk-for-sso",
+      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript/Node.js",
