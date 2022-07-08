@@ -1,22 +1,26 @@
 # 认证模块
 
+<LastUpdated/>
+
 认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
 
+注意：使用本模块之前，你需要创建一个 (Authing 标准 Web 应用)[https://docs.authing.cn/v2/guides/app/create-app.html]，并开启自建应用 SSO 功能，具体文档可参考(自建应用 SSO 方案)[https://docs.authing.cn/v2/guides/app/sso.html].
+
 使用方法：
-使用 AppId 、 appSecret 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
+使用 appId 、 appSecret 、 userPoolHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
 
 ![](./auth-flow.jpg)
 
 使用方法：
 
 ```javascript
-// 使用 AppId 、APP_SECRET 、 appHost、redirectUri 进行初始化
+// 使用 AppId appSecret 、 userPoolHost 、redirectUri 进行初始化
 import { AuthenticationClient } from "authing-node-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  host: "APP_HOST",
-  appId: "APP_ID",
-  appSecret: "APP_SECRET",
+  host: "userPoolHost",
+  appId: "appId",
+  appSecret: "appSecret",
   redirectUri: "redirectUri"
 });
 ```
@@ -28,7 +32,7 @@ authenticationClient.handleRedirectCallback; // 在应用回调端点处理认�
 authenticationClient.getLoginStateByAuthCode; // 用授权码获取用户登录态
 authenticationClient.getUserInfo; // 用 Access Token 获取用户身份信息
 authenticationClient.refreshLoginState; // 用 Refresh Token 刷新用户的登录态，延长过期时间
-authenticationClient.logoutWithRedirect; // 将浏览器重定向到 Authing 的登出发起 URL 进行登出
+authenticationClient.logoutWithRedirect; // 将浏览器重定向到 Authing 的登出 URL 进行登出
 authenticationClient.buildLogoutUrl; // 生成登出 URL
 authenticationClient.parseAccessToken; // 验证并解析 Access Token
 authenticationClient.parseIDToken; // 验证并解析 ID Token
@@ -62,16 +66,16 @@ const authenticationClient = new AuthenticationClient({
 ### 将用户浏览器重定向到 Authing 的认证发起 URL 进行认证
 
 ```js
-authenticationClient.loginWithRedirect(options);
+authenticationClient.loginWithRedirect(res, options);
 ```
 
 > 用户发起认证请求，你可以在服务端直接调用这个方法，通过操作请求的 response 对象，把用户的浏览器重定向到 Authing 的认证发起 URL 进行认证。
 
 #### 参数
 
-- `res` \<ServerResponse\> 通过操作 response 对象，直接将用户的浏览器 302 重定向到 Authing 的认证发起 URL。
+- `res` \<ServerResponse\> 操作请求的 response 对象，直接将用户的浏览器重定向到 Authing 的认证发起 URL。
 - `options` \<options\> 发起授权登录时需要填写的参数。
-- `options.scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限）。，覆盖初始化参数中的对应设置。
+- `options.scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
 - `options.redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -83,7 +87,7 @@ authenticationClient.loginWithRedirect(options);
 authenticationClient.buildAuthUrl(options);
 ```
 
-> 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存 生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
+> 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
 
 #### 参数
 
@@ -97,12 +101,12 @@ authenticationClient.buildAuthUrl(options);
 #### 示例
 
 ```javascript
-// 生成认证地址，用户通过认证地址进行登录，并携带 Code 和 state 跳转到指定的 redirectUri
+// 生成认证地址，用户通过认证地址进行登录，并携带 code 和 state 跳转到指定的 redirectUri
 const authUrl = authenticationClient.buildAuthUrl({
   scope: "openid profile",
   state: "随机字符串",
   nonce: "随机字符串",
-  redirectUri: "www.authing.cn",
+  redirectUri: "https://www.authing.cn",
   forced: false
 });
 ```
@@ -111,7 +115,7 @@ const authUrl = authenticationClient.buildAuthUrl({
 
 ```js
  {
-    url: 'https://core.authing.cn/oidc/auth?redirect_uri=https%3A%2F%2Fbaidu.com&response_mode=query&response_type=code&client_id=625fa4682e45fc2546331f25&scope=openid%20profile&state=AHyb4cXlwYbYtuFP&nonce=0BChaRhqezrMup1D',
+    url: 'https://<用户池域名>.authing.cn/oidc/auth?redirect_uri=https%3A%2F%2Fbaidu.com&response_mode=query&response_type=code&client_id=625fa4682e45fc2546331f25&scope=openid%20profile&state=AHyb4cXlwYbYtuFP&nonce=0BChaRhqezrMup1D',
     state:  "随机字符串",
     nonce:  "随机字符串"
   }
@@ -120,7 +124,7 @@ const authUrl = authenticationClient.buildAuthUrl({
 ### 应用回调端点处理认证返回结果
 
 ```js
-authenticationClient.handleRedirectCallback(req， res)
+authenticationClient.handleRedirectCallback(req, res);
 ```
 
 > 用户完成认证后，跳转到回调地址，通过调用本方法，校验 state 值，并消费 code 获取相应的登录信息。
@@ -183,12 +187,12 @@ const result = authenticationClient.handleRedirectCallback(req, res);
 
 | 字段名            | 含义                                                                       |
 | ----------------- | -------------------------------------------------------------------------- |
-| accessToken       | Access token，Authing 颁发的 Access token                                  |
+| accessToken       | Access Token，Authing 颁发的 Access Token                                  |
 | idToken           | ID token，Authing 颁发的用户的身份凭证，通过解密，可以获取到一部分用户信息 |
 | refreshToken      | 用来刷新用户的登录态，延长过期时间                                         |
 | expireAt          | 过期时间                                                                   |
 | parsedIDToken     | 解析 id token 的结果，具体字段在下面有解释                                 |
-| parsedAccessToken | 解析 access token 的结果，具体字段在下面有解释                             |
+| parsedAccessToken | 解析 Access Token 的结果，具体字段在下面有解释                             |
 
 ### 用授权码获取用户登录态
 
@@ -196,7 +200,7 @@ const result = authenticationClient.handleRedirectCallback(req, res);
 authenticationClient.getLoginStateByAuthCode(code, redirectUri);
 ```
 
-> 用户登录完成后，使用获得的授权码 Code 获取用户的登录态信息，如果初始化时 scope 字段中包含 profile ，登录流程到这里就可以结束了，用户信息包含在解析出来的 ID Token 中； 登录态信息包括 ID Token、 Access Token、 Refresh Token、Access Token 过期时间、 解析出来的 ID Token 中包含的（用户）信息，解析出来的 Access Token 中的信息。注意：1. 调用前需要对 认证完成后的 state 值进行比对校验。2. 获取到用户登录态信息后，需要比对解析出来的 ID Token 中的 nonce 值， 是否和本地缓存的保持一致。
+> 用户登录完成后，使用获得的授权码 Code 获取用户的登录态信息，如果初始化时 scope 字段中包含 profile ，登录流程到这里就可以结束了，用户信息包含在解析出来的 ID Token 中； 登录态信息包括 ID Token、 Access Token、 Refresh Token、Access Token 过期时间、解析出来的 ID Token 中包含的（用户）信息，解析出来的 Access Token 中的信息。注意：1. 调用前需要对认证完成后的 state 值进行比对校验。2. 获取到用户登录态信息后，需要比对解析出来的 ID Token 中的 nonce 值， 是否和本地缓存的保持一致。
 
 #### 参数
 
@@ -265,12 +269,12 @@ authenticationClient.getUserInfo(accessToken);
 
 #### 参数
 
-- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `access_token` \<String\> Access Token，使用授权码 Code 换取的 Access Token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
 
 #### 示例
 
 ```javascript
-const res = await authenticationClient.getUserInfo("Access token");
+const res = await authenticationClient.getUserInfo("Access Token");
 ```
 
 #### 示例数据
@@ -321,11 +325,11 @@ const res = await authenticationClient.getUserInfo("Access token");
 authenticationClient.refreshLoginState(refreshToken);
 ```
 
-> 使用 Refresh token 刷新登录态，并延长 accessToken 有效时间。
+> 使用 Refresh Token 刷新登录态，并延长 Access Token 有效时间。
 
 #### 参数
 
-- `refreshToken` \<String\> Refresh token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 authenticationClient.getLoginStateByAuthCode 方法的返回值中获得 refresh_token 。
+- `refreshToken` \<String\> Refresh Token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 authenticationClient.getLoginStateByAuthCode 方法的返回值中获得 refreshToken 。
 
 #### 示例
 
@@ -376,13 +380,13 @@ const res = authenticationClient.refreshLoginState(refreshToken);
 }
 ```
 
-### 将浏览器重定向到 Authing 的登出发起 URL 进行登出
+### 将浏览器重定向到 Authing 的登出 URL 进行登出
 
 ```js
 authenticationClient.logoutWithRedirect(res, options);
 ```
 
-> 将浏览器重定向到 Authing 的登出发起 URL 进行登出。
+> 将浏览器重定向到 Authing 的登出 URL 进行登出。
 
 #### 参数
 
@@ -397,7 +401,7 @@ authenticationClient.logoutWithRedirect(res, options);
 ```javascript
 const res = authenticationClient.logoutWithRedirect(res, {
   idToken: "",
-  redirectUri: "www.authing.cn",
+  redirectUri: "https://www.authing.cn",
   state: "随机生成的中间标识"
 });
 ```
@@ -410,17 +414,17 @@ authenticationClient.buildLogoutUrl(options)
 
 #### 参数
 
-- `options` \<options\> 发起授权登录时需要填写的参数。
+- `options` \<options\> 发起登出请求时需要填写的参数。
 - `options.idToken` \<String\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
 - `options.state` \<String\> 传递到目标 URL 的中间状态标识符。
-- `options.redirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
+- `options.redirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。注意：基于安全考虑 1. 此参数必须和 idToken 一起调用，否则无法实现重定向跳转。2.重定向地址必须预先在 Authing 控制台，**自建应用**详情中的**应用配置**页，**登出回调 URL**中进行设置，不支持对未设置的重定向地址进行跳转。
 
 #### 示例
 
 ```javascript
 const res = authenticationClient.buildLogoutUrl({
   idToken: "",
-  redirectUri: "www.authing.cn",
+  redirectUri: "https://www.authing.cn",
   state: "随机生成的中间标识"
 });
 ```
@@ -428,7 +432,7 @@ const res = authenticationClient.buildLogoutUrl({
 #### 示例数据
 
 ```json
-authing.cn/oidc/session/end?${createQueryParams(params)}
+authing.cn/oidc/session/end?/oidc/session/end?post_logout_redirect_uri=https%3A%2F%2Fbaidu.com&state=state&id_token_hint=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVlTVFVSDI1Ny1DWXQzOUFoblZNVXY2TUZrVjd1Q2xTWVU3T0VMZ1lzNzAifQ.eyJqdGkiOiJpbFFCczNmSVRpSlR5UHpQWDdYdFIiLCJzdWIiOiI2MmEyZmU2NTg4NTMzNTM0N2IwY2IwOWUiLCJpYXQiOjE2NTUyMDgyMDEsImV4cCI6MTY1NjQxNzgwMSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSIsImlzcyI6Imh0dHBzOi8vdGVzdC5teXNxbC5hdXRoaW5nLWluYy5jby9vaWRjIiwiYXVkIjoiNjI1ZmE0NjgyZTQ1ZmMyNTQ2MzMxZjI1In0.G0yT6ipreRco4LNmJmSoV3753MMmrnNaLe4Vikw4zEPDLHwAEtsxO2C92R3natBTo6SUrGES8l_rknjAnVC0GjxDWhmt28TrXe0OEnafcsFLWbT2Q_qXJS3QcW_eeDpqIgibGY8fmHNydQ3WqC69mOvhW20YXmKLdhxBpgxzn9g95tbEadV9_y1e-5n_HCjBd6BRJn2-X_uIGgkKwNQFrzOhQ5GlFZH7ejoajvIQcx8gZhJDU-3dUi2g_xWwBkvvTSwXvXzP_rFvpaXxlHj75amgS0YPNm61lawChNzWhuJtucY4XNmFiTOwb1DTKsZNGsRUiFnzfxZffpgPZT89lA
 ```
 
 ### 验证并解析 ID Token
@@ -473,7 +477,7 @@ authenticationClient.parseIDToken(IDToken);
   "aud": "625fa4682e45fc2546331f2",
   "exp": 1656417801,
   "iat": 1655208201,
-  "iss": "https://core.authing.cn/oidc"
+  "iss": "https://www.authing.cn/oidc"
 }
 ```
 
@@ -512,7 +516,7 @@ authenticationClient.parseAccessToken(accessToken);
 
 #### 参数
 
-- `accessToken` \<string\> Authing 颁发的 Access token
+- `accessToken` \<string\> Authing 颁发的 Access Token
 
 #### 示例
 
