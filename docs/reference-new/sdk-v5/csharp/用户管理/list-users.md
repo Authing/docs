@@ -17,9 +17,9 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| status | string  | 否 | - | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
-| updatedAtStart | number  | 否 | - | 用户创建、修改开始时间，为精确到秒的 UNIX 时间戳；支持获取从某一段时间之后的增量数据。。  | `1655714763890` |
-| updatedAtEnd | number  | 否 | - | 用户创建、修改终止时间，为精确到秒的 UNIX 时间戳；支持获取某一段时间内的增量数据。默认为当前时间。。  | `1655714763890` |
+| status | string  | 否 | - | 账户当前状态，如 已停用、已离职、正常状态、已归档。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
+| updatedAtStart | number  | 否 | - | 用户创建、修改开始时间，为精确到秒的 UNIX 时间戳；支持获取从某一段时间之后的增量数据。  | `1655714763890` |
+| updatedAtEnd | number  | 否 | - | 用户创建、修改终止时间，为精确到秒的 UNIX 时间戳；支持获取某一段时间内的增量数据。默认为当前时间。  | `1655714763890` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
 | withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
 | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
@@ -102,7 +102,7 @@ namespace Example
   "data": {
     "list": {
       "userId": "6229ffaxxxxxxxxcade3e3d9",
-      "createdAt": "2022-07-06T01:04:42.982Z",
+      "createdAt": "2022-07-08T12:56:15.061Z",
       "status": "Activated",
       "email": "test@example.com",
       "phone": "176xxxx6754",
@@ -117,8 +117,8 @@ namespace Example
       "gender": "M",
       "emailVerified": true,
       "phoneVerified": true,
-      "passwordLastSetAt": "2022-07-06T01:04:42.982Z",
-      "birthdate": "2022-07-06",
+      "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
+      "birthdate": "2022-07-08",
       "country": "CN",
       "province": "BJ",
       "city": "BJ",
@@ -137,7 +137,8 @@ namespace Example
       "customData": {
         "school": "北京大学",
         "age": 22
-      }
+      },
+      "statusChangedAt": "2022-07-08T12:56:16.793Z"
     }
   }
 }
@@ -159,7 +160,7 @@ namespace Example
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-06T01:04:42.982Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -174,8 +175,8 @@ namespace Example
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-06T01:04:42.982Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -187,6 +188,7 @@ namespace Example
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 | - | 批量用户。  |  |
-| options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 附加选项。  |  |
+| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 | - | 用户列表。  |  |
+| options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -59,7 +59,7 @@ func main() {
             Gender: CreateUserInfoDto.gender.M,
             EmailVerified: true,
             PhoneVerified: true,
-            Birthdate: "2022-07-06",
+            Birthdate: "2022-07-08",
             Country: "CN",
             Province: "BJ",
             City: "BJ",
@@ -70,6 +70,7 @@ func main() {
             DepartmentIds: []string{"624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",},
             CustomData: dto.CreateUserInfoDto {    school="北京大学",    age=22,},
             Password: "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=",
+            ResetPasswordOnFisrtLogin: false,
             TenantIds: []string{},
           Identities: []CreateIdentityDto{
                     dto.CreateIdentityDto
@@ -84,8 +85,14 @@ func main() {
                   },
         Options: dto.CreateUserOptionsDto {
                           KeepPassword: false,
+          AutoGeneratePassword: false,
           ResetPasswordOnFirstLogin: false,
           DepartmentIdType: CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID,
+        SendNotification: dto.SendCreateAccountNotificationDto {
+                          SendEmailNotification: false,
+          SendPhoneNotification: false,
+          AppId: "appid1",
+        },
         },
     }
   )
@@ -116,7 +123,7 @@ func main() {
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-07-06T01:04:42.982Z",
+    "createdAt": "2022-07-08T12:56:15.061Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -131,8 +138,8 @@ func main() {
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-07-06T01:04:42.982Z",
-    "birthdate": "2022-07-06",
+    "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
+    "birthdate": "2022-07-08",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -151,7 +158,8 @@ func main() {
     "customData": {
       "school": "北京大学",
       "age": 22
-    }
+    },
+    "statusChangedAt": "2022-07-08T12:56:16.793Z"
   }
 }
 ```
@@ -165,7 +173,7 @@ func main() {
 | ---- |  ---- | ---- | ---- |
 | status | string | 否 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
-| passwordEncryptType | string | 否 | 加密类型。 枚举值：`sm2`,`rsa`,`none`  |
+| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。 枚举值：`sm2`,`rsa`,`none`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
 | username | string | 否 | 用户名，用户池内唯一。 示例值： `bob`  |
@@ -175,7 +183,7 @@ func main() {
 | gender | string | 否 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 否 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 否 | 手机号是否验证。 示例值： `true`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -185,7 +193,8 @@ func main() {
 | externalId | string | 否 | 第三方外部 ID。 示例值： `10010`  |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
-| password | string | 否 | 密码。可选加密方式进行加密，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=`  |
+| password | string | 否 | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=`  |
+| resetPasswordOnFisrtLogin | boolean | 否 | 是否首次登录时重新设置密码。 示例值： `false`  |
 | tenantIds | array | 否 | 租户 ID。   |
 | identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定）。嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。 示例值： `[object Object]`  |
 
@@ -205,8 +214,19 @@ func main() {
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | keepPassword | boolean | 否 | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。。   |
+| autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码。   |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
+| sendNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。 示例值： `[object Object]`  |
+
+
+### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| sendEmailNotification | boolean | 否 | 创建账号之后，是否发送邮件通知。   |
+| sendPhoneNotification | boolean | 否 | 创建账号之后，是否发送短信通知。   |
+| appId | string | 否 | 发送登录地址时，指定的应用 id，会将此应用的登录地址发送给用户的邮箱或者手机号。默认为用户池应用面板的登录地址。。 示例值： `appid1`  |
 
 
 ### <a id="UserDto"></a> UserDto
@@ -214,7 +234,7 @@ func main() {
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-06T01:04:42.982Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -229,8 +249,8 @@ func main() {
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-06T01:04:42.982Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -242,6 +262,7 @@ func main() {
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

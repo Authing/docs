@@ -24,7 +24,7 @@
 | status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
 | emailVerified | boolean | 否 | - | 邮箱是否验证。  | `true` |
 | phoneVerified | boolean | 否 | - | 手机号是否验证。  | `true` |
-| birthdate | string | 否 | - | 出生日期。  | `2022-07-06` |
+| birthdate | string | 否 | - | 出生日期。  | `2022-07-08` |
 | country | string | 否 | - | 所在国家。  | `CN` |
 | province | string | 否 | - | 所在省份。  | `BJ` |
 | city | string | 否 | - | 所在城市。  | `BJ` |
@@ -33,12 +33,12 @@
 | postalCode | string | 否 | - | 邮政编码号。  | `438100` |
 | gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` | `M` |
 | username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
-| passwordEncryptType | string | 否 | none | 加密类型。 枚举值：`sm2`,`rsa`,`none` | `none` |
+| passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。 枚举值：`sm2`,`rsa`,`none` | `none` |
 | email | string | 否 | - | 邮箱。  | `test@example.com` |
 | phone | string | 否 | - | 手机号。  | `176xxxx6754` |
-| password | string | 否 | - | 密码。可选加密方式进行加密，默认为未加密。  | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
+| password | string | 否 | - | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。  | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"school":"北京大学","age":22}` |
-| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 附加选项。  |  |
+| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -61,7 +61,7 @@ data = management_client.update_user(
      status: "Activated",
      email_verified: true,
      phone_verified: true,
-     birthdate: "2022-07-06",
+     birthdate: "2022-07-08",
      country: "CN",
      province: "BJ",
      city: "BJ",
@@ -79,11 +79,12 @@ data = management_client.update_user(
 			"age":	22
 		},
      options: {
-         reset_password_on_next_login: false,
-       send_email_or_phone_notification: {
-         send_email_notification: "test@example.com",
-       send_phone_notification: "176xxxx6754",
-       app_id: "app1",
+         user_id_type: "user_id",
+       reset_password_on_next_login: false,
+       send_password_reseted_notification: {
+         send_email_notification: false,
+       send_phone_notification: false,
+       app_id: "appid1",
     },
     },
   
@@ -114,7 +115,7 @@ data = management_client.update_user(
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-07-06T01:04:42.982Z",
+    "createdAt": "2022-07-08T12:56:15.061Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -129,8 +130,8 @@ data = management_client.update_user(
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-07-06T01:04:42.982Z",
-    "birthdate": "2022-07-06",
+    "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
+    "birthdate": "2022-07-08",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -149,7 +150,8 @@ data = management_client.update_user(
     "customData": {
       "school": "北京大学",
       "age": 22
-    }
+    },
+    "statusChangedAt": "2022-07-08T12:56:16.793Z"
   }
 }
 ```
@@ -161,17 +163,18 @@ data = management_client.update_user(
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
-| sendEmailOrPhoneNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendEmailOrPhoneNotificationDto">SendEmailOrPhoneNotificationDto</a>。 示例值： `[object Object]`  |
+| sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `[object Object]`  |
 
 
-### <a id="SendEmailOrPhoneNotificationDto"></a> SendEmailOrPhoneNotificationDto
+### <a id="SendResetPasswordNotificationDto"></a> SendResetPasswordNotificationDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| sendEmailNotification | string | 否 | 邮箱。 示例值： `test@example.com`  |
-| sendPhoneNotification | string | 否 | 手机号。 示例值： `176xxxx6754`  |
-| appId | string | 否 | 应用 id。 示例值： `app1`  |
+| sendEmailNotification | boolean | 否 | 当用户密码修改之后，是否发送邮件通知。   |
+| sendPhoneNotification | boolean | 否 | 当用户密码修改之后，是否发送短信通知。   |
+| appId | string | 否 | 发送登录地址时，指定的应用 id，会将此应用的登录地址发送给用户的邮箱或者手机号。默认为用户池应用面板的登录地址。。 示例值： `appid1`  |
 
 
 ### <a id="UserDto"></a> UserDto
@@ -179,7 +182,7 @@ data = management_client.update_user(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-06T01:04:42.982Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -194,8 +197,8 @@ data = management_client.update_user(
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-06T01:04:42.982Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -207,6 +210,7 @@ data = management_client.update_user(
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

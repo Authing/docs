@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| name | string | 是 | - | 身份源名称。  | `exampleName` |
 | type | string | 是 | - | 身份源连接类型。 枚举值：`oidc`,`oauth2`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`wechat`,`google`,`qq`,`wechatwork`,`dingtalk`,`weibo`,`github`,`alipay`,`apple`,`baidu`,`lark`,`gitlab`,`twitter`,`facebook`,`slack`,`linkedin`,`yidun`,`qingcloud`,`gitee`,`instagram`,`welink` | `ad` |
+| name | string | 是 | - | 身份源名称。  | `exampleName` |
 | tenantId | string | 否 | - | 租户 ID。  | `60b49eb83fd80adb96f26e68` |
 
 

@@ -9,14 +9,14 @@
 
 <LastUpdated />
 
-给多个主体同时授权多个资源
+同时给多个主体授权多个资源
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 | - | 授权资源列表。  |  |
 | namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
-| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 | - | 授权列表。  |  |
 
 
 ## 示例代码

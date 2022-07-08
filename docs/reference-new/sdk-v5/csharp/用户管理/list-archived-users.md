@@ -17,7 +17,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定。。  | `1655714763890` |
+| startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定。  | `1655714763890` |
 
 
 ## 示例代码
@@ -92,7 +92,7 @@ namespace Example
   "data": {
     "list": {
       "userId": "userId",
-      "archivedAt": "2022-07-06T01:04:44.764Z"
+      "archivedAt": "2022-07-08T12:56:16.827Z"
     }
   }
 }
@@ -114,6 +114,6 @@ namespace Example
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `userId`  |
-| archivedAt | string | 是 | 归档时间。 示例值： `2022-07-06T01:04:44.764Z`  |
+| archivedAt | string | 是 | 归档时间。 示例值： `2022-07-08T12:56:16.827Z`  |
 
 

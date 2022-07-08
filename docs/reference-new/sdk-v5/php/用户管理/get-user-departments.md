@@ -15,12 +15,13 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| orderBy | string  | 是 | Desc | 增序还是倒序。 枚举值：`Asc`,`Desc` | `Desc` |
-| sortBy | string  | 是 | JoinDepartmentAt | 排序依据。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` | `JoinDepartmentAt` |
 | userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
+| sortBy | string  | 否 | JoinDepartmentAt | 排序依据，如 部门创建时间、加入部门时间、部门名称、部门标志符。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` | `JoinDepartmentAt` |
+| orderBy | string  | 否 | Desc | 增序或降序。 枚举值：`Asc`,`Desc` | `Desc` |
 
 
 ## 示例代码
@@ -39,17 +40,19 @@ $management = new ManagementClient(
 
 $data = $management->getUserDepartments(array(
   
-    "orderBy" => "Desc",
-
-    "sortBy" => "JoinDepartmentAt",
-
     "userId" => "6229ffaxxxxxxxxcade3e3d9",
+
+    "userIdType" => "user_id",
 
     "page" => 1,
 
     "limit" => 10,
 
     "withCustomData" => true,
+
+    "sortBy" => "JoinDepartmentAt",
+
+    "orderBy" => "Desc",
 
 ));
 ```
@@ -79,14 +82,14 @@ $data = $management->getUserDepartments(array(
     "list": {
       "organizationCode": "steamory",
       "departmentId": "60b49eb83fd80adb96f26e68",
-      "createdAt": "2022-07-06T01:04:44.760Z",
+      "createdAt": "2022-07-08T12:56:16.800Z",
       "name": "dd8d7stf44",
       "description": "dd8d7stf44",
       "openDepartmentId": "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
       "isLeader": true,
       "code": "6229c4deb3e4d8a20b6021ff",
       "isMainDepartment": true,
-      "joinedAt": "2022-07-06T01:04:44.760Z",
+      "joinedAt": "2022-07-08T12:56:16.800Z",
       "i18n": {
         "name": {
           "zh-CN": {
@@ -124,14 +127,14 @@ $data = $management->getUserDepartments(array(
 | ---- |  ---- | ---- | ---- |
 | organizationCode | string | 是 | 组织 Code（organizationCode）。 示例值： `steamory`  |
 | departmentId | string | 是 | 部门 ID。 示例值： `60b49eb83fd80adb96f26e68`  |
-| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-06T01:04:44.760Z`  |
+| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-08T12:56:16.800Z`  |
 | name | string | 是 | 部门名称。 示例值： `dd8d7stf44`  |
 | description | string | 是 | 部门描述。 示例值： `dd8d7stf44`  |
 | openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
 | isLeader | boolean | 是 | 是否是部门 Leader。 示例值： `true`  |
 | code | string | 是 | 部门识别码。 示例值： `6229c4deb3e4d8a20b6021ff`  |
 | isMainDepartment | boolean | 是 | 是否是主部门。 示例值： `true`  |
-| joinedAt | string | 是 | 加入部门时间。 示例值： `2022-07-06T01:04:44.760Z`  |
+| joinedAt | string | 是 | 加入部门时间。 示例值： `2022-07-08T12:56:16.800Z`  |
 | isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
 | customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |

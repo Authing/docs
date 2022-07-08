@@ -16,7 +16,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
-| departmentId | string  | 是 | - | 部门 id，根部门传 `root`。  | `root` |
+| departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。  | `root` |
 | keywords | string  | 是 | - | 搜索关键词。  | `张三` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
@@ -90,7 +90,7 @@ const managementClient = new ManagementClient({
   "data": {
     "list": {
       "userId": "6229ffaxxxxxxxxcade3e3d9",
-      "createdAt": "2022-07-06T01:04:42.982Z",
+      "createdAt": "2022-07-08T12:56:15.061Z",
       "status": "Activated",
       "email": "test@example.com",
       "phone": "176xxxx6754",
@@ -105,8 +105,8 @@ const managementClient = new ManagementClient({
       "gender": "M",
       "emailVerified": true,
       "phoneVerified": true,
-      "passwordLastSetAt": "2022-07-06T01:04:42.982Z",
-      "birthdate": "2022-07-06",
+      "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
+      "birthdate": "2022-07-08",
       "country": "CN",
       "province": "BJ",
       "city": "BJ",
@@ -125,7 +125,8 @@ const managementClient = new ManagementClient({
       "customData": {
         "school": "北京大学",
         "age": 22
-      }
+      },
+      "statusChangedAt": "2022-07-08T12:56:16.793Z"
     }
   }
 }
@@ -147,7 +148,7 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-06T01:04:42.982Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -162,8 +163,8 @@ const managementClient = new ManagementClient({
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-06T01:04:42.982Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -175,6 +176,7 @@ const managementClient = new ManagementClient({
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

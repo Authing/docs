@@ -16,6 +16,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | userId | string | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| options | <a href="#ResetUserPrincipalAuthenticationInfoOptionsDto">ResetUserPrincipalAuthenticationInfoOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -30,6 +31,9 @@ management_client = ManagementClient(
 
 data = management_client.reset_user_principal_authentication_info(
      user_id: "6229ffaxxxxxxxxcade3e3d9",
+     options: {
+         user_id_type: "user_id",
+    },
   
 )
 ```
@@ -63,6 +67,13 @@ data = management_client.reset_user_principal_authentication_info(
 ```
 
 ## 数据结构
+
+
+### <a id="ResetUserPrincipalAuthenticationInfoOptionsDto"></a> ResetUserPrincipalAuthenticationInfoOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto

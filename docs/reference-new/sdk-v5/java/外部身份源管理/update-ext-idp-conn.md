@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | string | 是 | - | 身份源连接 ID。  | `60b49eb83fd80adb96f26e68` |
-| displayName | string | 是 | - | 身份源连接显示名称。  | `exampleName` |
 | fields | object | 是 | - | 身份源连接自定义参数（增量修改）。  | `{"clientId":"clientId"}` |
+| displayName | string | 是 | - | 身份源连接显示名称。  | `exampleName` |
+| id | string | 是 | - | 身份源连接 ID。  | `60b49eb83fd80adb96f26e68` |
 | logo | string | 否 | - | 身份源连接的图标。  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 | loginOnly | boolean | 否 | - | 是否只支持登录。  |  |
 

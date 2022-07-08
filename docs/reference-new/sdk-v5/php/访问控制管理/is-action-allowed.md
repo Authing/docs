@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
-| userId | string | 是 | - | 用户 ID。  | `userId1` |
-| resource | string | 是 | - | 资源标识符。  | `ecs:1` |
 | action | string | 是 | - | 资源对应的操作。  | `ecs:Start` |
+| resource | string | 是 | - | 资源标识符。  | `ecs:1` |
+| userId | string | 是 | - | 用户 ID。  | `userId1` |
+| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
 
 
 ## 示例代码

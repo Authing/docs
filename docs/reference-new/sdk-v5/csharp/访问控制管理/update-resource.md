@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-修改资源（Pratial Update）
+修改资源
 
 ## 请求参数
 

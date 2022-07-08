@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| type | string | 是 | - | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `API` |
 | code | string | 是 | - | 资源唯一标志符。  | `ecs` |
 | description | string | 否 | - | 资源描述。  | `服务器` |
-| type | string | 是 | - | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `API` |
 | actions | <a href="#ResourceAction">ResourceAction[]</a> | 否 | - | 资源定义的操作类型。  | `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
 | apiIdentifier | string | 否 | - | API 资源的 URL 标识。  | `https://my-awesome-api.com/api` |
 | namespace | string | 否 | - | 所属权限分组的 code。  | `default` |

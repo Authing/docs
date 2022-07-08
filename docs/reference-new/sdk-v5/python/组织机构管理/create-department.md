@@ -15,11 +15,11 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| parentDepartmentId | string | 是 | - | 父部门 id。  | `6229c4deb3e4d8a20b6021ff` |
+| name | string | 是 | - | 部门名称。  | `开发部` |
 | organizationCode | string | 是 | - | 组织 Code（organizationCode）。  | `steamory` |
 | openDepartmentId | string | 否 | - | 自定义部门 ID，用于存储自定义的 ID。  | `ou_7dab8a3d3cdccxxxxxx777c7ad535d62` |
-| name | string | 是 | - | 部门名称。  | `开发部` |
 | description | string | 否 | - | 部门描述。  | `技术研发部门` |
-| parentDepartmentId | string | 是 | - | 父部门 id。  | `6229c4deb3e4d8a20b6021ff` |
 | code | string | 否 | - | 部门识别码。  | `6229c4deb3e4d8a20b6021ff` |
 | isVirtualNode | boolean | 否 | - | 是否是虚拟部门。  |  |
 | i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
@@ -90,7 +90,7 @@ data = management_client.create_department(
   "data": {
     "organizationCode": "steamory",
     "departmentId": "60b49eb83fd80adb96f26e68",
-    "createdAt": "2022-07-06T01:04:42.702Z",
+    "createdAt": "2022-07-08T12:56:14.781Z",
     "openDepartmentId": "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
     "name": "开发部",
     "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
@@ -150,7 +150,7 @@ data = management_client.create_department(
 | ---- |  ---- | ---- | ---- |
 | organizationCode | string | 是 | 组织 Code（organizationCode）。 示例值： `steamory`  |
 | departmentId | string | 是 | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68`  |
-| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-06T01:04:42.702Z`  |
+| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-08T12:56:14.781Z`  |
 | openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
 | name | string | 是 | 部门名称。 示例值： `开发部`  |
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |

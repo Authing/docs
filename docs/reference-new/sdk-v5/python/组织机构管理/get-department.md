@@ -16,7 +16,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
-| departmentId | string  | 否 | - | 部门 id，根部门传 `root`。departmentId 和 departmentCode 必传其一。。  | `root` |
+| departmentId | string  | 否 | - | 部门 ID，根部门传 `root`。departmentId 和 departmentCode 必传其一。。  | `root` |
 | departmentCode | string  | 否 | - | 部门 code。departmentId 和 departmentCode 必传其一。。  | `example` |
 | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
@@ -72,7 +72,7 @@ data = management_client.get_department(
   "data": {
     "organizationCode": "steamory",
     "departmentId": "60b49eb83fd80adb96f26e68",
-    "createdAt": "2022-07-06T01:04:42.702Z",
+    "createdAt": "2022-07-08T12:56:14.781Z",
     "openDepartmentId": "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
     "name": "开发部",
     "leaderUserIds": "[\"60b49eb83fd80adb96f26e68\"]",
@@ -109,7 +109,7 @@ data = management_client.get_department(
 | ---- |  ---- | ---- | ---- |
 | organizationCode | string | 是 | 组织 Code（organizationCode）。 示例值： `steamory`  |
 | departmentId | string | 是 | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68`  |
-| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-06T01:04:42.702Z`  |
+| createdAt | string | 是 | 部门创建时间。 示例值： `2022-07-08T12:56:14.781Z`  |
 | openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。 示例值： `ou_7dab8a3d3cdccxxxxxx777c7ad535d62`  |
 | name | string | 是 | 部门名称。 示例值： `开发部`  |
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |

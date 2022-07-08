@@ -15,14 +15,11 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
 | withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
 | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
-| userId | string  | 否 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| phone | string  | 否 | - | 手机号。  | `176xxxx6754` |
-| email | string  | 否 | - | 邮箱。  | `test@example.com` |
-| username | string  | 否 | - | 用户名。  | `bob` |
-| externalId | string  | 否 | - | 原系统 ID。  | `10010` |
 
 
 ## 示例代码
@@ -40,21 +37,15 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.getUser({
 
+    userId: '6229ffaxxxxxxxxcade3e3d9',
+
+    userIdType: 'user_id',
+
     withCustomData: true,
 
     withIdentities: true,
 
     withDepartmentIds: true,
-
-    userId: '6229ffaxxxxxxxxcade3e3d9',
-
-    phone: '176xxxx6754',
-
-    email: 'test@example.com',
-
-    username: 'bob',
-
-    externalId: '10010',
  });
 })();
 ```
@@ -83,7 +74,7 @@ const managementClient = new ManagementClient({
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-07-06T01:04:42.982Z",
+    "createdAt": "2022-07-08T12:56:15.061Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -98,8 +89,8 @@ const managementClient = new ManagementClient({
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-07-06T01:04:42.982Z",
-    "birthdate": "2022-07-06",
+    "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
+    "birthdate": "2022-07-08",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -118,7 +109,8 @@ const managementClient = new ManagementClient({
     "customData": {
       "school": "北京大学",
       "age": 22
-    }
+    },
+    "statusChangedAt": "2022-07-08T12:56:16.793Z"
   }
 }
 ```
@@ -131,7 +123,7 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-06T01:04:42.982Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -146,8 +138,8 @@ const managementClient = new ManagementClient({
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-06T01:04:42.982Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-06`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -159,6 +151,7 @@ const managementClient = new ManagementClient({
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto

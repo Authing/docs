@@ -16,6 +16,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 
 
 ## 示例代码
@@ -35,6 +36,8 @@ $management = new ManagementClient(
 $data = $management->getUserMfaInfo(array(
   
     "userId" => "6229ffaxxxxxxxxcade3e3d9",
+
+    "userIdType" => "user_id",
 
 ));
 ```

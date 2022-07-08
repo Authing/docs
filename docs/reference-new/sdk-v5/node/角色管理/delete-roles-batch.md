@@ -1,4 +1,4 @@
-# （批量）删除角色
+# 删除角色
 
 <!--
   警告⚠️：
@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-删除角色
+删除角色，支持批量删除
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[] | 是 | - | 角色 code 集合。  | `["code1","code2"]` |
+| codeList | string[] | 是 | - | 角色 code 列表。  | `["code1","code2"]` |
 | namespace | string | 否 | default | 所属权限分组的 code。  | `default` |
 
 

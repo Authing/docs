@@ -9,14 +9,15 @@
 
 <LastUpdated />
 
-强制下线用户
+强制让用户下线
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| appIds | string[] | 是 | - | APP ID 列表。  | `["62188e71cxxxx3075289c580"]` |
 | userId | string | 是 | - | 用户 ID。  |  |
-| appIds | string[] | 是 | - | APP ID 集合。  | `["62188e71cxxxx3075289c580"]` |
+| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数。  | `{"userIdType":"user_id"}` |
 
 
 ## 示例代码
@@ -46,6 +47,9 @@ func main() {
       dto.KickUsersDto {
           UserId: "undefined",
           AppIds: []string{"62188e71cxxxx3075289c580",},
+        Options: dto.KickUsersOptionsDto {
+                          UserIdType: KickUsersOptionsDto.userIdType.USER_ID,
+        },
     }
   )
 }
@@ -80,6 +84,13 @@ func main() {
 ```
 
 ## 数据结构
+
+
+### <a id="KickUsersOptionsDto"></a> KickUsersOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto

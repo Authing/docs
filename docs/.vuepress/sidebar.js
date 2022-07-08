@@ -2140,7 +2140,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -2250,7 +2250,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/csharp/角色管理/delete-roles-batch",
                     },
                     {
@@ -2575,7 +2575,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -2685,7 +2685,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/go/角色管理/delete-roles-batch",
                     },
                     {
@@ -3010,7 +3010,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3120,7 +3120,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/java/角色管理/delete-roles-batch",
                     },
                     {
@@ -3445,7 +3445,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3555,7 +3555,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/node/角色管理/delete-roles-batch",
                     },
                     {
@@ -3880,7 +3880,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3990,7 +3990,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/php/角色管理/delete-roles-batch",
                     },
                     {
@@ -4315,7 +4315,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问应用",
+                      title: "获取用户可访问的应用",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -4425,7 +4425,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/角色管理/list-roles",
                     },
                     {
-                      title: "（批量）删除角色",
+                      title: "删除角色",
                       path: "/reference-new/sdk-v5/python/角色管理/delete-roles-batch",
                     },
                     {

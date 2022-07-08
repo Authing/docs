@@ -9,15 +9,15 @@
 
 <LastUpdated />
 
-移除分配的角色，被分配者可以是用户，可以是部门
+移除分配的角色，被分配者可以是用户也可以是部门
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| targets | <a href="#TargetDto">TargetDto[]</a> | 是 | - | 移除角色的目标。  | `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 | code | string | 是 | - | 权限分组内角色的唯一标识符。  | `code1` |
 | namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
-| targets | <a href="#TargetDto">TargetDto[]</a> | 是 | - | 移除角色的目标。  | `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 
 
 ## 示例代码

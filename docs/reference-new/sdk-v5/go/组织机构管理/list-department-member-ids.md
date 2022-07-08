@@ -16,7 +16,7 @@
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
-| departmentId | string  | 是 | - | 部门 id，根部门传 `root`。  | `root` |
+| departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。  | `root` |
 | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
 
 

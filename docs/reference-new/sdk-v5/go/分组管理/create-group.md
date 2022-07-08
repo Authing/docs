@@ -9,15 +9,15 @@
 
 <LastUpdated />
 
-创建分组，一个分组必须包含一个用户池全局唯一的标志符（code），此标志符必须为一个合法的英文标志符，如 developers；以及分组名称
+创建分组，一个分组必须包含分组名称与一个用户池内全局唯一的标志符 code，且必须为一个合法的英文标志符，如 developers
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 | - | 分组 code。  | `developer` |
-| name | string | 是 | - | 分组名称。  | `开发者` |
 | description | string | 是 | - | 分组描述。  | `描述内容` |
+| name | string | 是 | - | 分组名称。  | `开发者` |
+| code | string | 是 | - | 分组 code。  | `developer` |
 
 
 ## 示例代码
