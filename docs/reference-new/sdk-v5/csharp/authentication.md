@@ -63,7 +63,7 @@ authenticationClient.LoginWithRedirect(res,scope,nonce,state,redirectUri,forced)
 #### 参数
 
 - `res` \<HttpResponse\> 通过操作 response 对象，直接将用户的浏览器 302 重定向到 Authing 的认证发起 URL。
-- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限）。，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -77,7 +77,7 @@ authenticationClient.BuildAuthUrl(scope,nonce,state,redirectUrl,forced)
 
 #### 参数
 
-- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限）。，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。

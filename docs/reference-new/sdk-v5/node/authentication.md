@@ -92,7 +92,7 @@ authenticationClient.buildAuthUrl(options);
 #### 参数
 
 - `options` \<options\> 发起授权登录时需要填写的参数。
-- `options.scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限）。，覆盖初始化参数中的对应设置。
+- `options.scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
 - `options.redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
