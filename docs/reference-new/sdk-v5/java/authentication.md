@@ -61,6 +61,7 @@ authenticationClient.buildAuthUrl
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
 - `forced` \<Boolean\> 即便用户已经登录也强制显示登录页。
+
 #### 示例
 
 ```java

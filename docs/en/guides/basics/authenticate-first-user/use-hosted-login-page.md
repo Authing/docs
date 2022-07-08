@@ -1,4 +1,4 @@
-# use Authing hosted login page to authenticate
+# Use Authing hosted login page to authenticate
 
 <LastUpdated/>
 
@@ -8,7 +8,7 @@ This document will introduce how to quickly implement a complete user authentica
 
 ## Create a user pool
 
-[User pool](/concepts/user-pool.md)is the minimum unit of isolation of your user system. You can divide users in different scenarios into different user pools. User pool is the smallest unit of isolation of your user system. You can divide users in different scenarios into different user pools.There can be users and applications under each user pool.The permissions, applications, and organizations between different user pools are completely isolated.
+[User pool](/en/concepts/user-pool.md) is the minimum unit of isolation of your user system. You can divide users in different scenarios into different user pools. User pool is the smallest unit of isolation of your user system. You can divide users in different scenarios into different user pools.There can be users and applications under each user pool.The permissions, applications, and organizations between different user pools are completely isolated.
 
 <img src="./images/Xnip2021-02-27_14-58-25.png" alt="drawing"/>
 
@@ -22,13 +22,15 @@ In Console - Application, you can check your application list:
 
 Select "other application" and click the experience button on the right. In the popped-up window, you can see this online login page hosted by {{$localeConfig.brandName}}, which integrates features such as login, registration, forgot password, social login, and MFA:
 
-![](./images/login-page-1.png)
+<!-- ![](./images/login-page-1.png) -->
+<img src="./images/login-page-1.png" style="display: block;margin: 0 auto; width: 430px;" />
 
 ## Create a user
 
 Switch to the registration page, select "register with email", enter the email and password, and click the register button:
 
-![](./images/register.png)
+<!-- ![](./images/register.png) -->
+<img src="./images/register.png" style="display: block;margin: 0 auto; width: 465px;" />
 
 After registering successfully, you can see the user on the user list page of the console.
 
@@ -68,7 +70,7 @@ const code2tokenResponse = await axios.post(
 const { id_token, access_token } = code2tokenResponse.data;
 ```
 
-There are [id_token](/concepts/id-token.md) and [access_token](/concepts/access-token.md) in the returned data.Simply speaking, `id_token` is equivalent to the user's identity credential, and `access_token` is the key that allows access to resources. You can learn more about their differences [here](/concepts/access-token-vs-id-token.md).
+There are [id_token](/en/concepts/id-token.md) and [access_token](/en/concepts/access-token.md) in the returned data.Simply speaking, `id_token` is equivalent to the user's identity credential, and `access_token` is the key that allows access to resources. You can learn more about their differences [here](/en/concepts/access-token-vs-id-token.md).
 
 ```json
 {
@@ -116,7 +118,7 @@ const token2UserInfoResponse = await axios.get(
 console.log(token2UserInfoResponse.data);
 ```
 
-After that, you need to pass the `id_token` back to the front end. The front end should save the id_token and carry it every time when it send requests the back end interface. The back end interface should validate the id_token sent from the front end before processing the user request. Please refer to the [document](/guides/faqs/how-to-validate-user-token.md) for how to validate the token.
+After that, you need to pass the `id_token` back to the front end. The front end should save the id_token and carry it every time when it send requests the back end interface. The back end interface should validate the id_token sent from the front end before processing the user request. Please refer to the [document](/en/guides/faqs/how-to-validate-user-token.md) for how to validate the token.
 
 ::: hint-info
 
@@ -138,53 +140,19 @@ Authing directly returns id_token and access_token to the callback address in th
 https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiI4YzgzN2I5My01OTNlLTQzZjctYWMzNC0yYjRmZDU3ZGFhMTciLCJhdF9oYXNoIjoiVFFtbFlEVTVPZGF1Zjl0U0VKdHY5USIsInNfaGFzaCI6Ind3SDNXclV2b0hiSUp5TWVZVHU4bHciLCJhdWQiOiI1ZDAxZTM4OTk4NWY4MWM2YzFkZDMxZGUiLCJleHAiOjE1NjA0MDkzNjgsImlhdCI6MTU2MDQwNTc2OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5hdXRoaW5nLmNuL29hdXRoL29pZGMifQ.T9M0s6rk4Teq6VOOBRIElgHK9KyM3q0ZJj2aS0VD_Fw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OE9XcVJNVXJEUXpMMXpHVzVtUWoiLCJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJpc3MiOiJodHRwczovL29hdXRoLmF1dGhpbmcuY24vb2F1dGgvb2lkYyIsImlhdCI6MTU2MDQwNTc2OCwiZXhwIjoxNTYwNDA5MzY4LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiYXVkIjoiNWQwMWUzODk5ODVmODFjNmMxZGQzMWRlIn0.mR0MZDwlZWGRMsAZjQ27sDFFqYoDgZ6WHTK4C7JbML4&expires_in=3600&token_type=Bearer&state=jazz&session_state=26ec053be9f47d68dc430f84b97efb1095469fe10169a9e00ef4092718714b8b
 ```
 
-You can extract `id_token` from `url hash`, and then you can get user information by decoding `id_token`. For details, please refer to [validate user token](/guides/faqs/how-to-validate-user-token.md).
+You can extract `id_token` from `url hash`, and then you can get user information by decoding `id_token`. For details, please refer to [validate user token](/en/guides/faqs/how-to-validate-user-token.md).
 
-#### Use trackSession
+#### Use Authing SPA SDK
 
-Authing provides another simple method for front-end to obtain user information without processing callbacks or other configurations.
+Authing provides another simple way for the front end to get user information without dealing with callbacks or other configuration.
 
-1. Install the [single sign-on SDK](/en/reference/sdk-for-sso.md), complete the initialization, and call the trackSession function to obtain the user's login status.
-
-Use NPM to install:
-
-```
-$ npm install @authing/sso --save
-```
-
-useCDN:
-
-```html
-<script src="https://cdn.authing.co/packages/authing-sso/2.1.2/umd/index.min.js"></script>
-```
-
-2. Initialize SDK
-
-```javascript
-const authing = new AuthingSSO({
-  appId: "AUTHING_APP_ID",
-  appDomain: "sample-app"
-});
-```
-
-3. Call trackSession to get user login status
-
-```javascript
-const res = await authing.trackSession();
-if (res.session) {
-  // logged in
-} else {
-  // not login yet
-}
-```
-
-Please check the [document](/reference/sdk-for-sso.md) for detailed usage.
+Please check the [Single Sign-On (SSO)](/en/reference/sdk-for-sso-spa.md) for detailed usage.
 
 :::
 
 ## Visit personal center
 
-Every application created in {{$localeConfig.brandName}} has a built-in personal center page for end users, <span v-pre>the address is {{YOUR_APP_DOMAIN}}/u</span>, such as https://sample-app.authing.cn/u.You can directly access the address through the browser:
+Every application created in {{$localeConfig.brandName}} has a built-in personal center page for end users, <span v-pre>the address is {YOUR_APP_DOMAIN}/u</span>, such as https://sample-app.authing.cn/u. You can directly access the address through the browser:
 
 ![](./images/personal-central.png)
 
@@ -192,8 +160,8 @@ Here end users can view and modify their personal information, modify passwords,
 
 ## Use login component
 
-In the above process, we use the online login page of {{$localeConfig.brandName}} operation and maintenance. At the same time, we also provide login components that support various mainstream web frameworks. Compared with online login pages, the [login components](/reference/guard/) are more flexible and more customizable. You can integrate them into your own pages. For the detailed process, see [use the embedded login component to authenticate](/guides/basics/authenticate-first-user/use-embeded-login-component/).
+In the above process, we use the online login page of {{$localeConfig.brandName}} operation and maintenance. At the same time, we also provide login components that support various mainstream web frameworks. Compared with online login pages, the [login components](/reference/guard/) are more flexible and more customizable. You can integrate them into your own pages. For the detailed process, see [use the embedded login component to authenticate](/en/guides/basics/authenticate-first-user/use-embeded-login-component/).
 
 ## Use API & SDK
 
-So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/en/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/guides/basics/authenticate-first-user/use-api-sdk/).
+So far you have learned how to quickly implement the core login and registration process with the help of {{$localeConfig.brandName}} hosted login page. If you want to have stronger customization needs, you can also use the [API & SDK](/en/reference/) provided by {{$localeConfig.brandName}}. For the detailed process, please see [use API & SDK to authenticate](/en/guides/basics/authenticate-first-user/use-api-sdk/).
