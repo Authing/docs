@@ -37,7 +37,7 @@ $authentication = new AuthenticationClient(options);
 - `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 - `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
 
@@ -62,7 +62,7 @@ $authentication->buildAuthUrl(options);
 
 ### 参数
 
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -355,6 +355,7 @@ array(6) {
 ```
 
 ## 生成登出 URL
+
 ```php
 $authentication->buildLogoutUrl(options)
 ```
@@ -389,7 +390,7 @@ $authentication->loginWithRedirect(options);
 
 ### 参数
 
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -525,6 +526,7 @@ $authentication->logoutWithRedirect(options);
 ```php
 $data = $authentication->logoutWithRedirect();
 ```
+
 ### 示例数据
 
 ```php

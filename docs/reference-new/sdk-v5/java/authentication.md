@@ -4,10 +4,12 @@
 
 认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
 
-使用方法：
-使用 AppId 、APP_SECRET 、 appHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
+注意：使用本模块之前，你需要创建一个 (Authing 标准 Web 应用)[https://docs.authing.cn/v2/guides/app/create-app.html]，并开启自建应用 SSO 功能，具体文档可参考(自建应用 SSO 方案)[https://docs.authing.cn/v2/guides/app/sso.html].
 
-<流程图>
+使用方法：
+使用 appId 、 appSecret 、 userPoolHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。
+
+![](./auth-flow.jpg)
 
 ```java
 // 使用 AppId 、APP_SECRET 、 appHost、redirectUri 进行初始化
@@ -34,28 +36,27 @@ authenticationClient.parseIDToken; // 验证并解析 ID Token
 - `host` \<String\> 用户池域名， Authing 应用所在的用户池域名，例如 https://pool.authing.cn;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和 Authing 控制台中应用所设置的 登录回调 URL 保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 
 #### 示例
 
 ```java
-// 使用 AppId、 AppSecret、AppHost、redirectUri 进行初始化
+// 使用 AppId、 AppSecret、UserpoolHost、redirectUri 进行初始化
  AuthenticationClientOptions clientOptions = new AuthenticationClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET, HOST, REDIRECT_URI);
  AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-
 ```
 
 ### 生成用户登录链接
 
 authenticationClient.buildAuthUrl
 
-> 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存 生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
+> 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
 
 #### 参数
 
 - `buildAuthUrlParams` \<buildAuthUrlParams\> 发起授权登录时需要填写的参数。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -85,7 +86,7 @@ AuthUrlResult buildAuthUrl = authenticationClient.buildAuthUrl(buildAuthUrlParam
 
 authenticationClient.getLoginStateByAuthCode(code, redirectUri)
 
-> 用户登录完成后，使用获得的授权码 Code 获取用户的登录态信息，如果初始化时 scope 字段中包含 profile ，登录流程到这里就可以结束了，用户信息包含在解析出来的 ID Token 中； 登录态信息包括 ID Token、 Access Token、 Refresh Token、Access Token 过期时间、 解析出来的 ID Token 中包含的（用户）信息，解析出来的 Access Token 中的信息。注意：1. 调用前需要对 认证完成后的 state 值进行比对校验。2. 获取到用户登录态信息后，需要比对解析出来的 ID Token 中的 nonce 值， 是否和本地缓存的保持一致。
+> 用户登录完成后，使用获得的授权码 Code 获取用户的登录态信息，如果初始化时 scope 字段中包含 profile ，登录流程到这里就可以结束了，用户信息包含在解析出来的 ID Token 中； 登录态信息包括 ID Token、 Access Token、 Refresh Token、Access Token 过期时间、解析出来的 ID Token 中包含的（用户）信息，解析出来的 Access Token 中的信息。注意：1. 调用前需要对认证完成后的 state 值进行比对校验。2. 获取到用户登录态信息后，需要比对解析出来的 ID Token 中的 nonce 值， 是否和本地缓存的保持一致。
 
 #### 参数
 
@@ -127,7 +128,7 @@ authenticationClient.getLoginStateByAuthCode(code, redirectUri)
     "aud": "625fa4682e45fc2546331f2",
     "exp": 1656417801,
     "iat": 1655208201,
-    "iss": "https://core.authing.cn/oidc"
+    "iss": "https://www.authing.cn/oidc"
   },
   "parsedAccessToken": {
     "jti": "ilQBs3fITiJTyPzPX7XtR",
@@ -135,7 +136,7 @@ authenticationClient.getLoginStateByAuthCode(code, redirectUri)
     "iat": 1655208201,
     "exp": 1656417801,
     "scope": "openid profile",
-    "iss": "https://core.authing.cn/oidc",
+    "iss": "https://www.authing.cn/oidc",
     "aud": "625fa4682e45fc2546331f25"
   }
 }
@@ -202,11 +203,11 @@ UserInfo getUserInfo = authenticationClient.getUserInfo('accessToken');
 
 authenticationClient.refreshLoginState(refreshToken)
 
-> 调用 getLoginStateByAuthCode 后可以获取到 Refresh Token ， 使用 Refresh Token 刷新登录态，并延长 Access Token 有效时间。
+> 使用 Refresh Token 刷新登录态，并延长 Access Token 有效时间。
 
 #### 参数
 
-- `refreshToken` \<String\> Refresh Token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access。
+- `refreshToken` \<String\> Refresh Token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 authenticationClient.getLoginStateByAuthCode 方法的返回值中获得 refreshToken 。
 
 #### 示例
 
@@ -243,7 +244,7 @@ LoginState refreshLoginState = authenticationClient.refreshLoginState(refreshTok
     "aud": "625fa4682e45fc2546331f2",
     "exp": 1656417801,
     "iat": 1655208201,
-    "iss": "https://core.authing.cn/oidc"
+    "iss": "https://www.authing.cn/oidc"
   },
   "parsedAccessToken": {
     "jti": "ilQBs3fITiJTyPzPX7XtR",
@@ -251,7 +252,7 @@ LoginState refreshLoginState = authenticationClient.refreshLoginState(refreshTok
     "iat": 1655208201,
     "exp": 1656417801,
     "scope": "openid profile",
-    "iss": "https://core.authing.cn/oidc",
+    "iss": "https://www.authing.cn/oidc",
     "aud": "625fa4682e45fc2546331f25"
   }
 }
@@ -265,10 +266,10 @@ authenticationClient.buildLogoutUrl(logoutUrlParams)
 
 #### 参数
 
-- `logoutUrlParams` \<logoutUrlParams\> 发起授权登录时需要填写的参数。
+- `logoutUrlParams` \<logoutUrlParams\> 发起登出请求时需要填写的参数。
 - `idTokenHint` \<String\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
 - `state` \<String\> 传递到目标 URL 的中间状态标识符。
-- `postLogoutRedirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
+- `postLogoutRedirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。注意：基于安全考虑 1. 此参数必须和 idToken 一起调用，否则无法实现重定向跳转。2.重定向地址必须预先在 Authing 控制台，**自建应用**详情中的**应用配置**页，**登出回调 URL**中进行设置，不支持对未设置的重定向地址进行跳转。
 
 #### 示例
 
@@ -276,7 +277,6 @@ authenticationClient.buildLogoutUrl(logoutUrlParams)
 LogoutUrlParams logoutUrlParams = new LogoutUrlParams();
 
 String buildLogoutUrl = authenticationClient.buildLogoutUrl(logoutUrlParams);
-
 ```
 
 #### 示例数据
@@ -325,35 +325,35 @@ authenticationClient.parseIDToken(IDToken);
   "aud": "625fa4682e45fc2546331f2",
   "exp": 1656417801,
   "iat": 1655208201,
-  "iss": "https://core.authing.cn/oidc"
+  "iss": "https://www.authing.cn/oidc"
 }
 ```
 
 字段解释：
 
-| 字段名             | 翻译                                                               |
-| :----------------- | :----------------------------------------------------------------- |
-| sub                | subject 的缩写，唯一标识，一般为用户 ID                            |
-| name               | 姓名                                                               |
-| given_name         | 名字                                                               |
-| family_name        | 姓氏                                                               |
-| middle_name        | 中间名                                                             |
-| nickname           | 昵称                                                               |
-| preferred_username | 希望被称呼的名字                                                   |
-| profile            | 基础资料                                                           |
-| picture            | 头像                                                               |
-| website            | 网站链接                                                           |
-| gender             | 性别                                                               |
-| birthdate          | 生日                                                               |
-| zoneinfo           | 时区                                                               |
-| locale             | 区域                                                               |
-| updated_at         | 信息更新时间                                                       |
-| nonce              | 发起认证时携带的随机字符串                                         |
-| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID               |
-| exp                | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| iat                | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| iss                | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                           |
-| at_hash            | Access Token 的 hash 值                                            |
+| 字段名             | 翻译                                                            |
+| :----------------- | :-------------------------------------------------------------- |
+| sub                | subject 的缩写，唯一标识，一般为用户 ID                         |
+| name               | 姓名                                                            |
+| given_name         | 名字                                                            |
+| family_name        | 姓氏                                                            |
+| middle_name        | 中间名                                                          |
+| nickname           | 昵称                                                            |
+| preferred_username | 希望被称呼的名字                                                |
+| profile            | 基础资料                                                        |
+| picture            | 头像                                                            |
+| website            | 网站链接                                                        |
+| gender             | 性别                                                            |
+| birthdate          | 生日                                                            |
+| zoneinfo           | 时区                                                            |
+| locale             | 区域                                                            |
+| updated_at         | 信息更新时间                                                    |
+| nonce              | 发起认证时携带的随机字符串                                      |
+| aud                | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |
+| exp                | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| iat                | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| iss                | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
+| at_hash            | Access Token 的 hash 值                                         |
 
 ### 验证并解析 Access Token
 
@@ -380,20 +380,19 @@ authenticationClient.parseAccessToken(accessToken);
   "iat": 1655208201,
   "exp": 1656417801,
   "scope": "openid profile",
-  "iss": "https://core.authing.cn/oidc",
+  "iss": "https://www.authing.cn/oidc",
   "aud": "625fa4682e45fc2546331f25"
 }
 ```
 
 字段解释：
 
-| 字段名 | 翻译                                                               |
-| :----- | :----------------------------------------------------------------- |
-| jti    | 令牌标识符声明                                                     |
-| sub    | subject 的缩写，唯一标识，一般为用户 ID                            |
-| iat    | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| scope  | 应用侧向 Authing 请求的权限                                        |
-| iss    | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                                                                |
-| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID |
-
+| 字段名 | 翻译                                                            |
+| :----- | :-------------------------------------------------------------- |
+| jti    | 令牌唯一标识符                                                  |
+| sub    | subject 的缩写，唯一标识，一般为用户 ID                         |
+| iat    | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| exp    | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| scope  | 令牌具备的资源权限（应用侧向 Authing 请求的权限）。             |
+| iss    | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
+| aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |
