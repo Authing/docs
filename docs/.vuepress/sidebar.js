@@ -1057,7 +1057,7 @@ const zhCnNavBar = {
     // },
     {
       title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso",
+      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript / Node.js",
@@ -1420,6 +1420,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark",
+            "/reference/sdk-for-android/social/oneauth",
           ],
         },
         {
@@ -1576,6 +1577,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/alipay",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
+            "/reference/sdk-for-ios/social/oneauth",
           ],
         },
         {
@@ -1814,6 +1816,7 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-android/social/wecom",
                 "/reference-new/mobile/sdk-for-android/social/alipay",
                 "/reference-new/mobile/sdk-for-android/social/lark",
+                "/reference-new/mobile/sdk-for-android/social/oneauth",
               ],
             },
             {
@@ -5954,7 +5957,7 @@ const translatedZhCnNavBar = {
     },
     {
       title: "Single Sign-On (SSO)",
-      path: "/reference/sdk-for-sso",
+      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript/Node.js",

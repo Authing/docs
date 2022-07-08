@@ -1,10 +1,10 @@
 ---
 meta:
   - name: description
-    content: Implement single sign-on
+    content: Single Sign-On (SSO)
 ---
 
-# Implement single sign-on
+# Single Sign-On (SSO)
 
 <LastUpdated/>
 

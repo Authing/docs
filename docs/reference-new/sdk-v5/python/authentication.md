@@ -24,14 +24,14 @@ authentication = AuthenticationClient(options)
 
 ### 参数
 
-- `appId` \<String\> Authing 应用 ID ;
-- `appSecret` \<String\> Authing 应用 Secret;
-- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
-- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
-- `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
-- `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
-- `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
+- `appId` \<str\> Authing 应用 ID ;
+- `appSecret` \<str\> Authing 应用 Secret;
+- `host` \<str\> 应用对应的用户池域名，例如 pool.authing.cn;
+- `redirectUri` \<str\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
+- `logoutRedirectUri` \<str\> 登出完成后的重定向目标 URL。
+- `scope` \<str\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `serverJWKS` \<str\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
+- `cookieKey` \<str\> 存储认证上下文的 Cookie 名称。
 
 ### 示例
 
@@ -54,11 +54,11 @@ authentication.buildAuthUrl(options)
 
 ### 参数
 
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
-- `state` \<String\> 随机字符串，选填，默认自动生成。
-- `nonce` \<String\> 随机字符串，选填，默认自动生成。
-- `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
-- `forced` \<Boolean\> 即便用户已经登录也强制显示登录页。
+- `scope` \<str\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `state` \<str\> 随机字符串，选填，默认自动生成。
+- `nonce` \<str\> 随机字符串，选填，默认自动生成。
+- `redirectUri` \<str\> 回调地址，覆盖初始化参数中的对应设置。
+- `forced` \<bool\> 即便用户已经登录也强制显示登录页。
 
 ### 示例
 
@@ -82,8 +82,8 @@ authentication.getLoginStateByAuthCode(code, redirectUri)
 
 ### 参数
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，每个 Code 只能使用一次。
-- `redirectUri` \<String\> 发起认证时传入的回调地址。
+- `code` \<str\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，每个 Code 只能使用一次。
+- `redirectUri` \<str\> 发起认证时传入的回调地址。
 
 ### 示例
 
@@ -108,7 +108,7 @@ authentication.getUserInfo(accessToken)
 
 ### 参数
 
-- `accessToken` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `accessToken` \<str\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
 
 ### 示例
 
@@ -152,7 +152,7 @@ authentication.refreshLoginState(refreshToken)
 
 ### 参数
 
-- `refreshToken` \<String\> Refresh token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 `authentication.getLoginStateByAuthCode` 方法的返回值中获得 refresh_token 。
+- `refreshToken` \<str\> Refresh token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 `authentication.getLoginStateByAuthCode` 方法的返回值中获得 refresh_token 。
 
 ### 示例
 
@@ -176,9 +176,9 @@ authentication.buildLogoutUrl(options)
 
 ### 参数
 
-- `idToken` \<String\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
-- `redirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
-- `state` \<String\> 传递到目标 URL 的中间状态标识符。
+- `idToken` \<str\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
+- `redirectUri` \<str\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
+- `state` \<str\> 传递到目标 URL 的中间状态标识符。
 
 ### 示例
 
