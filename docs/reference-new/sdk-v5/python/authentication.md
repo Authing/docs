@@ -24,14 +24,14 @@ authentication = AuthenticationClient(options)
 
 ### 参数
 
-- `appId` \<str\> Authing 应用 ID ;
-- `appSecret` \<str\> Authing 应用 Secret;
-- `host` \<str\> 应用对应的用户池域名，例如 pool.authing.cn;
-- `redirectUri` \<str\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
-- `logoutRedirectUri` \<str\> 登出完成后的重定向目标 URL。
-- `scope` \<str\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
-- `serverJWKS` \<str\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
-- `cookieKey` \<str\> 存储认证上下文的 Cookie 名称。
+- `appId` \<String\> Authing 应用 ID ;
+- `appSecret` \<String\> Authing 应用 Secret;
+- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
+- `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
+- `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
+- `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
 
 ### 示例
 
@@ -54,7 +54,7 @@ authentication.buildAuthUrl(options)
 
 ### 参数
 
-- `scope` \<str\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<str\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `state` \<str\> 随机字符串，选填，默认自动生成。
 - `nonce` \<str\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<str\> 回调地址，覆盖初始化参数中的对应设置。
@@ -94,7 +94,7 @@ data = authentication.getLoginStateByAuthCode("H5Sm-cxxxHVTbqqcOO", "https://xxx
 ### 示例数据
 
 ```python
-{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc', 
+{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc',
 'aud': '62ba7b1d1xxxxx3b597d3'}}
 ```
 
@@ -163,11 +163,12 @@ data = authentication.refreshLoginState("w7_gPfxxxxxovbv00")
 ### 示例数据
 
 ```python
-{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc', 
+{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc',
 'aud': '62ba7b1d1xxxxx3b597d3'}}
 ```
 
 ## 生成登出 URL
+
 ```python
 authentication.buildLogoutUrl(options)
 ```

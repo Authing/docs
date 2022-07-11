@@ -39,7 +39,7 @@ authenticationClient.ParseIDToken; // 验证并解析 ID Token
 - `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS` \<JwkSet\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 - `cookieKey` \<String\> 存储认证上下文的 Cookie 名称,用于 方法 loginWithRedirect 和 handleRedirectCallback 上存储用户的认证状态。。
 
@@ -63,7 +63,7 @@ authenticationClient.LoginWithRedirect(res,scope,nonce,state,redirectUri,forced)
 #### 参数
 
 - `res` \<HttpResponse\> 通过操作 response 对象，直接将用户的浏览器 302 重定向到 Authing 的认证发起 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -74,9 +74,10 @@ authenticationClient.LoginWithRedirect(res,scope,nonce,state,redirectUri,forced)
 authenticationClient.BuildAuthUrl(scope,nonce,state,redirectUrl,forced)
 
 > 调用该方法，生成用户登录链接返回给前端，在合适的时机触发登录认证流程，注意：需要缓存 生成的 state 和 nonce 参数，在认证完成后进行校验，用户认证成功后，由认证地址跳转到回调地址，并在 URL 参数中携带 code 和 state 值；认证失败， URL 参数中会携带 error 字段，返回错误信息。
+
 #### 参数
 
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
 - `nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `state` \<String\> 随机字符串，选填，默认自动生成。
 - `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
@@ -168,6 +169,7 @@ LoginState(){
 authenticationClient.GetUserInfo(accessToken)
 
 > 调用 getLoginStateByAuthCode 后可以获取到 Access Token ， 通过 getUserInfo 使用 Access Token 获取用户信息。
+
 #### 参数
 
 - `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
@@ -347,28 +349,28 @@ IDToken() {
 
 字段解释：
 
-| 字段名            | 翻译                                                               |
-| :---------------- | :----------------------------------------------------------------- |
-| Sub               | subject 的缩写，唯一标识，一般为用户 ID                            |
-| Name              | 姓名                                                               |
-| GivenName         | 名字                                                               |
-| FamiltName        | 姓氏                                                               |
-| MiddleName        | 中间名                                                             |
-| NickName          | 昵称                                                               |
-| PreferredUsername | 希望被称呼的名字                                                   |
-| Profile           | 基础资料                                                           |
-| Picture           | 头像                                                               |
-| Website           | 网站链接                                                           |
-| Gender            | 性别                                                               |
-| Birthdate         | 生日                                                               |
-| Zoneinfo          | 时区                                                               |
-| Locale            | 区域                                                               |
-| UpdatedAt         | 信息更新时间                                                       |
-| Nonce             | 发起认证时携带的随机字符串                                         |
-| Aud               | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID               |
-| Exp               | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| Iat               | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| Iss               | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                           |
+| 字段名            | 翻译                                                            |
+| :---------------- | :-------------------------------------------------------------- |
+| Sub               | subject 的缩写，唯一标识，一般为用户 ID                         |
+| Name              | 姓名                                                            |
+| GivenName         | 名字                                                            |
+| FamiltName        | 姓氏                                                            |
+| MiddleName        | 中间名                                                          |
+| NickName          | 昵称                                                            |
+| PreferredUsername | 希望被称呼的名字                                                |
+| Profile           | 基础资料                                                        |
+| Picture           | 头像                                                            |
+| Website           | 网站链接                                                        |
+| Gender            | 性别                                                            |
+| Birthdate         | 生日                                                            |
+| Zoneinfo          | 时区                                                            |
+| Locale            | 区域                                                            |
+| UpdatedAt         | 信息更新时间                                                    |
+| Nonce             | 发起认证时携带的随机字符串                                      |
+| Aud               | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |
+| Exp               | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| Iat               | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| Iss               | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
 
 ### 验证并解析 Access Token
 
@@ -402,12 +404,12 @@ AccessToken {
 
 字段解释：
 
-| 字段名 | 翻译                                                               |
-| :----- | :----------------------------------------------------------------- |
-| Jti    | 令牌标识符声明                                                     |
-| Sub    | subject 的缩写，唯一标识，一般为用户 ID                            |
-| Iat    | “Issued At”表示针对此令牌进行身份验证的时间。                      |
-| Exp    | “exp”（过期时间）声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
-| Scope  | 应用侧向 Authing 请求的权限                                        |
-| Iss    | OIDC 认证信息者的唯一标识。一般是一个 https 的 url。                           |
-| Aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID               |
+| 字段名 | 翻译                                                            |
+| :----- | :-------------------------------------------------------------- |
+| Jti    | 令牌唯一标识符                                                  |
+| Sub    | subject 的缩写，唯一标识，一般为用户 ID                         |
+| Iat    | 令牌颁发时间，表示针对此令牌进行身份验证的时间。                |
+| Exp    | 令牌过期时间，声明指定只能在哪个时间（含）之前接受 JWT 的处理。 |
+| Scope  | 令牌具备的资源权限（应用侧向 Authing 请求的权限）。             |
+| Iss    | OIDC 身份提供商的唯一标识。一般是一个 https 的 url。            |
+| Aud    | 标识令牌的目标接收方，这里一般是你的 authing 应用 ID            |

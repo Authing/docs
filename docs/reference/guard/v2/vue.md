@@ -78,6 +78,43 @@ export default {
 </script>
 ```
 
+::: warning Tips
+如果您的项目中使用了 `vue-router`，请在使用 guard 时指定挂载节点
+:::
+
+```vue
+<template>
+  <div id="guard">
+    <Guard :appId="appId" @login="onLogin" :config="config"></Guard>
+  </div>
+</template>
+
+<script>
+import { Guard } from "@authing/vue-ui-components";
+
+// 引入 CSS 样式
+import "@authing/vue-ui-components/lib/index.min.css";
+
+export default {
+  components: {
+    Guard,
+  },
+  data: () => ({
+    // 替换你的 AppId
+    appId: "your_appId_at_authing_console",
+    config: {
+      target: "#guard", //指定挂载节点
+    },
+  }),
+  methods: {
+    onLogin(userInfo) {
+      console.log(userInfo);
+    },
+  },
+};
+</script>
+```
+
 ### 方法二：直接通过浏览器加载
 
 **首先，在你的 HTML 文件中使用 script 和 link 标签直接引入文件，并使用全局变量 AuthingVueUIComponents。**
