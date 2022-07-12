@@ -71,7 +71,7 @@ class ManagementClientTest {
   "data": {
     "list": {
       "userId": "userId",
-      "archivedAt": "2022-07-08T12:56:16.827Z"
+      "archivedAt": "2022-07-03T02:20:30.000Z"
     }
   }
 }
@@ -93,6 +93,6 @@ class ManagementClientTest {
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `userId`  |
-| archivedAt | string | 是 | 归档时间。 示例值： `2022-07-08T12:56:16.827Z`  |
+| archivedAt | string | 是 | 归档时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 

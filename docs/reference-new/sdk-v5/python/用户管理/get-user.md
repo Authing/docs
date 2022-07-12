@@ -71,7 +71,7 @@ data = management_client.get_user(
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-07-08T12:56:15.061Z",
+    "createdAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -81,13 +81,13 @@ data = management_client.get_user(
     "nickname": "张三",
     "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
     "loginsCount": 3,
-    "lastLogin": "2022-04-10T12:24:00.000Z",
+    "lastLogin": "2022-07-03T02:20:30.000Z",
     "lastIp": "127.0.0.1",
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-07-08T12:56:15.061Z",
-    "birthdate": "2022-07-08",
+    "passwordLastSetAt": "2022-07-03T02:20:30.000Z",
+    "birthdate": "2022-06-03",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -107,7 +107,7 @@ data = management_client.get_user(
       "school": "北京大学",
       "age": 22
     },
-    "statusChangedAt": "2022-07-08T12:56:16.793Z"
+    "statusChangedAt": "2022-07-03T02:20:30.000Z"
   }
 }
 ```
@@ -120,7 +120,7 @@ data = management_client.get_user(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-08T12:56:15.061Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -130,13 +130,13 @@ data = management_client.get_user(
 | nickname | string | 否 | 昵称。 示例值： `张三`  |
 | photo | string | 否 | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
 | loginsCount | number | 否 | 历史总登录次数。 示例值： `3`  |
-| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T12:24:00.000Z`  |
+| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | lastIp | string | 否 | 上次登录 IP。 示例值： `127.0.0.1`  |
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-08T12:56:15.061Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-07-08`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-03`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -148,7 +148,7 @@ data = management_client.get_user(
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
-| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-08T12:56:16.793Z`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto
