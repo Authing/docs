@@ -27,6 +27,19 @@ const head = [
     {},
     `if(window.location.hostname === "docs.authing.cn"){window.Cohere.init("PUkf845sOZgDd59V6aTJCsuJ");}`,
   ],
+  ["link", { rel: "stylesheet", href: "https://useimean.com/sdk/main.css" }],
+  ["script", { src: "https://useimean.com/sdk/main.js" }],
+  [
+    "script",
+    {},
+    `if(ImeanSDK && ImeanSDK.init) {
+      ImeanSDK.init({
+        projectId: 'D-jajULWB9p8ko9Rnvhzt', // 项目id
+        baseUrl: 'https://useimean.com', // 请求服务器地址
+        hideHelp: false , // 设置为false即展示帮助中心
+      })
+    }`,
+  ],
 ];
 
 if (gaEnabled) {
