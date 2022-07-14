@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-批量获取权限分组详情
+分别通过权限分组唯一标志符，批量获取权限分组详情。
 
 ## 请求参数
 
@@ -33,7 +33,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.getNamespacesBatch({
 
-    codeList: 'code1,code2',
+    codeList: code1,code2,
  });
 })();
 ```

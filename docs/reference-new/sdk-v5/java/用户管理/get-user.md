@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过 id、username、email、phone、email、externalId 获取用户详情
+通过用户 ID，获取用户详情，可以选择获取自定义数据、identities、选择指定用户 ID 类型等。
 
 ## 请求参数
 

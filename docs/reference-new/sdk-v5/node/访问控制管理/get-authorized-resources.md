@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-获取某个主体被授权的资源列表
+根据筛选条件，获取某个主体被授权的资源列表。
 
 ## 请求参数
 
@@ -46,7 +46,7 @@ const managementClient = new ManagementClient({
 
     resourceType: 'DATA',
 
-    resourceList: 'undefined',
+    resourceList: undefined,
 
     withDenied: false,
  });

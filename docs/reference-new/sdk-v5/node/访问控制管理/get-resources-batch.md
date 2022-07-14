@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-批量获取资源详情
+根据筛选条件，批量获取资源详情。
 
 ## 请求参数
 
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.getResourcesBatch({
 
-    codeList: 'code1,code2',
+    codeList: code1,code2,
 
     namespace: 'default',
  });

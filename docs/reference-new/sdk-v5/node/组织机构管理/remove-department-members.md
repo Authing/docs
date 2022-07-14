@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-部门下删除成员
+通过部门 ID、组织 code，删除部门下成员。
 
 ## 请求参数
 
@@ -38,7 +38,7 @@ const managementClient = new ManagementClient({
     departmentId: '60b49eb83fd80adb96f26e68',
     organizationCode: 'steamory',
     departmentIdType: 'department_id',
-    userIds: '["623c20b2a062aaaaf41b17da"]',
+    userIds: ["623c20b2a062aaaaf41b17da"],
  });
 })();
 ```

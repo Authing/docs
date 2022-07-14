@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-批量删除权限分组
+分别通过权限分组唯一标志符，批量删除权限分组。
 
 ## 请求参数
 
@@ -32,7 +32,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
   const result = await managementClient.deleteNamespacesBatch({
-    codeList: '["code1","code2"]',
+    codeList: ["code1","code2"],
  });
 })();
 ```

@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-添加分组成员
+添加分组成员，成员以用户 ID 数组形式传递。
 
 ## 请求参数
 
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.addGroupMembers({
     code: 'developer',
-    userIds: '["6229ffaxxxxxxxxcade3e3d9"]',
+    userIds: ["6229ffaxxxxxxxxcade3e3d9"],
  });
 })();
 ```

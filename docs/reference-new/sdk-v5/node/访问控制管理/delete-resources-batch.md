@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-批量删除资源
+通过资源唯一标志符以及所属权限分组，批量删除资源
 
 ## 请求参数
 
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.deleteResourcesBatch({
     namespace: 'default',
-    codeList: '["code1","code2"]',
+    codeList: ["code1","code2"],
  });
 })();
 ```

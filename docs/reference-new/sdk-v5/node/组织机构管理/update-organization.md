@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-修改顶层组织机构
+通过组织 code，修改顶层组织机构，可以选择部门描述、新组织 code、组织名称等。
 
 ## 请求参数
 
@@ -41,7 +41,7 @@ const managementClient = new ManagementClient({
     organizationCode: 'steamory',
     description: '技术研发部门',
     openDepartmentId: '60b49eb83fd80adb96f26e68',
-    leaderUserIds: '["60b49eb83fd80adb96f26e68"]',
+    leaderUserIds: ["60b49eb83fd80adb96f26e68"],
     i18n: {
           organizationName: {
           zh-CN: {

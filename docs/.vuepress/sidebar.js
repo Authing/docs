@@ -2156,11 +2156,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -2230,7 +2232,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/csharp/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -2591,11 +2593,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -2665,7 +2669,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/go/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -3026,11 +3030,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -3100,7 +3106,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/java/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -3461,11 +3467,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -3535,7 +3543,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/node/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -3896,11 +3904,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -3970,7 +3980,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/php/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -4331,11 +4341,13 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-login-history",
                     },
                     {
-                      title: "获取用户曾经登录过的应用",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title: "获取用户曾经登录过的身份源",
+                      title:
+                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -4405,7 +4417,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/角色管理/revoke-role",
                     },
                     {
-                      title: "角色被授权的资源列表",
+                      title: "获取角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/python/角色管理/get-role-authorized-resources",
                     },
                     {

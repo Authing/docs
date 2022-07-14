@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-批量删除分组
+通过分组 code，批量删除分组。
 
 ## 请求参数
 
@@ -32,7 +32,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
   const result = await managementClient.deleteGroupsBatch({
-    codeList: '["code1"]',
+    codeList: ["code1"],
  });
 })();
 ```

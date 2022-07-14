@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-修改部门
+通过组织 code、部门 ID，修改部门，可以设置多种参数。
 
 ## 请求参数
 
@@ -43,7 +43,7 @@ const managementClient = new ManagementClient({
   const result = await managementClient.updateDepartment({
     organizationCode: 'steamory',
     departmentId: '60b49eb83fd80adb96f26e68',
-    leaderUserIds: '["60b49eb83fd80adb96f26e68"]',
+    leaderUserIds: ["60b49eb83fd80adb96f26e68"],
     description: '技术研发部门',
     code: '6229c4deb3e4d8a20b6021ff',
     i18n: {

@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-同时给多个主体授权多个资源
+将一个/多个资源授权给用户、角色、分组、组织机构等主体，且可以分别指定不同的操作权限。
 
 ## 请求参数
 
@@ -36,10 +36,10 @@ const managementClient = new ManagementClient({
     namespace: 'default',
     list: [{
             targetType: 'USER',
-          targetIdentifiers: '["userId1","userId2"]',
+          targetIdentifiers: ["userId1","userId2"],
           resources: [{
             code: 'ecs',
-          actions: '["ecs:Stop","ecs:Start"]',
+          actions: ["ecs:Stop","ecs:Start"],
           resourceType: 'DATA',
       }],
       }],

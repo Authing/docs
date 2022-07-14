@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-删除角色，支持批量删除
+删除角色，可以批量删除。
 
 ## 请求参数
 
@@ -33,7 +33,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
   const result = await managementClient.deleteRolesBatch({
-    codeList: '["code1","code2"]',
+    codeList: ["code1","code2"],
     namespace: 'default',
  });
 })();

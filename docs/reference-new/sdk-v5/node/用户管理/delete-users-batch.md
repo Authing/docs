@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-删除用户，支持批量删除
+通过用户 ID 列表，删除用户，支持批量删除，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
@@ -33,7 +33,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
   const result = await managementClient.deleteUsersBatch({
-    userIds: '["userId1","userId2"]',
+    userIds: ["userId1","userId2"],
     options: {
           userIdType: 'user_id',
     },

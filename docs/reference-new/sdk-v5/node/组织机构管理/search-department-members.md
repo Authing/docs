@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-搜索部门下的成员
+通过组织 code、部门 ID、搜索关键词，搜索部门下的成员，支持分页，可以选择获取自定义数据、identities 等。
 
 ## 请求参数
 
@@ -17,7 +17,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
 | departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。  | `root` |
-| keywords | string  | 是 | - | 搜索关键词。  | `张三` |
+| keywords | string  | 是 | - | 搜索关键词，如成员名称。  | `张三` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
 | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
 | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |

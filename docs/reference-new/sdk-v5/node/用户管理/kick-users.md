@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-强制让用户下线
+通过用户 ID、App ID 列表，强制让用户下线，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
@@ -35,7 +35,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.kickUsers({
     userId: 'undefined',
-    appIds: '["62188e71cxxxx3075289c580"]',
+    appIds: ["62188e71cxxxx3075289c580"],
     options: {
           userIdType: 'user_id',
     },

@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-根据用户 id 批量获取用户信息
+通过用户 ID 列表，批量获取用户信息，可以选择获取自定义数据、identities、选择指定用户 ID 类型等。
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userIds | string[]  | 是 | - | 用户 ID 数组。  | `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
+| userIds | string[]  | 是 | - | 用户 ID 数组。  | `["6229ffaxxxxxxxxcade3e3d9","6229ffaxxxxxxxxcade3e3d0"]` |
 | userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
 | withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |

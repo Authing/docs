@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-搜索部门下的成员
+通过组织 code、部门 ID、搜索关键词，搜索部门下的成员，支持分页，可以选择获取自定义数据、identities 等。
 
 ## 请求参数
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| keywords | string  | 是 | - | 搜索关键词。  | `张三` |
+| keywords | string  | 是 | - | 搜索关键词，如成员名称。  | `张三` |
 | departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。  | `root` |
 | organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
 | page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |

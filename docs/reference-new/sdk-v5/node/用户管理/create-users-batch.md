@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-此接口将以管理员身份批量创建用户，不需要进行手机号验证码检验等安全检测。用户的手机号、邮箱、用户名、externalId 用户池内唯一。
+批量创建用户，邮箱、手机号、用户名必须包含其中一个，邮箱、手机号、用户名、externalId 用户池内唯一，此接口将以管理员身份批量创建用户因此不需要进行手机号验证码检验等安全检测。
 
 ## 请求参数
 
@@ -54,14 +54,14 @@ const managementClient = new ManagementClient({
           streetAddress: '北京朝阳区 xxx 街道',
           postalCode: '438100',
           externalId: '10010',
-          departmentIds: '["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]',
+          departmentIds: ["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"],
           customData: {
 			"school":	"北京大学",
 			"age":	22
 		},
           password: 'oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=',
           resetPasswordOnFisrtLogin: false,
-          tenantIds: 'undefined',
+          tenantIds: undefined,
           identities: [{
             extIdpId: '6076bacxxxxxxxxd80d993b5',
           provider: 'wechat',
