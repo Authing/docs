@@ -84,9 +84,12 @@ const managementClient = new ManagementClient({
     options: {
           userIdType: 'user_id',
         resetPasswordOnNextLogin: false,
+        autoGeneratePassword: false,
         sendPasswordResetedNotification: {
-          sendEmailNotification: false,
-        sendPhoneNotification: false,
+          sendDefaultEmailNotification: false,
+        sendDefaultPhoneNotification: false,
+        inputSendEmailNotification: 'test@example.com',
+        inputSendPhoneNotification: '183xxxx1234',
         appId: 'appid1',
     },
     },
@@ -168,6 +171,7 @@ const managementClient = new ManagementClient({
 | ---- |  ---- | ---- | ---- |
 | userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
+| autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
 | sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `[object Object]`  |
 
 
@@ -175,8 +179,10 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| sendEmailNotification | boolean | 否 | 当用户密码修改之后，是否发送邮件通知。   |
-| sendPhoneNotification | boolean | 否 | 当用户密码修改之后，是否发送短信通知。   |
+| sendDefaultEmailNotification | boolean | 否 | 重置密码之后，是否发送用户默认邮件通知。   |
+| sendDefaultPhoneNotification | boolean | 否 | 重置密码之后，是否发送用户默认短信通知。   |
+| inputSendEmailNotification | string | 否 | 当用户密码修改之后，输入发送邮箱。 示例值： `test@example.com`  |
+| inputSendPhoneNotification | string | 否 | 当用户密码修改之后，输入发送手机号。 示例值： `183xxxx1234`  |
 | appId | string | 否 | 发送登录地址时，指定的应用 id，会将此应用的登录地址发送给用户的邮箱或者手机号。默认为用户池应用面板的登录地址。。 示例值： `appid1`  |
 
 

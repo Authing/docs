@@ -81,9 +81,12 @@ data = management_client.update_user(
      options: {
          user_id_type: "user_id",
        reset_password_on_next_login: false,
+       auto_generate_password: false,
        send_password_reseted_notification: {
-         send_email_notification: false,
-       send_phone_notification: false,
+         send_default_email_notification: false,
+       send_default_phone_notification: false,
+       input_send_email_notification: "test@example.com",
+       input_send_phone_notification: "183xxxx1234",
        app_id: "appid1",
     },
     },
@@ -165,6 +168,7 @@ data = management_client.update_user(
 | ---- |  ---- | ---- | ---- |
 | userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
+| autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
 | sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `[object Object]`  |
 
 
@@ -172,8 +176,10 @@ data = management_client.update_user(
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| sendEmailNotification | boolean | 否 | 当用户密码修改之后，是否发送邮件通知。   |
-| sendPhoneNotification | boolean | 否 | 当用户密码修改之后，是否发送短信通知。   |
+| sendDefaultEmailNotification | boolean | 否 | 重置密码之后，是否发送用户默认邮件通知。   |
+| sendDefaultPhoneNotification | boolean | 否 | 重置密码之后，是否发送用户默认短信通知。   |
+| inputSendEmailNotification | string | 否 | 当用户密码修改之后，输入发送邮箱。 示例值： `test@example.com`  |
+| inputSendPhoneNotification | string | 否 | 当用户密码修改之后，输入发送手机号。 示例值： `183xxxx1234`  |
 | appId | string | 否 | 发送登录地址时，指定的应用 id，会将此应用的登录地址发送给用户的邮箱或者手机号。默认为用户池应用面板的登录地址。。 示例值： `appid1`  |
 
 
