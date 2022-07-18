@@ -65,7 +65,8 @@ data = management_client.get_user_identities(
     "extIdpId": "6076bacxxxxxxxxd80d993b5",
     "provider": "wechat",
     "type": "openid",
-    "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
+    "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
+    "originConnIds": "[\"605492ac41xxxxe0362f0707\"]"
   }
 }
 ```
@@ -82,5 +83,6 @@ data = management_client.get_user_identities(
 | provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
 | type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
 | userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表。 示例值： `["605492ac41xxxxe0362f0707"]`  |
 
 

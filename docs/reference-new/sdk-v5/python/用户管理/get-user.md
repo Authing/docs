@@ -72,6 +72,7 @@ data = management_client.get_user(
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
     "createdAt": "2022-07-03T02:20:30.000Z",
+    "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -101,7 +102,8 @@ data = management_client.get_user(
       "extIdpId": "6076bacxxxxxxxxd80d993b5",
       "provider": "wechat",
       "type": "openid",
-      "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
+      "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
+      "originConnIds": "[\"605492ac41xxxxe0362f0707\"]"
     },
     "customData": {
       "school": "北京大学",
@@ -121,6 +123,7 @@ data = management_client.get_user(
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
 | createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-03T02:20:30.000Z`  |
+| updatedAt | string | 是 | 账号更新时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -160,5 +163,6 @@ data = management_client.get_user(
 | provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
 | type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
 | userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表。 示例值： `["605492ac41xxxxe0362f0707"]`  |
 
 
