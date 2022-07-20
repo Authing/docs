@@ -3,10 +3,12 @@ import VueSelect from "vue-select";
 import "vue-select/src/scss/vue-select.scss";
 import Pagination from "vue-pagination-2";
 import VTooltip from "v-tooltip";
+import VueClipboard from "vue-clipboard2";
 
 export default ({ Vue, options, router, siteData }) => {
   Vue.use(VueNotification);
   Vue.use(VTooltip);
+  Vue.use(VueClipboard);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
   Vue.prototype.$eventBus = new Vue();

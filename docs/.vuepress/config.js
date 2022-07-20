@@ -14,19 +14,19 @@ const head = [
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      href: "https://authing.cn/favicon.ico"
-    }
+      href: "https://authing.cn/favicon.ico",
+    },
   ],
   [
     "script",
     {},
-    `!function(){var e=window.Cohere=window.Cohere||[];if(e.invoked)console.error("Tried to load Cohere twice");else{e.invoked=!0,e.snippet="0.2",e.methods=["init","identify","stop","showCode","getSessionUrl","makeCall","addCallStatusListener","removeCallStatusListener","widget","addSessionUrlListener","removeSessionUrlListener",],e.methods.forEach(function(o){e[o]=function(){var t=Array.prototype.slice.call(arguments);t.unshift(o),e.push(t)}});var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://static.cohere.so/main.js",o.crossOrigin="anonymous";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(o,t)}}();`
+    `!function(){var e=window.Cohere=window.Cohere||[];if(e.invoked)console.error("Tried to load Cohere twice");else{e.invoked=!0,e.snippet="0.2",e.methods=["init","identify","stop","showCode","getSessionUrl","makeCall","addCallStatusListener","removeCallStatusListener","widget","addSessionUrlListener","removeSessionUrlListener",],e.methods.forEach(function(o){e[o]=function(){var t=Array.prototype.slice.call(arguments);t.unshift(o),e.push(t)}});var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://static.cohere.so/main.js",o.crossOrigin="anonymous";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(o,t)}}();`,
   ],
   [
     "script",
     {},
-    `if(window.location.hostname === "docs.authing.cn"){window.Cohere.init("PUkf845sOZgDd59V6aTJCsuJ");}`
-  ]
+    `if(window.location.hostname === "docs.authing.cn"){window.Cohere.init("PUkf845sOZgDd59V6aTJCsuJ");}`,
+  ],
 ];
 
 if (gaEnabled) {
@@ -34,8 +34,8 @@ if (gaEnabled) {
     "script",
     {
       async: true,
-      src: `https://www.googletagmanager.com/gtag/js?id=${gTrackingId}`
-    }
+      src: `https://www.googletagmanager.com/gtag/js?id=${gTrackingId}`,
+    },
   ]);
   head.push([
     "script",
@@ -44,7 +44,7 @@ if (gaEnabled) {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '${gTrackingId}');`
+    gtag('config', '${gTrackingId}');`,
   ]);
 }
 
@@ -59,16 +59,16 @@ module.exports = {
   markdown: {
     // lineNumbers: true,
     anchor: {
-      permalinkSymbol: "¶"
+      permalinkSymbol: "¶",
     },
     toc: {
-      includeLevel: [2, 3, 4, 5]
+      includeLevel: [2, 3, 4, 5],
     },
     extractHeaders: ["h2", "h3", "h4", "h5"],
-    extendMarkdown: md => {
+    extendMarkdown: (md) => {
       // 使用更多的 markdown-it 插件!
       md.use(require("markdown-it-include"), "docs");
-    }
+    },
   },
   locales: {
     // The key is the path for the locale to be nested under.
@@ -88,7 +88,7 @@ module.exports = {
       back: "回到列表",
       next: "下一步",
       previous: "上一步",
-      lastStep: "我知道了，返回列表"
+      lastStep: "我知道了，返回列表",
     },
     "/en/": {
       lang: "en-US",
@@ -105,13 +105,12 @@ module.exports = {
       back: "Back to list",
       next: "Next",
       previous: "Previous",
-      lastStep: "I know, return to the list"
-    }
+      lastStep: "I know, return to the list",
+    },
   },
   head,
   themeConfig: {
-    logo:
-      "https://files.authing.co/authing-console/authing-logo-new-20210924.svg",
+    logo: "https://files.authing.co/authing-console/authing-logo-new-20210924.svg",
     officeSiteDomain: "authing.cn",
     officeSiteUrl: "https://authing.cn",
     consoleDomain: "https://console.authing.cn",
@@ -137,6 +136,11 @@ module.exports = {
         search: "搜索标题",
         searchInDoc: "在文档中搜索",
         oldVersion: "旧版",
+        share: {
+          share: "分享",
+          copyLink: "复制链接",
+          copied: "链接已复制",
+        },
         nav: [
           { text: "快速开始", link: "/quickstarts/" },
           { text: "概念", link: "/concepts/" },
@@ -144,22 +148,22 @@ module.exports = {
           { text: "开发集成", link: "/reference/" },
           {
             text: "应用集成",
-            link: "/integration/"
+            link: "/integration/",
           },
           {
             text: "加入 APN",
-            link: "/apn/"
+            link: "/apn/",
           },
           {
             link: "/reference-new/",
             text: "开发集成",
-            hidden: true
+            hidden: true,
           },
           {
             link: "/tenant/",
             text: "多租户（内测版）",
-            hidden: true
-          }
+            hidden: true,
+          },
         ],
         sidebar: sidebar.zhCnNavBar,
         feedback: {
@@ -175,32 +179,32 @@ module.exports = {
             reasons: [
               {
                 value: "内容错误",
-                label: "内容错误"
+                label: "内容错误",
               },
               {
                 value: "缺少代码/图片示例",
-                label: "缺少代码/图片示例"
+                label: "缺少代码/图片示例",
               },
               {
                 value: "更新不及时",
-                label: "更新不及时"
+                label: "更新不及时",
               },
               {
                 value: "太简单/步骤待完善",
-                label: "太简单/步骤待完善"
+                label: "太简单/步骤待完善",
               },
               {
                 value: "链接错误",
-                label: "链接错误"
+                label: "链接错误",
               },
               {
                 value: "其他",
-                label: "其他"
-              }
+                label: "其他",
+              },
             ],
             customReasonPlaceholder:
-              "请详细描述在文档使用中遇到的问题或改进建议（选填）"
-          }
+              "请详细描述在文档使用中遇到的问题或改进建议（选填）",
+          },
         },
         footer: {
           sections: [
@@ -209,81 +213,81 @@ module.exports = {
               links: [
                 {
                   text: "集成第三方登录",
-                  link: "/guides/connections/"
+                  link: "/guides/connections/",
                 },
                 {
                   text: "手机号闪验",
-                  link: "https://authing.cn/verify"
+                  link: "https://authing.cn/verify",
                 },
                 {
                   text: "通用登录表单组件",
-                  link: "/reference/ui-components/"
+                  link: "/reference/ui-components/",
                 },
                 {
                   text: "自定义认证流程",
-                  link: "/guides/pipeline/"
-                }
-              ]
+                  link: "/guides/pipeline/",
+                },
+              ],
             },
             {
               title: "企业内部管理",
               links: [
                 {
                   text: "单点登录",
-                  link: "/guides/authentication/sso/"
+                  link: "/guides/authentication/sso/",
                 },
                 {
                   text: "多因素认证",
-                  link: "/guides/authentication/mfa/"
+                  link: "/guides/authentication/mfa/",
                 },
                 {
                   text: "权限管理",
-                  link: "/guides/access-control/"
-                }
-              ]
+                  link: "/guides/access-control/",
+                },
+              ],
             },
             {
               title: "开发者",
               links: [
                 {
                   text: "开发文档",
-                  link: "/reference/"
+                  link: "/reference/",
                 },
                 {
                   text: "框架集成",
-                  link: "/reference/frameworks"
+                  link: "/reference/frameworks",
                 },
                 {
                   text: "博客",
-                  link: "https://authing.cn/blog"
+                  link: "https://authing.cn/blog",
                 },
                 {
                   text: "GitHub",
-                  link: "https://github.com/authing"
+                  link: "https://github.com/authing",
                 },
                 {
                   text: "社区用户中心",
-                  link: "https://forum.authing.cn/"
-                }
-              ]
-            }
+                  link: "https://forum.authing.cn/",
+                },
+              ],
+            },
           ],
           socials: [
             {
               icon: "authing-github",
               link: "https://github.com/Authing",
-              title: "GitHub"
+              title: "GitHub",
             },
             {
               icon: "authing-gitter",
               link: "https://forum.authing.cn/",
-              title: "Forum"
+              title: "Forum",
             },
             {
               icon: "authing-zhihu",
               link: "https://www.zhihu.com/org/authing",
-              title: "知乎"
-            }
+              title: "知乎",
+            },
           ],
           // serviceStatus: "服务状态",
           contactPhone: "400 888 2106",
@@ -293,8 +297,8 @@ module.exports = {
             "成都市高新区天府五街 200 号 1 号楼 B 区 4 楼 406 室（分）",
           icp: "京ICP备19051205号",
           beian: "京公网安备 11010802035968号",
-          companyName: "© 北京蒸汽记忆科技有限公司"
-        }
+          companyName: "© 北京蒸汽记忆科技有限公司",
+        },
       },
       "/en/": {
         // text for the language dropdown
@@ -315,14 +319,19 @@ module.exports = {
         search: "Search",
         searchInDoc: "Search in Docs",
         oldVersion: "Old Version",
+        share: {
+          share: "Share",
+          copyLink: "Copy Link",
+          copied: "Link Copied",
+        },
         nav: [
           { text: "Concept", link: "/en/concepts/" },
           { text: "Guides", link: "/en/guides/" },
           { text: "Development Integration", link: "/en/reference/" },
           {
             text: "Application integration",
-            link: "/en/integration/"
-          }
+            link: "/en/integration/",
+          },
         ],
         sidebar: sidebar.enUsNavBar,
         feedback: {
@@ -338,32 +347,32 @@ module.exports = {
             reasons: [
               {
                 value: "内容错误",
-                label: "Content error"
+                label: "Content error",
               },
               {
                 value: "缺少代码/图片示例",
-                label: "Missing code/image example"
+                label: "Missing code/image example",
               },
               {
                 value: "更新不及时",
-                label: "Update is not timely"
+                label: "Update is not timely",
               },
               {
                 value: "太简单/步骤待完善",
-                label: "Too simple/steps to be perfected"
+                label: "Too simple/steps to be perfected",
               },
               {
                 value: "链接错误",
-                label: "Link error"
+                label: "Link error",
               },
               {
                 value: "其他",
-                label: "Other"
-              }
+                label: "Other",
+              },
             ],
             customReasonPlaceholder:
-              "Please describe in detail the problems encountered in the use of the document or suggestions for improvement (optional)"
-          }
+              "Please describe in detail the problems encountered in the use of the document or suggestions for improvement (optional)",
+          },
         },
         footer: {
           sections: [
@@ -372,81 +381,81 @@ module.exports = {
               links: [
                 {
                   text: "Integrated third-party login",
-                  link: "/en/guides/connections/"
+                  link: "/en/guides/connections/",
                 },
                 {
                   text: "Mobile phone number flash check",
-                  link: "https://authing.cn/verify"
+                  link: "https://authing.cn/verify",
                 },
                 {
                   text: "Universal login form component",
-                  link: "/en/reference/ui-components/"
+                  link: "/en/reference/ui-components/",
                 },
                 {
                   text: "Custom authentication process",
-                  link: "/en/guides/pipeline/"
-                }
-              ]
+                  link: "/en/guides/pipeline/",
+                },
+              ],
             },
             {
               title: "Enterprise internal management",
               links: [
                 {
                   text: "Single Sign On",
-                  link: "/en/guides/authentication/sso/"
+                  link: "/en/guides/authentication/sso/",
                 },
                 {
                   text: "Multi-factor Authentication",
-                  link: "/en/guides/authentication/mfa/"
+                  link: "/en/guides/authentication/mfa/",
                 },
                 {
                   text: "Authority Management",
-                  link: "/en/guides/access-control/"
-                }
-              ]
+                  link: "/en/guides/access-control/",
+                },
+              ],
             },
             {
               title: "Developers",
               links: [
                 {
                   text: "Development Document",
-                  link: "/en/reference/"
+                  link: "/en/reference/",
                 },
                 {
                   text: "Framework Integration",
-                  link: "/en/reference/frameworks"
+                  link: "/en/reference/frameworks",
                 },
                 {
                   text: "Blog",
-                  link: "https://authing.cn/blog"
+                  link: "https://authing.cn/blog",
                 },
                 {
                   text: "GitHub",
-                  link: "https://github.com/authing"
+                  link: "https://github.com/authing",
                 },
                 {
                   text: "Community User Center",
-                  link: "https://forum.authing.cn/"
-                }
-              ]
-            }
+                  link: "https://forum.authing.cn/",
+                },
+              ],
+            },
           ],
           socials: [
             {
               icon: "authing-github",
               link: "https://github.com/Authing",
-              title: "GitHub"
+              title: "GitHub",
             },
             {
               icon: "authing-gitter",
               link: "https://forum.authing.cn/",
-              title: "Forum"
+              title: "Forum",
             },
             {
               icon: "authing-zhihu",
               link: "https://www.zhihu.com/org/authing",
-              title: "ZhiHu"
-            }
+              title: "ZhiHu",
+            },
           ],
           // serviceStatus: "Service Status",
           contactPhone: "400 888 2106",
@@ -456,10 +465,10 @@ module.exports = {
           contactChenduAddress:
             "room 406, 4th floor, zone B, building 1, No. 200, Tianfu Fifth Street, Chengdu(branch)",
           icp: "Beijing ICP No.19051205-1",
-          companyName: "© Beijing Steamory Technology Co."
-        }
-      }
-    }
+          companyName: "© Beijing Steamory Technology Co.",
+        },
+      },
+    },
   },
   configureWebpack: (config, isServer) => {
     return {
@@ -473,29 +482,29 @@ module.exports = {
       //       },
       // },
       output: {
-        publicPath: process.env.PUBLIC_URL || basePath
+        publicPath: process.env.PUBLIC_URL || basePath,
       },
       resolve: {
         alias: {
           "@imagesZhCn": path.resolve(__dirname, "../images"),
-          "@imagesEnUs": path.resolve(__dirname, "../en/images")
-        }
+          "@imagesEnUs": path.resolve(__dirname, "../en/images"),
+        },
       },
       plugins: [
         process.env.npm_lifecycle_event !== "docs:dev" &&
           new webpack.optimize.LimitChunkCountPlugin({
-            maxChunks: 50
-          })
+            maxChunks: 50,
+          }),
         // new webpack.optimize.MinChunkSizePlugin({
         //   minChunkSize: 500000, // Minimum number of characters
         // }),
-      ].filter(Boolean)
+      ].filter(Boolean),
     };
   },
   extraWatchFiles: [
     ".vuepress/enhanceApp.js",
     ".vuepress/env.js",
     ".vuepress/sidebar.js",
-    "README.md"
-  ]
+    "README.md",
+  ],
 };
