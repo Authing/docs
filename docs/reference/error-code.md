@@ -10,7 +10,7 @@ meta:
 
 错误代码消息格式如下：
 
-```json
+```js
 {
   "uniqueId": "65e59f51-dbbc-4d1f-a809-6d3f15d9b53e", // 唯一标识，用于定位错误
   "statusCode": 499, // 状态码
