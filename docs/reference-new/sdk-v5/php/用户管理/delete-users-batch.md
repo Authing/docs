@@ -9,13 +9,14 @@
 
 <LastUpdated />
 
-删除用户（支持批量删除）
+通过用户 ID 列表，删除用户，支持批量删除，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userIds | string[] | 是 |  | 用户 ID 列表。 示例值： `["userId1","userId2"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userIds | string[] | 是 | - | 用户 ID 列表。  | `["userId1","userId2"]` |
+| options | <a href="#DeleteUsersBatchOptionsDto">DeleteUsersBatchOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -34,6 +35,9 @@ $management = new ManagementClient(
 
 $data = $management->deleteUsersBatch(array(
       "userIds" => array("userId1","userId2"),
+    "options" => array(
+          "userIdType" => "user_id",
+    ),
 
 ));
 ```
@@ -66,6 +70,13 @@ $data = $management->deleteUsersBatch(array(
 ```
 
 ## 数据结构
+
+
+### <a id="DeleteUsersBatchOptionsDto"></a> DeleteUsersBatchOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto

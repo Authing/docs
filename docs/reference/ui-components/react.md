@@ -59,11 +59,13 @@ ReactDOM.render(<App />, document.getElementById("root"));
   window.react = React
   window['react-dom']  = ReactDOM
 </script>
-<script src="https://cdn.authing.co/packages/react-ui-components/2.4.45/index.min.js"></script>
+<script src="https://cdn.authing.co/packages/react-ui-components/{LATEST_VERSION}/index.min.js"></script>
 
 <!-- CSS 文件 -->
-<link href="https://cdn.authing.co/packages/react-ui-components/2.4.45/index.min.css" rel="stylesheet"></link>
+<link href="https://cdn.authing.co/packages/react-ui-components/{LATEST_VERSION}/index.min.css" rel="stylesheet"></link>
 ```
+
+注意检查最新版本号，格式如：`3.1.21`。
 
 #### 在 Script 代码块中初始化
 

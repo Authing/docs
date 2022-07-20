@@ -9,18 +9,18 @@
 
 <LastUpdated />
 
-获取某个主体被授权的资源列表
+根据筛选条件，获取某个主体被授权的资源列表。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| targetIdentifier | string  | 是 |  | 目标对象唯一标志符。 示例值： `userId1` |
-| targetType | string  | 是 |  | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
-| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType | string  | 否 |  | 限定资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
-| resourceList | string[]  | 否 |  | 限定查询的资源列表，如果指定，只会返回所指定的资源列表。。  |
-| withDenied | boolean  | 否 | false | 是否获取被拒绝的资源。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| targetIdentifier | string  | 是 | - | 目标对象唯一标志符。  | `userId1` |
+| targetType | string  | 是 | - | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+| resourceType | string  | 否 | - | 限定资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `DATA` |
+| resourceList | string[]  | 否 | - | 限定查询的资源列表，如果指定，只会返回所指定的资源列表。。  |  |
+| withDenied | boolean  | 否 | - | 是否获取被拒绝的资源。  |  |
 
 
 ## 示例代码

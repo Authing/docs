@@ -9,13 +9,14 @@
 
 <LastUpdated />
 
-获取用户的外部身份源
+通过用户 ID，获取用户的外部身份源、选择指定用户 ID 类型。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 
 
 ## 示例代码
@@ -31,6 +32,8 @@ management_client = ManagementClient(
 data = management_client.get_user_identities(
   
       user_id: "6229ffaxxxxxxxxcade3e3d9",
+  
+      user_id_type: "user_id",
   
 )
 ```
@@ -62,7 +65,8 @@ data = management_client.get_user_identities(
     "extIdpId": "6076bacxxxxxxxxd80d993b5",
     "provider": "wechat",
     "type": "openid",
-    "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
+    "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
+    "originConnIds": "[\"605492ac41xxxxe0362f0707\"]"
   }
 }
 ```
@@ -79,5 +83,6 @@ data = management_client.get_user_identities(
 | provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
 | type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
 | userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表。 示例值： `["605492ac41xxxxe0362f0707"]`  |
 
 
