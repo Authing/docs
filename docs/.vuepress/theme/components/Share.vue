@@ -113,9 +113,10 @@ export default {
         { width: 300, errorCorrectionLevel: "M" },
         (err, url) => {
           if (err) {
-            this.$message.error("出错了，请刷新重试");
+            console.error(err);
+          } else {
+            this.qrdata = url;
           }
-          this.qrdata = url;
         }
       );
     },
