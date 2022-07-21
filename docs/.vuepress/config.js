@@ -139,6 +139,8 @@ module.exports = {
         share: {
           share: "分享",
           copyLink: "复制链接",
+          weibo: "新浪微博",
+          wechat: "微信扫一扫",
           copied: "链接已复制",
         },
         nav: [
@@ -322,6 +324,8 @@ module.exports = {
         share: {
           share: "Share",
           copyLink: "Copy Link",
+          weibo: "Weibo",
+          wechat: "Wechat QRCode",
           copied: "Link Copied",
         },
         nav: [
