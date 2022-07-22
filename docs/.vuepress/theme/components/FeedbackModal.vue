@@ -158,7 +158,11 @@ export default {
         reasonList: this.selectedReasons,
       };
 
-      feishuFeedback(params).then(console.log);
+      feishuFeedback(params).then(() => {
+        setTimeout(() => {
+          this.hideFeedback();
+        }, 1000);
+      });
     },
     xssCheck(str, reg) {
       const map = {
