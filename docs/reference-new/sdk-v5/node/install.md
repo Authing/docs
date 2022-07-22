@@ -14,6 +14,8 @@ npm install authing-node-sdk
 yarn add authing-node-sdk
 ```
 
+Github 仓库： <https://github.com/Authing/authing-node-sdk>
+
 ## 使用 管理模块
 
 ### 初始化
@@ -25,7 +27,7 @@ import { ManagementClient } from "authing-node-sdk";
 
 const managementClient = new ManagementClient({
   accessKeyId: "YOUR_ACCESS_KEY_ID",
-  accessKeySecret: "YOUR_ACCESS_KEY_SECRET"
+  accessKeySecret: "YOUR_ACCESS_KEY_SECRET",
 });
 ```
 
@@ -49,7 +51,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const { data } = await managementClient.listUsers({
     page: 1,
-    limit: 10
+    limit: 10,
   });
 })();
 ```
@@ -61,7 +63,7 @@ const managementClient = new ManagementClient({
   const { data } = await managementClient.createRole({
     code: "admin",
     description: "管理员",
-    namespace: "default"
+    namespace: "default",
   });
 })();
 ```
@@ -80,7 +82,7 @@ import { AuthenticationClient } from "authing-node-sdk";
 const authenticationClient = new AuthenticationClient({
   appId: "YOUR_APP_ID",
   appSecret: "YOUR_APP_SECRET",
-  host: "YOUR_USERPOOL_HOST"
+  host: "YOUR_USERPOOL_HOST",
 });
 ```
 
@@ -91,11 +93,11 @@ const authenticationClient = new AuthenticationClient({
 - `host`: 应用对应的用户池域名，例如 pool.authing.cn;
 - `redirectUri`: 认证完成后的重定向目标 URL, 会进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL。
-- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `scope`: 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 - `serverJWKS`: 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
-- `cookieKey`: 存储认证上下文的 Cookie 名称。
+- `cookieKey`: 存储认证上下文的 Cookie 名称,用于 方法 loginWithRedirect 和 handleRedirectCallback 上存储用户的认证状态。
 
-认证侧相关的使用和方法说明，你可以在 [Authing Nodejs SDK](https://docs.authing.cn/v2/reference-new/sdk/v5/node/authentication.html) 中查看。
+认证侧相关的使用和方法说明，你可以在 [Authing Nodejs SDK](./authentication.html) 中查看。
 
 ## 私有化部署
 
@@ -107,7 +109,7 @@ import { ManagementClient } from "authing-node-sdk";
 const managementClient = new ManagementClient({
   accessKeyId: "YOUR_ACCESS_KEY_ID",
   accessKeySecret: "YOUR_ACCESS_KEY_SECRET",
-  host: "https://authing-api.my-authing-service.com"
+  host: "https://authing-api.my-authing-service.com",
 });
 ```
 

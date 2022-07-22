@@ -6,6 +6,8 @@
 go get -u github.com/Authing/authing-golang-sdk
 ```
 
+Github 仓库： <https://github.com/Authing/authing-golang-sdk>
+
 ## 初始化
 
 初始化 `ManagementClient` 需要使用 `accessKeyId` 和 `accessKeySecret` 参数:

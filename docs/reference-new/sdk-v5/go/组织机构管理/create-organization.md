@@ -9,17 +9,17 @@
 
 <LastUpdated />
 
-创建组织机构，会创建一个只有一个节点的组织机构
+创建组织机构，会创建一个只有一个节点的组织机构，可以选择组织描述信息、根节点自定义 ID、多语言等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| organizationName | string | 是 |  | 组织名称。 示例值： `蒸汽记忆` |
-| description | string | 否 |  | 组织描述信息。 示例值： `组织描述信息` |
-| openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| organizationName | string | 是 | - | 组织名称。  | `蒸汽记忆` |
+| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
+| description | string | 否 | - | 组织描述信息。  | `组织描述信息` |
+| openDepartmentId | string | 否 | - | 根节点自定义 ID。  | `60b49eb83fd80adb96f26e68` |
+| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置。  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
 ## 示例代码

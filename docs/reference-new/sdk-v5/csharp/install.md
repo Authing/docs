@@ -2,13 +2,13 @@
 
 <LastUpdated/>
 
-### Nuget
+## Nuget
 
 ```powershell
 Install-Package Authing.CSharp.SDK
 ```
 
-###
+Github 仓库： <https://github.com/Authing/authing-csharp-sdk>
 
 ## 初始化
 

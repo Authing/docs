@@ -20,7 +20,7 @@ meta:
 | 条目     | 说明                                        |
 | -------- | ------------------------------------------- |
 | 支持版本 | 所有版本                                    |
-| 仓库地址 | [https://github.com/Authing/authing-csharp-library](https://github.com/Authing/authing-csharp-library) |
+| 仓库地址 | [https://github.com/Authing/authing-csharp-sdk-neo](https://github.com/Authing/authing-csharp-sdk-neo) |
 
 ## 安装
 

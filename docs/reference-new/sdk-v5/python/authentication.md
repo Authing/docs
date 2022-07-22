@@ -29,7 +29,7 @@ authentication = AuthenticationClient(options)
 - `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
-- `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
+- `scope` \<String\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
 - `serverJWKS` \<String\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 - `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
 
@@ -54,11 +54,11 @@ authentication.buildAuthUrl(options)
 
 ### 参数
 
-- `scope` \<String\> 应用侧向 Authing 请求的权限，覆盖初始化参数中的对应设置。
-- `state` \<String\> 随机字符串，选填，默认自动生成。
-- `nonce` \<String\> 随机字符串，选填，默认自动生成。
-- `redirectUri` \<String\> 回调地址，覆盖初始化参数中的对应设置。
-- `forced` \<Boolean\> 即便用户已经登录也强制显示登录页。
+- `scope` \<str\> 令牌具备的资源权限（应用侧向 Authing 请求的权限），覆盖初始化参数中的对应设置。
+- `state` \<str\> 随机字符串，选填，默认自动生成。
+- `nonce` \<str\> 随机字符串，选填，默认自动生成。
+- `redirectUri` \<str\> 回调地址，覆盖初始化参数中的对应设置。
+- `forced` \<bool\> 即便用户已经登录也强制显示登录页。
 
 ### 示例
 
@@ -82,8 +82,8 @@ authentication.getLoginStateByAuthCode(code, redirectUri)
 
 ### 参数
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，每个 Code 只能使用一次。
-- `redirectUri` \<String\> 发起认证时传入的回调地址。
+- `code` \<str\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，每个 Code 只能使用一次。
+- `redirectUri` \<str\> 发起认证时传入的回调地址。
 
 ### 示例
 
@@ -94,7 +94,7 @@ data = authentication.getLoginStateByAuthCode("H5Sm-cxxxHVTbqqcOO", "https://xxx
 ### 示例数据
 
 ```python
-{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc', 
+{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc',
 'aud': '62ba7b1d1xxxxx3b597d3'}}
 ```
 
@@ -108,7 +108,7 @@ authentication.getUserInfo(accessToken)
 
 ### 参数
 
-- `accessToken` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `accessToken` \<str\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
 
 ### 示例
 
@@ -152,7 +152,7 @@ authentication.refreshLoginState(refreshToken)
 
 ### 参数
 
-- `refreshToken` \<String\> Refresh token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 `authentication.getLoginStateByAuthCode` 方法的返回值中获得 refresh_token 。
+- `refreshToken` \<str\> Refresh token，为了获取 Refresh Token，需要在 scope 参数中加入 offline_access, 然后可以从 `authentication.getLoginStateByAuthCode` 方法的返回值中获得 refresh_token 。
 
 ### 示例
 
@@ -163,11 +163,12 @@ data = authentication.refreshLoginState("w7_gPfxxxxxovbv00")
 ### 示例数据
 
 ```python
-{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc', 
+{'accessToken': 'xxxxx', 'idToken': 'xxxxx', 'refreshToken': 'xxxxx', 'expireAt': 1209600, 'parsedIDToken': {'sub': '62946eexxxxx4ffab6', 'birthdate': None, 'family_name': None, 'gender': 'M', 'given_name': None, 'locale': None, 'middle_name': None, 'name': 'xxxxx', 'nickname': 'xxxxx', 'picture': 'https://i2.hdslb.com/bfs/face/xxxxxa411f5e5c7d3e9d366a.jpg@100Q.webp', 'preferred_username': None, 'profile': None, 'updated_at': '2022-06-30T06:24:28.934Z', 'website': None, 'zoneinfo': None, 'nonce': 'NqlL4bxxxxxfJxVTU', 'at_hash': 'AsSMPrxxxxxb1OXcg', 'aud': '62ba7b1dxxxxx3b597d3', 'exp': 1657780627, 'iat': 1656571027, 'iss': 'https://xxxxx.authing.cn/oidc'}, 'parsedAccessToken': {'jti': 'mYDDY27xxxxx9nSy0', 'sub': '62946ee413xxxxx44ffab6', 'iat': 1656571027, 'exp': 1657780627, 'scope': 'openid offline_access profile', 'iss': 'https://xxxxx.authing.cn/oidc',
 'aud': '62ba7b1d1xxxxx3b597d3'}}
 ```
 
 ## 生成登出 URL
+
 ```python
 authentication.buildLogoutUrl(options)
 ```
@@ -176,9 +177,9 @@ authentication.buildLogoutUrl(options)
 
 ### 参数
 
-- `idToken` \<String\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
-- `redirectUri` \<String\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
-- `state` \<String\> 传递到目标 URL 的中间状态标识符。
+- `idToken` \<str\> 用户登录时获取的 ID Token，用于无效化用户 Token，建议传入。
+- `redirectUri` \<str\> 登出完成后的重定向目标 URL，覆盖初始化参数中的对应设置。
+- `state` \<str\> 传递到目标 URL 的中间状态标识符。
 
 ### 示例
 

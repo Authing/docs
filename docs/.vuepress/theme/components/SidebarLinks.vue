@@ -83,7 +83,9 @@ export default {
     },
 
     routerLink(dataIndex) {
-      this.$eventBus.$emit('onChangeIndex', dataIndex)
+      setTimeout(() => {
+        this.$eventBus.$emit('onChangeIndex', dataIndex)
+      }, 200);
     }
   },
 }

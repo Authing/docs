@@ -28,7 +28,7 @@ authClient, err =  authentication.NewClient(&authentication.AuthenticationClient
     Domain:      "应用域名",
     RedirectUri: "授权回调地址",
     LogoutRedirectUri: "登出回调地址"
-    Scope: "应用侧向 Authing 请求的权限，以空格分隔"
+    Scope: "令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔"
 })
 ```
 
