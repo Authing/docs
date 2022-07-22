@@ -61,7 +61,7 @@
             <p>问题描述：</p>
             <textarea
               class="textarea"
-              :placeholder="textareaPlaceholder"
+              placeholder="请输入你遇到的问题"
               v-model="customReason"
               :class="{ focused: focused }"
               @focus="focused = true"
@@ -95,6 +95,8 @@
 </template>
 
 <script>
+import { feishuFeedback } from "@theme/util/feishu";
+
 export default {
   data() {
     return {
@@ -146,9 +148,36 @@ export default {
       this.selectedReasons = [];
       this.customReason = "";
     },
-    submit() {},
+    submit() {
+      const params = {
+        helpful: false,
+        docTitle: this.$page.title,
+        docUrl: window.location.href,
+        customReason: this.xssCheck(this.customReason),
+        selectedWords: this.selectedWords,
+        reasonList: this.selectedReasons,
+      };
+
+      feishuFeedback(params).then(console.log);
+    },
+    xssCheck(str, reg) {
+      const map = {
+        "<": "&lt;",
+        "&": "&amp;",
+        '"': "&quot;",
+        ">": "&gt;",
+        "'": "&#39;",
+      };
+      return str
+        ? str.replace(
+            reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp|#\d+);)?/g,
+            ($0, $1) => {
+              return $1 ? $0 : map[$0];
+            }
+          )
+        : "";
+    },
     onSelected(e) {
-      console.log(e);
       let word = window.getSelection().toString().trim().replace(/\n/g, ""); //选中的内容
       if (word != "") {
         this.selectedWords = word;
