@@ -205,35 +205,6 @@ AuthClient().loginByPhoneCode(phone: "13012345678", code: "1234") { code, messag
 
 <br>
 
-## LDAP 登录
-
-```swift
-func loginByLDAP(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
-**参数**
-
-* *username* ldap 用户名
-* *password* 明文密码
-
-**示例**
-
-```swift
-AuthClient().loginByLDAP(username: "username", password: "strong") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo：用户信息
-    }
-}
-```
-
-**错误码**
-
-* 2333 帐号或密码错误
-
-<br>
-
-## AD 登录
-
 ```swift
 func loginByAD(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
