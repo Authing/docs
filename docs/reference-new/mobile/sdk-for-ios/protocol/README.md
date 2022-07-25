@@ -130,7 +130,7 @@ OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 
 ### 邮箱验证码注册
 
-使用 OIDC 邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](#发送邮件) 接口以获取邮箱验证码
+使用 OIDC 邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码
 
 ```swift
 func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -189,7 +189,7 @@ OIDCClient().registerByUserName(username: "username", password: "strong") { code
 
 ### 短信验证码注册
 
-通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
+通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口以获取短信验证码
 
 ```swift
 func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -270,6 +270,8 @@ OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInf
 <br>
 
 ### 邮箱验证码登录
+
+使用 OIDC 邮箱验证码登录，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码
 
 ```swift
 func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
