@@ -41,7 +41,7 @@
           <hr style="margin-left: -16px; margin-right: -16px" />
         </div>
         <!-- content -->
-        <div style="font-size: 14px">
+        <div v-if="!submitted" style="font-size: 14px">
           <div>
             <p>问题类型：</p>
             <div style="display: flex; justify-content: space-between">
@@ -78,8 +78,31 @@
             />
           </div>
         </div>
+        <div
+          v-else
+          style="
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <img
+            src="../assets/images/feedback-success.png"
+            class="feedback-success-icon"
+          />
+          <div class="tips-box">
+            <img
+              src="../assets/images/checkbox-circle-fill.svg"
+              style="width: 20px; height: 20px; vertical-align: middle"
+            />
+            <span>提交成功，感谢你的反馈</span>
+          </div>
+        </div>
         <!-- footer -->
-        <div class="feedback-footer">
+        <div v-if="!submitted" class="feedback-footer">
           <div
             class="submit"
             @click="hideFeedback"
@@ -104,6 +127,7 @@ export default {
       selectX: 0,
       selectY: 0,
       modalVisible: false,
+      submitted: false,
       container: document.querySelector(".theme-default-content"),
       focused: false,
       selectedWords: "",
@@ -147,6 +171,7 @@ export default {
       this.modalVisible = true;
       this.selectedReasons = [];
       this.customReason = "";
+      this.submitted = false;
     },
     submit() {
       const params = {
@@ -159,6 +184,7 @@ export default {
       };
 
       feishuFeedback(params).then(() => {
+        this.submitted = true;
         setTimeout(() => {
           this.hideFeedback();
         }, 1000);
@@ -308,4 +334,9 @@ export default {
     color #fff
     border-radius 4px
     cursor pointer
+
+.feedback-success-icon
+  margin-bottom 19px
+  width 120px
+  height 92px
 </style>
