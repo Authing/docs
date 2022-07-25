@@ -994,6 +994,10 @@ const zhCnNavBar = {
   ],
   "/reference/": [
     {
+      title: "单点登录（SSO）",
+      path: "/reference/sdk-for-sso-spa",
+    },
+    {
       title: "登录组件 (Guard)",
       path: "/reference/guard/v2/",
       children: [
@@ -1055,10 +1059,6 @@ const zhCnNavBar = {
     //     },
     //   ],
     // },
-    {
-      title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso-spa",
-    },
     {
       title: "JavaScript / Node.js",
       path: "/reference/sdk-for-node/",
@@ -5930,6 +5930,10 @@ const translatedZhCnNavBar = {
   ],
   "/reference/": [
     {
+      title: "Single Sign-On (SSO)",
+      path: "/reference/sdk-for-sso-spa",
+    },
+    {
       title: "Login component",
       path: "/reference/ui-components/",
       children: [
@@ -5954,10 +5958,6 @@ const translatedZhCnNavBar = {
           path: "/reference/ui-components/parameters",
         },
       ],
-    },
-    {
-      title: "Single Sign-On (SSO)",
-      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript/Node.js",

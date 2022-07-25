@@ -28,6 +28,8 @@
     "v-tooltip": "^2.1.3",
     "vue-notification": "^1.3.20",
     "vue-pagination-2": "^3.0.8",
-    "vue-select": "^3.11.2"
+    "vue-select": "^3.11.2",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-tabs": "^0.3.0"
   }
 }
