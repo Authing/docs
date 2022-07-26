@@ -6,6 +6,8 @@ meta:
 
 # Manage User Accounts
 
+<LastUpdated/>
+
 Managing user accounts includes completed procedures such as forgetting passwords, verifying email addresses, modifying the bound phone number and email address, multi-factor authentication, disabling user accounts, binding social login, and account merging. If you use Authing, congratulations, these are all built-in functions in Authing, and you only need to spend a very short time to finish them.
 
 ## Use Online Login Page and Personal Center

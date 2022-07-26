@@ -4,8 +4,8 @@
   noToc: true,
   noFeedback: true,
   fullWidthPage: true,
-  title: '接入微信小程序扫码登录',
-  bannerTitle: '接入微信小程序扫码登录',
+  title: '接入微信 PC 小程序扫码登录',
+  bannerTitle: '接入微信 PC 小程序扫码登录',
   steps:
     [
       { title: '在微信公众平台创建一个小程序（可选）' },

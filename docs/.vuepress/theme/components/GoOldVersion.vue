@@ -27,5 +27,5 @@ export default {
   cursor pointer
   font-size 14px
   &:hover
-    color #396aff
+    color $accentColor
 </style>

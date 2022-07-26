@@ -1,5 +1,7 @@
 # Access Token VS ID Token
 
+<LastUpdated/>
+
 There are two types of Token related to identity accesss: Access Token and ID Token.
 
 ## Access Token

@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## Use email registration
+## Use email and password registration
 
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
@@ -19,6 +19,36 @@ func registerByEmail(email: String, password: String, completion: @escaping(Int,
 
 ```swift
 AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+## Use email and verification code registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique, you need to call [sendEmail](#Send-email) interface to send a reset password message (the scene value `VERIFY_CODE`).
+
+```swift
+func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `email` email address
+* `code` code
+
+**Example**
+
+```swift
+AuthClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
     if (code == 200) {
         // userInfo
     }
@@ -63,7 +93,7 @@ AuthClient().registerByUserName(username: "username", password: "strong") { code
 
 ## Use mobile phone number registration
 
-Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send verification code) method sends SMS verification code.
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send-verification-code) method sends SMS verification code.
 
 ```swift
 func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -148,7 +178,7 @@ AuthClient().loginByAccount(account: "account", password: "strong") { code, mess
 
 ## Use the mobile phone number verification code to login
 
-Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send verification code) sends a SMS verification code.
+Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send-verification-code) sends a SMS verification code.
 
 ```swift
 func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -174,35 +204,6 @@ AuthClient().loginByPhoneCode(phone: "13012345678", code: "1234") { code, messag
 * `2001` SMS verification code error
 
 <br>
-
-##  Log in with an LDAP username
-
-```swift
-func loginByLDAP(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
-**Parameter**
-
-* `username` ldap username
-* `password` password
-
-**Example**
-
-```swift
-AuthClient().loginByLDAP(username: "username", password: "strong") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo
-    }
-}
-```
-
-**Error Code**
-
-* `2333` The account or password is incorrect
-
-<br>
-
-## Login with an AD username
 
 ```swift
 func loginByAD(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -343,6 +344,7 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
   - `VERIFY_EMAIL`: Send a message to verify the mailbox;
   - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
   - `MFA_VERIFY`: Send MFA verification email.
+  - `VERIFY_CODE`: Send verification email.
 
 **Example**
 
@@ -471,7 +473,7 @@ public func imagePickerController(_ picker: UIImagePickerController, didFinishPi
 
 ## Reset password via SMS verification code
 
-Reset your password by SMS verification code, you can send SMS verification code by [sendSmsCode](#Send verification code) method.
+Reset your password by SMS verification code, you can send SMS verification code by [sendSmsCode](#Send-verification-code) method.
 
 ```swift
 func resetPasswordByPhone(phone: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
@@ -501,7 +503,7 @@ AuthClient().resetPasswordByPhone(phone: "13012345678", code: "1234", newPasswor
 
 ## Reset password via mail verification code
 
-eset password by email verification code, you need to call [sendEmail](#Send email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
+Reset password by email verification code, you need to call [sendEmail](#Send-email) interface to send a reset password message (the scene value `RESET_PASSWORD`).
 
 ```swift
 func resetPasswordByEmail(email: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
@@ -643,7 +645,7 @@ AuthClient().updatePassword(newPassword: "newStrong", oldPassword: "oldStrong") 
 
 ## Binding mobile phone number
 
-Bind the mobile phone number of the current login user.  you can send SMS verification code by [sendSmsCode](#Send verification code) method.
+Bind the mobile phone number of the current login user.  you can send SMS verification code by [sendSmsCode](#Send-verification-code) method.
 
 ```swift
 func bindPhone(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)

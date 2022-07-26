@@ -209,60 +209,6 @@ AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userIn
 
 <br>
 
-##  Log in with an LDAP username
-
-```java
-public static void loginByLDAP(String username, String password, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**Parameter**
-
-* `username` ldap username
-* `password` password
-
-**Example**
-
-```java
-AuthClient.loginByLDAP("username", "strong", (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo
-    }
-});
-```
-
-**Error Code**
-
-* `2333` The account or password is incorrect
-
-<br>
-
-## Login with an AD username
-
-```java
-public static void loginByAD(String username, String password, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**Parameter**
-
-* `username` AD username
-* `password` password
-
-**Example**
-
-```java
-AuthClient.loginByAD("username", "strong", (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo
-    }
-});
-```
-
-**Error Code**
-
-* `2333` The account or password is incorrect
-
-<br>
-
 ## Get the user information of current login
 
 Get the user information of the current login user, you need that is currently logged in to get it.

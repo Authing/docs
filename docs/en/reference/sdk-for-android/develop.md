@@ -42,6 +42,6 @@ Authing.init(appContext, "your_authing_app_id");
 
 Next, embed authentication flow and UI in 1 minute.
 
-<span style="background-color: #396aff;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">Quick start →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">Quick start →</a>
 </span>
 

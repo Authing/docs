@@ -18,7 +18,6 @@ React 版本：React 16/17
 
 在 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的**创建自建应用**按钮，填入以下信息：
 
-
 - 应用名称: 你的应用名称；
 - 认证地址: 选择一个二级域名，必须为合法的域名格式，例如 `my-awesome-app`；
 
@@ -26,8 +25,7 @@ React 版本：React 16/17
 
 创建完成！接下来你将正式开始 Authing Guard (React) 的接入和配置。
 
-
-## STEP 2:  安装和初始化
+## STEP 2: 安装和初始化
 
 有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
 
@@ -37,7 +35,7 @@ React 版本：React 16/17
 
 **首先，通过 npm/yarn/cnpm 安装 Authing library.**
 
-推荐使用 npm （稳定版本 v3.1.10）或 yarn，它们能更好的和 [webpack](https://webpack.js.org/) 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
+推荐使用 npm （稳定版本 v3.1.21）或 yarn，它们能更好的和 [webpack](https://webpack.js.org/) 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 如果你的网络环境不佳，也可使用 [cnpm](https://github.com/cnpm/cnpm) 。
 
 运行下列命令行安装 Authing React.JS library：
@@ -77,7 +75,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 **首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `AuthingReactUIComponents`。**
 
-Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components@3.1.15/lib/index.min.js) 下载）。
+Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components/lib/index.min.js) 下载）。
 
 ```html
 <html lang="en">
@@ -129,7 +127,7 @@ Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供�
 
 接下来，你可以根据实际的需要，直接阅读对应的使用指南和代码示例。
 
-## STPE 3:  常用操作
+## STPE 3: 常用操作
 
 我们为你整理了所有在配置 Guard 时常用的操作和代码示例，你可以直接点击跳到相应位置：
 
@@ -772,7 +770,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 import { AuthClientProvider, Guard } from "@authing/react-ui-components";
 import React from "react";
 import ReactDOM from "react-dom";
-import { AuthenticationClient } from 'authing-js-sdk';
+import { AuthenticationClient } from "authing-js-sdk";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
 
@@ -789,11 +787,10 @@ const App = () => {
   };
 
   const refreshToken = async () => {
+    await authClient.refreshToken();
 
-    await authClient.refreshToken()
-
-    console.log(userUDF)
-  }
+    console.log(userUDF);
+  };
 
   return (
     <>
@@ -812,96 +809,93 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ### 1. 常用事件列表
 
-| 名称                        | 描述                                             | 参数                | 参数描述      |
-| :---------------------------- | :--------------------------------------------------- | :---------------------- | :------------------------------------------------------------------------------------------------------------ |
-|onLoad|Guard 初始化完成，开始渲染页面|authClient|AuthenticationClient 对象，详情请查看 [authing-js-sdk](/reference/sdk-for-node/)|
-|onLoadError|Guard 初始化失败|error|错误信息|
-|onLogin|用户登录成功|user|用户信息|
-|onLoginError|用户登录失败|error|错误信息，包含字段缺失／非法或服务器错误等信息|
-|onRegister|用户注册成功|user|用户信息|
-|onRegisterError|用户注册失败|error|错误信息，包含字段缺失／非法或服务器错误等信息|
-|onClose|modal 模式中 guard 关闭事件|-|-|
-
+| 名称            | 描述                           | 参数       | 参数描述                                                                         |
+| :-------------- | :----------------------------- | :--------- | :------------------------------------------------------------------------------- |
+| onLoad          | Guard 初始化完成，开始渲染页面 | authClient | AuthenticationClient 对象，详情请查看 [authing-js-sdk](/reference/sdk-for-node/) |
+| onLoadError     | Guard 初始化失败               | error      | 错误信息                                                                         |
+| onLogin         | 用户登录成功                   | user       | 用户信息                                                                         |
+| onLoginError    | 用户登录失败                   | error      | 错误信息，包含字段缺失／非法或服务器错误等信息                                   |
+| onRegister      | 用户注册成功                   | user       | 用户信息                                                                         |
+| onRegisterError | 用户注册失败                   | error      | 错误信息，包含字段缺失／非法或服务器错误等信息                                   |
+| onClose         | modal 模式中 guard 关闭事件    | -          | -                                                                                |
 
 ### 2. Config 参数列表
 
-| 名称 | 类型 | 描述 | 默认值 |
-|:---|:---|:---|:---|
-| target | String | 指定 Guard 表单的挂载点，接受 [querySelector (opens new window)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面 | - |
-| mode | [GuardMode](../parameters.md#guardmode) | Guard 展示模式 | GuardMode.Normal |
-| title | String | 产品名称 | Authing 控制台中的配置 |
-| logo | String | 产品 logo | Authing 控制台中的配置 |
-| contentCss | String | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 节点。如 body {background:#6699 !important;} | - |
-| loginMethods | [LoginMethods](../parameters.md#loginmethods)[] | 需要使用的普通登录(包括 LDAP)方式列表 | Authing 控制台中的配置 |
-| registerMethods | [RegisterMethods](../parameters.md#registermethods)[] | 需要使用的注册方式 | Authing 控制台中的配置 |
-| defaultRegisterMethod | [RegisterMethods](../parameters.md#registermethods) | 默认展示的注册方式 | Authing 控制台中的配置 |
-| defaultScenes | GuardModuleType | 打开组件时展示的界面 | GuardModuleType.LOGIN |
-| socialConnections | [SocialConnections](../parameters.md#socialconnections)[] | 需要使用的社会化登录列表，**如果在 Authing 控制台中没有配置，则不会显示** | Authing 控制台中的配置 |
-| enterpriseConnections | Array | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用，**如果在 Authing 控制台中没有配置，则不会显示** | Authing 控制台中的配置 |
-| defaultLoginMethod | String | **默认显示的登录方式**。可选值为 options.loginMethods 中的某一项 | Authing 控制台中的配置 |
-| autoRegister | Boolean | **是否将注册和登录合并**，合并后如果用户不存在将自动注册 | Authing 控制台中的配置 |
-| disableRegister | Boolean | **是否禁止注册**，禁止的话会隐藏「注册」入口 | Authing 控制台中的配置 |
-| disableResetPwd | Boolean | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口 | Authing 控制台中的配置 |
-| clickCloseable | Boolean | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框 | Authing 控制台中的配置 |
-| escCloseable | Boolean | **Modal 模式时是否可以通过键盘 ESC 键关闭登录框** | Authing 控制台中的配置 |
-| isSSO | Boolean | 是否是单点登录 | Authing 控制台中的配置 |
-| lang | 'zh-CN' | 使用语言，可选值为 zh-CN、en-US | 'en-US' |
-| langRange | ('zh-CN'｜ 'en-US')[] | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮 | ['zh-CN', 'en-US'] |
-| host | String | 私有部署时的 API 请求地址 | - |
+| 名称                  | 类型                                                      | 描述                                                                                                                                                                                                                              | 默认值                 |
+| :-------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------- |
+| target                | String                                                    | 指定 Guard 表单的挂载点，接受 [querySelector (opens new window)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面 | -                      |
+| mode                  | [GuardMode](../parameters.md#guardmode)                   | Guard 展示模式                                                                                                                                                                                                                    | GuardMode.Normal       |
+| title                 | String                                                    | 产品名称                                                                                                                                                                                                                          | Authing 控制台中的配置 |
+| logo                  | String                                                    | 产品 logo                                                                                                                                                                                                                         | Authing 控制台中的配置 |
+| contentCss            | String                                                    | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 节点。如 body {background:#6699 !important;}                                                                                                                         | -                      |
+| loginMethods          | [LoginMethods](../parameters.md#loginmethods)[]           | 需要使用的普通登录(包括 LDAP)方式列表                                                                                                                                                                                             | Authing 控制台中的配置 |
+| registerMethods       | [RegisterMethods](../parameters.md#registermethods)[]     | 需要使用的注册方式                                                                                                                                                                                                                | Authing 控制台中的配置 |
+| defaultRegisterMethod | [RegisterMethods](../parameters.md#registermethods)       | 默认展示的注册方式                                                                                                                                                                                                                | Authing 控制台中的配置 |
+| defaultScenes         | GuardModuleType                                           | 打开组件时展示的界面                                                                                                                                                                                                              | GuardModuleType.LOGIN  |
+| socialConnections     | [SocialConnections](../parameters.md#socialconnections)[] | 需要使用的社会化登录列表，**如果在 Authing 控制台中没有配置，则不会显示**                                                                                                                                                         | Authing 控制台中的配置 |
+| enterpriseConnections | Array                                                     | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用，**如果在 Authing 控制台中没有配置，则不会显示**                                                     | Authing 控制台中的配置 |
+| defaultLoginMethod    | String                                                    | **默认显示的登录方式**。可选值为 options.loginMethods 中的某一项                                                                                                                                                                  | Authing 控制台中的配置 |
+| autoRegister          | Boolean                                                   | **是否将注册和登录合并**，合并后如果用户不存在将自动注册                                                                                                                                                                          | Authing 控制台中的配置 |
+| disableRegister       | Boolean                                                   | **是否禁止注册**，禁止的话会隐藏「注册」入口                                                                                                                                                                                      | Authing 控制台中的配置 |
+| disableResetPwd       | Boolean                                                   | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口                                                                                                                                                                              | Authing 控制台中的配置 |
+| clickCloseable        | Boolean                                                   | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框                                                                                                                                        | Authing 控制台中的配置 |
+| escCloseable          | Boolean                                                   | **Modal 模式时是否可以通过键盘 ESC 键关闭登录框**                                                                                                                                                                                 | Authing 控制台中的配置 |
+| isSSO                 | Boolean                                                   | 是否是单点登录                                                                                                                                                                                                                    | Authing 控制台中的配置 |
+| lang                  | 'zh-CN'                                                   | 使用语言，可选值为 zh-CN、en-US                                                                                                                                                                                                   | 'en-US'                |
+| langRange             | ('zh-CN'｜ 'en-US')[]                                     | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮                                                                                                                                                            | ['zh-CN', 'en-US']     |
+| host                  | String                                                    | 私有部署时的 API 请求地址                                                                                                                                                                                                         | -                      |
 
+#### GuardMode
 
-#### GuardMode 
-
-| 键                        |   值                     | 说明                | 
-| :--------------------------| :----------------------------| :------------------|
-|Modal|'modal'|模态框模式|
-|Normal|'normal'|正常模式|
+| 键     | 值       | 说明       |
+| :----- | :------- | :--------- |
+| Modal  | 'modal'  | 模态框模式 |
+| Normal | 'normal' | 正常模式   |
 
 #### LoginMethods
 
-| 键                        |   值                     | 说明                | 
-| :--------------------------| :----------------------------| :------------------|
-|LDAP|'ldap'|LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))|
-|AppQr|'app-qrcode'|APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
-|Password|'password'|账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码。)|
-|PhoneCode|'phone-code'|手机验证码登录|
-|WxMinQr|'wechat-miniprogram-qrcode'|微信小程序扫码登录|
-|AD|'ad'|AD 用户目录登录|
-
+| 键        | 值                          | 说明                                                                                     |
+| :-------- | :-------------------------- | :--------------------------------------------------------------------------------------- |
+| LDAP      | 'ldap'                      | LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))                              |
+| AppQr     | 'app-qrcode'                | APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)) |
+| Password  | 'password'                  | 账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码。)                            |
+| PhoneCode | 'phone-code'                | 手机验证码登录                                                                           |
+| WxMinQr   | 'wechat-miniprogram-qrcode' | 微信 PC 小程序扫码登录                                                                   |
+| AD        | 'ad'                        | AD 用户目录登录                                                                          |
 
 #### RegisterMethods
 
-| 键                        |   值                     | 说明                | 
-| :--------------------------| :----------------------------| :------------------|
-|Email|'email'|邮箱注册|
-|Phone|'phone'|手机验证码注册|
+| 键    | 值      | 说明           |
+| :---- | :------ | :------------- |
+| Email | 'email' | 邮箱注册       |
+| Phone | 'phone' | 手机验证码注册 |
 
 #### GuardModuleType
 
-| 键                        |   值                     | 说明                | 
-| :--------------------------| :----------------------------| :------------------|
-|LOGIN|'login'|登录界面|
-|REGISTER|'register'|注册界面|
+| 键       | 值         | 说明     |
+| :------- | :--------- | :------- |
+| LOGIN    | 'login'    | 登录界面 |
+| REGISTER | 'register' | 注册界面 |
 
 #### SocialConnections
 
-| 键                        |   值                     | 说明                | 
-| :--------------------------| :----------------------------| :------------------|
-|ALIPAY|'alipay'|支付宝登录|
-|GOOGLE|'google'|谷歌登录|
-|WECHATPC|'wechat:pc'|微信 PC 登录|
-|WECHATMP|'wechat:webpage-authorization'|微信网页授权|
-|WECHATMOBILE|'wechat:mobile'|微信移动端扫码登录|
-|WECHATWORK_ADDRESS_BOOK|'wechatwork:addressbook'|企业微信通讯录|
-|WECHATWORK_CORP_QRCONNECT|'wechatwork:corp:qrconnect'|企业微信内部应用|
-|DINGTALK|'dingtalk'|钉钉登录|
-|WEIBO|'weibo'|微博登录|
-|APPLE|'apple'|Apple 登录|
-|LARK_PUBLIC|'lark-public'|飞书应用商店登录|
-|LARK_INTERNAL|'lark-internal'|飞书企业自建应用登录|
-|BAIDU|'baidu'|百度登录|
-|LINKEDIN|'linkedin'|领英登录|
-|SLACK|'slack'|Slack 登录|
-|YIDUN|'yidun'|网易易盾登录|
-|QINGCLOUD|'qingcloud'|青云 QingCloud 登录|
-|FACEBOOK|'facebook'|FaceBook 登录|
+| 键                        | 值                             | 说明                 |
+| :------------------------ | :----------------------------- | :------------------- |
+| ALIPAY                    | 'alipay'                       | 支付宝登录           |
+| GOOGLE                    | 'google'                       | 谷歌登录             |
+| WECHATPC                  | 'wechat:pc'                    | 微信 PC 登录         |
+| WECHATMP                  | 'wechat:webpage-authorization' | 微信网页授权         |
+| WECHATMOBILE              | 'wechat:mobile'                | 微信移动端扫码登录   |
+| WECHATWORK_ADDRESS_BOOK   | 'wechatwork:addressbook'       | 企业微信通讯录       |
+| WECHATWORK_CORP_QRCONNECT | 'wechatwork:corp:qrconnect'    | 企业微信内部应用     |
+| DINGTALK                  | 'dingtalk'                     | 钉钉登录             |
+| WEIBO                     | 'weibo'                        | 微博登录             |
+| APPLE                     | 'apple'                        | Apple 登录           |
+| LARK_PUBLIC               | 'lark-public'                  | 飞书应用商店登录     |
+| LARK_INTERNAL             | 'lark-internal'                | 飞书企业自建应用登录 |
+| BAIDU                     | 'baidu'                        | 百度登录             |
+| LINKEDIN                  | 'linkedin'                     | 领英登录             |
+| SLACK                     | 'slack'                        | Slack 登录           |
+| YIDUN                     | 'yidun'                        | 网易易盾登录         |
+| QINGCLOUD                 | 'qingcloud'                    | 青云 QingCloud 登录  |
+| FACEBOOK                  | 'facebook'                     | FaceBook 登录        |

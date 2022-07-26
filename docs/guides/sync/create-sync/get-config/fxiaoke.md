@@ -7,13 +7,13 @@
 
 2. 创建一个自建应用
 
-<img src="../../images/fxiaoke-1.png" />
+![](../../images/fxiaoke-1.png)
 
 <br/>
 
 3. 进入应用详情页面获取 AppId、AppSecret 和 PermanentCode。
 
-<img src="../../images/fxiaoke-2.png" />
+![](../../images/fxiaoke-2.png)
 
 <br/>
 

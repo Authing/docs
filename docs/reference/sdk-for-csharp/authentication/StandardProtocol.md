@@ -14,7 +14,7 @@ meta:
 
 ```csharp
 // 使用 AppId 和 appHost 进行初始化
-managementClient authentication = new managementClient(string AppId, string Host);
+authenticationClient authentication = new authenticationClient(string AppId, string Host);
 ```
 
 ## OIDC
@@ -23,7 +23,7 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 
 ### 初始化
 
-初始化 managementClient 时的参数：
+初始化 authenticationClient 时的参数：
 
 - `AppId` \<string\> 应用 ID，必填。
 - `Secret` \<string\> 应用密钥，必填。
@@ -38,13 +38,13 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 
 ```csharp
 // 使用 AppId 和 appHost 进行初始化
-var authentication = await new managementClient("APP_ID", "APP_HOST");
+var authentication = await new authenticationClient("APP_ID", "APP_HOST");
 ```
 
 
 ### 生成 OIDC 协议的用户登录链接
 ```csharp
-managementClient.BuildOidcAuthorizeUrl(Oidcoptions options)
+authenticationClient.BuildOidcAuthorizeUrl(Oidcoptions options)
 ```
 > 生成 OIDC 协议的用户登录链接
 
@@ -65,7 +65,7 @@ var iOidcParams = new Oidcoptions(){
   RedirectUri="www.xxxxxxx.com",
   Nonce="nonce test"
 };
-var oidcstring = await managementClient.BuildOidcAuthorizeUrl(iOidcParams);
+var oidcstring = await authenticationClient.BuildOidcAuthorizeUrl(iOidcParams);
 ```
 
 #### 示例数据
@@ -76,7 +76,7 @@ https://oidc1.authing.cn/oidc/auth?nonce=5485323897342262&state=7400704296715694
 
 ### Code 换 Token
 ```csharp
-managementClient.GetAccessTokenByCode(string code)
+authenticationClient.GetAccessTokenByCode(string code)
 ```
 > 使用授权码 Code 获取用户的 Token 信息。
 
@@ -87,7 +87,7 @@ managementClient.GetAccessTokenByCode(string code)
 #### 示例
 
 ```csharp
-var result = await managementClient.GetAccessTokenByCode("empower_code");
+var result = await authenticationClient.GetAccessTokenByCode("empower_code");
 ```
 
 #### 示例数据
@@ -114,7 +114,7 @@ var result = await managementClient.GetAccessTokenByCode("empower_code");
 
 ### Token 换用户信息
 ```csharp
-managementClient.GetUserInfoByAccessToken(string token)
+authenticationClient.GetUserInfoByAccessToken(string token)
 ```
 > 使用 Access token 获取用户信息。
 
@@ -125,7 +125,7 @@ managementClient.GetUserInfoByAccessToken(string token)
 #### 示例
 
 ```csharp
-var result  = await managementClient.GetUserInfoByAccessToken("accessToken");
+var result  = await authenticationClient.GetUserInfoByAccessToken("accessToken");
 ```
 
 #### 示例数据
@@ -193,18 +193,18 @@ var result  = await managementClient.GetUserInfoByAccessToken("accessToken");
 
 ### 刷新 Access Token
 ```csharp
-managementClient.GetNewAccessTokenByRefreshToken(string refreshToken)
+authenticationClient.GetNewAccessTokenByRefreshToken(string refreshToken)
 ```
 > 使用 Refresh token 获取新的 Access token。
 
 #### 参数
 
-- `refreshToken` \<string\> Refresh token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](/guides/federation/oidc.md#刷新-access-token)。
+- `refreshToken` \<string\> Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](/guides/federation/oidc.md#刷新-access-token)。
 
 #### 示例
 
 ```csharp
-var result =  await managementClient.GetNewAccessTokenByRefreshToken("accessToken");
+var result =  await authenticationClient.GetNewAccessTokenByRefreshToken("accessToken");
 ```
 
 #### 示例数据
@@ -222,18 +222,18 @@ var result =  await managementClient.GetNewAccessTokenByRefreshToken("accessToke
 
 ### 检查 Access Token
 ```csharp
-managementClient.IntrospectToken(string token)
+authenticationClient.IntrospectToken(string token)
 ```
 > 检查 Access token 或 Refresh token 的状态。
 
 #### 参数
 
-- `token` \<string\> Access token 或 Refresh token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 access_token、refresh_token 获得。
+- `token` \<string\> Access token 或 Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 access_token、refresh_token 获得。
 
 #### 示例
 
 ```csharp
-var result = await managementClient.IntrospectToken("accessToken or refreshToken");
+var result = await authenticationClient.IntrospectToken("accessToken or refreshToken");
 ```
 
 #### 示例数据
@@ -267,15 +267,15 @@ Token 不合法时返回：
 ### 检验 Id Token 合法性
 
 ```csharp
-managementClient.ValidateToken(ValidateTokenParams param)
+authenticationClient.ValidateToken(ValidateTokenParams param)
 ```
 > 通过 Authing 提供的在线接口验证 Id token 或 Access token，会产生网络请求。
 
 #### 参数
 
 - `param` \<ValidateTokenParams\>
-- `param.IdToken` \<string\> Access token 或 Refresh token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 id_token 获得。
-- `param.AccessToken` \<string\> Access token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 access_token 获得。
+- `param.IdToken` \<string\> Access token 或 Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 id_token 获得。
+- `param.AccessToken` \<string\> Access token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 access_token 获得。
 
 #### 示例
 
@@ -284,7 +284,7 @@ var param = new ValidateTokenParams(){
   IdToken="IdToken",
   AccessToken="AccessToken"
 };
-var result = managementClient.ValidateToken(params);
+var result = authenticationClient.ValidateToken(params);
 ```
 
 #### 示例数据
@@ -357,7 +357,7 @@ Access token 验证非法时返回：
 
 ### 拼接登出 URL
 ```csharp
-managementClient.BuildLogoutUrl(LogoutParams options)
+authenticationClient.BuildLogoutUrl(LogoutParams options)
 ```
 > 拼接登出 URL。
 
@@ -375,7 +375,7 @@ managementClient.BuildLogoutUrl(LogoutParams options)
 var params = new LogoutParams(){
   RedirectUri = "https://authing.cn"
 };
-var url = await managementClient.BuildLogoutUrl(params);
+var url = await authenticationClient.BuildLogoutUrl(params);
 ```
 
 使用 OIDC 协议标准链接退出登录，需要传入当前用户的 **Id token**，且登出回调地址**必须与控制台配置的一致**：
@@ -386,12 +386,12 @@ var url = await managementClient.BuildLogoutUrl(params);
   IdToken = "待退出用户的 idToken"
   Expert = true
 };
-var url = await managementClient.BuildLogoutUrl(params);
+var url = await authenticationClient.BuildLogoutUrl(params);
 ```
 
 ### Client Credentials 模式获取 Access Token
 ```csharp
-managementClient.GetAccessTokenByClientCredentials(string scope  GetAccessTokenByClientCredentialsoptions options) 
+authenticationClient.GetAccessTokenByClientCredentials(string scope  GetAccessTokenByClientCredentialsoptions options) 
 ```
 > 使用[编程访问账号](/guides/authorization/m2m-authz.html#m2m-授权)获取具备权限的 Access Token。
 
@@ -411,7 +411,7 @@ managementClient.GetAccessTokenByClientCredentials(string scope  GetAccessTokenB
       SecretKey = "secretKey",
     };
 
-var result = await managementClient.getAccessTokenByClientCredentials("testr2", clientCredentialInput);
+var result = await authenticationClient.getAccessTokenByClientCredentials("testr2", clientCredentialInput);
 ```
 
 #### 示例数据
@@ -431,7 +431,7 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 
 ### 初始化
 
-初始化 managementClient 时的参数：
+初始化 authenticationClient 时的参数：
 
 - `appId` \<string\> 应用 ID，必填。
 - `secret` \<string\> 应用密钥，必填。
@@ -446,12 +446,12 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 
 ```csharp
 // 使用 AppId 和 appHost 进行初始化
-var authentication = new managementClient("APP_ID", "APP_HOST");
+var authentication = new authenticationClient("APP_ID", "APP_HOST");
 ```
 
 ### 拼接 OIDC、OAuth 2.0、SAML、CAS 协议授权链接
 ```csharp
-managementClient.BuildAuthorizeUrl(IProtocolInterface options)
+authenticationClient.BuildAuthorizeUrl(IProtocolInterface options)
 ```
 > 生成 OAuth 2.0 协议的用户登录链接
 
@@ -472,7 +472,7 @@ var iOauthParams = new IProtocolInterface(){
   ResponseType = "token",
   RedirectUri = "https://authing.cn"
 };
-var result = await managementClient.BuildAuthorizeUrl(iOauthParams);
+var result = await authenticationClient.BuildAuthorizeUrl(iOauthParams);
 ```
 
 #### 示例数据
@@ -483,7 +483,7 @@ https://oidc1.authing.cn/oauth/auth?state=7400704296715694&scope=user&client_id=
 
 ### Code 换 Token
 ```csharp
-managementClient.GetAccessTokenByCode(string code)
+authenticationClient.GetAccessTokenByCode(string code)
 ```
 > 使用授权码 Code 获取用户的 Token 信息。
 
@@ -494,7 +494,7 @@ managementClient.GetAccessTokenByCode(string code)
 #### 示例
 
 ```csharp
-var result = await managementClient.GetAccessTokenByCode("授权码 code");
+var result = await authenticationClient.GetAccessTokenByCode("授权码 code");
 ```
 
 #### 示例数据
@@ -520,7 +520,7 @@ var result = await managementClient.GetAccessTokenByCode("授权码 code");
 
 ### Token 换用户信息
 ```csharp
-managementClient.GetUserInfoByAccessToken(string token)
+authenticationClient.GetUserInfoByAccessToken(string token)
 ```
 > 使用 Access token 获取用户信息。
 
@@ -531,7 +531,7 @@ managementClient.GetUserInfoByAccessToken(string token)
 #### 示例
 
 ```csharp
-var result = await managementClient.GetUserInfoByAccessToken("Access token");
+var result = await authenticationClient.GetUserInfoByAccessToken("Access token");
 ```
 
 #### 示例数据
@@ -599,18 +599,18 @@ var result = await managementClient.GetUserInfoByAccessToken("Access token");
 
 ### 刷新 Access Token
 ```csharp
-managementClient.GetNewAccessTokenByRefreshToken(string refreshToken)
+authenticationClient.GetNewAccessTokenByRefreshToken(string refreshToken)
 ```
 > 使用 Refresh token 获取新的 Access token。
 
 #### 参数
 
-- `refreshToken` \<string\> Refresh token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。
+- `refreshToken` \<string\> Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。
 
 #### 示例
 
 ```csharp
-var result = await managementClient.GetNewAccessTokenByRefreshToken("Access token");
+var result = await authenticationClient.GetNewAccessTokenByRefreshToken("Access token");
 ```
 
 #### 示例数据
@@ -627,18 +627,18 @@ var result = await managementClient.GetNewAccessTokenByRefreshToken("Access toke
 
 ### 检查 Access Token
 ```csharp
-managementClient.IntrospectToken(string token)
+authenticationClient.IntrospectToken(string token)
 ```
 > 检查 Access token 或 Refresh token 的状态。
 
 #### 参数
 
-- `token` \<string\> Access token 或 Refresh token，可以从 managementClient.getAccessTokenByCode 方法的返回值中的 access_token、refresh_token 获得。
+- `token` \<string\> Access token 或 Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 access_token、refresh_token 获得。
 
 #### 示例
 
 ```csharp
-var result = await managementClient.introspectToken("accessToken or refreshToken");
+var result = await authenticationClient.introspectToken("accessToken or refreshToken");
 ```
 
 #### 示例数据
@@ -675,7 +675,7 @@ Token 不合法时返回：
 
 ### 初始化
 
-初始化 managementClient 时的参数：
+初始化 authenticationClient 时的参数：
 
 - `appId` \<string\> 应用 ID，必填。
 - `appHost` \<string\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 "/"。
@@ -684,7 +684,7 @@ Token 不合法时返回：
 
 ### 生成 SAML2 协议的用户登录链接
 ```csharp
-managementClient.BuildAuthorizeUrl()
+authenticationClient.BuildAuthorizeUrl()
 ```
 > 生成 SAML2 协议的用户登录链接
 
@@ -696,7 +696,7 @@ managementClient.BuildAuthorizeUrl()
 
 ```csharp
 // 拼接 SAML2 登录链接
-var samlstring = await managementClient.BuildAuthorizeUrl();
+var samlstring = await authenticationClient.BuildAuthorizeUrl();
 ```
 
 #### 示例数据
@@ -711,7 +711,7 @@ CAS 是 Central Authentication Service 的缩写，中央认证服务，一种�
 
 ### 初始化
 
-初始化 managementClient 时的参数：
+初始化 authenticationClient 时的参数：
 
 - `appId` \<string\> 应用 ID，必填。
 - `appHost` \<string\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 "/"。
@@ -722,7 +722,7 @@ CAS 是 Central Authentication Service 的缩写，中央认证服务，一种�
 
 ### 生成 CAS 协议的用户登录链接
 ```csharp
-managementClient.BuildAuthorizeUrl(options)
+authenticationClient.BuildAuthorizeUrl(options)
 ```
 > 生成 CAS 协议的用户登录链接
 
@@ -737,7 +737,7 @@ managementClient.BuildAuthorizeUrl(options)
 ICasParams iCasParams = new ICasParams(){
   Service = "service txt",  
 };
-var result = await managementClient.BuildAuthorizeUrl(iCasParams);
+var result = await authenticationClient.BuildAuthorizeUrl(iCasParams);
 ```
 
 #### 示例数据
@@ -749,7 +749,7 @@ https://oidc1.authing.cn/cas-idp/5f17a529f64fb009b794a2ff/login?service=https://
 
 ### 生成 CAS 协议的用户登录链接
 ```csharp
-managementClient.BuildOauthAuthorizeUrl(Oauthoptions options)
+authenticationClient.BuildOauthAuthorizeUrl(Oauthoptions options)
 ```
 > 生成 CAS 协议的用户登录链接
 #### 参数
@@ -768,7 +768,7 @@ managementClient.BuildOauthAuthorizeUrl(Oauthoptions options)
 var iCasParams = new Oauthoptions(){
   AppId = "app id",  
 };
-var rersult = await managementClient.BuildOauthAuthorizeUrl(iCasParams);
+var rersult = await authenticationClient.BuildOauthAuthorizeUrl(iCasParams);
 ```
 
 
@@ -776,7 +776,7 @@ var rersult = await managementClient.BuildOauthAuthorizeUrl(iCasParams);
 
 ### 撤回 Access token 或 Refresh token
 ```csharp
-managementClient.RevokeToken(string token)
+authenticationClient.RevokeToken(string token)
 ```
 
 #### 参数
@@ -786,13 +786,13 @@ managementClient.RevokeToken(string token)
 #### 示例
 
 ```csharp
-var result = await managementClient.BuildAuthorizeUrl("Access token or Refresh token");
+var result = await authenticationClient.BuildAuthorizeUrl("Access token or Refresh token");
 ```
 
 
 ### 撤回 Access token 或 Refresh token
 ```csharp
-managementClient.ValidateTicketV1(string ticket, string service)
+authenticationClient.ValidateTicketV1(string ticket, string service)
 ```
 #### 参数
 
@@ -802,12 +802,12 @@ managementClient.ValidateTicketV1(string ticket, string service)
 #### 示例
 
 ```csharp
-var result = await managementClient.ValidateTicketV1("ticket","service");
+var result = await authenticationClient.ValidateTicketV1("ticket","service");
 ```
 
 ### 获取合法票据
 ```csharp
-managementClient.GetCodeChallengeDigest(CodeChallengeDigestoptions options)
+authenticationClient.GetCodeChallengeDigest(CodeChallengeDigestoptions options)
 ```
 #### 参数
 
@@ -821,12 +821,12 @@ managementClient.GetCodeChallengeDigest(CodeChallengeDigestoptions options)
 var options = new CodeChallengeDigestoptions(){
   CodeChallenge = "CodeChallenge"
 }
-var result = await managementClient.GetCodeChallengeDigest(options);
+var result = await authenticationClient.GetCodeChallengeDigest(options);
 ```
 
 ### 生成合法票据
 ```csharp
-managementClient.GenerateCodeChallenge()
+authenticationClient.GenerateCodeChallenge()
 ```
 #### 参数
 
@@ -835,12 +835,12 @@ managementClient.GenerateCodeChallenge()
 #### 示例
 
 ```csharp
-var result = await managementClient.GenerateCodeChallenge();
+var result = await authenticationClient.GenerateCodeChallenge();
 ```
 
 ### 通过远端服务验证票据合法性
 ```csharp
-managementClient.ValidateTicketV2(string ticket, string service,ValidateTicketFormat validateTicketFormat)
+authenticationClient.ValidateTicketV2(string ticket, string service,ValidateTicketFormat validateTicketFormat)
 ```
 #### 参数
 
@@ -850,7 +850,7 @@ managementClient.ValidateTicketV2(string ticket, string service,ValidateTicketFo
 #### 示例
 
 ```csharp
-var result = await managementClient.ValidateTicketV2("ticket","service");
+var result = await authenticationClient.ValidateTicketV2("ticket","service");
 ```
 
 

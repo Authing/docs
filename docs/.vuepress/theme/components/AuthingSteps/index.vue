@@ -112,8 +112,8 @@ export default {
     &.current {
       .item-dot {
         color: #fff;
-        border-color: #396aff;
-        background-color: #396aff;
+        border-color: $accentColor;
+        background-color: $accentColor;
       }
       .item-title {
         color: rgba(0, 0, 0, 0.85);
@@ -125,13 +125,13 @@ export default {
     }
     &.done {
       .item-dot {
-        border-color: #396aff;
+        border-color: $accentColor;
       }
     }
     .step-done {
       width: 14px;
       height: 7px;
-      border: 2px solid #396aff;
+      border: 2px solid $accentColor;
       border-left-color: transparent;
       border-bottom-color: transparent;
       transform: translateY(-4px) rotate(135deg);

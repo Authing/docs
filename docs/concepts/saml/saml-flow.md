@@ -7,6 +7,8 @@ tags:
 ---
 # 理解 SAML 流程
 
+<LastUpdated/>
+
 本文为读者讲述 SAML 中，SP、IdP、浏览器三个实体之间数据交互的流程。
 
 ## SAML 协议中涉及到的主体

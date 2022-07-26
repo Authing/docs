@@ -1,5 +1,7 @@
 # Logging Overview
 
+<LastUpdated/>
+
 Safety and legality is important for a company or organization, they are the basics for them to operating properly. It's not easy to realize both safety and legality, Authing provides operation autit and logging to help company and organization to run properly.
 
 ## Log Category

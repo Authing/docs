@@ -42,7 +42,7 @@
 
 
 小程序扫码登录网站是 {{$localeConfig.brandName}}  的一个开创性的设计，在 {{$localeConfig.brandName}}  中开启扫描小登录二维码登录后可以获得微信官方的实名用户信息， 用户一键授权即可以真实号码完成注册或者登录，为开发者建立以手机号码为基础的账号体系。
-详情请[阅读此文档](/guides/wechat-ecosystem/wechat-miniprogram-qrcode/README.md)。
+详情请[阅读此文档](/guides/connections/social/wechat-miniprogram-qrconnect/README.md)。
 
 <img src="../wechat-ecosystem/images/wxapp-scaning-demo.gif" style="display:block;margin: 15px auto;">
 

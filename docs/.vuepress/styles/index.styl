@@ -1,12 +1,19 @@
 @require './plugin-container.styl'
+@require '~vuepress-plugin-tabs/dist/themes/default.styl'
 
 html, body
   font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   color #333
   min-width 375px
 
+.tooltip
+  z-index 999
+
 .theme-default-content
   font-size 16px
+  color #4e5969
+  blockquote, blockquote p
+    color #86909C
   p, ul, ol
     line-height 2
   ul li
@@ -21,9 +28,15 @@ html, body
     border-bottom none
   h3
     font-size: 18px
+  h1, h2, h3, h4, h4, h6
+    color #1d2129
   img
     border: 1px solid #eee;
     border-radius: 4px;
+  table
+    thead
+      th
+        text-align: left
 
 a
   font-weight normal
@@ -119,7 +132,7 @@ video
       a
         color rgba(0, 0, 0, 0.65)
       &.active
-        background-color #396aff
+        background-color #215AE5
         a
           color #fff
       &.disabled
@@ -143,3 +156,20 @@ video
 .md-table-padding
   display inline
   float right
+
+.header-anchor
+  text-decoration: none !important
+.authing-last-updated+h2
+  padding-top: 3.1rem !important
+html
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+// tabs 样式
+.tabs-component-tab
+  margin-bottom: 0 !important;
+  a
+    &:hover
+      text-decoration: none !important;
+th, td
+  min-width: 50px

@@ -1,10 +1,14 @@
 <template>
+  <p v-if="!link && type === 'bread'">
+    {{ item.text }}
+  </p>
   <RouterLink
-    v-if="isInternal"
+    v-else-if="isInternal"
     class="nav-link"
     :to="link"
     :exact="exact"
     @focusout.native="focusoutAction"
+    @click.native="onRouter"
   >
     <slot>
       {{ item.text }}
@@ -35,11 +39,14 @@ export default {
     item: {
       required: true,
     },
+    type: {
+      default: ''
+    }
   },
 
   computed: {
     link() {
-      return ensureExt(this.item.link)
+      return this.item.link ? ensureExt(this.item.link) : ''
     },
 
     exact() {
@@ -91,6 +98,11 @@ export default {
     focusoutAction() {
       this.$emit('focusout')
     },
+    onRouter() {
+      setTimeout(() => {
+        this.$eventBus.$emit('onChangeIndex')
+      }, 200);
+    }
   },
 }
 </script>

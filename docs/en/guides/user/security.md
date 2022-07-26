@@ -1,5 +1,7 @@
 # Enhance Account Security
 
+<LastUpdated/>
+
 The security of user accounts is very important. You can enhance the security of user accounts in the following ways.
 
 ## Configure Stronger Password

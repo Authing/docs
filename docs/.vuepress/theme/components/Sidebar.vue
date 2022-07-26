@@ -9,12 +9,18 @@
     <template v-else-if="$frontmatter.sidebarType === 'page'">
       <PageSidebar />
     </template>
-    <template v-else>
+    <template v-else-if="!$frontmatter.noSidebar">
       <div class="current-nav-text" v-if="currentNavText">
         {{ currentNavText }}
       </div>
 
-      <SidebarLinks :depth="0" :items="items" />
+      <SidebarSearch
+        :placeholder="$themeLocaleConfig.search"
+        class="sidebar-search"
+        :items="items"
+      />
+
+      <SidebarLinks :depth="0" :items="items" :check-index="dataIndex" />
     </template>
     <slot name="bottom" />
   </aside>
@@ -26,22 +32,38 @@ import NavLinks from "@theme/components/NavLinks.vue";
 import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
 import GoOldVersion from "@theme/components/GoOldVersion.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
+import SidebarSearch from "@theme/components/SidebarSearch.vue";
 
 export default {
   name: "Sidebar",
 
-  components: { SidebarLinks, NavLinks, GoOldVersion, PageSidebar },
+  components: {
+    SidebarLinks,
+    NavLinks,
+    GoOldVersion,
+    PageSidebar,
+    SidebarSearch
+  },
 
   props: ["items"],
 
+  data() {
+    return {
+      dataIndex: ''
+    }
+  },
+
   computed: {
     currentNavText() {
+      const path = this.$route.path;
+      if (path.startsWith("/reference-new")) {
+        return "";
+      }
+
       const navLinks = this.$themeLocaleConfig.nav;
       if (!navLinks) {
         return "";
       }
-
-      const path = this.$route.path;
 
       const currNav = navLinks.find(item => path.startsWith(item.link));
 
@@ -56,7 +78,6 @@ export default {
       return getLanguageNavLinks(this);
     }
   },
-
   mounted() {
     const sidebar = this.$refs.sidebarRef;
     const activeItem = sidebar && sidebar.querySelector(".active");
@@ -64,11 +85,25 @@ export default {
     if (sidebar && activeItem) {
       sidebar.scrollTop = activeItem.getBoundingClientRect().top - 200;
     }
-  },
 
+    if (activeItem) {
+      let parentNode = activeItem.parentNode
+      while(parentNode) {
+        if (parentNode.getAttribute('data-index')) {
+          this.dataIndex = parentNode.getAttribute('data-index')
+          parentNode = null
+        } else {
+          parentNode = parentNode.parentNode
+        }
+      }
+    }
+    this.$eventBus.$on('onChangeIndex', (index) => {
+      this.dataIndex = index || ''
+    })
+  },
   methods: {
     getUserNavLinks,
-    getLanguageNavLinks
+    getLanguageNavLinks,
   }
 };
 </script>
@@ -80,7 +115,18 @@ export default {
   top calc(3.6rem + 36px)
   align-self flex-start
   width 250px
-
+  overflow-y unset
+  .sidebar-search
+    width: 94%
+    .suggestions
+      li
+        padding: 16px;
+  .current-nav-text
+    margin-bottom: 16px
+    font-size: 20px
+    font-weight: 500
+    color: #1D2129
+    line-height: 32px
 
   .old-version
     display none
@@ -89,6 +135,7 @@ export default {
     padding 0
 
   ul
+    line-height 1
     margin 0
     list-style-type none
 
@@ -102,19 +149,26 @@ export default {
 
     .nav-item, .repo-link
       display block
-      line-height 1.25rem
+      line-height 26px
       font-size 14px
       padding 0.5rem 0 0.5rem 1.5rem
 
   & > .sidebar-links
-    margin-top 1rem
+    margin-top: 16px
+    margin-left -8px
+    overflow-y: scroll
+    max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
 
     & > li > a.sidebar-link
-      font-size 16px
-      line-height 1.7
-
-    & > li:not(:first-child)
-      margin-top .75rem
+      // font-size 14px
+  .depth-0 > ul > li
+    & > .sidebar-group > .sidebar-heading, & > .sidebar-link
+      // font-size: 14px
+      line-height 22px
+      padding 10px 1.5rem
+  & > .sidebar-links > li > a {
+    padding-left 1.5rem
+  }
 
 @media (max-width: $MQMobile)
   .sidebar
@@ -127,6 +181,10 @@ export default {
     transform translateX(100%)
     border-right none
     border-left 1px solid #eee
+
+    .sidebar-search
+      margin-left 1.5rem
+      width 82%
 
     .nav-links
       display block
@@ -143,4 +201,10 @@ export default {
 
     .old-version
       margin-top 1rem
+@media (max-width: $MQMobile)
+  .sidebar
+    overflow-y auto
+  .current-nav-text
+    padding-bottom 0 !important
+    margin-bottom 0.67rem !important
 </style>

@@ -2,7 +2,25 @@
 
 <LastUpdated/>
 
-## build login URL
+## OIDC
+
+OpenID Connect is abbreviated as OIDC, an extension of OAuth 2.0, which mainly adds a semantic user information field.
+
+### initialization
+
+`OIDCClient` will automatically obtain the default value of the console. If you need to customize parameters such as `scope` and `redirect_uri`, you can pass in a custom `AuthReuest`.
+
+**example**
+
+```swift
+let authRequest = AuthRequest()
+authRequest.scope = "openid"
+OIDCClient(authRequest).buildAuthorizeUrl() { url in }
+```
+<br>
+
+
+### build login URL
 
 Use this API to generate login url, then pass this url to Webview
 
@@ -25,7 +43,7 @@ OIDCClient().buildAuthorizeUrl() { url in
 **set scope**
 
 use this API to set OIDC scope.
-Default scope is: openid profile email phone username address offline_access role extended_fields
+Default `scope` is: openid profile email phone username address offline_access role extended_fields
 
 ```swift
 let authRequest = AuthRequest()
@@ -35,7 +53,7 @@ OIDCClient(authRequest).buildAuthorizeUrl() { url in }
 
 <br>
 
-## get token by auth code
+### get token by auth code
 
 This API returns token(s) by auth code. Note that in order to return *refresh token* make sure the scope includes *offline_access*, which is included by default.
 
@@ -72,9 +90,130 @@ func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigatio
 
 <br>
 
-## OIDC Use the username to login
 
-OIDC Use the username to login，The returned UserInfo contains the Access token, ID token, and Refresh token.
+### Use email and password registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
+
+```swift
+func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `email` email address
+* `password` password
+
+**Example**
+
+```swift
+OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Use email and verification code registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique, you need to call [sendEmail](#Send-email) interface to send a reset password message (the scene value `VERIFY_CODE`).
+
+```swift
+func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `email` email address
+* `code` code
+
+**Example**
+
+```swift
+OIDCClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Register using username
+
+Use the username to register, the username is case sensitive and the only user pool.
+
+```swift
+func registerByUserName(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `username` username
+* `password` password
+
+**Example**
+
+```swift
+OIDCClient().registerByUserName(username: "username", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2026` The user name already exists
+
+<br>
+
+### Use mobile phone number registration
+
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send-verification-code) method sends SMS verification code.
+
+```swift
+func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**Parameter**
+
+* `phone` The phone number
+* `code` SMS verification code
+* `password` initial password, it can be null
+
+**Example**
+
+```swift
+OIDCClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
+
+<br>
+
+### Use the username to login
+
+Use the username to login，The returned `UserInfo` contains the `Access token`, `ID token`, and `Refresh token`.
 
 ```swift
 public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -97,9 +236,9 @@ OIDCClient().loginByAccount(account: account, password: password) { code,  messa
 
 <br>
 
-## OIDC Login by phone code 
+### Login by phone code 
 
-login by phone number and a verification code. Must call [sendSms](#send-sms-code) method to get an SMS verification code before calling this method.
+login by phone number and a verification code. Must call [sendSms](#Send-verification-code) method to get an SMS verification code before calling this method.
 
 ```swift
 public func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -122,7 +261,7 @@ OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInf
 
 <br>
 
-## OIDC Login by email code
+### Login by email code
 
 ```swift
 public func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
@@ -145,7 +284,30 @@ OIDCClient().loginByEmail(phone: phone, code: code) { code, message, userInfo in
 
 <br>
 
-## Get user info
+
+### login by Wechat auth code
+
+```swift
+public func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**params**
+
+* *code* auth code from Wechat
+
+**example**
+
+```swift
+OIDCClient().loginByWechat(authCode) { code, message, userInfo in
+    if (code == 200) {
+        // userInfo
+    }
+}
+```
+
+<br>
+
+### Get user info
 
 Get detailed user info by access token. The returned UserInfo object is the same as the UserInfo object in parameter.
 
@@ -169,7 +331,7 @@ OIDCClient().getUserInfoByAccessToken(userInfo: userInfo) { code, message, data 
 
 <br>
 
-## Obtain new access token and id token by refresh token
+### Get new access token and id token by refresh token
 
 the valid duration of an access token is usually short. After it expires, instead of pop up login dialog, which is not very user friendly, we should use refresh token to get new access token. Only show login page when refresh token is expired.
 

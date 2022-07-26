@@ -80,8 +80,10 @@ export class AppComponent {
 #### 使用 CDN 引入
 
 ```html
-<script src="https://cdn.authing.co/packages/ng-ui-components/2.4.45/authing-ng-ui-components.umd.min.js"></script>
+<script src="https://cdn.authing.co/packages/ng-ui-components/{LATEST_VERSION}/authing-ng-ui-components.umd.min.js"></script>
 ```
+
+注意检查最新版本号，格式如：`3.1.21`。
 
 #### 在 Script 代码块中初始化
 

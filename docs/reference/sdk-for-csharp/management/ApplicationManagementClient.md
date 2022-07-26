@@ -6,7 +6,9 @@ meta:
 
 
 
-## 管理应用
+# 管理应用
+
+<LastUpdated/>
 
 ```csharp
 managementClient.Applications.Create(string name, string identifier, string redirectUris, string logo = null)

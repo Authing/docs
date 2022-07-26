@@ -10,6 +10,8 @@ meta:
 
 # 了解 JWT Token 释义及使用
 
+<LastUpdated/>
+
 了解在 {{$localeConfig.brandName}} 系统中如何验证 token:
 
 ::: page-ref /guides/faqs/how-to-validate-user-token.md
