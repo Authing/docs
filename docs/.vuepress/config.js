@@ -152,6 +152,11 @@ module.exports = {
             link: "/tenant/",
             text: "多租户（内测版）",
             hidden: true
+          },
+          {
+            link: "/console-using/",
+            text: "控制台文档",
+            hidden: true
           }
         ],
         sidebar: sidebar.zhCnNavBar,

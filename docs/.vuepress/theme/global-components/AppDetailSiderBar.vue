@@ -46,6 +46,7 @@ export default {
     font-weight: 500;
     font-size: 24px;
     color: #1d2129;
+    margin-top: 0;
     margin-bottom: 8px;
   }
   a {

@@ -204,16 +204,6 @@ export default {
       setCookie(k, v);
     });
     this.registerMessage();
-    if (this.$route.query.appId) {
-      this.$nextTick(() => {
-        this.findDom("pre[class*='language-']", "AUTHING_APP_ID");
-      });
-    }
-    if (this.$route.query.userPoolId) {
-      this.$nextTick(() => {
-        this.findDom("pre[class*='language-']", "AUTHING_USERPOOL_ID");
-      });
-    }
     if (this.$route.query.isInConsoleAppDetail) {
       this.$themeConfig.isInConsoleAppDetail = true;
     }
@@ -224,14 +214,10 @@ export default {
   },
 
   methods: {
-    findDom(domClass, rgExp) {
+    findDom(domClass, rgExp, params) {
       document.querySelectorAll(domClass).forEach(item => {
         if (item.innerText.indexOf(rgExp) > -1) {
-          const res = this.replaceString(
-            item.innerHTML,
-            rgExp,
-            this.$route.query.appId
-          );
+          const res = this.replaceString(item.innerHTML, rgExp, params);
           item.innerHTML = res;
         }
       });
@@ -250,51 +236,109 @@ export default {
         let _this = this;
         window.addEventListener("message", evt => {
           try {
-            const { event } = JSON.parse(evt.data);
+            const { event, data } = JSON.parse(evt.data);
             if (event.source === "authing-fe-console") {
               // 1. 隐藏头部和顶部区域
               _this.hiddenModule();
               _this.isInConsole = event.eventType;
-
-              // if (event.eventType === 'console-protocol-common') {
-
-              // } else if (event.eventType === "console-protocol-asa") {
-
-              // }
             }
+            // 这里判断是在控制台快速开始文档，要操作的步骤
             if (event.isQuickDocs) {
+              console.log(11123);
+              if (data.appId) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_APP_ID",
+                    data.appId
+                  );
+                });
+              }
+              if (data.userPoolId) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_USERPOOL_ID",
+                    data.userPoolId
+                  );
+                });
+              }
+              if (data.secret) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_SECRET",
+                    data.secret
+                  );
+                });
+              }
+              if (data.domain) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_DOMAIN",
+                    data.domain
+                  );
+                });
+              }
+              if (data.redirectUri) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_REDIRECTURI",
+                    data.redirectUri
+                  );
+                });
+              }
+              if (data.logoutRedirectUris) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_LOGOUTREDIRECTURI",
+                    data.logoutRedirectUris
+                  );
+                });
+              }
+              if (data.scope) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_SCOPE",
+                    data.scope
+                  );
+                });
+              }
+              if (data.userPoolSecret) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "AUTHING_USERPOOL_SECRET",
+                    data.userPoolSecret
+                  );
+                });
+              }
               _this.quickDocsStyle();
             }
           } catch (e) {}
         });
       }
     },
+    // 控制台快速开始文档样式调整
     quickDocsStyle() {
-      let pageNav = document.querySelector("[class*='page-nav']");
-      let feedBack = document.querySelector("[class*='feedback']");
-      let breadcrumbContainer = document.querySelector(
-        "[class*='breadcrumb-container']"
-      );
-      let lastUpdated = document.querySelector(
-        "[class*='authing-last-updated']"
-      );
       let mainContent = document.querySelector("[class*='main-content']");
       let lauoutContent = document.querySelector("[class*='page']");
       let breadcrumbContent = document.querySelector(
         "[class*='breadcrumb-content-container']"
       );
-      let themeDefault = document.querySelector(
-        "[class*='theme-default-content"
-      );
-
-      pageNav.style = "display:none;";
-      feedBack.style = "display:none;";
-      breadcrumbContainer.style = "display:none;";
-      lastUpdated.style = "display:none;";
-      mainContent.style = "margin-top: 0;";
-      lauoutContent.style = "padding: 0;";
-      breadcrumbContent.style = "margin: 0;";
-      themeDefault.style = "margin-top: -3.5rem;";
+      if (mainContent) {
+        mainContent.style = "margin-top: 0";
+      }
+      if (lauoutContent) {
+        lauoutContent.style = "padding: 0";
+      }
+      if (breadcrumbContent) {
+        breadcrumbContent.style = "margin: 0 !important";
+      }
     },
     // 1. 移除模块
     hiddenModule() {
