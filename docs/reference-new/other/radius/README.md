@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/2.0.0/AuthingRadius-2.0.0.zip)
+## 步骤一：[下载 Authing Radius Agent](https://authing-public-cn.oss-cn-beijing.aliyuncs.com/public/AuthingRadius/AuthingRadius-2.0.0.zip)
 
 <br>
 
