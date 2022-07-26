@@ -22,7 +22,7 @@ Add to dependencies in build.gradle:
 implementation "com.authing:java-core:<LATEST_VERSION>"
 ```
 
-> You can check the latest version at [https://search.maven.org/artifact/com.authing/java-core](https://search.maven.org/artifact/com.authing/java-core) .
+> You can check the latest version at [https://search.maven.org/artifact/cn.authing/java-core](https://search.maven.org/artifact/cn.authing/java-core) .
 
 ### maven project
 

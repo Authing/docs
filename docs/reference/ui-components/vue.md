@@ -51,10 +51,12 @@ $ npm install @authing/vue-ui-components --save
 #### 使用 CDN 引入
 
 ```html
-<script src="https://cdn.authing.co/packages/vue-ui-components/2.4.45/index.min.js"></script>
+<script src="https://cdn.authing.co/packages/vue-ui-components/{LATEST_VERSION}/index.min.js"></script>
 
-<link href="https://cdn.authing.co/packages/vue-ui-components/2.4.45/index.min.css" rel="stylesheet"></link>
+<link href="https://cdn.authing.co/packages/vue-ui-components/{LATEST_VERSION}/index.min.css" rel="stylesheet"></link>
 ```
+
+注意检查最新版本号，格式如：`3.1.21`。
 
 #### 在 Script 代码块中初始化
 
@@ -220,9 +222,9 @@ authClient.getCurrentUser().then((user) => console.log(user));
 ## 属性列表
 
 | 属性名称       | 描述                                                                                       | 类型    | 取值描述                             |
-| -------------- | :----------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
+| -------------- | :----------------------------------------------------------------------------------------- | ------- | ------------------------------------ | --- |
 | appId          | 你的应用 ID                                                                                | String  |                                      |
-| mode           | Guard 展示模式                                                                             | String  | modal：弹窗模式<br> normal：全屏模式 |  |
+| mode           | Guard 展示模式                                                                             | String  | modal：弹窗模式<br> normal：全屏模式 |     |
 | autoRegister   | 如果为 true，登录时，用户不存在则自动注册账号                                              | boolean | 默认为 false                         |
 | isSSO          | 是否是单点登录                                                                             | boolean | 默认为 false                         |
 | clickCloseable | Modal 模式时是否隐藏登录框右上角的关闭按钮。<br>如果隐藏，用户将不能通过点击按钮关闭登录框 | boolean | 默认为 true                          |

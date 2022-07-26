@@ -14,12 +14,11 @@ meta:
 
 `ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。此模块适合在后端或者**可信任**的前端环境下使用。
 
-
 ## GitHub 下载地址
 
-| 条目     | 说明                                        |
-| -------- | ------------------------------------------- |
-| 支持版本 | 所有版本                                    |
+| 条目     | 说明                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| 支持版本 | 所有版本                                                                                               |
 | 仓库地址 | [https://github.com/Authing/authing-api-client-net](https://github.com/Authing/authing-api-client-net) |
 
 ## 安装
@@ -28,12 +27,14 @@ meta:
 
 ```sh
 # 包管理器
-Install-Package Authing.ApiClient -Version 4.2.2
+Install-Package Authing.ApiClient -Version {LATEST_VERSION}
 # .Net Cli
-dotnet add package Authing.ApiClient --version 4.2.2
-# packagereference 
-<PackageReference Include="Authing.ApiClient" Version="4.2.2" />
+dotnet add package Authing.ApiClient --version {LATEST_VERSION}
+# packagereference
+<PackageReference Include="Authing.ApiClient" Version="{LATEST_VERSION}" />
 ```
+
+注意检查最新版本号，格式如：`4.2.4.12`。
 
 其他方式，请参考 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)
 

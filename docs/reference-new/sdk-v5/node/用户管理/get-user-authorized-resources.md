@@ -9,15 +9,16 @@
 
 <LastUpdated />
 
-获取用户被授权的所有资源，用户被授权的资源是用户自身被授予、通过分组继承、通过角色继承、通过组织机构继承的集合
+通过用户 ID，获取用户被授权的所有资源，可以选择指定用户 ID 类型等，用户被授权的资源是用户自身被授予、通过分组继承、通过角色继承、通过组织机构继承的集合。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| resourceType | string  | 否 |  | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+| resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` |  |
 
 
 ## 示例代码
@@ -36,6 +37,8 @@ const managementClient = new ManagementClient({
   const result = await managementClient.getUserAuthorizedResources({
 
     userId: '6229ffaxxxxxxxxcade3e3d9',
+
+    userIdType: 'user_id',
 
     namespace: 'default',
 

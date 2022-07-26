@@ -7,27 +7,29 @@
 生成登录 URL，传给 WebView 加载
 
 ```java
-public static String buildAuthorizeUrl(Config config, AuthRequest authRequest)
+public String buildAuthorizeUrl(Callback<String> callback)
 ```
 
 **参数**
-* `config` 应用配置，可以通过 Authing.getPublicConfig 获取
-* `authRequest` 请求参数
+
+* `callback` 回调
 
 **示例**
 
 ```java
 AuthRequest authRequest = new AuthRequest();
 
-Authing.getPublicConfig(config -> {
-    String url = OIDCClient.buildAuthorizeUrl(config, authRequest);
-    myWebView.loadUrl(url);
+new OIDCClient(authRequest).buildAuthorizeUrl(new Callback<String>() {
+  	@Override
+  	public void call(boolean ok, String data) {
+    	myWebView.loadUrl(data);
+  	}
 });
 ```
 
 **设置 scope 参数**
 
-默认值为 openid profile email phone username address offline_access role extended_fields
+默认值为 openid profile email phone username address offline_access roles extended_fields
 
 ```java
 authRequest.setScope(String scope)
@@ -43,12 +45,12 @@ authRequest.setRedirectURL(String redirectURL)
 
 <br>
 
-## code 换 token
+## Code 换 Token
 
 通过 OIDC 授权码认证，返回的 UserInfo 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token
 
 ```java
-public static void authByCode(String code, AuthRequest authRequest, @NotNull AuthCallback<UserInfo> callback)
+public void authByCode(String code, AuthRequest authRequest, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
@@ -67,7 +69,7 @@ myWebView.setWebViewClient(new WebViewClient() {
             try {
                 String authCode = Util.getAuthCode(url);
                 if (authCode != null) {
-                    OIDCClient.authByCode(authCode, authRequest, (code, message, userInfo) -> {
+                    new OIDCClient().authByCode(authCode, authRequest, (code, message, userInfo) -> {
                         // got user info
                     });
                 }
@@ -88,7 +90,7 @@ myWebView.setWebViewClient(new WebViewClient() {
 通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
 
 ```java
-public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
+public void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
@@ -99,7 +101,7 @@ public static void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCall
 **示例**
 
 ```java
-OIDCClient.getUserInfoByAccessToken(userInfo, (code, message, data)->{
+new OIDCClient().getUserInfoByAccessToken(userInfo, (code, message, data)->{
     if (code == 200) {
         // data 为更新了用户信息的 UserInfo 对象，和参数是同一个对象
     }
@@ -108,12 +110,12 @@ OIDCClient.getUserInfoByAccessToken(userInfo, (code, message, data)->{
 
 <br>
 
-## 通过 refresh token 获取新的 access token 和 id token
+## 通过 Refresh Token 获取新的 Access Token 和 ID Token
 
 access token 的有效期通常较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
 
 ```java
-public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull AuthCallback<UserInfo> callback)
+public void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
@@ -124,7 +126,7 @@ public static void getNewAccessTokenByRefreshToken(String refreshToken, @NotNull
 **示例**
 
 ```java
-OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
+new OIDCClient().getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
     if (code == 200) {
         Log.d(TAG, "new at:" + data.getAccessToken());
         Log.d(TAG, "new id token:" + data.getIdToken());
@@ -136,3 +138,184 @@ OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
 >注意，每次调用会得到新的 refresh token
 
 <br>
+
+## 获取 Access Token、ID Token 和 Refresh Token
+
+### 邮箱注册
+
+使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
+
+```java
+public void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `email` 邮箱
+* `password` 明文密码
+
+**示例**
+
+```java
+new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2003` 非法邮箱地址
+* `2026` 邮箱已注册
+
+<br>
+
+### 邮箱验证码注册
+
+使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮箱](./authentication/#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+
+```java
+public void registerByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `email` 邮箱
+* `vCode` 验证码
+
+**示例**
+
+```java
+new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2003` 非法邮箱地址
+* `2026` 邮箱已注册
+
+<br>
+
+### 短信验证码注册
+
+通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./authentication/#发送短信验证码) 接口以获取短信验证码
+
+```java
+public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phone` 手机号
+* `code` 短信验证码
+* `password` 明文密码，如果没有可传 “” 或者 null
+
+**示例**
+
+```java
+new OIDCClient().registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2001` 验证码错误
+* `2026` 手机号已注册
+
+<br>
+
+### 帐号密码登录
+
+```java
+public void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `account` 可以是手机号 / 邮箱 / 用户名
+* `password` 明文密码
+
+**示例**
+
+```java
+new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2333` 帐号或密码错误
+
+<br>
+
+### 邮箱验证码登录
+
+通过邮箱验证码登录，需要先调用 [发送邮箱](./authentication/#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+
+```java
+public void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `email` 邮箱
+* `code` 验证码
+
+**示例**
+
+```java
+new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2001` 验证码不正确
+
+<br>
+
+### 短信验证码登录
+
+通过短信验证码登录，需要先调用 [发送短信验证码](./authentication/#发送短信验证码) 接口。
+
+```java
+public void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phone` 手机号
+* `code` 短信验证码
+
+**示例**
+
+```java
+new OIDCClient().loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2001` 短信验证码不正确
+
+<br>
+

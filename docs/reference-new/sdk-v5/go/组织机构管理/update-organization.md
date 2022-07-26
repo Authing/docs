@@ -9,19 +9,19 @@
 
 <LastUpdated />
 
-修改顶层组织机构
+通过组织 code，修改顶层组织机构，可以选择部门描述、新组织 code、组织名称等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| description | string | 否 |  | 部门描述。 示例值： `技术研发部门` |
-| openDepartmentId | string | 否 |  | 根节点自定义 ID。 示例值： `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | string[] | 否 |  | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]` |
-| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 |  | 多语言设置。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| organizationNewCode | string | 否 |  | 新组织 code。 示例值： `steamory2` |
-| organizationName | string | 否 |  | 组织名称。 示例值： `蒸汽记忆` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
+| description | string | 否 | - | 部门描述。  | `技术研发部门` |
+| openDepartmentId | string | 否 | - | 根节点自定义 ID。  | `60b49eb83fd80adb96f26e68` |
+| leaderUserIds | string[] | 否 | - | 部门负责人 ID。  | `["60b49eb83fd80adb96f26e68"]` |
+| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置。  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| organizationNewCode | string | 否 | - | 新组织 code。  | `steamory2` |
+| organizationName | string | 否 | - | 组织名称。  | `蒸汽记忆` |
 
 
 ## 示例代码

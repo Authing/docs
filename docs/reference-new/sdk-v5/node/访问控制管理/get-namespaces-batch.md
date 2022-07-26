@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-批量获取权限分组详情
+分别通过权限分组唯一标志符，批量获取权限分组详情。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| codeList | string[]  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔。  | `code1,code2` |
 
 
 ## 示例代码
@@ -33,7 +33,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.getNamespacesBatch({
 
-    codeList: 'code1,code2',
+    codeList: code1,code2,
  });
 })();
 ```

@@ -18,6 +18,8 @@ implementation "cn.authing:authing-java-sdk:<{final_version}>"
 </dependency>
 ```
 
+Github 仓库： <https://github.com/Authing/authing-java-sdk> （目前在 `v5.0` 分支）
+
 ## 初始化
 
 初始化 `ManagementClient` 需要使用 `accessKeyId` 和 `accessKeySecret` 参数:
