@@ -38,7 +38,7 @@
 
     <DropdownTransition>
       <SidebarLinks
-        v-show="open || !collapsable"
+        v-if="open || !collapsable"
         class="sidebar-group-items"
         :items="item.children"
         :sidebar-depth="item.sidebarDepth"
@@ -71,7 +71,11 @@ export default {
   computed: {
     active() {
       const active =  isActive(this.$route, this.item.path)
-      if (active) this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+      if (active) {
+        setTimeout(() => {
+          this.$eventBus.$emit('onChangeIndex', this.item.dataIndex)
+        }, 200);
+      }
       return active
     }
   },

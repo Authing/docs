@@ -90,8 +90,11 @@ dotnet new WebApi -n AuthingWebApi
 
 ```bash
 # 可以访问 nuget 地址使用最新版本 SDK，SDK 持续更新中，文档写时使用版本如下
-dotnet add package Authing.ApiClient --version 4.2.3
+dotnet add package Authing.ApiClient --version {LATEST_VERSION}
 ```
+
+注意检查最新版本号，格式如：`4.2.4.12`。
+
 之后在 `StartUp.cs` 中完成初始化，并作为单例注册到容器中去，同时为了方便常见 `HttpException` 的抛出，注册使用 [Opw.HttpExceptions.AspNetCore](https://www.nuget.org/packages/Opw.HttpExceptions.AspNetCore/)
 
 ```csharp {7-17}
@@ -203,7 +206,7 @@ public class AuthController : ControllerBase
 
 ### 添加 `HandleCallback`
 
-增加 `HandleCallback` 方法，路由为 `callback`，该方法主要处理认证过程中的 `Code`，使用 `Code` 换取  `Token`，再使用 `Token` 换取 `用户信息`，我们可能需要使用 `HttpSession` 来存储用户的状态，此时我们需要添加 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/):
+增加 `HandleCallback` 方法，路由为 `callback`，该方法主要处理认证过程中的 `Code`，使用 `Code` 换取 `Token`，再使用 `Token` 换取 `用户信息`，我们可能需要使用 `HttpSession` 来存储用户的状态，此时我们需要添加 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/):
 
 ```bash
 dotnet add package Microsoft.AspNetCore.Session --version 2.2.0
@@ -302,7 +305,7 @@ public class AuthController : ControllerBase
         {
             // 通过 Token 获取用户信息，错误的 Token 可能会导致异常
             userInfo = await _authenticationClient.GetUserInfoByAccessToken(token);
-            // 将 Token 信息存储到 userInfo 中 
+            // 将 Token 信息存储到 userInfo 中
             userInfo.Token = token;
         }
         catch (Exception)
@@ -315,7 +318,6 @@ public class AuthController : ControllerBase
     }
 }
 ```
-
 
 ### 添加 `GetLogoutUrl`
 
@@ -410,14 +412,11 @@ dotnet run
 
 > 使用 `HttpClient` 完成对应接口请求，比如 `post man`，这里使用 VS code 插件 `Thunder Client`。
 
-
 ![](~@imagesZhCn/quickstarts/webApp/csharp/thunder-client.png)
-
 
 ### 登录
 
 ![](~@imagesZhCn/quickstarts/webApp/csharp/get-login.png)
-
 
 ### 获取 Token
 

@@ -8,6 +8,8 @@
 composer require authing-sdk/php
 ```
 
+Github 仓库： <https://github.com/Authing/authing-php-sdk> （目前在 `v5.0` 分支）
+
 ## 初始化
 
 初始化 `ManagementClient` 需要使用 `accessKeyId` 和 `accessKeySecret` 参数，并且应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次）:

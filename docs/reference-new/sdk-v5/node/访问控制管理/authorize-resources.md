@@ -9,14 +9,14 @@
 
 <LastUpdated />
 
-给多个主体同时授权多个资源
+将一个/多个资源授权给用户、角色、分组、组织机构等主体，且可以分别指定不同的操作权限。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| namespace | string | 否 |  | 所属权限分组的 code。 示例值： `default` |
-| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 |  | 授权列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#AuthorizeResourceItem">AuthorizeResourceItem[]</a> | 是 | - | 授权资源列表。  |  |
+| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
 
 
 ## 示例代码
@@ -36,10 +36,10 @@ const managementClient = new ManagementClient({
     namespace: 'default',
     list: [{
             targetType: 'USER',
-          targetIdentifiers: '["userId1","userId2"]',
+          targetIdentifiers: ["userId1","userId2"],
           resources: [{
             code: 'ecs',
-          actions: '["ecs:Stop","ecs:Start"]',
+          actions: ["ecs:Stop","ecs:Start"],
           resourceType: 'DATA',
       }],
       }],

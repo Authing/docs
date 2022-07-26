@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-删除组织机构树
+通过组织 code，删除组织机构树。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
 
 
 ## 示例代码

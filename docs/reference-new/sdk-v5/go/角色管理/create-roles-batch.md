@@ -9,13 +9,13 @@
 
 <LastUpdated />
 
-批量创建角色
+批量创建角色，可以选择权限分组、角色描述等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 |  | 角色列表。 示例值： `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表。  | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
 ## 示例代码
