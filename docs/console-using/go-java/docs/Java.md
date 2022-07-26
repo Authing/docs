@@ -6,14 +6,14 @@
 
 ## 安装
 
-
-
 ### Gradle 项目
+
 ```
 implementation "cn.authing:authing-java-sdk:<{final_version}>"
 ```
 
 ### Maven 项目
+
 ```xml
 <dependency>
     <groupId>cn.authing</groupId>
@@ -118,14 +118,14 @@ import cn.authing.sdk.java.util.JsonUtils;
 
 
 public class CreateUserTest {
-    
+
     private static final String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static final String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-    
+
     public static void main(String[] args) throws Throwable {
         ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
         ManagementClient client = new ManagementClient(clientOptions);
-        
+
         CreateUserReqDto request = new CreateUserReqDto();
         request.setEmail("test@example.com");
         request.setPhone("17612345678");
@@ -139,7 +139,7 @@ public class CreateUserTest {
         request.setPhoneVerified(Boolean.TRUE);
         request.setExternalId("10010");
         request.setPassword("123456");
-        
+
         UserSingleRespDto response = client.createUser(request);
         System.out.println(JsonUtils.serialize(response));
     }
@@ -179,7 +179,7 @@ public class UpdateUserTest {
         request.setEmail("test@example.com");
         request.setPhone(null);
         request.setPassword("password_3847");
-        Object customData = new Object();
+        // Object customData = new Object();
         request.setCustomData(customData);
 
         UserSingleRespDto response = client.updateUser(request);
@@ -200,7 +200,7 @@ import cn.authing.sdk.java.util.JsonUtils;
 import java.util.Collections;
 
 public class DeleteUserBatchTest {
-    
+
     private static final String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static final String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -249,3 +249,4 @@ public static void main(String[] args) {
 
     // 继续你的业务逻辑 ...
 }
+```
