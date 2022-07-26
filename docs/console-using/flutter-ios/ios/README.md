@@ -8,6 +8,12 @@
 
 ## 安装
 
+### 代码地址
+
+| 条目     | 说明                                        |
+| -------- | ------------------------------------------- |
+| 支持版本 | iOS 11.0 +  
+| 仓库地址 | [https://github.com/Authing/guard-ios](https://github.com/Authing/guard-ios) |
 
 <br>
 
@@ -35,9 +41,39 @@
 
 <LastUpdated/>
 
-### OIDC 协议账号密码登陆
+### 邮箱密码注册
 
-通过 OIDC 账号密码登录，返回的 UserInfo 里面包含 access token , id token 和 refresh token。
+使用 OIDC 邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
+
+```swift
+func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**参数**
+
+* *email* 邮箱
+* *password* 明文密码
+
+**示例**
+
+```swift
+OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+}
+```
+
+**错误码**
+
+* 2003 非法邮箱地址
+* 2026 邮箱已注册
+
+<br>
+
+### 账号密码登录
+
+通过 OIDC 账号密码登录，返回的 UserInfo 里面包含用户信息以及 access token , id token 和 refresh token。
 
 ```swift
 public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -60,25 +96,25 @@ OIDCClient().loginByAccount(account: account, password: password) { code,  messa
 
 <br>
 
-### 获取用户信息
+### 通过 refresh token 获取新的 access token 和 id token
 
-通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
+access token 的有效期通常较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
 
 ```swift
-public func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
-* *userInfo* 包含 access token 的用户信息
+refreshToken 刷新凭证
 
 **示例**
 
 ```swift
-OIDCClient().getUserInfoByAccessToken(userInfo: userInfo) { code, message, data in
-    if (code == 200) {
-        // data 为更新了用户信息的 UserInfo 对象，和参数是同一个对象
-    }
+OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message, userInfo in
+    print("\(userInfo?.accessToken ?? "")")
+    print("\(userInfo?.idToken ?? "")")
+    print("\(userInfo?.refreshToken ?? "")")
 }
 ```
 

@@ -8,7 +8,7 @@ Authing Android SDK 由两大部分组成：`超组件（Hyper Component）`、`
 
 `超组件（Hyper Component）`组件帮助开发者快速构建注册、登录认证页面。
 
-`AuthClient / OIDCClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 OpenId Connect，OAuth 2.0，SAML 和 CAS。此模块适用于自己构建认证 UI 界面进行用户身份认证的场景。
+`AuthClient / OIDCClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 OpenId Connect、OAuth 2.0。此模块适用于自己构建认证 UI 界面进行用户身份认证的场景。
 
 <AppDetailSiderBar />
 
@@ -88,10 +88,18 @@ UserInfo userInfo = Authing.getCurrentUser();
 String email = "test@example.com";
 String password = "123456";
 //获取到 idToken
-AuthClient.registerByEmail(email, password, this::fireCallback);
+AuthClient.registerByEmail(email, password, (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
 
-//如果想获取到 accessToken和refreshToken
-new OIDCClient().registerByEmail(email, password, this::fireCallback);
+//如果想获取到 accessToken 和 refreshToken
+new OIDCClient().registerByEmail(email, password, (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
 ```
 
 接下来可以进行登录操作：
@@ -100,10 +108,18 @@ new OIDCClient().registerByEmail(email, password, this::fireCallback);
 String account = "test@example.com";
 String password = "123456";
 //获取到 idToken
-AuthClient.loginByAccount(account, password, this::fireCallback);
+AuthClient.loginByAccount(account, password, (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
 
-//如果想获取到 accessToken和refreshToken
-new OIDCClient().loginByAccount(account, password, this::fireCallback);
+//如果想获取到 accessToken 和 refreshToken
+new OIDCClient().loginByAccount(account, password, (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
 ```
 
 完成登录之后，`updateProfile` 等要求用户登录的方法就可用了：
@@ -113,9 +129,7 @@ JSONObject object = new JSONObject();
 object.put("name", "test");
 AuthClient.updateProfile(object, (code, message, res) -> {
     if (code == 200) {
-        finish();
-    } else {
-        Util.setErrorText(btnSubmit, message);
+    
     }
 });
 ```
@@ -126,6 +140,6 @@ AuthClient.updateProfile(object, (code, message, res) -> {
 
 错误信息返回在 AuthCallback 回调函数中，可使用 ErrorTextView 组件显示错误信息，在你的布局页面合适的位置放置 ErrorTextView，在函数回调中调用如下代码
 
-```
-Util.setErrorText(this, message);
+```java
+Util.setErrorText(view, message);
 ```
