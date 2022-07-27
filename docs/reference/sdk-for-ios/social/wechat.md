@@ -5,7 +5,7 @@
 集成微信需要三个主要步骤：
 * 在微信开放平台进行配置
 * 在 Authing 管理控制台进行配置
-* 集成 iOS SDK
+* 集成 Authing iOS 微信登录
 
 <br>
 
@@ -41,19 +41,17 @@
 
 <br>
 
-## STEP 3：集成 iOS SDK 步骤
+## STEP 3：集成 Authing iOS 微信登录
 
-### 初始化 Guard-iOS-Wechat SDK
+### 添加依赖
 
-> Guard-iOS-Wechat 依赖于 Guard 组件（Version 1.1.7 之后）
+> Guard-iOS-binary 依赖于 Guard 组件（Version 1.2.4 之后）
 
-- 在 swift package 搜索栏输入：https://github.com/Authing/guard-ios-wechat
+- 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
 
 - 依赖规则选择 Up to Next Major Version 1.0.0
 
 - Add Package 后勾选 Wechat
-
-![](./images/wechat/8.png)
 
 <br>
 

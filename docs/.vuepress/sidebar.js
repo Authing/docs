@@ -480,14 +480,6 @@ const zhCnNavBar = {
           path: "/guides/dashboard/",
         },
         {
-          title: "飞书工作台 SSO 方案",
-          path: "/guides/lark-sso/",
-        },
-        {
-          title: "企业微信 SSO 方案",
-          path: "/guides/qiwei-sso/",
-        },
-        {
           title: "集成应用 SSO 方案",
           path: "/guides/apn/",
           children: [],
@@ -495,6 +487,27 @@ const zhCnNavBar = {
         {
           title: "自建应用 SSO 方案",
           path: "/guides/app/sso",
+        },
+        {
+          title: "第三方 SSO 方案",
+          children: [
+            {
+              title: "飞书工作台 SSO 方案",
+              path: "/guides/lark-sso/",
+            },
+            {
+              title: "企业微信 SSO 方案",
+              path: "/guides/qiwei-sso/",
+            },
+            {
+              title: "钉钉 SSO 方案",
+              path: "/guides/dingding-sso/",
+            },
+            {
+              title: "WeLink SSO 方案",
+              path: "/guides/welink-sso/",
+            },
+          ]
         },
         {
           title: "管理用户登录状态",
@@ -2028,6 +2041,7 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
+                "/reference-new/mobile/sdk-for-ios/social/oneauth",
               ],
             },
             {
