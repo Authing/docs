@@ -488,6 +488,14 @@ const zhCnNavBar = {
           path: "/guides/qiwei-sso/",
         },
         {
+          title: "钉钉 SSO 方案",
+          path: "/guides/dingding-sso/",
+        },
+        {
+          title: "WeLink SSO 方案",
+          path: "/guides/welink-sso/",
+        },
+        {
           title: "集成应用 SSO 方案",
           path: "/guides/apn/",
           children: [],
