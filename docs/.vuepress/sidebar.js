@@ -2041,6 +2041,7 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
+                "/reference-new/mobile/sdk-for-ios/social/oneauth",
               ],
             },
             {
