@@ -343,6 +343,9 @@ const plugins = [
   ],
   [
     cacheSidebarPlugin
+  ],
+  [
+    require('vuepress-plugin-tabs')
   ]
 ]
 

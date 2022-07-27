@@ -85,6 +85,27 @@ text
 ::: hint-danger
 ```
 
+`tabs`:
+```bash
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+
+:::
+  
+::: tab Vue2
+
+:::
+
+::: tab Vue3
+
+:::
+
+::: tab Angular
+
+:::
+::::
+```
+
 `api-method`:
 
 ````markdown
