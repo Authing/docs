@@ -17,7 +17,7 @@ You should set the initialized `ManagementClient` instance to a global variable 
 Install via Nuget:
 
 ```
-Install-Package Authing.ApiClient
+Install-Package Authing.Library
 ```
 
 ## Use ManagementClient
@@ -27,7 +27,7 @@ Initialization of ManagementClient requires `userPoolId` and `secret`:
 > You can [learn how to get UserPoolId and Secret](/guides/faqs/get-userpool-id-and-secret.md) here.
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.ManagementBaseClient;
 
 var managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
 ```
@@ -46,7 +46,7 @@ Initialization of `AuthenticationClient` requires `AppId`:
 > You can view your own **application** list in the application of the console.
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(opt =>
             {
@@ -76,7 +76,7 @@ await authenticationClient.UpdateProfile(new UpdateUserInput() {
 You can also set the `AccessToken` parameter after initialization, so that it is unnecessary to call the the `LoginByXXX` method every time:
 
 ```csharp
-using Authing.ApiClient;
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
 
 var authenticationClient = new AuthenticationClient(opt =>
             {

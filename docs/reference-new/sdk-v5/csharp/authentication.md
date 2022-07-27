@@ -22,7 +22,7 @@ authenticationClient.LoginWithRedirect; // 将用户浏览器重定向到 Authin
 authenticationClient.BuildAuthUrl; // 构造前端登录链接
 authenticationClient.HandleRedirectCallback; // 在应用回调端点处理认证返回结果
 authenticationClient.GetLoginStateByAuthCode; // 用授权码获取用户登录态
-authenticationClient.GetLoginStateByAuthCode; // 用 Access Token 获取用户身份信息
+authenticationClient.GetUserInfo; // 用 Access Token 获取用户身份信息
 authenticationClient.RefreshLoginState; // 用 Refresh Token 刷新用户的登录态，延长过期时间
 authenticationClient.LogoutWithRedirect; // 将浏览器重定向到 Authing 的登出发起 URL 进行登出
 authenticationClient.BuildLogoutUrl; // 生成登出 URL
@@ -36,9 +36,9 @@ authenticationClient.ParseIDToken; // 验证并解析 ID Token
 
 - `appId` \<String\> Authing 应用 ID ;
 - `appSecret` \<String\> Authing 应用 Secret;
-- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn;
+- `host` \<String\> 应用对应的用户池域名，例如 pool.authing.cn，（不带结尾的"/"）或（"http(s)://xxxxx"）;
 - `redirectUri` \<String\> 认证完成后的重定向目标 URL, 认证时会进行校验，需要和控制台的设置保持一致。
-- `logoutRedirectUri` \<String\> 登出完成后的重定向目标 URL。
+- `logoutRedirectUri` \<String> 登出完成后的重定向目标 URL。
 - `scope` \<String\> 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。
 - `serverJWKS` \<JwkSet\> 服务端的 JWKS 公钥，用于验证 Token 签名，默认会通过网络请求从服务端的 JWKS 端点自动获取。
 - `cookieKey` \<String\> 存储认证上下文的 Cookie 名称。
@@ -418,4 +418,3 @@ AccessToken {
 | Scope  | 应用侧向 Authing 请求的权限                                  |
 | Iss    | 标识构造并返回令牌的安全令牌服务 (STS)。                     |
 | Aud    | 标识令牌的目标接收方                                         |
-

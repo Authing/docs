@@ -9,16 +9,16 @@
 
 <LastUpdated />
 
-修改分组，通过 code 唯一标志用户池中的一个分组。你可以修改此分组的 code
+通过分组 code，修改分组，可以修改此分组的 code。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer` |
-| name | string | 是 |  | 分组名称。 示例值： `开发者` |
-| description | string | 是 |  | 分组描述。 示例值： `描述内容` |
-| newCode | string | 否 |  | 分组新的 code。 示例值： `developer` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| description | string | 是 | - | 分组描述。  | `描述内容` |
+| name | string | 是 | - | 分组名称。  | `开发者` |
+| code | string | 是 | - | 分组 code。  | `developer` |
+| newCode | string | 否 | - | 分组新的 code。  | `developer` |
 
 
 ## 示例代码

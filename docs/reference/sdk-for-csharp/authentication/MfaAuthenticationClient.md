@@ -4,13 +4,24 @@
 
 此模块用于为用户绑定、解绑 TOTP、短信、邮箱、人脸识别等二次认证器。例如用户存在异地行为时，你希望让用户进行二次身份认证，目前 Authing 支持多种二次验证的方式，包括 TOTP、短信、邮箱、人脸识别等。
 
-示例代码：
+## 初始化
+```csharp
+using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;
+
+var authenticationClient = new MfaAuthenticationClient(
+  opt =>
+        {
+          opt.AppId = "AUTHING_APP_ID",
+          opt.AppHost: 'https://xxx.authing.cn',
+        }
+);
+```
 
 ## TOTP 认证器
 
 ### 获取 TOTP 认证器信息
 ```csharp
-managementClient.GetMfaAuthenticators(GetMfaAuthenticatorsParam getMfaAuthenticatorsParam)
+authenticationClient.GetMfaAuthenticators(GetMfaAuthenticatorsParam getMfaAuthenticatorsParam)
 ```
 > 获取 TOTP MFA 认证器
 
@@ -24,14 +35,14 @@ managementClient.GetMfaAuthenticators(GetMfaAuthenticatorsParam getMfaAuthentica
 
 ```csharp
 var option = new GetMfaAuthenticatorsParam(){};
-var result = await managementClient.GetMfaAuthenticators(option);
+var result = await authenticationClient.GetMfaAuthenticators(option);
 ```
 
 
 ### 请求绑定 TOTP 认证器
 
 ```csharp
-managementClient.AssosicateMfaAuthenticator(AssosicateMfaAuthenticatorParam option);
+authenticationClient.AssosicateMfaAuthenticator(AssosicateMfaAuthenticatorParam option);
 ```
 > 请求 TOTP MFA 二维码和密钥信息，从而完成绑定
 
@@ -46,13 +57,13 @@ managementClient.AssosicateMfaAuthenticator(AssosicateMfaAuthenticatorParam opti
 
 ```csharp
 var option = new AssosicateMfaAuthenticatorParam(){};
-var result = await managementClient.AssosicateMfaAuthenticator(option);
+var result = await authenticationClient.AssosicateMfaAuthenticator(option);
 ```
 
 
 ### 确认绑定 TOTP 认证器
 ```csharp
-managementClient.ConfirmAssosicateMfaAuthenticator(ConfirmAssosicateMfaAuthenticatorParam option);
+authenticationClient.ConfirmAssosicateMfaAuthenticator(ConfirmAssosicateMfaAuthenticatorParam option);
 ```
 > 确认绑定 TOTP 认证器
 
@@ -71,13 +82,13 @@ var option = new ConfirmAssosicateMfaAuthenticatorParam(){
   Totp = "TotpCode",
   TotpSource = "APPLICATION"
 };
-var result = await managementClient.ConfirmAssosicateMfaAuthenticator(option);
+var result = await authenticationClient.ConfirmAssosicateMfaAuthenticator(option);
 ```
 
 
 ### 检验 TOTP 认证器恢复代码
 ```csharp
-managementClient.VerifyTotpRecoveryCode(VerifyTotpRecoveryCodeParam option)
+authenticationClient.VerifyTotpRecoveryCode(VerifyTotpRecoveryCodeParam option)
 ```
 > 检验二次验证 TOTP MFA 恢复代码
 
@@ -94,7 +105,7 @@ var option = new VerifyTotpRecoveryCodeParam(){
   RecoveryCode = "RecoveryCode",
   MfaToken = "MfaToken"
 };
-var authenticators = await managementClient.VerifyTotpRecoveryCode(option);
+var authenticators = await authenticationClient.VerifyTotpRecoveryCode(option);
 ```
 
 ### 解绑 MFA
@@ -108,7 +119,7 @@ DeleteMfaAuthenticator.DeleteMfaAuthenticator()
 #### 示例
 
 ```csharp
-var result = await managementClient.DeleteMfaAuthenticator();
+var result = await authenticationClient.DeleteMfaAuthenticator();
 ```
 
 
@@ -116,7 +127,7 @@ var result = await managementClient.DeleteMfaAuthenticator();
 
 ### 检验短信验证码认证器口令
 ```csharp
-managementClient.VerifyAppSmsMfa(VerifyAppSmsMfaParam option)
+authenticationClient.VerifyAppSmsMfa(VerifyAppSmsMfaParam option)
 ```
 > 检验二次验证 MFA 短信验证码
 
@@ -135,7 +146,7 @@ var option = new VerifyAppSmsMfaParam(){
   Code = "Code",
   MfaToken = "MfaToken"
 };
-var authenticators = await managementClient.VerifyAppSmsMfa(option);
+var authenticators = await authenticationClient.VerifyAppSmsMfa(option);
 ```
 
 ## 邮箱认证器
@@ -143,7 +154,7 @@ var authenticators = await managementClient.VerifyAppSmsMfa(option);
 ### 检验邮箱验证码认证器口令
 
 ```csharp
-managementClient.VerifyAppEmailMfa(VerifyAppEmailMfaParam option);
+authenticationClient.VerifyAppEmailMfa(VerifyAppEmailMfaParam option);
 ```
 > 检验二次验证 TOTP MFA 邮箱验证码
 
@@ -162,13 +173,13 @@ var option = new VerifyAppEmailMfaParam(){
   Code = "Code",
   MfaToken = "MfaToken"
 };
-var result = await managementClient.VerifyAppEmailMfa(option);
+var result = await authenticationClient.VerifyAppEmailMfa(option);
 ```
 
 
 ### 检测邮箱是否已被绑定
 ```csharp
-managementClient.PhoneOrEmailBindable(PhoneOrEmailBindableParam phoneOrEmailBindableParam);
+authenticationClient.PhoneOrEmailBindable(PhoneOrEmailBindableParam phoneOrEmailBindableParam);
 ```
 > 当需要手机或邮箱 MFA 登录，而用户未绑定手机或邮箱时，可先让用户输入手机号或邮箱，用此接口先检测手机或邮箱是否可绑定，再进行 MFA 验证
 
@@ -185,14 +196,14 @@ var option = new PhoneOrEmailBindableParam(){
   Email = "Email",
   MfaToken = "MfaToken"
 };
-var result = await managementClient.PhoneOrEmailBindable(option);
+var result = await authenticationClient.PhoneOrEmailBindable(option);
 ```
 
 ## 人脸认证器
 
 ### 通过图片 URL 绑定人脸
 ```csharp
-managementClient.AssociateFaceByUrl(AssociateFaceByUrlParams option);
+authenticationClient.AssociateFaceByUrl(AssociateFaceByUrlParams option);
 ```
 > 通过图片 URL 绑定人脸
 
@@ -210,11 +221,11 @@ var option = new AssociateFaceByUrlParams(){
   BaseFace = "BaseFace",
   CompareFace = "CompareFace"
 };
-var authenticators = await managementClient.AssociateFaceByUrl(option);
+var authenticators = await authenticationClient.AssociateFaceByUrl(option);
 ```
 ### 检验人脸认证器
 ```csharp
-managementClient.VerifyFaceMfa(string photo, string mfaToken);
+authenticationClient.VerifyFaceMfa(string photo, string mfaToken);
 ```
 > 检测二次登录人脸验证
 
@@ -226,12 +237,12 @@ managementClient.VerifyFaceMfa(string photo, string mfaToken);
 #### 示例
 
 ```csharp
-var authenticators = await managementClient.VerifyFaceMfa("http://example.com/photo/photo.jpg","mfaToken");
+var authenticators = await authenticationClient.VerifyFaceMfa("http://example.com/photo/photo.jpg","mfaToken");
 ```
 
 ### 检验二次验证 MFA 口令
 ```csharp
-managementClient.VerifyTotpMfa(VerifyTotpMfaParam option)
+authenticationClient.VerifyTotpMfa(VerifyTotpMfaParam option)
 ```
 > 检验二次验证 MFA 口令
 
@@ -248,6 +259,6 @@ var option =  new VerifyTotpMfaParam(){
   Totp = "Totp",
   MfaToken = "MfaToken"
 };
-var authenticators = await managementClient.VerifyTotpMfa(option)
+var authenticators = await authenticationClient.VerifyTotpMfa(option)
 ```
 

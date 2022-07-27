@@ -13,10 +13,12 @@ implementation "cn.authing:authing-java-sdk:<{final_version}>"
 ```xml
 <dependency>
     <groupId>cn.authing</groupId>
-    <artifactId>java-core</artifactId>
+    <artifactId>authing-java-sdk</artifactId>
     <version>{final_version}</version>
 </dependency>
 ```
+
+Github 仓库： <https://github.com/Authing/authing-java-sdk> （目前在 `v5.0` 分支）
 
 ## 初始化
 

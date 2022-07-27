@@ -9,15 +9,15 @@
 
 <LastUpdated />
 
-删除部门
+通过组织 code、部门 ID，删除部门。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
+| organizationCode | string | 是 | - | 组织 Code（organizationCode）。  | `steamory` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
 
 
 ## 示例代码
@@ -36,8 +36,8 @@ class ManagementClientTest {
         ManagementClient managementClient = new ManagementClient(clientOptions);
     
         DeleteDepartmentReqDto request = new DeleteDepartmentReqDto();
-        request.setDepartmentId("60b49eb83fd80adb96f26e68");
         request.setOrganizationCode("steamory");
+        request.setDepartmentId("60b49eb83fd80adb96f26e68");
         request.setDepartmentIdType(DeleteDepartmentReqDto.departmentIdType.DEPARTMENT_ID);
         
         IsSuccessRespDto response = managementClient.deleteDepartment(request);

@@ -13,9 +13,9 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#SetCustomFieldDto">SetCustomFieldDto[]</a> | 是 |  | 自定义字段列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#SetCustomFieldDto">SetCustomFieldDto[]</a> | 是 | - | 自定义字段列表。  |  |
 
 
 ## 示例代码

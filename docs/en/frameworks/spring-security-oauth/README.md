@@ -78,7 +78,7 @@ Add Spring Web，Spring Security，Spring Oauth2 Client dependence
     <dependency>
         <groupId>cn.authing</groupId>
         <artifactId>java-core</artifactId>
-        <version>4.3.40</version>
+        <version>{LATEST_VERSION}</version>
     </dependency>
 </dependencies>
 ```
@@ -299,7 +299,7 @@ After logging in, the resources directly accessing the server-pic do not need to
  <dependency>
     <groupId>cn.authing</groupId>
     <artifactId>java-core</artifactId>
-    <version>4.3.40</version>
+    <version>{LATEST_VERSION}</version>
 </dependency>
 ```
 

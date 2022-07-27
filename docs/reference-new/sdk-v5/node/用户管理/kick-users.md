@@ -9,14 +9,15 @@
 
 <LastUpdated />
 
-强制下线用户
+通过用户 ID、App ID 列表，强制让用户下线，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。  |
-| appIds | string[] | 是 |  | APP ID 集合。 示例值： `["62188e71cxxxx3075289c580"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| appIds | string[] | 是 | - | APP ID 列表。  | `["62188e71cxxxx3075289c580"]` |
+| userId | string | 是 | - | 用户 ID。  |  |
+| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数。  | `{"userIdType":"user_id"}` |
 
 
 ## 示例代码
@@ -34,7 +35,10 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.kickUsers({
     userId: 'undefined',
-    appIds: '["62188e71cxxxx3075289c580"]',
+    appIds: ["62188e71cxxxx3075289c580"],
+    options: {
+          userIdType: 'user_id',
+    },
  });
 })();
 ```
@@ -68,6 +72,13 @@ const managementClient = new ManagementClient({
 ```
 
 ## 数据结构
+
+
+### <a id="KickUsersOptionsDto"></a> KickUsersOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto

@@ -99,7 +99,9 @@ export default {
       this.$emit('focusout')
     },
     onRouter() {
-      this.$eventBus.$emit('onChangeIndex')
+      setTimeout(() => {
+        this.$eventBus.$emit('onChangeIndex')
+      }, 200);
     }
   },
 }

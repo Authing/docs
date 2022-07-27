@@ -9,15 +9,15 @@
 
 <LastUpdated />
 
-获取顶层组织机构列表
+获取顶层组织机构列表，支持分页。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。 示例值： `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。 示例值： `10` |
-| fetchAll | boolean  | 否 | false | 拉取所有。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
+| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+| fetchAll | boolean  | 否 | - | 拉取所有。  |  |
 
 
 ## 示例代码
@@ -116,6 +116,7 @@ $data = $management->listOrganizations(array(
 | hasChildren | boolean | 是 | 是否包含子节点。 示例值： `true`  |
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
+| isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
 
 

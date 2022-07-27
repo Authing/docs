@@ -128,3 +128,70 @@ AuthClient().mfaVerifyByRecoveryCode(code: "1234") { code, message, userInfo in
 ```
 
 <br>
+
+## Upload face photo
+
+Upload a photo before face recognition, this interface returns the `Key` value of the photo, used for face verification.
+
+```swift
+func uploadFaceImage(_ image: UIImage,_ isPrivate: Bool = true, completion: @escaping (Int, String?) -> Void)
+```
+
+**param**
+
+* *image* photo
+
+**example**
+
+```swift
+AuthClient().uploadFaceImage(image) { code, key in
+    // key: Face recognition parameter
+}
+```
+
+<br>
+
+## Bind face photo
+
+First face verification binding face. Before calling this interface, you need to call the [Upload face photo](#upload-face-photo) interface to get the photo `key` value
+
+```swift
+func mfaAssociateByFace(photoKeyA: String, photoKeyB: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**param**
+
+* *photoKeyA* The Key from the first photo
+* *photoKeyB* The Key from the second photo
+
+**example**
+
+```swift
+AuthClient().mfaAssociateByFace(photoKeyA: "photoKeyA", photoKeyB: "photoKeyB") { code, message, userInfo in
+    // userInfo
+}
+```
+
+<br>
+
+## Face verification
+
+Multi-factor authentication through face recognition. Before calling this interface, you need to call the [upload face photo](#upload-face-photo) interface to get the photo `key` value
+
+```swift
+func mfaVerifyByFace(photoKey: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**param**
+
+* *photoKey* Key
+
+**example**
+
+```swift
+AuthClient().mfaVerifyByFace(photoKey: "photoKey") { code, message, userInfo in
+    // userInfo、
+}
+```
+
+<br>

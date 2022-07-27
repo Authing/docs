@@ -9,16 +9,16 @@
 
 <LastUpdated />
 
-部门下添加成员
+通过部门 ID、组织 code，添加部门下成员。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| departmentId | string | 是 |  | 部门系统 ID（为 Authing 系统自动生成，不可修改）。 示例值： `60b49eb83fd80adb96f26e68` |
-| organizationCode | string | 是 |  | 组织 code。 示例值： `steamory` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` |
-| userIds | string[] | 是 |  | 用户 ID 列表。 示例值： `["623c20b2a062aaaaf41b17da"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userIds | string[] | 是 | - | 用户 ID 列表。  | `["623c20b2a062aaaaf41b17da"]` |
+| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
 
 
 ## 示例代码
@@ -38,7 +38,7 @@ const managementClient = new ManagementClient({
     departmentId: '60b49eb83fd80adb96f26e68',
     organizationCode: 'steamory',
     departmentIdType: 'department_id',
-    userIds: '["623c20b2a062aaaaf41b17da"]',
+    userIds: ["623c20b2a062aaaaf41b17da"],
  });
 })();
 ```

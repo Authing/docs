@@ -9,14 +9,15 @@
 
 <LastUpdated />
 
-判断用户是否有某个角色，支持同时传入多个角色进行判断
+通过用户 ID，判断用户是否有某个角色，支持传入多个角色，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| roles | <a href="#HasRoleRolesDto">HasRoleRolesDto[]</a> | 是 |  | 角色列表。  |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| roles | <a href="#HasRoleRolesDto">HasRoleRolesDto[]</a> | 是 | - | 角色列表。  |  |
+| userId | string | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| options | <a href="#HasAnyRoleOptionsDto">HasAnyRoleOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -52,6 +53,9 @@ func main() {
             Code: "admin",
                 }
                   },
+        Options: dto.HasAnyRoleOptionsDto {
+                          UserIdType: HasAnyRoleOptionsDto.userIdType.USER_ID,
+        },
     }
   )
 }
@@ -94,6 +98,13 @@ func main() {
 | ---- |  ---- | ---- | ---- |
 | namespace | string | 否 | 所属权限分组的 code。 示例值： `default`  |
 | code | string | 是 | 角色 code。 示例值： `admin`  |
+
+
+### <a id="HasAnyRoleOptionsDto"></a> HasAnyRoleOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="HasAnyRoleDto"></a> HasAnyRoleDto
