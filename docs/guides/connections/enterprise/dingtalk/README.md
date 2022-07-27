@@ -10,7 +10,6 @@
 
 <img src="./images/dingtalk_1.png" >
 
-
 ## 注意事项
 
 - 如果您未开通钉钉开放平台账号，请先前往 [钉钉开放平台](https://open-dev.dingtalk.com/#/) 注册账号。
@@ -23,41 +22,44 @@
 <img src="./images/dingtalk_2.png" >
 <img src="./images/dingtalk_3.png" >
 
-- 创建企业内部应用，并记录下 AgentId，AppKey，AppSecret。
+- 创建企业内部应用，并记录下 AppKey，AppSecret。
 
 <img src="./images/dingtalk_4.png" >
 
 - 在登录与分享中，填写回调域名为：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
-
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置钉钉 H5 微应用（企业内部开发）
 
-2.1 请在 {{$localeConfig.brandName}}  控制台 的「企业化身份源」页面，点击「创建企业化身份源」按钮，进入「选择企业化身份源」页面。
+2.1 请在 {{$localeConfig.brandName}} 控制台 的「企业化身份源」页面，点击「创建企业化身份源」按钮，进入「选择企业化身份源」页面。
 
 <img src="./images/dingtalk_5.png" >
 
-2.2 请在  {{$localeConfig.brandName}}  控制台 的「企业化身份源」-「选择企业化身份源」页面，点击「钉钉」身份源按钮，进入 「钉钉 H5 微应用（企业内部开发）登录模式」页面。
+2.2 请在 {{$localeConfig.brandName}} 控制台 的「企业化身份源」-「选择企业化身份源」页面，点击「钉钉」身份源按钮，进入 「钉钉 H5 微应用（企业内部开发）登录模式」页面。
 
 <img src="./images/dingtalk_6.png" >
 
-2.3 请在  {{$localeConfig.brandName}}  控制台 的「企业化身份源」-「钉钉 H5 微应用（企业内部开发）」页面，配置相关的字段信息。
+2.3 请在 {{$localeConfig.brandName}} 控制台 的「企业化身份源」-「钉钉 H5 微应用（企业内部开发）」页面，配置相关的字段信息。
 
 <img src="./images/dingtalk_7.png" >
 
-| 字段/功能    | 描述                                                         |
-| ----- | ------------ | ------------------------------------------------------------ |
-| 唯一标识     | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。 |
-| 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                 |
-| 企业 ID     | 企业 ID，需要在钉钉开放平台上获取。                  |
-| AppKey     | 钉钉编号，需要在钉钉开放平台上获取。                  |
-| AppSecret    |  钉钉密钥，需要在钉钉开放平台上获取。                   |
-| Callback URL     | 可以填写你的业务回调地址，用户完成登录后，浏览器将会跳转到该地址。 |
-| Scopes     | 默认情况下，{{$localeConfig.brandName}} 只会向用户申请基础用户信息（如头像、昵称等）的授权，如果你需要更多高级权限，可以勾选上对应的选项。 |
-| 回调地址     |  钉钉有效跳转 URI。需要将此 URL 配置到钉钉开放平台上。 |
-| 登录模式     | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
+| 字段/功能    | 描述                                                                                                                                                                         |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 唯一标识     | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。                                                                             |
+| 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                                 |
+| 企业 ID      | CorpId 需要在钉钉开放平台首页可以看到。                                                                                                                                      |
+| AppKey       | 钉钉编号，需要在钉钉开放平台上获取。                                                                                                                                         |
+| AppSecret    | 钉钉密钥，需要在钉钉开放平台上获取。                                                                                                                                         |
+| Callback URL | 可以填写你的业务回调地址，用户完成登录后，浏览器将会跳转到该地址。                                                                                                           |
+| Scopes       | 默认情况下，{{$localeConfig.brandName}} 只会向用户申请基础用户信息（如头像、昵称等）的授权，如果你需要更多高级权限，可以勾选上对应的选项。                                   |
+| 回调地址     | 钉钉有效跳转 URI。需要将此 URL 配置到钉钉开放平台上。                                                                                                                        |
+| 登录模式     | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                                         |
 | 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。a.关联方式：选择 |
 
 配置完成后，点击「创建」或者「保存」按钮完成创建。
+
+在钉钉开发平台首页可以看到 CorpId。
+
+<img src="./images/dingtalk_11.png" >
 
 在 {{$localeConfig.brandName}} 控制台上创建完钉钉身份源后，需要将回调地址配置到钉钉开放平台上的回调域名。
 
@@ -71,9 +73,9 @@
 
 - **详细接入方法**：
 
-3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
 
-3.2 在已创建好的钉钉 H5 微应用（企业内部开发）身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+  3.2 在已创建好的钉钉 H5 微应用（企业内部开发）身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 
 <img src="./images/dingtalk_9.png" >
 
