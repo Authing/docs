@@ -24,31 +24,31 @@
 
 <img src="./images/2-1.png" class="medium-zoom-image" />
 
-2. 接下来切换顶部 type ，进入到基本信息页面，确认与 Authing 控制台中 Welink 身份源的 client_id 、 client_secret 保持一致。
+2. 应用创建成功
 <img src="./images/2-2.png" class="medium-zoom-image" />
 
-3. 然后进入阿里云配置详情页，复制应用访问链接。
+3. 进入阿里云配置详情页，复制应用访问链接。
 <img src="./images/2-7.png" class="medium-zoom-image" />
 
-4. 然后切换顶部 type ，进入到「版本管理」页面，点击设置首页地址后的前往设置，将前边复制的链接填入弹窗中的 PC 端链接。
+4. 切换顶部 type ，进入到「版本管理」页面，点击设置首页地址后的前往设置，将前边复制的链接填入弹窗中的 PC 端链接。
 <img src="./images/2-8.png" class="medium-zoom-image" />
 <img src="./images/2-9.png" class="medium-zoom-image" />
 
-6. 然后点击接口权限
+5. 点击接口权限
 <img src="./images/2-5.png" class="medium-zoom-image" />
 
-7. 在权限详情页面开放用户登录信息以及用户详细信息权限。
+6. 在权限详情页面开放用户登录信息以及用户详细信息权限。
 <img src="./images/2-6.png" class="medium-zoom-image" />
 
-8. 之后进入控制台将 Welink 身份源中的回调地址填入应用管理后台。
+7. 之后进入控制台将 Welink 身份源中的回调地址填入应用管理后台。
 <img src="./images/2-3.png" class="medium-zoom-image" />
 <img src="./images/2-4.png" class="medium-zoom-image" />
 
-9. 点击「发布版本」，依据流程完成版本发布。注意：首次发布需要管理员审核。
+8. 点击「发布版本」，依据流程完成版本发布。
 <img src="./images/2-10.png" class="medium-zoom-image" />
 <img src="./images/2-11.png" class="medium-zoom-image" />
 
-10. 此时你的应用已经进入 Welink 的工作面板，点击进入即可。
+9. 此时你的应用已经进入 Welink 的工作面板，点击进入即可。
 
 <img src="./images/2-12.png" class="medium-zoom-image" />
 
