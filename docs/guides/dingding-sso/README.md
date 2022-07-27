@@ -20,13 +20,13 @@
 
 ### 集成应用
 
-1. 进入[钉钉开放平台后台](https://open-dev.dingtalk.com/)，点击顶部 Type 切换到「企业应用」，点击步骤一创建的应用（阿里云）卡片。
+1. 进入[钉钉开放平台后台](https://open-dev.dingtalk.com/)，点击顶部 Type 切换到「企业应用」，点击步骤一创建的应用（阿里云）卡片或创建新应用。
 
 <img src="./images/1-1.png" class="medium-zoom-image" />
 
 <img src="./images/1-2.png" class="medium-zoom-image" >
 
-2. 点击左边栏的「开发管理」，点击「修改」按钮
+2. 进入应用详情信息页，点击左边栏的「开发管理」，点击「修改」按钮
 
 <img src="./images/1-3.png" class="medium-zoom-image" >
 
