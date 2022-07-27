@@ -8,7 +8,7 @@
 
 第一步：使用 Authing 创建一个应用：
 
-- 进入<a href="https://console.authing.cn/" target="blank">控制台</a>
+- 进入<a href="https://authing.cn/" target="blank">控制台</a>
 - 选择`应用`菜单
 - 点击右上角`创建自建应用`按钮
 - 填写`应用名称`和`认证地址`、选择`单页 Web 应用`

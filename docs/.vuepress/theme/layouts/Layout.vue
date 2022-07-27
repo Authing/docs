@@ -131,14 +131,14 @@ export default {
     PageSidebar,
     ApplicationIntegration,
     Quickstarts,
-    Reference
+    Reference,
   },
 
   data() {
     return {
       isSidebarOpen: false,
       isInConsole: "",
-      appId: ""
+      appId: "",
     };
   },
 
@@ -182,11 +182,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -194,14 +194,14 @@ export default {
       this.isSidebarOpen = false;
     });
 
-    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach(item =>
+    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach((item) =>
       delCookie(item)
     );
     let search = querystring.parse(
       typeof window !== "undefined" && window.location.search
     );
 
-    Object.keys(search).forEach(k => {
+    Object.keys(search).forEach((k) => {
       let v = search[k];
       setCookie(k, v);
     });
@@ -217,7 +217,7 @@ export default {
 
   methods: {
     findDom(domClass, rgExp, params) {
-      document.querySelectorAll(domClass).forEach(item => {
+      document.querySelectorAll(domClass).forEach((item) => {
         if (item.innerText.indexOf(rgExp) > -1) {
           const res = this.replaceString(item.innerHTML, rgExp, params);
           item.innerHTML = res;
@@ -236,7 +236,7 @@ export default {
     registerMessage() {
       if (window) {
         let _this = this;
-        window.addEventListener("message", evt => {
+        window.addEventListener("message", (evt) => {
           try {
             const { event, data } = JSON.parse(evt.data);
             if (event.source === "authing-fe-console") {
@@ -246,7 +246,6 @@ export default {
             }
             // 这里判断是在控制台快速开始文档，要操作的步骤
             if (event.isQuickDocs) {
-              console.log(11123);
               if (data.appId) {
                 _this.$nextTick(() => {
                   _this.findDom(
@@ -347,9 +346,38 @@ export default {
       let aside = document.querySelector("aside[class='sidebar']");
       let header = document.querySelector("header[class*='navbar']");
       let footer = document.querySelector("footer[class*='footer']");
-      aside.style = "display:none;";
-      header.style = "display:none;";
-      footer.style = "display:none;";
+      let newAside = document.querySelector(
+        "aside[class='on-this-page-navigation']"
+      );
+      let authingLastUpdate = document.querySelector(
+        "div[class='authing-last-updated']"
+      );
+
+      let feedback = document.querySelector("div[class='feedback']");
+
+      if (aside) {
+        aside.style = "display:none;";
+      }
+
+      if (header) {
+        header.style = "display:none;";
+      }
+
+      if (footer) {
+        footer.style = "display:none;";
+      }
+
+      if (newAside) {
+        newAside.style = "display:none;";
+      }
+
+      if (authingLastUpdate) {
+        authingLastUpdate.style = "display:none;";
+      }
+
+      if (feedback) {
+        feedback.style = "display:none;";
+      }
     },
 
     toggleSidebar(to) {
@@ -361,7 +389,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -375,8 +403,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
