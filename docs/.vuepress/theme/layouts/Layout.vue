@@ -346,6 +346,7 @@ export default {
       let aside = document.querySelector("aside[class='sidebar']");
       let header = document.querySelector("header[class*='navbar']");
       let footer = document.querySelector("footer[class*='footer']");
+      let body = document.body;
       let newAside = document.querySelector(
         "aside[class='on-this-page-navigation']"
       );
@@ -377,6 +378,10 @@ export default {
 
       if (feedback) {
         feedback.style = "display:none;";
+      }
+
+      if (body) {
+        body.style = "padding-right:16px;";
       }
     },
 
