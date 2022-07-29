@@ -2,7 +2,8 @@
   <div class="newBarWrap" v-if="$themeConfig.isInConsoleAppDetail">
     <p class="newBarTitle">快速开始</p>
     <p class="newBarDesc">
-      本教程演示如何快速集成用户登录到你的应用程序。我们会根据你的账户信息做定制化信息呈现。
+      本指南将介绍如何快速集成 Authing
+      基础能力到你的应用程序，并且会根据当前的配置情况做定制化信息呈现。
     </p>
     <div class="anchorWrap">
       <a
@@ -13,7 +14,7 @@
           resolvePath({
             path: item.path || undefined,
             hash: !item.path && '#' + item.slug,
-            query: $route.query
+            query: $route.query,
           })
         "
       >
@@ -31,9 +32,9 @@ export default {
   methods: {
     resolvePath(path) {
       return this.$router.resolve(path).href;
-    }
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 
