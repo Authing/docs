@@ -383,6 +383,24 @@ export default {
       if (body) {
         body.style = "padding-right:16px;";
       }
+
+      let h2 = document.querySelectorAll(
+        "div[class*='theme-default-content'] h2"
+      );
+      let h3 = document.querySelectorAll(
+        "div[class*='theme-default-content'] h3"
+      );
+
+      if (h2) {
+        h2.forEach((el) => {
+          el.style = "margin-top:10px;padding-top:0px;";
+        });
+      }
+      if (h3) {
+        h3.forEach((el) => {
+          el.style = "margin-top:10px;padding-top:0px;";
+        });
+      }
     },
 
     toggleSidebar(to) {
