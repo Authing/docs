@@ -4,16 +4,16 @@
 
 ## 概述
 
-{{$localeConfig.brandName}} 不仅可以通过控制台来配置 MFA 认证流程，你还可以通过 SDK 的方式为 {{$localeConfig.brandName}} 的 MFA 认证流程进行定制化开发
+{{$localeConfig.brandName}} 不仅可以通过控制台来配置 MFA 认证流程，你还可以通过 SDK 的方式为 {{$localeConfig.brandName}} 的 MFA 认证流程进行定制化开发。
 
-本文将以 [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference/sdk-for-node/) 为例，指引用户完成基于 SDK 的 MFA 自定义开发
+本文将以 [{{$localeConfig.brandName}} - Node/JavaScript SDK](/reference/sdk-for-node/) 为例，指引用户完成基于 SDK 的 MFA 自定义开发。
 
-其中包含：绑定 MFA 认证器、解绑 MFA 认证器、用户二次认证等
+其中包含：绑定 MFA 认证器、解绑 MFA 认证器、用户二次认证等。
 
 ## 准备工作
 
-1. <a :href="`${$themeConfig.consoleDomain}`">注册一个 {{$localeConfig.brandName}} 账号</a>
-2. [完成用户池和应用的创建](/guides/basics/authenticate-first-user/use-hosted-login-page.md)
+1. <a :href="`${$themeConfig.consoleDomain}`">注册一个 {{$localeConfig.brandName}} 账号</a>。
+2. [创建用户池和应用](/guides/basics/authenticate-first-user/use-hosted-login-page.md)。
 
 ## 多因素认证（MFA）API
 
@@ -27,7 +27,7 @@
 <template slot="queryParams">
 <ApiMethodParam name="authenticator_type" type="string" required>
 
-填写 `totp`
+填写 `totp`:
 
 </ApiMethodParam>
 </template>
@@ -66,7 +66,7 @@
 
 ### 请求绑定 MFA 口令
 
-<ApiMethodSpec method="post" :host="$themeConfig.apiDomain" path="/api/v2/mfa/totp/associate" summary="获取 MFA 二维码以及 Secret 信息，用于展示，等待用户确认绑定" description="请求此接口后，用户确认绑定之前，MFA 二次认证不会生效。接口返回 MFA Secret，MFA Uri，MFA 二维码 Data Url，恢复代码。">
+<ApiMethodSpec method="post" :host="$themeConfig.apiDomain" path="/api/v2/mfa/totp/associate" summary="获取 MFA 二维码以及 Secret 信息，用于展示，等待用户确认绑定。" description="请求此接口后，用户确认绑定之前，MFA 二次认证不会生效。接口返回 MFA Secret、MFA Uri、MFA 二维码 Data Url，恢复代码。">
 <template slot="headers">
 <ApiMethodParam name="x-authing-userpool-id" type="string" required description="用户池 ID" />
 <ApiMethodParam name="Authorization" type="string" required description="Bearer <用户 Token>" />
@@ -74,7 +74,7 @@
 <template slot="bodyParams">
 <ApiMethodParam name="authenticator_type" type="string" required>
 
-填写 `totp`
+填写 `totp`:
 
 </ApiMethodParam>
 </template>
@@ -111,12 +111,12 @@
 <template slot="bodyParams">
 <ApiMethodParam name="authenticator_type" type="string" required>
 
-填写 `totp`
+填写 `totp`:
 
 </ApiMethodParam>
 <ApiMethodParam name="totp" type="string" required>
 
-MFA 口令
+MFA 口令:
 
 </ApiMethodParam>
 </template>
@@ -193,7 +193,7 @@ try {
 <ApiMethodSpec method="post" :host="$themeConfig.apiDomain" path="/api/v2/mfa/totp/verify" summary="用于登录时一次认证成功后，检验二次认证口令是否正确。">
 <template slot="description">
 
-对于开启二次认证的用户，第一次认证成功后会返回一个 **mfaToken**，需要携带 **mfaToken** 请求本接口完成二次认证
+对于开启二次认证的用户，第一次认证成功后会返回一个 **mfaToken**，需要携带 **mfaToken** 请求本接口完成二次认证。
 
 </template>
 <template slot="headers">
@@ -379,7 +379,7 @@ MFA 口令
 <ApiMethodSpec method="delete" :host="$themeConfig.apiDomain" path="/api/v2/mfa/totp/associate" summary="解绑 MFA 认证器">
 <template slot="description">
 
-请求此接口后，会解绑 MFA，之后登录无需 TOTP MFA 二次认证
+请求此接口后，会解绑 MFA，之后登录无需 TOTP MFA 二次认证。
 
 </template>
 <template slot="headers">
@@ -400,22 +400,22 @@ MFA 口令
 
 ## 运行方法
 
-双击打开 index.html 文件。
-
-或在项目目录启动一个 http 服务器。
+1. 双击打开 ‘index.html’ 文件，或在项目目录启动一个 http 服务器。
 
 ```bash
 $ npm install -g http-server
 $ http-server
 ```
 
-然后访问 127.0.0.1:8080
+2. 然后访问 127.0.0.1:8080。
 
-**你可以参考 {{$localeConfig.brandName}} 提供的 [MFA Demo](https://github.com/authing/mfa-demo)**
+::: hint-info
+您可以参考 {{$localeConfig.brandName}} 提供的 [MFA Demo](https://github.com/authing/mfa-demo)。
+:::
 
 ## 多因素认证（MFA）SDK
 
-## 请求绑定 MFA 认证器：
+### 请求绑定 MFA 认证器
 
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
@@ -430,7 +430,7 @@ await authenticationClient.mfa.assosicateMfaAuthenticator({
 })
 ```
 
-## 验证 MFA 二次口令：
+### 验证 MFA 二次口令
 
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
@@ -446,11 +446,9 @@ await authenticationClient.mfa.verifyTotpMfa({
 })
 ```
 
-## 获取 MFA 认证器
+### 获取 MFA 认证器
 
 MfaAuthenticationClient().getMfaAuthenticators()
-
-> 获取 MFA 认证器
 
 #### 示例
 
@@ -469,7 +467,7 @@ const authenticators = await authenticationClient.mfa.getMfaAuthenticators({
 
 - `Promise<IMfaAuthenticators>`
 
-## 请求 MFA 二维码和密钥信息
+### 请求 MFA 二维码和密钥信息
 
 MfaAuthenticationClient().assosicateMfaAuthenticator()
 
@@ -492,7 +490,7 @@ const authenticators = await authenticationClient.mfa.assosicateMfaAuthenticator
 
 - `Promise<IMfaAssociation>`
 
-## 解绑 MFA
+### 解绑 MFA
 
 MfaAuthenticationClient().deleteMfaAuthenticator()
 
@@ -513,7 +511,7 @@ const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator()
 
 - `Promise<IMfaDeleteAssociation>`
 
-## 确认绑定 MFA
+### 确认绑定 MFA
 
 MfaAuthenticationClient().confirmAssosicateMfaAuthenticator()
 
@@ -536,7 +534,7 @@ const authenticators = await authenticationClient.mfa.confirmAssosicateMfaAuthen
 
 - `Promise<IMfaConfirmAssociation>`
 
-## 检验二次验证 MFA 口令
+### 检验二次验证 MFA 口令
 
 MfaAuthenticationClient().verifyTotpMfa()
 
@@ -560,11 +558,9 @@ const authenticators = await authenticationClient.mfa.verifyTotpMfa({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## 检验二次验证 MFA 短信验证码
+### 检验二次验证 MFA 短信验证码
 
 MfaAuthenticationClient().verifyAppSmsMfa()
-
-> 检验二次验证 MFA 短信验证码
 
 #### 参数
 
@@ -592,11 +588,9 @@ const authenticators = await authenticationClient.mfa.verifySmsMfa({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## 检验二次验证 MFA 邮箱验证码
+### 检验二次验证 MFA 邮箱验证码
 
 MfaAuthenticationClient().verifyAppEmailMfa()
-
-> 检验二次验证 MFA 邮箱验证码
 
 #### 参数
 
@@ -624,7 +618,7 @@ const authenticators = await authenticationClient.mfa.verifyAppEmailMfa({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## 检测手机号或邮箱是否已被绑定
+### 检测手机号或邮箱是否已被绑定
 
 MfaAuthenticationClient().phoneOrEmailBindable()
 
@@ -655,11 +649,9 @@ const authenticators = await authenticationClient.mfa.phoneOrEmailBindable({
 
 - `Promise<boolean>`
 
-## 检验二次验证 MFA 恢复代码
+### 检验二次验证 MFA 恢复代码
 
 MfaAuthenticationClient().verifyTotpRecoveryCode()
-
-> 检验二次验证 MFA 恢复代码
 
 #### 示例
 

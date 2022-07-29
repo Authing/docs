@@ -66,6 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
+    
     {
       title: "快速开始",
       children: [
@@ -191,13 +192,9 @@ const zhCnNavBar = {
           path: "/guides/authentication/mobile-sso/",
         },
         {
-          title: "多因素认证（MFA）",
+          title: "多因素认证",
           path: "/guides/authentication/mfa/",
           children: [
-            {
-              title: "基于时间戳算法的一次性密码（TOTP）的 MFA",
-              path: "/guides/authentication/mfa/totp",
-            },
             {
               title: "基于短信验证码的 MFA",
               path: "/guides/authentication/mfa/sms",
@@ -207,10 +204,18 @@ const zhCnNavBar = {
               path: "/guides/authentication/mfa/email-code",
             },
             {
+              title: "基于时间戳算法的一次性密码的 MFA",
+              path: "/guides/authentication/mfa/totp",
+            },
+            {
+              title: "基于人脸识别的 MFA",
+              path: "/guides/authentication/mfa/face-recognition",
+            },
+            {
               title: "通过 SDK 接入 MFA",
               path: "/guides/authentication/mfa/mfa-sdk",
             },
-          ],
+                    ],
         },
         {
           title: "对认证流程进行扩展",
