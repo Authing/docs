@@ -2,13 +2,7 @@
 
 <LastUpdated/>
 
-本教程演示如何快速集成用户登录到你的 Android 应用程序。
-
-Authing Android SDK 由两大部分组成：`超组件（Hyper Component）`、`AuthClient / OIDCClient`。
-
-`超组件（Hyper Component）`组件帮助开发者快速构建注册、登录认证页面。
-
-`AuthClient / OIDCClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 OpenId Connect、OAuth 2.0。此模块适用于自己构建认证 UI 界面进行用户身份认证的场景。
+本指南将从 Authing Android SDK 的安装开始逐步引导你如何快速为你已有或新开发的 Android 应用添加用户认证能力。
 
 <AppDetailSiderBar />
 
@@ -38,7 +32,7 @@ implementation 'cn.authing:guard:+'
 ```java
 // context is application or initial activity
 // ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 

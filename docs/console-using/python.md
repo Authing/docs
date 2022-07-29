@@ -1,12 +1,6 @@
 # Python
 
-Authing Python SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClient`。
-
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [Authing 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。此模块适合在后端或者可信任的前端环境下使用。
-
-`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 OpenID Connect, OAuth 2.0, SAML 和 CAS。此模块适合用于非受信任的浏览器环境和纯后端交互的服务器环境。
-
-你应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次），而 `AuthenticationClient` 应该每次请求初始化一个。
+本指南将从 Authing Python SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
 
@@ -16,7 +10,7 @@ Authing Python SDK 由两部分组成：`ManagementClient` 和 `AuthenticationCl
 pip install authing==5.0.0a6
 ```
 
-> 如果你希望使用 V4 版本，请切换到 [v4](https://github.com/Authing/authing-py-sdk/tree/v4) 分支查看文档。
+> 如果你希望使用 V4 版本，请跳转到 [v4](https://github.com/Authing/authing-py-sdk/tree/v4) 分支查看文档。
 
 ## 认证你的用户
 
@@ -26,10 +20,10 @@ pip install authing==5.0.0a6
 from authing import AuthenticationClient
 
 authentication_client = AuthenticationClient(
-  app_id="YOUR_APP_ID",
-  app_secret="YOUR_APP_SECRET",
-  host="YOUR_APP_HOST",
-  redirect_uri="YOUR_APP_URL",
+  app_id="AUTHING_APP_ID",
+  app_secret="AUTHING_SECRET",
+  host="AUTHING_DOMAIN",
+  redirect_uri="AUTHING_REDIRECTURI",
 )
 ```
 

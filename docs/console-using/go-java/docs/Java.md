@@ -1,6 +1,6 @@
 # Java
 
-这篇文档简单介绍了 Java SDK 的基本使用方式。ManagementClient 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 Authing 控制台 (opens new window)中能做的所有操作，都能用此模块完成，此模块适合在后端使用。
+本指南将从 Authing Java SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
 

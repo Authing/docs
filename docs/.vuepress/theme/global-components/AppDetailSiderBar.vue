@@ -10,13 +10,7 @@
         class="anchorContent"
         v-for="(item, index) in $page.fullHeaders[0].children"
         :key="index"
-        :href="
-          resolvePath({
-            path: item.path || undefined,
-            hash: !item.path && '#' + item.slug,
-            query: $route.query,
-          })
-        "
+        @click="handlejump(item.path)"
       >
         <span class="anchorCircle">{{ index + 1 }}</span>
         <span class="anchorTitle">{{ item.title }}</span>
@@ -32,6 +26,11 @@ export default {
   methods: {
     resolvePath(path) {
       return this.$router.resolve(path).href;
+    },
+    handlejump(path) {
+      let item = path.split("#")[1];
+      let hash = `#${item}`;
+      this.$router.options.scrollBehavior({ hash });
     },
   },
   mounted() {},

@@ -1,10 +1,6 @@
 # Golang
 
-Authing Golang SDK 由两部分组成：ManagementClient 和 AuthenticationClient。
-
-AuthenticationClient 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 OpenID Connect, OAuth 2.0, SAML 和 CAS。此模块适合用于后端交互的服务器环境。
-
-ManagementClient 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 Authing 控制台 (opens new window)中能做的所有操作，都能用此模块完成。此模块适合在后端环境下使用。
+本指南将从 Authing Golang SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
 
@@ -17,9 +13,7 @@ go get -u github.com/Authing/authing-golang-sdk
 
 ## 认证你的用户
 
-golang SDK 中使用 OIDC 协议的[授权码模式](https://docs.authing.cn/v2/concepts/oidc/choose-flow.html#%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F)进行认证，其使用的时序图如下：
-
-![login_flow.drawio](media/16556973639782/login_flow.drawio.png)
+Golang SDK 中使用 OIDC 协议的[授权码模式](https://docs.authing.cn/v2/concepts/oidc/choose-flow.html#%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F)进行认证。
 
 
 ### 2.1 初始化授权客户端
@@ -31,12 +25,12 @@ import (
 var authClient *authentication.Client
 var err error
 authClient, err =  authentication.NewClient(&authentication.AuthenticationClientOptions{
-    AppId:       "应用ID",
-    AppSecret:   "应用密钥",
-    Domain:      "应用域名",
-    RedirectUri: "授权回调地址",
-    LogoutRedirectUri: "登出回调地址"
-    Scope: "应用侧向 Authing 请求的权限，以空格分隔"
+    AppId:       "AUTHING_APP_ID",
+    AppSecret:   "AUTHING_SECRET",
+    Domain:      "AUTHING_DOMAIN",
+    RedirectUri: "AUTHING_REDIRECTURI",
+    LogoutRedirectUri: "AUTHING_LOGOUTREDIRECTURI"
+    Scope: "AUTHING_SCOPE"
 })
 ```
 

@@ -2,20 +2,20 @@
 
 <LastUpdated/>
 
-以下指南将逐步引导你如何使用 Authing Node.js/Javascript SDK 为你提供的基础认证与用户管理能力。
+本指南将从 Authing Node.js/Javascript SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
 
 ## 安装
 
 
-使用 `npm`:
+使用 `npm`：
 
 ```
 npm install authing-js-sdk
 ```
 
-使用 `yarn`:
+使用 `yarn`：
 
 ```
 yarn add authing-js-sdk
@@ -23,7 +23,7 @@ yarn add authing-js-sdk
 
 > 如果你要在 React Native 环境中使用，需要先在 RN 项目根目录运行：`npx rn-nodeify --install "crypto,stream"`，之后会在项目根目录生成一个 `shim.js` 文件，然后在 App.js 第一行引入 `import './shim.js'`。
 
-使用 CDN:
+使用 `CDN`：
 
 ```html
 <script src="https://cdn.authing.co/packages/authing-js-sdk/4.23.4/umd/index.js"></script>
@@ -32,7 +32,7 @@ yarn add authing-js-sdk
   /** 你可以通过全局变量 Authing 获取 AuthenticationClient 和 ManagementClient */
   var authing = new Authing.AuthenticationClient({
     appId: 'AUTHING_APP_ID',
-    appHost: 'https://xxx.authing.cn',
+    appHost: 'AUTHING_DOMAIN',
   })
 </script>
 ```
@@ -49,7 +49,7 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 - `appId` \<string\> 应用 ID，必填。
 - `secret` \<string\> 应用密钥，必填。
 - `appHost` \<string\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 '/'。
-- `redirectUri` \<string\> 业务回调 URL，必填。详情请查看[文档](/guides/federation/oidc.html#授权码模式)。
+- `redirectUri` \<string\> 业务回调 URL，必填。
 - `protocol` \<string\> 协议类型，可选值为 `oidc`、`oauth`、`saml`、`cas`，此处填写 `oidc`。
 - `tokenEndPointAuthMethod` \<string\> 获取 token 端点验证方式，可选值为 `client_secret_post`、`client_secret_basic`、`none`，默认为 `client_secret_post`。
 - `introspectionEndPointAuthMethod` \<string\> 检验 token 端点验证方式，可选值为 `client_secret_post`、`client_secret_basic`、`none`，默认为 `client_secret_post`。
@@ -62,10 +62,10 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 ```
 
@@ -94,9 +94,9 @@ AuthenticationClient().buildAuthorizeUrl(options)
 ```javascript
 // 拼接 OIDC 授权链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let url = client.buildAuthorizeUrl({ scope: 'openid profile offline_access' });
 
@@ -125,18 +125,18 @@ AuthenticationClient().getAccessTokenByCode(code, options)
 
 #### 参数
 
-- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
-- `options` \<object\> 发起 PKCE 授权登录时需要填写此参数。详情请见[使用 OIDC 授权码 + PKCE 模式](/federation/oidc/pkce/)。
+- `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
+- `options` \<object\> 发起 PKCE 授权登录时需要填写此参数。详情请见[使用 OIDC 授权码 + PKCE 模式](https://docs.authing.cn/v2/federation/oidc/pkce/)。
 - `options.codeVerifier` \<string\> 校验码原始值，不是摘要值。
 
 #### 示例
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.getAccessTokenByCode('授权码 code');
 let res2 = await authenticationClient.getAccessTokenByCode('授权码 code', {
@@ -176,16 +176,16 @@ AuthenticationClient().getUserInfoByAccessToken('access_token')
 
 #### 参数
 
-- `access_token` \<string\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `access_token` \<string\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)。
 
 #### 示例
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.getUserInfoByAccessToken('Access token');
 ```
@@ -262,16 +262,16 @@ AuthenticationClient().getNewAccessTokenByRefreshToken(refreshToken)
 
 #### 参数
 
-- `refreshToken` \<string\> Refresh token，可以从 AuthenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](/guides/federation/oidc.md#刷新-access-token)。
+- `refreshToken` \<string\> Refresh token，可以从 AuthenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](https://docs.authing.cn/v2/guides/federation/oidc.html#%E5%88%B7%E6%96%B0-access-token)。
 
 #### 示例
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.getNewAccessTokenByRefreshToken('Access token');
 ```
@@ -305,10 +305,10 @@ AuthenticationClient().introspectToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.introspectToken('Access token 或 Refresh token');
 ```
@@ -358,7 +358,7 @@ AuthenticationClient().validateToken(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
 });
 let res = await authing.validateToken({ idToken: 'ID Token' });
 ```
@@ -447,10 +447,10 @@ AuthenticationClient().revokeToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.revokeToken('Access token 或 Refresh token');
 ```
@@ -483,9 +483,9 @@ AuthenticationClient().buildLogoutUrl(options)
 ```javascript
 // 拼接前端万能登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn' });
 ```
@@ -495,17 +495,17 @@ let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn
 ```js
 // 拼接符合 OIDC 协议标准的登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  appHost: 'https://{YOUR_DOMAIN}.authing.cn',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  appHost: 'AUTHING_DOMAIN',
+  redirectUri: 'AUTHING_REDIRECTURI',
   protocol: 'oidc',
 });
 let url = authenticationClient.buildLogoutUrl({ expert: true, idToken: '待退出用户的 idToken', redirectUri: 'https://authing.cn' });
 ```
 
 ### Client Credentials 模式获取 Access Token
->使用[编程访问账号](/guides/authorization/m2m-authz.html#m2m-授权)获取具备权限的 Access Token。
+>使用[编程访问账号](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#m2m-%E6%8E%88%E6%9D%83)获取具备权限的 Access Token。
 
 ```js
 AuthenticationClient().getAccessTokenByClientCredentials(scope, options)
@@ -514,7 +514,7 @@ AuthenticationClient().getAccessTokenByClientCredentials(scope, options)
 
 #### 参数
 
-- `scope` \<string\> 权限项目，空格分隔的字符串，每一项代表一个权限。详情请见[机器间（M2M）授权](/guides/authorization/m2m-authz.html#获取具备权限的-accesstoken)。
+- `scope` \<string\> 权限项目，空格分隔的字符串，每一项代表一个权限。详情请见[机器间（M2M）授权](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#%E8%8E%B7%E5%8F%96%E5%85%B7%E5%A4%87%E6%9D%83%E9%99%90%E7%9A%84-accesstoken)。
 - `options`，编程访问账号的 AK 与 SK 信息。
 - `options.accessKey`，编程访问账号 AccessKey。
 - `options.secretKey`，编程访问账号 SecretKey。
@@ -523,9 +523,9 @@ AuthenticationClient().getAccessTokenByClientCredentials(scope, options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
-  redirectUri: '业务回调地址',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_SECRET',
+  redirectUri: 'AUTHING_REDIRECTURI',
 });
 let res = await authenticationClient.getAccessTokenByClientCredentials('email openid profile phone', { accessKey: '编程访问账号 AK', secretKey: '编程访问账号 SK' });
 ```
@@ -602,8 +602,8 @@ Bu6RP796BBiAwGwdUpHpKfhmQqahszBcGep8qT31XOy
 ```javascript
 import { ManagementClient } from 'authing-js-sdk'
 const managementClient = new ManagementClient({
-  userPoolId: 'YOUR_USERPOOL_ID',
-  secret: 'YOUR_USERPOOL_SECRET',
+  userPoolId: 'AUTHING_USERPOOL_ID',
+  secret: 'AUTHING_USERPOOL_SECRET',
 })
 
 managementClient.users.list // 获取用户列表
@@ -659,8 +659,8 @@ try {
 ```js
 import { message } from 'antd'
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
-  appHost: 'https://core.you-authing-service.com',
+  appId: 'AUTHING_APP_ID',
+  appHost: 'AUTHING_DOMAIN',
   onError: (code, msg: any) => {
     message.error(msg)
   },

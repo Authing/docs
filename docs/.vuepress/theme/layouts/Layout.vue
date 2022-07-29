@@ -218,6 +218,7 @@ export default {
   methods: {
     findDom(domClass, rgExp, params) {
       document.querySelectorAll(domClass).forEach((item) => {
+        console.log(rgExp);
         if (item.innerText.indexOf(rgExp) > -1) {
           const res = this.replaceString(item.innerHTML, rgExp, params);
           item.innerHTML = res;
@@ -244,6 +245,7 @@ export default {
               _this.hiddenModule();
               _this.isInConsole = event.eventType;
             }
+
             // 这里判断是在控制台快速开始文档，要操作的步骤
             if (event.isQuickDocs) {
               if (data.appId) {
@@ -315,6 +317,15 @@ export default {
                     "pre[class*='language-']",
                     "AUTHING_USERPOOL_SECRET",
                     data.userPoolSecret
+                  );
+                });
+              }
+              if (data.appId) {
+                _this.$nextTick(() => {
+                  _this.findDom(
+                    "pre[class*='language-']",
+                    "APP_ID",
+                    data.appId
                   );
                 });
               }

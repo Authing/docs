@@ -1,6 +1,6 @@
 # Vue
 
-以下指南将逐步引导你如何使用 Authing SDK 为你`已有`或`新开发`的 `Vue(2/3) 应用`添加`登录`、`登出`、`展示用户信息`、`发起认证授权`等`一系列认证能力`。
+本指南将从 Authing 的配置开始逐步引导你如何快速使用 SDK 为你已有或新开发的 Vue(2/3) 应用添加登录、登出、展示用户信息、发起认证授权等一系列认证能力。
 
 <AppDetailSiderBar />
 
@@ -8,7 +8,7 @@
 
 第一步：使用 Authing 创建一个应用：
 
-- 进入<a href="https://authing.cn/" target="blank">控制台</a>
+- 进入`控制台`
 - 选择`应用`菜单
 - 点击右上角`创建自建应用`按钮
 - 填写`应用名称`和`认证地址`、选择`单页 Web 应用`
@@ -41,11 +41,11 @@ import { enhancedAuthing } from "@/plugins/enhancedAuthing";
 
 Vue.use(enhancedAuthing, {
   // appId：控制台 -> 端点信息 -> App ID
-  appId: "APP_ID",
+  appId: 'AUTHING_APP_ID',
   // appHost：应用认证地址，控制台 -> 应用详情 -> 认证配置 -> 认证地址
-  appHost: "https://{应用域名}.authing.cn",
+  appHost: 'AUTHING_DOMAIN',
   // redirectUri：应用回调地址，在 Authing 完成认证后跳回的地址。控制台 -> 应用详情 -> 认证配置 -> 登录回调 URL
-  redirectUri: "通过 Authing 登录成功后的跳转地址",
+  redirectUri: 'AUTHING_REDIRECTURI',
   tokenEndPointAuthMethod: "none", // 默认
   introspectionEndPointAuthMethod: "none", // 默认
 });
@@ -185,8 +185,3 @@ Vue.use(enhancedAuthing, {
   };
 </script>
 ```
-
-## 资源
-
-- [用户认证 SDK 所有功能](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)
-- [论坛社区](https://forum.authing.cn/)

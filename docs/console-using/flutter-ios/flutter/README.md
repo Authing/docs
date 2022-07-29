@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-本指南将逐步引导你如何使用 Authing Flutter SDK 为你提供的基础认证能力。
+本指南将从 Authing Flutter SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证能力。
 
 <AppDetailSiderBar />
 

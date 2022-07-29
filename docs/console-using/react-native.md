@@ -1,6 +1,6 @@
 # React Native
 
-SDK for React Native 是 Authing 提供的一种在 webview 中嵌入了 Guard 组件的集成功能 sdk，你可以把它嵌入在你任何的 React-Native 应用中，一站式处理复杂的用户认证流程。
+本指南将从 Authing React Native SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
 
@@ -34,7 +34,7 @@ import { AuthingGuard } from '@authing/rn';
 
 const App = () => {
   // 替换你的 AppId
-	const appId = 'your_appId_at_authing_console';
+	const appId = 'AUTHING_APP_ID';
 	const options = {
 		title: 'SDK for React Native',
 		forceLogin: true // 将注册和登录合并，当用户不存在的时候为其自动注册

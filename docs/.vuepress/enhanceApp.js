@@ -14,11 +14,11 @@ export default ({ Vue, options, router, siteData }) => {
       {
         data() {
           return {
-            appId: ""
+            appId: "",
           };
-        }
-      }
-    ]
+        },
+      },
+    ],
   });
 
   Vue.prototype.$eventBus = new Vue();
