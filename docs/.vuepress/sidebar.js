@@ -215,6 +215,10 @@ const zhCnNavBar = {
               title: "通过 SDK 接入 MFA",
               path: "/guides/authentication/mfa/mfa-sdk",
             },
+            {
+              title: "MFA 策略配置",
+              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
+            },
                     ],
         },
         {
