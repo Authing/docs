@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| keywords | string | 是 | - | 搜索关键词，如组织名称等。  | `Authing` |
-| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
-| withCustomData | boolean | 否 | - | 是否获取自定义数据。  | `true` |
+| keywords | string | 是 | - | 搜索关键词，如组织名称等。   | `Authing` |
+| organizationCode | string | 是 | - | 组织 code。   | `steamory` |
+| withCustomData | boolean | 否 | - | 是否获取自定义数据。   | `true` |
 
 
 ## 示例代码

@@ -15,16 +15,16 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| parentDepartmentId | string | 是 | - | 父部门 id。  | `6229c4deb3e4d8a20b6021ff` |
-| name | string | 是 | - | 部门名称。  | `开发部` |
-| organizationCode | string | 是 | - | 组织 Code（organizationCode）。  | `steamory` |
-| openDepartmentId | string | 否 | - | 自定义部门 ID，用于存储自定义的 ID。  | `ou_7dab8a3d3cdccxxxxxx777c7ad535d62` |
-| description | string | 否 | - | 部门描述。  | `技术研发部门` |
-| code | string | 否 | - | 部门识别码。  | `6229c4deb3e4d8a20b6021ff` |
-| isVirtualNode | boolean | 否 | - | 是否是虚拟部门。  |  |
-| i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| customData | object | 否 | - | 部门的扩展字段数据。  | `{"icon":"https://example.com/logo"}` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
+| parentDepartmentId | string | 是 | - | 父部门 id。   | `6229c4deb3e4d8a20b6021ff` |
+| name | string | 是 | - | 部门名称。   | `开发部` |
+| organizationCode | string | 是 | - | 组织 Code（organizationCode）。   | `steamory` |
+| openDepartmentId | string | 否 | - | 自定义部门 ID，用于存储自定义的 ID。   | `ou_7dab8a3d3cdccxxxxxx777c7ad535d62` |
+| description | string | 否 | - | 部门描述。   | `技术研发部门` |
+| code | string | 否 | - | 部门识别码。   | `6229c4deb3e4d8a20b6021ff` |
+| isVirtualNode | boolean | 否 | - | 是否是虚拟部门。   |  |
+| i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。   | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| customData | object | 否 | - | 部门的扩展字段数据。   | `{"icon":"https://example.com/logo"}` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型。  枚举值：`department_id`,`open_department_id` | `department_id` |
 
 
 ## 示例代码

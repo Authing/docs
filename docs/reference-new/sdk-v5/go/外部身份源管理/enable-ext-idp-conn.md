@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appId | string | 是 | - | 应用 ID。  | `60b49eb83fd80adb96f26e68` |
-| enabled | boolean | 是 | - | 是否开启身份源连接。  |  |
-| id | string | 是 | - | 身份源连接 ID。  | `60b49eb83fd80adb96f26e68` |
-| tenantId | string | 否 | - | 租户 ID。  | `60b49eb83fd80adb96f26e68` |
+| appId | string | 是 | - | 应用 ID。   | `60b49eb83fd80adb96f26e68` |
+| enabled | boolean | 是 | - | 是否开启身份源连接。   |  |
+| id | string | 是 | - | 身份源连接 ID。   | `60b49eb83fd80adb96f26e68` |
+| tenantId | string | 否 | - | 租户 ID。   | `60b49eb83fd80adb96f26e68` |
 
 
 ## 示例代码

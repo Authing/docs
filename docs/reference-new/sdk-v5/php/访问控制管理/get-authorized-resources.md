@@ -19,7 +19,7 @@
 | targetType | string  | 是 | - | 目标对象类型。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
 | namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
 | resourceType | string  | 否 | - | 限定资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON` | `DATA` |
-| resourceList | string[]  | 否 | - | 限定查询的资源列表，如果指定，只会返回所指定的资源列表。。  |  |
+| resourceList | string[]  | 否 | - | 限定查询的资源列表，如果指定，只会返回所指定的资源列表。。数组长度限制：50。  |  |
 | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源。  |  |
 
 

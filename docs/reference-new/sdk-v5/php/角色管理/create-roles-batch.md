@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表。  | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表。 数组长度限制：50。  | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
 ## 示例代码

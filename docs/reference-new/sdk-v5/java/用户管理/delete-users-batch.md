@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userIds | string[] | 是 | - | 用户 ID 列表。  | `["userId1","userId2"]` |
-| options | <a href="#DeleteUsersBatchOptionsDto">DeleteUsersBatchOptionsDto</a> | 否 | - | 可选参数。  |  |
+| userIds | string[] | 是 | - | 用户 ID 列表。 数组长度限制：50。  | `["userId1","userId2"]` |
+| options | <a href="#DeleteUsersBatchOptionsDto">DeleteUsersBatchOptionsDto</a> | 否 | - | 可选参数。   |  |
 
 
 ## 示例代码

@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userIds | array[] | 是 | - | 用户 ID 列表。  | `["623c20b2a062aaaaf41b17da"]` |
-| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
-| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
+| userIds | array[] | 是 | - | 用户 ID 列表。   | `["623c20b2a062aaaaf41b17da"]` |
+| organizationCode | string | 是 | - | 组织 code。   | `steamory` |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。   | `60b49eb83fd80adb96f26e68` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。  枚举值：`department_id`,`open_department_id` | `department_id` |
 
 
 ## 示例代码
