@@ -273,17 +273,17 @@ export default {
     login() {
       const params = {
         // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址";
+        redirectUri: "回调地址",
 
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后
         // 重定向回到此页面，默认为当前 URL
-        originalUri: "发起登录的 URL";
+        originalUri: "发起登录的 URL",
 
         // 即使在用户已登录时也提示用户再次登录
-        forced: false;
+        forced: false,
 
         // 自定义的中间状态，会被传递到回调端点
-        customState: {};
+        customState: {},
       };
       this.sdk.loginWithRedirect(params);
     },
@@ -305,17 +305,17 @@ export default {
     const login = () => {
       const params = {
         // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址";
+        redirectUri: "回调地址",
 
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后
         // 重定向回到此页面，默认为当前 URL
-        originalUri: "发起登录的 URL";
+        originalUri: "发起登录的 URL",
 
         // 即使在用户已登录时也提示用户再次登录
-        forced: false;
+        forced: false,
 
         // 自定义的中间状态，会被传递到回调端点
-        customState: {};
+        customState: {},
       };
       sdk.loginWithRedirect(params);
     }
@@ -483,10 +483,10 @@ export default {
     async login() {
       const params = {
         // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址";
+        redirectUri: "回调地址",
 
         // 即使在用户已登录时也提示用户再次登录
-        forced: false;
+        forced: false,
       };
       const res = await this.sdk.loginWithPopup(params);
       this.loginState = res;
@@ -509,10 +509,10 @@ export default {
     const login = async () => {
       const params = {
         // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址";
+        redirectUri: "回调地址",
 
         // 即使在用户已登录时也提示用户再次登录
-        forced: false;
+        forced: false,
       };
       const res = await sdk.loginWithPopup(params);
       state.loginState = res;
@@ -1080,10 +1080,10 @@ export default {
       const options = {
         // 登出完成后的回调地址，默认为初始化参数中的 logoutRedirectUri
         // 登出回调地址，需要在控制台『应用配置 - 登出回调 URL』中指定
-        redirectUri: "登出回调地址";
+        redirectUri: "登出回调地址",
 
         // 自定义中间状态
-        state: "";
+        state: "",
       };
       await this.sdk.logoutWithRedirect(options);
     },
@@ -1106,10 +1106,10 @@ export default {
       const options = {
         // 登出完成后的回调地址，默认为初始化参数中的 logoutRedirectUri
         // 登出回调地址，需要在控制台『应用配置 - 登出回调 URL』中指定
-        redirectUri: "登出回调地址";
+        redirectUri: "登出回调地址",
 
         // 自定义中间状态
-        state: "";
+        state: "",
       };
       await sdk.logoutWithRedirect(options);
     };
