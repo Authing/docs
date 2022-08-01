@@ -1,8 +1,8 @@
 <!-- 初始化 SDK -->
 ```js
-import { AuthingSPA } from '@authing/spa-auth-sdk';
+import { Authing } from '@authing/browser';
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // 应用的认证地址，例如：https://domain.authing.cn
   domain: '认证地址',
   appId: '应用 ID',

@@ -7,7 +7,7 @@
 **单点登录**（Single Sign On），简称为 **SSO**，是目前比较流行的企业业务整合的解决方案之一。 SSO 的定义是在多个应用系统中，**用户只需要登录一次**就可以**访问所有**相互信任的应用系统。
 
 
-## Authing SPA SDK
+## Authing Browser SDK
 
 基于 OIDC 标准的 Single Page App 场景认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
 
@@ -50,26 +50,26 @@
 
 ## 安装
 
-Authing SPA SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
+Authing Browser SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
 ### 使用 NPM 安装
 
 ```shell
-$ npm install @authing/spa-auth-sdk
+$ npm install @authing/browser
 ```
 
 ### 使用 Yarn 安装
 
 ```shell
-$ yarn add @authing/spa-auth-sdk
+$ yarn add @authing/browser
 ```
 
 ### 使用 script 标签直接引入
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@authing/spa-auth-sdk@0.0.1-alpha1/dist/index.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/browser"></script>
 <script>
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',
@@ -101,12 +101,12 @@ const sdk = new AuthingSPA({
 
 ![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-为了使用 Authing SPA SDK，你需要填写`应用 ID`、`认证域名`、`回调地址`等参数，如下示例：
+为了使用 Authing Browser SDK，你需要填写`应用 ID`、`认证域名`、`回调地址`等参数，如下示例：
 
 ```js
-import { AuthingSPA } from '@authing/spa-auth-sdk';
+import { Authing } from '@authing/browser';
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',
@@ -118,7 +118,7 @@ const sdk = new AuthingSPA({
 
 ## 登录
 
-Authing SPA SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
+Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
 
 1. 在当前窗口转到 Authing 托管的登录页；
 2. 弹出一个窗口，在弹出的窗口中加载 Authing 托管的登录页。
@@ -130,12 +130,12 @@ Authing SPA SDK 可以向 Authing 发起认证授权请求，目前支持三种�
 ::: tab React
 ```tsx{22-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -213,7 +213,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -224,7 +224,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -288,12 +288,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -370,8 +370,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -382,7 +382,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
@@ -569,12 +569,12 @@ export class AppComponent {
 ::: tab React
 ```tsx{22-28}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -643,7 +643,7 @@ export default App;
   </div>
 </template>
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -654,7 +654,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -710,12 +710,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -777,8 +777,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -789,7 +789,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
@@ -944,12 +944,12 @@ export class AppComponent {
 ::: tab React
 ```tsx{22-44}
 import React, { useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -1027,7 +1027,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1038,7 +1038,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1096,12 +1096,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1170,8 +1170,8 @@ export default defineComponent({
 
 ```ts{26-44}
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1182,7 +1182,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
@@ -1234,12 +1234,12 @@ export class AppComponent {
 
 ### 高级使用
 
-每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing SPA SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
+每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Browser SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
-import { AuthingSPA } from '@authing/spa-auth-sdk';
+import { Authing } from '@authing/browser';
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',
@@ -1285,12 +1285,12 @@ const sdk = new AuthingSPA({
 ::: tab React
 ```tsx{29-36}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -1368,7 +1368,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1379,7 +1379,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1450,12 +1450,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1539,8 +1539,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1551,7 +1551,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
@@ -1612,12 +1612,12 @@ export class AppComponent {
 ::: tab React
 ```tsx{38-50}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState, UserInfo } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -1725,7 +1725,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1737,7 +1737,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1832,12 +1832,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -1941,8 +1941,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState, UserInfo } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1954,7 +1954,7 @@ export class AppComponent {
   loginState: LoginState | null = null;
   userInfo: UserInfo | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
@@ -2027,12 +2027,12 @@ export class AppComponent {
 ::: tab React
 ```tsx{36-43}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
@@ -2120,7 +2120,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -2131,7 +2131,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -2196,12 +2196,12 @@ export default {
 
 <script>
 import { defineComponent } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // 很重要，请仔细填写！
       // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: "单点登录的'应用面板地址'",
@@ -2248,8 +2248,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -2260,7 +2260,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 很重要，请仔细填写！
     // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
     domain: '单点登录的"应用面板地址"',
