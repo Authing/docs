@@ -164,7 +164,7 @@ const managementClient = new ManagementClient({
 | hasChildren | boolean | 是 | 是否包含子部门。 示例值： `true`  |
 | isVirtualNode | boolean | 否 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
-| customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |
+| customData | object | 否 | 部门的扩展字段数据。 示例值： `{"icon":"https://example.com/logo"}`  |
 
 
 ### <a id="I18nDto"></a> I18nDto

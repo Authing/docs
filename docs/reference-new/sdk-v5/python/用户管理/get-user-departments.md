@@ -134,7 +134,7 @@ data = management_client.get_user_departments(
 | joinedAt | string | 是 | 加入部门时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
 | i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
-| customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |
+| customData | object | 否 | 部门的扩展字段数据。 示例值： `{"icon":"https://example.com/logo"}`  |
 
 
 ### <a id="I18nDto"></a> I18nDto
