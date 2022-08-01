@@ -30,7 +30,7 @@ Pre-Register（注册前） Pipeline 的 user 对象含有用户注册时填入�
 | signedUp       | string  | 注册时间，格式为 2020-02-07T04:29:40.877Z     |
 | lastLogin      | string  | 上次登录时间，格式为 2020-02-07T04:29:40.877Z |
 | oauth          | string  | 社会化登录信息                                |
-| registerMethod | string  | 注册方式                                      |
+| registerSource | string  | 注册方式                                      |
 | blocked        | boolean | 是否被锁定                                    |
 | company        | string  | 公司名                                        |
 | browser        | string  | 访问浏览器                                    |
