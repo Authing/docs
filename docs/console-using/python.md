@@ -6,44 +6,40 @@
 
 ## 安装
 
-```bash
-pip install authing==5.0.0a6
-```
+我们推荐使用 `pip` 进行安装，它可以与一些模块打包工具很好地配合使用。
 
-> 如果你希望使用 V4 版本，请跳转到 [v4](https://github.com/Authing/authing-py-sdk/tree/v4) 分支查看文档。
+```bash
+pip install authing
+```
 
 ## 认证你的用户
 
 ### 初始化
 
 ```python
-from authing import AuthenticationClient
+from authing.v2.authentication import AuthenticationClient, AuthenticationClientOptions
 
 authentication_client = AuthenticationClient(
-  app_id="AUTHING_APP_ID",
-  app_secret="AUTHING_SECRET",
-  host="AUTHING_DOMAIN",
-  redirect_uri="AUTHING_REDIRECTURI",
+    options=AuthenticationClientOptions(
+        app_id='AUTHING_APP_ID',
+        secret='AUTHING_SECRET',
+        app_host='AUTHING_DOMAIN',
+        redirect_uri='AUTHING_LOGOUTREDIRECTURI'
+    )
 )
 ```
 
 完整的参数和释义如下：
 
-- `appId`: 应用 ID（必填）。
-- `appSecret`: 应用 Secret（必填）。
-- `host`: 应用对应的用户池域名，例如 pool.authing.cn，最后不带 `/` （必填）。
-- `redirectUri`: 认证完成后的重定向目标 URL（必填）。
-- `logoutRedirectUri`: 登出完成后的重定向目标 URL（可选）。
-- `scope`: 应用侧向 Authing 请求的权限（可选）。
-- `serverJWKS`: 服务端的 JWKS 公钥（可选）。
-- `cookieKey`: 存储认证上下文的 Cookie 名称（可选）。
+- `app_id`: 应用 ID（必填）。
+- `secret`: 应用 Secret（必填）。
+- `app_host`: 应用对应的用户池域名，例如 pool.authing.cn，最后不带 `/` （必填）。
+- `redirect_uri`: 认证完成后的重定向目标 URL（必填）。
 
-### 获取用户身份信息
+### 检测 Token 登录状态
 
 ```python
-data = authentication_client.get_user_info(
-  access_token='YOUR_ACCESS_TOKEN',
-)
+data = authentication_client.check_login_status('YOUR_ACCESS_TOKEN')
 ```
 
 ## 管理你的用户
@@ -51,24 +47,22 @@ data = authentication_client.get_user_info(
 ### 初始化
 
 ```python
-from authing import ManagementClient
+from authing.v2.management import ManagementClient, ManagementClientOptions
 
 management_client = ManagementClient(
-  access_key_id="AUTHING_USERPOOL_ID",
-  access_key_secret="AUTHING_USERPOOL_SECRET",
+    options=ManagementClientOptions(
+        user_pool_id='AUTHING_USERPOOL_ID',
+        secret='AUTHING_USERPOOL_SECRET',
+        host='AUTHING_DOMAIN'
+    )
 )
 ```
 
-`ManagementClient` 会自动从 Authing 服务器获取  Management API Token，并通过返回的 Token 过期时间自动对 Token 进行缓存。
-
 完整的参数和释义如下：
 
-- `access_key_id`: 用户池 ID（必填）。
-- `access_key_secret`: 用户池密钥（必填）。
-- `timeout`: 请求超时时间（可选）。单位为毫秒，默认为 10000 （10 秒）。
+- `user_pool_id`: 用户池 ID（必填）。
+- `secret`: 用户池密钥（必填）。
 - `host`: Authing 服务器地址。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: `https://authing-api.mydomain.com`，最后不带 `/` 。
-- `lang`: 接口 Message 返回语言格式（可选）。可选值为 `zh-CN` 和 `en-US`，默认为 `zh-CN`。
-- `use_unverified_ssl`: 不校验 `ssl` 证书（可选），默认为 `false`。
 
 ### 简单管理用户
 
@@ -77,32 +71,29 @@ management_client = ManagementClient(
 - 获取用户列表
 
 ```python
-data = management_client.list_users(
-    page=1,
-    limit=10
-)
+data = management_client.users.list()
 ```
 
 - 创建角色
 
 ```python
-data = management_client.create_role(
-  code='admin',
-  description='管理员',
-)
+data = management_client.roles.create(code='role1', description='this is description', namespace='default')
 ```
 
 ## 错误处理
 
+你可以使用 `try catch` 进行错误处理：
+
 ```python
-data = await management_client.get_user(
-  userId="62559df6b2xxxx259877b5f4"
-)
+from authing.v2.exceptions import AuthingException
 
-status_code, api_code, message = data.get('statusCode'), data.get('apiCode'), data.get('message')
-if (status_code !== 200) {
-  raise Exception(message); # 抛出异常，由全局异常捕捉中间件进行异常捕捉
-}
+try:
+    authentication_client.login_by_username(
+        username='bob',
+        password='passw0rd',
+    )
+except AuthingException as e:
+    print(e.code) # 2004
+    print(e.message) # 用户不存在
 
-// 继续你的业务逻辑 ...
 ```

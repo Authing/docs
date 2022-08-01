@@ -43,71 +43,8 @@ Authing.init(String userPoolId, String appId)
 
 ## 认证你的用户
 
->如果使用 Native 登录不使用 WebView，只需要调用 [OIDC 协议账号密码登录](#OIDC-协议账号密码登录) 即可登录。
+>如果使用 WebView，需要调用 [生成 OIDC 协议的用户登录链接](#https://docs.authing.cn/v2/reference/sdk-for-flutter/protocol/#生成-oidc-协议的用户登录链接) 获取到授权码，然后调用 [code 换 token](#https://docs.authing.cn/v2/reference/sdk-for-flutter/protocol/#code-换-token) 获取 Token。
 
-### 生成 OIDC 协议的用户登录链接
-
-生成登录 URL，传给 WebView 加载
-
-```dart
-static Future<AuthResult> buildAuthorizeUrl(AuthRequest authRequest) async
-```
-
-**参数**
-
-* *authRequest* 请求参数
-
-**示例**
-
-```dart
-AuthRequest authRequest = AuthRequest();
-authRequest.createAuthRequest();
-String url = await OIDCClient.buildAuthorizeUrl(authRequest);
-```
-
-**设置 scope 参数**
-
-默认值为 openid profile email phone username address offline_access role extended_fields
-
-```dart
-authRequest.scope = "openid"
-```
-
-**设置回调参数**
-
-SDK 会自动获取控制台默认回调。如果在控制台修改了回调，则需要设置 authRequest 回调地址。
-
-```dart
-authRequest.redirectUrl = "your_uri"
-```
-
-<br>
-
-### code 换 token
-
-通过 OIDC 授权码认证，返回的 User 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token
-
-```dart
-static Future<AuthResult> authByCode(String code, String codeVerifier, String redirectUrl) async
-```
-
-**参数**
-
-* *code* OIDC 授权码。
-* *codeVerifier* PKCE 验证码
-* *redirectUrl* 回调 Url
-
-**示例**
-
-```dart
-AuthResult result = await AuthClient.authByCode("P6FENDfGSH72PxgJQk17FoGMWY3oL1G0D2PQ1AfyDeo",
-        "fu6IivbcEb7DFCytjLmoAICRtFLbG9zkk5QdDbNd0gG",
-        "https://guard.authing/redirect");
-String ak = result.user?.accessToken;
-String idToken = result.user?.token;
-```
-
-<br>
 
 ### 邮箱密码注册
 
@@ -152,7 +89,7 @@ static Future<AuthResult> loginByAccount(String account, String password) async
 **示例**
 
 ```dart
-AuthResult results = await OIDCClient.loginByAccount("your account", "your password");
+AuthResult result = await OIDCClient.loginByAccount("your account", "your password");
 User user = result.user; // user info
 ```
 

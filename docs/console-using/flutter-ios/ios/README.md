@@ -23,17 +23,23 @@
 
 依赖规则选择 Up to Next Major Version 1.0.0
 
-![](./images/create_project3.png)
-
 ![](./images/create_project4.png)
 
 ![](./images/create_project5.png)
 
 ### 第二步：初始化
 
-红色部分是需要改动的地方
+App 启动时，初始化 Authing iOS SDK
 
-![](./images/start.png)
+```swift
+import Guard
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Authing.start(<#APPID#>);
+    }
+}
+```
+ `APPID` 为 Authing 控制台应用 ID
 
 <br>
 
