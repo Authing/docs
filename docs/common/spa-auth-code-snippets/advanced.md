@@ -1,8 +1,8 @@
 <!-- 高级使用 -->
 ```js
-import { AuthingSPA } from '@authing/spa-auth-sdk';
+import { Authing } from '@authing/browser';
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',

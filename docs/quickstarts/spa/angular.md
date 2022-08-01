@@ -12,7 +12,7 @@ downloadDemo:
 
 # Angular 快速开始
 
-你可以使用 Authing 快速为新开发的或已有的 Angular 应用集成**认证能力**。本教程讲述如何使用 Authing SPA SDK 为你的 Angular 应用添加认证能力。
+你可以使用 Authing 快速为新开发的或已有的 Angular 应用集成**认证能力**。本教程讲述如何使用 Authing Browser SDK 为你的 Angular 应用添加认证能力。
 
 > 如果您只需登录组件，可参考 [**登录组件文档**](/reference/guard/v2/angular.md)
 
@@ -49,7 +49,7 @@ downloadDemo:
 
 ### 记录应用信息
 
-为了下面方便顺利地使用 Authing SPA SDK，你需要记下该应用的这几个信息：
+为了下面方便顺利地使用 Authing Browser SDK，你需要记下该应用的这几个信息：
 
 - App ID
 - 认证地址
@@ -60,27 +60,27 @@ downloadDemo:
 
 ## 集成 Authing
 
-Authing SPA SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
+Authing Browser SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
 ### 安装 SDK
 
 #### 使用 NPM 安装
 
 ```bash
-$ npm install @authing/spa-auth-sdk
+$ npm install @authing/browser
 ```
 
 #### 使用 Yarn 安装
 
 ```bash
-$ yarn add @authing/spa-auth-sdk
+$ yarn add @authing/browser
 ```
 
 #### 使用 script 标签直接引入
 
 ```html
 <head>
-  <script src="//cdn.jsdelivr.net/npm/@authing/spa-auth-sdk@0.0.1-alpha1/dist/index.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@authing/browser"></script>
 </head>
 ```
 
@@ -92,7 +92,7 @@ $ yarn add @authing/spa-auth-sdk
 
 ### 发起登录
 
-Authing SPA SDK 可以向 Authing 发起认证授权请求，目前支持下面两种登录方式：
+Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持下面两种登录方式：
 
 - 在当前窗口转到 Authing 托管的登录页
 - 弹出一个窗口，在弹出的窗口中加载 Authing 托管的登录页
@@ -116,8 +116,8 @@ Authing SPA SDK 可以向 Authing 发起认证授权请求，目前支持下面�
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -127,7 +127,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: '认证地址',
     appId: '应用 ID',
@@ -227,8 +227,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -238,7 +238,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: "认证地址",
     appId: "应用 ID",
@@ -298,7 +298,7 @@ export class AppComponent {
 
 #### 高级使用
 
-每次发起登录本质是访问一个携带许多参数的 URL 地址，Authing SPA SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
+每次发起登录本质是访问一个携带许多参数的 URL 地址，Authing Browser SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 !!!include(common/spa-auth-code-snippets/advanced.md)!!!
 
@@ -324,8 +324,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -335,7 +335,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: '认证地址',
     appId: '应用 ID',
@@ -408,11 +408,11 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
+import { Authing } from '@authing/browser';
 import type {
   LoginState,
   UserInfo
-} from '@authing/spa-auth-sdk/dist/types/global';
+} from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -423,7 +423,7 @@ export class AppComponent {
   loginState: LoginState | null = null;
   userInfo: UserInfo | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: '认证地址',
     appId: '应用 ID',
@@ -505,8 +505,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -516,7 +516,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: '认证地址',
     appId: '应用 ID',
@@ -705,8 +705,8 @@ $ npm start
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -717,7 +717,7 @@ export class AppComponent {
   loginState: LoginState | null = null;
   resource: object | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // 应用的认证地址，例如：https://domain.authing.cn
     domain: '认证地址',
     appId: '应用 ID',
