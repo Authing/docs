@@ -199,7 +199,7 @@ namespace Example
 | userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
-| sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `[object Object]`  |
+| sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `{"sendDefaultEmailNotification":false,"sendDefaultPhoneNotification":false,"inputSendEmailNotification":"test@example.com","inputSendPhoneNotification":"136xxxx1234","appId":"app1"}`  |
 
 
 ### <a id="SendResetPasswordNotificationDto"></a> SendResetPasswordNotificationDto

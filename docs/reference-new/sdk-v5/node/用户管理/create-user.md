@@ -195,7 +195,7 @@ const managementClient = new ManagementClient({
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码。   |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
-| sendNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。 示例值： `[object Object]`  |
+| sendNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。 示例值： `{"sendEmailNotification":true,"sendPhoneNotification":true}`  |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto

@@ -114,15 +114,15 @@ $data = $management->updateOrganization(array(
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit
@@ -146,22 +146,22 @@ $data = $management->updateOrganization(array(
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
 | isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
-| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}`  |
 
 
 ### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit
