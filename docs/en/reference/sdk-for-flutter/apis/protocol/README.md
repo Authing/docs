@@ -26,7 +26,89 @@ String ak = result.user?.accessToken;
 String idToken = result.user?.token;
 ```
 
+<br>
 
+### Use email and password registration
+
+Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
+
+```dart
+static Future<AuthResult> registerByEmail(String email, String password) async
+```
+
+**Parameter**
+
+- *email* email address
+- *password* password
+
+**example**
+
+```dart
+AuthResult result = await OIDCClient.registerByEmail("email", "password");
+User user = result.user; // get user info
+```
+
+**Error Code**
+
+* `2003` Illegal email address
+* `2026` Registered mailbox
+
+<br>
+
+### Register using username
+
+Use the username to register, the username is case sensitive and the only user pool.
+
+```dart
+static Future<AuthResult> registerByUserName(String username, String password) async
+```
+
+**Parameter**
+
+- *username* username
+- *password* password
+
+**Example**
+
+```dart
+AuthResult result = await OIDCClient.registerByUserName("username", "password");
+User user = result.user; // get user info
+```
+
+
+**Error Code**
+
+* `2026` Registered mailbox
+
+<br>
+
+### Use mobile phone number registration
+
+Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#https://docs.authing.cn/v2/en/reference/sdk-for-flutter/apis/authentication/#send-sms-code) method sends SMS verification code.
+
+```dart
+  static Future<AuthResult> registerByPhoneCode(String phone, String code, String password) async
+```
+
+**Parameter**
+
+- *phone* The phone number
+- *code* SMS verification code
+- *password* initial password, it can be null
+
+**Example**
+
+```dart
+AuthResult result = await OIDCClient.registerByPhoneCode("phone", "code", "password");
+User user = result.user; // get user info
+```
+
+**Error Code**
+
+* `2001` SMS verification code error
+* `2026` Cell phone number registered
+
+<br>
 
 ## OIDC Login by account and password 
 
@@ -46,7 +128,7 @@ AuthResult results = await OIDCClient.loginByAccount("your account", "your passw
 User user = result.user; // user info
 ```
 
-
+<br>
 
 ## OIDC Login by phone code 
 
@@ -68,7 +150,7 @@ AuthResult result = await OIDCClient.loginByPhoneCode("phone", "code");
 User user = result.user; // get user info
 ```
 
-
+<br>
 
 ## Build authorize URL 
 
@@ -92,7 +174,7 @@ authRequest.createAuthRequest();
 String url = await OIDCClient.buildAuthorizeUrl(authRequest);
 ```
 
-
+<br>
 
 ## Token Change user information 
 
@@ -113,7 +195,7 @@ AuthResult result = await OIDCClient.getUserInfoByAccessToken("accessToken");
 User user = result.user; // get user info
 ```
 
-
+<br>
 
 ## Refresh Access Token 
 
