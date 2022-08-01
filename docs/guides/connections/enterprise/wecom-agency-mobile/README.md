@@ -26,7 +26,7 @@
 
 在配置开发信息页面，点击**随机获取**生成 Token 和 EncodingAESKey；代开发模板回调 URL，需要在 {{$localeConfig.brandName}} 控制台创建应用后才能生成，并通过微信服务器校验，因此我们先把页面保留在这里，打开 {{$localeConfig.brandName}} 控制台。
 
-![](./images/console_save.png)
+![](./images/save_token.png)
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端（代开发模式）
 
