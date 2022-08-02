@@ -57,52 +57,53 @@
 2. 选择 **应用->自建应用**，点击目标应用详情页右上角 **体验登录** 按钮，使用上述创建的账号登录。
 
 3. 绑定 OTP。
-    * 方法一：
+   * 方法一：
 
 <img src="./images/otp-binding-window.png" height=500 style="display:block;margin: 0 auto;">
-
-        a. 点击 **确定**，打开 MFA 绑定 QR 窗口。
+        
+a. 点击 **确定**，打开 MFA 绑定扫码窗口。
 
 <img src="./images/mfa-binding-scan.png" height=500 style="display:block;margin: 0 auto;">
 
-        b. 在手机端下载并打开 Google Authenticator / Microsoft Authenticator APP（下文以 Microsoft Authenticator 为例添加 MFA。），点击右上角 + 按钮，选择 **其他（Google、Facebook 等）**， 扫码添加 MFA。
+b. 在手机端下载并打开 Google Authenticator / Microsoft Authenticator APP（下文以 Microsoft Authenticator 为例添加 MFA。），点击右上角 + 按钮，选择 **其他（Google、Facebook 等）**， 扫码添加 MFA。
 
-        扫码后，可以在 APP 的账户列表中查看到刚刚添加的 MFA。
+扫码后，可以在 APP 的账户列表中查看到刚刚添加的 MFA。
+
 <img src="./images/otp-mtp-qr.png">
 
-        c. 在电脑端输入该 MFA 上显示的动态口令，点击 **下一步**，备份密钥，勾选下方保存密钥提示，点击 **下一步** 完成确认绑定。
+c. 在电脑端输入该 MFA 上显示的动态口令，点击 **下一步**，备份密钥，勾选下方保存密钥提示，点击 **下一步** 完成确认绑定。
 
 <img src="./images/recovery-qr-code.png" height=500 style="display:block;margin: 0 auto;">
 
-        ::: hint-info
-        务必将这里展示的恢复代码妥善保存。如果以后丢失了 MFA、无法通过 MFA 口令登录，可使用这个密钥来恢复账号访问。
-        :::
+::: hint-info
+务必将这里展示的恢复代码妥善保存。如果以后丢失了 MFA、无法通过 MFA 口令登录，可使用这个密钥来恢复账号访问。
+:::
 
-        系统提示认证成功。
+系统提示认证成功。
 
 <img src="./images/certified-sucessfully.png">
 
-    * 方法二：
+   * 方法二：
         
-        要绑定 OTP，执行以下步骤：
+   要绑定 OTP，执行以下步骤：
 
-        a. 访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}` 进行登录。然后访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}/u` ，点击页面右上角头像进入 **个人中心**。
+a. 访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}` 进行登录。然后访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}/u` ，点击页面右上角头像进入 **个人中心**。
 
-        b. 选择 **个人中心->账号安全->个人 MFA**，点击 **立即绑定** 按钮绑定 MFA。
+b. 选择 **个人中心->账号安全->个人 MFA**，点击 **立即绑定** 按钮绑定 MFA。
 
 ![](./images/mfa-binding-path.png)
 
-        c. 在手机端下载并打开 Google Authenticator / Microsoft Authenticator APP（下文以 Microsoft Authenticator 为例添加 MFA。），点击右上角 + 按钮，选择 **其他（Google、Facebook 等）**，扫描网页端控制台二维码。
+c. 在手机端下载并打开 Google Authenticator / Microsoft Authenticator APP（下文以 Microsoft Authenticator 为例添加 MFA。），点击右上角 + 按钮，选择 **其他（Google、Facebook 等）**，扫描网页端控制台二维码。
 
 ![](./images/authenticator-app-add-mfa.png) 
 
-        扫码后，可以在 APP 的账户列表中查看到刚刚添加的 MFA 及生产的动态口令。
+扫码后，可以在 APP 的账户列表中查看到刚刚添加的 MFA 及生产的动态口令。
 
-        d. 在网页端点击 **下一步**，输入动态口令。
+d. 在网页端点击 **下一步**，输入动态口令。
 
-        e. 备份密钥，勾选下方保存密钥提示，点击 **下一步** 完成确认绑定，点击 **下一步**。
+e. 备份密钥，勾选下方保存密钥提示，点击 **下一步** 完成确认绑定，点击 **下一步**。
     
-        提示绑定成功。
+提示绑定成功。
 
 ### 用户登录
 
@@ -127,7 +128,9 @@
 要解绑 Authenticator 和控制台的 MFA 绑定，执行以下步骤：
 
 1. 选择 **个人中心->账号安全->个人 MFA**。
+
 2. 点击 **立即修改** 按钮。
+
 3. 在打开的 **MFA绑定** 页面右上角点击 **解除绑定** 按钮，并确认解绑。
 
 ![](./images/mfa-unbinding.png)
