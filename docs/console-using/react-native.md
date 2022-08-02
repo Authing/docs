@@ -98,7 +98,7 @@ fetch('https://mywebsite.com/endpoint/', {
 
 ### 在后端验证 Token
 
-Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里](https://docs.authing.cn/v2/guides/faqs/how-to-validate-user-token.html)。
+Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，详见[如何验证用户身份凭证（token）](https://docs.authing.cn/v2/guides/faqs/how-to-validate-user-token.html)。
 
 1. 开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
 
@@ -129,7 +129,7 @@ if not logged_in:
 
 ## 管理你的用户
 
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [Authing 控制台 ](https://console.authing.cn/console/userpool)中能做的所有操作，都能用此模块完成。此模块适合在后端或者**可信任**的前端环境下使用。下面使用 NodeJs 的sdk来实现（或者也可以在 React-Native 前端项目中使用）：
+`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在控制台中能做的所有操作，都能用此模块完成。此模块适合在后端或者**可信任**的前端环境下使用。下面使用 NodeJs 的sdk来实现（或者也可以在 React-Native 前端项目中使用）：
 
 ### 安装
 
