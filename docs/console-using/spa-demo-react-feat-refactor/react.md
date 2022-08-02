@@ -1,8 +1,7 @@
-# React 快速开始
+# React 
 
 你可以使用 Authing 快速为新开发的或已有的 React 应用集成**认证能力**。本教程讲述如何使用 Authing Browser SDK 为你的 React 应用添加认证能力。
 
-> 如果你只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/v2/react.html)
 
 ## 配置 Authing
 
