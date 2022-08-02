@@ -1,13 +1,10 @@
 # Android
 
-<LastUpdated/>
-
 本指南将从 Authing Android SDK 的安装开始逐步引导你如何快速为你已有或新开发的 Android 应用添加用户认证能力。
 
 <AppDetailSiderBar />
 
 ## 安装
-
 
 在工程根目录的 build.gradle 文件里面需包含 mavenCentral
 

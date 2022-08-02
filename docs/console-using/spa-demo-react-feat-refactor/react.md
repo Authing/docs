@@ -1,7 +1,8 @@
 # React 
 
-你可以使用 Authing 快速为新开发的或已有的 React 应用集成**认证能力**。本教程讲述如何使用 Authing Browser SDK 为你的 React 应用添加认证能力。
+本指南讲述如何使用 Authing Browser SDK 为你的 React 应用添加认证能力。
 
+<AppDetailSiderBar />
 
 ## 配置 Authing
 

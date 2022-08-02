@@ -6,7 +6,6 @@
 
 ## 安装
 
-
 ```
 go get -u github.com/Authing/authing-golang-sdk
 ```

@@ -1,7 +1,5 @@
 # Node.js/Javascript
 
-<LastUpdated/>
-
 本指南将从 Authing Node.js/Javascript SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
 
 <AppDetailSiderBar />
