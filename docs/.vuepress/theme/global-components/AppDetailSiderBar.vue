@@ -1,10 +1,7 @@
 <template>
   <div class="newBarWrap" v-if="$themeConfig.isInConsoleAppDetail">
     <p class="newBarTitle">快速开始</p>
-    <p class="newBarDesc">
-      本指南将介绍如何快速集成 Authing
-      基础能力到你的应用程序，并且会根据当前的配置情况做定制化信息呈现。
-    </p>
+    <p class="newBarDesc">仅需几步，即可完成 Authing 能力接入。</p>
     <div class="anchorWrap">
       <a
         class="anchorContent"
@@ -54,7 +51,7 @@ export default {
   }
   .newBarDesc {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     color: #86909c;
     margin-bottom: 22px;
   }
