@@ -23,7 +23,7 @@ cd ios && pod install
 
 ## 认证你的用户
 
-### 1.快速开始
+### 快速开始
 
 用户在登录成功后会触发 `onLogin` 事件，并且在事件中会返回用户的详细信息。`onLogin` 具体的使用方法如下：
 
@@ -58,18 +58,18 @@ export default App;
 
 
 
-### 2. 携带 Token 信息到请求中
+### 携带 Token 信息到请求中
 
 用户成功登录之后 authing-rn-sdk 会将用户信息 `userInfo` 回调给传入的 `onLogin` 函数，`userInfo` 是数组类型，第一项是用户信息，用户信息中包含了 Authing 用户 ID、头像、昵称等，还包括登录凭证 `token`。
 
-将 `Authorization` 请求头设置为 "Bearer " + token，例如：
+1. 将 `Authorization` 请求头设置为 "Bearer " + token，例如：
 
 ```js
 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ';
 
 ```
 
-如果你使用的是 axios，可以这样写：
+2. 如果你使用的是 axios，可以这样写：
 
 ```js
 axios.get('https://mywebsite.com/endpoint/', {
@@ -79,7 +79,7 @@ axios.get('https://mywebsite.com/endpoint/', {
 });
 ```
 
-如果你使用的是 fetch，可以这样写：
+3. 如果你使用的是 fetch，可以这样写：
 
 ```js
 fetch('https://mywebsite.com/endpoint/', {
@@ -96,11 +96,11 @@ fetch('https://mywebsite.com/endpoint/', {
 
 
 
-### 3.在后端验证 Token
+### 在后端验证 Token
 
-Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里 (opens new window)](https://docs.authing.cn/v2/guides/faqs/how-to-validate-user-token.html)。
+Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里](https://docs.authing.cn/v2/guides/faqs/how-to-validate-user-token.html)。
 
-开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
+1. 开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
 
 > 开发者不用在后端存储该 token，只需要调用 Authing 提供的接口。
 
@@ -116,7 +116,7 @@ def check_authing_token_status(token: str) -> bool:
 
 
 
-然后就可以通过登录状态和自己的业务逻辑对请求进行响应了，比如：
+2. 然后就可以通过登录状态和自己的业务逻辑对请求进行响应了，比如：
 
 ```py
 logged_in = check_authing_token_status(token)
@@ -129,15 +129,15 @@ if not logged_in:
 
 ## 管理你的用户
 
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [Authing 控制台 (opens new window)](https://console.authing.cn/console/userpool)中能做的所有操作，都能用此模块完成。此模块适合在后端或者**可信任**的前端环境下使用。下面使用 NodeJs 的sdk来实现（或者也可以在 React-Native 前端项目中使用）：
+`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [Authing 控制台 ](https://console.authing.cn/console/userpool)中能做的所有操作，都能用此模块完成。此模块适合在后端或者**可信任**的前端环境下使用。下面使用 NodeJs 的sdk来实现（或者也可以在 React-Native 前端项目中使用）：
 
-### 1.安装
+### 安装
 
 ```shell
 yarn add authing-js-sdk
 ```
 
-### 2.初始化
+### 初始化
 
 ```js
 import { ManagementClient } from 'authing-js-sdk'
@@ -158,7 +158,7 @@ const managementClient = new ManagementClient({
 -   `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 Authing 公有云服务，可以忽略；如果你使用的是私有化部署的 Authing，请联系 Authing IDaaS 服务管理员。
 -   `lang`: 接口 Message 返回语言格式（可选），可选值为 `zh-CN` 和 `en-US`，默认为 `zh-CN`。
 
-### 3.快速开始
+### 快速开始
 
 1. 获取用户目录列表:
 

@@ -64,7 +64,8 @@ $management->requestToken();
 
 - `userPoolId`: 用户池 ID（必填）。
 - `secret`: 用户池密钥（必填）。
-- `appHost`: Authing 服务器地址。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: `https://authing-api.mydomain.com`，最后不带 `/` 。
+- `appHost`: Authing 服务器地址。如果你使用的是 Authing 公有云版本，请忽略此参数。
+> 如果你使用的是私有化部署的版本，此参数必填，格式如下: `https://authing-api.mydomain.com`，最后不带 `/` 。
 
 ### 简单管理用户
 

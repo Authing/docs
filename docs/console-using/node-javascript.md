@@ -124,7 +124,7 @@ AuthenticationClient().getAccessTokenByCode(code, options)
 #### 参数
 
 - `code` \<string\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
-- `options` \<object\> 发起 PKCE 授权登录时需要填写此参数。详情请见[使用 OIDC 授权码 + PKCE 模式](https://docs.authing.cn/v2/federation/oidc/pkce/)。
+- `options` \<object\> 发起 PKCEProof Key for Code Exchange（PKCE） 授权登录时需要填写此参数。详情请见[使用 OIDC 授权码 + PKCE 模式](https://docs.authing.cn/v2/federation/oidc/pkce/)。
 - `options.codeVerifier` \<string\> 校验码原始值，不是摘要值。
 
 #### 示例
@@ -512,7 +512,7 @@ AuthenticationClient().getAccessTokenByClientCredentials(scope, options)
 
 #### 参数
 
-- `scope` \<string\> 权限项目，空格分隔的字符串，每一项代表一个权限。详情请见[机器间（M2M）授权](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#%E8%8E%B7%E5%8F%96%E5%85%B7%E5%A4%87%E6%9D%83%E9%99%90%E7%9A%84-accesstoken)。
+- `scope` \<string\> 权限项目，空格分隔的字符串，每一项代表一个权限，详情请见[机器间（M2M）授权](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#%E8%8E%B7%E5%8F%96%E5%85%B7%E5%A4%87%E6%9D%83%E9%99%90%E7%9A%84-accesstoken)。
 - `options`，编程访问账号的 AK 与 SK 信息。
 - `options.accessKey`，编程访问账号 AccessKey。
 - `options.secretKey`，编程访问账号 SecretKey。
@@ -593,8 +593,6 @@ Bu6RP796BBiAwGwdUpHpKfhmQqahszBcGep8qT31XOy
 ## 管理你的用户
 
 
-此模块可以进行用户目录增删改查、搜索用户、管理用户分组、管理用户角色、管理用户策略授权等操作。
-
 请使用以下方式使用该模块：
 
 ```javascript
@@ -611,7 +609,7 @@ managementClient.users.search // 搜索用户
 ```
 
 
-### 创建用户
+### 以创建用户为例
 >此接口将以管理员身份创建用户，不需要进行手机号验证码检验等安全检测。用户的手机号、邮箱、用户名、externalId 用户池内唯一。
 
 ```js

@@ -15,7 +15,7 @@
 
 <br>
 
-### 第一步：添加依赖
+### 添加依赖
 
 在 swift package 搜索栏输入：https://github.com/Authing/guard-ios
 
@@ -25,7 +25,7 @@
 
 ![](./images/create_project5.png)
 
-### 第二步：初始化
+### 初始化
 
 App 启动时，初始化 Authing iOS SDK
 
@@ -76,7 +76,7 @@ OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 
 ### 账号密码登录
 
-通过 OIDC 账号密码登录，返回的 UserInfo 里面包含用户信息以及 access token , id token 和 refresh token。
+通过 OIDC 账号密码登录，返回的 UserInfo 里面包含用户信息以及 access token 、 id token 和 refresh token。
 
 ```swift
 public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -101,7 +101,7 @@ OIDCClient().loginByAccount(account: account, password: password) { code,  messa
 
 ### 通过 refresh token 获取新的 access token 和 id token
 
-access token 的有效期通常较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
+access token 的有效期通常较短，比如几个小时或者一天。当 access token 过期后，App 不能频繁的弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
 
 ```swift
 func getNewAccessTokenByRefreshToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)

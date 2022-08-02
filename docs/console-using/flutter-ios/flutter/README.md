@@ -73,7 +73,7 @@ User user = result.user; // get user info
 
 ### 账号密码登录
 
-通过 OIDC 账号密码登录，返回的 User 里面包含用户信息以及 access token , id token 和 refresh token。
+通过 OIDC 账号密码登录，返回的 User 里面包含用户信息以及 access token 、 id token 和 refresh token。
 
 ```dart
 static Future<AuthResult> loginByAccount(String account, String password) async

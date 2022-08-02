@@ -14,7 +14,7 @@ Install-Package Authing.CSharp.SDK
 
 ## 认证你的用户
 
-认证模块基于 OIDC 标准协议实现，支持获取认证地址、认证、处理认证结果，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
+认证模块基于 OIDC 标准协议实现，支持获取认证地址、认证、处理认证结果、获取令牌、检查令牌、刷新用户登录态、登出等方法。本模块只支持在服务端调用。
 
 使用方法：
 
@@ -462,7 +462,8 @@ ManagementClient managementClient = new ManagementClient(options);
 - `accessKeyId`: Authing 用户池 ID;
 - `accessKeySecret`: Authing 用户池密钥;
 - `timeout`: 超时时间，单位为 ms，默认为 10000 ms;
-- `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
+- `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。
+> 如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
 
 初始化完成 `ManagementClient` 之后，你可以获取 `ManagementClient` 的实例，然后调用此实例上的方法。例如：
@@ -656,19 +657,19 @@ namespace Example
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| extIdpId | string | 是 | 外部身份源的 ID。 示例值： `6076bacxxxxxxxxd80d993b5`  |
+| extIdpId | string | 是 | 外部身份源的 ID， 示例值： `6076bacxxxxxxxxd80d993b5`  |
 | provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
-| type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
-| userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| type | string | 是 | Identity 类型，如 unionid、openid、primary。 示例值： `openid`  |
+| userIdInIdp | string | 是 | 在外部身份源的 id， 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
 
 
 #### <a id="CreateUserOptionsDto"></a> CreateUserOptionsDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| keepPassword | boolean | 否 | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。。   |
+| keepPassword | boolean | 否 | 该参数一般在迁移旧有用户数据到 Authing 的时候会设置。开启这个开关，password 字段会直接写入 Authing 数据库，Authing 不会再次加密此字段。如果你的密码不是明文存储，你应该保持开启，并编写密码函数计算。   |
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码。   |
-| departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
+| departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`、`open_department_id`  |
 
 
 #### <a id="UserDto"></a> UserDto
@@ -716,7 +717,6 @@ namespace Example
 
 ### 修改用户资料
 
-修改用户资料
 
 #### 请求参数
 
