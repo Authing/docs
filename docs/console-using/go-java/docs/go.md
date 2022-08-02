@@ -43,7 +43,7 @@ Scope 以空格分隔，默认为 `openid profile`，常见 scope 如下：
 | profile        | 用户信息                                                 | 否   |
 | offline_access | 获取用户的 Refresh Token，可用于调用 refreshLoginState 刷新用户的登录态 | 否   |
 
-更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
+更多 scope 定义参考 [OIDC 常见问题](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
 
 ### 生成授权地址
 
