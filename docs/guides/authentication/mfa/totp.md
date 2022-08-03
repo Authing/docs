@@ -57,7 +57,8 @@
 2. 选择 **应用->自建应用**，点击目标应用详情页右上角 **体验登录** 按钮，使用上述创建的账号登录。
 
 3. 绑定 OTP。
-   * 方法一：
+
+* 方法一：
 
 <img src="./images/otp-binding-window.png" height=500 style="display:block;margin: 0 auto;">
         
@@ -83,9 +84,9 @@ c. 在电脑端输入该 MFA 上显示的动态口令，点击 **下一步**，�
 
 <img src="./images/certified-sucessfully.png">
 
-   * 方法二：
+* 方法二：
         
-   要绑定 OTP，执行以下步骤：
+要绑定 OTP，执行以下步骤：
 
 a. 访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}` 进行登录。然后访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}/u` ，点击页面右上角头像进入 **个人中心**。
 
