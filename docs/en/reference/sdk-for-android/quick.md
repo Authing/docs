@@ -1,56 +1,33 @@
-# Get started
+# Quick start
 
 <LastUpdated/>
 
-## Step 1: Create an Android project
+It takes only 1 minute if app uses UI provided by us.
 
-<img src="./images/create_project1.png" alt="drawing" width="800"/>
-
-<img src="./images/create_project2.png" alt="drawing" width="800"/>
-
-> Note: Minimum OS version is Android 7.0
-
-## Step 2: Add dependency for Guard
-
-make sure mavenCentral is present in project-level build.gradle:
-
- ```groovy
- buildscript {
-    repositories {
-        mavenCentral()
-        // other repositories
-    }
- }
- ```
-
-Add dependencies to the build.gradle file of the main project:
-
-```groovy
-implementation 'cn.authing:guard:+'
-```
-
-## Step 3: Initialization
-
-at app startup, call:
+Make sure you went over all the steps in [Get started](./develop.md), then call the following method where you want to authenticate user:
 
 ```java
-// context is application or initial activity
-// ”appId“ is obtained from the Authing console
-Authing.init(context, "appId");
+AuthFlow.start(this); // 'this' is Activity
 ```
 
-> Note: appId is the application ID, not the user pool ID
+This is how it looks like:
 
-## Step 4: Common operations
+<img src="./images/standard.png" alt="drawing" width="400"/>
 
-###  1. Register/log in and get user information
+Then, we can get authentication result using the following code:
 
-- [Host pages using the SDK](./develop.md)
-- [Use the SDK API](./apis/)
+```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+      //login success，do next task
+    }
+  }
+```
 
-### 2. [Login from a third-party identity source](./social/)
+If authentication success, we can get user info by:
 
-### 3. [A typical scenario](./scenario/)
-
-### 4. [Privatization deployment](./onpremise.md)
-
+```java
+UserInfo userInfo = Authing.getCurrentUser();
+```

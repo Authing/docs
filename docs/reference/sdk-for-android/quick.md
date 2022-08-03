@@ -2,57 +2,42 @@
 
 <LastUpdated/>
 
-## 第一步：新建 Android 工程
+通过 Authing 提供的标准认证流程和界面，应用程序可以 1 分钟完成接入。
 
-<img src="./images/create_project1.png" alt="drawing" width="800"/>
-
-<img src="./images/create_project2.png" alt="drawing" width="800"/>
-
-> 注意：Minimum SDK 版本 Android 7.0
-
-## 第二步：添加 Guard 依赖
-
-在工程根目录的 build.gradle 文件里面需包含 mavenCentral
-
- ```groovy
- buildscript {
-    repositories {
-        mavenCentral()
-        // other repositories
-    }
- }
- ```
-
-在主工程的 build.gradle 文件里面添加依赖
-
-```groovy
-implementation 'cn.authing:guard:+'
-```
-
-## 第三步：初始化
-
-在应用启动时调用：
+首先确保已经完成了  [开发准备工作](./develop.md)，然后在需要认证的地方调用：
 
 ```java
-// context is application or initial activity
-// ”appId“ is obtained from the Authing console
-Authing.init(context, "appId");
+// this is the activity context
+AuthFlow.start(this);
 ```
 
-> 注意：appId 是应用 ID，不是用户池 ID
+效果如下：
 
-## 第四步：常用操作
+<img src="./images/standard.png" alt="drawing" width="400"/>
 
-###  1. 注册/登录并获取用户信息
+接下来，我们获取登录成功回调信息：
 
-- [使用 SDK 托管页](./develop.md)
-- [使用 SDK 超组件](./component/)
-- [使用 SDK API](./apis/)
+```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+      //login success，do next task
+    }
+  }
+```
 
-### 2. [第三方身份源登录](./social/)
+登录成功后也可以通过如下代码获取本地用户数据
 
-### 3. [典型场景](./scenario/)
+```java
+UserInfo userInfo = Authing.getCurrentUser();
+```
 
-### 4. [私有化部署](./onpremise.md)
 
 
+如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
+
+
+
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./component/" style="color:#FFF;">超组件使用指南 →</a>
+</span>
