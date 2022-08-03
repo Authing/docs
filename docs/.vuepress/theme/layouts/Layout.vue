@@ -216,15 +216,44 @@ export default {
   },
 
   methods: {
-    findDom(domClass, rgExp, params) {
-      document.querySelectorAll(domClass).forEach((item) => {
-        console.log(rgExp);
-        if (item.innerText.indexOf(rgExp) > -1) {
-          const res = this.replaceString(item.innerHTML, rgExp, params);
-          item.innerHTML = res;
+    findDom(domClass, params) {
+      let _this = this;
+      let elements = [...document.querySelectorAll(domClass)];
+
+      let keys = Object.keys(params);
+
+      keys.forEach((key, index) => {
+        let found = elements.filter((d) => d.innerHTML.indexOf(key) !== -1);
+
+        if (found.length !== 0) {
+          let targetDOM = _this.findTarget(found, key);
+
+          targetDOM.forEach((node) => {
+            node.innerHTML = params[key];
+          });
         }
       });
     },
+
+    findTarget(doms, key) {
+      let codes = doms.reduce((current, next) => {
+        let code = [...next.children].find(
+          (d) => d.nodeType === 1 && d.nodeName === "CODE"
+        );
+        current.push(code);
+        return current;
+      }, []);
+
+      let children = codes.reduce((current, next) => {
+        current = current.concat([...next.children]);
+        return current;
+      }, []);
+
+      let targets = children.filter((d) => d.innerHTML.indexOf(key) !== -1);
+
+      return targets;
+    },
+
     // 进行字符串替换方法
     replaceString(repStr, rgExp, replaceText) {
       var str = repStr.replace(rgExp, replaceText);
@@ -246,89 +275,42 @@ export default {
               _this.isInConsole = event.eventType;
             }
 
+            let target = {};
+
             // 这里判断是在控制台快速开始文档，要操作的步骤
             if (event.isQuickDocs) {
               if (data.appId) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_APP_ID",
-                    data.appId
-                  );
-                });
+                target["AUTHING_APP_ID"] = data.appId;
               }
               if (data.userPoolId) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_USERPOOL_ID",
-                    data.userPoolId
-                  );
-                });
+                target["AUTHING_USERPOOL_ID"] = data.userPoolId;
               }
               if (data.secret) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_SECRET",
-                    data.secret
-                  );
-                });
+                target["AUTHING_SECRET"] = data.secret;
               }
               if (data.domain) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_DOMAIN",
-                    data.domain
-                  );
-                });
+                target["AUTHING_DOMAIN"] = data.domain;
               }
               if (data.redirectUri) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_REDIRECTURI",
-                    data.redirectUri
-                  );
-                });
+                target["AUTHING_REDIRECTURI"] = data.domain;
               }
               if (data.logoutRedirectUris) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_LOGOUTREDIRECTURI",
-                    data.logoutRedirectUris
-                  );
-                });
+                target["AUTHING_LOGOUTREDIRECTURI"] = data.logoutRedirectUris;
               }
               if (data.scope) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_SCOPE",
-                    data.scope
-                  );
-                });
+                target["AUTHING_SCOPE"] = data.scope;
               }
               if (data.userPoolSecret) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "AUTHING_USERPOOL_SECRET",
-                    data.userPoolSecret
-                  );
-                });
+                target["AUTHING_USERPOOL_SECRET"] = data.userPoolSecret;
               }
               if (data.appId) {
-                _this.$nextTick(() => {
-                  _this.findDom(
-                    "pre[class*='language-']",
-                    "APP_ID",
-                    data.appId
-                  );
-                });
+                target["APP_ID"] = data.appId;
               }
+
+              _this.$nextTick(() => {
+                _this.findDom("pre[class*='language-']", target);
+              });
+
               _this.quickDocsStyle();
             }
           } catch (e) {}
