@@ -1295,12 +1295,12 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "开始开发",
-          path: "/reference/sdk-for-android/develop",
-        },
-        {
           title: "快速接入",
           path: "/reference/sdk-for-android/quick",
+        },
+        {
+          title: "托管页",
+          path: "/reference/sdk-for-android/develop",
         },
         {
           title: "超组件",
@@ -1427,6 +1427,7 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-android/apis/",
           children: [
             "/reference/sdk-for-android/apis/authentication/",
             "/reference/sdk-for-android/apis/protocol/",
@@ -1447,7 +1448,9 @@ const zhCnNavBar = {
         },
         {
           title: "典型场景",
+          path: "/reference/sdk-for-android/scenario/",
           children: [
+            "/reference/sdk-for-android/scenario/logout",
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
@@ -1691,12 +1694,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-android/",
           children: [
             {
-              title: "开始开发",
-              path: "/reference-new/mobile/sdk-for-android/develop",
-            },
-            {
               title: "快速接入",
               path: "/reference-new/mobile/sdk-for-android/quick",
+            },
+            {
+              title: "托管页",
+              path: "/reference-new/mobile/sdk-for-android/develop",
             },
             {
               title: "超组件",
@@ -1823,6 +1826,7 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
+              path: "/reference-new/mobile/sdk-for-android/apis/",
               children: [
                 "/reference-new/mobile/sdk-for-android/apis/authentication/",
                 "/reference-new/mobile/sdk-for-android/apis/protocol/",
@@ -1843,7 +1847,9 @@ const zhCnNavBar = {
             },
             {
               title: "典型场景",
+              path: "/reference-new/mobile/sdk-for-android/scenario/",
               children: [
+                "/reference-new/mobile/sdk-for-android/scenario/logout",
                 "/reference-new/mobile/sdk-for-android/scenario/splash",
                 "/reference-new/mobile/sdk-for-android/scenario/tokens",
                 "/reference-new/mobile/sdk-for-android/scenario/user-profile",
@@ -6428,12 +6434,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "Get started",
-          path: "/reference/sdk-for-android/develop",
-        },
-        {
           title: "Quick start",
           path: "/reference/sdk-for-android/quick",
+        },
+        {
+          title: "Hosting page",
+          path: "/reference/sdk-for-android/develop",
         },
         {
           title: "APIs",
@@ -6468,6 +6474,16 @@ const translatedZhCnNavBar = {
             {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
+            },
+          ],
+        },
+        {
+          title: "Scenario",
+          path: "/reference/sdk-for-android/scenario/",
+          children: [
+            {
+              title: "logout",
+              path: "/reference/sdk-for-android/scenario/logout",
             },
           ],
         },
