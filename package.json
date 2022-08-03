@@ -3,6 +3,7 @@
   "version": "1.2.6",
   "description": "Authing 文档",
   "scripts": {
+    "postinstall": "patch-package",
     "docs:dev": "vuepress dev docs -p 8888",
     "docs:no-cache": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888 --no-cache",
     "docs:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build docs --max-concurrency=150"
@@ -15,6 +16,7 @@
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "async": "^3.2.4",
     "html-minifier-terser": "^7.0.0-beta.0",
+    "patch-package": "^6.4.7",
     "sass-loader": "^7.3.1",
     "vuepress": "^1.9.7",
     "vuepress-plugin-code-copy": "^1.0.6"

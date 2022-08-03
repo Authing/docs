@@ -11,6 +11,18 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(VueClipboard);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
+  Vue.extend({
+    mixins: [
+      {
+        data() {
+          return {
+            appId: "",
+          };
+        },
+      },
+    ],
+  });
+
   Vue.prototype.$eventBus = new Vue();
 
   // // 移动端判断
