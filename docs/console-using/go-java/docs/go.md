@@ -47,7 +47,7 @@ result, err = authClient.BuildAuthUrl(&authentication.AuthURLParams{
 
 ## 管理你的用户
 
-## 初始化
+### 初始化
 
 ```go
 options := client.ManagementClientOptions {
