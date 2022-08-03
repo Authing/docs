@@ -6,9 +6,9 @@
 
 ## 安装
 
-我们推荐使用 `pip` 进行安装，它可以与一些模块打包工具很好地配合使用。
 
 ```bash
+#使用 `pip` 进行安装
 pip install authing
 ```
 
@@ -21,25 +21,19 @@ from authing.v2.authentication import AuthenticationClient, AuthenticationClient
 
 authentication_client = AuthenticationClient(
     options=AuthenticationClientOptions(
-        app_id='AUTHING_APP_ID',
-        secret='AUTHING_SECRET',
-        app_host='AUTHING_DOMAIN',
-        redirect_uri='AUTHING_LOGOUTREDIRECTURI'
+        app_id='AUTHING_APP_ID',# 应用 ID
+        secret='AUTHING_SECRET',# 应用 Secret
+        app_host='AUTHING_DOMAIN',# 应用对应的用户池域名
+        redirect_uri='AUTHING_REDIRECTURI'# 认证完成后的重定向目标 URL
     )
 )
 ```
 
-完整的参数和释义如下：
-
-- `app_id`: 应用 ID（必填）。
-- `secret`: 应用 Secret（必填）。
-- `app_host`: 应用对应的用户池域名，例如 pool.authing.cn，最后不带 `/` （必填）。
-- `redirect_uri`: 认证完成后的重定向目标 URL（必填）。
-
-### 检测 Token 登录状态
+### 简单认证用户
 
 ```python
-data = authentication_client.check_login_status('YOUR_ACCESS_TOKEN')
+#生成 OIDC 协议的用户登录链接
+data = authentication_client.build_authorize_url(scope="openid profile offline_access")
 ```
 
 ## 管理你的用户
@@ -51,49 +45,47 @@ from authing.v2.management import ManagementClient, ManagementClientOptions
 
 management_client = ManagementClient(
     options=ManagementClientOptions(
-        user_pool_id='AUTHING_USERPOOL_ID',
-        secret='AUTHING_USERPOOL_SECRET',
-        host='AUTHING_DOMAIN'
+        user_pool_id='AUTHING_USERPOOL_ID',# 用户池 ID
+        secret='AUTHING_USERPOOL_SECRET',# 用户池密钥
+        host='AUTHING_DOMAIN'#  Authing 服务器地址
     )
 )
 ```
 
-完整的参数和释义如下：
-
-- `user_pool_id`: 用户池 ID（必填）。
-- `secret`: 用户池密钥（必填）。
-- `host`: Authing 服务器地址。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: `https://authing-api.mydomain.com`，最后不带 `/` 。
-
 ### 简单管理用户
 
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [Authing 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。例如：
-
-- 获取用户列表
 
 ```python
-data = management_client.users.list()
-```
-
-- 创建角色
-
-```python
-data = management_client.roles.create(code='role1', description='this is description', namespace='default')
+#创建用户
+data = management_client.users.create(
+    userInfo={
+        'email': 'admin@test.com',
+        'password': 'test',
+    }
+)
 ```
 
 ## 错误处理
 
-你可以使用 `try catch` 进行错误处理：
 
 ```python
+from authing.v2.authentication import AuthenticationClient, AuthenticationClientOptions
 from authing.v2.exceptions import AuthingException
+
+authentication_client = AuthenticationClient(
+    options=AuthenticationClientOptions(
+        app_id='AUTHING_APP_ID',
+        secret='AUTHING_SECRET',
+        app_host='AUTHING_DOMAIN',
+        redirect_uri='AUTHING_REDIRECTURI'# 认证完成后的重定向目标 URL
+    )
+)
 
 try:
     authentication_client.login_by_username(
-        username='bob',
+        username='test',
         password='passw0rd',
     )
 except AuthingException as e:
-    print(e.code) # 2004
-    print(e.message) # 用户不存在
-
+    print(e)
 ```
