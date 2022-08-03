@@ -4,6 +4,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
+    :key="appId"
   >
     <notifications
       classes="top-center-vue-notification vue-notification"
@@ -130,13 +131,14 @@ export default {
     PageSidebar,
     ApplicationIntegration,
     Quickstarts,
-    Reference
+    Reference,
   },
 
   data() {
     return {
       isSidebarOpen: false,
-      isInConsole: ""
+      isInConsole: "",
+      appId: "",
     };
   },
 
@@ -180,11 +182,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -192,19 +194,21 @@ export default {
       this.isSidebarOpen = false;
     });
 
-    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach(item =>
+    ["utm_term", "utm_source", "utm_campaign", "utm_medium"].forEach((item) =>
       delCookie(item)
     );
     let search = querystring.parse(
       typeof window !== "undefined" && window.location.search
     );
 
-    Object.keys(search).forEach(k => {
+    Object.keys(search).forEach((k) => {
       let v = search[k];
       setCookie(k, v);
     });
-
     this.registerMessage();
+    if (this.$route.query.isInConsoleAppDetail) {
+      this.$themeConfig.isInConsoleAppDetail = true;
+    }
   },
 
   beforeDestroy() {
@@ -212,36 +216,184 @@ export default {
   },
 
   methods: {
+    findDom(domClass, params) {
+      let _this = this;
+      let elements = [...document.querySelectorAll(domClass)];
+
+      let keys = Object.keys(params);
+
+      keys.forEach((key, index) => {
+        let found = elements.filter((d) => d.innerHTML.indexOf(key) !== -1);
+
+        if (found.length !== 0) {
+          let targetDOM = _this.findTarget(found, key);
+
+          targetDOM.forEach((node) => {
+            node.innerHTML = params[key];
+          });
+        }
+      });
+    },
+
+    findTarget(doms, key) {
+      let codes = doms.reduce((current, next) => {
+        let code = [...next.children].find(
+          (d) => d.nodeType === 1 && d.nodeName === "CODE"
+        );
+        current.push(code);
+        return current;
+      }, []);
+
+      let children = codes.reduce((current, next) => {
+        current = current.concat([...next.children]);
+        return current;
+      }, []);
+
+      let targets = children.filter((d) => d.innerHTML.indexOf(key) !== -1);
+
+      return targets;
+    },
+
+    // 进行字符串替换方法
+    replaceString(repStr, rgExp, replaceText) {
+      var str = repStr.replace(rgExp, replaceText);
+      if (str.indexOf(rgExp) != -1) {
+        str = this.replaceString(str, rgExp, replaceText);
+      }
+      return str;
+    },
     // 注册消息事件来自 fe console
     registerMessage() {
       if (window) {
         let _this = this;
-        window.addEventListener("message", evt => {
+        window.addEventListener("message", (evt) => {
           try {
-            const { event } = JSON.parse(evt.data);
+            const { event, data } = JSON.parse(evt.data);
             if (event.source === "authing-fe-console") {
               // 1. 隐藏头部和顶部区域
               _this.hiddenModule();
               _this.isInConsole = event.eventType;
-              // if (event.eventType === 'console-protocol-common') {
+            }
 
-              // } else if (event.eventType === "console-protocol-asa") {
+            let target = {};
 
-              // }
+            // 这里判断是在控制台快速开始文档，要操作的步骤
+            if (event.isQuickDocs) {
+              if (data.appId) {
+                target["AUTHING_APP_ID"] = data.appId;
+              }
+              if (data.userPoolId) {
+                target["AUTHING_USERPOOL_ID"] = data.userPoolId;
+              }
+              if (data.secret) {
+                target["AUTHING_SECRET"] = data.secret;
+              }
+              if (data.domain) {
+                target["AUTHING_DOMAIN"] = data.domain;
+              }
+              if (data.redirectUri) {
+                target["AUTHING_REDIRECTURI"] = data.domain;
+              }
+              if (data.logoutRedirectUris) {
+                target["AUTHING_LOGOUTREDIRECTURI"] = data.logoutRedirectUris;
+              }
+              if (data.scope) {
+                target["AUTHING_SCOPE"] = data.scope;
+              }
+              if (data.userPoolSecret) {
+                target["AUTHING_USERPOOL_SECRET"] = data.userPoolSecret;
+              }
+              if (data.appId) {
+                target["APP_ID"] = data.appId;
+              }
+
+              _this.$nextTick(() => {
+                _this.findDom("pre[class*='language-']", target);
+              });
+
+              _this.quickDocsStyle();
             }
           } catch (e) {}
         });
       }
     },
-
+    // 控制台快速开始文档样式调整
+    quickDocsStyle() {
+      let mainContent = document.querySelector("[class*='main-content']");
+      let lauoutContent = document.querySelector("[class*='page']");
+      let breadcrumbContent = document.querySelector(
+        "[class*='breadcrumb-content-container']"
+      );
+      if (mainContent) {
+        mainContent.style = "margin-top: 0";
+      }
+      if (lauoutContent) {
+        lauoutContent.style = "padding: 0";
+      }
+      if (breadcrumbContent) {
+        breadcrumbContent.style = "margin: 0 !important";
+      }
+    },
     // 1. 移除模块
     hiddenModule() {
       let aside = document.querySelector("aside[class='sidebar']");
       let header = document.querySelector("header[class*='navbar']");
       let footer = document.querySelector("footer[class*='footer']");
-      aside.style = "display:none;";
-      header.style = "display:none;";
-      footer.style = "display:none;";
+      let body = document.body;
+      let newAside = document.querySelector(
+        "aside[class='on-this-page-navigation']"
+      );
+      let authingLastUpdate = document.querySelector(
+        "div[class='authing-last-updated']"
+      );
+
+      let feedback = document.querySelector("div[class='feedback']");
+
+      if (aside) {
+        aside.style = "display:none;";
+      }
+
+      if (header) {
+        header.style = "display:none;";
+      }
+
+      if (footer) {
+        footer.style = "display:none;";
+      }
+
+      if (newAside) {
+        newAside.style = "display:none;";
+      }
+
+      if (authingLastUpdate) {
+        authingLastUpdate.style = "display:none;";
+      }
+
+      if (feedback) {
+        feedback.style = "display:none;";
+      }
+
+      if (body) {
+        body.style = "padding-right:16px;";
+      }
+
+      let h2 = document.querySelectorAll(
+        "div[class*='theme-default-content'] h2"
+      );
+      let h3 = document.querySelectorAll(
+        "div[class*='theme-default-content'] h3"
+      );
+
+      if (h2) {
+        h2.forEach((el) => {
+          el.style = "margin-top:10px;padding-top:0px;";
+        });
+      }
+      if (h3) {
+        h3.forEach((el) => {
+          el.style = "margin-top:10px;padding-top:0px;";
+        });
+      }
     },
 
     toggleSidebar(to) {
@@ -253,7 +405,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -267,8 +419,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
