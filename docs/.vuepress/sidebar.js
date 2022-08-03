@@ -66,6 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
+    
     {
       title: "快速开始",
       children: [
@@ -191,13 +192,9 @@ const zhCnNavBar = {
           path: "/guides/authentication/mobile-sso/",
         },
         {
-          title: "多因素认证（MFA）",
+          title: "多因素认证",
           path: "/guides/authentication/mfa/",
           children: [
-            {
-              title: "基于时间戳算法的一次性密码（TOTP）的 MFA",
-              path: "/guides/authentication/mfa/totp",
-            },
             {
               title: "基于短信验证码的 MFA",
               path: "/guides/authentication/mfa/sms",
@@ -207,10 +204,22 @@ const zhCnNavBar = {
               path: "/guides/authentication/mfa/email-code",
             },
             {
+              title: "基于时间戳算法的一次性密码的 MFA",
+              path: "/guides/authentication/mfa/totp",
+            },
+            {
+              title: "基于人脸识别的 MFA",
+              path: "/guides/authentication/mfa/face-recognition",
+            },
+            {
               title: "通过 SDK 接入 MFA",
               path: "/guides/authentication/mfa/mfa-sdk",
             },
-          ],
+            {
+              title: "MFA 策略配置",
+              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
+            },
+                    ],
         },
         {
           title: "对认证流程进行扩展",
@@ -480,14 +489,6 @@ const zhCnNavBar = {
           path: "/guides/dashboard/",
         },
         {
-          title: "飞书工作台 SSO 方案",
-          path: "/guides/lark-sso/",
-        },
-        {
-          title: "企业微信 SSO 方案",
-          path: "/guides/qiwei-sso/",
-        },
-        {
           title: "集成应用 SSO 方案",
           path: "/guides/apn/",
           children: [],
@@ -495,6 +496,27 @@ const zhCnNavBar = {
         {
           title: "自建应用 SSO 方案",
           path: "/guides/app/sso",
+        },
+        {
+          title: "第三方 SSO 方案",
+          children: [
+            {
+              title: "飞书工作台 SSO 方案",
+              path: "/guides/lark-sso/",
+            },
+            {
+              title: "企业微信 SSO 方案",
+              path: "/guides/qiwei-sso/",
+            },
+            {
+              title: "钉钉 SSO 方案",
+              path: "/guides/dingding-sso/",
+            },
+            {
+              title: "WeLink SSO 方案",
+              path: "/guides/welink-sso/",
+            },
+          ]
         },
         {
           title: "管理用户登录状态",
@@ -2028,6 +2050,7 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
+                "/reference-new/mobile/sdk-for-ios/social/oneauth",
               ],
             },
             {

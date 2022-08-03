@@ -142,7 +142,7 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 You can extract `id_token` from `url hash`, and then you can get user information by decoding `id_token`. For details, please refer to [validate user token](/en/guides/faqs/how-to-validate-user-token.md).
 
-#### Use Authing SPA SDK
+#### Use Authing Browser SDK
 
 Authing provides another simple way for the front end to get user information without dealing with callbacks or other configuration.
 

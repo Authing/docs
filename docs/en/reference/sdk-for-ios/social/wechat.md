@@ -47,8 +47,13 @@ Wechat requires a callback through [Universal Links](https://developer.apple.com
 
 ### Initialize Guard SDK
 
-Introduce Guard dependencies through Swift Package Manager and call the initialization function.
-[The detailed steps](/reference/sdk-for-ios/develop.html)
+> Guard-iOS-binary depends on the Guard component (after Version 1.2.4)
+
+- in the swift package search bar enter: https://github.com/Authing/authing-binary
+
+- Dependency rule Select Up to Next Major Version 1.0.0
+
+- Add Package Then select Wechat
 
 <br>
 
@@ -82,9 +87,10 @@ You can also open Info.plist through Source Code, and then copy and paste the fo
 
 ```swift
 import Guard
-Authing.setupWechat("your_wechat_appid", universalLink: "your_deep_link")
+import Wechat
+Authing.start(<#Authing AppId#>);
+WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep_link#>)
  ```
-
 The first parameter is the WeChat App id; the second parameter is iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
 
 <br>
