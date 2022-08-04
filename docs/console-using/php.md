@@ -49,7 +49,7 @@ use Authing\Mgmt\ManagementClient;
 $management = new ManagementClient(function ($options) {
     $options->userPoolId = "AUTHING_USERPOOL_ID";// 用户池 ID
     $options->secret = "AUTHING_USERPOOL_SECRET";// 用户池密钥
-    $options->appHost = "AUTHING_DOMAIN";// Authing 服务器地址
+    $options->appHost = "https://api.authing.cn";// Authing 服务器地址
 });
 
 $management->requestToken();
