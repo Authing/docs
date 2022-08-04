@@ -115,6 +115,9 @@
 ![](./images/download_file.png)
 
 将文件名和文件的内容填入 {{$localeConfig.brandName}} 的 **Txt Filename** 和 **Txt Content** 中，点击保存
+
+![](./images/save_file_name.png)
+
 ![](./images/confirm_auth_url.png)
 
 点击微信平台上的**使用配置**上的保存按钮进行保存。
@@ -122,7 +125,7 @@
 设置企业微信授权登录
 ![](./images/set_auth_login.png)
 
-在相应的移动端配置中填写必要信息，并获取 schema (iOS 和 Android schema 是一致的)填写在 authing 的身份源连接配置中
+填入相应的移动端开发者信息， iOS 侧需要填写 Bundle ID，Android 需要填写应用签名及应用包名。填写好后点击保存。将 schema (iOS 和 Android schema 是一致的)填写在 authing 的身份源连接配置中
 
 ![](./images/auth_mobile_message.jpg)
 
@@ -141,8 +144,9 @@
 点击进入待上线的应用，提交上线
 
 ![](./images/confirm_app.png)
+![](./images/confirm_app_upload.jpg)
 
-在授权企业的企业管理后台（注意：不是服务商管理后台），我的企业 查看企业 ID
+在授权企业的[企业管理后台](https://work.weixin.qq.com/wework_admin/frame#profile/role)（注意：不是服务商管理后台），我的企业 查看企业 ID
 
 ![](./images/check_corpid.png)
 
@@ -150,11 +154,11 @@
 
 ![](./images/write_corpid.png)
 
-在授权企业的企业管理后台（注意：不是服务商管理后台）的自建应用中找到新建的应用，进入应用详情， 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
+在授权企业的[企业管理后台](https://work.weixin.qq.com/wework_admin/frame#profile/role)（注意：不是服务商管理后台）的自建应用中找到新建的应用，进入应用详情， 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
 
-![](./images/check_agetnid.png)
+![](./images/check_agetnid.jpg)
 
-点击编辑按钮，添加可见范围，只有选择的组织成员可使用 {{$localeConfig.brandName}} 进行登录
+点击编辑按钮，添加可见范围，只有选择的组织成员可使用 {{$localeConfig.brandName}} 进行登录(特别提示：如果你的应用处于 「开发中」状态，那么请返回企业微信服务商管理后台的「代开发应用上线」上线相关的应用!!!)
 
 ![](./images/chose_user.png)
 
