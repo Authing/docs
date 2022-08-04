@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-android/develop.md)、[手机号码重置密码](./reset-password-by-phone.md)、[邮箱地址重置密码](./reset-password-by-email.md)
+阅读此教程之前，确保已经完成了 [开发准备](/reference/sdk-for-android/quick.md)、[手机号码重置密码](./reset-password-by-phone.md)、[邮箱地址重置密码](./reset-password-by-email.md)
 
 为了方便用户使用，我们设计一个稍微复杂一点的重置密码流程。我们将根据用户的输入动态决定采用哪种方式重置密码。即：
 

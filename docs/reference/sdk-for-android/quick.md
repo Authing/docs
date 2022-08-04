@@ -43,7 +43,7 @@ Authing.init(context, "appId");
 
 ## 第四步：常用操作
 
-###  1. 注册/登录并获取用户信息
+### 1. 注册/登录并获取用户信息
 
 - [使用 SDK 托管页](./develop.md)
 - [使用 SDK 超组件](./component/)
