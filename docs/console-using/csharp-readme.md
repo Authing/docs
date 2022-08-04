@@ -1,6 +1,7 @@
 # CSharp
 
 本指南将从 Authing CSharp SDK 的安装开始逐步引导你如何快速为你已有或新开发的应用添加用户认证与管理能力。
+
 <AppDetailSiderBar />
 
 ## 安装
@@ -16,7 +17,7 @@ Install-Package Authing.CSharp.SDK
 
 
 
-```c#
+```csharp
 // 使用 AppId 、APP_SECRET 、 appHost、redirectUri 进行初始化
 using Authing.CSharp.SDK.Models.Authentication;
 using Authing.CSharp.SDK.Services;
@@ -33,7 +34,7 @@ AuthenticationClient authentication = new AuthenticationClient(new Authenticatio
 
 ### 简单认证用户
 
-```c#
+```csharp
 //生成认证地址，用户通过认证地址进行登录，并携带 Code 和 state 跳转到指定的 redirectUri
 string authUrl = authenticationClient.BuildAuthUrl( scope: "openid profile offline_access");
 ```
@@ -44,7 +45,7 @@ string authUrl = authenticationClient.BuildAuthUrl( scope: "openid profile offli
 
 ### 初始化
 
-```c#
+```csharp
 using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
 
@@ -75,7 +76,7 @@ UserSingleRespDto  result = await managementClient.CreateUser
 
 ## 错误处理
 
-```c#
+```csharp
 UserSingleRespDto userSingleRespDto =await managementClient.GetUser("61c188ccfff26fef0ca6880d");
 
 if (userSingleRespDto.StatusCode !== 200) 
