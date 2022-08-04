@@ -6,9 +6,9 @@ Let's illustrate with an example. Suppose there is a university with two interna
 
 **Single Sign-On**, referred to as **SSO**, is one of the more popular solutions for enterprise business integration. The definition of SSO is that in multiple application systems, **users only need to log in once** to **access all** mutually trusted application systems.
 
-## Authing SPA SDK
+## Authing Browser SDK
 
-Based on the OIDC standard Single Page App scenario authentication side SDK, you can complete the integration with {{$localeConfig.brandName}} by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
+Based on the OIDC standard web application authentication SDK, you can complete the integration with Authing by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
 
 ## Create Self-built App
 
@@ -39,26 +39,26 @@ Click **Save** to save the configuration, as shown in the following figure:
 
 ## Install
 
-{{$localeConfig.brandName}} SPA SDK supports integration into your front-end business software through package manager installation and script tag introduction.
+{{$localeConfig.brandName}} Browser SDK supports integration into your front-end business software through package manager installation and script tag introduction.
 
 ### Use NPM
 
 ```shell
-$ npm install @authing/spa-auth-sdk
+$ npm install @authing/browser
 ```
 
 ### Use Yarn
 
 ```shell
-$ yarn add @authing/spa-auth-sdk
+$ yarn add @authing/browser
 ```
 
 ### Use script tag
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@authing/spa-auth-sdk@0.0.1-alpha1/dist/index.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/browser"></script>
 <script>
-  const sdk = new AuthingSPA({
+  const sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" for SSO here;
     // otherwise, fill in the application's "Subdomain".
@@ -91,12 +91,12 @@ Fill in the callback address according to your own business, as shown in the fig
 
 ![](~@imagesEnUs/common/integrate-sso/sso-callback.png)
 
-In order to use the Authing SPA SDK, you need to fill in the `App ID`, `domain`, `callback url` and other parameters, as shown in the following example:
+In order to use the Authing Browser SDK, you need to fill in the `App ID`, `domain`, `callback url` and other parameters, as shown in the following example:
 
 ```js
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // Very important, please fill in carefully!
   // If the application enables SSO, you must write the "App Panel Address" for SSO here;
   // otherwise, fill in the application's "Subdomain".
@@ -110,7 +110,7 @@ const sdk = new AuthingSPA({
 
 ## Log in
 
-The Authing SPA SDK can initiate authentication and authorization requests to Authing. Currently, three forms are supported:
+The Authing Browser SDK can initiate authentication and authorization requests to Authing. Currently, three forms are supported:
 
 1. Redirect to the login page hosted by Authing in the current window;
 2. A pop-up window loads the Authing-hosted login page in the pop-up window.
@@ -122,12 +122,12 @@ The Authing SPA SDK can initiate authentication and authorization requests to Au
 ::: tab React
 ```tsx{21-26}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -207,7 +207,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -218,7 +218,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -281,12 +281,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -365,8 +365,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -377,7 +377,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -574,12 +574,12 @@ You can also use the following method on your business software page to let user
 ::: tab React
 ```tsx{21-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -647,7 +647,7 @@ export default App;
   </div>
 </template>
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -658,7 +658,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -713,12 +713,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -779,8 +779,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -791,7 +791,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -946,12 +946,12 @@ As mentioned in the article [Self-built App SSO solution](/en/guides/app/sso.md)
 ::: tab React
 ```tsx{22-45}
 import React, { useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1031,7 +1031,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1042,7 +1042,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1102,12 +1102,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1177,8 +1177,8 @@ export default defineComponent({
 
 ```ts{26-45}
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1189,7 +1189,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1243,12 +1243,12 @@ export class AppComponent {
 
 ### Advanced usage
 
-The essence of each login is to access a URL, which can carry many parameters. The Authing SPA SDK uses default parameters by default. If you need fine-grained control over login request parameters, you can refer to this example.
+The essence of each login is to access a URL, which can carry many parameters. The Authing Browser SDK uses default parameters by default. If you need fine-grained control over login request parameters, you can refer to this example.
 
 ```js
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // Very important, please fill in carefully!
   // If the application enables SSO, you must write the "App Panel Address" 
   // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1302,12 +1302,12 @@ If you want to check the user's login state and get the user's `Access Token`, `
 ::: tab React
 ```tsx{28-34}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1387,7 +1387,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1398,7 +1398,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1471,12 +1471,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1561,8 +1561,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1573,7 +1573,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1636,12 +1636,12 @@ You need to use the Access Token to get the user's personal information:
 ::: tab React
 ```tsx{37-49}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState, UserInfo } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1751,7 +1751,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -1763,7 +1763,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1860,12 +1860,12 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -1970,8 +1970,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState, UserInfo } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -1983,7 +1983,7 @@ export class AppComponent {
   loginState: LoginState | null = null;
   userInfo: UserInfo | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -2057,12 +2057,12 @@ You can call the `logoutWithRedirect` method of the SDK to log out
 ::: tab React
 ```tsx{36-41}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -2152,7 +2152,7 @@ export default App;
 </template>
 
 <script>
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default {
   name: "App",
@@ -2163,7 +2163,7 @@ export default {
     };
   },
   created() {
-    this.sdk = new AuthingSPA({
+    this.sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -2230,12 +2230,12 @@ export default {
 
 <script>
 import { defineComponent } from "vue";
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const sdk = new AuthingSPA({
+    const sdk = new Authing({
       // Very important, please fill in carefully!
       // If the application enables SSO, you must write the "App Panel Address" 
       // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -2281,8 +2281,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 @Component({
   selector: 'app-root',
@@ -2293,7 +2293,7 @@ export class AppComponent {
 
   loginState: LoginState | null = null;
 
-  private sdk = new AuthingSPA({
+  private sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" 
     // for SSO here; otherwise, fill in the application's "Subdomain".
@@ -2354,10 +2354,7 @@ export class AppComponent {
 
 ## Code reference
 
-- [Demo for React](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo)
-- [Demo for Vue2](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue2)
-- [Demo for Vue3](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue3)
-- [Demo for Angular](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-angular)
+- [Demo](https://github.com/Authing/authing-browser-sdk/tree/main/example/sso/)
 
 
 ## Get help <a id="get-help"></a>

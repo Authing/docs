@@ -7,6 +7,7 @@ meta:
 
 <LastUpdated/>
 
+
 > 此模块包含注册登录、重置手机号邮箱、修改账号信息等方法，是以你的终端用户（End User）的身份进行请求，适合在需要验证用户身份的情况下使用。
 
 ```csharp
@@ -20,6 +21,7 @@ var authenticationClient = new AuthenticationClient(
         }
 );
 ```
+<AppDetailSiderBar/>
 
 ## 文档相关说明
 - 我们尽可能在代码相关文档提供足够关键的信息来协助开发者方便，快捷完成功能实现。

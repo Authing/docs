@@ -151,7 +151,7 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 你可以从 `url hash` 中取出 `id_token`，然后可以通过解码 `id_token` 获取用户信息，详情请见[验证用户身份凭证（token）](/guides/faqs/how-to-validate-user-token.md)。
 
-#### 使用 Authing SPA SDK
+#### 使用 Authing Browser SDK
 
 Authing 提供另外一种简单的前端获取用户信息的方式，无需处理回调或进行其他配置。
 
