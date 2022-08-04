@@ -8,7 +8,7 @@ Let's illustrate with an example. Suppose there is a university with two interna
 
 ## Authing Browser SDK
 
-Based on the OIDC standard Single Page App scenario authentication side SDK, you can complete the integration with {{$localeConfig.brandName}} by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
+Based on the OIDC standard web application authentication SDK, you can complete the integration with Authing by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
 
 ## Create Self-built App
 
@@ -2354,10 +2354,7 @@ export class AppComponent {
 
 ## Code reference
 
-- [Demo for React](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo)
-- [Demo for Vue2](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue2)
-- [Demo for Vue3](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue3)
-- [Demo for Angular](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-angular)
+- [Demo](https://github.com/Authing/authing-browser-sdk/tree/main/example/sso/)
 
 
 ## Get help <a id="get-help"></a>
