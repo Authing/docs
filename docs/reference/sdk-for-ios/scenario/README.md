@@ -60,7 +60,9 @@ AuthClient().deleteAccount() { code, message in
 Guard 的自动登录通过记住 token 来完成。在闪屏页，调用：
 
 ```swift
-Authing.autoLogin((code, message, userInfo) -> {});
+Authing.autoLogin{ code, message, userInfo in 
+    //userInfo
+}
 ```
 
 如果自动登录成功，可以通过下面代码获取用户信息：
