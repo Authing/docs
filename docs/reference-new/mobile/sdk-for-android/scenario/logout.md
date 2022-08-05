@@ -9,7 +9,7 @@
 ```java
 AuthClient.logout((code, message, data)->{
     if (code == 200) {
-    		//logout success
+ 			//logout success
     }
 });
 ```

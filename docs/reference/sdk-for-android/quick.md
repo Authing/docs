@@ -1,4 +1,4 @@
-# 快速接入
+# 快速开始
 
 <LastUpdated/>
 
@@ -54,5 +54,4 @@ Authing.init(context, "appId");
 ### 3. [典型场景](./scenario/)
 
 ### 4. [私有化部署](./onpremise.md)
-
 

@@ -1,4 +1,4 @@
-# Get started
+# Quick start
 
 <LastUpdated/>
 

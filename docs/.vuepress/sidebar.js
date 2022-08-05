@@ -66,7 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
-    
+
     {
       title: "快速开始",
       children: [
@@ -1299,7 +1299,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "快速接入",
+          title: "快速开始",
           path: "/reference/sdk-for-android/quick",
         },
         {
@@ -1698,7 +1698,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-android/",
           children: [
             {
-              title: "快速接入",
+              title: "快速开始",
               path: "/reference-new/mobile/sdk-for-android/quick",
             },
             {
