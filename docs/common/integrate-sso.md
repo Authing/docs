@@ -9,7 +9,7 @@
 
 ## Authing Browser SDK
 
-基于 OIDC 标准的 Single Page App 场景认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
+基于 OIDC 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
 
 ## 创建自建应用
 
@@ -2320,11 +2320,7 @@ export class AppComponent {
 
 ## 代码参考
 
-- [Demo for React](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo)
-- [Demo for Vue2](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue2)
-- [Demo for Vue3](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-vue3)
-- [Demo for Angular](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo-angular)
-
+- [Demo](https://github.com/Authing/authing-browser-sdk/tree/main/example/sso/)
 
 ## 获取帮助 <a id="get-help"></a>
 
