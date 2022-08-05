@@ -156,7 +156,7 @@
 
 在授权企业的[企业管理后台](https://work.weixin.qq.com/wework_admin/frame#profile/role)（注意：不是服务商管理后台）的自建应用中找到新建的应用，进入应用详情， 将 AgentId 填入 {{$localeConfig.brandName}} 的 AgentId 中
 
-![](./images/check_agetnid.jpg)
+![](./images/check_agentid.jpg)
 
 点击编辑按钮，添加可见范围，只有选择的组织成员可使用 {{$localeConfig.brandName}} 进行登录(特别提示：如果你的应用处于 「开发中」状态，那么请返回企业微信服务商管理后台的「代开发应用上线」上线相关的应用!!!)
 
