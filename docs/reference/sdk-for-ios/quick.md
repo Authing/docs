@@ -2,13 +2,13 @@
 
 <LastUpdated/>
 
-## 第一步：新建 iOS Swift 工程
+## 1. 新建 iOS Swift 工程
 
 ![](./images/create_project1.png)
 
 ![](./images/create_project2.png)
 
-## 第二步：添加 Guard 依赖
+## 2. 添加 Guard 依赖
 
 在 Xcode 菜单栏右上角选择 *File* 点击 *Add Packages*
 
@@ -22,22 +22,22 @@
 
 ![](./images/create_project5.png)
 
-## 第三步：初始化
+## 3. 初始化
 
-红色部分是需要改动的地方
+红色部分是需要改动的地方。
 
 ![](./images/start.png)
 
-## 第四步：常用操作
+## 4. 常用操作
 
-### 1. 注册/登录并获取用户信息
+### a. 注册/登录并获取用户信息
 
 - [使用 SDK 托管页](./develop.md)
-- [使用 SDK 超组件](./component/README.md)
+- [使用 SDK 超组件](./component/)
 - [使用 SDK API](./apis.md)
 
-### 2. [第三方身份源登录](./social/README.md)
+### b. [第三方身份源登录](./social/)
 
-### 3. [典型场景](./scenario/README.md)
+### c. [典型场景](./scenario/)
 
-### 4. [私有化部署](./onpremise.md)
+### d. [私有化部署](./onpremise.md)
