@@ -1,47 +1,35 @@
 
 
-# Get started
+# Hosting page
 
 <LastUpdated/>
 
-## Step 1: Create an Android project
-
-![](./images/create_project1.png)
-
-![image-20220327173229220](./images/create_project2.png)
-
-> Note: Minimum OS version is Android 7.0
-
-## Step 2: Add dependency for Guard
-
-make sure mavenCentral is present in project-level build.gradle
-
- ```groovy
- buildscript {
-    repositories {
-        mavenCentral()
-
-        // other repositories
-    }
- }
- ```
-
-```groovy
-implementation 'cn.authing:guard:+'
-```
-
-## Step 3: Initialization
-
-at app startup, call:
+It takes only 1 minute if app uses UI provided by us, then call the following method where you want to authenticate user:
 
 ```java
-// “context” is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(appContext, "your_authing_app_id");
+// this is the activity context
+AuthFlow.start(this);
 ```
 
-Next, embed authentication flow and UI in 1 minute.
+This is how it looks like:
 
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">Quick start →</a>
-</span>
+<img src="./images/standard.png" alt="drawing" width="400"/>
+
+Then, we can get authentication result using the following code:
+
+```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+      //login success，do next task
+    }
+  }
+```
+
+If authentication success, we can get user info by:
+
+```java
+UserInfo userInfo = Authing.getCurrentUser();
+```
 

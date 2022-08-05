@@ -1,26 +1,43 @@
-# 快速接入
+# 快速开始
 
 <LastUpdated/>
 
-通过 Authing 提供的标准认证流程和界面，应用程序可以 1 分钟完成接入。
+## 第一步：新建 iOS Swift 工程
 
-首先确保已经完成了 [开发准备工作](./develop.md)，然后在需要认证的地方调用：
+![](./images/create_project1.png)
 
-```swift
-import Guard
-AuthFlow().start { [weak self] code, message, userInfo in
-    if code == 200 {
-        // userInfo 为用户信息
-    }
-}
-```
+![](./images/create_project2.png)
 
-效果如下：
+## 第二步：添加 Guard 依赖
 
-<img src="./images/standard.png" alt="drawing" width="400"/>
+在 Xcode 菜单栏右上角选择 *File* 点击 *Add Packages*
 
-如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
+在 Swift Package 搜索栏输入：https://github.com/Authing/guard-ios
 
-<br>
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./component/" style="color:#FFF;">超组件使用指南 →</a>
-</span>
+依赖规则选择 *Up to Next Major Version 1.0.0*
+
+![](./images/create_project3.png)
+
+![](./images/create_project4.png)
+
+![](./images/create_project5.png)
+
+## 第三步：初始化
+
+红色部分是需要改动的地方
+
+![](./images/start.png)
+
+## 第四步：常用操作
+
+### 1. 注册/登录并获取用户信息
+
+- [使用 SDK 托管页](./develop.md)
+- [使用 SDK 超组件](./component/README.md)
+- [使用 SDK API](./apis.md)
+
+### 2. [第三方身份源登录](./social/README.md)
+
+### 3. [典型场景](./scenario/README.md)
+
+### 4. [私有化部署](./onpremise.md)

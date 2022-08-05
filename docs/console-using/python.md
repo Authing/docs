@@ -47,7 +47,7 @@ management_client = ManagementClient(
     options=ManagementClientOptions(
         user_pool_id='AUTHING_USERPOOL_ID',# 用户池 ID
         secret='AUTHING_USERPOOL_SECRET',# 用户池密钥
-        host='AUTHING_DOMAIN'#  Authing 服务器地址
+        host='https://api.authing.cn'#  Authing 服务器地址
     )
 )
 ```

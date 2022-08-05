@@ -229,7 +229,7 @@ export default {
           let targetDOM = _this.findTarget(found, key);
 
           targetDOM.forEach((node) => {
-            node.innerHTML = params[key];
+            node.innerHTML = `'${params[key]}'`;
           });
         }
       });
@@ -292,7 +292,7 @@ export default {
                 target["AUTHING_DOMAIN"] = data.domain;
               }
               if (data.redirectUri) {
-                target["AUTHING_REDIRECTURI"] = data.domain;
+                target["AUTHING_REDIRECTURI"] = data.redirectUri;
               }
               if (data.logoutRedirectUris) {
                 target["AUTHING_LOGOUTREDIRECTURI"] = data.logoutRedirectUris;

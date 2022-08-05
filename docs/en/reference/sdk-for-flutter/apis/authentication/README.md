@@ -262,7 +262,12 @@ static Future<AuthResult> sendEmail(String email, String scene) async
 **params**
 
 - *email* email address
-- *scene* can be one of the following: RESET_PASSWORD, VERIFY_EMAIL, CHANGE_EMAIL, MFA_VERIFY
+- *scene* Send a scene, optional value is ：
+  - `RESET_PASSWORD`: Send a reset password message, including the verification code.
+  - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code.
+  - `MFA_VERIFY`: Send MFA verification email.
+  - `VERIFY_CODE`: Send verification email.
+
 
 **example**
 
