@@ -8,7 +8,7 @@
 - **应用场景**：移动端
 - **终端用户预览图**：
 
-![](./images/MobileLogin.png)
+![](./images/mobile_login.png)
 
 ## 注意事项
 
@@ -184,4 +184,4 @@
 
 3.3 在登录页面体验 企业微信移动端（代开发模式） 第三方登录
 
-![](./images/MobileLogin.png)
+![](./images/mobile_login.png)
