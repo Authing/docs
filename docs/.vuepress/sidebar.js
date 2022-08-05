@@ -659,6 +659,10 @@ const zhCnNavBar = {
               path: "/guides/connections/enterprise/wecom-mobile/",
             },
             {
+              title: "企业微信移动端（代开发模式）",
+              path: "/guides/connections/enterprise/wecom-agency-mobile/",
+            },
+            {
               title: "钉钉 H5 微应用（企业内部开发）",
               path: "/guides/connections/enterprise/dingtalk/",
             },
