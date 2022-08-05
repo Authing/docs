@@ -1,38 +1,35 @@
-# 开始开发
+
+# 托管页
 
 <LastUpdated/>
 
-## 第一步：新建 iOS Swift 工程
+应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面，在需要认证的地方调用：
 
-![](./images/create_project1.png)
+```Swift
+Authing.start(<#Authing_APPID#>)
+AuthFlow().start { [weak self] code, message, userInfo in
+}
+```
 
-![](./images/create_project2.png)
+效果如下：
 
-## 第二步：添加 Guard 依赖
+<img src="./images/standard.png" alt="drawing" width="320"/>
 
-在 swift package 搜索栏输入：https://github.com/Authing/guard-ios
+登录成功回调：
 
-依赖规则选择 Up to Next Major Version 1.0.0
+```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+      //login success，do next task
+    }
+  }
+```
 
-> 如需使用[飞书登录](https://docs.authing.cn/v2/reference/sdk-for-ios/social/lark.html)则集成 swift package: https://github.com/Authing/guard-ios-lark ，其中包含 Guard 组件所有功能。（飞书 SDK 仅支持 Swift 5.3.2 (Xcode 12.3) 编译不向上兼容）
+登录成功后获取本地用户数据：
 
-![](./images/create_project3.png)
+```java
+UserInfo userInfo = Authing.getCurrentUser();
+```
 
-![](./images/create_project4.png)
-
-![](./images/create_project5.png)
-
-## 第三步：初始化
-
-红色部分是需要改动的地方
-
-![](./images/start.png)
-
-<br>
-
-接下来，应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面。
-
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速接入 →</a>
-</span>
-
-<br>
