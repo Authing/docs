@@ -13,4 +13,4 @@ Authing iOS SDK 提供了以下几个方面的 API：
 - [多因素认证](./mfa/README.md)
 - [扫码认证](./scan/README.md)
 - [工具使用类](./util/README.md)
-- [社会化登录](./social)
+- [社会化登录](./social/README.md)

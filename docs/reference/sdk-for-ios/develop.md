@@ -1,35 +1,20 @@
-
 # 托管页
 
 <LastUpdated/>
 
-应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面，在需要认证的地方调用：
+通过 Authing 提供的标准认证流程和界面，应用程序可以 1 分钟完成接入。
 
-```Swift
-Authing.start(<#Authing_APPID#>)
+首先确保已经完成了 [开发准备工作](./develop.md)，然后在需要认证的地方调用：
+
+```swift
+import Guard
 AuthFlow().start { [weak self] code, message, userInfo in
+    if code == 200 {
+        // userInfo 为用户信息
+    }
 }
 ```
 
 效果如下：
 
-<img src="./images/standard.png" alt="drawing" width="320"/>
-
-登录成功回调：
-
-```java
-  @Override
-  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
-      //login success，do next task
-    }
-  }
-```
-
-登录成功后获取本地用户数据：
-
-```java
-UserInfo userInfo = Authing.getCurrentUser();
-```
-
+<img src="./images/standard.png" alt="drawing" width="400"/>

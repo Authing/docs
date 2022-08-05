@@ -1473,12 +1473,12 @@ const zhCnNavBar = {
 
       children: [
         {
-          title: "开始开发",
-          path: "/reference/sdk-for-ios/develop",
+          title: "快速开始",
+          path: "/reference/sdk-for-ios/quick",
         },
         {
-          title: "快速接入",
-          path: "/reference/sdk-for-ios/quick",
+          title: "托管页",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
           title: "超组件",
@@ -1604,6 +1604,10 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
           ],
+        },
+        {
+          title: "典型场景",
+          path: "/reference/sdk-for-ios/scenario/",
         },
         {
           title: "私有化部署",
@@ -1927,12 +1931,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-ios/",
           children: [
             {
-              title: "开始开发",
-              path: "/reference-new/mobile/sdk-for-ios/develop",
+              title: "快速开始",
+              path: "/reference-new/mobile/sdk-for-ios/quick",
             },
             {
-              title: "快速接入",
-              path: "/reference-new/mobile/sdk-for-ios/quick",
+              title: "托管页",
+              path: "/reference-new/mobile/sdk-for-ios/develop",
             },
             {
               title: "超组件",
@@ -2058,6 +2062,10 @@ const zhCnNavBar = {
                 "/reference-new/mobile/sdk-for-ios/social/apple",
                 "/reference-new/mobile/sdk-for-ios/social/oneauth",
               ],
+            },
+            {
+              title: "典型场景",
+              path: "/reference-new/mobile/sdk-for-ios/scenario/",
             },
             {
               title: "私有化部署",
@@ -6498,12 +6506,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-ios/",
       children: [
         {
-          title: "Get started",
-          path: "/reference/sdk-for-ios/develop",
-        },
-        {
           title: "Quick start",
           path: "/reference/sdk-for-ios/quick",
+        },
+        {
+          title: "Auth Flow",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
           title: "APIs",

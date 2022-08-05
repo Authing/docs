@@ -28,35 +28,16 @@
 
 ![](./images/start.png)
 
-<br>
+## 第四步：常用操作
 
-接下来，应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面。
+### 1. 注册/登录并获取用户信息
 
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速接入 →</a>
-</span>
+- [使用 SDK 托管页](./develop.md)
+- [使用 SDK 超组件](./component/README.md)
+- [使用 SDK API](./apis.md)
 
-<br>
+### 2. [第三方身份源登录](./social/README.md)
 
+### 3. [典型场景](./scenario/README.md)
 
-通过 Authing 提供的标准认证流程和界面，应用程序可以 1 分钟完成接入。
-
-首先确保已经完成了 [开发准备工作](./develop.md)，然后在需要认证的地方调用：
-
-```swift
-import Guard
-AuthFlow().start { [weak self] code, message, userInfo in
-    if code == 200 {
-        // userInfo 为用户信息
-    }
-}
-```
-
-效果如下：
-
-<img src="./images/standard.png" alt="drawing" width="400"/>
-
-如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
-
-<br>
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./component/" style="color:#FFF;">超组件使用指南 →</a>
-</span>
+### 4. [私有化部署](./onpremise.md)
