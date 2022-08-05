@@ -1589,6 +1589,7 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-ios/api/",
           children: [
             "/reference/sdk-for-ios/authentication/",
             "/reference/sdk-for-ios/protocol/",
@@ -1603,7 +1604,6 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-ios/social/wechat",
             "/reference/sdk-for-ios/social/wecom",
-            "/reference/sdk-for-ios/social/alipay",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
@@ -1624,7 +1624,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "开始开发",
+          title: "快速开始",
           path: "/reference/sdk-for-flutter/develop",
         },
         {
@@ -1911,7 +1911,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-flutter/",
           children: [
             {
-              title: "开始开发",
+              title: "快速开始",
               path: "/reference-new/mobile/sdk-for-flutter/develop",
             },
             {
@@ -2047,6 +2047,7 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
+              path: "/reference-new/mobile/sdk-for-ios/api/",
               children: [
                 "/reference-new/mobile/sdk-for-ios/authentication/",
                 "/reference-new/mobile/sdk-for-ios/protocol/",
@@ -2061,7 +2062,6 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-ios/social/wechat",
                 "/reference-new/mobile/sdk-for-ios/social/wecom",
-                "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
                 "/reference-new/mobile/sdk-for-ios/social/oneauth",
@@ -6568,7 +6568,7 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "Get started",
+          title: "Quick start",
           path: "/reference/sdk-for-flutter/develop",
         },
         {

@@ -12,7 +12,7 @@
 			language: [
 			{'key':'ios','link':'reference/sdk-for-ios/quick.html'},
 			{'key':'android','link':'reference/sdk-for-android/quick.html'},
-            {'key':'flutter','link':'reference/sdk-for-flutter'},
+            {'key':'flutter','link':'reference/sdk-for-flutter/develop.html'},
 			{'key':'reactNative','link':'reference/sdk-for-react-native.html'}],
             unLanguage: []
         },
