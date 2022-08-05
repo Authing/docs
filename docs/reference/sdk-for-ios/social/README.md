@@ -8,8 +8,8 @@
 
 Authing iOS SDK 提供了以下几个方面的第三方身份源：
 
-- [微信登录](./authentication/README.md)
-- [企业微信登录](./protocol/README.md)
-- [飞书登陆](./mfa/README.md)
-- [苹果账号登录](./scan/README.md)
-- [手机号一键登录](./util/README.md)
+- [微信登录](./wechat.md)
+- [企业微信登录](./wecom.md)
+- [飞书登录](./lark.md)
+- [苹果账号登录](./apple.md)
+- [手机号一键登录](./oneauth.md)
