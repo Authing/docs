@@ -341,7 +341,6 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
 * *email* 邮箱地址
 * *scene* 发送场景，可选值包含：
   - RESET_PASSWORD: 发送重置密码邮件，邮件中包含验证码
-  - VERIFY_EMAIL: 发送验证邮箱的邮件
   - CHANGE_EMAIL: 发送修改邮箱邮件，邮件中包含验证码
   - MFA_VERIFY: 发送 MFA 验证邮件
   - VERIFY_CODE: 发送验证码

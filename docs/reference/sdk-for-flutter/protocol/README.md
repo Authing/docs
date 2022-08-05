@@ -196,7 +196,7 @@ User user = result.user; // get user info
 通过 access token 获取用户信息。返回的 User 对像和参数传入的是同一个 User 对象
 
 ```dart
-static Future<AuthResult> getUserByAccessToken(String accessToken, [Map? data]) async
+static Future<Result> getUserByAccessToken(String accessToken, [Map? data]) async
 ```
 
 **参数**
@@ -206,8 +206,7 @@ static Future<AuthResult> getUserByAccessToken(String accessToken, [Map? data]) 
 **示例**
 
 ```dart
-AuthResult result = await OIDCClient.getUserByAccessToken("accessToken");
-User user = result.user; // get user info
+Result result = await OIDCClient.getUserByAccessToken("accessToken");
 ```
 
 <br>
