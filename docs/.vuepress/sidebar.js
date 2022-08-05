@@ -66,7 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
-    
+
     {
       title: "快速开始",
       children: [
@@ -679,6 +679,10 @@ const zhCnNavBar = {
             {
               title: "企业微信移动端",
               path: "/guides/connections/enterprise/wecom-mobile/",
+            },
+            {
+              title: "企业微信移动端（代开发模式）",
+              path: "/guides/connections/enterprise/wecom-agency-mobile/",
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -1295,7 +1299,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "快速接入",
+          title: "快速开始",
           path: "/reference/sdk-for-android/quick",
         },
         {
@@ -1698,7 +1702,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-android/",
           children: [
             {
-              title: "快速接入",
+              title: "快速开始",
               path: "/reference-new/mobile/sdk-for-android/quick",
             },
             {

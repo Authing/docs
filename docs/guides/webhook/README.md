@@ -89,7 +89,7 @@ Webhook 测试
 | user:register-whitelist-deleted     | 删除注册白名单事件                                           | `data.phones`: 删除的手机号列表，`data.emails`: 删除的邮箱列表，`data.usernames`: 删除的用户名列表 |
 | permission:add                      | 添加授权事件，授权对象可以是用户、角色、组织结构，分组       | `data.policyCodes`: 授权的策略代码列表，`data.targetType`: 授权的目标类型，如用户，角色等，`data.userPoolId`: 所属用户池 ID，`data.targetIdentifiers`: 授权的目标 ID 列表，`data.namespace`: 策略所属权限组 |
 | permission:revoke                   | 取消授权事件，取消授权对象可以是用户、角色、组织机构，分组   | `data.policyCodes`: 授权的策略代码列表，`data.targetType`: 授权的目标类型，如用户，角色等，`data.userPoolId`: 所属用户池 ID，`data.targetIdentifiers`: 授权的目标 ID 列表，`data.namespace`: 策略所属权限组 |
-| kick                                | 用户被强制下线事件                                           | `data.users`: 被下线的用户列表，`data.application`: 用户所属应用信息 |
+| kick                                | 用户被强制下线事件                                           | `data.users`: 被下线的用户列表，`data.application`: 从某个应用强制下线时，对应的应用信息 |
 | privilege-namespace:created         | 添加权限分组事件，管理员手动创建权限分组，或创建应用自动创建权限分组时会触发此事件 | `data.namespace`: 创建的权限分组                             |
 | privilege-namespace:updated         | 修改权限分组信息事件                                         | `data.namespace`: 修改后的权限分组，`data.updates`: 更新的字段对象 |
 | privilege-namespace:deleted         | 删除权限分组事件                                             | `data.namespaces`: 删除的权限分组列表                        |
