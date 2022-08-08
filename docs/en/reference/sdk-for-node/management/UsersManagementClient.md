@@ -96,11 +96,11 @@ const user = await managementClient.users.create({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## Update user infor
+## Update user info
 
 UsersManagementClient \*().update(id, updates)
 
-> Update user infor
+> Update user info
 
 #### Parameter
 
