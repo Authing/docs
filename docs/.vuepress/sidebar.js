@@ -1589,13 +1589,13 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
-          path: "/reference/sdk-for-ios/api/",
+          path: "/reference/sdk-for-ios/apis/",
           children: [
-            "/reference/sdk-for-ios/authentication/",
-            "/reference/sdk-for-ios/protocol/",
-            "/reference/sdk-for-ios/mfa/",
-            "/reference/sdk-for-ios/scan/",
-            "/reference/sdk-for-ios/util/",
+            "/reference/sdk-for-ios/apis/authentication",
+            "/reference/sdk-for-ios/apis/protocol",
+            "/reference/sdk-for-ios/apis/mfa",
+            "/reference/sdk-for-ios/apis/scan",
+            "/reference/sdk-for-ios/apis/util",
           ],
         },
         {
@@ -2047,13 +2047,13 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
-              path: "/reference-new/mobile/sdk-for-ios/api/",
+              path: "/reference-new/mobile/sdk-for-ios/apis/",
               children: [
-                "/reference-new/mobile/sdk-for-ios/authentication/",
-                "/reference-new/mobile/sdk-for-ios/protocol/",
-                "/reference-new/mobile/sdk-for-ios/mfa/",
-                "/reference-new/mobile/sdk-for-ios/scan/",
-                "/reference-new/mobile/sdk-for-ios/util/",
+                "/reference-new/mobile/sdk-for-ios/apis/authentication",
+                "/reference-new/mobile/sdk-for-ios/apis/protocol",
+                "/reference-new/mobile/sdk-for-ios/apis/mfa",
+                "/reference-new/mobile/sdk-for-ios/apis/scan",
+                "/reference-new/mobile/sdk-for-ios/apis/util",
               ],
             },
             {
