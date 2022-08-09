@@ -34,7 +34,7 @@
 
 - [使用 SDK 托管页](./develop.md)
 - [使用 SDK 超组件](./component/)
-- [使用 SDK API](./apis.md)
+- [使用 SDK API](./apis/)
 
 ### b. [第三方身份源登录](./social/)
 
