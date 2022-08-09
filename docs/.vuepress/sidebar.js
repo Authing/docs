@@ -1591,11 +1591,11 @@ const zhCnNavBar = {
           title: "APIs",
           path: "/reference/sdk-for-ios/apis/",
           children: [
-            "/reference/sdk-for-ios/apis/authentication",
-            "/reference/sdk-for-ios/apis/protocol",
-            "/reference/sdk-for-ios/apis/mfa",
-            "/reference/sdk-for-ios/apis/scan",
-            "/reference/sdk-for-ios/apis/util",
+            "/reference/sdk-for-ios/apis/authentication/",
+            "/reference/sdk-for-ios/apis/protocol/",
+            "/reference/sdk-for-ios/apis/mfa/",
+            "/reference/sdk-for-ios/apis/scan/",
+            "/reference/sdk-for-ios/apis/util/",
           ],
         },
         {
@@ -2049,11 +2049,11 @@ const zhCnNavBar = {
               title: "APIs",
               path: "/reference-new/mobile/sdk-for-ios/apis/",
               children: [
-                "/reference-new/mobile/sdk-for-ios/apis/authentication",
-                "/reference-new/mobile/sdk-for-ios/apis/protocol",
-                "/reference-new/mobile/sdk-for-ios/apis/mfa",
-                "/reference-new/mobile/sdk-for-ios/apis/scan",
-                "/reference-new/mobile/sdk-for-ios/apis/util",
+                "/reference-new/mobile/sdk-for-ios/apis/authentication/",
+                "/reference-new/mobile/sdk-for-ios/apis/protocol/",
+                "/reference-new/mobile/sdk-for-ios/apis/mfa/",
+                "/reference-new/mobile/sdk-for-ios/apis/scan/",
+                "/reference-new/mobile/sdk-for-ios/apis/util/",
               ],
             },
             {
@@ -6546,10 +6546,6 @@ const translatedZhCnNavBar = {
             {
               title: "Wechat",
               path: "/reference/sdk-for-ios/social/wechat",
-            },
-            {
-              title: "Alipay",
-              path: "/reference/sdk-for-ios/social/alipay",
             },
             {
               title: "Apple",
