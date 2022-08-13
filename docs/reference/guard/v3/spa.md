@@ -12,6 +12,8 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的 SPA 项目，跟随引导将 Authing Guard 接入到你的 SPA 项目中吧！
 
+[使用示例](https://github.com/Authing/Guard/tree/master/examples)
+
 ## 创建应用
 
 第一步：使用 Authing 创建一个应用：
