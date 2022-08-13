@@ -2,7 +2,7 @@
 
 <LastUpdated />
 
-Guard 3.x / 4.x 版本：
+当前使用文档适用于 Guard 5.0，如果您正在使用 Guard 3.x / 4.x，可参考：
 
 - [将 Guard 接入到 React 项目](https://docs.authing.cn/v2/reference/guard/v2/react.html)
 - [将 Guard 接入到 Vue 项目](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
@@ -61,7 +61,7 @@ npm install --save @authing/guard-angular
 | 名称         | 类型            | 默认值 | 必传 | 描述                                               |
 | ------------ | --------------- | ------ | ---- | -------------------------------------------------- |
 | appId        | String          | -      | 是   | appId                                              |
-| mode         | normal / modal  | normal | 否   | Guard 组件展示模式                                 |
+| mode         | normal / modal  | normal | 否   | Guard 组件展示模式，normal：嵌入模式，modal：窗口模式                                 |
 | defaultScene | GuardModuleType | login  | 否   | 组件默认渲染界面                                   |
 | lang         | zh-CN / en-US   | zh-CN  | 否   | 语言                                               |
 | isSSO        | Boolean         | true   | 否   | 是否是单点登录                                     |
@@ -419,9 +419,10 @@ import { useGuard } from '@authing/guard-react'
 const guard = useGuard()
 
 // 展示 Guard 弹窗
-guard.show()
+const showGuard = () => guard.show()
+
 // 隐藏 Guard 弹窗
-guard.hide()
+const hideGuard = () => guard.hide()
 ```
 :::
 
@@ -473,7 +474,7 @@ export class LoginComponent {
   ) {}
 
   showGuard () {
-    this.guard.client.unmount()
+    this.guard.client.show()
   },
 
   hideGuard () {
@@ -495,13 +496,13 @@ import { useGuard } from '@authing/guard-react'
 const guard = useGuard()
 
 // 登录页调用 startWithRedirect，通过页面跳转获取 code
-guard.startWithRedirect()
+const startWithRedirect = () => guard.startWithRedirect()
 
-// 在回调页面执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
-guard.handleRedirectCallback()
+// 在回调页面（Console 控制台配置的登录回调 url）执行 handleRedirectCallback，Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
+const handleRedirectCallback = () => guard.handleRedirectCallback()
 
 // 退出登录
-guard.logout()
+const logout = () => guard.logout()
 ```
 :::
 
@@ -515,7 +516,7 @@ export default {
     },
 
     handleRedirectCallback () {
-      // 在回调页面执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
+      // 在回调页面（Console 控制台配置的登录回调 url）执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
       this.$guard.handleRedirectCallback()
     },
 
@@ -537,7 +538,7 @@ const guard = useGuard()
 // 登录页调用 startWithRedirect，通过页面跳转获取 code
 const startWithRedirect = () => guard.startWithRedirect()
 
-// 在回调页面执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
+// 在回调页面（Console 控制台配置的登录回调 url）执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
 const handleRedirectCallback = () => guard.handleRedirectCallback()
 
 // 退出登录
@@ -567,7 +568,7 @@ export class LoginComponent {
   },
 
   handleRedirectCallback () {
-    // 在回调页面执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
+    // 在回调页面（Console 控制台配置的登录回调 url）执行 handleRedirectCallback， Guard 将自动为你处理包括 code 换 token 等各种繁琐的操作。
     this.guard.client.handleRedirectCallback()
   }，
 

@@ -1,6 +1,6 @@
 # 将 Guard 接入到 MPA 项目
 
-Guard 3.x / 4.x 版本：
+当前使用文档适用于 Guard 5.0，如果您正在使用 Guard 3.x / 4.x，可参考：
 
 - [将 Guard 接入到原生 JS 项目](https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html)
 
@@ -50,7 +50,7 @@ npm install --save @authing/guard
 |-----|----|----|----|----|
 |appId|String| - |是| appId|
 |host|String| - |否|私有部署时的 API 请求地址，可在 Console 控制台配置|
-|mode|normal / modal|normal| 否 |Guard 组件展示模式|
+|mode|normal / modal|normal| 否 |Guard 组件展示模式，normal：嵌入模式，modal：窗口模式|
 |defaultScene|GuardModuleType|login| 否 |组件默认渲染界面|
 |lang|zh-CN / en-US|zh-CN| 否 |语言|
 |isSSO|Boolean|true|否|是否是单点登录|
