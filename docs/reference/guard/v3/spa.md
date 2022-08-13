@@ -357,7 +357,7 @@ import { useGuard } from '@authing/guard-react'
 
 const guard = useGuard()
 
-guard.unmount()
+const unmountGuard = () => guard.unmount()
 ```
 :::
 
@@ -436,6 +436,7 @@ export default {
       // 展示 Guard 弹窗
       this.$guard.show()
     },
+
     hideGuard () {
       // 隐藏 Guard 弹窗
       this.$guard.hide()
