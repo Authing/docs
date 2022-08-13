@@ -1612,6 +1612,12 @@ const zhCnNavBar = {
         {
           title: "典型场景",
           path: "/reference/sdk-for-ios/scenario/",
+          children: [
+            "/reference/sdk-for-ios/scenario/tokens",
+            "/reference/sdk-for-ios/scenario/webview",
+            "/reference/sdk-for-ios/scenario/logout",
+            "/reference/sdk-for-ios/scenario/splash",
+          ],
         },
         {
           title: "私有化部署",
@@ -2070,6 +2076,12 @@ const zhCnNavBar = {
             {
               title: "典型场景",
               path: "/reference-new/mobile/sdk-for-ios/scenario/",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/scenario/tokens",
+                "/reference-new/mobile/sdk-for-ios/scenario/webview",
+                "/reference-new/mobile/sdk-for-ios/scenario/logout",
+                "/reference-new/mobile/sdk-for-ios/scenario/splash",
+              ],
             },
             {
               title: "私有化部署",
