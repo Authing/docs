@@ -41,7 +41,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 使用 NPM：
 
 ``` shell
-npm insstall --save @authing/guard
+npm install --save @authing/guard
 ```
 
 ## 初始化 Guard
