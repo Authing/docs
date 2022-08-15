@@ -1028,11 +1028,11 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "SPA",
+          title: "单页应用",
           path: "/reference/guard/v3/spa.md",
         },
         {
-          title: "MPA",
+          title: "标准 WEB 应用",
           path: "/reference/guard/v3/mpa.md",
         }
       ],
