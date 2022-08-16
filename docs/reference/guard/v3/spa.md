@@ -36,25 +36,38 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 根据你的使用场景和个人偏好，在使用 Guard 时，你可以选择是否采用构建流程。
 
-使用 `appId` 即可初始化 Guard，更多可选参数及其应用场景可参考：[GuardOptions](#GuardOptions)
-
 ### 使用构建工具
 
-```shell
-# 根据您使用的框架，按需执行以下命令
-
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
+:::
 
+::: tab Vue2
+``` shell
 # 兼容 Vue 2
 npm install --save @authing/guard-vue2
+```
+:::
 
+::: tab Vue3
+``` shell
 # 兼容 Vue 3
 npm install --save @authing/guard-vue3
+```
+:::
 
+::: tab Angular
+``` shell
 # 兼容 Angular 14
 npm install --save @authing/guard-angular
 ```
+:::
+::::
+
+使用 `appId` 即可初始化 Guard，更多可选参数及其应用场景可参考：[GuardOptions](#GuardOptions)
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -231,13 +244,13 @@ export class LoginComponent {
 
 ### 不使用构建工具
 
-若不想经过构建流程就可以使用 Guard，请直接复制下面的代码到一个 HTML 文件中，并在浏览器中打开它：
+若不想经过构建流程就可以使用 Guard，比如引用 Gurad 的 CDN 资源。请直接复制下面的代码到一个 HTML 文件中，并在浏览器中打开它：
 
 ```html
 发布了正式版再补 cdn 及 html 代码
 ```
 
-至此，你已经完成了 Guard 的初始化，你可以使用 Guard 实例来完成后续更多的操作。
+至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
 ## STEP3：常用操作
 
@@ -329,11 +342,20 @@ export class LoginComponent {
   userInfo = ''
 
   ngOnInit () {
-    this.guard.client.start('#guard-root').then(userInfo => {
+    this.guard.client.start('#guard').then(userInfo => {
       this.userInfo = userInfo
     })
   }
 }
+```
+:::
+::: tab CDN
+``` html
+<div id="guard"></div>
+
+<script>
+  guard.start('#guard')
+</script>
 ```
 :::
 ::::
@@ -445,8 +467,23 @@ export class LoginComponent {
 }
 ```
 :::
-::::
+::: tab CDN
+``` html
+<div id="unmount">unmount Guard</div>
+<div id="guard"></div>
 
+<script>
+  guard.start('#guard').then(userInfo => {
+    console.log(userInfo)
+  })
+
+  document.querySelector('#unmount').onclick = function () {
+    guard.unmount()
+  }
+</script>
+```
+:::
+::::
 
 ### 使用弹窗形式的登录框
 
@@ -575,6 +612,27 @@ export class LoginComponent {
     this.guard.client.hide()
   }
 }
+```
+:::
+::: tab CDN
+``` html
+<div id="show">show Guard</div>
+<div id="hide">hide Guard</div>
+<div id="guard"></div>
+
+<script>
+  guard.start('#guard').then(userInfo => {
+    console.log(userInfo)
+  })
+
+  document.querySelector('#show').onclick = function () {
+    guard.show()
+  }
+
+  document.querySelector('#hide').onclick = function () {
+    guard.hide()
+  }
+</script>
 ```
 :::
 ::::
@@ -751,6 +809,22 @@ export class CallbackComponent {
 }
 ```
 :::
+::: tab CDN
+``` html
+// login.html
+<script>
+  guard.startWithRedirect()
+</script>
+```
+``` html
+// callback.html
+<script>
+  guard.handleRedirectCallback().then(() => {
+    window.location.replace('/personal.html')
+  })
+</script>
+```
+:::
 ::::
 
 ### 退出登录
@@ -823,23 +897,416 @@ export class LoginComponent {
 }
 ```
 :::
+::: tab CDN
+``` html
+<div id="logout">logout</div>
+
+<script>
+  document.querySelector('#logout').onclick = function () {
+    guard.logout()
+  }
+</script>
+```
+:::
 ::::
 
 ### 用户注册
 
-``` typescript
-guard.startRegister()
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import React from 'react'
+
+import { useGuard } from '@authing/guard-react'
+
+export default function Jump() {
+  const guard = useGuard()
+
+  const startRegister = () => guard.startRegister()
+
+  return (
+    <div>
+      <div>
+        <button onClick={startRegister}>startRegister</button>
+      </div>
+    </div>
+  )
+}
 ```
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  methods: {
+    startRegister () {
+      this.$guard.startRegister()
+    }
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+const startRegister = () => guard.startRegister()
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+  ) {}
+
+  startRegister () {
+    this.guard.client.startRegister()
+  }
+}
+```
+:::
+::: tab CDN
+``` html
+<div id="start-register">startRegister</div>
+
+<script>
+  document.querySelector('#start-register').onclick = function () {
+    guard.startRegister()
+  }
+</script>
+```
+:::
+::::
 
 ### 判断用户登录状态
 
-``` typescript
-guard.checkLoginStatus().then(user => {
-  // 如果是未登录状态，user 为 undefined
-  console.log(user)
-})
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import React from 'react'
+
+import { useGuard } from '@authing/guard-react'
+
+export default function Jump() {
+  const guard = useGuard()
+
+  const checkLoginStatus = () => {
+    guard.checkLoginStatus().then(user => {
+      // 如果是未登录状态，user 为 undefined
+      console.log(user)
+    })
+  }
+
+  return (
+    <div>
+      <div>
+        <button onClick={checkLoginStatus}>checkLoginStatus</button>
+      </div>
+    </div>
+  )
+}
 ```
-## 事件
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  methods: {
+    checkLoginStatus () {
+      guard.checkLoginStatus().then(user => {
+        // 如果是未登录状态，user 为 undefined
+        console.log(user)
+      })
+    }
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+const checkLoginStatus = () => {
+  guard.checkLoginStatus().then(user => {
+    // 如果是未登录状态，user 为 undefined
+    console.log(user)
+  })
+}
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+  ) {}
+
+  checkLoginStatus () {
+    guard.checkLoginStatus().then(user => {
+      // 如果是未登录状态，user 为 undefined
+      console.log(user)
+    })
+  }
+}
+```
+:::
+::: tab CDN
+``` html
+<div id="check-login-status">checkLoginStatus</div>
+
+<script>
+  document.querySelector('#check-login-status').onclick = function () {
+    guard.checkLoginStatus().then(user => {
+      // 如果是未登录状态，user 为 undefined
+      console.log(user)
+    })
+  }
+</script>
+```
+:::
+::::
+
+### 切换语言
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import React, { useEffect, useState } from 'react'
+
+import { useGuard, Lang } from '@authing/guard-react'
+
+export default function Jump() {
+  const guard = useGuard()
+
+  const [lang, setLang] = useState<Lang>('zh-CN')
+
+  useEffect(() => {
+    guard.start('#guard').then(userInfo => {
+      console.log('userInfo from guard.start: ', userInfo)
+    })
+  }, [])
+
+  const changeLang = () => {
+    if (lang === 'zh-CN') {
+      setLang('en-US')
+    } else {
+      setLang('zh-CN')
+    }
+  }
+
+  useEffect(() => {
+    guard.changeLang(lang)
+  }, [lang])
+
+  return (
+    <div>
+      <button onClick={changeLang}>changeLang</button>
+      <div id="guard"></div>
+    </div>
+  )
+}
+```
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  data: {
+    lang: 'zh-CN'
+  },
+  methods: {
+    changeLang () {
+      this.lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+      this.$guard.changeLang(lang)
+    }
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+let lang = 'zh-CN'
+
+const changeLang = () => {
+  lang = lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+  guard.changeLang(lang)
+}
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+    private
+  ) {}
+
+  lang = 'zh-CN'
+
+  changeLang () {
+    this.lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+    this.guard.client.changeLang(this.lang)
+  }
+}
+```
+:::
+::: tab CDN
+``` html
+<div id="change-lang">changeLang</div>
+
+<script>
+  let lang = 'zh-CN'
+
+  document.querySelector('#change-lang').onclick = function () {
+    lang = 'zh-CN' ? 'en-US' : 'zh-CN'
+
+    guard.changeLang(lang)
+  }
+</script>
+```
+:::
+::::
+
+### 自定义样式
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import React, { useEffect, useState } from 'react'
+
+import { useGuard } from '@authing/guard-react'
+
+export default function Jump() {
+  const guard = useGuard()
+
+  useEffect(() => {
+    guard.start('#guard').then(userInfo => {
+      console.log('userInfo from guard.start: ', userInfo)
+    })
+  }, [])
+
+  const changeContentCSS = () => guard.changeContentCSS('body {background: red}')
+
+  return (
+    <div>
+      <button onClick={changeContentCSS}>changeContentCSS</button>
+      <div id="guard"></div>
+    </div>
+  )
+}
+```
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  data: {
+    lang: 'zh-CN'
+  },
+  methods: {
+    changeLang () {
+      this.$guard.changeContentCSS('body {background: red}')
+    }
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+const changeLang = () => guard.changeContentCSS('body {background: red}')
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+    private
+  ) {}
+
+  lang = 'zh-CN'
+
+  changeLang () {
+    this.guard.client.changeContentCSS('body {background: red}')
+  }
+}
+```
+:::
+::: tab CDN
+``` html
+<div id="change-content-css">changeContentCSS</div>
+
+<script>
+  document.querySelector('#change-content-css').onclick = function () {
+    guard.changeContentCSS('body {background: red}')
+  }
+</script>
+```
+:::
+::::
+
+## 注册事件
 
 使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
 
@@ -912,6 +1379,15 @@ export class LoginComponent {
     })
   }
 }
+```
+:::
+::: tab CDN
+``` html
+<script>
+  guard.on('event-name', () => {
+    console.log('........')
+  })
+</script>
 ```
 :::
 ::::
@@ -1011,13 +1487,23 @@ export class LoginComponent {
 }
 ```
 :::
+::: tab CDN
+``` html
+<script>
+  guard.getAuthClient().then(authClient => {
+    authClient.registerByEmail()
+    authClient.validateToken()
+    // ........
+  })
+</script>
+```
+:::
 ::::
 
 参考 [Authentication SDK](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)
 
-
-## 常用参数列表
-### <p id="GuardOptions">GuardOptions</p>
+## 附录常用参数列表
+### <p id="GuardOptions"></p>
 
 初始化 Guard 所需参数：
 
@@ -1036,7 +1522,7 @@ export class LoginComponent {
 
 使用以上参数实例化 Guard，您可以体验 Guard 最基本的登录、注册等功能。
 
-如果想拥有 Guard 的完整能力，还可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）：
+**如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）**
 
 - [config](#config)
 

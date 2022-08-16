@@ -38,13 +38,13 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 根据你的使用场景和个人偏好，在使用 Guard 时，你可以选择是否采用构建流程。
 
-使用 `appId` 即可初始化 Guard，更多可选参数及其应用场景可参考：[GuardOptions](#GuardOptions)
-
 ### 使用构建工具
 
 ``` shell
 npm install --save @authing/guard
 ```
+
+使用 `appId` 即可初始化 Guard，更多可选参数及其应用场景可参考：[GuardOptions](#GuardOptions)
 
 ``` javascript
 import { Guard } from '@authing/guard'
@@ -64,7 +64,7 @@ const guard = new Guard({
 发布了正式版再补 cdn 及 html 代码
 ```
 
-至此，你已经完成了 Guard 的初始化，你可以使用 Guard 实例来完成后续更多的操作。
+至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
 ## STEP3：常用操作
 
@@ -154,6 +154,34 @@ guard.checkLoginStatus().then(user => {
 })
 ```
 
+### 切换语言
+
+``` html
+<div id="change-lang">changeLang</div>
+
+<script>
+  let lang = 'zh-CN'
+
+  document.querySelector('#change-lang').onclick = function () {
+    lang = 'zh-CN' ? 'en-US' : 'zh-CN'
+
+    guard.changeLang(lang)
+  }
+</script>
+```
+
+### 自定义样式
+
+``` html
+<div id="change-content-css">changeContentCSS</div>
+
+<script>
+  document.querySelector('#change-content-css').onclick = function () {
+    guard.changeContentCSS('body {background: red}')
+  }
+</script>
+```
+
 ## 注册事件
 
 使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
@@ -211,7 +239,7 @@ guard.getAuthClient().then(authClient => {
 
 使用以上参数实例化 Guard，您可以体验 Guard 最基本的登录、注册等功能。
 
-如果想拥有 Guard 的完整能力，还可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）：
+**如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）：**
 
 - [config](#config)
 
