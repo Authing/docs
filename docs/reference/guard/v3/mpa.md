@@ -4,7 +4,7 @@
 
 ## 简介
 
-当前使用文档适用于 [Guard 5.0](https://github.com/authing/guard)，如果您正在使用 [Guard 3.x / 4.x](https://github.com/authing/authing-ui-components)，可参考：
+当前使用文档适用于 [Guard 5.0](https://github.com/authing/guard)，如果您正在使用[Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 [将 Guard 接入到原生 JS 项目](https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html)
 
