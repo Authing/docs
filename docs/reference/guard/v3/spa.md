@@ -4,7 +4,7 @@
 
 ## 简介
 
-当前使用文档适用于 Guard 5.0，如果您正在使用 Guard 3.x / 4.x，可参考：
+当前使用文档适用于 [Guard 5.0](https://github.com/authing/guard)，如果您正在使用 [Guard 3.x / 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 - [将 Guard 接入到 React 项目](https://docs.authing.cn/v2/reference/guard/v2/react.html)
 - [将 Guard 接入到 Vue 项目](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
@@ -14,25 +14,31 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的 SPA 项目，跟随引导将 Authing Guard 接入到你的 SPA 项目中吧！
 
-## STEP1：创建应用
+## STEP 1：创建 Authing 应用
 
-1、使用 Authing 创建一个应用：
+1. 使用 Authing 创建一个应用：
 
-- 进入<a href="https://console.authing.cn/" target="blank">控制台</a>
-- 选择`应用`菜单
-- 点击右上角`创建自建应用`按钮
-- 填写`应用名称`和`认证地址`、选择`单页 Web 应用`
-- 点击创建
+<ul style="padding-left: 50px">
+  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
+  <li>展开左侧<strong>应用</strong>菜单，点击<strong>自建应用</strong>菜单</li>
+  <li>点击右上角<strong>创建自建应用</strong>按钮</li>
+  <li>填写<strong>应用名称</strong>和<strong>认证地址</strong>、选择<strong>单页 Web 应用</strong></li>
+  <li>点击创建</li>
+</ul>
 
-<img src="./images/spa-1.png" width="650" />
+<img src="./images/spa-1.png" width="650" style="margin-left: 50px" />
 
-2、在`认证配置`处填写`登录回调 URL`和`登出回调 URL`
+<br />
 
-<img src="./images/spa-2.png" width="650" />
+2. 在<strong>应用配置</strong>标签页的<strong>认证配置</strong>处填写<strong>登录回调 URL</strong>和<strong>登出回调 URL</strong>
 
-3、保存当前配置。
+<img src="./images/spa-2.png" width="650" style="margin-left: 50px" />
 
-## STEP2：快速开始
+<br />
+
+3. 保存当前配置。
+
+## STEP 2：接入 Guard
 
 根据你的使用场景和个人偏好，在使用 Guard 时，你可以选择是否采用构建流程。
 
@@ -72,9 +78,14 @@ npm install --save @authing/guard-angular
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ``` tsx
+// App.tsx
+import React from 'react'
+
 import { GuardProvider } from '@authing/guard-react'
 
 import '@authing/guard-react/dist/esm/guard.min.css'
+
+import RouterComponent from './router'
 
 function App() {
   return (
@@ -89,7 +100,8 @@ function App() {
 :::
 
 ::: tab Vue2
-``` typescript
+``` javascript
+// main.js
 import Vue from 'vue'
 import { GuardPlugin } from '@authing/guard-vue2'
 
@@ -103,6 +115,7 @@ Vue.use(GuardPlugin, {
 
 ::: tab Vue3
 ``` typescript
+// main.ts
 import { createApp } from 'vue'
 
 import { GuardPlugin } from '@authing/guard-vue3'
@@ -252,11 +265,19 @@ export class LoginComponent {
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
-## STEP3：常用操作
+## STEP 3：常用操作
 
-### 渲染 Guard 组件
+Guard 提供三种登录方式，分别是<strong>嵌入模式</strong>、<strong>弹窗模式</strong>、<strong>跳转模式</strong>。
 
-使用 `start` 方法渲染 Guard 组件，登录完成之后可以自动获取到用户信息。
+- <strong>嵌入模式</strong>、<strong>弹窗模式</strong>：在指定的 DOM 中渲染一个登录框组件，通过这个组件面板可轻松完成登录、注册、找回密码、MFA 多因素认证、各种社会化登录等操作。[在线体验](https://sample-sso.authing.cn)
+
+- <strong>跳转模式</strong>：Guard 完整集成并封装了 Auhting 认证类 SDK，只需一行代码即可实现登录、登出、处理登录成功后的回调等能力。
+
+使用 Guard 提供的各种 API 可拥有获取用户信息、切换语言、自定义样式等能力。
+
+### 嵌入模式
+
+使用 `start` 和 `unmount` 方法实现组件渲染和卸载。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -269,13 +290,18 @@ export default function Login() {
   // 获取 Guard 实例
   const guard = useGuard()
 
+  const unmountGuard = () => guard.unmount()
+
   useEffect(() => {
     guard.start('#guard').then(userInfo => {
       console.log(userInfo)
     })
   }, [])
 
-  return <div id="guard"></div>
+  return <>
+    <button onClick={unmountGuard}>unmount Guard</button>
+    <div id="guard"></div>
+  <>
 }
 ```
 :::
@@ -284,6 +310,7 @@ export default function Login() {
 ``` html
 <template>
   <div>
+    <button @click="unmountGuard">unmount Guard</button>
     <div id="guard"></div>
   </div>
 </template>
@@ -294,6 +321,11 @@ export default {
     this.$guard.start('#guard').then(userInfo => {
       console.log(userInfo)
     })
+  },
+  methods: {
+    unmountGuard () {
+      this.$guard.unmount()
+    }
   }
 }
 </script>
@@ -304,6 +336,7 @@ export default {
 ``` html
 <template>
   <div>
+    <button @click="unmountGuard">unmount Guard</button>
     <div id="guard"></div>
   </div>
 </template>
@@ -313,6 +346,8 @@ import { onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
+
+const unmountGuard = () => guard.unmount()
 
 onMounted(() => {
   guard.start('#root').then(userInfo => {
@@ -346,120 +381,6 @@ export class LoginComponent {
       this.userInfo = userInfo
     })
   }
-}
-```
-:::
-::: tab CDN
-``` html
-<div id="guard"></div>
-
-<script>
-  guard.start('#guard')
-</script>
-```
-:::
-::::
-
-### 卸载 Guard 组件
-
-使用 `unmount` 卸载 Guard 组件
-
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab React
-``` tsx
-import React, { useEffect } from 'react'
-import { useGuard } from '@authing/guard-react'
-
-export export function Login () {
-  const guard = useGuard()
-
-  const unmountGuard = () => guard.unmount()
-
-  useEffect(() => {
-    guard.start('#guard').then(userInfo => {
-      console.log(userInfo)
-    })
-  }, [])
-
-  return <>
-    <button onClick={unmountGuard}>unmount Guard</button>
-    <div id="guard"></div>
-  </>
-}
-```
-:::
-
-::: tab Vue2
-``` html
-<template>
-  <div>
-    <button @click="unmountGuard">unmount Guard</button>
-    <div id="guard"></div>
-  </div>
-</template>
-
-<script scoped>
-export default {
-  mounted () {
-    this.$guard.start('#guard').then(userInfo => {
-      console.log(userInfo)
-    })
-  },
-  methods: {
-    unmountGuard () {
-      this.$guard.unmount()
-    }
-  }
-}
-</script>
-```
-:::
-
-::: tab Vue3
-``` html
-<template>
-  <div>
-    <button @click="unmountGuard">unmount Guard</button>
-    <div id="guard"></div>
-  </div>
-</template>
-
-<script setup scoped>
-import { onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-
-const guard = useGuard()
-
-const unmountGuard = guard.unmount()
-
-onMounted(() => {
-  guard.start('#guard')
-})
-</script>
-```
-:::
-
-::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-
-import { GuardService } from '@authing/guard-angular'
-
-@Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
-
-  ngOnInit () {
-    this.guard.client.start('#guard').then(userInfo => {
-      console.log(userInfo)
-    })
-  }
 
   unmountGuard () {
     this.guard.client.unmount()
@@ -467,25 +388,19 @@ export class LoginComponent {
 }
 ```
 :::
+
 ::: tab CDN
 ``` html
-<div id="unmount">unmount Guard</div>
 <div id="guard"></div>
 
 <script>
-  guard.start('#guard').then(userInfo => {
-    console.log(userInfo)
-  })
-
-  document.querySelector('#unmount').onclick = function () {
-    guard.unmount()
-  }
+  guard.start('#guard')
 </script>
 ```
 :::
 ::::
 
-### 使用弹窗形式的登录框
+### 弹窗模式
 
 当 Guard 初始化时的参数 `mode` 为 `modal` 时，启动窗口模式，可使用以下 API 操作 Guard 窗口的展示和隐藏。
 
@@ -604,6 +519,7 @@ export class LoginComponent {
   }
 
   showGuard () {
+    // 展示 Guard 弹窗
     this.guard.client.show()
   },
 
@@ -637,9 +553,7 @@ export class LoginComponent {
 :::
 ::::
 
-### 使用跳转模式登录
-
-无需渲染 Guard 组件，通过调用 Guard API 也可以实现登录功能。
+### 跳转模式
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -811,17 +725,138 @@ export class CallbackComponent {
 :::
 ::: tab CDN
 ``` html
-// login.html
+<!-- login.html -->
 <script>
   guard.startWithRedirect()
 </script>
 ```
 ``` html
-// callback.html
+<!-- callback.html -->
 <script>
   guard.handleRedirectCallback().then(() => {
     window.location.replace('/personal.html')
   })
+</script>
+```
+:::
+::::
+
+### 获取用户信息
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import React, { useEffect, useState } from 'react'
+
+import { useGuard } from '@authing/guard-react'
+
+export default function Jump() {
+  const [userInfo, setUserInfo] = useState()
+
+  const guard = useGuard()
+
+  const getUserInfo = async () => {
+    const userInfo = await guard.trackSession()
+    setUserInfo(userInfo)
+  }
+
+  useEffect(() => {
+    getUserInfo()
+  })
+
+  return (
+    <div>
+      <div>
+        <button onClick={getUserInfo}>获取用户信息</button>
+      </div>
+    </div>
+  )
+}
+```
+:::
+
+::: tab Vue2
+``` html
+<template>
+  <div>
+    <button @click="getUserInfo">获取用户信息</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      userInfo: null
+    }
+  },
+  methods: {
+    async getUserInfo () {
+      this.userInfo = await this.$guard.trackSession()
+    }
+  }
+}
+</script>
+```
+:::
+
+::: tab Vue3
+``` html
+<template>
+  <div>
+    <button @click="getUserInfo">获取用户信息</button>
+  </div>
+</template>
+
+<script>
+import { onMounted, ref } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const userInfo = ref(null)
+const guard = useGuard()
+
+const getUserInfo = async () => {
+  const _userInfo = await guard.trackSession()
+  userInfo.value = _userInfo
+}
+</script>
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+  ) {}
+
+  userInfo = null
+
+  async getUserInfo () {
+    this.userInfo = await this.guard.client.trackSession()
+  }
+}
+```
+:::
+::: tab CDN
+``` html
+<div id="get-user-info">获取用户信息</div>
+
+<script>
+  document.querySelector('#get-user-info').onclick = function () {
+    guard.trackSession().then(userInfo => {
+      console.log(userInfo)
+    })
+  }
 </script>
 ```
 :::
@@ -1525,9 +1560,7 @@ export class LoginComponent {
 **如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）**
 
 - [config](#config)
-
 - [authClientOptions](#authClientOptions)
-
 ### <p id="config">config</p>
 
 | 名称                  | 类型                                                      | 描述                                                                                                                                                                                                                              | 默认值                 |

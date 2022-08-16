@@ -4,7 +4,7 @@
 
 ## 简介
 
-当前使用文档适用于 Guard 5.0，如果您正在使用 Guard 3.x / 4.x，可参考：
+当前使用文档适用于 [Guard 5.0](https://github.com/authing/guard)，如果您正在使用 [Guard 3.x / 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 [将 Guard 接入到原生 JS 项目](https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html)
 
@@ -12,29 +12,37 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的原生 JavaScript 项目，跟随引导将 Authing Guard 接入到你的原生 JavaScript 项目中吧！
 
-## STEP1：创建应用
+## STEP 1：创建 Authing 应用
 
 1、使用 Authing 创建一个应用：
 
-- 进入<a href="https://console.authing.cn/" target="blank">控制台</a>
-- 选择`应用`菜单
-- 点击右上角`创建自建应用`按钮
-- 填写`应用名称`和`认证地址`、选择`标准 Web 应用`
-- 点击创建
+<ul style="padding-left: 50px">
+  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
+  <li>展开左侧<strong>应用</strong>菜单，点击<strong>自建应用</strong>菜单</li>
+  <li>点击右上角<strong>创建自建应用</strong>按钮</li>
+  <li>填写<strong>应用名称</strong>和<strong>认证地址</strong>、选择<strong>标准 Web 应用</strong></li>
+  <li>点击创建</li>
+</ul>
 
-<img src="./images/mpa-1.png" width="650" />
+<img src="./images/mpa-1.png" width="650" style="margin-left: 50px" />
 
-2、在`认证配置`处填写`登录回调 URL`和`登出回调 URL`
+<br />
 
-<img src="./images/mpa-2.png" width="650" />
+2、在<strong>认证配置</strong>处填写<strong>登录回调 URL</strong>和<strong>登出回调 URL</strong>
 
-3、换取 token 身份验证方式选择 `none`
+<img src="./images/mpa-2.png" width="650" style="margin-left: 50px" />
 
-<img src="./images/mpa-3.png" width="650" />
+<br />
+
+3、换取 token 身份验证方式选择 <strong>none</strong>
+
+<img src="./images/mpa-3.png" width="650" style="margin-left: 50px" />
+
+<br />
 
 4、保存当前配置。
 
-## STEP2：快速开始
+## STEP 2：接入 Guard
 
 根据你的使用场景和个人偏好，在使用 Guard 时，你可以选择是否采用构建流程。
 
@@ -66,28 +74,23 @@ const guard = new Guard({
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
-## STEP3：常用操作
+## STEP 3：常用操作
 
-### 渲染 Guard 组件
+Guard 提供三种登录方式，分别是<strong>嵌入模式</strong>、<strong>弹窗模式</strong>、<strong>跳转模式</strong>。
 
-使用 `start` 方法渲染 Guard 组件，登录完成之后可以自动获取到用户信息。
+- <strong>嵌入模式</strong>、<strong>弹窗模式</strong>：在指定的 DOM 中渲染一个登录框组件，通过这个组件面板可轻松完成登录、注册、找回密码、MFA 多因素认证、各种社会化登录等操作。[在线体验](https://sample-sso.authing.cn)
 
-``` html
-<div id="guard"></div>
+- <strong>跳转模式</strong>：Guard 完整集成并封装了 Auhting 认证类 SDK，只需一行代码即可实现登录、登出、处理登录成功后的回调等能力。
 
-<script>
-  guard.start('#guard').then(userInfo => {
-    console.log(userInfo)
-  })
-</script>
-```
+使用 Guard 提供的各种 API 可拥有获取用户信息、切换语言、自定义样式等能力。
 
-### 卸载 Guard 组件
+### 嵌入模式
 
-使用 `unmount` 卸载 Guard 组件
+使用 `start` 和 `unmount` 方法实现组件渲染和卸载。
 
 ``` html
 <button id="unmount">unmount Guard</button>
+
 <div id="guard"></div>
 
 <script>
@@ -101,7 +104,7 @@ const guard = new Guard({
 </script>
 ```
 
-### 使用弹窗形式的登录框
+### 弹窗模式
 
 当 Guard 初始化时的参数 `mode` 为 `modal` 时，启动窗口模式，可使用以下 API 操作 Guard 窗口的展示和隐藏。
 
@@ -125,12 +128,16 @@ const guard = new Guard({
 </script>
 ```
 
-### 使用跳转模式登录
-
-无需渲染 Guard 组件，通过调用 Guard API 也可以实现登录功能。
+### 跳转模式
 
 ``` typescript
+// login.html
 guard.startWithRedirect()
+
+// callback.html
+guard.handleRedirectCallback().then(() => {
+  window.location.replace('personal.html')
+})
 ```
 
 ### 退出登录
