@@ -14,7 +14,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的 SPA 项目，跟随引导将 Authing Guard 接入到你的 SPA 项目中吧！
 
-## 第一步：创建应用
+## STEP1：创建应用
 
 1、使用 Authing 创建一个应用：
 
@@ -32,7 +32,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 3、保存当前配置。
 
-## 第二步：快速开始
+## STEP2：快速开始
 
 根据你的使用场景和个人偏好，在使用 Guard 时，你可以选择是否采用构建流程。
 
@@ -237,183 +237,9 @@ export class LoginComponent {
 发布了正式版再补 cdn 及 html 代码
 ```
 
-## 事件
+至此，你已经完成了 Guard 的初始化，你可以使用 Guard 实例来完成后续更多的操作。
 
-使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
-
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab React
-``` tsx
-import { useEffect } from 'react'
-import { useGuard } from '@authing/guard-react'
-
-export default function Login () {
-  const guard = useGuard()
-
-  useEffect(() => {
-    guard.on('event-name', () => {
-      console.log('........')
-    })
-  })
-
-  return <div></div>
-}
-```
-:::
-
-::: tab Vue2
-``` typescript
-export default {
-  mounted () {
-    this.$guard.on('event-name', () => {
-      console.log('........')
-    })
-  }
-}
-```
-:::
-
-::: tab Vue3
-``` typescript
-import { onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-
-const guard = useGuard()
-
-onMounted(() => {
-  guard.on('event-name', () => {
-    console.log('........')
-  })
-})
-```
-:::
-
-::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-
-import { GuardService } from '@authing/guard-angular'
-
-@Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
-
-  ngOnInit () {
-    this.guard.client.on('event-name', () => {
-      console.log('........')
-    })
-  }
-}
-```
-:::
-::::
-
-常用事件列表：
-
-| 事件名称       | 描述                           | 回调参数   | 回调参数说明                                                                                                              |
-| -------------- | ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
-| load           | Guard 初始化完成，开始渲染页面 | authClient | AuthenticationClient 对象，详情请查看 [authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) |
-| load-error     | Guard 初始化失败               | error      | 错误信息                                                                                                                  |
-| login          | 用户登录成功                   | user       | 用户信息                                                                                                                  |
-| login-error    | 用户登录失败                   | error      | 错误信息                                                                                                                  |
-| register       | 用户注册成功                   | user       | 用户信息                                                                                                                  |
-| register-error | 用户注册失败                   | error      | 错误信息                                                                                                                  |
-| close          | modal 模式中关闭 Guard 事件    | -          | -                                                                                                                         |
-
-## Guard 内置 Authing JS SDK
-
-Guard 集成了 AuthenticationClient, 可调用 AuthenticationClient 的所有方法。
-
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab React
-``` tsx
-import { useEffect } from 'react'
-import { useGuard } from '@authing/guard-react'
-
-export default function Login () {
-  const guard = useGuard()
-
-  useEffect(() => {
-    guard.getAuthClient().then(authClient => {
-      authClient.registerByEmail()
-      authClient.validateToken()
-      // ........
-    })
-  })
-
-  return <div></div>
-}
-```
-:::
-
-::: tab Vue2
-``` typescript
-export default {
-  created () {
-    this.$guard.getAuthClient().then(authClient => {
-      authClient.registerByEmail()
-      authClient.validateToken()
-      // ........
-    })
-  }
-}
-```
-:::
-
-::: tab Vue3
-``` typescript
-import { onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-
-const guard = useGuard()
-
-onMounted(() => {
-  guard.getAuthClient().then(authClient => {
-    authClient.registerByEmail()
-    authClient.validateToken()
-    // ........
-  })
-})
-```
-:::
-
-::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-
-import { GuardService } from '@authing/guard-angular'
-
-@Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
-
-  ngOnInit () {
-    this.guard.client.getAuthClient().then(authClient => {
-      authClient.registerByEmail()
-      authClient.validateToken()
-      // ........
-    })
-  }
-}
-```
-:::
-::::
-
-参考 [Authentication SDK](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)
-
-## 常用操作
+## STEP3：常用操作
 
 ### 渲染 Guard 组件
 
@@ -998,6 +824,197 @@ export class LoginComponent {
 ```
 :::
 ::::
+
+### 用户注册
+
+``` typescript
+guard.startRegister()
+```
+
+### 判断用户登录状态
+
+``` typescript
+guard.checkLoginStatus().then(user => {
+  // 如果是未登录状态，user 为 undefined
+  console.log(user)
+})
+```
+## 事件
+
+使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import { useEffect } from 'react'
+import { useGuard } from '@authing/guard-react'
+
+export default function Login () {
+  const guard = useGuard()
+
+  useEffect(() => {
+    guard.on('event-name', () => {
+      console.log('........')
+    })
+  })
+
+  return <div></div>
+}
+```
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  mounted () {
+    this.$guard.on('event-name', () => {
+      console.log('........')
+    })
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+onMounted(() => {
+  guard.on('event-name', () => {
+    console.log('........')
+  })
+})
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+  ) {}
+
+  ngOnInit () {
+    this.guard.client.on('event-name', () => {
+      console.log('........')
+    })
+  }
+}
+```
+:::
+::::
+
+常用事件列表：
+
+| 事件名称       | 描述                           | 回调参数   | 回调参数说明                                                                                                              |
+| -------------- | ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
+| load           | Guard 初始化完成，开始渲染页面 | authClient | AuthenticationClient 对象，详情请查看 [authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) |
+| load-error     | Guard 初始化失败               | error      | 错误信息                                                                                                                  |
+| login          | 用户登录成功                   | user       | 用户信息                                                                                                                  |
+| login-error    | 用户登录失败                   | error      | 错误信息                                                                                                                  |
+| register       | 用户注册成功                   | user       | 用户信息                                                                                                                  |
+| register-error | 用户注册失败                   | error      | 错误信息                                                                                                                  |
+| close          | modal 模式中关闭 Guard 事件    | -          | -                                                                                                                         |
+
+## Guard 内置 Authing JS SDK
+
+Guard 集成了 AuthenticationClient, 可调用 AuthenticationClient 的所有方法。
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` tsx
+import { useEffect } from 'react'
+import { useGuard } from '@authing/guard-react'
+
+export default function Login () {
+  const guard = useGuard()
+
+  useEffect(() => {
+    guard.getAuthClient().then(authClient => {
+      authClient.registerByEmail()
+      authClient.validateToken()
+      // ........
+    })
+  })
+
+  return <div></div>
+}
+```
+:::
+
+::: tab Vue2
+``` typescript
+export default {
+  created () {
+    this.$guard.getAuthClient().then(authClient => {
+      authClient.registerByEmail()
+      authClient.validateToken()
+      // ........
+    })
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` typescript
+import { onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+onMounted(() => {
+  guard.getAuthClient().then(authClient => {
+    authClient.registerByEmail()
+    authClient.validateToken()
+    // ........
+  })
+})
+```
+:::
+
+::: tab Angular
+``` typescript
+import { Component } from '@angular/core'
+
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'login-container',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  constructor (
+    private guard: GuardService
+  ) {}
+
+  ngOnInit () {
+    this.guard.client.getAuthClient().then(authClient => {
+      authClient.registerByEmail()
+      authClient.validateToken()
+      // ........
+    })
+  }
+}
+```
+:::
+::::
+
+参考 [Authentication SDK](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)
+
 
 ## 常用参数列表
 ### <p id="GuardOptions">GuardOptions</p>
