@@ -265,7 +265,7 @@ export class LoginComponent {
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
-## STEP 3：常用操作
+## STEP 3：使用 Guard
 
 Guard 提供三种登录方式，分别是<strong>嵌入模式</strong>、<strong>弹窗模式</strong>、<strong>跳转模式</strong>。
 
@@ -746,7 +746,7 @@ export class CallbackComponent {
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ``` tsx
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { useGuard } from '@authing/guard-react'
 
@@ -759,10 +759,6 @@ export default function Jump() {
     const userInfo = await guard.trackSession()
     setUserInfo(userInfo)
   }
-
-  useEffect(() => {
-    getUserInfo()
-  })
 
   return (
     <div>

@@ -14,7 +14,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 ## STEP 1：创建 Authing 应用
 
-1、使用 Authing 创建一个应用：
+1. 使用 Authing 创建一个应用：
 
 <ul style="padding-left: 50px">
   <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
@@ -28,19 +28,19 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 <br />
 
-2、在<strong>认证配置</strong>处填写<strong>登录回调 URL</strong>和<strong>登出回调 URL</strong>
+2. 在<strong>认证配置</strong>处填写<strong>登录回调 URL</strong>和<strong>登出回调 URL</strong>
 
 <img src="./images/mpa-2.png" width="650" style="margin-left: 50px" />
 
 <br />
 
-3、换取 token 身份验证方式选择 <strong>none</strong>
+3. 换取 token 身份验证方式选择 <strong>none</strong>
 
 <img src="./images/mpa-3.png" width="650" style="margin-left: 50px" />
 
 <br />
 
-4、保存当前配置。
+4. 保存当前配置。
 
 ## STEP 2：接入 Guard
 
@@ -74,7 +74,7 @@ const guard = new Guard({
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
 
-## STEP 3：常用操作
+## STEP 3：使用 Guard
 
 Guard 提供三种登录方式，分别是<strong>嵌入模式</strong>、<strong>弹窗模式</strong>、<strong>跳转模式</strong>。
 
