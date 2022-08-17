@@ -292,7 +292,7 @@ Guard 提供三种登录方式，分别是<strong>嵌入模式</strong>、<stron
 
 - <strong>嵌入模式</strong>、<strong>弹窗模式</strong>：在指定的 DOM 中渲染一个登录框组件，通过这个组件面板可轻松完成登录、注册、找回密码、MFA 多因素认证、各种社会化登录等操作。[在线体验](https://sample-sso.authing.cn)
 
-- <strong>跳转模式</strong>：Guard 完整集成并封装了 Auhting 认证类 SDK，只需一行代码即可实现登录、登出、处理登录成功后的回调等能力。
+- <strong>跳转模式</strong>：Guard 完整集成并封装了 Authing 认证类 SDK，只需一行代码即可实现登录、登出、处理登录成功后的回调等能力。
 
 使用 Guard 提供的各种 API 可拥有获取用户信息、切换语言、自定义样式等能力。
 
