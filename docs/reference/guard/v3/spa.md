@@ -261,8 +261,27 @@ export class LoginComponent {
 
 若不想经过构建流程就可以使用 Guard，比如引用 Gurad 的 CDN 资源。请直接复制下面的代码到一个 HTML 文件中，并在浏览器中打开它：
 
-```html
-发布了正式版再补 cdn 及 html 代码
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.js"></script>
+  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.css" />
+</head>
+<body>
+  <div id="guard"></div>
+
+  <script>
+    const guard = new GuardFactory.Guard({
+      appId: '62e22721c889dd44bad1dda2'
+    })
+  </script>
+</body>
+</html>
 ```
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
@@ -391,7 +410,7 @@ export class LoginComponent {
 ```
 :::
 
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="guard"></div>
 
@@ -532,7 +551,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="show">show Guard</div>
 <div id="hide">hide Guard</div>
@@ -725,7 +744,7 @@ export class CallbackComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <!-- login.html -->
 <script>
@@ -845,7 +864,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="get-user-info">获取用户信息</div>
 
@@ -930,7 +949,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="logout">logout</div>
 
@@ -1013,7 +1032,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="start-register">startRegister</div>
 
@@ -1112,7 +1131,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="check-login-status">checkLoginStatus</div>
 
@@ -1228,7 +1247,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="change-lang">changeLang</div>
 
@@ -1326,7 +1345,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <div id="change-content-css">changeContentCSS</div>
 
@@ -1414,7 +1433,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <script>
   guard.on('event-name', () => {
@@ -1520,7 +1539,7 @@ export class LoginComponent {
 }
 ```
 :::
-::: tab CDN
+::: tab CDN或原生JS
 ``` html
 <script>
   guard.getAuthClient().then(authClient => {

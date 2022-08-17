@@ -71,7 +71,26 @@ const guard = new Guard({
 若不想经过构建流程就可以使用 Guard，请直接复制下面的代码到一个 HTML 文件中，并在浏览器中打开它：
 
 ``` html
-发布了正式版再补 cdn 及 html 代码
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.js"></script>
+  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.css" />
+</head>
+<body>
+  <div id="guard"></div>
+
+  <script>
+    const guard = new GuardFactory.Guard({
+      appId: '62e22721c889dd44bad1dda2'
+    })
+  </script>
+</body>
+</html>
 ```
 
 至此，你已经完成了 Guard 的初始化，接下来你可以使用 Guard 实例来完成后续更多的操作。
