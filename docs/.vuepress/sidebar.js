@@ -1034,6 +1034,10 @@ const zhCnNavBar = {
         {
           title: "标准 WEB 应用",
           path: "/reference/guard/v3/mpa.md",
+        },
+        {
+          title: "Guard Changelog",
+          path: "/reference/guard/guard-changelog",
         }
       ],
     },

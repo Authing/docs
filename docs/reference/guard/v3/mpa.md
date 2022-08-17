@@ -2,11 +2,13 @@
 
 <LastUpdated />
 
-## 简介
+## 说明
 
-当前使用文档适用于 [Guard 5.0](https://github.com/authing/guard)，如果您正在使用[Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
+[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果您正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 [将 Guard 接入到原生 JS 项目](https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html)
+
+## 简介
 
 Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的 MPA（Multiple Page Application）应用中，一站式处理复杂的用户认证流程。
 
