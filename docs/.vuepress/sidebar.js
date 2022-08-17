@@ -1028,29 +1028,17 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "React",
-          path: "/reference/guard/v2/react.md",
+          title: "单页应用",
+          path: "/reference/guard/v3/spa.md",
         },
         {
-          title: "原生 JavaScript",
-          path: "/reference/guard/v2/native-javascript.md",
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/v2/vue.md",
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/v2/angular.md",
-        },
-        {
-          title: "迁移指南",
-          path: "/reference/guard/v2/migration",
+          title: "标准 WEB 应用",
+          path: "/reference/guard/v3/mpa.md",
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/v2/guard-changelog",
-        },
+          path: "/reference/guard/guard-changelog",
+        }
       ],
     },
     // {
