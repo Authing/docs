@@ -2,32 +2,27 @@
 
 <LastUpdated/>
 
-> 使用 Authing 飞书登录仅需要集成 [Guard-iOS-Lark](https://github.com/Authing/guard-ios-lark) ，其中包含 Guard 组件所有功能，不需要引入 Guard 库。
->
-> 飞书 SDK 仅支持 Swift 5.3.2 (Xcode 12.3) 编译不向上兼容。
-
 集成飞书登录需要以下步骤：
 
 - 企业自建应用 Authing 控制台以及飞书控制台配置请参阅 [接入飞书企业自建应用移动应用登录](https://docs.authing.cn/v2/connections/lark-internal-mobile/)
 
 - 应用商店应用 Authing 控制台以及飞书控制台配置请参阅 [接入飞书应用商店应用移动应用登录](https://docs.authing.cn/v2/connections/lark-public-mobile/)
 
-- 集成 Guard-iOS-Lark SDK
+- 集成 Authing iOS 飞书登录
 
 - 修改项目配置
+
 <br>
 
-## 集成 Guard-iOS-Lark
+## 集成 Authing iOS 飞书登录
 
-- 在 swift package 搜索栏输入：https://github.com/Authing/guard-ios-lark
+> Guard-iOS-binary 依赖于 Guard 组件（Version 1.2.4 之后）
+
+- 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
 
 - 依赖规则选择 Up to Next Major Version 1.0.0
 
-- 勾选 Guard 和 LarkLogin
-
-![](./images/lark/1.png)
-![](./images/lark/2.png)
-![](./images/lark/3.png)
+- 勾选 LarkLogin
 
 <br>
 
@@ -47,7 +42,7 @@
 <br>
 
 ## 在应用启动时初始化 SDK
-- 导入 Guard 和 LarkLogin
+- 导入 LarkLogin
 - Authing.start 需要传入 Authing 控制台发放的 `AppId`
 - LarkLogin.setupLark 需要传入飞书开放平台发放的 `AppId` 以及 `Scheme`
 

@@ -66,7 +66,88 @@ String idToken = result.user?.token;
 
 <br>
 
-## OIDC 协议账号密码登陆
+## OIDC 邮箱密码注册
+
+使用 OIDC 邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
+
+```dart
+static Future<AuthResult> registerByEmail(String email, String password) async
+```
+
+**参数**
+
+* *email* 邮箱
+* *password* 密码
+
+**示例**
+
+```dart
+AuthResult result = await OIDCClient.registerByEmail("email", "password");
+User user = result.user; // get user info
+```
+
+**错误码**
+
+* 2003 非法邮箱地址
+* 2026 邮箱已注册
+
+<br>
+
+## OIDC 用户名注册
+
+通过 OIDC 用户名注册帐号。用户名区分大小写且用户池内唯一。
+
+```dart
+static Future<AuthResult> registerByUserName(String username, String password) async
+```
+
+**参数**
+
+* *username* 用户名
+* *password* 明文密码
+
+**示例**
+
+```dart
+AuthResult result = await OIDCClient.registerByUserName("username", "password");
+User user = result.user; // get user info
+```
+
+**错误码**
+
+* 2026 用户名已存在
+
+<br>
+
+## OIDC 短信验证码注册
+
+通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](hhttps://docs.authing.cn/v2/reference/sdk-for-flutter/authentication/#发送短信验证码) 接口以获取短信验证码
+
+```dart
+  static Future<AuthResult> registerByPhoneCode(String phone, String code, String password) async
+```
+
+**参数**
+
+* *phone* 手机号
+* *code* 短信验证码
+* *password* 明文密码
+
+**示例**
+
+```dart
+AuthResult result = await OIDCClient.registerByPhoneCode("phone", "code", "password");
+User user = result.user; // get user info
+```
+
+**错误码**
+
+* 2001 验证码错误
+* 2026 手机号已注册
+
+<br>
+
+## OIDC 协议账号密码登录
 
 通过 OIDC 账号密码登录，返回的 User 里面包含 access token , id token 和 refresh token。
 
@@ -88,9 +169,9 @@ User user = result.user; // user info
 
 <br>
 
-## OIDC 协议手机号验证码登陆
+## OIDC 协议手机号验证码登录
 
-通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 User 里面包含 access token , id token 和 refresh token。
+通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](hhttps://docs.authing.cn/v2/reference/sdk-for-flutter/authentication/#发送短信验证码) 接口。返回的 User 里面包含 access token , id token 和 refresh token。
 
 ```dart
 static Future<AuthResult> loginByPhoneCode(String phone, String code) async
@@ -115,7 +196,7 @@ User user = result.user; // get user info
 通过 access token 获取用户信息。返回的 User 对像和参数传入的是同一个 User 对象
 
 ```dart
-static Future<AuthResult> getUserByAccessToken(String accessToken, [Map? data]) async
+static Future<Result> getUserByAccessToken(String accessToken, [Map? data]) async
 ```
 
 **参数**
@@ -125,8 +206,7 @@ static Future<AuthResult> getUserByAccessToken(String accessToken, [Map? data]) 
 **示例**
 
 ```dart
-AuthResult result = await OIDCClient.getUserByAccessToken("accessToken");
-User user = result.user; // get user info
+Result result = await OIDCClient.getUserByAccessToken("accessToken");
 ```
 
 <br>

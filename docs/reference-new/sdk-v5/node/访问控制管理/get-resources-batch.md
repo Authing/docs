@@ -9,14 +9,14 @@
 
 <LastUpdated />
 
-批量获取资源详情
+根据筛选条件，批量获取资源详情。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| codeList | string[]  | 是 |  | 资源 code 列表,批量可以使用逗号分隔。 示例值： `code1,code2` |
-| namespace | string  | 否 |  | 所属权限分组的 code。 示例值： `default` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔。  | `code1,code2` |
+| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
 
 
 ## 示例代码
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
 (async () => {
   const result = await managementClient.getResourcesBatch({
 
-    codeList: 'code1,code2',
+    codeList: code1,code2,
 
     namespace: 'default',
  });

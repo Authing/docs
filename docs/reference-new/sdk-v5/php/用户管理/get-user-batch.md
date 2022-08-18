@@ -9,16 +9,17 @@
 
 <LastUpdated />
 
-根据用户 id 批量获取用户信息
+通过用户 ID 列表，批量获取用户信息，可以选择获取自定义数据、identities、选择指定用户 ID 类型等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userIds | string[]  | 是 |  | 用户 ID 数组。 示例值： `6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0` |
-| withCustomData | boolean  | 否 | false | 是否获取自定义数据。 示例值： `true` |
-| withIdentities | boolean  | 否 | false | 是否获取 identities。 示例值： `true` |
-| withDepartmentIds | boolean  | 否 | false | 是否获取部门 ID 列表。 示例值： `true` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userIds | string[]  | 是 | - | 用户 ID 数组。  | `["6229ffaxxxxxxxxcade3e3d9","6229ffaxxxxxxxxcade3e3d0"]` |
+| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
+| withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
+| withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。  | `true` |
 
 
 ## 示例代码
@@ -38,6 +39,8 @@ $management = new ManagementClient(
 $data = $management->getUserBatch(array(
   
     "userIds" => "6229ffaxxxxxxxxcade3e3d9,6229ffaxxxxxxxxcade3e3d0",
+
+    "userIdType" => "user_id",
 
     "withCustomData" => true,
 
@@ -71,7 +74,8 @@ $data = $management->getUserBatch(array(
   "apiCode": 20001,
   "data": {
     "userId": "6229ffaxxxxxxxxcade3e3d9",
-    "createdAt": "2022-06-30T13:54:56.396Z",
+    "createdAt": "2022-07-03T02:20:30.000Z",
+    "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
     "email": "test@example.com",
     "phone": "176xxxx6754",
@@ -81,13 +85,13 @@ $data = $management->getUserBatch(array(
     "nickname": "张三",
     "photo": "https://files.authing.co/authing-console/default-user-avatar.png",
     "loginsCount": 3,
-    "lastLogin": "2022-04-10T12:24:00.000Z",
+    "lastLogin": "2022-07-03T02:20:30.000Z",
     "lastIp": "127.0.0.1",
     "gender": "M",
     "emailVerified": true,
     "phoneVerified": true,
-    "passwordLastSetAt": "2022-06-30T13:54:56.396Z",
-    "birthdate": "2022-06-30",
+    "passwordLastSetAt": "2022-07-03T02:20:30.000Z",
+    "birthdate": "2022-06-03",
     "country": "CN",
     "province": "BJ",
     "city": "BJ",
@@ -101,12 +105,14 @@ $data = $management->getUserBatch(array(
       "extIdpId": "6076bacxxxxxxxxd80d993b5",
       "provider": "wechat",
       "type": "openid",
-      "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg"
+      "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
+      "originConnIds": "[\"605492ac41xxxxe0362f0707\"]"
     },
     "customData": {
       "school": "北京大学",
       "age": 22
-    }
+    },
+    "statusChangedAt": "2022-07-03T02:20:30.000Z"
   }
 }
 ```
@@ -119,7 +125,8 @@ $data = $management->getUserBatch(array(
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
 | userId | string | 是 | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9`  |
-| createdAt | string | 是 | 账号创建时间。 示例值： `2022-06-30T13:54:56.396Z`  |
+| createdAt | string | 是 | 账号创建时间。 示例值： `2022-07-03T02:20:30.000Z`  |
+| updatedAt | string | 是 | 账号更新时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
 | phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
@@ -129,13 +136,13 @@ $data = $management->getUserBatch(array(
 | nickname | string | 否 | 昵称。 示例值： `张三`  |
 | photo | string | 否 | 头像链接。 示例值： `https://files.authing.co/authing-console/default-user-avatar.png`  |
 | loginsCount | number | 否 | 历史总登录次数。 示例值： `3`  |
-| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-04-10T12:24:00.000Z`  |
+| lastLogin | string | 否 | 上次登录时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | lastIp | string | 否 | 上次登录 IP。 示例值： `127.0.0.1`  |
 | gender | string | 是 | 性别。 枚举值：`M`,`W`,`U`  |
 | emailVerified | boolean | 是 | 邮箱是否验证。 示例值： `true`  |
 | phoneVerified | boolean | 是 | 手机号是否验证。 示例值： `true`  |
-| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-06-30T13:54:56.396Z`  |
-| birthdate | string | 否 | 出生日期。 示例值： `2022-06-30`  |
+| passwordLastSetAt | string | 否 | 用户上次密码修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
+| birthdate | string | 否 | 出生日期。 示例值： `2022-06-03`  |
 | country | string | 否 | 所在国家。 示例值： `CN`  |
 | province | string | 否 | 所在省份。 示例值： `BJ`  |
 | city | string | 否 | 所在城市。 示例值： `BJ`  |
@@ -147,6 +154,7 @@ $data = $management->getUserBatch(array(
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
 | customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 
 ### <a id="IdentityDto"></a> IdentityDto
@@ -158,5 +166,6 @@ $data = $management->getUserBatch(array(
 | provider | string | 是 | 外部身份源类型，如 lark, wechat。 示例值： `wechat`  |
 | type | string | 是 | Identity 类型，如 unionid, openid, primary。 示例值： `openid`  |
 | userIdInIdp | string | 是 | 在外部身份源的 id。 示例值： `oj7Nq05R-RRaqak0_YlMLnnIwsvg`  |
+| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表。 示例值： `["605492ac41xxxxe0362f0707"]`  |
 
 

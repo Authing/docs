@@ -6,9 +6,9 @@ Let's illustrate with an example. Suppose there is a university with two interna
 
 **Single Sign-On**, referred to as **SSO**, is one of the more popular solutions for enterprise business integration. The definition of SSO is that in multiple application systems, **users only need to log in once** to **access all** mutually trusted application systems.
 
-## Authing SPA SDK
+## Authing Browser SDK
 
-Based on the OIDC standard Single Page App scenario authentication side SDK, you can complete the integration with {{$localeConfig.brandName}} by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
+Based on the OIDC standard web application authentication SDK, you can complete the integration with Authing by calling the SDK, and realize the cross-main domain single sign-on effect in the browser for your multiple business software.
 
 ## Create Self-built App
 
@@ -39,26 +39,26 @@ Click **Save** to save the configuration, as shown in the following figure:
 
 ## Install
 
-{{$localeConfig.brandName}} SPA SDK supports integration into your front-end business software through package manager installation and script tag introduction.
+{{$localeConfig.brandName}} Browser SDK supports integration into your front-end business software through package manager installation and script tag introduction.
 
 ### Use NPM
 
 ```shell
-$ npm install @authing/spa-auth-sdk
+$ npm install @authing/browser
 ```
 
 ### Use Yarn
 
 ```shell
-$ yarn add @authing/spa-auth-sdk
+$ yarn add @authing/browser
 ```
 
 ### Use script tag
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@authing/spa-auth-sdk@0.0.1-alpha1/dist/index.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/browser"></script>
 <script>
-  const sdk = new AuthingSPA({
+  const sdk = new Authing({
     // Very important, please fill in carefully!
     // If the application enables SSO, you must write the "App Panel Address" for SSO here;
     // otherwise, fill in the application's "Subdomain".
@@ -91,12 +91,12 @@ Fill in the callback address according to your own business, as shown in the fig
 
 ![](~@imagesEnUs/common/integrate-sso/sso-callback.png)
 
-In order to use the Authing SPA SDK, you need to fill in the `App ID`, `domain`, `callback url` and other parameters, as shown in the following example:
+In order to use the Authing Browser SDK, you need to fill in the `App ID`, `domain`, `callback url` and other parameters, as shown in the following example:
 
 ```js
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // Very important, please fill in carefully!
   // If the application enables SSO, you must write the "App Panel Address" for SSO here;
   // otherwise, fill in the application's "Subdomain".
@@ -110,7 +110,7 @@ const sdk = new AuthingSPA({
 
 ## Log in
 
-The Authing SPA SDK can initiate authentication and authorization requests to Authing. Currently, three forms are supported:
+The Authing Browser SDK can initiate authentication and authorization requests to Authing. Currently, three forms are supported:
 
 1. Redirect to the login page hosted by Authing in the current window;
 2. A pop-up window loads the Authing-hosted login page in the pop-up window.
@@ -118,21 +118,19 @@ The Authing SPA SDK can initiate authentication and authorization requests to Au
 
 ### Redirect login
 
-Taking React as an example, the following code demonstrates how to use redirect login:
-
-> The sample code scenarios below will use React && Typescript by default
-
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
 ```tsx{21-26}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -164,8 +162,9 @@ function App() {
       /**
        * Open the login page hosted by Authing in a redirect mode.
        * After the authentication is successful, you need to cooperate with
-       * the `handleRedirectCallback` method to process the authorization code or token
-       * sent by Authing at the callback endpoint to obtain the user's login status.
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
        */
       sdk.handleRedirectCallback().then((res) => setLoginState(res));
     } else {
@@ -187,10 +186,254 @@ function App() {
 
 export default App;
 ```
+:::
+
+::: tab Vue2
+```html{53-58}
+<template>
+  <div id="app">
+    <p>
+      <button @click="login">loginWithRedirect</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log("redirect");
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace("/");
+      });
+    } else {
+      this.getLoginState();
+    }
+  },
+  methods: {
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    login() {
+      this.sdk.loginWithRedirect();
+    },
+    /**
+     * Get the user's login status
+     */
+    async getLoginState() {
+      const state = await this.sdk.getLoginState();
+      this.loginState = state;
+    },
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{47-52}
+<template>
+  <div>
+    <p>
+      <button @click="login">loginWithRedirect</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    const state = reactive({
+      loginState: null,
+    });
+
+    /**
+     * Get the user's login status
+     */
+    const getLoginState = async () => {
+      const res = await sdk.getLoginState();
+      state.loginState = res;
+    };
+
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    const login = () => {
+      sdk.loginWithRedirect();
+    };
+
+    onMounted(() => {
+      // Determine whether the current URL is the Authing login callback URL
+      if (sdk.isRedirectCallback()) {
+        console.log("redirect");
+
+        /**
+         * Open the login page hosted by Authing in a redirect mode.
+         * After the authentication is successful, you need to cooperate with
+         * the `handleRedirectCallback` method to process the authorization code 
+         * or token sent by Authing at the callback endpoint to obtain the 
+         * user's login status.
+         */
+        sdk.handleRedirectCallback().then((res) => {
+          state.loginState = res;
+          window.location.replace("/");
+        });
+      } else {
+        getLoginState();
+      }
+    });
+
+    return {
+      ...toRefs(state),
+      login,
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{48-53}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * Redirect to the Authing-hosted login page
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+:::
+::::
+
 
 If you want to customize the parameters, you can also customize the following parameters. If you do not pass the parameters, the default parameters will be used.
 
-```js
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+```ts
 const login = () => {
   const params: {
     // The callback url, the default is redirectUri in the initialization parameter
@@ -207,30 +450,139 @@ const login = () => {
     // Custom intermediate state, which will be passed to the callback endpoint
     customState?: any,
   } = {
-    redirectUri: "Login Callback URL",
-    originalUri: "URL to initiate login",
+    redirectUri: 'Login Callback URL',
+    originalUri: 'URL to initiate login',
     forced: false,
     customState: {},
   };
   sdk.loginWithRedirect(params);
 };
 ```
+:::
+
+::: tab Vue2
+```js
+export default {
+  ...
+  methods: {
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    login() {
+      const params = {
+        // The callback url, the default is redirectUri in the initialization parameter
+        redirectUri: "Login Callback URL";
+
+        // The URL that initiates the login.
+        // If redirectToOriginalUri is set, it will be redirected back to this page 
+        // after the login. The default is the current URL
+        originalUri: "URL to initiate login";
+
+        // Prompt the user to log in again even if the user is already logged in
+        forced: false;
+
+        // Custom intermediate state, which will be passed to the callback endpoint
+        customState: {};
+      };
+      this.sdk.loginWithRedirect(params);
+    },
+    ...
+  },
+  ...
+}
+```
+:::
+
+::: tab Vue3
+```js
+export default {
+  ...
+  setup() {
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    const login = () => {
+      const params = {
+        // The callback url, the default is redirectUri in the initialization parameter
+        redirectUri: "Login Callback URL";
+
+        // The URL that initiates the login.
+        // If redirectToOriginalUri is set, it will be redirected back to this page 
+        // after the login. The default is the current URL
+        originalUri: "URL to initiate login";
+
+        // Prompt the user to log in again even if the user is already logged in
+        forced: false;
+
+        // Custom intermediate state, which will be passed to the callback endpoint
+        customState: {};
+      };
+      sdk.loginWithRedirect(params);
+    }
+
+    return {
+      login
+    }
+  }
+  ...
+}
+```
+:::
+
+::: tab Angular
+```ts
+export class AppComponent {
+  ...
+  /**
+   * Redirect to the Authing-hosted login page
+   */
+  login() {
+    const params: {
+      // The callback url, the default is redirectUri in the initialization parameter
+      redirectUri?: string,
+
+      // The URL that initiates the login.
+      // If redirectToOriginalUri is set, it will be redirected back to this page after
+      // the login. The default is the current URL
+      originalUri?: string,
+
+      // Prompt the user to log in again even if the user is already logged in
+      forced?: boolean,
+
+      // Custom intermediate state, which will be passed to the callback endpoint
+      customState?: any,
+    } = {
+      redirectUri: 'Login Callback URL',
+      originalUri: 'URL to initiate login',
+      forced: false,
+      customState: {},
+    };
+    this.sdk.loginWithRedirect(params);
+  }
+  ...
+}
+```
+:::
+::::
+
 
 ### Popup login
 
 You can also use the following method on your business software page to let users log in in a new window by popping up a new window:
 
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
 ```tsx{21-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -275,10 +627,211 @@ function App() {
 
 export default App;
 ```
+:::
+
+::: tab Vue2
+```html{43-49}
+<template>
+  <div id="app">
+    <p>
+      <button @click="login">loginWithPopup</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    this.getLoginState();
+  },
+  methods: {
+    /**
+     * Open Authing-hosted login page as a popup
+     */
+    async login() {
+      const res = await this.sdk.loginWithPopup();
+      this.loginState = res;
+    },
+    /**
+     * Get the user's login status
+     */
+    async getLoginState() {
+      const state = await this.sdk.getLoginState();
+      this.loginState = state;
+    },
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{47-53}
+<template>
+  <div>
+    <p>
+      <button @click="login">loginWithPopup</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    const state = reactive({
+      loginState: null,
+    });
+
+    /**
+     * Get the user's login status
+     */
+    const getLoginState = async () => {
+      const res = await sdk.getLoginState();
+      state.loginState = res;
+    };
+
+    /**
+     * Open Authing-hosted login page as a popup
+     */
+    const login = async () => {
+      const res = await sdk.loginWithPopup();
+      state.loginState = res;
+    };
+
+    onMounted(getLoginState);
+
+    return {
+      ...toRefs(state),
+      login,
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithPopup</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{31-37}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    this.getLoginState();
+  }
+
+  /**
+   * Open Authing-hosted login page as a popup
+   */
+  async login() {
+    const res = await this.sdk.loginWithPopup();
+    this.loginState = res;
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+:::
+::::
+
 
 If you want to customize the parameters, you can also customize the following parameters. If you do not pass the parameters, the default parameters will be used.
 
-```js
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+```ts
 const login = async () => {
   const params: {
     // The callback url, the default is redirectUri in the initialization parameter
@@ -294,22 +847,114 @@ const login = async () => {
   setLoginState(res);
 };
 ```
+:::
+
+::: tab Vue2
+```js
+export default {
+  ...
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    }
+  },
+  methods: {
+    /**
+     * Open Authing-hosted login page as a popup
+     */
+    async login() {
+      const params = {
+        // The callback url, the default is redirectUri in the initialization parameter
+        redirectUri: "Login Callback URL";
+
+        // Prompt the user to log in again even if the user is already logged in
+        forced: false;
+      };
+      const res = await this.sdk.loginWithPopup(params);
+      this.loginState = res;
+    },
+    ...
+  },
+  ...
+}
+```
+:::
+
+::: tab Vue3
+```js
+export default {
+  ...
+  setup() {
+    /**
+     * Open Authing-hosted login page as a popup
+     */
+    const login = async () => {
+      const params = {
+        // The callback url, the default is redirectUri in the initialization parameter
+        redirectUri: "Login Callback URL";
+
+        // Prompt the user to log in again even if the user is already logged in
+        forced: false;
+      };
+      const res = await sdk.loginWithPopup(params);
+      state.loginState = res;
+    };
+
+    return {
+      login
+    }
+  }
+  ...
+}
+```
+:::
+
+::: tab Angular
+```ts
+export class AppComponent {
+  ...
+  /**
+   * Open Authing-hosted login page as a popup
+   */
+  async login() {
+    const params: {
+    // The callback url, the default is redirectUri in the initialization parameter
+    redirectUri?: string,
+
+    // Prompt the user to log in again even if the user is already logged in
+    forced?: boolean,
+  } = {
+    redirectUri: 'Login Callback URL',
+    forced: false,
+  };
+    const res = await this.sdk.loginWithPopup(params);
+    this.loginState = res;
+  };
+  ...
+}
+```
+:::
+::::
+
 
 ### Silent login
 
 As mentioned in the article [Self-built App SSO solution](/en/guides/app/sso.md), multiple self-built applications can be added to the **SSO** panel. If the user has already logged in to one of the applications, he can access other applications in another tab of the same browser. When the application is used, it can realize silent login, directly obtain user information, and realize the effect of single sign-on.
 
-```tsx{21-45}
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+```tsx{22-45}
 import React, { useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -327,8 +972,9 @@ function App() {
       /**
        * Open the login page hosted by Authing in a redirect mode.
        * After the authentication is successful, you need to cooperate with
-       * the `handleRedirectCallback` method to process the authorization code or token
-       * sent by Authing at the callback endpoint to obtain the user's login status.
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
        */
       sdk.handleRedirectCallback().then((res) => setLoginState(res));
     } else {
@@ -367,18 +1013,245 @@ function App() {
 
 export default App;
 ```
+:::
+
+::: tab Vue2
+```html{38-64}
+<template>
+  <div id="app">
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log("redirect");
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace("/");
+      });
+    } else {
+      console.log("normal");
+
+      this.sdk.getLoginState().then((res) => {
+        if (res) {
+          this.loginState = res;
+        } else {
+          // If the user is not logged in, redirect to the authentication center
+          this.sdk.loginWithRedirect();
+        }
+      });
+    }
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{47-66}
+<template>
+  <p v-if="loginState">
+    <textarea
+      cols="100"
+      rows="20"
+      readOnly
+      :value="JSON.stringify(loginState, null, 2)"
+    ></textarea>
+  </p>
+</template>
+
+<script>
+import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    const state = reactive({
+      loginState: null,
+    });
+
+    /**
+     * Get the user's login status
+     */
+    const getLoginState = async () => {
+      const res = await sdk.getLoginState();
+      state.loginState = res;
+
+      if (!res) {
+        sdk.loginWithRedirect();
+      }
+    };
+
+    onMounted(() => {
+      // Determine whether the current URL is the Authing login callback URL
+      if (sdk.isRedirectCallback()) {
+        console.log("redirect");
+
+        /**
+         * Open the login page hosted by Authing in a redirect mode.
+         * After the authentication is successful, you need to cooperate with
+         * the `handleRedirectCallback` method to process the authorization code 
+         * or token sent by Authing at the callback endpoint to obtain the 
+         * user's login status.
+         */
+        sdk.handleRedirectCallback().then((res) => {
+          state.loginState = res;
+          window.location.replace("/");
+        });
+      } else {
+        console.log("normal");
+
+        getLoginState();
+      }
+    });
+
+    return {
+      ...toRefs(state),
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<div>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{26-45}
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      console.log('normal');
+
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const res = await this.sdk.getLoginState();
+    if (res) {
+      this.loginState = res;
+    } else {
+      // If the user is not logged in, redirect to the authentication center
+      this.sdk.loginWithRedirect();
+    }
+  }
+}
+```
+:::
+::::
+
 
 ### Advanced usage
 
-The essence of each login is to access a URL, which can carry many parameters. The Authing SPA SDK uses default parameters by default. If you need fine-grained control over login request parameters, you can refer to this example.
+The essence of each login is to access a URL, which can carry many parameters. The Authing Browser SDK uses default parameters by default. If you need fine-grained control over login request parameters, you can refer to this example.
 
 ```js
-import { AuthingSPA } from "@authing/spa-auth-sdk";
+import { Authing } from "@authing/browser";
 
-const sdk = new AuthingSPA({
+const sdk = new Authing({
   // Very important, please fill in carefully!
-  // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-  // otherwise, fill in the application's "Subdomain".
+  // If the application enables SSO, you must write the "App Panel Address" 
+  // for SSO here; otherwise, fill in the application's "Subdomain".
   domain: "SSO App Panel Address",
 
   appId: "App ID",
@@ -406,10 +1279,11 @@ const sdk = new AuthingSPA({
   // id_token: returns ID Token
   implicitResponseType: "token id_token",
 
-  // Whether to request Authing to check the validity of the Access Token every time the
-  // login status is obtained, it can be used in a single sign-out scenario, default is false
-  // If set to true, you need to set "Configuration" - "Other Configuration" -
-  // "Client Verification Method for Validating Token" to none in the console
+  // Whether to request Authing to check the validity of the Access Token every time 
+  // the login status is obtained, it can be used in a single sign-out scenario, 
+  // default is false If set to true, you need to set "Configuration" - 
+  // "Other Configuration" - "Client Verification Method for Validating Token" 
+  // to none in the console
   introspectAccessToken: false,
 
   // width of the popup window
@@ -424,17 +1298,19 @@ const sdk = new AuthingSPA({
 
 If you want to check the user's login state and get the user's `Access Token`, `ID Token`, you can call the `getLoginState` method. If the user is not logged in at Authing, this method will throw an error:
 
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
 ```tsx{28-34}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -466,8 +1342,9 @@ function App() {
       /**
        * Open the login page hosted by Authing in a redirect mode.
        * After the authentication is successful, you need to cooperate with
-       * the `handleRedirectCallback` method to process the authorization code or token
-       * sent by Authing at the callback endpoint to obtain the user's login status.
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
        */
       sdk.handleRedirectCallback().then((res) => setLoginState(res));
     } else {
@@ -489,6 +1366,264 @@ function App() {
 
 export default App;
 ```
+:::
+
+::: tab Vue2
+```html{63-69}
+<template>
+  <div id="app">
+    <p>
+      <button @click="login">loginWithRedirect</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log("redirect");
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace("/");
+      });
+    } else {
+      console.log("normal");
+
+      this.getLoginState();
+    }
+  },
+  methods: {
+    /**
+     * Get the user's login status
+     */
+    async getLoginState() {
+      const state = await this.sdk.getLoginState();
+      this.loginState = state;
+    },
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    login() {
+      this.sdk.loginWithRedirect();
+    },
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{39-49}
+<template>
+  <div>
+    <p>
+      <button @click="login">loginWithRedirect</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    const state = reactive({
+      loginState: null,
+    });
+
+    /**
+     * Get the user's login status
+     */
+    const getLoginState = async () => {
+      const res = await sdk.getLoginState();
+      state.loginState = res;
+
+      if (!res) {
+        sdk.loginWithRedirect();
+      }
+    };
+
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    const login = () => {
+      sdk.loginWithRedirect();
+    };
+
+    onMounted(() => {
+      // Determine whether the current URL is the Authing login callback URL
+      if (sdk.isRedirectCallback()) {
+        console.log("redirect");
+
+        /**
+         * Open the login page hosted by Authing in a redirect mode.
+         * After the authentication is successful, you need to cooperate with
+         * the `handleRedirectCallback` method to process the authorization code 
+         * or token sent by Authing at the callback endpoint to obtain the 
+         * user's login status.
+         */
+        sdk.handleRedirectCallback().then((res) => {
+          state.loginState = res;
+          window.location.replace("/");
+        });
+      } else {
+        console.log("normal");
+
+        getLoginState();
+      }
+    });
+
+    return {
+      ...toRefs(state),
+      login,
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{55-61}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * Redirect to the Authing-hosted login page
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+:::
+::::
+
 
 ## Get user information
 
@@ -497,17 +1632,19 @@ You need to use the Access Token to get the user's personal information:
 1. When the user logs in successfully for the first time, they can get the user's Access Token in the callback function, and then use the Access Token to obtain user information;
 2. If the user is already logged in, you can first obtain the user's Access Token and then use the Access Token to obtain user information.
 
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
 ```tsx{37-49}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState, UserInfo } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -554,8 +1691,9 @@ function App() {
       /**
        * Open the login page hosted by Authing in a redirect mode.
        * After the authentication is successful, you need to cooperate with
-       * the `handleRedirectCallback` method to process the authorization code or token
-       * sent by Authing at the callback endpoint to obtain the user's login status.
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
        */
       sdk.handleRedirectCallback().then((res) => setLoginState(res));
     } else {
@@ -583,22 +1721,351 @@ function App() {
 
 export default App;
 ```
+:::
+  
+::: tab Vue2
+```html{73-85}
+<template>
+  <div id="app">
+    <p>
+      <button @click="login">loginWithRedirect</button>
+      <button @click="getUserInfo">getUserInfo</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+    <p v-if="userInfo">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(userInfo, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+      userInfo: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log("redirect");
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace("/");
+      });
+    } else {
+      console.log("normal");
+
+      this.getLoginState();
+    }
+  },
+  methods: {
+    /**
+     * Obtain user identity information with Access Token
+     */
+    async getUserInfo() {
+      if (!this.loginState) {
+        alert("not logged in");
+        return;
+      }
+      const userInfo = await this.sdk.getUserInfo({
+        accessToken: this.loginState.accessToken,
+      });
+      this.userInfo = userInfo;
+    },
+    /**
+     * Get the user's login status
+     */
+    async getLoginState() {
+      const state = await this.sdk.getLoginState();
+      this.loginState = state;
+    },
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    login() {
+      this.sdk.loginWithRedirect();
+    },
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{70-82}
+<template>
+  <div>
+    <p>
+      <button @click="login">loginWithRedirect</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+    <p>
+      <button @click="getUserInfo">getUserInfo</button>
+    </p>
+    <p v-if="userInfo">
+      <textarea
+        cols="100"
+        rows="15"
+        readOnly
+        :value="JSON.stringify(userInfo, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    const state = reactive({
+      loginState: null,
+      userInfo: null,
+    });
+
+    /**
+     * Get the user's login status
+     */
+    const getLoginState = async () => {
+      const res = await sdk.getLoginState();
+      state.loginState = res;
+
+      if (!res) {
+        sdk.loginWithRedirect();
+      }
+    };
+
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    const login = () => {
+      sdk.loginWithRedirect();
+    };
+
+    /**
+     * Obtain user identity information with Access Token
+     */
+    const getUserInfo = async () => {
+      if (!state.loginState) {
+        alert("not logged in");
+        return;
+      }
+      const userInfo = await sdk.getUserInfo({
+        accessToken: state.loginState.accessToken,
+      });
+      state.userInfo = userInfo;
+    };
+
+    onMounted(() => {
+      // Determine whether the current URL is the Authing login callback URL
+      if (sdk.isRedirectCallback()) {
+        console.log("redirect");
+
+        /**
+         * Open the login page hosted by Authing in a redirect mode.
+         * After the authentication is successful, you need to cooperate with
+         * the `handleRedirectCallback` method to process the authorization code 
+         * or token sent by Authing at the callback endpoint to obtain the 
+         * user's login status.
+         */
+        sdk.handleRedirectCallback().then((res) => {
+          state.loginState = res;
+          window.location.replace("/");
+        });
+      } else {
+        console.log("normal");
+
+        getLoginState();
+      }
+    });
+
+    return {
+      ...toRefs(state),
+      login,
+      getUserInfo,
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+    <button (click)="getUserInfo()">getUserInfo</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+  <p *ngIf="userInfo">
+    <textarea cols="100" rows="20" readOnly>{{ userInfo | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{49-61}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+  userInfo: UserInfo | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * Obtain user identity information with Access Token
+   */
+  async getUserInfo() {
+    if (!this.loginState) {
+      alert('not logged in');
+      return;
+    }
+    const userInfo = await this.sdk.getUserInfo({
+      accessToken: this.loginState.accessToken,
+    });
+    this.userInfo = userInfo;
+  }
+
+  /**
+   * Redirect to the Authing-hosted login page
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+:::
+::::
+
 
 ## Sign out
 
-You can call the `logoutWithRedirect` method to log out
+You can call the `logoutWithRedirect` method of the SDK to log out
 
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
 ```tsx{36-41}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { AuthingSPA } from '@authing/spa-auth-sdk';
-import type { LoginState } from '@authing/spa-auth-sdk/dist/types/global';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
 
 function App() {
   const sdk = useMemo(() => {
-    return new AuthingSPA({
+    return new Authing({
       // Very important, please fill in carefully!
-      // If the application enables SSO, you must write the "App Panel Address" for SSO here;
-      // otherwise, fill in the application's "Subdomain".
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
       domain: 'SSO App Panel Address',
       appId: 'App ID',
       // The login callback address needs to be specified in the console
@@ -637,8 +2104,9 @@ function App() {
       /**
        * Open the login page hosted by Authing in a redirect mode.
        * After the authentication is successful, you need to cooperate with
-       * the `handleRedirectCallback` method to process the authorization code or token
-       * sent by Authing at the callback endpoint to obtain the user's login status.
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
        */
       sdk.handleRedirectCallback().then((res) => setLoginState(res));
     } else {
@@ -662,10 +2130,232 @@ function App() {
 
 export default App;
 ```
+:::
+
+::: tab Vue2
+```html{68-73}
+<template>
+  <div id="app">
+    <p>
+      <button @click="login">loginWithRedirect</button>
+      <button @click="logout">logout</button>
+    </p>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
+
+<script>
+import { Authing } from "@authing/browser";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      sdk: null,
+      loginState: null,
+    };
+  },
+  created() {
+    this.sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+  },
+  mounted() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log("redirect");
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain 
+       * the user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace("/");
+      });
+    } else {
+      this.getLoginState();
+    }
+  },
+  methods: {
+    /**
+     * Redirect to the Authing-hosted login page
+     */
+    login() {
+      this.sdk.loginWithRedirect();
+    },
+    /**
+     * Sign out
+     */
+    logout() {
+      this.sdk.logoutWithRedirect();
+    },
+    /**
+     * Get the user's login status
+     */
+    async getLoginState() {
+      const state = await this.sdk.getLoginState();
+      this.loginState = state;
+    },
+  },
+};
+</script>
+```
+:::
+
+::: tab Vue3
+```html{24-31}
+<template>
+  <div>
+    <button @click="logout">logout</button>
+  </div>
+</template>
+
+<script>
+import { defineComponent } from "vue";
+import { Authing } from "@authing/browser";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const sdk = new Authing({
+      // Very important, please fill in carefully!
+      // If the application enables SSO, you must write the "App Panel Address" 
+      // for SSO here; otherwise, fill in the application's "Subdomain".
+      domain: "SSO App Panel Address",
+      appId: "App ID",
+      // The login callback address needs to be specified in the console
+      // "Configuration - Authentication Configuration - Login Callback URL"
+      redirectUri: "Login Callback URL",
+    });
+
+    /**
+     * Sign out
+     */
+    const logout = () => {
+      sdk.logoutWithRedirect();
+    };
+
+    return {
+      logout,
+    };
+  },
+});
+</script>
+```
+:::
+
+::: tab Angular
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+    <button (click)="logout()">logout</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{54-61}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/browser';
+import type { LoginState } from '@authing/browser/dist/types/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // Very important, please fill in carefully!
+    // If the application enables SSO, you must write the "App Panel Address" 
+    // for SSO here; otherwise, fill in the application's "Subdomain".
+    domain: 'SSO App Panel Address',
+    appId: 'App ID',
+    // The login callback address needs to be specified in the console
+    // "Configuration - Authentication Configuration - Login Callback URL"
+    redirectUri: 'Login Callback URL',
+  });
+
+  ngOnInit() {
+    // Determine whether the current URL is the Authing login callback URL
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * Open the login page hosted by Authing in a redirect mode.
+       * After the authentication is successful, you need to cooperate with
+       * the `handleRedirectCallback` method to process the authorization code 
+       * or token sent by Authing at the callback endpoint to obtain the 
+       * user's login status.
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * Redirect to the Authing-hosted login page
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * Sign out
+   */
+  logout() {
+    this.sdk.logoutWithRedirect();
+  }
+
+  /**
+   * Get the user's login status
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+:::
+::::
+
 
 ## Code reference
 
-[Authing SPA SDK Demo](https://github.com/Authing/authing-sso-demo/tree/feat-sso-v3-demo)
+- [Demo](https://github.com/Authing/authing-browser-sdk/tree/main/example/sso/)
+
 
 ## Get help <a id="get-help"></a>
 

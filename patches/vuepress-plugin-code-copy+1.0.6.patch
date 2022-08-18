@@ -1,0 +1,49 @@
+diff --git a/node_modules/vuepress-plugin-code-copy/CodeCopy.vue b/node_modules/vuepress-plugin-code-copy/CodeCopy.vue
+index 0d63c1c..4c39afa 100644
+--- a/node_modules/vuepress-plugin-code-copy/CodeCopy.vue
++++ b/node_modules/vuepress-plugin-code-copy/CodeCopy.vue
+@@ -73,15 +73,7 @@ export default {
+                 : null
+         },
+         copyToClipboard(el) {
+-            if (navigator.clipboard) {
+-                navigator.clipboard.writeText(this.code).then(
+-                    () => {
+-                        this.setSuccessTransitions()
+-                    },
+-                    () => {}
+-                )
+-            } else {
+-                let copyelement = document.createElement('textarea')
++            let copyelement = document.createElement('textarea')
+                 document.body.appendChild(copyelement)
+                 copyelement.value = this.code
+                 copyelement.select()
+@@ -89,7 +81,26 @@ export default {
+                 copyelement.remove()
+ 
+                 this.setSuccessTransitions()
+-            }
++
++            // if (navigator.clipboard) {
++            //     navigator.clipboard.writeText(this.code).then(
++            //         () => {
++            //             this.setSuccessTransitions()
++            //         },
++            //         (e) => {
++            //           console.log("fff",e);
++            //         }
++            //     )
++            // } else {
++            //     let copyelement = document.createElement('textarea')
++            //     document.body.appendChild(copyelement)
++            //     copyelement.value = this.code
++            //     copyelement.select()
++            //     document.execCommand('Copy')
++            //     copyelement.remove()
++
++            //     this.setSuccessTransitions()
++            // }
+         },
+         setSuccessTransitions() {
+             clearTimeout(this.successTimeout)

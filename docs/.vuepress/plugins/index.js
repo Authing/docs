@@ -1,335 +1,337 @@
-const { basePath } = require('../env')
+const { basePath } = require("../env");
 
-const cacheSidebarPlugin = require('./vuepress-plugin-cache-sidebar')
-const compressHtmlPlugin = require('./vuepress-plugin-compress-html')
+const cacheSidebarPlugin = require("./vuepress-plugin-cache-sidebar");
+const compressHtmlPlugin = require("./vuepress-plugin-compress-html");
 
 const parsePath = (path) => {
-  const urlPath = path.includes('.md') ? path.slice(0, -3) + '.html' : path
-  const relativePath = path.includes('.md')
+  const urlPath = path.includes(".md") ? path.slice(0, -3) + ".html" : path;
+  const relativePath = path.includes(".md")
     ? path.slice(1)
-    : path.slice(1) + 'README.md'
+    : path.slice(1) + "README.md";
 
-  const link = urlPath.replace(new RegExp(basePath), '/')
+  const link = urlPath.replace(new RegExp(basePath), "/");
 
-  const text = `{{($site.pages.find(page => page.relativePath === '${relativePath}') || {}).title}}`
+  const text = `{{($site.pages.find(page => page.relativePath === '${relativePath}') || {}).title}}`;
 
   return {
     link,
     text,
-  }
-}
+  };
+};
 
 const plugins = [
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'description',
-      defaultTitle: '',
+      type: "description",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'img-description',
-      defaultTitle: '',
+      type: "img-description",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'hint-success',
-      defaultTitle: '',
+      type: "hint-success",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'hint-info',
-      defaultTitle: '',
+      type: "hint-info",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'hint-warning',
-      defaultTitle: '',
+      type: "hint-warning",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'hint-danger',
-      defaultTitle: '',
+      type: "hint-danger",
+      defaultTitle: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'page-ref',
+      type: "page-ref",
       before: (path) => {
-        const parsed = parsePath(path)
+        const parsed = parsePath(path);
 
-        return `<RouterLink class="page-ref" to="${parsed.link}">${parsed.text}`
+        return `<RouterLink class="page-ref" to="${parsed.link}">${parsed.text}`;
       },
-      after: '</RouterLink>',
+      after: "</RouterLink>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'page-ref-list',
+      type: "page-ref-list",
       before: (pathsStr) => {
-        const paths = pathsStr.split(',').map((item) => item.trim())
+        const paths = pathsStr.split(",").map((item) => item.trim());
         const aTags = paths
           .map((path) => {
-            const parsed = parsePath(path)
-            return `<li class="page-ref-list-item"><RouterLink to="${parsed.link}">${parsed.text}</RouterLink></li>`
+            const parsed = parsePath(path);
+            return `<li class="page-ref-list-item"><RouterLink to="${parsed.link}">${parsed.text}</RouterLink></li>`;
           })
-          .join('')
+          .join("");
 
-        return `<div class="page-ref-list"><p class="page-ref-list-title">{{$localeConfig.relatedDocText}}</p><ul>${aTags}</ul></div>`
+        return `<div class="page-ref-list"><p class="page-ref-list-title">{{$localeConfig.relatedDocText}}</p><ul>${aTags}</ul></div>`;
       },
-      after: '',
+      after: "",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'embed',
+      type: "embed",
       before: `<div class="embed">`,
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method',
+      type: "api-method",
       before: (info) => {
-        const method = info.match(/method="(.*?)"/)[1]
-        const host = info.match(/host="(.*?)"/)[1]
-        const path = info.match(/path="(.*?)"/)[1]
+        const method = info.match(/method="(.*?)"/)[1];
+        const host = info.match(/host="(.*?)"/)[1];
+        const path = info.match(/path="(.*?)"/)[1];
         return `<div class="api-method">
             <div class="method">${method.toUpperCase()}</div>
             <div class="path"> ${host}<strong>${path}</strong> </div>
-        `
+        `;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-summary',
+      type: "api-method-summary",
       before: (info) => {
-        return `<div class="api-method-summary"><strong>`
+        return `<div class="api-method-summary"><strong>`;
       },
-      after: '</strong></div>',
+      after: "</strong></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-description',
+      type: "api-method-description",
       before: (info) => {
-        return `<div class="api-method-description">`
+        return `<div class="api-method-description">`;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-spec',
+      type: "api-method-spec",
       before: (info) => {
-        return `<form class="api-method-spec tabs">`
+        return `<form class="api-method-spec tabs">`;
       },
-      after: '</form>',
+      after: "</form>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-request',
+      type: "api-method-request",
       before: (info) => {
-        const random = Math.random().toString()
+        const random = Math.random().toString();
         return `
         <input type="radio" name="tabs" id="tabone${random}" checked>
         <label for="tabone${random}">Request</label>
         <div class="api-method-request tab">
-        `
+        `;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-response',
+      type: "api-method-response",
       before: (info) => {
-        const random = Math.random().toString()
+        const random = Math.random().toString();
         return `
           <input type="radio" name="tabs" id="tabtwo${random}">
           <label for="tabtwo${random}">Response</label>
           <div class="api-method-response tab">
-        `
+        `;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-path-parameters',
+      type: "api-method-path-parameters",
       before: (info) => {
         return `<div class="api-method-path-parameters">
           <div class="parameters-description"> Path Paramter </div>
           <table>
-        `
+        `;
       },
-      after: '</table></div>',
+      after: "</table></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-body-parameters',
+      type: "api-method-body-parameters",
       before: (info) => {
         return `<div class="api-method-body-parameters">
           <div class="parameters-description"> Body Paramter </div>
           <table>
-        `
+        `;
       },
-      after: '</table></div>',
+      after: "</table></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-headers',
+      type: "api-method-headers",
       before: (info) => {
         return `<div class="api-method-headers">
           <div class="parameters-description"> Headers </div>
           <table>
-        `
+        `;
       },
-      after: '</table></div>',
+      after: "</table></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-query-parameters',
+      type: "api-method-query-parameters",
       before: (info) => {
         return `<div class="api-method-query-parameters">
           <div class="parameters-description"> Query Parameters </div>
           <table>
-        `
+        `;
       },
-      after: '</table></div>',
+      after: "</table></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-form-data-parameters',
+      type: "api-method-form-data-parameters",
       before: (info) => {
         return `<div class="api-method-form-data-parameters">
           <div class="parameters-description"> Form Data Parameters </div>
           <table>
-        `
+        `;
       },
-      after: '</table></div>',
+      after: "</table></div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-parameter',
+      type: "api-method-parameter",
       before: (info) => {
-        const name = info.match(/name="(.*?)"/)[1]
-        const type = info.match(/type="(.*?)"/)[1]
-        const required = info.match(/required=(.*)/)[1]
+        const name = info.match(/name="(.*?)"/)[1];
+        const type = info.match(/type="(.*?)"/)[1];
+        const required = info.match(/required=(.*)/)[1];
         return `
         <tr class="api-method-parameter">
           <td>
           ${name}
-          ${required.includes('true')
-            ? '<div class="required">REQUIRED</div>'
-            : '<div class="optional">OPTIONAL</div>'
+          ${
+            required.includes("true")
+              ? '<div class="required">REQUIRED</div>'
+              : '<div class="optional">OPTIONAL</div>'
           }
           </td>
           <td>${type}</td>
           <td class="description">
-        `
+        `;
       },
-      after: '</td></tr>',
+      after: "</td></tr>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-response-example',
+      type: "api-method-response-example",
       before: (info) => {
-        const httpCode = info.match(/httpCode=(.*)/)[1]
-        const OkDIV = '<div> <span class="green-dot"></span> 200: OK </div>'
+        const httpCode = info.match(/httpCode=(.*)/)[1];
+        const OkDIV = '<div> <span class="green-dot"></span> 200: OK </div>';
         const ErrDIV =
-          '<div> <span class="red-dot"></span> 400: Bad Request </div>'
+          '<div> <span class="red-dot"></span> 400: Bad Request </div>';
         return `<div class="api-method-response-example">
           <div class="parameters-description">
-            ${httpCode.includes('200') ? OkDIV : ''} 
-            ${httpCode.includes('400') ? ErrDIV : ''} 
+            ${httpCode.includes("200") ? OkDIV : ""}
+            ${httpCode.includes("400") ? ErrDIV : ""}
           </div>
-        `
+        `;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   [
-    'vuepress-plugin-container',
+    "vuepress-plugin-container",
     {
-      type: 'api-method-response-example-description',
+      type: "api-method-response-example-description",
       before: (info) => {
-        return `<div class="api-method-response-example-description">`
+        return `<div class="api-method-response-example-description">`;
       },
-      after: '</div>',
+      after: "</div>",
     },
   ],
   // 更新时间
   [
-    '@vuepress/last-updated',
+    "@vuepress/last-updated",
     {
       transformer: (timestamp, lang) => {
         // 不要忘了安装 moment
-        const dayjs = require('dayjs')
-        return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
+        const dayjs = require("dayjs");
+        return dayjs(timestamp).format("YYYY-MM-DD HH:mm:ss");
       },
     },
   ],
 
   // 代码块 可以复制
   [
-    'vuepress-plugin-code-copy',
+    "vuepress-plugin-code-copy",
     {
       // selector: String,
       // 顶部是最好的选择 但是顶部还有语言标识 会出现重叠
-      align: 'bottom',
+      align: "bottom",
       // color: String,
       // backgroundTransition: Boolean,
       // backgroundColor: String,
-      successText: '复制成功',
+      successText: "复制成功",
       // staticIcon: true
     },
   ],
+
   // 图片 可以放大
   [
-    '@vuepress/plugin-medium-zoom',
+    "@vuepress/plugin-medium-zoom",
     {
       selector:
-        '.theme-default-content :not(a) > img:not(.no-zoom), .theme-default-content > img',
+        ".theme-default-content :not(a) > img:not(.no-zoom), .theme-default-content > img",
       delay: 1000,
       options: {
         margin: 24,
-        background: 'rgba(0,0,0,0.85)',
+        background: "rgba(0,0,0,0.85)",
         scrollOffset: 0,
       },
     },
@@ -338,12 +340,10 @@ const plugins = [
   // nav 过长的时候 自动调整位置 使高亮位置呈现在视觉范围
   // "@vuepress/active-header-links",
 
-  [
-    compressHtmlPlugin
-  ],
-  [
-    cacheSidebarPlugin
-  ]
-]
+  [compressHtmlPlugin],
+  [cacheSidebarPlugin],
 
-module.exports = plugins
+  [require("vuepress-plugin-tabs")],
+];
+
+module.exports = plugins;

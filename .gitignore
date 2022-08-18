@@ -37,5 +37,6 @@ yarn-error.log*
 docs/.vuepress/.cache
 docs/.vuepress/.temp
 demo/
+temp/
 *.log
 *.log*

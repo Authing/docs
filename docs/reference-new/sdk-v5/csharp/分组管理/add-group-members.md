@@ -9,14 +9,14 @@
 
 <LastUpdated />
 
-添加分组成员
+添加分组成员，成员以用户 ID 数组形式传递。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 |  | 分组 code。 示例值： `developer` |
-| userIds | string[] | 是 |  | 用户 ID 数组。 示例值： `["6229ffaxxxxxxxxcade3e3d9"]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| userIds | string[] | 是 | - | 用户 ID 数组。  | `["6229ffaxxxxxxxxcade3e3d9"]` |
+| code | string | 是 | - | 分组 code。  | `developer` |
 
 
 ## 示例代码

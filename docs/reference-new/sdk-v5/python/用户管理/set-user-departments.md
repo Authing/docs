@@ -9,14 +9,15 @@
 
 <LastUpdated />
 
-设置用户所在部门
+通过用户 ID，设置用户所在部门，可以选择指定用户 ID 类型等。
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 |  | 用户 ID。 示例值： `6229ffaxxxxxxxxcade3e3d9` |
-| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 |  | 部门信息。 示例值： `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 | - | 部门信息。  | `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| userId | string | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+| options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数。  |  |
 
 
 ## 示例代码
@@ -36,6 +37,9 @@ data = management_client.set_user_departments(
          is_leader: true,
          is_main_department: true,
       }],
+     options: {
+         user_id_type: "user_id",
+    },
   
 )
 ```
@@ -78,6 +82,13 @@ data = management_client.set_user_departments(
 | departmentId | string | 是 | 部门 id。 示例值： `60b49eb83fd80adb96f26e68`  |
 | isLeader | boolean | 否 | 是否是部门 leader。 示例值： `true`  |
 | isMainDepartment | boolean | 否 | 是否是主部门。 示例值： `true`  |
+
+
+### <a id="SetUserDepartmentsOptionsDto"></a> SetUserDepartmentsOptionsDto
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto

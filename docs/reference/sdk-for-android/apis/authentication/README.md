@@ -211,60 +211,6 @@ AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userIn
 
 <br>
 
-## LDAP 登录
-
-```java
-public static void loginByLDAP(String username, String password, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**参数**
-
-* `username` ldap 用户名
-* `password` 明文密码
-
-**示例**
-
-```java
-AuthClient.loginByLDAP("username", "strong", (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
-    }
-});
-```
-
-**错误码**
-
-* `2333` 帐号或密码错误
-
-<br>
-
-## AD 登录
-
-```java
-public static void loginByAD(String username, String password, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**参数**
-
-* `username` AD 用户名
-* `password` 明文密码
-
-**示例**
-
-```java
-AuthClient.loginByAD("username", "strong", (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
-    }
-});
-```
-
-**错误码**
-
-* `2333` 帐号或密码错误
-
-<br>
-
 ## 获取当前登录的用户信息
 
 获取当前登录的用户信息，需要先登录
