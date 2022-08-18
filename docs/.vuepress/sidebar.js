@@ -66,7 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
-
+    
     {
       title: "快速开始",
       children: [
@@ -415,12 +415,20 @@ const zhCnNavBar = {
               ],
             },
             {
+              path: "/guides/sync/create-sync/sync-scope",
+              title: "筛选同步范围",
+            },
+            {
               path: "/guides/sync/create-sync/field-mapping",
-              title: "自定义字段映射",
+              title: "自定义同步字段映射",
             },
             {
               path: "/guides/sync/create-sync/sync-type",
-              title: "选择同步方式",
+              title: "配置同步时机",
+            },
+            {
+              path: "/guides/sync/create-sync/sync-policy",
+              title: "配置同步策略",
             },
           ],
         },
@@ -431,10 +439,6 @@ const zhCnNavBar = {
         {
           title: "风险操作提示",
           path: "/guides/sync/manual-actions",
-        },
-        {
-          title: "常见问题",
-          path: "/guides/sync/FQA",
         },
       ],
     },
@@ -481,12 +485,76 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: "应用",
+      path: "/guides/app-new/",
+      children: [
+        {
+          title: "自建应用",
+          path: "/guides/app-new/create-app/",
+          children: [
+            {
+              title: "创建自建应用",
+              path: "/guides/app-new/create-app/create-app",
+            },
+            {
+              title: "快速开始",
+              path: "/guides/app-new/create-app/quick-start",
+            },
+            {
+              title: "应用配置",
+              path: "/guides/app-new/create-app/app-configuration",
+            },
+            {
+              title: "登录控制",
+              path: "/guides/app-new/create-app/login-control",
+            },
+            {
+              title: "访问授权",
+              path: "/guides/app-new/create-app/application-access-control",
+            },
+            {
+              title: "品牌化",
+              path: "/guides/app-new/create-app/customize-guard",
+            },
+            {
+              title: "安全管理",
+              path: "/guides/app-new/create-app/security-management",
+            },
+            {
+              title: "高级配置",
+              path: "/guides/app-new/create-app/advanced-settings",
+            },
+            {
+              title: "租户配置",
+              path: "/guides/app-new/create-app/tenant-config",
+            },
+          ]
+        },
+        {
+          title: "单点登录 SSO",
+          path: "/guides/app-new/sso",
+          children: [
+
+          ]
+        },
+        
+      ],
+    },
+    {
       title: "单点登录 SSO",
       path: "/guides/sso/",
       children: [
         {
           title: "应用面板",
           path: "/guides/dashboard/",
+        },
+        {
+          title: "飞书工作台 SSO 方案",
+          path: "/guides/lark-sso/",
+        },
+        {
+          title: "企业微信 SSO 方案",
+          path: "/guides/qiwei-sso/",
         },
         {
           title: "集成应用 SSO 方案",
@@ -496,27 +564,6 @@ const zhCnNavBar = {
         {
           title: "自建应用 SSO 方案",
           path: "/guides/app/sso",
-        },
-        {
-          title: "第三方 SSO 方案",
-          children: [
-            {
-              title: "飞书工作台 SSO 方案",
-              path: "/guides/lark-sso/",
-            },
-            {
-              title: "企业微信 SSO 方案",
-              path: "/guides/qiwei-sso/",
-            },
-            {
-              title: "钉钉 SSO 方案",
-              path: "/guides/dingding-sso/",
-            },
-            {
-              title: "WeLink SSO 方案",
-              path: "/guides/welink-sso/",
-            },
-          ]
         },
         {
           title: "管理用户登录状态",
@@ -679,10 +726,6 @@ const zhCnNavBar = {
             {
               title: "企业微信移动端",
               path: "/guides/connections/enterprise/wecom-mobile/",
-            },
-            {
-              title: "企业微信移动端（代开发模式）",
-              path: "/guides/connections/enterprise/wecom-agency-mobile/",
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -1014,31 +1057,43 @@ const zhCnNavBar = {
         {
           title: `如何获取 ${BRAND_NAME_ZH_CN} 服务器集群 IP`,
           path: "/guides/faqs/public-ips",
+        }, 
+        {
+          title: "同步中心",
+          path: "/guides/faqs/sync/",
         },
       ],
     },
   ],
   "/reference/": [
     {
-      title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso-spa",
-    },
-    {
       title: "登录组件 (Guard)",
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "单页应用",
-          path: "/reference/guard/v3/spa.md",
+          title: "React",
+          path: "/reference/guard/v2/react.md",
         },
         {
-          title: "标准 WEB 应用",
-          path: "/reference/guard/v3/mpa.md",
+          title: "原生 JavaScript",
+          path: "/reference/guard/v2/native-javascript.md",
+        },
+        {
+          title: "Vue",
+          path: "/reference/guard/v2/vue.md",
+        },
+        {
+          title: "Angular",
+          path: "/reference/guard/v2/angular.md",
+        },
+        {
+          title: "迁移指南",
+          path: "/reference/guard/v2/migration",
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog",
-        }
+          path: "/reference/guard/v2/guard-changelog",
+        },
       ],
     },
     // {
@@ -1073,6 +1128,10 @@ const zhCnNavBar = {
     //     },
     //   ],
     // },
+    {
+      title: "单点登录（SSO）",
+      path: "/reference/sdk-for-sso-spa",
+    },
     {
       title: "JavaScript / Node.js",
       path: "/reference/sdk-for-node/",
@@ -1287,12 +1346,12 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "快速开始",
-          path: "/reference/sdk-for-android/quick",
+          title: "开始开发",
+          path: "/reference/sdk-for-android/develop",
         },
         {
-          title: "托管页",
-          path: "/reference/sdk-for-android/develop",
+          title: "快速接入",
+          path: "/reference/sdk-for-android/quick",
         },
         {
           title: "超组件",
@@ -1419,7 +1478,6 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
-          path: "/reference/sdk-for-android/apis/",
           children: [
             "/reference/sdk-for-android/apis/authentication/",
             "/reference/sdk-for-android/apis/protocol/",
@@ -1440,9 +1498,7 @@ const zhCnNavBar = {
         },
         {
           title: "典型场景",
-          path: "/reference/sdk-for-android/scenario/",
           children: [
-            "/reference/sdk-for-android/scenario/logout",
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
@@ -1465,12 +1521,12 @@ const zhCnNavBar = {
 
       children: [
         {
-          title: "快速开始",
-          path: "/reference/sdk-for-ios/quick",
+          title: "开始开发",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
-          title: "托管页",
-          path: "/reference/sdk-for-ios/develop",
+          title: "快速接入",
+          path: "/reference/sdk-for-ios/quick",
         },
         {
           title: "超组件",
@@ -1577,13 +1633,12 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
-          path: "/reference/sdk-for-ios/apis/",
           children: [
-            "/reference/sdk-for-ios/apis/authentication/",
-            "/reference/sdk-for-ios/apis/protocol/",
-            "/reference/sdk-for-ios/apis/mfa/",
-            "/reference/sdk-for-ios/apis/scan/",
-            "/reference/sdk-for-ios/apis/util/",
+            "/reference/sdk-for-ios/authentication/",
+            "/reference/sdk-for-ios/protocol/",
+            "/reference/sdk-for-ios/mfa/",
+            "/reference/sdk-for-ios/scan/",
+            "/reference/sdk-for-ios/util/",
           ],
         },
         {
@@ -1592,19 +1647,10 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-ios/social/wechat",
             "/reference/sdk-for-ios/social/wecom",
+            "/reference/sdk-for-ios/social/alipay",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
-          ],
-        },
-        {
-          title: "典型场景",
-          path: "/reference/sdk-for-ios/scenario/",
-          children: [
-            "/reference/sdk-for-ios/scenario/tokens",
-            "/reference/sdk-for-ios/scenario/webview",
-            "/reference/sdk-for-ios/scenario/logout",
-            "/reference/sdk-for-ios/scenario/splash",
           ],
         },
         {
@@ -1618,7 +1664,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "快速开始",
+          title: "开始开发",
           path: "/reference/sdk-for-flutter/develop",
         },
         {
@@ -1696,12 +1742,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-android/",
           children: [
             {
-              title: "快速开始",
-              path: "/reference-new/mobile/sdk-for-android/quick",
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-android/develop",
             },
             {
-              title: "托管页",
-              path: "/reference-new/mobile/sdk-for-android/develop",
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-android/quick",
             },
             {
               title: "超组件",
@@ -1828,7 +1874,6 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
-              path: "/reference-new/mobile/sdk-for-android/apis/",
               children: [
                 "/reference-new/mobile/sdk-for-android/apis/authentication/",
                 "/reference-new/mobile/sdk-for-android/apis/protocol/",
@@ -1849,9 +1894,7 @@ const zhCnNavBar = {
             },
             {
               title: "典型场景",
-              path: "/reference-new/mobile/sdk-for-android/scenario/",
               children: [
-                "/reference-new/mobile/sdk-for-android/scenario/logout",
                 "/reference-new/mobile/sdk-for-android/scenario/splash",
                 "/reference-new/mobile/sdk-for-android/scenario/tokens",
                 "/reference-new/mobile/sdk-for-android/scenario/user-profile",
@@ -1905,7 +1948,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-flutter/",
           children: [
             {
-              title: "快速开始",
+              title: "开始开发",
               path: "/reference-new/mobile/sdk-for-flutter/develop",
             },
             {
@@ -1929,12 +1972,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-ios/",
           children: [
             {
-              title: "快速开始",
-              path: "/reference-new/mobile/sdk-for-ios/quick",
+              title: "开始开发",
+              path: "/reference-new/mobile/sdk-for-ios/develop",
             },
             {
-              title: "托管页",
-              path: "/reference-new/mobile/sdk-for-ios/develop",
+              title: "快速接入",
+              path: "/reference-new/mobile/sdk-for-ios/quick",
             },
             {
               title: "超组件",
@@ -2041,13 +2084,12 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
-              path: "/reference-new/mobile/sdk-for-ios/apis/",
               children: [
-                "/reference-new/mobile/sdk-for-ios/apis/authentication/",
-                "/reference-new/mobile/sdk-for-ios/apis/protocol/",
-                "/reference-new/mobile/sdk-for-ios/apis/mfa/",
-                "/reference-new/mobile/sdk-for-ios/apis/scan/",
-                "/reference-new/mobile/sdk-for-ios/apis/util/",
+                "/reference-new/mobile/sdk-for-ios/authentication/",
+                "/reference-new/mobile/sdk-for-ios/protocol/",
+                "/reference-new/mobile/sdk-for-ios/mfa/",
+                "/reference-new/mobile/sdk-for-ios/scan/",
+                "/reference-new/mobile/sdk-for-ios/util/",
               ],
             },
             {
@@ -2056,19 +2098,9 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-ios/social/wechat",
                 "/reference-new/mobile/sdk-for-ios/social/wecom",
+                "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
-                "/reference-new/mobile/sdk-for-ios/social/oneauth",
-              ],
-            },
-            {
-              title: "典型场景",
-              path: "/reference-new/mobile/sdk-for-ios/scenario/",
-              children: [
-                "/reference-new/mobile/sdk-for-ios/scenario/tokens",
-                "/reference-new/mobile/sdk-for-ios/scenario/webview",
-                "/reference-new/mobile/sdk-for-ios/scenario/logout",
-                "/reference-new/mobile/sdk-for-ios/scenario/splash",
               ],
             },
             {
@@ -2181,7 +2213,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -2197,13 +2229,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -2273,7 +2303,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/csharp/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -2293,7 +2323,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/csharp/角色管理/delete-roles-batch",
                     },
                     {
@@ -2324,10 +2354,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/csharp/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -2376,10 +2402,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/csharp/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -2618,7 +2640,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -2634,13 +2656,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -2710,7 +2730,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/go/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -2730,7 +2750,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/go/角色管理/delete-roles-batch",
                     },
                     {
@@ -2761,10 +2781,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/go/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -2813,10 +2829,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/go/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3055,7 +3067,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3071,13 +3083,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -3147,7 +3157,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/java/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -3167,7 +3177,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/java/角色管理/delete-roles-batch",
                     },
                     {
@@ -3198,10 +3208,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/java/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -3250,10 +3256,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/java/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3492,7 +3494,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3508,13 +3510,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -3584,7 +3584,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/node/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -3604,7 +3604,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/node/角色管理/delete-roles-batch",
                     },
                     {
@@ -3635,10 +3635,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/node/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -3687,10 +3683,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/node/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -3929,7 +3921,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -3945,13 +3937,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -4021,7 +4011,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/php/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -4041,7 +4031,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/php/角色管理/delete-roles-batch",
                     },
                     {
@@ -4072,10 +4062,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/php/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -4124,10 +4110,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/php/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -4366,7 +4348,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/用户管理/update-user",
                     },
                     {
-                      title: "获取用户可访问的应用",
+                      title: "获取用户可访问应用",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-accessible-apps",
                     },
                     {
@@ -4382,13 +4364,11 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的应用",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
+                      title: "获取用户曾经登录过的身份源",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-logged-in-identities",
                     },
                     {
@@ -4458,7 +4438,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/角色管理/revoke-role",
                     },
                     {
-                      title: "获取角色被授权的资源列表",
+                      title: "角色被授权的资源列表",
                       path: "/reference-new/sdk-v5/python/角色管理/get-role-authorized-resources",
                     },
                     {
@@ -4478,7 +4458,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/角色管理/list-roles",
                     },
                     {
-                      title: "删除角色",
+                      title: "（批量）删除角色",
                       path: "/reference-new/sdk-v5/python/角色管理/delete-roles-batch",
                     },
                     {
@@ -4509,10 +4489,6 @@ const zhCnNavBar = {
                     {
                       title: "删除组织机构",
                       path: "/reference-new/sdk-v5/python/组织机构管理/delete-organization",
-                    },
-                    {
-                      title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/search-organizations",
                     },
                     {
                       title: "获取部门信息",
@@ -4561,10 +4537,6 @@ const zhCnNavBar = {
                     {
                       title: "获取父部门信息",
                       path: "/reference-new/sdk-v5/python/组织机构管理/get-parent-department",
-                    },
-                    {
-                      title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/is-user-in-department",
                     },
                   ],
                 },
@@ -6031,10 +6003,6 @@ const translatedZhCnNavBar = {
   ],
   "/reference/": [
     {
-      title: "Single Sign-On (SSO)",
-      path: "/reference/sdk-for-sso-spa",
-    },
-    {
       title: "Login component",
       path: "/reference/ui-components/",
       children: [
@@ -6059,6 +6027,10 @@ const translatedZhCnNavBar = {
           path: "/reference/ui-components/parameters",
         },
       ],
+    },
+    {
+      title: "Single Sign-On (SSO)",
+      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript/Node.js",
@@ -6446,12 +6418,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "Quick start",
-          path: "/reference/sdk-for-android/quick",
+          title: "Get started",
+          path: "/reference/sdk-for-android/develop",
         },
         {
-          title: "Hosting page",
-          path: "/reference/sdk-for-android/develop",
+          title: "Quick start",
+          path: "/reference/sdk-for-android/quick",
         },
         {
           title: "APIs",
@@ -6490,16 +6462,6 @@ const translatedZhCnNavBar = {
           ],
         },
         {
-          title: "Scenario",
-          path: "/reference/sdk-for-android/scenario/",
-          children: [
-            {
-              title: "logout",
-              path: "/reference/sdk-for-android/scenario/logout",
-            },
-          ],
-        },
-        {
           title: "On-premise",
           path: "/reference/sdk-for-android/onpremise",
         },
@@ -6510,12 +6472,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-ios/",
       children: [
         {
-          title: "Quick start",
-          path: "/reference/sdk-for-ios/quick",
+          title: "Get started",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
-          title: "Auth Flow",
-          path: "/reference/sdk-for-ios/develop",
+          title: "Quick start",
+          path: "/reference/sdk-for-ios/quick",
         },
         {
           title: "APIs",
@@ -6548,6 +6510,10 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/wechat",
             },
             {
+              title: "Alipay",
+              path: "/reference/sdk-for-ios/social/alipay",
+            },
+            {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
             },
@@ -6564,7 +6530,7 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "Quick start",
+          title: "Get started",
           path: "/reference/sdk-for-flutter/develop",
         },
         {
