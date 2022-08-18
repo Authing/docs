@@ -22,9 +22,11 @@
     "vuepress-plugin-code-copy": "^1.0.6"
   },
   "dependencies": {
+    "vuepress-theme-authing": "^1.0.4",
     "axios": "^0.21.1",
     "cosmiconfig": "^7.0.1",
     "dayjs": "^1.10.4",
+    "lodash": "^4.17.21",
     "markdown-it-include": "^2.0.0",
     "node-sass": "npm:dart-sass@^1.25.0",
     "v-tooltip": "^2.1.3",
