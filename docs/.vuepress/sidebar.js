@@ -415,20 +415,12 @@ const zhCnNavBar = {
               ],
             },
             {
-              path: "/guides/sync/create-sync/sync-scope",
-              title: "筛选同步范围",
-            },
-            {
               path: "/guides/sync/create-sync/field-mapping",
               title: "自定义同步字段映射",
             },
             {
               path: "/guides/sync/create-sync/sync-type",
               title: "配置同步时机",
-            },
-            {
-              path: "/guides/sync/create-sync/sync-policy",
-              title: "配置同步策略",
             },
           ],
         },

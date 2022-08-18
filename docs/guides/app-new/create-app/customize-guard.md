@@ -82,7 +82,7 @@
 具体的 CSS 类名可以在 Authing 的登录界面通过 Chrome 控制台查看，需要自定义样式的 dom 标签都提供了固定的类名，若带有 hash 的类名不能使用，因为会经常变化。
 :::
 
-![Custom CSS](../images/Xnip2021-03-04_15-40-29.png)
+![Custom CSS](../images/xnip.png)
 
 ### 常规登录
 
