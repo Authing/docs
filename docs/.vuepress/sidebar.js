@@ -533,9 +533,6 @@ const zhCnNavBar = {
         {
           title: "单点登录 SSO",
           path: "/guides/app-new/sso",
-          children: [
-
-          ]
         },
         
       ],

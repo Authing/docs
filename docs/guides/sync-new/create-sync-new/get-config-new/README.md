@@ -2,8 +2,6 @@
 
 <LastUpdated/>
 
-角色：管理员
-
 为了保证 **数据安全**，在进行数据同步时，上下游身份源会对 Authing 发出的请求进行识别和鉴权。如果无法识别身份或者不具备数据操作的权限，则会拒绝请求。因此在数据同步之前，Authing 需要拿到上下游身份源颁发的令牌，该令牌用于身份认证和权限鉴定。令牌获取步骤如下：
 
 ## 第一步 获取配置信息
@@ -38,7 +36,7 @@ c. 点击 **确定创建** 按钮。</br>
 要配置飞书权限，执行以下步骤：
 
 1. 配置 **事件订阅请求网址 URL**。</br>
-a. 在获取应用配置信息后，需要 [配置用户同步字段映射](./field-mapping-new.md)、[配置同步时机](./sync-type-new.md) 及 [配置同步策略](./sync-policy-new.md)，点击 **创建**。</br>
+a. 在获取应用配置信息后，需要 [配置用户同步字段映射](/docs/guides/sync-new/create-sync-new/field-mapping-new.md)、[配置同步时机](/docs/guides/sync-new/create-sync-new/sync-type-new.md) 及 [配置同步策略](/docs/guides/sync-new/create-sync-new/sync-policy-new.md)，点击 **创建**。</br>
 b. 重新进入配置详情页，Authing 会在 **配置信息** 模块自动生成一个回调地址，该地址用于接收飞书事件。拷贝该 URL。</br>
 c. 将该地址填入飞书开发平台应用详情页 **事件订阅** 的 **请求地址配置**，点击 **保存**。
 

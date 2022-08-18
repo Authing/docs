@@ -6,7 +6,7 @@
 
 ## 自定义配置
 
-<img src="../images/advanced-settings.png"> 
+<img src="../images/advanced-settings.png">
 
 ::: hint-info​
 打开本模块中的开关后，应用的登录框首先将继承左侧导航栏 **品牌化->全局登录框** 中的配置。在此基础上进行改动，不用担心会对用户带来突然的登录框样式改变。

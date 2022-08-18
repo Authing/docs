@@ -52,4 +52,4 @@ Authing 为客户提供组织和用户数据同步场景下的最佳实践：
 
 * [风险操作提示](./risky-operation.md)，如何删除下游用户和部门。
 
-* [常见问题](./faq.md)，常见问题及解答。
+* [常见问题](/docs/guides/faqs/sync/README.md)，常见问题及解答。

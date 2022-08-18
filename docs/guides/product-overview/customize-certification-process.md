@@ -10,7 +10,7 @@ Authing Pipeline 函数均可用户自定义，同时我们还提供了丰富的
 
 Authing Pipeline 后端使用 serverless 架构，所有的用户自定义代码均运行在云端，保证不同租户之间的隔离性，同时能弹性伸缩，既保证了安全性，又提升了运行效率。
 
-![](../images/customize-certification-process.jpg)
+![](./images/customize-certification-process.jpg)
 
 借助 Authing Pipeline，开发者可以实现以下功能：
 
