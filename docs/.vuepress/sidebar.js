@@ -432,10 +432,6 @@ const zhCnNavBar = {
           title: "风险操作提示",
           path: "/guides/sync/manual-actions",
         },
-        {
-          title: "常见问题",
-          path: "/guides/sync/FQA",
-        },
       ],
     },
     {
@@ -478,6 +474,54 @@ const zhCnNavBar = {
         //   title: '授权管理',
         //   path: '/guides/app/authorization'
         // }
+      ],
+    },
+    {
+      title: "应用",
+      path: "/guides/app-new/",
+      children: [
+        {
+          title: "自建应用",
+          path: "/guides/app-new/create-app/",
+          children: [
+            {
+              title: "创建自建应用",
+              path: "/guides/app-new/create-app/create-app",
+            },
+            {
+              title: "快速开始",
+              path: "/guides/app-new/create-app/quick-start",
+            },
+            {
+              title: "应用配置",
+              path: "/guides/app-new/create-app/app-configuration",
+            },
+            {
+              title: "登录控制",
+              path: "/guides/app-new/create-app/login-control",
+            },
+            {
+              title: "访问授权",
+              path: "/guides/app-new/create-app/application-access-control",
+            },
+            {
+              title: "品牌化",
+              path: "/guides/app-new/create-app/customize-guard",
+            },
+            {
+              title: "安全管理",
+              path: "/guides/app-new/create-app/security-management",
+            },
+            {
+              title: "高级配置",
+              path: "/guides/app-new/create-app/advanced-settings",
+            },
+            {
+              title: "租户配置",
+              path: "/guides/app-new/create-app/tenant-config",
+            },
+          ]
+        },        
       ],
     },
     {
@@ -983,6 +1027,10 @@ const zhCnNavBar = {
     {
       title: "常见问题 FAQs",
       children: [
+        {
+          title: "同步中心",
+          path: "/guides/faqs/sync/README.md", 
+        },
         {
           title: "如何获取用户池 ID",
           path: "/guides/faqs/get-userpool-id-and-secret.md",
