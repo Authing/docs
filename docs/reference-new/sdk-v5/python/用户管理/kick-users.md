@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appIds | array[] | 是 | - | APP ID 列表。  | `["62188e71cxxxx3075289c580"]` |
-| userId | string | 是 | - | 用户 ID。  |  |
-| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数。  | `{"userIdType":"user_id"}` |
+| appIds | array[] | 是 | - | APP ID 列表。 数组长度限制：50。  | `["62188e71cxxxx3075289c580"]` |
+| userId | string | 是 | - | 用户 ID。   |  |
+| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数。   | `{"userIdType":"user_id"}` |
 
 
 ## 示例代码

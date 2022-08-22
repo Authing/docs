@@ -15,16 +15,16 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。  | `60b49eb83fd80adb96f26e68` |
-| organizationCode | string | 是 | - | 组织 Code（organizationCode）。  | `steamory` |
-| leaderUserIds | string[] | 否 | - | 部门负责人 ID。  | `["60b49eb83fd80adb96f26e68"]` |
-| description | string | 否 | - | 部门描述。  | `技术研发部门` |
-| code | string | 否 | - | 部门识别码。  | `6229c4deb3e4d8a20b6021ff` |
-| i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| name | string | 否 | - | 部门名称。  | `开发部` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
-| parentDepartmentId | string | 否 | - | 父部门 ID。  | `6229c4deb3e4d8a20b6021ff` |
-| customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"icon":"https://example.com/icon"}` |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。   | `60b49eb83fd80adb96f26e68` |
+| organizationCode | string | 是 | - | 组织 Code（organizationCode）。   | `steamory` |
+| leaderUserIds | string[] | 否 | - | 部门负责人 ID。   | `["60b49eb83fd80adb96f26e68"]` |
+| description | string | 否 | - | 部门描述。   | `技术研发部门` |
+| code | string | 否 | - | 部门识别码。   | `6229c4deb3e4d8a20b6021ff` |
+| i18n | <a href="#I18nDto">I18nDto</a> | 否 | - | 多语言设置。   | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| name | string | 否 | - | 部门名称。   | `开发部` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。  枚举值：`department_id`,`open_department_id` | `department_id` |
+| parentDepartmentId | string | 否 | - | 父部门 ID。   | `6229c4deb3e4d8a20b6021ff` |
+| customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。   | `{"icon":"https://example.com/icon"}` |
 
 
 ## 示例代码
@@ -138,15 +138,15 @@ func main() {
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit
@@ -173,23 +173,23 @@ func main() {
 | membersCount | number | 是 | 部门人数（仅包含直属成员）。 示例值： `11`  |
 | hasChildren | boolean | 是 | 是否包含子部门。 示例值： `true`  |
 | isVirtualNode | boolean | 否 | 是否是虚拟部门。   |
-| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
-| customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}`  |
+| customData | object | 否 | 部门的扩展字段数据。 示例值： `{"icon":"https://example.com/logo"}`  |
 
 
 ### <a id="I18nDto"></a> I18nDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit

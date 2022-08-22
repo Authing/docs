@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userIds | string[]  | 是 | - | 用户 ID 数组。  | `["6229ffaxxxxxxxxcade3e3d9","6229ffaxxxxxxxxcade3e3d0"]` |
+| userIds | string[]  | 是 | - | 用户 ID 数组。数组长度限制：50。  | `["6229ffaxxxxxxxxcade3e3d9","6229ffaxxxxxxxxcade3e3d0"]` |
 | userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
 | withCustomData | boolean  | 否 | - | 是否获取自定义数据。  | `true` |
 | withIdentities | boolean  | 否 | - | 是否获取 identities。  | `true` |
@@ -153,7 +153,7 @@ const managementClient = new ManagementClient({
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
-| customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| customData | object | 否 | 用户的扩展字段数据。 示例值： `{"school":"北京大学","age":22}`  |
 | statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 

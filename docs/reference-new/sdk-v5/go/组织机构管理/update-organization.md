@@ -15,13 +15,13 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 | - | 组织 code。  | `steamory` |
-| description | string | 否 | - | 部门描述。  | `技术研发部门` |
-| openDepartmentId | string | 否 | - | 根节点自定义 ID。  | `60b49eb83fd80adb96f26e68` |
-| leaderUserIds | string[] | 否 | - | 部门负责人 ID。  | `["60b49eb83fd80adb96f26e68"]` |
-| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置。  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| organizationNewCode | string | 否 | - | 新组织 code。  | `steamory2` |
-| organizationName | string | 否 | - | 组织名称。  | `蒸汽记忆` |
+| organizationCode | string | 是 | - | 组织 code。   | `steamory` |
+| description | string | 否 | - | 部门描述。   | `技术研发部门` |
+| openDepartmentId | string | 否 | - | 根节点自定义 ID。   | `60b49eb83fd80adb96f26e68` |
+| leaderUserIds | string[] | 否 | - | 部门负责人 ID。   | `["60b49eb83fd80adb96f26e68"]` |
+| i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置。   | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| organizationNewCode | string | 否 | - | 新组织 code。   | `steamory2` |
+| organizationName | string | 否 | - | 组织名称。   | `蒸汽记忆` |
 
 
 ## 示例代码
@@ -126,15 +126,15 @@ func main() {
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit
@@ -158,22 +158,22 @@ func main() {
 | leaderUserIds | array | 否 | 部门负责人 ID。 示例值： `["60b49eb83fd80adb96f26e68"]`  |
 | membersCount | number | 是 | 部门人数。 示例值： `150`  |
 | isVirtualNode | boolean | 是 | 是否是虚拟部门。   |
-| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `[object Object]`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a>。 示例值： `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}`  |
 
 
 ### <a id="OrganizationNameI18nDto"></a> OrganizationNameI18nDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| organizationName |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit

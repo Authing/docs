@@ -15,10 +15,10 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#SetCustomDataDto">SetCustomDataDto[]</a> | 是 | - | 自定义数据列表。  |  |
-| targetIdentifier | string | 是 | - | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。  | `userId1` |
-| targetType | string | 是 | - | 主体类型，目前支持用户、角色、分组、部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
-| namespace | string | 否 | - | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。  | `default` |
+| list | <a href="#SetCustomDataDto">SetCustomDataDto[]</a> | 是 | - | 自定义数据列表。 数组长度限制：50。  |  |
+| targetIdentifier | string | 是 | - | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。   | `userId1` |
+| targetType | string | 是 | - | 主体类型，目前支持用户、角色、分组、部门。  枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
+| namespace | string | 否 | - | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。   | `default` |
 
 
 ## 示例代码

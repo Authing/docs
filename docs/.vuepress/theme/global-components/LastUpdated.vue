@@ -10,6 +10,10 @@
         <FeedbackSmall />
       </ClientOnly>
       <div class="github-edit">
+        <ClientOnly>
+          <Share />
+        </ClientOnly>
+
         <svg
           viewBox="0 0 1024 1024"
           version="1.1"
@@ -22,9 +26,7 @@
         </svg>
 
         <a
-          :href="
-            `https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`
-          "
+          :href="`https://github.com/Authing/docs/edit/main/docs/${$page.relativePath}`"
         >
           {{ $localeConfig.githubEdit }}
         </a>
@@ -35,10 +37,11 @@
 
 <script>
 import FeedbackSmall from "@theme/components/FeedbackSmall.vue";
+import Share from "@theme/components/Share.vue";
 
 export default {
   name: "LastUpdated",
-  components: { FeedbackSmall },
+  components: { FeedbackSmall, Share },
   computed: {
     lastUpdated() {
       return this.$page.lastUpdated;
@@ -52,8 +55,8 @@ export default {
         return this.$site.themeConfig.lastUpdated;
       }
       return "Last Updated";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -74,6 +77,7 @@ export default {
     align-items center
     justify-content space-between
     .github-edit
+      display flex
       margin-left 20px
   a
     line-height: 20px;

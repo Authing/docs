@@ -27,9 +27,7 @@
         >
           <a :href="s.path" @click.prevent>
             <span class="page-title">{{ s.title || s.path }}</span>
-            <span v-if="s.header" class="header"
-              >&gt; {{ s.header.title }}</span
-            >
+            <span v-if="s.nav" class="header">{{ s.nav.join(" / ") }}</span>
           </a>
         </li>
       </ul>
@@ -47,7 +45,7 @@ export default {
 
   props: {
     placeholder: String,
-    items: Array
+    items: Array,
   },
 
   data() {
@@ -55,7 +53,7 @@ export default {
       query: "",
       focused: false,
       focusIndex: 0,
-      platLinks: []
+      platLinks: [],
     };
   },
   watch: {
@@ -65,8 +63,8 @@ export default {
         this.calcLinks();
       },
       immediate: true,
-      deep: true
-    }
+      deep: true,
+    },
   },
 
   computed: {
@@ -75,14 +73,14 @@ export default {
     },
 
     suggestions() {
-      const query = this.query.trim().toLowerCase();
+      const query = this.query.toString().trim().toLowerCase();
       if (!query) {
         return;
       }
       if (this.platLinks.length === 0) {
         this.calcLinks();
       }
-      const result = this.platLinks.filter(item =>
+      const result = this.platLinks.filter((item) =>
         item.keywords.includes(query)
       );
       return result;
@@ -93,7 +91,7 @@ export default {
       const navCount = (this.$site.themeConfig.nav || []).length;
       const repo = this.$site.repo ? 1 : 0;
       return navCount + repo <= 2;
-    }
+    },
   },
 
   mounted() {
@@ -107,8 +105,8 @@ export default {
   methods: {
     calcLinks() {
       const result = [];
-      function calcLinksWithChildren(items) {
-        items.forEach(item => {
+      function calcLinksWithChildren(items, nav = []) {
+        items.forEach((item) => {
           if (item.path) {
             result.push({
               path: item.path,
@@ -117,11 +115,12 @@ export default {
                 .split("/")
                 .pop()
                 .toLowerCase()}${item.title.toLowerCase()}`,
-              dataIndex: item.dataIndex
+              dataIndex: item.dataIndex,
+              nav,
             });
           }
           if (item.children && item.children.length > 0) {
-            calcLinksWithChildren(item.children);
+            calcLinksWithChildren(item.children, [...nav, item.title]);
           }
         });
       }
@@ -175,7 +174,7 @@ export default {
 
     unfocus() {
       this.focusIndex = -1;
-    }
-  }
+    },
+  },
 };
 </script>

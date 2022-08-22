@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#CreateResourceBatchItemDto">CreateResourceBatchItemDto[]</a> | 是 | - | 资源列表。  |  |
-| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
+| list | <a href="#CreateResourceBatchItemDto">CreateResourceBatchItemDto[]</a> | 是 | - | 资源列表。 数组长度限制：50。  |  |
+| namespace | string | 否 | - | 所属权限分组的 code。   | `default` |
 
 
 ## 示例代码
@@ -92,7 +92,7 @@ $data = $management->createResourcesBatch(array(
 | code | string | 是 | 资源唯一标志符。 示例值： `ecs`  |
 | description | string | 否 | 资源描述。 示例值： `服务器`  |
 | type | string | 是 | 资源类型，如数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`  |
-| actions | array | 否 | 资源定义的操作类型。嵌套类型：<a href="#ResourceAction">ResourceAction</a>。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]`  |
+| actions | array | 否 | 资源定义的操作类型。嵌套类型：<a href="#ResourceAction">ResourceAction</a>。数组长度限制：100。 示例值： `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]`  |
 | apiIdentifier | string | 否 | API 资源的 URL 标识。 示例值： `https://my-awesome-api.com/api`  |
 
 

@@ -3,7 +3,7 @@
     class="page content-layout-container"
     :class="{
       'full-width': $frontmatter.fullWidthPage,
-      isInConsole: isInConsole
+      isInConsole: isInConsole,
     }"
   >
     <slot name="top" />
@@ -15,6 +15,7 @@
         <Content class="theme-default-content" />
         <downloadDemoPage v-if="showDownloadDemo" />
         <ClientOnly>
+          <FeedbackModal />
           <Feedback v-if="!$page.frontmatter.noFeedback" />
         </ClientOnly>
         <PageNav
@@ -40,6 +41,7 @@ import PageEdit from "@theme/components/PageEdit.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import OnThisPage from "@theme/components/OnThisPage.vue";
 import Feedback from "@theme/components/Feedback.vue";
+import FeedbackModal from "@theme/components/FeedbackModal.vue";
 import DownloadDemo from "@theme/components/DownloadDemo";
 import DownloadDemoPage from "@theme/components/DownloadDemo/DownloadDemoPage";
 
@@ -48,9 +50,10 @@ export default {
     PageEdit,
     PageNav,
     Feedback,
+    FeedbackModal,
     OnThisPage,
     DownloadDemo,
-    DownloadDemoPage
+    DownloadDemoPage,
   },
   props: ["sidebarItems", "isInConsole"],
   computed: {
@@ -58,8 +61,8 @@ export default {
       const download = this.$frontmatter.downloadDemo;
 
       return !!(download && (download.downloadUrl || download.jumpUrl));
-    }
-  }
+    },
+  },
 };
 </script>
 

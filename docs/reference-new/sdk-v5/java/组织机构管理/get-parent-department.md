@@ -120,23 +120,23 @@ class ManagementClientTest {
 | membersCount | number | 是 | 部门人数（仅包含直属成员）。 示例值： `11`  |
 | hasChildren | boolean | 是 | 是否包含子部门。 示例值： `true`  |
 | isVirtualNode | boolean | 否 | 是否是虚拟部门。   |
-| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `[object Object]`  |
-| customData | object | 否 | 部门的扩展字段数据。 示例值： `[object Object]`  |
+| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#I18nDto">I18nDto</a>。 示例值： `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}`  |
+| customData | object | 否 | 部门的扩展字段数据。 示例值： `{"icon":"https://example.com/logo"}`  |
 
 
 ### <a id="I18nDto"></a> I18nDto
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `[object Object]`  |
+| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。 示例值： `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}`  |
 
 
 ### <a id="LangObject"></a> LangObject
 
 | 名称 | 类型 | 必填 | 描述 |
 | ---- |  ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `[object Object]`  |
+| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"中文"}`  |
+| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。 示例值： `{"enabled":false,"value":"English"}`  |
 
 
 ### <a id="LangUnit"></a> LangUnit

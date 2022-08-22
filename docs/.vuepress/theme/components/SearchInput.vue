@@ -32,7 +32,9 @@
         >
           <a :href="s.path" @click.prevent>
             <span class="page-title">{{ s.title || s.path }}</span>
-            <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+            <span v-if="s.header" class="header"
+              >&gt; {{ s.header.title }}</span
+            >
           </a>
         </li>
       </ul>
@@ -49,14 +51,14 @@ export default {
   name: "SearchBox",
 
   props: {
-    placeholder: String
+    placeholder: String,
   },
 
   data() {
     return {
       query: "",
       focused: false,
-      focusIndex: 0
+      focusIndex: 0,
     };
   },
 
@@ -74,17 +76,17 @@ export default {
       let { pages } = this.$site;
       pages = pages
         // TODO: 暂时隐藏开发集成 新版页面 reference-new
-        .filter(item => !item.path.includes("reference-new/"))
-        .map(item => {
+        .filter((item) => !item.path.includes("reference-new/"))
+        .map((item) => {
           return {
             ...item,
             title: transformInterpolation(item.title, this),
             headers:
               item.headers &&
-              item.headers.map(header => ({
+              item.headers.map((header) => ({
                 ...header,
-                title: transformInterpolation(header.title, this)
-              }))
+                title: transformInterpolation(header.title, this),
+              })),
           };
         });
       const max =
@@ -115,7 +117,7 @@ export default {
               res.push(
                 Object.assign({}, p, {
                   path: p.path + "#" + h.slug,
-                  header: h
+                  header: h,
                 })
               );
             }
@@ -130,7 +132,7 @@ export default {
       const navCount = (this.$site.themeConfig.nav || []).length;
       const repo = this.$site.repo ? 1 : 0;
       return navCount + repo <= 2;
-    }
+    },
   },
 
   mounted() {
@@ -164,7 +166,7 @@ export default {
         : new Array(searchPaths);
 
       return (
-        searchPaths.filter(path => {
+        searchPaths.filter((path) => {
           return page.path.match(path);
         }).length > 0
       );
@@ -215,8 +217,8 @@ export default {
 
     unfocus() {
       this.focusIndex = -1;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -297,9 +299,14 @@ export default {
       color lighten($textColor, 35%)
       .page-title
         font-weight 600
+        display block
       .header
+        display block
         font-size 0.9em
-        margin-left 0.25em
+        margin-top 0.25em
+        height 1em
+        line-height 1em
+        overflow hidden
     &.focused
       background-color #f3f4f5
       a

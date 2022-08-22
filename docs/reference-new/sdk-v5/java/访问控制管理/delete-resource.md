@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 | - | 资源唯一标志符。  | `ecs` |
-| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
+| code | string | 是 | - | 资源唯一标志符。   | `ecs` |
+| namespace | string | 否 | - | 所属权限分组的 code。   | `default` |
 
 
 ## 示例代码

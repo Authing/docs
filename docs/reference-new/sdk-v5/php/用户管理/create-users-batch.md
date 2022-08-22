@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 | - | 用户列表。  |  |
-| options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数。  |  |
+| list | <a href="#CreateUserInfoDto">CreateUserInfoDto[]</a> | 是 | - | 用户列表。 数组长度限制：50。  |  |
+| options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数。   |  |
 
 
 ## 示例代码
@@ -62,7 +62,6 @@ $data = $management->createUsersBatch(array(
    "age"=> 22
 ),
           "password" => "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=",
-          "resetPasswordOnFisrtLogin" => false,
           "tenantIds" => "undefined",
           "identities" => array(
       array(
@@ -186,11 +185,10 @@ $data = $management->createUsersBatch(array(
 | postalCode | string | 否 | 邮政编码号。 示例值： `438100`  |
 | externalId | string | 否 | 第三方外部 ID。 示例值： `10010`  |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
-| customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `[object Object]`  |
+| customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。 示例值： `{"school":"北京大学","age":22}`  |
 | password | string | 否 | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。 示例值： `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=`  |
-| resetPasswordOnFisrtLogin | boolean | 否 | 是否首次登录时重新设置密码。 示例值： `false`  |
 | tenantIds | array | 否 | 租户 ID。   |
-| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定）。嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。 示例值： `[object Object]`  |
+| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定）。嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。 示例值： `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}`  |
 
 
 ### <a id="CreateIdentityDto"></a> CreateIdentityDto
@@ -212,7 +210,7 @@ $data = $management->createUsersBatch(array(
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码。   |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型。 枚举值：`department_id`,`open_department_id`  |
-| sendNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。 示例值： `[object Object]`  |
+| sendNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。 示例值： `{"sendEmailNotification":true,"sendPhoneNotification":true}`  |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto
@@ -257,7 +255,7 @@ $data = $management->createUsersBatch(array(
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
-| customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| customData | object | 否 | 用户的扩展字段数据。 示例值： `{"school":"北京大学","age":22}`  |
 | statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 

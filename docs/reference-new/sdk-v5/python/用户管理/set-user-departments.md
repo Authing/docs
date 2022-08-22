@@ -15,9 +15,9 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 | - | 部门信息。  | `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
-| userId | string | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数。  |  |
+| departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 | - | 部门信息。 数组长度限制：10。  | `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
+| userId | string | 是 | - | 用户 ID。   | `6229ffaxxxxxxxxcade3e3d9` |
+| options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数。   |  |
 
 
 ## 示例代码

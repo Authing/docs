@@ -15,30 +15,30 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| phoneCountryCode | string | 否 | - | 手机区号。  | `+86` |
-| name | string | 否 | - | 用户真实名称，不具备唯一性。  | `张三` |
-| nickname | string | 否 | - | 昵称。  | `张三` |
-| photo | string | 否 | - | 头像链接。  | `https://files.authing.co/authing-console/default-user-avatar.png` |
-| externalId | string | 否 | - | 第三方外部 ID。  | `10010` |
-| status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
-| emailVerified | boolean | 否 | - | 邮箱是否验证。  | `true` |
-| phoneVerified | boolean | 否 | - | 手机号是否验证。  | `true` |
-| birthdate | string | 否 | - | 出生日期。  | `2022-06-03` |
-| country | string | 否 | - | 所在国家。  | `CN` |
-| province | string | 否 | - | 所在省份。  | `BJ` |
-| city | string | 否 | - | 所在城市。  | `BJ` |
-| address | string | 否 | - | 所处地址。  | `北京朝阳` |
-| streetAddress | string | 否 | - | 所处街道地址。  | `北京朝阳区 xxx 街道` |
-| postalCode | string | 否 | - | 邮政编码号。  | `438100` |
-| gender | string | 否 | U | 性别。 枚举值：`M`,`W`,`U` | `M` |
-| username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
-| passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。 枚举值：`sm2`,`rsa`,`none` | `none` |
-| email | string | 否 | - | 邮箱。  | `test@example.com` |
-| phone | string | 否 | - | 手机号。  | `176xxxx6754` |
-| password | string | 否 | - | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。  | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
-| customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"school":"北京大学","age":22}` |
-| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数。  |  |
+| userId | string | 是 | - | 用户 ID。   | `6229ffaxxxxxxxxcade3e3d9` |
+| phoneCountryCode | string | 否 | - | 手机区号。   | `+86` |
+| name | string | 否 | - | 用户真实名称，不具备唯一性。   | `张三` |
+| nickname | string | 否 | - | 昵称。   | `张三` |
+| photo | string | 否 | - | 头像链接。   | `https://files.authing.co/authing-console/default-user-avatar.png` |
+| externalId | string | 否 | - | 第三方外部 ID。   | `10010` |
+| status | string | 否 | Activated | 账户当前状态。  枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
+| emailVerified | boolean | 否 | - | 邮箱是否验证。   | `true` |
+| phoneVerified | boolean | 否 | - | 手机号是否验证。   | `true` |
+| birthdate | string | 否 | - | 出生日期。   | `2022-06-03` |
+| country | string | 否 | - | 所在国家。   | `CN` |
+| province | string | 否 | - | 所在省份。   | `BJ` |
+| city | string | 否 | - | 所在城市。   | `BJ` |
+| address | string | 否 | - | 所处地址。   | `北京朝阳` |
+| streetAddress | string | 否 | - | 所处街道地址。   | `北京朝阳区 xxx 街道` |
+| postalCode | string | 否 | - | 邮政编码号。   | `438100` |
+| gender | string | 否 | U | 性别。  枚举值：`M`,`W`,`U` | `M` |
+| username | string | 否 | - | 用户名，用户池内唯一。   | `bob` |
+| passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。  枚举值：`sm2`,`rsa`,`none` | `none` |
+| email | string | 否 | - | 邮箱。   | `test@example.com` |
+| phone | string | 否 | - | 手机号。   | `176xxxx6754` |
+| password | string | 否 | - | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。   | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
+| customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。   | `{"school":"北京大学","age":22}` |
+| options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数。   |  |
 
 
 ## 示例代码
@@ -174,7 +174,7 @@ $data = $management->updateUser(array(
 | userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码。   |
-| sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `[object Object]`  |
+| sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项。嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。 示例值： `{"sendDefaultEmailNotification":false,"sendDefaultPhoneNotification":false,"inputSendEmailNotification":"test@example.com","inputSendPhoneNotification":"136xxxx1234","appId":"app1"}`  |
 
 
 ### <a id="SendResetPasswordNotificationDto"></a> SendResetPasswordNotificationDto
@@ -221,7 +221,7 @@ $data = $management->updateUser(array(
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码。   |
 | departmentIds | array | 否 | 用户所属部门 ID 列表。 示例值： `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]`  |
 | identities | array | 否 | 外部身份源。嵌套类型：<a href="#IdentityDto">IdentityDto</a>。   |
-| customData | object | 否 | 用户的扩展字段数据。 示例值： `[object Object]`  |
+| customData | object | 否 | 用户的扩展字段数据。 示例值： `{"school":"北京大学","age":22}`  |
 | statusChangedAt | string | 否 | 用户状态上次修改时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 
 

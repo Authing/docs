@@ -15,8 +15,8 @@
 
 | 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | array[] | 是 | - | 资源 code 列表。  | `["code1","code2"]` |
-| namespace | string | 否 | - | 所属权限分组的 code。  | `default` |
+| codeList | array[] | 是 | - | 资源 code 列表。 数组长度限制：50。  | `["code1","code2"]` |
+| namespace | string | 否 | - | 所属权限分组的 code。   | `default` |
 
 
 ## 示例代码
