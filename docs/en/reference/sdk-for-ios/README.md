@@ -19,7 +19,7 @@ Before we start, please prepare for the following：
 
 <br>
 
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./develop.html" style="color:#FFF;">Get started →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">Get started →</a>
 </span>
 
 <br>

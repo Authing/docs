@@ -10,9 +10,12 @@ Please follow the instructions below to use this client:
 
 ```javascript
 import { ManagementClient } from "authing-js-sdk";
+// Cited by Node.js:
+// const { ManagementClient } = require('authing-node-sdk');
+
 const managementClient = new ManagementClient({
-  userPoolId: "YOUR_USERPOOL_ID",
-  secret: "YOUR_USERPOOL_SECRET"
+  accessKeyId: 'AUTHING_USERPOOL_ID',
+  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
 });
 
 managementClient.users.list; // create user list
@@ -93,11 +96,11 @@ const user = await managementClient.users.create({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## Update user information
+## Update user info
 
 UsersManagementClient \*().update(id, updates)
 
-> Update user information
+> Update user info
 
 #### Parameter
 
@@ -164,7 +167,7 @@ const user = await managementClient.users.update("USERID", {
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-## 获取用户详情
+## Get user details
 
 UsersManagementClient().detail(userId)
 
@@ -370,7 +373,7 @@ const users = await managementClient.users.batch(["USERID"]);
 
 - `Promise<CommonMessage>`
 
-## 获取用户列表
+## Get user list
 
 UsersManagementClient().list(page, limit)
 
@@ -465,7 +468,7 @@ UsersManagementClient().refreshToken(id)
 
 #### Parameter
 
-- `id` \<string\> 用户 ID
+- `id` \<string\> User ID
 
 #### Example
 

@@ -21,7 +21,7 @@ iOS App 通过 Guard 开源组件库接入。Guard 采用了全新的 [语义化
 
 <br>
 
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./develop.html" style="color:#FFF;">开始开发 →</a>
+<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速开始 →</a>
 </span>
 
 <br>

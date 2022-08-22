@@ -1028,29 +1028,17 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "React",
-          path: "/reference/guard/v2/react.md",
+          title: "单页应用",
+          path: "/reference/guard/v3/spa.md",
         },
         {
-          title: "原生 JavaScript",
-          path: "/reference/guard/v2/native-javascript.md",
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/v2/vue.md",
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/v2/angular.md",
-        },
-        {
-          title: "迁移指南",
-          path: "/reference/guard/v2/migration",
+          title: "标准 WEB 应用",
+          path: "/reference/guard/v3/mpa.md",
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/v2/guard-changelog",
-        },
+          path: "/reference/guard/guard-changelog",
+        }
       ],
     },
     // {
@@ -1589,12 +1577,13 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-ios/apis/",
           children: [
-            "/reference/sdk-for-ios/authentication/",
-            "/reference/sdk-for-ios/protocol/",
-            "/reference/sdk-for-ios/mfa/",
-            "/reference/sdk-for-ios/scan/",
-            "/reference/sdk-for-ios/util/",
+            "/reference/sdk-for-ios/apis/authentication/",
+            "/reference/sdk-for-ios/apis/protocol/",
+            "/reference/sdk-for-ios/apis/mfa/",
+            "/reference/sdk-for-ios/apis/scan/",
+            "/reference/sdk-for-ios/apis/util/",
           ],
         },
         {
@@ -1603,7 +1592,6 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-ios/social/wechat",
             "/reference/sdk-for-ios/social/wecom",
-            "/reference/sdk-for-ios/social/alipay",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
@@ -1612,6 +1600,12 @@ const zhCnNavBar = {
         {
           title: "典型场景",
           path: "/reference/sdk-for-ios/scenario/",
+          children: [
+            "/reference/sdk-for-ios/scenario/tokens",
+            "/reference/sdk-for-ios/scenario/webview",
+            "/reference/sdk-for-ios/scenario/logout",
+            "/reference/sdk-for-ios/scenario/splash",
+          ],
         },
         {
           title: "私有化部署",
@@ -1624,7 +1618,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "开始开发",
+          title: "快速开始",
           path: "/reference/sdk-for-flutter/develop",
         },
         {
@@ -1911,7 +1905,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-flutter/",
           children: [
             {
-              title: "开始开发",
+              title: "快速开始",
               path: "/reference-new/mobile/sdk-for-flutter/develop",
             },
             {
@@ -2047,12 +2041,13 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
+              path: "/reference-new/mobile/sdk-for-ios/apis/",
               children: [
-                "/reference-new/mobile/sdk-for-ios/authentication/",
-                "/reference-new/mobile/sdk-for-ios/protocol/",
-                "/reference-new/mobile/sdk-for-ios/mfa/",
-                "/reference-new/mobile/sdk-for-ios/scan/",
-                "/reference-new/mobile/sdk-for-ios/util/",
+                "/reference-new/mobile/sdk-for-ios/apis/authentication/",
+                "/reference-new/mobile/sdk-for-ios/apis/protocol/",
+                "/reference-new/mobile/sdk-for-ios/apis/mfa/",
+                "/reference-new/mobile/sdk-for-ios/apis/scan/",
+                "/reference-new/mobile/sdk-for-ios/apis/util/",
               ],
             },
             {
@@ -2061,7 +2056,6 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-ios/social/wechat",
                 "/reference-new/mobile/sdk-for-ios/social/wecom",
-                "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
                 "/reference-new/mobile/sdk-for-ios/social/oneauth",
@@ -2070,6 +2064,12 @@ const zhCnNavBar = {
             {
               title: "典型场景",
               path: "/reference-new/mobile/sdk-for-ios/scenario/",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/scenario/tokens",
+                "/reference-new/mobile/sdk-for-ios/scenario/webview",
+                "/reference-new/mobile/sdk-for-ios/scenario/logout",
+                "/reference-new/mobile/sdk-for-ios/scenario/splash",
+              ],
             },
             {
               title: "私有化部署",
@@ -6548,10 +6548,6 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/wechat",
             },
             {
-              title: "Alipay",
-              path: "/reference/sdk-for-ios/social/alipay",
-            },
-            {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
             },
@@ -6568,7 +6564,7 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "Get started",
+          title: "Quick start",
           path: "/reference/sdk-for-flutter/develop",
         },
         {

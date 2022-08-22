@@ -31,7 +31,7 @@ The red part needs to be edited
 
 - [Using the auth flow](./develop.md)
 <!-- - [Using the components](./component/README.md) -->
-- [Using the API](./apis.md)
+- [Using the API](./apis/)
 
 ### 2. [Social API](./social/README.md)
 
