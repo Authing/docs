@@ -46,9 +46,9 @@ PC 网站
 
 <img src="./images/03.png" >
 
-### 步骤二：在 Authing 控制台配置企业微信自建应用扫码（代开发模式）
+### 步骤二：在 {{$localeConfig.brandName}} 控制台配置企业微信自建应用扫码（代开发模式）
 
-1. 选择 **Authing 控制台->身份源管理->企业身份源**，在 **企业身份源** 页面点击 **创建企业身份源** 按钮，进入 **选择企业身份源** 页面，点击 **企业微信** 身份源。
+1. 选择 **{{$localeConfig.brandName}} 控制台->身份源管理->企业身份源**，在 **企业身份源** 页面点击 **创建企业身份源** 按钮，进入 **选择企业身份源** 页面，点击 **企业微信** 身份源。
 
 <img src="./images/04.png" >
 
@@ -231,7 +231,7 @@ PC 网站
 
 #### 详细接入方法
 
-1. 在 {{$localeConfig.brandName}} 控制台创建一个应用。详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/docs/docs/guides/app-new/create-app/create-app.md)。
+1. 在 {{$localeConfig.brandName}} 控制台创建一个应用。详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)。
 
 2. 在已创建好的 **企业微信自建应用扫码（代开发模式）** 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用。
 
