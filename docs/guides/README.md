@@ -24,7 +24,7 @@
    - [如何在小程序中进行认证](/guides/authentication/wechat-mini-program/)；
    - [实现单点登录（SSO）](/guides/authentication/sso/)；
    - [在移动端实现单点登录](/guides/authentication/mobile-sso/)；
-   - [如何集成多因素认证](/guides/authentication/mfa/)
+   - [如何集成多因素认证](/guides/security/mfa/)
    - 对认证流程进行扩展：
      - [添加用户自定义字段](/guides/authentication/extensibility/user-defined-field/)
      - [添加部门自定义字段](/guides/authentication/extensibility/depart`ment-extend/)

@@ -239,7 +239,7 @@ module.exports = {
                 },
                 {
                   text: "多因素认证",
-                  link: "/guides/authentication/mfa/"
+                  link: "/guides/security/mfa/"
                 },
                 {
                   text: "权限管理",

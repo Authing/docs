@@ -193,7 +193,7 @@ const zhCnNavBar = {
         },
         {
           title: "多因素认证",
-          path: "/guides/authentication/mfa/",
+          path: "/guides/security/mfa/",
         },
         {
           title: "对认证流程进行扩展",
@@ -906,31 +906,31 @@ const zhCnNavBar = {
         },
         {
           title: "多因素认证",
-          path: "/guides/authentication/mfa/",
+          path: "/guides/security/mfa/",
           children: [
             {
               title: "基于短信验证码的 MFA",
-              path: "/guides/authentication/mfa/sms",
+              path: "/guides/security/mfa/sms",
             },
             {
               title: "基于邮件验证码的 MFA",
-              path: "/guides/authentication/mfa/email-code",
+              path: "/guides/security/mfa/email-code",
             },
             {
               title: "基于时间戳算法的一次性密码的 MFA",
-              path: "/guides/authentication/mfa/totp",
+              path: "/guides/security/mfa/totp",
             },
             {
               title: "基于人脸识别的 MFA",
-              path: "/guides/authentication/mfa/face-recognition",
+              path: "/guides/security/mfa/face-recognition",
             },
             {
               title: "通过 SDK 接入 MFA",
-              path: "/guides/authentication/mfa/mfa-sdk",
+              path: "/guides/security/mfa/mfa-sdk",
             },
             {
               title: "MFA 策略配置",
-              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
+              path: "/guides/security/mfa/policy-based-mfa-configuration",
             },
                     ],
         },
@@ -1087,7 +1087,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/authentication/AuthenticationClient",
             "/reference/sdk-for-node/authentication/StandardProtocol",
             "/reference/sdk-for-node/authentication/QrCodeAuthenticationClient",
-            "/reference/sdk-for-node/authentication/MfaAuthenticationClient",
+            "/reference/sdk-for-node/authentication/mfaAuthenticationClient",
             "/reference/sdk-for-node/authentication/SocialAuthenticationClient",
             "/reference/sdk-for-node/authentication/EnterpriseAuthenticationClient",
             "/reference/sdk-for-node/authentication/PrincipalAuthentication",
@@ -1125,7 +1125,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-java/authentication/AuthenticationClient",
             "/reference/sdk-for-java/authentication/StandardProtocol",
-            // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
+            // '/reference/sdk-for-java/authentication/mfaAuthenticationClient',
           ],
         },
         {
@@ -1157,7 +1157,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-python/authentication/AuthenticationClient",
             "/reference/sdk-for-python/authentication/StandardProtocol",
-            "/reference/sdk-for-python/authentication/MfaAuthenticationClient",
+            "/reference/sdk-for-python/authentication/mfaAuthenticationClient",
           ],
         },
         {
@@ -1190,7 +1190,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-csharp/authentication/AuthenticationClient",
             "/reference/sdk-for-csharp/authentication/StandardProtocol",
-            "/reference/sdk-for-csharp/authentication/MfaAuthenticationClient",
+            "/reference/sdk-for-csharp/authentication/mfaAuthenticationClient",
           ],
         },
         {
@@ -1222,7 +1222,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-php/authentication/AuthenticationClient",
             "/reference/sdk-for-php/authentication/StandardProtocol",
-            "/reference/sdk-for-php/authentication/MfaAuthenticationClient",
+            "/reference/sdk-for-php/authentication/mfaAuthenticationClient",
           ],
         },
         {
@@ -1253,7 +1253,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-go/authentication/AuthenticationClient",
             "/reference/sdk-for-go/authentication/StandardProtocol",
-            "/reference/sdk-for-go/authentication/MfaAuthenticationClient",
+            "/reference/sdk-for-go/authentication/mfaAuthenticationClient",
           ],
         },
         {
@@ -1881,7 +1881,7 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
                 "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
-                "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient",
+                "/reference-new/mobile/sdk-for-csharp/authentication/mfaAuthenticationClient",
               ],
             },
             {
@@ -6077,7 +6077,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Multi-factor authentication module",
-              path: "/reference/sdk-for-node/authentication/MfaAuthenticationClient",
+              path: "/reference/sdk-for-node/authentication/mfaAuthenticationClient",
             },
             {
               title: "Social login module",
@@ -6161,7 +6161,7 @@ const translatedZhCnNavBar = {
               title: "Standard agreement certification module",
               path: "/reference/sdk-for-java/authentication/StandardProtocol",
             },
-            // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
+            // '/reference/sdk-for-java/authentication/mfaAuthenticationClient',
           ],
         },
         {
@@ -6230,7 +6230,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Multi-factor authentication module",
-              path: "/reference/sdk-for-python/authentication/MfaAuthenticationClient",
+              path: "/reference/sdk-for-python/authentication/mfaAuthenticationClient",
             },
           ],
         },

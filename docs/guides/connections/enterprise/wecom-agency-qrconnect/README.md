@@ -231,7 +231,7 @@ PC 网站
 
 2. 在已创建好的 **企业微信自建应用扫码（代开发模式）** 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用。
 
-<img src="./images/associate-app.png" >
+<img src="./images/associate-app.png" height=150 style="display:block;margin: 0 auto;">
 
 3. 在登录页面体验企业微信自建应用扫码（代开发模式）第三方登录。
 

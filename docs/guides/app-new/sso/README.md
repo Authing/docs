@@ -17,4 +17,4 @@
 - [应用面板](/guides/dashboard/README.md)，用于展示企业所需的各类应用，是提供员工单点登录、提高工作效率、保证信息安全的好地方。
 - [集成应用 SSO 方案](guides/apn/README.md)，是一套 Authing 预先与第三方应用集成的目录，可以让 Authing 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
 - [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)，当你有多个应用的时候，你可以快速实现用户池应用间的单点登录，用户切换应用的时候不需要再次登录，给用户更好的使用体验。
-- [第三方 SSO 方案](/guides/app-new/sso/third-party-sso/)，以飞书、企业微信、钉钉、Welink 等作为企业单一身份源实现 SSO 的集成方案。
+- [第三方 SSO 方案](/guides/app-new/sso/third-party-sso/README.md)，以飞书、企业微信、钉钉、Welink 等作为企业单一身份源实现 SSO 的集成方案。

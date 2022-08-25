@@ -78,4 +78,4 @@ style="display:block;margin: 0 auto;">
 * 应用级别的 MFA 配置优先级高于全局 MFA。
 :::
 
-更多详情，请参阅 [多因素认证综述](/guides/authentication/mfa/)。
+更多详情，请参阅 [多因素认证综述](/guides/security/mfa/)。
