@@ -23,7 +23,7 @@ Before we start, please prepare for the following：
 
 - Install [AndroidStudio](https://developer.android.google.cn/studio) and [Xcode 13](https://developer.apple.com/xcode/)
 - Create a free [Authing account](https://www.authing.cn/)
-- At our console, [create an app](https://docs.authing.cn/v2/guides/app/create-app.html)
+- At our console, [create an app](/guides/app-new/create-app/create-app.md)
 
 <br>
 

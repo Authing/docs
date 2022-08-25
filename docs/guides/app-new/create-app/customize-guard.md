@@ -164,7 +164,7 @@
 
 配置完成后就可以在注册界面看到该注册协议。用户在登录 / 注册时需要查看和勾选您所配置的服务条款和隐私条款等内容：
 
-<img src="../images/login-register-protocol.png" height=450 style="display:block;margin: 0 auto;">
+<img src="../images/login-register-protocol.png" height=550 style="display:block;margin: 0 auto;">
 
 ## 登录注册信息补全
 

@@ -73,4 +73,9 @@ style="display:block;margin: 0 auto;">
 
 ![](../images/app-level-mfa.png)
 
+::: hint-info
+* 要配置应用级别 MFA，必须在 **应用->自建应用->应用详情->高级配置** 中开启 **自定义本应用的安全规则** 开关，才会出现 **安全管理** 页签。
+* 应用级别的 MFA 配置优先级高于全局 MFA。
+:::
+
 更多详情，请参阅 [多因素认证综述](/guides/authentication/mfa/)。

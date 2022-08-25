@@ -122,7 +122,7 @@ https://core.authing.cn/connection/social/{ 唯一标识 }/{USERPOOL_ID}/events
 
 - **详细接入方法**：
 
-  5.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  5.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   5.2 在已创建好的 飞书应用商店应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

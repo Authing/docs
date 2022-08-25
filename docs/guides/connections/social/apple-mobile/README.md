@@ -129,7 +129,7 @@
 
   3.1 请根据 [苹果登录 SDK 接入文档 ](https://docs.authing.cn/v2/reference/sdk-for-ios/social/apple.html)接入您的 iOS 应用；
  
-  3.2 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
+  3.2 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   3.3 在已创建好的「Apple」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
   ![](./images/step3.2.jpg)

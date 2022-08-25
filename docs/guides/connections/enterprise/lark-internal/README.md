@@ -103,7 +103,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 - **详细接入方法**：
 
-  4.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  4.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   4.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

@@ -194,32 +194,6 @@ const zhCnNavBar = {
         {
           title: "多因素认证",
           path: "/guides/authentication/mfa/",
-          children: [
-            {
-              title: "基于短信验证码的 MFA",
-              path: "/guides/authentication/mfa/sms",
-            },
-            {
-              title: "基于邮件验证码的 MFA",
-              path: "/guides/authentication/mfa/email-code",
-            },
-            {
-              title: "基于时间戳算法的一次性密码的 MFA",
-              path: "/guides/authentication/mfa/totp",
-            },
-            {
-              title: "基于人脸识别的 MFA",
-              path: "/guides/authentication/mfa/face-recognition",
-            },
-            {
-              title: "通过 SDK 接入 MFA",
-              path: "/guides/authentication/mfa/mfa-sdk",
-            },
-            {
-              title: "MFA 策略配置",
-              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
-            },
-                    ],
         },
         {
           title: "对认证流程进行扩展",
@@ -439,48 +413,6 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "自建应用",
-      path: "/guides/app/",
-      children: [
-        {
-          title: "创建应用",
-          path: "/guides/app/create-app",
-        },
-        {
-          title: "配置登录注册方式",
-          path: "/guides/app/config-login-methods",
-        },
-        {
-          title: "添加注册协议",
-          path: "/guides/app/agreements",
-        },
-        {
-          title: "自定义登录框样式",
-          path: "/guides/app/custom-styles",
-        },
-        {
-          title: "成为联邦认证身份源",
-          path: "/guides/app/identity-provider",
-        },
-        {
-          title: "开启多因素认证",
-          path: "/guides/app/mfa",
-        },
-        {
-          title: "子账号管理",
-          path: "/guides/app/sub-account",
-        },
-        // {
-        //   title: '开启子账号登录',
-        //   path: '/guides/app/sub-account'
-        // },
-        // {
-        //   title: '授权管理',
-        //   path: '/guides/app/authorization'
-        // }
-      ],
-    },
-    {
       title: "应用",
       path: "/guides/app-new/",
       children: [
@@ -525,61 +457,54 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/tenant-config",
             },
           ]
-        },        
-      ],
-    },
-{
-      title: "单点登录 SSO",
-      path: "/guides/sso/",
-      children: [
+        },   
         {
-          title: "应用面板",
-          path: "/guides/dashboard/",
-        },
-        {
-          title: "集成应用 SSO 方案",
-          path: "/guides/apn/",
-          children: [],
-        },
-        {
-          title: "自建应用 SSO 方案",
-          path: "/guides/app/sso",
-        },
-        {
-          title: "第三方 SSO 方案",
+          title: "单点登录 SSO",
+          path: "/guides/app-new/sso/",
           children: [
             {
-              title: "飞书工作台 SSO 方案",
-              path: "/guides/lark-sso/",
+              title: "应用面板",
+              path: "/guides/dashboard/",
             },
             {
-              title: "企业微信 SSO 方案",
-              path: "/guides/qiwei-sso/",
+              title: "集成应用 SSO 方案",
+              path: "/guides/apn/",
+              children: [],
             },
             {
-              title: "钉钉 SSO 方案",
-              path: "/guides/dingding-sso/",
+              title: "自建应用 SSO 方案",
+              path: "/guides/app-new/sso/create-app-sso.md",
             },
             {
-              title: "WeLink SSO 方案",
-              path: "/guides/welink-sso/",
+              title: "第三方 SSO 方案",
+              path: "/guides/app-new/sso/third-party-sso/",
+              children: [
+                {
+                  title: "飞书工作台 SSO 方案",
+                  path: "/guides/lark-sso/",
+                },
+                {
+                  title: "企业微信 SSO 方案",
+                  path: "/guides/qiwei-sso/",
+                },
+                {
+                  title: "钉钉 SSO 方案",
+                  path: "/guides/dingding-sso/",
+                },
+                {
+                  title: "WeLink SSO 方案",
+                  path: "/guides/welink-sso/",
+                },
+              ]
             },
-          ]
-        },
-        {
-          title: "管理用户登录状态",
-          path: "/guides/app/session-management",
-        },
-        {
-          title: "ASA 表单代填",
-          path: "/guides/asa/",
-        },
+            {
+              title: "ASA 表单代填",
+              path: "/guides/asa/",
+            },
+          ],
+        },   
       ],
     },
-    // {
-    //   title: '飞书工作台 SSO 方案',
-    //   path: '/guides/lark-sso/',
-    // },
     {
       title: "成为联邦认证身份源",
       path: "/guides/federation/",
@@ -961,15 +886,11 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "配置安全信息",
+      title: "安全设置",
       children: [
         {
           title: "配置 Web 安全域",
           path: "/guides/security/config-domain",
-        },
-        {
-          title: "配置密码强度",
-          path: "/guides/security/config-password",
         },
         {
           title: "配置注册频率限制",
@@ -978,6 +899,40 @@ const zhCnNavBar = {
         {
           title: "配置登录失败次数限制",
           path: "/guides/security/config-login-fail-limit",
+        },        
+        {
+          title: "密码安全",
+          path: "/guides/security/pw-security",
+        },
+        {
+          title: "多因素认证",
+          path: "/guides/authentication/mfa/",
+          children: [
+            {
+              title: "基于短信验证码的 MFA",
+              path: "/guides/authentication/mfa/sms",
+            },
+            {
+              title: "基于邮件验证码的 MFA",
+              path: "/guides/authentication/mfa/email-code",
+            },
+            {
+              title: "基于时间戳算法的一次性密码的 MFA",
+              path: "/guides/authentication/mfa/totp",
+            },
+            {
+              title: "基于人脸识别的 MFA",
+              path: "/guides/authentication/mfa/face-recognition",
+            },
+            {
+              title: "通过 SDK 接入 MFA",
+              path: "/guides/authentication/mfa/mfa-sdk",
+            },
+            {
+              title: "MFA 策略配置",
+              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
+            },
+                    ],
         },
       ],
     },
@@ -5618,14 +5573,6 @@ const translatedZhCnNavBar = {
           title: "Manage user login status",
           path: "/guides/app/session-management",
         },
-        // {
-        // title:'Open sub-account login',
-        // path:'/guides/app/sub-account'
-        // },
-        // {
-        // title:'Authorization Management',
-        // path:'/guides/app/authorization'
-        //}
       ],
     },
     {
@@ -5984,7 +5931,7 @@ const translatedZhCnNavBar = {
         },
         {
           title: "Configure password strength",
-          path: "/guides/security/config-password",
+          path: "/guides/security/pw-security",
         },
         {
           title: "Configure registration frequency limit",
