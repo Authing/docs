@@ -193,7 +193,7 @@ const zhCnNavBar = {
         },
         {
           title: "多因素认证",
-          path: "/guides/security/mfa/",
+          path: "/guides/authentication/mfa/",
         },
         {
           title: "对认证流程进行扩展",
@@ -477,7 +477,6 @@ const zhCnNavBar = {
             },
             {
               title: "第三方 SSO 方案",
-              path: "/guides/app-new/sso/third-party-sso/",
               children: [
                 {
                   title: "飞书工作台 SSO 方案",
