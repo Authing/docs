@@ -413,6 +413,68 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: "同步中心",
+      path: "/guides/sync-new/",
+      children: [
+        {
+          title: "创建同步任务",
+          path: "/guides/sync-new/create-sync-new/",
+          children: [
+            {
+              title: "获取应用配置信息和权限",
+              path: "/guides/sync-new/create-sync-new/get-config-new/",
+              children: [
+                {
+                  title: "获取飞书配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/feishu",
+                },
+                {
+                  title: "获取企业微信配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/wechatwork",
+                },
+                {
+                  title: "获取钉钉配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/dingding",
+                },
+                {
+                  title: "获取纷享销客配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/fxiaoke", 
+                },
+                {
+                  title: "获取其他应用配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/others",
+                },
+              ],
+            },
+            {
+              title: "配置同步字段映射",
+              path: "/guides/sync-new/create-sync-new/field-mapping-new",
+            },
+            {
+              title: "配置同步策略",
+              path: "/guides/sync-new/create-sync-new/sync-policy-new",
+            },
+            {
+              title: "筛选同步范围",
+              path: "/guides/sync-new/create-sync-new/sync-scope-new",
+            },
+            {
+              title: "配置同步时机",
+              path: "/guides/sync-new/create-sync-new/sync-type-new",
+            },
+          ],
+        },
+        {
+          title: "执行同步任务",
+          path: "/guides/sync-new/perform-sync-new",
+        },
+        {
+          title: "风险操作提示",
+          path: "/guides/sync-new/risky-operation",
+        },
+      ],
+    },
+    {
       title: "应用",
       path: "/guides/app-new/",
       children: [
@@ -477,6 +539,7 @@ const zhCnNavBar = {
             },
             {
               title: "第三方 SSO 方案",
+              path: "/guides/app-new/sso/third-party-sso/",
               children: [
                 {
                   title: "飞书工作台 SSO 方案",
@@ -1016,6 +1079,10 @@ const zhCnNavBar = {
         {
           title: `如何获取 ${BRAND_NAME_ZH_CN} 服务器集群 IP`,
           path: "/guides/faqs/public-ips",
+        },
+        {
+          title: `同步中心常见问题`,
+          path: "/guides/faqs/sync",
         },
       ],
     },
