@@ -185,7 +185,7 @@ const zhCnNavBar = {
         },
         {
           title: "实现单点登录（SSO）",
-          path: "/guides/authentication/sso/",
+          path: "/guides/app-new/sso/",
         },
         {
           title: "在移动端实现单点登录",
@@ -447,20 +447,20 @@ const zhCnNavBar = {
               ],
             },
             {
-              title: "配置同步字段映射",
-              path: "/guides/sync-new/create-sync-new/field-mapping-new",
-            },
-            {
-              title: "配置同步策略",
-              path: "/guides/sync-new/create-sync-new/sync-policy-new",
-            },
-            {
               title: "筛选同步范围",
               path: "/guides/sync-new/create-sync-new/sync-scope-new",
             },
             {
+              title: "配置同步字段映射",
+              path: "/guides/sync-new/create-sync-new/field-mapping-new",
+            },
+            {
               title: "配置同步时机",
               path: "/guides/sync-new/create-sync-new/sync-type-new",
+            },
+            {
+              title: "配置同步策略",
+              path: "/guides/sync-new/create-sync-new/sync-policy-new",
             },
           ],
         },
@@ -646,8 +646,12 @@ const zhCnNavBar = {
               path: "/guides/connections/social/twitter/",
             },
             {
-              title: "Google",
+              title: "Google Web 端",
               path: "/guides/connections/social/google/",
+            },
+            {
+              title: "Google 移动端",
+              path: "/guides/connections/social/google-mobile/",
             },
             {
               title: "Apple 移动端",

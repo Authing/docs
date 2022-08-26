@@ -11,25 +11,39 @@
 1. 在 **同步中心** 页面点击 **创建同步任务** 按钮。</br>
 打开 **创建同步任务** 窗口。
 
-2. 根据需求选择并点击一个上游 / 下游应用（这里以飞书上游为例）。</br>
-打开该应用的同步任务创建窗口。
+2. 根据需求选择并点击一个上游 / 下游应用。</br>打开该应用的同步任务创建窗口。
 
-::: hint-info​
+::: hint-info
 在一个用户池新建一个同步任务时，同一个身份源不能既作为上游，又同时充当下游。
 :::
 
-3. 根据提示填写配置信息。</br>有关获取配置信息的详细描述，请参阅 [获取应用配置项和权限-获取飞书配置项](/guides/sync-new/create-sync-new/get-config-new/feishu.md#获取飞书配置项)。
+3. 根据提示填写配置信息。</br>有关获取配置信息的详细描述，请参阅 [获取应用配置项和权限->获取飞书配置项](/guides/sync-new/create-sync-new/get-config-new/feishu.md#获取飞书配置项)。
 
-4. 配置用户同步字段映射。</br>有关同步字段映射的配置详情，请参阅 [配置用户同步字段映射](/guides/sync-new/create-sync-new/field-mapping-new.md)。
+4. 筛选同步范围。有关筛选同步范围详情，请参阅 [筛选同步范围](/guides/sync-new/create-sync-new/sync-scope-new.md)。
 
-5. 选择适用的同步时机。提供**手动同步**、**实时同步**、**定时同步**三种同步方式。</br>有关同步时机详情，请参阅[配置同步时机](/guides/sync-new/create-sync-new/sync-type-new.md)。
+::: hint-info
+本步骤仅适用于下游同步。
+:::
 
-6. 配置同步策略。</br>有关同步策略详情，请参阅[配置同步策略](/guides/sync-new/create-sync-new/sync-policy-new.md)。
+5. 配置用户同步字段映射。</br>有关同步字段映射的配置详情，请参阅 [配置用户同步字段映射](/guides/sync-new/create-sync-new/field-mapping-new.md)。
 
-7. 点击 **保存**，完成同步任务的创建。</br>在 **配置信息** 模块自动生成 **事件订阅请求网址 URL**。
+6. 选择适用的同步时机。提供**手动**、**定时同步**、**实时同步**三种同步方式。</br>有关同步时机详情，请参阅[配置同步时机](/guides/sync-new/create-sync-new/sync-type-new.md)。
 
-8. 重新进入所选应用的配置详情页，在 **配置信息** 模块拷贝生成的 **事件订阅请求网址 URL**。
+7. 配置同步策略。</br>有关同步策略详情，请参阅[配置同步策略](/guides/sync-new/create-sync-new/sync-policy-new.md)。
 
-9. 配置应用权限（以飞书为例）。</br>有关配置应用权限，请参阅 [获取应用配置项和权限-配置飞书权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md#配置飞书权限)。
+::: hint-info
+本步骤仅适用于上游同步。
+:::
+
+8. 点击 **创建**。
+
+9. 重新进入所选应用的配置详情页，拷贝 **事件订阅请求网址 URL**。
+
+::: hint-info
+本步骤仅适用于上游同步。
+对于上游同步，{{$localeConfig.brandName}} 会在 **配置信息** 模块自动生成一个回调地址，用于接收应用事件。
+:::
+
+10. 配置应用权限。</br>有关配置应用权限，请参阅 [获取应用配置项和权限->配置飞书权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md#配置飞书权限)。
 
 同步任务创建完成。

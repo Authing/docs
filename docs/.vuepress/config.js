@@ -235,7 +235,7 @@ module.exports = {
               links: [
                 {
                   text: "单点登录",
-                  link: "/guides/authentication/sso/"
+                  link: "/guides/app-new/sso/"
                 },
                 {
                   text: "多因素认证",

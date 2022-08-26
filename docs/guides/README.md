@@ -22,7 +22,7 @@
    - [如何接入社会化登录认证](/guides/authentication/social/)；
    - [如何接入扫码登录认证](/guides/authentication/qrcode/use-self-build-app/)；
    - [如何在小程序中进行认证](/guides/authentication/wechat-mini-program/)；
-   - [实现单点登录（SSO）](/guides/authentication/sso/)；
+   - [实现单点登录（SSO）](/guides/app-new/sso/)；
    - [在移动端实现单点登录](/guides/authentication/mobile-sso/)；
    - [如何集成多因素认证](/guides/security/mfa/)
    - 对认证流程进行扩展：

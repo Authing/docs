@@ -18,12 +18,12 @@
 
 ## LDAP
 
-请联系 Authing 售后服务人员获取配置。
+请联系 {{$localeConfig.brandName}} 售后服务人员获取配置。
 
 ## Windows AD
 
-请联系 Authing 售后服务人员获取配置。
+请联系 {{$localeConfig.brandName}} 售后服务人员获取配置。
 
 ## SCIM
 
-请联系 Authing 售后服务人员获取配置。
+请联系 {{$localeConfig.brandName}} 售后服务人员获取配置。

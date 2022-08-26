@@ -473,5 +473,5 @@ export default {
 :::
 
 自建应用 SSO 方案：
-::: page-ref /guides/authentication/sso/
+::: page-ref /guides/app-new/sso/
 :::
