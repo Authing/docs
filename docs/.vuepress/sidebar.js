@@ -351,68 +351,6 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "同步中心(BETA)",
-      path: "/guides/sync/",
-      children: [
-        {
-          title: "快速开始",
-          path: "/guides/sync/quick-start",
-        },
-        {
-          title: "创建同步任务",
-          path: "/guides/sync/create-sync/",
-          children: [
-            {
-              path: "/guides/sync/create-sync/get-config/",
-              title: "获取应用配置项和权限",
-              children: [
-                {
-                  path: "/guides/sync/create-sync/get-config/lark",
-                  title: "获取飞书配置项和权限",
-                },
-                {
-                  path: "/guides/sync/create-sync/get-config/wechatwork",
-                  title: "获取企业微信配置项和权限",
-                },
-                {
-                  path: "/guides/sync/create-sync/get-config/dingding",
-                  title: "获取钉钉配置项和权限",
-                },
-                {
-                  path: "/guides/sync/create-sync/get-config/fxiaoke",
-                  title: "获取纷享销客配置项和权限",
-                },
-                {
-                  path: "/guides/sync/create-sync/get-config/others",
-                  title: "获取其他应用配置项和权限",
-                },
-              ],
-            },
-            {
-              path: "/guides/sync/create-sync/field-mapping",
-              title: "自定义字段映射",
-            },
-            {
-              path: "/guides/sync/create-sync/sync-type",
-              title: "选择同步方式",
-            },
-          ],
-        },
-        {
-          title: "执行同步任务",
-          path: "/guides/sync/perform-sync",
-        },
-        {
-          title: "风险操作提示",
-          path: "/guides/sync/manual-actions",
-        },
-        {
-          title: "常见问题",
-          path: "/guides/sync/FQA",
-        },
-      ],
-    },
-    {
       title: "同步中心",
       path: "/guides/sync-new/",
       children: [

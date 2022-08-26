@@ -72,8 +72,6 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 | 显示名称 | 这个名称会显示在终端用户的登录界面的按钮上。|
 | Client ID | 填入 Google 开放平台上获取的 **Your Client ID**。|
 | Client Secret | 填入在 Google 开放平台上获取的 **Your Client Secret**。|
-| Domain Verification File Name | Google 域名验证 HTML 文件名，如 xxxx.html |
-| Domain Verification File Content | Google 域名验证 HTML 文件内容|
 | Callback URL | 可以填写您的业务回调地址，用户完成登录后，浏览器将会跳转到该地址。 |
 | 回调地址 | Google 有效跳转 URI。需要将此 URL 配置到 Google 开放平台上。 |
 | 登录模式 | 开启 **仅登录模式** 后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
