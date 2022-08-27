@@ -1095,7 +1095,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/authentication/AuthenticationClient",
             "/reference/sdk-for-node/authentication/StandardProtocol",
             "/reference/sdk-for-node/authentication/QrCodeAuthenticationClient",
-            "/reference/sdk-for-node/authentication/mfaAuthenticationClient",
+            "/reference/sdk-for-node/authentication/MfaAuthenticationClient",
             "/reference/sdk-for-node/authentication/SocialAuthenticationClient",
             "/reference/sdk-for-node/authentication/EnterpriseAuthenticationClient",
             "/reference/sdk-for-node/authentication/PrincipalAuthentication",
@@ -1133,7 +1133,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-java/authentication/AuthenticationClient",
             "/reference/sdk-for-java/authentication/StandardProtocol",
-            // '/reference/sdk-for-java/authentication/mfaAuthenticationClient',
+            // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
           ],
         },
         {
@@ -1165,7 +1165,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-python/authentication/AuthenticationClient",
             "/reference/sdk-for-python/authentication/StandardProtocol",
-            "/reference/sdk-for-python/authentication/mfaAuthenticationClient",
+            "/reference/sdk-for-python/authentication/MfaAuthenticationClient",
           ],
         },
         {
@@ -1198,7 +1198,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-csharp/authentication/AuthenticationClient",
             "/reference/sdk-for-csharp/authentication/StandardProtocol",
-            "/reference/sdk-for-csharp/authentication/mfaAuthenticationClient",
+            "/reference/sdk-for-csharp/authentication/MfaAuthenticationClient",
           ],
         },
         {
@@ -1230,7 +1230,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-php/authentication/AuthenticationClient",
             "/reference/sdk-for-php/authentication/StandardProtocol",
-            "/reference/sdk-for-php/authentication/mfaAuthenticationClient",
+            "/reference/sdk-for-php/authentication/MfaAuthenticationClient",
           ],
         },
         {
@@ -1261,7 +1261,7 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-go/authentication/AuthenticationClient",
             "/reference/sdk-for-go/authentication/StandardProtocol",
-            "/reference/sdk-for-go/authentication/mfaAuthenticationClient",
+            "/reference/sdk-for-go/authentication/MfaAuthenticationClient",
           ],
         },
         {
@@ -1889,7 +1889,7 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-csharp/authentication/AuthenticationClient",
                 "/reference-new/mobile/sdk-for-csharp/authentication/StandardProtocol",
-                "/reference-new/mobile/sdk-for-csharp/authentication/mfaAuthenticationClient",
+                "/reference-new/mobile/sdk-for-csharp/authentication/MfaAuthenticationClient",
               ],
             },
             {
@@ -5939,7 +5939,7 @@ const translatedZhCnNavBar = {
         },
         {
           title: "Configure password strength",
-          path: "/guides/security/pw-security",
+          path: "/guides/security/config-password",
         },
         {
           title: "Configure registration frequency limit",
@@ -6085,7 +6085,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Multi-factor authentication module",
-              path: "/reference/sdk-for-node/authentication/mfaAuthenticationClient",
+              path: "/reference/sdk-for-node/authentication/MfaAuthenticationClient",
             },
             {
               title: "Social login module",
@@ -6169,7 +6169,7 @@ const translatedZhCnNavBar = {
               title: "Standard agreement certification module",
               path: "/reference/sdk-for-java/authentication/StandardProtocol",
             },
-            // '/reference/sdk-for-java/authentication/mfaAuthenticationClient',
+            // '/reference/sdk-for-java/authentication/MfaAuthenticationClient',
           ],
         },
         {
@@ -6238,7 +6238,7 @@ const translatedZhCnNavBar = {
             },
             {
               title: "Multi-factor authentication module",
-              path: "/reference/sdk-for-python/authentication/mfaAuthenticationClient",
+              path: "/reference/sdk-for-python/authentication/MfaAuthenticationClient",
             },
           ],
         },
