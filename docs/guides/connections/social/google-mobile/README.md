@@ -16,11 +16,11 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 在移动应用中拉起谷歌页面进行登录。
 
-<img src="./images/google-mobile.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/google-mobile.png" style="display:block;margin: 0 auto;">
 
 ## 准备工作
 
-* 如果您未开通 Google 账号，请先前往 [Google 开发者控制台](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册。
+* 如果您未开通 Google 账号，请先前往 [Google](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册。
 
 * 如果您未开通 Authing 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号。
 
@@ -38,7 +38,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 <img src="./images/google_4-mobile.png" >
 
-3. 选择 **Application type** 为 **Web application**，填写 **Authorized redirect URIs**（先暂写一个合法的地址）。
+3. 选择 **Application type** 为 **Web application**，填写 **Authorized redirect URIs**（暂写一个合法的地址）。
 
 <img src="./images/google_5-mobile.png" >
 
@@ -91,7 +91,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 #### 推荐开发接入方式
 
-使用托管登录页。
+SDK
 
 #### 优劣势描述
 
@@ -105,9 +105,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 <img src="./images/google_12-mobile.png" >
 
-3. 在登录页面体验 Google 第三方登录。
-
-<img src="./images/google_13-mobile.png" >
+3. 在登录页面体验 Google 第三方登录（如 [终端用户预览图](#终端用户预览图) 所示）。
 
 
 

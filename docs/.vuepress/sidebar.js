@@ -417,48 +417,6 @@ const zhCnNavBar = {
       path: "/guides/app-new/",
       children: [
         {
-          title: "自建应用",
-          path: "/guides/app-new/create-app/",
-          children: [
-            {
-              title: "创建自建应用",
-              path: "/guides/app-new/create-app/create-app",
-            },
-            {
-              title: "快速开始",
-              path: "/guides/app-new/create-app/quick-start",
-            },
-            {
-              title: "应用配置",
-              path: "/guides/app-new/create-app/app-configuration",
-            },
-            {
-              title: "登录控制",
-              path: "/guides/app-new/create-app/login-control",
-            },
-            {
-              title: "访问授权",
-              path: "/guides/app-new/create-app/application-access-control",
-            },
-            {
-              title: "品牌化",
-              path: "/guides/app-new/create-app/customize-guard",
-            },
-            {
-              title: "安全管理",
-              path: "/guides/app-new/create-app/security-management",
-            },
-            {
-              title: "高级配置",
-              path: "/guides/app-new/create-app/advanced-settings",
-            },
-            {
-              title: "租户配置",
-              path: "/guides/app-new/create-app/tenant-config",
-            },
-          ]
-        },   
-        {
           title: "单点登录 SSO",
           path: "/guides/app-new/sso/",
           children: [
@@ -502,7 +460,49 @@ const zhCnNavBar = {
               path: "/guides/asa/",
             },
           ],
-        },   
+        },
+        {
+          title: "自建应用",
+          path: "/guides/app-new/create-app/",
+          children: [
+            {
+              title: "创建自建应用",
+              path: "/guides/app-new/create-app/create-app",
+            },
+            {
+              title: "快速开始",
+              path: "/guides/app-new/create-app/quick-start",
+            },
+            {
+              title: "应用配置",
+              path: "/guides/app-new/create-app/app-configuration",
+            },
+            {
+              title: "登录控制",
+              path: "/guides/app-new/create-app/login-control",
+            },
+            {
+              title: "访问授权",
+              path: "/guides/app-new/create-app/application-access-control",
+            },
+            {
+              title: "品牌化",
+              path: "/guides/app-new/create-app/customize-guard",
+            },
+            {
+              title: "安全管理",
+              path: "/guides/app-new/create-app/security-management",
+            },
+            {
+              title: "高级配置",
+              path: "/guides/app-new/create-app/advanced-settings",
+            },
+            {
+              title: "租户配置",
+              path: "/guides/app-new/create-app/tenant-config",
+            },
+          ]
+        },      
       ],
     },
     {

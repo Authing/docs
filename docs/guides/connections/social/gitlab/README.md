@@ -14,7 +14,7 @@ PC 网站
 
 ### 终端用户预览图
 
-<img src="./images/gitlab-login2.png" height=450 style="display:block;margin: 0 auto;">
+<img src="./images/gitlab-login2.png" style="display:block;margin: 0 auto;">
 
 ## 准备工作
 
