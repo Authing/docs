@@ -1595,6 +1595,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
+            "/reference/sdk-for-ios/social/google",
           ],
         },
         {

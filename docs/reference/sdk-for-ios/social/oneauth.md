@@ -6,7 +6,7 @@
 
 ### 添加依赖
 
-> Guard-iOS-binary 依赖于 Guard 组件（Version 1.2.4 之后）
+> Guard-iOS-binary 依赖于 Guard 组件
 
 - 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
 

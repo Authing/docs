@@ -13,3 +13,4 @@ Authing iOS SDK 提供了以下第三方身份源的便捷登录授权：
 - [飞书登录](./lark.md)
 - [苹果账号登录](./apple.md)
 - [手机号一键登录](./oneauth.md)
+- [Google 登录](./google.md)
