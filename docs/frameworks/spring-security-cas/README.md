@@ -7,7 +7,7 @@ downloadDemo:
     title: 本页资源
     description: 下载一个 Spring Security 5 集成 CAS 快速开始的示例程序或在 GitHub 查看。
     downloadUrl: https://github.com/Authing/example-spring-boot-cas/archive/refs/heads/master.zip
-    jumpUrl: https://github.com/Authing/authing-spring-boot-starter
+    jumpUrl: https://github.com/Authing/example-spring-boot-cas
 ---
 
 
