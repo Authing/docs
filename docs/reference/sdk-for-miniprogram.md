@@ -1,0 +1,1182 @@
+# 微信小程序 SDK
+
+## 说明
+
+[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 5 日发布，如果您正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
+
+SDK 5.0 主要升级：
+
+- 集成并增强 Authing 最新 V3 版认证 API，覆盖大多数用户认证、授权类核心功能，未来我们将根据用户需要继续拓展其他功能
+- 完善的数据类型提示，TS 环境下可脱离文档写代码
+- 基于 AuthingMove 框架构建适配多端产物：原生微信小程序、Taro 和 uniapp 框架，未来我们将按需继续支持其他主流小程序平台及框架
+- 核心认证场景总包体积 19.02 K，未来我们将继续优化其他场景下的包体积
+- 支持按需集成 rsa 和 sm2 两种加密方式，包体积更优
+- 向下支持小程序基础库 `2.14.1`
+
+## STEP 1：创建社会化身份源
+
+- 在微信公众平台后台的`开发` -> `开发管理` -> `开发设置`页面获取`小程序 ID` 和`小程序密钥`。
+- 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `小程序`创建一个微信社会化身份源，并填写以下信息：
+
+  - 唯一标识：这是此连接的唯一标识，设置之后不能修改。
+  - 小程序名称
+  - 小程序 ID
+  - 小程序密钥
+- 选择`使用此身份源的应用`
+- 点击保存
+
+## STEP 2: 安装 SDK
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` shell
+npm install --save @authing/miniprogram-wx
+```
+:::
+
+::: tab Taro
+``` shell
+npm install --save @authing/miniprogram-taro
+```
+:::
+
+::: tab uniapp
+``` shell
+npm install --save @authing/miniprogram-uniapp
+```
+:::
+::::
+
+## STEP 3: 初始化 SDK
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` typescript
+import { Authing } from '@authing/miniprogram-wx'
+
+const authing = new Authing({
+  appId: '630b549efa97ba795338e2cd',
+  host: 'http://localhost:3000',
+  userPoolId: '630b549d5a697473a2d7fa20'
+})
+```
+:::
+::: tab Taro
+``` typescript
+import { Authing } from '@authing/miniprogram-taro'
+
+const authing = new Authing({
+  appId: '630b549efa97ba795338e2cd',
+  host: 'http://localhost:3000',
+  userPoolId: '630b549d5a697473a2d7fa20'
+})
+```
+:::
+::: tab uniapp
+``` typescript
+import { Authing } from '@authing/miniprogram-uniapp'
+
+const authing = new Authing({
+  appId: '630b549efa97ba795338e2cd',
+  host: 'http://localhost:3000',
+  userPoolId: '630b549d5a697473a2d7fa20'
+})
+```
+:::
+::::
+
+## STEP 4: 使用 SDK
+
+### authing.core.loginByCode
+
+>使用微信授权 code 的方式登录
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|connection|String|认证方式|wechat_mini_program_code|否|
+|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
+|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
+|options|Options|额外数据，参考 [Options](#Options)| - |否|
+
+**WechatMiniProgramCodePayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
+|iv|String|加密算法的初始向量| - | 是 |
+|code|String|用户登录凭证（有效期五分钟）| - | 是 |
+
+**Options**
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|scope|String|参考[Scope](#Scope)|-|否|
+|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|-|否|
+|tenantId|String|租户 ID|-|否|
+|customData|Object|设置额外的用户自定义数据，你需要先在 Authing 控制台[配置自定义数据](https://docs.authing.cn/v2/guides/users/user-defined-field/)。|-|否|
+
+#### 出参
+
+
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="loginByCode">loginByCode</button>
+```
+``` typescript
+// index.js
+Page({
+  async loginByCode () {
+    const { encryptedData, iv } = await wx.getUserProfile({
+      desc: 'getUserProfile'
+    })
+
+    const { code } = await wx.login()
+    
+    const res = await authing.core.loginByCode({
+      connection: 'wechat_mini_program_code',
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramCodePayload: {
+        encryptedData,
+        iv,
+        code
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+
+    console.log('authing.core.loginByCode res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.loginByCode()}>loginByCode</Button>
+      </View>
+    )
+  }
+  async loginByCode () {
+    const { encryptedData, iv } = await Taro.getUserProfile({
+      desc: 'getUserProfile'
+    })
+
+    const { code } = await Taro.login()
+    
+    const res = await authing.core.loginByCode({
+      connection: 'wechat_mini_program_code',
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramCodePayload: {
+        encryptedData,
+        iv,
+        code
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+
+    console.log('authing.core.loginByCode res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async loginByCode () {
+      const { encryptedData, iv } = await uni.getUserProfile({
+        desc: 'getUserProfile'
+      })
+
+      const { code } = await uni.login()
+      
+      const res = await authing.core.loginByCode({
+        connection: 'wechat_mini_program_code',
+        extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+        wechatMiniProgramCodePayload: {
+          encryptedData,
+          iv,
+          code
+        },
+        options: {
+          scope: 'openid profile offline_access'
+        }
+      })
+
+      console.log('authing.core.loginByCode res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.core.loginByPhone
+
+>使用微信授权手机号的方式登录
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|connection|String|认证方式|wechat_mini_program_phone|否|
+|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
+|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
+|options|Options|额外数据，参考[Options](#Options)| - |否|
+
+**WechatMiniProgramCodePayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
+|iv|String|加密算法的初始向量| - | 是 |
+|code|String|用户登录凭证（有效期五分钟）| - | 是 |
+
+**Options**
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|scope|String|参考[Scope](#Scope)|-|否|
+|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|-|否|
+|tenantId|String|租户 ID|-|否|
+|customData|Object|设置额外的用户自定义数据，你需要先在 Authing 控制台[配置自定义数据](https://docs.authing.cn/v2/guides/users/user-defined-field/)。|-|否|
+
+#### 出参
+
+参考：[LoginState](#LoginState)
+
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="loginByPhone">loginByPhone</button>
+```
+``` typescript
+// index.js
+Page({
+  async loginByPhone () {
+    const { encryptedData, iv } = await wx.getUserProfile({
+      desc: 'getUserProfile'
+    })
+
+    const { code } = await wx.login()
+    
+    const res = await authing.core.loginByPhone({
+      connection: 'wechat_mini_program_phone',
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramPhonePayload: {
+        encryptedData,
+        iv,
+        code
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+
+    console.log('authing.core.loginByPhone res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.loginByPhone()}>loginByPhone</Button>
+      </View>
+    )
+  }
+  async loginByPhone () {
+    const { encryptedData, iv } = await Taro.getUserProfile({
+      desc: 'getUserProfile'
+    })
+
+    const { code } = await Taro.login()
+    
+    const res = await authing.core.loginByPhone({
+      connection: 'wechat_mini_program_phone',
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramPhonePayload: {
+        encryptedData,
+        iv,
+        code
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+
+    console.log('authing.core.loginByPhone res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async loginByPhone () {
+      const { encryptedData, iv } = await uni.getUserProfile({
+        desc: 'getUserProfile'
+      })
+
+      const { code } = await uni.login()
+      
+      const res = await authing.core.loginByPhone({
+        connection: 'wechat_mini_program_phone',
+        extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+        wechatMiniProgramPhonePayload: {
+          encryptedData,
+          iv,
+          code
+        },
+        options: {
+          scope: 'openid profile offline_access'
+        }
+      })
+
+      console.log('authing.core.loginByPhone res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.core.loginByPassword
+
+> 使用账号密码登录
+
+**入参**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|connection|String|认证方式|PASSWORD|否|
+|passwordPayload|PasswordPayload|登录数据| - | 是|
+|options|Options|额外数据，参考[Options](#Options)| - |否|
+
+**PasswordPayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|password|String|密码|-|是|
+|username|String|用户名|-|否|
+|email|String|邮箱|-|否|
+|phone|String|手机号|-|否|
+|account|String|用户账号（用户名/手机号/邮箱|-|否|
+
+#### 出参
+
+参考：[LoginState](#LoginState)
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="loginByPassword">loginByPassword</button>
+```
+``` typescript
+// index.js
+Page({
+  async loginByPassword () {
+    const res = await authing.core.loginByPassword({
+      connection: 'PASSWORD',
+      passwordPayload: {
+        password: '123',
+        username: 'test'
+      },
+      options: {
+        passwordEncryptType: 'sm2',
+        scope: 'offline_access openid profile'
+      }
+    })
+
+    console.log('authing.core.loginByPassword res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.loginByPassword()}>loginByPassword</Button>
+      </View>
+    )
+  }
+  async loginByPassword () {
+    const res = await authing.core.loginByPassword({
+      connection: 'PASSWORD',
+      passwordPayload: {
+        password: '123',
+        username: 'test'
+      },
+      options: {
+        passwordEncryptType: 'sm2',
+        scope: 'offline_access openid profile'
+      }
+    })
+
+    console.log('authing.core.loginByPassword res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async loginByPassword () {
+      const res = await authing.core.loginByPassword({
+        connection: 'PASSWORD',
+        passwordPayload: {
+          password: '123',
+          username: 'test'
+        },
+        options: {
+          passwordEncryptType: 'rsa',
+          scope: 'offline_access openid profile'
+        }
+      })
+
+      console.log('authing.core.loginByPassword res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.core.loginByPassCode
+
+**入参**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|connection|String|认证方式|PASSCODE|否|
+|passCodePayload|PassCodePayload|登录数据| - | 是|
+|options|Options|额外数据，参考[Options](#Options)| - |否|
+
+**PassCodePayload**
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|passCode|String|短信/邮箱等验证码|是|
+|email|String|邮箱|-|否|
+|phone|String|手机号|-|否|
+|phoneCountryCode|String|默认 +86,手机区号，中国大陆手机号可不填|-|否|
+
+#### 出参
+
+参考：[LoginState](#LoginState)
+
+> 使用验证码登录
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="loginByPassCode">loginByPassCode</button>
+```
+``` typescript
+// index.js
+Page({
+  async loginByPassCode () {
+    const res = await authing.core.loginByPassCode({
+      connection: 'PASSCODE',
+      passCodePayload: {
+        // 手机收到的短信验证码
+        passCode: '5671',
+        phone: '13100000000',
+        phoneCountryCode: '+86'
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+
+    console.log('authing.core.loginByPassCode: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.loginByPassCode()}>loginByPassCode</Button>
+      </View>
+    )
+  }
+  async loginByPassCode () {
+    const res = await authing.core.loginByPassCode({
+      connection: 'PASSCODE',
+      passCodePayload: {
+        // 手机收到的短信验证码
+        passCode: '9973',
+        phone: '13100000000',
+        phoneCountryCode: '+86'
+      }
+    })
+
+    console.log('authing.core.loginByPassCode: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async loginByPassCode () {
+      const res = await authing.core.loginByPassCode({
+        connection: 'PASSCODE',
+        passCodePayload: {
+          // 手机收到的短信验证码
+          passCode: '9973',
+          phone: '13100000000',
+          phoneCountryCode: '+86'
+        }
+      })
+
+      console.log('authing.core.loginByPassCode: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.core.refreshToken
+
+> 刷新 Token
+
+#### 入参
+
+无
+
+#### 出参
+
+参考：[LoginState](#LoginState)
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="refreshToken">refreshToken</button>
+```
+``` typescript
+// index.js
+Page({
+  async refreshToken () {
+    const res = await authing.core.refreshToken()
+    console.log('authing.core.refreshToken res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.refreshToken()}>refreshToken</Button>
+      </View>
+    )
+  }
+  
+  async refreshToken () {
+    const res = await authing.core.refreshToken()
+    console.log('authing.core.refreshToken res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="refreshToken">refreshToken</button>
+```
+``` typescript
+export default {
+  methods: {
+    async refreshToken () {
+      const res = await authing.core.refreshToken()
+      console.log('authing.core.refreshToken res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.user.getPhone
+
+> 获取用户手机号
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识|-|是|
+|code|String|button 的 open-type 为 getPhoneNumber 时获取到的 code| - | 是|
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|countryCode|String|+86|
+|phoneNumber|String|手机号
+|watermark|Watermark|微信返回的其他信息|
+
+**Watermark**
+
+|名称|类型|描述|
+|-----|----|----|
+|appid|String|app id|
+|timestamp|Number|时间戳
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhone">getPhone</button>
+```
+``` typescript
+// index.js
+Page({
+  /**
+   * 需要在真机上测试，微信开发者工具不会返回 code
+   * @param {*} e 
+   */
+  async getPhone (e) {
+    const { code } = e.detail
+
+    const res = await authing.user.getPhone({
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      code
+    })
+
+    console.log('authing.user.getPhone res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button openType="getPhoneNumber" onClick={(e) => this.getPhone(e)}>getPhone</Button>
+      </View>
+    )
+  }
+  /**
+   * 需要在真机上测试，微信开发者工具不会返回 code
+   * @param {*} e 
+   */
+  async getPhone (e) {
+    const { code } = e.detail
+
+    const res = await authing.user.getPhone({
+      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      code
+    })
+
+    console.log('authing.user.getPhone res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button open-type="getPhoneNumber" @getphonenumber="getPhone">getPhone</button>
+```
+``` typescript
+export default {
+  methods: {
+    /**
+    * 需要在真机上测试，微信开发者工具不会返回 code
+    * @param {*} e 
+    */
+    async getPhone (e) {
+      const { code } = e.detail
+
+      const res = await authing.user.getPhone({
+        extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+        code
+      })
+
+      console.log('authing.user.getPhone res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.user.sendSms
+
+> 发送短信验证码
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|phoneNumber|String|手机号码|是|
+|phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|message|String|返回信息
+|statusCode|Number|状态码
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="sendSms">sendSms</button>
+```
+``` typescript
+// index.js
+Page({
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.core.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.core.sendSms res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.sendSms()}>sendSms</Button>
+      </View>
+    )
+  }
+  
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.core.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.core.sendSms res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="sendSms">sendSms</button>
+```
+``` typescript
+export default {
+  methods: {
+    async sendSms () {
+      // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+      const res = await authing.core.sendSms({
+        phoneNumber: '13100000000',
+        phoneCountryCode: '+86',
+        channel: 'CHANNEL_LOGIN'
+      })
+
+      console.log('authing.core.sendSms res: ', res)
+    },
+  }
+}
+```
+:::
+::::
+
+### authing.user.updatePassword
+
+> 修改密码
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|newPassword|String|新密码|-|是|
+|oldPassword|String|旧密码|-|是|
+|oldPassword|String|旧密码|-|是|
+|passwordEncryptType|none / rsa / sm2|加密方式|none|否
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|message|String|返回信息
+|statusCode|Number|状态码
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="updatePassword">updatePassword</button>
+```
+``` typescript
+// index.js
+Page({
+  async updatePassword () {
+    const res = await authing.user.updatePassword({
+      newPassword: '123',
+      oldPassword: '123',
+      passwordEncryptType: 'none'
+    })
+
+    console.log('authing.user.updatePassword res: ', res)
+  },
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.updatePassword()}>updatePassword</Button>
+      </View>
+    )
+  }
+  
+  async updatePassword () {
+    const res = await authing.user.updatePassword({
+      newPassword: '123',
+      oldPassword: '123',
+      passwordEncryptType: 'none'
+    })
+
+    console.log('authing.user.updatePassword res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="updatePassword">updatePassword</button>
+```
+``` typescript
+export default {
+  methods: {
+    async updatePassword () {
+      const res = await authing.user.updatePassword({
+        newPassword: '123',
+        oldPassword: '123',
+        passwordEncryptType: 'none'
+      })
+
+      console.log('authing.user.updatePassword res: ', res)
+    },
+  }
+}
+```
+:::
+::::
+
+
+### authing.user.getUserInfo
+
+> 获取用户信息
+
+#### 入参
+
+无
+
+#### 出参
+
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="getUserInfo">getUserInfo</button>
+```
+``` typescript
+// index.js
+Page({
+  async getUserInfo () {
+    const res = await authing.user.getUserInfo()
+    console.log('authing.user.getUserInfo res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.getUserInfo()}>getUserInfo</Button>
+      </View>
+    )
+  }
+  
+  async getUserInfo () {
+    const res = await authing.user.getUserInfo()
+    console.log('authing.user.getUserInfo res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="getUserInfo">getUserInfo</button>
+```
+``` typescript
+export default {
+  methods: {
+    async getUserInfo () {
+      const res = await authing.user.getUserInfo()
+      console.log('authing.user.getUserInfo res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.user.updateAvatar
+
+> 修改头像
+
+#### 入参
+
+无
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|code|Number|wx.uploadFile 返回的 code|
+|message|String|wx.uploadFile 返回的 message|
+|data|Data|主体数据|
+
+**Data**
+
+|名称|类型|描述|
+|-----|----|----|
+|key|String|wx.uploadFile 返回的 key|
+|url|String|文件地址|
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="updateAvatar">updateAvatar</button>
+```
+``` typescript
+// index.js
+Page({
+  async updateAvatar () {
+    const res = await authing.user.updateAvatar()
+    console.log('authing.user.updateAvatar res: ', res)
+  },
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.updateAvatar()}>updateAvatar</Button>
+      </View>
+    )
+  }
+  
+  async updateAvatar () {
+    const res = await authing.user.updateAvatar()
+    console.log('authing.user.updateAvatar res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="updateAvatar">updateAvatar</button>
+```
+``` typescript
+export default {
+  methods: {
+    async updateAvatar () {
+      const res = await authing.user.updateAvatar()
+      console.log('authing.user.updateAvatar res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### authing.user.updateUserInfo
+
+> 修改用户信息
+
+#### 入参
+
+参考：[UserInfo](#UserInfo)
+
+#### 出参
+
+参考：[UserInfo](#UserInfo)
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="updateUserInfo">updateUserInfo</button>
+```
+``` typescript
+// index.js
+Page({
+  async updateUserInfo () {
+    const res = await authing.user.updateUserInfo({
+      address: 'Hello world'
+    })
+
+    console.log('authing.user.updateUserInfo res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.updateUserInfo()}>updateUserInfo</Button>
+      </View>
+    )
+  }
+  
+  async updateUserInfo () {
+    const res = await authing.user.updateUserInfo({
+      address: 'Hello world'
+    })
+
+    console.log('authing.user.updateUserInfo res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="updateUserInfo">updateUserInfo</button>
+```
+``` typescript
+export default {
+  methods: {
+    async updateUserInfo () {
+      const res = await authing.user.updateUserInfo({
+        address: 'Hello world'
+      })
+
+      console.log('authing.user.updateUserInfo res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+## 附录公共参数列表
+
+### <p id="Options">Options</p>
+
+|名称|类型|描述|
+|-----|----|----|
+|scope|Scope|获取的资源类型，以空格分割|
+|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|
+|tenantId|String|租户 ID|
+|customData|Object|自定义数据|
+
+### <p id="Scope">Scope</p>
+
+- `openid`：必须包含
+- `profile`：返回 birthdate, family_name, gender, given_name, locale, middle_name, name, nickname, picture,preferred_username, profile, update_at, website, zoneinfo
+- `username`： 返回 username
+- `email`：返回 email、email_verified
+- `phone`：返回 phone_number, phone_number_verified
+- `offline_access`: 如果存在此参数，token 接口会返回 refresh_token 字段
+- `roles`: 返回用户的角色列表
+- `external_id`：用户在原有系统的用户 ID
+- `extended_fields`：返回用户的扩展字段信息，内容为一个对象，key 为扩展字段，value 为扩展字段值
+- `tenant_id`：返回用户的租户 id
+
+### <p id="UserInfo">UserInfo</p>
+
+|名称|类型|描述|
+|-----|----|----|
+|name|String|用户名|
+|nickname|String|昵称|
+|photo|String|头像|
+|externalId|String|xx|
+|birthdate|String|生日|
+|country|String|国家|
+|province|String|省份|
+|city|String|城市|
+|address|String|地址|
+|streetAddress|String|街道地址|
+|postalCode|String|邮递地址|
+|gender|String|性别|
+|username|String|用户名|
+|customData|String|自定义数据|
+
+### <p id="LoginState">LoginState</p>
+
+|名称|类型|描述|
+|-----|----|----|
+|access_token|String|access token|
+|id_token|String|id token|
+|expires_in|String|token 有效期|
+|expires_at|String|token 过期时间|
+|scope|String|参考 [Scope](#Scope)|
+|token_type|String|token 类型，默认：Bearer|
+|refresh_token|String|用于更新 token|
+
