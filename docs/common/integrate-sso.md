@@ -69,7 +69,7 @@ $ yarn add @authing/web
 ```html
 <script src="https://cdn.authing.co/packages/web/5.0.0/index.global.js"></script>
 <script>
-const sdk = new Authing({
+const sdk = new AuthingFactory.Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',

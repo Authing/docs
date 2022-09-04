@@ -8,11 +8,11 @@
 
 SDK 5.0 主要升级：
 
-- 支持完善的 TS 类型提示
+- 完善的 TS 类型提示
 - 修复 `checkWechatUA` 函数 bug
 - 未来我们将继续优化 `getUserInfo` 函数
 
-## 开发准备
+## STEP 1：创建社会化身份源
 
 - 微信公众号：前往[微信公众平台](https://mp.weixin.qq.com/) 注册
 - 必须为服务号
@@ -32,21 +32,26 @@ SDK 5.0 主要升级：
   - 域名校验文件内容：前面记录的 txt 文本内容
   - Callback URL：你的业务回调链接，必填。配置的回调地址支持使用通配符，例如你配置的回调地址为`https://*.example.com/*`，下面的回调地址也是允许的：`https://forum.example.com/t/topic/1234`。
 
-## 安装
+## STEP 2：安装
 
-使用 NPM:
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab NPM
 ``` shell
 npm install --save @authing/weixin-official-account
 ```
+:::
 
-使用 CDN:
+::: tab CDN
 ```html
 <script src="https://cdn.authing.co/packages/weixin-official-account/5.0.0/weixin-official-account.min.js"></script>
 ```
+:::
+::::
 
-## 使用
-### 初始化
+## STEP 3：初始化
 
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab NPM
 ``` typescript
 import { AuthingWxmp } from '@authing/weixin-official-account'
 
@@ -61,6 +66,25 @@ const authingWx = new AuthingWxmp({
   redirectUrl: 'http://localhost:3001'
 })
 ```
+:::
+
+::: tab CDN
+``` typescript
+const authingWx = new AuthingFactory.AuthingWxmp({
+  // 此社会化身份源的唯一标志，你在 Authing 控制台创建微信身份源的时候填写的
+  identifier: "authing-official-account",
+  // Authing 应用 ID
+  appId: "62e7f0c91073aaba0db4d65b",
+  // Authing 应用域名，如 https://my-awesome-app.authing.cn
+  host: "https://test-application-2022.authing.cn",
+  // 指定的回调链接，选填，默认使用控制台配置的回调地址
+  redirectUrl: 'http://localhost:3001'
+})
+```
+:::
+::::
+
+## STEP 4：使用
 ### 判断当前环境是否为微信客户端
 ``` typescript
 const isWeixin = authingWx.checkWechatUA()

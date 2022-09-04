@@ -87,9 +87,9 @@ const authing = new Authing({
 
 ## STEP 4: 使用 SDK
 
-### authing.core.loginByCode
+### 微信授权 code 登录
 
->使用微信授权 code 的方式登录
+>authing.core.loginByCode
 
 #### 入参
 
@@ -118,7 +118,7 @@ const authing = new Authing({
 
 #### 出参
 
-
+参考：[LoginState](#LoginState)
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -222,9 +222,9 @@ export default {
 :::
 ::::
 
-### authing.core.loginByPhone
+### 微信授权手机号登录
 
->使用微信授权手机号的方式登录
+>authing.core.loginByPhone
 
 #### 入参
 
@@ -358,9 +358,9 @@ export default {
 :::
 ::::
 
-### authing.core.loginByPassword
+### 账号密码登录
 
-> 使用账号密码登录
+> authing.core.loginByPassword
 
 **入参**
 
@@ -465,7 +465,9 @@ export default {
 :::
 ::::
 
-### authing.core.loginByPassCode
+### 验证码登录
+
+>authing.core.loginByPassCode
 
 **入参**
 
@@ -486,8 +488,6 @@ export default {
 #### 出参
 
 参考：[LoginState](#LoginState)
-
-> 使用验证码登录
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -567,9 +567,9 @@ export default {
 :::
 ::::
 
-### authing.core.refreshToken
+### 刷新 Token
 
-> 刷新 Token
+>authing.core.refreshToken
 
 #### 入参
 
@@ -631,9 +631,9 @@ export default {
 :::
 ::::
 
-### authing.user.getPhone
+### 获取用户手机号
 
-> 获取用户手机号
+> authing.user.getPhone
 
 #### 入参
 
@@ -738,9 +738,9 @@ export default {
 :::
 ::::
 
-### authing.user.sendSms
+### 发送短信验证码
 
-> 发送短信验证码
+> authing.user.sendSms
 
 #### 入参
 
@@ -826,9 +826,9 @@ export default {
 :::
 ::::
 
-### authing.user.updatePassword
+### 修改密码
 
-> 修改密码
+> authing.user.updatePassword
 
 #### 入参
 
@@ -914,9 +914,9 @@ export default {
 ::::
 
 
-### authing.user.getUserInfo
+### 获取用户信息
 
-> 获取用户信息
+> authing.user.getUserInfo
 
 #### 入参
 
@@ -924,7 +924,7 @@ export default {
 
 #### 出参
 
-
+参考：[LoginState](#LoginState)
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -977,9 +977,9 @@ export default {
 :::
 ::::
 
-### authing.user.updateAvatar
+### 修改头像
 
-> 修改头像
+> authing.user.updateAvatar
 
 #### 入参
 
@@ -1052,9 +1052,9 @@ export default {
 :::
 ::::
 
-### authing.user.updateUserInfo
+### 修改用户信息
 
-> 修改用户信息
+> authing.user.updateUserInfo
 
 #### 入参
 
@@ -1156,7 +1156,7 @@ export default {
 |name|String|用户名|
 |nickname|String|昵称|
 |photo|String|头像|
-|externalId|String|xx|
+|externalId|String|在外部系统 ID|
 |birthdate|String|生日|
 |country|String|国家|
 |province|String|省份|
