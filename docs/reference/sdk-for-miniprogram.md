@@ -8,10 +8,10 @@ SDK 5.0 主要升级：
 
 - 集成并增强 Authing 最新 V3 版认证 API，覆盖大多数用户认证、授权类核心功能，未来我们将根据用户需要继续拓展其他功能
 - 完善的 TS 类型提示
-- 基于 AuthingMove 框架构建适配多端产物：原生微信小程序、Taro 和 uniapp 框架，未来我们将按需继续支持其他主流小程序平台及框架
+- 基于 [AuthingMove](https://github.com/authing/authingmove) 框架构建适配多端产物：原生微信小程序、Taro 和 uniapp 框架，未来我们将按需继续支持其他主流小程序平台及框架
 - 核心认证场景总包体积 19.02 K，未来我们将继续优化其他场景下的包体积
 - 支持按需集成 rsa 和 sm2 两种加密方式，包体积更优
-- 向下支持小程序基础库 `2.14.1`
+- 向下兼容至小程序基础库版本 `2.14.1`
 
 ## STEP 1：创建社会化身份源
 
@@ -54,10 +54,16 @@ npm install --save @authing/miniprogram-uniapp
 ``` typescript
 import { Authing } from '@authing/miniprogram-wx'
 
+// 以下两种密码加密方式可以按需使用，选其一即可
+import { encryptFunction } from '@authing/miniprogram-jsencrypt'
+import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',
   host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20'
+  userPoolId: '630b549d5a697473a2d7fa20',
+  // 非必传，密码默认将以明文传输
+  encryptFunction
 })
 ```
 :::
@@ -65,10 +71,16 @@ const authing = new Authing({
 ``` typescript
 import { Authing } from '@authing/miniprogram-taro'
 
+// 以下两种密码加密方式可以按需使用，选其一即可
+import { encryptFunction } from '@authing/miniprogram-jsencrypt'
+import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',
   host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20'
+  userPoolId: '630b549d5a697473a2d7fa20',
+  // 非必传，密码默认将以明文传输
+  encryptFunction
 })
 ```
 :::
@@ -76,10 +88,16 @@ const authing = new Authing({
 ``` typescript
 import { Authing } from '@authing/miniprogram-uniapp'
 
+// 以下两种密码加密方式可以按需使用，选其一即可
+import { encryptFunction } from '@authing/miniprogram-jsencrypt'
+import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',
   host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20'
+  userPoolId: '630b549d5a697473a2d7fa20',
+  // 非必传，密码默认将以明文传输
+  encryptFunction
 })
 ```
 :::
@@ -89,7 +107,7 @@ const authing = new Authing({
 
 ### 微信授权 code 登录
 
->authing.core.loginByCode
+>authing.loginByCode
 
 #### 入参
 
@@ -98,7 +116,7 @@ const authing = new Authing({
 |connection|String|认证方式|wechat_mini_program_code|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
 |wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
-|options|Options|额外数据，参考 [Options](#Options)| - |否|
+|options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
 
 **WechatMiniProgramCodePayload**
 
@@ -107,14 +125,6 @@ const authing = new Authing({
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
 |iv|String|加密算法的初始向量| - | 是 |
 |code|String|用户登录凭证（有效期五分钟）| - | 是 |
-
-**Options**
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|scope|String|参考[Scope](#Scope)|-|否|
-|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|-|否|
-|tenantId|String|租户 ID|-|否|
-|customData|Object|设置额外的用户自定义数据，你需要先在 Authing 控制台[配置自定义数据](https://docs.authing.cn/v2/guides/users/user-defined-field/)。|-|否|
 
 #### 出参
 
@@ -137,7 +147,7 @@ Page({
 
     const { code } = await wx.login()
     
-    const res = await authing.core.loginByCode({
+    const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
@@ -150,7 +160,7 @@ Page({
       }
     })
 
-    console.log('authing.core.loginByCode res: ', res)
+    console.log('authing.loginByCode res: ', res)
   }
 })
 ```
@@ -172,7 +182,7 @@ export default class Index extends Component<PropsWithChildren> {
 
     const { code } = await Taro.login()
     
-    const res = await authing.core.loginByCode({
+    const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
@@ -185,7 +195,7 @@ export default class Index extends Component<PropsWithChildren> {
       }
     })
 
-    console.log('authing.core.loginByCode res: ', res)
+    console.log('authing.loginByCode res: ', res)
   }
 }
 ```
@@ -195,13 +205,13 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByCode () {
-      const { encryptedData, iv } = await uni.getUserProfile({
+      const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
 
-      const { code } = await uni.login()
+      const [, { code }] = await uni.login()
       
-      const res = await authing.core.loginByCode({
+      const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         wechatMiniProgramCodePayload: {
@@ -214,7 +224,7 @@ export default {
         }
       })
 
-      console.log('authing.core.loginByCode res: ', res)
+      console.log('authing.loginByCode res: ', res)
     }
   }
 }
@@ -224,7 +234,7 @@ export default {
 
 ### 微信授权手机号登录
 
->authing.core.loginByPhone
+>authing.loginByPhone
 
 #### 入参
 
@@ -233,7 +243,7 @@ export default {
 |connection|String|认证方式|wechat_mini_program_phone|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
 |wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
-|options|Options|额外数据，参考[Options](#Options)| - |否|
+|options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
 
 **WechatMiniProgramCodePayload**
 
@@ -242,14 +252,6 @@ export default {
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
 |iv|String|加密算法的初始向量| - | 是 |
 |code|String|用户登录凭证（有效期五分钟）| - | 是 |
-
-**Options**
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|scope|String|参考[Scope](#Scope)|-|否|
-|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|-|否|
-|tenantId|String|租户 ID|-|否|
-|customData|Object|设置额外的用户自定义数据，你需要先在 Authing 控制台[配置自定义数据](https://docs.authing.cn/v2/guides/users/user-defined-field/)。|-|否|
 
 #### 出参
 
@@ -273,7 +275,7 @@ Page({
 
     const { code } = await wx.login()
     
-    const res = await authing.core.loginByPhone({
+    const res = await authing.loginByPhone({
       connection: 'wechat_mini_program_phone',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramPhonePayload: {
@@ -286,7 +288,7 @@ Page({
       }
     })
 
-    console.log('authing.core.loginByPhone res: ', res)
+    console.log('authing.loginByPhone res: ', res)
   }
 })
 ```
@@ -308,7 +310,7 @@ export default class Index extends Component<PropsWithChildren> {
 
     const { code } = await Taro.login()
     
-    const res = await authing.core.loginByPhone({
+    const res = await authing.loginByPhone({
       connection: 'wechat_mini_program_phone',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramPhonePayload: {
@@ -321,7 +323,7 @@ export default class Index extends Component<PropsWithChildren> {
       }
     })
 
-    console.log('authing.core.loginByPhone res: ', res)
+    console.log('authing.loginByPhone res: ', res)
   }
 }
 ```
@@ -331,13 +333,13 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByPhone () {
-      const { encryptedData, iv } = await uni.getUserProfile({
+      const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
 
-      const { code } = await uni.login()
+      const [, { code }] = await uni.login()
       
-      const res = await authing.core.loginByPhone({
+      const res = await authing.loginByPhone({
         connection: 'wechat_mini_program_phone',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         wechatMiniProgramPhonePayload: {
@@ -350,7 +352,7 @@ export default {
         }
       })
 
-      console.log('authing.core.loginByPhone res: ', res)
+      console.log('authing.loginByPhone res: ', res)
     }
   }
 }
@@ -360,7 +362,7 @@ export default {
 
 ### 账号密码登录
 
-> authing.core.loginByPassword
+> authing.loginByPassword
 
 **入参**
 
@@ -368,7 +370,7 @@ export default {
 |-----|----|----|----|----|
 |connection|String|认证方式|PASSWORD|否|
 |passwordPayload|PasswordPayload|登录数据| - | 是|
-|options|Options|额外数据，参考[Options](#Options)| - |否|
+|options|[NormalLoginOptions](#NormalLoginOptions)|额外数据| - |否|
 
 **PasswordPayload**
 
@@ -395,7 +397,7 @@ export default {
 // index.js
 Page({
   async loginByPassword () {
-    const res = await authing.core.loginByPassword({
+    const res = await authing.loginByPassword({
       connection: 'PASSWORD',
       passwordPayload: {
         password: '123',
@@ -407,7 +409,7 @@ Page({
       }
     })
 
-    console.log('authing.core.loginByPassword res: ', res)
+    console.log('authing.loginByPassword res: ', res)
   }
 })
 ```
@@ -423,7 +425,7 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async loginByPassword () {
-    const res = await authing.core.loginByPassword({
+    const res = await authing.loginByPassword({
       connection: 'PASSWORD',
       passwordPayload: {
         password: '123',
@@ -435,7 +437,7 @@ export default class Index extends Component<PropsWithChildren> {
       }
     })
 
-    console.log('authing.core.loginByPassword res: ', res)
+    console.log('authing.loginByPassword res: ', res)
   }
 }
 ```
@@ -445,7 +447,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByPassword () {
-      const res = await authing.core.loginByPassword({
+      const res = await authing.loginByPassword({
         connection: 'PASSWORD',
         passwordPayload: {
           password: '123',
@@ -457,7 +459,7 @@ export default {
         }
       })
 
-      console.log('authing.core.loginByPassword res: ', res)
+      console.log('authing.loginByPassword res: ', res)
     }
   }
 }
@@ -467,7 +469,7 @@ export default {
 
 ### 验证码登录
 
->authing.core.loginByPassCode
+>authing.loginByPassCode
 
 **入参**
 
@@ -475,12 +477,12 @@ export default {
 |-----|----|----|----|----|
 |connection|String|认证方式|PASSCODE|否|
 |passCodePayload|PassCodePayload|登录数据| - | 是|
-|options|Options|额外数据，参考[Options](#Options)| - |否|
+|options|[NormalLoginOptions](#NormalLoginOptions)|额外数据| - |否|
 
 **PassCodePayload**
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
-|passCode|String|短信/邮箱等验证码|是|
+|passCode|String|短信/邮箱等验证码|-|是|
 |email|String|邮箱|-|否|
 |phone|String|手机号|-|否|
 |phoneCountryCode|String|默认 +86,手机区号，中国大陆手机号可不填|-|否|
@@ -500,7 +502,7 @@ export default {
 // index.js
 Page({
   async loginByPassCode () {
-    const res = await authing.core.loginByPassCode({
+    const res = await authing.loginByPassCode({
       connection: 'PASSCODE',
       passCodePayload: {
         // 手机收到的短信验证码
@@ -513,7 +515,7 @@ Page({
       }
     })
 
-    console.log('authing.core.loginByPassCode: ', res)
+    console.log('authing.loginByPassCode: ', res)
   }
 })
 ```
@@ -529,7 +531,7 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async loginByPassCode () {
-    const res = await authing.core.loginByPassCode({
+    const res = await authing.loginByPassCode({
       connection: 'PASSCODE',
       passCodePayload: {
         // 手机收到的短信验证码
@@ -539,7 +541,7 @@ export default class Index extends Component<PropsWithChildren> {
       }
     })
 
-    console.log('authing.core.loginByPassCode: ', res)
+    console.log('authing.loginByPassCode: ', res)
   }
 }
 ```
@@ -549,7 +551,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByPassCode () {
-      const res = await authing.core.loginByPassCode({
+      const res = await authing.loginByPassCode({
         connection: 'PASSCODE',
         passCodePayload: {
           // 手机收到的短信验证码
@@ -559,7 +561,7 @@ export default {
         }
       })
 
-      console.log('authing.core.loginByPassCode: ', res)
+      console.log('authing.loginByPassCode: ', res)
     }
   }
 }
@@ -569,7 +571,11 @@ export default {
 
 ### 刷新 Token
 
->authing.core.refreshToken
+>authing.refreshToken
+
+#### 说明
+
+刷新 Token 需要用到登录接口返回的 `refresh_token` 字段，使用登录相关方法时需传入参数 `scope`，并包含 `offline_access`，具体参考：[WxLoginOptions](#WxLoginOptions) 和 [NormalLoginOptions](#NormalLoginOptions)
 
 #### 入参
 
@@ -590,8 +596,8 @@ export default {
 // index.js
 Page({
   async refreshToken () {
-    const res = await authing.core.refreshToken()
-    console.log('authing.core.refreshToken res: ', res)
+    const res = await authing.refreshToken()
+    console.log('authing.refreshToken res: ', res)
   }
 })
 ```
@@ -608,8 +614,8 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async refreshToken () {
-    const res = await authing.core.refreshToken()
-    console.log('authing.core.refreshToken res: ', res)
+    const res = await authing.refreshToken()
+    console.log('authing.refreshToken res: ', res)
   }
 }
 ```
@@ -622,8 +628,8 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async refreshToken () {
-      const res = await authing.core.refreshToken()
-      console.log('authing.core.refreshToken res: ', res)
+      const res = await authing.refreshToken()
+      console.log('authing.refreshToken res: ', res)
     }
   }
 }
@@ -633,7 +639,7 @@ export default {
 
 ### 获取用户手机号
 
-> authing.user.getPhone
+> authing.getPhone
 
 #### 入参
 
@@ -674,12 +680,12 @@ Page({
   async getPhone (e) {
     const { code } = e.detail
 
-    const res = await authing.user.getPhone({
+    const res = await authing.getPhone({
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       code
     })
 
-    console.log('authing.user.getPhone res: ', res)
+    console.log('authing.getPhone res: ', res)
   }
 })
 ```
@@ -701,12 +707,12 @@ export default class Index extends Component<PropsWithChildren> {
   async getPhone (e) {
     const { code } = e.detail
 
-    const res = await authing.user.getPhone({
+    const res = await authing.getPhone({
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       code
     })
 
-    console.log('authing.user.getPhone res: ', res)
+    console.log('authing.getPhone res: ', res)
   }
 }
 ```
@@ -725,12 +731,12 @@ export default {
     async getPhone (e) {
       const { code } = e.detail
 
-      const res = await authing.user.getPhone({
+      const res = await authing.getPhone({
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         code
       })
 
-      console.log('authing.user.getPhone res: ', res)
+      console.log('authing.getPhone res: ', res)
     }
   }
 }
@@ -740,7 +746,7 @@ export default {
 
 ### 发送短信验证码
 
-> authing.user.sendSms
+> authing.sendSms
 
 #### 入参
 
@@ -768,13 +774,13 @@ export default {
 Page({
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.core.sendSms({
+    const res = await authing.sendSms({
       phoneNumber: '13100000000',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
 
-    console.log('authing.core.sendSms res: ', res)
+    console.log('authing.sendSms res: ', res)
   }
 })
 ```
@@ -792,13 +798,13 @@ export default class Index extends Component<PropsWithChildren> {
   
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.core.sendSms({
+    const res = await authing.sendSms({
       phoneNumber: '13100000000',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
 
-    console.log('authing.core.sendSms res: ', res)
+    console.log('authing.sendSms res: ', res)
   }
 }
 ```
@@ -812,13 +818,13 @@ export default {
   methods: {
     async sendSms () {
       // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-      const res = await authing.core.sendSms({
+      const res = await authing.sendSms({
         phoneNumber: '13100000000',
         phoneCountryCode: '+86',
         channel: 'CHANNEL_LOGIN'
       })
 
-      console.log('authing.core.sendSms res: ', res)
+      console.log('authing.sendSms res: ', res)
     },
   }
 }
@@ -828,7 +834,7 @@ export default {
 
 ### 修改密码
 
-> authing.user.updatePassword
+> authing.updatePassword
 
 #### 入参
 
@@ -857,13 +863,13 @@ export default {
 // index.js
 Page({
   async updatePassword () {
-    const res = await authing.user.updatePassword({
+    const res = await authing.updatePassword({
       newPassword: '123',
       oldPassword: '123',
       passwordEncryptType: 'none'
     })
 
-    console.log('authing.user.updatePassword res: ', res)
+    console.log('authing.updatePassword res: ', res)
   },
 })
 ```
@@ -880,13 +886,13 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updatePassword () {
-    const res = await authing.user.updatePassword({
+    const res = await authing.updatePassword({
       newPassword: '123',
       oldPassword: '123',
       passwordEncryptType: 'none'
     })
 
-    console.log('authing.user.updatePassword res: ', res)
+    console.log('authing.updatePassword res: ', res)
   }
 }
 ```
@@ -899,13 +905,13 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updatePassword () {
-      const res = await authing.user.updatePassword({
+      const res = await authing.updatePassword({
         newPassword: '123',
         oldPassword: '123',
         passwordEncryptType: 'none'
       })
 
-      console.log('authing.user.updatePassword res: ', res)
+      console.log('authing.updatePassword res: ', res)
     },
   }
 }
@@ -916,7 +922,7 @@ export default {
 
 ### 获取用户信息
 
-> authing.user.getUserInfo
+> authing.getUserInfo
 
 #### 入参
 
@@ -936,8 +942,8 @@ export default {
 // index.js
 Page({
   async getUserInfo () {
-    const res = await authing.user.getUserInfo()
-    console.log('authing.user.getUserInfo res: ', res)
+    const res = await authing.getUserInfo()
+    console.log('authing.getUserInfo res: ', res)
   }
 })
 ```
@@ -954,8 +960,8 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async getUserInfo () {
-    const res = await authing.user.getUserInfo()
-    console.log('authing.user.getUserInfo res: ', res)
+    const res = await authing.getUserInfo()
+    console.log('authing.getUserInfo res: ', res)
   }
 }
 ```
@@ -968,8 +974,8 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async getUserInfo () {
-      const res = await authing.user.getUserInfo()
-      console.log('authing.user.getUserInfo res: ', res)
+      const res = await authing.getUserInfo()
+      console.log('authing.getUserInfo res: ', res)
     }
   }
 }
@@ -979,7 +985,7 @@ export default {
 
 ### 修改头像
 
-> authing.user.updateAvatar
+> authing.updateAvatar
 
 #### 入参
 
@@ -1011,8 +1017,8 @@ export default {
 // index.js
 Page({
   async updateAvatar () {
-    const res = await authing.user.updateAvatar()
-    console.log('authing.user.updateAvatar res: ', res)
+    const res = await authing.updateAvatar()
+    console.log('authing.updateAvatar res: ', res)
   },
 })
 ```
@@ -1029,8 +1035,8 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updateAvatar () {
-    const res = await authing.user.updateAvatar()
-    console.log('authing.user.updateAvatar res: ', res)
+    const res = await authing.updateAvatar()
+    console.log('authing.updateAvatar res: ', res)
   }
 }
 ```
@@ -1043,8 +1049,8 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updateAvatar () {
-      const res = await authing.user.updateAvatar()
-      console.log('authing.user.updateAvatar res: ', res)
+      const res = await authing.updateAvatar()
+      console.log('authing.updateAvatar res: ', res)
     }
   }
 }
@@ -1054,7 +1060,7 @@ export default {
 
 ### 修改用户信息
 
-> authing.user.updateUserInfo
+> authing.updateUserInfo
 
 #### 入参
 
@@ -1075,11 +1081,11 @@ export default {
 // index.js
 Page({
   async updateUserInfo () {
-    const res = await authing.user.updateUserInfo({
+    const res = await authing.updateUserInfo({
       address: 'Hello world'
     })
 
-    console.log('authing.user.updateUserInfo res: ', res)
+    console.log('authing.updateUserInfo res: ', res)
   }
 })
 ```
@@ -1096,11 +1102,11 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updateUserInfo () {
-    const res = await authing.user.updateUserInfo({
+    const res = await authing.updateUserInfo({
       address: 'Hello world'
     })
 
-    console.log('authing.user.updateUserInfo res: ', res)
+    console.log('authing.updateUserInfo res: ', res)
   }
 }
 ```
@@ -1113,11 +1119,11 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updateUserInfo () {
-      const res = await authing.user.updateUserInfo({
+      const res = await authing.updateUserInfo({
         address: 'Hello world'
       })
 
-      console.log('authing.user.updateUserInfo res: ', res)
+      console.log('authing.updateUserInfo res: ', res)
     }
   }
 }
@@ -1127,23 +1133,35 @@ export default {
 
 ## 附录公共参数列表
 
-### <p id="Options">Options</p>
+### <p id="WxLoginOptions">WxLoginOptions</p>
 
-|名称|类型|描述|
-|-----|----|----|
-|scope|Scope|获取的资源类型，以空格分割|
-|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)|
-|tenantId|String|租户 ID|
-|customData|Object|自定义数据|
+> 用于 authing.loginByCode 和 wx.loginByCode
+
+|名称|类型|描述|默认值|必传|
+|-----|----|----|----|----|
+|scope|[Scope](#Scope)|获取的资源类型，以空格分割| - | 否 |
+|context|Object|额外请求上下文，将会传递到认证前和认证后的 [Pipeline](https://docs.authing.cn/v2/guides/pipeline/) 的 `context` 对象中。了解[如何在 Pipeline 的 `context` 参数中获取传入的额外 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html)| - | 否 |
+|tenantId|String|租户 ID| - | 否|
+|customData|Object|自定义数据| - | 否|
+
+### <p id="NormalLoginOptions">NormalLoginOptions</p>
+
+> 用于 authing.loginByPassword 和 loginByPassCode
+
+|名称|类型|描述|默认值|必传|
+|-----|----|----|----|----|
+|passwordEncryptType|none / rsa / sm2|密码加密方式|none|否|
+|scope|[Scope](#Scope)|获取的资源类型，以空格分割| - | 否|
+
 
 ### <p id="Scope">Scope</p>
 
 - `openid`：必须包含
+- `offline_access`: 如果存在此参数，token 接口会返回 refresh_token 字段
 - `profile`：返回 birthdate, family_name, gender, given_name, locale, middle_name, name, nickname, picture,preferred_username, profile, update_at, website, zoneinfo
 - `username`： 返回 username
 - `email`：返回 email、email_verified
 - `phone`：返回 phone_number, phone_number_verified
-- `offline_access`: 如果存在此参数，token 接口会返回 refresh_token 字段
 - `roles`: 返回用户的角色列表
 - `external_id`：用户在原有系统的用户 ID
 - `extended_fields`：返回用户的扩展字段信息，内容为一个对象，key 为扩展字段，value 为扩展字段值

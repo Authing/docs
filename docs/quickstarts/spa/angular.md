@@ -67,20 +67,20 @@ Authing Browser SDK 支持通过包管理器安装、script 标签引入的方�
 #### 使用 NPM 安装
 
 ```bash
-$ npm install @authing/browser
+$ npm install @authing/web
 ```
 
 #### 使用 Yarn 安装
 
 ```bash
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 #### 使用 script 标签直接引入
 
 ```html
 <head>
-  <script src="//cdn.jsdelivr.net/npm/@authing/browser"></script>
+  <script src="//cdn.jsdelivr.net/npm/@authing/web"></script>
 </head>
 ```
 
@@ -116,8 +116,8 @@ Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持下
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -227,8 +227,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -324,8 +324,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -408,11 +408,11 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 import type {
   LoginState,
   UserInfo
-} from '@authing/browser/dist/types/global';
+} from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -505,8 +505,8 @@ export class AppComponent {
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -705,8 +705,8 @@ $ npm start
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
