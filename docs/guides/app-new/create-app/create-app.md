@@ -6,6 +6,8 @@
 
 您可以在 **自建应用** 页面查看所有自建应用。
 
+<img src="../images/create-app.png" height=520 style="display:block;margin: 0 auto;">
+
 要创建新的自建应用，执行以下步骤：​
 ​
 1. 点击页面右上角 **创建自建应用** 按钮。​

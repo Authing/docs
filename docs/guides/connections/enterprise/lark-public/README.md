@@ -112,7 +112,7 @@ https://core.authing.cn/connection/social/{ 唯一标识 }/{USERPOOL_ID}/events
 
 <img src="./images/08.png" >
 
-4.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业企业应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
+4.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业自建应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
 
 ## 步骤 5：开发接入
 

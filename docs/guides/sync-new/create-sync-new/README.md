@@ -17,7 +17,7 @@
 在一个用户池新建一个同步任务时，同一个身份源不能既作为上游，又同时充当下游。
 :::
 
-3. 根据提示填写配置信息。</br>有关获取配置信息的详细描述，请参阅 [获取应用配置项和权限->获取飞书配置项](/guides/sync-new/create-sync-new/get-config-new/feishu.md#获取飞书配置项)。
+3. 根据提示填写配置信息。</br>有关获取配置信息的详细描述，请参阅 [获取应用配置项和权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md)。
 
 4. 筛选同步范围。有关筛选同步范围详情，请参阅 [筛选同步范围](/guides/sync-new/create-sync-new/sync-scope-new.md)。
 
@@ -44,6 +44,6 @@
 对于上游同步，{{$localeConfig.brandName}} 会在 **配置信息** 模块自动生成一个回调地址，用于接收应用事件。
 :::
 
-10. 配置应用权限。</br>有关配置应用权限，请参阅 [获取应用配置项和权限->配置飞书权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md#配置飞书权限)。
+10. 配置应用权限。</br>有关配置应用权限，请参阅 [获取应用配置项和权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md)。
 
 同步任务创建完成。

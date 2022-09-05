@@ -71,19 +71,41 @@
 
 #### 自定义 css
 
-通过自定义 CSS 对登录框进行一些高级自定义样式定制，如修改背景颜色：
+自定义 css 可以对托管登录页实现更加细致的控制，以便符合用户对于登录页的预期。通过自定义 css 可以对登录框进行一些高级自定义样式定制，如修改背景颜色：
 
 ```css
 .authing-guard-layout {
   background: gray;
 }
 ```
+要通过自定义 css 配置个性化登录框，需要在 **整体样式** 标签页打开 **自定义 css** 开关。
+
+<img src="../images/css-switch.png" height=550 style="display:block;margin: 0 auto;">
+
+自定义 css 有以下注意事项：
+
+* 尽量控制指定 css 生效范围​，其生成规则是依赖最后一级路由。</br>如只针对登录页面样式，可在所有 css 选择器前添加 `.login`，如 `/login` 页面 则添加 `.login`。
+
+<img src="../images/css-effective-scope.png" style="display:block;margin: 0 auto;">
+
+* 尽量指定要修改的 guard 渲染节点，常见渲染节点如：
+  * .g2-view-login​
+  * .g2-view-register​
+  * .g2-forget-password​
+  * .g2-need-help​
+  * ...</br>如下图`.g2-view-login` 这个类名表明 guard 处于登录节点。携带这个类名作为前置的选择器，其样式只会在登录节点生效​。
+
+<img src="../images/guard-on-login-node.png" style="display:block;margin: 0 auto;">
+
+* 具体的 css 类名可以在 {{$localeConfig.brandName}} 的登录界面通过 Chrome 控制台查看，需要自定义样式的 dom 标签都提供了固定的类名，不能使用带有 hash 的类名，因为会经常变化。
+
+* 尽量精确选择元素。如果 dom 层级很深，建议使用 **复制 selector** 并配合前面第一、二条的前置选择器使用。
+
+<img src="../images/copy-selector.png" style="display:block;margin: 0 auto;">
 
 ::: hint-info
-具体的 CSS 类名可以在 {{$localeConfig.brandName}} 的登录界面通过 Chrome 控制台查看，需要自定义样式的 dom 标签都提供了固定的类名，若带有 hash 的类名不能使用，因为会经常变化。
+Guard 为更好的服务用户一直在保持迭代以及功能的扩展。在这一发展过程中可能会存在 dom 结构调整以及类名弃用等情况。如果影响了用户自定义 css 相关，可联系我们开发人员进行 css 调整。
 :::
-
-<img src="../images/xnip.png" height=550 style="display:block;margin: 0 auto;">
 
 ### 常规登录
 

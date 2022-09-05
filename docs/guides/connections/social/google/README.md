@@ -5,7 +5,7 @@
 ## 场景介绍
 
 - **概述**：Google 社会化登录是用户以 Google 为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 Google 的社会化登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 Google 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：创建 OAuth 应用程序
+- **应用场景**：Web 端
 - **终端用户预览图**：
 
 <img src="./images/google_1.png" >

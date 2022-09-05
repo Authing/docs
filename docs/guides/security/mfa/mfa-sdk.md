@@ -141,7 +141,7 @@ MFA 口令:
 
 ### 一次认证后返回 MFA Token
 
-调用 authing-js-sdk 中的登录方法，参考[登录](/sdk/sdk-for-javascript/README.md#登录)。或者直接调用 [GraphQL 接口](/sdk/open-graphql.md#登录)。你需要存储 mfaToken 以备后续使用。
+调用 authing-js-sdk 中的登录方法，参考[登录](/reference/sdk-for-node/authentication/AuthenticationClient.html#使用邮箱登录)。你需要存储 mfaToken 以备后续使用。
 
 调用 SDK 的处理方式：
 
