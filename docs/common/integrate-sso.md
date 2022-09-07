@@ -46,6 +46,10 @@
 
 ![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
+如果使用的是「标准 WEB 应用」，需要将`换取 token 身份验证方式`配置为 `none`
+
+![](~@imagesZhCn/common/integrate-sso/mpa-3.png)
+
 至此，配置完成
 
 ## 安装
