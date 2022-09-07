@@ -2,18 +2,40 @@
 
 ## 说明
 
-[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 X 日发布，如果您正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
+[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果您正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
 
 SDK 5.0 主要升级：
 
 - 集成并增强 Authing 最新 V3 版认证 API，覆盖大多数用户认证、授权类核心功能，未来我们将根据用户需要继续拓展其他功能
 - 完善的 TS 类型提示
 - 基于 [AuthingMove](https://github.com/authing/authingmove) 框架构建适配多端产物：原生微信小程序、Taro 和 uniapp 框架，未来我们将按需继续支持其他主流小程序平台及框架
-- 核心认证场景总包体积 19.02 K，未来我们将继续优化其他场景下的包体积
+- 核心认证场景总包体积 16.68 K，未来我们将继续优化其他场景下的包体积
 - 支持按需集成 rsa 和 sm2 两种加密方式，包体积更优
 - 向下兼容至小程序基础库版本 `2.14.1`
 
-## STEP 1：创建社会化身份源
+## STEP 1：创建应用
+
+1. 使用 Authing 创建一个应用：
+
+<ul style="padding-left: 50px">
+  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
+  <li>展开左侧<strong>应用</strong>菜单，点击<strong>自建应用</strong>菜单</li>
+  <li>点击右上角<strong>创建自建应用</strong>按钮</li>
+  <li>填写<strong>应用名称</strong>和<strong>认证地址</strong>、选择<strong>标准 Web 应用</strong></li>
+  <li>点击创建</li>
+</ul>
+
+<img src="./images/sdk-for-miniprogram-1.png" width="650" style="margin-left: 50px" />
+
+2. 以下身份验证方式选择 <strong>none</strong>
+
+<img src="./images/sdk-for-miniprogram-2.png" width="650" style="margin-left: 50px" />
+
+<br />
+
+3. 保存当前配置
+
+## STEP 2：创建社会化身份源
 
 - 在微信公众平台后台的`开发` -> `开发管理` -> `开发设置`页面获取`小程序 ID` 和`小程序密钥`。
 - 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `小程序`创建一个微信社会化身份源，并填写以下信息：
@@ -25,7 +47,7 @@ SDK 5.0 主要升级：
 - 选择`使用此身份源的应用`
 - 点击保存
 
-## STEP 2: 安装 SDK
+## STEP 3: 安装 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -47,7 +69,7 @@ npm install --save @authing/miniprogram-uniapp
 :::
 ::::
 
-## STEP 3: 初始化 SDK
+## STEP 4: 初始化 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -103,7 +125,7 @@ const authing = new Authing({
 :::
 ::::
 
-## STEP 4: 使用 SDK
+## STEP 5: 使用 SDK
 
 ### 微信授权 code 登录
 
@@ -124,7 +146,6 @@ const authing = new Authing({
 |-----|----|----|----|----|
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
 |iv|String|加密算法的初始向量| - | 是 |
-|code|String|用户登录凭证（有效期五分钟）| - | 是 |
 
 #### 出参
 
@@ -144,16 +165,13 @@ Page({
     const { encryptedData, iv } = await wx.getUserProfile({
       desc: 'getUserProfile'
     })
-
-    const { code } = await wx.login()
     
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
         encryptedData,
-        iv,
-        code
+        iv
       },
       options: {
         scope: 'openid profile offline_access'
@@ -179,16 +197,13 @@ export default class Index extends Component<PropsWithChildren> {
     const { encryptedData, iv } = await Taro.getUserProfile({
       desc: 'getUserProfile'
     })
-
-    const { code } = await Taro.login()
     
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
         encryptedData,
-        iv,
-        code
+        iv
       },
       options: {
         scope: 'openid profile offline_access'
@@ -208,16 +223,13 @@ export default {
       const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
-
-      const [, { code }] = await uni.login()
       
       const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         wechatMiniProgramCodePayload: {
           encryptedData,
-          iv,
-          code
+          iv
         },
         options: {
           scope: 'openid profile offline_access'
@@ -251,7 +263,6 @@ export default {
 |-----|----|----|----|----|
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
 |iv|String|加密算法的初始向量| - | 是 |
-|code|String|用户登录凭证（有效期五分钟）| - | 是 |
 
 #### 出参
 
@@ -272,16 +283,13 @@ Page({
     const { encryptedData, iv } = await wx.getUserProfile({
       desc: 'getUserProfile'
     })
-
-    const { code } = await wx.login()
     
     const res = await authing.loginByPhone({
       connection: 'wechat_mini_program_phone',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramPhonePayload: {
         encryptedData,
-        iv,
-        code
+        iv
       },
       options: {
         scope: 'openid profile offline_access'
@@ -307,16 +315,13 @@ export default class Index extends Component<PropsWithChildren> {
     const { encryptedData, iv } = await Taro.getUserProfile({
       desc: 'getUserProfile'
     })
-
-    const { code } = await Taro.login()
     
     const res = await authing.loginByPhone({
       connection: 'wechat_mini_program_phone',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramPhonePayload: {
         encryptedData,
-        iv,
-        code
+        iv
       },
       options: {
         scope: 'openid profile offline_access'
@@ -336,16 +341,13 @@ export default {
       const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
-
-      const [, { code }] = await uni.login()
       
       const res = await authing.loginByPhone({
         connection: 'wechat_mini_program_phone',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         wechatMiniProgramPhonePayload: {
           encryptedData,
-          iv,
-          code
+          iv
         },
         options: {
           scope: 'openid profile offline_access'
@@ -847,10 +849,7 @@ export default {
 
 #### 出参
 
-|名称|类型|描述|
-|-----|----|----|
-|message|String|返回信息
-|statusCode|Number|状态码
+`Promise<boolean>`
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1124,6 +1123,73 @@ export default {
       })
 
       console.log('authing.updateUserInfo res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
+### 退出登录
+
+> authing.logout
+
+#### 入参
+
+无
+
+#### 出参
+
+`Promise<boolean>`
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="logout">logout</button>
+```
+``` typescript
+// index.js
+Page({
+  async logout () {
+    const res = await authing.logout()
+
+    console.log('authing.logout res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.logout()}>logout</Button>
+      </View>
+    )
+  }
+  
+  async logout () {
+    const res = await authing.logout()
+
+    console.log('authing.logout res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="logout">logout</button>
+```
+``` typescript
+export default {
+  methods: {
+    async logout () {
+      const res = await authing.logout()
+
+      console.log('authing.logout res: ', res)
     }
   }
 }
