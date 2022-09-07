@@ -25,11 +25,11 @@ SDK 5.0 主要升级：
   <li>点击创建</li>
 </ul>
 
-<img src="./images/sdk-for-miniprogram-1.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-1.png" width="650" style="margin-left: 50px" />
 
 2. 以下身份验证方式选择 <strong>none</strong>
 
-<img src="./images/sdk-for-miniprogram-2.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-2.png" width="650" style="margin-left: 50px" />
 
 <br />
 
@@ -52,19 +52,19 @@ SDK 5.0 主要升级：
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
 ``` shell
-npm install --save @authing/miniprogram-wx
+npm install --save @authing/miniapp-wx
 ```
 :::
 
 ::: tab Taro
 ``` shell
-npm install --save @authing/miniprogram-taro
+npm install --save @authing/miniapp-taro
 ```
 :::
 
 ::: tab uniapp
 ``` shell
-npm install --save @authing/miniprogram-uniapp
+npm install --save @authing/miniapp-uniapp
 ```
 :::
 ::::
@@ -74,11 +74,11 @@ npm install --save @authing/miniprogram-uniapp
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
 ``` typescript
-import { Authing } from '@authing/miniprogram-wx'
+import { Authing } from '@authing/miniapp-wx'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
-import { encryptFunction } from '@authing/miniprogram-jsencrypt'
-import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+import { encryptFunction } from '@authing/miniapp-jsencrypt'
+import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',
@@ -91,11 +91,11 @@ const authing = new Authing({
 :::
 ::: tab Taro
 ``` typescript
-import { Authing } from '@authing/miniprogram-taro'
+import { Authing } from '@authing/miniapp-taro'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
-import { encryptFunction } from '@authing/miniprogram-jsencrypt'
-import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+import { encryptFunction } from '@authing/miniapp-jsencrypt'
+import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',
@@ -108,11 +108,11 @@ const authing = new Authing({
 :::
 ::: tab uniapp
 ``` typescript
-import { Authing } from '@authing/miniprogram-uniapp'
+import { Authing } from '@authing/miniapp-uniapp'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
-import { encryptFunction } from '@authing/miniprogram-jsencrypt'
-import { encryptFunction } from '@authing/miniprogram-sm2encrypt'
+import { encryptFunction } from '@authing/miniapp-jsencrypt'
+import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   appId: '630b549efa97ba795338e2cd',

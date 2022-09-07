@@ -1643,7 +1643,7 @@ const zhCnNavBar = {
     },
     {
       title: "微信小程序",
-      path: "/reference/sdk-for-miniprogram",
+      path: "/reference/sdk-for-weixin-miniapp",
     },
     {
       title: "微信网页授权",
