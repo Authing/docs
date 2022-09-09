@@ -203,6 +203,10 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/user-defined-field",
             },
             {
+              title: "添加角色自定义字段",
+              path: "/guides/authentication/extensibility/role-extend",
+            },
+            {
               title: "添加部门自定义字段",
               path: "/guides/authentication/extensibility/department-extend",
             },
