@@ -428,7 +428,7 @@ managementClient.SetToken(string token)
 ```csharp
 managementClient.SetToken("TOKEN")
 ```
-## 设置当前用户信息获取用户所在组织机构数据列表
+## 获取用户所在组织机构数据列表
 
 ```csharp
 managementClient.ListOrgs(string userId)
