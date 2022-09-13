@@ -29,58 +29,58 @@
 
 <table>
 <tr>
-<th>序号</th>
+<th valign="center">序号</th>
 <th>字段</th>
 <th>说明</th>
 </tr>
 
 <tr>
-<td valign="center">1</td>
+<td>1</td>
 <td>序号 </td>
 <td>以倒序的方式统计应用同步任务当前执行的次数。
 </td>
 </tr>
 
 <tr>
-<td valign="center">2</td>
+<td>2</td>
 <td>同步时间</td>
 <td>显示同步任务历次执行完成时间，最新的一次执行显示在首行。</td>
 </tr>
 
 <tr>
-<td valign="center">3</td>
+<td>3</td>
 <td>同步方式</td>
 <td>显示创建或修改同步任务时指定的 <b>同步时机</b> 的值。</p>对于手动同步，每次执行，都会生成一条记录。</p>对于定时同步和实时同步，只会生成一条记录，其同步时间以最后一次为准。</p>在 <b>风险策略配置</b> 开启了删除主体自动同步后，执行风险操作自动同步并不会影响 <b>同步方式</b> 的值。</td>
 </tr>
 
 <tr>
-<td valign="center">4</td>
+<td>4</td>
 <td>组织状态</td>
 <td>统计此次执行同步任务，共有几个组织同步成功：同步成功数量/同步总数。</td>
 </tr>
 
 <tr>
-<td valign="center">5</td>
+<td>5</td>
 <td>组织更新</td>
 <td>统计此次执行同步任务，共有几个组织更新成功：更新成功数量/更新总数
 。</td>
 </tr>
 
 <tr>
-<td valign="center">6</td>
+<td>6</td>
 <td>用户状态</td>
 <td>统计此次执行同步任务，共有多少用户同步成功：同步成功数量/同步总数。</td>
 </tr>
 
 <tr>
-<td valign="center">7</td>
+<td>7</td>
 <td>用户更新</td>
 <td>统计此次执行同步任务，共有多少用户更新成功：更新成功数量/更新总数
 。</td>
 </tr>
 
 <tr>
-<td valign="center">8</td>
+<td>8</td>
 <td>操作</td>
 <td>
 <ul>

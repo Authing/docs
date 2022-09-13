@@ -460,7 +460,7 @@ const zhCnNavBar = {
     },
     {
       title: "单点登录 SSO",
-      path: "/guides/sso/",
+      path: "/guides/app-new/sso/",
       children: [
         {
           title: "应用面板",
@@ -940,6 +940,19 @@ const zhCnNavBar = {
                     ],
         },
       ],
+    },
+    {
+      title: "品牌化",
+      children: [
+        {
+          title: "全局登录框",
+          path: "/guides/customize/global-guard/",
+        },
+        {
+          title: "自定义域名",
+          path: "/guides/customize/domain/customized-domain",
+        },
+                ],
     },
     {
       title: "配置用户池信息",
