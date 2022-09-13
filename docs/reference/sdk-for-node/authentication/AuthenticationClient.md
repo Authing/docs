@@ -981,7 +981,7 @@ AuthenticationClient().updateProfile(updates)
 - `updates.profile` \<string\> Profile Url
 - `updates.preferredUsername` \<string\> Preferred Name
 - `updates.website` \<string\> 个人网站
-- `updates.gender` \<string\> 性别, F 表示男性、W 表示女性、未知表示 U
+- `updates.gender` \<string\> 性别, M 表示男性、F 表示女性、未知表示 U
 - `updates.birthdate` \<string\> 生日
 - `updates.zoneinfo` \<string\> 时区
 - `updates.locale` \<string\> 语言
