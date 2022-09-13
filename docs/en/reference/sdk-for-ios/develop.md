@@ -1,35 +1,20 @@
-# Get started
+# Auth Flow
 
 <LastUpdated/>
 
-## Step 1: Create a new Xcode project
+It takes only 1 minute if app uses UI provided by us.
 
-![](./images/create_project1.png)
+Make sure you went over all the steps in [Get started](./develop.md), then call the following method where you want to authenticate user:
 
-![](./images/create_project2.png)
+```swift
+import Guard
+AuthFlow().start { [weak self] code, message, userInfo in
+    if code == 200 {
+        // userInfo
+    }
+}
+```
 
-## Step 2：Add Guard dependencies
+This is how it looks like:
 
-Entering the package URL in the search field：https://github.com/Authing/guard-ios
-Dependency rule select Up to Next Major Version 1.0.0
-
-![](./images/create_project3.png)
-
-![](./images/create_project4.png)
-
-![](./images/create_project5.png)
-
-## Step 3: Initialization
-
-The red part needs to be edited
-
-![](./images/start.png)
-
-<br>
-
-Next, embed authentication flow and UI in 1 minute.
-
-<span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">Quick start →</a>
-</span>
-
-<br>
+<img src="./images/standard.png" alt="drawing" width="320"/>

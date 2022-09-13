@@ -2,6 +2,8 @@
 
 <LastUpdated/>
 
+如果应用需要自定义认证流程和界面，推荐使用超组件（Hyper Component）快速构建认证流程和界面。
+
 超组件（Hyper Component）是我们在低代码领域的重要创新，它具备以下特性：
 
 * 语义化

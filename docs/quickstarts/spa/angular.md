@@ -12,242 +12,583 @@ downloadDemo:
 
 # Angular 快速开始
 
-你可以使用 Authing 快速为新开发的或已有的 Angular 应用集成**认证能力**。本教程讲述如何使用 Authing SDK 为你的 Angular 应用添加认证能力。
+你可以使用 Authing 快速为新开发的或已有的 Angular 应用集成**认证能力**。本教程讲述如何使用 Authing Browser SDK 为你的 Angular 应用添加认证能力。
 
-示例应用使用的是 Angular12，node < 15
-
-> 如果您只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/v2/angular.html)
+> 如果您只需登录组件，可参考 [**登录组件文档**](/reference/guard/v2/angular.md)
 
 ## 配置 Authing
 
-你需要先在 Authing 创建一个应用。进入[**控制台**](https://console.authing.cn) > **应用**，点击右上角的「添加应用」。
+### 创建自建应用
 
-![](~@imagesZhCn/quickstarts/create-app.png)
+> 也可以使用现有应用
 
-**认证地址**填写一个域名，作为这个应用在 Authing 的唯一标识，**回调链接**填写：`http://localhost:4000/callback`
+在控制台的「自建应用」页面，点击「创建自建应用」，应用类型选择「单页 Web 应用」，并填入以下信息：
 
-![](~@imagesZhCn/quickstarts/spa/create-app-2.png)
+- 应用名称：你的应用名称；
+- 认证地址：选择一个二级域名，必须为合法的域名格式，例如 `my-spa-app`；
 
-在应用列表找到你的应用，进入**应用详情**。在「高级配置」选项卡中的「安全性」卡片，**id_token 签名算法**选择 **RS256**，然后点击「保存」。
+![](~@imagesZhCn/common/integrate-sso/sso-create-app-1.png)
 
-![](~@imagesZhCn/quickstarts/spa/set-app.png)
+![](~@imagesZhCn/common/integrate-sso/sso-create-app-2.png)
 
-在「安全性」卡片中，配置**换取 token 身份验证方式**、**检验 token 身份验证方式**、**撤回 token 身份验证方式**为 **none**。
 
-![](~@imagesZhCn/quickstarts/spa/set-auth-method.png)
+### 配置应用
 
-### 配置登录回调地址
+在「自建应用」列表中，找到上一步创建好的应用，点击应用卡片进入「应用配置」页面，修改如下配置项并保存：
 
-当用户在 Authing 完成认证后，Authing 会将用户重定向到回调地址。必须在这里配置回调地址白名单，否则用户会遇到回调地址不匹配的错误信息。本教程需要用到的回调地址是 `http://localhost:4000/callback` 请在**登录回调地址**中粘贴此链接。
+- **认证配置**：配置 `登录回调 URL`
+- **授权配置**：`授权模式`开启 `authorization_code`、`refresh_token`
+- **授权配置**：`返回类型`开启 `code`
 
-![](~@imagesZhCn/quickstarts/spa/set-url.png)
+![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-### 配置登出回调地址
+![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
-当用户在 Authing 完成退出后，Authing 会将用户重定向到登出回调地址。**必须在这里配置登出回调地址白名单**，否则用户会遇到登出回调地址不匹配的错误信息。本教程需要用到的回调地址是 `http://localhost:4000` 请在**登出回调地址**中粘贴此链接。
+至此，配置完成。
 
-![](~@imagesZhCn/quickstarts/spa/set-url.png)
 
 ### 记录应用信息
 
-记录以下信息：
+为了下面方便顺利地使用 Authing Browser SDK，你需要记下该应用的这几个信息：
 
-- 应用 ID
-- 应用密钥
-- 应用域名
+- App ID
+- 认证地址
+- 登录回调 URL
 
-![](~@imagesZhCn/quickstarts/save-app-info.png)
+![](~@imagesZhCn/quickstarts/spa/app-info.png)
+
 
 ## 集成 Authing
 
-### 修改 Demo 配置
-
-如果你下载了[示例 Demo 代码](https://github.com/Authing/spa-demo-angular)，需要修改 src/service/authing.service.ts ，修改配置为你的应用配置。
-
-```js
-const authing = new AuthenticationClient({
-	appId: 'APP_ID',
-	appHost: 'https://{你的域名}.authing.cn',
-	redirectUri: 'http://localhost:4000/callback',
-	tokenEndPointAuthMethod: 'none'
-});
-```
-
-然后运行：
-
-```bash
-$ yarn install
-$ yarn start
-```
+Authing Browser SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
 ### 安装 SDK
 
-在你的应用项目中安装 authing-js-sdk 包。然后初始化一个 SDK 实例。
-
-我们的示例中使用的是 yarn 所以建议你也使用 yarn 来安装 authing-js-sdk
+#### 使用 NPM 安装
 
 ```bash
-$ yarn add authing-js-sdk
+$ npm install @authing/web
 ```
 
-如果你使用的是 npm
+#### 使用 Yarn 安装
 
 ```bash
-$ npm install authing-js-sdk
+$ yarn add @authing/web
 ```
 
-初始化 SDK 实例在 Angular 项目中使用。
+#### 使用 script 标签直接引入
 
-```js
-import { Injectable } from '@angular/core';
-import { AuthenticationClient } from 'authing-js-sdk';
-@Injectable({
-	providedIn: 'root'
-})
-export class AuthingSDK {
-	authing: AuthenticationClient;
-	constructor() {
-		this.authing = new AuthenticationClient({
-			appId: 'APP_ID',
-			appHost: 'https://{你的域名}.authing.cn',
-			redirectUri: 'http://localhost:4000/callback',
-			tokenEndPointAuthMethod: 'none'
-		});
-	}
-}
+```html
+<head>
+  <script src="//cdn.jsdelivr.net/npm/@authing/web"></script>
+</head>
 ```
 
-Authing JS SDK 接收以下参数：
+### 初始化 SDK
 
-- appId，应用 ID，可以在应用详情页面获得。
-- appHost：应用认证地址，将`{应用域名}`替换为你的应用实际的域名。
-- redirectUri：应用回调地址，在 Authing 完成认证后跳回的地址。必须在控制台回调地址白名单提前配置，**随意填写一定会报错！**
-- tokenEndPointAuthMethod：token 端点身份验证方式，可选值为 `client_secret_post`、`client_secret_basic`、`none`，默认为 `client_secret_post`。SPA 场景填 `none`。
+可以根据上面步骤中记录的 `App ID`、`认证地址`、`登录回调 URL` 等信息，进行 SDK 的初始化，如下示例：
+
+!!!include(common/spa-auth-code-snippets/initialize.md)!!!
 
 ### 发起登录
 
-Authing SDK 能够让你快速集成登录到 Angular 应用。你需要生成一个 **code_verifier 值**和它的**摘要值**，将 **code_verifier** 保存，而将其**摘要值**填入 buildAuthorizeUrl 来构建登录链接。然后在登录按钮点击时将浏览器重定向到该地址，让用户在 Authing 托管的登录页完成认证。登录成功后，Authing 会将用户重定向回你的应用。
+Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持下面两种登录方式：
+
+- 在当前窗口转到 Authing 托管的登录页
+- 弹出一个窗口，在弹出的窗口中加载 Authing 托管的登录页
+
+#### 跳转登录
 
 ```html
-<h1>hello ,Authing</h1>
-<br />
-<button (click)="handleLogin()">点击登录</button>
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
 ```
 
-```js
+```ts{41-48}
+// <!-- src/app/app.component.ts -->
+
 import { Component } from '@angular/core';
-import { AuthingSDK } from '../../service/authing.service';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
+
 @Component({
-	selector: 'app-login',
-	templateUrl: './login.component.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
-export class LoginComponent {
-	constructor(private AuthingSDK: AuthingSDK) {}
-	async handleLogin() {
-		const { authing } = this.AuthingSDK;
-		// PKCE 场景使用示例
-		// 生成一个 code_verifier
-		let codeChallenge = authing.generateCodeChallenge();
-		localStorage.setItem('codeChallenge', codeChallenge);
-		// 计算 code_verifier 的 SHA256 摘要
-		let codeChallengeDigest = authing.getCodeChallengeDigest({ codeChallenge, method: 'S256' });
-		// 构造 OIDC 授权码 + PKCE 模式登录 URL
-		let url = authing.buildAuthorizeUrl({ codeChallenge: codeChallengeDigest, codeChallengeMethod: 'S256' });
-		window.location.href = url;
-	}
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: '认证地址',
+    appId: '应用 ID',
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: '登录回调地址',
+  });
+
+  ngOnInit() {
+    // 校验当前 url 是否是登录回调地址
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 
+       * handleRedirectCallback 方法，在回调端点处理 Authing 发送的
+       * 授权码或 token，获取用户登录态
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
 }
 ```
 
-### 处理回调
+如果你想自定义参数，也可以对以下参数进行自定义传参，如不传参将使用默认参数
 
-用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后使用 Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。
+```ts
+export class AppComponent {
+  ...
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    const params: {
+      // 回调地址，默认为初始化参数中的 redirectUri
+      redirectUri?: string;
 
-```js
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { AuthingSDK } from '../../service/authing.service';
-@Component({
-	selector: 'app-user-info',
-	templateUrl: './userinfo.component.html'
-})
-export class UserInfoComponent implements OnInit {
-	loading: boolean;
-	userInfo: string;
-	constructor(private AuthingSDK: AuthingSDK, private activateInfo: ActivatedRoute, private router: Router) {
-		this.userInfo = '';
-		this.loading = false;
-	}
-	ngOnInit() {
-		this.activateInfo.queryParams.subscribe((params: Params) => {
-			if (Object.keys(params).length > 0) {
-				this.handleCallback(params);
-			}
-		});
-	}
-	async handleCallback(params: Params) {
-		this.setLoading(true);
-		try {
-			const accessToken = localStorage.getItem('accessToken');
-			if (accessToken) {
-				this.setUserInfo();
-				this.setLoading(false);
-			} else {
-				const { authing } = this.AuthingSDK;
-				const { code } = params;
-				const codeChallenge = localStorage.getItem('codeChallenge');
-				const tokenSet = await authing.getAccessTokenByCode(code, { codeVerifier: codeChallenge as string });
-				const { access_token, id_token } = tokenSet;
-				const userInfo = await authing.getUserInfoByAccessToken(tokenSet.access_token);
-				localStorage.setItem('accessToken', access_token);
-				localStorage.setItem('idToken', id_token);
-				localStorage.setItem('userInfo', JSON.stringify(userInfo));
-				this.setUserInfo();
-				this.setLoading(false);
-			}
-		} catch (error) {
-			console.log('error', JSON.stringify(error));
-			this.router.navigate(['/login']);
-		}
-	}
+      // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向
+      // 回到此页面，默认为当前 URL
+      originalUri?: string;
+
+      // 即使在用户已登录时也提示用户再次登录
+      forced?: boolean;
+
+      // 自定义的中间状态，会被传递到回调端点
+      customState?: any;
+    } = {
+      redirectUri: '回调地址',
+      originalUri: '发起登录的 URL',
+      forced: false,
+      customState: {},
+    }
+    this.sdk.loginWithRedirect(params);
+  }
+  ...
 }
 ```
 
-### 用户登出
 
-使用 buildLogoutUrl 方法构造登出地址，需要传入当前登出用户的 **Id token** 和**登出回调地址**，登出回调地址**必须配置**在控制台的应用登出回调白名单中，**随意填写一定会报错！**
+#### 弹出窗口登录
 
-```js
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { AuthingSDK } from '../../service/authing.service';
+你也可以在你的业务软件页面使用下面的方法，通过弹出一个新窗口的方式让用户在新窗口登录：
+
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithPopup</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{26-34}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
+
 @Component({
-	selector: 'app-user-info',
-	templateUrl: './userinfo.component.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
-export class UserInfoComponent implements OnInit {
-	loading: boolean;
-	userInfo: string;
-	constructor(private AuthingSDK: AuthingSDK, private activateInfo: ActivatedRoute, private router: Router) {
-		this.userInfo = '';
-		this.loading = false;
-	}
-	ngOnInit() {
-		this.activateInfo.queryParams.subscribe((params: Params) => {
-			if (Object.keys(params).length > 0) {
-				this.handleCallback(params);
-			}
-		});
-	}
-	handleLogout() {
-		const { authing } = this.AuthingSDK;
-		const idToken = localStorage.getItem('idToken');
-		localStorage.clear();
-		if (idToken) {
-			const url = authing.buildLogoutUrl({ expert: true, redirectUri: 'http://localhost:4000', idToken });
-			console.log(url);
-			this.router.navigate(['/login']);
-		}
-	}
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: "认证地址",
+    appId: "应用 ID",
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: "登录回调地址",
+  });
+
+  ngOnInit() {
+    this.getLoginState();
+  }
+
+  /**
+   * 以弹窗方式打开 Authing 托管的登录页
+   */
+  async login() {
+    const res = await this.sdk.loginWithPopup();
+    this.loginState = res;
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+
+
+如果你想自定义参数，也可以对以下参数进行自定义传参，如不传参将使用默认参数
+
+```ts
+export class AppComponent {
+  ...
+  /**
+   * 以弹窗方式打开 Authing 托管的登录页
+   */
+  async login() {
+    const params: {
+      // 回调地址，默认为初始化参数中的 redirectUri
+      redirectUri?: string;
+
+      // 即使在用户已登录时也提示用户再次登录
+      forced?: boolean;
+    } = {
+      redirectUri: '回调地址',
+      forced: false,
+    };
+    const res = await this.sdk.loginWithPopup(params);
+    this.loginState = res;
+  };
+  ...
+}
+```
+
+
+#### 高级使用
+
+每次发起登录本质是访问一个携带许多参数的 URL 地址，Authing Browser SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
+
+!!!include(common/spa-auth-code-snippets/advanced.md)!!!
+
+
+### 检查登录态并获取 Token
+
+如果你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，该方法会抛出错误：
+
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{49-55}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: '认证地址',
+    appId: '应用 ID',
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: '登录回调地址',
+  });
+
+  ngOnInit() {
+    // 校验当前 url 是否是登录回调地址
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 
+       * handleRedirectCallback 方法，在回调端点处理 Authing 发送的
+       * 授权码或 token，获取用户登录态
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+
+
+### 获取用户信息
+
+你需要使用 `Access Token` 获取用户的个人信息：
+
+- 用户初次登录成功时可以在回调函数中拿到用户的 Access Token，然后使用 Access Token 获取用户信息；
+- 如果用户已经登录，你可以先获取用户的 Access Token 然后使用 Access Token 获取用户信息。
+
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+    <button (click)="getUserInfo()">getUserInfo</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+  <p *ngIf="userInfo">
+    <textarea cols="100" rows="20" readOnly>{{ userInfo | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{46-58}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/web';
+import type {
+  LoginState,
+  UserInfo
+} from '@authing/web/dist/typings/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+  userInfo: UserInfo | null = null;
+
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: '认证地址',
+    appId: '应用 ID',
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: '登录回调地址',
+  });
+
+  ngOnInit() {
+    // 校验当前 url 是否是登录回调地址
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 
+       * handleRedirectCallback 方法，在回调端点处理 Authing 发送的
+       * 授权码或 token，获取用户登录态
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * 用 Access Token 获取用户身份信息
+   */
+  async getUserInfo() {
+    if (!this.loginState) {
+      alert('用户未登录');
+      return;
+    }
+    const userInfo = await this.sdk.getUserInfo({
+      accessToken: this.loginState.accessToken,
+    });
+    this.userInfo = userInfo;
+  }
+
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+
+
+
+### 退出登录
+
+可以调用 SDK 的 `logoutWithRedirect` 方法退出登录
+
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+    <button (click)="logout()">logout</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+</div>
+```
+
+```ts{49-54}
+// <!-- src/app/app.component.ts -->
+
+import { Component } from '@angular/core';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+
+  loginState: LoginState | null = null;
+
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: '认证地址',
+    appId: '应用 ID',
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: '登录回调地址',
+  });
+
+  ngOnInit() {
+    // 校验当前 url 是否是登录回调地址
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 
+       * handleRedirectCallback 方法，在回调端点处理 Authing 发送的
+       * 授权码或 token，获取用户登录态
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * 登出
+   */
+  logout() {
+    this.sdk.logoutWithRedirect();
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+}
+```
+
+如果你想自定义参数，也可以对以下参数进行自定义传参，如不传参将使用默认参数
+
+```ts
+export class AppComponent {
+  ...
+  /**
+   * 登出
+   */
+  logout() {
+    const options: {
+      // 登出完成后的回调地址，默认为初始化参数中的 logoutRedirectUri
+      // 登出回调地址，需要在控制台『应用配置 - 登出回调 URL』中指定
+      redirectUri?: string | null;
+
+      // 自定义中间状态
+      state?: string;
+    } = {
+      redirectUri: 'https://localhost:3000/?logout'
+    };
+    this.sdk.logoutWithRedirect(options);
+  }
+  ...
 }
 ```
 
@@ -255,7 +596,7 @@ export class UserInfoComponent implements OnInit {
 
 接下来讲述如何从 Angular 应用**请求外部资源服务器的 API**。
 
-> 如果你跟随之前的步骤为你的 Angular 应用集成了认证功能，需要先**登出**，我们需要一个新的 Access token。
+> 如果你跟随之前的步骤为你的 Angular 应用集成了认证功能，需要先**登出**，我们需要一个新的 Access Token。
 
 ### 搭建服务端 API
 
@@ -264,7 +605,7 @@ export class UserInfoComponent implements OnInit {
 克隆 API Server 仓库：
 
 ```bash
-$ git clone https://github.com/Authing/m2m-demo-express.git
+$ git clone git@github.com:Authing/m2m-demo-express.git
 ```
 
 进入项目目录，安装依赖：
@@ -273,10 +614,10 @@ $ git clone https://github.com/Authing/m2m-demo-express.git
 $ npm install
 ```
 
-在 app.js 第 12 行，修改配置为你的应用配置：
+在 `/app.js` 第 12 行，修改配置为你的应用配置：
 
 ```js
-// 授权中间件，Access token 必须存在，并且能被 Authing 应用公钥验签
+// 授权中间件，Access Token 必须存在，并且能被 Authing 应用公钥验签
 const checkJwt = jwt({
 	// 从 Authing 应用服务发现地址动态获取验签公钥
 	secret: jwksRsa.expressJwtSecret({
@@ -299,11 +640,12 @@ const checkJwt = jwt({
 $ npm start
 ```
 
-详情参考[文档](/quickstarts/apiServer/nodeJsExpress)。
+更多详情请参考 [Node.js Express API Server 快速开始](/quickstarts/apiServer/nodeJsExpress/README.md)。
+
 
 ### 设置资源权限
 
-为了获取一个具备资源权限的 Access token，首先需要在 Authing 定义**谁具备什么资源的什么权限**。
+为了获取一个具备资源权限的 Access Token，首先需要在 Authing 定义**谁具备什么资源的什么权限**。
 
 #### 创建一个用户
 
@@ -329,73 +671,114 @@ $ npm start
 
 ![](~@imagesZhCn/quickstarts/spa/resource-acl.png)
 
-**被授权主体类型**选择**用户**，**被授权主体**搜索刚才创建的测试用户，**授权作用**选择允许，**资源类型**选择刚刚定义的订单资源，**资源标识符**保留默认，**操作**选择特定操作，选择读取订单操作。最后点击确定。
+「**被授权主体类型**」选择「**用户**」，「**被授权主体**」搜索刚才创建的测试用户，「**授权作用**」选择允许，「**资源类型**」选择刚刚定义的订单资源，「**资源标识符**」保留默认，「**操作**」选择特定操作，选择读取订单操作。最后点击确定。
 
 ![](~@imagesZhCn/quickstarts/spa/resource-authz-1.png)
 
 ![](~@imagesZhCn/quickstarts/spa/resource-authz-2.png)
 
-### 发起认证授权
 
-Authing SDK 能够让你快速集成登录到 Angular 应用。你需要生成一个 **code_verifier 值**和它的**摘要值**，将 code_verifier 保存，而将其摘要值填入 buildAuthorizeUrl 来构建登录链接。除此之外，还需要指定 **scope 授权范围**，请求相应的资源权限。然后在登录按钮点击时将浏览器重定向到该地址，让用户在 Authing 托管的登录页完成认证。登录成功后，Authing 会将用户重定向回你的应用。
+### 使用 Access Token 调用资源 API
 
-```js
-export class LoginComponent {
-	constructor(private AuthingSDK: AuthingSDK) {}
-	async handleLogin() {
-		const { authing } = this.AuthingSDK;
-		// PKCE 场景使用示例
-		// 生成一个 code_verifier
-		let codeChallenge = authing.generateCodeChallenge();
-		localStorage.setItem('codeChallenge', codeChallenge);
-		// 计算 code_verifier 的 SHA256 摘要
-		let codeChallengeDigest = authing.getCodeChallengeDigest({ codeChallenge, method: 'S256' });
-		// 构造 OIDC 授权码 + PKCE 模式登录 URL
-		let url = authing.buildAuthorizeUrl({ codeChallenge: codeChallengeDigest, codeChallengeMethod: 'S256' });
-		window.location.href = url;
-	}
-}
+接下来我们在 Angular 应用中调用后端接口。你可以在**请求头中携带 Access Token**，API 服务器会检查 Access Token 合法性和具备的权限，然后返回数据。
+
+> API 服务器 `http://localhost:5000/api/protected` 要求 order:read 权限 scope。
+
+```html
+<!-- src/app/app.component.html -->
+
+<div>
+  <p>
+    <button (click)="login()">loginWithRedirect</button>
+    <button (click)="handleResource()">handleResource</button>
+  </p>
+  <p *ngIf="loginState">
+    <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
+  </p>
+  <p *ngIf="resource">
+    <textarea cols="100" rows="5" readOnly>{{ resource | json }}</textarea>
+  </p>
+</div>
 ```
 
-### 处理回调
+```ts{58-74}
+// <!-- src/app/app.component.ts -->
 
-用户在 Authing 完成认证后，会回调到业务应用。我们需要从 **query** 中取出 **code**，从 localStorage 中取出发起登录时的 code_verifier，然后调用 getAccessTokenByCode 函数，**获取 Access token**。之后使用 Access token 调用 getUserInfoByAccessToken 函数，**获取用户信息**。最后跳转到应用的其他页面。
+import { Component } from '@angular/core';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
-```js
-const { authing } = this.AuthingSDK;
-const { code } = params;
-const codeChallenge = localStorage.getItem('codeChallenge');
-const tokenSet = await authing.getAccessTokenByCode(code, { codeVerifier: codeChallenge as string });
-const { access_token, id_token } = tokenSet;
-const userInfo = await authing.getUserInfoByAccessToken(tokenSet.access_token);
-localStorage.setItem('accessToken', access_token);
-localStorage.setItem('idToken', id_token);
-localStorage.setItem('userInfo', JSON.stringify(userInfo));
-```
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
 
-### 使用 Access token 调用资源 API
+  loginState: LoginState | null = null;
+  resource: object | null = null;
 
-接下来我们在 Angular 应用中调用后端接口。你可以在**请求头中携带 Access token**，API 服务器会检查 Access token 合法性和具备的权限，然后返回数据。
+  private sdk = new Authing({
+    // 应用的认证地址，例如：https://domain.authing.cn
+    domain: '认证地址',
+    appId: '应用 ID',
+    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
+    redirectUri: '登录回调地址',
+  });
 
-```js
-async function handleResource() {
-  try {
-    let accessToken = localStorage.getItem("accessToken");
-    let res = await fetch("http://localhost:5000/api/protected", {
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-      method: "GET",
-    });
-    let data = await res.json();
-    alert(JSON.stringify(data));
-  } catch (err) {
-    alert("无权访问接口");
+  ngOnInit() {
+    // 校验当前 url 是否是登录回调地址
+    if (this.sdk.isRedirectCallback()) {
+      console.log('redirect');
+
+      /**
+       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 
+       * handleRedirectCallback 方法，在回调端点处理 Authing 发送的
+       * 授权码或 token，获取用户登录态
+       */
+      this.sdk.handleRedirectCallback().then((res) => {
+        this.loginState = res;
+        window.location.replace('/');
+      });
+    } else {
+      this.getLoginState();
+    }
+  }
+
+  /**
+   * 以跳转方式打开 Authing 托管的登录页
+   */
+  login() {
+    this.sdk.loginWithRedirect();
+  }
+
+  /**
+   * 获取用户的登录状态
+   */
+  async getLoginState() {
+    const state = await this.sdk.getLoginState();
+    this.loginState = state;
+  }
+
+  /**
+   * 使用 Access Token 调用资源 API
+   */
+  async handleResource() {
+    try {
+      let res = await fetch('http://localhost:5000/api/protected', {
+        headers: {
+          Authorization: `Bearer ${this.loginState?.accessToken}`,
+        },
+        method: "GET",
+      });
+      let data = await res.json();
+      this.resource = data;
+    } catch (err) {
+      alert("无权访问接口");
+    }
   }
 }
 ```
 
-> API 服务器 http://localhost:5000/api/protected 要求 order:read 权限 scope。
 
 恭喜 🎉，到此你学会了在 Angular 单页应用中集成 Authing 认证授权，并调用外部的资源服务器接口。
 

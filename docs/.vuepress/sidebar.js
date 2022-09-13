@@ -66,6 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
+
     {
       title: "快速开始",
       children: [
@@ -191,13 +192,9 @@ const zhCnNavBar = {
           path: "/guides/authentication/mobile-sso/",
         },
         {
-          title: "多因素认证（MFA）",
+          title: "多因素认证",
           path: "/guides/authentication/mfa/",
           children: [
-            {
-              title: "基于时间戳算法的一次性密码（TOTP）的 MFA",
-              path: "/guides/authentication/mfa/totp",
-            },
             {
               title: "基于短信验证码的 MFA",
               path: "/guides/authentication/mfa/sms",
@@ -207,10 +204,22 @@ const zhCnNavBar = {
               path: "/guides/authentication/mfa/email-code",
             },
             {
+              title: "基于时间戳算法的一次性密码的 MFA",
+              path: "/guides/authentication/mfa/totp",
+            },
+            {
+              title: "基于人脸识别的 MFA",
+              path: "/guides/authentication/mfa/face-recognition",
+            },
+            {
               title: "通过 SDK 接入 MFA",
               path: "/guides/authentication/mfa/mfa-sdk",
             },
-          ],
+            {
+              title: "MFA 策略配置",
+              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
+            },
+                    ],
         },
         {
           title: "对认证流程进行扩展",
@@ -480,14 +489,6 @@ const zhCnNavBar = {
           path: "/guides/dashboard/",
         },
         {
-          title: "飞书工作台 SSO 方案",
-          path: "/guides/lark-sso/",
-        },
-        {
-          title: "企业微信 SSO 方案",
-          path: "/guides/qiwei-sso/",
-        },
-        {
           title: "集成应用 SSO 方案",
           path: "/guides/apn/",
           children: [],
@@ -495,6 +496,27 @@ const zhCnNavBar = {
         {
           title: "自建应用 SSO 方案",
           path: "/guides/app/sso",
+        },
+        {
+          title: "第三方 SSO 方案",
+          children: [
+            {
+              title: "飞书工作台 SSO 方案",
+              path: "/guides/lark-sso/",
+            },
+            {
+              title: "企业微信 SSO 方案",
+              path: "/guides/qiwei-sso/",
+            },
+            {
+              title: "钉钉 SSO 方案",
+              path: "/guides/dingding-sso/",
+            },
+            {
+              title: "WeLink SSO 方案",
+              path: "/guides/welink-sso/",
+            },
+          ]
         },
         {
           title: "管理用户登录状态",
@@ -657,6 +679,10 @@ const zhCnNavBar = {
             {
               title: "企业微信移动端",
               path: "/guides/connections/enterprise/wecom-mobile/",
+            },
+            {
+              title: "企业微信移动端（代开发模式）",
+              path: "/guides/connections/enterprise/wecom-agency-mobile/",
             },
             {
               title: "钉钉 H5 微应用（企业内部开发）",
@@ -994,33 +1020,25 @@ const zhCnNavBar = {
   ],
   "/reference/": [
     {
+      title: "单点登录（SSO）",
+      path: "/reference/sdk-for-sso-spa",
+    },
+    {
       title: "登录组件 (Guard)",
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "React",
-          path: "/reference/guard/v2/react.md",
+          title: "单页应用",
+          path: "/reference/guard/v3/spa.md",
         },
         {
-          title: "原生 JavaScript",
-          path: "/reference/guard/v2/native-javascript.md",
-        },
-        {
-          title: "Vue",
-          path: "/reference/guard/v2/vue.md",
-        },
-        {
-          title: "Angular",
-          path: "/reference/guard/v2/angular.md",
-        },
-        {
-          title: "迁移指南",
-          path: "/reference/guard/v2/migration",
+          title: "标准 WEB 应用",
+          path: "/reference/guard/v3/mpa.md",
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/v2/guard-changelog",
-        },
+          path: "/reference/guard/guard-changelog",
+        }
       ],
     },
     // {
@@ -1055,10 +1073,6 @@ const zhCnNavBar = {
     //     },
     //   ],
     // },
-    {
-      title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso-spa",
-    },
     {
       title: "JavaScript / Node.js",
       path: "/reference/sdk-for-node/",
@@ -1273,12 +1287,12 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "开始开发",
-          path: "/reference/sdk-for-android/develop",
+          title: "快速开始",
+          path: "/reference/sdk-for-android/quick",
         },
         {
-          title: "快速接入",
-          path: "/reference/sdk-for-android/quick",
+          title: "托管页",
+          path: "/reference/sdk-for-android/develop",
         },
         {
           title: "超组件",
@@ -1405,6 +1419,7 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-android/apis/",
           children: [
             "/reference/sdk-for-android/apis/authentication/",
             "/reference/sdk-for-android/apis/protocol/",
@@ -1425,7 +1440,9 @@ const zhCnNavBar = {
         },
         {
           title: "典型场景",
+          path: "/reference/sdk-for-android/scenario/",
           children: [
+            "/reference/sdk-for-android/scenario/logout",
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
@@ -1448,12 +1465,12 @@ const zhCnNavBar = {
 
       children: [
         {
-          title: "开始开发",
-          path: "/reference/sdk-for-ios/develop",
+          title: "快速开始",
+          path: "/reference/sdk-for-ios/quick",
         },
         {
-          title: "快速接入",
-          path: "/reference/sdk-for-ios/quick",
+          title: "托管页",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
           title: "超组件",
@@ -1560,12 +1577,13 @@ const zhCnNavBar = {
         },
         {
           title: "APIs",
+          path: "/reference/sdk-for-ios/apis/",
           children: [
-            "/reference/sdk-for-ios/authentication/",
-            "/reference/sdk-for-ios/protocol/",
-            "/reference/sdk-for-ios/mfa/",
-            "/reference/sdk-for-ios/scan/",
-            "/reference/sdk-for-ios/util/",
+            "/reference/sdk-for-ios/apis/authentication/",
+            "/reference/sdk-for-ios/apis/protocol/",
+            "/reference/sdk-for-ios/apis/mfa/",
+            "/reference/sdk-for-ios/apis/scan/",
+            "/reference/sdk-for-ios/apis/util/",
           ],
         },
         {
@@ -1574,10 +1592,19 @@ const zhCnNavBar = {
           children: [
             "/reference/sdk-for-ios/social/wechat",
             "/reference/sdk-for-ios/social/wecom",
-            "/reference/sdk-for-ios/social/alipay",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
+          ],
+        },
+        {
+          title: "典型场景",
+          path: "/reference/sdk-for-ios/scenario/",
+          children: [
+            "/reference/sdk-for-ios/scenario/tokens",
+            "/reference/sdk-for-ios/scenario/webview",
+            "/reference/sdk-for-ios/scenario/logout",
+            "/reference/sdk-for-ios/scenario/splash",
           ],
         },
         {
@@ -1591,7 +1618,7 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "开始开发",
+          title: "快速开始",
           path: "/reference/sdk-for-flutter/develop",
         },
         {
@@ -1616,11 +1643,11 @@ const zhCnNavBar = {
     },
     {
       title: "微信小程序",
-      path: "/reference/sdk-for-wxapp",
+      path: "/reference/sdk-for-weixin-miniapp",
     },
     {
       title: "微信网页授权",
-      path: "/reference/sdk-for-wxmp",
+      path: "/reference/sdk-for-weixin-official-account",
     },
     {
       title: "框架集成",
@@ -1669,12 +1696,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-android/",
           children: [
             {
-              title: "开始开发",
-              path: "/reference-new/mobile/sdk-for-android/develop",
+              title: "快速开始",
+              path: "/reference-new/mobile/sdk-for-android/quick",
             },
             {
-              title: "快速接入",
-              path: "/reference-new/mobile/sdk-for-android/quick",
+              title: "托管页",
+              path: "/reference-new/mobile/sdk-for-android/develop",
             },
             {
               title: "超组件",
@@ -1801,6 +1828,7 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
+              path: "/reference-new/mobile/sdk-for-android/apis/",
               children: [
                 "/reference-new/mobile/sdk-for-android/apis/authentication/",
                 "/reference-new/mobile/sdk-for-android/apis/protocol/",
@@ -1821,7 +1849,9 @@ const zhCnNavBar = {
             },
             {
               title: "典型场景",
+              path: "/reference-new/mobile/sdk-for-android/scenario/",
               children: [
+                "/reference-new/mobile/sdk-for-android/scenario/logout",
                 "/reference-new/mobile/sdk-for-android/scenario/splash",
                 "/reference-new/mobile/sdk-for-android/scenario/tokens",
                 "/reference-new/mobile/sdk-for-android/scenario/user-profile",
@@ -1875,7 +1905,7 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-flutter/",
           children: [
             {
-              title: "开始开发",
+              title: "快速开始",
               path: "/reference-new/mobile/sdk-for-flutter/develop",
             },
             {
@@ -1899,12 +1929,12 @@ const zhCnNavBar = {
           path: "/reference-new/mobile/sdk-for-ios/",
           children: [
             {
-              title: "开始开发",
-              path: "/reference-new/mobile/sdk-for-ios/develop",
+              title: "快速开始",
+              path: "/reference-new/mobile/sdk-for-ios/quick",
             },
             {
-              title: "快速接入",
-              path: "/reference-new/mobile/sdk-for-ios/quick",
+              title: "托管页",
+              path: "/reference-new/mobile/sdk-for-ios/develop",
             },
             {
               title: "超组件",
@@ -2011,12 +2041,13 @@ const zhCnNavBar = {
             },
             {
               title: "APIs",
+              path: "/reference-new/mobile/sdk-for-ios/apis/",
               children: [
-                "/reference-new/mobile/sdk-for-ios/authentication/",
-                "/reference-new/mobile/sdk-for-ios/protocol/",
-                "/reference-new/mobile/sdk-for-ios/mfa/",
-                "/reference-new/mobile/sdk-for-ios/scan/",
-                "/reference-new/mobile/sdk-for-ios/util/",
+                "/reference-new/mobile/sdk-for-ios/apis/authentication/",
+                "/reference-new/mobile/sdk-for-ios/apis/protocol/",
+                "/reference-new/mobile/sdk-for-ios/apis/mfa/",
+                "/reference-new/mobile/sdk-for-ios/apis/scan/",
+                "/reference-new/mobile/sdk-for-ios/apis/util/",
               ],
             },
             {
@@ -2025,9 +2056,19 @@ const zhCnNavBar = {
               children: [
                 "/reference-new/mobile/sdk-for-ios/social/wechat",
                 "/reference-new/mobile/sdk-for-ios/social/wecom",
-                "/reference-new/mobile/sdk-for-ios/social/alipay",
                 "/reference-new/mobile/sdk-for-ios/social/lark",
                 "/reference-new/mobile/sdk-for-ios/social/apple",
+                "/reference-new/mobile/sdk-for-ios/social/oneauth",
+              ],
+            },
+            {
+              title: "典型场景",
+              path: "/reference-new/mobile/sdk-for-ios/scenario/",
+              children: [
+                "/reference-new/mobile/sdk-for-ios/scenario/tokens",
+                "/reference-new/mobile/sdk-for-ios/scenario/webview",
+                "/reference-new/mobile/sdk-for-ios/scenario/logout",
+                "/reference-new/mobile/sdk-for-ios/scenario/splash",
               ],
             },
             {
@@ -5990,6 +6031,10 @@ const translatedZhCnNavBar = {
   ],
   "/reference/": [
     {
+      title: "Single Sign-On (SSO)",
+      path: "/reference/sdk-for-sso-spa",
+    },
+    {
       title: "Login component",
       path: "/reference/ui-components/",
       children: [
@@ -6014,10 +6059,6 @@ const translatedZhCnNavBar = {
           path: "/reference/ui-components/parameters",
         },
       ],
-    },
-    {
-      title: "Single Sign-On (SSO)",
-      path: "/reference/sdk-for-sso-spa",
     },
     {
       title: "JavaScript/Node.js",
@@ -6405,12 +6446,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-android/",
       children: [
         {
-          title: "Get started",
-          path: "/reference/sdk-for-android/develop",
-        },
-        {
           title: "Quick start",
           path: "/reference/sdk-for-android/quick",
+        },
+        {
+          title: "Hosting page",
+          path: "/reference/sdk-for-android/develop",
         },
         {
           title: "APIs",
@@ -6449,6 +6490,16 @@ const translatedZhCnNavBar = {
           ],
         },
         {
+          title: "Scenario",
+          path: "/reference/sdk-for-android/scenario/",
+          children: [
+            {
+              title: "logout",
+              path: "/reference/sdk-for-android/scenario/logout",
+            },
+          ],
+        },
+        {
           title: "On-premise",
           path: "/reference/sdk-for-android/onpremise",
         },
@@ -6459,12 +6510,12 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-ios/",
       children: [
         {
-          title: "Get started",
-          path: "/reference/sdk-for-ios/develop",
-        },
-        {
           title: "Quick start",
           path: "/reference/sdk-for-ios/quick",
+        },
+        {
+          title: "Auth Flow",
+          path: "/reference/sdk-for-ios/develop",
         },
         {
           title: "APIs",
@@ -6497,10 +6548,6 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/wechat",
             },
             {
-              title: "Alipay",
-              path: "/reference/sdk-for-ios/social/alipay",
-            },
-            {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
             },
@@ -6517,7 +6564,7 @@ const translatedZhCnNavBar = {
       path: "/reference/sdk-for-flutter/",
       children: [
         {
-          title: "Get started",
+          title: "Quick start",
           path: "/reference/sdk-for-flutter/develop",
         },
         {

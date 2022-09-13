@@ -462,8 +462,6 @@ func (c *Client) RevokeResource(request model.RevokeResourceRequest) (bool, erro
 - `RevokeResourceRequest.Opts` \<[]AuthorizeResourceOpt\> 资源操作类型数组
 
 ```go
-    var actions []string
-	actions = append(actions, "*")
 	opt := model.AuthorizeResourceOpt{
 		TargetType:       model.EnumPolicyAssignmentTargetTypeUser,
 		TargetIdentifier: "61090ca34e01a3968d3e3b76",

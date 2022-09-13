@@ -205,35 +205,6 @@ AuthClient().loginByPhoneCode(phone: "13012345678", code: "1234") { code, messag
 
 <br>
 
-##  Log in with an LDAP username
-
-```swift
-func loginByLDAP(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
-**Parameter**
-
-* `username` ldap username
-* `password` password
-
-**Example**
-
-```swift
-AuthClient().loginByLDAP(username: "username", password: "strong") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo
-    }
-}
-```
-
-**Error Code**
-
-* `2333` The account or password is incorrect
-
-<br>
-
-## Login with an AD username
-
 ```swift
 func loginByAD(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
@@ -369,9 +340,8 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
 
 * `email` email address
 * `scene` Send a scene, optional value is ：
-  - `RESET_PASSWORD`: Send a reset password message, including the verification code;
-  - `VERIFY_EMAIL`: Send a message to verify the mailbox;
-  - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code;
+  - `RESET_PASSWORD`: Send a reset password message, including the verification code.
+  - `CHANGE_EMAIL`: Send a modified mailbox message, including the verification code.
   - `MFA_VERIFY`: Send MFA verification email.
   - `VERIFY_CODE`: Send verification email.
 
