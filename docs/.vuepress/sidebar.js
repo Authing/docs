@@ -185,7 +185,7 @@ const zhCnNavBar = {
         },
         {
           title: "实现单点登录（SSO）",
-          path: "/guides/app-new/sso/",
+          path: "/guides/authentication/sso/",
         },
         {
           title: "在移动端实现单点登录",
@@ -417,95 +417,92 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "应用",
-      path: "/guides/app-new/",
+      title: "自建应用",
+      path: "/guides/app/",
       children: [
         {
-          title: "自建应用",
-          path: "/guides/app-new/create-app/",
+          title: "创建应用",
+          path: "/guides/app/create-app",
+        },
+        {
+          title: "配置登录注册方式",
+          path: "/guides/app/config-login-methods",
+        },
+        {
+          title: "添加注册协议",
+          path: "/guides/app/agreements",
+        },
+        {
+          title: "自定义登录框样式",
+          path: "/guides/app/custom-styles",
+        },
+        {
+          title: "成为联邦认证身份源",
+          path: "/guides/app/identity-provider",
+        },
+        {
+          title: "开启多因素认证",
+          path: "/guides/app/mfa",
+        },
+        {
+          title: "子账号管理",
+          path: "/guides/app/sub-account",
+        },
+        // {
+        //   title: '开启子账号登录',
+        //   path: '/guides/app/sub-account'
+        // },
+        // {
+        //   title: '授权管理',
+        //   path: '/guides/app/authorization'
+        // }
+      ],
+    },
+    {
+      title: "单点登录 SSO",
+      path: "/guides/sso/",
+      children: [
+        {
+          title: "应用面板",
+          path: "/guides/dashboard/",
+        },
+        {
+          title: "集成应用 SSO 方案",
+          path: "/guides/apn/",
+          children: [],
+        },
+        {
+          title: "自建应用 SSO 方案",
+          path: "/guides/app/sso.md",
+        },
+        {
+          title: "第三方 SSO 方案",
           children: [
             {
-              title: "创建自建应用",
-              path: "/guides/app-new/create-app/create-app",
+              title: "飞书工作台 SSO 方案",
+              path: "/guides/lark-sso/",
             },
             {
-              title: "快速开始",
-              path: "/guides/app-new/create-app/quick-start",
+              title: "企业微信 SSO 方案",
+              path: "/guides/qiwei-sso/",
             },
             {
-              title: "应用配置",
-              path: "/guides/app-new/create-app/app-configuration",
+              title: "钉钉 SSO 方案",
+              path: "/guides/dingding-sso/",
             },
             {
-              title: "登录控制",
-              path: "/guides/app-new/create-app/login-control",
-            },
-            {
-              title: "访问授权",
-              path: "/guides/app-new/create-app/application-access-control",
-            },
-            {
-              title: "品牌化",
-              path: "/guides/app-new/create-app/customize-guard",
-            },
-            {
-              title: "安全管理",
-              path: "/guides/app-new/create-app/security-management",
-            },
-            {
-              title: "高级配置",
-              path: "/guides/app-new/create-app/advanced-settings",
-            },
-            {
-              title: "租户配置",
-              path: "/guides/app-new/create-app/tenant-config",
+              title: "WeLink SSO 方案",
+              path: "/guides/welink-sso/",
             },
           ]
-        }, 
+        },
         {
-          title: "单点登录 SSO",
-          path: "/guides/app-new/sso/",
-          children: [
-            {
-              title: "应用面板",
-              path: "/guides/dashboard/",
-            },
-            {
-              title: "集成应用 SSO 方案",
-              path: "/guides/apn/",
-              children: [],
-            },
-            {
-              title: "自建应用 SSO 方案",
-              path: "/guides/app-new/sso/create-app-sso.md",
-            },
-            {
-              title: "第三方 SSO 方案",
-              path: "/guides/app-new/sso/third-party-sso/",
-              children: [
-                {
-                  title: "飞书工作台 SSO 方案",
-                  path: "/guides/lark-sso/",
-                },
-                {
-                  title: "企业微信 SSO 方案",
-                  path: "/guides/qiwei-sso/",
-                },
-                {
-                  title: "钉钉 SSO 方案",
-                  path: "/guides/dingding-sso/",
-                },
-                {
-                  title: "WeLink SSO 方案",
-                  path: "/guides/welink-sso/",
-                },
-              ]
-            },
-            {
-              title: "ASA 表单代填",
-              path: "/guides/asa/",
-            },
-          ],
+          title: "管理用户登录状态",
+          path: "/guides/app/session-management.md",
+        },
+        {
+          title: "ASA 表单代填",
+          path: "/guides/asa/",
         },
       ],
     },
