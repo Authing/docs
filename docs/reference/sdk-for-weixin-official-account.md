@@ -43,7 +43,7 @@ npm install --save @authing/weixin-official-account
 
 ::: tab CDN
 ```html
-<script src="https://cdn.authing.co/packages/weixin-official-account/5.0.0/weixin-official-account.min.js"></script>
+<script src="https://cdn.authing.co/packages/weixin-official-account/5.0.1/weixin-official-account.min.js"></script>
 ```
 :::
 ::::
