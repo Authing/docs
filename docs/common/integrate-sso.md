@@ -67,7 +67,7 @@ $ yarn add @authing/web
 ### 使用 script 标签直接引入
 
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.0/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.1/index.global.js"></script>
 <script>
 const sdk = new AuthingFactory.Authing({
   // 很重要，请仔细填写！

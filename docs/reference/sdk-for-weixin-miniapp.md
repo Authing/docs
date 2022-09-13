@@ -77,7 +77,11 @@ npm install --save @authing/miniapp-uniapp
 import { Authing } from '@authing/miniapp-wx'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -94,7 +98,11 @@ const authing = new Authing({
 import { Authing } from '@authing/miniapp-taro'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -111,7 +119,11 @@ const authing = new Authing({
 import { Authing } from '@authing/miniapp-uniapp'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -244,124 +256,6 @@ export default {
 :::
 ::::
 
-### 微信授权手机号登录
-
->authing.loginByPhone
-
-#### 入参
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|connection|String|认证方式|wechat_mini_program_phone|否|
-|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
-|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
-|options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
-
-**WechatMiniProgramCodePayload**
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
-|iv|String|加密算法的初始向量| - | 是 |
-
-#### 出参
-
-参考：[LoginState](#LoginState)
-
-
-#### 示例代码
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab 微信原生小程序
-``` html
-<!-- index.wxml -->
-<button bindtap="loginByPhone">loginByPhone</button>
-```
-``` typescript
-// index.js
-Page({
-  async loginByPhone () {
-    const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
-    const res = await authing.loginByPhone({
-      connection: 'wechat_mini_program_phone',
-      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramPhonePayload: {
-        encryptedData,
-        iv
-      },
-      options: {
-        scope: 'openid profile offline_access'
-      }
-    })
-
-    console.log('authing.loginByPhone res: ', res)
-  }
-})
-```
-:::
-::: tab Taro
-``` tsx
-export default class Index extends Component<PropsWithChildren> {
-  render () {
-    return (
-      <View className='index'>
-        <Button onClick={() => this.loginByPhone()}>loginByPhone</Button>
-      </View>
-    )
-  }
-  async loginByPhone () {
-    const { encryptedData, iv } = await Taro.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
-    const res = await authing.loginByPhone({
-      connection: 'wechat_mini_program_phone',
-      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramPhonePayload: {
-        encryptedData,
-        iv
-      },
-      options: {
-        scope: 'openid profile offline_access'
-      }
-    })
-
-    console.log('authing.loginByPhone res: ', res)
-  }
-}
-```
-:::
-::: tab uniapp
-``` typescript
-export default {
-  methods: {
-    async loginByPhone () {
-      const [, { encryptedData, iv }] = await uni.getUserProfile({
-        desc: 'getUserProfile'
-      })
-      
-      const res = await authing.loginByPhone({
-        connection: 'wechat_mini_program_phone',
-        extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-        wechatMiniProgramPhonePayload: {
-          encryptedData,
-          iv
-        },
-        options: {
-          scope: 'openid profile offline_access'
-        }
-      })
-
-      console.log('authing.loginByPhone res: ', res)
-    }
-  }
-}
-```
-:::
-::::
-
 ### 账号密码登录
 
 > authing.loginByPassword
@@ -463,6 +357,94 @@ export default {
 
       console.log('authing.loginByPassword res: ', res)
     }
+  }
+}
+```
+:::
+::::
+
+### 发送短信验证码
+
+> authing.sendSms
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|phoneNumber|String|手机号码|是|
+|phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|message|String|返回信息
+|statusCode|Number|状态码
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="sendSms">sendSms</button>
+```
+``` typescript
+// index.js
+Page({
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.sendSms res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.sendSms()}>sendSms</Button>
+      </View>
+    )
+  }
+  
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.sendSms res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="sendSms">sendSms</button>
+```
+``` typescript
+export default {
+  methods: {
+    async sendSms () {
+      // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+      const res = await authing.sendSms({
+        phoneNumber: '13100000000',
+        phoneCountryCode: '+86',
+        channel: 'CHANNEL_LOGIN'
+      })
+
+      console.log('authing.sendSms res: ', res)
+    },
   }
 }
 ```
@@ -740,94 +722,6 @@ export default {
 
       console.log('authing.getPhone res: ', res)
     }
-  }
-}
-```
-:::
-::::
-
-### 发送短信验证码
-
-> authing.sendSms
-
-#### 入参
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|phoneNumber|String|手机号码|是|
-|phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
-
-#### 出参
-
-|名称|类型|描述|
-|-----|----|----|
-|message|String|返回信息
-|statusCode|Number|状态码
-
-#### 示例代码
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab 微信原生小程序
-``` html
-<!-- index.wxml -->
-<button bindtap="sendSms">sendSms</button>
-```
-``` typescript
-// index.js
-Page({
-  async sendSms () {
-    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
-      phoneNumber: '13100000000',
-      phoneCountryCode: '+86',
-      channel: 'CHANNEL_LOGIN'
-    })
-
-    console.log('authing.sendSms res: ', res)
-  }
-})
-```
-:::
-::: tab Taro
-``` tsx
-export default class Index extends Component<PropsWithChildren> {
-  render () {
-    return (
-      <View className='index'>
-        <Button onClick={() => this.sendSms()}>sendSms</Button>
-      </View>
-    )
-  }
-  
-  async sendSms () {
-    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
-      phoneNumber: '13100000000',
-      phoneCountryCode: '+86',
-      channel: 'CHANNEL_LOGIN'
-    })
-
-    console.log('authing.sendSms res: ', res)
-  }
-}
-```
-:::
-::: tab uniapp
-```html
-<button @click="sendSms">sendSms</button>
-```
-``` typescript
-export default {
-  methods: {
-    async sendSms () {
-      // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-      const res = await authing.sendSms({
-        phoneNumber: '13100000000',
-        phoneCountryCode: '+86',
-        channel: 'CHANNEL_LOGIN'
-      })
-
-      console.log('authing.sendSms res: ', res)
-    },
   }
 }
 ```
@@ -1218,6 +1112,11 @@ export default {
 |-----|----|----|----|----|
 |passwordEncryptType|none / rsa / sm2|密码加密方式|none|否|
 |scope|[Scope](#Scope)|获取的资源类型，以空格分割| - | 否|
+|autoRegister|Boolean|是否开启自动注册。如果设置为 true，当用户不存在的时候，会先自动为其创建一个账号。| false | 否|
+|clientIp|String|客户端真实 IP 地址。默认情况下，Authing 会将请求来源的 IP 识别为用户登录的 IP 地址，如果你在后端服务器中调用此接口，需要将此 IP 设置为用户的真实请求 IP。| - | 否 |
+|context|String|额外请求上下文，将会传递到认证前和认证后的 Pipeline 的 context 对象中。了解如何在 Pipeline 的 context 参数中获取传入的额外 context。| - | 否|
+|tenantId|String|租户 ID| - | 否|
+|customData|Object|自定义数据| - | 否 |
 
 
 ### <p id="Scope">Scope</p>
