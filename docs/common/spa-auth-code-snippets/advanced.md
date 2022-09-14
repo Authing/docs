@@ -1,6 +1,6 @@
 <!-- 高级使用 -->
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   // 很重要，请仔细填写！

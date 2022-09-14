@@ -7,7 +7,7 @@
 ## 安装
 
 ```bash
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 
@@ -16,7 +16,7 @@ $ yarn add @authing/browser
 ### 初始化
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   domain: 'AUTHING_DOMAIN', // 应用的认证地址
@@ -45,8 +45,8 @@ const sdk = new Authing({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',

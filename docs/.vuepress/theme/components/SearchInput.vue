@@ -73,8 +73,17 @@ export default {
 
       let { pages } = this.$site;
       pages = pages
-        // TODO: 暂时隐藏开发集成 新版页面 reference-new
-        .filter(item => !item.path.includes("reference-new/"))
+        // TODO: 暂时隐藏开发集成 新版页面 reference-new 隐藏旧版 guard
+        .filter(
+          item =>
+            !(item.path.includes("reference-new/") ||
+            (
+              item.path.includes("/reference/guard/") &&
+              !(
+                item.path.includes("v3") || item.path === "/reference/guard/v2/"
+              )
+            ))
+        )
         .map(item => {
           return {
             ...item,

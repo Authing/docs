@@ -67,20 +67,20 @@ Authing Browser SDK 支持通过包管理器安装、script 标签引入的方�
 #### 使用 NPM 安装
 
 ```bash
-$ npm install @authing/browser
+$ npm install @authing/web
 ```
 
 #### 使用 Yarn 安装
 
 ```bash
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 #### 使用 script 标签直接引入
 
 ```html
 <head>
-  <script src="//cdn.jsdelivr.net/npm/@authing/browser"></script>
+  <script src="//cdn.jsdelivr.net/npm/@authing/web"></script>
 </head>
 ```
 
@@ -119,7 +119,7 @@ Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持下
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -196,7 +196,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -354,7 +354,7 @@ export default {
   </div>
 </template>
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -417,7 +417,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -559,7 +559,7 @@ export default {
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -638,7 +638,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -744,7 +744,7 @@ export default defineComponent({
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -846,7 +846,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -957,7 +957,7 @@ export default defineComponent({
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1030,7 +1030,7 @@ export default {
 
 <script>
 import { defineComponent } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1235,7 +1235,7 @@ $ npm start
 
 ```vue{56-72}
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1327,7 +1327,7 @@ export default {
 ```vue{37-55}
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",

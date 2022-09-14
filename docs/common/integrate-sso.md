@@ -55,21 +55,21 @@ Authing Browser SDK 支持通过包管理器安装、script 标签引入的方�
 ### 使用 NPM 安装
 
 ```shell
-$ npm install @authing/browser
+$ npm install @authing/web
 ```
 
 ### 使用 Yarn 安装
 
 ```shell
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 ### 使用 script 标签直接引入
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@authing/browser"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.1/index.global.js"></script>
 <script>
-const sdk = new Authing({
+const sdk = new AuthingFactory.Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',
@@ -104,7 +104,7 @@ const sdk = new Authing({
 为了使用 Authing Browser SDK，你需要填写`应用 ID`、`认证域名`、`回调地址`等参数，如下示例：
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   // 很重要，请仔细填写！
@@ -130,8 +130,8 @@ Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持三
 ::: tab React
 ```tsx{22-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -213,7 +213,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -288,7 +288,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -370,8 +370,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -569,8 +569,8 @@ export class AppComponent {
 ::: tab React
 ```tsx{22-28}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -643,7 +643,7 @@ export default App;
   </div>
 </template>
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -710,7 +710,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -777,8 +777,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -944,8 +944,8 @@ export class AppComponent {
 ::: tab React
 ```tsx{22-44}
 import React, { useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1027,7 +1027,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1096,7 +1096,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1170,8 +1170,8 @@ export default defineComponent({
 
 ```ts{26-44}
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -1237,7 +1237,7 @@ export class AppComponent {
 每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Browser SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   // 很重要，请仔细填写！
@@ -1285,8 +1285,8 @@ const sdk = new Authing({
 ::: tab React
 ```tsx{29-36}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1368,7 +1368,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1450,7 +1450,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1539,8 +1539,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -1612,8 +1612,8 @@ export class AppComponent {
 ::: tab React
 ```tsx{38-50}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1725,7 +1725,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1832,7 +1832,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1941,8 +1941,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -2027,8 +2027,8 @@ export class AppComponent {
 ::: tab React
 ```tsx{36-43}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -2120,7 +2120,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -2196,7 +2196,7 @@ export default {
 
 <script>
 import { defineComponent } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -2248,8 +2248,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
