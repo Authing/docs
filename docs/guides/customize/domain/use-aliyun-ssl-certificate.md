@@ -4,17 +4,17 @@
 
 在阿里云控制台的 **数字证书管理服务->SSL 证书** 中找到您要使用的证书，并根据您的服务器类型选择对应的证书包进行下载。
 
-<img src="../images/download-certificate.png" style="display:block;margin: 0 auto;">
+<img src="../images/download-certificate-new.png" style="display:block;margin: 0 auto;">
 
 如果您还没有证书，可以点击 **立即购买** 生成新的证书。
 
-<img src="../images/purchase-ssl-certificate.png" style="display:block;margin: 0 auto;">
+<img src="../images/purchase-ssl-certificate-new.png" style="display:block;margin: 0 auto;">
 
 ## 第二步：获取证书关键信息
 
 以 Apache 证书包为例，解压后有三个文件：
 
-<img src="../images/apache-package.png" style="display:block;margin: 0 auto;">
+<img src="../images/apache-package-new.png" style="display:block;margin: 0 auto;">
 
 打开之后即可获取签名证书、签名私钥和证书链信息。
 
