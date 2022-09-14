@@ -1,7 +1,7 @@
 const { basePath } = require("../env");
 
 const cacheSidebarPlugin = require("./vuepress-plugin-cache-sidebar");
-const compressHtmlPlugin = require("./vuepress-plugin-compress-html");
+// const compressHtmlPlugin = require("./vuepress-plugin-compress-html");
 
 const parsePath = (path) => {
   const urlPath = path.includes(".md") ? path.slice(0, -3) + ".html" : path;
@@ -340,7 +340,8 @@ const plugins = [
   // nav 过长的时候 自动调整位置 使高亮位置呈现在视觉范围
   // "@vuepress/active-header-links",
 
-  [compressHtmlPlugin],
+  // html压缩之后生成的html，和vue第二次渲染检测的时候发现整体html不同，导致看上去页面整体刷新了，导致了二次刷新
+  // [compressHtmlPlugin],
   [cacheSidebarPlugin],
 
   [require("vuepress-plugin-tabs")],
