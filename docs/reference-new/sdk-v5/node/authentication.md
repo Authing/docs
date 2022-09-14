@@ -4,7 +4,7 @@
 
 认证模块基于 OIDC 标准协议实现，支持获取认证地址、获取用户登录态，获取令牌、检查令牌、刷新用户登录态，登出等方法。本模块只支持在服务端调用。
 
-注意：使用本模块之前，你需要创建一个 (Authing 标准 Web 应用)[https://docs.authing.cn/v2/guides/app/create-app.html]，并开启自建应用 SSO 功能，具体文档可参考(自建应用 SSO 方案)[https://docs.authing.cn/v2/guides/app/sso.html].
+注意：使用本模块之前，你需要创建一个 (Authing 标准 Web 应用)[/guides/app-new/create-app/create-app.md]，并开启自建应用 SSO 功能，具体文档可参考[自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)。
 
 使用方法：
 使用 appId 、 appSecret 、 userPoolHost 、 redirectUri 初始化 AuthenticationClient，初始化完成后调用 buildAuthUrl 构造前端登录链接，用户完成登录后，调用 getLoginStateByAuthCode，校验 state 值，并通过 code 码换取 token（Access Token、 ID Token、 Refresh Token），获得用户登录态，登录结束后，可调用 buildLogoutUrl 生成登出 URL。用户点击后触发登出，完成整个登录登出流程。

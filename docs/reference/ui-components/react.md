@@ -113,7 +113,7 @@ function App() {
 
 ### 添加社会化登录
 
-在初始化参数 `config` 中传入 `socialConnections` 列表指定需要显示的社会化登录（默认显示[该应用配置的所有社会化登录](/guides/app/config-login-methods.md#添加社会化登录)）。
+在初始化参数 `config` 中传入 `socialConnections` 列表指定需要显示的社会化登录（默认显示[该应用配置的所有社会化登录](/guides/app-new/create-app/login-control.md#添加社会化登录)）。
 
 ```javascript
 import { AuthingGuard, SocialConnections } from "@authing/react-ui-components";

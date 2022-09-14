@@ -6,7 +6,7 @@
 
 ## 创建两个应用
 
-首先你可以按照[指引](./create-app.md)创建两个应用。
+首先你可以按照[指引](/guides/app-new/create-app/create-app.md)创建两个应用。
 
 ## 配置单点登录
 
