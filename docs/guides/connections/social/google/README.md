@@ -5,7 +5,7 @@
 ## 场景介绍
 
 - **概述**：Google 社会化登录是用户以 Google 为身份源安全登录第三方应用或者网站。在 {{$localeConfig.brandName}} 中配置并开启 Google 的社会化登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 Google 基本开放的信息和帮助用户实现免密登录功能。
-- **应用场景**：创建 OAuth 应用程序
+- **应用场景**：Web 端
 - **终端用户预览图**：
 
 <img src="./images/google_1.png" >
@@ -80,7 +80,7 @@
 
 - **详细接入方法**：
 
-3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
 3.2 在已创建好的 Google 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

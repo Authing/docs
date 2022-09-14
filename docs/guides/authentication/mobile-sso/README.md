@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-移动应用单点登录（Single Sign On，单点登录） 和传统 [Web 端 SSO](../sso/README.md) 类似，指的是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。
+移动应用单点登录（Single Sign On，单点登录） 和传统 [Web 端 SSO](/guides/app-new/sso/README.md) 类似，指的是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。
 
 Authing 目前共支持两种形式的移动端单点登录方式：
 

@@ -76,7 +76,7 @@ After creating the DingTalk identity source on the {{$localeConfig.brandName}} c
 
 - **Detailed access method**:
 
-3.1 Create an app in the {{$localeConfig.brandName}} console. For details, see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 Create an app in the {{$localeConfig.brandName}} console. For details, see: [How to create an app in {{$localeConfig.brandName}}](/guides/app-new/create-app/create-app.md)
 
 3.2 On the created DingTalk H5 micro-app (internal development) identity source connection details page, open and associate an application created in the {{$localeConfig.brandName}} console
 

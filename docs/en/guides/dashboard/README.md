@@ -36,10 +36,10 @@
 ### 2. 配置应用面板
 企业管理员或具有 {{$localeConfig.brandName}}  控制台权限的管理员可以进入控制台 > 应用 > 应用面板 > 配置 来配置应用面板的登录注册方式、自定义登录框样式、开启多因素认证方式等。
 
-#### 2.1 [配置登录注册方式](https://docs.authing.cn/v2/guides/app/config-login-methods.html)
-#### 2.2 [自定义登录框样式](https://docs.authing.cn/v2/guides/app/custom-styles.html)
-#### 2.3 [开启多因素认证](https://docs.authing.cn/v2/guides/app/mfa.html) | {{$localeConfig.brandName}}  文档
-#### 2.4 [添加注册协议](https://docs.authing.cn/v2/guides/app/agreements.html) | {{$localeConfig.brandName}}  文档
+#### 2.1 [配置登录注册方式](/guides/app-new/create-app/login-control.md)
+#### 2.2 [自定义登录框样式](/guides/app-new/create-app/customize-guard.md#登录框样式)
+#### 2.3 [开启多因素认证](/guides/app-new/create-app/security-management.md#多因素认证) | {{$localeConfig.brandName}}  文档
+#### 2.4 [添加注册协议](/guides/app-new/create-app/customize-guard.md#登录注册协议) | {{$localeConfig.brandName}}  文档
 ![](~@imagesZhCn/guides/dashboard/8.png)
 
 ### 3. 查看用户或组织可访问的应用

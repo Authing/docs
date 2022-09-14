@@ -1406,7 +1406,7 @@ def check_password_strength(self, password):
   pass
 ```
 
-检查密码强度，详情请见 [https://docs.authing.co/v2/guides/security/config-password.html](https://docs.authing.co/v2/guides/security/config-password.html)
+检查密码强度，详情请见 [密码安全](/guides/security/pw-security.md)
 
 #### 参数
 -  `password` \<str\> 密码

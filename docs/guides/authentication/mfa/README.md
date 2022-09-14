@@ -6,12 +6,12 @@
 
 您可在本章节了解以下 MFA 认证信息：
 
-- [基于短信验证码的 MFA](./sms.md)
-- [基于邮件验证码的 MFA](./email-code.md)
-- [基于时间戳算法的一次性密码的 MFA](./totp.md)
-- [基于人脸识别的 MFA](./face-recognition.md)
-- [通过 SDK 接入 MFA](./mfa-sdk.md)
-- [MFA 策略配置](./policy-based-mfa-configuration.md)
+- [基于短信验证码的 MFA](/guides/security/mfa/sms.md)
+- [基于邮件验证码的 MFA](/guides/security/mfa/email-code.md)
+- [基于时间戳算法的一次性密码的 MFA](/guides/security/mfa/totp.md)
+- [基于人脸识别的 MFA](/guides/security/mfa/face-recognition.md)
+- [通过 SDK 接入 MFA](/guides/security/mfa/mfa-sdk.md)
+- [MFA 策略配置](/guides/security/mfa/policy-based-mfa-configuration.md)
 
 <img src="./images/global-level-mfa.png" style="display:block;margin: 0 auto;">
 

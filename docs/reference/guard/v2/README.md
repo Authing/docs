@@ -48,7 +48,7 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 - [自建 APP 扫码认证](/guides/authentication/qrcode/use-self-build-app/)
 - [手机号一键登录](/guides/oneauth/)
 - [单点登录 SSO](/reference/sdk-for-sso-spa.html)
-- [多因素认证 MFA](/guides/app/mfa.html)
+- [多因素认证 MFA](/guides/app-new/create-app/security-management.md#多因素认证)
 
 ## 所有主流认证协议
 
