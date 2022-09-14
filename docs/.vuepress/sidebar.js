@@ -380,7 +380,7 @@ const zhCnNavBar = {
                 },
                 {
                   title: "获取纷享销客配置项和权限",
-                  path: "/guides/sync-new/create-sync-new/get-config-new/fxiaoke", 
+                  path: "/guides/sync-new/create-sync-new/get-config-new/fxiaoke",
                 },
                 {
                   title: "获取其他应用配置项和权限",
@@ -679,6 +679,10 @@ const zhCnNavBar = {
               path: "/guides/connections/enterprise/windows-ad/",
             },
             {
+              title: "AD 免登",
+              path: "/guides/connections/enterprise/ad-kerberos/",
+            },
+            {
               title: "Azure AD",
               path: "/guides/connections/enterprise/azure-ad/",
             },
@@ -904,7 +908,7 @@ const zhCnNavBar = {
         {
           title: "配置登录失败次数限制",
           path: "/guides/security/config-login-fail-limit",
-        },        
+        },
         {
           title: "密码安全",
           path: "/guides/security/pw-security",
@@ -5761,6 +5765,10 @@ const translatedZhCnNavBar = {
             {
               title: "Windows AD",
               path: "/guides/connections/enterprise/windows-ad/",
+            },
+            {
+              title: "AD Quick Login",
+              path: "/guides/connections/enterprise/ad-kerberos/",
             },
             {
               title: "Azure AD",
