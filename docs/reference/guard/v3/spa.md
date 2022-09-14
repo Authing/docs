@@ -433,6 +433,8 @@ import React, { useEffect } from 'react'
 import { useGuard } from '@authing/guard-react'
 
 export export function Login () {
+  const guard = useGuard()
+
   // 展示 Guard 弹窗
   const showGuard = guard.show()
 
