@@ -1006,7 +1006,7 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "常见问题 FAQs",
+      title: "常见问题 FAQ",
       children: [
         {
           title: "如何获取用户池 ID",
