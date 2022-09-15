@@ -48,7 +48,7 @@
 
 至此，配置完成，**点击下方保存按钮**。
 
-## STEP 4: 创建登录实例
+## STEP 4: 登录实例参数准备
 
 ### 获取用户池 ID
 
@@ -81,6 +81,28 @@
 
 为了使用 Authing Web SDK，你需要填写`应用 ID`、`单点登录地址`、`回调登录 URL`、`用户池 ID`等参数，如下示例：
 
+## STEP 5: 安装 SDK
+
+Authing Web SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab NPM
+``` shell
+npm install --save @authing/web
+```
+:::
+
+::: tab CDN
+```html
+<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
+```
+:::
+::::
+
+## STEP 6: 初始化 SDK
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab NPM
 ```js
 import { Authing } from '@authing/web';
 
@@ -91,39 +113,23 @@ const sdk = new Authing({
   userPoolId: '用户池 ID'
 });
 ```
+:::
 
-## STEP 5: 安装 SDK
-
-Authing Web SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
-
-### 使用 NPM 安装
-
-```shell
-$ npm install @authing/web
-```
-
-### 使用 Yarn 安装
-
-```shell
-$ yarn add @authing/web
-```
-
-### 使用 script 标签直接引入
-
+::: tab CDN
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
 <script>
-const sdk = new AuthingFactory.Authing({
-  domain: '单点登录地址',
-  appId: '应用 ID',
-  redirectUri: '登录回调 URL',
-  userPoolId: '用户池 ID'
-});
+  const sdk = new AuthingFactory.Authing({
+    domain: '单点登录地址',
+    appId: '应用 ID',
+    redirectUri: '登录回调 URL',
+    userPoolId: '用户池 ID'
+  });
 </script>
-
 ```
+:::
+::::
 
-## STEP 6: 发起登录
+## STEP 7: 发起登录
 
 Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
 
@@ -1216,7 +1222,7 @@ const sdk = new Authing({
 });
 ```
 
-## STEP 7: 登录后的处理
+## STEP 8: 登录后的处理
 
 ### 检查登录态并获取 Token
 
