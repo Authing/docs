@@ -6,7 +6,7 @@
 
 ## 为什么要使用自定义域名？
 
-在您的 {{$localeConfig.brandName}} 用户池中，应用面板会拥有一个默认的域名 `YOUR_DOMAIN.authing.cn`。完成自定义域名的配置后，您的用户可以访问 `login.YOUR_DOMAIN.CN`，从而始终在域名内完成登录。自定义域可以提升您的品牌知名度，并让用户始终在您的域名下使用提供的应用服务。
+在您的 {{$localeConfig.brandName}} 用户池中，应用面板会拥有一个默认的域名 `default.authing.cn`。完成自定义域名的配置后，您的用户可以访问 `login.your_domain.cn`，从而始终在域名内完成登录。自定义域可以提升您的品牌知名度，并让用户始终在您的域名下使用提供的应用服务。
 
 ## 使用 Authing 提供的自定义域名功能​
 
@@ -65,10 +65,9 @@
 
 出于安全性考虑，{{$localeConfig.brandName}} 当前仅支持 `https` 协议下的域名。为了确保域名能够正常访问，您需要在域名服务器中找到您的 SSL 证书并下载。
 
-由于不同服务商提供的证书信息种类繁多，您需要在其中找到以下三项信息：​
+由于不同服务商提供的证书信息种类繁多，您需要在其中找到以下两项信息：​
 * 签名证书​
 * 签名私钥​
-* 证书链
 
 <img src="../images/ssl-certificate-config.png" style="display:block;margin: 0 auto;">
 
@@ -88,26 +87,9 @@
 ----- END RSA PRIVATE KEY-----
 ```
 
-3. 上传证书链​。</br>SSL 证书链的结构，一般是由 **网站证书->CA 中间证书机构->CA 根证书机构** 构成，中间证书还可能存在多层关系。​</br>证书链的格式为：
-
-```language
------ BEGIN CERTIFICATE-----
-签名证书正文
------ END CERTIFICATE-----
-....
------ BEGIN CERTIFICATE-----
-签名证书正文
------ END CERTIFICATE-----
-```
-
-::: hint-info
-**为什么需要填写证书链？**</br>
-通常情况下 PC 端浏览器都可以通过 Authority Info Access（权威信息访问）的 URL 链接获得中间证书，但在部分 Android 系统的浏览器上访问时会出现证书不可信或无法访问等问题。主要原因在于部分 Android 系统的浏览器并不支持通过 Authority Info Access（权威信息访问）的 URL 链接获得中间证书，这时就需要把证书链文件按照 SSL 证书链的结构合并为一个文件重新部署到服务器上，浏览器在与服务器连接时将会下载用户证书和中间证书，使您的浏览器访问时显示为可信证书。
-:::
-
-4. 以上三部分信息完成配置后，点击 **连通测试**，我们会验证您所配置的证书是否对应您在第一步配置的域名，并且校验此证书是否仍在有效期内。​
+3. 以上两部分信息完成配置后，点击 **连通测试**，我们会验证您所配置的证书是否对应您在第一步配置的域名，并且校验此证书是否仍在有效期内。​
 ​
-5. 连通测试通过后，点击 **完成**。您的自定义域名当即生效！
+4. 连通测试通过后，点击 **完成**。您的自定义域名当即生效！
 
 <img src="../images/ssl-certificate-valid.png" style="display:block;margin: 0 auto;">
 
@@ -156,10 +138,6 @@ GET https://mycustomdomain.com/api/v3/clients
 Headers:
 Authorization: Bearer <access_token>
 ```
-
-### SAML 相关配置
-
-[点击了解如何使用 SAML 作为 SP。](https://auth0.com/docs/customize/custom-domains/configure-features-to-use-custom-domains#configure-saml-applications)
 
 ### 私有化部署
 
