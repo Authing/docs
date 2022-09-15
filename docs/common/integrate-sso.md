@@ -27,7 +27,7 @@
 
 ## 配置单点登录
 
-> 参考 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)
+> 参考 [自建应用 SSO 方案](/guides/app/sso.md)
 
 ## 修改配置
 
@@ -67,7 +67,7 @@ $ yarn add @authing/web
 ### 使用 script 标签直接引入
 
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.1/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
 <script>
 const sdk = new AuthingFactory.Authing({
   // 很重要，请仔细填写！
@@ -75,7 +75,8 @@ const sdk = new AuthingFactory.Authing({
   domain: '认证域名',
   appId: '应用 ID',
   // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-  redirectUri: '登录回调地址'
+  redirectUri: '登录回调地址',
+  userPoolId: '用户池 ID'
 });
 </script>
 
@@ -112,7 +113,8 @@ const sdk = new Authing({
   domain: '认证域名',
   appId: '应用 ID',
   // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-  redirectUri: '登录回调地址'
+  redirectUri: '登录回调地址',
+  userPoolId: '用户池 ID'
 });
 ```
 
@@ -131,7 +133,7 @@ Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持三
 ```tsx{22-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -145,6 +147,9 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
@@ -234,6 +239,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -303,6 +311,9 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     const state = reactive({
@@ -371,7 +382,7 @@ export default defineComponent({
 
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -392,6 +403,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -442,7 +456,7 @@ const login = () => {
     // 回调地址，默认为初始化参数中的 redirectUri
     redirectUri?: string;
 
-    // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
+    // 发起登录的 URL，若实例化 Authing 时设置了 redirectToOriginalUri， 会在登录结束后重定向回到此页面，默认为当前 URL
     originalUri?: string;
 
     // 即使在用户已登录时也提示用户再次登录
@@ -570,7 +584,7 @@ export class AppComponent {
 ```tsx{22-28}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -584,6 +598,9 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
@@ -664,6 +681,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -725,6 +745,9 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     const state = reactive({
@@ -778,7 +801,7 @@ export default defineComponent({
 
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -799,6 +822,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -938,14 +964,14 @@ export class AppComponent {
 
 ### 静默登录
 
-在 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md) 一文中有提到，可以将多个自建应用添加到「单点登录 SSO」面板，如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
+在 [自建应用 SSO 方案](/guides/app/sso.md) 一文中有提到，可以将多个自建应用添加到「单点登录 SSO」面板，如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ```tsx{22-44}
 import React, { useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -959,6 +985,9 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
@@ -1048,6 +1077,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -1111,6 +1143,9 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     const state = reactive({
@@ -1171,7 +1206,7 @@ export default defineComponent({
 ```ts{26-44}
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -1192,6 +1227,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调地址',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -1286,7 +1324,7 @@ const sdk = new Authing({
 ```tsx{29-36}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1300,6 +1338,9 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
@@ -1389,6 +1430,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -1465,6 +1509,9 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     const state = reactive({
@@ -1540,7 +1587,7 @@ export default defineComponent({
 
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -1561,6 +1608,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -1613,7 +1663,7 @@ export class AppComponent {
 ```tsx{38-50}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
+import type { LoginState, IUserInfo } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1627,11 +1677,14 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
   const [loginState, setLoginState] = useState<LoginState | null>();
-  const [userInfo, setUserInfo] = useState<UserInfo | null>();
+  const [userInfo, setUserInfo] = useState<IUserInfo | null>();
 
   /**
    * 以跳转方式打开 Authing 托管的登录页
@@ -1747,6 +1800,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -1847,6 +1903,9 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     const state = reactive({
@@ -1942,7 +2001,7 @@ export default defineComponent({
 
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
+import type { LoginState, IUserInfo } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -1952,7 +2011,7 @@ import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 export class AppComponent {
 
   loginState: LoginState | null = null;
-  userInfo: UserInfo | null = null;
+  userInfo: IUserInfo | null = null;
 
   private sdk = new Authing({
     // 很重要，请仔细填写！
@@ -1964,6 +2023,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -2028,7 +2090,7 @@ export class AppComponent {
 ```tsx{36-43}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -2042,6 +2104,9 @@ function App() {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   }, []);
 
@@ -2066,7 +2131,10 @@ function App() {
    * 登出
    */
   const logout = async () => {
-    await sdk.logoutWithRedirect();
+    await sdk.logoutWithRedirect({
+      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      redirectUri: '退出登录后的跳转地址'
+    });
   };
 
   useEffect(() => {
@@ -2141,6 +2209,9 @@ export default {
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
   },
   mounted() {
@@ -2171,7 +2242,10 @@ export default {
      * 登出
      */
     logout() {
-      this.sdk.logoutWithRedirect();
+      this.sdk.logoutWithRedirect({
+        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        redirectUri: '退出登录后的跳转地址'
+      });
     },
     /**
      * 获取用户的登录状态
@@ -2211,13 +2285,19 @@ export default defineComponent({
 
       // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
+
+      // 用户池 ID
+      userPoolId: '用户池 ID'
     });
 
     /**
      * 登出
      */
     const logout = () => {
-      sdk.logoutWithRedirect();
+      sdk.logoutWithRedirect({
+        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        redirectUri: '退出登录后的跳转地址'
+      });
     };
 
     return {
@@ -2249,7 +2329,7 @@ export default defineComponent({
 
 import { Component } from '@angular/core';
 import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/global';
+import type { LoginState } from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -2270,6 +2350,9 @@ export class AppComponent {
 
     // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
+
+    // 用户池 ID
+    userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
@@ -2301,7 +2384,10 @@ export class AppComponent {
    * 登出
    */
   logout() {
-    this.sdk.logoutWithRedirect();
+    this.sdk.logoutWithRedirect({
+      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      redirectUri: '退出登录后的跳转地址'
+    });
   }
 
   /**
@@ -2320,7 +2406,7 @@ export class AppComponent {
 
 ## 代码参考
 
-- [Demo](https://github.com/Authing/authing-browser-sdk/tree/main/example/sso/)
+- [Demo](https://github.com/Authing/authing-js-sdk/tree/master/examples/web/sso)
 
 ## 获取帮助 <a id="get-help"></a>
 
