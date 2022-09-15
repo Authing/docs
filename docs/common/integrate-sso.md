@@ -92,7 +92,7 @@ const sdk = new Authing({
 });
 ```
 
-## STEP 4: 安装 SDK
+## STEP 5: 安装 SDK
 
 Authing Web SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
