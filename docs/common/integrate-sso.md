@@ -7,11 +7,11 @@
 **单点登录**（Single Sign On），简称为 **SSO**，是目前比较流行的企业业务整合的解决方案之一。 SSO 的定义是在多个应用系统中，**用户只需要登录一次**就可以**访问所有**相互信任的应用系统。
 
 
-## Authing Browser SDK
+## Authing Web SDK
 
 基于 OIDC 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
 
-## 创建自建应用
+## STEP 1: 创建自建应用
 
 > 也可以使用现有应用
 
@@ -25,18 +25,18 @@
 ![](~@imagesZhCn/common/integrate-sso/sso-create-app-2.png)
 
 
-## 配置单点登录
+## STEP 2: 配置单点登录
 
 > 参考 [自建应用 SSO 方案](/guides/app/sso.md)
 
-## 修改配置
+## STEP 3: 修改配置
 
 找到刚刚配置好的应用，进入**应用配置**页面
 
 ![](~@imagesZhCn/common/integrate-sso/sso-panel.png)
 
 - **认证配置**：配置 `登录回调 URL`
-- **授权配置**：`授权模式`开启 `authorization_code`、`refresh_token`
+- **授权配置**：`授权模式`开启 `authorization_code`
 - **授权配置**：`返回类型`开启 `code`
 - 点击保存进行保存配置
 
@@ -46,11 +46,11 @@
 
 ![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
-至此，配置完成
+至此，配置完成，**点击下方保存按钮**。
 
-## 安装
+## STEP 4: 安装 SDK
 
-Authing Browser SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
+Authing Web SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
 ### 使用 NPM 安装
 
@@ -70,63 +70,68 @@ $ yarn add @authing/web
 <script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
 <script>
 const sdk = new AuthingFactory.Authing({
-  // 很重要，请仔细填写！
-  // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-  domain: '认证域名',
+  domain: '单点登录地址',
   appId: '应用 ID',
-  // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-  redirectUri: '登录回调地址',
+  redirectUri: '登录回调 URL',
   userPoolId: '用户池 ID'
 });
 </script>
 
 ```
 
-## 初始化
+## STEP 5: 创建登录实例
 
-### 应用 ID
+### 获取用户池 ID
+
+- 进入 Authing 控制台，左上角选择对应的用户池
+- 点击左侧菜单栏 `设置` -> `基础设置`
+- 点击右侧`密钥管理`，找到`用户池 ID`
 
 如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-userpoolid.png)
+
+### 获取应用 ID
+
+进入 Authing 控制台，选择左侧`自建应用` 菜单，找到并进入对应的应用，在右侧找到对应应用的 APP ID，如图所示：
 
 ![](~@imagesZhCn/common/integrate-sso/sso-appid.png)
 
-### 认证域名
+### 获取登录回调 URL
 
-如图所示：
-
-![](~@imagesZhCn/common/integrate-sso/sso-app-panel-address.png)
-
-### 回调地址
-
-根据你自己的业务填写回调地址，如图所示：
+在`认证配置`处，填写你自己的业务`登录回调 URL`，如图所示：
 
 ![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-为了使用 Authing Browser SDK，你需要填写`应用 ID`、`认证域名`、`回调地址`等参数，如下示例：
+### 获取单点登录地址
+
+进入 Authing 控制台，选择左侧`单点登录 SSO` 菜单，在右侧点击`配置`选项，复制`应用面板地址`完整 URL，如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-app-panel-address.png)
+
+
+为了使用 Authing Web SDK，你需要填写`应用 ID`、`单点登录地址`、`回调地址`、`用户池 ID`等参数，如下示例：
 
 ```js
 import { Authing } from '@authing/web';
 
 const sdk = new Authing({
-  // 很重要，请仔细填写！
-  // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-  domain: '认证域名',
+  domain: '单点登录地址',
   appId: '应用 ID',
-  // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-  redirectUri: '登录回调地址',
+  redirectUri: '登录回调 URL',
   userPoolId: '用户池 ID'
 });
 ```
 
-## 登录
+## STEP 6: 发起登录
 
-Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
+Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
 
 1. 在当前窗口转到 Authing 托管的登录页；
 2. 弹出一个窗口，在弹出的窗口中加载 Authing 托管的登录页。
 3. 静默登录
 
-### 跳转登录
+### 一、跳转登录
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -138,17 +143,9 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -230,22 +227,14 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
   mounted() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log("redirect");
       this.sdk.handleRedirectCallback().then((res) => {
@@ -302,17 +291,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -336,7 +317,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // 校验当前 url 是否是登录回调地址
+      // 校验当前 url 是否是登录回调 URL
       if (sdk.isRedirectCallback()) {
         console.log("redirect");
 
@@ -394,22 +375,14 @@ export class AppComponent {
   loginState: LoginState | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
-
-    // 用户池 ID
     userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log('redirect');
 
@@ -485,8 +458,7 @@ export default {
      */
     login() {
       const params = {
-        // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址",
+        redirectUri: "登录回调 URL",
 
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: "发起登录的 URL",
@@ -516,8 +488,7 @@ export default {
      */
     const login = () => {
       const params = {
-        // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址",
+        redirectUri: "登录回调 URL",
 
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: "发起登录的 URL",
@@ -575,7 +546,7 @@ export class AppComponent {
 ::::
 
 
-### 弹出窗口登录
+### 二、弹出窗口登录
 
 你也可以在你的业务软件页面使用下面的方法，通过弹出一个新窗口的方式让用户在新窗口登录：
 
@@ -589,17 +560,9 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
       domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -672,17 +635,9 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
@@ -736,17 +691,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -813,17 +760,9 @@ export class AppComponent {
   loginState: LoginState | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
-
-    // 用户池 ID
     userPoolId: '用户池 ID'
   });
 
@@ -889,8 +828,7 @@ export default {
      */
     async login() {
       const params = {
-        // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址",
+        redirectUri: "登录回调 URL",
 
         // 即使在用户已登录时也提示用户再次登录
         forced: false,
@@ -915,8 +853,7 @@ export default {
      */
     const login = async () => {
       const params = {
-        // 回调地址，默认为初始化参数中的 redirectUri
-        redirectUri: "回调地址",
+        redirectUri: "登录回调 URL",
 
         // 即使在用户已登录时也提示用户再次登录
         forced: false,
@@ -962,7 +899,7 @@ export class AppComponent {
 ::::
 
 
-### 静默登录
+### 三、静默登录
 
 在 [自建应用 SSO 方案](/guides/app/sso.md) 一文中有提到，可以将多个自建应用添加到「单点登录 SSO」面板，如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
 
@@ -976,17 +913,9 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
+      domain: '单点登录地址',
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -1068,22 +997,14 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
   mounted() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log("redirect");
 
@@ -1134,17 +1055,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -1165,7 +1078,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // 校验当前 url 是否是登录回调地址
+      // 校验当前 url 是否是登录回调 URL
       if (sdk.isRedirectCallback()) {
         console.log("redirect");
 
@@ -1218,22 +1131,14 @@ export class AppComponent {
   loginState: LoginState | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-    redirectUri: '登录回调地址',
-
-    // 用户池 ID
+    redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log('redirect');
 
@@ -1270,20 +1175,17 @@ export class AppComponent {
 ::::
 
 
-### 高级使用
+### 四、高级使用
 
-每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Browser SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
+每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Web SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
 import { Authing } from '@authing/web';
 
 const sdk = new Authing({
-  // 很重要，请仔细填写！
-  // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-  domain: '认证域名',
+  domain: '单点登录地址',
   appId: '应用 ID',
-  // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
-  redirectUri: '登录回调地址',
+  redirectUri: '登录回调 URL',
 
   // 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'
   scope: 'openid email phone profile',
@@ -1314,8 +1216,9 @@ const sdk = new Authing({
 });
 ```
 
+## STEP 7: 登录后的处理
 
-## 检查登录态并获取 Token
+### 检查登录态并获取 Token
 
 如果你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，该方法会抛出错误：
 
@@ -1329,17 +1232,9 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
+      domain: '单点登录地址',
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -1421,22 +1316,14 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
   mounted() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log("redirect");
 
@@ -1500,17 +1387,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -1538,7 +1417,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // 校验当前 url 是否是登录回调地址
+      // 校验当前 url 是否是登录回调 URL
       if (sdk.isRedirectCallback()) {
         console.log("redirect");
 
@@ -1599,22 +1478,14 @@ export class AppComponent {
   loginState: LoginState | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
-
-    // 用户池 ID
     userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log('redirect');
 
@@ -1649,9 +1520,7 @@ export class AppComponent {
 ```
 :::
 ::::
-
-
-## 获取用户信息
+### 获取用户信息
 
 你需要使用 Access Token 获取用户的个人信息：
 
@@ -1668,17 +1537,9 @@ import type { LoginState, IUserInfo } from '@authing/web/dist/typings/src/global
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
+      domain: '单点登录地址',
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -1791,22 +1652,14 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
   mounted() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log("redirect");
 
@@ -1894,17 +1747,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -1947,7 +1792,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // 校验当前 url 是否是登录回调地址
+      // 校验当前 url 是否是登录回调 URL
       if (sdk.isRedirectCallback()) {
         console.log("redirect");
 
@@ -2014,22 +1859,14 @@ export class AppComponent {
   userInfo: IUserInfo | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
-
-    // 用户池 ID
     userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log('redirect');
 
@@ -2080,7 +1917,7 @@ export class AppComponent {
 ::::
 
 
-## 退出登录
+### 退出登录
 
 可以调用 SDK 的 `logoutWithRedirect` 方法退出登录
 
@@ -2095,17 +1932,9 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: '单点登录的“应用面板地址”',
-
-      // 应用 ID
+      domain: '单点登录地址',
       appId: '应用 ID',
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: '登录回调 URL',
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   }, []);
@@ -2200,22 +2029,14 @@ export default {
   },
   created() {
     this.sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
   },
   mounted() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log("redirect");
 
@@ -2276,17 +2097,9 @@ export default defineComponent({
   name: "App",
   setup() {
     const sdk = new Authing({
-      // 很重要，请仔细填写！
-      // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-      domain: "单点登录的'应用面板地址'",
-
-      // 应用 ID
+      domain: "单点登录地址",
       appId: "应用 ID",
-
-      // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
       redirectUri: "登录回调 URL",
-
-      // 用户池 ID
       userPoolId: '用户池 ID'
     });
 
@@ -2341,22 +2154,14 @@ export class AppComponent {
   loginState: LoginState | null = null;
 
   private sdk = new Authing({
-    // 很重要，请仔细填写！
-    // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
-    domain: '单点登录的"应用面板地址"',
-
-    // 应用 ID
+    domain: '单点登录地址',
     appId: '应用 ID',
-
-    // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
     redirectUri: '登录回调 URL',
-
-    // 用户池 ID
     userPoolId: '用户池 ID'
   });
 
   ngOnInit() {
-    // 校验当前 url 是否是登录回调地址
+    // 校验当前 url 是否是登录回调 URL
     if (this.sdk.isRedirectCallback()) {
       console.log('redirect');
 
@@ -2400,9 +2205,7 @@ export class AppComponent {
 }
 ```
 :::
- 
 ::::
-
 
 ## 代码参考
 
