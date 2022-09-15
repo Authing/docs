@@ -69,7 +69,7 @@ Go to QingCloud's [AppCenter Application Development Platform](https://appcenter
 
 - **Detailed access method**：
 
-  3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](https://docs.authing.cn/v2/guides/app/create-app.html).
+  3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](/guides/app-new/create-app/create-app.md).
 
 <img src='./images/openapp.png' />
 

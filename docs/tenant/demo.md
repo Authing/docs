@@ -100,8 +100,6 @@
 
 ![](./images/demo-brandsave.png)
 
-
-
 在 Uthing 中退出登录，进入登录界面，即可看到自定义 CSS 已生效。
 
 ![](./images/demo-tenantlogin.png)

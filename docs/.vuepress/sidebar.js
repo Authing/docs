@@ -194,32 +194,6 @@ const zhCnNavBar = {
         {
           title: "多因素认证",
           path: "/guides/authentication/mfa/",
-          children: [
-            {
-              title: "基于短信验证码的 MFA",
-              path: "/guides/authentication/mfa/sms",
-            },
-            {
-              title: "基于邮件验证码的 MFA",
-              path: "/guides/authentication/mfa/email-code",
-            },
-            {
-              title: "基于时间戳算法的一次性密码的 MFA",
-              path: "/guides/authentication/mfa/totp",
-            },
-            {
-              title: "基于人脸识别的 MFA",
-              path: "/guides/authentication/mfa/face-recognition",
-            },
-            {
-              title: "通过 SDK 接入 MFA",
-              path: "/guides/authentication/mfa/mfa-sdk",
-            },
-            {
-              title: "MFA 策略配置",
-              path: "/guides/authentication/mfa/policy-based-mfa-configuration",
-            },
-                    ],
         },
         {
           title: "对认证流程进行扩展",
@@ -227,6 +201,10 @@ const zhCnNavBar = {
             {
               title: "添加用户自定义字段",
               path: "/guides/authentication/extensibility/user-defined-field",
+            },
+            {
+              title: "添加角色自定义字段",
+              path: "/guides/authentication/extensibility/role-extend",
             },
             {
               title: "添加部门自定义字段",
@@ -377,64 +355,64 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "同步中心(BETA)",
-      path: "/guides/sync/",
+      title: "同步中心",
+      path: "/guides/sync-new/",
       children: [
         {
-          title: "快速开始",
-          path: "/guides/sync/quick-start",
-        },
-        {
           title: "创建同步任务",
-          path: "/guides/sync/create-sync/",
+          path: "/guides/sync-new/create-sync-new/",
           children: [
             {
-              path: "/guides/sync/create-sync/get-config/",
-              title: "获取应用配置项和权限",
+              title: "获取应用配置信息和权限",
+              path: "/guides/sync-new/create-sync-new/get-config-new/",
               children: [
                 {
-                  path: "/guides/sync/create-sync/get-config/lark",
                   title: "获取飞书配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/feishu",
                 },
                 {
-                  path: "/guides/sync/create-sync/get-config/wechatwork",
                   title: "获取企业微信配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/wechatwork",
                 },
                 {
-                  path: "/guides/sync/create-sync/get-config/dingding",
                   title: "获取钉钉配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/dingding",
                 },
                 {
-                  path: "/guides/sync/create-sync/get-config/fxiaoke",
                   title: "获取纷享销客配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/fxiaoke",
                 },
                 {
-                  path: "/guides/sync/create-sync/get-config/others",
                   title: "获取其他应用配置项和权限",
+                  path: "/guides/sync-new/create-sync-new/get-config-new/others",
                 },
               ],
             },
             {
-              path: "/guides/sync/create-sync/field-mapping",
-              title: "自定义字段映射",
+              title: "筛选同步范围",
+              path: "/guides/sync-new/create-sync-new/sync-scope-new",
             },
             {
-              path: "/guides/sync/create-sync/sync-type",
-              title: "选择同步方式",
+              title: "配置同步字段映射",
+              path: "/guides/sync-new/create-sync-new/field-mapping-new",
+            },
+            {
+              title: "配置同步时机",
+              path: "/guides/sync-new/create-sync-new/sync-type-new",
+            },
+            {
+              title: "配置同步策略",
+              path: "/guides/sync-new/create-sync-new/sync-policy-new",
             },
           ],
         },
         {
           title: "执行同步任务",
-          path: "/guides/sync/perform-sync",
+          path: "/guides/sync-new/perform-sync-new",
         },
         {
           title: "风险操作提示",
-          path: "/guides/sync/manual-actions",
-        },
-        {
-          title: "常见问题",
-          path: "/guides/sync/FQA",
+          path: "/guides/sync-new/risky-operation",
         },
       ],
     },
@@ -482,7 +460,7 @@ const zhCnNavBar = {
     },
     {
       title: "单点登录 SSO",
-      path: "/guides/sso/",
+      path: "/guides/app-new/sso/",
       children: [
         {
           title: "应用面板",
@@ -495,7 +473,7 @@ const zhCnNavBar = {
         },
         {
           title: "自建应用 SSO 方案",
-          path: "/guides/app/sso",
+          path: "/guides/app/sso.md",
         },
         {
           title: "第三方 SSO 方案",
@@ -520,7 +498,7 @@ const zhCnNavBar = {
         },
         {
           title: "管理用户登录状态",
-          path: "/guides/app/session-management",
+          path: "/guides/app/session-management.md",
         },
         {
           title: "ASA 表单代填",
@@ -528,10 +506,6 @@ const zhCnNavBar = {
         },
       ],
     },
-    // {
-    //   title: '飞书工作台 SSO 方案',
-    //   path: '/guides/lark-sso/',
-    // },
     {
       title: "成为联邦认证身份源",
       path: "/guides/federation/",
@@ -611,8 +585,12 @@ const zhCnNavBar = {
               path: "/guides/connections/social/twitter/",
             },
             {
-              title: "Google",
+              title: "Google Web 端",
               path: "/guides/connections/social/google/",
+            },
+            {
+              title: "Google 移动端",
+              path: "/guides/connections/social/google-mobile/",
             },
             {
               title: "Apple 移动端",
@@ -699,6 +677,10 @@ const zhCnNavBar = {
             {
               title: "Windows AD",
               path: "/guides/connections/enterprise/windows-ad/",
+            },
+            {
+              title: "AD 免登",
+              path: "/guides/connections/enterprise/ad-kerberos/",
             },
             {
               title: "Azure AD",
@@ -913,15 +895,11 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "配置安全信息",
+      title: "安全设置",
       children: [
         {
           title: "配置 Web 安全域",
           path: "/guides/security/config-domain",
-        },
-        {
-          title: "配置密码强度",
-          path: "/guides/security/config-password",
         },
         {
           title: "配置注册频率限制",
@@ -931,7 +909,54 @@ const zhCnNavBar = {
           title: "配置登录失败次数限制",
           path: "/guides/security/config-login-fail-limit",
         },
+        {
+          title: "密码安全",
+          path: "/guides/security/pw-security",
+        },
+        {
+          title: "多因素认证",
+          path: "/guides/security/mfa/",
+          children: [
+            {
+              title: "基于短信验证码的 MFA",
+              path: "/guides/security/mfa/sms",
+            },
+            {
+              title: "基于邮件验证码的 MFA",
+              path: "/guides/security/mfa/email-code",
+            },
+            {
+              title: "基于时间戳算法的一次性密码的 MFA",
+              path: "/guides/security/mfa/totp",
+            },
+            {
+              title: "基于人脸识别的 MFA",
+              path: "/guides/security/mfa/face-recognition",
+            },
+            {
+              title: "通过 SDK 接入 MFA",
+              path: "/guides/security/mfa/mfa-sdk",
+            },
+            {
+              title: "MFA 策略配置",
+              path: "/guides/security/mfa/policy-based-mfa-configuration",
+            },
+                    ],
+        },
       ],
+    },
+    {
+      title: "品牌化",
+      children: [
+        {
+          title: "全局登录框",
+          path: "/guides/customize/global-guard/",
+        },
+        {
+          title: "自定义域名",
+          path: "/guides/customize/domain/customized-domain",
+        },
+                ],
     },
     {
       title: "配置用户池信息",
@@ -1014,6 +1039,10 @@ const zhCnNavBar = {
         {
           title: `如何获取 ${BRAND_NAME_ZH_CN} 服务器集群 IP`,
           path: "/guides/faqs/public-ips",
+        },
+        {
+          title: `同步中心常见问题`,
+          path: "/guides/faqs/sync",
         },
       ],
     },
@@ -5570,14 +5599,6 @@ const translatedZhCnNavBar = {
           title: "Manage user login status",
           path: "/guides/app/session-management",
         },
-        // {
-        // title:'Open sub-account login',
-        // path:'/guides/app/sub-account'
-        // },
-        // {
-        // title:'Authorization Management',
-        // path:'/guides/app/authorization'
-        //}
       ],
     },
     {
@@ -5744,6 +5765,10 @@ const translatedZhCnNavBar = {
             {
               title: "Windows AD",
               path: "/guides/connections/enterprise/windows-ad/",
+            },
+            {
+              title: "AD Quick Login",
+              path: "/guides/connections/enterprise/ad-kerberos/",
             },
             {
               title: "Azure AD",

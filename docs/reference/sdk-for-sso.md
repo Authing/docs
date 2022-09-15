@@ -14,11 +14,11 @@ Authing SSO SDK 为开发者提供了简单易用的函数来实现 Web 端的�
 
 ## 创建自建应用
 
-> 参考 [创建应用](../guides/app/create-app.md)
+> 参考 [创建应用](/guides/app-new/create-app/create-app.md)
 
 ## 配置单点登录
 
-> 参考 [自建应用 SSO 方案](../guides/app/sso.md)
+> 参考 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)
 
 ## 修改配置
 

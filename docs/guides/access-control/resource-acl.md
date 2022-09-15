@@ -14,7 +14,7 @@
 
 ## 创建应用
 
-请查看创建应用[文档](/guides/app/create-app.md)。
+请查看创建应用[文档](/guides/app-new/create-app/create-app.md)。
 
 ## 创建资源
 

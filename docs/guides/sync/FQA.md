@@ -16,5 +16,5 @@ A: 可能是下游在添加用户时需要用户确认。比如员工 A 注册�
 
 ### Q: 进行下游同步所有部门或员工都同步失败？
 
-A: 可能是您在下游没有开通相应权限，开通权限参考[获取配置和权限](./create-sync/get-config/README.md)。
+A: 可能是您在下游没有开通相应权限，开通权限参考[获取配置和权限](/guides/sync-new/create-sync-new/get-config-new/README.md)。
 
