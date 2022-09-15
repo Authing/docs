@@ -48,6 +48,50 @@
 
 至此，配置完成，**点击下方保存按钮**。
 
+## STEP 4: 创建登录实例
+
+### 获取用户池 ID
+
+- 进入 Authing 控制台，左上角选择对应的用户池
+- 点击左侧菜单栏 `设置` -> `基础设置`
+- 点击右侧`密钥管理`，找到`用户池 ID`
+
+如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-userpoolid.png)
+
+### 获取应用 ID
+
+进入 Authing 控制台，选择左侧`自建应用` 菜单，找到并进入对应的应用，在右侧找到对应应用的 APP ID，如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-appid.png)
+
+### 获取登录回调 URL
+
+在`认证配置`处，填写你自己的业务`登录回调 URL`，如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
+
+### 获取单点登录地址
+
+进入 Authing 控制台，选择左侧`单点登录 SSO` 菜单，在右侧点击`配置`选项，复制`应用面板地址`完整 URL，如图所示：
+
+![](~@imagesZhCn/common/integrate-sso/sso-app-panel-address.png)
+
+
+为了使用 Authing Web SDK，你需要填写`应用 ID`、`单点登录地址`、`回调登录 URL`、`用户池 ID`等参数，如下示例：
+
+```js
+import { Authing } from '@authing/web';
+
+const sdk = new Authing({
+  domain: '单点登录地址',
+  appId: '应用 ID',
+  redirectUri: '登录回调 URL',
+  userPoolId: '用户池 ID'
+});
+```
+
 ## STEP 4: 安装 SDK
 
 Authing Web SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
@@ -79,50 +123,6 @@ const sdk = new AuthingFactory.Authing({
 
 ```
 
-## STEP 5: 创建登录实例
-
-### 获取用户池 ID
-
-- 进入 Authing 控制台，左上角选择对应的用户池
-- 点击左侧菜单栏 `设置` -> `基础设置`
-- 点击右侧`密钥管理`，找到`用户池 ID`
-
-如图所示：
-
-![](~@imagesZhCn/common/integrate-sso/sso-userpoolid.png)
-
-### 获取应用 ID
-
-进入 Authing 控制台，选择左侧`自建应用` 菜单，找到并进入对应的应用，在右侧找到对应应用的 APP ID，如图所示：
-
-![](~@imagesZhCn/common/integrate-sso/sso-appid.png)
-
-### 获取登录回调 URL
-
-在`认证配置`处，填写你自己的业务`登录回调 URL`，如图所示：
-
-![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
-
-### 获取单点登录地址
-
-进入 Authing 控制台，选择左侧`单点登录 SSO` 菜单，在右侧点击`配置`选项，复制`应用面板地址`完整 URL，如图所示：
-
-![](~@imagesZhCn/common/integrate-sso/sso-app-panel-address.png)
-
-
-为了使用 Authing Web SDK，你需要填写`应用 ID`、`单点登录地址`、`回调地址`、`用户池 ID`等参数，如下示例：
-
-```js
-import { Authing } from '@authing/web';
-
-const sdk = new Authing({
-  domain: '单点登录地址',
-  appId: '应用 ID',
-  redirectUri: '登录回调 URL',
-  userPoolId: '用户池 ID'
-});
-```
-
 ## STEP 6: 发起登录
 
 Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种形式：
@@ -143,7 +143,7 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      domain: '单点登录的“应用面板地址”',
+      domain: '单点登录地址',
       appId: '应用 ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
@@ -426,7 +426,7 @@ export class AppComponent {
 ```js
 const login = () => {
   const params: {
-    // 回调地址，默认为初始化参数中的 redirectUri
+    // 回调登录 URL，默认为初始化参数中的 redirectUri
     redirectUri?: string;
 
     // 发起登录的 URL，若实例化 Authing 时设置了 redirectToOriginalUri， 会在登录结束后重定向回到此页面，默认为当前 URL
@@ -438,7 +438,7 @@ const login = () => {
     // 自定义的中间状态，会被传递到回调端点
     customState?: any;
   } = {
-    redirectUri: '回调地址',
+    redirectUri: '回调登录 URL',
     originalUri: '发起登录的 URL',
     forced: false,
     customState: {},
@@ -520,7 +520,7 @@ export class AppComponent {
    */
   login() {
     const params: {
-      // 回调地址，默认为初始化参数中的 redirectUri
+      // 回调登录 URL，默认为初始化参数中的 redirectUri
       redirectUri?: string;
 
       // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
@@ -532,7 +532,7 @@ export class AppComponent {
       // 自定义的中间状态，会被传递到回调端点
       customState?: any;
     } = {
-      redirectUri: '回调地址',
+      redirectUri: '回调登录 URL',
       originalUri: '发起登录的 URL',
       forced: false,
       customState: {},
@@ -560,7 +560,7 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
 function App() {
   const sdk = useMemo(() => {
     return new Authing({
-      domain: '单点登录的“应用面板地址”',
+      domain: '单点登录地址',
       appId: '应用 ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
@@ -797,13 +797,13 @@ export class AppComponent {
 ```ts
 const login = async () => {
   const params: {
-    // 回调地址，默认为初始化参数中的 redirectUri
+    // 回调登录 URL，默认为初始化参数中的 redirectUri
     redirectUri?: string;
 
     // 即使在用户已登录时也提示用户再次登录
     forced?: boolean;
   } = {
-    redirectUri: '回调地址',
+    redirectUri: '回调登录 URL',
     forced: false,
   };
   const res = await sdk.loginWithPopup(params);
@@ -880,13 +880,13 @@ export class AppComponent {
    */
   async login() {
     const params: {
-      // 回调地址，默认为初始化参数中的 redirectUri
+      // 回调登录 URL，默认为初始化参数中的 redirectUri
       redirectUri?: string;
 
       // 即使在用户已登录时也提示用户再次登录
       forced?: boolean;
     } = {
-      redirectUri: '回调地址',
+      redirectUri: '回调登录 URL',
       forced: false,
     };
     const res = await this.sdk.loginWithPopup(params);
