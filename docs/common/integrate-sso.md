@@ -84,7 +84,7 @@
 
 ## STEP 5: 安装 SDK
 
-Authing Web SDK 支持通过包管理器安装、script 标签引入的方式集成到您的前端业务软件中。
+Authing Web SDK 支持通过包管理器安装、script 标签引入的方式集成到你的前端业务软件中。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab NPM
@@ -393,7 +393,7 @@ export class AppComponent {
 ::::
 
 
-您可以使用默认参数，也可以根据需要进行自定义传参：
+你可以使用默认参数，也可以根据需要进行自定义传参：
 
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -516,7 +516,7 @@ export class AppComponent {
 
 ### 二、弹出窗口登录
 
-您也可以在你的业务软件页面使用下面的方法，通过弹出一个新窗口加载 Authing 托管的登录页的方式，让用户在新窗口登录：
+你也可以在你的业务软件页面使用下面的方法，通过弹出一个新窗口加载 Authing 托管的登录页的方式，让用户在新窗口登录：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -715,7 +715,7 @@ export class AppComponent {
 ::::
 
 
-您可以使用默认参数，也可以根据需要进行自定义传参：
+你可以使用默认参数，也可以根据需要进行自定义传参：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -1070,7 +1070,7 @@ export class AppComponent {
 
 ### 四、高级使用
 
-每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Browser SDK 默认会使用缺省参数。如果你您需要精细控制登录请求参数，可以参考本示例。
+每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Browser SDK 默认会使用缺省参数。如果你你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
 import { Authing } from '@authing/web';
@@ -1113,7 +1113,7 @@ const authing = new Authing({
 
 ### 检查登录态并获取 Token
 
-如果你您想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，。如果用户没有在 Authing 登录，该方法会抛出错误：
+如果你你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，。如果用户没有在 Authing 登录，该方法会抛出错误：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -1378,10 +1378,10 @@ export class AppComponent {
 ::::
 ### 获取用户信息
 
-您需要使用 Access Token 获取用户的个人信息：
+你需要使用 Access Token 获取用户的个人信息：
 
 1. 用户初次登录成功时可以在回调函数中拿到用户的 Access Token，然后使用 Access Token 获取用户信息；
-2. 如果用户已经登录，你您可以先获取用户的 Access Token ，然后使用 Access Token 获取用户信息。
+2. 如果用户已经登录，你你可以先获取用户的 Access Token ，然后使用 Access Token 获取用户信息。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
