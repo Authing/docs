@@ -14,7 +14,7 @@ downloadDemo:
 
 你可以使用 Authing 快速为新开发的或已有的 Vue 应用集成**认证能力**。本教程讲述如何使用 Authing Browser SDK 为你的 Vue 应用添加认证能力。
 
-> 如果您只需登录组件，可参考 [**登录组件文档**](/reference/guard/v2/vue.md)
+> 如果你只需登录组件，可参考 [**登录组件文档**](/reference/guard/v2/vue.md)
 
 ## 配置 Authing
 

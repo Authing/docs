@@ -2,7 +2,7 @@
 
 ## 第一步：选择要创建解析的域名
 
-1. 在拥有生效域名的前提下，在阿里云控制台的 **云解析 DNS->域名解析** 功能区，选中您想要添加 **CNAME** 的域名。
+1. 在拥有生效域名的前提下，在阿里云控制台的 **云解析 DNS->域名解析** 功能区，选中你想要添加 **CNAME** 的域名。
 
 <img src="../images/aliyun-domain-list.png" style="display:block;margin: 0 auto;">
 
@@ -52,4 +52,4 @@ Authing 自定义域名 DNS 配置页
 
 在阿里云完成 DNS 配置之后，即可在 {{$localeConfig.brandName}} 的 DNS 配置页面进行连通测试，一般来说域名解析配置完成之后需要一段时间生效，如果已经完成配置但没有连通测试成功，可以稍作等待。
 
-连通测试完成之后，您就完成了 {{$localeConfig.brandName}} 和 DNS 服务器之间的域名解析配置。
+连通测试完成之后，你就完成了 {{$localeConfig.brandName}} 和 DNS 服务器之间的域名解析配置。

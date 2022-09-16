@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通 Facebook 开放平台账号，请先前往 [Facebook 开放平台](https://developers.facebook.com/) 注册开发者账号。
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 Facebook 开放平台账号，请先前往 [Facebook 开放平台](https://developers.facebook.com/) 注册开发者账号。
+- 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：创建 Facebook 应用
 
@@ -23,7 +23,7 @@
 
 ![](./images/2-metaSaveApp.png)
 
-在控制面板中，找到 **Facebook 登录** 产品，然后点击设置，将其添加至您的应用。之后在左侧的菜单中设置>基本中找到该应用编号和应用密钥，并记录下。
+在控制面板中，找到 **Facebook 登录** 产品，然后点击设置，将其添加至你的应用。之后在左侧的菜单中设置>基本中找到该应用编号和应用密钥，并记录下。
 
 ![](./images/3-metaAddFacebook.png)
 

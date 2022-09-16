@@ -22,7 +22,7 @@
 - 需要提供以下任意一个环境用于安装 Authing 域内代理服务：
   - 虚拟机 (ESXi)
   - Docker
-- 如果您未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 配置步骤
 

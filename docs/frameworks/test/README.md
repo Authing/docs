@@ -17,7 +17,7 @@ downloadDemo:
 
 系统要求：Vue 2.x
 
-> 如果您只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
+> 如果你只需登录组件，可参考 [**登录组件文档**](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
 
 ## 配置 Authing
 

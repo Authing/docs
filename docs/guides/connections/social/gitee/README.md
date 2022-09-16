@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您还没有 Gitee 账号，请先前往 [gitee.com](https://gitee.com/signup)注册账号
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
+- 如果你还没有 Gitee 账号，请先前往 [gitee.com](https://gitee.com/signup)注册账号
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
 
 ## 步骤 1：在 Gitee 创建一个 OAuth 应用
 

@@ -4,7 +4,7 @@
 
 ## 说明
 
-[Authing 微信网页授权 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/weixin-official-account) 于 2022 年 9 月 7 日发布，如果您正在使用之前的版本 [authing-wxmp-sdk](https://github.com/Authing/authing-wxmp-sdk)，可参考：[微信网页授权](./sdk-for-wxmp.md)
+[Authing 微信网页授权 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/weixin-official-account) 于 2022 年 9 月 7 日发布，如果你正在使用之前的版本 [authing-wxmp-sdk](https://github.com/Authing/authing-wxmp-sdk)，可参考：[微信网页授权](./sdk-for-wxmp.md)
 
 SDK 5.0 主要升级：
 

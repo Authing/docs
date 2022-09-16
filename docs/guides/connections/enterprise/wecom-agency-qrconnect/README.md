@@ -18,11 +18,11 @@ PC 网站
 
 ## 准备工作
 
-- 如果您未开通企业微信服务商账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为 **企业微信服务商**。
+- 如果你未开通企业微信服务商账号，请先前往 [企业微信服务商官网](https://open.work.weixin.qq.com/) 点击成为 **企业微信服务商**。
 
-- 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，您可以在 [企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role) 修改管理员权限。
+- 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，你可以在 [企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role) 修改管理员权限。
 
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 配置步骤
 
@@ -227,7 +227,7 @@ PC 网站
 
 #### 优劣势描述
 
-运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名。如果需要嵌入到您的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
+运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名。如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
 #### 详细接入方法
 

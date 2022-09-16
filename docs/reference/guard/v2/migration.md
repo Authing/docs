@@ -1,15 +1,15 @@
 # 从 Guard V1 迁移
 <LastUpdated/>
 
-本指南是为使用 Guard V1 版本（版本号小于 3.0.0 的版本）的用户提供的。您在使用 V1 版本已经了解 Guard 的使用方式，我们主要阐述您想进行版本升级所需要的操作。
+本指南是为使用 Guard V1 版本（版本号小于 3.0.0 的版本）的用户提供的。你在使用 V1 版本已经了解 Guard 的使用方式，我们主要阐述你想进行版本升级所需要的操作。
 
-> 您如果使用的是 Guard V1 可以放心升级，Guard V1 我们会进行维护的，您如果在使用的时候发现某些缺陷，您可以通过提出 issues 的方式来进行反馈。
+> 你如果使用的是 Guard V1 可以放心升级，Guard V1 我们会进行维护的，你如果在使用的时候发现某些缺陷，你可以通过提出 issues 的方式来进行反馈。
 
 ## 升级部分
 
 我们本次更新是一个大版本的迭代，我们列出了我们更新的列表：
 
-- DOM 结构优化，您在使用自定义 CSS 的时候可以更好的进行定义样式
+- DOM 结构优化，你在使用自定义 CSS 的时候可以更好的进行定义样式
 - Guard 功能添加 - MFA 中支持人脸识别 & 活体检测
 - Guard 功能添加 - 首次登录修改密码
 - Guard 功能添加 - 密码轮换策略
@@ -21,7 +21,7 @@
 
 ## 使用方式
 
-您原有的使用方式为在 `@authing/react-ui-components` 或者`@authing/vue-ui-components` 中导出 `AuthingGuard` 组件，将 `AuthingGuard` 组件改为 `Guard` 您导出直接替换原有的 `AuthingGuard`即可继续使用。下面我用 React 代码作为示例。
+你原有的使用方式为在 `@authing/react-ui-components` 或者`@authing/vue-ui-components` 中导出 `AuthingGuard` 组件，将 `AuthingGuard` 组件改为 `Guard` 你导出直接替换原有的 `AuthingGuard`即可继续使用。下面我用 React 代码作为示例。
 
 - Guard V1 的使用方式
 
@@ -63,7 +63,7 @@ const App = () => {
 
 ### 使用自定义 CSS
 
-如果您在 Guard V1 中使用了 `contentCss` (自定义 CSS)，我们不能保证 100 % 的兼容。如果在使用中发现了不兼容的 Dom ClassName 您可以给我们进行反馈，我们会及时进行处理。
+如果你在 Guard V1 中使用了 `contentCss` (自定义 CSS)，我们不能保证 100 % 的兼容。如果在使用中发现了不兼容的 Dom ClassName 你可以给我们进行反馈，我们会及时进行处理。
 
 > Github issues：[https://github.com/Authing/authing-ui-components/issues](https://github.com/Authing/authing-ui-components/issues)
 

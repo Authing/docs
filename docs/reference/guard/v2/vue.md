@@ -79,7 +79,7 @@ export default {
 ```
 
 ::: warning Tips
-如果您的项目中使用了 `vue-router`，请在使用 guard 时指定挂载节点
+如果你的项目中使用了 `vue-router`，请在使用 guard 时指定挂载节点
 :::
 
 ```vue

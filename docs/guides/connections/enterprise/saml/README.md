@@ -13,7 +13,7 @@
 ## 注意事项
 
 - 需要一个支持 SAML 协议能力的服务；
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/)注册开发者账号；
+- 如果你未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/)注册开发者账号；
 
 ## 步骤 1：创建 SAML 身份源
 

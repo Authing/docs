@@ -768,7 +768,7 @@ Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗�
       const user = await authClient.getCurrentUser();
 
       if (!user) {
-        alert("您还没有登录，请先登录！");
+        alert("你还没有登录，请先登录！");
       }
 
       await authClient.logout();

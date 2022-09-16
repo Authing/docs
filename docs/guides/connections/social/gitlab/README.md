@@ -18,8 +18,8 @@ PC 网站
 
 ## 准备工作
 
-* 如果您还没有 GitLab 账号，请先前往 [GitLab.com](https://gitlab.com/users/sign_up/) 注册账号。
-* 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+* 如果你还没有 GitLab 账号，请先前往 [GitLab.com](https://gitlab.com/users/sign_up/) 注册账号。
+* 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 配置步骤
 
@@ -83,7 +83,7 @@ PC 网站
 | ---- | ---- |
 | 唯一标识 |* 唯一标识由小写字母、数字、`-` 组成，且长度小于 32 位。<br />* 这是此连接的唯一标识，设置之后不能修改。 |
 | 显示名称 | 这个名称会显示在终端用户的登录界面的按钮上。  |
-| Base URL | 默认情况下会使用 GitLab.com 作为认证端点，您也可以指定任意私有的 GitLab 实例，如 `https://gitlab.example.com/`。 |
+| Base URL | 默认情况下会使用 GitLab.com 作为认证端点，你也可以指定任意私有的 GitLab 实例，如 `https://gitlab.example.com/`。 |
 | Application ID | 上一步获取的 GitLab 应用 ID。  |
 | Secret  | 上一步获取的 GitLab 应用密钥。   |
 | 登录模式 | 开启 **仅登录模式** 后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
@@ -99,7 +99,7 @@ PC 网站
 
 #### 优劣势描述
 
-运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名。如果需要嵌入到您的应用，需要使用弹窗模式登录，即：点击 **登录** 按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
+运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名。如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击 **登录** 按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
 
 #### 详细接入方法
 

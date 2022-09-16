@@ -4,7 +4,7 @@
 
 ## 说明
 
-[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果您正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
+[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果你正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 [将 Guard 接入到原生 JS 项目](https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html)
 
@@ -265,7 +265,7 @@ guard.getAuthClient().then(authClient => {
 | redirectUri  | String          | -      | 否   | 回调地址，可在 Console 控制台配置                  |
 | state        | String          | -      | 否   | OIDC 状态                                          |
 
-使用以上参数实例化 Guard，您可以体验 Guard 最基本的登录、注册等功能。
+使用以上参数实例化 Guard，你可以体验 Guard 最基本的登录、注册等功能。
 
 **如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）：**
 
