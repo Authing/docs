@@ -2,7 +2,7 @@
 
 ## 说明
 
-[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果您正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
+[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果你正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
 
 SDK 5.0 主要升级：
 
@@ -738,7 +738,6 @@ export default {
 |-----|----|----|----|----|
 |newPassword|String|新密码|-|是|
 |oldPassword|String|旧密码|-|是|
-|oldPassword|String|旧密码|-|是|
 |passwordEncryptType|none / rsa / sm2|加密方式|none|否
 
 #### 出参
@@ -1120,6 +1119,8 @@ export default {
 
 
 ### <p id="Scope">Scope</p>
+
+以下内容需使用空格分割使用，可根据自身需要按需添加，如：`openid offline_access username`
 
 - `openid`：必须包含
 - `offline_access`: 如果存在此参数，token 接口会返回 refresh_token 字段
