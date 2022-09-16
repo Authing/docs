@@ -9,13 +9,13 @@
 
 ## Authing Web SDK
 
-基于 OIDC 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
+基于 [OIDC](https://docs.authing.cn/v2/guides/federation/oidc.html) 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
 
 ## STEP 1: 创建自建应用
 
 > 也可以使用现有应用
 
-在控制台的「自建应用」页面，点击「创建自建应用」，应用类型选择「单页 Web 应用」，并填入以下信息：
+在[控制台](https://console.authing.cn)的「自建应用」页面，点击「创建自建应用」，应用类型选择「单页 Web 应用」，并填入以下信息：
 
 - 应用名称：你的应用名称；
 - 认证地址：选择一个二级域名，必须为合法的域名格式，例如 `my-spa-app`；
