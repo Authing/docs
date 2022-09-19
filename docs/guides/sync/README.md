@@ -60,7 +60,7 @@ Authing 将为客户提供组织和用户数据同步场景下的最佳实践：
 
 - [执行同步任务](./perform-sync-new.md)，执行你创建的同步任务并查看执行结果。
 
-- [风险操作提示](./risky-operation.md)，如何删除下游用户和部门。
+- [处理删除保护](./risky-operation.md)，如何删除下游用户和部门。
 
 - [常见问题](/guides/faqs/sync.md)，常见问题及解答。
 

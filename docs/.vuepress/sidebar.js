@@ -411,7 +411,7 @@ const zhCnNavBar = {
           path: "/guides/sync-new/perform-sync-new",
         },
         {
-          title: "风险操作提示",
+          title: "处理删除保护",
           path: "/guides/sync-new/risky-operation",
         },
       ],
