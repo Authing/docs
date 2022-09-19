@@ -1,6 +1,6 @@
 <!-- 初始化 SDK -->
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   // 应用的认证地址，例如：https://domain.authing.cn

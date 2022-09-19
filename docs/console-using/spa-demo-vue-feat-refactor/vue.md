@@ -8,7 +8,7 @@
 
 ```bash
 # 使用 Yarn 安装
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 
@@ -17,7 +17,7 @@ $ yarn add @authing/browser
 ### 初始化
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   domain: 'AUTHING_DOMAIN',// 应用的认证地址
@@ -29,7 +29,7 @@ const sdk = new Authing({
 ### 简单认证用户
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 export default {
   name: 'App',

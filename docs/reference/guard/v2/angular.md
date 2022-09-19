@@ -14,7 +14,7 @@ Angular 版本：Angular 10/11/12/13
 
 ## STEP 1: 在 Authing 控制台创建应用
 
-**首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](/guides/app/create-app.md)。
+**首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](/guides/app-new/create-app/create-app.md)。
 
 在 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的**创建自建应用**按钮，填入以下信息：
 

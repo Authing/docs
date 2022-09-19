@@ -6,7 +6,7 @@
     "postinstall": "patch-package",
     "docs:dev": "vuepress dev docs -p 8888",
     "docs:no-cache": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js dev docs -p 8888 --no-cache",
-    "docs:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build docs --max-concurrency=150"
+    "docs:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build docs --max-concurrency=150 --no-cache"
   },
   "main": "index.js",
   "author": "Authing",

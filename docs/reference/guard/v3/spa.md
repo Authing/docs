@@ -4,7 +4,7 @@
 
 ## 说明
 
-[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果您正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
+[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果你正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 - [将 Guard 接入到 React 项目](https://docs.authing.cn/v2/reference/guard/v2/react.html)
 - [将 Guard 接入到 Vue 项目](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
@@ -51,6 +51,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ``` shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
+```
 :::
 
 ::: tab Vue2
@@ -269,8 +270,8 @@ export class LoginComponent {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.js"></script>
-  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
+  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
@@ -432,6 +433,8 @@ import React, { useEffect } from 'react'
 import { useGuard } from '@authing/guard-react'
 
 export export function Login () {
+  const guard = useGuard()
+
   // 展示 Guard 弹窗
   const showGuard = guard.show()
 
@@ -1572,7 +1575,7 @@ export class LoginComponent {
 | redirectUri  | String          | -      | 否   | 回调地址，可在 Console 控制台配置                  |
 | state        | String          | -      | 否   | OIDC 状态                                          |
 
-使用以上参数实例化 Guard，您可以体验 Guard 最基本的登录、注册等功能。
+使用以上参数实例化 Guard，你可以体验 Guard 最基本的登录、注册等功能。
 
 **如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）**
 

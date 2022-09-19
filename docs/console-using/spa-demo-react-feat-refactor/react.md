@@ -10,7 +10,7 @@
 
 ```bash
 #使用 Yarn 安装
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 ## 认证你的用户
@@ -18,7 +18,7 @@ $ yarn add @authing/browser
 ### 初始化
 
 ```js
-import { Authing } from '@authing/browser';
+import { Authing } from '@authing/web';
 
 const sdk = new Authing({
   domain: 'AUTHING_DOMAIN',// 应用的认证地址
@@ -31,8 +31,8 @@ const sdk = new Authing({
 
 ```tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {

@@ -67,20 +67,20 @@ Authing Browser SDK 支持通过包管理器安装、script 标签引入的方�
 #### 使用 NPM 安装
 
 ```bash
-$ npm install @authing/browser
+$ npm install @authing/web
 ```
 
 #### 使用 Yarn 安装
 
 ```bash
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 #### 使用 script 标签直接引入
 
 ```html
 <head>
-  <script src="//cdn.jsdelivr.net/npm/@authing/browser"></script>
+  <script src="//cdn.jsdelivr.net/npm/@authing/web"></script>
 </head>
 ```
 
@@ -101,8 +101,8 @@ Authing Browser SDK 可以向 Authing 发起认证授权请求，目前支持下
 
 ```tsx{18-23}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -195,8 +195,8 @@ const login = () => {
 
 ```tsx{18-24}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -278,8 +278,8 @@ const login = async () => {
 
 ```tsx{24-32}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -348,8 +348,8 @@ export default App;
 
 ```tsx{34-46}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -436,8 +436,8 @@ export default App;
 
 ```tsx{32-39}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -620,8 +620,8 @@ $ npm start
 
 ```tsx{36-52}
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Authing } from "@authing/browser";
-import type { LoginState } from "@authing/browser/dist/types/global";
+import { Authing } from "@authing/web";
+import type { LoginState } from "@authing/web/dist/typings/global";
 
 function App() {
   const sdk = useMemo(() => {
@@ -738,5 +738,5 @@ export default App;
 :::
 
 自建应用 SSO 方案：
-::: page-ref /guides/authentication/sso/
+::: page-ref /guides/app-new/sso/
 :::

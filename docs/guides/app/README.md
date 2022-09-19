@@ -8,9 +8,9 @@
 
 以下内容不分先后顺序，您可以选择自己感兴趣的内容进行阅读：
 
-- [配置登录注册方式](./config-login-methods.md)，可以为你的应用添加社会化登录、第三方身份源登录。
-- [添加注册协议](./agreements.md)，可以让用户在注册前先阅读并同意注册协议，你可以自定义协议内容和链接。
-- [自定义登录框样式](./custom-styles.md)，{{$localeConfig.brandName}} 托管登录页支持通过自定义 CSS 的方式高度自定义页面样式。
-- [成为联邦认证身份源](./identity-provider.md)，{{$localeConfig.brandName}} 可以通过简单的配置快速成为 OIDC、OAuth2.0、SAML 身份提供商。
-- [开启多因素认证](./mfa.md)，为您的应用开启 MFA 多因素认证，支持短信验证码、邮件验证码、OTP、人脸识别等多种方式。
+- [配置登录注册方式](/guides/app-new/create-app/login-control.md)，可以为你的应用添加社会化登录、第三方身份源登录。
+- [添加注册协议](/guides/app-new/create-app/customize-guard.md#登录注册协议)，可以让用户在注册前先阅读并同意注册协议，你可以自定义协议内容和链接。
+- [自定义登录框样式](/guides/app-new/create-app/customize-guard.md#登录框样式)，{{$localeConfig.brandName}} 托管登录页支持通过自定义 CSS 的方式高度自定义页面样式。
+- [成为联邦认证身份源](/guides/app-new/create-app/app-configuration.md)，{{$localeConfig.brandName}} 可以通过简单的配置快速成为 OIDC、OAuth2.0、SAML 身份提供商。
+- [开启多因素认证](/guides/app-new/create-app/security-management.md#多因素认证)，为您的应用开启 MFA 多因素认证，支持短信验证码、邮件验证码、OTP、人脸识别等多种方式。
 

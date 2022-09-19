@@ -713,7 +713,7 @@ AuthenticationClient.shared.socialUnLink(primaryUserToken: <#id_token#>, complet
 
 ## 检查密码强度
 
-> 检查密码强度，[点此查看详情](/guides/security/config-password.md)。
+> 检查密码强度，[点此查看详情](/guides/security/pw-security.md)。
 >
 > 判断密码是否符合密码强度要求。{{$localeConfig.brandName}} 中密码强度等级分为以下几种：
 >
