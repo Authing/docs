@@ -45,8 +45,7 @@
 
 <img src="../images/cname-record.png" height=700 style="display:block;margin: 0 auto;">
 
-::: img-description
-示例：阿里云控制台 DNS 配置页 - CNAME 记录​
+::: img-description 示例：阿里云控制台 DNS 配置页 - CNAME 记录​
 :::
 
 ::: hint-info
@@ -144,15 +143,11 @@ Authorization: Bearer <access_token>
 对于已经在控制台完成 SAML 配置并将 SAML 应用添加到应用面板的集成应用，如果已经配置了自定义域名，要使其生效，则需要重新 **下载 SAML 元数据文档**（新配置的自定义域名将直接更新为 `entityID` 的值），用以替换阿里云上配置的元数据。
 
 ![](../images/download-saml-metadata-file.png)​
-
-::: img-description​
-下载 SAML 元数据文档​ - 控制台
+::: img-description 下载 SAML 元数据文档​ - 控制台
 :::
 
 ![](../images/replace-saml-metadata-file.jpg)​
-
-::: img-description​
-替换 SAML 元数据文档​ - 阿里云工作台
+::: img-description 替换 SAML 元数据文档​ - 阿里云工作台
 :::
 
 ### 私有化部署
