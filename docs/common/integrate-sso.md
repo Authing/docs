@@ -97,7 +97,7 @@ npm install --save @authing/web
 
 ::: tab CDN
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.3/index.global.js"></script>
 ```
 :::
 ::::

@@ -149,15 +149,7 @@ const authing = new Authing({
 |-----|----|----|----|----|
 |connection|String|认证方式|wechat_mini_program_code|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
-|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
 |options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
-
-**WechatMiniProgramCodePayload**
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
-|iv|String|加密算法的初始向量| - | 是 |
 
 #### 出参
 
@@ -173,18 +165,10 @@ const authing = new Authing({
 ``` typescript
 // index.js
 Page({
-  async loginByCode () {
-    const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
+  async loginByCode () {    
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramCodePayload: {
-        encryptedData,
-        iv
-      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -205,18 +189,10 @@ export default class Index extends Component<PropsWithChildren> {
       </View>
     )
   }
-  async loginByCode () {
-    const { encryptedData, iv } = await Taro.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
+  async loginByCode () {    
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramCodePayload: {
-        encryptedData,
-        iv
-      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -231,18 +207,10 @@ export default class Index extends Component<PropsWithChildren> {
 ``` typescript
 export default {
   methods: {
-    async loginByCode () {
-      const [, { encryptedData, iv }] = await uni.getUserProfile({
-        desc: 'getUserProfile'
-      })
-      
+    async loginByCode () {      
       const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-        wechatMiniProgramCodePayload: {
-          encryptedData,
-          iv
-        },
         options: {
           scope: 'openid profile offline_access'
         }
