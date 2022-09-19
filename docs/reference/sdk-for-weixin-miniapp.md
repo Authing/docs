@@ -2,9 +2,9 @@
 
 ## 说明
 
-[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果你正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
+[Authing 小程序 SDK 5.x](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果你正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
 
-SDK 5.0 主要升级：
+SDK 5.x 主要升级：
 
 - 集成并增强 Authing 最新 V3 版认证 API，覆盖大多数用户认证、授权类核心功能，未来我们将根据用户需要继续拓展其他功能
 - 完善的 TS 类型提示
