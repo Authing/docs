@@ -561,11 +561,11 @@ const zhCnNavBar = {
             },
             {
               title: "微信网页授权",
-              path: "/guides/connections/social/wechat-mp/",
+              path: "/reference/sdk-for-weixin-official-account",
             },
             {
               title: "微信小程序",
-              path: "/guides/connections/social/wechat-miniprogram/",
+              path: "/reference/sdk-for-weixin-miniapp",
             },
             {
               title: "腾讯 QQ",

@@ -270,8 +270,8 @@ export class LoginComponent {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.js"></script>
-  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
+  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
@@ -433,6 +433,8 @@ import React, { useEffect } from 'react'
 import { useGuard } from '@authing/guard-react'
 
 export export function Login () {
+  const guard = useGuard()
+
   // 展示 Guard 弹窗
   const showGuard = guard.show()
 
