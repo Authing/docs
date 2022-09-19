@@ -90,18 +90,20 @@ API 资源、数据资源、UI 资源在本质上没有区别，类型仅用于�
 一个资源就创建好了。
 
 <img src="../images/api-resource.png" height=700 style="display:block;margin: 0 auto;">
-::: img-description
-API 资源
+
+::: img-description API 资源
 :::
+
 
 <img src="../images/data-resource.png" height=700 style="display:block;margin: 0 auto;">
-::: img-description
-数据资源
+
+::: img-description 数据资源​
 :::
 
+
 <img src="../images/ui-resource.png" height=700 style="display:block;margin: 0 auto;">
-::: img-description
-UI 资源
+
+::: img-description UI 资源​
 :::
 
 要编辑或删除资源，可在资源列表相应资源所在行点击 **操作** 列 **编辑** / **删除** 按钮。
