@@ -52,4 +52,6 @@ HR 同学需要在员工入职时，手动在各个 IM 工具、业务应用中�
 
 * [处理删除保护](/guides/sync-new/risky-operation.md)：如何删除下游用户和部门。
 
+* [维护同步任务](../sync-new/maintain-sync.md)：执行同步任务维护操作，包括查看同步任务执行状态，修改同步任务信息，启用 / 禁用同步任务，删除同步任务等。
+
 * [常见问题](/guides/faqs/sync.md)：常见问题及解答。
