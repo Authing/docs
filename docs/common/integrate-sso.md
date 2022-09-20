@@ -39,15 +39,17 @@
 
 ![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-2. **授权配置**：`授权模式`开启 `authorization_code`
+2. **授权配置**：`授权模式`开启 `authorization_code`，`返回类型`开启 `code`
 
 ![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
-3. **授权配置**：`返回类型`开启 `code`
+3. 以下 token 验证方式勾选 `none`
+
+![](~@imagesZhCn/common/integrate-sso/sso-authorization-token.png)
 
 4. 保存当前配置
 
-至此，配置完成，**点击下方保存按钮**。
+> 注意，如果使用社会化身份源或企业身份源登录，且获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考[身份源连接的账号关联](/guides/connections/account-association.html)
 
 ## STEP 4: 登录实例参数准备
 
@@ -95,7 +97,7 @@ npm install --save @authing/web
 
 ::: tab CDN
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.3/index.global.js"></script>
 ```
 :::
 ::::
