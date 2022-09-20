@@ -139,6 +139,76 @@ const authing = new Authing({
 
 ## STEP 5: 使用 SDK
 
+### 获取登录态
+
+> authing.getLoginState
+
+#### 入参
+
+无
+
+#### 出参
+
+[LoginState](#LoginState) 或 null
+
+#### 说明
+
+- 如果返回值为 null，说明用户未登录，或登录态已过期
+
+- 如果返回值不为 null，说明用户已登录，且登录态未过期
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="getLoginState">getLoginState</button>
+```
+``` typescript
+// index.js
+Page({
+  async getLoginState () {    
+    const res = await authing.getLoginState()
+
+    console.log('authing.getLoginState res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.getLoginState()}>getLoginState</Button>
+      </View>
+    )
+  }
+  async getLoginState () {    
+    const res = await authing.getLoginState()
+
+    console.log('authing.getLoginState res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async getLoginState () {      
+      const res = await authing.getLoginState()
+
+      console.log('authing.getLoginState res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
 ### 微信授权 code 登录
 
 >authing.loginByCode
@@ -149,7 +219,14 @@ const authing = new Authing({
 |-----|----|----|----|----|
 |connection|String|认证方式|wechat_mini_program_code|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
+|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据|-|是|
 |options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
+
+**WechatMiniProgramCodePayload**
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
+|iv|String|加密算法的初始向量|-|是|
 
 #### 出参
 
@@ -165,10 +242,27 @@ const authing = new Authing({
 ``` typescript
 // index.js
 Page({
-  async loginByCode () {    
+  async loginByCode () {
+    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+    // 为了防止用户频繁触发登录按钮
+    // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+    // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+    const { encryptedData, iv } = await wx.getUserProfile({
+      desc: 'getUserProfile1'
+    })
+
+    // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+    // 偶然情况下 res 会是 undefined
+    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramCodePayload: {
+        encryptedData,
+        iv
+      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -190,9 +284,26 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async loginByCode () {    
+    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+    // 为了防止用户频繁触发登录按钮
+    // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+    // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+    const { encryptedData, iv } = await Taro.getUserProfile({
+      desc: 'getUserProfile'
+    })
+
+    // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+    // 偶然情况下 res 会是 undefined
+    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+      wechatMiniProgramCodePayload: {
+        encryptedData,
+        iv
+      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -207,10 +318,27 @@ export default class Index extends Component<PropsWithChildren> {
 ``` typescript
 export default {
   methods: {
-    async loginByCode () {      
+    async loginByCode () {   
+      // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+      // 为了防止用户频繁触发登录按钮
+      // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+      // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+      // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+      const [, { encryptedData, iv }] = await uni.getUserProfile({
+        desc: 'getUserProfile'
+      })
+
+      // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+      // 偶然情况下 res 会是 undefined
+      // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+      // 如果 res 是 undefined，则提示用户再点击一次按钮即可   
       const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
+        wechatMiniProgramCodePayload: {
+          encryptedData,
+          iv
+        },
         options: {
           scope: 'openid profile offline_access'
         }
