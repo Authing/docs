@@ -410,7 +410,7 @@ $ http-server
 2. 然后访问 127.0.0.1:8080。
 
 ::: hint-info
-您可以参考 {{$localeConfig.brandName}} 提供的 [MFA Demo](https://github.com/authing/mfa-demo)。
+你可以参考 {{$localeConfig.brandName}} 提供的 [MFA Demo](https://github.com/authing/mfa-demo)。
 :::
 
 ## 多因素认证（MFA）SDK

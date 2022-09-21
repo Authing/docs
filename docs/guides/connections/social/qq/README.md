@@ -14,9 +14,9 @@
 
 ## 注意事项
 
-- 如果您未开通 QQ 互联平台账号，请先前往 [QQ 互联中心](https://connect.qq.com/manage.html#/) 注册开发者账号。
+- 如果你未开通 QQ 互联平台账号，请先前往 [QQ 互联中心](https://connect.qq.com/manage.html#/) 注册开发者账号。
 - 需要审核通过后，才可创建应用。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
 ## 步骤1：在 QQ 开放平台创建一个网站应用

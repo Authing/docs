@@ -214,7 +214,7 @@ export class AppComponent {
     const user = await this.authClient.getCurrentUser();
 
     if (!user) {
-      alert("您还没有登录，请先登录！");
+      alert("你还没有登录，请先登录！");
     }
 
     await this.authClient.logout();
@@ -343,7 +343,7 @@ export class AppComponent {
     const user = await this.authClient.getCurrentUser();
 
     if (!user) {
-      alert("您还没有登录，请先登录！");
+      alert("你还没有登录，请先登录！");
     }
 
     await this.authClient.logout();
@@ -725,7 +725,7 @@ export class AppComponent {
     const user = await this.authClient.getCurrentUser();
 
     if (!user) {
-      alert("您还没有登录，请先登录！");
+      alert("你还没有登录，请先登录！");
     }
 
     await this.authClient.logout();

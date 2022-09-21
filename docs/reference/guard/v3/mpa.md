@@ -14,6 +14,8 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的原生 JavaScript 项目，跟随引导将 Authing Guard 接入到你的原生 JavaScript 项目中吧！
 
+[Guard](https://cdn-daily.authing.co/authing-docs-v2/1.3.108-530/assets/img/guard_index.26ae483e.png)
+
 ## STEP 1：创建 Authing 应用
 
 1. 使用 Authing 创建一个应用：

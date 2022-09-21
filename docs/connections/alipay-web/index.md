@@ -14,7 +14,7 @@
 
 1. 前往[支付宝开放平台](https://open.alipay.com/)注册一个支付宝开放账号；
 2. 前往[开发者中心控制台](https://open.alipay.com/dev/workspace)按照指引创建一个**网站应用**。请确保你的应用获取了 **获取会员信息** 能力，否则将无法使用支付宝登录；
-3. 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
+3. 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
 
 ## 步骤1：创建支付宝应用
 

@@ -14,7 +14,7 @@
 ## 注意事项
 
 - 需要一个 LDAP 服务；
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
+- 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
 
 ## 步骤1：创建 LDAP 身份源
 

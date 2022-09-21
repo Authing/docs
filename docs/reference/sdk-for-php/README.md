@@ -27,7 +27,7 @@ Authing PHP SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClien
 
 我们推荐使用 `composer` 进行安装， 它可以与一些模块打包工具很好地配合使用。
 
-> 需要注意您的 `php 相关版本`，[官方版本相关说明](https://www.php.net/supported-versions.php)。
+> 需要注意你的 `php 相关版本`，[官方版本相关说明](https://www.php.net/supported-versions.php)。
 > 官方 sdk 开发采用 `php 8.0`，经过 `Retor` 兼容 `低版本` php 来使用
 
 默认包 `authing-sdk/php` 支持 `php 7.1` 以及以上，如果你想使用自己当前 `php` 版本的一些特性，可以安装适合自己版本的 sdk。以下是 `authing-sdk/php` 相关包，版本都与 `authing-sdk/php` 对齐，列表如下：

@@ -14,9 +14,9 @@
 
 ## 注意事项
 
-- 如果您未开通 QingCloud 账号，请先前往 [QingCloud](https://www.qingcloud.com/) 平台注册一个账号。
+- 如果你未开通 QingCloud 账号，请先前往 [QingCloud](https://www.qingcloud.com/) 平台注册一个账号。
 - 需在 QingCloud 上的[应用开发](https://appcenter.qingcloud.com/developer/)中创建一个可支持协议认证应用。
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤1：创建 QingCloud 应用
 

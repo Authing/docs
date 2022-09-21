@@ -776,7 +776,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button openType="getPhoneNumber" onClick={(e) => this.getPhone(e)}>getPhone</Button>
+        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>getPhone</Button>
       </View>
     )
   }

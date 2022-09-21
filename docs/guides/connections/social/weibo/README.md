@@ -12,9 +12,9 @@
 
 ## 注意事项
 
-- 如果您未开通微博开放平台账号，请先前往 [微博开放平台](https://open.weibo.com/connect) 注册开发者账号。
+- 如果你未开通微博开放平台账号，请先前往 [微博开放平台](https://open.weibo.com/connect) 注册开发者账号。
 - 需要身份认证通过后，才可创建应用。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
 ## 步骤 1：在微博开放平台创建一个应用
