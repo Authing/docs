@@ -4,59 +4,13 @@
 
 集成企业微信录需要以下步骤：
 
-- 在企业微信管理后台进行配置
-
-- 在 Authing 管理控制台进行配置
+- 在企业微信管理后台及 Authing 管理控制台进行配置请参阅[企业微信移动端（代开发模式）](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/)
 
 - 集成 Authing iOS 企业微信登录
 
 <br>
 
-## STEP 1：在[企业微信管理后台](https://work.weixin.qq.com/)进行配置
-
-获取 `CorpID` `AgentID` `Schema` `Secret` 并填写 BundleID
-
-- 点击 “我的企业”
-
-- 页面底部复制企业ID ( CorpID )
-
-![](./images/wecom/1.png)
-
-- 点击 “应用管理“
-
-- 点击 “创建应用“
-
-- 复制 AgentID 和 Schema
-
-![](./images/wecom/2.png)
-
-![](./images/wecom/3.png)
-
-- 点击 “企业微信授权登录“
-
-- 选择 iOS 复制 Schema 并填写 BundleID
-
-![](./images/wecom/4.png)
-
-<br>
-
-## STEP 2：在 Authing 管理控制台的操作步骤
-
-- 在控制台的 “连接身份源” 菜单选择 “创建企业身份源“
-
-- 选择 “企业微信”
-
-- 选择 “企业微信企业内部应用移动端登录”
-
-- 填入对应参数
-
-![](./images/wecom/6.png)
-
-![](./images/wecom/7.png)
-
-<br>
-
-## STEP 3：集成 Authing iOS 企业微信登录
+## 集成 Authing iOS 企业微信登录
 
 ### 添加依赖
 
