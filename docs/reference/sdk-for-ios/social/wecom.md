@@ -75,19 +75,42 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ### 发起企业微信授权
 
-推荐通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
+SDK 提供了三种授权方式：
+
+1. 开发者在需要登录时调用 API：
+
+```swift
+WeCom.login { code, message, userInfo in
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+}
+```
+
+2. 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 
 ```swift
 WeComLoginButton
 ```
-设置 Module 为 WeCom
+
+设置 Module 为 WeCom，Build success 后点击按钮即可登录。
 
 ![](./images/wecom/9.png)
 
-如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录 API：
+3. 如果想自己接入 Wecom 授权整个流程，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
 
 ```swift
-WeCom.login { code, message, userInfo in
+func loginbyWeComAgency(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**参数**
+
+* *authCode* Wecom 授权码
+
+**示例**
+
+```swift
+AuthClient().loginbyWeComAgency(authCode) { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }

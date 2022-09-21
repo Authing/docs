@@ -43,7 +43,7 @@
 
 - Google.register 需要传入 Google 发放的 `clientID` `serverClientId`
 > clientID 为 Google iOS 应用的 ClientID
-serverClientId 为 Google Web 应用的 ClientID
+> serverClientId 为 Google Web 应用的 ClientID
 ```swift
 import Guard
 import Google
