@@ -88,7 +88,7 @@ c. 在电脑端输入该 MFA 上显示的动态口令，点击 **下一步**，�
         
 要绑定 OTP，执行以下步骤：
 
-a. 访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}` 进行登录。然后访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}/u` ，点击页面右上角头像进入 **个人中心**。
+a. 访问 `https://<你的应用域名>.{{$themeConfig.officeSiteDomain}}` 进行登录。然后访问 `https://<你的应用域名>.{{$themeConfig.officeSiteDomain}}/u` ，点击页面右上角头像进入 **个人中心**。
 
 b. 选择 **个人中心->账号安全->个人 MFA**，点击 **立即绑定** 按钮绑定 MFA。
 
@@ -114,7 +114,7 @@ e. 备份密钥，勾选下方保存密钥提示，点击 **下一步** 完成�
 
 如用户已完成 OTP MFA 的绑定，下次登录时可执行以下步骤：
 
-1. 访问 `https://<您的应用域名>.{{$themeConfig.officeSiteDomain}}`。使用绑定过 MFA 的账号进行登录，在一次身份认证后，会提示输入安全码进行二次认证。
+1. 访问 `https://<你的应用域名>.{{$themeConfig.officeSiteDomain}}`。使用绑定过 MFA 的账号进行登录，在一次身份认证后，会提示输入安全码进行二次认证。
 
 <div align=center>
 <img src="./images/otp-authentication.png"/>

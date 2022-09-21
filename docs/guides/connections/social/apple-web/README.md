@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。申请个人、公司账号地址：[https://developer.apple.com/programs/](https://developer.apple.com/programs/) ， 申请企业账号地址：[https://developer.apple.com/programs/enterprise/](https://developer.apple.com/programs/enterprise/)
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
+- 请确保你已经申请了苹果开发者账号，否则无法进行以下操作。申请个人、公司账号地址：[https://developer.apple.com/programs/](https://developer.apple.com/programs/) ， 申请企业账号地址：[https://developer.apple.com/programs/enterprise/](https://developer.apple.com/programs/enterprise/)
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
 
 ## 步骤 1：在 Apple 开发者中心进行配置
 

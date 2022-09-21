@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建企业自建应用
 

@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通微信开放平台账号，请先前往[微信开放平台](https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN)注册并登录。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通微信开放平台账号，请先前往[微信开放平台](https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN)注册并登录。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建网站应用
 

@@ -8,7 +8,7 @@ meta:
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} Java SDK 是用 Kotlin 语言开发而诞生的。Kotlin 是由 JetBrains 开发的静态类型的开源编程语言，可以在 Java 虚拟机（JVM）上有效地运行。最终的产物是 jar 文件，可与 Java 实现 100% 互操作性，您可以将 SDK 引入您的 Java / Android / Kotlin 的项目中使用。
+{{$localeConfig.brandName}} Java SDK 是用 Kotlin 语言开发而诞生的。Kotlin 是由 JetBrains 开发的静态类型的开源编程语言，可以在 Java 虚拟机（JVM）上有效地运行。最终的产物是 jar 文件，可与 Java 实现 100% 互操作性，你可以将 SDK 引入你的 Java / Android / Kotlin 的项目中使用。
 
 {{$localeConfig.brandName}} Java SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClient`。
 

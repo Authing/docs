@@ -14,7 +14,7 @@
 ## 注意事项
 
 - 请按照 [Microsoft 文档](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin#getting-started)指引创建一个应用。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
 ## 步骤 1：在 LinkedIn 创建应用
