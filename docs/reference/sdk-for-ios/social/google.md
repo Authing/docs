@@ -10,9 +10,6 @@
 
 - 修改项目配置
 
-> OAuth Client 应用类型需要创建 Web Application 及 iOS 两种
-> Authing 控制台社会化身份源应选择 Google 移动端
-
 ## 集成 Authing iOS Google 登录
 
 ### 添加依赖
@@ -42,8 +39,9 @@
 - 导入 Guard 和 Google
 
 - Google.register 需要传入 Google 发放的 `clientID` `serverClientId`
-> clientID 为 Google iOS 应用的 ClientID
-> serverClientId 为 Google Web 应用的 ClientID
+> `clientID` 为 Google iOS 应用的 ClientID 
+> `serverClientId` 为 Google Web 应用的 ClientID
+
 ```swift
 import Guard
 import Google
