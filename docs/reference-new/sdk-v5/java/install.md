@@ -130,7 +130,7 @@ public class ManagementClientTest {
 
     private static final String ACCESS_KEY_ID = "YOUR_ACCESS_KEY_ID";
     private static final String ACCESS_KEY_SECRET = "YOUR_ACCESS_KEY_SECRET";
-    // 您的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
+    // 你的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
     private static final String HOST = "YOUR_HOST";
     private ManagementClient managementClient = null;
 

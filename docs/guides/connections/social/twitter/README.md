@@ -12,9 +12,9 @@
 
 ## 注意事项
 
-- 如果您还没有 Twitter 账号，请先前往 [Twitter 平台](https://twitter.com/) 进行账号注册。
+- 如果你还没有 Twitter 账号，请先前往 [Twitter 平台](https://twitter.com/) 进行账号注册。
 - 前往 [Twitter 开发者平台](https://developer.twitter.com/en/portal/)完善账号信息， 并为账号[申请 Elevated access 权限](https://developer.twitter.com/en/portal/petition/standard/basic-info)。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建 Twitter 应用
 
@@ -65,7 +65,7 @@
 根据需要选择 App 的权限，默认选择 **Read**，就可以满足认证功能，**Callback URI / Redirect URL**填写在 {{$localeConfig.brandName}} 控制台上创建 Twitter 身份源后，所展示的回调地址。
 <img src="./images/08.png" >
 
-**Website URL**填写您的站点主页即可，然后点击保存
+**Website URL**填写你的站点主页即可，然后点击保存
 <img src="./images/09.png" >
 
 如果忘记了应用的 Key，可以在应用页点击 **Keys and tokens**，选择 **Regenerate** 重新生成。
@@ -82,7 +82,7 @@
 
 - **详细接入方法**：
 
-  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](./guides/app/create-app.md)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   3.2 在已创建好的 Twitter 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

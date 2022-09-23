@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建飞书应用商店应用
 
@@ -112,7 +112,7 @@ https://core.authing.cn/connection/social/{ 唯一标识 }/{USERPOOL_ID}/events
 
 <img src="./images/08.png" >
 
-4.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业企业应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
+4.2 提交申请后，你的企业管理员会进行审核，审核结果会通过飞书和开发者后台发送给你。详情请见[飞书文档 - 开发企业自建应用](https://open.feishu.cn/document/uQjL04CN/ukzM04SOzQjL5MDN)
 
 ## 步骤 5：开发接入
 
@@ -122,7 +122,7 @@ https://core.authing.cn/connection/social/{ 唯一标识 }/{USERPOOL_ID}/events
 
 - **详细接入方法**：
 
-  5.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  5.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   5.2 在已创建好的 飞书应用商店应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

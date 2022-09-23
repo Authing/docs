@@ -68,7 +68,7 @@ After the configuration is complete, click the "Create" or "Save" button to comp
 
 - **Detailed access method**:
 
-3.1 Create an OIDC Client in the {{$localeConfig.brandName}} console. For details, see: [How to create an application in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 Create an OIDC Client in the {{$localeConfig.brandName}} console. For details, see: [How to create an application in {{$localeConfig.brandName}}](/guides/app-new/create-app/create-app.md)
 
 3.2 On the created OIDC Client identity source connection details page, open and associate an application created in the {{$localeConfig.brandName}} console
 

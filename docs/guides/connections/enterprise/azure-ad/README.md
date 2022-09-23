@@ -12,9 +12,9 @@
 
 ## 注意事项
 
-- 如果您还没有微软账号，请先前往 [Microsoft 平台](https://signup.live.com/signup) 进行账号注册。
-- 您的微软账号需要注册 Azure 账号，请先前往 [Azure 平台](https://signup.azure.com/signup) 进行账号注册。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://{{$localeConfig.brandName}}.cn/) 注册开发者账号；
+- 如果你还没有微软账号，请先前往 [Microsoft 平台](https://signup.live.com/signup) 进行账号注册。
+- 你的微软账号需要注册 Azure 账号，请先前往 [Azure 平台](https://signup.azure.com/signup) 进行账号注册。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://{{$localeConfig.brandName}}.cn/) 注册开发者账号；
 
 ## 步骤 1：创建 Azure Active Directory 应用
 
@@ -73,7 +73,7 @@
 
 - **详细接入方法**：
 
-  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](./guides/app/create-app.md)
+  3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   3.2 在已创建好的 Azure AD 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

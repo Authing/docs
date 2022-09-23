@@ -60,7 +60,7 @@ After the configuration is complete, click the "Create" or "Save" button to comp
 - **Description of advantages and disadvantages**: Simple access, only a few lines of code are required. The most customizable.
 - **Detailed access method**:
 
-3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](https://docs.authing.cn/v2/guides/app/create-app.html).
+3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](/guides/app-new/create-app/create-app.md).
 
 3.2 On the created YiDun identity source connection details page, open and associate an application created in the Authing console.
 

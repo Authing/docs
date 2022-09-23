@@ -14,9 +14,9 @@
 
 ## 注意事项
 
-- 如果您未开通 Instagram 开放平台账号，请先前往 [Instagram 开放平台](https://developers.facebook.com/) 注册开发者账号。因 Instagram 是属于 facebook 的，所以此处所说的 Instagram 开放平台就是 Facebook 的开放平台；
+- 如果你未开通 Instagram 开放平台账号，请先前往 [Instagram 开放平台](https://developers.facebook.com/) 注册开发者账号。因 Instagram 是属于 facebook 的，所以此处所说的 Instagram 开放平台就是 Facebook 的开放平台；
 -  开通一个包含多媒体素材的 [Instagram 账户](https://www.instagram.com/)；
-- 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
 
 
 
@@ -28,7 +28,7 @@
 
 <img src="./images/02-saveapp.png" >
 
-在控制面板中，找到 **Instagram Basic Display** 产品，然后点击设置，将其添加至您的应用。
+在控制面板中，找到 **Instagram Basic Display** 产品，然后点击设置，将其添加至你的应用。
 
 <img src="./images/03-addinstagram.png" >
 
@@ -76,7 +76,7 @@
 
 - **详细接入方法**：
 
-3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](/guides/app-new/create-app/create-app.md)
 
 3.2 在已创建好的 Instagram 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用
 

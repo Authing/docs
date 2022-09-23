@@ -2,9 +2,9 @@
 
 ## 说明
 
-[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果您正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
+[Authing 小程序 SDK 5.x](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，如果你正在使用之前的版本 [authing-wxapp-sdk](https://github.com/Authing/authing-wxapp-sdk)，可参考：[微信小程序 SDK](./sdk-for-wxapp.md)
 
-SDK 5.0 主要升级：
+SDK 5.x 主要升级：
 
 - 集成并增强 Authing 最新 V3 版认证 API，覆盖大多数用户认证、授权类核心功能，未来我们将根据用户需要继续拓展其他功能
 - 完善的 TS 类型提示
@@ -69,6 +69,21 @@ npm install --save @authing/miniapp-uniapp
 :::
 ::::
 
+
+如果你是使用账号密码登录，且不想让密码以明文传输，可以按需使用以下两种加密方式之一实现密码加密
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab rsa加密
+``` shell
+npm install --save @authing/miniapp-jsencrypt
+```
+:::
+::: tab sm2加密
+``` shell
+npm install --save @authing/miniapp-sm2encrypt
+```
+:::
+::::
 ## STEP 4: 初始化 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -77,7 +92,11 @@ npm install --save @authing/miniapp-uniapp
 import { Authing } from '@authing/miniapp-wx'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -94,7 +113,11 @@ const authing = new Authing({
 import { Authing } from '@authing/miniapp-taro'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -111,7 +134,11 @@ const authing = new Authing({
 import { Authing } from '@authing/miniapp-uniapp'
 
 // 以下两种密码加密方式可以按需使用，选其一即可
+
+// rsa 加密
 import { encryptFunction } from '@authing/miniapp-jsencrypt'
+
+// sm2 加密
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
@@ -127,6 +154,76 @@ const authing = new Authing({
 
 ## STEP 5: 使用 SDK
 
+### 获取登录态
+
+> authing.getLoginState
+
+#### 入参
+
+无
+
+#### 出参
+
+[LoginState](#LoginState) 或 null
+
+#### 说明
+
+- 如果返回值为 null，说明用户未登录，或登录态已过期
+
+- 如果返回值不为 null，说明用户已登录，且登录态未过期
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="getLoginState">getLoginState</button>
+```
+``` typescript
+// index.js
+Page({
+  async getLoginState () {    
+    const res = await authing.getLoginState()
+
+    console.log('authing.getLoginState res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.getLoginState()}>getLoginState</Button>
+      </View>
+    )
+  }
+  async getLoginState () {    
+    const res = await authing.getLoginState()
+
+    console.log('authing.getLoginState res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+``` typescript
+export default {
+  methods: {
+    async getLoginState () {      
+      const res = await authing.getLoginState()
+
+      console.log('authing.getLoginState res: ', res)
+    }
+  }
+}
+```
+:::
+::::
+
 ### 微信授权 code 登录
 
 >authing.loginByCode
@@ -137,19 +234,26 @@ const authing = new Authing({
 |-----|----|----|----|----|
 |connection|String|认证方式|wechat_mini_program_code|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
-|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
+|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据|-|是|
 |options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
 
 **WechatMiniProgramCodePayload**
-
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
-|iv|String|加密算法的初始向量| - | 是 |
+|iv|String|加密算法的初始向量|-|是|
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+参考：[UserInfo](#UserInfo)
+
+#### 说明
+
+微信小程序相关接口说明请参考：
+
+[wx.getUserProfile](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)
+
+[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -162,10 +266,19 @@ const authing = new Authing({
 // index.js
 Page({
   async loginByCode () {
+    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+    // 为了防止用户频繁触发登录按钮
+    // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+    // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
     const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile'
+      desc: 'getUserProfile1'
     })
-    
+
+    // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+    // 偶然情况下 res 会是 undefined
+    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -193,11 +306,20 @@ export default class Index extends Component<PropsWithChildren> {
       </View>
     )
   }
-  async loginByCode () {
+  async loginByCode () {    
+    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+    // 为了防止用户频繁触发登录按钮
+    // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+    // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
     const { encryptedData, iv } = await Taro.getUserProfile({
       desc: 'getUserProfile'
     })
-    
+
+    // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+    // 偶然情况下 res 会是 undefined
+    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -219,11 +341,20 @@ export default class Index extends Component<PropsWithChildren> {
 ``` typescript
 export default {
   methods: {
-    async loginByCode () {
+    async loginByCode () {   
+      // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
+      // 为了防止用户频繁触发登录按钮
+      // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
+      // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
+      // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
       const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
-      
+
+      // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
+      // 偶然情况下 res 会是 undefined
+      // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
+      // 如果 res 是 undefined，则提示用户再点击一次按钮即可   
       const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -237,124 +368,6 @@ export default {
       })
 
       console.log('authing.loginByCode res: ', res)
-    }
-  }
-}
-```
-:::
-::::
-
-### 微信授权手机号登录
-
->authing.loginByPhone
-
-#### 入参
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|connection|String|认证方式|wechat_mini_program_phone|否|
-|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
-|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据| - | 是|
-|options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
-
-**WechatMiniProgramCodePayload**
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
-|iv|String|加密算法的初始向量| - | 是 |
-
-#### 出参
-
-参考：[LoginState](#LoginState)
-
-
-#### 示例代码
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab 微信原生小程序
-``` html
-<!-- index.wxml -->
-<button bindtap="loginByPhone">loginByPhone</button>
-```
-``` typescript
-// index.js
-Page({
-  async loginByPhone () {
-    const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
-    const res = await authing.loginByPhone({
-      connection: 'wechat_mini_program_phone',
-      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramPhonePayload: {
-        encryptedData,
-        iv
-      },
-      options: {
-        scope: 'openid profile offline_access'
-      }
-    })
-
-    console.log('authing.loginByPhone res: ', res)
-  }
-})
-```
-:::
-::: tab Taro
-``` tsx
-export default class Index extends Component<PropsWithChildren> {
-  render () {
-    return (
-      <View className='index'>
-        <Button onClick={() => this.loginByPhone()}>loginByPhone</Button>
-      </View>
-    )
-  }
-  async loginByPhone () {
-    const { encryptedData, iv } = await Taro.getUserProfile({
-      desc: 'getUserProfile'
-    })
-    
-    const res = await authing.loginByPhone({
-      connection: 'wechat_mini_program_phone',
-      extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-      wechatMiniProgramPhonePayload: {
-        encryptedData,
-        iv
-      },
-      options: {
-        scope: 'openid profile offline_access'
-      }
-    })
-
-    console.log('authing.loginByPhone res: ', res)
-  }
-}
-```
-:::
-::: tab uniapp
-``` typescript
-export default {
-  methods: {
-    async loginByPhone () {
-      const [, { encryptedData, iv }] = await uni.getUserProfile({
-        desc: 'getUserProfile'
-      })
-      
-      const res = await authing.loginByPhone({
-        connection: 'wechat_mini_program_phone',
-        extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
-        wechatMiniProgramPhonePayload: {
-          encryptedData,
-          iv
-        },
-        options: {
-          scope: 'openid profile offline_access'
-        }
-      })
-
-      console.log('authing.loginByPhone res: ', res)
     }
   }
 }
@@ -463,6 +476,94 @@ export default {
 
       console.log('authing.loginByPassword res: ', res)
     }
+  }
+}
+```
+:::
+::::
+
+### 发送短信验证码
+
+> authing.sendSms
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|phoneNumber|String|手机号码|是|
+|phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
+
+#### 出参
+
+|名称|类型|描述|
+|-----|----|----|
+|message|String|返回信息
+|statusCode|Number|状态码
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="sendSms">sendSms</button>
+```
+``` typescript
+// index.js
+Page({
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.sendSms res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.sendSms()}>sendSms</Button>
+      </View>
+    )
+  }
+  
+  async sendSms () {
+    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+    const res = await authing.sendSms({
+      phoneNumber: '13100000000',
+      phoneCountryCode: '+86',
+      channel: 'CHANNEL_LOGIN'
+    })
+
+    console.log('authing.sendSms res: ', res)
+  }
+}
+```
+:::
+::: tab uniapp
+```html
+<button @click="sendSms">sendSms</button>
+```
+``` typescript
+export default {
+  methods: {
+    async sendSms () {
+      // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
+      const res = await authing.sendSms({
+        phoneNumber: '13100000000',
+        phoneCountryCode: '+86',
+        channel: 'CHANNEL_LOGIN'
+      })
+
+      console.log('authing.sendSms res: ', res)
+    },
   }
 }
 ```
@@ -698,7 +799,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button openType="getPhoneNumber" onClick={(e) => this.getPhone(e)}>getPhone</Button>
+        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>getPhone</Button>
       </View>
     )
   }
@@ -746,94 +847,6 @@ export default {
 :::
 ::::
 
-### 发送短信验证码
-
-> authing.sendSms
-
-#### 入参
-
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|phoneNumber|String|手机号码|是|
-|phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
-
-#### 出参
-
-|名称|类型|描述|
-|-----|----|----|
-|message|String|返回信息
-|statusCode|Number|状态码
-
-#### 示例代码
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab 微信原生小程序
-``` html
-<!-- index.wxml -->
-<button bindtap="sendSms">sendSms</button>
-```
-``` typescript
-// index.js
-Page({
-  async sendSms () {
-    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
-      phoneNumber: '13100000000',
-      phoneCountryCode: '+86',
-      channel: 'CHANNEL_LOGIN'
-    })
-
-    console.log('authing.sendSms res: ', res)
-  }
-})
-```
-:::
-::: tab Taro
-``` tsx
-export default class Index extends Component<PropsWithChildren> {
-  render () {
-    return (
-      <View className='index'>
-        <Button onClick={() => this.sendSms()}>sendSms</Button>
-      </View>
-    )
-  }
-  
-  async sendSms () {
-    // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
-      phoneNumber: '13100000000',
-      phoneCountryCode: '+86',
-      channel: 'CHANNEL_LOGIN'
-    })
-
-    console.log('authing.sendSms res: ', res)
-  }
-}
-```
-:::
-::: tab uniapp
-```html
-<button @click="sendSms">sendSms</button>
-```
-``` typescript
-export default {
-  methods: {
-    async sendSms () {
-      // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-      const res = await authing.sendSms({
-        phoneNumber: '13100000000',
-        phoneCountryCode: '+86',
-        channel: 'CHANNEL_LOGIN'
-      })
-
-      console.log('authing.sendSms res: ', res)
-    },
-  }
-}
-```
-:::
-::::
-
 ### 修改密码
 
 > authing.updatePassword
@@ -843,7 +856,6 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |newPassword|String|新密码|-|是|
-|oldPassword|String|旧密码|-|是|
 |oldPassword|String|旧密码|-|是|
 |passwordEncryptType|none / rsa / sm2|加密方式|none|否
 
@@ -1201,7 +1213,7 @@ export default {
 
 ### <p id="WxLoginOptions">WxLoginOptions</p>
 
-> 用于 authing.loginByCode 和 wx.loginByCode
+> 用于 authing.loginByCode
 
 |名称|类型|描述|默认值|必传|
 |-----|----|----|----|----|
@@ -1212,15 +1224,22 @@ export default {
 
 ### <p id="NormalLoginOptions">NormalLoginOptions</p>
 
-> 用于 authing.loginByPassword 和 loginByPassCode
+> 用于 authing.loginByPassword 和 authing.loginByPassCode
 
 |名称|类型|描述|默认值|必传|
 |-----|----|----|----|----|
 |passwordEncryptType|none / rsa / sm2|密码加密方式|none|否|
 |scope|[Scope](#Scope)|获取的资源类型，以空格分割| - | 否|
+|autoRegister|Boolean|是否开启自动注册。如果设置为 true，当用户不存在的时候，会先自动为其创建一个账号。| false | 否|
+|clientIp|String|客户端真实 IP 地址。默认情况下，Authing 会将请求来源的 IP 识别为用户登录的 IP 地址，如果你在后端服务器中调用此接口，需要将此 IP 设置为用户的真实请求 IP。| - | 否 |
+|context|String|额外请求上下文，将会传递到认证前和认证后的 Pipeline 的 context 对象中。了解如何在 Pipeline 的 context 参数中获取传入的额外 context。| - | 否|
+|tenantId|String|租户 ID| - | 否|
+|customData|Object|自定义数据| - | 否 |
 
 
 ### <p id="Scope">Scope</p>
+
+以下内容需使用空格分割使用，可根据自身需要按需添加，如：`openid offline_access username`
 
 - `openid`：必须包含
 - `offline_access`: 如果存在此参数，token 接口会返回 refresh_token 字段
@@ -1237,6 +1256,7 @@ export default {
 
 |名称|类型|描述|
 |-----|----|----|
+|userId|String|用户 ID|
 |name|String|用户名|
 |nickname|String|昵称|
 |photo|String|头像|
@@ -1251,6 +1271,16 @@ export default {
 |gender|String|性别|
 |username|String|用户名|
 |customData|String|自定义数据|
+|createdAt|String|用户创建时间|
+|email|String|邮箱|
+|emailVerified|Boolean|邮箱是否已验证|
+|lastIp|String|最后一次登录的 IP 地址|
+|lastLogin|String|最后登录时间|
+|loginsCount|Number|登录次数|
+|passwordLastSetAt|String|密码最后重置时间|
+|phoneCountryCode|String|手机号码所在地区编号|
+|phoneVerified|Boolean|手机号已否已验证|
+|resetPasswordOnNextLogin|Boolean|下次登录是否要求重置密码|
 
 ### <p id="LoginState">LoginState</p>
 

@@ -154,7 +154,7 @@ func main() {
 	options := client.ManagementClientOptions{
 		AccessKeyId:     "AUTHING_USERPOOL_ID",
 		AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-		Host:            "YOUR_HOST", // 您的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
+		Host:            "YOUR_HOST", // 你的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
 	}
 	client, err := client.NewClient(&options)
 	if err != nil {

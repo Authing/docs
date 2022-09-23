@@ -22,7 +22,7 @@
 
 ![](./images/Xnip2021-02-26_10-48-40.png)
 
-开启这个开关之后，用户在应用 A 登录之后，用户访问应用 B 将会自动登录。更多详情请查看[实现单点登录（SSO）](/guides/authentication/sso/)指引和[单点登录 SDK](/reference/sdk-for-sso-spa.md)。
+开启这个开关之后，用户在应用 A 登录之后，用户访问应用 B 将会自动登录。更多详情请查看[实现单点登录（SSO）](/guides/app-new/sso/)指引和[单点登录 SDK](/reference/sdk-for-sso-spa.md)。
 
 ## 访问在线版的登录表单
 

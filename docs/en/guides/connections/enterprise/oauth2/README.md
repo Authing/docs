@@ -63,7 +63,7 @@ After the configuration is complete, click the "Save" button to complete the cre
 
 - **Detailed access method**:
 
-3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](https://docs.authing.cn/v2/guides/app/create-app.html).
+3.1 Create an app in the Authing console. For details, see: [How to create an app in Authing](/guides/app-new/create-app/create-app.md).
 
 3.2 On the created OAuth2.0 identity source connection details page, open and associate an application created in the Authing console.
 

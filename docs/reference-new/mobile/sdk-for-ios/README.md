@@ -17,7 +17,7 @@ iOS App 通过 Guard 开源组件库接入。Guard 采用了全新的 [语义化
 
 - 开发设备上安装 [Xcode 13](https://developer.apple.com/xcode/)
 - 免费创建一个 [Authing 帐号](https://www.authing.cn/)
-- 在 Authing 控制台 [创建一个自建应用](/guides/app/create-app.md)
+- 在 Authing 控制台 [创建一个自建应用](/guides/app-new/create-app/create-app.md)
 
 <br>
 

@@ -23,7 +23,7 @@ Spring Boot 可以轻松创建可以**直接运行**的独立的、生产级的�
 Spring Boot 的特征主要有：
 
 - 创建独立的 Spring 应用程序
-- 提供版本仲裁的入门依赖项以简化您的构建配置
+- 提供版本仲裁的入门依赖项以简化你的构建配置
 - 尽可能自动配置 Spring 和 3rd 方库
 - 完全无需代码生成，无需 XML 配置
 
@@ -31,9 +31,9 @@ Spring Boot 的特征主要有：
 
 ## 集成介绍
 
-Authing Spring Boot Starter 可以为您提供拦截校验 token 的功能。
+Authing Spring Boot Starter 可以为你提供拦截校验 token 的功能。
 
-您可以新建一个您的 spring-boot 工程来使用本项目，或直接使用我们在 `/example/use-this-starter` 提供的示例项目进行试用。
+你可以新建一个你的 spring-boot 工程来使用本项目，或直接使用我们在 `/example/use-this-starter` 提供的示例项目进行试用。
 
 
 
@@ -47,7 +47,7 @@ Authing Spring Boot Starter 可以为您提供拦截校验 token 的功能。
 
 ![](https://cdn.authing.co/authing-docs-v2/1.3.98/assets/img/stepnew2-1.5f55fe46.png)
 
-为您的示例应用创建一些测试用户。
+为你的示例应用创建一些测试用户。
 
 ![image-20220825161101516](D:\authing\TempCode\doc framework starter.assets\image-20220825161101516.png)
 
@@ -82,7 +82,7 @@ Authing Spring Boot Starter 可以为您提供拦截校验 token 的功能。
 
 ####  从中央仓库引入
 
-在您的 Spring 项目中引入：
+在你的 Spring 项目中引入：
 
 ```xml
 <dependency>
@@ -121,7 +121,7 @@ Authing Spring Boot Starter 可以为您提供拦截校验 token 的功能。
 
 引入 `authing-spring-boot-starter`完成后，
 
-> 由于 okhttp3 的版本冲突问题，请从您的 `spring-boot-starter-web`中排除 `okhttp`, 使用 `okhttp:4.8.0`版本。
+> 由于 okhttp3 的版本冲突问题，请从你的 `spring-boot-starter-web`中排除 `okhttp`, 使用 `okhttp:4.8.0`版本。
 
 ```xml
 <dependency>
@@ -145,7 +145,7 @@ Authing Spring Boot Starter 可以为您提供拦截校验 token 的功能。
 
 #### 配置用户池与应用
 
-这里以 `yml`格式为例。 在 `application.yml` 配置文件中添加您的用户池与应用的相关配置：
+这里以 `yml`格式为例。 在 `application.yml` 配置文件中添加你的用户池与应用的相关配置：
 
 ```yml
 authing:
@@ -184,7 +184,7 @@ authing:
 
 ##### 不需要校验登录态
 
-如果您希望暴露某些资源，如注册页/ 登录页等，来允许未登录者访问，请将资源地址配置在 `application.yml`中：
+如果你希望暴露某些资源，如注册页/ 登录页等，来允许未登录者访问，请将资源地址配置在 `application.yml`中：
 
 ```yaml
 authing:
@@ -197,7 +197,7 @@ authing:
 
 ### 失败处理
 
-如果您希望全局地给验证失败的请求返回特定异常，如 HTTP 403 异常，可在您的全局异常处理器中添加以下内容：
+如果你希望全局地给验证失败的请求返回特定异常，如 HTTP 403 异常，可在你的全局异常处理器中添加以下内容：
 
 ```java
 @ControllerAdvice(basePackages = "YOUR-PACKAGE")
