@@ -95,4 +95,4 @@
 
 - [基础部署模式](/guides/deployment/bare-metal.md)；
 - [Docker 部署模式](/guides/deployment/docker-compose.md)；
-- [Kubernetes 部署模式](/guides/deployment/kubernetes.md)。
+- [Kubernetes 部署模式](/guides/deployment/kubernetes.md)；
