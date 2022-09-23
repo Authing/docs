@@ -69,6 +69,21 @@ npm install --save @authing/miniapp-uniapp
 :::
 ::::
 
+
+如果你是使用账号密码登录，且不想让密码以明文传输，可以按需使用以下两种加密方式之一实现密码加密
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab rsa加密
+``` shell
+npm install --save @authing/miniapp-jsencrypt
+```
+:::
+::: tab sm2加密
+``` shell
+npm install --save @authing/miniapp-sm2encrypt
+```
+:::
+::::
 ## STEP 4: 初始化 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -230,7 +245,15 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+参考：[UserInfo](#UserInfo)
+
+#### 说明
+
+微信小程序相关接口说明请参考：
+
+[wx.getUserProfile](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)
+
+[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1190,7 +1213,7 @@ export default {
 
 ### <p id="WxLoginOptions">WxLoginOptions</p>
 
-> 用于 authing.loginByCode 和 wx.loginByCode
+> 用于 authing.loginByCode
 
 |名称|类型|描述|默认值|必传|
 |-----|----|----|----|----|
@@ -1201,7 +1224,7 @@ export default {
 
 ### <p id="NormalLoginOptions">NormalLoginOptions</p>
 
-> 用于 authing.loginByPassword 和 loginByPassCode
+> 用于 authing.loginByPassword 和 authing.loginByPassCode
 
 |名称|类型|描述|默认值|必传|
 |-----|----|----|----|----|
@@ -1233,6 +1256,7 @@ export default {
 
 |名称|类型|描述|
 |-----|----|----|
+|userId|String|用户 ID|
 |name|String|用户名|
 |nickname|String|昵称|
 |photo|String|头像|
@@ -1247,6 +1271,16 @@ export default {
 |gender|String|性别|
 |username|String|用户名|
 |customData|String|自定义数据|
+|createdAt|String|用户创建时间|
+|email|String|邮箱|
+|emailVerified|Boolean|邮箱是否已验证|
+|lastIp|String|最后一次登录的 IP 地址|
+|lastLogin|String|最后登录时间|
+|loginsCount|Number|登录次数|
+|passwordLastSetAt|String|密码最后重置时间|
+|phoneCountryCode|String|手机号码所在地区编号|
+|phoneVerified|Boolean|手机号已否已验证|
+|resetPasswordOnNextLogin|Boolean|下次登录是否要求重置密码|
 
 ### <p id="LoginState">LoginState</p>
 
