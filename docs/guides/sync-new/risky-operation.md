@@ -55,8 +55,8 @@
 
 ::: hint-info
 同步任务画布中，**处理删除保护** 按钮有两种状态：
-* 黑色三角：当前同步任务无待处理的删除操作。
-* 橙色三角：当前同步任务有待处理的删除操作。
+* 默认状态（黑色）：当前同步任务无待处理的删除操作。
+* 高亮状态（橙色）：当前同步任务有待处理的删除操作。
 :::
 
 <img src="./images/enter-process-delete-protection.png" style="display:block;margin: 0 auto;">
