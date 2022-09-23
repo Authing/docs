@@ -80,7 +80,7 @@
 <img src="./images/execute-status.jpg" style="display:block;margin: 0 auto;">
 
 ::: hint-info
-对于 **未执行** 和/或 **执行失败** 状态，可以点击多个条目进行批量操作。
+对于 **未执行** 和/或 **执行失败** 状态，可以选择多个条目进行批量操作。
 :::
 
 <img src="./images/batch-delete.png" style="display:block;margin: 0 auto;">
