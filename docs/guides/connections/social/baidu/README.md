@@ -13,9 +13,9 @@
 ## 注意事项
 
 
-- 如果您未注册百度开发者账号，请先前往 [百度开发者中心](https://developer.baidu.com/) 注册开发者账号。
+- 如果你未注册百度开发者账号，请先前往 [百度开发者中心](https://developer.baidu.com/) 注册开发者账号。
 - 百度开发者中心-[用户中心](http://developer.baidu.com/user/info)
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：在百度开放平台创建一个网站应用
 

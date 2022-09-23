@@ -1,5 +1,22 @@
 本文讲述如何使用 {{$localeConfig.brandName}} 实现应用账号打通和单点登录。
 
+> Authing Web SDK 可以帮你实现浏览器内多个应用跨主域的单点登录效果，**目前只适合单独使用**，暂不支持与 Guard 或其他 SDK 混用。
+
+>[authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 实现了 Authing 大部分认证类功能，后期我们会逐步将这些功能迁移到 Authing Web SDK，并集成 Authing 最新的 V3 版认证类 API，为用户提供更好的使用体验。
+
+Authing WEB SDK 目前支持的功能如下：
+
+|功能|说明|
+|----|----|
+|loginWithRedirect|跳转登录|
+|loginWithPopup|弹窗窗口登录|
+|isRedirectCallback|判断当前 URL 是否为 Authing 登录回调 URL，结合 getLoginState 实现静默登录|
+|getLoginState|获取登录态|
+|getUserInfo|获取用户信息|
+|logoutWithRedirect|退出登录|
+
+[authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 的其他功能当前正在 Authing Web SDK 中陆续实现。
+
 ## 什么是单点登录
 
 我们通过一个例子来说明，假设有一所大学，内部有两个系统，一个是邮箱系统，一个是课表查询系统。现在想实现这样的效果：在邮箱系统中登录一遍，然后此时进入课表系统的网站，无需再次登录，课表网站系统直接跳转到个人课表页面，反之亦然。比较专业的定义如下：
@@ -39,15 +56,17 @@
 
 ![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-2. **授权配置**：`授权模式`开启 `authorization_code`
+2. **授权配置**：`授权模式`开启 `authorization_code`，`返回类型`开启 `code`
 
 ![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
-3. **授权配置**：`返回类型`开启 `code`
+3. 以下 token 验证方式勾选 `none`
+
+![](~@imagesZhCn/common/integrate-sso/sso-authorization-token.png)
 
 4. 保存当前配置
 
-至此，配置完成，**点击下方保存按钮**。
+> 注意，如果使用社会化身份源或企业身份源登录，且获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考[身份源连接的账号关联](/guides/connections/account-association.html)
 
 ## STEP 4: 登录实例参数准备
 
@@ -95,7 +114,7 @@ npm install --save @authing/web
 
 ::: tab CDN
 ```html
-<script src="https://cdn.authing.co/packages/web/5.0.2/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.0.3/index.global.js"></script>
 ```
 :::
 ::::

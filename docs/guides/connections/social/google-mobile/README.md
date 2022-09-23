@@ -20,9 +20,9 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 ## 准备工作
 
-* 如果您未开通 Google 账号，请先前往 [Google](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册。
+* 如果你未开通 Google 账号，请先前往 [Google](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册。
 
-* 如果您未开通 Authing 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号。
+* 如果你未开通 Authing 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 配置步骤
 
@@ -40,7 +40,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 <img src="./images/google_5-mobile.png" height=600 style="display:block;margin: 0 auto;">
 
-4. 创建成功后，在下一个页面您可以获取到此应用的 **Your Client ID** 和 **Your Client Secret**，记录下来。
+4. 创建成功后，在下一个页面你可以获取到此应用的 **Your Client ID** 和 **Your Client Secret**，记录下来。
 
 <img src="./images/google_6-mobile.png" style="display:block;margin: 0 auto;">
 
@@ -53,7 +53,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 3. 选择 **Application type** 为 **Android**，填写 **Name**、**Package name** 和 **SHA-1 certificate fingerprint**，点击 **CREATE** 按钮。
 
 ::: hint-info
-* 需要登录您的移动端应用后台获取 **Package name**（安卓应用包名）和 **SHA-1 certificate fingerprint**（安卓应用的 SHA-1）。
+* 需要登录你的移动端应用后台获取 **Package name**（安卓应用包名）和 **SHA-1 certificate fingerprint**（安卓应用的 SHA-1）。
 * 设置保存后到生效需一段时间，请耐心等待。
 :::
 
@@ -141,7 +141,7 @@ Team ID
 
 <tr>
 <td>Callback URL</td>
-<td>可以填写您的业务回调地址，用户完成登录后，浏览器将会跳转到该地址。</td>
+<td>可以填写你的业务回调地址，用户完成登录后，浏览器将会跳转到该地址。</td>
 </tr>
 
 <tr>
@@ -178,7 +178,7 @@ SDK
 
 #### 优劣势描述
 
-运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到您的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
 
 #### 详细接入方法
 

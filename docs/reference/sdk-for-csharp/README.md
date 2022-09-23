@@ -35,7 +35,7 @@ dotnet add package Authing.Library --version 0.0.22
 <PackageReference Include="Authing.Library" Version="0.0.22" />
 ```
 
-如果您想要获取最新版本，请查阅 [Authing.Library](https://www.nuget.org/packages/Authing.Library)
+如果你想要获取最新版本，请查阅 [Authing.Library](https://www.nuget.org/packages/Authing.Library)
 
 ## 使用管理模块
 

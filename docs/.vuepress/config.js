@@ -174,9 +174,9 @@ module.exports = {
           editTip: "有建议或错误，可直接",
           editLink: "有建议或错误，可直接在 Github 上反馈",
           help: `如果遇到其他问题，立即 <a href="https://forum.authing.cn/" target="_blank">联系我们</a>`,
-          successTip: `提交成功，感谢您的反馈`,
+          successTip: `提交成功，感谢你的反馈`,
           uselessConfig: {
-            title: "您是否遇到以下问题",
+            title: "你是否遇到以下问题",
             reasons: [
               {
                 value: "内容错误",

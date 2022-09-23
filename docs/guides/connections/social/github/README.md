@@ -12,13 +12,13 @@
 
 ## 注意事项
 
-- 如果您未开通 Github 账号，请先前往 [GitHub](https://www.github.com) 注册开发者账号。
+- 如果你未开通 Github 账号，请先前往 [GitHub](https://www.github.com) 注册开发者账号。
 - 请按照 [GitHub 文档](https://docs.github.com/cn/developers/apps/building-oauth-apps/creating-an-oauth-app)指引创建一个 GitHub OAuth 应用，并记录应用的 Client ID 和 Client Secret。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：在 Github 创建一个 OAuth 应用程序
 
-- 在 Github 任何页面的右上角，单击您的个人资料照片，然后单击 Settings（设置）。
+- 在 Github 任何页面的右上角，单击你的个人资料照片，然后单击 Settings（设置）。
 
 - 在左侧栏中，单击 <> 开发者设置。
 

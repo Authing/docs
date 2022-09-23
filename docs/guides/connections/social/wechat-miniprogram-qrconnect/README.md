@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通微信公众平台账号，请先前往 [微信公众平台](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN)注册并登录。
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通微信公众平台账号，请先前往 [微信公众平台](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN)注册并登录。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：在微信公众平台创建一个小程序（可选）
 

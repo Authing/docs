@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 请确保您已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/)；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
+- 请确保你已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/)；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：在 Apple 开发者中心进行配置
 
@@ -127,7 +127,7 @@
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。
 - **详细接入方法**：
 
-  3.1 请根据 [苹果登录 SDK 接入文档 ](https://docs.authing.cn/v2/reference/sdk-for-ios/social/apple.html)接入您的 iOS 应用；
+  3.1 请根据 [苹果登录 SDK 接入文档 ](https://docs.authing.cn/v2/reference/sdk-for-ios/social/apple.html)接入你的 iOS 应用；
  
   3.2 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 

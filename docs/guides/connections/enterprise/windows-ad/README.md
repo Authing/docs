@@ -16,7 +16,7 @@
 - 服务器安装了 Active Directory；
 - 运行 Authing AD Connector 的机器上，能够连通 Active Directory；
 - 一个具有 Active Directory 的读取权限的用户账密。
-- 如果您未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 本章节包含以下内容：
 
@@ -76,7 +76,7 @@
 
 ### 2. 安装 **AD LDS**
 
-> **AD LDS** 并不是必须要安装的，您也可以选择不进行安装，直接进行 **`配置 AD 域服务`** 的安装， 此处只是提供安装过程，以及需要注意的点。
+> **AD LDS** 并不是必须要安装的，你也可以选择不进行安装，直接进行 **`配置 AD 域服务`** 的安装， 此处只是提供安装过程，以及需要注意的点。
 
 2.1 运行 `安装向导`
 
@@ -170,7 +170,7 @@
 
 ###4. 检查 **Active Directory** 服务连接
 
-> 此处使用 `ldp` 进行连接测试， 无需输入更多 `ldap` 连接相关信息即可获取响应结果， 您也可以使用一些客户端（如 Apache Ldap Studio 等）来完成连接测试。当然 `AD 管理中心` 可以打开也意味着 `当前` 您的连接测试是没有问题的。
+> 此处使用 `ldp` 进行连接测试， 无需输入更多 `ldap` 连接相关信息即可获取响应结果， 你也可以使用一些客户端（如 Apache Ldap Studio 等）来完成连接测试。当然 `AD 管理中心` 可以打开也意味着 `当前` 你的连接测试是没有问题的。
 
 4.1 `Win + r` 打开 `CMD 执行窗口`， 键入 `ldp`
 
@@ -545,7 +545,7 @@
 
 配置好之后，你可以选择对应的导入方式导入组织机构。
 
-> 默认情况下，当您使用 AD 导入组织机构的之后， 并且您已经完成前面相关步骤， 此时 AD 的双向同步已经开启
+> 默认情况下，当你使用 AD 导入组织机构的之后， 并且你已经完成前面相关步骤， 此时 AD 的双向同步已经开启
 
 ![](~@imagesZhCn/guides/org/import-org.jpg)
 
