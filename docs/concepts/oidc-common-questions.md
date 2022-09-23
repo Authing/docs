@@ -12,7 +12,7 @@ OIDC 的全称是 OpenID Connect，是一个基于 OAuth 2.0 的轻量级认证 
 
 ## OIDC 在后端如何处理
 
-请参考 GitHub 上的示例：[oidc-demo](https://github.com/Authing/oidc-demo)
+请参考 GitHub 上的示例：[example-spring-boot-oidc](https://github.com/Authing/example-spring-boot-oidc)
 
 ## OIDC 三种认证流程的特征对比
 
