@@ -66,7 +66,6 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
-
     {
       title: "快速开始",
       children: [
@@ -464,8 +463,8 @@ const zhCnNavBar = {
               title: "租户配置",
               path: "/guides/app-new/create-app/tenant-config",
             },
-          ]
-        }, 
+          ],
+        },
         {
           title: "单点登录 SSO",
           path: "/guides/app-new/sso/",
@@ -503,7 +502,7 @@ const zhCnNavBar = {
                   title: "WeLink SSO 方案",
                   path: "/guides/welink-sso/",
                 },
-              ]
+              ],
             },
             {
               title: "ASA 表单代填",
@@ -948,7 +947,7 @@ const zhCnNavBar = {
               title: "MFA 策略配置",
               path: "/guides/security/mfa/policy-based-mfa-configuration",
             },
-                    ],
+          ],
         },
       ],
     },
@@ -963,7 +962,7 @@ const zhCnNavBar = {
           title: "自定义域名",
           path: "/guides/customize/domain/customized-domain",
         },
-                ],
+      ],
     },
     {
       title: "配置用户池信息",
@@ -1074,7 +1073,7 @@ const zhCnNavBar = {
         {
           title: "Guard Changelog",
           path: "/reference/guard/guard-changelog",
-        }
+        },
       ],
     },
     // {
@@ -2124,6 +2123,7 @@ const zhCnNavBar = {
       path: "/reference-new/sdk-v5/",
       redirect: "/reference-new/sdk-v5/csharp/install.html",
       // 自动生成粘贴开始
+
       children: [
         {
           title: "C#",
@@ -2142,419 +2142,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/csharp/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/csharp/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/csharp/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/csharp/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/csharp/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/csharp/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/csharp/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/csharp/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/csharp/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/csharp/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/csharp/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/csharp/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/csharp/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/csharp/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/csharp/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/csharp/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/csharp/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
@@ -2579,419 +2687,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/go/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/go/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/go/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/go/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/go/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/go/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/go/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/go/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/go/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/go/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/go/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/go/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/go/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/go/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/go/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/go/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/go/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/go/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/go/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/go/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/go/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/go/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/go/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/go/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/go/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/go/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/go/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/go/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/go/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/go/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/go/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/go/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/go/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/go/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/go/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/go/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/go/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/go/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/go/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/go/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/go/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/go/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/go/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/go/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
@@ -3016,419 +3232,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/java/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/java/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/java/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/java/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/java/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/java/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/java/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/java/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/java/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/java/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/java/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/java/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/java/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/java/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/java/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/java/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/java/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/java/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/java/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/java/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/java/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/java/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/java/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/java/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/java/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/java/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/java/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/java/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/java/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/java/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/java/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/java/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/java/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/java/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/java/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/java/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/java/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/java/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/java/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/java/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/java/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/java/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/java/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/java/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
@@ -3453,419 +3777,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/node/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/node/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/node/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/node/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/node/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/node/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/node/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/node/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/node/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/node/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/node/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/node/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/node/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/node/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/node/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/node/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/node/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/node/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/node/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/node/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/node/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/node/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/node/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/node/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/node/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/node/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/node/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/node/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/node/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/node/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/node/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/node/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/node/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/node/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/node/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/node/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/node/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/node/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/node/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/node/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/node/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/node/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/node/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/node/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
@@ -3890,419 +4322,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/php/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/php/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/php/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/php/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/php/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/php/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/php/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/php/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/php/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/php/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/php/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/php/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/php/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/php/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/php/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/php/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/php/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/php/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/php/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/php/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/php/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/php/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/php/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/php/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/php/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/php/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/php/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/php/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/php/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/php/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/php/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/php/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/php/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/php/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/php/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/php/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/php/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/php/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/php/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/php/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/php/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/php/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/php/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/php/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
@@ -4327,419 +4867,527 @@ const zhCnNavBar = {
               title: "管理模块",
               children: [
                 {
-                  title: "用户管理",
+                  title: "管理用户/API 列表",
                   children: [
                     {
                       title: "获取用户信息",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user",
                     },
                     {
                       title: "批量获取用户信息",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-batch",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-batch",
                     },
                     {
                       title: "获取用户列表",
-                      path: "/reference-new/sdk-v5/python/用户管理/list-users",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/list-users",
                     },
                     {
                       title: "获取用户的外部身份源",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-identities",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-identities",
                     },
                     {
                       title: "获取用户角色列表",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-roles",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-roles",
                     },
                     {
                       title: "获取用户实名认证信息",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-principal-authentication-info",
                     },
                     {
                       title: "删除用户实名认证信息",
-                      path: "/reference-new/sdk-v5/python/用户管理/reset-user-principal-authentication-info",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/reset-user-principal-authentication-info",
                     },
                     {
                       title: "获取用户部门列表",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-departments",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-departments",
                     },
                     {
                       title: "设置用户所在部门",
-                      path: "/reference-new/sdk-v5/python/用户管理/set-user-departments",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/set-user-departments",
                     },
                     {
                       title: "获取用户分组列表",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-groups",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-groups",
                     },
                     {
                       title: "删除用户",
-                      path: "/reference-new/sdk-v5/python/用户管理/delete-users-batch",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/delete-users-batch",
                     },
                     {
                       title: "获取用户 MFA 绑定信息",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-mfa-info",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-mfa-info",
                     },
                     {
                       title: "获取已归档的用户列表",
-                      path: "/reference-new/sdk-v5/python/用户管理/list-archived-users",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/list-archived-users",
                     },
                     {
                       title: "强制下线用户",
-                      path: "/reference-new/sdk-v5/python/用户管理/kick-users",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/kick-users",
                     },
                     {
                       title: "判断用户是否存在",
-                      path: "/reference-new/sdk-v5/python/用户管理/is-user-exists",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/is-user-exists",
                     },
                     {
                       title: "创建用户",
-                      path: "/reference-new/sdk-v5/python/用户管理/create-user",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/create-user",
                     },
                     {
                       title: "批量创建用户",
-                      path: "/reference-new/sdk-v5/python/用户管理/create-users-batch",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/create-users-batch",
                     },
                     {
                       title: "修改用户资料",
-                      path: "/reference-new/sdk-v5/python/用户管理/update-user",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/update-user",
                     },
                     {
                       title: "获取用户可访问的应用",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-accessible-apps",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-accessible-apps",
                     },
                     {
                       title: "获取用户授权的应用",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-authorized-apps",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-authorized-apps",
                     },
                     {
                       title: "判断用户是否有某个角色",
-                      path: "/reference-new/sdk-v5/python/用户管理/has-any-role",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/has-any-role",
                     },
                     {
                       title: "获取用户的登录历史记录",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-login-history",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-login-history",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的应用，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-loggedin-apps",
+                      title: "获取用户曾经登录过的应用",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-loggedin-apps",
                     },
                     {
-                      title:
-                        "通过用户 ID，获取用户曾经登录过的身份源，可以选择指定用户 ID 类型等。",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-logged-in-identities",
+                      title: "获取用户曾经登录过的身份源",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-logged-in-identities",
+                    },
+                    {
+                      title: "用户离职",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/resign-user",
+                    },
+                    {
+                      title: "批量用户离职",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/resign-user-batch",
                     },
                     {
                       title: "获取用户被授权的所有资源",
-                      path: "/reference-new/sdk-v5/python/用户管理/get-user-authorized-resources",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/get-user-authorized-resources",
+                    },
+                    {
+                      title: "检查某个用户在应用下是否具备 Session 登录态",
+                      path: "/reference-new/sdk-v5/python/管理用户/api-列表/check-session-status",
                     },
                   ],
                 },
                 {
-                  title: "分组管理",
-                  children: [
-                    {
-                      title: "获取分组详情",
-                      path: "/reference-new/sdk-v5/python/分组管理/get-group",
-                    },
-                    {
-                      title: "获取分组列表",
-                      path: "/reference-new/sdk-v5/python/分组管理/list-groups",
-                    },
-                    {
-                      title: "创建分组",
-                      path: "/reference-new/sdk-v5/python/分组管理/create-group",
-                    },
-                    {
-                      title: "批量创建分组",
-                      path: "/reference-new/sdk-v5/python/分组管理/create-groups-batch",
-                    },
-                    {
-                      title: "修改分组",
-                      path: "/reference-new/sdk-v5/python/分组管理/update-group",
-                    },
-                    {
-                      title: "批量删除分组",
-                      path: "/reference-new/sdk-v5/python/分组管理/delete-groups-batch",
-                    },
-                    {
-                      title: "添加分组成员",
-                      path: "/reference-new/sdk-v5/python/分组管理/add-group-members",
-                    },
-                    {
-                      title: "批量移除分组成员",
-                      path: "/reference-new/sdk-v5/python/分组管理/remove-group-members",
-                    },
-                    {
-                      title: "获取分组成员列表",
-                      path: "/reference-new/sdk-v5/python/分组管理/list-group-members",
-                    },
-                    {
-                      title: "获取分组被授权的资源列表",
-                      path: "/reference-new/sdk-v5/python/分组管理/get-group-authorized-resources",
-                    },
-                  ],
-                },
-                {
-                  title: "角色管理",
-                  children: [
-                    {
-                      title: "获取角色详情",
-                      path: "/reference-new/sdk-v5/python/角色管理/get-role",
-                    },
-                    {
-                      title: "分配角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/assign-role",
-                    },
-                    {
-                      title: "移除分配的角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/revoke-role",
-                    },
-                    {
-                      title: "获取角色被授权的资源列表",
-                      path: "/reference-new/sdk-v5/python/角色管理/get-role-authorized-resources",
-                    },
-                    {
-                      title: "获取角色成员列表",
-                      path: "/reference-new/sdk-v5/python/角色管理/list-role-members",
-                    },
-                    {
-                      title: "获取角色的部门列表",
-                      path: "/reference-new/sdk-v5/python/角色管理/list-role-departments",
-                    },
-                    {
-                      title: "创建角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/create-role",
-                    },
-                    {
-                      title: "获取角色列表",
-                      path: "/reference-new/sdk-v5/python/角色管理/list-roles",
-                    },
-                    {
-                      title: "删除角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/delete-roles-batch",
-                    },
-                    {
-                      title: "批量创建角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/create-roles-batch",
-                    },
-                    {
-                      title: "修改角色",
-                      path: "/reference-new/sdk-v5/python/角色管理/update-role",
-                    },
-                  ],
-                },
-                {
-                  title: "组织机构管理",
+                  title: "管理组织机构/API 列表",
                   children: [
                     {
                       title: "获取顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/list-organizations",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/list-organizations",
                     },
                     {
                       title: "创建顶层组织机构",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/create-organization",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/create-organization",
                     },
                     {
                       title: "修改顶层组织机构",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/update-organization",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/update-organization",
                     },
                     {
                       title: "删除组织机构",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/delete-organization",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/delete-organization",
                     },
                     {
                       title: "搜索顶层组织机构列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/search-organizations",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/search-organizations",
                     },
                     {
                       title: "获取部门信息",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/get-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/get-department",
                     },
                     {
                       title: "创建部门",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/create-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/create-department",
                     },
                     {
                       title: "修改部门",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/update-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/update-department",
                     },
                     {
                       title: "删除部门",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/delete-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/delete-department",
                     },
                     {
                       title: "搜索部门",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/search-departments",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/search-departments",
                     },
                     {
                       title: "获取子部门列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/list-children-departments",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/list-children-departments",
                     },
                     {
                       title: "获取部门成员列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/list-department-members",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/list-department-members",
                     },
                     {
                       title: "获取部门直属成员 ID 列表",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/list-department-member-ids",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/list-department-member-ids",
                     },
                     {
                       title: "搜索部门下的成员",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/search-department-members",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/search-department-members",
                     },
                     {
                       title: "部门下添加成员",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/add-department-members",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/add-department-members",
                     },
                     {
                       title: "部门下删除成员",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/remove-department-members",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/remove-department-members",
                     },
                     {
                       title: "获取父部门信息",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/get-parent-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/get-parent-department",
                     },
                     {
                       title: "判断用户是否在某个部门下",
-                      path: "/reference-new/sdk-v5/python/组织机构管理/is-user-in-department",
+                      path: "/reference-new/sdk-v5/python/管理组织机构/api-列表/is-user-in-department",
                     },
                   ],
                 },
                 {
-                  title: "访问控制管理",
+                  title: "管理角色/API 列表",
                   children: [
                     {
-                      title: "创建资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/create-resource",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/get-role",
                     },
                     {
-                      title: "批量创建资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/create-resources-batch",
+                      title: "分配角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/assign-role",
                     },
                     {
-                      title: "获取资源详情",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/get-resource",
+                      title: "移除分配的角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/revoke-role",
                     },
                     {
-                      title: "批量获取资源详情",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/get-resources-batch",
+                      title: "获取角色被授权的资源列表",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/get-role-authorized-resources",
                     },
                     {
-                      title: "分页获取资源列表",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/list-resources",
+                      title: "获取角色成员列表",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/list-role-members",
                     },
                     {
-                      title: "修改资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/update-resource",
+                      title: "获取角色的部门列表",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/list-role-departments",
                     },
                     {
-                      title: "删除资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/delete-resource",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/create-role",
                     },
                     {
-                      title: "批量删除资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/delete-resources-batch",
+                      title: "获取角色列表",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/list-roles",
                     },
                     {
-                      title: "创建权限分组",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/create-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/delete-roles-batch",
                     },
                     {
-                      title: "批量创建权限分组",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/create-namespaces-batch",
+                      title: "批量创建角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/create-roles-batch",
                     },
                     {
-                      title: "获取权限分组详情",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/get-namespace",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/update-role",
                     },
                     {
-                      title: "批量获取权限分组详情",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/get-namespaces-batch",
+                      title: "获取角色详情",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-get-role",
                     },
                     {
-                      title: "修改权限分组信息",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/update-namespace",
+                      title: "创建角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-create-role",
                     },
                     {
-                      title: "删除权限分组信息",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/delete-namespace",
+                      title: "删除角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-delete-role",
                     },
                     {
-                      title: "批量删除权限分组",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/delete-namespaces-batch",
+                      title: "修改角色",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-update-role",
                     },
                     {
-                      title: "授权资源",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/authorize-resources",
+                      title: "检查角色 name 或者 code 是否重复",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-check-params-role-exists",
                     },
                     {
-                      title: "获取某个主体被授权的资源列表",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/get-authorized-resources",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/permission-list-roles",
                     },
                     {
-                      title: "判断用户是否对某个资源的某个操作有权限",
-                      path: "/reference-new/sdk-v5/python/访问控制管理/is-action-allowed",
+                      title: "角色 list 分页查询",
+                      path: "/reference-new/sdk-v5/python/管理角色/api-列表/list-role-assignments",
                     },
                   ],
                 },
                 {
-                  title: "外部身份源管理",
+                  title: "管理用户分组/API 列表",
                   children: [
                     {
-                      title: "获取身份源列表",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/list-ext-idp",
+                      title: "获取分组详情",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/get-group",
                     },
                     {
-                      title: "获取身份源详情",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/get-ext-idp",
+                      title: "获取分组列表",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/list-groups",
                     },
                     {
-                      title: "创建身份源",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp",
+                      title: "创建分组",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/create-group",
                     },
                     {
-                      title: "更新身份源配置",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp",
+                      title: "批量创建分组",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/create-groups-batch",
                     },
                     {
-                      title: "删除身份源",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp",
+                      title: "修改分组",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/update-group",
                     },
                     {
-                      title: "在某个已有身份源下创建新连接",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/create-ext-idp-conn",
+                      title: "批量删除分组",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/delete-groups-batch",
                     },
                     {
-                      title: "更新身份源连接",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/update-ext-idp-conn",
+                      title: "添加分组成员",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/add-group-members",
                     },
                     {
-                      title: "删除身份源连接",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/delete-ext-idp-conn",
+                      title: "批量移除分组成员",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/remove-group-members",
                     },
                     {
-                      title: "身份源连接开关",
-                      path: "/reference-new/sdk-v5/python/外部身份源管理/enable-ext-idp-conn",
+                      title: "获取分组成员列表",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/list-group-members",
+                    },
+                    {
+                      title: "获取分组被授权的资源列表",
+                      path: "/reference-new/sdk-v5/python/管理用户分组/api-列表/get-group-authorized-resources",
                     },
                   ],
                 },
                 {
-                  title: "自定义字段管理",
+                  title: "管理自定义字段/API 列表",
                   children: [
+                    {
+                      title: "获取用户池用户内置字段列表",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/get-user-base-fields",
+                    },
+                    {
+                      title: "修改用户池用户内置字段定义",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/set-user-base-fields",
+                    },
                     {
                       title: "获取用户池配置的自定义字段列表",
-                      path: "/reference-new/sdk-v5/python/自定义字段管理/get-custom-fields",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/get-custom-fields",
                     },
                     {
                       title: "创建/修改自定义字段定义",
-                      path: "/reference-new/sdk-v5/python/自定义字段管理/set-custom-fields",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/set-custom-fields",
                     },
                     {
                       title: "设置自定义字段的值",
-                      path: "/reference-new/sdk-v5/python/自定义字段管理/set-custom-data",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/set-custom-data",
                     },
                     {
                       title: "获取用户、分组、角色、组织机构的自定义字段值",
-                      path: "/reference-new/sdk-v5/python/自定义字段管理/get-custom-data",
+                      path: "/reference-new/sdk-v5/python/管理自定义字段/api-列表/get-custom-data",
+                    },
+                  ],
+                },
+                {
+                  title: "管理资源与权限/API 列表",
+                  children: [
+                    {
+                      title: "创建权限分组",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/create-namespace",
+                    },
+                    {
+                      title: "批量创建权限分组",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/create-namespaces-batch",
+                    },
+                    {
+                      title: "获取权限分组详情",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/get-namespace",
+                    },
+                    {
+                      title: "批量获取权限分组详情",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/get-namespaces-batch",
+                    },
+                    {
+                      title: "修改权限分组信息",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/update-namespace",
+                    },
+                    {
+                      title: "删除权限分组信息",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/delete-namespace",
+                    },
+                    {
+                      title: "批量删除权限分组",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/delete-namespaces-batch",
+                    },
+                    {
+                      title: "授权资源",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/authorize-resources",
+                    },
+                    {
+                      title: "获取某个主体被授权的资源列表",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/get-authorized-resources",
+                    },
+                    {
+                      title: "判断用户是否对某个资源的某个操作有权限",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/is-action-allowed",
+                    },
+                    {
+                      title: "获取资源被授权的主体",
+                      path: "/reference-new/sdk-v5/python/管理资源与权限/api-列表/get-authorized-targets",
+                    },
+                  ],
+                },
+                {
+                  title: "管理身份源/API 列表",
+                  children: [
+                    {
+                      title: "获取身份源列表",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/list-ext-idp",
+                    },
+                    {
+                      title: "获取身份源详情",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/get-ext-idp",
+                    },
+                    {
+                      title: "创建身份源",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/create-ext-idp",
+                    },
+                    {
+                      title: "更新身份源配置",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/update-ext-idp",
+                    },
+                    {
+                      title: "删除身份源",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/delete-ext-idp",
+                    },
+                    {
+                      title: "在某个已有身份源下创建新连接",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/create-ext-idp-conn",
+                    },
+                    {
+                      title: "更新身份源连接",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/update-ext-idp-conn",
+                    },
+                    {
+                      title: "删除身份源连接",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/delete-ext-idp-conn",
+                    },
+                    {
+                      title: "身份源连接开关",
+                      path: "/reference-new/sdk-v5/python/管理身份源/api-列表/enable-ext-idp-conn",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据资源/API 列表",
+                  children: [
+                    {
+                      title: "获取数据资源详情",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/get-data-resource",
+                    },
+                    {
+                      title: "创建数据资源",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/create-data-resource",
+                    },
+                    {
+                      title: "获取数据资源列表",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/list-data-resources",
+                    },
+                    {
+                      title: "删除数据资源",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/delete-data-resource",
+                    },
+                    {
+                      title: "修改数据资源",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/update-data-resource",
+                    },
+                    {
+                      title: "检查数据资源名称或数据资源 Code 是否有效 ",
+                      path: "/reference-new/sdk-v5/python/管理数据资源/api-列表/check-params-data-resource-exists",
+                    },
+                  ],
+                },
+                {
+                  title: "管理数据策略/API 列表",
+                  children: [
+                    {
+                      title: "获取数据策略详情",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/get-data-policy",
+                    },
+                    {
+                      title: "获取策略名称列表",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/list-data-policies-name",
+                    },
+                    {
+                      title: "分页获取数据策略详细信息详情列表",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/list-data-policies",
+                    },
+                    {
+                      title: "分页获取数据策略简略信息详情列表",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/list-simple-data-policies",
+                    },
+                    {
+                      title: "创建数据策略",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/create-data-policy",
+                    },
+                    {
+                      title: "校验数据策略名称是否有效",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/check-data-policy-exists",
+                    },
+                    {
+                      title: "修改数据策略",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/update-data-policy",
+                    },
+                    {
+                      title: "数据策略删除",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/delete-data-policy",
+                    },
+                    {
+                      title: "分页获取数据策略下所有的授权主体的信息",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/list-data-policy-subject",
+                    },
+                    {
+                      title: "数据策略创建主体授权",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/create-authorize-data-policies",
+                    },
+                    {
+                      title: "删除数据策略相关的主体授权",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/revoke-authorize-data-policy",
+                    },
+                    {
+                      title: "用户权限应用下所属权限",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/list-authentication-appId",
+                    },
+                    {
+                      title: "用户是否拥有某个资源的权限",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/check-path-authentication",
+                    },
+                    {
+                      title: "获取用户在某个资源路径下的权限",
+                      path: "/reference-new/sdk-v5/python/管理数据策略/api-列表/get-authentication-path",
                     },
                   ],
                 },
