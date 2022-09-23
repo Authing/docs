@@ -1,5 +1,22 @@
 本文讲述如何使用 {{$localeConfig.brandName}} 实现应用账号打通和单点登录。
 
+> Authing Web SDK 可以帮你实现浏览器内多个应用跨主域的单点登录效果，**目前只适合单独使用**，暂不支持与 Guard 或其他 SDK 混用。
+
+>[authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 实现了 Authing 大部分认证类功能，后期我们会逐步将这些功能迁移到 Authing Web SDK，并集成 Authing 最新的 V3 版认证类 API，为用户提供更好的使用体验。
+
+Authing WEB SDK 目前支持的功能如下：
+
+|功能|说明|
+|----|----|
+|loginWithRedirect|跳转登录|
+|loginWithPopup|弹窗窗口登录|
+|isRedirectCallback|判断当前 URL 是否为 Authing 登录回调 URL，结合 getLoginState 实现静默登录|
+|getLoginState|获取登录态|
+|getUserInfo|获取用户信息|
+|logoutWithRedirect|退出登录|
+
+[authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 的其他功能当前正在 Authing Web SDK 中陆续实现。
+
 ## 什么是单点登录
 
 我们通过一个例子来说明，假设有一所大学，内部有两个系统，一个是邮箱系统，一个是课表查询系统。现在想实现这样的效果：在邮箱系统中登录一遍，然后此时进入课表系统的网站，无需再次登录，课表网站系统直接跳转到个人课表页面，反之亦然。比较专业的定义如下：
