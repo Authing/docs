@@ -100,9 +100,12 @@ import { encryptFunction } from '@authing/miniapp-jsencrypt'
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
-  appId: '630b549efa97ba795338e2cd',
-  host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20',
+  // Authing App ID
+  appId: '',
+  // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
+  host: ',
+  // 用户池 ID
+  userPoolId: '',
   // 非必传，密码默认将以明文传输
   encryptFunction
 })
@@ -121,9 +124,12 @@ import { encryptFunction } from '@authing/miniapp-jsencrypt'
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
-  appId: '630b549efa97ba795338e2cd',
-  host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20',
+  // Authing App ID
+  appId: '',
+  // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
+  host: ',
+  // 用户池 ID
+  userPoolId: '',
   // 非必传，密码默认将以明文传输
   encryptFunction
 })
@@ -142,9 +148,12 @@ import { encryptFunction } from '@authing/miniapp-jsencrypt'
 import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
-  appId: '630b549efa97ba795338e2cd',
-  host: 'http://localhost:3000',
-  userPoolId: '630b549d5a697473a2d7fa20',
+  // Authing App ID
+  appId: '',
+  // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
+  host: ',
+  // 用户池 ID
+  userPoolId: '',
   // 非必传，密码默认将以明文传输
   encryptFunction
 })
@@ -245,7 +254,7 @@ export default {
 
 #### 出参
 
-参考：[UserInfo](#UserInfo)
+参考：[LoginState](#LoginState)
 
 #### 说明
 
@@ -270,7 +279,7 @@ Page({
     // 为了防止用户频繁触发登录按钮
     // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
     // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
-    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，且登录态未过期，则无需再显示登录按钮
     const { encryptedData, iv } = await wx.getUserProfile({
       desc: 'getUserProfile1'
     })
@@ -311,7 +320,7 @@ export default class Index extends Component<PropsWithChildren> {
     // 为了防止用户频繁触发登录按钮
     // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
     // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
-    // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+    // 如果登录态不为 null，说明用户已登录，且登录态未过期，则无需再显示登录按钮
     const { encryptedData, iv } = await Taro.getUserProfile({
       desc: 'getUserProfile'
     })
@@ -346,7 +355,7 @@ export default {
       // 为了防止用户频繁触发登录按钮
       // 建议使用 const loginState = await authing.getLoginState() 方法获取登录态
       // 如果登录态为 null，说明用户未登录，或登录态已过期，则显示登录按钮
-      // 如果登录态不为 null，说明用户已登录，则无需再显示登录按钮
+      // 如果登录态不为 null，说明用户已登录，且登录态未过期，则无需再显示登录按钮
       const [, { encryptedData, iv }] = await uni.getUserProfile({
         desc: 'getUserProfile'
       })
@@ -492,6 +501,7 @@ export default {
 |-----|----|----|----|----|
 |phoneNumber|String|手机号码|是|
 |phoneCountryCode|String|默认 +86，手机区号，中国大陆手机号可不填| +86 | 否|
+|channel|[SmsChannel](#SmsChannel)|短信验证码用途|-|是|
 
 #### 出参
 
@@ -941,7 +951,7 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+参考：[UserInfo](#UserInfo)
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -1294,3 +1304,17 @@ export default {
 |token_type|String|token 类型，默认：Bearer|
 |refresh_token|String|用于更新 token|
 
+### <p id="SmsChannel">SmsChannel</p>
+|名称|描述|
+|-----|----|
+|CHANNEL_LOGIN|登录|
+|CHANNEL_REGISTER|注册|
+|CHANNEL_RESET_PASSWORD|重置密码|
+|CHANNEL_BIND_PHONE|绑定手机号|
+|CHANNEL_UNBIND_PHONE|解绑手机号|
+|CHANNEL_BIND_MFA|绑定 MFA|
+|CHANNEL_VERIFY_MFA|校验 MFA|
+|CHANNEL_UNBIND_MFA|解绑 MFA|
+|CHANNEL_COMPLETE_PHONE|确认手机号码|
+|CHANNEL_IDENTITY_VERIFICATION|实名认证|
+|CHANNEL_DELETE_ACCOUNT|删除账号|

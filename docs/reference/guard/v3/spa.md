@@ -94,7 +94,7 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="62e22721c889dd44bad1dda2"
+      appId=""
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -112,7 +112,7 @@ import { GuardPlugin } from '@authing/guard-vue2'
 import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
-  appId: '62e22721c889dd44bad1dda2'
+  appId: ''
 })
 ```
 :::
@@ -122,7 +122,7 @@ Vue.use(GuardPlugin, {
 // main.ts
 import { createApp } from 'vue'
 
-import { GuardPlugin } from '@authing/guard-vue3'
+import { createGuard } from '@authing/guard-vue3'
 
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
@@ -132,7 +132,7 @@ const app = createApp(App)
 
 app.use(
   createGuard({
-    appId: '62e22721c889dd44bad1dda2'
+    appId: ''
   })
 )
 ```
@@ -172,7 +172,7 @@ import { GuardModule } from '@authing/guard-angular'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: '62e22721c889dd44bad1dda2'
+      appId: ''
     })
   ],
   providers: [],
@@ -279,7 +279,7 @@ export class LoginComponent {
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: '62e22721c889dd44bad1dda2'
+      appId: ''
     })
   </script>
 </body>
