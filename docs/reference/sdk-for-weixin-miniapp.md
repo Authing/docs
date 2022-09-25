@@ -173,7 +173,7 @@ const authing = new Authing({
 
 #### 出参
 
-[LoginState](#LoginState) 或 null
+Promise<[LoginState](#LoginState) | null>
 
 #### 说明
 
@@ -254,7 +254,7 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+Promise<[LoginState](#LoginState) | void> 
 
 #### 说明
 
@@ -408,7 +408,7 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+Promise<[LoginState](#LoginState) | void>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -504,6 +504,13 @@ export default {
 |channel|[SmsChannel](#SmsChannel)|短信验证码用途|-|是|
 
 #### 出参
+
+``` typescript
+Promise<{
+  message: string
+  statusCode: number
+}>
+```
 
 |名称|类型|描述|
 |-----|----|----|
@@ -602,7 +609,7 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+Promise<[LoginState](#LoginState) | void>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -696,7 +703,7 @@ export default {
 
 #### 出参
 
-参考：[LoginState](#LoginState)
+Promise<[LoginState](#LoginState) | void>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -762,6 +769,14 @@ export default {
 |code|String|button 的 open-type 为 getPhoneNumber 时获取到的 code| - | 是|
 
 #### 出参
+
+``` typescript
+Promise<{
+  countryCode: string
+  phoneNumber: string
+  watermark: Watermark
+}>
+```
 
 |名称|类型|描述|
 |-----|----|----|
@@ -871,7 +886,9 @@ export default {
 
 #### 出参
 
-`Promise<boolean>`
+``` typescript
+Promise<boolean>
+```
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -951,7 +968,7 @@ export default {
 
 #### 出参
 
-参考：[UserInfo](#UserInfo)
+Promise<[UserInfo](#UserInfo) | void>
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -1013,6 +1030,14 @@ export default {
 无
 
 #### 出参
+
+``` typescript
+Promise<{
+  code: number
+  message: string
+  data: Data
+}>
+```
 
 |名称|类型|描述|
 |-----|----|----|
@@ -1089,7 +1114,7 @@ export default {
 
 #### 出参
 
-参考：[UserInfo](#UserInfo)
+Promise<[UserInfo](#UserInfo) | void>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1162,7 +1187,9 @@ export default {
 
 #### 出参
 
-`Promise<boolean>`
+``` typescript
+Promise<boolean>
+```
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
