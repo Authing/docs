@@ -1296,7 +1296,7 @@ export default {
 |名称|类型|描述|
 |-----|----|----|
 |userId|String|用户 ID|
-|name|String|用户名|
+|name|String|姓名|
 |nickname|String|昵称|
 |photo|String|头像|
 |externalId|String|在外部系统 ID|
