@@ -49,7 +49,7 @@ data = management_client.get_authentication_path(
 | statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | string | 响应数据 |
+| data | <a href="#AuthPathRes">AuthPathRes</a> | 响应数据 |
 
 
 
@@ -59,10 +59,21 @@ data = management_client.get_authentication_path(
 {
   "statusCode": 200,
   "message": "操作成功",
-  "apiCode": 20001
+  "apiCode": 20001,
+  "data": {
+    "path": "1/2/3"
+  }
 }
 ```
 
 ## 数据结构
+
+
+### <a id="AuthPathRes"></a> AuthPathRes
+
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| path | string | 是 | 路径。 示例值： `1/2/3`  |
+| actionList | array | 是 | 操作列表。   |
 
 
