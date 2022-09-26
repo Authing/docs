@@ -254,7 +254,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void> 
+Promise<[LoginState](#LoginState) | null> 
 
 #### 说明
 
@@ -410,7 +410,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -611,7 +611,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -705,7 +705,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -970,7 +970,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | void>
+Promise<[UserInfo](#UserInfo) | null>
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -1116,7 +1116,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | void>
+Promise<[UserInfo](#UserInfo) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
