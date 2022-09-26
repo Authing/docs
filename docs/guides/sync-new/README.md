@@ -50,8 +50,8 @@ HR 同学需要在员工入职时，手动在各个 IM 工具、业务应用中�
 
 * [执行同步任务](/guides/sync-new/perform-sync-new.md)：执行你创建的同步任务并查看执行结果。
 
-* [处理删除保护](/guides/sync-new/risky-operation.md)：如何删除下游用户和部门。
+* [处理删除保护](/guides/sync-new/risky-operation.md)：{{$localeConfig.brandName}} 中删除用户或组织会触发删除保护，需要手动确认。此部分描述下游同步中删除操作的处理方法。
 
 * [维护同步任务](../sync-new/maintain-sync.md)：执行同步任务维护操作，包括查看同步任务执行状态，修改同步任务信息，启用 / 禁用同步任务，删除同步任务等。
 
-* [常见问题](/guides/faqs/sync.md)：常见问题及解答。
+* [常见问题](/guides/faqs/sync.md)：提供同步中心相关常见问题及解答。

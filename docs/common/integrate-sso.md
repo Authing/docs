@@ -1,15 +1,31 @@
-本文讲述如何使用 {{$localeConfig.brandName}} 实现应用账号打通和单点登录。
+本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}}  提供的 SDK，实现[单点登录](/guides/app-new/sso/)及多个应用之间共享登录态。
+
+本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：@authing/web
+
+## Authing Web SDK
+
+Authing Web SDK 为开发者提供了简单易用的函数来实现浏览器端的单点登录效果，它是一款基于 [OIDC](https://docs.authing.cn/v2/guides/federation/oidc.html) 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，帮你实现浏览器内多个应用跨主域的[单点登录](/guides/app-new/sso/)效果。
+
+Authing Web SDK 可以帮你实现浏览器内多个应用跨主域的单点登录效果，**目前只适合单独使用**，暂不支持与 Guard 或其他 SDK 混用。
+
+Authing Web SDK 目前支持的功能如下：
+
+|功能|说明|
+|----|----|
+|loginWithRedirect|跳转登录|
+|loginWithPopup|弹窗窗口登录|
+|isRedirectCallback|判断当前 URL 是否为 Authing 登录回调 URL，结合 getLoginState 实现静默登录|
+|getLoginState|获取登录态|
+|getUserInfo|获取用户信息|
+|logoutWithRedirect|退出登录|
+
+除此之外，Authing Web SDK 未来将陆续从 [authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 中迁移所有可在浏览器中运行的 Authing 大部分认证类功能，并集成 Authing 最新的 V3 版认证类 API，为用户提供更好的使用体验。
 
 ## 什么是单点登录
 
 我们通过一个例子来说明，假设有一所大学，内部有两个系统，一个是邮箱系统，一个是课表查询系统。现在想实现这样的效果：在邮箱系统中登录一遍，然后此时进入课表系统的网站，无需再次登录，课表网站系统直接跳转到个人课表页面，反之亦然。比较专业的定义如下：
 
 **[单点登录](/guides/app-new/sso/)**（Single Sign On），简称为 **[SSO](/guides/app-new/sso/)**，是目前比较流行的企业业务整合的解决方案之一。 [SSO](/guides/app-new/sso/) 的定义是在多个应用系统中，**用户只需要登录一次**就可以**访问所有**相互信任的应用系统。
-
-
-## Authing Web SDK
-
-基于 [OIDC](https://docs.authing.cn/v2/guides/federation/oidc.html) 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，为你的多个业务软件实现浏览器内的可以跨主域的单点登录效果。
 
 ## STEP 1: 创建自建应用
 
@@ -97,6 +113,7 @@ npm install --save @authing/web
 
 ::: tab CDN
 ```html
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.authing.co/packages/web/5.0.3/index.global.js"></script>
 ```
 :::
@@ -143,6 +160,26 @@ Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种�
 ### 一、跳转登录
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+if (authing.isRedirectCallback()) {
+  console.log('redirect')
+  authing.handleRedirectCallback().then((loginState) => {
+    console.log('loginState: ', loginState)
+    window.location.replace('/')
+  })
+} else {
+  authing.getLoginState().then(loginState => {
+    console.log('loginState: ', loginState)
+  })
+}
+
+document.querySelector('#loginWithRedirect').onclick = function () {
+  authing.loginWithRedirect()
+}
+```
+:::
+
 ::: tab React
 ```tsx{22-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
@@ -521,6 +558,15 @@ export class AppComponent {
 你也可以在你的业务软件页面使用下面的方法，通过弹出一个新窗口加载 Authing 托管的登录页的方式，让用户在新窗口登录：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+document.querySelector('#loginWithPopup').onclick = function () {
+  authing.loginWithPopup().then(loginState => {
+    console.log('loginState: ', loginState)
+  })
+}
+```
+:::
 ::: tab React
 ```tsx{22-28}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
@@ -720,6 +766,25 @@ export class AppComponent {
 你可以使用默认参数，也可以根据需要进行自定义传参：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const params = {
+  redirectUri: "登录回调 URL",
+
+  // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
+  originalUri: "发起登录的 URL",
+
+  // 即使在用户已登录时也提示用户再次登录
+  forced: false,
+
+  // 自定义的中间状态，会被传递到回调端点
+  customState: {}
+}
+
+authing.loginWithRedirect(params)
+```
+:::
+
 ::: tab React
 ```ts
 const login = async () => {
@@ -818,12 +883,27 @@ export class AppComponent {
 :::
 ::::
 
-
 ### 三、静默登录
 
 在 [自建应用 SSO 方案](/guides/app/sso.md) 一文中有提到，可以将多个自建应用添加到「 **单点登录 SSO」** 面板，。如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+if (authing.isRedirectCallback()) {
+  console.log('redirect')
+  authing.handleRedirectCallback().then((loginState) => {
+    console.log('loginState: ', loginState)
+    window.location.replace('/')
+  })
+} else {
+  authing.getLoginState().then(loginState => {
+    console.log('loginState: ', loginState)
+  })
+}
+```
+:::
+
 ::: tab React
 ```tsx{22-44}
 import React, { useEffect, useMemo, useState } from 'react';
@@ -1118,6 +1198,14 @@ const authing = new Authing({
 如果你你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，。如果用户没有在 Authing 登录，该方法会抛出错误：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+authing.getLoginState().then(loginState => {
+  console.log('loginState: ', loginState)
+})
+```
+:::
+
 ::: tab React
 ```tsx{29-36}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
@@ -1386,6 +1474,16 @@ export class AppComponent {
 2. 如果用户已经登录，你你可以先获取用户的 Access Token ，然后使用 Access Token 获取用户信息。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+document.querySelector('#getUserInfo').onclick = function () {
+  authing.getUserInfo().then(userInfo => {
+    console.log('userInfo: ', userInfo)
+  })
+}
+```
+:::
+
 ::: tab React
 ```tsx{38-50}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';

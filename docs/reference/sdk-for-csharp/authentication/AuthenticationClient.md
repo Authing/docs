@@ -430,7 +430,7 @@ authenticationClient.SetToken(string token)
 ```csharp
 authenticationClient.SetToken("TOKEN")
 ```
-## 设置当前用户信息
+## 获取用户所在组织机构数据列表
 
 ```csharp
 authenticationClient.ListOrgs(string userId)
