@@ -254,7 +254,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void> 
+Promise<[LoginState](#LoginState) | null> 
 
 #### 说明
 
@@ -410,7 +410,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -611,7 +611,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -705,7 +705,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | void>
+Promise<[LoginState](#LoginState) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -970,7 +970,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | void>
+Promise<[UserInfo](#UserInfo) | null>
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -1116,7 +1116,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | void>
+Promise<[UserInfo](#UserInfo) | null>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1296,7 +1296,7 @@ export default {
 |名称|类型|描述|
 |-----|----|----|
 |userId|String|用户 ID|
-|name|String|用户名|
+|name|String|姓名|
 |nickname|String|昵称|
 |photo|String|头像|
 |externalId|String|在外部系统 ID|
@@ -1317,9 +1317,11 @@ export default {
 |lastLogin|String|最后登录时间|
 |loginsCount|Number|登录次数|
 |passwordLastSetAt|String|密码最后重置时间|
+|phone|String|手机号|
 |phoneCountryCode|String|手机号码所在地区编号|
 |phoneVerified|Boolean|手机号已否已验证|
 |resetPasswordOnNextLogin|Boolean|下次登录是否要求重置密码|
+|company|String|所在公司|
 
 ### <p id="LoginState">LoginState</p>
 
