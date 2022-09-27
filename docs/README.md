@@ -12,7 +12,7 @@ hotSearch:
   - text: 如何对用户进行授权
     link: /guides/authorization/
   - text: 快速实现单点登录
-    link: /guides/authentication/sso/
+    link: /guides/app-new/sso/
   - text: 添加社会化登录
     link: /guides/authentication/social/
   - text: 如何验证 token

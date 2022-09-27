@@ -13,9 +13,9 @@
 ## 注意事项
 
 
-- 如果您未注册百度开发者账号，请先前往 [百度开发者中心](https://developer.baidu.com/) 注册开发者账号。
+- 如果你未注册百度开发者账号，请先前往 [百度开发者中心](https://developer.baidu.com/) 注册开发者账号。
 - 百度开发者中心-[用户中心](http://developer.baidu.com/user/info)
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：在百度开放平台创建一个网站应用
 
@@ -72,7 +72,7 @@
 
 - **详细接入方法**：
 
-3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
 3.2 在已创建好的百度身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

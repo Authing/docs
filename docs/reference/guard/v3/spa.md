@@ -4,7 +4,7 @@
 
 ## 说明
 
-[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果您正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
+[Guard 5.0](https://github.com/authing/guard) 于 2022 年 8 月 17 日发布，如果你正在使用之前的版本 [Guard 3.x](https://github.com/Authing/authing-ui-components/tree/v3.1.25) 或 [Guard 4.x](https://github.com/authing/authing-ui-components)，可参考：
 
 - [将 Guard 接入到 React 项目](https://docs.authing.cn/v2/reference/guard/v2/react.html)
 - [将 Guard 接入到 Vue 项目](https://docs.authing.cn/v2/reference/guard/v2/vue.html)
@@ -16,6 +16,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 准备好你的 SPA 项目，跟随引导将 Authing Guard 接入到你的 SPA 项目中吧！
 
+![Guard](https://cdn-daily.authing.co/authing-docs-v2/1.3.108-530/assets/img/guard_index.26ae483e.png)
 ## STEP 1：创建 Authing 应用
 
 1. 使用 Authing 创建一个应用：
@@ -51,6 +52,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ``` shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
+```
 :::
 
 ::: tab Vue2
@@ -92,7 +94,7 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="62e22721c889dd44bad1dda2"
+      appId=""
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -110,7 +112,7 @@ import { GuardPlugin } from '@authing/guard-vue2'
 import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
-  appId: '62e22721c889dd44bad1dda2'
+  appId: ''
 })
 ```
 :::
@@ -120,7 +122,7 @@ Vue.use(GuardPlugin, {
 // main.ts
 import { createApp } from 'vue'
 
-import { GuardPlugin } from '@authing/guard-vue3'
+import { createGuard } from '@authing/guard-vue3'
 
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
@@ -130,7 +132,7 @@ const app = createApp(App)
 
 app.use(
   createGuard({
-    appId: '62e22721c889dd44bad1dda2'
+    appId: ''
   })
 )
 ```
@@ -170,7 +172,7 @@ import { GuardModule } from '@authing/guard-angular'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: '62e22721c889dd44bad1dda2'
+      appId: ''
     })
   ],
   providers: [],
@@ -269,15 +271,15 @@ export class LoginComponent {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.js"></script>
-  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.0/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
+  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: '62e22721c889dd44bad1dda2'
+      appId: ''
     })
   </script>
 </body>
@@ -432,6 +434,8 @@ import React, { useEffect } from 'react'
 import { useGuard } from '@authing/guard-react'
 
 export export function Login () {
+  const guard = useGuard()
+
   // 展示 Guard 弹窗
   const showGuard = guard.show()
 
@@ -1567,12 +1571,12 @@ export class LoginComponent {
 | align|none / left / center / right | none | 否 | Guard 默认展示位置                              |
 | lang         | zh-CN / en-US   | zh-CN  | 否   | 语言                                               |
 | isSSO        | Boolean         | true   | 否   | 是否是单点登录                                     |
-| host         | String          | -      | 否   | 私有部署时的 API 请求地址，可在 Console 控制台配置 |
+| host         | String          | -      | 否   | 自建应用的【认证地址】，如果是开启了单点登录，则应填写单点登录的【应用面板地址】|
 | scope        | String          | -      | 否   | OIDC scope                                         |
 | redirectUri  | String          | -      | 否   | 回调地址，可在 Console 控制台配置                  |
 | state        | String          | -      | 否   | OIDC 状态                                          |
 
-使用以上参数实例化 Guard，您可以体验 Guard 最基本的登录、注册等功能。
+使用以上参数实例化 Guard，你可以体验 Guard 最基本的登录、注册等功能。
 
 **如果想拥有 Guard 的完整能力，可以配置 config 和 authClientOptions（相同参数以上表格中的值优先级更高）**
 
@@ -1602,7 +1606,7 @@ export class LoginComponent {
 | isSSO                 | Boolean                                                   | 是否是单点登录                                                                                                                                                                                                                    | Authing 控制台中的配置 |
 | lang                  | 'zh-CN'                                                   | 使用语言，可选值为 zh-CN、en-US                                                                                                                                                                                                   | 'en-US'                |
 | langRange             | ('zh-CN'｜ 'en-US')[]                                     | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮                                                                                                                                                            | ['zh-CN', 'en-US']     |
-| host                  | String                                                    | 私有部署时的 API 请求地址                                                                                                                                                                                                         | -                      |
+| host                  | String                                                    | 自建应用的【认证地址】，如果是开启了单点登录，则应填写单点登录的【应用面板地址】                                                                                                                                                                                                         | -                      |
 
 ### <p id="GuardMode">GuardMode</p>
 

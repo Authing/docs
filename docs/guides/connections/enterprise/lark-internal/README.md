@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 飞书开发者 账号，请先前往 [飞书开发者后台](https://open.feishu.cn/app) 进行注册；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建企业自建应用
 
@@ -23,13 +23,17 @@
 
 <img src="./images/02.png" >
 
-进入创建的应用，点击**应用功能**，选择**网页**，开启**启用网页**功能。
+进入创建的应用，点击**应用功能**，选择**网页**，开启**启用网页**功能，填写 **网页配置**。
 
 <img src="./images/04.png" >
 
+::: hint-info
+其中 **网页配置** 是可以在飞书应用中心打开的网页地址，比如 Authing 的应用面板地址。</br>可以在 **自建应用->单点登录 SSO-> 应用管理** 页面右上角点击 **前往体验** 拷贝地址。
+:::
+
 点击**凭证与基础信息**，查看 App ID 和 App Secret ，打开 {{$localeConfig.brandName}} 控制台。
 
-如果你需要 **接入移动应用登录能力**，点击**应用功能**，选择**移动应用登录**，开启**飞书登录**功能，在下方的飞书登录配置中，用户登录协议选项 ** OAuth 2.0**，并填写移动端应用的配置。
+如果你需要 **接入移动应用登录能力**，点击**应用功能**，选择**移动应用登录**，开启**飞书登录**功能，在下方的飞书登录配置中，用户登录协议选项 ** OAuth 2.0**，并填写移动端应用的配置（有关详细配置，请参阅 [飞书开放平台移动应用登录流程-准备工作-补全应用信息](https://open.feishu.cn/document/uAjLw4CM/uYjL24iN/mobile-app/mobile-app-overview)）。
 
 <img src="./images/09.png" >
 
@@ -103,7 +107,7 @@ App ID 和 App Secret ，填写在飞书应用的后台， **凭证与基础信�
 
 - **详细接入方法**：
 
-  4.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+  4.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   4.2 在已创建好的 飞书企业自建应用 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

@@ -120,7 +120,7 @@ Finally, click Save.
 
 - **Detailed access method**.
 
-  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](/guides/app-new/create-app/create-app.md)
 
   3.2 In the created Feishu Marketplace App identity source connection details page, open and associate an app created in {{$localeConfig.brandName}} console
 

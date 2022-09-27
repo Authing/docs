@@ -56,7 +56,7 @@
 
 1. 创建自建应用
 
-> 首先需要创建自建应用并完成配置，创建应用参考 [如何创建自建应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+> 首先需要创建自建应用并完成配置，创建应用参考 [如何创建自建应用](/guides/app-new/create-app/create-app.md)
 
 2. 用户需要进入配置好的自建应用详情页，将其认证地址进行复制
 

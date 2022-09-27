@@ -12,8 +12,8 @@
 
 ## 注意事项
 
-- 如果您未开通 企业微信管理 账号，请先前往 [企业微信管理后台](https://work.weixin.qq.com/) 进行注册；
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 企业微信管理 账号，请先前往 [企业微信管理后台](https://work.weixin.qq.com/) 进行注册；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 步骤 1：创建企业微信自建应用
 
@@ -69,9 +69,9 @@
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。
 - **详细接入方法**：
 
-  3.1 请根据[企业微信登录 SDK 接入文档（安卓）](https://docs.authing.cn/v2/reference/sdk-for-android/social/wecom.html)，接入您的安卓应用；请根据[企业微信登录 SDK 接入文档（IOS）](https://docs.authing.cn/v2/reference/sdk-for-ios/social/wecom.html)，接入您的 IOS 应用；
+  3.1 请根据[企业微信登录 SDK 接入文档（安卓）](https://docs.authing.cn/v2/reference/sdk-for-android/social/wecom.html)，接入你的安卓应用；请根据[企业微信登录 SDK 接入文档（IOS）](https://docs.authing.cn/v2/reference/sdk-for-ios/social/wecom.html)，接入你的 IOS 应用；
 
-  3.2 在 {{$localeConfig.brandName}} 控制台创建一个移动应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app/create-app.md)
+  3.2 在 {{$localeConfig.brandName}} 控制台创建一个移动应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
   3.3 在已创建好的「企业微信移动端」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用；
   ![](./images/15.png)

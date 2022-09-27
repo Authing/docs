@@ -23,4 +23,4 @@
 
 ![](./images/create-app04.png)
 
-接下来，你可以为此应用[配置登录注册方式](./config-login-methods.md)。
+接下来，你可以为此应用[配置登录注册方式](/guides/app-new/create-app/login-control.md)。

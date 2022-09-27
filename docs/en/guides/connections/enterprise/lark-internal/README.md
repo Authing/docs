@@ -98,7 +98,7 @@ In the Feishu Open Platform, open the app management page, select **Security Set
 
 - **Detailed access method**.
 
-  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](https://docs.authing.cn/v2/guides/app/create-app.html)
+  3.1 Create an app in the {{$localeConfig.brandName}} console, for details see: [How to create an app in {{$localeConfig.brandName}}](/guides/app-new/create-app/create-app.md)
 
   3.2 In the created FeiShu enterprise app identity source connection details page, open and associate an app created in the {{$localeConfig.brandName}} console
 
