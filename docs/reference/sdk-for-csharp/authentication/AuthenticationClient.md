@@ -430,7 +430,7 @@ authenticationClient.SetToken(string token)
 ```csharp
 authenticationClient.SetToken("TOKEN")
 ```
-## 设置当前用户信息
+## 获取用户所在组织机构数据列表
 
 ```csharp
 authenticationClient.ListOrgs(string userId)
@@ -945,7 +945,7 @@ await authenticationClient.unLinkAccount(
 authenticationClient.CheckPasswordStrength(string password)
 ```
 
-> 检查密码强度，[点此查看详情](/guides/security/config-password.md)。
+> 检查密码强度，[点此查看详情](/guides/security/pw-security.md)。
 
 判断密码是否符合密码强度要求。{{$localeConfig.brandName}} 中密码强度等级分为以下几种：
 

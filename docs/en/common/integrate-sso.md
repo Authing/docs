@@ -44,19 +44,19 @@ Click **Save** to save the configuration, as shown in the following figure:
 ### Use NPM
 
 ```shell
-$ npm install @authing/browser
+$ npm install @authing/web
 ```
 
 ### Use Yarn
 
 ```shell
-$ yarn add @authing/browser
+$ yarn add @authing/web
 ```
 
 ### Use script tag
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@authing/browser"></script>
+<script src="https://cdn.jsdelivr.net/npm/@authing/web"></script>
 <script>
   const sdk = new Authing({
     // Very important, please fill in carefully!
@@ -94,7 +94,7 @@ Fill in the callback address according to your own business, as shown in the fig
 In order to use the Authing Browser SDK, you need to fill in the `App ID`, `domain`, `callback url` and other parameters, as shown in the following example:
 
 ```js
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 const sdk = new Authing({
   // Very important, please fill in carefully!
@@ -122,8 +122,8 @@ The Authing Browser SDK can initiate authentication and authorization requests t
 ::: tab React
 ```tsx{21-26}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -207,7 +207,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -281,7 +281,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -365,8 +365,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -574,8 +574,8 @@ You can also use the following method on your business software page to let user
 ::: tab React
 ```tsx{21-27}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -647,7 +647,7 @@ export default App;
   </div>
 </template>
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -713,7 +713,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -779,8 +779,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -946,8 +946,8 @@ As mentioned in the article [Self-built App SSO solution](/en/guides/app/sso.md)
 ::: tab React
 ```tsx{22-45}
 import React, { useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1031,7 +1031,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1102,7 +1102,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1177,8 +1177,8 @@ export default defineComponent({
 
 ```ts{26-45}
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -1246,7 +1246,7 @@ export class AppComponent {
 The essence of each login is to access a URL, which can carry many parameters. The Authing Browser SDK uses default parameters by default. If you need fine-grained control over login request parameters, you can refer to this example.
 
 ```js
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 const sdk = new Authing({
   // Very important, please fill in carefully!
@@ -1302,8 +1302,8 @@ If you want to check the user's login state and get the user's `Access Token`, `
 ::: tab React
 ```tsx{28-34}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1387,7 +1387,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1471,7 +1471,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1561,8 +1561,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -1636,8 +1636,8 @@ You need to use the Access Token to get the user's personal information:
 ::: tab React
 ```tsx{37-49}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -1751,7 +1751,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -1860,7 +1860,7 @@ export default {
 
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -1970,8 +1970,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState, UserInfo } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState, UserInfo } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',
@@ -2057,8 +2057,8 @@ You can call the `logoutWithRedirect` method of the SDK to log out
 ::: tab React
 ```tsx{36-41}
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 function App() {
   const sdk = useMemo(() => {
@@ -2152,7 +2152,7 @@ export default App;
 </template>
 
 <script>
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default {
   name: "App",
@@ -2230,7 +2230,7 @@ export default {
 
 <script>
 import { defineComponent } from "vue";
-import { Authing } from "@authing/browser";
+import { Authing } from "@authing/web";
 
 export default defineComponent({
   name: "App",
@@ -2281,8 +2281,8 @@ export default defineComponent({
 // <!-- src/app/app.component.ts -->
 
 import { Component } from '@angular/core';
-import { Authing } from '@authing/browser';
-import type { LoginState } from '@authing/browser/dist/types/global';
+import { Authing } from '@authing/web';
+import type { LoginState } from '@authing/web/dist/typings/global';
 
 @Component({
   selector: 'app-root',

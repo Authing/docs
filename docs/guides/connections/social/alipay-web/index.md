@@ -14,7 +14,7 @@
 
 1. 前往[支付宝开放平台](https://open.alipay.com/)注册一个支付宝开放账号；
 2. 前往[开发者中心控制台](https://open.alipay.com/dev/workspace)按照指引创建一个**网站应用**。请确保你的应用获取了 **获取会员信息** 能力，否则将无法使用支付宝登录；
-3. 如果您未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
+3. 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/)注册开发者账号；
 
 ## 步骤 1：创建支付宝应用
 
@@ -74,7 +74,7 @@
 - **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
 - **详细接入方法**：
 
-3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)。
+3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](/guides/app-new/create-app/create-app.md)。
 
 3.2 在已创建好的支付宝身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 

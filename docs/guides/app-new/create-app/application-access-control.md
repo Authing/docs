@@ -4,12 +4,17 @@
 
 路径：**应用->自建应用->应用详情->访问授权**
 
+<<<<<<< HEAD
 假如您是一家做社交通讯业务的公司，现有另外一家公司想通过调用您的业务 API 开发一个聊天记录整理导出的工具，并且已经和你的公司签约合作。现在您想要安全地将用户信息授权给这家公司，您期望：
+=======
+假如你是一家做社交通讯业务的公司，现有另外一家公司想通过调用你的业务 API 开发一个聊天记录整理导出的工具，并且已经和你的公司签约合作。现在你想要安全地将用户信息授权给这家公司，你期望：
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 * API 的调用只开放给合作伙伴公司。
 * 不同的合作伙伴拥有不同的访问权限，能够访问不同的业务 API。
 * 如果将来终止合作，或者发生变化，希望能够收回某些数据的权限或者完全禁用。
 
+<<<<<<< HEAD
 作为管理员，您可以在控制台管理和分配资源的权限。在实践权限管理和授权之前，需要先了解几个概念。
 
 * **应用**：管理员能够创建应用，应用就是您在开发的应用项目在 Authing 的一个定义。
@@ -18,6 +23,26 @@
 * **资源**：您可以在 Authing 中定义一些资源，例如应用中的资源可能有 API、数据资源、菜单、按钮等。
 
 **访问授权** 从应用维度定义了主体对当前应用的访问权限。管理员可以在 **访问授权** 页面定义被授权主体、角色、资源、授权规则和编程访问。
+=======
+作为管理员，你可以在控制台管理和分配资源的权限。在实践权限管理和授权之前，需要先了解几个概念。
+
+* **应用**：管理员能够创建应用，应用就是你在开发的应用项目在 Authing 的一个定义。
+* **用户**：你可以直接将权限指派给用户，你也可以将你的用户划分成不同的分组、角色、组织机构部门，这样在以后分配权限的时候方便管理。
+* **角色**：角色是一组用户的集合，角色中的用户会自动继承该角色被授权的权限。
+* **资源**：你可以在 Authing 中定义一些资源，例如应用中的资源可能有 API、数据资源、菜单、按钮等。
+
+**访问授权** 从应用维度定义了主体对当前应用的访问权限。管理员可以在 **访问授权** 页面将当前应用集成到单点登录（SSO），也可以定义被授权主体、角色、资源、授权规则和编程访问。
+
+## 单点登录
+
+管理员可以在此模块将当前自建应用添加到应用面板。
+
+为此，管理员只需在 **单点登录** 模块下开启 **添加到单点登录** 开关即可。
+
+![](../images/add-app-to-sso.png)
+
+将应用添加到 [单点登录（SSO）](../../app-new/sso/README.md) 意味着你的用户可以在登录应用面板后一次性登录到所有已开启 SSO 的应用。
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 ## 应用访问控制
 
@@ -48,9 +73,15 @@
 2. 在侧拉框 **创建角色** 窗口输入 **角色 Code**、**角色描述**。
 3. 点击 **确定** 按钮。
 
+<<<<<<< HEAD
 新增角色会显示在 **角色管理** 列表顶部，同时在 **权限管理** 本应用权限分组下 **角色管理** 列表同步更新。 guides/authority-management/role-management.md)
 
 管理员可以点击角色所在行 **角色 Code** 列打开角色详情页，编辑角色信息，添加授权用户、组织机构及规则。有关详情，请参阅[角色管理](/docs/guides/access-control/rbac.md)。
+=======
+新增角色会显示在 **角色管理** 列表顶部，同时在 **权限管理** 本应用权限分组下 **角色管理** 列表同步更新。
+
+管理员可以点击角色所在行 **角色 Code** 列打开角色详情页，编辑角色信息，添加授权用户、组织机构及规则。有关详情，请参阅 [角色管理](../../access-control/rbac.md)。
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 要删除某个角色，只需点击该角色所在行 **操作** 列 **删除** 按钮。
 
@@ -69,7 +100,10 @@ API 资源、数据资源、UI 资源在本质上没有区别，类型仅用于�
 要添加资源，执行以下步骤：
 
 1. 在 **访问授权->API / 数据 / UI 资源** 下，点击右上角 **添加** 按钮。
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 2. 在侧拉框 **创建资源** 窗口输入填写资源信息，定义操作类型。
 
 ::: hint-info
@@ -81,6 +115,7 @@ API 资源、数据资源、UI 资源在本质上没有区别，类型仅用于�
 
 一个资源就创建好了。
 
+<<<<<<< HEAD
 <img src="../images/api-resource.png" height=700 style="display:block;margin: 0 auto;">
 ::: img-description
 API 资源
@@ -94,6 +129,22 @@ API 资源
 <img src="../images/ui-resource.png" height=700 style="display:block;margin: 0 auto;">
 ::: img-description
 UI 资源
+=======
+<img src="../images/api-resource.png" style="display:block;margin: 0 auto;">
+
+::: img-description API 资源
+:::
+
+
+<img src="../images/data-resource.png" style="display:block;margin: 0 auto;">
+
+::: img-description 数据资源​
+:::
+
+<img src="../images/ui-resource.png" style="display:block;margin: 0 auto;">
+
+::: img-description UI 资源​
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 :::
 
 要编辑或删除资源，可在资源列表相应资源所在行点击 **操作** 列 **编辑** / **删除** 按钮。
@@ -102,7 +153,11 @@ UI 资源
 
 现在有了 **资源** 和 **人**，接下来要定义「**谁**」能够对什么「**资源**」做什么「**操作**」。
 
+<<<<<<< HEAD
 <img src="../images/resource-authorization.png" height=785 style="display:block;margin: 0 auto;">
+=======
+<img src="../images/resource-authorization.png" style="display:block;margin: 0 auto;">
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 要对资源进行授权，执行以下步骤：
 
@@ -121,16 +176,24 @@ UI 资源
 
 ## 编程访问账号
 
+<<<<<<< HEAD
 编程访问账号是应用下的一对 **AccessKey**、**SecretKey**。管理员可以创建 **AccessKey** 和 **SecretKey**，并授予这组 Key 相应的权限，用于交给外包商等第三方厂商进行调用。调用方使用编程访问账号结合 OIDC 授权码 code 获取用户的 AccessToken 与 IdToken，或者使用编程访问账号进行 OIDC ClientCredentials 模式代表调用方本身请求授权，从而调用您的资源接口。
+=======
+编程访问账号是应用下的一对 **AccessKey**、**SecretKey**。管理员可以创建 **AccessKey** 和 **SecretKey**，并授予这组 Key 相应的权限，用于交给外包商等第三方厂商进行调用。调用方使用编程访问账号结合 OIDC 授权码 code 获取用户的 AccessToken 与 IdToken，或者使用编程访问账号进行 OIDC ClientCredentials 模式代表调用方本身请求授权，从而调用你的资源接口。
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 ![](../images/program-account.png)
 
 要创建编程访问账号，执行以下步骤：
 
 1. 在 **访问授权->编程访问** 下，点击右上角 **添加** 按钮。</br>打开 **添加编程访问账号** 侧拉框。
+<<<<<<< HEAD
 
 2. 指定 **AccessToken 过期时间（秒）**。
 
+=======
+2. 指定 **AccessToken 过期时间（秒）**。
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 3. 点击 **确定** 按钮。
 
 编程访问账号列表会在顶部新增一条记录。
@@ -139,4 +202,8 @@ UI 资源
 
 ::: hint-info
 点击 **刷新密钥**，只会更新 **SecretKey**。
+<<<<<<< HEAD
 ::: 
+=======
+::: 
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126

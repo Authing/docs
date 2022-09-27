@@ -697,7 +697,7 @@ AuthenticationClient().checkPasswordStrength(password)
 - 至少 6 位字符，且须包含英文、数字与符号中的两种；
 - 至少 6 位字符，且密码中须包含英文、数字与符号。
 
-默认为任意非空字符，你可以[在此](/guides/security/config-password.md) 配置用户池的密码强度等级。
+默认为任意非空字符，你可以[在此](/guides/security/pw-security.md) 配置用户池的密码强度等级。
 
 #### 参数
 
@@ -981,7 +981,7 @@ AuthenticationClient().updateProfile(updates)
 - `updates.profile` \<string\> Profile Url
 - `updates.preferredUsername` \<string\> Preferred Name
 - `updates.website` \<string\> 个人网站
-- `updates.gender` \<string\> 性别, F 表示男性、W 表示女性、未知表示 U
+- `updates.gender` \<string\> 性别, M 表示男性、F 表示女性、未知表示 U
 - `updates.birthdate` \<string\> 生日
 - `updates.zoneinfo` \<string\> 时区
 - `updates.locale` \<string\> 语言

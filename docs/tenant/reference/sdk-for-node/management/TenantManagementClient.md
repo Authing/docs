@@ -203,7 +203,7 @@ managementClient.tenant.create(options);
 | ------------------- | ------ | ---- | ------------------------------------------- |
 | options.name        | string | 是   | 租户名称                                    |
 | options.appIds      | string | 是   | 应用 ID，支持关联多个应用，使用英文逗号分隔 |
-| options.logo        | string | 否   | 头像资源地址，通过图片上传接口中的 url 值   |
+| options.logo        | string | 否   | 头像地址，通过图片上传接口中的 url 值。可不传，有值时必须为 URL 格式的字符串，不能为空字符串   |
 | options.description | string | 否   | 租户描述                                    |
 
 #### 示例

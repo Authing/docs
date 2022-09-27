@@ -132,7 +132,7 @@ implementation
 const
   DEF_ACCESS_KEY_ID = 'ACCESS_KEY_ID';
   DEF_ACCESS_KEY_SECRET = 'ACCESS_KEY_SECRET';
-   // 您的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
+   // 你的 Authing 私有化实例 HOST 地址，格式例如 https://core.authing.cn
   DEF_HOST = 'YourHost';
 
 { TManagementClientTest }

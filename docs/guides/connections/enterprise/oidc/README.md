@@ -12,7 +12,7 @@
 
 ## 注意事项
 
-- 如果您未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：在 OIDC 身份服务商中创建一个 OIDC Client
 
@@ -67,7 +67,7 @@ Authing 的 OIDC 回调链接为：https://core.authing.cn/connections/oidc/call
 
 - **详细接入方法**：
 
-3.1 在 {{$localeConfig.brandName}} 控制台创建一个 OIDC Client，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)
+3.1 在 {{$localeConfig.brandName}} 控制台创建一个 OIDC Client，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
 3.2 在已创建好的 OIDC Client 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 

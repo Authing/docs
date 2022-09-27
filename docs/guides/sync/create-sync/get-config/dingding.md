@@ -28,7 +28,7 @@
 
 <br/>
 
-6. 将所有参数填入配置，[创建](../../create-sync/README.md)一个同步任务，得到一个接收事件 URL，将该 Url 填入上图步骤三位置。
+6. 将所有参数填入配置，[创建](/guides/sync-new/create-sync-new/README.md)一个同步任务，得到一个接收事件 URL，将该 Url 填入上图步骤三位置。
 
 ![](../../images/ding-5.png)
 
