@@ -3,6 +3,7 @@
 <LastUpdated/>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Authing 为用户提供三种同步时机，包括 **手动同步**、**定时同步** 和 **实时同步**。
 
 ::: hint-info
@@ -24,6 +25,8 @@ Authing 为用户提供三种同步时机，包括 **手动同步**、**定时�
 
 当 Authing 数据发生变更，需要在 Authing 控制台手动点击执行同步，变更数据才会同步到下游。
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 {{$localeConfig.brandName}} 为用户提供三种同步时机，包括 **手动**、**定时同步** 和 **实时同步**。
 
 ::: hint-info
@@ -44,12 +47,16 @@ Authing 为用户提供三种同步时机，包括 **手动同步**、**定时�
 ### 手动下游同步
 
 当 {{$localeConfig.brandName}} 数据发生变更，需要在 {{$localeConfig.brandName}} 控制台手动点击执行同步，变更数据才会同步到下游。
+<<<<<<< HEAD
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 ## 定时同步
 
 通过设定具体执行周期实现定时触发同步任务，定时同步执行效果和手动同步一致，特点是 **按时触发，不需要手动点击**。
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 定时同步支持每月、每周、每天、每六小时、每两小时执行。设置定时同步，除了需要设置 **定时频率**，还需 **选择同步开始时间**。
 
@@ -72,6 +79,8 @@ Authing 为用户提供三种同步时机，包括 **手动同步**、**定时�
 ### 实时下游同步
 当 Authing 数据发生变更，变更数据会实时同步到下游。
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 定时同步支持 **每月**、**每周**、**每天**、**每六小时**、**每两小时** 执行。设置定时同步，除了需要设置 **定时频率**，还需 **选择同步开始时间**。
 
 <img src="../images/periodical-sync.png" height=450 style="display:block;margin: 0 auto;">
@@ -94,5 +103,9 @@ Authing 为用户提供三种同步时机，包括 **手动同步**、**定时�
 当上游数据发生变更，变更数据会实时同步到 {{$localeConfig.brandName}}。
 
 ### 实时下游同步
+<<<<<<< HEAD
+当 {{$localeConfig.brandName}} 数据发生变更，变更数据会实时同步到下游。
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 当 {{$localeConfig.brandName}} 数据发生变更，变更数据会实时同步到下游。
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126

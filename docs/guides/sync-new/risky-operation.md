@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 风险操作提示
 
 <LastUpdated/>
@@ -40,6 +41,8 @@ Authing 认为，删除操作可能由于人为因素或系统因素等造成管
 如果部门中存在用户，可能导致下游删除部门失败。
 :::
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 # 处理删除保护
 
 <LastUpdated/>
@@ -127,4 +130,7 @@ Authing 认为，删除操作可能由于人为因素或系统因素等造成管
 
 <img src="./images/batch-delete.png" style="display:block;margin: 0 auto;">
 
+<<<<<<< HEAD
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126

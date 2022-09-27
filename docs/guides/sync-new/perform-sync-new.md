@@ -3,10 +3,13 @@
 <LastUpdated/>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 路径：**用户管理->同步中心**
 
 进入 **同步中心** 页面，可以看到已创建的同步任务列表。
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 路径：**同步中心**
 
 当 **同步时机** 为 **手动** 时，需要管理员手动执行同步任务，实现上下游数据的同步。
@@ -14,12 +17,16 @@
 ## 执行同步
 
 进入 **同步中心** 页面，可以看到同步任务画布，展示所有已创建的同步任务。
+<<<<<<< HEAD
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 
 要执行选定的同步任务，执行以下步骤：
 
 ::: hint-info
 * 执行同步任务，数据不可恢复，要谨慎操作！
+<<<<<<< HEAD
 <<<<<<< HEAD
 * 同步数据会需要一些时间，这取决于您同步的数据量的大小。
 :::
@@ -36,6 +43,8 @@
 
 也可以到控制台用户管理页面查看同步后结果，检验同步是否成功。
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
 * 必须为用户配置正确的手机号等必要字段信息（因三方数据源而不同），否则同步失败。
 :::
 
@@ -198,5 +207,9 @@
 
 3. 点击 **下载文件** 将同步日志下载到本地。
 
+<<<<<<< HEAD
+<img src="./images/excel-sync-log.png" style="display:block;margin: 0 auto;">
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 <img src="./images/excel-sync-log.png" style="display:block;margin: 0 auto;">
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126

@@ -390,6 +390,7 @@ const zhCnNavBar = {
             },
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
               path: "/guides/sync/create-sync/field-mapping",
               title: "自定义同步字段映射",
             },
@@ -401,6 +402,12 @@ const zhCnNavBar = {
               path: "/guides/sync-new/create-sync-new/sync-scope-new",
             },
             {
+=======
+              title: "筛选同步范围",
+              path: "/guides/sync-new/create-sync-new/sync-scope-new",
+            },
+            {
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
               title: "配置同步字段映射",
               path: "/guides/sync-new/create-sync-new/field-mapping-new",
             },
@@ -411,6 +418,9 @@ const zhCnNavBar = {
             {
               title: "配置同步策略",
               path: "/guides/sync-new/create-sync-new/sync-policy-new",
+<<<<<<< HEAD
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
             },
           ],
@@ -437,6 +447,7 @@ const zhCnNavBar = {
       path: "/guides/app-new/",
       children: [
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
           title: "创建应用",
           path: "/guides/app/create-app",
@@ -482,6 +493,8 @@ const zhCnNavBar = {
         {
 =======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
           title: "自建应用",
           path: "/guides/app-new/create-app/",
           children: [
@@ -522,6 +535,7 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/tenant-config",
             },
           ]
+<<<<<<< HEAD
 <<<<<<< HEAD
         },
         {
@@ -564,6 +578,8 @@ const zhCnNavBar = {
           title: "ASA 表单代填",
           path: "/guides/asa/",
 =======
+=======
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
         }, 
         {
           title: "单点登录 SSO",
@@ -609,6 +625,9 @@ const zhCnNavBar = {
               path: "/guides/asa/",
             },
           ],
+<<<<<<< HEAD
+>>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
+=======
 >>>>>>> ba53c2dd0bf518dbfa90efa3ac5d7ac5dfcd8126
         },
       ],
@@ -1146,6 +1165,10 @@ const zhCnNavBar = {
         {
           title: "同步中心",
           path: "/guides/faqs/sync/",
+        },
+        {
+          title: `同步中心常见问题`,
+          path: "/guides/faqs/sync",
         },
         {
           title: `同步中心常见问题`,
