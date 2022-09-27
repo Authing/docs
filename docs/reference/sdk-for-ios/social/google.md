@@ -4,43 +4,53 @@
 
 集成 Google 登录需要以下步骤：
 
-- 在 Google 开发者控制台及 Authing 管理控制台进行配置请参阅 [Google 移动端](https://docs.authing.cn/v2/guides/connections/social/google-mobile/)
+1. 在 [Google API Console Credentials 控制台]() 及 [Authing 管理控制台](https://www.authing.cn/) 进行配置，请参阅 [Google 移动端](https://docs.authing.cn/v2/guides/connections/social/google-mobile/)。
 
-- 集成 Authing iOS Google 登录
+2. 添加 Google 登录组件依赖。
 
-- 修改项目配置
+3. 修改项目配置。
 
-## 集成 Authing iOS Google 登录
+## 集成 Google 登录组件
 
-### 添加依赖
+### 步骤 1：添加 Google 登录组件依赖
 
 > Guard-iOS-binary 依赖于 Guard 组件
 
-- 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
+1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
-- 依赖规则选择 Up to Next Major Version 1.0.0
+2. 依赖规则选择 **Up to Next Major Version 1.0.0** 。
 
-- Add Package 后勾选 Google
-
-<br>
-
-### 修改项目配置
-
-配置 Google 回跳 URL：
-- 点击项目文件，URL Types 中点击加号。
-- URL Schemes 添加 `REVERSED_CLIENT_ID` （例如：com.googleusercontent.apps.416092875790-gk29o58aein6vrkneb3vd1bki91b5his）。
-
-![](./images/google/2.png)
+3. 点击 **Add Package** 后勾选 **Google** 。
 
 <br>
 
-### 初始化 Google
+### 步骤 2：修改项目配置
 
-- 导入 Guard 和 Google
+配置 Google 登录组件回跳 URL：
+1. 点击项目文件，URL Types 中点击加号。
+2. URL Schemes 添加 Google 控制台的 **iOS URL scheme** 。
 
-- Google.register 需要传入 Google 发放的 `clientID` `serverClientId`
-> `clientID` 为 Google iOS 应用的 ClientID 
-> `serverClientId` 为 Google Web 应用的 ClientID
+<img src="./images/google/2.png" height=500 style="display:block;margin: 0 auto;">
+
+::: img-description
+添加 URL Types
+:::
+
+<img src="./images/google/3.png" height=500 style="display:block;margin: 0 auto;">
+
+::: img-description
+iOS URL scheme
+:::
+
+<br>
+
+### 步骤 3：初始化 Google 组件
+
+1. 导入 Guard iOS SDK 和 Google 登录组件。
+
+2. Google.register 需要传入 Google 控制台发放的、 **clientID** 和 **serverClientId**。
+> **clientID** 为 Google 控制台 iOS 应用的 ClientID，
+> **serverClientId** 为 Google 控制台 Web 应用的 ClientID。
 
 ```swift
 import Guard
@@ -52,7 +62,7 @@ Google.register(clientID: <#iOS ClientId#>, serverClientId: <#Oauth Web ClientId
  
 <br>
 
-### 添加回调
+### 步骤 4：添加回调
 
 登录成功返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -64,20 +74,20 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 }
  ```
 
-如果未使用 SceneDelegate，则需要在 AppDelegate 里面重载
+如果未使用 SceneDelegate，则需要在 AppDelegate 里面重载。
 
 ```swift
-  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-      return Google.handleURL(url: url)
-  }
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+   return Google.handleURL(url: url)
+}
  ```
 
 <br>
 
-### 发起 Google 授权
+### 步骤 5：发起 Google 授权
 SDK 提供了三种授权方式：
 
-1. 开发者在需要登录时调用 API：
+- 开发者在需要登录时调用 API：
 
 ```swift
 Google.login(viewController: <#承载视图的ViewController#>) { code, message, userInfo in
@@ -87,15 +97,14 @@ Google.login(viewController: <#承载视图的ViewController#>) { code, message,
 }
 ```
 
-2. 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
+- 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 
 ```swift
 GoogleSignInButton
 ```
-设置 Module 为 Google，Build success 后点击按钮即可登录。
+设置 **Module** 为 Google，Build success 后点击 **GoogleSignInButton** 即可登录。
 ![](./images/google/1.png)
-
-3. 如果想自己接入 Google 授权整个流程，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
+- 如果想自己接入 Google 授权整个流程，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
 
 ```swift
 func loginByGoogle(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -103,7 +112,7 @@ func loginByGoogle(_ code: String, completion: @escaping(Int, String?, UserInfo?
 
 **参数**
 
-* *authCode* Google 授权码
+`authCode` Google 授权码
 
 **示例**
 
