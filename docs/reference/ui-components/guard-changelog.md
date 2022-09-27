@@ -2,6 +2,10 @@
 
 <LastUpdated/>
 
+::: hint-info​
+本文对应 {{$localeConfig.brandName}} 老版本产品。如想了解最新功能说明，请查看 [接入 Authing Guard](https://docs.authing.cn/v2/reference/guard/v2/)。
+:::
+
 - ## 2.4.52
 
 > 更新时间：2021.10.08
