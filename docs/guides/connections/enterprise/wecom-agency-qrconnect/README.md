@@ -240,3 +240,20 @@ PC 网站
 3. 在登录页面体验企业微信自建应用扫码（代开发模式）第三方登录。
 
 <img src="./images/41.png" >
+
+## 用户操作
+
+要使用企业微信账号登录自建应用，用户初次使用，需要先从企业微信登录应用，完成敏感信息的授权；授权后，{{$localeConfig.brandName}} 自动进行手机号的匹配，从而实现后续的企业微信账号登录。
+
+要完成敏感信息授权，用户需要执行以下步骤：
+
+1. 登录企业微信，访问 **工作台**。
+
+2. 拉到页面底部，找到并点击待访问授权的自建应用，在企业微信内进行登录。
+
+3. 在打开的 **企业微信授权** 页面勾选允许 {{$localeConfig.brandName}} 访问的用户个人敏感信息，点击 **同意**。
+
+<img src="./images/individual-sensitive-info.png" height=550 style="display:block;margin: 0 auto;">
+
+绑定成功。
+<img src="./images/user-center.png" height=550 style="display:block;margin: 0 auto;">
