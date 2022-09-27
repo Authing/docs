@@ -288,8 +288,8 @@ Page({
 
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
     // 偶然情况下 res 会是 undefined
-    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
-    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
+    // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
+    // 如果 res 是 null，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -1307,22 +1307,83 @@ export default {
 |address|String|地址|
 |streetAddress|String|街道地址|
 |postalCode|String|邮递地址|
-|gender|String|性别|
+|gender|String|性别，M：男性，F：女性，U：未知|
 |username|String|用户名|
 |customData|String|自定义数据|
 |createdAt|String|用户创建时间|
 |email|String|邮箱|
 |emailVerified|Boolean|邮箱是否已验证|
 |lastIp|String|最后一次登录的 IP 地址|
-|lastLogin|String|最后登录时间|
-|loginsCount|Number|登录次数|
-|passwordLastSetAt|String|密码最后重置时间|
+|lastLogin|String|上次登录时间|
+|loginsCount|Number|历史总登录次数|
+|passwordLastSetAt|String|用户上次密码修改时间|
 |phone|String|手机号|
 |phoneCountryCode|String|手机号码所在地区编号|
 |phoneVerified|Boolean|手机号已否已验证|
 |resetPasswordOnNextLogin|Boolean|下次登录是否要求重置密码|
 |company|String|所在公司|
+|region|String|所在地区|
+|status|Suspended / Resigned / Activated / Archived / Deactivated |账户当前状态|
+|browser|String|最近一次登录时使用的浏览器 UA|
+|device|String|最近一次登录时使用的设备|
+|givenName|String|名|
+|familyName|String|姓|
+|middleName|String|中间名|
+|profile|String| 个人资料  |
+|preferredUsername|String| Preferred Username |
+|website|String|用户个人网页|
+|zoneinfo|String|用户时区信息|
+|locale|String|  Locale  |
+|formatted|String|标准的完整地址|
+|userSourceType|excel：通过 excel 导入 / register：用户自主注册 / adminCreated：管理员后台手动创建（包含使用管理 API 创建用户 ） / syncTask： 同步中心的同步任务 |来源类型|
+|userSourceId|String|应用 ID 或者同步任务 ID|
+|lastLoginApp|String|用户上次登录的应用 ID|
+|mainDepartmentId|String|用户主部门 ID|
+|lastMfaTime|String|用户上次进行 MFA 认证的时间|
+|passwordSecurityLevel|Number|用户密码安全强度等级|
+|departmentIds|String[]|用户所属部门 ID 列表|
+|identities|[Identity](#Identity)[]|外部身份源|
 
+### <p id="Identity">Identity</p>
+|名称|类型|描述|
+|-----|----|----|
+|identityId|String|身份源 ID|
+|extIdpId|String|身份源连接 ID|
+|provider|[Provider](#Provider)|外部身份源类型|
+|type|String|Identity 类型，如 unionid, openid, primary|
+|userIdInIdp|String|在外部身份源中的 ID|
+|originConnIds|String[]|身份来自的身份源连接 ID 列表|
+
+### <p id="Provider">Provider</p>
+|名称|描述|
+|-----|----|
+|wechat|微信|
+|qq|QQ|
+|wechatwork|企业微信|
+|dingtalk|钉钉|
+|weibo|微博|
+|github|Github|
+|alipay|支付宝|
+|baidu|百度|
+|lark|飞书|
+|welink|Welink|
+|yidun|网易易盾|
+|qingcloud|青云|
+|google|Google|
+|gitlab|Gitlab|
+|gitee|Gitee|
+|twitter|Twitter|
+|facebook|Facebook|
+|slack|Slack|
+|linkedin|Linkedin|
+|instagram|Instagram|
+|oidc|OIDC 型企业身份源|
+|oauth2|OAuth2 型企业身份源|
+|saml|SAML 型企业身份源|
+|ldap|LDAP 型企业身份源|
+|ad|AD 型企业身份源|
+|cas|CAS 型企业身份源|
+|azure-ad|Azure AD 型企业身份源|
 ### <p id="LoginState">LoginState</p>
 
 |名称|类型|描述|
