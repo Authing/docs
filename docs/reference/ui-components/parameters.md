@@ -2,10 +2,6 @@
 
 <LastUpdated/>
 
-::: hint-info​
-本文对应 {{$localeConfig.brandName}} 老版本产品。如想了解最新功能说明，请查看 [接入 Authing Guard](https://docs.authing.cn/v2/reference/guard/v2/)。
-:::
-
 Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，使用特定登录方式等。所有配置如下：
 
 | 参数名                | 参数说明                                                                                                                                                                                                          | 类型                                      | 是否必传       | 默认值                                             |

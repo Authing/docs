@@ -251,20 +251,20 @@ PC 网站
 
 2. 拉到页面底部，找到并点击待授权的应用。
 
-<img src="./images/workbench.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/workbench.png" height=750 style="display:block;margin: 0 auto;">
 
 3. 点击页面底部 **登录应用** 按钮在企业微信内进行登录。
 
-<img src="./images/log-in-app.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/log-in-app.png" height=750 style="display:block;margin: 0 auto;">
 
 4. 在打开的 **企业微信授权** 页面勾选允许 {{$localeConfig.brandName}} 访问的用户个人敏感信息，点击 **同意**。
 
-::: hint-info​
+::: hint-info
 请务必勾选 **你的手机号**，否则，企业微信账号与授权应用无法实现关联！
 一旦手机号关联失败，后续可通过 PC 端 SSO 面板登录，进入 Authing **个人中心** 里进行绑定。
-:::
+::: 
 
-<img src="./images/individual-sensitive-info.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/individual-sensitive-info.png" height=750 style="display:block;margin: 0 auto;">
 
 用户选择敏感信息并同意授权后，即可完成登录；同时，你所勾选的信息将会同步至 {{$localeConfig.brandName}}，图示为用户个人中心获取到的用户信息。
-<img src="./images/user-center.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/user-center.png" height=750 style="display:block;margin: 0 auto;">

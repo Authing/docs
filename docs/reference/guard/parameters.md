@@ -2,10 +2,6 @@
 
 <LastUpdated/>
 
-::: hint-info​
-本文对应 {{$localeConfig.brandName}} 老版本产品。如想了解最新功能说明，请查看 [接入 Authing Guard](https://docs.authing.cn/v2/reference/guard/v2/)。
-:::
-
 Authing 登录组件（Guard）的基础配置，点此查看[旧版参数列表](../ui-components/parameters.md)，新版配置如下:
 
 | 参数名   | 参数说明                                          | 类型                             | 是否必传 | 默认值 | 版本        |
