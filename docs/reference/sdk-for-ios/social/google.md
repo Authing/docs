@@ -14,7 +14,7 @@
 
 ### 步骤 1：添加 Google 登录组件依赖
 
-> Guard-iOS-binary 依赖于 Guard 组件
+> Guard-iOS-binary 依赖于 Guard 组件。
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -27,14 +27,8 @@
 ### 步骤 2：修改项目配置
 
 配置 Google 登录组件回跳 URL：
-1. 点击项目文件，URL Types 中点击加号。
-2. URL Schemes 添加 Google 控制台的 **iOS URL scheme** 。
-
-<img src="./images/google/2.png" height=500 style="display:block;margin: 0 auto;">
-
-::: img-description
-添加 URL Types
-:::
+1. 点击项目文件，**URL Types** 中点击加号。
+2. **URL Schemes** 添加 Google 控制台的 **iOS URL scheme** 。
 
 <img src="./images/google/3.png" height=500 style="display:block;margin: 0 auto;">
 
@@ -42,15 +36,24 @@
 iOS URL scheme
 :::
 
+<img src="./images/google/2.png" height=500 style="display:block;margin: 0 auto;">
+
+::: img-description
+添加 URL Types
+:::
+
 <br>
 
 ### 步骤 3：初始化 Google 组件
 
-1. 导入 Guard iOS SDK 和 Google 登录组件。
+1. 在 AppDelegate 或 SceneDelegate 中 import Guard 和 Google 。
 
 2. Google.register 需要传入 Google 控制台发放的、 **clientID** 和 **serverClientId**。
-> **clientID** 为 Google 控制台 iOS 应用的 ClientID，
-> **serverClientId** 为 Google 控制台 Web 应用的 ClientID。
+
+<img src="./images/google/4.png" height=500 style="display:block;margin: 0 auto;">
+
+> **clientID** 为 Google 控制台 iOS 应用的 **ClientID**，
+> **serverClientId** 为 Google 控制台 Web 应用的 **ClientID**。
 
 ```swift
 import Guard
@@ -97,13 +100,20 @@ Google.login(viewController: <#承载视图的ViewController#>) { code, message,
 }
 ```
 
+<br>
+
 - 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 
 ```swift
 GoogleSignInButton
 ```
+
 设置 **Module** 为 Google，Build success 后点击 **GoogleSignInButton** 即可登录。
+
 ![](./images/google/1.png)
+
+<br>
+
 - 如果想自己接入 Google 授权整个流程，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
 
 ```swift
