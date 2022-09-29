@@ -29,7 +29,7 @@ A:  如果在授权过程中忘记勾选个人手机号，则无法实现企业�
 <img src="./images/wecom-scanning.png" height=350 style="display:block;margin: 0 auto;">
 
 ::: hint-info
-要确保已在后台完成企业微信的配置（有关详情，请参阅 [企业微信自建应用扫码（代开发模式）](/guides/connections/enterprise/wecom-agency-qrconnect/README.md#用户操作)）。
+要确保已在后台完成企业微信的配置（有关详情，请参阅 [企业微信自建应用扫码（代开发模式）](/guides/connections/enterprise/wecom-agency-qrconnect/README.md#配置步骤)）。
 :::
 
 成功绑定自建应用及企业微信后，用户即可使用企业微信账号登录自建应用。
