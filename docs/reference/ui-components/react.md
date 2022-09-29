@@ -2,6 +2,10 @@
 
 <LastUpdated/>
 
+::: hint-info
+本文对应 {{$localeConfig.brandName}} 老版本产品。如想了解最新功能说明，请查看 [将 Guard 接入到 React 项目](https://docs.authing.cn/v2/reference/guard/v2/react.html)。
+::: 
+
 Authing 登录组件（Guard）是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。它使你可以轻松添加各种社会化登录方式，以便你的用户可以无缝登录，并且在不同平台拥有一致的登录体验。Guard 为开发者屏蔽了很多底层认证的实现细节，同时也包括繁琐的 UI 开发。
 
 Guard 可以通过组件化的形式集成到你的 React 项目中，你可以借助此组件快速实现登录认证流程。
