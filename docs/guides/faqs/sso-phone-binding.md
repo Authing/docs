@@ -8,7 +8,7 @@ A: 对于企业内部场景，我们建议将 **禁止注册** 功能打开，�
 
 #### Q: 在开启 **禁止注册** 后，员工扫码显示 “登录失败，应用已禁止注册”，是为什么呢？
 
-A: 如果已经确认 {{$localeConfig.brandName}} 后台配置无误的话，这种情况是由于员工没有进行手机号信息的授权，详细授权方法请参照 [用户个人敏感信息授权](/guides/connections/enterprise/wecom-agency-qrconnect/README.md#用户操作)。
+A: 如果已经确认 {{$localeConfig.brandName}} 后台配置无误的话，这种情况是由于员工没有进行手机号信息的授权，详细授权方法请参照 [用户操作](/guides/connections/enterprise/wecom-agency-qrconnect/README.md#用户操作)。
 
 #### Q: 在个人第一次授权后忘记授权手机号或者中断了怎么办呢？还能再次授权吗？
 

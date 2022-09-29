@@ -261,7 +261,7 @@ PC 网站
 
 ::: hint-info
 请务必勾选 **你的手机号**，否则，企业微信账号与授权应用无法实现关联！
-一旦手机号关联失败，后续可通过 PC 端 SSO 面板登录，进入 Authing **个人中心** 里绑定企业微信。有关详情，请参阅 [如何在应用面板配置企业微信与自建应用的绑定](/guides/faqs/sso-phone-binding#q-在个人第一次授权后忘记授权手机号或者中断了怎么办呢还能再次授权吗)。
+一旦手机号关联失败，后续可通过 PC 端 SSO 面板登录，进入 Authing **个人中心** 里绑定企业微信。有关详情，请参阅 [如何在应用面板配置企业微信与自建应用的绑定](/docs/guides/faqs/sso-phone-binding.md#q-在个人第一次授权后忘记授权手机号或者中断了怎么办呢还能再次授权吗)。
 ::: 
 
 <img src="./images/individual-sensitive-info.png" height=750 style="display:block;margin: 0 auto;">
