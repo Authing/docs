@@ -465,7 +465,7 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/tenant-config",
             },
           ]
-        }, 
+        },
         {
           title: "单点登录 SSO",
           path: "/guides/app-new/sso/",
@@ -1050,6 +1050,10 @@ const zhCnNavBar = {
         {
           title: `同步中心常见问题`,
           path: "/guides/faqs/sync",
+        },
+        {
+          title: `企业微信扫码登录常见问题`,
+          path: "/guides/faqs/sso-phone-binding",
         },
       ],
     },
