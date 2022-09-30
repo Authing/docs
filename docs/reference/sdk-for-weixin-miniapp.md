@@ -287,9 +287,9 @@ Page({
     })
 
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
-    // 偶然情况下 res 会是 undefined
+    // 偶然情况下 res 会是 null
     // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
-    // 如果 res 是 null，则提示用户再点击一次按钮即可
+    // 如果 res 是 null，则提示用户再点击一次按钮重新登录即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -328,9 +328,9 @@ export default class Index extends Component<PropsWithChildren> {
     })
 
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
-    // 偶然情况下 res 会是 undefined
-    // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
-    // 如果 res 是 undefined，则提示用户再点击一次按钮即可
+    // 偶然情况下 res 会是 null
+    // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
+    // 如果 res 是 null，则提示用户再点击一次按钮即可
     const res = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -363,9 +363,9 @@ export default {
       })
 
       // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
-      // 偶然情况下 res 会是 undefined
-      // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
-      // 如果 res 是 undefined，则提示用户再点击一次按钮即可   
+      // 偶然情况下 res 会是 null
+      // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
+      // 如果 res 是 null，则提示用户再点击一次按钮即可   
       const res = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
@@ -1112,7 +1112,7 @@ export default {
 
 #### 入参
 
-参考：[UserInfo](#UserInfo)
+参考：[UpdateUserInfo](#UpdateUserInfo)
 
 #### 出参
 
@@ -1291,6 +1291,31 @@ export default {
 - `extended_fields`：返回用户的扩展字段信息，内容为一个对象，key 为扩展字段，value 为扩展字段值
 - `tenant_id`：返回用户的租户 id
 
+### <p id="UpdateUserInfo">UpdateUserInfo</p>
+|名称|类型|描述|
+|-----|----|----|
+|name|String|姓名|
+|nickname|String|昵称|
+|username|String|用户名|
+|photo|String|头像地址|
+|externalId|String|第三方外部 ID|
+|birthdate|String|出生日期|
+|country|String|所在国家|
+|province|String|所在省份|
+|city|String|所在城市|
+|address|String|所处地址|
+|streetAddress|String|所处街道地址|
+|postalCode|String|邮政编码|
+|gender|[Gender](#Gender)|性别|
+|customData|Object|自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段|
+
+### <p id="Gender">Gender</p>
+|名称|描述|
+|-----|----|
+|M|男性|
+|F|女性|
+|U|未知|
+
 ### <p id="UserInfo">UserInfo</p>
 
 |名称|类型|描述|
@@ -1307,7 +1332,7 @@ export default {
 |address|String|地址|
 |streetAddress|String|街道地址|
 |postalCode|String|邮递地址|
-|gender|String|性别，M：男性，F：女性，U：未知|
+|gender|[Gender](#Gender)|性别|
 |username|String|用户名|
 |customData|String|自定义数据|
 |createdAt|String|用户创建时间|
