@@ -272,7 +272,7 @@ export class LoginComponent {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
-  <link rel="stylesheet" src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
