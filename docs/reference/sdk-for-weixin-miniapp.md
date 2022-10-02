@@ -173,7 +173,7 @@ const authing = new Authing({
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | null>
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 说明
 
@@ -193,9 +193,7 @@ Promise<[LoginState](#LoginState) | null>
 // index.js
 Page({
   async getLoginState () {    
-    const res = await authing.getLoginState()
-
-    console.log('authing.getLoginState res: ', res)
+    const [error, loginState] = await authing.getLoginState()
   }
 })
 ```
@@ -211,9 +209,7 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async getLoginState () {    
-    const res = await authing.getLoginState()
-
-    console.log('authing.getLoginState res: ', res)
+    const [error, loginState] = await authing.getLoginState()
   }
 }
 ```
@@ -223,9 +219,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async getLoginState () {      
-      const res = await authing.getLoginState()
-
-      console.log('authing.getLoginState res: ', res)
+      const [error, loginState] = await authing.getLoginState()
     }
   }
 }
@@ -254,7 +248,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | null> 
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 说明
 
@@ -290,7 +284,7 @@ Page({
     // 偶然情况下 res 会是 null
     // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
     // 如果 res 是 null，则提示用户再点击一次按钮重新登录即可
-    const res = await authing.loginByCode({
+    const [error, res] = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
@@ -301,8 +295,6 @@ Page({
         scope: 'openid profile offline_access'
       }
     })
-
-    console.log('authing.loginByCode res: ', res)
   }
 })
 ```
@@ -331,7 +323,7 @@ export default class Index extends Component<PropsWithChildren> {
     // 偶然情况下 res 会是 null
     // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
     // 如果 res 是 null，则提示用户再点击一次按钮即可
-    const res = await authing.loginByCode({
+    const [error, res] = await authing.loginByCode({
       connection: 'wechat_mini_program_code',
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       wechatMiniProgramCodePayload: {
@@ -342,8 +334,6 @@ export default class Index extends Component<PropsWithChildren> {
         scope: 'openid profile offline_access'
       }
     })
-
-    console.log('authing.loginByCode res: ', res)
   }
 }
 ```
@@ -366,7 +356,7 @@ export default {
       // 偶然情况下 res 会是 null
       // 所以需要判断 res 是否为 null 再进一步处理剩余业务逻辑
       // 如果 res 是 null，则提示用户再点击一次按钮即可   
-      const res = await authing.loginByCode({
+      const [error, res] = await authing.loginByCode({
         connection: 'wechat_mini_program_code',
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         wechatMiniProgramCodePayload: {
@@ -377,8 +367,6 @@ export default {
           scope: 'openid profile offline_access'
         }
       })
-
-      console.log('authing.loginByCode res: ', res)
     }
   }
 }
@@ -410,7 +398,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | null>
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -423,7 +411,7 @@ Promise<[LoginState](#LoginState) | null>
 // index.js
 Page({
   async loginByPassword () {
-    const res = await authing.loginByPassword({
+    const [error, res] = await authing.loginByPassword({
       connection: 'PASSWORD',
       passwordPayload: {
         password: '123',
@@ -434,8 +422,6 @@ Page({
         scope: 'offline_access openid profile'
       }
     })
-
-    console.log('authing.loginByPassword res: ', res)
   }
 })
 ```
@@ -451,7 +437,7 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async loginByPassword () {
-    const res = await authing.loginByPassword({
+    const [error, res] = await authing.loginByPassword({
       connection: 'PASSWORD',
       passwordPayload: {
         password: '123',
@@ -462,8 +448,6 @@ export default class Index extends Component<PropsWithChildren> {
         scope: 'offline_access openid profile'
       }
     })
-
-    console.log('authing.loginByPassword res: ', res)
   }
 }
 ```
@@ -473,7 +457,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByPassword () {
-      const res = await authing.loginByPassword({
+      const [error, res] = await authing.loginByPassword({
         connection: 'PASSWORD',
         passwordPayload: {
           password: '123',
@@ -484,8 +468,6 @@ export default {
           scope: 'offline_access openid profile'
         }
       })
-
-      console.log('authing.loginByPassword res: ', res)
     }
   }
 }
@@ -507,12 +489,7 @@ export default {
 
 #### 出参
 
-``` typescript
-Promise<{
-  message: string
-  statusCode: number
-}>
-```
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 
 |名称|类型|描述|
 |-----|----|----|
@@ -531,13 +508,11 @@ Promise<{
 Page({
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
+    const [error, res] = await authing.sendSms({
       phoneNumber: '13100000000',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
-
-    console.log('authing.sendSms res: ', res)
   }
 })
 ```
@@ -555,13 +530,11 @@ export default class Index extends Component<PropsWithChildren> {
   
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-    const res = await authing.sendSms({
+    const [error, res] = await authing.sendSms({
       phoneNumber: '13100000000',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
-
-    console.log('authing.sendSms res: ', res)
   }
 }
 ```
@@ -575,13 +548,11 @@ export default {
   methods: {
     async sendSms () {
       // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
-      const res = await authing.sendSms({
+      const [error, res] = await authing.sendSms({
         phoneNumber: '13100000000',
         phoneCountryCode: '+86',
         channel: 'CHANNEL_LOGIN'
       })
-
-      console.log('authing.sendSms res: ', res)
     },
   }
 }
@@ -611,7 +582,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | null>
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -624,7 +595,7 @@ Promise<[LoginState](#LoginState) | null>
 // index.js
 Page({
   async loginByPassCode () {
-    const res = await authing.loginByPassCode({
+    const [error, res] = await authing.loginByPassCode({
       connection: 'PASSCODE',
       passCodePayload: {
         // 手机收到的短信验证码
@@ -636,8 +607,6 @@ Page({
         scope: 'openid profile offline_access'
       }
     })
-
-    console.log('authing.loginByPassCode: ', res)
   }
 })
 ```
@@ -673,7 +642,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByPassCode () {
-      const res = await authing.loginByPassCode({
+      const [error, res] = await authing.loginByPassCode({
         connection: 'PASSCODE',
         passCodePayload: {
           // 手机收到的短信验证码
@@ -682,8 +651,6 @@ export default {
           phoneCountryCode: '+86'
         }
       })
-
-      console.log('authing.loginByPassCode: ', res)
     }
   }
 }
@@ -705,7 +672,7 @@ export default {
 
 #### 出参
 
-Promise<[LoginState](#LoginState) | null>
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -718,8 +685,7 @@ Promise<[LoginState](#LoginState) | null>
 // index.js
 Page({
   async refreshToken () {
-    const res = await authing.refreshToken()
-    console.log('authing.refreshToken res: ', res)
+    const [error, res] = await authing.refreshToken()
   }
 })
 ```
@@ -736,8 +702,7 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async refreshToken () {
-    const res = await authing.refreshToken()
-    console.log('authing.refreshToken res: ', res)
+    const [error, res] = await authing.refreshToken()
   }
 }
 ```
@@ -750,8 +715,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async refreshToken () {
-      const res = await authing.refreshToken()
-      console.log('authing.refreshToken res: ', res)
+      const [error, res] = await authing.refreshToken()
     }
   }
 }
@@ -772,26 +736,7 @@ export default {
 
 #### 出参
 
-``` typescript
-Promise<{
-  countryCode: string
-  phoneNumber: string
-  watermark: Watermark
-}>
-```
-
-|名称|类型|描述|
-|-----|----|----|
-|countryCode|String|+86|
-|phoneNumber|String|手机号
-|watermark|Watermark|微信返回的其他信息|
-
-**Watermark**
-
-|名称|类型|描述|
-|-----|----|----|
-|appid|String|app id|
-|timestamp|Number|时间戳
+Promise<[SDKResponse](#SDKResponse)<[GetUserPhoneResponseData](#GetUserPhoneResponseData)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -810,12 +755,10 @@ Page({
   async getPhone (e) {
     const { code } = e.detail
 
-    const res = await authing.getPhone({
+    const [error, res] = await authing.getPhone({
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       code
     })
-
-    console.log('authing.getPhone res: ', res)
   }
 })
 ```
@@ -837,12 +780,10 @@ export default class Index extends Component<PropsWithChildren> {
   async getPhone (e) {
     const { code } = e.detail
 
-    const res = await authing.getPhone({
+    const [error, res] = await authing.getPhone({
       extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
       code
     })
-
-    console.log('authing.getPhone res: ', res)
   }
 }
 ```
@@ -861,12 +802,10 @@ export default {
     async getPhone (e) {
       const { code } = e.detail
 
-      const res = await authing.getPhone({
+      const [error, res] = await authing.getPhone({
         extIdpConnidentifier: 'authing-zhaoyiming-miniprogram',
         code
       })
-
-      console.log('authing.getPhone res: ', res)
     }
   }
 }
@@ -888,9 +827,7 @@ export default {
 
 #### 出参
 
-``` typescript
-Promise<boolean>
-```
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -903,13 +840,11 @@ Promise<boolean>
 // index.js
 Page({
   async updatePassword () {
-    const res = await authing.updatePassword({
+    const [error, res] = await authing.updatePassword({
       newPassword: '123',
       oldPassword: '123',
       passwordEncryptType: 'none'
     })
-
-    console.log('authing.updatePassword res: ', res)
   },
 })
 ```
@@ -926,13 +861,11 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updatePassword () {
-    const res = await authing.updatePassword({
+    const [error, res] = await authing.updatePassword({
       newPassword: '123',
       oldPassword: '123',
       passwordEncryptType: 'none'
     })
-
-    console.log('authing.updatePassword res: ', res)
   }
 }
 ```
@@ -945,13 +878,11 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updatePassword () {
-      const res = await authing.updatePassword({
+      const [error, res] = await authing.updatePassword({
         newPassword: '123',
         oldPassword: '123',
         passwordEncryptType: 'none'
       })
-
-      console.log('authing.updatePassword res: ', res)
     },
   }
 }
@@ -970,7 +901,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | null>
+Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -982,8 +913,7 @@ Promise<[UserInfo](#UserInfo) | null>
 // index.js
 Page({
   async getUserInfo () {
-    const res = await authing.getUserInfo()
-    console.log('authing.getUserInfo res: ', res)
+    const [error, res] = await authing.getUserInfo()
   }
 })
 ```
@@ -1000,8 +930,7 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async getUserInfo () {
-    const res = await authing.getUserInfo()
-    console.log('authing.getUserInfo res: ', res)
+    const [error, res] = await authing.getUserInfo()
   }
 }
 ```
@@ -1014,8 +943,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async getUserInfo () {
-      const res = await authing.getUserInfo()
-      console.log('authing.getUserInfo res: ', res)
+      const [error, res] = await authing.getUserInfo()
     }
   }
 }
@@ -1033,26 +961,7 @@ export default {
 
 #### 出参
 
-``` typescript
-Promise<{
-  code: number
-  message: string
-  data: Data
-}>
-```
-
-|名称|类型|描述|
-|-----|----|----|
-|code|Number|wx.uploadFile 返回的 code|
-|message|String|wx.uploadFile 返回的 message|
-|data|Data|主体数据|
-
-**Data**
-
-|名称|类型|描述|
-|-----|----|----|
-|key|String|wx.uploadFile 返回的 key|
-|url|String|文件地址|
+Promise<[SDKResponse](#SDKResponse)<[UploadFileResponseData](#UploadFileResponseData)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1065,8 +974,7 @@ Promise<{
 // index.js
 Page({
   async updateAvatar () {
-    const res = await authing.updateAvatar()
-    console.log('authing.updateAvatar res: ', res)
+    const [error, res] = await authing.updateAvatar()
   },
 })
 ```
@@ -1083,8 +991,7 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updateAvatar () {
-    const res = await authing.updateAvatar()
-    console.log('authing.updateAvatar res: ', res)
+    const [error, res] = await authing.updateAvatar()
   }
 }
 ```
@@ -1097,8 +1004,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updateAvatar () {
-      const res = await authing.updateAvatar()
-      console.log('authing.updateAvatar res: ', res)
+      const [error, res] = await authing.updateAvatar()
     }
   }
 }
@@ -1116,7 +1022,7 @@ export default {
 
 #### 出参
 
-Promise<[UserInfo](#UserInfo) | null>
+Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1129,11 +1035,9 @@ Promise<[UserInfo](#UserInfo) | null>
 // index.js
 Page({
   async updateUserInfo () {
-    const res = await authing.updateUserInfo({
+    const [error, res] = await authing.updateUserInfo({
       address: 'Hello world'
     })
-
-    console.log('authing.updateUserInfo res: ', res)
   }
 })
 ```
@@ -1150,11 +1054,9 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async updateUserInfo () {
-    const res = await authing.updateUserInfo({
+    const [error, res] = await authing.updateUserInfo({
       address: 'Hello world'
     })
-
-    console.log('authing.updateUserInfo res: ', res)
   }
 }
 ```
@@ -1167,11 +1069,9 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async updateUserInfo () {
-      const res = await authing.updateUserInfo({
+      const [error, res] = await authing.updateUserInfo({
         address: 'Hello world'
       })
-
-      console.log('authing.updateUserInfo res: ', res)
     }
   }
 }
@@ -1190,7 +1090,7 @@ export default {
 #### 出参
 
 ``` typescript
-Promise<boolean>
+Promise<SDKResponse<boolean>>
 ```
 
 #### 示例代码
@@ -1204,9 +1104,7 @@ Promise<boolean>
 // index.js
 Page({
   async logout () {
-    const res = await authing.logout()
-
-    console.log('authing.logout res: ', res)
+    const [error, res] = await authing.logout()
   }
 })
 ```
@@ -1223,9 +1121,7 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async logout () {
-    const res = await authing.logout()
-
-    console.log('authing.logout res: ', res)
+    const [error, res] = await authing.logout()
   }
 }
 ```
@@ -1238,9 +1134,7 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async logout () {
-      const res = await authing.logout()
-
-      console.log('authing.logout res: ', res)
+      const [error, res] = await authing.logout()
     }
   }
 }
@@ -1248,7 +1142,46 @@ export default {
 :::
 ::::
 
+## 错误处理
+
+Authing 小程序 SDK 所有的功能都是异步的，且提供完善的错误处理机制。
+
+你可以使用数组解构的方式获取 SDK 返回结果：
+
+- 第一个参数 [error](#ErrorData) 不为 null 时表示有错误产生，此时第二个参数是 undefined
+
+- 第二个参数作为成功返回的数据，如果没有异常，error 会被设为 null，第二个成功的数据就会被返回
+
+代码示例如下：
+
+``` typescript
+const [error, userInfo] = await authing.getUserInfo()
+
+if (error) {
+  wx.showToast({
+    title: error.message
+  })
+} else {
+  console.log(userInfo)
+}
+```
+
 ## 附录公共参数列表
+
+### <p id="SDKResponse">SDKResponse</p>
+``` typescript
+type SDKResponse<T> = SDKResponseSuccess<T> | SDKResponseError
+
+type SDKResponseSuccess<T> = [null, T]
+
+type SDKResponseError = [ErrorData, undefined]
+
+interface ErrorData {
+  message: unknown
+  statusCode?: number
+  apiCode?: number
+}
+```
 
 ### <p id="WxLoginOptions">WxLoginOptions</p>
 
@@ -1435,3 +1368,45 @@ export default {
 |CHANNEL_COMPLETE_PHONE|确认手机号码|
 |CHANNEL_IDENTITY_VERIFICATION|实名认证|
 |CHANNEL_DELETE_ACCOUNT|删除账号|
+
+### <p id="ErrorData">ErrorData</p>
+|名称|类型|描述|
+|-----|----|----|
+|message|String|错误信息|
+|statusCode|Number|状态码|
+|apiCode|Number|code|
+
+### <p id="SimpleResponseData">SimpleResponseData</p>
+|名称|类型|描述|
+|-----|----|----|
+|message|String|错误信息|
+|statusCode|Number|状态码|
+
+### <p id="GetUserPhoneResponseData">GetUserPhoneResponseData</p>
+|名称|类型|描述|
+|-----|----|----|
+|countryCode|String|+86|
+|phoneNumber|String|手机号
+|watermark|Watermark|微信返回的其他信息|
+
+**Watermark**
+
+|名称|类型|描述|
+|-----|----|----|
+|appid|String|app id|
+|timestamp|Number|时间戳
+
+### <p id="UploadFileResponseData">UploadFileResponseData</p>
+|名称|类型|描述|
+|-----|----|----|
+|code|Number|wx.uploadFile 返回的 code|
+|message|String|wx.uploadFile 返回的 message|
+|data|Data|主体数据|
+
+**Data**
+
+|名称|类型|描述|
+|-----|----|----|
+|key|String|wx.uploadFile 返回的 key|
+|url|String|文件地址|
+
