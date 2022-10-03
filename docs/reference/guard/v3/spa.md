@@ -271,8 +271,8 @@ export class LoginComponent {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.4/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.4/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
@@ -1361,6 +1361,162 @@ export class LoginComponent {
 ```
 :::
 ::::
+
+### 启用多因素人脸识别
+
+进入 Authing 控制台，左侧菜单选择 `安全设置` -> `多因素认证`，右侧开启`人脸识别`
+
+<img src="./images/guard-face.png" width="650" style="margin-left: 50px" />
+
+在原有基础上引入 `face-api`，且在初始化 Guard 时传入参数 `facePlugin` 即可。
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab React
+``` shell
+npm install --save face-api.js
+```
+
+``` tsx
+// App.tsx
+import React from 'react'
+
+import { GuardProvider } from '@authing/guard-react'
+
+import '@authing/guard-react/dist/esm/guard.min.css'
+
+import * as facePlugin from 'face-api.js'
+
+import RouterComponent from './router'
+
+function App() {
+  return (
+    <GuardProvider
+      appId=""
+      facePlugin={facePlugin}
+    >
+      <RouterComponent></RouterComponent>
+    </GuardProvider>
+  )
+}
+```
+:::
+
+::: tab Vue2
+``` shell
+npm install --save face-api.js
+```
+
+``` typescript
+// main.js
+import * as facePlugin from 'face-api.js'
+
+import Vue from 'vue'
+import { GuardPlugin } from '@authing/guard-vue2'
+
+import '@authing/guard-vue2/dist/esm/guard.min.css'
+
+Vue.use(GuardPlugin, {
+  appId: '',
+  facePlugin: facePlugin
+})
+```
+:::
+
+::: tab Vue3
+``` shell
+npm install --save face-api.js
+```
+
+``` typescript
+// main.ts
+import { createApp } from 'vue'
+
+import { createGuard } from '@authing/guard-vue3'
+
+import '@authing/guard-vue3/dist/esm/guard.min.css'
+
+import * as facePlugin from 'face-api.js'
+
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(
+  createGuard({
+    appId: '',
+    facePlugin: facePlugin
+  })
+)
+```
+:::
+
+::: tab Angular
+``` shell
+npm install --save face-api.js
+```
+
+``` typescript
+// app.module.ts
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+
+import { GuardModule } from '@authing/guard-angular'
+
+import * as facePlugin from 'face-api.js'
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GuardModule.forRoot({
+      appId: '',
+      facePlugin: facePlugin
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+```
+:::
+::: tab CDN或原生JS
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
+  <script src="https://cdn.authing.co/packages/guard/5.0.4/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.4/guard.min.css" />
+</head>
+<body>
+  <div id="guard"></div>
+
+  <script>
+    const guard = new GuardFactory.Guard({
+      appId: '',
+      facePlugin: faceapi
+    })
+  </script>
+</body>
+</html>
+```
+:::
+::::
+
+## 示例代码
+
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/Guard/tree/master/examples)
 
 ## 注册事件
 

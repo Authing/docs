@@ -62,7 +62,7 @@ npm install --save @authing/guard
 import { Guard } from '@authing/guard'
 
 const guard = new Guard({
-  appId: '62e22721c889dd44bad1dda2'
+  appId: ''
 })
 ```
 
@@ -80,15 +80,15 @@ const guard = new Guard({
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.3/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.3/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.4/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.4/guard.min.css" />
 </head>
 <body>
   <div id="guard"></div>
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: '62e22721c889dd44bad1dda2'
+      appId: ''
     })
   </script>
 </body>
@@ -212,6 +212,30 @@ guard.checkLoginStatus().then(user => {
 </script>
 ```
 
+### 启用多因素人脸识别
+
+进入 Authing 控制台，左侧菜单选择 `安全设置` -> `多因素认证`，右侧开启`人脸识别`
+
+<img src="./images/guard-face.png" width="650" style="margin-left: 50px" />
+
+在原有基础上引入 `face-api`，且在初始化 Guard 时传入参数 `facePlugin` 即可。
+
+``` html
+<script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
+
+<div id="guard"></div>
+
+<script>
+  const guard = new GuardFactory.Guard({
+    appId: '',
+    facePlugin: faceapi
+  })
+</script>
+```
+
+## 示例代码
+
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/Guard/tree/master/examples)
 ## 注册事件
 
 使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
