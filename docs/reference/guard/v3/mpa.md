@@ -212,6 +212,10 @@ guard.checkLoginStatus().then(user => {
 </script>
 ```
 
+## 示例代码
+
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/Guard/tree/master/examples)
+
 ## 注册事件
 
 使用 Guard 提供的 `on` 方法可以方便的注册一些实用的事件
