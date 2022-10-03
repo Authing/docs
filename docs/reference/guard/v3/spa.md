@@ -1362,7 +1362,7 @@ export class LoginComponent {
 :::
 ::::
 
-### <p id="face-api">启用多因素人脸识别</p>
+### 启用多因素人脸识别
 
 进入 Authing 控制台，左侧菜单选择 `安全设置` -> `多因素认证`，右侧开启`人脸识别`
 
@@ -1731,7 +1731,7 @@ export class LoginComponent {
 | scope        | String          | -      | 否   | OIDC scope                                         |
 | redirectUri  | String          | -      | 否   | 回调地址，可在 Console 控制台配置                  |
 | state        | String          | -      | 否   | OIDC 状态                                          |
-| facePlugin   | FacePlugin      | -      | 否   | 控制台开启[多因素人脸识别](#face-api)认证后必传
+| facePlugin   | FacePlugin      | -      | 否   | 控制台开启多因素人脸识别认证后必传
 
 使用以上参数实例化 Guard，你可以体验 Guard 最基本的登录、注册等功能。
 
