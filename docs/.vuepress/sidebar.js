@@ -1068,12 +1068,8 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "单页应用",
-          path: "/reference/guard/v3/spa.md",
-        },
-        {
-          title: "标准 WEB 应用",
-          path: "/reference/guard/v3/mpa.md",
+          title: "WEB 应用",
+          path: "/reference/guard/web",
         },
         {
           title: "Guard Changelog",
