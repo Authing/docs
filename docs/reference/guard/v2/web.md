@@ -87,9 +87,8 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="AUTHING_APP_ID",
-      
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      appId="AUTHING_APP_ID"
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host="https://my-authing-app.example.com"
     >
       <RouterComponent></RouterComponent>
@@ -344,7 +343,7 @@ export default function Login() {
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
     guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log("userInfo: ", userInfo)
     })
   }, [])
 
@@ -356,20 +355,32 @@ export default function Login() {
 :::
 
 ::: tab Vue2
-``` javascript
+``` vue
+<template>
+  <div id="authing-guard-container"></div>
+</template>
+<script>
 export default {
   mounted () {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
     this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log('userInfo: ', userInfo)
     })
   }
 }
+</script>
 ```
 :::
 
 ::: tab Vue3
-``` javascript
+``` vue
+<!-- TODO 完整代码示例参考 -->
+<template>
+  <button @click="unmountGuard">unmountGuard</button>
+  <div id="authing-guard-container"></div>
+</template>
+
+<script setup>
 import { onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
 
@@ -380,9 +391,10 @@ const unmountGuard = () => guard.unmount()
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
   guard.start('#authing-guard-container').then(userInfo => {
-    console.log(userInfo)
+    console.log("userInfo: ", userInfo)
   })
 })
+</script>
 ```
 :::
 
@@ -405,7 +417,7 @@ export class LoginComponent {
   ngOnInit () {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
     this.guard.client.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log("userInfo: ", userInfo)
     })
   }
 }
@@ -429,11 +441,8 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="AUTHING_APP_ID",
-      config={{
-        mode: GuardMode.Modal
-      }},
-
+      appId="AUTHING_APP_ID"
+      mode={{GuardMode.Modal}}
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host="https://my-authing-app.example.com"
     >
@@ -452,9 +461,7 @@ import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
-  config: {
-    mode: 'modal'
-  }
+  mode: 'modal',
 })
 ```
 :::
@@ -462,7 +469,8 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 ``` javascript
 import { createApp } from 'vue'
-import { createGuard } from '@authing/guard-vue3'
+import App from './App.vue'
+import { createGuard, GuardMode } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
 const app = createApp(App)
@@ -470,9 +478,7 @@ const app = createApp(App)
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
-    config: {
-      mode: 'modal'
-    },
+    mode: GuardMode.Modal,
     // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
     // host: 'https://my-authing-app.example.com'
   })
@@ -500,9 +506,7 @@ import { GuardModule } from '@authing/guard-angular'
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
-      config: {
-        mode: 'modal'
-      },
+      mode: 'modal',
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host: 'https://my-authing-app.example.com'
     })
@@ -532,7 +536,7 @@ export function Login () {
   useEffect(() => {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
     guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log('userInfo: ', userInfo)
     })
   }, [])
 
@@ -546,12 +550,16 @@ export function Login () {
 :::
 
 ::: tab Vue2
-``` javascript
+``` vue
+<template>
+  <div id="authing-guard-container"></div>
+</template>
+<script>
 export default {
   mounted () {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
     this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log('userInfo: ', userInfo)
     })
   },
   methods: {
@@ -565,11 +573,21 @@ export default {
     }
   }
 }
+</script>
 ```
 :::
 
 ::: tab Vue3
-``` javascript
+``` vue
+<template>
+  <div class="embed-container">
+    <button @click="showGuard">Show Guard</button>
+    <button @click="hideGuard">Hide Guard</button>
+    <div id="authing-guard-container"></div>
+  </div>
+</template>
+
+<script setup>
 import { onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
 
@@ -583,10 +601,12 @@ const hideGuard = () => guard.hide()
 
 onMounted(() => {
   // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-  this.$guard.start('#authing-guard-container').then(userInfo => {
-    console.log(userInfo)
+  guard.start('#authing-guard-container').then(userInfo => {
+    console.log('userInfo: ', userInfo)
   })
 })
+</script>
+
 ```
 :::
 
@@ -675,6 +695,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 ``` javascript
 import { createApp } from 'vue'
+import App from './App.vue'
 import { createGuard } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
@@ -751,9 +772,10 @@ export default function Logout() {
 ``` javascript
 export default {
   methods: {
+    // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
     logout () {
       this.$guard.logout()
-    }
+    },
   }
 }
 ```
@@ -765,6 +787,7 @@ import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
+// 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
 const logout = () => guard.logout()
 ```
 :::
@@ -852,12 +875,13 @@ Vue.use(GuardPlugin, {
 ```
 
 ``` javascript
-// logout.js
+// Logout.vue
 export default {
   methods: {
+    // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
     logout () {
       this.$guard.logout()
-    }
+    },
   }
 }
 ```
@@ -885,6 +909,7 @@ import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
+// 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
 const logout = () => guard.logout()
 ```
 :::
@@ -1056,12 +1081,35 @@ export default function App() {
 
 ::: tab Vue2
 ``` javascript
+import Vue from 'vue'
+import { GuardPlugin } from '@authing/guard-vue2'
+import '@authing/guard-vue2/dist/esm/guard.min.css'
 
+Vue.use(GuardPlugin, {
+  appId: 'AUTHING_APP_ID',
+  config: {
+    socialConnections: ['github']
+  },
+})
 ```
 :::
 
 ::: tab Vue3
 ``` typescript
+import { createApp } from 'vue'
+import { createGuard, SocialConnectionProvider } from '@authing/guard-vue3'
+import '@authing/guard-vue3/dist/esm/guard.min.css'
+
+const app = createApp(App)
+
+app.use(
+  createGuard({
+    appId: 'AUTHING_APP_ID',
+    config: {
+      socialConnections: [SocialConnectionProvider.GITHUB]
+    }
+  })
+)
 
 ```
 :::
@@ -1109,9 +1157,10 @@ export default function GetUserInfo() {
 // GetUserInfo.vue
 export default {
   methods: {
-    getUserInfo () {
-      this.$guard.trackSession()
-    }
+    async getUserInfo () {
+      const userInfo = await this.$guard.trackSession()
+      console.log('userInfo: ', userInfo)
+    },
   }
 }
 ```
@@ -1123,7 +1172,10 @@ import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
-const getUserInfo = () => guard.trackSession()
+const getUserInfo = async () => {
+  const userInfo = await guard.trackSession()
+  console.log('userInfo: ', userInfo)
+}
 ```
 :::
 
@@ -1201,28 +1253,87 @@ export default function ChangeLanguage() {
 :::
 
 ::: tab Vue2
-``` javascript
-// ChangeLang.vue
+``` vue
+<!-- ChangeLang.vue -->
+<template>
+  <div class="embed-container">
+    <select v-model="langCache" @change="changeLang">
+      <option value="zh-CN">zh-CN</option>
+      <option value="zh-TW">zh-TW</option>
+      <option value="en-US">en-US</option>
+      <option value="ja-JP">ja-JP</option>
+    </select>
+    <div id="authing-guard-container"></div>
+  </div>
+</template>
+
+<script>
 export default {
+  data () {
+    return {
+      langCache: ''
+    }
+  },
+  mounted () {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start('#authing-guard-container').then(userInfo => {
+      console.log('userInfo: ', userInfo)
+    })
+
+    this.$guard.on('load', ()=>{
+      // 缓存中获取 Guard 默认语言类型
+      this.langCache = localStorage.getItem('_guard_i18nextLng')
+    })
+  },
   methods: {
-    // ......... 需要从 example 代码中复制一部分过来
-    changeLang (lang) {
-      this.$guard.changeLang()
+    changeLang (event) {
+      this.$guard.changeLang(event.target.value)
+      this.langCache = event.target.value
     }
   }
 }
+</script>
 ```
 :::
 
 ::: tab Vue3
-``` typescript
-// ChangeLang.vue
+``` vue
+<!-- ChangeLang.vue -->
+<template>
+  <div class="embed-container">
+    <select v-model="langCache" @change="changeLang">
+      <option value="zh-CN">zh-CN</option>
+      <option value="zh-TW">zh-TW</option>
+      <option value="en-US">en-US</option>
+      <option value="ja-JP">ja-JP</option>
+    </select>
+    <div id="authing-guard-container"></div>
+  </div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
 
+const langCache = ref('')
 const guard = useGuard()
 
-// ......... 需要从 example 代码中复制一部分过来
-const changeLang = () => guard.changeLang(lang)
+onMounted(() => {
+  // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+  guard.start('#authing-guard-container').then(userInfo => {
+    console.log('userInfo: ', userInfo)
+  })
+
+  guard.on('load', ()=>{
+    // 缓存中获取 Guard 默认语言类型
+    langCache.value = localStorage.getItem('_guard_i18nextLng')
+  })
+})
+
+const changeLang = (event) => {
+  guard.changeLang(event.target.value)
+  langCache.value = event.target.value
+}
+</script>
 ```
 :::
 
@@ -1287,27 +1398,59 @@ export default function ChangeContentCSS() {
 :::
 
 ::: tab Vue2
-``` javascript
-// ChangeContentCSS.vue
+``` vue
+<!-- ChangeContentCSS.vue -->
+<template>
+  <div class="embed-container">
+    <button class="authing-button" @click="changeContentCSS">Change Content CSS</button>
+    <div id="authing-guard-container"></div>
+  </div>
+</template>
+
+<script>
 export default {
+  mounted () {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start('#authing-guard-container').then(userInfo => {
+      console.log(userInfo)
+    })
+  },
   methods: {
     changeContentCSS () {
-      this.$guard.changeContentCSS('body {background: red}')
-    }
+      this.$guard.changeContentCSS('body {background: blue}')
+    },
   }
 }
+</script>
 ```
 :::
 
 ::: tab Vue3
-``` typescript
-// ChangeContentCSS.vue
+``` vue
+<!-- ChangeContentCSS.vue -->
+<template>
+  <div class="embed-container">
+    <button @click="changeContentCSS">Change Content CSS</button>
+    <div id="authing-guard-container"></div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
-// ......... 需要从 example 代码中复制一部分过来
-const changeContentCSS = () => guard.changeContentCSS('body {background: red}')
+onMounted(() => {
+  // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+  guard.start('#authing-guard-container').then(userInfo => {
+    console.log("userInfo: ", userInfo)
+  })
+})
+
+const changeContentCSS = () => guard.changeContentCSS('body {background: blue}')
+
+</script>
 ```
 :::
 
@@ -1369,17 +1512,60 @@ export default function Personal () {
 :::
 
 ::: tab Vue2
-``` javascript
-// Personal.vue
+``` vue
+<!-- Personal.vue -->
+<template>
+  <div class="personal-container">
+    <button class="authing-button" @click="updateProfile">Update Profile</button>
+  </div>
+</template>
+
+<script>
 export default {
-  
+  methods: {
+    updateProfile() {
+      this.$guard.getAuthClient().then(authenticationClient => {
+        // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+        // 比如更新用户昵称
+        authenticationClient.updateProfile({
+          nickname: 'Nick'
+        })
+        // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+      })
+    }
+  }
 }
+</script>
+
 ```
 :::
 
 ::: tab Vue3
-``` typescript
-// Personal.vue
+``` vue
+<!-- Personal.vue -->
+<template>
+  <div class="personal-container">
+    <button @click="updateProfile">Update Profile</button>
+  </div>
+</template>
+
+<script setup>
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+const updateProfile = () => {
+  guard.getAuthClient().then(authenticationClient => {
+    // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+    // 比如更新用户昵称
+    authenticationClient.updateProfile({
+      nickname: 'Nick'
+    })
+    // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+  })
+}
+
+</script>
 ```
 :::
 
@@ -1425,16 +1611,18 @@ function App() {
 ``` javascript
 // main.js
 import Vue from 'vue'
+import App from './App.vue'
 import { GuardPlugin } from '@authing/guard-vue2'
 import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
-
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-
-  scope: 'openid'
+  scope: 'openid',
+  config: {
+    title: 'Authing Guard Web 应用'
+  }
 })
 ```
 :::
@@ -1443,20 +1631,21 @@ Vue.use(GuardPlugin, {
 ``` typescript
 // main.ts
 import { createApp } from 'vue'
+import App from './App.vue'
 import { createGuard } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
-import App from './App.vue'
 
 const app = createApp(App)
 
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
-
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com',
-
-    scope: 'openid'
+    scope: 'openid',
+    config: {
+      title: 'Authing Guard Web 应用'
+    }
   })
 )
 ```
