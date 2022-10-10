@@ -2,8 +2,8 @@
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getAccessTokenByClientCredentials('email openid profile phone', { accessKey: '编程访问账号 AK', secretKey: '编程访问账号 SK' });

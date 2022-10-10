@@ -8,7 +8,7 @@ To implement WeChat PC scan code login, you only need to implement the following
 import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 

@@ -128,7 +128,7 @@ import { Authing } from '@authing/web';
 
 const authing = new Authing({
   domain: '单点登录地址',
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   redirectUri: '登录回调 URL',
   userPoolId: '用户池 ID'
 });
@@ -140,7 +140,7 @@ const authing = new Authing({
 <script>
   const authing = new AuthingFactory.Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -194,7 +194,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -389,7 +389,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -577,7 +577,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -733,7 +733,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -914,7 +914,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -1107,7 +1107,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -1159,7 +1159,7 @@ import { Authing } from '@authing/web';
 
 const authing = new Authing({
   domain: '单点登录地址',
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   redirectUri: '登录回调 URL',
 
   // 应用侧向 Authing 请求的权限，以空格分隔，默认为 'openid profile'
@@ -1216,7 +1216,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -1425,7 +1425,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -1494,7 +1494,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -1752,7 +1752,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });
@@ -1825,7 +1825,7 @@ function App() {
   const authing = useMemo(() => {
     return new Authing({
       domain: '单点登录地址',
-      appId: '应用 ID',
+      appId: 'AUTHING_APP_ID',
       redirectUri: '登录回调 URL',
       userPoolId: '用户池 ID'
     });
@@ -2018,7 +2018,7 @@ export class AppComponent {
 
   private authing = new Authing({
     domain: '单点登录地址',
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     redirectUri: '登录回调 URL',
     userPoolId: '用户池 ID'
   });

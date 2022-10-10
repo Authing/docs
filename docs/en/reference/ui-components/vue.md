@@ -167,7 +167,7 @@ export default {
 import { initAuthClient } from "@authing/vue-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 
@@ -233,7 +233,7 @@ The Guard components are packaged based on the [authing JavaScript SDK](../sdk-f
 import { initAuthClient } from "@authing/vue-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

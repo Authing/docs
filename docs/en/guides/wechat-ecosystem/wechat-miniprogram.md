@@ -64,7 +64,7 @@ Check the npm module option:
 const { AuthenticationClient } = require("authing-wxapp-sdk");
 
 const authing = new AuthenticationClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

@@ -452,7 +452,7 @@ AclManagementClient().allow(userId, action, resource, namespace);
 
 - `userId` \<string\> 用户 ID
 - `action` \<string\> 操作名称，推荐使用 \<resourceType\>:\<actionName\> 的格式，如 `books:edit`, `books:list`
-- `resource` \<string\> 资源名称, 必须为 \<resourceType\>:\<resourceId\> 格式或者为 _, 如 `_`,`books:123`,`books:\*`
+- `resource` \<string\> 资源名称, 必须为 \<resourceType\>:\<resourceId\> 的格式， 如 `books:123`,`books:*`
 - `namespace` \<string\> 权限分组的 code，详情请见[使用权限分组管理权限资源](/guides/access-control/resource-group.md)；
 
 #### 示例
@@ -545,7 +545,7 @@ AclManagementClient().isAllowed(userId, action, resource, namesapce);
 #### 示例
 
 ```javascript
-managementClient.acl.isAllowed("USERID", "books:*", "books:edit", {
+managementClient.acl.isAllowed("60b4a136d9xxxxcc3d87e55a", "books:*", "books:edit", {
   namespace: "default"
 });
 ```
@@ -578,7 +578,7 @@ UsersManagementClient().listAuthorizedResources(userId, namespace, options);
 ```javascript
 import { ResourceType } from "authing-js-sdk";
 
-managementClient.users.listAuthorizedResources("USERID", "NAMESPACE_CODE", {
+managementClient.users.listAuthorizedResources("60b4a136d9xxxxcc3d87e55a", "NAMESPACE_CODE", {
   resourceType: ResourceType.MENU
 });
 ```

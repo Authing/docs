@@ -110,7 +110,7 @@ public static void registerByPhoneCode(String phoneCountryCode, String phone, St
 **示例**
 
 ```java
-AuthClient.registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
+AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -198,7 +198,7 @@ public static void loginByPhoneCode(String phoneCountryCode, String phone, Strin
 **示例**
 
 ```java
-AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
+AuthClient.loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -272,7 +272,7 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 **示例**
 
 ```java
-AuthClient.sendSms("+86", "13012345678", (code, message, data)->{});
+AuthClient.sendSms("+86", "188xxxx8888", (code, message, data)->{});
 ```
 
 **错误码**
@@ -456,7 +456,7 @@ public static void resetPasswordByPhoneCode(String phoneCountryCode, String phon
 **示例**
 
 ```java
-AuthClient.resetPasswordByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -610,7 +610,7 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 **示例**
 
 ```java
-AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "1882025101", "1234",(code, message, data)->{
     if (code == 200) {
     }
 });
@@ -639,7 +639,7 @@ public static void bindPhone(String phoneCountryCode, String phone, String code,
 **示例**
 
 ```java
-AuthClient.bindPhone("13012345678", "1234", (code, message, data)->{
+AuthClient.bindPhone("188xxxx8888", "1234", (code, message, data)->{
     if (code == 200) {
     }
 });

@@ -298,7 +298,7 @@ UsersManagementClient.hasRole(userId, roleCode, namespace)
 #### 示例
 
 ```javascript
-managementClient.users.hasRole("USERID", "roleCode", "default");
+managementClient.users.hasRole("60b4a136d9xxxxcc3d87e55a", "roleCode", "default");
 ```
 
 #### 示例数据

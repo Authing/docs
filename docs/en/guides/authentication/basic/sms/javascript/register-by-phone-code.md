@@ -3,14 +3,14 @@
 首先调用发送短信验证码接口发送短信验证码，然后 Use `registerByPhoneCode` 方法：
 
 ```javascript
-authenticationClient.registerByPhoneCode("176xxxx6754", "1234");
+authenticationClient.registerByPhoneCode("188xxxx8888", "1234");
 ```
 
 或者：
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd",
   {

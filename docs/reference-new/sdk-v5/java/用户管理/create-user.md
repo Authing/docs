@@ -18,7 +18,7 @@
 | status | string | 否 | Activated | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived` | `Activated` |
 | email | string | 否 | - | 邮箱。  | `test@example.com` |
 | passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。 枚举值：`sm2`,`rsa`,`none` | `none` |
-| phone | string | 否 | - | 手机号。  | `176xxxx6754` |
+| phone | string | 否 | - | 手机号。  | `188xxxx8888` |
 | phoneCountryCode | string | 否 | - | 手机区号。  | `+86` |
 | username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
 | name | string | 否 | - | 用户真实名称，不具备唯一性。  | `张三` |
@@ -63,7 +63,7 @@ class ManagementClientTest {
         request.setStatus(CreateUserReqDto.status.ACTIVATED);
         request.setEmail("test@example.com");
         request.setPasswordEncryptType(CreateUserReqDto.passwordEncryptType.NONE);
-        request.setPhone("176xxxx6754");
+        request.setPhone("188xxxx8888");
         request.setPhoneCountryCode("+86");
         request.setUsername("bob");
         request.setName("张三");
@@ -141,7 +141,7 @@ class ManagementClientTest {
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
     "email": "test@example.com",
-    "phone": "176xxxx6754",
+    "phone": "188xxxx8888",
     "phoneCountryCode": "+86",
     "username": "bob",
     "name": "张三",
@@ -223,7 +223,7 @@ class ManagementClientTest {
 | updatedAt | string | 是 | 账号更新时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
-| phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
+| phone | string | 否 | 手机号。 示例值： `188xxxx8888`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
 | username | string | 否 | 用户名，用户池内唯一。 示例值： `bob`  |
 | name | string | 否 | 用户真实名称，不具备唯一性。 示例值： `张三`  |

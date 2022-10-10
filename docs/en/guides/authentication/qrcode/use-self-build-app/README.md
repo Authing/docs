@@ -17,7 +17,7 @@ On the web side, we recommend using the [JavaScript SDK](/en/reference/sdk-for-n
 ```js
 import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 
@@ -127,7 +127,7 @@ At this time, the entire login process is complete, and developers can use the t
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 const user = await authenticationClient.qrcode.exchangeUserInfo("TICKET");

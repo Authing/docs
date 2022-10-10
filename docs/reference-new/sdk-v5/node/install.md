@@ -80,7 +80,7 @@ const managementClient = new ManagementClient({
 import { AuthenticationClient } from "authing-node-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appSecret: "YOUR_APP_SECRET",
   host: "YOUR_USERPOOL_HOST",
 });

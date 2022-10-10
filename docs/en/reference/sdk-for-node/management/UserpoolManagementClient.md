@@ -85,7 +85,7 @@ const userpool = await managementClient.userpool.update({
 
 UserPoolManagementClient().listEnv()
 
-> Get the user pool environment variables list. The environment variables configured by the user pool can be used in the pipeline scenario. Please check: `https://docs.authing.co/extensibility/pipeline/env.html` for details.
+> Get the user pool environment variables list. The environment variables configured by the user pool can be used in the pipeline scenario. Please check: `https://docs.authing.cn/v2/guides/pipeline/env.html` for details.
 
 #### Parameter
 
@@ -116,7 +116,7 @@ UserPoolManagementClient().addEnv(key, value)
 const envList = await managementClient.userpool.addEnv(
   "LARK_WEBHOOK",
   "xxxxxxx"
-); // the webhppk address of adding a lark bot, you can use it later in pipeline function. (See more details in: https://docs.authing.co/extensibility/pipeline/usage.html)
+); // the webhppk address of adding a lark bot, you can use it later in pipeline function. (See more details in: https://docs.authing.cn/v2/guides/pipeline/)
 ```
 
 #### Return value

@@ -243,7 +243,7 @@ Guard 组件本身基于 [Authing JavaScript SDK](../Standard-web-application/sd
 import { initAuthClient } from "@authing/react-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

@@ -35,7 +35,7 @@
 | username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
 | passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。 枚举值：`sm2`,`rsa`,`none` | `none` |
 | email | string | 否 | - | 邮箱。  | `test@example.com` |
-| phone | string | 否 | - | 手机号。  | `176xxxx6754` |
+| phone | string | 否 | - | 手机号。  | `188xxxx8888` |
 | password | string | 否 | - | 密码。可选加密方式进行加密，通过 passwordEncryptType 参数进行加密方法选择，默认为未加密。  | `oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段。  | `{"school":"北京大学","age":22}` |
 | options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数。  |  |
@@ -86,7 +86,7 @@ func main() {
           Username: "bob",
           PasswordEncryptType: UpdateUserReqDto.passwordEncryptType.NONE,
           Email: "test@example.com",
-          Phone: "176xxxx6754",
+          Phone: "188xxxx8888",
           Password: "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=",
           CustomData: dto.UpdateUserReqDto {    school="北京大学",    age=22,},
         Options: dto.UpdateUserOptionsDto {
@@ -134,7 +134,7 @@ func main() {
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
     "email": "test@example.com",
-    "phone": "176xxxx6754",
+    "phone": "188xxxx8888",
     "phoneCountryCode": "+86",
     "username": "bob",
     "name": "张三",
@@ -206,7 +206,7 @@ func main() {
 | updatedAt | string | 是 | 账号更新时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
-| phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
+| phone | string | 否 | 手机号。 示例值： `188xxxx8888`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
 | username | string | 否 | 用户名，用户池内唯一。 示例值： `bob`  |
 | name | string | 否 | 用户真实名称，不具备唯一性。 示例值： `张三`  |

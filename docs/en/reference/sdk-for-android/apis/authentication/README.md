@@ -109,7 +109,7 @@ public static void registerByPhoneCode(String phoneCountryCode, String phone, St
 **Example**
 
 ```java
-AuthClient.registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
+AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -196,7 +196,7 @@ public static void loginByPhoneCode(String phoneCountryCode, String phone, Strin
 **Example**
 
 ```java
-AuthClient.loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
+AuthClient.loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -270,7 +270,7 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 **Example**
 
 ```java
-AuthClient.sendSms("13012345678", "+86", (code, message, data)->{});
+AuthClient.sendSms("188xxxx8888", "+86", (code, message, data)->{});
 ```
 
 **Error Code**
@@ -440,7 +440,7 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 **Example**
 
 ```java
-AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByPhoneCode("188xxxx8888", "1234", "strong", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -594,7 +594,7 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 **Example**
 
 ```java
-AuthClient.updatePhone("+86", "13012345678", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "1882025101", "1234",(code, message, data)->{
     if (code == 200) {
     }
 });
@@ -623,7 +623,7 @@ public static void bindPhone(String phoneCountryCode, String phone, String code,
 **Example**
 
 ```java
-AuthClient.bindPhone("+86", "13012345678", "1234", (code, message, data)->{
+AuthClient.bindPhone("+86", "188xxxx8888", "1234", (code, message, data)->{
     if (code == 200) {
     }
 });

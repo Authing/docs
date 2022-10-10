@@ -17,7 +17,7 @@
 ```js
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 
@@ -129,7 +129,7 @@ Web 端生成的二维码中包含的原始信息为一串字符串，转换为 
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 const user = await authenticationClient.qrcode.exchangeUserInfo('TICKET')

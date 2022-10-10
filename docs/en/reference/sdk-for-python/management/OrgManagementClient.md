@@ -808,8 +808,8 @@ def import_by_json(self, json_str)
 ```python
 json ="""
                 {
-                    "name": "北京非凡科技有限公司",
-                    "code": "feifan",
+                    "name": "北京某某公司有限公司",
+                    "code": "example",
                     "children": [{
 
                     "code": "operation",
@@ -900,7 +900,7 @@ management.org.add_members("6142e833716601219e93d813",["6141876341abedef979c3740
         "externalId": null,
         "isDeleted": false,
         "postalCode": null,
-        "email": "fptvmzqyxn@authing.cn",
+        "email": "test@example.com",
         "username": null,
         "openid": null,
         "company": null,
@@ -1003,7 +1003,7 @@ management.org.list_members(node_id='6142e833716601219e93d813',page=2)
         "externalId": null,
         "isDeleted": false,
         "postalCode": null,
-        "email": "fptvmzqyxn@authing.cn",
+        "email": "test@example.com",
         "username": null,
         "openid": null,
         "company": null,

@@ -101,7 +101,7 @@ import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   // Authing App ID
-  appId: '',
+  appId: 'AUTHING_APP_ID',
   // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
   host: ',
   // 用户池 ID
@@ -125,7 +125,7 @@ import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   // Authing App ID
-  appId: '',
+  appId: 'AUTHING_APP_ID',
   // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
   host: ',
   // 用户池 ID
@@ -149,7 +149,7 @@ import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 
 const authing = new Authing({
   // Authing App ID
-  appId: '',
+  appId: 'AUTHING_APP_ID',
   // 认证地址，Authing 控制台 -> 认证配置 -> 认证地址
   host: ',
   // 用户池 ID
@@ -532,7 +532,7 @@ Page({
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
     const res = await authing.sendSms({
-      phoneNumber: '13100000000',
+      phoneNumber: '188xxxx8888',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
@@ -556,7 +556,7 @@ export default class Index extends Component<PropsWithChildren> {
   async sendSms () {
     // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
     const res = await authing.sendSms({
-      phoneNumber: '13100000000',
+      phoneNumber: '188xxxx8888',
       phoneCountryCode: '+86',
       channel: 'CHANNEL_LOGIN'
     })
@@ -576,7 +576,7 @@ export default {
     async sendSms () {
       // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
       const res = await authing.sendSms({
-        phoneNumber: '13100000000',
+        phoneNumber: '188xxxx8888',
         phoneCountryCode: '+86',
         channel: 'CHANNEL_LOGIN'
       })
@@ -629,7 +629,7 @@ Page({
       passCodePayload: {
         // 手机收到的短信验证码
         passCode: '5671',
-        phone: '13100000000',
+        phone: '188xxxx8888',
         phoneCountryCode: '+86'
       },
       options: {
@@ -658,7 +658,7 @@ export default class Index extends Component<PropsWithChildren> {
       passCodePayload: {
         // 手机收到的短信验证码
         passCode: '9973',
-        phone: '13100000000',
+        phone: '188xxxx8888',
         phoneCountryCode: '+86'
       }
     })
@@ -678,7 +678,7 @@ export default {
         passCodePayload: {
           // 手机收到的短信验证码
           passCode: '9973',
-          phone: '13100000000',
+          phone: '188xxxx8888',
           phoneCountryCode: '+86'
         }
       })

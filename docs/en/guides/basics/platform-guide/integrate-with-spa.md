@@ -63,7 +63,7 @@ Now you can log in, and you need to implement a method for users to log out, whi
 import { initAuthClient } from "@authing/react-ui-components";
 // initialize AuthenticationClient in project entry
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 
@@ -88,7 +88,7 @@ After the user logs in, you may also need to obtain the user information of the 
 import { initAuthClient } from "@authing/react-ui-components";
 // initialize AuthenticationClient in project entry
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

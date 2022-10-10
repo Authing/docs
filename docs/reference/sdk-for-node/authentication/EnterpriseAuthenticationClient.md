@@ -9,7 +9,7 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 await authenticationClient.enterprise.authorize('oidc', 'xxxx', {
@@ -44,7 +44,7 @@ EnterpriseAuthenticationClient().authorize(provider, identifier, options)
 // 使用 SAML 服务提供商登录
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -65,7 +65,7 @@ await authenticationClient.enterprise.authorize('saml', 'xxxx', {
 // 使用新建浏览器 tab 的形式打开企业身份源登录页面
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

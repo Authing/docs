@@ -18,7 +18,7 @@ public static void mfaCheck(String phone, String email, @NotNull AuthCallback<JS
 **example**
 
 ```java
-AuthClient.mfaCheck("13012345678", null, (code, message, ok) -> {
+AuthClient.mfaCheck("188xxxx8888", null, (code, message, ok) -> {
     if (code == 200) {
         if (ok) {
             
@@ -53,7 +53,7 @@ public static void mfaVerifyByPhone(String phone, String code, @NotNull AuthCall
 **example**
 
 ```java
-AuthClient.mfaVerifyByPhone("13012345678", "1234", (code, message, userInfo)->{
+AuthClient.mfaVerifyByPhone("188xxxx8888", "1234", (code, message, userInfo)->{
 });
 ```
 

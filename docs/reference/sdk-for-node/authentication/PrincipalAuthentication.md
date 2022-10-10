@@ -16,7 +16,7 @@ tags:
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 })
 
@@ -35,7 +35,7 @@ PrincipalAuthentication().detail()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 })
 const authenticators = await authenticationClient.principal.detail()
@@ -92,7 +92,7 @@ PrincipalAuthentication().authenticate(principalInfo)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 })
 await authenticationClient.principal.authenticate({

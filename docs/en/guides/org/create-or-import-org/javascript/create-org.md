@@ -4,8 +4,8 @@ Use `OrgManagementClient` 的 `create` 方法创建组织机构：
 
 ```javascript
 const org = await managementClient.org.create(
-  "北京非凡科技",
-  "北京非凡科技有限公司",
-  "feifan"
+  "北京某某公司",
+  "北京某某科技有限公司",
+  "example"
 );
 ```
