@@ -524,7 +524,7 @@ export class AppModule { }
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ``` tsx
-export function Login () {
+export default function Login () {
   const guard = useGuard()
 
   // 展示 Guard 弹窗
@@ -630,7 +630,7 @@ export class LoginComponent {
   ngOnInit () {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
     this.guard.client.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log('userInfo: ', userInfo)
     })
   }
 
@@ -669,7 +669,7 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="AUTHING_APP_ID",
+      appId="AUTHING_APP_ID"
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
@@ -755,13 +755,13 @@ import { useGuard } from '@authing/guard-react'
 
 export default function Logout() {
   const guard = useGuard()
+
+  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
   const onLogout = () => guard.logout()
 
   return (
     <div>
-      <div>
-        <button onClick={onLogout}>登出</button>
-      </div>
+      <button onClick={onLogout}>登出</button>
     </div>
   )
 }
@@ -832,7 +832,7 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="AUTHING_APP_ID",
+      appId="AUTHING_APP_ID"
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
@@ -852,9 +852,7 @@ export default function Logout() {
 
   return (
     <div>
-      <div>
-        <button onClick={onLogout}>登出</button>
-      </div>
+      <button onClick={onLogout}>登出</button>
     </div>
   )
 }
@@ -977,15 +975,13 @@ export class LoginComponent {
 import React from 'react'
 import { useGuard } from '@authing/guard-react'
 
-export default function Logout() {
+export default function Register() {
   const guard = useGuard()
   const startRegister = () => guard.startRegister()
 
   return (
     <div>
-      <div>
-        <button onClick={startRegister}>startRegister</button>
-      </div>
+      <button onClick={startRegister}>startRegister</button>
     </div>
   )
 }
@@ -1057,7 +1053,7 @@ export class LoginComponent {
 ``` tsx
 import React from 'react'
 
-import { GuardProvider } from '@authing/guard-react'
+import { GuardProvider, SocialConnectionProvider } from '@authing/guard-react'
 
 import '@authing/guard-react/dist/esm/guard.min.css'
 
@@ -1067,9 +1063,9 @@ import RouterComponent from './router'
 export default function App() {
   return (
     <GuardProvider
-      appId="6322ef4c06b1a01036695b33"
+      appId="AUTHING_APP_ID"
       config={{
-        socialConnections: ['github']
+        socialConnections: [SocialConnectionProvider.GITHUB]
       }}
     >
       <RouterComponent></RouterComponent>
@@ -1116,7 +1112,31 @@ app.use(
 
 ::: tab Angular
 ``` typescript
+// app.module.ts
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
 
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+
+import { GuardModule, SocialConnectionProvider } from '@authing/guard-angular'
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GuardModule.forRoot({
+      appId: 'AUTHING_APP_ID',
+      config: {
+        socialConnections: [SocialConnectionProvider.GITHUB]
+      }
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 ```
 :::
 ::::
@@ -1138,14 +1158,12 @@ export default function GetUserInfo() {
   const getUserInfo = async () => {
     // 获取用户信息
     const userInfo = await guard.trackSession()
-    console.log(userInfo)
+    console.log("userInfo: ",userInfo)
   }
 
   return (
     <div>
-      <div>
-        <button onClick={getUserInfo}>Get User Info</button>
-      </div>
+      <button onClick={getUserInfo}>Get User Info</button>
     </div>
   )
 }
@@ -1220,26 +1238,36 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 Authing 
 ::: tab React
 ``` tsx
 // ChangeLang.tsx
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { useGuard, Lang } from '@authing/guard-react'
+import { useGuard } from '@authing/guard-react'
 
 export default function ChangeLanguage() {
+  const [langCache, setLangCache] = useState('')
+
   const guard = useGuard()
 
   useEffect(() => {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
     guard.start('#authing-guard-container').then(userInfo => {
       console.log('userInfo: ', userInfo)
     })
+
+    guard.on('load', ()=>{
+      // 缓存中获取 Guard 默认语言类型
+      const langCache = localStorage.getItem('_guard_i18nextLng') || 'zh-CN'
+      setLangCache(langCache)
+    })
   }, [])
 
-  const changeLang = (e) => {
-    guard.changeLang(e.target.value)
+  const changeLang = (event: any) => {
+    guard.changeLang(event.target.value)
+    setLangCache(event.target.value)
   }
 
   return (
     <div>
-      <select id="lang" onChange={changeLang}>
+      <select value={langCache} onChange={changeLang}>
           <option value="zh-CN">zh-CN</option>
           <option value="en-US">en-US</option>
           <option value="zh-TW">zh-TW</option>
@@ -1353,11 +1381,25 @@ export class GetUserInfoComponent {
     private guard: GuardService
   ) {}
 
-  changeLang () {
-    // ......... 需要从 example 代码中复制一部分过来
-    this.guard.client.changeLang(lang)
+  langCache = ''
+
+  changeLang(event: any) {
+    this.langCache = event?.target?.value
+    this.guard.client.changeLang(event?.target?.value)
   }
 }
+```
+``` html
+<!-- ChangeLang.component.html -->
+<div class="change-lang-container">
+  <select ng-model="langCache" (change)="changeLang($event)">
+    <option ngValue="zh-CN">zh-CN</option>
+    <option ngValue="zh-TW">zh-TW</option>
+    <option ngValue="en-US">en-US</option>
+    <option ngValue="ja-JP">ja-JP</option>
+  </select>
+  <div id="authing-guard-container"></div>
+</div>
 ```
 :::
 ::::
@@ -1470,11 +1512,22 @@ export class GetUserInfoComponent {
     private guard: GuardService
   ) {}
 
-  changeLang () {
-    // ......... 需要从 example 代码中复制一部分过来
-    this.guard.client.ChangeContentCSS('body {background: red}')
+  ngOnInit() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.guard.client.start('#authing-guard-container')
+  }
+
+  changeContentCSS() {
+    this.guard.client.changeContentCSS('body {background: red}')
   }
 }
+```
+``` html
+<!-- ChangeContentCSS.component.html -->
+<div class="change-content-css-container">
+  <button (click)="changeContentCSS()">Change Content CSS</button>
+  <div id="authing-guard-container"></div>
+</div>
 ```
 :::
 ::::
@@ -1572,6 +1625,28 @@ const updateProfile = () => {
 ::: tab Angular
 ``` typescript
 // personal.component.ts
+import { Component } from '@angular/core'
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'personal-container',
+  templateUrl: './personal.component.html',
+  styleUrls: ['./personal.component.css']
+})
+export class PersonalComponent {
+  constructor(private guard: GuardService) {}
+
+  updateProfile() {
+    this.guard.client.getAuthClient().then(authenticationClient => {
+      // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+      // 比如更新用户昵称
+      authenticationClient.updateProfile({
+        nickname: 'Nick'
+      })
+      // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+    })
+  }
+}
 ```
 :::
 ::::
@@ -1593,12 +1668,13 @@ import RouterComponent from './router'
 function App() {
   return (
     <GuardProvider
-      appId="AUTHING_APP_ID",
-      
+      appId="AUTHING_APP_ID"
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host="https://my-authing-app.example.com",
-
       scope="openid"
+      config={{
+        title: 'Authing Guard Web 应用'
+      }}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -1683,11 +1759,12 @@ import { GuardModule } from '@authing/guard-angular'
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
-
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com',
-
-      scope: 'openid'
+      scope: 'openid',
+      config: {
+        title: 'Authing Guard Web 应用'
+      }
     })
   ],
   providers: [],
