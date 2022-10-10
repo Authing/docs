@@ -1,4 +1,4 @@
-# 获取 {{$localeConfig.brandName}} 服务器集群 IP 地址
+# 如何获取 {{$localeConfig.brandName}} 服务器集群 IP 地址
 
 <LastUpdated/>
 
