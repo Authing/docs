@@ -2,25 +2,15 @@
 
 <LastUpdated/>
 
-集成 Google 登录需要三个主要步骤：
+## 准备工作
 
-1. 在谷歌开放平台进行配置
-
-2. 在 Authing 管理控制台进行配置
-
-3. 集成 Android SDK
+在 [Google API Console Credentials](https://console.cloud.google.com/apis/credentials) 及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅 [Google 移动端](../../../guides/connections/social/google-mobile/README.md)。
 
 <br>
 
-STEP1 和 STEP2 请参考：
+## 集成 Google 登录步骤
 
-[Google 移动端配置](../../../guides/connections/social/google-mobile/README.md)
-
-
-
-## STEP3：集成 Guard Android SDK 
-
-1. 添加依赖
+### 步骤 1：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
@@ -29,7 +19,9 @@ implementation 'com.google.android.gms:play-services-auth:20.2.0'
 
 > Guard 只是 compileOnly 依赖 gms，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-2. 在应用启动时初始化 Authing
+### 步骤 2：初始化 Guard Android SDK
+
+在应用启动的时候初始化：
 
 ```java
 // context is application or initial activity
@@ -39,7 +31,7 @@ Authing.init(context, "AUTHING_APP_ID");
 
 
 
-**通过以上 3 步即可简单快速的通过 Authing 管理控制台配置后自动拥有 Google 登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
+**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动拥有 Google 登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 
@@ -69,7 +61,7 @@ button.setOnLoginListener((ok, data) -> {
 });
 ```
 
-
+<br>
 
 * 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing Google 登录登录 API：
 
@@ -84,9 +76,9 @@ google.login(appContext, ((ok, data) -> {
 }));
 ```
 
+<br>
 
-
-- 如果想完全自己实现 Google 登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
+- 如果想完全自己实现 Google 登录，拿到授权码后，可以调用下面 API 换取用户信息：
 
 ```java
 public static void loginByGoogle(String authCode, @NotNull AuthCallback<UserInfo> callback)

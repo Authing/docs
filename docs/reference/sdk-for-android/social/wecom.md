@@ -1,26 +1,16 @@
-# 企业微信登录
+# 企业微信（代开发模式）登录
 
 <LastUpdated/>
 
-集成企业微信需要三个主要步骤：
+## 准备工作
 
-1. 在企业微信管理控制台进行配置
-
-2. 在 Authing 管理控制台进行配置
-
-3. 集成 Android SDK
+在[企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅[企业微信移动端（代开发模式）](../../../guides/connections/enterprise/wecom-agency-mobile/README.md)。
 
 <br>
 
-STEP1 和 STEP2 请参考：
+## 集成企业微信（代开发模式）登录步骤
 
-[企业微信移动端（代开发模式）配置](../../../guides/connections/enterprise/wecom-agency-mobile/README.md)
-
-
-
-## STEP 3 ：集成 Guard Android SDK 
-
-1. 设置依赖
+### 步骤 1：添加依赖
 
 - 下载[企业微信 SDK](http://dldir1.qq.com/foxmail/wwopen_docFile/sdk/lib_wwapi-2.0.12.11.aar)；
 - 将下载的 sdk  jar 文件拷贝到工程的 libs 目录下；
@@ -41,7 +31,9 @@ implementation files('libs/lib_wwapi-2.0.12.11.aar')
 }
 ```
 
-2. 在应用启动的时候初始化：
+### 步骤 2：初始化 Guard Android SDK
+
+在应用启动的时候初始化：
 
 ```java
 // context is application or initial activity
@@ -51,7 +43,7 @@ Authing.init(context, "AUTHING_APP_ID");
 
 
 
-**通过以上 3 步即可简单快速的通过 Authing 管理控制台配置后自动获取企业微信身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
+**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动获取企业微信身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 
@@ -80,7 +72,7 @@ button.setOnLoginListener((ok, data) -> {
 });
 ```
 
-
+<br>
 
 - 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录 API：
 
@@ -95,9 +87,9 @@ weCom.login(appContext, ((ok, data) -> {
 }));
 ```
 
+<br>
 
-
-- 如果想完全自己实现企业微信登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
+- 如果想完全自己实现企业微信登录，拿到授权码后，可以调用下面 API 换取用户信息：
 
 
 ```java

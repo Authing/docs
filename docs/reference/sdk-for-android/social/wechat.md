@@ -2,24 +2,16 @@
 
 <LastUpdated/>
 
-集成微信需要三个主要步骤：
-1. 在微信开放平台进行配置
+## 准备工作
 
-2. 在 Authing 管理控制台进行配置
-
-3. 集成 Android SDK
+在[微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅[微信移动端](../../../guides/connections/social/wechat-mobile/README.md)。
 
 <br>
 
-STEP1 和 STEP2 请参考：
+## 集成微信登录步骤
 
-[微信移动端配置](../../../guides/connections/social/wechat-mobile/README.md)
+### 步骤 1：添加依赖
 
-<br>
-
-## STEP 3：集成 Guard Android SDK 步骤
-
-1. 设置依赖：
 ```groovy
 implementation 'cn.authing:guard:+'
 implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
@@ -27,14 +19,19 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 
 >Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-2. 在应用启动的时候初始化 Authing：
+### 步骤 2：初始化 Guard Android SDK
+
+在应用启动的时候初始化：
+
 ```java
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
 ```
 
-3. 由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：
+### 步骤 3：创建WXEntryActivity
+
+由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：
 
 com.example.myapp
 
@@ -53,7 +50,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 }
 ```
 
-4. 在 Manifest 里面声明微信回调 Activity
+### 步骤 4：在 Manifest 里面声明微信回调 Activity
 
 ```xml
 <activity
@@ -61,7 +58,14 @@ public class WXEntryActivity extends WXCallbackActivity {
     android:exported="true" />
 ```
 
-接下来，如果使用我们提供的微信登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
+
+
+**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动获取微信身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
+
+
+
+- 接下来，如果使用我们提供的微信登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
+
 
 ```xml
 <cn.authing.guard.WechatLoginButton
@@ -87,7 +91,8 @@ button.setOnLoginListener((ok, data) -> {
 
 <br>
 
-如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
+- 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 微信登录 API：
+
 
 ```java
 Wechat wechat = new Wechat();
@@ -102,7 +107,8 @@ wechat.login(appContext, ((ok, data) -> {
 
 <br>
 
-如果想完全自己实现微信登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
+- 如果想完全自己实现微信登录，拿到授权码后，可以调用下面 API 换取用户信息：
+
 
 ```java
 public static void loginByWechat(String authCode, @NotNull AuthCallback<UserInfo> callback)
@@ -110,7 +116,7 @@ public static void loginByWechat(String authCode, @NotNull AuthCallback<UserInfo
 
 **参数**
 
-* *authCode* 微信授权码
+* *`authCode`* 微信授权码
 
 **示例**
 
