@@ -2,12 +2,14 @@
 
 <LastUpdated/>
 
-应用程序只需要 1 分钟，即可嵌入 Authing 提供的标准认证流程和界面，在需要认证的地方调用：
+通过 Guard 托管页提供的标准认证流程和界面，应用程序可以 1 分钟完成接入。 首先确保已经完成了 [开发准备工作](./quick.md)，在需要认证的地方调用：
 
 ```java
 // this is the activity context
 AuthFlow.start(this);
 ```
+
+> AuthFlow 对象为 Guard 托管页提供入口。
 
 效果如下：
 
