@@ -76,7 +76,6 @@ npm install --save @authing/guard-angular
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ``` tsx
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-react/src/App.tsx
 // App.tsx
 import React from 'react'
 import { GuardProvider } from '@authing/guard-react'
@@ -100,7 +99,6 @@ function App() {
 
 ::: tab Vue2
 ``` javascript
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/src/main.js
 // main.js
 import Vue from 'vue'
 import { GuardPlugin } from '@authing/guard-vue2'
@@ -116,11 +114,11 @@ Vue.use(GuardPlugin, {
 
 ::: tab Vue3
 ``` typescript
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/src/main.ts
 // main.ts
 import { createApp } from 'vue'
 import { createGuard } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
+// 你的业务代码根组件
 import App from './App.vue'
 
 const app = createApp(App)
@@ -151,7 +149,6 @@ app.use(
 }
 ```
 ``` typescript
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-angular/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -226,9 +223,22 @@ export class AppModule { }
 安装完成后，你可以获取 Guard 实例并将 Guard 挂载到 DOM 中：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com'
+})
+
+console.log('guard instance: ', guard)
+```
+:::
+
 ::: tab React
 ``` tsx
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-react/src/pages/Home.tsx
 import { useGuard } from '@authing/guard-react'
 
 export default function Login () {
@@ -243,7 +253,6 @@ export default function Login () {
 
 ::: tab Vue2
 ``` javascript
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/src/views/Home.vue
 export default {
   created () {
     console.log('guard instance: ', this.$guard)
@@ -254,8 +263,6 @@ export default {
 
 ::: tab Vue3
 ``` javascript
-// Composition API 
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/src/views/Home.vue
 import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
@@ -267,7 +274,6 @@ console.log('guard instance: ', guard)
 ::: tab Angular
 ``` typescript
 // Angular 组件中使用 Guard API
-// 完整的代码示例请参考：https://github.com/Authing/Guard/blob/master/examples/guard-angular/src/app/pages/home/home.component.ts
 import { Component } from '@angular/core'
 import { GuardService } from '@authing/guard-angular'
 
@@ -323,13 +329,136 @@ export class HomeComponent {
 ![guard-console-identify-verify-mode](./images/guard-console-identify-verify-mode.png)
 
 
-// ......... startWithRedirect 的说明和参数配置
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com'
+})
+
+function startWithRedirect () {
+  // 跳转到 Authing 托管页面登录
+  guard.startWithRedirect()
+}
+```
+:::
+
+::: tab React
+``` tsx
+import { useGuard } from '@authing/guard-react'
+
+export default function Jump() {
+  const guard = useGuard()
+
+  // 跳转到 Authing 托管页面登录
+  const startWithRedirect = () => guard.startWithRedirect()
+
+  return (
+    <div>
+      <div>
+        <button className='authing-button' onClick={startWithRedirect}>Start With Redirect</button>
+      </div>
+    </div>
+  )
+}
+```
+:::
+
+::: tab Vue2
+``` javascript
+export default {
+  methods: {
+    startWithRedirect () {
+      // 跳转到 Authing 托管页面登录
+      this.$guard.startWithRedirect()
+    }
+  }
+}
+```
+:::
+
+::: tab Vue3
+``` javascript
+import { useGuard } from '@authing/guard-vue3'
+
+const guard = useGuard()
+
+const startWithRedirect = () => {
+  // 跳转到 Authing 托管页面登录
+  guard.startWithRedirect()
+}
+```
+:::
+
+::: tab Angular
+``` typescript
+// Angular 组件中使用 Guard API
+import { Component } from '@angular/core'
+import { GuardService } from '@authing/guard-angular'
+
+@Component({
+  selector: 'home-container',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent {
+  constructor (
+    // 使用 Angular 依赖注入，获取 Guard 实例
+    private guard: GuardService
+  ) {}
+
+  startWithRedirect () {
+    // 跳转到 Authing 托管页面登录
+    this.guard.client.startWithRedirect()
+  }
+}
+```
+:::
+::::
+
+此外，`startWithRedirect` 函数还可以自定义传入一个对象，具体参数如下：
+
+|名称|类型|默认值|必传|描述|
+|----|----|----|----|----|
+|codeChallengeMethod|[CodeChallengeMethod](#CodeChallengeMethod)|S256|否|表示计算 code_challenge 时使用的摘要算法，plain 表示不用任何算法，S256 表示 code_challenge 是使用 SHA256 计算的。|
+|scope|String|"openid profile email phone address"|否|OIDC scope，用空格分割，默认为 "openid profile email phone address"。完整的 scope 列表请见[此文档](https://docs.authing.co/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。|
+|redirectUri|String|-|否|登录回调地址，可在 Console 控制台配置|
+|state|String|自动生成的随机数|否|随机字符串，选填，默认自动生成。|
+|nonce|String|自动生成的随机数|否|随机字符串，选填，默认自动生成。|
+|responseMode|String|query|否|响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。|
+|responseType|String|code|否|响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。|
+
+<p id="CodeChallengeMethod">CodeChallengeMethod</p>
+|名称|描述|
+|----|----|
+|S256|code_challenge 是使用 SHA256 计算|
+|plain|不使用任何算法计算|
 
 ### 内嵌模式
 
 #### 普通形态
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` html
+<div id="authing-guard-container"></div>
+```
+
+``` javascript
+// 获取 Guard 实例
+const guard = new GuardFactory.Guard(guardOptions)
+
+// 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+guard.start('#authing-guard-container').then(userInfo => {
+  console.log('userInfo: ', userInfo)
+})
+```
+:::
+
 ::: tab React
 ``` tsx
 import React, { useEffect } from 'react'
@@ -376,21 +505,19 @@ export default {
 ``` vue
 <!-- TODO 完整代码示例参考 -->
 <template>
-  <button @click="unmountGuard">unmountGuard</button>
   <div id="authing-guard-container"></div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
+import type { User } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
-const unmountGuard = () => guard.unmount()
-
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then(userInfo => {
+  guard.start('#authing-guard-container').then((userInfo: User) => {
     console.log('userInfo: ', userInfo)
   })
 })
@@ -426,14 +553,48 @@ export class LoginComponent {
 
 #### 模态框形态
 
-初始化时，你需要将初始化参数的 `mode` 设置成 `modal`：
+初始化时，你需要将初始化参数的 `mode` 设置成 `modal`。
+
+你可以通过 `guard` 实例 `start` 方法对**模态框**进行渲染，同时可以通过 `show` 和 `hide` 控制**模态框**的显示和隐藏：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` html
+<button onclick="showGuard()">Show Guard</button>
+
+<div>模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果</div>
+<div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
+
+<div id="authing-guard-container"></div>
+```
+``` javascript
+const guard = new GuardFactory.Guard({
+  appId: 'AUTHING_APP_ID',
+  mode: 'modal',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com'
+})
+
+guard.start('#authing-guard-container').then(userInfo => {
+  // 登录成功后将在 then 回调中获取到 userInfo
+  console.log('userInfo: ', userInfo)
+
+  setTimeout(() => {
+    guard.hide()
+  }, 2000)
+})
+
+function showGuard () {
+  guard.show()
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 // App.tsx
 import React from 'react'
-import { GuardProvider, GuardMode } from '@authing/guard-react'
+import { GuardProvider } from '@authing/guard-react'
 import '@authing/guard-react/dist/esm/guard.min.css'
 import RouterComponent from './router'
 
@@ -441,7 +602,7 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      mode={GuardMode.Modal}
+      mode="modal"
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host="https://my-authing-app.example.com"
     >
@@ -461,6 +622,8 @@ import '@authing/guard-vue2/dist/esm/guard.min.css'
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
   mode: 'modal',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com'
 })
 ```
 :::
@@ -469,7 +632,7 @@ Vue.use(GuardPlugin, {
 ``` javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createGuard, GuardMode } from '@authing/guard-vue3'
+import { createGuard } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
 const app = createApp(App)
@@ -477,7 +640,7 @@ const app = createApp(App)
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
-    mode: GuardMode.Modal,
+    mode: 'modal',
     // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
     // host: 'https://my-authing-app.example.com'
   })
@@ -492,7 +655,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GuardMode, GuardModule } from '@authing/guard-angular'
+import { GuardModule } from '@authing/guard-angular'
 @NgModule({
   declarations: [
     AppComponent,
@@ -502,7 +665,7 @@ import { GuardMode, GuardModule } from '@authing/guard-angular'
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
-      mode: GuardMode.Modal,
+      mode: 'modal',
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com'
     })
@@ -515,134 +678,7 @@ export class AppModule { }
 :::
 ::::
 
-你可以通过 `guard` 实例 `start` 方法对**模态框**进行渲染，同时可以通过 `show` 和 `hide` 控制**模态框**的显示和隐藏：
-
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab React
-``` tsx
-import React, { useEffect } from 'react'
-import { useGuard, User } from '@authing/guard-react'
-
-export default function Login() {
-  const guard = useGuard()
-
-  // 展示 Guard 弹窗
-  const showGuard = () => guard.show()
-
-  // 隐藏 Guard 弹窗
-  const hideGuard = () => guard.hide()
-
-  useEffect(() => {
-    // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
-  }, [])
-
-  return <>
-    <button onClick={showGuard}>Show Guard</button>
-    <button onClick={hideGuard}>Hide Guard</button>
-    <div id="authing-guard-container"></div>
-  </>
-}
-```
-:::
-
-::: tab Vue2
-``` vue
-<template>
-  <div id="authing-guard-container"></div>
-</template>
-<script>
-export default {
-  mounted () {
-    // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log('userInfo: ', userInfo)
-    })
-  },
-  methods: {
-    showGuard () {
-      // 展示 Guard 弹窗
-      this.$guard.show()
-    },
-    hideGuard () {
-      // 隐藏 Guard 弹窗
-      this.$guard.hide()
-    }
-  }
-}
-</script>
-```
-:::
-
-::: tab Vue3
-``` vue
-<template>
-  <div class="embed-container">
-    <button @click="showGuard">Show Guard</button>
-    <button @click="hideGuard">Hide Guard</button>
-    <div id="authing-guard-container"></div>
-  </div>
-</template>
-
-<script setup>
-import { onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-
-const guard = useGuard()
-
-// 展示 Guard 弹窗
-const showGuard = () => guard.show()
-
-// 隐藏 Guard 弹窗
-const hideGuard = () => guard.hide()
-
-onMounted(() => {
-  // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-  guard.start('#authing-guard-container').then(userInfo => {
-    console.log('userInfo: ', userInfo)
-  })
-})
-</script>
-
-```
-:::
-
-::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService, User } from '@authing/guard-angular'
-
-@Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent {
-  constructor (
-    // 使用 Angular 依赖注入，获取 Guard 实例
-    private guard: GuardService
-  ) {}
-
-  ngOnInit () {
-    // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
-  }
-
-  showGuard () {
-    this.guard.client.show()
-  }
-
-  hideGuard () {
-    this.guard.client.hide()
-  }
-}
-```
-:::
-::::
+### 实现单点登录
 
 单点登录能让用户能够在所有接入 Authing 的应用之间单点登录，即：一次登录，即可使用所有应用。
 
@@ -655,9 +691,19 @@ export class LoginComponent {
 具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html)。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
+  isSSO: true
+})
+```
+:::
+
 ::: tab React
 ``` tsx
-// App.tsx
 import React from 'react'
 import { GuardProvider } from '@authing/guard-react'
 import '@authing/guard-react/dist/esm/guard.min.css'
@@ -668,6 +714,8 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // host="https://my-authing-app.example.com",
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
@@ -685,6 +733,8 @@ import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
   isSSO: true
 })
 ```
@@ -702,6 +752,8 @@ const app = createApp(App)
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    // host: 'https://my-authing-app.example.com',
     isSSO: true
   })
 )
@@ -728,6 +780,8 @@ import { GuardModule } from '@authing/guard-angular'
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // host: 'https://my-authing-app.example.com',
       isSSO: true
     })
   ],
@@ -746,6 +800,21 @@ export class AppModule { }
 #### 单应用登出
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com'
+})
+
+function Logout() {
+  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+  const onLogout = () => guard.logout()
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 import React from 'react'
@@ -759,7 +828,7 @@ export default function Logout() {
 
   return (
     <div>
-      <button onClick={onLogout}>登出</button>
+      <button onClick={onLogout}>Logout</button>
     </div>
   )
 }
@@ -818,6 +887,21 @@ export class LoginComponent {
 要实现单点登出，只需在初始化 Authing Guard 时，设置 `isSSO` 为 `true` 即可：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
+  isSSO: true
+})
+
+function Logout() {
+  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+  const onLogout = () => guard.logout()
+}
+```
+
 ::: tab React
 ``` tsx
 // App.tsx
@@ -831,6 +915,8 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // host="https://my-authing-app.example.com"
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
@@ -850,7 +936,7 @@ export default function Logout() {
 
   return (
     <div>
-      <button onClick={onLogout}>登出</button>
+      <button onClick={onLogout}>Logout</button>
     </div>
   )
 }
@@ -866,6 +952,8 @@ import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
   isSSO: true
 })
 ```
@@ -895,6 +983,8 @@ const app = createApp(App)
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    // host: 'https://my-authing-app.example.com',
     isSSO: true
   })
 )
@@ -930,6 +1020,8 @@ import { GuardModule } from '@authing/guard-angular'
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // host: 'https://my-authing-app.example.com',
       isSSO: true
     })
   ],
@@ -967,6 +1059,13 @@ export class LoginComponent {
 你可以通过 `startRegister` 方法将 Authing Guard 切换到注册 Tab 页：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+function startRegister () {
+  guard.startRegister()
+}
+```
+:::
 ::: tab React
 ``` tsx
 // Register.tsx
@@ -979,7 +1078,7 @@ export default function Register() {
 
   return (
     <div>
-      <button onClick={startRegister}>startRegister</button>
+      <button onClick={startRegister}>Start Register</button>
     </div>
   )
 }
@@ -1047,11 +1146,24 @@ export class LoginComponent {
 此处以 Github 身份源为例：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+const guard = new GuardFactory.Guard({
+  appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
+  config: {
+    socialConnectionList: ['github']
+  }
+})
+```
+:::
+
 ::: tab React
 ``` tsx
 import React from 'react'
 
-import { GuardProvider, SocialConnectionProvider } from '@authing/guard-react'
+import { GuardProvider } from '@authing/guard-react'
 
 import '@authing/guard-react/dist/esm/guard.min.css'
 
@@ -1062,8 +1174,10 @@ export default function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // host="https://my-authing-app.example.com",
       config={{
-        socialConnections: [SocialConnectionProvider.GITHUB],
+        socialConnectionList: ['github'],
       }}
     >
       <RouterComponent></RouterComponent>
@@ -1081,8 +1195,10 @@ import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
   config: {
-    socialConnections: ['github']
+    socialConnectionList: ['github']
   },
 })
 ```
@@ -1091,7 +1207,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 ``` typescript
 import { createApp } from 'vue'
-import { createGuard, SocialConnectionProvider } from '@authing/guard-vue3'
+import { createGuard } from '@authing/guard-vue3'
 import '@authing/guard-vue3/dist/esm/guard.min.css'
 
 const app = createApp(App)
@@ -1099,8 +1215,10 @@ const app = createApp(App)
 app.use(
   createGuard({
     appId: 'AUTHING_APP_ID',
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // host: 'https://my-authing-app.example.com',
     config: {
-      socialConnections: [SocialConnectionProvider.GITHUB]
+      socialConnectionList: ['github']
     }
   })
 )
@@ -1117,7 +1235,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
-import { GuardModule, SocialConnectionProvider } from '@authing/guard-angular'
+import { GuardModule } from '@authing/guard-angular'
 
 @NgModule({
   declarations: [AppComponent],
@@ -1127,7 +1245,7 @@ import { GuardModule, SocialConnectionProvider } from '@authing/guard-angular'
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
       config: {
-        socialConnections: [SocialConnectionProvider.GITHUB]
+        socialConnectionList: ['github']
       }
     })
   ],
@@ -1139,11 +1257,23 @@ export class AppModule {}
 :::
 ::::
 
+// ..........补充 socialConnectionList 有效值或写在附录中
+
 ### 获取用户信息
 
 你也可以通过 `trackSession` 方法获取用户信息：
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+async function getUserInfo () {
+  // 获取用户信息
+  const userInfo = await guard.trackSession()
+  console.log(userInfo)
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 // GetUserInfo.tsx
@@ -1183,15 +1313,19 @@ export default {
 :::
 
 ::: tab Vue3
-``` typescript
-import { useGuard } from '@authing/guard-vue3'
+``` html
+<script lang="ts" setup>
+import { useGuard  } from '@authing/guard-vue3'
+
+import type { User } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
 const getUserInfo = async () => {
-  const userInfo = await guard.trackSession()
+  const userInfo: User | null = await guard.trackSession()
   console.log('userInfo: ', userInfo)
 }
+</script>
 ```
 :::
 
@@ -1234,6 +1368,22 @@ export class GetUserInfoComponent {
 Authing Guard 会持续新增对不同语言的支持，详情请参见 Authing 目前支持的语言列表。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` html
+<select onchange="changeLang(event)">
+  <option value="zh-CN">zh-CN</option>
+  <option value="zh-TW">zh-TW</option>
+  <option value="en-US">en-US</option>
+  <option value="ja-JP">ja-JP</option>
+</select>
+```
+``` javascript
+function changeLang (event) {
+  guard.changeLang(event.target.value)
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 // ChangeLang.tsx
@@ -1337,16 +1487,17 @@ export default {
     <div id="authing-guard-container"></div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
+import type { User } from '@authing/guard-vue3'
 
 const langCache = ref('')
 const guard = useGuard()
 
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then(userInfo => {
+  guard.start('#authing-guard-container').then((userInfo: User) => {
     console.log('userInfo: ', userInfo)
   })
 
@@ -1410,6 +1561,14 @@ export class GetUserInfoComponent {
 > 注：此方法只应该被调用一次，多次调用会覆盖之前设置的 CSS 内容。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+function changeContentCSS () {
+  guard.changeContentCSS('body {background: blue}')
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 // changeContentCSS.tsx
@@ -1420,7 +1579,7 @@ export default function ChangeContentCSS() {
   const guard = useGuard()
 
   useEffect(() => {
-    guard.start('#guard').then((userInfo: User) => {
+    guard.start('#authing-guard-container').then((userInfo: User) => {
       console.log('userInfo: ', userInfo)
     })
   }, [])
@@ -1431,7 +1590,7 @@ export default function ChangeContentCSS() {
   return (
     <div>
       <button onClick={changeContentCSS}>Change Content CSS</button>
-      <div id="guard"></div>
+      <div id="authing-guard-container"></div>
     </div>
   )
 }
@@ -1476,21 +1635,21 @@ export default {
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useGuard } from '@authing/guard-vue3'
+import type { User } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then(userInfo => {
+  guard.start('#authing-guard-container').then((userInfo: User) => {
     console.log("userInfo: ", userInfo)
   })
 })
 
 const changeContentCSS = () => guard.changeContentCSS('body {background: blue}')
-
 </script>
 ```
 :::
@@ -1540,27 +1699,50 @@ Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://doc
 你可以通过 `getAuthClient` 获取 `AuthenticationClient` 实例，之后可调用 AuthenticationClient 的所有方法。
 
 :::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+``` javascript
+async function updateProfile () {
+  const authenticationClient = await guard.getAuthClient()
+
+  // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+  // 比如更新用户昵称
+  const userProfile = await authenticationClient.updateProfile({
+    nickname: 'Nick'
+  })
+
+  console.log('userProfile: ', userProfile)
+
+  // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+}
+```
+:::
+
 ::: tab React
 ``` tsx
 // Personal.tsx
 import React, { useEffect } from 'react'
-import { useGuard, AuthenticationClient } from '@authing/guard-react'
+import { useGuard, AuthenticationClient, User } from '@authing/guard-react'
 
 export default function Personal() {
   const guard = useGuard()
 
-  useEffect(() => {
-    guard.getAuthClient().then((authenticationClient: AuthenticationClient) => {
-      // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
-      // 比如更新用户昵称
-      authenticationClient.updateProfile({
-        nickname: 'Nick'
-      })
-      // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
-    })
-  })
+  const updateProfile = async () => {
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
 
-  return <div></div>
+    // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+    // 比如更新用户昵称
+    const userProfile: User = await authenticationClient.updateProfile({
+      nickname: 'Nick'
+    })
+
+    console.log('userProfile: ', userProfile)
+
+    // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+  }
+
+  return <div>
+    <button className='authing-button' onClick={updateProfile}>Update Profile</button>
+  </div>
 }
 ```
 :::
@@ -1577,15 +1759,18 @@ export default function Personal() {
 <script>
 export default {
   methods: {
-    updateProfile() {
-      this.$guard.getAuthClient().then(authenticationClient => {
-        // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
-        // 比如更新用户昵称
-        authenticationClient.updateProfile({
-          nickname: 'Nick'
-        })
-        // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+    async updateProfile() {
+      const authenticationClient = await this.$guard.getAuthClient()
+
+      // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+      // 比如更新用户昵称
+      const userProfile = await authenticationClient.updateProfile({
+        nickname: 'Nickaaa'
       })
+
+      console.log(userProfile)
+
+      // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
     }
   }
 }
@@ -1608,17 +1793,21 @@ import { useGuard } from '@authing/guard-vue3'
 
 const guard = useGuard()
 
-const updateProfile = () => {
-  guard.getAuthClient().then(authenticationClient => {
-    // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
-    // 比如更新用户昵称
-    authenticationClient.updateProfile({
-      nickname: 'Nick'
-    })
-    // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
-  })
-}
+import type { User, AuthenticationClient } from '@authing/guard-vue3'
 
+const updateProfile = async () => {
+  const authenticationClient: AuthenticationClient = await guard.getAuthClient()
+
+  // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+  // 比如更新用户昵称
+  const userProfile: User = await authenticationClient.updateProfile({
+    nickname: 'Nick'
+  })
+
+  console.log(userProfile)
+
+  // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+}
 </script>
 ```
 :::
@@ -1627,7 +1816,7 @@ const updateProfile = () => {
 ``` typescript
 // personal.component.ts
 import { Component } from '@angular/core'
-import { GuardService, AuthenticationClient } from '@authing/guard-angular'
+import { AuthenticationClient, GuardService, User } from '@authing/guard-angular'
 
 @Component({
   selector: 'personal-container',
@@ -1637,15 +1826,18 @@ import { GuardService, AuthenticationClient } from '@authing/guard-angular'
 export class PersonalComponent {
   constructor(private guard: GuardService) {}
 
-  updateProfile() {
-    this.guard.client.getAuthClient().then((authenticationClient: AuthenticationClient) => {
-      // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
-      // 比如更新用户昵称
-      authenticationClient.updateProfile({
-        nickname: 'Nick'
-      })
-      // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+  async updateProfile() {
+    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient()
+
+    // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+    // 比如更新用户昵称
+    const userProfile: User = await authenticationClient.updateProfile({
+      nickname: 'Nick'
     })
+
+    console.log('userProfile: ', userProfile)
+
+    // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
   }
 }
 ```
@@ -1672,7 +1864,6 @@ function App() {
       appId="AUTHING_APP_ID"
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host="https://my-authing-app.example.com",
-      scope="openid"
       config={{
         title: 'Authing Guard Web 应用'
       }}
@@ -1696,7 +1887,6 @@ Vue.use(GuardPlugin, {
   appId: 'AUTHING_APP_ID',
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-  scope: 'openid',
   config: {
     title: 'Authing Guard Web 应用'
   }
@@ -1719,7 +1909,6 @@ app.use(
     appId: 'AUTHING_APP_ID',
     // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com',
-    scope: 'openid',
     config: {
       title: 'Authing Guard Web 应用'
     }
@@ -1762,7 +1951,6 @@ import { GuardModule } from '@authing/guard-angular'
       appId: 'AUTHING_APP_ID',
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com',
-      scope: 'openid',
       config: {
         title: 'Authing Guard Web 应用'
       }
