@@ -334,7 +334,7 @@ export class HomeComponent {
 ``` tsx
 import React, { useEffect } from 'react'
 
-import { useGuard } from '@authing/guard-react'
+import { useGuard, User } from '@authing/guard-react'
 
 export default function Login() {
   // 获取 Guard 实例
@@ -342,8 +342,8 @@ export default function Login() {
 
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start('#authing-guard-container').then(userInfo => {
-      console.log("userInfo: ", userInfo)
+    guard.start('#authing-guard-container').then((userInfo: User) => {
+      console.log('userInfo: ', userInfo)
     })
   }, [])
 
@@ -391,7 +391,7 @@ const unmountGuard = () => guard.unmount()
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
   guard.start('#authing-guard-container').then(userInfo => {
-    console.log("userInfo: ", userInfo)
+    console.log('userInfo: ', userInfo)
   })
 })
 </script>
@@ -401,8 +401,7 @@ onMounted(() => {
 ::: tab Angular
 ``` typescript
 import { Component } from '@angular/core'
-
-import { GuardService } from '@authing/guard-angular'
+import { GuardService, User } from '@authing/guard-angular'
 
 @Component({
   selector: 'login-container',
@@ -416,8 +415,8 @@ export class LoginComponent {
 
   ngOnInit () {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client.start('#authing-guard-container').then(userInfo => {
-      console.log("userInfo: ", userInfo)
+    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
+      console.log('userInfo: ', userInfo)
     })
   }
 }
@@ -442,7 +441,7 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      mode={{GuardMode.Modal}}
+      mode={GuardMode.Modal}
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
       // host="https://my-authing-app.example.com"
     >
@@ -491,23 +490,20 @@ app.use(
 ``` typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { GuardModule } from '@authing/guard-angular'
-
+import { GuardMode, GuardModule } from '@authing/guard-angular'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
       appId: 'AUTHING_APP_ID',
-      mode: 'modal',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      mode: GuardMode.Modal,
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com'
     })
   ],
@@ -524,7 +520,10 @@ export class AppModule { }
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ``` tsx
-export default function Login () {
+import React, { useEffect } from 'react'
+import { useGuard, User } from '@authing/guard-react'
+
+export default function Login() {
   const guard = useGuard()
 
   // 展示 Guard 弹窗
@@ -535,7 +534,7 @@ export default function Login () {
 
   useEffect(() => {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    guard.start('#authing-guard-container').then(userInfo => {
+    guard.start('#authing-guard-container').then((userInfo: User) => {
       console.log('userInfo: ', userInfo)
     })
   }, [])
@@ -613,7 +612,7 @@ onMounted(() => {
 ::: tab Angular
 ``` typescript
 import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { GuardService, User } from '@authing/guard-angular'
 
 @Component({
   selector: 'login-container',
@@ -622,14 +621,13 @@ import { GuardService } from '@authing/guard-angular'
 })
 export class LoginComponent {
   constructor (
-    private router: Router,
     // 使用 Angular 依赖注入，获取 Guard 实例
     private guard: GuardService
   ) {}
 
   ngOnInit () {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    this.guard.client.start('#authing-guard-container').then(userInfo => {
+    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
       console.log('userInfo: ', userInfo)
     })
   }
@@ -661,7 +659,7 @@ export class LoginComponent {
 ``` tsx
 // App.tsx
 import React from 'react'
-import { GuardProvider, GuardMode } from '@authing/guard-react'
+import { GuardProvider } from '@authing/guard-react'
 import '@authing/guard-react/dist/esm/guard.min.css'
 // 项目根组件
 import RouterComponent from './router'
@@ -824,7 +822,7 @@ export class LoginComponent {
 ``` tsx
 // App.tsx
 import React from 'react'
-import { GuardProvider, GuardMode } from '@authing/guard-react'
+import { GuardProvider } from '@authing/guard-react'
 import '@authing/guard-react/dist/esm/guard.min.css'
 // 项目根组件
 import RouterComponent from './router'
@@ -1065,7 +1063,7 @@ export default function App() {
     <GuardProvider
       appId="AUTHING_APP_ID"
       config={{
-        socialConnections: [SocialConnectionProvider.GITHUB]
+        socialConnections: [SocialConnectionProvider.GITHUB],
       }}
     >
       <RouterComponent></RouterComponent>
@@ -1150,14 +1148,14 @@ export class AppModule {}
 ``` tsx
 // GetUserInfo.tsx
 import React from 'react'
-import { useGuard } from '@authing/guard-react'
+import { useGuard, User } from '@authing/guard-react'
 
 export default function GetUserInfo() {
   const guard = useGuard()
 
   const getUserInfo = async () => {
     // 获取用户信息
-    const userInfo = await guard.trackSession()
+    const userInfo: User | null = await guard.trackSession()
     console.log("userInfo: ",userInfo)
   }
 
@@ -1201,7 +1199,7 @@ const getUserInfo = async () => {
 ``` typescript
 // GetUserInfo.component.ts
 import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { GuardService, User } from '@authing/guard-angular'
 
 @Component({
   selector: 'get-user-info-container',
@@ -1213,8 +1211,9 @@ export class GetUserInfoComponent {
     private guard: GuardService
   ) {}
 
-  getUserInfo () {
-    this.guard.client.trackSession()
+  async getUserInfo() {
+    const userInfo: User | null = await this.guard.client.trackSession()
+    console.log('userInfo: ', userInfo)
   }
 }
 ```
@@ -1240,7 +1239,7 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 Authing 
 // ChangeLang.tsx
 import React, { useEffect, useState } from 'react'
 
-import { useGuard } from '@authing/guard-react'
+import { useGuard, User } from '@authing/guard-react'
 
 export default function ChangeLanguage() {
   const [langCache, setLangCache] = useState('')
@@ -1249,7 +1248,7 @@ export default function ChangeLanguage() {
 
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start('#authing-guard-container').then(userInfo => {
+    guard.start('#authing-guard-container').then((userInfo: User) => {
       console.log('userInfo: ', userInfo)
     })
 
@@ -1415,13 +1414,13 @@ export class GetUserInfoComponent {
 ``` tsx
 // changeContentCSS.tsx
 import React, { useEffect } from 'react'
-import { useGuard } from '@authing/guard-react'
+import { useGuard, User } from '@authing/guard-react'
 
 export default function ChangeContentCSS() {
   const guard = useGuard()
 
   useEffect(() => {
-    guard.start('#guard').then(userInfo => {
+    guard.start('#guard').then((userInfo: User) => {
       console.log('userInfo: ', userInfo)
     })
   }, [])
@@ -1454,7 +1453,7 @@ export default {
   mounted () {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
     this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
+      console.log('userInfo: ', userInfo)
     })
   },
   methods: {
@@ -1500,7 +1499,7 @@ const changeContentCSS = () => guard.changeContentCSS('body {background: blue}')
 ``` typescript
 // ChangeContentCSS.component.ts
 import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { GuardService, User } from '@authing/guard-angular'
 
 @Component({
   selector: 'change-content-css-container',
@@ -1514,7 +1513,9 @@ export class GetUserInfoComponent {
 
   ngOnInit() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client.start('#authing-guard-container')
+    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
+      console.log('userInfo: ', userInfo)
+    })
   }
 
   changeContentCSS() {
@@ -1542,14 +1543,14 @@ Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://doc
 ::: tab React
 ``` tsx
 // Personal.tsx
-import { useEffect } from 'react'
-import { useGuard } from '@authing/guard-react'
+import React, { useEffect } from 'react'
+import { useGuard, AuthenticationClient } from '@authing/guard-react'
 
-export default function Personal () {
+export default function Personal() {
   const guard = useGuard()
 
   useEffect(() => {
-    guard.getAuthClient().then(authenticationClient => {
+    guard.getAuthClient().then((authenticationClient: AuthenticationClient) => {
       // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
       // 比如更新用户昵称
       authenticationClient.updateProfile({
@@ -1626,7 +1627,7 @@ const updateProfile = () => {
 ``` typescript
 // personal.component.ts
 import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { GuardService, AuthenticationClient } from '@authing/guard-angular'
 
 @Component({
   selector: 'personal-container',
@@ -1637,7 +1638,7 @@ export class PersonalComponent {
   constructor(private guard: GuardService) {}
 
   updateProfile() {
-    this.guard.client.getAuthClient().then(authenticationClient => {
+    this.guard.client.getAuthClient().then((authenticationClient: AuthenticationClient) => {
       // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
       // 比如更新用户昵称
       authenticationClient.updateProfile({
