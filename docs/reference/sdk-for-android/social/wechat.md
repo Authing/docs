@@ -3,45 +3,21 @@
 <LastUpdated/>
 
 集成微信需要三个主要步骤：
-* 在微信开放平台进行配置
-* 在 Authing 管理控制台进行配置
-* 集成 Android SDK
+1. 在微信开放平台进行配置
+
+2. 在 Authing 管理控制台进行配置
+
+3. 集成 Android SDK
 
 <br>
 
-## STEP 1：在 [微信开放平台](https://open.weixin.qq.com/) 进行配置
+STEP1 和 STEP2 请参考：
 
->注意：使用微信登录需要开发人员在微信开放平台认证，认证主体需要是个体商户，企事业单位，不支持个人开发人员，当前认证费用为 300 RMB
-
-1. 获取 AppID 和 AppSecret
-
-![](./images/wechat/1.png)
-
-2. 设置 Android 应用信息
-
-![](./images/wechat/2.png)
-
-> 特别注意：这里的签名 MD5 不能包含冒号
+[微信移动端配置](../../../guides/connections/social/wechat-mobile/README.md)
 
 <br>
 
-## STEP 2：在 Authing 管理控制台的操作步骤
-
-1. 在控制台的 “连接身份源” 菜单选择 “创建社交身份源“
-
-![](./images/wechat/3.png)
-
-2. 选择 “微信移动端”
-
-![](./images/wechat/4.png)
-
-3. 填入微信开放平台对应的 AppID 和 AppSecret
-
-![](./images/wechat/5.png)
-
-<br>
-
-## STEP 3：集成 Android SDK 步骤
+## STEP 3：集成 Guard Android SDK 步骤
 
 1. 设置依赖：
 ```groovy
@@ -54,8 +30,8 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 2. 在应用启动的时候初始化 Authing：
 ```java
 // context is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 3. 由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：

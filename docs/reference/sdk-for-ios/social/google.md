@@ -2,15 +2,12 @@
 
 <LastUpdated/>
 
-集成 Google 登录需要以下步骤：
+## 准备工作
 
-1. 在 [Google API Console Credentials 控制台](https://console.cloud.google.com/apis/credentials) 及 [Authing 管理控制台](https://www.authing.cn/) 进行配置，请参阅 [Google 移动端](https://docs.authing.cn/v2/guides/connections/social/google-mobile/)。
+在 [Google API Console Credentials 控制台](https://console.cloud.google.com/apis/credentials) 及 [Authing 管理控制台](https://www.authing.cn/) 进行配置，请参阅 [Google 移动端](https://docs.authing.cn/v2/guides/connections/social/google-mobile/)。
 
-2. 添加 Google 登录组件依赖。
 
-3. 修改项目配置。
-
-## 集成 Google 登录组件
+## 集成 Google 登录步骤
 
 ### 步骤 1：添加 Google 登录组件依赖
 
@@ -28,7 +25,7 @@
 ### 步骤 2：修改项目配置
 
 配置 Google 登录组件回跳 URL：
-1. 选择 Xcode 工程，在 **Targets** - **Info** - **URL Types** 中点击加号。
+1. 选择 Xcode 工程，在 **Targets** -> **Info** -> **URL Types** 中点击加号。
 2. **URL Schemes** 添加 Google 控制台的 **iOS URL scheme** 。
 
 <img src="./images/google/3.png" height=500 style="display:block;margin: 0 auto;">
@@ -49,9 +46,9 @@ iOS URL scheme
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import Google 。
 
-2. 调用 Authing.start() 初始化 Guard SDK。
+2. 调用 Authing.start() 初始化 Guard SDK 。
 
-3. Google.register 需要传入 Google 控制台发放的、 **clientID** 和 **serverClientId**。
+3. Google.register 需要传入 Google 控制台发放的 **clientID** 和 **serverClientId** 。
 
 <img src="./images/google/4.png" height=500 style="display:block;margin: 0 auto;">
 
@@ -62,7 +59,7 @@ iOS URL scheme
 import Guard
 import Google
 
-Authing.start(<#Authing AppId#>);
+Authing.start(<#AUTHING_APP_ID#>)
 Google.register(clientID: <#iOS ClientId#>, serverClientId: <#Oauth Web ClientId#>)
  ```
  

@@ -8,3 +8,6 @@
 
 > 注意：超组件也可帮助你快速构建 UI 界面，组件已集成相应 API
 
+
+
+[错误码查询](reference/error-code.html)

@@ -6,7 +6,7 @@
 
 若存粹完全使用 API 的方式来完成登录注册等认证流程，你需要独立构建自己的登录注册等 UI 界面。
 
-Authing iOS SDK 提供了以下几个方面的 API：
+我们提供了以下几个方面的 API：
 
 - [核心认证](./authentication/README.md)
 - [标准协议认证](./protocol/README.md)

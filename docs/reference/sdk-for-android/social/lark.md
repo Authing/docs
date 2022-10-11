@@ -2,47 +2,25 @@
 
 <LastUpdated/>
 
-集成飞书登录的 3 个步骤
+集成飞书登录的 4 个步骤
 
-- 在飞书开放平台注册并且配置应用
-- 在 Authing 管理控制台配置应用
-- 集成 Android SDK
+1. 在飞书开放平台注册并且配置自建应用
 
-## STEP 1 ：在[飞书开放平台](https://open.feishu.cn/)注册并且配置应用
+2. 在 Authing 管理控制台配置应用
 
-1. 获取 AppId 和 AppSecret
+3. 在飞书后台上线飞书自建应用
 
-   ![](./images/lark/1.png)
+4. 集成 Android SDK
 
-2. 设置 Android 应用信息（请务必打开飞书登录）
+<br>
 
-   ![](./images/lark/2.png)
+STEP1 和 STEP2 请参考：
 
-
-
-## STEP 2 ：在 [Authing 管理控制台](https://console.authing.cn/)配置应用
-
-1. 选择或者创建一个用户池—>身份源管理—>企业身份源—>创建企业身份源
-
-   ![](./images/lark/3.png)
-
-2. 填写配置信息
-
-   登录方式：飞书开放平台注册的应用类型
-
-   唯一标志性：自定义
-
-   显示名称：自定义
-
-   AppId：飞书开放平台注册的应用 AppId
-
-   AppSecret：飞书开放平台注册的应用 AppSecret
-
-   ![](./images/lark/4.png)
+[飞书企业自建应用配置](../../../guides/connections/enterprise/lark-internal/README.md)
 
 
 
-## STEP 3 ：集成 Android SDK
+## STEP 4 ：集成 Guard Android SDK
 
 1. 设置依赖
 
@@ -62,8 +40,8 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 
 ```java
 // context is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 

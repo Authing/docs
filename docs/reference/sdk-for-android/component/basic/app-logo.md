@@ -25,3 +25,9 @@
 ```
 
 ![](./../images/app_logo2.png)
+
+## 控制台设置
+
+可以在控制台配置：
+
+![](./../images/app_logo3.png)

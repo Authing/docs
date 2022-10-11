@@ -2,6 +2,24 @@
 
 <LastUpdated/>
 
+集成支付宝登录需要三个主要步骤：
+
+1. 在支付宝开放平台进行配置
+
+2. 在 Authing 管理控制台进行配置
+
+3. 集成 Android SDK
+
+<br>
+
+STEP1 和 STEP2 请参考：
+
+[支付宝配置](../../../guides/connections/social/alipay-web/README.md)
+
+
+
+## STEP3：集成 Guard Android SDK 
+
 1. 在这个页面下载 [支付宝 Android SDK](https://opendocs.alipay.com/open/54/104509)
 
 >支付宝将 Android、iOS 的 SDK 和 Demo 打包到一个 zip 包里面，找到里面的安卓 SDK，拷贝到 app 的 libs 目录
@@ -17,8 +35,8 @@ implementation files('libs/alipaysdk.aar')
 3. 在应用启动的时候初始化 Authing：
 ```java
 // context is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 接下来，如果使用我们提供的支付宝登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：

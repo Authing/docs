@@ -4,9 +4,11 @@
 
 集成手机号一键登录需要三个主要步骤：
 
-* 在网易易盾开放平台进行配置
-* 在 Authing 管理控制台进行配置
-* 集成 Android SDK
+1. 在网易易盾开放平台进行配置
+
+2. 在 Authing 管理控制台进行配置
+
+3. 集成 Android SDK
 
 <br>
 
@@ -16,7 +18,7 @@ STEP1 和 STEP2 请参考：
 
 
 
-## STEP3：集成 Android SDK 步骤
+## STEP3：集成 Guard Android SDK 
 
 1. 添加依赖
 
@@ -27,12 +29,13 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 
 > Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
+2. 混淆配置，请参考[易顿官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
 2. 在应用启动时初始化 Authing
 
 ```java
 // context is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 
