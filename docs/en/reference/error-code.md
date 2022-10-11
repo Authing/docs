@@ -24,8 +24,8 @@ The error code message format is as follows:
 |<p>1001</p><p></p>|<p>No permission to perform this operation</p><p></p>|
 |<p>2000</p><p></p>|<p>The account is abnormal, you need to enter the verification code</p><p></p>|
 |<p>2001</p><p></p>|<p>Verification code verification failed (verification code error)</p><p></p>|
-|<p>2002</p><p></p>|<p>Monthly login quota has been used up</p><p></p>|
-|<p>2003</p><p></p>|<p>The email format is incorrect when registering or logging in</p><p></p>|
+|<p>2002</p><p></p>|<p>Monthly login quota exceeded. Contact sales for upgrade.</p><p></p>|
+|<p>2003</p><p></p>|<p>E-mail format incorrect</p><p></p>|
 |<p>2004</p><p></p>|<p>User does not exist</p><p></p>|
 |<p>2005</p><p></p>|<p>User has been locked</p><p></p>|
 |<p>2006</p><p></p>|<p>Incorrect password</p><p></p>|
@@ -61,10 +61,10 @@ The error code message format is as follows:
 |<p>2037</p><p></p>|<p>The filled-in old mailbox does not match the actual mailbox</p><p></p>|
 |<p>2038</p><p></p>|<p>The filled-in old phone does not match the actual phone</p><p></p>|
 |<p>2039</p><p></p>|<p>Domain name is already used</p><p></p>|
-|<p>2040</p><p></p>|<p>The number is full</p><p></p>|
-|<p>2100</p><p></p>|<p>Registration is too frequent, please try again later</p><p></p>|
+|<p>2040</p><p></p>|<p>MAU quota exceeded</p><p></p>|
+|<p>2100</p><p></p>|<p>Request rate exceeded, please try again later</p><p></p>|
 |<p>2101</p><p></p>|<p>Please provide the app ID</p><p></p>|
-|<p>2200</p><p></p>|<p>The mailbox has been bound</p><p></p>|
+|<p>2200</p><p></p>|<p>Mailbox already exists</p><p></p>|
 |<p>2201</p><p></p>|<p>Please enter the original password</p><p></p>|
 |<p>2202</p><p></p>|<p>The modified information does not belong to the current user</p><p></p>|
 |<p>2203</p><p></p>|<p>The original password is wrong</p><p></p>|
@@ -72,7 +72,6 @@ The error code message format is as follows:
 |<p>2205</p><p></p>|<p>Missing parameter：registerInClient</p><p></p>|
 |<p>2206</p><p></p>|<p>Login information has expired, need to log in again</p><p></p>|
 |<p>2207</p><p></p>|<p>The login information is wrong, need to log in again</p><p></p>|
-|<p>2208</p><p></p>|<p>Please use another email</p><p></p>|
 |<p>2209</p><p></p>|<p>No permission to delete this user</p><p></p>|
 |<p>2210</p><p></p>|<p>A wrong delete operation was performed, which may be caused by deleting a non-existent user, or other errors occurred during the deletion.</p><p></p>|
 |<p>2211</p><p></p>|<p>Missing parameter：username</p><p></p>|
@@ -80,7 +79,7 @@ The error code message format is as follows:
 |<p>2213</p><p></p>|<p>When trying to bind a third-party OAuth login method, it has already been bound</p><p></p>|
 |<p>2214</p><p></p>|<p>Failed to read the bound OAuth login method</p><p></p>|
 |<p>2215</p><p></p>|<p>When trying to bind a third-party OAuth login method, the account has already been bound</p><p></p>|
-|<p>2216</p><p></p>|<p>When trying to unbind the third-party OAuth login method, no OAuth login has been bound</p><p></p>|
+|<p>2216</p><p></p>|<p>When trying to unbind the third-party OAuth login method,  no bounding exists</p><p></p>|
 |<p>2217</p><p></p>|<p>When trying to unbind the third-party OAuth login method or mailbox, there is only one login method, so it cannot be unbind</p><p></p>|
 |<p>2218</p><p></p>|<p>When trying to modify the password, the mailbox is not bound, and modification is not allowed</p><p></p>|
 |<p>2219</p><p></p>|<p>When trying to unbind the mailbox, the user did not bind the mailbox</p><p></p>|
@@ -90,32 +89,30 @@ The error code message format is as follows:
 |<p>2223</p><p></p>|<p>When trying to create OAuth application information, a used domain name was used</p><p></p>|
 |<p>2224</p><p></p>|<p>User pool does not exist</p><p></p>|
 |<p>2225</p><p></p>|<p>The updateUser interface cannot directly modify the mailbox, please use the updateEmail interface</p><p></p>|
-|<p>2226</p><p></p>|<p>The updateUser interface cannot directly modify the phone number, please use the updateEmail interface</p><p></p>|
+|<p>2226</p><p></p>|<p>The updateUser API cannot directly modify the phone number, please use the updatePhone interface</p><p></p>|
 |<p>2227</p><p></p>|<p>To modify the mailbox, the original mailbox must be verified</p><p></p>|
-|<p>2228</p><p></p>|<p>To modify the phone number, the original phone number must be verified</p><p></p>|
 |<p>2229</p><p></p>|<p>The new mailbox is the same as the old mailbox</p><p></p>|
 |<p>2230</p><p></p>|<p>The new mailbox is the same as the old mailbox</p><p></p>|
-|<p>2231</p><p></p>|<p>Incomplete request parameters!</p><p></p>|
+|<p>2231</p><p></p>|<p>Invalid request. Insufficient request parameter!</p><p></p>|
 |<p>2300</p><p></p>|<p>Verification code expired</p><p></p>|
 |<p>2401</p><p></p>|<p>Mobile application sso session does not exist</p><p></p>|
-|<p>3012</p><p></p>|<p>Macro command execution error</p><p></p>|
+|<p>3012</p><p></p>|<p>Macro execution error</p><p></p>|
 |<p>3013</p><p></p>|<p>Sending mail error, unknown error</p><p></p>|
-|<p>3014</p><p></p>|<p>Failed to send mail, reason: unable to obtain transporter</p><p></p>|
+|<p>3014</p><p></p>|<p>Failed to send mail. Reason: unable to contact SMTP transport server</p><p></p>|
 |<p>3617</p><p></p>|<p>No permission to add collaborators</p><p></p>|
-|<p>3618</p><p></p>|<p>No permission to add permission items</p><p></p>|
-|<p>3619</p><p></p>|<p>No permission to view the user pool information for this user to participate in collaboration</p><p></p>|
+|<p>3619</p><p></p>|<p>No permission to view the collaborated userpool information</p><p></p>|
 |<p>3620</p><p></p>|<p>Collaborator already exists</p><p></p>|
 |<p>3621</p><p></p>|<p>No permission to delete collaboration</p><p></p>|
 |<p>3622</p><p></p>|<p>No permission to view list of collaborators</p><p></p>|
-|<p>3623</p><p></p>|<p>Collaboration does not exist</p><p></p>|
+|<p>3623</p><p></p>|<p>No collaboration relationship</p><p></p>|
 |<p>3624</p><p></p>|<p>No permission to modify collaborators</p><p></p>|
-|<p>3829</p><p></p>|<p>This secondary domain name is already used</p><p></p>|
+|<p>3829</p><p></p>|<p>Subdomain already exists</p><p></p>|
 |<p>4212</p><p></p>|<p>OIDC application does not exist</p><p></p>|
 |<p>5000</p><p></p>|<p>Failed to obtain the corresponding application of the order</p><p></p>|
 |<p>5001</p><p></p>|<p>Order does not exist</p><p></p>|
 |<p>5022</p><p></p>|<p>Failed to create order</p><p></p>|
 |<p>5023</p><p></p>|<p>Failed to create Alipay order</p><p></p>|
-|<p>5024</p><p></p>|<p>Failed to create order, unknown error</p><p></p>|
-|<p>5025</p><p></p>|<p>Failed to create order: the price is illegal</p><p></p>|
+|<p>5024</p><p></p>|<p>Failed to create order: unknown error</p><p></p>|
+|<p>5025</p><p></p>|<p>Failed to create order: incorrect amount format</p><p></p>|
 |<p>7348</p><p></p>|<p>SAML SP application does not exist</p><p></p>|
 |<p>8128</p><p></p>|<p>An error occurred when returning saml assertion</p><p></p>|
