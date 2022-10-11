@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-Guard Android SDK 包含 **Guard 登录组件**及**用户认证 API** 两部分：
+Guard Android SDK 包含 **[Guard 登录组件](./component/README.md)**及**[用户认证 API](./apis/README.md)** 两部分：
 
 **Guard 登录组件**采用了全新的[语义化编程模型](https://github.com/Authing/guard-android/blob/master/doc/topics/design.md)，App 通过 Guard 可以快速构建自定义风格的认证流程。 
 
@@ -19,11 +19,11 @@ Guard Android SDK 包含 **Guard 登录组件**及**用户认证 API** 两部分
 
 在开始开发之前，需要准备以下内容：
 
-- 开发设备上安装 [AndroidStudio](https://developer.android.google.cn/studio)
+1. 开发设备上安装 [AndroidStudio](https://developer.android.google.cn/studio)。
 
-- 免费创建一个 [Authing 帐号](https://www.authing.cn/)
+2. 免费创建一个 [Authing 帐号](https://www.authing.cn/)。
 
-- 在 Authing 控制台 [创建一个客户端自建应用](/guides/app-new/create-app/create-app.md)
+3. 在 Authing 控制台 [创建一个客户端自建应用](/guides/app-new/create-app/create-app.md)。
 
   - 在**选择类型**时请选择：**客户端应用**。
 
