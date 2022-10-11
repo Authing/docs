@@ -6604,6 +6604,10 @@ const translatedZhCnNavBar = {
           title: "On-premise",
           path: "/reference/sdk-for-ios/onpremise",
         },
+        {
+          title: "Error Code List",
+          path: "/reference/sdk-for-ios/errorcode",
+        },
       ],
     },
     {
