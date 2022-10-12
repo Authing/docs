@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-API Error coce list：[Error Code](https://docs.authing.cn/v2/en/reference/error-code.html)
+API Error code list：[Error Code](https://docs.authing.cn/v2/en/reference/error-code.html)
 
 The following error codes are unique to the iOS SDK：
 
