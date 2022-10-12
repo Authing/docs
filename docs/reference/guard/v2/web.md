@@ -2214,10 +2214,7 @@ const guard = new GuardFactory.Guard({
   isSSO: false,
 
   // Guard 详细配置，具体值参考附录中的 IGuardConfig
-  config: {},
-
-  // 初始化 Authing JS SDK 所需参数，具体参考附录中的 AuthenticationClientOptions
-  authClientOptions: {}
+  config: {}
 })
 ```
 :::
@@ -2261,9 +2258,6 @@ function App() {
 
       // Guard 详细配置，具体值参考附录中的 IGuardConfig
       config={{}}
-
-      // 初始化 Authing JS SDK 所需参数，具体参考附录中的 AuthenticationClientOptions
-      authClientOptions={{}}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -2307,10 +2301,7 @@ Vue.use(GuardPlugin, {
   isSSO: false,
 
   // Guard 详细配置，具体值参考附录中的 IGuardConfig
-  config: {},
-
-  // 初始化 Authing JS SDK 所需参数，具体参考附录中的 AuthenticationClientOptions
-  authClientOptions: {}
+  config: {}
 })
 ```
 :::
@@ -2353,10 +2344,7 @@ app.use(
     isSSO: false,
 
     // Guard 详细配置，具体值参考附录中的 IGuardConfig
-    config: {},
-
-    // 初始化 Authing JS SDK 所需参数，具体参考附录中的 AuthenticationClientOptions
-    authClientOptions: {}
+    config: {}
   })
 )
 ```
@@ -2419,10 +2407,7 @@ import { GuardModule } from '@authing/guard-angular'
       isSSO: false,
 
       // Guard 详细配置，具体值参考附录中的 IGuardConfig
-      config: {},
-
-      // 初始化 Authing JS SDK 所需参数，具体参考附录中的 AuthenticationClientOptions
-      authClientOptions: {}
+      config: {}
     })
   ],
   providers: [],
@@ -2449,7 +2434,6 @@ export class AppModule { }
 |lang|[Lang](#Lang)|如未设置，默认以控制台配置为准|否|Guard 显示语言|
 |isSSO|Boolean|false|否|是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。|
 |config|[IGuardConfig](#IGuardConfig)|-|否|Guard 详细配置|
-|authClientOptions|[AuthenticationClientOptions](#AuthenticationClientOptions)|-|否|初始化 Authing JS SDK 所需参数|
 
 ### IGuardMode
 
