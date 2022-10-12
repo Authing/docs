@@ -48,7 +48,9 @@ Authing.start(<#Authing_APPID#>)
 let flow = AuthFlow()
 flow.authProtocol = .EOIDC
 flow.start()  { [weak self] code, message, userInfo in
-    self?.goHome(userInfo: userInfo)
+    if code == 200 {
+        // userInfo 为用户信息
+    }
 }
 ```
 
