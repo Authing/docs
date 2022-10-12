@@ -25,7 +25,7 @@
 在一个用户池新建一个同步任务时，同一个数据源不能既作为上游，又同时充当下游。
 :::
 
-3. 根据提示填写配置信息。</br>有关获取配置信息的详细描述，请参阅 [获取应用配置项和权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md)。
+3. 根据提示填写配置信息。</br>有关获取配置信息的详情，请参阅 [获取应用配置项和权限](/guides/sync-new/create-sync-new/get-config-new/feishu.md)。
 
 4. 筛选同步范围。有关筛选同步范围详情，请参阅 [筛选同步范围](/guides/sync-new/create-sync-new/sync-scope-new.md)。
 
