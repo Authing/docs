@@ -1064,16 +1064,16 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-sso-spa",
     },
     {
-      title: "登录组件 (Guard)",
+      title: "登录组件（Guard）",
       path: "/reference/guard/v2/",
       children: [
         {
           title: "WEB 应用",
-          path: "/reference/guard/web",
+          path: "/reference/guard/v2/web",
         },
         {
           title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog",
+          path: "/reference/guard/v2/guard-changelog",
         }
       ],
     },
