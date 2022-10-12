@@ -27,7 +27,7 @@ Guard iOS SDK 包含 **[Guard 登录组件](./component/README.md)**及**[用户
 
   <img src="./images/create_client_application.png" alt="drawing" width="620"/>
 
-  - 创建完应用后，你可以根据你的业务需求来进行自定义配置，参考：[应用常用配置](./scenario/application_config.md)
+  - 创建完应用后，你可以根据你的业务需求来进行自定义配置，参考：[应用常用配置](./scenario/application_config.md)。
 
 <br>
 

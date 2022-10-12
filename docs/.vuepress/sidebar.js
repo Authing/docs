@@ -1685,6 +1685,10 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-flutter/onpremise",
+        },       
+        {
+          title: "Flutter SDK Changelog",
+          path: "/reference/sdk-for-flutter/flutter-changelog",
         },
       ],
     },
