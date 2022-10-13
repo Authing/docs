@@ -347,9 +347,13 @@ export class HomeComponent {
 
 - 在 [Authing 控制台](https://console.authing.cn) 的`应用` - `自建应用` - `应用详情`中配置`登录回调 URL`，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
 
-![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
+![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，请确保应用的「换取 token 身份验证方式」设置为了 `none`（如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况）。
+- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式`选择 `authentication_code`，`返回类型` 选择 `code`
+
+![guard-console-authentication-config](./images/guard-console-authentication-config.png)
+
+- 如果是标准 Web 应用，请在应用详情的`应用配置` - `其他配置` - `授权配置`中，请确保应用的「换取 token 身份验证方式」设置为了 `none`（如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况）。
 
 ![guard-console-identify-verify-mode](./images/guard-console-identify-verify-mode.png)
 
