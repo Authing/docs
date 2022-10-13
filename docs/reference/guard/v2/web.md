@@ -341,7 +341,7 @@ export class HomeComponent {
 
 **对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、最安全、最通用的 Authing 认证最佳实践。**
 
-### 托管模式
+### 使用托管模式
 
 托管模式将跳转到 Authing 提供的托管登录页。由于此模式 Authing 默认使用 OIDC 标准协议认证，你需要进行以下额外配置：
 
@@ -485,7 +485,7 @@ export class HomeComponent {
 | S256  | code_challenge 是使用 SHA256 计算 |
 | plain | 不使用任何算法计算                |
 
-### 内嵌模式
+### 使用内嵌模式
 
 #### 普通形态
 
@@ -2892,7 +2892,7 @@ Guard 内部短信验证码发送的场景值
 
 ## 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的**安全设置 - 基础安全配置安全域（CORS）**进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域（CORS）</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
 
 ![guard-console-safity-domain](./images/guard-console-safity-domain.png)
 
