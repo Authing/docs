@@ -1068,7 +1068,7 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "WEB 应用",
+          title: "将 Guard 接入到 WEB 应用",
           path: "/reference/guard/v2/web",
         },
         {

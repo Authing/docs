@@ -15,9 +15,9 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 现在开始跟随引导将 Authing Guard 接入到你的项目中吧！
 
-## STEP 1: 在 Authing 控制台创建应用
+## 第一步：在 Authing 控制台创建应用
 
-**首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)。
+**首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 
 从 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的**创建自建应用**按钮，填入以下信息：
 
@@ -29,17 +29,17 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 创建完成！接下来你将正式开始 Authing Guard (v5.0） 的接入和配置。
 
-## STEP 2: 安装、初始化并获取 Guard 实例
+## 第二步：安装、初始化并获取 Guard 实例
 
 ### 安装并初始化
 
 有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
 
-无论使用哪一种安装方式，你都需要用到应用的 `appid`，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
+无论使用哪一种安装方式，你都需要用到应用的 <strong>APP ID</strong>，请先[前往控制台获取](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 
 #### 方法一：安装 Authing library
 
-**首先，通过 npm/yarn 安装 Authing library.**
+首先，通过 npm / yarn 安装 Authing library。
 
 推荐使用 npm 或 yarn，它们能更好的和 webpack 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 
@@ -194,7 +194,7 @@ export class AppModule {}
 
 #### 方法二：直接通过浏览器加载
 
-**首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `GuardFactory`。**
+首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `GuardFactory`。
 
 ```html
 <!DOCTYPE html>
@@ -229,7 +229,7 @@ export class AppModule {}
 </html>
 ```
 
-**无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
+无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。
 
 接下来，你可以根据实际的需要，直接阅读对应的使用指南和代码示例。
 
@@ -321,7 +321,7 @@ export class HomeComponent {
 :::
 ::::
 
-## STPE 3: 常用操作
+## 第三步：常见操作
 
 ### 托管模式 & 内嵌模式
 
@@ -472,7 +472,7 @@ export class HomeComponent {
 | responseMode        | String                                      | query                                | 否   | 响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。                                                                                                                                                        |
 | responseType        | String                                      | code                                 | 否   | 响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。                                                                                                      |
 
-接下来 `startWithRedirect` 还会支持传入以下两个参数（暂不支持）：
+接下来 `startWithRedirect` 将支持传入以下两个参数（暂不支持）：
 
 - forced（即便已登录，也强制用户再次登录）。
 
@@ -565,7 +565,6 @@ export default {
 ::: tab Vue3
 
 ```vue
-<!-- TODO 完整代码示例参考 -->
 <template>
   <div id="authing-guard-container"></div>
 </template>
@@ -759,7 +758,6 @@ Vue.use(GuardPlugin, {
 <script>
   export default {
     mounted() {
-      console.log(this.$guard);
       // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
       this.$guard.start("#authing-guard-container").then((userInfo) => {
         console.log("userInfo: ", userInfo);
@@ -2043,8 +2041,7 @@ export default function Personal() {
   const guard = useGuard();
 
   const updateProfile = async () => {
-    const authenticationClient: AuthenticationClient =
-      await guard.getAuthClient();
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient();
 
     // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
     // 比如更新用户昵称
@@ -2114,7 +2111,7 @@ export default {
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -2122,8 +2119,7 @@ const guard = useGuard();
 import type { User, AuthenticationClient } from "@authing/guard-vue3";
 
 const updateProfile = async () => {
-  const authenticationClient: AuthenticationClient =
-    await guard.getAuthClient();
+  const authenticationClient: AuthenticationClient = await guard.getAuthClient();
 
   // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
   // 比如更新用户昵称
@@ -2160,8 +2156,7 @@ export class PersonalComponent {
   constructor(private guard: GuardService) {}
 
   async updateProfile() {
-    const authenticationClient: AuthenticationClient =
-      await this.guard.client.getAuthClient();
+    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient();
 
     // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
     // 比如更新用户昵称
@@ -2329,10 +2324,8 @@ export default function Login() {
   const guard = useGuard();
 
   const refreshToken = async () => {
-    const authenticationClient: AuthenticationClient =
-      await guard.getAuthClient();
-    const refreshedToken: RefreshToken =
-      await authenticationClient.refreshToken();
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient();
+    const refreshedToken: RefreshToken = await authenticationClient.refreshToken();
     console.log(refreshedToken);
   };
 
@@ -2375,10 +2368,8 @@ export default {
   const guard = useGuard();
 
   const refreshToken = async () => {
-    const authenticationClient: AuthenticationClient =
-      await guard.getAuthClient();
-    const refreshedToken: RefreshToken =
-      await authenticationClient.refreshToken();
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient();
+    const refreshedToken: RefreshToken = await authenticationClient.refreshToken();
     console.log(refreshedToken);
   };
 </script>
@@ -2409,10 +2400,8 @@ export class HomeComponent {
   ) {}
 
   async refreshToken() {
-    const authenticationClient: AuthenticationClient =
-      await this.guard.client.getAuthClient();
-    const refreshedToken: RefreshToken =
-      await authenticationClient.refreshToken();
+    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient();
+    const refreshedToken: RefreshToken = await authenticationClient.refreshToken();
     console.log(refreshedToken);
   }
 }
@@ -2476,22 +2465,30 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
+
       // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
       // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
       // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
       host="https://my-authing-app.example.com"
+
       // 控制台登录回调 URL
       redirectUri="https://my-authing-app.example.com/callback"
+
       // modal 弹框模式
       // normal 内嵌模式
       mode="normal"
+
       // 默认展示页面，具体值参考附录中的 IGuardModuleType
       defaultScene="login"
+
       tenantId="AUTHING_TENANT_ID"
+
       // 显示语言，可用值参考附录中的 Lang
       lang="zh-CN"
+
       // 是否开启单点登录
       isSSO={false}
+      
       // Guard 详细配置，具体值参考附录中的 IGuardConfig
       config={{}}
     >
@@ -2673,6 +2670,177 @@ export class AppModule {}
 | lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
 | isSSO        | Boolean                               | false                          | 否   | 是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。 |
 | config       | [IGuardConfig](#IGuardConfig)         | -                              | 否   | Guard 详细配置                                                                                                                                                                                   |
+### 配置安全域
+
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域（CORS）</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
+
+![guard-console-safity-domain](./images/guard-console-safity-domain.png)
+
+### 控制台配置项与 Authing Guard 内嵌模式本地配置的关系
+
+如果你不进行额外配置，Authing Guard 默认会使用云端的 Authing 控制台配置项，否则会对控制台中的配置进行覆盖。下面以 Guard 展示默认语言为例。
+
+默认情况下，Guard 会读取品牌化配置中的**默认语言**作为默认展示语言：
+
+![guard-console-relationship](./images/guard-console-relationship.png)
+
+你也可以通过 `changeLang` 方法修改需要展示的语言，参考[切换语言](#changeLang)
+
+### 事件列表
+
+使用 Guard 提供的 `on` 方法可以对 Guard 支持的事件进行监听：
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+
+```javascript
+guard.on("login", (userInfo) => {
+  console.log(userInfo);
+});
+```
+
+:::
+
+::: tab React
+
+```tsx
+import React, { useEffect } from "react";
+
+import { useGuard, User } from "@authing/guard-react";
+
+export default function Login() {
+  const guard = useGuard();
+
+  useEffect(() => {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
+
+    guard.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  }, []);
+
+  return (
+    <div>
+      <div id="authing-guard-container"></div>
+    </div>
+  );
+}
+```
+
+:::
+
+::: tab Vue2
+
+```javascript
+export default {
+  mounted() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log(userInfo);
+    });
+
+    this.$guard.on("login", (userInfo) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  },
+};
+```
+
+:::
+
+::: tab Vue3
+
+```html
+<script lang="ts" setup>
+  import { onMounted } from "vue";
+
+  import { useGuard } from "@authing/guard-vue3";
+
+  import type { User } from "@authing/guard-vue3";
+
+  const guard = useGuard();
+
+  onMounted(() => {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
+
+    guard.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  });
+</script>
+```
+
+:::
+
+::: tab Angular
+
+```typescript
+import { Component, ChangeDetectorRef } from "@angular/core";
+
+import { GuardService, User } from "@authing/guard-angular";
+
+@Component({
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"],
+})
+export class EmbedComponent {
+  constructor(private guard: GuardService) {}
+
+  ngOnInit() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log(userInfo);
+      });
+
+    this.guard.client.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  }
+}
+```
+
+:::
+::::
+
+完整事件列表如下：
+
+> 如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
+
+
+| 事件名称                     | 描述                                                                                      | 回调参数                              | 回调参数说明                                                                                                                                                                                                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
+| onLoadError                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
+| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
+| onLogin                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onLoginError                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
+| onRegister                   | 用户注册成功                                                                              | user, authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onRegisterError              | 用户注册失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence           | <p>sence: [IEmailScene](#IEmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
+| onEmailSendError             | 邮件发送失败                                                                              | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [IEmailScene](#IEmailScene)</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                 |
+| onPhoneSend                  | 短信验证码发送成功                                                                        | authenticationClient，sence           | <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                               |
+| onPhoneSendError             | 短信验证码发送失败                                                                        | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                    |
+| onPwdReset                   | 重置密码成功                                                                              | authenticationClient                  | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                                                    |
+| onPwdResetError              | 重置密码失败                                                                              | error，authenticationClient           | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                         |
+| onClose                      | modal 模式中 guard 关闭事件                                                               | -                                     | -                                                                                                                                                                                                                                                         |
+| onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，userInfo，authenticationClient  | <p>user: [User](#User)</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                   |
+| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，userInfo，authenticationClient | <p>error: 错误信息</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
+| onLangChange                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
+| onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
+
+## 字段类型定义
 
 ### IGuardMode
 
@@ -2889,173 +3057,3 @@ Guard 内部短信验证码发送的场景值
 | mfa-verify     | 邮箱 MFA 场景发送短信验证码 |
 | reset          | 重置密码场景发送短信验证码  |
 | complete-phone | 信息补全场景发送短信验证码  |
-
-## 配置安全域
-
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域（CORS）</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
-
-![guard-console-safity-domain](./images/guard-console-safity-domain.png)
-
-## 控制台配置项与 Authing Guard 内嵌模式本地配置的关系
-
-如果你不进行额外配置，Authing Guard 默认会使用云端的 Authing 控制台配置项，否则会对控制台中的配置进行覆盖。下面以 Guard 展示默认语言为例。
-
-默认情况下，Guard 会读取品牌化配置中的**默认语言**作为默认展示语言：
-
-![guard-console-relationship](./images/guard-console-relationship.png)
-
-你也可以通过 `changeLang` 方法修改需要展示的语言，参考[切换语言](#changeLang)
-
-## 事件列表
-
-使用 Guard 提供的 `on` 方法可以对 Guard 支持的事件进行监听：
-
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-guard.on("login", (userInfo) => {
-  console.log(userInfo);
-});
-```
-
-:::
-
-::: tab React
-
-```tsx
-import React, { useEffect } from "react";
-
-import { useGuard, User } from "@authing/guard-react";
-
-export default function Login() {
-  const guard = useGuard();
-
-  useEffect(() => {
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start("#authing-guard-container").then((userInfo: User) => {
-      console.log("userInfo: ", userInfo);
-    });
-
-    guard.on("login", (userInfo: User) => {
-      console.log("userInfo in login: ", userInfo);
-    });
-  }, []);
-
-  return (
-    <div>
-      <div id="authing-guard-container"></div>
-    </div>
-  );
-}
-```
-
-:::
-
-::: tab Vue2
-
-```javascript
-export default {
-  mounted() {
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start("#authing-guard-container").then((userInfo) => {
-      console.log(userInfo);
-    });
-
-    this.$guard.on("login", (userInfo) => {
-      console.log("userInfo in login: ", userInfo);
-    });
-  },
-};
-```
-
-:::
-
-::: tab Vue3
-
-```html
-<script lang="ts" setup>
-  import { onMounted } from "vue";
-
-  import { useGuard } from "@authing/guard-vue3";
-
-  import type { User } from "@authing/guard-vue3";
-
-  const guard = useGuard();
-
-  onMounted(() => {
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start("#authing-guard-container").then((userInfo: User) => {
-      console.log("userInfo: ", userInfo);
-    });
-
-    guard.on("login", (userInfo: User) => {
-      console.log("userInfo in login: ", userInfo);
-    });
-  });
-</script>
-```
-
-:::
-
-::: tab Angular
-
-```typescript
-import { Component, ChangeDetectorRef } from "@angular/core";
-
-import { GuardService, User } from "@authing/guard-angular";
-
-@Component({
-  selector: "embed-container",
-  templateUrl: "./embed.component.html",
-  styleUrls: ["./embed.component.css"],
-})
-export class EmbedComponent {
-  constructor(private guard: GuardService) {}
-
-  ngOnInit() {
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client
-      .start("#authing-guard-container")
-      .then((userInfo: User) => {
-        console.log(userInfo);
-      });
-
-    this.guard.client.on("login", (userInfo: User) => {
-      console.log("userInfo in login: ", userInfo);
-    });
-  }
-}
-```
-
-:::
-::::
-
-完整事件列表如下：
-
-> 如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
-
-
-| 事件名称                     | 描述                                                                                      | 回调参数                              | 回调参数说明                                                                                                                                                                                                                                              |
-| ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
-| onLoadError                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
-| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onLogin                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
-| onLoginError                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
-| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
-| onRegister                   | 用户注册成功                                                                              | user, authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
-| onRegisterError              | 用户注册失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
-| onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence           | <p>sence: [IEmailScene](#IEmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
-| onEmailSendError             | 邮件发送失败                                                                              | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [IEmailScene](#IEmailScene)</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                 |
-| onPhoneSend                  | 短信验证码发送成功                                                                        | authenticationClient，sence           | <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                               |
-| onPhoneSendError             | 短信验证码发送失败                                                                        | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                    |
-| onPwdReset                   | 重置密码成功                                                                              | authenticationClient                  | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                                                    |
-| onPwdResetError              | 重置密码失败                                                                              | error，authenticationClient           | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                         |
-| onClose                      | modal 模式中 guard 关闭事件                                                               | -                                     | -                                                                                                                                                                                                                                                         |
-| onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
-| onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
-| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，userInfo，authenticationClient  | <p>user: [User](#User)</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                   |
-| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，userInfo，authenticationClient | <p>error: 错误信息</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
-| onLangChange                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
-| onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
