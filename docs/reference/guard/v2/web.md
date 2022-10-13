@@ -15,7 +15,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 现在开始跟随引导将 Authing Guard 接入到你的项目中吧！
 
-## 步骤 1：在 Authing 控制台创建应用
+## STEP 1: 在 Authing 控制台创建应用
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)。
 
@@ -29,7 +29,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 创建完成！接下来你将正式开始 Authing Guard (v5.0） 的接入和配置。
 
-## 步骤 2：安装、初始化并获取 Guard 实例
+## STEP 2: 安装、初始化并获取 Guard 实例
 
 ### 安装并初始化
 
@@ -45,43 +45,52 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
-``` shell
+
+```shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
 ```
+
 :::
 
 ::: tab Vue2
-``` shell
+
+```shell
 # 兼容 Vue 2
 npm install --save @authing/guard-vue2
 ```
+
 :::
 
 ::: tab Vue3
-``` shell
+
+```shell
 # 兼容 Vue 3
 npm install --save @authing/guard-vue3
 ```
+
 :::
 
 ::: tab Angular
-``` shell
+
+```shell
 # 兼容 Angular 14
 npm install --save @authing/guard-angular
 ```
+
 :::
 ::::
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
-``` tsx
+
+```tsx
 // App.tsx
-import React from 'react'
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
+import React from "react";
+import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
 // 你的业务代码根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 function App() {
   return (
@@ -92,89 +101,92 @@ function App() {
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 // main.js
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-// main.ts
-import { createApp } from 'vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
-// 你的业务代码根组件
-import App from './App.vue'
 
-const app = createApp(App)
+```typescript
+// main.ts
+import { createApp } from "vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+// 你的业务代码根组件
+import App from "./App.vue";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    appId: "AUTHING_APP_ID",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com'
   })
-)
+);
 ```
+
 :::
 
 ::: tab Angular
-``` json
+
+```json
 // angular.json
 {
   "projects": {
     "architect": {
       "build": {
-        "styles": [
-          "node_modules/@authing/guard-angular/dist/guard.min.css"
-        ]
+        "styles": ["node_modules/@authing/guard-angular/dist/guard.min.css"]
       }
     }
   }
 }
 ```
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
-import { GuardModule } from '@authing/guard-angular'
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com'
-    })
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -184,33 +196,36 @@ export class AppModule { }
 
 **首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `GuardFactory`。**
 
-``` html
+```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authing Guard Demo</title>
-  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
-</head>
-<body>
-  <div id="authing-guard-container"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authing Guard Demo</title>
+    <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css"
+    />
+  </head>
+  <body>
+    <div id="authing-guard-container"></div>
 
-  <script>
-    const guard = new GuardFactory.Guard({
-      // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
-      appId: "AUTHING_APP_ID",
+    <script>
+      const guard = new GuardFactory.Guard({
+        // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+        appId: "AUTHING_APP_ID",
 
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-      // host: 'https://my-authing-app.example.com'
-    })
+        // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+        // host: 'https://my-authing-app.example.com'
+      });
 
-    // 挂载 Authing Guard
-    guard.start('#authing-guard-container')
-  </script>
-</body>
+      // 挂载 Authing Guard
+      guard.start("#authing-guard-container");
+    </script>
+  </body>
 </html>
 ```
 
@@ -224,79 +239,89 @@ export class AppModule { }
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 
-console.log('guard instance: ', guard)
+console.log("guard instance: ", guard);
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import { useGuard } from '@authing/guard-react'
 
-export default function Login () {
-  const guard = useGuard()
+```tsx
+import { useGuard } from "@authing/guard-react";
 
-  console.log('guard instance: ', guard)
+export default function Login() {
+  const guard = useGuard();
 
-  return <div></div>
+  console.log("guard instance: ", guard);
+
+  return <div></div>;
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
-  created () {
-    console.log('guard instance: ', this.$guard)
-  }
-}
+  created() {
+    console.log("guard instance: ", this.$guard);
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` javascript
-import { useGuard } from '@authing/guard-vue3'
 
-const guard = useGuard()
+```javascript
+import { useGuard } from "@authing/guard-vue3";
 
-console.log('guard instance: ', guard)
+const guard = useGuard();
+
+console.log("guard instance: ", guard);
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // Angular 组件中使用 Guard API
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'home-container',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "home-container",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  constructor (
+  constructor(
     // 使用 Angular 依赖注入，获取 Guard 实例
     private guard: GuardService
   ) {}
 
-  ngOnInit () {
-    console.log('guard instance: ', this.guard.client)
+  ngOnInit() {
+    console.log("guard instance: ", this.guard.client);
   }
 }
 ```
+
 :::
 ::::
 
-## 步骤 3：常用操作
+## STPE 3: 常用操作
 
 ### 托管模式 & 内嵌模式
 
@@ -316,7 +341,7 @@ export class HomeComponent {
 
 **对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、最安全、最通用的 Authing 认证最佳实践。**
 
-### 使用托管模式
+### 托管模式
 
 托管模式将跳转到 Authing 提供的托管登录页。由于此模式 Authing 默认使用 OIDC 标准协议认证，你需要进行以下额外配置：
 
@@ -324,247 +349,260 @@ export class HomeComponent {
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
-- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式` 勾选 `authorization_code`，`返回类型`勾选 `code`。
-
-![guard-console-authentication-config](./images/guard-console-authentication-config.png)
-
 - 在应用详情的`应用配置` - `其他配置` - `授权配置`中，请确保应用的「换取 token 身份验证方式」设置为了 `none`（如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况）。
 
 ![guard-console-identify-verify-mode](./images/guard-console-identify-verify-mode.png)
 
-
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 
-function startWithRedirect () {
+function startWithRedirect() {
   // 跳转到 Authing 托管页面登录
-  guard.startWithRedirect()
+  guard.startWithRedirect();
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import { useGuard } from '@authing/guard-react'
+
+```tsx
+import { useGuard } from "@authing/guard-react";
 
 export default function Jump() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   // 跳转到 Authing 托管页面登录
-  const startWithRedirect = () => guard.startWithRedirect()
+  const startWithRedirect = () => guard.startWithRedirect();
 
   return (
     <div>
       <div>
-        <button className='authing-button' onClick={startWithRedirect}>Start With Redirect</button>
+        <button className="authing-button" onClick={startWithRedirect}>
+          Start With Redirect
+        </button>
       </div>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
   methods: {
-    startWithRedirect () {
+    startWithRedirect() {
       // 跳转到 Authing 托管页面登录
-      this.$guard.startWithRedirect()
-    }
-  }
-}
+      this.$guard.startWithRedirect();
+    },
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` javascript
-import { useGuard } from '@authing/guard-vue3'
 
-const guard = useGuard()
+```javascript
+import { useGuard } from "@authing/guard-vue3";
+
+const guard = useGuard();
 
 const startWithRedirect = () => {
   // 跳转到 Authing 托管页面登录
-  guard.startWithRedirect()
-}
+  guard.startWithRedirect();
+};
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // Angular 组件中使用 Guard API
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'home-container',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "home-container",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  constructor (
+  constructor(
     // 使用 Angular 依赖注入，获取 Guard 实例
     private guard: GuardService
   ) {}
 
-  startWithRedirect () {
+  startWithRedirect() {
     // 跳转到 Authing 托管页面登录
-    this.guard.client.startWithRedirect()
+    this.guard.client.startWithRedirect();
   }
 }
 ```
+
 :::
 ::::
 
 此外，`startWithRedirect` 函数还可以自定义传入一个对象，具体参数如下：
 
-|名称|类型|默认值|必传|描述|
-|----|----|----|----|----|
-|codeChallengeMethod|[CodeChallengeMethod](#CodeChallengeMethod)|S256|否|表示计算 code_challenge 时使用的摘要算法，plain 表示不用任何算法，S256 表示 code_challenge 是使用 SHA256 计算的。|
-|scope|String|"openid profile email phone address"|否|OIDC scope，用空格分割，默认为 "openid profile email phone address"。完整的 scope 列表请见[此文档](https://docs.authing.co/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。|
-|redirectUri|String|-|否|登录回调地址，可在 Console 控制台配置|
-|state|String|自动生成的随机数|否|随机字符串，选填，默认自动生成。|
-|nonce|String|自动生成的随机数|否|随机字符串，选填，默认自动生成。|
-|responseMode|String|query|否|响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。|
-|responseType|String|code|否|响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。|
+| 名称                | 类型                                        | 默认值                               | 必传 | 描述                                                                                                                                                                                                                                                         |
+| ------------------- | ------------------------------------------- | ------------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| codeChallengeMethod | [CodeChallengeMethod](#CodeChallengeMethod) | S256                                 | 否   | 表示计算 code_challenge 时使用的摘要算法，plain 表示不用任何算法，S256 表示 code_challenge 是使用 SHA256 计算的。                                                                                                                                            |
+| scope               | String                                      | "openid profile email phone address" | 否   | OIDC scope，用空格分割，默认为 "openid profile email phone address"。完整的 scope 列表请见[此文档](https://docs.authing.co/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。 |
+| redirectUri         | String                                      | -                                    | 否   | 登录回调地址，可在 Console 控制台配置                                                                                                                                                                                                                        |
+| state               | String                                      | 自动生成的随机数                     | 否   | 随机字符串，选填，默认自动生成。                                                                                                                                                                                                                             |
+| nonce               | String                                      | 自动生成的随机数                     | 否   | 随机字符串，选填，默认自动生成。                                                                                                                                                                                                                             |
+| responseMode        | String                                      | query                                | 否   | 响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。                                                                                                                                                        |
+| responseType        | String                                      | code                                 | 否   | 响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。                                                                                                      |
 
 <p id="CodeChallengeMethod">CodeChallengeMethod</p>
 
-|名称|描述|
-|----|----|
-|S256|code_challenge 是使用 SHA256 计算|
-|plain|不使用任何算法计算|
+| 名称  | 描述                              |
+| ----- | --------------------------------- |
+| S256  | code_challenge 是使用 SHA256 计算 |
+| plain | 不使用任何算法计算                |
 
-接下来，我们将支持以下两个参数（目前暂不支持）：
-
-- forced：即便已登录，也强制用户再次登录。
-
-- useImplicitMode：是否使用 OIDC implicit 模式替代默认的 PKCE 模式，安全性较低，不推荐使用，目前只是 Web SDK 中有这个选项。
-
-### 使用内嵌模式
+### 内嵌模式
 
 #### 普通形态
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` html
+
+```html
 <div id="authing-guard-container"></div>
 ```
 
-``` javascript
+```javascript
 // 获取 Guard 实例
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 
 // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-guard.start('#authing-guard-container').then(userInfo => {
-  console.log('userInfo: ', userInfo)
-})
+guard.start("#authing-guard-container").then((userInfo) => {
+  console.log("userInfo: ", userInfo);
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React, { useEffect } from 'react'
 
-import { useGuard, User } from '@authing/guard-react'
+```tsx
+import React, { useEffect } from "react";
+
+import { useGuard, User } from "@authing/guard-react";
 
 export default function Login() {
   // 获取 Guard 实例
-  const guard = useGuard()
+  const guard = useGuard();
 
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
-  }, [])
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
+  }, []);
 
-  return <div>
-    <div id="authing-guard-container"></div>
-  </div>
+  return (
+    <div>
+      <div id="authing-guard-container"></div>
+    </div>
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` vue
+
+```vue
 <template>
   <div id="authing-guard-container"></div>
 </template>
 <script>
 export default {
-  mounted () {
+  mounted() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log('userInfo: ', userInfo)
-    })
-  }
-}
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
+    });
+  },
+};
 </script>
 ```
+
 :::
 
 ::: tab Vue3
-``` vue
+
+```vue
 <!-- TODO 完整代码示例参考 -->
 <template>
   <div id="authing-guard-container"></div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-import type { User } from '@authing/guard-vue3'
+import { onMounted } from "vue";
+import { useGuard } from "@authing/guard-vue3";
+import type { User } from "@authing/guard-vue3";
 
-const guard = useGuard()
+const guard = useGuard();
 
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then((userInfo: User) => {
-    console.log('userInfo: ', userInfo)
-  })
-})
+  guard.start("#authing-guard-container").then((userInfo: User) => {
+    console.log("userInfo: ", userInfo);
+  });
+});
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService, User } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "login-container",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  ngOnInit () {
+  ngOnInit() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log("userInfo: ", userInfo);
+      });
   }
 }
 ```
+
 :::
 ::::
 
@@ -576,114 +614,132 @@ export class LoginComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` html
+
+```html
 <button onclick="showGuard()">Show Guard</button>
 
-<div>模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果</div>
+<div>
+  模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide
+  方法的效果
+</div>
 <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
 <div id="authing-guard-container"></div>
 ```
-``` javascript
-const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  mode: 'modal',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-  // host: 'https://my-authing-app.example.com'
-})
 
-guard.start('#authing-guard-container').then(userInfo => {
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  mode: "modal",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+guard.start("#authing-guard-container").then((userInfo) => {
   // 登录成功后将在 then 回调中获取到 userInfo
-  console.log('userInfo: ', userInfo)
+  console.log("userInfo: ", userInfo);
 
   setTimeout(() => {
-    guard.hide()
-  }, 2000)
-})
+    guard.hide();
+  }, 2000);
+});
 
-function showGuard () {
-  guard.show()
+function showGuard() {
+  guard.show();
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
+
+```tsx
 // App.tsx
-import React from 'react'
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
-import RouterComponent from './router'
+import React from "react";
+import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
+import RouterComponent from "./router";
 
 function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
       mode="modal"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host="https://my-authing-app.example.com"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
 
-``` tsx
+```tsx
 // Embed.tsx
-import { useGuard, User } from '@authing/guard-react'
+import { useGuard, User } from "@authing/guard-react";
 
 export default function Embed() {
-  const guard = useGuard()
+  const guard = useGuard();
 
-  const showGuard = () => guard.show()
+  const showGuard = () => guard.show();
 
   useEffect(() => {
     // 挂载模态框，当用户完成登录之后，你可以获取到用户信息
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
 
       setTimeout(() => {
-        guard.hide()
-      }, 2000)
-    })
-  }, [])
+        guard.hide();
+      }, 2000);
+    });
+  }, []);
 
-  return <div>
-    <button className='authing-button' onClick={showGuard}>Show Guard</button>
+  return (
+    <div>
+      <button className="authing-button" onClick={showGuard}>
+        Show Guard
+      </button>
 
-    <div>模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果</div>
-    <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
+      <div>
+        模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
+        hide 方法的效果
+      </div>
+      <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
-    <div id="authing-guard-container"></div>
-  </div>
+      <div id="authing-guard-container"></div>
+    </div>
+  );
 }
-
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 // main.js
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  mode: 'modal',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  mode: "modal",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 ```
 
-``` html
+```html
 <!-- Embed.vue -->
 <template>
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
-    <div>模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果</div>
+    <div>
+      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
+      hide 方法的效果
+    </div>
     <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
     <div id="authing-guard-container"></div>
@@ -691,55 +747,60 @@ Vue.use(GuardPlugin, {
 </template>
 
 <script>
-export default {
-  mounted () {
-    console.log(this.$guard)
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log('userInfo: ', userInfo)
+  export default {
+    mounted() {
+      console.log(this.$guard);
+      // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+      this.$guard.start("#authing-guard-container").then((userInfo) => {
+        console.log("userInfo: ", userInfo);
 
-      setTimeout(() => {
-        this.$guard.hide()
-      }, 2000)
-    })
-  },
-  methods: {
-    showGuard () {
-      this.$guard.show()
-    }
-  }
-}
+        setTimeout(() => {
+          this.$guard.hide();
+        }, 2000);
+      });
+    },
+    methods: {
+      showGuard() {
+        this.$guard.show();
+      },
+    },
+  };
 </script>
 ```
+
 :::
 
 ::: tab Vue3
-``` javascript
-// main.ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```javascript
+// main.ts
+import { createApp } from "vue";
+import App from "./App.vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    mode: 'modal',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    appId: "AUTHING_APP_ID",
+    mode: "modal",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com'
   })
-)
+);
 ```
 
-``` html
+```html
 <!-- Embed.vue -->
 <template>
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
-    <div>模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果</div>
+    <div>
+      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
+      hide 方法的效果
+    </div>
     <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
     <div id="authing-guard-container"></div>
@@ -747,86 +808,88 @@ app.use(
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+  import { onMounted } from "vue";
 
-import { useGuard } from '@authing/guard-vue3'
+  import { useGuard } from "@authing/guard-vue3";
 
-const guard = useGuard()
+  const guard = useGuard();
 
-const showGuard = () => guard.show()
+  const showGuard = () => guard.show();
 
-onMounted(() => {
-  // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then(userInfo => {
-    console.log('userInfo: ', userInfo)
+  onMounted(() => {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
 
-    setTimeout(() => {
-      guard.hide()
-    }, 2000)
-  })
-})
+      setTimeout(() => {
+        guard.hide();
+      }, 2000);
+    });
+  });
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { GuardModule } from '@authing/guard-angular'
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { GuardModule } from "@authing/guard-angular";
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      mode: 'modal',
+      appId: "AUTHING_APP_ID",
+      mode: "modal",
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com'
-    })
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
-``` typescript
-// embed.component.ts
-import { Component } from '@angular/core'
 
-import { GuardService, User } from '@authing/guard-angular'
+```typescript
+// embed.component.ts
+import { Component } from "@angular/core";
+
+import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: 'embed-container',
-  templateUrl: './embed.component.html',
-  styleUrls: ['./embed.component.css']
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"],
 })
 export class EmbedComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  ngOnInit () {
-    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
+  ngOnInit() {
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log("userInfo: ", userInfo);
 
-      setTimeout(() => {
-        this.guard.client.hide()
-      }, 2000)
-    })
+        setTimeout(() => {
+          this.guard.client.hide();
+        }, 2000);
+      });
   }
 
-  showGuard () {
-    this.guard.client.show()
+  showGuard() {
+    this.guard.client.show();
   }
 }
 ```
+
 :::
 ::::
 
@@ -844,104 +907,111 @@ export class EmbedComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-  isSSO: true
-})
+  isSSO: true,
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React from 'react'
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
+
+```tsx
+import React from "react";
+import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
 // 项目根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host="https://my-authing-app.example.com",
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+
+```javascript
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-  isSSO: true
-})
+  isSSO: true,
+});
 ```
+
 :::
 
 ::: tab Vue3
-``` javascript
-import { createApp } from 'vue'
-import App from './App.vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```javascript
+import { createApp } from "vue";
+import App from "./App.vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    appId: "AUTHING_APP_ID",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com',
-    isSSO: true
+    isSSO: true,
   })
-)
-
+);
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+```typescript
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { GuardModule } from '@authing/guard-angular'
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com',
-      isSSO: true
-    })
+      isSSO: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -953,85 +1023,93 @@ export class AppModule { }
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com'
-})
+});
 
 function Logout() {
   // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-  const onLogout = () => guard.logout()
+  const onLogout = () => guard.logout();
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React from 'react'
-import { useGuard } from '@authing/guard-react'
+
+```tsx
+import React from "react";
+import { useGuard } from "@authing/guard-react";
 
 export default function Logout() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-  const onLogout = () => guard.logout()
+  const onLogout = () => guard.logout();
 
   return (
     <div>
       <button onClick={onLogout}>Logout</button>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
   methods: {
     // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-    logout () {
-      this.$guard.logout()
+    logout() {
+      this.$guard.logout();
     },
-  }
-}
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-import { useGuard } from '@authing/guard-vue3'
 
-const guard = useGuard()
+```typescript
+import { useGuard } from "@authing/guard-vue3";
+
+const guard = useGuard();
 
 // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-const logout = () => guard.logout()
+const logout = () => guard.logout();
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'login-container',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "login-container",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  onLogout () {
+  onLogout() {
     // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-    this.guard.client.logout()
+    this.guard.client.logout();
   }
 }
 ```
+
 :::
 ::::
 
@@ -1041,169 +1119,175 @@ export class LoginComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-  isSSO: true
-})
+  isSSO: true,
+});
 
 function Logout() {
   // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-  const onLogout = () => guard.logout()
+  const onLogout = () => guard.logout();
 }
 ```
 
 ::: tab React
-``` tsx
+
+```tsx
 // App.tsx
-import React from 'react'
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
+import React from "react";
+import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
 // 项目根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host="https://my-authing-app.example.com"
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
 
-``` tsx
+```tsx
 // Logout.tsx
-import React from 'react'
-import { useGuard } from '@authing/guard-react'
+import React from "react";
+import { useGuard } from "@authing/guard-react";
 
 export default function Logout() {
-  const guard = useGuard()
-  const onLogout = () => guard.logout()
+  const guard = useGuard();
+  const onLogout = () => guard.logout();
 
   return (
     <div>
       <button onClick={onLogout}>Logout</button>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 // main.js
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
-  isSSO: true
-})
+  isSSO: true,
+});
 ```
 
-``` javascript
+```javascript
 // Logout.vue
 export default {
   methods: {
     // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-    logout () {
-      this.$guard.logout()
+    logout() {
+      this.$guard.logout();
     },
-  }
-}
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-// main.ts
-import { createApp } from 'vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```typescript
+// main.ts
+import { createApp } from "vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    appId: "AUTHING_APP_ID",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com',
-    isSSO: true
+    isSSO: true,
   })
-)
+);
 ```
-``` typescript
-// Logout.vue
-import { useGuard } from '@authing/guard-vue3'
 
-const guard = useGuard()
+```typescript
+// Logout.vue
+import { useGuard } from "@authing/guard-vue3";
+
+const guard = useGuard();
 
 // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
-const logout = () => guard.logout()
+const logout = () => guard.logout();
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { GuardModule } from '@authing/guard-angular'
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com',
-      isSSO: true
-    })
+      isSSO: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
-``` typescript
+```typescript
 // logout.component.ts
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'logout-container',
-  templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  selector: "logout-container",
+  templateUrl: "./logout.component.html",
+  styleUrls: ["./logout.component.css"],
 })
 export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  onLogout () {
-    this.guard.client.logout()
+  onLogout() {
+    this.guard.client.logout();
   }
 }
 ```
+
 :::
 ::::
 
@@ -1213,72 +1297,80 @@ export class LoginComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
-function startRegister () {
-  guard.startRegister()
+
+```javascript
+function startRegister() {
+  guard.startRegister();
 }
 ```
+
 :::
 ::: tab React
-``` tsx
-import React from 'react'
-import { useGuard } from '@authing/guard-react'
+
+```tsx
+import React from "react";
+import { useGuard } from "@authing/guard-react";
 
 export default function Register() {
-  const guard = useGuard()
-  const startRegister = () => guard.startRegister()
+  const guard = useGuard();
+  const startRegister = () => guard.startRegister();
 
   return (
     <div>
       <button onClick={startRegister}>Start Register</button>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
   methods: {
-    startRegister () {
-      this.$guard.startRegister()
-    }
-  }
-}
+    startRegister() {
+      this.$guard.startRegister();
+    },
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-import { useGuard } from '@authing/guard-vue3'
 
-const guard = useGuard()
+```typescript
+import { useGuard } from "@authing/guard-vue3";
 
-const startRegister = () => guard.startRegister()
+const guard = useGuard();
+
+const startRegister = () => guard.startRegister();
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'register-container',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: "register-container",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"],
 })
 export class LoginComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  startRegister () {
-    this.guard.client.startRegister()
+  startRegister() {
+    this.guard.client.startRegister();
   }
 }
 ```
+
 :::
 ::::
 
@@ -1299,95 +1391,103 @@ export class LoginComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
   config: {
-    socialConnectionList: ['github']
-  }
-})
+    socialConnectionList: ["github"],
+  },
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React from 'react'
 
-import { GuardProvider } from '@authing/guard-react'
+```tsx
+import React from "react";
 
-import '@authing/guard-react/dist/esm/guard.min.css'
+import { GuardProvider } from "@authing/guard-react";
+
+import "@authing/guard-react/dist/esm/guard.min.css";
 
 // 用户业务根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 export default function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host="https://my-authing-app.example.com",
       config={{
-        socialConnectionList: ['github'],
+        socialConnectionList: ["github"],
       }}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+
+```javascript
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
   // host: 'https://my-authing-app.example.com',
   config: {
-    socialConnectionList: ['github']
+    socialConnectionList: ["github"],
   },
-})
+});
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-import { createApp } from 'vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```typescript
+import { createApp } from "vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+    appId: "AUTHING_APP_ID",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
     // host: 'https://my-authing-app.example.com',
     config: {
-      socialConnectionList: ['github']
-    }
+      socialConnectionList: ["github"],
+    },
   })
-)
-
+);
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { GuardModule } from '@authing/guard-angular'
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
   declarations: [AppComponent],
@@ -1395,19 +1495,20 @@ import { GuardModule } from '@authing/guard-angular'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       // host: 'https://my-authing-app.example.com',
       config: {
-        socialConnectionList: ['github']
-      }
-    })
+        socialConnectionList: ["github"],
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -1419,89 +1520,97 @@ export class AppModule {}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
-async function getUserInfo () {
+
+```javascript
+async function getUserInfo() {
   // 获取用户信息
-  const userInfo = await guard.trackSession()
-  console.log(userInfo)
+  const userInfo = await guard.trackSession();
+  console.log(userInfo);
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React from 'react'
-import { useGuard, User } from '@authing/guard-react'
+
+```tsx
+import React from "react";
+import { useGuard, User } from "@authing/guard-react";
 
 export default function GetUserInfo() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   const getUserInfo = async () => {
     // 获取用户信息
-    const userInfo: User | null = await guard.trackSession()
-    console.log("userInfo: ",userInfo)
-  }
+    const userInfo: User | null = await guard.trackSession();
+    console.log("userInfo: ", userInfo);
+  };
 
   return (
     <div>
       <button onClick={getUserInfo}>Get User Info</button>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
   methods: {
-    async getUserInfo () {
-      const userInfo = await this.$guard.trackSession()
-      console.log('userInfo: ', userInfo)
+    async getUserInfo() {
+      const userInfo = await this.$guard.trackSession();
+      console.log("userInfo: ", userInfo);
     },
-  }
-}
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` html
+
+```html
 <script lang="ts" setup>
-import { useGuard  } from '@authing/guard-vue3'
+  import { useGuard } from "@authing/guard-vue3";
 
-import type { User } from '@authing/guard-vue3'
+  import type { User } from "@authing/guard-vue3";
 
-const guard = useGuard()
+  const guard = useGuard();
 
-const getUserInfo = async () => {
-  const userInfo: User | null = await guard.trackSession()
-  console.log('userInfo: ', userInfo)
-}
+  const getUserInfo = async () => {
+    const userInfo: User | null = await guard.trackSession();
+    console.log("userInfo: ", userInfo);
+  };
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService, User } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: 'get-user-info-container',
-  templateUrl: './get-user-info.component.html',
-  styleUrls: ['./get-user-info.component.css']
+  selector: "get-user-info-container",
+  templateUrl: "./get-user-info.component.html",
+  styleUrls: ["./get-user-info.component.css"],
 })
 export class GetUserInfoComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
   async getUserInfo() {
-    const userInfo: User | null = await this.guard.client.trackSession()
-    console.log('userInfo: ', userInfo)
+    const userInfo: User | null = await this.guard.client.trackSession();
+    console.log("userInfo: ", userInfo);
   }
 }
 ```
+
 :::
 ::::
 
@@ -1522,7 +1631,8 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` html
+
+```html
 <select onchange="changeLang(event)">
   <option value="zh-CN">zh-CN</option>
   <option value="zh-TW">zh-TW</option>
@@ -1530,58 +1640,63 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
   <option value="ja-JP">ja-JP</option>
 </select>
 ```
-``` javascript
-function changeLang (event) {
-  guard.changeLang(event.target.value)
+
+```javascript
+function changeLang(event) {
+  guard.changeLang(event.target.value);
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React, { useEffect, useState } from 'react'
 
-import { useGuard, User } from '@authing/guard-react'
+```tsx
+import React, { useEffect, useState } from "react";
+
+import { useGuard, User } from "@authing/guard-react";
 
 export default function ChangeLanguage() {
-  const [langCache, setLangCache] = useState('')
+  const [langCache, setLangCache] = useState("");
 
-  const guard = useGuard()
+  const guard = useGuard();
 
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
 
-    guard.on('load', ()=>{
-      const langCache = localStorage.getItem('_guard_i18nextLng') || 'zh-CN'
-      setLangCache(langCache)
-    })
-  }, [])
+    guard.on("load", () => {
+      const langCache = localStorage.getItem("_guard_i18nextLng") || "zh-CN";
+      setLangCache(langCache);
+    });
+  }, []);
 
   const changeLang = (event: any) => {
-    guard.changeLang(event.target.value)
-    setLangCache(event.target.value)
-  }
+    guard.changeLang(event.target.value);
+    setLangCache(event.target.value);
+  };
 
   return (
     <div>
       <select value={langCache} onChange={changeLang}>
-          <option value="zh-CN">zh-CN</option>
-          <option value="en-US">en-US</option>
-          <option value="zh-TW">zh-TW</option>
-          <option value="ja-JP">ja-JP</option>
+        <option value="zh-CN">zh-CN</option>
+        <option value="en-US">en-US</option>
+        <option value="zh-TW">zh-TW</option>
+        <option value="ja-JP">ja-JP</option>
       </select>
       <div id="authing-guard-container"></div>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` vue
+
+```vue
 <template>
   <div class="embed-container">
     <select v-model="langCache" @change="changeLang">
@@ -1596,34 +1711,36 @@ export default function ChangeLanguage() {
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      langCache: ''
-    }
+      langCache: "",
+    };
   },
-  mounted () {
+  mounted() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log('userInfo: ', userInfo)
-    })
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
+    });
 
-    this.$guard.on('load', ()=>{
-      this.langCache = localStorage.getItem('_guard_i18nextLng')
-    })
+    this.$guard.on("load", () => {
+      this.langCache = localStorage.getItem("_guard_i18nextLng");
+    });
   },
   methods: {
-    changeLang (event) {
-      this.$guard.changeLang(event.target.value)
-      this.langCache = event.target.value
-    }
-  }
-}
+    changeLang(event) {
+      this.$guard.changeLang(event.target.value);
+      this.langCache = event.target.value;
+    },
+  },
+};
 </script>
 ```
+
 :::
 
 ::: tab Vue3
-``` vue
+
+```vue
 <template>
   <div class="embed-container">
     <select v-model="langCache" @change="changeLang">
@@ -1636,56 +1753,57 @@ export default {
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-import type { User } from '@authing/guard-vue3'
+import { ref, onMounted } from "vue";
+import { useGuard } from "@authing/guard-vue3";
+import type { User } from "@authing/guard-vue3";
 
-const langCache = ref('')
-const guard = useGuard()
+const langCache = ref("");
+const guard = useGuard();
 
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then((userInfo: User) => {
-    console.log('userInfo: ', userInfo)
-  })
+  guard.start("#authing-guard-container").then((userInfo: User) => {
+    console.log("userInfo: ", userInfo);
+  });
 
-  guard.on('load', ()=>{
-    langCache.value = localStorage.getItem('_guard_i18nextLng')
-  })
-})
+  guard.on("load", () => {
+    langCache.value = localStorage.getItem("_guard_i18nextLng");
+  });
+});
 
 const changeLang = (event) => {
-  guard.changeLang(event.target.value)
-  langCache.value = event.target.value
-}
+  guard.changeLang(event.target.value);
+  langCache.value = event.target.value;
+};
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: 'change-lang-container',
-  templateUrl: './change-lang.component.html',
-  styleUrls: ['./change-lang.component.css']
+  selector: "change-lang-container",
+  templateUrl: "./change-lang.component.html",
+  styleUrls: ["./change-lang.component.css"],
 })
 export class GetUserInfoComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
-  langCache = ''
+  langCache = "";
 
   changeLang(event: any) {
-    this.langCache = event?.target?.value
-    this.guard.client.changeLang(event?.target?.value)
+    this.langCache = event?.target?.value;
+    this.guard.client.changeLang(event?.target?.value);
   }
 }
 ```
-``` html
+
+```html
 <div class="change-lang-container">
   <select ng-model="langCache" (change)="changeLang($event)">
     <option ngValue="zh-CN">zh-CN</option>
@@ -1696,6 +1814,7 @@ export class GetUserInfoComponent {
   <div id="authing-guard-container"></div>
 </div>
 ```
+
 :::
 ::::
 
@@ -1707,91 +1826,79 @@ export class GetUserInfoComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-```html
-<div id="authing-guard-container"></div>
-```
 
-``` javascript
-function changeContentCSS () {
-  guard.changeContentCSS(`
-    #authing-guard-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  `)
+```javascript
+function changeContentCSS() {
+  guard.changeContentCSS("body {background: blue}");
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React, { useEffect } from 'react'
-import { useGuard, User } from '@authing/guard-react'
+
+```tsx
+import React, { useEffect } from "react";
+import { useGuard, User } from "@authing/guard-react";
 
 export default function ChangeContentCSS() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   useEffect(() => {
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
-  }, [])
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
+  }, []);
 
   // 设置自定义样式
-  const changeContentCSS = () => guard.changeContentCSS(`
-    #authing-guard-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  `)
+  const changeContentCSS = () =>
+    guard.changeContentCSS("body {background: red}");
 
   return (
     <div>
       <button onClick={changeContentCSS}>Change Content CSS</button>
       <div id="authing-guard-container"></div>
     </div>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` vue
+
+```vue
 <template>
   <div class="embed-container">
-    <button class="authing-button" @click="changeContentCSS">Change Content CSS</button>
+    <button class="authing-button" @click="changeContentCSS">
+      Change Content CSS
+    </button>
     <div id="authing-guard-container"></div>
   </div>
 </template>
 
 <script>
 export default {
-  mounted () {
+  mounted() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log('userInfo: ', userInfo)
-    })
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
+    });
   },
   methods: {
-    changeContentCSS () {
-      this.$guard.changeContentCSS(`
-        #authing-guard-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      `)
+    changeContentCSS() {
+      this.$guard.changeContentCSS("body {background: blue}");
     },
-  }
-}
+  },
+};
 </script>
 ```
+
 :::
 
 ::: tab Vue3
-``` vue
+
+```vue
 <template>
   <div class="embed-container">
     <button @click="changeContentCSS">Change Content CSS</button>
@@ -1800,69 +1907,62 @@ export default {
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useGuard } from '@authing/guard-vue3'
-import type { User } from '@authing/guard-vue3'
+import { ref, onMounted } from "vue";
+import { useGuard } from "@authing/guard-vue3";
+import type { User } from "@authing/guard-vue3";
 
-const guard = useGuard()
+const guard = useGuard();
 
 onMounted(() => {
   // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then((userInfo: User) => {
-    console.log("userInfo: ", userInfo)
-  })
-})
+  guard.start("#authing-guard-container").then((userInfo: User) => {
+    console.log("userInfo: ", userInfo);
+  });
+});
 
-const changeContentCSS = () => guard.changeContentCSS(`
-  #authing-guard-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`)
+const changeContentCSS = () =>
+  guard.changeContentCSS("body {background: blue}");
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { GuardService, User } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: 'change-content-css-container',
-  templateUrl: './change-content-css.component.html',
-  styleUrls: ['./change-content-css.component.css']
+  selector: "change-content-css-container",
+  templateUrl: "./change-content-css.component.html",
+  styleUrls: ["./change-content-css.component.css"],
 })
 export class GetUserInfoComponent {
-  constructor (
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
   ngOnInit() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log("userInfo: ", userInfo);
+      });
   }
 
   changeContentCSS() {
-    this.guard.client.changeContentCSS(`
-      #authing-guard-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    `)
+    this.guard.client.changeContentCSS("body {background: red}");
   }
 }
 ```
-``` html
+
+```html
 <div class="change-content-css-container">
   <button (click)="changeContentCSS()">Change Content CSS</button>
   <div id="authing-guard-container"></div>
 </div>
 ```
+
 :::
 ::::
 
@@ -1874,59 +1974,71 @@ Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://doc
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
-async function updateProfile () {
-  const authenticationClient = await guard.getAuthClient()
+
+```javascript
+async function updateProfile() {
+  const authenticationClient = await guard.getAuthClient();
 
   // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
   // 比如更新用户昵称
   const userProfile = await authenticationClient.updateProfile({
-    nickname: 'Nick'
-  })
+    nickname: "Nick",
+  });
 
-  console.log('userProfile: ', userProfile)
+  console.log("userProfile: ", userProfile);
 
   // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
   // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React, { useEffect } from 'react'
-import { useGuard, AuthenticationClient, User } from '@authing/guard-react'
+
+```tsx
+import React, { useEffect } from "react";
+import { useGuard, AuthenticationClient, User } from "@authing/guard-react";
 
 export default function Personal() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   const updateProfile = async () => {
-    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
+    const authenticationClient: AuthenticationClient =
+      await guard.getAuthClient();
 
     // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
     // 比如更新用户昵称
     const userProfile: User = await authenticationClient.updateProfile({
-      nickname: 'Nick'
-    })
+      nickname: "Nick",
+    });
 
-    console.log('userProfile: ', userProfile)
+    console.log("userProfile: ", userProfile);
 
     // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
     // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
-  }
+  };
 
-  return <div>
-    <button className='authing-button' onClick={updateProfile}>Update Profile</button>
-  </div>
+  return (
+    <div>
+      <button className="authing-button" onClick={updateProfile}>
+        Update Profile
+      </button>
+    </div>
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` vue
+
+```vue
 <template>
   <div class="personal-container">
-    <button class="authing-button" @click="updateProfile">Update Profile</button>
+    <button class="authing-button" @click="updateProfile">
+      Update Profile
+    </button>
   </div>
 </template>
 
@@ -1934,28 +2046,29 @@ export default function Personal() {
 export default {
   methods: {
     async updateProfile() {
-      const authenticationClient = await this.$guard.getAuthClient()
+      const authenticationClient = await this.$guard.getAuthClient();
 
       // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
       // 比如更新用户昵称
       const userProfile = await authenticationClient.updateProfile({
-        nickname: 'Nick'
-      })
+        nickname: "Nick",
+      });
 
-      console.log(userProfile)
+      console.log(userProfile);
 
       // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
       // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
-    }
-  }
-}
+    },
+  },
+};
 </script>
-
 ```
+
 :::
 
 ::: tab Vue3
-``` vue
+
+```vue
 <template>
   <div class="personal-container">
     <button @click="updateProfile">Update Profile</button>
@@ -1963,59 +2076,68 @@ export default {
 </template>
 
 <script setup>
-import { useGuard } from '@authing/guard-vue3'
+import { useGuard } from "@authing/guard-vue3";
 
-const guard = useGuard()
+const guard = useGuard();
 
-import type { User, AuthenticationClient } from '@authing/guard-vue3'
+import type { User, AuthenticationClient } from "@authing/guard-vue3";
 
 const updateProfile = async () => {
-  const authenticationClient: AuthenticationClient = await guard.getAuthClient()
+  const authenticationClient: AuthenticationClient =
+    await guard.getAuthClient();
 
   // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
   // 比如更新用户昵称
   const userProfile: User = await authenticationClient.updateProfile({
-    nickname: 'Nick'
-  })
+    nickname: "Nick",
+  });
 
-  console.log(userProfile)
+  console.log(userProfile);
 
   // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
   // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
-}
+};
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component } from '@angular/core'
-import { AuthenticationClient, GuardService, User } from '@authing/guard-angular'
+
+```typescript
+import { Component } from "@angular/core";
+import {
+  AuthenticationClient,
+  GuardService,
+  User,
+} from "@authing/guard-angular";
 
 @Component({
-  selector: 'personal-container',
-  templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  selector: "personal-container",
+  templateUrl: "./personal.component.html",
+  styleUrls: ["./personal.component.css"],
 })
 export class PersonalComponent {
   constructor(private guard: GuardService) {}
 
   async updateProfile() {
-    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient()
+    const authenticationClient: AuthenticationClient =
+      await this.guard.client.getAuthClient();
 
     // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
     // 比如更新用户昵称
     const userProfile: User = await authenticationClient.updateProfile({
-      nickname: 'Nick'
-    })
+      nickname: "Nick",
+    });
 
-    console.log('userProfile: ', userProfile)
+    console.log("userProfile: ", userProfile);
 
     // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
     // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
   }
 }
 ```
+
 :::
 ::::
 
@@ -2025,86 +2147,94 @@ export class PersonalComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-  host: 'https://my-authing-app.example.com'
-})
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  host: "https://my-authing-app.example.com",
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
+
+```tsx
 // App.tsx
-import React from 'react'
+import React from "react";
 
-import { GuardProvider } from '@authing/guard-react'
+import { GuardProvider } from "@authing/guard-react";
 
-import '@authing/guard-react/dist/esm/guard.min.css'
+import "@authing/guard-react/dist/esm/guard.min.css";
 
 // 用户业务根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 export default function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
       host="https://my-authing-app.example.com"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 // main.js
-import Vue from 'vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-  host: 'https://my-authing-app.example.com'
-})
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  host: "https://my-authing-app.example.com",
+});
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-// main.ts
-import { createApp } from 'vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```typescript
+// main.ts
+import { createApp } from "vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-    host: 'https://my-authing-app.example.com'
+    appId: "AUTHING_APP_ID",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+    host: "https://my-authing-app.example.com",
   })
-)
-
+);
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { GuardModule } from '@authing/guard-angular'
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
   declarations: [AppComponent],
@@ -2112,16 +2242,17 @@ import { GuardModule } from '@authing/guard-angular'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如 
-      host: 'https://my-authing-app.example.com'
-    })
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+      host: "https://my-authing-app.example.com",
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -2135,92 +2266,119 @@ export class AppModule {}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
-async function refreshToken () {
-  const authenticationClient = await guard.getAuthClient()
-  const refreshedToken = await authenticationClient.refreshToken()
-  console.log(refreshedToken)
+
+```javascript
+async function refreshToken() {
+  const authenticationClient = await guard.getAuthClient();
+  const refreshedToken = await authenticationClient.refreshToken();
+  console.log(refreshedToken);
 }
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import { AuthenticationClient, RefreshToken, useGuard } from '@authing/guard-react'
+
+```tsx
+import {
+  AuthenticationClient,
+  RefreshToken,
+  useGuard,
+} from "@authing/guard-react";
 
 export default function Login() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   const refreshToken = async () => {
-    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
-    const refreshedToken: RefreshToken = await authenticationClient.refreshToken()
-    console.log(refreshedToken)
-  }
+    const authenticationClient: AuthenticationClient =
+      await guard.getAuthClient();
+    const refreshedToken: RefreshToken =
+      await authenticationClient.refreshToken();
+    console.log(refreshedToken);
+  };
 
-  return <div>
-    <button className='authing-button' onClick={refreshToken}>Refresh Token</button>
-  </div>
+  return (
+    <div>
+      <button className="authing-button" onClick={refreshToken}>
+        Refresh Token
+      </button>
+    </div>
+  );
 }
-
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 export default {
   methods: {
-    async refreshToken () {
-      const authenticationClient = await this.$guard.getAuthClient()
-      const refreshedToken = await authenticationClient.refreshToken()
-      console.log(refreshedToken)
-    }
-  }
-}
+    async refreshToken() {
+      const authenticationClient = await this.$guard.getAuthClient();
+      const refreshedToken = await authenticationClient.refreshToken();
+      console.log(refreshedToken);
+    },
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` html
+
+```html
 <script lang="ts" setup>
-  import { useGuard  } from '@authing/guard-vue3'
+  import { useGuard } from "@authing/guard-vue3";
 
-  import type { RefreshToken, AuthenticationClient } from '@authing/guard-vue3'
+  import type { RefreshToken, AuthenticationClient } from "@authing/guard-vue3";
 
-  const guard = useGuard()
+  const guard = useGuard();
 
   const refreshToken = async () => {
-    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
-    const refreshedToken: RefreshToken = await authenticationClient.refreshToken()
-    console.log(refreshedToken)
-  }
+    const authenticationClient: AuthenticationClient =
+      await guard.getAuthClient();
+    const refreshedToken: RefreshToken =
+      await authenticationClient.refreshToken();
+    console.log(refreshedToken);
+  };
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
+
+```typescript
 // Angular 组件中使用 Guard API
-import { Component } from '@angular/core'
-import { AuthenticationClient, GuardService, RefreshToken } from '@authing/guard-angular'
+import { Component } from "@angular/core";
+import {
+  AuthenticationClient,
+  GuardService,
+  RefreshToken,
+} from "@authing/guard-angular";
 
 @Component({
-  selector: 'home-container',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "home-container",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  constructor (
+  constructor(
     // 使用 Angular 依赖注入，获取 Guard 实例
     private guard: GuardService
   ) {}
 
   async refreshToken() {
-    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient()
-    const refreshedToken: RefreshToken = await authenticationClient.refreshToken()
-    console.log(refreshedToken)
+    const authenticationClient: AuthenticationClient =
+      await this.guard.client.getAuthClient();
+    const refreshedToken: RefreshToken =
+      await authenticationClient.refreshToken();
+    console.log(refreshedToken);
   }
 }
 ```
+
 :::
 ::::
 
@@ -2230,236 +2388,234 @@ export class HomeComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
+
+```javascript
 const guard = new GuardFactory.Guard({
-  appId: 'AUTHING_APP_ID',
+  appId: "AUTHING_APP_ID",
 
   // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
   // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
   // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
-  host: 'https://my-authing-app.example.com',
+  host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
-  redirectUri: 'https://my-authing-app.example.com/callback',
+  redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
   // normal 内嵌模式
-  mode: 'normal',
+  mode: "normal",
 
   // 默认展示页面，具体值参考附录中的 IGuardModuleType
-  defaultScene: 'login',
-  
-  tenantId: 'AUTHING_TENANT_ID',
+  defaultScene: "login",
+
+  tenantId: "AUTHING_TENANT_ID",
 
   // 显示语言，可用值参考附录中的 Lang
-  lang: 'zh-CN',
+  lang: "zh-CN",
 
   // 是否开启单点登录
   isSSO: false,
 
   // Guard 详细配置，具体值参考附录中的 IGuardConfig
-  config: {}
-})
+  config: {},
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
+
+```tsx
 // App.tsx
-import React from 'react'
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
+import React from "react";
+import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
 // 你的业务代码根组件
-import RouterComponent from './router'
+import RouterComponent from "./router";
 
 function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-
       // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
       // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
       // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
       host="https://my-authing-app.example.com"
-
       // 控制台登录回调 URL
       redirectUri="https://my-authing-app.example.com/callback"
-
       // modal 弹框模式
       // normal 内嵌模式
       mode="normal"
-
       // 默认展示页面，具体值参考附录中的 IGuardModuleType
       defaultScene="login"
-      
       tenantId="AUTHING_TENANT_ID"
-
       // 显示语言，可用值参考附录中的 Lang
       lang="zh-CN"
-
       // 是否开启单点登录
       isSSO={false}
-
       // Guard 详细配置，具体值参考附录中的 IGuardConfig
       config={{}}
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
-  )
+  );
 }
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
+
+```javascript
 // main.js
-import Vue from 'vue'
-import App from './App.vue'
-import { GuardPlugin } from '@authing/guard-vue2'
-import '@authing/guard-vue2/dist/esm/guard.min.css'
+import Vue from "vue";
+import App from "./App.vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
-  appId: 'AUTHING_APP_ID',
+  appId: "AUTHING_APP_ID",
 
   // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
   // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
   // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
-  host: 'https://my-authing-app.example.com',
+  host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
-  redirectUri: 'https://my-authing-app.example.com/callback',
+  redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
   // normal 内嵌模式
-  mode: 'normal',
+  mode: "normal",
 
   // 默认展示页面，具体值参考附录中的 IGuardModuleType
-  defaultScene: 'login',
-  
-  tenantId: 'AUTHING_TENANT_ID',
+  defaultScene: "login",
+
+  tenantId: "AUTHING_TENANT_ID",
 
   // 显示语言，可用值参考附录中的 Lang
-  lang: 'zh-CN',
+  lang: "zh-CN",
 
   // 是否开启单点登录
   isSSO: false,
 
   // Guard 详细配置，具体值参考附录中的 IGuardConfig
-  config: {}
-})
+  config: {},
+});
 ```
+
 :::
 
 ::: tab Vue3
-``` typescript
-// main.ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import { createGuard } from '@authing/guard-vue3'
-import '@authing/guard-vue3/dist/esm/guard.min.css'
 
-const app = createApp(App)
+```typescript
+// main.ts
+import { createApp } from "vue";
+import App from "./App.vue";
+import { createGuard } from "@authing/guard-vue3";
+import "@authing/guard-vue3/dist/esm/guard.min.css";
+
+const app = createApp(App);
 
 app.use(
   createGuard({
-    appId: 'AUTHING_APP_ID',
+    appId: "AUTHING_APP_ID",
 
     // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
     // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
     // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
-    host: 'https://my-authing-app.example.com',
+    host: "https://my-authing-app.example.com",
 
     // 控制台登录回调 URL
-    redirectUri: 'https://my-authing-app.example.com/callback',
+    redirectUri: "https://my-authing-app.example.com/callback",
 
     // modal 弹框模式
     // normal 内嵌模式
-    mode: 'normal',
+    mode: "normal",
 
     // 默认展示页面，具体值参考附录中的 IGuardModuleType
-    defaultScene: 'login',
-    
-    tenantId: 'AUTHING_TENANT_ID',
+    defaultScene: "login",
+
+    tenantId: "AUTHING_TENANT_ID",
 
     // 显示语言，可用值参考附录中的 Lang
-    lang: 'zh-CN',
+    lang: "zh-CN",
 
     // 是否开启单点登录
     isSSO: false,
 
     // Guard 详细配置，具体值参考附录中的 IGuardConfig
-    config: {}
+    config: {},
   })
-)
+);
 ```
+
 :::
 
 ::: tab Angular
-``` json
+
+```json
 // angular.json
 {
   "projects": {
     "architect": {
       "build": {
-        "styles": [
-          "node_modules/@authing/guard-angular/dist/guard.min.css"
-        ]
+        "styles": ["node_modules/@authing/guard-angular/dist/guard.min.css"]
       }
     }
   }
 }
 ```
-``` typescript
+
+```typescript
 // app.module.ts
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
-import { GuardModule } from '@authing/guard-angular'
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: 'AUTHING_APP_ID',
+      appId: "AUTHING_APP_ID",
 
       // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
       // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
       // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
-      host: 'https://my-authing-app.example.com',
+      host: "https://my-authing-app.example.com",
 
       // 控制台登录回调 URL
-      redirectUri: 'https://my-authing-app.example.com/callback',
+      redirectUri: "https://my-authing-app.example.com/callback",
 
       // modal 弹框模式
       // normal 内嵌模式
-      mode: 'normal',
+      mode: "normal",
 
       // 默认展示页面，具体值参考附录中的 IGuardModuleType
-      defaultScene: 'login',
-      
-      tenantId: 'AUTHING_TENANT_ID',
+      defaultScene: "login",
+
+      tenantId: "AUTHING_TENANT_ID",
 
       // 显示语言，可用值参考附录中的 Lang
-      lang: 'zh-CN',
+      lang: "zh-CN",
 
       // 是否开启单点登录
       isSSO: false,
 
       // Guard 详细配置，具体值参考附录中的 IGuardConfig
-      config: {}
-    })
+      config: {},
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -2467,38 +2623,37 @@ export class AppModule { }
 
 <p id="InitConfig"></p>
 
-|名称|类型|默认值|必传|描述|
-|----|----|----|----|----|
-|appId|String|-|是|[Authing 应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)，可以在 Authing 控制台自建应用的应用详情中获取。|
-|host|String|-|否|如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。|
-|redirectUri|String|-|否|控制台登录回调 URL|
-|mode|[IGuardMode](#IGuardMode)|normal|否|Guard 采用内嵌模式时，有两种展示形态：normal —— 普通形态，modal —— 模态框形态|
-|defaultScene|[IGuardModuleType](#IGuardModuleType)|login|否|Guard 默认渲染页面|
-|tenantId|String|-|否|租户 ID|
-|lang|[Lang](#Lang)|如未设置，默认以控制台配置为准|否|Guard 显示语言|
-|isSSO|Boolean|false|否|是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。|
-|config|[IGuardConfig](#IGuardConfig)|-|否|Guard 详细配置|
+| 名称         | 类型                                  | 默认值                         | 必传 | 描述                                                                                                                                                                                             |
+| ------------ | ------------------------------------- | ------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| appId        | String                                | -                              | 是   | [Authing 应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)，可以在 Authing 控制台自建应用的应用详情中获取。                                                            |
+| host         | String                                | -                              | 否   | 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。    |
+| redirectUri  | String                                | -                              | 否   | 控制台登录回调 URL                                                                                                                                                                               |
+| mode         | [IGuardMode](#IGuardMode)             | normal                         | 否   | Guard 采用内嵌模式时，有两种展示形态：normal —— 普通形态，modal —— 模态框形态                                                                                                                    |
+| defaultScene | [IGuardModuleType](#IGuardModuleType) | login                          | 否   | Guard 默认渲染页面                                                                                                                                                                               |
+| tenantId     | String                                | -                              | 否   | 租户 ID                                                                                                                                                                                          |
+| lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
+| isSSO        | Boolean                               | false                          | 否   | 是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。 |
+| config       | [IGuardConfig](#IGuardConfig)         | -                              | 否   | Guard 详细配置                                                                                                                                                                                   |
 
 ### IGuardMode
 
 <p id="IGuardMode"></p>
 
-|值|描述|
-|----|----|
-|normal|普通形态|
-|modal|模态框形态|
-
+| 值     | 描述       |
+| ------ | ---------- |
+| normal | 普通形态   |
+| modal  | 模态框形态 |
 
 ### Lang
 
 <p id="Lang"></p>
 
-|值|描述|
-|----|----|
-|zh-CN|中文|
-|en-US|英文|
-|zh-TW|繁体|
-|ja-JP|日语|
+| 值    | 描述 |
+| ----- | ---- |
+| zh-CN | 中文 |
+| en-US | 英文 |
+| zh-TW | 繁体 |
+| ja-JP | 日语 |
 
 ### IGuardConfig
 
@@ -2506,30 +2661,30 @@ export class AppModule { }
 
 Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，使用特定登录方式等。所有配置如下：
 
-| 参数名| 参数说明 | 类型 | 是否必传 | 默认值 |
-| :---- | :---- | :---- | :---- | :---- |
-| target| 指定 Guard 表单的挂载点，接受 [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) 能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面 | String | HTMLElement| 否 |
-| mode | Guard 展示模式   | [IGuardMode](#IGuardMode)   | 否  |normal|
-| title | **产品名称**  | String  | 否  | {{$localeConfig.brandName}} |
-| logo | **产品 logo**   | String | 否 | [{{$localeConfig.brandName}} logo] |
-| contentCSS | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 <style type="text/css"></style> 节点。如 body {background:#6699 !important;}。| String | 否| - |
-|loginMethodList| **需要使用的普通登录(包括 LDAP)方式列表**| [ILoginMethod](#ILoginmethod)[]| 否 | [*phone-code, password*]  | 
-| registerMethodList | **需要使用的注册方式** | [IRegisterMethod](#IRegistermethod)[]| 否 | [*RegisterMethods.Email*, *RegisterMethods.Phone*] |
-| registerMethod | **默认展示的注册方式**  | [IRegisterMethod](#IRegistermethod)| 否 | email |
-| defaultScene | **打开组件时展示的界面** | [IGuardModuleType](#IGuardModuleType)| 否 | password |
-| socialConnectionList | **需要使用的社会化登录列表** | [ISocialConnectionProvider](#ISocialConnectionProvider)[] | 否| []|                                            |
-| enterpriseConnections | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用 | Array| 否 | [] |
-| loginMethod | **默认显示的登录方式**。 | [ILoginMethod](#ILoginMethod)| 否  | password |
-| autoRegister | **是否将注册和登录合并**，合并后如果用户不存在将自动注册| Boolean | 否 | false |
-| disableRegister | **是否禁止注册**，禁止的话会隐藏「注册」入口 | Boolean | 否 | false |
-| disableResetPwd | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口| | |
-| clickCloseable | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框 | Boolean | 否 | true |
-| escCloseable| **Modal 模式时是否可以通过键盘 ESC 键关闭登录框** | 否 |true |
-| isSSO  | 是否是单点登录   | Boolean  | 否 | false |
-| qrCodeScanOptions| 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect | 否 | null |                                       |                                            |
-|lang|使用语言|[Lang](#Lang)|否|en-US|
-|langRange|语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮|[Lang](#Lang)[]|否|['zh-CN', 'en-US']|
-|host|如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。|String|否|-|
+| 参数名                | 参数说明                                                                                                                                                                                                             | 类型                                                      | 是否必传    | 默认值                                             |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------- | :---------- | :------------------------------------------------- | --- | --- |
+| target                | 指定 Guard 表单的挂载点，接受 [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) 能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面      | String                                                    | HTMLElement | 否                                                 |
+| mode                  | Guard 展示模式                                                                                                                                                                                                       | [IGuardMode](#IGuardMode)                                 | 否          | normal                                             |
+| title                 | **产品名称**                                                                                                                                                                                                         | String                                                    | 否          | {{$localeConfig.brandName}}                        |
+| logo                  | **产品 logo**                                                                                                                                                                                                        | String                                                    | 否          | [{{$localeConfig.brandName}} logo]                 |
+| contentCSS            | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 <style type="text/css"></style> 节点。如 body {background:#6699 !important;}。                                                                          | String                                                    | 否          | -                                                  |
+| loginMethodList       | **需要使用的普通登录(包括 LDAP)方式列表**                                                                                                                                                                            | [ILoginMethod](#ILoginmethod)[]                           | 否          | [*phone-code, password*]                           |
+| registerMethodList    | **需要使用的注册方式**                                                                                                                                                                                               | [IRegisterMethod](#IRegistermethod)[]                     | 否          | [*RegisterMethods.Email*, *RegisterMethods.Phone*] |
+| registerMethod        | **默认展示的注册方式**                                                                                                                                                                                               | [IRegisterMethod](#IRegistermethod)                       | 否          | email                                              |
+| defaultScene          | **打开组件时展示的界面**                                                                                                                                                                                             | [IGuardModuleType](#IGuardModuleType)                     | 否          | password                                           |
+| socialConnectionList  | **需要使用的社会化登录列表**                                                                                                                                                                                         | [ISocialConnectionProvider](#ISocialConnectionProvider)[] | 否          | []                                                 |     |
+| enterpriseConnections | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用                                                                                         | Array                                                     | 否          | []                                                 |
+| loginMethod           | **默认显示的登录方式**。                                                                                                                                                                                             | [ILoginMethod](#ILoginMethod)                             | 否          | password                                           |
+| autoRegister          | **是否将注册和登录合并**，合并后如果用户不存在将自动注册                                                                                                                                                             | Boolean                                                   | 否          | false                                              |
+| disableRegister       | **是否禁止注册**，禁止的话会隐藏「注册」入口                                                                                                                                                                         | Boolean                                                   | 否          | false                                              |
+| disableResetPwd       | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口                                                                                                                                                                 |                                                           |             |
+| clickCloseable        | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框                                                                                                                           | Boolean                                                   | 否          | true                                               |
+| escCloseable          | **Modal 模式时是否可以通过键盘 ESC 键关闭登录框**                                                                                                                                                                    | 否                                                        | true        |
+| isSSO                 | 是否是单点登录                                                                                                                                                                                                       | Boolean                                                   | 否          | false                                              |
+| qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                                   | 否          | null                                               |     |     |
+| lang                  | 使用语言                                                                                                                                                                                                             | [Lang](#Lang)                                             | 否          | en-US                                              |
+| langRange             | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮                                                                                                                                               | [Lang](#Lang)[]                                           | 否          | ['zh-CN', 'en-US']                                 |
+| host                  | 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。                        | String                                                    | 否          | -                                                  |
 
 ### ILoginMethod
 
@@ -2537,14 +2692,14 @@ Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，�
 
 Guard 支持的普通登录方式
 
-|值|说明|
-| :------------------------------------------ | :----------------------------- |
-|ldap| LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))|
-|app-qrcode| APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/))|
-|password| 账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码)|
-|phone-code| 手机验证码登录|
-|wechat-miniprogram-qrcode|微信 PC 小程序扫码登录|
-|ad| AD 用户目录登录|
+| 值                        | 说明                                                                                     |
+| :------------------------ | :--------------------------------------------------------------------------------------- |
+| ldap                      | LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))                              |
+| app-qrcode                | APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)) |
+| password                  | 账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码)                              |
+| phone-code                | 手机验证码登录                                                                           |
+| wechat-miniprogram-qrcode | 微信 PC 小程序扫码登录                                                                   |
+| ad                        | AD 用户目录登录                                                                          |
 
 ### IRegisterMethod
 
@@ -2552,11 +2707,11 @@ Guard 支持的普通登录方式
 
 Guard 支持的注册方式
 
-|值|说明|
-| ---- | ---- |
-| email | 邮箱注册 |
-|emailCode|邮箱验证码注册|
-| phone | 手机验证码注册 |
+| 值        | 说明           |
+| --------- | -------------- |
+| email     | 邮箱注册       |
+| emailCode | 邮箱验证码注册 |
+| phone     | 手机验证码注册 |
 
 ### IGuardModuleType
 
@@ -2564,28 +2719,28 @@ Guard 支持的注册方式
 
 Guard 可展示的界面
 
-|值|说明|
-| :--------- | :------- |
-| login    | 登录界面 |
-| register | 注册界面 |
-|error|Error页面|
-|mfa|MFA|
-|forgetPassword|重置密码|
-|forcedPasswordReset|登陆安全策略 修改密码|
-|noticePasswordReset|提示 修改密码|
-|firstLoginPassword|首次登录 修改密码|
-|unsafePasswordReset|密码强度不符 修改密码|
-|downloadAT|加载 GA 验证器|
-|bindTotp|绑定 TOTP|
-|anyQuestions|问题反馈|
-|loginCompleteInfo|登录信息补全|
-|registerPassword|注册密码不全|
-|registerCompleteInfo|注册信息补全|
-|recoveryCode|MFA TOTP 恢复码|
-|submitSuccess|提交成功|
-|identityBindingAsk|身份源绑定 问询|
-|identityBinding|身份源绑定|
-|selfUnlock|自助解锁|
+| 值                   | 说明                  |
+| :------------------- | :-------------------- |
+| login                | 登录界面              |
+| register             | 注册界面              |
+| error                | Error 页面            |
+| mfa                  | MFA                   |
+| forgetPassword       | 重置密码              |
+| forcedPasswordReset  | 登陆安全策略 修改密码 |
+| noticePasswordReset  | 提示 修改密码         |
+| firstLoginPassword   | 首次登录 修改密码     |
+| unsafePasswordReset  | 密码强度不符 修改密码 |
+| downloadAT           | 加载 GA 验证器        |
+| bindTotp             | 绑定 TOTP             |
+| anyQuestions         | 问题反馈              |
+| loginCompleteInfo    | 登录信息补全          |
+| registerPassword     | 注册密码不全          |
+| registerCompleteInfo | 注册信息补全          |
+| recoveryCode         | MFA TOTP 恢复码       |
+| submitSuccess        | 提交成功              |
+| identityBindingAsk   | 身份源绑定 问询       |
+| identityBinding      | 身份源绑定            |
+| selfUnlock           | 自助解锁              |
 
 ### ISocialConnectionProvider
 
@@ -2593,8 +2748,8 @@ Guard 可展示的界面
 
 Guard 支持的社会化登录方式
 
-| 值                                          | 说明                           |
-| :------------------------------------------ | :----------------------------- |
+| 值                                        | 说明                           |
+| :---------------------------------------- | :----------------------------- |
 | qq                                        | QQ 登录                        |
 | weibo                                     | 新浪微博登录                   |
 | github                                    | GitHub 登录                    |
@@ -2611,9 +2766,94 @@ Guard 支持的社会化登录方式
 
 详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
 
+### NomalLoginParams
+
+<p id="NomalLoginParams"></p>
+
+```typescript
+interface NomalLoginParams {
+  type:'ldap' | 'ad' | 'password',
+  data:{
+    identity: string,
+    password: string,
+    captchaCode?: string
+  }
+}
+```
+
+### VerifyCodeLoginParams
+
+<p id="VerifyCodeLoginParams"></p>
+
+```typescript
+interface VerifyCodeLoginParams {
+  type:'email-code' | 'phone-code'
+  data:{
+    identity: string,
+    code: string,
+    phoneCountryCode?: string,
+  }
+}
+```
+
+### ScanLoginParams
+
+<p id="ScanLoginParams"></p>
+
+```typescript
+interface ScanLoginParams {
+  type: "app-qrcode" | "wechat-miniprogram-qrcode" | "wechatmp-qrcode";
+  data: User;
+}
+```
+
+### RegisterParams
+
+<p id="RegisterParams"></p>
+
+```typescript
+interface RegisterParams {
+  type:'phone' | 'email' | 'emailCode'
+  data:{
+    identity: string,
+    password?: string,
+    code?: string
+  }
+}
+```
+
+### EmailScene
+
+Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台配置完成的邮件模版
+
+<p id="EmailScene"></p>
+
+| 场景值                             | 应用场景                    |
+| :--------------------------------- | :-------------------------- |
+| LOGIN_VERIFY_CODE                  | 登录场景发送邮箱验证码      |
+| REGISTER_VERIFY_CODE               | 注册场景发送邮箱验证码      |
+| MFA_VERIFY_CODE                    | 邮箱 MFA 场景发送邮箱验证码 |
+| SELF_UNLOCKING_VERIFY_CODE         | 自助解锁场景发送邮箱验证码  |
+| RESET_PASSWORD_VERIFY_CODE         | 重置密码场景发送邮箱验证码  |
+| INFORMATION_COMPLETION_VERIFY_CODE | 信息补全场景发送邮箱验证码  |
+
+### SceneType
+
+Guard 内部短信验证码发送的场景值
+
+<p id="SceneType"></p>
+
+| 场景值         | 应用场景                    |
+| :------------- | :-------------------------- |
+| login          | 登录场景发送短信验证码      |
+| register       | 注册场景发送短信验证码      |
+| mfa-verify     | 邮箱 MFA 场景发送短信验证码 |
+| reset          | 重置密码场景发送短信验证码  |
+| complete-phone | 信息补全场景发送短信验证码  |
+
 ## 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域(CORS)</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的**安全设置 - 基础安全配置安全域（CORS）**进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
 
 ![guard-console-safity-domain](./images/guard-console-safity-domain.png)
 
@@ -2633,111 +2873,122 @@ Guard 支持的社会化登录方式
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
-``` javascript
-guard.on('login', userInfo => {
-  console.log(userInfo)
-})
+
+```javascript
+guard.on("login", (userInfo) => {
+  console.log(userInfo);
+});
 ```
+
 :::
 
 ::: tab React
-``` tsx
-import React, { useEffect } from 'react'
 
-import { useGuard, User } from '@authing/guard-react'
+```tsx
+import React, { useEffect } from "react";
+
+import { useGuard, User } from "@authing/guard-react";
 
 export default function Login() {
-  const guard = useGuard()
+  const guard = useGuard();
 
   useEffect(() => {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    guard.start('#authing-guard-container').then((userInfo: User) => {
-      console.log('userInfo: ', userInfo)
-    })
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
 
-    guard.on('login', (userInfo: User) => {
-      console.log('userInfo in login: ', userInfo)
-    })
-  }, [])
+    guard.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  }, []);
 
-  return <div>
-    <div id="authing-guard-container"></div>
-  </div>
+  return (
+    <div>
+      <div id="authing-guard-container"></div>
+    </div>
+  );
 }
-
 ```
+
 :::
 
 ::: tab Vue2
-``` javascript
-export default {
-  mounted () {
-    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.$guard.start('#authing-guard-container').then(userInfo => {
-      console.log(userInfo)
-    })
 
-    this.$guard.on('login', (userInfo)=>{
-      console.log('userInfo in login: ', userInfo)
-    })
-  }
-}
+```javascript
+export default {
+  mounted() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log(userInfo);
+    });
+
+    this.$guard.on("login", (userInfo) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  },
+};
 ```
+
 :::
 
 ::: tab Vue3
-``` html
+
+```html
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+  import { onMounted } from "vue";
 
-import { useGuard  } from '@authing/guard-vue3'
+  import { useGuard } from "@authing/guard-vue3";
 
-import type { User } from '@authing/guard-vue3'
+  import type { User } from "@authing/guard-vue3";
 
-const guard = useGuard()
+  const guard = useGuard();
 
-onMounted(() => {
-  // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-  guard.start('#authing-guard-container').then((userInfo: User) => {
-    console.log("userInfo: ", userInfo)
-  })
+  onMounted(() => {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    guard.start("#authing-guard-container").then((userInfo: User) => {
+      console.log("userInfo: ", userInfo);
+    });
 
-  guard.on('login', (userInfo: User) => {
-    console.log('userInfo in login: ', userInfo)
-  })
-})
+    guard.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
+  });
 </script>
 ```
+
 :::
 
 ::: tab Angular
-``` typescript
-import { Component, ChangeDetectorRef } from '@angular/core'
 
-import { GuardService, User } from '@authing/guard-angular'
+```typescript
+import { Component, ChangeDetectorRef } from "@angular/core";
+
+import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: 'embed-container',
-  templateUrl: './embed.component.html',
-  styleUrls: ['./embed.component.css']
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"],
 })
 export class EmbedComponent {
-  constructor(
-    private guard: GuardService
-  ) {}
+  constructor(private guard: GuardService) {}
 
   ngOnInit() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-    this.guard.client.start('#authing-guard-container').then((userInfo: User) => {
-      console.log(userInfo)
-    })
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log(userInfo);
+      });
 
-    this.guard.client.on('login', (userInfo: User) => {
-      console.log('userInfo in login: ', userInfo)
-    })
+    this.guard.client.on("login", (userInfo: User) => {
+      console.log("userInfo in login: ", userInfo);
+    });
   }
 }
 ```
+
 :::
 ::::
 
@@ -2745,26 +2996,26 @@ export class EmbedComponent {
 
 > 如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
 
-| 事件名称 | 描述| 回调参数 | 回调参数说明 |
-| ---- | ---- | ---- | ---- |
-| onLoad | Guard 初始化完成，开始渲染页面 | authenticationClient | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) |
-| onLoadError | Guard 初始化失败 | error | 错误信息 |
-|onBeforeLogin|用户触发登录前|loginInfo , authenticationClient|<p>loginInfo: [A](#A) | [B](#B) </p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>|
-| onLogin | 用户登录成功 | user，authenticationClient| <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onLoginError| 用户登录失败 | error | 错误信息，包含字段缺失／非法或服务器错误等信息 |
-|onBeforeRegister|用户触发注册前|registerInfo，authenticationClient |<p>registerInfo: 注册参数信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onRegister | 用户注册成功 | user, authenticationClient | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-|onRegisterError | 用户注册失败 | error | 错误信息，包含字段缺失／非法或服务器错误等信息 |
-| onEmailSend | 邮件发送成功 | authenticationClient，sence  |<p>sence: 发送邮件场景值</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onEmailSendError | 邮件发送失败 | error，authenticationClient，sence | <p>error: 具体错误信息</p> <p>sence: 发送邮件场景值</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onPhoneSend | 短信验证码发送成功 | authenticationClient，sence| <p>sence: 发送短信验证码场景值</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onPhoneSendError| 短信验证码发送失败| error，authenticationClient，sence|<p>error: 具体错误信息</p> <p>sence: 发送短信验证码场景值</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onPwdReset | 重置密码成功 | authenticationClient | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>|
-| onPwdResetError | 重置密码失败| error，authenticationClient | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onClose | modal 模式中 guard 关闭事件 | - | - |
-| onLoginTabChange | 登录方式 tab 切换事件| activeTab | 切换后的 tabKey |
-| onRegisterTabChange | 注册方式 tab 切换事件 | activeTab | 切换后的 tabKey |
-| onRegisterInfoCompleted | 注册补全成功事件 | user，content，authenticationClient  | <p>user: 用户信息</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>|
-| onRegisterInfoCompletedError | 注册补全失败事件| error，content，authenticationClient | <p>error: 错误信息</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-|onLangChange|语言切换事件|lang|切换的目标语言|
-|onBeforeChangeModule|Guard 内部Module 切换前事件|moduleType，initData|<p>moduleType: 流转的目标节点类型</p><p>initData: 目标节点初始化所需数据</p>|
+| 事件名称                     | 描述                                                                                      | 回调参数                             | 回调参数说明                                                                                                                                                                                                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                 | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
+| onLoadError                  | Guard 初始化失败                                                                          | error                                | 错误信息                                                                                                                                                                                                                                                  |
+| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient   | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#Scanparams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
+| onLogin                      | 用户登录成功                                                                              | user，authenticationClient           | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onLoginError                 | 用户登录失败                                                                              | error                                | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
+| onRegister                   | 用户注册成功                                                                              | user, authenticationClient           | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onRegisterError              | 用户注册失败                                                                              | error                                | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence          | <p>sence: [EmailScene](#EmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
+| onEmailSendError             | 邮件发送失败                                                                              | error，authenticationClient，sence   | <p>error: 具体错误信息</p> <p>sence: [EmailScene](#EmailScene)</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                 |
+| onPhoneSend                  | 短信验证码发送成功                                                                        | authenticationClient，sence          | <p>sence: [SceneType](#SceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                               |
+| onPhoneSendError             | 短信验证码发送失败                                                                        | error，authenticationClient，sence   | <p>error: 具体错误信息</p> <p>sence: [SceneType](#SceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                    |
+| onPwdReset                   | 重置密码成功                                                                              | authenticationClient                 | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                                                    |
+| onPwdResetError              | 重置密码失败                                                                              | error，authenticationClient          | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                         |
+| onClose                      | modal 模式中 guard 关闭事件                                                               | -                                    | -                                                                                                                                                                                                                                                         |
+| onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                            | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                            | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，content，authenticationClient  | <p>user: [User](#User)</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                        |
+| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，content，authenticationClient | <p>error: 错误信息</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
+| onLangChange                 | 语言切换事件                                                                              | lang                                 | 切换的目标语言                                                                                                                                                                                                                                            |
+| onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                 | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>                                                                                                                                                           |
