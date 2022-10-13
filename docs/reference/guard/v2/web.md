@@ -347,7 +347,7 @@ export class HomeComponent {
 
 - 在 [Authing 控制台](https://console.authing.cn) 的`应用` - `自建应用` - `应用详情`中配置`登录回调 URL`，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
 
-![guard-console-authentication-config](./images/guard-console-authentication-config.png)
+![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
 - 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式`选择 `authentication_code`，`返回类型` 选择 `code`:
 
