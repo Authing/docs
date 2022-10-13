@@ -1895,7 +1895,7 @@ export default {
       // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
       // 比如更新用户昵称
       const userProfile = await authenticationClient.updateProfile({
-        nickname: 'Nickaaa'
+        nickname: 'Nick'
       })
 
       console.log(userProfile)
