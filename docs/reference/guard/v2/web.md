@@ -15,7 +15,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 现在开始跟随引导将 Authing Guard 接入到你的项目中吧！
 
-## STEP 1: 在 Authing 控制台创建应用
+## 步骤 1：在 Authing 控制台创建应用
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app/create-app.html)。
 
@@ -29,7 +29,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 创建完成！接下来你将正式开始 Authing Guard (v5.0） 的接入和配置。
 
-## STEP 2:  安装、初始化并获取 Guard 实例
+## 步骤 2：安装、初始化并获取 Guard 实例
 
 ### 安装并初始化
 
@@ -296,7 +296,7 @@ export class HomeComponent {
 :::
 ::::
 
-## STPE 3: 常用操作
+## 步骤 3：常用操作
 
 ### 托管模式 & 内嵌模式
 
@@ -316,13 +316,17 @@ export class HomeComponent {
 
 **对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、最安全、最通用的 Authing 认证最佳实践。**
 
-### 托管模式
+### 使用托管模式
 
 托管模式将跳转到 Authing 提供的托管登录页。由于此模式 Authing 默认使用 OIDC 标准协议认证，你需要进行以下额外配置：
 
 - 在 [Authing 控制台](https://console.authing.cn) 的`应用` - `自建应用` - `应用详情`中配置`登录回调 URL`，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
+
+- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式` 勾选 `authorization_code`，`返回类型`勾选 `code`。
+
+![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
 - 在应用详情的`应用配置` - `其他配置` - `授权配置`中，请确保应用的「换取 token 身份验证方式」设置为了 `none`（如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况）。
 
@@ -439,7 +443,13 @@ export class HomeComponent {
 |S256|code_challenge 是使用 SHA256 计算|
 |plain|不使用任何算法计算|
 
-### 内嵌模式
+接下来，我们将支持以下两个参数（目前暂不支持）：
+
+- forced：即便已登录，也强制用户再次登录。
+
+- useImplicitMode：是否使用 OIDC implicit 模式替代默认的 PKCE 模式，安全性较低，不推荐使用，目前只是 Web SDK 中有这个选项。
+
+### 使用内嵌模式
 
 #### 普通形态
 
@@ -1697,9 +1707,19 @@ export class GetUserInfoComponent {
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
+```html
+<div id="authing-guard-container"></div>
+```
+
 ``` javascript
 function changeContentCSS () {
-  guard.changeContentCSS('body {background: blue}')
+  guard.changeContentCSS(`
+    #authing-guard-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `)
 }
 ```
 :::
@@ -1719,7 +1739,13 @@ export default function ChangeContentCSS() {
   }, [])
 
   // 设置自定义样式
-  const changeContentCSS = () => guard.changeContentCSS('body {background: red}')
+  const changeContentCSS = () => guard.changeContentCSS(`
+    #authing-guard-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `)
 
   return (
     <div>
@@ -1750,7 +1776,13 @@ export default {
   },
   methods: {
     changeContentCSS () {
-      this.$guard.changeContentCSS('body {background: blue}')
+      this.$guard.changeContentCSS(`
+        #authing-guard-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `)
     },
   }
 }
@@ -1781,7 +1813,13 @@ onMounted(() => {
   })
 })
 
-const changeContentCSS = () => guard.changeContentCSS('body {background: blue}')
+const changeContentCSS = () => guard.changeContentCSS(`
+  #authing-guard-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`)
 </script>
 ```
 :::
@@ -1809,7 +1847,13 @@ export class GetUserInfoComponent {
   }
 
   changeContentCSS() {
-    this.guard.client.changeContentCSS('body {background: red}')
+    this.guard.client.changeContentCSS(`
+      #authing-guard-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `)
   }
 }
 ```
@@ -1895,7 +1939,7 @@ export default {
       // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
       // 比如更新用户昵称
       const userProfile = await authenticationClient.updateProfile({
-        nickname: 'Nickaaa'
+        nickname: 'Nick'
       })
 
       console.log(userProfile)
@@ -2569,7 +2613,7 @@ Guard 支持的社会化登录方式
 
 ## 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的**安全设置 - 基础安全配置安全域（CORS）**进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域(CORS)</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
 
 ![guard-console-safity-domain](./images/guard-console-safity-domain.png)
 
@@ -2705,7 +2749,7 @@ export class EmbedComponent {
 | ---- | ---- | ---- | ---- |
 | onLoad | Guard 初始化完成，开始渲染页面 | authenticationClient | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) |
 | onLoadError | Guard 初始化失败 | error | 错误信息 |
-|onBeforeLogin|用户触发登录前|loginInfo , authenticationClient|<p>loginInfo: 登录参数信息 </p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>|
+|onBeforeLogin|用户触发登录前|loginInfo , authenticationClient|<p>loginInfo: [A](#A) | [B](#B) </p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>|
 | onLogin | 用户登录成功 | user，authenticationClient| <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
 | onLoginError| 用户登录失败 | error | 错误信息，包含字段缺失／非法或服务器错误等信息 |
 |onBeforeRegister|用户触发注册前|registerInfo，authenticationClient |<p>registerInfo: 注册参数信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
