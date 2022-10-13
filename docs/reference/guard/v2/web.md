@@ -1829,10 +1829,15 @@ export class GetUserInfoComponent {
 
 ```javascript
 function changeContentCSS() {
-  guard.changeContentCSS("body {background: blue}");
+  guard.changeContentCSS(`
+    #authing-guard-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `);
 }
 ```
-
 :::
 
 ::: tab React
@@ -1851,8 +1856,15 @@ export default function ChangeContentCSS() {
   }, []);
 
   // 设置自定义样式
-  const changeContentCSS = () =>
-    guard.changeContentCSS("body {background: red}");
+  const changeContentCSS = () => {
+    guard.changeContentCSS(`
+      #authing-guard-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `);
+  }
 
   return (
     <div>
@@ -1887,7 +1899,13 @@ export default {
   },
   methods: {
     changeContentCSS() {
-      this.$guard.changeContentCSS("body {background: blue}");
+      this.$guard.changeContentCSS(`
+        #authing-guard-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `);
     },
   },
 };
@@ -1921,10 +1939,15 @@ onMounted(() => {
 });
 
 const changeContentCSS = () =>
-  guard.changeContentCSS("body {background: blue}");
+  guard.changeContentCSS(`
+    #authing-guard-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `);
 </script>
 ```
-
 :::
 
 ::: tab Angular
@@ -1951,7 +1974,13 @@ export class GetUserInfoComponent {
   }
 
   changeContentCSS() {
-    this.guard.client.changeContentCSS("body {background: red}");
+    this.guard.client.changeContentCSS(`
+      #authing-guard-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `);
   }
 }
 ```
@@ -2772,12 +2801,12 @@ Guard 支持的社会化登录方式
 
 ```typescript
 interface NomalLoginParams {
-  type:'ldap' | 'ad' | 'password',
-  data:{
-    identity: string,
-    password: string,
-    captchaCode?: string
-  }
+  type: "ldap" | "ad" | "password"; // 登录方式
+  data: {
+    identity: string; // 账号
+    password: string; // 密码
+    captchaCode?: string; // 图形验证码
+  };
 }
 ```
 
@@ -2787,12 +2816,12 @@ interface NomalLoginParams {
 
 ```typescript
 interface VerifyCodeLoginParams {
-  type:'email-code' | 'phone-code'
-  data:{
-    identity: string,
-    code: string,
-    phoneCountryCode?: string,
-  }
+  type: "email-code" | "phone-code"; // 登录方式
+  data: {
+    identity: string; // 账号
+    code: string; // 验证码
+    phoneCountryCode?: string; // 开启国际化短信后携带的区号信息
+  };
 }
 ```
 
@@ -2802,8 +2831,8 @@ interface VerifyCodeLoginParams {
 
 ```typescript
 interface ScanLoginParams {
-  type: "app-qrcode" | "wechat-miniprogram-qrcode" | "wechatmp-qrcode";
-  data: User;
+  type: "app-qrcode" | "wechat-miniprogram-qrcode" | "wechatmp-qrcode"; // 登录方式
+  data: User; // 用户信息
 }
 ```
 
@@ -2813,20 +2842,20 @@ interface ScanLoginParams {
 
 ```typescript
 interface RegisterParams {
-  type:'phone' | 'email' | 'emailCode'
-  data:{
-    identity: string,
-    password?: string,
-    code?: string
-  }
+  type: "phone" | "email" | "emailCode"; // 登录方式
+  data: {
+    identity: string; // 账号
+    password?: string; // 密码
+    code?: string; // 验证码
+  };
 }
 ```
 
-### EmailScene
+### IEmailScene
 
 Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台配置完成的邮件模版
 
-<p id="EmailScene"></p>
+<p id="IEmailScene"></p>
 
 | 场景值                             | 应用场景                    |
 | :--------------------------------- | :-------------------------- |
@@ -2837,11 +2866,11 @@ Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台�
 | RESET_PASSWORD_VERIFY_CODE         | 重置密码场景发送邮箱验证码  |
 | INFORMATION_COMPLETION_VERIFY_CODE | 信息补全场景发送邮箱验证码  |
 
-### SceneType
+### ISceneType
 
 Guard 内部短信验证码发送的场景值
 
-<p id="SceneType"></p>
+<p id="ISceneType"></p>
 
 | 场景值         | 应用场景                    |
 | :------------- | :-------------------------- |
@@ -2996,26 +3025,27 @@ export class EmbedComponent {
 
 > 如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
 
-| 事件名称                     | 描述                                                                                      | 回调参数                             | 回调参数说明                                                                                                                                                                                                                                              |
-| ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                 | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
-| onLoadError                  | Guard 初始化失败                                                                          | error                                | 错误信息                                                                                                                                                                                                                                                  |
-| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient   | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#Scanparams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| onLogin                      | 用户登录成功                                                                              | user，authenticationClient           | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
-| onLoginError                 | 用户登录失败                                                                              | error                                | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
-| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
-| onRegister                   | 用户注册成功                                                                              | user, authenticationClient           | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
-| onRegisterError              | 用户注册失败                                                                              | error                                | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
-| onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence          | <p>sence: [EmailScene](#EmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
-| onEmailSendError             | 邮件发送失败                                                                              | error，authenticationClient，sence   | <p>error: 具体错误信息</p> <p>sence: [EmailScene](#EmailScene)</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                 |
-| onPhoneSend                  | 短信验证码发送成功                                                                        | authenticationClient，sence          | <p>sence: [SceneType](#SceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                               |
-| onPhoneSendError             | 短信验证码发送失败                                                                        | error，authenticationClient，sence   | <p>error: 具体错误信息</p> <p>sence: [SceneType](#SceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                    |
-| onPwdReset                   | 重置密码成功                                                                              | authenticationClient                 | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                                                    |
-| onPwdResetError              | 重置密码失败                                                                              | error，authenticationClient          | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                         |
-| onClose                      | modal 模式中 guard 关闭事件                                                               | -                                    | -                                                                                                                                                                                                                                                         |
-| onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                            | 切换后的 tabKey                                                                                                                                                                                                                                           |
-| onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                            | 切换后的 tabKey                                                                                                                                                                                                                                           |
-| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，content，authenticationClient  | <p>user: [User](#User)</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                        |
-| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，content，authenticationClient | <p>error: 错误信息</p><p>content: 需要补全的用户信息</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
-| onLangChange                 | 语言切换事件                                                                              | lang                                 | 切换的目标语言                                                                                                                                                                                                                                            |
-| onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                 | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>                                                                                                                                                           |
+
+| 事件名称                     | 描述                                                                                      | 回调参数                              | 回调参数说明                                                                                                                                                                                                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
+| onLoadError                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
+| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#Scanparams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
+| onLogin                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onLoginError                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
+| onRegister                   | 用户注册成功                                                                              | user, authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| onRegisterError              | 用户注册失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
+| onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence           | <p>sence: [IEmailScene](#IEmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
+| onEmailSendError             | 邮件发送失败                                                                              | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [IEmailScene](#IEmailScene)</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                 |
+| onPhoneSend                  | 短信验证码发送成功                                                                        | authenticationClient，sence           | <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                               |
+| onPhoneSendError             | 短信验证码发送失败                                                                        | error，authenticationClient，sence    | <p>error: 具体错误信息</p> <p>sence: [ISceneType](#ISceneType)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                    |
+| onPwdReset                   | 重置密码成功                                                                              | authenticationClient                  | <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                                                    |
+| onPwdResetError              | 重置密码失败                                                                              | error，authenticationClient           | <p>error: 具体错误信息</p> <p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                         |
+| onClose                      | modal 模式中 guard 关闭事件                                                               | -                                     | -                                                                                                                                                                                                                                                         |
+| onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
+| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，userInfo，authenticationClient  | <p>user: [User](#User)</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                   |
+| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，userInfo，authenticationClient | <p>error: 错误信息</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
+| onLangChange                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
+| onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
