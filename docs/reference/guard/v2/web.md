@@ -472,6 +472,12 @@ export class HomeComponent {
 | responseMode        | String                                      | query                                | 否   | 响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。                                                                                                                                                        |
 | responseType        | String                                      | code                                 | 否   | 响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。                                                                                                      |
 
+接下来 `startWithRedirect` 还会支持传入以下两个参数（暂不支持）：
+
+- forced（即便已登录，也强制用户再次登录）。
+
+- useImplicitMode（是否使用 OIDC implicit 模式替代默认的 PKCE 模式，安全性较低，不推荐使用）。
+
 <p id="CodeChallengeMethod">CodeChallengeMethod</p>
 
 | 名称  | 描述                              |
