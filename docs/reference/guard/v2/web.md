@@ -349,7 +349,7 @@ export class HomeComponent {
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式`选择 `authentication_code`，`返回类型` 选择 `code`
+- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式`选择 `authentication_code`，`返回类型` 选择 `code`:
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
