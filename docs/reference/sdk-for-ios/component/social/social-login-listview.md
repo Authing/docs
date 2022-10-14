@@ -22,12 +22,12 @@
 
 | 属性名                     | 类型 | 说明 | 默认值 |
 | ----------------------- |:--------:| :------:| :-----: |
-|  src     |    String    |   社会化登录源。auto：跟随控制台；wechat\|apple，用 \| 隔开   |    auto   |
+|  src     |    String    |   社会化登录源。auto：跟随控制台；wechat\|apple\|wecom\|google\|lark-internal\|lark-public，用 \| 隔开   |    auto   |
 
 ## 设置属性示例
 
 ```swift
 if let social: SocialLoginListView = Util.findView(view, viewClass: SocialLoginListView.self) {
-    social.src = "wechat"
+    social.src = "wechat|apple"
 }
 ```

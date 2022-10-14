@@ -1166,6 +1166,11 @@ if (error) {
 }
 ```
 
+## 示例代码
+
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/authing-js-sdk/tree/master/examples)
+
+
 ## 附录公共参数列表
 
 ### <p id="SDKResponse">SDKResponse</p>
