@@ -3021,8 +3021,6 @@ Guard 内部短信验证码发送的场景值
 | reset          | 重置密码场景发送短信验证码  |
 | complete-phone | 信息补全场景发送短信验证码  |
 
-详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
-
 #### NomalLoginParams
 
 <p id="NomalLoginParams"></p>
@@ -3082,3 +3080,5 @@ interface RegisterParams {
 #### User
 
 <p id="User"></p>
+
+详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
