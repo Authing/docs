@@ -60,7 +60,7 @@
 
 <img src="./images/sdk-for-app-4.png" width="650" />
 
-<p style="margin-left: 50px">以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
+<p>以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
 
 <img src="./images/sdk-for-app-5.png" width="650" />
 
