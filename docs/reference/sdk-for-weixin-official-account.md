@@ -115,7 +115,7 @@ const authingWx = new AuthingWxmp({
   host: "https://my-awesome-app.authing.cn",
 
   // Authing 控制台 -> 选择已创建的小程序应用 -> 应用配置 -> -> 认证配置 -> 登录回调 URL
-  redirectUrl: ''
+  redirectUrl: 'https://my-awesome-app.authing.cn/callback'
 })
 ```
 :::
@@ -132,7 +132,7 @@ const authingWx = new AuthingFactory.AuthingWxmp({
   host: "https://my-awesome-app.authing.cn",
 
   // Authing 控制台 -> 选择已创建的小程序应用 -> 应用配置 -> -> 认证配置 -> 登录回调 URL
-  redirectUrl: ''
+  redirectUrl: 'https://my-awesome-app.authing.cn/callback'
 })
 ```
 :::
