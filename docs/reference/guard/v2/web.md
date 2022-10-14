@@ -33,15 +33,17 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 ### 安装并初始化
 
-有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
+有两种方式可以供你选择：**安装 Authing library** 或 **直接通过浏览器加载**。
 
 无论使用哪一种安装方式，你都需要用到应用的 <strong>APP ID</strong>，请先[前往控制台获取](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 
 #### 方法一：安装 Authing library
 
-首先，通过 npm / yarn 安装 Authing library。
-
+::: hint-info
 推荐使用 npm 或 yarn，它们能更好的和 webpack 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
+:::
+
+首先，通过 npm / yarn 安装 Authing library。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
@@ -215,7 +217,7 @@ export class AppModule {}
 
     <script>
       const guard = new GuardFactory.Guard({
-        // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+        // 你可以前往 Authing 控制台的本应用详情页查看你的 APP ID
         appId: "AUTHING_APP_ID",
 
         // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -329,7 +331,7 @@ export class HomeComponent {
 
 - 安全性：你的业务系统将用户重定向到 Authing，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。
 
-- 样式丰富性：托管模式提供了中等程度的登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
+- 样式丰富性：托管模式提供了登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
 
 - 集成便利性：你不需要额外运维登录页面，Authing 将负责此页面的维护和升级，当 Authing 有新功能发布之后，你不需要做任何操作即可获取最新能力。
 
@@ -339,21 +341,25 @@ export class HomeComponent {
 
 - 模态框形态：和普通形态类似，只不过通过模态框（Modal）的样式进行展示。
 
-**对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、最安全、最通用的 Authing 认证最佳实践。**
+**对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、安全、通用的 Authing 认证最佳实践。**
 
 ### 使用托管模式
 
 托管模式将跳转到 Authing 提供的托管登录页。由于此模式 Authing 默认使用 OIDC 标准协议认证，你需要进行以下额外配置：
 
-- 在 [Authing 控制台](https://console.authing.cn) 的`应用` - `自建应用` - `应用详情`中配置`登录回调 URL`，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
+- 在 [Authing 控制台](https://console.authing.cn) 的<strong>应用 -> 自建应用 -> 应用详情</strong>中配置<strong>登录回调 URL</strong>，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
-- 在应用详情的`应用配置` - `其他配置` - `授权配置`中，`授权模式`选择 `authentication_code`，`返回类型` 选择 `code`:
+- 在应用详情的<strong>应用配置 -> 其他配置 -> 授权配置</strong>中，<strong>授权模式</strong>选择 <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 如果是标准 Web 应用，请在应用详情的`应用配置` - `其他配置` - `授权配置`中，请确保应用的「换取 token 身份验证方式」设置为了 `none`（如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况）。
+- 如果是标准 Web 应用，请在应用详情的<strong>应用配置 -> 其他配置 -> 授权配置</strong>中，请确保应用的「换取 token 身份验证方式」设置为了 <strong>none</strong>。
+
+::: hint-info
+如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况。
+:::
 
 ![guard-console-identify-verify-mode](./images/guard-console-identify-verify-mode.png)
 
@@ -464,19 +470,19 @@ export class HomeComponent {
 
 | 名称                | 类型                                        | 默认值                               | 必传 | 描述                                                                                                                                                                                                                                                         |
 | ------------------- | ------------------------------------------- | ------------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| codeChallengeMethod | [CodeChallengeMethod](#CodeChallengeMethod) | S256                                 | 否   | 表示计算 code_challenge 时使用的摘要算法，plain 表示不用任何算法，S256 表示 code_challenge 是使用 SHA256 计算的。                                                                                                                                            |
-| scope               | String                                      | "openid profile email phone address" | 否   | OIDC scope，用空格分割，默认为 "openid profile email phone address"。完整的 scope 列表请见[此文档](https://docs.authing.co/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。 |
+| codeChallengeMethod | [CodeChallengeMethod](#CodeChallengeMethod) | S256                                 | 否   | <p>表示计算 `code_challenge` 时使用的摘要算法：</p><p>`plain` 表示不用任何算法；</p><p>`S256` 表示 `code_challenge` 是使用 `SHA256` 计算的。</p>                                                                         |
+| scope               | String                                      | "openid profile email phone address" | 否   | OIDC scope，用空格分割，默认为 "openid profile email phone address"。完整的 scope 列表请见[OIDC 常见问题](https://docs.authing.co/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。 |
 | redirectUri         | String                                      | -                                    | 否   | 登录回调地址，可在 Console 控制台配置                                                                                                                                                                                                                        |
 | state               | String                                      | 自动生成的随机数                     | 否   | 随机字符串，选填，默认自动生成。                                                                                                                                                                                                                             |
 | nonce               | String                                      | 自动生成的随机数                     | 否   | 随机字符串，选填，默认自动生成。                                                                                                                                                                                                                             |
 | responseMode        | String                                      | query                                | 否   | 响应类型，可选值为 query、fragment、form_post；默认为 query，即通过浏览器重定向发送 code 到回调地址。                                                                                                                                                        |
 | responseType        | String                                      | code                                 | 否   | 响应类型，选填，可选值为 code、code id_token token、code id_token、code id_token、code token、id_token token、id_token、none；默认为 code，授权码模式。                                                                                                      |
 
+::: hint-info
 接下来 `startWithRedirect` 将支持传入以下两个参数（暂不支持）：
-
 - forced（即便已登录，也强制用户再次登录）。
-
 - useImplicitMode（是否使用 OIDC implicit 模式替代默认的 PKCE 模式，安全性较低，不推荐使用）。
+:::
 
 <p id="CodeChallengeMethod">CodeChallengeMethod</p>
 
@@ -903,9 +909,9 @@ export class EmbedComponent {
 
 ### 实现单点登录
 
-单点登录能让用户能够在所有接入 Authing 的应用之间单点登录，即：一次登录，即可使用所有应用。
+单点登录能让用户在所有接入 Authing 的应用之间实现一次登录，即可使用所有应用。
 
-想要实现单点登录，你需要先将此应用`添加到单点登录`：
+想要实现单点登录，你需要先将此应用**添加到单点登录**：
 
 ![guard-sso](./images/guard-sso.png)
 
@@ -1040,7 +1046,7 @@ const guard = new GuardFactory.Guard({
 });
 
 function Logout() {
-  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
   const onLogout = () => guard.logout();
 }
 ```
@@ -1056,7 +1062,7 @@ import { useGuard } from "@authing/guard-react";
 export default function Logout() {
   const guard = useGuard();
 
-  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
   const onLogout = () => guard.logout();
 
   return (
@@ -1074,7 +1080,7 @@ export default function Logout() {
 ```javascript
 export default {
   methods: {
-    // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
     logout() {
       this.$guard.logout();
     },
@@ -1091,7 +1097,7 @@ import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
 
-// 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+// 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
 const logout = () => guard.logout();
 ```
 
@@ -1112,7 +1118,7 @@ export class LoginComponent {
   constructor(private guard: GuardService) {}
 
   onLogout() {
-    // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
     this.guard.client.logout();
   }
 }
@@ -1137,7 +1143,7 @@ const guard = new GuardFactory.Guard({
 });
 
 function Logout() {
-  // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
   const onLogout = () => guard.logout();
 }
 ```
@@ -1386,14 +1392,14 @@ export class LoginComponent {
 
 **Authing 目前支持 20+ 种第三方身份源登录方式，基本囊括所有常用的身份源：**
 
-- [社会化身份源](https://docs.authing.cn/v2/guides/authentication/social/)： Google、GitHub、微信、QQ、微博、 飞书、企业微信、钉钉、AD、Azure AD...
+- [社会化身份源](https://docs.authing.cn/v2/guides/authentication/social/)： Google、GitHub、微信、QQ、微博、飞书、企业微信、钉钉、AD、Azure AD...
 - [基于认证协议的身份服务](https://docs.authing.cn/v2/connections/custom-social-provider/)： OIDC、OAuth2.0、SAML、CAS...
 
-你可以点击上面的链接查看 Authing 支持的所有第三方身份源，并根据你的实际需要进行选择。选好你需要使用的身份源后，请根据下面的引导完成接入。
+你可以点击上面的链接查看 Authing 支持的所有第三方身份源，并根据你的实际需要进行选择。选好你需要使用的身份源后，请根据下面的引导完成接入：
 
-**首先**，你需要根据在 Authing 控制台完成你所需的身份源的配置。
+1. 你需要在 Authing 控制台完成所需身份源的配置。
 
-**然后**，使用下面的方法来控制配置完成的身份源的展示与隐藏。
+2. 使用下面的方法来控制配置完成的身份源的展示与隐藏。
 
 此处以 Github 身份源为例：
 
@@ -1633,7 +1639,7 @@ export class GetUserInfoComponent {
 - en-US：英文
 - ja-JP：日文
 
-如果用户的浏览器语言 Authing Guard 暂未支持，Guard 默认将会展示为配置的默认语言。
+如果 Authing Guard 暂未支持用户的浏览器语言，Guard 会展示配置的默认语言。
 
 Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing 目前支持的语言列表](#Lang)。
 
@@ -2003,9 +2009,9 @@ export class GetUserInfoComponent {
 :::
 ::::
 
-## 使用 Guard 内置的 Authing JS SDK
+### 使用 Guard 内置的 Authing JS SDK
 
-Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)（`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](https://docs.authing.cn/v2/guides/federation/oidc.html), [OAuth 2.0](https://docs.authing.cn/v2/guides/federation/oauth.html), [SAML](https://docs.authing.cn/v2/guides/federation/saml.html) 和 [CAS](https://docs.authing.cn/v2/guides/federation/cas.html)）。
+Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)（`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](https://docs.authing.cn/v2/guides/federation/oidc.html)、[OAuth 2.0](https://docs.authing.cn/v2/guides/federation/oauth.html)、[SAML](https://docs.authing.cn/v2/guides/federation/saml.html)、[CAS](https://docs.authing.cn/v2/guides/federation/cas.html)）。
 
 你可以通过 `getAuthClient` 获取 `AuthenticationClient` 实例，之后可调用 AuthenticationClient 的所有方法。
 
@@ -2175,7 +2181,7 @@ export class PersonalComponent {
 :::
 ::::
 
-## 私有化部署
+### 私有化部署
 
 如果你是通过「私有化部署」的方式使用 Authing 服务，需要指定你私有化的端点（不带 Path），具体方式如下：
 
@@ -2292,7 +2298,7 @@ export class AppModule {}
 
 如果你不清楚具体的操作方式，请直接在你的私有化服务群中联系相应的 Authing 工作人员，他们将为你提供直接支持。
 
-## 高级功能
+### 高级功能
 
 除上述常用操作外，Guard 还支持一些更高级的操作（如管理用户自定义数据、退出登录、刷新 Token）。
 
@@ -2412,7 +2418,7 @@ export class HomeComponent {
 
 ## 附录
 
-此附录中的「初始化参数列表」及「Config 参数列表」都会作为 Guard 初始化的配置项，例如：
+此附录中的**初始化参数列表**和**Config 参数列表**都会作为 Guard 初始化的配置项，例如：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2444,7 +2450,7 @@ const guard = new GuardFactory.Guard({
   // 是否开启单点登录
   isSSO: false,
 
-  // Guard 详细配置，具体值参考附录中的 IGuardConfig
+  // Guard 详细配置，具体值参考附录中的Config 参数列表
   config: {},
 });
 ```
@@ -2489,7 +2495,7 @@ function App() {
       // 是否开启单点登录
       isSSO={false}
       
-      // Guard 详细配置，具体值参考附录中的 IGuardConfig
+      // Guard 详细配置，具体值参考附录中的 Config 参数列表
       config={{}}
     >
       <RouterComponent></RouterComponent>
@@ -2535,7 +2541,7 @@ Vue.use(GuardPlugin, {
   // 是否开启单点登录
   isSSO: false,
 
-  // Guard 详细配置，具体值参考附录中的 IGuardConfig
+  // Guard 详细配置，具体值参考附录中的 Config 参数列表
   config: {},
 });
 ```
@@ -2580,7 +2586,7 @@ app.use(
     // 是否开启单点登录
     isSSO: false,
 
-    // Guard 详细配置，具体值参考附录中的 IGuardConfig
+    // Guard 详细配置，具体值参考附录中的 Config 参数列表
     config: {},
   })
 );
@@ -2642,7 +2648,7 @@ import { GuardModule } from "@authing/guard-angular";
       // 是否开启单点登录
       isSSO: false,
 
-      // Guard 详细配置，具体值参考附录中的 IGuardConfig
+      // Guard 详细配置，具体值参考附录中的 Config 参数列表
       config: {},
     }),
   ],
@@ -2657,12 +2663,10 @@ export class AppModule {}
 
 ### 初始化参数列表
 
-<p id="InitConfig"></p>
-
 | 名称         | 类型                                  | 默认值                         | 必传 | 描述                                                                                                                                                                                             |
 | ------------ | ------------------------------------- | ------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | appId        | String                                | -                              | 是   | [Authing 应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)，可以在 Authing 控制台自建应用的应用详情中获取。                                                            |
-| host         | String                                | -                              | 否   | 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。    |
+| host         | String                                | -                              | 否   | 如果此应用没有开启单点登录，需要填写自建应用**认证地址**；如果开启了单点登录，则应填写单点登录的**应用面板地址**;如果是私有化部署，填写私有化部署对应的**认证地址**或**应用面板地址**即可。    |
 | redirectUri  | String                                | -                              | 否   | 控制台登录回调 URL                                                                                                                                                                               |
 | mode         | [IGuardMode](#IGuardMode)             | normal                         | 否   | Guard 采用内嵌模式时，有两种展示形态：normal —— 普通形态，modal —— 模态框形态                                                                                                                    |
 | defaultScene | [IGuardModuleType](#IGuardModuleType) | login                          | 否   | Guard 默认渲染页面                                                                                                                                                                               |
@@ -2670,9 +2674,47 @@ export class AppModule {}
 | lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
 | isSSO        | Boolean                               | false                          | 否   | 是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。 |
 | config       | [IGuardConfig](#IGuardConfig)         | -                              | 否   | Guard 详细配置                                                                                                                                                                                   |
+
+### Config 参数列表
+
+<p id="IGuardConfig"></p>
+
+Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录方式等。所有配置如下：
+
+| 参数名| 参数说明 | 类型 | 是否必传 | 默认值|
+| ---- | ---- | ---- | ---- | ---- |
+| target                | 指定 Guard 表单的挂载点，接受 [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) 能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面      | String                                                    | HTMLElement | 否                                                 |
+| mode                  | Guard 展示模式                                                                                                                                                                                                       | [IGuardMode](#IGuardMode)                                 | 否          | normal                                             |
+| title                 | 产品名称                                                                                | String                                                    | 否          | {{$localeConfig.brandName}}                        |
+| logo                  | 产品 logo                                                                     | String                                                    | 否          | [{{$localeConfig.brandName}} logo]                 |
+| contentCSS            | 自定义 CSS 样式，如果指定了，会在 DOM 的 head 中插入一个 <style type="text/css"></style> 节点。如 body {background:#6699 !important;}。                                                                          | String                                                    | 否          | -                                                  |
+| loginMethodList       | 需要使用的普通登录(包括 LDAP)方式列表                                                   | [ILoginMethod](#ILoginmethod)[]                           | 否          | [*phone-code, password*]                           |
+| registerMethodList    | 需要使用的注册方式   | [IRegisterMethod](#IRegistermethod)[]                     | 否          | [*RegisterMethods.Email*, *RegisterMethods.Phone*] |
+| registerMethod        | 默认展示的注册方式                                                                    | [IRegisterMethod](#IRegistermethod)                       | 否          | email                                              |
+| defaultScene          | 打开组件时展示的界面                                                     | [IGuardModuleType](#IGuardModuleType)                     | 否          | password                                           |
+| socialConnectionList  | 需要使用的社会化登录列表                                                 | [ISocialConnectionProvider](#ISocialConnectionProvider)[] | 否          | []                                                 |     |
+| enterpriseConnections | 需要使用的企业身份源列表(不包括 LDAP)，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 APP ID 才能使用                                                                                         | Array                                                     | 否          | []                                                 |
+| loginMethod           | 默认显示的登录方式                                                           | [ILoginMethod](#ILoginMethod)                             | 否          | password                                           |
+| autoRegister          | 是否将注册和登录合并，合并后如果用户不存在将自动注册 | Boolean                                                   | 否          | false                                              |
+| disableRegister       | 是否禁止注册，禁止的话会隐藏「注册」入口                                                                                                                                                                         | Boolean                                                   | 否          | false                                              |
+| disableResetPwd| 是否禁止重置密码，禁止的话会隐藏「忘记密码」入口 | Boolean |否 | Authing 控制台中的配置|
+| clickCloseable | Modal 模式时是否隐藏登录框右上角的关闭按钮，如果隐藏，用户将不能通过点击按钮关闭登录框 | Boolean | 否 | Authing 控制台中的配置 |
+| escCloseable          | Modal 模式时是否可以通过键盘 ESC 键关闭登录框  |  Boolean |否|Authing 控制台中的配置 |
+| isSSO                 | 是否是单点登录                                                                                                                                                                                                       | Boolean                                                   | 否          | false                                              |
+| qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                                   | 否          | null                                               |     |     |
+| lang                  | 使用语言                                                                                                                                                                                                             | [Lang](#Lang)                                             | 否          | en-US                                              |
+| langRange             | 语言切换可选的范围，如果填入空数组或一个项时，则不会显示语言切换按钮                                                                                                                                               | [Lang](#Lang)[]                                           | 否          | ['zh-CN', 'en-US']                                 |
+| host | 如果此应用没有开启单点登录，需要填写自建应用的**认证地址**；如果开启了单点登录，则应填写单点登录的**应用面板地址**;如果是私有化部署，填写私有化部署对应的**认证地址**或**应用面板地址**即可。| String | 否| - |
+
 ### 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 - 基础安全配置安全域（CORS）</strong>进行配置（如果有多个域名，可以通过换行符（\n）进行分割）。配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 -> 通用安全 -> 基础安全 -> 安全域（CORS）</strong>进行配置。
+
+::: hint-info
+如果有多个域名，可以通过换行符（\n）进行分割
+:::
+
+配置之后，只有在你安全域配置白名单中的域，才能调用相关 API，从而正常使用 Authing Guard 功能。
 
 ![guard-console-safity-domain](./images/guard-console-safity-domain.png)
 
@@ -2680,7 +2722,7 @@ export class AppModule {}
 
 如果你不进行额外配置，Authing Guard 默认会使用云端的 Authing 控制台配置项，否则会对控制台中的配置进行覆盖。下面以 Guard 展示默认语言为例。
 
-默认情况下，Guard 会读取品牌化配置中的**默认语言**作为默认展示语言：
+默认情况下，Guard 会读取品牌化配置中的 **默认语言** 作为默认展示语言：
 
 ![guard-console-relationship](./images/guard-console-relationship.png)
 
@@ -2813,17 +2855,18 @@ export class EmbedComponent {
 
 完整事件列表如下：
 
-> 如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
-
+::: hint-info
+如果配置了登录注册合并，将之后触发 `login` 事件，不会触发 `register` 事件。
+:::
 
 | 事件名称                     | 描述                                                                                      | 回调参数                              | 回调参数说明                                                                                                                                                                                                                                              |
 | ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
 | onLoadError                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
-| onBeforeLogin                | 用户触发登录前(返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续)               | loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜ [VerifyCodeLoginParams](#VerifyCodeParams) ｜[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
+| onBeforeLogin                | 用户触发登录前（返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续）。| loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜</p><p> [VerifyCodeLoginParams](#VerifyCodeParams) ｜</p><p>[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
 | onLogin                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
 | onLoginError                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
-| onBeforeRegister             | 用户触发注册前(返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续)               | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
+| onBeforeRegister             | 用户触发注册前（返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续）。             | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
 | onRegister                   | 用户注册成功                                                                              | user, authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
 | onRegisterError              | 用户注册失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
 | onEmailSend                  | 邮件发送成功                                                                              | authenticationClient，sence           | <p>sence: [IEmailScene](#IEmailScene)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                             |
@@ -2840,9 +2883,9 @@ export class EmbedComponent {
 | onLangChange                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
 | onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
 
-## 字段类型定义
+### 类型定义
 
-### IGuardMode
+#### IGuardMode
 
 <p id="IGuardMode"></p>
 
@@ -2851,7 +2894,7 @@ export class EmbedComponent {
 | normal | 普通形态   |
 | modal  | 模态框形态 |
 
-### Lang
+#### Lang
 
 <p id="Lang"></p>
 
@@ -2862,38 +2905,7 @@ export class EmbedComponent {
 | zh-TW | 繁体 |
 | ja-JP | 日语 |
 
-### IGuardConfig
-
-<p id="IGuardConfig"></p>
-
-Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，使用特定登录方式等。所有配置如下：
-
-| 参数名                | 参数说明                                                                                                                                                                                                             | 类型                                                      | 是否必传    | 默认值                                             |
-| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------- | :---------- | :------------------------------------------------- | --- | --- |
-| target                | 指定 Guard 表单的挂载点，接受 [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) 能接受的所有参数或者 dom 元素，若未传入，Guard 会自动生成一个 div 标签放入 body 的最后面      | String                                                    | HTMLElement | 否                                                 |
-| mode                  | Guard 展示模式                                                                                                                                                                                                       | [IGuardMode](#IGuardMode)                                 | 否          | normal                                             |
-| title                 | **产品名称**                                                                                                                                                                                                         | String                                                    | 否          | {{$localeConfig.brandName}}                        |
-| logo                  | **产品 logo**                                                                                                                                                                                                        | String                                                    | 否          | [{{$localeConfig.brandName}} logo]                 |
-| contentCSS            | **自定义 CSS 样式**，如果指定了，会在 DOM 的 head 中插入一个 <style type="text/css"></style> 节点。如 body {background:#6699 !important;}。                                                                          | String                                                    | 否          | -                                                  |
-| loginMethodList       | **需要使用的普通登录(包括 LDAP)方式列表**                                                                                                                                                                            | [ILoginMethod](#ILoginmethod)[]                           | 否          | [*phone-code, password*]                           |
-| registerMethodList    | **需要使用的注册方式**                                                                                                                                                                                               | [IRegisterMethod](#IRegistermethod)[]                     | 否          | [*RegisterMethods.Email*, *RegisterMethods.Phone*] |
-| registerMethod        | **默认展示的注册方式**                                                                                                                                                                                               | [IRegisterMethod](#IRegistermethod)                       | 否          | email                                              |
-| defaultScene          | **打开组件时展示的界面**                                                                                                                                                                                             | [IGuardModuleType](#IGuardModuleType)                     | 否          | password                                           |
-| socialConnectionList  | **需要使用的社会化登录列表**                                                                                                                                                                                         | [ISocialConnectionProvider](#ISocialConnectionProvider)[] | 否          | []                                                 |     |
-| enterpriseConnections | **需要使用的企业身份源列表(不包括 LDAP)**，列表项值为配置的企业身份源唯一标识符，注意：企业身份源需要传入对应 appId 才能使用                                                                                         | Array                                                     | 否          | []                                                 |
-| loginMethod           | **默认显示的登录方式**。                                                                                                                                                                                             | [ILoginMethod](#ILoginMethod)                             | 否          | password                                           |
-| autoRegister          | **是否将注册和登录合并**，合并后如果用户不存在将自动注册                                                                                                                                                             | Boolean                                                   | 否          | false                                              |
-| disableRegister       | **是否禁止注册**，禁止的话会隐藏「注册」入口                                                                                                                                                                         | Boolean                                                   | 否          | false                                              |
-| disableResetPwd       | **是否禁止重置密码**，禁止的话会隐藏「忘记密码」入口                                                                                                                                                                 |                                                           |             |
-| clickCloseable        | **Modal 模式时是否隐藏登录框右上角的关闭按钮**，如果隐藏，用户将不能通过点击按钮关闭登录框                                                                                                                           | Boolean                                                   | 否          | true                                               |
-| escCloseable          | **Modal 模式时是否可以通过键盘 ESC 键关闭登录框**                                                                                                                                                                    | 否                                                        | true        |
-| isSSO                 | 是否是单点登录                                                                                                                                                                                                       | Boolean                                                   | 否          | false                                              |
-| qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                                   | 否          | null                                               |     |     |
-| lang                  | 使用语言                                                                                                                                                                                                             | [Lang](#Lang)                                             | 否          | en-US                                              |
-| langRange             | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮                                                                                                                                               | [Lang](#Lang)[]                                           | 否          | ['zh-CN', 'en-US']                                 |
-| host                  | 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；如果开启了单点登录，则应填写单点登录的「应用面板地址」;如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。                        | String                                                    | 否          | -                                                  |
-
-### ILoginMethod
+#### ILoginMethod
 
 <p id="ILoginMethod"></p>
 
@@ -2901,14 +2913,14 @@ Guard 支持的普通登录方式
 
 | 值                        | 说明                                                                                     |
 | :------------------------ | :--------------------------------------------------------------------------------------- |
-| ldap                      | LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))                              |
-| app-qrcode                | APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)) |
-| password                  | 账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码)                              |
+| ldap                      | LDAP 身份目录登录（需要[配置 LDAP 服务](/connections/ldap/)）                              |
+| app-qrcode                | APP 扫码登录（需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)） |
+| password                  | 账号密码登录（包括手机号 + 密码、邮箱 + 密码、用户名 + 密码）                          |
 | phone-code                | 手机验证码登录                                                                           |
 | wechat-miniprogram-qrcode | 微信 PC 小程序扫码登录                                                                   |
 | ad                        | AD 用户目录登录                                                                          |
 
-### IRegisterMethod
+#### IRegisterMethod
 
 <p id="IRegisterMethod"></p>
 
@@ -2916,11 +2928,11 @@ Guard 支持的注册方式
 
 | 值        | 说明           |
 | --------- | -------------- |
-| email     | 邮箱注册       |
+| email     | 邮箱密码注册       |
 | emailCode | 邮箱验证码注册 |
 | phone     | 手机验证码注册 |
 
-### IGuardModuleType
+#### IGuardModuleType
 
 <p id="IGuardModuleType"></p>
 
@@ -2949,7 +2961,7 @@ Guard 可展示的界面
 | identityBinding      | 身份源绑定            |
 | selfUnlock           | 自助解锁              |
 
-### ISocialConnectionProvider
+#### ISocialConnectionProvider
 
 <p id="ISocialConnectionProvider"></p>
 
@@ -2957,23 +2969,36 @@ Guard 支持的社会化登录方式
 
 | 值                                        | 说明                           |
 | :---------------------------------------- | :----------------------------- |
+|alipay|支付宝登录|
 | qq                                        | QQ 登录                        |
 | weibo                                     | 新浪微博登录                   |
 | github                                    | GitHub 登录                    |
 | google                                    | Google 账号登录                |
 | wechat:pc                                 | 微信 PC 端登录                 |
 | dingtalk                                  | 钉钉登录                       |
-| wechatwork:corp:qrconnect                 | 企业微信二维码登录             |
+| wechatwork:corp:qrconnect                 | 企业微信内部应用             |
 | wechatwork:service-provider:qrconnect     | 企业微信第三方应用扫码授权登录 |
 | wechatwork:service-provider:authorization | 企业微信第三方应用网页授权登录 |
+|wechat:webpage-authorization|微信网页授权登录|
+|wechat:mobile|微信移动端扫码登录|
+|wechatwork:addressbook|企业微信通讯录|
+|apple|Apple 登录|
+|lark-public|飞书应用商店登录|
+|lark-internal|飞书企业自建应用登录|
+|baidu|百度登录|
+|linkedin|领英登录|
+|slack|Slack 登录|
+|yidun|网易易盾登录|
+|qingcloud|青云 QingCloud 登录|
+|facebook|FaceBook 登录|
 
-### User
+#### User
 
 <p id="User"></p>
 
 详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
 
-### NomalLoginParams
+#### NomalLoginParams
 
 <p id="NomalLoginParams"></p>
 
@@ -2988,7 +3013,7 @@ interface NomalLoginParams {
 }
 ```
 
-### VerifyCodeLoginParams
+#### VerifyCodeLoginParams
 
 <p id="VerifyCodeLoginParams"></p>
 
@@ -3003,7 +3028,7 @@ interface VerifyCodeLoginParams {
 }
 ```
 
-### ScanLoginParams
+#### ScanLoginParams
 
 <p id="ScanLoginParams"></p>
 
@@ -3014,7 +3039,7 @@ interface ScanLoginParams {
 }
 ```
 
-### RegisterParams
+#### RegisterParams
 
 <p id="RegisterParams"></p>
 
@@ -3029,7 +3054,7 @@ interface RegisterParams {
 }
 ```
 
-### IEmailScene
+#### IEmailScene
 
 Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台配置完成的邮件模版
 
@@ -3044,7 +3069,7 @@ Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台�
 | RESET_PASSWORD_VERIFY_CODE         | 重置密码场景发送邮箱验证码  |
 | INFORMATION_COMPLETION_VERIFY_CODE | 信息补全场景发送邮箱验证码  |
 
-### ISceneType
+#### ISceneType
 
 Guard 内部短信验证码发送的场景值
 
