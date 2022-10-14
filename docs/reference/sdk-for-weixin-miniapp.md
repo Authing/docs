@@ -27,13 +27,13 @@
   <li>点击<strong>创建</strong></li>
 </ul>
 
-<img src="./images/sdk-for-app-1.png" width="650" />
+![sdk-for-app-1](./images/sdk-for-app-1.png)
 
 2. 以下身份验证方式选择 `none`
 
 <p>应用创建成功之后，在「自建应用」列表，点击该应用，点击「应用配置」标签，找到「其他配置」，点击展开，找到以下三种身份认证方式并全部设置为 none（前端应用不适合存储密钥，这会造成密钥泄漏）</p>
 
-<img src="./images/sdk-for-app-2.png" width="650" />
+![sdk-for-app-2](./images/sdk-for-app-2.png)
 
 <br />
 
@@ -43,13 +43,13 @@
 
 1. 在[微信小程序后台](https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=678159627)的`开发` -> `开发管理` -> `开发设置`页面获取`小程序 ID` 和`小程序密钥`。
 
-<img src="./images/sdk-for-app-3.png" width="650" />
+![sdk-for-app-3](./images/sdk-for-app-3.png)
 
 然后在当前页面底部配置`服务器域名`，添加`request 合法域名`。
 
 如果你使用的是 Authing 公有云服务，`request 合法域名` 添加 `https://core.authing.cn`；如果是私有化部署，请填写你的私有化服务端地址。
 
-<img src="./images/sdk-wechat-request-domain.png" width="650" />
+![sdk-wechat-request-domain](./images/sdk-wechat-request-domain.png)
 
 2. 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `小程序`创建一个微信社会化身份源，并填写以下信息：
 
@@ -58,15 +58,15 @@
   - 小程序 ID
   - 小程序密钥
 
-<img src="./images/sdk-for-app-4.png" width="650" />
+![sdk-for-app-4](./images/sdk-for-app-4.png)
 
 <p>以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
 
-<img src="./images/sdk-for-app-5.png" width="650" />
+![sdk-for-app-5](./images/sdk-for-app-5.png)
 
 3. 在当前页面选择`使用此身份源的应用` 并点击**保存**按钮再次保存
 
-<img src="./images/sdk-for-app-6.png" width="650" />
+![sdk-for-app-6](./images/sdk-for-app-6.png)
 
 ## 步骤三：安装 SDK
 
