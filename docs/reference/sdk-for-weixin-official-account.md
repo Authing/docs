@@ -32,7 +32,7 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 
 2. 以下身份验证方式选择 <strong>none</strong>
 
-<p>应用创建成功之后，在 <strong>自建应用</strong> 列表，点击该应用，点击 <strong>应用配置</strong> 标签，找到 <strong>其他配置</strong>，点击展开，找到以下三种身份认证方式并全部设置为 <strong>none</strong></p>。
+<p>应用创建成功之后，在 <strong>自建应用</strong> 列表，点击该应用，点击 <strong>应用配置</strong> 标签，找到 <strong>其他配置</strong>，点击展开，找到以下三种身份认证方式并全部设置为 <strong>none</strong>。</p>
 
 ::: hint-info
 前端应用不适合存储密钥，这会造成密钥泄漏。

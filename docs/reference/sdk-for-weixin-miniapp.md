@@ -297,9 +297,9 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 微信小程序相关接口说明请参考：
 
-[wx.getUserProfile](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)
+- [wx.getUserProfile](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)
 
-[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
+- [小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
 
 微信小程序用户头像昵称获取规则生效后，你可以使用 `authing.updateUserInfo` 引导用户更新头像昵称。
 
