@@ -1478,6 +1478,7 @@ const zhCnNavBar = {
           title: "典型场景",
           path: "/reference/sdk-for-android/scenario/",
           children: [
+            "/reference/sdk-for-android/scenario/application_config",
             "/reference/sdk-for-android/scenario/logout",
             "/reference/sdk-for-android/scenario/splash",
             "/reference/sdk-for-android/scenario/tokens",
@@ -1631,12 +1632,14 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
+            "/reference/sdk-for-ios/social/google",
           ],
         },
         {
           title: "典型场景",
           path: "/reference/sdk-for-ios/scenario/",
           children: [
+            "/reference/sdk-for-ios/scenario/application_config",
             "/reference/sdk-for-ios/scenario/tokens",
             "/reference/sdk-for-ios/scenario/webview",
             "/reference/sdk-for-ios/scenario/logout",
@@ -1646,6 +1649,14 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "Guard iOS Changelog",
+          path: "/reference/sdk-for-ios/ios-guard-changelog"
+        },
+        {
+          title: "返回码对照表",
+          path: "/reference/sdk-for-ios/errorcode"
         },
       ],
     },
@@ -1670,6 +1681,10 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-flutter/onpremise",
+        },       
+        {
+          title: "Flutter SDK Changelog",
+          path: "/reference/sdk-for-flutter/flutter-changelog",
         },
       ],
     },
@@ -6588,6 +6603,10 @@ const translatedZhCnNavBar = {
         {
           title: "On-premise",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "Error Code List",
+          path: "/reference/sdk-for-ios/errorcode",
         },
       ],
     },

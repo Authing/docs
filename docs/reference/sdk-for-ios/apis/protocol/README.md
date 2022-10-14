@@ -4,20 +4,18 @@
 
 ## OIDC
 
-OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语义化的用户信息字段。
+OpenID Connect 简称 [OIDC](https://docs.authing.cn/v2/apn/#关于-oidc)，是 OAuth 2.0 的一个扩展，主要增加了语义化的用户信息字段。
 
 ### 初始化
 
-OIDCClient 会自动获取控制台默认回调，如需要自定义 scope, redirect_uri 等参数，可传入自定义 AuthReuest。
+OIDCClient 会自动获取控制台默认回调，如需要自定义 scope, redirect_uri 等参数，可创建 AuthRequest 对象，重新给 scope 或 redirect_uri 属性赋值。
 
 **示例**
 
 ```swift
 let authRequest = AuthRequest()
 authRequest.scope = "openid"
-OIDCClient(authRequest).loginByAccount(account: account, password: password) { code,  message,  userInfo in
-    //userInfo
-}
+OIDCClient(authRequest).loginByXXX()
 ```
 <br>
 
@@ -37,7 +35,7 @@ func registerByEmail(email: String, password: String, completion: @escaping(Int,
 **示例**
 
 ```swift
-OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+OIDCClient().registerByEmail(email: "test@example.com", password: "strong") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -53,7 +51,7 @@ OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 
 ### 邮箱验证码注册
 
-使用 OIDC 邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码
+使用 OIDC 邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
 func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -67,7 +65,7 @@ func registerByEmailCode(email: String, code: String, completion: @escaping(Int,
 **示例**
 
 ```swift
-OIDCClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
+OIDCClient().registerByEmailCode(email: "test@example.com", code: "code") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -97,7 +95,7 @@ func registerByUserName(username: String, password: String, completion: @escapin
 **示例**
 
 ```swift
-OIDCClient().registerByUserName(username: "username", password: "strong") { code, message, userInfo in
+OIDCClient().registerByUserName(username: "test", password: "strong") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -112,7 +110,7 @@ OIDCClient().registerByUserName(username: "username", password: "strong") { code
 
 ### 短信验证码注册
 
-通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口以获取短信验证码
+通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口以获取短信验证码。
 
 ```swift
 func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -127,7 +125,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 **示例**
 
 ```swift
-OIDCClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "strong") { code, message, userInfo in
+OIDCClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "password") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -158,7 +156,7 @@ func loginByAccount(account: String, password: String, completion: @escaping(Int
 **示例**
 
 ```swift
-OIDCClient().loginByAccount(account: account, password: password) { code,  message,  userInfo in
+OIDCClient().loginByAccount(account: "test", password: "password") { code,  message,  userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -183,7 +181,7 @@ func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, St
 **示例**
 
 ```swift
-OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInfo in
+OIDCClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -194,7 +192,7 @@ OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInf
 
 ### 邮箱验证码登录
 
-使用 OIDC 邮箱验证码登录，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码
+使用 OIDC 邮箱验证码登录，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
 func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
@@ -208,7 +206,7 @@ func loginByEmail(email: String, code: String, completion: @escaping(Int, String
 **示例**
 
 ```swift
-OIDCClient().loginByEmail(phone: phone, code: code) { code, message, userInfo in
+OIDCClient().loginByEmail(email: "test@example.com", code: "1234") { code, message, userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -230,7 +228,7 @@ func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?
 **示例**
 
 ```swift
-OIDCClient().loginByWechat(authCode) { code, message, userInfo in
+OIDCClient().loginByWechat("authCode") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -241,7 +239,7 @@ OIDCClient().loginByWechat(authCode) { code, message, userInfo in
 
 ### 获取用户信息
 
-通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
+通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象，此接口只返回协议相关用户信息字段。
 
 ```swift
 func getUserInfoByAccessToken(userInfo: UserInfo?, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -285,6 +283,6 @@ OIDCClient().getNewAccessTokenByRefreshToken(userInfo: userInfo) { code, message
 }
 ```
 
->注意，每次调用会得到新的 refresh token
+>注意，每次调用会得到新的 refresh token 。
 
 <br>
