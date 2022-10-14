@@ -19,11 +19,11 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 
-从 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的**创建自建应用**按钮，填入以下信息：
+从 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的 **创建自建应用** 按钮，填入以下信息：
 
 - 应用名称：填入你的应用名称；
 - 认证地址：选择一个二级域名，必须为合法的域名格式，例如 `my-awesome-app`；
-- 应用类型：选择「标准 Web 应用」或「单页 Web 应用」；
+- 应用类型：选择 **标准 Web 应用** 或 **单页 Web 应用**。
 
 ![guard-create-application.png](./images/guard-create-application.png)
 
@@ -35,7 +35,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 有两种方式可以供你选择：**安装 Authing library** 或 **直接通过浏览器加载**。
 
-无论使用哪一种安装方式，你都需要用到应用的 <strong>APP ID</strong>，请先[前往控制台获取](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
+无论使用哪一种安装方式，你都需要用到应用的 **APP ID**，请先[前往控制台获取](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 
 #### 方法一：安装 Authing library
 
@@ -242,7 +242,7 @@ export class AppModule {}
 
 ```javascript
 const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -325,16 +325,13 @@ export class HomeComponent {
 
 **托管模式：** 指跳转到 Authing 提供的托管登录页。Authing 默认使用 OIDC 标准协议认证，你的用户在登录时将始终由 Authing 提供的认证最佳实践保驾护航。
 
-- 安全性：你的业务系统将用户重定向到 Authing，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。
-
+- 安全性：你的业务系统将用户重定向到 Authing，用户在此进行身份验证，然后重定向回在控制台配置的应用回调连接。
 - 样式丰富性：托管模式提供了登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
-
 - 集成便利性：你不需要额外运维登录页面，Authing 将负责此页面的维护和升级，当 Authing 有新功能发布之后，你不需要做任何操作即可获取最新能力。
 
 **内嵌模式：** 指的是将 Authing 提供的登录组件（Guard）嵌入到你的 Web 应用中。仅需要几行 JavaScript 代码即可，该模式包含两种形态：
 
 - 普通形态：样式与托管模式一致，但灵活之处在于你可以将它嵌入到你的任意的 DOM 节点。
-
 - 模态框形态：和普通形态类似，只不过通过模态框（Modal）的样式进行展示。
 
 **对于大多数登录认证场景，我们推荐使用「托管模式」进行集成。这是最简便、安全、通用的 Authing 认证最佳实践。**
@@ -343,15 +340,15 @@ export class HomeComponent {
 
 托管模式将跳转到 Authing 提供的托管登录页。由于此模式 Authing 默认使用 OIDC 标准协议认证，你需要进行以下额外配置：
 
-- 在 [Authing 控制台](https://console.authing.cn) 的<strong>应用 -> 自建应用 -> 应用详情</strong>中配置<strong>登录回调 URL</strong>，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
+- 在 [Authing 控制台](https://console.authing.cn) 的 <strong>应用 -> 自建应用 -> 应用详情</strong> 中配置 <strong>登录回调 URL</strong>，回调地址为下述示例代码中 Callback 页面地址，此处以 `http://localhost:3000/callback` 为例：
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
-- 在应用详情的<strong>应用配置 -> 其他配置 -> 授权配置</strong>中，<strong>授权模式</strong>选择 <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
+- 在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，<strong>授权模式</strong> 选择      <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 如果是标准 Web 应用，请在应用详情的<strong>应用配置 -> 其他配置 -> 授权配置</strong>中，请确保应用的「换取 token 身份验证方式」设置为了 <strong>none</strong>。
+- 如果是标准 Web 应用，请在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，请确保应用的「换取 token 身份验证方式」设置为了 <strong>none</strong>。
 
 ::: hint-info
 如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况。
@@ -364,7 +361,7 @@ export class HomeComponent {
 
 ```javascript
 const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -501,7 +498,7 @@ export class HomeComponent {
 ```javascript
 // 获取 Guard 实例
 const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 appId
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -621,7 +618,7 @@ export class LoginComponent {
 
 初始化时，你需要将初始化参数的 `mode` 设置成 `modal`。
 
-你可以通过 `guard` 实例 `start` 方法对**模态框**进行渲染，同时可以通过 `show` 和 `hide` 控制**模态框**的显示和隐藏：
+你可以通过 `guard` 实例 `start` 方法对 **模态框** 进行渲染，同时可以通过 `show` 和 `hide` 控制 **模态框** 的显示和隐藏：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -907,7 +904,7 @@ export class EmbedComponent {
 
 单点登录能让用户在所有接入 Authing 的应用之间实现一次登录，即可使用所有应用。
 
-想要实现单点登录，你需要先将此应用**添加到单点登录**：
+想要实现单点登录，你需要先将此应用 **添加到单点登录**：
 
 ![guard-sso](./images/guard-sso.png)
 
@@ -1027,7 +1024,7 @@ export class AppModule {}
 
 ### 登出
 
-根据你的具体使用场景，退出登录分为单应用登出和 SSO 单点登出两种。
+根据你的具体使用场景，退出登录分为 **单应用登出** 和 **SSO 单点登出** 两种。
 
 #### 单应用登出
 
@@ -1042,7 +1039,7 @@ const guard = new GuardFactory.Guard({
 });
 
 function Logout() {
-  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
   const onLogout = () => guard.logout();
 }
 ```
@@ -1058,7 +1055,7 @@ import { useGuard } from "@authing/guard-react";
 export default function Logout() {
   const guard = useGuard();
 
-  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
   const onLogout = () => guard.logout();
 
   return (
@@ -1076,7 +1073,7 @@ export default function Logout() {
 ```javascript
 export default {
   methods: {
-    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
     logout() {
       this.$guard.logout();
     },
@@ -1093,7 +1090,7 @@ import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
 
-// 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+// 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
 const logout = () => guard.logout();
 ```
 
@@ -1114,7 +1111,7 @@ export class LoginComponent {
   constructor(private guard: GuardService) {}
 
   onLogout() {
-    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+    // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
     this.guard.client.logout();
   }
 }
@@ -1139,7 +1136,7 @@ const guard = new GuardFactory.Guard({
 });
 
 function Logout() {
-  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 ->登出回调 URL 中配置
+  // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
   const onLogout = () => guard.logout();
 }
 ```
@@ -1175,6 +1172,8 @@ import { useGuard } from "@authing/guard-react";
 
 export default function Logout() {
   const guard = useGuard();
+
+  // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
   const onLogout = () => guard.logout();
 
   return (
@@ -1207,8 +1206,8 @@ Vue.use(GuardPlugin, {
 // Logout.vue
 export default {
   methods: {
-    // 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
     logout() {
+      // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
       this.$guard.logout();
     },
   },
@@ -1243,7 +1242,7 @@ import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
 
-// 登出后的回调地址请在 Authing 控制台「应用详情」-「应用配置」-「登出回调 URL」中配置
+// 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
 const logout = () => guard.logout();
 ```
 
@@ -1572,6 +1571,7 @@ export default function GetUserInfo() {
 export default {
   methods: {
     async getUserInfo() {
+      // 获取用户信息
       const userInfo = await this.$guard.trackSession();
       console.log("userInfo: ", userInfo);
     },
@@ -1592,6 +1592,7 @@ export default {
   const guard = useGuard();
 
   const getUserInfo = async () => {
+    // 获取用户信息
     const userInfo: User | null = await guard.trackSession();
     console.log("userInfo: ", userInfo);
   };
@@ -1615,6 +1616,7 @@ export class GetUserInfoComponent {
   constructor(private guard: GuardService) {}
 
   async getUserInfo() {
+    // 获取用户信息
     const userInfo: User | null = await this.guard.client.trackSession();
     console.log("userInfo: ", userInfo);
   }
@@ -2005,11 +2007,11 @@ export class GetUserInfoComponent {
 :::
 ::::
 
-### 使用 Guard 内置的 Authing JS SDK
+### Guard 内置 Authing JS SDK
 
-Authing Guard 中集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)（`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](https://docs.authing.cn/v2/guides/federation/oidc.html)、[OAuth 2.0](https://docs.authing.cn/v2/guides/federation/oauth.html)、[SAML](https://docs.authing.cn/v2/guides/federation/saml.html)、[CAS](https://docs.authing.cn/v2/guides/federation/cas.html)）。
+Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)（`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](https://docs.authing.cn/v2/guides/federation/oidc.html)、[OAuth 2.0](https://docs.authing.cn/v2/guides/federation/oauth.html)、[SAML](https://docs.authing.cn/v2/guides/federation/saml.html)、[CAS](https://docs.authing.cn/v2/guides/federation/cas.html)）。
 
-你可以通过 `getAuthClient` 获取 `AuthenticationClient` 实例，之后可调用 AuthenticationClient 的所有方法。
+你可以通过 `getAuthClient` 获取 `AuthenticationClient` 实例，之后可调用 `AuthenticationClient` 的所有方法。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2179,7 +2181,7 @@ export class PersonalComponent {
 
 ### 私有化部署
 
-如果你是通过「私有化部署」的方式使用 Authing 服务，需要指定你私有化的端点（不带 Path），具体方式如下：
+如果你是通过 **私有化部署** 的方式使用 Authing 服务，需要指定你私有化的端点（不带 Path），具体方式如下：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2298,7 +2300,7 @@ export class AppModule {}
 
 除上述常用操作外，Guard 还支持一些更高级的操作（如管理用户自定义数据、退出登录、刷新 Token）。
 
-以**刷新 Token**为例：
+以 **刷新 Token** 为例：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2414,7 +2416,7 @@ export class HomeComponent {
 
 ## 附录
 
-此附录中的**初始化参数列表**和**Config 参数列表**都会作为 Guard 初始化的配置项，例如：
+此附录中的 **初始化参数列表** 和 **Config 参数列表** 都会作为 Guard 初始化的配置项，例如：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2662,9 +2664,9 @@ export class AppModule {}
 | 名称         | 类型                                  | 默认值                         | 必传 | 描述                                                                                                                                                                                             |
 | ------------ | ------------------------------------- | ------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | appId        | String                                | -                              | 是   | [Authing 应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)，可以在 Authing 控制台自建应用的应用详情中获取。                                                            |
-| host         | String                                | -                              | 否   | 如果此应用没有开启单点登录，需要填写自建应用**认证地址**；如果开启了单点登录，则应填写单点登录的**应用面板地址**;如果是私有化部署，填写私有化部署对应的**认证地址**或**应用面板地址**即可。    |
+| host         | String                                | -                              | 否   | 如果此应用没有开启单点登录，需要填写自建应用 **认证地址**；如果开启了单点登录，则应填写单点登录的 **应用面板地址**；如果是私有化部署，填写私有化部署对应的 **认证地址** 或 **应用面板地址** 即可。    |
 | redirectUri  | String                                | -                              | 否   | 控制台登录回调 URL                                                                                                                                                                               |
-| mode         | [IGuardMode](#IGuardMode)             | normal                         | 否   | Guard 采用内嵌模式时，有两种展示形态：normal —— 普通形态，modal —— 模态框形态                                                                                                                    |
+| mode         | [IGuardMode](#IGuardMode)             | normal                         | 否   | Guard 采用内嵌模式时，有两种展示形态：normal - 普通形态，modal - 模态框形态                                                                                                                    |
 | defaultScene | [IGuardModuleType](#IGuardModuleType) | login                          | 否   | Guard 默认渲染页面                                                                                                                                                                               |
 | tenantId     | String                                | -                              | 否   | 租户 ID                                                                                                                                                                                          |
 | lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
@@ -2700,11 +2702,11 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 | qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                                   | 否          | null                                               |     |     |
 | lang                  | 使用语言                                                                                                                                                                                                             | [Lang](#Lang)                                             | 否          | en-US                                              |
 | langRange             | 语言切换可选的范围，如果填入空数组或一个项时，则不会显示语言切换按钮                                                                                                                                               | [Lang](#Lang)[]                                           | 否          | ['zh-CN', 'en-US']                                 |
-| host | 如果此应用没有开启单点登录，需要填写自建应用的**认证地址**；如果开启了单点登录，则应填写单点登录的**应用面板地址**;如果是私有化部署，填写私有化部署对应的**认证地址**或**应用面板地址**即可。| String | 否| - |
+| host | 如果此应用没有开启单点登录，需要填写自建应用的 **认证地址**；如果开启了单点登录，则应填写单点登录的 **应用面板地址**；如果是私有化部署，填写私有化部署对应的 **认证地址** 或 **应用面板地址** 即可。| String | 否| - |
 
 ### 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的<strong>安全设置 -> 通用安全 -> 基础安全 -> 安全域（CORS）</strong>进行配置。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的 <strong>安全设置 -> 通用安全 -> 基础安全 -> 安全域（CORS）</strong> 进行配置。
 
 ::: hint-info
 如果有多个域名，可以通过换行符（\n）进行分割
@@ -2874,8 +2876,8 @@ export class EmbedComponent {
 | onClose                      | modal 模式中 guard 关闭事件                                                               | -                                     | -                                                                                                                                                                                                                                                         |
 | onLoginTabChange             | 登录方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
 | onRegisterTabChange          | 注册方式 tab 切换事件                                                                     | activeTab                             | 切换后的 tabKey                                                                                                                                                                                                                                           |
-| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，userInfo，authenticationClient  | <p>user: [User](#User)</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                   |
-| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，userInfo，authenticationClient | <p>error: 错误信息</p><p>userInfo: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
+| onRegisterInfoCompleted      | 注册补全成功事件                                                                          | user，udfs，authenticationClient  | <p>user: [User](#User)</p><p>udfs: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                   |
+| onRegisterInfoCompletedError | 注册补全失败事件                                                                          | error，udfs，authenticationClient | <p>error: 错误信息</p><p>udfs: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
 | onLangChange                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
 | onBeforeChangeModule         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
 
