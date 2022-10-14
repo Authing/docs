@@ -1064,16 +1064,37 @@ const zhCnNavBar = {
       path: "/reference/sdk-for-sso-spa",
     },
     {
-      title: "登录组件（Guard）",
+      title: "登录组件 (Guard)",
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "将 Guard 接入到 WEB 应用",
+          title: "Web Guard",
           path: "/reference/guard/v2/web",
         },
         {
-          title: "Guard Changelog",
-          path: "/reference/guard/v2/guard-changelog",
+          title: "iOS Guard",
+          path: "/reference/sdk-for-ios/",
+        },
+        {
+          title: "Android Guard",
+          path: "/reference/sdk-for-android/",
+        },
+        {
+          title: "更改日志",
+          children: [
+            {
+              title: "Web Guard 更改日志",
+              path: "/reference/guard/v2/guard-changelog.md",
+            },
+            {
+              title: "iOS Guard 更改日志",
+              path: "/reference/sdk-for-ios/ios-guard-changelog.md",
+            },
+            {
+              title: "Android Guard 更改日志",
+              path: "/reference/sdk-for-android/version.md",
+            },
+         ],
         }
       ],
     },

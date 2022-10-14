@@ -251,6 +251,7 @@ const guard = new GuardFactory.Guard({
 
 console.log("guard instance: ", guard);
 ```
+:::
 
 ::: tab React
 
@@ -910,7 +911,7 @@ export class EmbedComponent {
 
 之后在初始化 Authing Guard 时，需要将 `isSSO` 设置为 `true`。
 
-具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html)。
+具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2416,7 +2417,7 @@ export class HomeComponent {
 
 ## 附录
 
-此附录中的 **初始化参数列表** 和 **Config 参数列表** 都会作为 Guard 初始化的配置项，例如：
+此附录中的 **[初始化参数列表](#InitGuardOptions)** 和 **[Config 参数列表](#IGuardConfig)** 都会作为 Guard 初始化的配置项，例如：
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
@@ -2661,6 +2662,8 @@ export class AppModule {}
 
 ### 初始化参数列表
 
+<p id="InitGuardOptions"></p>
+
 | 名称         | 类型                                  | 默认值                         | 必传 | 描述                                                                                                                                                                                             |
 | ------------ | ------------------------------------- | ------------------------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | appId        | String                                | -                              | 是   | [Authing 应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)，可以在 Authing 控制台自建应用的应用详情中获取。                                                            |
@@ -2706,7 +2709,7 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 
 ### 配置安全域
 
-默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的 <strong>安全设置 -> 通用安全 -> 基础安全 -> 安全域（CORS）</strong> 进行配置。
+默认情况下，Authing 不会校验 API 请求来源，你可以在 Authing 控制台中的 <strong>安全设置 -> 通用安全 -> 基础安全 -> 安全域（CORS）</strong>进行配置。
 
 ::: hint-info
 如果有多个域名，可以通过换行符（\n）进行分割
