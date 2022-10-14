@@ -10,27 +10,31 @@
 
 Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 
-- 包名变更为`@authing/weixin-official-account`，让开发者更直观的知道该 SDK 的使用场景和范围
-- 增加了全面的 `TS` 类型支持，让开发者在集成开发过程中更得心应手
-- 修复了 `checkWechatUA` 函数的 Bug，能正确判断是否处于微信网页浏览器环境
+- 包名变更为`@authing/weixin-official-account`，让开发者更直观的知道该 SDK 的使用场景和范围。
+- 增加了全面的 `TS` 类型支持，让开发者在集成开发过程中更得心应手。
+- 修复了 `checkWechatUA` 函数的 Bug，能正确判断是否处于微信网页浏览器环境。
 
-## 步骤一：创建应用
+## 第一步：创建应用
 
 1. 使用 Authing 创建一个应用：
 
 <ul style="padding-left: 50px">
   <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
-  <li>展开左侧<strong>应用</strong>菜单，点击<strong>自建应用</strong>菜单</li>
-  <li>点击右上角<strong>创建自建应用</strong>按钮</li>
-  <li>填写<strong>应用名称</strong>、<strong>认证地址</strong>、选择<strong>标准 Web 应用</strong></li>
-  <li>点击<strong>创建</strong></li>
+  <li>展开左侧 <strong>应用</strong> 菜单，点击 <strong>自建应用</strong> 菜单</li>
+  <li>点击右上角 <strong>创建自建应用</strong> 按钮</li>
+  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>标准 Web 应用</strong></li>
+  <li>点击 <strong>创建</strong> </li>
 </ul>
 
 ![sdk-for-app-1](./images/sdk-for-app-1.png)
 
 2. 以下身份验证方式选择 <strong>none</strong>
 
-<p>应用创建成功之后，在「自建应用」列表，点击该应用，点击「应用配置」标签，找到「其他配置」，点击展开，找到以下三种身份认证方式并全部设置为 none（前端应用不适合存储密钥，这会造成密钥泄漏）</p>
+<p>应用创建成功之后，在 <strong>自建应用</strong> 列表，点击该应用，点击 <strong>应用配置</strong> 标签，找到 <strong>其他配置</strong>，点击展开，找到以下三种身份认证方式并全部设置为 <strong>none</strong></p>。
+
+::: hint-info
+前端应用不适合存储密钥，这会造成密钥泄漏。
+:::
 
 ![sdk-for-app-2](./images/sdk-for-app-2.png)
 
@@ -38,27 +42,25 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 
 3. 保存当前配置
 
-## 步骤二：创建社会化身份源
+## 第二步：创建社会化身份源
 
 1. 前往[微信公众平台](https://mp.weixin.qq.com/) 注册
 
-- **选择服务号（订阅号也可用于测试，生产环境建议使用服务号）**
+    - **选择服务号（订阅号也可用于测试，生产环境建议使用服务号）**
+    - **必须通过微信认证**
 
-- **必须通过微信认证**
-
-2. 在微信公众平台后台的`设置与开发` -> `基本配置`页面获取`开发者 ID (AppID) `和`开发者密码（AppSecret）`。
+2. 在微信公众平台后台的 <strong>设置与开发 -> 基本配置</strong> 页面获取 <strong>开发者 ID(AppID)</strong> 和 <strong>开发者密码(AppSecret)</strong>。
 
 ![weichat-official-account-dev-info](./images/weichat-official-account-dev-info.png)
 
-3. 在微信公众平台后台的`设置与开发` -> `公众号设置` -> `功能设置`页面添加`网页授权域名`。
+3. 在微信公众平台后台的 <strong>设置与开发 -> 公众号设置 -> 功能设置</strong> 页面添加 <strong>网页授权域名</strong>。
 
   - **域名填写 Authing 的统一回调域名：`core.authing.cn`**。
-
-  - **出于安全验证考虑，微信服务器需要和 Authing 服务器做一次请求验证，开发者需要下载`txt 文件`，并记录`文件名`和`文本内容`**。
+  - **出于安全验证考虑，微信服务器需要和 Authing 服务器做一次请求验证，开发者需要下载 `txt 文件`，并记录 `文件名` 和 `文本内容`**。
 
 ![sdk-for-weixin-official-account-1](./images/sdk-for-weixin-official-account-1.png)
 
-4. 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `微信网页授权`创建一个微信社会化身份源。
+4. 在 Authing 控制台 <strong>身份源管理 -> 社会化身份源 -> 创建社会化身份源 -> 微信 -> 微信网页授权</strong> 创建一个微信社会化身份源。
 
 ![sdk-for-weixin-official-account-2](./images/sdk-for-weixin-official-account-2.png)
 
@@ -72,13 +74,13 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 |域名校验文件内容|前面记录的 txt 文本内容|
 |Callback URL|你的业务回调链接，必填。配置的回调地址支持使用通配符，例如你配置的回调地址为`https://*.example.com/*`，下面的回调地址也是允许的：`https://forum.example.com/t/topic/1234`|
 
-<p>以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
+<p>以上内容填写完成后，点击 <strong>创建</strong> 按钮进行保存</p>。
 
-5. 在当前页面选择`使用此身份源的应用`并点击**保存**按钮再次保存
+5. 在当前页面选择 **使用此身份源的应用** 并点击 **保存** 按钮再次保存。
 
 ![sdk-for-weixin-official-account-3](./images/sdk-for-weixin-official-account-3.png)
 
-## 步骤三：安装 SDK
+## 第三步：安装 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab NPM
@@ -94,7 +96,7 @@ npm install --save @authing/weixin-official-account
 :::
 ::::
 
-## 步骤四：初始化 SDK
+## 第四步：初始化 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab NPM
@@ -134,7 +136,7 @@ const authingWx = new AuthingFactory.AuthingWxmp({
 :::
 ::::
 
-## 步骤五：使用 SDK
+## 第五步：使用 SDK
 
 ### 判断当前环境是否为微信客户端
 ``` typescript
@@ -162,4 +164,4 @@ if (ok) {
 
 ## 示例代码
 
-当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/authing-js-sdk/tree/master/examples/weixin-official-account)
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/authing-js-sdk/tree/master/examples/weixin-official-account)。

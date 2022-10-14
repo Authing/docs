@@ -6,69 +6,73 @@
 
 [Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，相较于原版 SDK，Authing 小程序 SDK 5.0 主要有以下几个优势：
 
-- 用法更简单，NPM 包名更清晰：用法更简单，按需导入 NPM 包
+- 用法更简单，NPM 包名更清晰：用法更简单，按需导入 NPM 包。
 - 支持的接口更多、框架更多，覆盖更多开发者需求：
   - 支持的接口更多：集成并增强 Authing 最新 V3 版认证 API，覆盖核心认证、授权类功能。
-  - 支持的小程序框架更多：支持微信原生小程序、Taro 和 uniapp 框架
-- 支持的类型提示更多，操作更便捷：完整的 TS 类型提示
-- 运行更流畅：包体积更小，不到 5 分钟即可完成接入
+  - 支持的小程序框架更多：包括 **微信原生小程序**、**Taro**、**uni-app** 框架。
+- 支持完整的 TS 类型提示，操作更便捷。
+- 运行更流畅：包体积更小，不到 5 分钟即可完成接入。
 
 升级版 SDK 为开发者提供了更稳定、更便捷的开发环境，建议您尽快升级。
 
-## 步骤一：创建应用
+## 第一步：创建应用
 
 1. 使用 Authing 创建一个应用：
 
 <ul style="padding-left: 50px">
-  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
-  <li>展开左侧<strong>应用</strong>菜单，点击<strong>自建应用</strong>菜单</li>
-  <li>点击右上角<strong>创建自建应用</strong>按钮</li>
-  <li>填写<strong>应用名称</strong>、<strong>认证地址</strong>、选择<strong>标准 Web 应用</strong></li>
-  <li>点击<strong>创建</strong></li>
+  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a>；</li>
+  <li>展开左侧 <strong>应用</strong> 菜单，点击 <strong>自建应用</strong> 菜单；</li>
+  <li>点击右上角 <strong>创建自建应用</strong> 按钮；</li>
+  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>标准 Web 应用</strong>；</li>
+  <li>点击 <strong>创建</strong>。</li>
 </ul>
 
 ![sdk-for-app-1](./images/sdk-for-app-1.png)
 
-2. 以下身份验证方式选择 `none`
+2. 以下身份验证方式选择 <strong>none</strong>
 
-<p>应用创建成功之后，在「自建应用」列表，点击该应用，点击「应用配置」标签，找到「其他配置」，点击展开，找到以下三种身份认证方式并全部设置为 none（前端应用不适合存储密钥，这会造成密钥泄漏）</p>
+<p>应用创建成功之后，在 <strong>自建应用</strong> 列表，点击该应用，点击 <strong>应用配置</strong> 标签，找到 <strong>其他配置</strong>，点击展开，找到以下三种身份认证方式并全部设置为 <strong>none</strong>。</p>
+
+::: hint-info
+前端应用不适合存储密钥，这会造成密钥泄漏。
+:::
 
 ![sdk-for-app-2](./images/sdk-for-app-2.png)
 
 <br />
 
-3. 保存当前配置
+3. 点击页面底部 **保存** 按钮，保存当前配置。
 
-## 步骤二：创建社会化身份源
+## 第二步：创建社会化身份源
 
-1. 在[微信小程序后台](https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=678159627)的`开发` -> `开发管理` -> `开发设置`页面获取`小程序 ID` 和`小程序密钥`。
+1. 在[微信小程序后台](https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=678159627)的 <strong>开发 -> 开发管理 -> 开发设置</strong> 页面获取 <strong>APPID(小程序 ID)</strong> 和 <strong>AppSecrect(小程序密钥)</strong>。
 
 ![sdk-for-app-3](./images/sdk-for-app-3.png)
 
-然后在当前页面底部配置`服务器域名`，添加`request 合法域名`。
+在当前页面底部配置 **服务器域名**，添加 `request 合法域名`。
 
 如果你使用的是 Authing 公有云服务，`request 合法域名` 添加 `https://core.authing.cn`；如果是私有化部署，请填写你的私有化服务端地址。
 
 ![sdk-wechat-request-domain](./images/sdk-wechat-request-domain.png)
 
-2. 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `小程序`创建一个微信社会化身份源，并填写以下信息：
+2. 在 Authing 控制台 <strong>身份源管理 -> 社会化身份源 -> 创建社会化身份源 -> 微信 -> 小程序</strong> 创建一个微信社会化身份源，并填写以下信息：
 
-  - 唯一标识：因为这是此连接的唯一标识，所以设置之后不能修改。
-  - 小程序名称
-  - 小程序 ID
-  - 小程序密钥
+    - <strong>唯一标识</strong>：因为这是此连接的唯一标识，所以设置之后不能修改。
+    - <strong>显示名称</strong>
+    - <strong>小程序 ID</strong>
+    - <strong>小程序密钥</strong>
 
 ![sdk-for-app-4](./images/sdk-for-app-4.png)
 
-<p>以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
+<p>以上内容填写完成后，点击 <strong>创建</strong> 按钮进行保存。</p>
 
 ![sdk-for-app-5](./images/sdk-for-app-5.png)
 
-3. 在当前页面选择`使用此身份源的应用` 并点击**保存**按钮再次保存
+3. 在当前页面选择 **使用此身份源的应用** 并点击 **保存** 按钮再次保存。
 
 ![sdk-for-app-6](./images/sdk-for-app-6.png)
 
-## 步骤三：安装 SDK
+## 第三步：安装 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -85,7 +89,7 @@ npm install --save @authing/miniapp-taro
 ```
 :::
 
-::: tab uniapp
+::: tab uni-app
 ``` shell
 npm install --save @authing/miniapp-uniapp
 ```
@@ -108,7 +112,7 @@ npm install --save @authing/miniapp-sm2encrypt
 :::
 ::::
 
-## 步骤四：初始化 SDK
+## 第四步：初始化 SDK
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
@@ -126,7 +130,7 @@ import { encryptFunction } from '@authing/miniapp-sm2encrypt'
 const authing = new Authing({
   appId: 'AUTHING_APP_ID',
 
-  // 公有云部署：Authing 控制台 -> 选择已创建的小程序应用 -> 应用配置 -> -> 认证配置 -> 认证地址
+  // 公有云部署：Authing 控制台 -> 选择已创建的小程序应用 -> 应用配置 -> 认证配置 -> 认证地址
   // 私有化部署：填写你的私有服务地址
   host: 'https://my-authing-app.example.com',
 
@@ -165,7 +169,7 @@ const authing = new Authing({
 })
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ``` typescript
 import { Authing } from '@authing/miniapp-uniapp'
 
@@ -194,11 +198,11 @@ const authing = new Authing({
 :::
 ::::
 
-`userPoolId` 可通过 `控制台` -> `设置` -> `基础设置` -> `密钥管理` 获取。
+`userPoolId` 可通过 **控制台 -> 设置 -> 基础设置 -> 密钥管理** 获取。
 
 ![userPoolId](./images/sdk-for-get-user-pool-id.png)
 
-## 步骤五：使用 SDK
+## 第五步：使用 SDK
 
 ### 获取登录态
 
@@ -214,9 +218,9 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
 #### 说明
 
-- 如果返回值为 null，说明用户未登录，或登录态已过期
+- 如果返回值为 `null`，说明用户未登录，或登录态已过期
 
-- 如果返回值不为 null，说明用户已登录，且登录态未过期
+- 如果返回值不为 `null`，说明用户已登录，且登录态未过期
 
 #### 示例代码
 
@@ -251,7 +255,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ``` typescript
 export default {
   methods: {
@@ -314,7 +318,7 @@ Page({
     // 如果 loginState 为 undefined，说明用户未登录，或登录态已过期，则显示登录按钮
     // 如果 loginState 不为 undefined，说明用户已登录，且登录态未过期，则无需再显示登录按钮
     const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile1'
+      desc: 'getUserProfile'
     })
 
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
@@ -375,7 +379,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ``` typescript
 export default {
   methods: {
@@ -495,7 +499,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ``` typescript
 export default {
   methods: {
@@ -585,7 +589,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="sendSms">sendSms</button>
 ```
@@ -679,7 +683,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ``` typescript
 export default {
   methods: {
@@ -705,7 +709,7 @@ export default {
 
 #### 说明
 
-刷新 Token 需要用到登录接口返回的 `refresh_token` 字段，使用登录相关方法时需传入参数 `scope`，并包含 `offline_access`，具体参考：[WxLoginOptions](#WxLoginOptions) 和 [NormalLoginOptions](#NormalLoginOptions)
+刷新 Token 需要用到登录接口返回的 `refresh_token` 字段，使用登录相关方法时需传入参数 `scope`，并包含 `offline_access`，具体参考：[WxLoginOptions](#WxLoginOptions) 和 [NormalLoginOptions](#NormalLoginOptions)。
 
 #### 入参
 
@@ -748,7 +752,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="refreshToken">refreshToken</button>
 ```
@@ -831,7 +835,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button open-type="getPhoneNumber" @getphonenumber="getPhone">getPhone</button>
 ```
@@ -918,7 +922,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="updatePassword">updatePassword</button>
 ```
@@ -985,7 +989,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="getUserInfo">getUserInfo</button>
 ```
@@ -1046,7 +1050,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="updateAvatar">updateAvatar</button>
 ```
@@ -1111,7 +1115,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="updateUserInfo">updateUserInfo</button>
 ```
@@ -1176,7 +1180,7 @@ export default class Index extends Component<PropsWithChildren> {
 }
 ```
 :::
-::: tab uniapp
+::: tab uni-app
 ```html
 <button @click="logout">logout</button>
 ```
@@ -1194,13 +1198,13 @@ export default {
 
 ## 错误处理
 
-Authing 小程序 SDK 所有的功能都是异步的，且提供完善的错误处理机制。
+Authing 小程序 SDK 所有方法都会返回 `Promise`，且提供了完善的错误处理机制。
 
 你可以使用数组解构的方式获取 SDK 返回结果：
 
-- 第一个参数 [error](#ErrorData) 不为 null 时表示有错误产生，此时第二个参数是 undefined
+- 第一个参数 [error](#ErrorData) 不为 `null` 时表示有错误产生，此时第二个参数是 `undefined`。
 
-- 第二个参数作为成功返回的数据，如果没有异常，error 会被设为 null，第二个成功的数据就会被返回
+- 第二个参数作为成功返回的数据，如果没有异常，`error` 会被设为 `null`，第二个成功的数据就会被返回。
 
 代码示例如下：
 
@@ -1218,8 +1222,7 @@ if (error) {
 
 ## 示例代码
 
-当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/authing-js-sdk/tree/master/examples)
-
+当前文档对应的完整示例代码请参考：[examples](https://github.com/Authing/authing-js-sdk/tree/master/examples)。
 
 ## 附录公共参数列表
 

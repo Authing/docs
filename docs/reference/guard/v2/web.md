@@ -237,8 +237,6 @@ export class AppModule {}
 
 ### 获取 Guard 实例
 
-安装完成后，你可以获取 Guard 实例并将 Guard 挂载到 DOM 中：
-
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
 
@@ -253,8 +251,6 @@ const guard = new GuardFactory.Guard({
 
 console.log("guard instance: ", guard);
 ```
-
-:::
 
 ::: tab React
 
