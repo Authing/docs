@@ -1,4 +1,4 @@
-# Guard - iOS
+# iOS Guard
 
 <LastUpdated/>
 
