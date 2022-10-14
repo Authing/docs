@@ -1,8 +1,10 @@
 # 微信小程序 SDK
 
+> Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
+
 ## 说明
 
-[Authing 小程序 SDK 5.x](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，五分钟即可通过微信接入小程序。相较于原版 SDK，Authing 小程序 SDK 5.0 主要有以下几个优势：
+[Authing 小程序 SDK 5.0](https://github.com/Authing/authing-js-sdk/tree/master/packages/) 于 2022 年 9 月 7 日发布，相较于原版 SDK，Authing 小程序 SDK 5.0 主要有以下几个优势：
 
 - 用法更简单，NPM 包名更清晰：用法更简单，按需导入 NPM 包
 - 支持的接口更多、框架更多，覆盖更多开发者需求：
@@ -25,13 +27,13 @@
   <li>点击<strong>创建</strong></li>
 </ul>
 
-<img src="./images/sdk-for-app-1.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-1.png" width="650" />
 
 2. 以下身份验证方式选择 `none`
 
-<p style="margin-left: 50px">应用创建成功之后，在「自建应用」列表，点击该应用，点击「应用配置」标签，找到「其他配置」，点击展开，找到以下三种身份认证方式并全部设置为 none（前端应用不适合存储密钥，这会造成密钥泄漏）</p>
+<p>应用创建成功之后，在「自建应用」列表，点击该应用，点击「应用配置」标签，找到「其他配置」，点击展开，找到以下三种身份认证方式并全部设置为 none（前端应用不适合存储密钥，这会造成密钥泄漏）</p>
 
-<img src="./images/sdk-for-app-2.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-2.png" width="650" />
 
 <br />
 
@@ -41,13 +43,13 @@
 
 1. 在[微信小程序后台](https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=678159627)的`开发` -> `开发管理` -> `开发设置`页面获取`小程序 ID` 和`小程序密钥`。
 
-<img src="./images/sdk-for-app-3.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-3.png" width="650" />
 
 然后在当前页面底部配置`服务器域名`，添加`request 合法域名`。
 
 如果你使用的是 Authing 公有云服务，`request 合法域名` 添加 `https://core.authing.cn`；如果是私有化部署，请填写你的私有化服务端地址。
 
-<img src="./images/sdk-wechat-request-domain.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-wechat-request-domain.png" width="650" />
 
 2. 在 Authing 控制台`身份源管理` -> `社会化身份源` -> `创建社会化身份源` -> `微信` -> `小程序`创建一个微信社会化身份源，并填写以下信息：
 
@@ -56,17 +58,15 @@
   - 小程序 ID
   - 小程序密钥
 
-<img src="./images/sdk-for-app-4.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-4.png" width="650" />
 
 <p style="margin-left: 50px">以上内容填写完成后，点击<strong>创建</strong>按钮进行保存</p>
 
-<img src="./images/sdk-for-app-5.png" width="650" style="margin-left: 50px" />
+<img src="./images/sdk-for-app-5.png" width="650" />
 
-3. 在当前页面选择`使用此身份源的应用`
+3. 在当前页面选择`使用此身份源的应用` 并点击**保存**按钮再次保存
 
-<img src="./images/sdk-for-app-6.png" width="650" style="margin-left: 50px" />
-
-4. 再次点击**保存**
+<img src="./images/sdk-for-app-6.png" width="650" />
 
 ## 步骤三：安装 SDK
 
