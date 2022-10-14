@@ -457,7 +457,7 @@ Page({
       },
       options: {
         // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
-        // 如果传 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
+        // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
         passwordEncryptType: 'sm2',
         scope: 'offline_access openid profile'
       }
@@ -486,7 +486,7 @@ export default class Index extends Component<PropsWithChildren> {
       },
       options: {
         // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
-        // 如果传 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
+        // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
         passwordEncryptType: 'sm2',
         scope: 'offline_access openid profile'
       }
@@ -509,7 +509,7 @@ export default {
         },
         options: {
           // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
-          // 如果传 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
+          // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction 
           passwordEncryptType: 'rsa',
           scope: 'offline_access openid profile'
         }
