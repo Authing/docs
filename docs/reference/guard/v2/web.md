@@ -2689,7 +2689,7 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 | logo                  | 产品 logo                                                                     | String                                                    | 否          | [{{$localeConfig.brandName}} logo]                 |
 | contentCSS            | 自定义 CSS 样式，如果指定了，会在 DOM 的 head 中插入一个 <style type="text/css"></style> 节点。如 body {background:#6699 !important;}。                                                                          | String                                                    | 否          | -                                                  |
 | loginMethodList       | 需要使用的普通登录(包括 LDAP)方式列表                                                   | [ILoginMethod](#ILoginmethod)[]                           | 否          | [*phone-code, password*]                           |
-| registerMethodList    | 需要使用的注册方式   | [IRegisterMethod](#IRegistermethod)[]                     | 否          | [*RegisterMethods.Email*, *RegisterMethods.Phone*] |
+| registerMethodList    | 需要使用的注册方式   | [IRegisterMethod](#IRegistermethod)[]                     | 否          | ['email', 'phone'] |
 | registerMethod        | 默认展示的注册方式                                                                    | [IRegisterMethod](#IRegistermethod)                       | 否          | email                                              |
 | defaultScene          | 打开组件时展示的界面                                                     | [IGuardModuleType](#IGuardModuleType)                     | 否          | password                                           |
 | socialConnectionList  | 需要使用的社会化登录列表                                                 | [ISocialConnectionProvider](#ISocialConnectionProvider)[] | 否          | []                                                 |     |
@@ -2992,11 +2992,34 @@ Guard 支持的社会化登录方式
 |qingcloud|青云 QingCloud 登录|
 |facebook|FaceBook 登录|
 
-#### User
+#### IEmailScene
 
-<p id="User"></p>
+Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台配置完成的邮件模版
 
-详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
+<p id="IEmailScene"></p>
+
+| 场景值                             | 应用场景                    |
+| :--------------------------------- | :-------------------------- |
+| LOGIN_VERIFY_CODE                  | 登录场景发送邮箱验证码      |
+| REGISTER_VERIFY_CODE               | 注册场景发送邮箱验证码      |
+| MFA_VERIFY_CODE                    | 邮箱 MFA 场景发送邮箱验证码 |
+| SELF_UNLOCKING_VERIFY_CODE         | 自助解锁场景发送邮箱验证码  |
+| RESET_PASSWORD_VERIFY_CODE         | 重置密码场景发送邮箱验证码  |
+| INFORMATION_COMPLETION_VERIFY_CODE | 信息补全场景发送邮箱验证码  |
+
+#### ISceneType
+
+Guard 内部短信验证码发送的场景值
+
+<p id="ISceneType"></p>
+
+| 场景值         | 应用场景                    |
+| :------------- | :-------------------------- |
+| login          | 登录场景发送短信验证码      |
+| register       | 注册场景发送短信验证码      |
+| mfa-verify     | 邮箱 MFA 场景发送短信验证码 |
+| reset          | 重置密码场景发送短信验证码  |
+| complete-phone | 信息补全场景发送短信验证码  |
 
 #### NomalLoginParams
 
@@ -3054,31 +3077,8 @@ interface RegisterParams {
 }
 ```
 
-#### IEmailScene
+#### User
 
-Guard 内部邮箱验证码发送的场景值，根据场景值发送控制台配置完成的邮件模版
+<p id="User"></p>
 
-<p id="IEmailScene"></p>
-
-| 场景值                             | 应用场景                    |
-| :--------------------------------- | :-------------------------- |
-| LOGIN_VERIFY_CODE                  | 登录场景发送邮箱验证码      |
-| REGISTER_VERIFY_CODE               | 注册场景发送邮箱验证码      |
-| MFA_VERIFY_CODE                    | 邮箱 MFA 场景发送邮箱验证码 |
-| SELF_UNLOCKING_VERIFY_CODE         | 自助解锁场景发送邮箱验证码  |
-| RESET_PASSWORD_VERIFY_CODE         | 重置密码场景发送邮箱验证码  |
-| INFORMATION_COMPLETION_VERIFY_CODE | 信息补全场景发送邮箱验证码  |
-
-#### ISceneType
-
-Guard 内部短信验证码发送的场景值
-
-<p id="ISceneType"></p>
-
-| 场景值         | 应用场景                    |
-| :------------- | :-------------------------- |
-| login          | 登录场景发送短信验证码      |
-| register       | 注册场景发送短信验证码      |
-| mfa-verify     | 邮箱 MFA 场景发送短信验证码 |
-| reset          | 重置密码场景发送短信验证码  |
-| complete-phone | 信息补全场景发送短信验证码  |
+详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
