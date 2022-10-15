@@ -1512,7 +1512,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/onpremise",
         },
         {
-          title: "版本历史",
+          title: "Android Guard 更改日志",
           path: "/reference/sdk-for-android/version",
         },
       ],
@@ -1672,7 +1672,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-ios/onpremise",
         },
         {
-          title: "Guard iOS Changelog",
+          title: "iOS Guard 更改日志",
           path: "/reference/sdk-for-ios/ios-guard-changelog"
         },
         {
