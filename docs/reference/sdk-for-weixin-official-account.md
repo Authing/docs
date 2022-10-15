@@ -21,11 +21,11 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 1. 使用 Authing 创建一个应用：
 
 <ul style="padding-left: 50px">
-  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a></li>
-  <li>展开左侧 <strong>应用</strong> 菜单，点击 <strong>自建应用</strong> 菜单</li>
-  <li>点击右上角 <strong>创建自建应用</strong> 按钮</li>
-  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>标准 Web 应用</strong></li>
-  <li>点击 <strong>创建</strong> </li>
+  <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a>；</li>
+  <li>展开左侧 <strong>应用</strong> 菜单，点击 <strong>自建应用</strong> 菜单；</li>
+  <li>点击右上角 <strong>创建自建应用</strong> 按钮；</li>
+  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>标准 Web 应用</strong>；</li>
+  <li>点击 <strong>创建</strong>。</li>
 </ul>
 
 ![sdk-for-app-1](./images/sdk-for-app-1.png)

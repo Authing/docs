@@ -349,7 +349,7 @@ export class HomeComponent {
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 如果是标准 Web 应用，请在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，请确保应用的「换取 token 身份验证方式」设置为了 <strong>none</strong>。
+- 如果是标准 Web 应用，请在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，请确保应用的 <strong>换取 token 身份验证方式</strong> 设置为了 <strong>none</strong>。
 
 ::: hint-info
 如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况。
@@ -2007,6 +2007,170 @@ export class GetUserInfoComponent {
 </div>
 ```
 
+:::
+::::
+
+### 启用多因素人脸识别
+
+多因素认证（Multi Factor Authentication，简称 MFA）是一种非常简单的安全实践方法，它能够在用户名称和密码之外额外增加一层保护。启用多因素认证后，用户进行操作时，除了需要提供用户名和密码外（第一次身份验证），还需要进行第二次身份验证。多因素身份认证结合起来将为你的帐号和资源提供更高的安全保护。
+
+人脸作为人体特征的关键因素，在安全认证领域被广泛应用。
+
+<img src="https://cdn.authing.co/authing-docs-v2/1.3.122/assets/img/product-mfa-biology.2804fcd7.png" height=500 style="display:block;margin: 0 auto;">
+
+进入 Authing 控制台，左侧菜单选择 **安全设置 -> 多因素认证**，右侧开启人脸识别。
+
+![guard-console-open-face](./images/guard-console-open-face.png)
+
+在原有代码基础上引入 `face-api`，且在初始化 Guard 时传入参数 `facePlugin` 即可。
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab CDN
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authing Guard Demo</title>
+  <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
+  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+</head>
+<body>
+  <div id="authing-guard-container"></div>
+
+  <script>
+    const guard = new GuardFactory.Guard({
+      appId: 'AUTHING_APP_ID',
+      facePlugin: faceapi
+    })
+  </script>
+</body>
+</html>
+```
+:::
+
+::: tab React
+
+``` shell
+npm install --save face-api.js
+```
+
+```tsx
+// App.tsx
+import React from 'react'
+
+import { GuardProvider } from '@authing/guard-react'
+
+import '@authing/guard-react/dist/esm/guard.min.css'
+
+import * as facePlugin from 'face-api.js'
+
+// 你的业务根组件
+import RouterComponent from './router'
+
+function App() {
+  return (
+    <GuardProvider
+      appId="AUTHING_APP_ID"
+      facePlugin={facePlugin}
+    >
+      <RouterComponent></RouterComponent>
+    </GuardProvider>
+  )
+}
+```
+:::
+
+::: tab Vue2
+
+``` shell
+npm install --save face-api.js
+```
+
+```javascript
+// main.js
+import * as facePlugin from 'face-api.js'
+
+import Vue from 'vue'
+import { GuardPlugin } from '@authing/guard-vue2'
+
+import '@authing/guard-vue2/dist/esm/guard.min.css'
+
+Vue.use(GuardPlugin, {
+  appId: 'AUTHING_APP_ID',
+  facePlugin: facePlugin
+})
+```
+
+:::
+
+::: tab Vue3
+``` shell
+npm install --save face-api.js
+```
+
+``` typescript
+// main.ts
+import { createApp } from 'vue'
+
+import { createGuard } from '@authing/guard-vue3'
+
+import '@authing/guard-vue3/dist/esm/guard.min.css'
+
+import * as facePlugin from 'face-api.js'
+
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(
+  createGuard({
+    appId: 'AUTHING_APP_ID',
+    facePlugin: facePlugin
+  })
+)
+```
+:::
+
+::: tab Angular
+``` shell
+npm install --save face-api.js
+```
+
+``` typescript
+// app.module.ts
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+
+import { GuardModule } from '@authing/guard-angular'
+
+import * as facePlugin from 'face-api.js'
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GuardModule.forRoot({
+      appId: 'AUTHING_APP_ID',
+      facePlugin: facePlugin
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+```
 :::
 ::::
 
