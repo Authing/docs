@@ -19,7 +19,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 
-从 Authing 控制台左侧导航进入「自建应用」功能区，点击右上角的 **创建自建应用** 按钮，填入以下信息：
+从 Authing 控制台左侧导航进入 **自建应用** 功能区，点击右上角的 **创建自建应用** 按钮，填入以下信息：
 
 - 应用名称：填入你的应用名称；
 - 认证地址：选择一个二级域名，必须为合法的域名格式，例如 `my-awesome-app`；
@@ -40,7 +40,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 #### 方法一：安装 Authing library
 
 ::: hint-info
-推荐使用 npm 或 yarn，它们能更好的和 webpack 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
+推荐使用 npm 或 yarn，它们能更好的与 `Webpack`、`Rollup` 等打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 :::
 
 首先，通过 npm / yarn 安装 Authing library。
@@ -207,10 +207,7 @@ export class AppModule {}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
     <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -238,20 +235,6 @@ export class AppModule {}
 ### 获取 Guard 实例
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
-  appId: "AUTHING_APP_ID",
-
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
-});
-
-console.log("guard instance: ", guard);
-```
-:::
 
 ::: tab React
 
@@ -318,6 +301,22 @@ export class HomeComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+const guard = new GuardFactory.Guard({
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+console.log("guard instance: ", guard);
+```
+:::
+
 ::::
 
 ## 第三步：常见操作
@@ -358,24 +357,6 @@ export class HomeComponent {
 ![guard-console-identify-verify-mode](./images/guard-console-identify-verify-mode.png)
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
-  appId: "AUTHING_APP_ID",
-
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
-});
-
-function startWithRedirect() {
-  // 跳转到 Authing 托管页面登录
-  guard.startWithRedirect();
-}
-```
-
-:::
 
 ::: tab React
 
@@ -458,6 +439,26 @@ export class HomeComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+const guard = new GuardFactory.Guard({
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+function startWithRedirect() {
+  // 跳转到 Authing 托管页面登录
+  guard.startWithRedirect();
+}
+```
+
+:::
+
 ::::
 
 此外，`startWithRedirect` 函数还可以自定义传入一个对象，具体参数如下：
@@ -490,29 +491,6 @@ export class HomeComponent {
 #### 普通形态
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```html
-<div id="authing-guard-container"></div>
-```
-
-```javascript
-// 获取 Guard 实例
-const guard = new GuardFactory.Guard({
-  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
-  appId: "AUTHING_APP_ID",
-
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
-});
-
-// 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
-guard.start("#authing-guard-container").then((userInfo) => {
-  console.log("userInfo: ", userInfo);
-});
-```
-
-:::
 
 ::: tab React
 
@@ -613,6 +591,31 @@ export class LoginComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```html
+<div id="authing-guard-container"></div>
+```
+
+```javascript
+// 获取 Guard 实例
+const guard = new GuardFactory.Guard({
+  // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+// 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+guard.start("#authing-guard-container").then((userInfo) => {
+  console.log("userInfo: ", userInfo);
+});
+```
+
+:::
+
 ::::
 
 #### 模态框形态
@@ -622,43 +625,6 @@ export class LoginComponent {
 你可以通过 `guard` 实例 `start` 方法对 **模态框** 进行渲染，同时可以通过 `show` 和 `hide` 控制 **模态框** 的显示和隐藏：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```html
-<button onclick="showGuard()">Show Guard</button>
-
-<div>
-  模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide
-  方法的效果
-</div>
-<div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
-
-<div id="authing-guard-container"></div>
-```
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  mode: "modal",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
-});
-
-guard.start("#authing-guard-container").then((userInfo) => {
-  // 登录成功后将在 then 回调中获取到 userInfo
-  console.log("userInfo: ", userInfo);
-
-  setTimeout(() => {
-    guard.hide();
-  }, 2000);
-});
-
-function showGuard() {
-  guard.show();
-}
-```
-
-:::
 
 ::: tab React
 
@@ -899,6 +865,45 @@ export class EmbedComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```html
+<button onclick="showGuard()">Show Guard</button>
+
+<div>
+  模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide
+  方法的效果
+</div>
+<div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
+
+<div id="authing-guard-container"></div>
+```
+
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  mode: "modal",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+guard.start("#authing-guard-container").then((userInfo) => {
+  // 登录成功后将在 then 回调中获取到 userInfo
+  console.log("userInfo: ", userInfo);
+
+  setTimeout(() => {
+    guard.hide();
+  }, 2000);
+});
+
+function showGuard() {
+  guard.show();
+}
+```
+
+:::
+
 ::::
 
 ### 实现单点登录
@@ -914,18 +919,6 @@ export class EmbedComponent {
 具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
-  isSSO: true,
-});
-```
-
-:::
 
 ::: tab React
 
@@ -1021,6 +1014,19 @@ export class AppModule {}
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com',
+  isSSO: true,
+});
+```
+
+:::
 ::::
 
 ### 登出
@@ -1030,22 +1036,6 @@ export class AppModule {}
 #### 单应用登出
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
-});
-
-function Logout() {
-  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
-  const onLogout = () => guard.logout();
-}
-```
-
-:::
 
 ::: tab React
 
@@ -1119,6 +1109,23 @@ export class LoginComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com'
+});
+
+function Logout() {
+  // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
+  const onLogout = () => guard.logout();
+}
+```
+
+:::
 ::::
 
 #### SSO 单点登出
@@ -1126,21 +1133,6 @@ export class LoginComponent {
 要实现单点登出，只需在初始化 Authing Guard 时，设置 `isSSO` 为 `true` 即可：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
-  isSSO: true,
-});
-
-function Logout() {
-  // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
-  const onLogout = () => guard.logout();
-}
-```
 
 ::: tab React
 
@@ -1299,6 +1291,24 @@ export class LoginComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com',
+  isSSO: true,
+});
+
+function Logout() {
+  // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
+  const onLogout = () => guard.logout();
+}
+```
+:::
+
 ::::
 
 ### 注册
@@ -1306,15 +1316,7 @@ export class LoginComponent {
 你可以通过 `startRegister` 方法将 Authing Guard 切换到注册 Tab 页：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
 
-```javascript
-function startRegister() {
-  guard.startRegister();
-}
-```
-
-:::
 ::: tab React
 
 ```tsx
@@ -1382,6 +1384,17 @@ export class LoginComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+function startRegister() {
+  guard.startRegister();
+}
+```
+
+:::
+
 ::::
 
 ### 第三方身份源登录
@@ -1400,20 +1413,6 @@ export class LoginComponent {
 此处以 Github 身份源为例：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
-  config: {
-    socialConnectionList: ["github"],
-  },
-});
-```
-
-:::
 
 ::: tab React
 
@@ -1520,6 +1519,20 @@ export class AppModule {}
 ```
 
 :::
+
+::: tab CDN
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // host: 'https://my-authing-app.example.com',
+  config: {
+    socialConnectionList: ["github"],
+  },
+});
+```
+:::
+
 ::::
 
 社会化登录全部有效值请参考：[ISocialConnectionProvider](#ISocialConnectionProvider)
@@ -1529,17 +1542,6 @@ export class AppModule {}
 你也可以通过 `trackSession` 方法获取用户信息：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-async function getUserInfo() {
-  // 获取用户信息
-  const userInfo = await guard.trackSession();
-  console.log(userInfo);
-}
-```
-
-:::
 
 ::: tab React
 
@@ -1625,13 +1627,24 @@ export class GetUserInfoComponent {
 ```
 
 :::
+
+::: tab CDN
+```javascript
+async function getUserInfo() {
+  // 获取用户信息
+  const userInfo = await guard.trackSession();
+  console.log(userInfo);
+}
+```
+:::
+
 ::::
 
 ### 切换语言
 
 <p id="changeLang"></p>
 
-默认情况下，Guard 会展示你在 Authing 控制台中配置的默认语言，你也可以通过 `changeLang` 修改 Authing Gaurd 显示的语言，目前共支持以下四种：
+默认情况下，Guard 会展示你在 Authing 控制台中配置的默认语言，你也可以通过 `changeLang` 修改 Authing Guard 显示的语言，目前共支持以下四种：
 
 - zh-CN：中文简体
 - zh-TW：中文繁体
@@ -1643,24 +1656,6 @@ export class GetUserInfoComponent {
 Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing 目前支持的语言列表](#Lang)。
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```html
-<select onchange="changeLang(event)">
-  <option value="zh-CN">zh-CN</option>
-  <option value="zh-TW">zh-TW</option>
-  <option value="en-US">en-US</option>
-  <option value="ja-JP">ja-JP</option>
-</select>
-```
-
-```javascript
-function changeLang(event) {
-  guard.changeLang(event.target.value);
-}
-```
-
-:::
 
 ::: tab React
 
@@ -1829,6 +1824,24 @@ export class GetUserInfoComponent {
 ```
 
 :::
+
+::: tab CDN
+```html
+<select onchange="changeLang(event)">
+  <option value="zh-CN">zh-CN</option>
+  <option value="zh-TW">zh-TW</option>
+  <option value="en-US">en-US</option>
+  <option value="ja-JP">ja-JP</option>
+</select>
+```
+
+```javascript
+function changeLang(event) {
+  guard.changeLang(event.target.value);
+}
+```
+:::
+
 ::::
 
 ### 自定义样式
@@ -1840,20 +1853,6 @@ export class GetUserInfoComponent {
 :::
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-function changeContentCSS() {
-  guard.changeContentCSS(`
-    #authing-guard-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  `);
-}
-```
-:::
 
 ::: tab React
 
@@ -2008,6 +2007,22 @@ export class GetUserInfoComponent {
 ```
 
 :::
+
+::: tab CDN
+
+```javascript
+function changeContentCSS() {
+  guard.changeContentCSS(`
+    #authing-guard-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `);
+}
+```
+:::
+
 ::::
 
 ### 启用多因素人脸识别
@@ -2025,33 +2040,6 @@ export class GetUserInfoComponent {
 在原有代码基础上引入 `face-api`，且在初始化 Guard 时传入参数 `facePlugin` 即可。
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authing Guard Demo</title>
-  <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
-</head>
-<body>
-  <div id="authing-guard-container"></div>
-
-  <script>
-    const guard = new GuardFactory.Guard({
-      appId: 'AUTHING_APP_ID',
-      facePlugin: faceapi
-    })
-  </script>
-</body>
-</html>
-```
-:::
 
 ::: tab React
 
@@ -2172,6 +2160,34 @@ import * as facePlugin from 'face-api.js'
 export class AppModule { }
 ```
 :::
+
+::: tab CDN
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authing Guard Demo</title>
+  <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
+  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+</head>
+<body>
+  <div id="authing-guard-container"></div>
+
+  <script>
+    const guard = new GuardFactory.Guard({
+      appId: 'AUTHING_APP_ID',
+      facePlugin: faceapi
+    })
+  </script>
+</body>
+</html>
+```
+:::
+
 ::::
 
 ### Guard 内置 Authing JS SDK
@@ -2181,26 +2197,6 @@ Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.a
 你可以通过 `getAuthClient` 获取 `AuthenticationClient` 实例，之后可调用 `AuthenticationClient` 的所有方法。
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-async function updateProfile() {
-  const authenticationClient = await guard.getAuthClient();
-
-  // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
-  // 比如更新用户昵称
-  const userProfile = await authenticationClient.updateProfile({
-    nickname: "Nick",
-  });
-
-  console.log("userProfile: ", userProfile);
-
-  // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
-  // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
-}
-```
-
-:::
 
 ::: tab React
 
@@ -2344,6 +2340,26 @@ export class PersonalComponent {
 ```
 
 :::
+
+::: tab CDN
+```javascript
+async function updateProfile() {
+  const authenticationClient = await guard.getAuthClient();
+
+  // 获取到 AuthenticationClient 实例之后，可以调用其提供的所有方法
+  // 比如更新用户昵称
+  const userProfile = await authenticationClient.updateProfile({
+    nickname: "Nick",
+  });
+
+  console.log("userProfile: ", userProfile);
+
+  // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
+  // https://docs.authing.cn/v2/reference/sdk-for-node/authentication/
+}
+```
+:::
+
 ::::
 
 ### 私有化部署
@@ -2351,17 +2367,6 @@ export class PersonalComponent {
 如果你是通过 **私有化部署** 的方式使用 Authing 服务，需要指定你私有化的端点（不带 Path），具体方式如下：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  host: "https://my-authing-app.example.com",
-});
-```
-
-:::
 
 ::: tab React
 
@@ -2459,6 +2464,17 @@ export class AppModule {}
 ```
 
 :::
+
+::: tab CDN
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  host: "https://my-authing-app.example.com",
+});
+```
+:::
+
 ::::
 
 如果你不清楚具体的操作方式，请直接在你的私有化服务群中联系相应的 Authing 工作人员，他们将为你提供直接支持。
@@ -2470,17 +2486,6 @@ export class AppModule {}
 以 **刷新 Token** 为例：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-async function refreshToken() {
-  const authenticationClient = await guard.getAuthClient();
-  const refreshedToken = await authenticationClient.refreshToken();
-  console.log(refreshedToken);
-}
-```
-
-:::
 
 ::: tab React
 
@@ -2579,6 +2584,17 @@ export class HomeComponent {
 ```
 
 :::
+
+::: tab CDN
+```javascript
+async function refreshToken() {
+  const authenticationClient = await guard.getAuthClient();
+  const refreshedToken = await authenticationClient.refreshToken();
+  console.log(refreshedToken);
+}
+```
+:::
+
 ::::
 
 ## 附录
@@ -2586,41 +2602,6 @@ export class HomeComponent {
 此附录中的 **[初始化参数列表](#InitGuardOptions)** 和 **[Config 参数列表](#IGuardConfig)** 都会作为 Guard 初始化的配置项，例如：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-const guard = new GuardFactory.Guard({
-  appId: "AUTHING_APP_ID",
-
-  // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
-  // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
-  // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
-  host: "https://my-authing-app.example.com",
-
-  // 控制台登录回调 URL
-  redirectUri: "https://my-authing-app.example.com/callback",
-
-  // modal 弹框模式
-  // normal 内嵌模式
-  mode: "normal",
-
-  // 默认展示页面，具体值参考附录中的 IGuardModuleType
-  defaultScene: "login",
-
-  tenantId: "AUTHING_TENANT_ID",
-
-  // 显示语言，可用值参考附录中的 Lang
-  lang: "zh-CN",
-
-  // 是否开启单点登录
-  isSSO: false,
-
-  // Guard 详细配置，具体值参考附录中的Config 参数列表
-  config: {},
-});
-```
-
-:::
 
 ::: tab React
 
@@ -2824,6 +2805,41 @@ export class AppModule {}
 ```
 
 :::
+
+::: tab CDN
+```javascript
+const guard = new GuardFactory.Guard({
+  appId: "AUTHING_APP_ID",
+
+  // 如果此应用没有开启单点登录，需要填写自建应用的「认证地址」；
+  // 如果开启了单点登录，则应填写单点登录的「应用面板地址」;
+  // 如果是私有化部署，填写私有化部署对应的「认证地址」或「应用面板地址」即可。
+  host: "https://my-authing-app.example.com",
+
+  // 控制台登录回调 URL
+  redirectUri: "https://my-authing-app.example.com/callback",
+
+  // modal 弹框模式
+  // normal 内嵌模式
+  mode: "normal",
+
+  // 默认展示页面，具体值参考附录中的 IGuardModuleType
+  defaultScene: "login",
+
+  tenantId: "AUTHING_TENANT_ID",
+
+  // 显示语言，可用值参考附录中的 Lang
+  lang: "zh-CN",
+
+  // 是否开启单点登录
+  isSSO: false,
+
+  // Guard 详细配置，具体值参考附录中的Config 参数列表
+  config: {},
+});
+```
+:::
+
 ::::
 
 ### 初始化参数列表
@@ -2900,15 +2916,6 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 使用 Guard 提供的 `on` 方法可以对 Guard 支持的事件进行监听：
 
 :::: tabs :options="{ useUrlFragment: false }"
-::: tab CDN
-
-```javascript
-guard.on("login", (userInfo) => {
-  console.log(userInfo);
-});
-```
-
-:::
 
 ::: tab React
 
@@ -3018,6 +3025,15 @@ export class EmbedComponent {
 ```
 
 :::
+
+::: tab CDN
+```javascript
+guard.on("login", (userInfo) => {
+  console.log(userInfo);
+});
+```
+:::
+
 ::::
 
 完整事件列表如下：
