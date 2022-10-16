@@ -3207,7 +3207,9 @@ Guard 内部短信验证码发送的场景值
 
 ```typescript
 interface NomalLoginParams {
-  type: "ldap" | "ad" | "password"; // 登录方式
+  type: "ldap" /**LDAP 登录 */
+    | "ad" /**AD 登录 */
+    | "password"/**密码登录，如手机号 + 密码，邮箱 + 密码 */;
   data: {
     identity: string; // 账号
     password: string; // 密码
@@ -3222,7 +3224,8 @@ interface NomalLoginParams {
 
 ```typescript
 interface VerifyCodeLoginParams {
-  type: "email-code" | "phone-code"; // 登录方式
+  type: "email-code" /**邮箱验证码登录 */ 
+    | "phone-code" /**手机验证码登录 */;
   data: {
     identity: string; // 账号
     code: string; // 验证码
@@ -3237,7 +3240,9 @@ interface VerifyCodeLoginParams {
 
 ```typescript
 interface ScanLoginParams {
-  type: "app-qrcode" | "wechat-miniprogram-qrcode" | "wechatmp-qrcode"; // 登录方式
+  type: "app-qrcode" /**APP 扫码登录登录 */ 
+    | "wechat-miniprogram-qrcode" /**微信小程序扫码登录 */
+    | "wechatmp-qrcode" /**微信公众号扫码登录登录 */;
   data: User; // 用户信息
 }
 ```
@@ -3248,7 +3253,9 @@ interface ScanLoginParams {
 
 ```typescript
 interface RegisterParams {
-  type: "phone" | "email" | "emailCode"; // 登录方式
+  type: "phone" /**手机验证码注册 */
+    | "email" /**邮箱密码注册 */
+    | "emailCode" /**邮箱验证码注册 */;
   data: {
     identity: string; // 账号
     password?: string; // 密码
