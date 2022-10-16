@@ -572,9 +572,9 @@ import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: "login-container",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class LoginComponent {
   constructor(private guard: GuardService) {}
@@ -676,8 +676,7 @@ export default function Embed() {
       </button>
 
       <div>
-        模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
-        hide 方法的效果
+        模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果
       </div>
       <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
@@ -712,8 +711,7 @@ Vue.use(GuardPlugin, {
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
     <div>
-      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
-      hide 方法的效果
+      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果
     </div>
     <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
@@ -772,8 +770,7 @@ app.use(
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
     <div>
-      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示
-      hide 方法的效果
+      模态窗口打开并登录成功后会在 2 秒内调用 hide 方法关闭模态窗口，用于展示 hide 方法的效果
     </div>
     <div>模态框自动关闭后，可以点击 Show Guard 按钮再次显示</div>
 
@@ -1094,9 +1091,9 @@ import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: "login-container",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class LoginComponent {
   constructor(private guard: GuardService) {}
@@ -1277,9 +1274,9 @@ import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: "logout-container",
-  templateUrl: "./logout.component.html",
-  styleUrls: ["./logout.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class LoginComponent {
   constructor(private guard: GuardService) {}
@@ -1370,9 +1367,9 @@ import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: "register-container",
-  templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class LoginComponent {
   constructor(private guard: GuardService) {}
@@ -1611,9 +1608,9 @@ import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: "get-user-info-container",
-  templateUrl: "./get-user-info.component.html",
-  styleUrls: ["./get-user-info.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class GetUserInfoComponent {
   constructor(private guard: GuardService) {}
@@ -1795,9 +1792,9 @@ import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: "change-lang-container",
-  templateUrl: "./change-lang.component.html",
-  styleUrls: ["./change-lang.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class GetUserInfoComponent {
   constructor(private guard: GuardService) {}
@@ -1971,9 +1968,9 @@ import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
 @Component({
-  selector: "change-content-css-container",
-  templateUrl: "./change-content-css.component.html",
-  styleUrls: ["./change-content-css.component.css"],
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
 })
 export class GetUserInfoComponent {
   constructor(private guard: GuardService) {}
@@ -2281,9 +2278,9 @@ export default {
 <script setup lang="ts">
 import { useGuard } from "@authing/guard-vue3";
 
-const guard = useGuard();
-
 import type { User, AuthenticationClient } from "@authing/guard-vue3";
+
+const guard = useGuard();
 
 const updateProfile = async () => {
   const authenticationClient: AuthenticationClient = await guard.getAuthClient();
@@ -3046,7 +3043,7 @@ guard.on("login", (userInfo) => {
 | ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onLoad                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
 | onLoadError                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
-| onBeforeLogin                | 用户触发登录前（返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续）。| loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalParams) ｜</p><p> [VerifyCodeLoginParams](#VerifyCodeParams) ｜</p><p>[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
+| onBeforeLogin                | 用户触发登录前（返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续）。| loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalLoginParams) ｜</p><p> [VerifyCodeLoginParams](#VerifyCodeLoginParams) ｜</p><p>[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
 | onLogin                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
 | onLoginError                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
 | onBeforeRegister             | 用户触发注册前（返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续）。             | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
