@@ -131,7 +131,7 @@ Android Nativie：
 请先确保已经依赖并初始化 [Android Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-android/)
 
 ```java
-// 初始化 Android SDK
+// 初始化 Android Guard SDK
 Authing.init(context, "AUTHING_APP_ID");
 
 // 使用 ticket 去换取用户信息
@@ -149,7 +149,7 @@ IOS Nativie：
 ```swift
 import Guard
 
-// 初始化IOS SDK
+// 初始化IOS Guard SDK
 Authing.start(<#AUTHING_APP_ID#>)
 
 // 使用 ticket 去换取用户信息
