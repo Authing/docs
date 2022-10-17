@@ -1,4 +1,4 @@
-# Guard - Android
+# Android Guard
 
 <LastUpdated/>
 
