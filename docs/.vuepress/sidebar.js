@@ -127,6 +127,20 @@ const zhCnNavBar = {
           ],
         },
         {
+          title: "体验期",
+          path: "/guides/basics/trial/",
+          children: [
+            {
+              title: `管理员相关操作`,
+              path: "/guides/basics/trial/admin",
+            },
+            {
+              title: `终端用户相关操作`,
+              path: "/guides/basics/trial/end-user",
+            },
+          ],
+        },
+        {
           title: "控制台概览",
           path: "/guides/basics/console/",
         },

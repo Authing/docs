@@ -4,7 +4,7 @@
 
 ## 场景介绍
 
-- **概述**：AD 免登是用 Kerberos 协议实现的在 AD 域内无需账密直接登录的功能。Kerberos 支持内置于所有主要计算机操作系统，包括 Microsoft Windows、Apple macOS、FreeBSD 和 Linux。
+- **概述**：AD 免密自动登录功能支持 Windows、MacOS 系统，可实现用户在登录 PC 终端后通过免密方式进行自动身份认证，访问内部资源如: Web Apps。
 - **应用场景**：企业 PC 免登场景
 - **终端用户预览图**：
 
