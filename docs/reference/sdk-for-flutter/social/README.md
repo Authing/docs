@@ -12,8 +12,8 @@ static Future<AuthResult> loginByWechat(String connId, String code) async
 
 **参数**
 
-- *connId* 在 Authing 的控制台获取的 social connection 配置
-- *code* auth 微信返回的 auth code
+- *connId* 在 Authing 控制台 -> 身份源管理 -> 社会化身份源 -> 基础配置中获取
+- *code* 微信授权成功后返回的 auth code
 
 **示例**
 
@@ -33,8 +33,8 @@ static Future<AuthResult> loginByAlipay(String connId, String code) async
 
 **参数**
 
-- *connId* 在 Authing 的控制台获取的 social connection 配置
-- *code* 支付宝返回的 auth code
+- *connId* 在 Authing 控制台 -> 身份源管理 -> 社会化身份源 -> 基础配置中获取
+- *code* 支付宝授权成功后返回的 auth code
 
 **示例**
 
@@ -54,7 +54,7 @@ static Future<AuthResult> loginByApple(String code) async
 
 **参数**
 
-- *code* auth 苹果返回的 auth code
+- *code* auth 苹果授权成功后返回的 auth code
 
 **示例**
 

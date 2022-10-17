@@ -22,10 +22,10 @@
             icon: 'authing-danye',
             link: 'quickstarts/spa',
             language: [
-			{'key':'javascript','link':'reference/guard/v2/native-javascript.html'},
-			{'key':'react','link':'quickstarts/spa/react.html'},
-			{'key':'vue','link':'quickstarts/spa/vue.html'},
-			{'key':'angular','link':'quickstarts/spa/angular.html'}],
+			{'key':'javascript','link':'reference/guard/v2/web.html'},
+			{'key':'react','link':'reference/guard/v2/web.html'},
+			{'key':'vue','link':'reference/guard/v2/web.html'},
+			{'key':'angular','link':'reference/guard/v2/web.html'}],
             unLanguage: []
         },
         {

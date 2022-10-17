@@ -4,9 +4,9 @@
 
 ## 准备工作
 
-- 企业自建应用 Authing 控制台以及飞书控制台配置请参阅[接入飞书企业自建应用移动应用登录](https://docs.authing.cn/v2/connections/lark-internal-mobile/)。
+- 企业自建应用 Authing 控制台以及飞书控制台配置请参阅 [接入飞书企业自建应用移动应用登录](https://docs.authing.cn/v2/connections/lark-internal-mobile/)。
 
-- 应用商店应用 Authing 控制台以及飞书控制台配置请参阅[接入飞书应用商店应用移动应用登录](https://docs.authing.cn/v2/connections/lark-public-mobile/)。
+- 应用商店应用 Authing 控制台以及飞书控制台配置请参阅 [接入飞书应用商店应用移动应用登录](https://docs.authing.cn/v2/connections/lark-public-mobile/)。
 
 <br>
 
@@ -27,7 +27,7 @@
 
 ### 步骤 2：修改项目配置
 
-- 前往[飞书开发平台](https://open.feishu.cn/document/uAjLw4CM/uYjL24iN/mobile-app/sdk)下载 iOS LarkSS0Demo。
+- 前往 [飞书开发平台](https://open.feishu.cn/document/uAjLw4CM/uYjL24iN/mobile-app/sdk) 下载 iOS LarkSS0Demo。
 
 - 将 LarkSSO 目录中的 LarkSSO.bundle 拖入工程项目目录下，勾选 Copy items if needed 。
 
