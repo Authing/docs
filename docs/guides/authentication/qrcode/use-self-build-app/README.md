@@ -162,7 +162,7 @@ AuthClient().loginByScannedTicket(ticket: "ticket") { code, message, data in
 
 其它场景：
 
-请先确保已依赖并初始化 [IOS Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-ios/)
+请先确保已安装 [Authing JavaScript/Node SDK](https://docs.authing.cn/v2/reference/sdk-for-node/)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
