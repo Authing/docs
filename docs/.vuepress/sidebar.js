@@ -1068,16 +1068,33 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "单页应用",
-          path: "/reference/guard/v3/spa.md",
+          title: "Web Guard",
+          path: "/reference/guard/v2/web",
         },
         {
-          title: "标准 WEB 应用",
-          path: "/reference/guard/v3/mpa.md",
+          title: "iOS Guard",
+          path: "/reference/sdk-for-ios/",
         },
         {
-          title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog",
+          title: "Android Guard",
+          path: "/reference/sdk-for-android/",
+        },
+        {
+          title: "更新日志",
+          children: [
+            {
+              title: "Web Guard 更新日志",
+              path: "/reference/guard/v2/guard-changelog.md",
+            },
+            {
+              title: "iOS Guard 更新日志",
+              path: "/reference/sdk-for-ios/ios-guard-changelog.md",
+            },
+            {
+              title: "Android Guard 更新日志",
+              path: "/reference/sdk-for-android/version.md",
+            },
+         ],
         }
       ],
     },
@@ -1495,7 +1512,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/onpremise",
         },
         {
-          title: "版本历史",
+          title: "Android Guard 更新日志",
           path: "/reference/sdk-for-android/version",
         },
       ],
@@ -1655,7 +1672,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-ios/onpremise",
         },
         {
-          title: "Guard iOS Changelog",
+          title: "iOS Guard 更新日志",
           path: "/reference/sdk-for-ios/ios-guard-changelog"
         },
         {
