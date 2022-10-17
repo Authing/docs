@@ -87,6 +87,7 @@ npm install --save @authing/guard-angular
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
 import React from "react";
 import { GuardProvider } from "@authing/guard-react";
@@ -112,6 +113,7 @@ function App() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -129,6 +131,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -153,6 +156,7 @@ app.use(
 
 ```json
 // angular.json
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/angular.json
 {
   "projects": {
     "architect": {
@@ -165,6 +169,7 @@ app.use(
 ```
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -239,6 +244,7 @@ export class AppModule {}
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
 
 export default function Login() {
@@ -255,6 +261,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Home.vue
 export default {
   created() {
     console.log("guard instance: ", this.$guard);
@@ -267,6 +274,7 @@ export default {
 ::: tab Vue3
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Home.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -279,6 +287,7 @@ console.log("guard instance: ", guard);
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
@@ -305,6 +314,7 @@ export class HomeComponent {
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
@@ -361,6 +371,8 @@ console.log("guard instance: ", guard);
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
+// Jump.tsx
 import { useGuard } from "@authing/guard-react";
 
 export default function Jump() {
@@ -381,11 +393,107 @@ export default function Jump() {
 }
 ```
 
+``` tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
+// Callback.tsx
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+
+import { JwtTokenStatus, useGuard, User } from '@authing/guard-react'
+
+export default function Callback() {
+  const history = useHistory()
+  const guard = useGuard()
+
+  const handleCallback = async () => {
+    try {
+      // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
+      // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
+      await guard.handleRedirectCallback()
+
+      // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
+      const loginStatus: JwtTokenStatus | undefined  = await guard.checkLoginStatus()
+
+      if (!loginStatus) {
+        guard.startWithRedirect({
+          scope: 'openid profile',
+          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+          redirectUri: 'http://localhost:3000/callback'
+        })
+        return
+      }
+
+      // 3. 获取到登录用户的用户信息
+      const userInfo: User | null = await guard.trackSession()
+
+      console.log(userInfo)
+
+      // 你也可以重定向到你的任意业务页面，比如重定向到用户的个人中心
+      // 如果你希望实现登录后跳转到同一页面的效果，可以通过在调用 startWithRedirect 时传入的自定义 state 实现
+      // 之后你在这些页面可以通过 trackSession 方法获取用户登录态和用户信息
+
+      // 示例一：跳转到固定页面
+      history.replace('/personal')
+
+      // 示例二：获取自定义 state，进行特定操作
+      // const search = window.location.search
+      // 从 URL search 中解析 state
+    } catch (e) {
+      // 登录失败，推荐再次跳转到登录页面
+      guard.startWithRedirect({
+        scope: 'openid profile',
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        redirectUri: 'http://localhost:3000/callback'
+      })
+    }
+  }
+
+  useEffect(() => {
+    handleCallback()
+  })
+
+  return <div>This is Callback page</div>
+}
+```
+
+``` tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
+// Personal.tsx
+import React, { useEffect, useState } from 'react'
+import { useGuard, User } from '@authing/guard-react'
+
+export default function Personal() {
+  const [userInfo, setUserInfo] = useState('')
+
+  const guard = useGuard()
+
+  useEffect(() => {
+    guard.trackSession().then((res: User | null) => {
+      setUserInfo(JSON.stringify(res, null, 2))
+    })
+  }, [])
+
+  return (
+    <div>
+      {userInfo && (
+        <div>
+          <div>用户信息：</div>
+          <textarea cols={100} rows={30} defaultValue={userInfo}></textarea>
+        </div>
+      )}
+    </div>
+  )
+}
+```
 :::
 
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Jump.vue
+// Jump.vue
 export default {
   methods: {
     startWithRedirect() {
@@ -396,11 +504,96 @@ export default {
 };
 ```
 
+``` javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Callback.vue
+// Callback.vue
+export default {
+  data () {
+    return {
+      message: 'This is callback page ~'
+    }
+  },
+  mounted () {
+    this.handleAuthingLoginCallback()
+  },
+  methods: {
+    async handleAuthingLoginCallback () {
+      try {
+        // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
+        // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
+        await this.$guard.handleRedirectCallback()
+        // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
+        const loginStatus = await this.$guard.checkLoginStatus()
+        if (!loginStatus) {
+          this.$guard.startWithRedirect({
+            scope: 'openid profile',
+            // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+            // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+            redirectUri: 'http://localhost:3000/callback'
+          })
+          return
+        }
+        // 3. 获取到登录用户的用户信息
+        const userInfo = await this.$guard.trackSession()
+        console.log(userInfo)
+        // 你也可以重定向到你的任意业务页面，比如重定向到用户的个人中心
+        // 如果你希望实现登录后跳转到同一页面的效果，可以通过在调用 startWithRedirect 时传入的自定义 state 实现
+        // 之后你在这些页面可以通过 trackSession 方法获取用户登录态和用户信息
+        // 示例一：跳转到固定页面
+        this.$router.replace('/personal')
+        // 示例二：获取自定义 state，进行特定操作
+        // const search = window.location.search
+        // 从 URL search 中解析 state
+      } catch (e) {
+        // 登录失败，推荐再次跳转到登录页面
+        this.$guard.startWithRedirect({
+          scope: 'openid profile',
+          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+          redirectUri: 'http://localhost:3000/callback'
+        })
+      }
+    }
+  }
+}
+```
+
+``` html
+<template>
+  <div class="personal-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Personal.vue -->
+    <!-- Personal.vue -->
+    <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      userInfo: ''
+    }
+  },
+  created () {
+    this.getUserInfo()
+  },
+  methods: {
+    async getUserInfo () {
+      const userInfo = await this.$guard.trackSession()
+      this.userInfo = JSON.stringify(userInfo, null, 2)
+    }
+  }
+}
+</script>
+```
+
 :::
 
 ::: tab Vue3
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Jump.vue
+// Jump.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -411,19 +604,112 @@ const startWithRedirect = () => {
 };
 ```
 
+``` html
+<template>
+  <div class="personal-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Callback.vue -->
+    <!-- Callback.vue -->
+    <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
+  </div>
+</template>
+<script lang="ts" setup>
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useGuard } from '@authing/guard-vue3'
+
+import type { JwtTokenStatus, User } from '@authing/guard-vue3'
+
+const router = useRouter()
+const guard = useGuard()
+
+const handleAuthingLoginCallback = async () => {
+  try {
+    // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
+    // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
+    await guard.handleRedirectCallback()
+    // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
+    const loginStatus: JwtTokenStatus | undefined = await guard.checkLoginStatus()
+    if (!loginStatus) {
+      guard.startWithRedirect({
+        scope: 'openid profile',
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        redirectUri: 'http://localhost:3000/callback'
+      })
+      return
+    }
+    // 3. 获取到登录用户的用户信息
+    const userInfo: User | null = await guard.trackSession()
+    console.log(userInfo)
+    // 你也可以重定向到你的任意业务页面，比如重定向到用户的个人中心
+    // 如果你希望实现登录后跳转到同一页面的效果，可以通过在调用 startWithRedirect 时传入的自定义 state 实现
+    // 之后你在这些页面可以通过 trackSession 方法获取用户登录态和用户信息
+    // 示例一：跳转到固定页面
+    router.replace({
+      name: 'Personal'
+    })
+    // 示例二：获取自定义 state，进行特定操作
+    // const search = window.location.search
+    // 从 URL search 中解析 state
+  } catch (e) {
+    // 登录失败，推荐再次跳转到登录页面
+    guard.startWithRedirect({
+      scope: 'openid profile',
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      redirectUri: 'http://localhost:3000/callback'
+    })
+  }
+}
+onMounted(() => {
+  handleAuthingLoginCallback()
+})
+</script>
+```
+
+``` html
+<template>
+  <div class="personal-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Personal.vue -->
+    <!-- Personal.vue -->
+    <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue'
+import { useGuard } from '@authing/guard-vue3'
+import type { User } from '@authing/guard-vue3'
+
+const userInfo = ref<string>('')
+
+const guard = useGuard()
+
+const getUserInfo = async () => {
+  const _userInfo: User | null = await guard.trackSession()
+  userInfo.value = JSON.stringify(_userInfo, null, 2)
+}
+
+onMounted(() => {
+  getUserInfo()
+})
+</script>
+```
 :::
 
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/jump/jump.component.ts
+// jump.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
 @Component({
-  selector: "home-container",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"],
+  selector: "jump-container",
+  templateUrl: "./jump.component.html",
+  styleUrls: ["./jump.component.css"],
 })
 export class HomeComponent {
   constructor(
@@ -438,11 +724,112 @@ export class HomeComponent {
 }
 ```
 
+``` typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/callback/callback.component.ts
+// callback.component.ts
+import { Component } from '@angular/core'
+import { Router } from '@angular/router'
+
+import { GuardService, JwtTokenStatus, User } from '@authing/guard-angular'
+
+@Component({
+  selector: 'callback-container',
+  templateUrl: './callback.component.html',
+  styleUrls: ['./callback.component.css']
+})
+export class CallbackComponent {
+  constructor (
+    private router: Router,
+    private guard: GuardService
+  ) {}
+
+  ngOnInit () {
+    this.handleAuthingLoginCallback()
+  }
+
+  async handleAuthingLoginCallback () {
+    try {
+      // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
+      // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
+      await this.guard.client.handleRedirectCallback()
+
+      // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
+      const loginStatus: JwtTokenStatus | undefined = await this.guard.client.checkLoginStatus()
+
+      if (!loginStatus) {
+        this.guard.client.startWithRedirect({
+          scope: 'openid profile',
+          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+          redirectUri: 'http://localhost:3000/callback'
+        })
+        return
+      }
+
+      // 3. 获取到登录用户的用户信息
+      const userInfo: User | null = await this.guard.client.trackSession()
+
+      console.log(userInfo)
+
+      // 你也可以重定向到你的任意业务页面，比如重定向到用户的个人中心
+      // 如果你希望实现登录后跳转到同一页面的效果，可以通过在调用 startWithRedirect 时传入的自定义 state 实现
+      // 之后你在这些页面可以通过 trackSession 方法获取用户登录态和用户信息
+
+      // 示例一：跳转到固定页面
+      this.router.navigateByUrl('personal', {
+        replaceUrl: true
+      })
+
+      // 示例二：获取自定义 state，进行特定操作
+      // const search = window.location.search
+      // 从 URL search 中解析 state
+    } catch (e) {
+      // 登录失败，推荐再次跳转到登录页面
+      this.guard.client.startWithRedirect({
+        scope: 'openid profile',
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        redirectUri: 'http://localhost:3000/callback'
+      })
+    }
+  }
+}
+```
+
+``` typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
+// personal.component.ts
+import { Component } from '@angular/core'
+import { GuardService, User } from '@authing/guard-angular'
+
+@Component({
+  selector: 'personal-container',
+  templateUrl: './personal.component.html',
+  styleUrls: ['./personal.component.css']
+})
+export class PersonalComponent {
+  constructor(private guard: GuardService) {}
+
+  userInfo = ''
+
+  ngOnInit() {
+    this.getUserInfo()
+  }
+
+  async getUserInfo() {
+    const _userInfo: User | null = await this.guard.client.trackSession()
+    this.userInfo = JSON.stringify(_userInfo || '', null, 2)
+  }
+}
+```
+
 :::
 
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/jump.html
+// jump.html
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
@@ -457,6 +844,88 @@ function startWithRedirect() {
 }
 ```
 
+``` javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/callback.html
+// callback.html
+const guard = new GuardFactory.Guard(guardOptions)
+
+handleAuthingLoginCallback()
+
+async function handleAuthingLoginCallback () {
+  try {
+    // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
+    // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
+    await guard.handleRedirectCallback()
+
+    // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
+    const loginStatus = await guard.checkLoginStatus()
+
+    if (!loginStatus) {
+      guard.startWithRedirect({
+        scope: 'openid profile',
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        redirectUri: callbackPageUrl
+      })
+      return
+    }
+
+    // 3. 获取到登录用户的用户信息
+    const userInfo = await guard.trackSession()
+
+    console.log(userInfo)
+
+    // 你也可以重定向到你的任意业务页面，比如重定向到用户的个人中心
+    // 如果你希望实现登录后跳转到同一页面的效果，可以通过在调用 startWithRedirect 时传入的自定义 state 实现
+    // 之后你在这些页面可以通过 trackSession 方法获取用户登录态和用户信息
+
+    // 示例一：跳转到固定页面
+    window.location.replace(personalPageUrl)
+
+    // 示例二：获取自定义 state，进行特定操作
+    // const search = window.location.search
+    // 从 URL search 中解析 state
+  } catch (e) {
+    // 登录失败，推荐再次跳转到登录页面
+    guard.startWithRedirect({
+      scope: 'openid profile',
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      redirectUri: callbackPageUrl
+    })
+  }
+}
+``` 
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authing Guard Demo - Personal</title>
+  <script src="https://cdn.authing.co//packages/guard/5.0.5/guard.min.js"></script>
+  <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
+  <script src="./config.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css">
+</head>
+<body>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
+  <!-- personal.html -->
+  <button onclick="getUserInfo()">Get User Info</button>
+
+  <script>
+    const guard = new GuardFactory.Guard(guardOptions)
+
+    async function getUserInfo () {
+      const userInfo = await guard.trackSession()
+      console.log(userInfo)
+    }
+  </script>
+</body>
+</html>
+```
 :::
 
 ::::
@@ -495,6 +964,7 @@ function startWithRedirect() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React, { useEffect } from "react";
 
 import { useGuard, User } from "@authing/guard-react";
@@ -524,6 +994,7 @@ export default function Login() {
 
 ```vue
 <template>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
   <div id="authing-guard-container"></div>
 </template>
 <script>
@@ -544,6 +1015,7 @@ export default {
 
 ```vue
 <template>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
   <div id="authing-guard-container"></div>
 </template>
 
@@ -568,6 +1040,7 @@ onMounted(() => {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -595,6 +1068,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```html
+<!-- https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
 <div id="authing-guard-container"></div>
 ```
 
@@ -629,6 +1103,7 @@ guard.start("#authing-guard-container").then((userInfo) => {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
 // App.tsx
 import React from "react";
 import { GuardProvider } from "@authing/guard-react";
@@ -650,6 +1125,7 @@ function App() {
 ```
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
 // Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
@@ -691,6 +1167,7 @@ export default function Embed() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/modal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -705,8 +1182,9 @@ Vue.use(GuardPlugin, {
 ```
 
 ```html
-<!-- Embed.vue -->
 <template>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/modal/src/views/Embed.vue -->
+  <!-- Embed.vue -->
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
@@ -745,6 +1223,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/modal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
@@ -764,8 +1243,9 @@ app.use(
 ```
 
 ```html
-<!-- Embed.vue -->
 <template>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/modal/src/views/Embed.vue -->
+  <!-- Embed.vue -->
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
 
@@ -805,6 +1285,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/modal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -830,6 +1311,7 @@ export class AppModule {}
 ```
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/modal/src/app/pages/embed/embed.component.ts
 // embed.component.ts
 import { Component } from "@angular/core";
 
@@ -866,6 +1348,7 @@ export class EmbedComponent {
 ::: tab CDN
 
 ```html
+<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/modal/embed.html -->
 <button onclick="showGuard()">Show Guard</button>
 
 <div>
@@ -920,6 +1403,7 @@ function showGuard() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import React from "react";
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
@@ -945,6 +1429,7 @@ function App() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
 import "@authing/guard-vue2/dist/esm/guard.min.css";
@@ -962,6 +1447,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -984,6 +1470,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -1015,6 +1502,7 @@ export class AppModule {}
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -1037,6 +1525,7 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React from "react";
 import { useGuard } from "@authing/guard-react";
 
@@ -1059,6 +1548,7 @@ export default function Logout() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
@@ -1074,6 +1564,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -1087,6 +1578,7 @@ const logout = () => guard.logout();
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1110,6 +1602,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -1118,7 +1611,7 @@ const guard = new GuardFactory.Guard({
 
 function Logout() {
   // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
-  const onLogout = () => guard.logout();
+  guard.logout();
 }
 ```
 
@@ -1134,6 +1627,7 @@ function Logout() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
 import React from "react";
 import { GuardProvider } from "@authing/guard-react";
@@ -1156,7 +1650,7 @@ function App() {
 ```
 
 ```tsx
-// Logout.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React from "react";
 import { useGuard } from "@authing/guard-react";
 
@@ -1179,6 +1673,7 @@ export default function Logout() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -1193,7 +1688,7 @@ Vue.use(GuardPlugin, {
 ```
 
 ```javascript
-// Logout.vue
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     logout() {
@@ -1209,6 +1704,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -1227,7 +1723,7 @@ app.use(
 ```
 
 ```typescript
-// Logout.vue
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -1241,6 +1737,7 @@ const logout = () => guard.logout();
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -1269,7 +1766,7 @@ export class AppModule {}
 ```
 
 ```typescript
-// logout.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1281,7 +1778,7 @@ import { GuardService } from "@authing/guard-angular";
 export class LoginComponent {
   constructor(private guard: GuardService) {}
 
-  onLogout() {
+  logout() {
     this.guard.client.logout();
   }
 }
@@ -1292,6 +1789,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -1301,7 +1799,7 @@ const guard = new GuardFactory.Guard({
 
 function Logout() {
   // 登出后的回调地址请在 Authing 控制台 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
-  const onLogout = () => guard.logout();
+  guard.logout();
 }
 ```
 :::
@@ -1317,6 +1815,7 @@ function Logout() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React from "react";
 import { useGuard } from "@authing/guard-react";
 
@@ -1337,6 +1836,7 @@ export default function Register() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     startRegister() {
@@ -1351,6 +1851,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -1363,6 +1864,7 @@ const startRegister = () => guard.startRegister();
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1385,6 +1887,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 function startRegister() {
   guard.startRegister();
 }
@@ -1414,6 +1917,7 @@ function startRegister() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import React from "react";
 
 import { GuardProvider } from "@authing/guard-react";
@@ -1444,6 +1948,7 @@ export default function App() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
 import "@authing/guard-vue2/dist/esm/guard.min.css";
@@ -1463,6 +1968,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
 import "@authing/guard-vue3/dist/esm/guard.min.css";
@@ -1486,6 +1992,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -1519,6 +2026,7 @@ export class AppModule {}
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -1543,6 +2051,7 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React from "react";
 import { useGuard, User } from "@authing/guard-react";
 
@@ -1568,6 +2077,7 @@ export default function GetUserInfo() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     async getUserInfo() {
@@ -1585,6 +2095,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
+  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
   import { useGuard } from "@authing/guard-vue3";
 
   import type { User } from "@authing/guard-vue3";
@@ -1604,6 +2115,7 @@ export default {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -1627,6 +2139,7 @@ export class GetUserInfoComponent {
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 async function getUserInfo() {
   // 获取用户信息
   const userInfo = await guard.trackSession();
@@ -1657,6 +2170,7 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React, { useEffect, useState } from "react";
 
 import { useGuard, User } from "@authing/guard-react";
@@ -1704,6 +2218,7 @@ export default function ChangeLanguage() {
 ```vue
 <template>
   <div class="embed-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
     <select v-model="langCache" @change="changeLang">
       <option value="zh-CN">zh-CN</option>
       <option value="zh-TW">zh-TW</option>
@@ -1748,6 +2263,7 @@ export default {
 ```vue
 <template>
   <div class="embed-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
     <select v-model="langCache" @change="changeLang">
       <option value="zh-CN">zh-CN</option>
       <option value="zh-TW">zh-TW</option>
@@ -1788,6 +2304,7 @@ const changeLang = (event) => {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1809,6 +2326,7 @@ export class GetUserInfoComponent {
 ```
 
 ```html
+<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
 <div class="change-lang-container">
   <select ng-model="langCache" (change)="changeLang($event)">
     <option ngValue="zh-CN">zh-CN</option>
@@ -1824,6 +2342,7 @@ export class GetUserInfoComponent {
 
 ::: tab CDN
 ```html
+<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
 <select onchange="changeLang(event)">
   <option value="zh-CN">zh-CN</option>
   <option value="zh-TW">zh-TW</option>
@@ -1854,6 +2373,7 @@ function changeLang(event) {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React, { useEffect } from "react";
 import { useGuard, User } from "@authing/guard-react";
 
@@ -1893,6 +2413,7 @@ export default function ChangeContentCSS() {
 ```vue
 <template>
   <div class="embed-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
     <button class="authing-button" @click="changeContentCSS">
       Change Content CSS
     </button>
@@ -1930,6 +2451,7 @@ export default {
 ```vue
 <template>
   <div class="embed-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
     <button @click="changeContentCSS">Change Content CSS</button>
     <div id="authing-guard-container"></div>
   </div>
@@ -1964,6 +2486,7 @@ const changeContentCSS = () =>
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -2008,6 +2531,7 @@ export class GetUserInfoComponent {
 ::: tab CDN
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 function changeContentCSS() {
   guard.changeContentCSS(`
     #authing-guard-container {
@@ -2045,6 +2569,7 @@ npm install --save face-api.js
 ```
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 // App.tsx
 import React from 'react'
 
@@ -2077,6 +2602,7 @@ npm install --save face-api.js
 ```
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 // main.js
 import * as facePlugin from 'face-api.js'
 
@@ -2099,6 +2625,7 @@ npm install --save face-api.js
 ```
 
 ``` typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
 // main.ts
 import { createApp } from 'vue'
 
@@ -2127,6 +2654,7 @@ npm install --save face-api.js
 ```
 
 ``` typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // app.module.ts
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -2198,6 +2726,7 @@ Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.a
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
 import React, { useEffect } from "react";
 import { useGuard, AuthenticationClient, User } from "@authing/guard-react";
 
@@ -2236,6 +2765,7 @@ export default function Personal() {
 ```vue
 <template>
   <div class="personal-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Personal.vue -->
     <button class="authing-button" @click="updateProfile">
       Update Profile
     </button>
@@ -2271,6 +2801,7 @@ export default {
 ```vue
 <template>
   <div class="personal-container">
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Personal.vue -->
     <button @click="updateProfile">Update Profile</button>
   </div>
 </template>
@@ -2304,6 +2835,7 @@ const updateProfile = async () => {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
 import { Component } from "@angular/core";
 import {
   AuthenticationClient,
@@ -2340,6 +2872,7 @@ export class PersonalComponent {
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 async function updateProfile() {
   const authenticationClient = await guard.getAuthClient();
 
@@ -2368,6 +2901,7 @@ async function updateProfile() {
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
 import React from "react";
 
@@ -2383,7 +2917,7 @@ export default function App() {
     <GuardProvider
       appId="AUTHING_APP_ID"
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      host="https://my-authing-app.example.com"
+      // host="https://my-authing-app.example.com"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -2396,6 +2930,7 @@ export default function App() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -2413,6 +2948,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -2434,6 +2970,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -2464,6 +3001,7 @@ export class AppModule {}
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
@@ -2487,6 +3025,7 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import {
   AuthenticationClient,
   RefreshToken,
@@ -2517,6 +3056,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     async refreshToken() {
@@ -2534,6 +3074,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
+  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
   import { useGuard } from "@authing/guard-vue3";
 
   import type { RefreshToken, AuthenticationClient } from "@authing/guard-vue3";
@@ -2553,6 +3094,7 @@ export default {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
 import {
@@ -2584,6 +3126,7 @@ export class HomeComponent {
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 async function refreshToken() {
   const authenticationClient = await guard.getAuthClient();
   const refreshedToken = await authenticationClient.refreshToken();
@@ -2917,6 +3460,7 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 ::: tab React
 
 ```tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import React, { useEffect } from "react";
 
 import { useGuard, User } from "@authing/guard-react";
@@ -2948,6 +3492,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   mounted() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
@@ -2968,6 +3513,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
+  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
   import { onMounted } from "vue";
 
   import { useGuard } from "@authing/guard-vue3";
@@ -2994,6 +3540,7 @@ export default {
 ::: tab Angular
 
 ```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component, ChangeDetectorRef } from "@angular/core";
 
 import { GuardService, User } from "@authing/guard-angular";
@@ -3025,6 +3572,7 @@ export class EmbedComponent {
 
 ::: tab CDN
 ```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 guard.on("login", (userInfo) => {
   console.log(userInfo);
 });

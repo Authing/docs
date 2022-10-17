@@ -1080,18 +1080,18 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/",
         },
         {
-          title: "更改日志",
+          title: "更新日志",
           children: [
             {
-              title: "Web Guard 更改日志",
+              title: "Web Guard 更新日志",
               path: "/reference/guard/v2/guard-changelog.md",
             },
             {
-              title: "iOS Guard 更改日志",
+              title: "iOS Guard 更新日志",
               path: "/reference/sdk-for-ios/ios-guard-changelog.md",
             },
             {
-              title: "Android Guard 更改日志",
+              title: "Android Guard 更新日志",
               path: "/reference/sdk-for-android/version.md",
             },
          ],
@@ -1512,7 +1512,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/onpremise",
         },
         {
-          title: "Android Guard 更改日志",
+          title: "Android Guard 更新日志",
           path: "/reference/sdk-for-android/version",
         },
       ],
@@ -1672,7 +1672,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-ios/onpremise",
         },
         {
-          title: "iOS Guard 更改日志",
+          title: "iOS Guard 更新日志",
           path: "/reference/sdk-for-ios/ios-guard-changelog"
         },
         {
