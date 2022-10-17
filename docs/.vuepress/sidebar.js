@@ -1083,7 +1083,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "Web Guard",
-          path: "/reference/guard/v2/web.md",
+          path: "/reference/guard/v2/web",
         },
         {
           title: "iOS Guard",
@@ -1686,7 +1686,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-ios/onpremise",
         },
         {
-          title: "Guard iOS Changelog",
+          title: "iOS Guard 更新日志",
           path: "/reference/sdk-for-ios/ios-guard-changelog"
         },
         {
@@ -1716,6 +1716,10 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-flutter/onpremise",
+        },
+        {
+          title: "Flutter SDK Changelog",
+          path: "/reference/sdk-for-flutter/flutter-changelog",
         },
       ],
     },
