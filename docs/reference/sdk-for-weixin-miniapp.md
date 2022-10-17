@@ -437,7 +437,7 @@ export default {
 |username|String|用户名|-|否|
 |email|String|邮箱|-|否|
 |phone|String|手机号|-|否|
-|account|String|用户账号（用户名/手机号/邮箱|-|否|
+|account|String|用户账号（用户名/手机号/邮箱）|-|否|
 
 #### 出参
 
