@@ -18,7 +18,7 @@ static Future<AuthResult> registerByEmail(String email, String password) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.registerByEmail("x@example.com", "strong");
+AuthResult result = await AuthClient.registerByEmail("test@example.com", "strong");
 User user = result.user;
 ```
 
@@ -45,7 +45,7 @@ static Future<AuthResult> registerByUserName(String username, String password) a
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.registerByUserName("nextgeneration", "strong");
+AuthResult result = await AuthClient.registerByUserName("test", "strong");
 User user = result.user;
 ```
 
@@ -57,7 +57,7 @@ User user = result.user;
 
 ## 短信验证码注册
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
+通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码。
 
 ```dart
 static Future<AuthResult> registerByPhoneCode(String phone, String code, String password) async
@@ -72,7 +72,7 @@ static Future<AuthResult> registerByPhoneCode(String phone, String code, String 
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.registerByPhoneCode("13012345678", "1121", "strong");
+AuthResult result = await AuthClient.registerByPhoneCode("188xxxx8888", "code", "strong");
 User user = result.user;
 ```
 
@@ -97,7 +97,7 @@ static Future<AuthResult> loginByAccount(String account, String password) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.loginByAccount("your account", "your password");
+AuthResult result = await AuthClient.loginByAccount("test", "your password");
 User user = result.user; // user info
 ```
 
@@ -123,7 +123,7 @@ static Future<AuthResult> loginByPhoneCode(String phone, String code) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.loginByPhoneCode("13012345678", "1234");
+AuthResult result = await AuthClient.loginByPhoneCode("188xxxx8888", "code");
 User user = result.user; // get user info
 ```
 
@@ -133,7 +133,7 @@ User user = result.user; // get user info
 
 <br>
 
-## LDAP 登录
+<!-- ## LDAP 登录
 
 ```dart
 static Future<AuthResult> loginByLDAP(String username, String password) async
@@ -144,9 +144,9 @@ static Future<AuthResult> loginByLDAP(String username, String password) async
 * *username* ldap 用户名
 * *password* 明文密码
 
-**示例**
+**示例** -->
 
-```dart
+<!-- ```dart
 AuthResult result = await AuthClient.loginByLDAP("your username", "your password");
 User user = result.user; // user info
 ```
@@ -155,9 +155,9 @@ User user = result.user; // user info
 
 * 2333 帐号或密码错误
 
-<br>
+<br> -->
 
-## AD 登录
+<!-- ## AD 登录
 
 ```dart
 static Future<AuthResult> loginByAD(String username, String password) async
@@ -177,11 +177,11 @@ User user = result.user; // user info
 
 **错误码**
 
-<br>
+<br> -->
 
 ## 获取当前登录的用户信息
 
-获取当前登录的用户信息，需要先登录
+获取当前登录的用户信息，需要先登录。
 
 ```dart
 static Future<AuthResult> getCurrentUser() async
@@ -202,7 +202,7 @@ User user = result.user; // user info
 
 ## 退出登录
 
-退出登录。同时清除内存以及本地持久化的 token 和用户信息
+退出登录，同时清除内存以及本地持久化的 token 和用户信息。
 
 ```dart
 static Future<AuthResult> logout() async
@@ -223,7 +223,7 @@ var code = result.code;
 
 ## 发送短信验证码
 
-向指定的手机发送短信验证码
+向指定的手机发送短信验证码。
 
 ```dart
 static Future<AuthResult> sendSms(String phone, [String? phoneCountryCode]) async
@@ -237,7 +237,7 @@ static Future<AuthResult> sendSms(String phone, [String? phoneCountryCode]) asyn
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.sendSms("13012345678", "+86");
+AuthResult result = await AuthClient.sendSms("188xxxx8888", "+86");
 var code = result.code;
 ```
 
@@ -249,7 +249,7 @@ var code = result.code;
 
 ## 发送邮件
 
-给指定邮箱发送邮件
+给指定邮箱发送邮件。
 
 ```dart
 static Future<AuthResult> sendEmail(String email, String scene) async
@@ -267,7 +267,7 @@ static Future<AuthResult> sendEmail(String email, String scene) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.sendEmail("cool@gmail.com", "RESET_PASSWORD");
+AuthResult result = await AuthClient.sendEmail("test@example.com", "RESET_PASSWORD");
 var code = result.code;
 ```
 
@@ -279,11 +279,11 @@ var code = result.code;
 
 ## 获取用户自定义数据
 
-获取用户自定义数据，你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)
+获取用户自定义数据，你需要先在用户池[定义用户自定义数据元信息](/guides/users/user-defined-field/)，
 
-用户自定义数据会添加到传入的 userInfo 对象里面
+用户自定义数据会添加到传入的 userInfo 对象里面，
 
-调用此接口需要先登录
+调用此接口需要先登录。
 
 ```dart
 static Future<AuthResult> getCustomData(String userId) async
@@ -308,9 +308,7 @@ var value = AuthClient.currentUser?.customData[0]["key"], "your_custom_field_key
 
 ## 设置用户自定义数据
 
-设置用户的自定义数据。你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配。
-
-调用此接口需要先登录
+设置用户的自定义数据。你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)，且传入值的类型必须和定义的类型匹配，调用此接口需要先登录。
 
 ```dart
 static Future<AuthResult> setCustomData(List data) async
@@ -335,7 +333,7 @@ AuthResult result = await AuthClient.setCustomData(AuthClient.currentUser!.custo
 
 ## 通过短信验证码重置密码
 
-通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码
+通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码。
 
 ```dart
 static Future<AuthResult> resetPasswordByPhoneCode(String phone, String code, String password) async
@@ -350,7 +348,7 @@ static Future<AuthResult> resetPasswordByPhoneCode(String phone, String code, St
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong");
+AuthResult result = await AuthClient.resetPasswordByPhoneCode("188xxxx8888", "code", "strong");
 expect(result.code, 200);
 ```
 
@@ -377,7 +375,7 @@ static Future<AuthResult> resetPasswordByEmailCode(String email, String code, St
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.resetPasswordByEmailCode("cool@gmail.com", "1234", "strong");
+AuthResult result = await AuthClient.resetPasswordByEmailCode("test@example.com", "1234", "strong");
 expect(result.code, 200);
 ```
 
@@ -389,7 +387,7 @@ expect(result.code, 200);
 
 ## 修改用户资料
 
-修改用户资料，此接口不能用于修改手机号、邮箱、密码
+修改用户资料，此接口不能用于修改手机号、邮箱、密码。
 
 ```dart
 static Future<AuthResult> updateProfile(Map map) async
@@ -471,7 +469,7 @@ var code = result.code;
 
 ## 绑定手机号
 
-为当前登录用户绑定手机号。调用 [发送短信验证码](#发送短信验证码) 获取验证码。
+为当前登录用户绑定手机号，调用 [发送短信验证码](#发送短信验证码) 获取验证码。
 
 ```dart
 static Future<AuthResult> bindPhone(String phone, String code) async
@@ -485,7 +483,7 @@ static Future<AuthResult> bindPhone(String phone, String code) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.bindPhone("13012345678", "1234");
+AuthResult result = await AuthClient.bindPhone("188xxxx8888", "1234");
 var code = result.code;
 ```
 
@@ -552,7 +550,7 @@ AuthResult result = await AuthClient.unbindPhone();
 
 ## 绑定邮箱
 
-为当前登录用户绑定邮箱。调用 [发送邮件](#发送邮件) 获取验证码。
+为当前登录用户绑定邮箱，调用 [发送邮件](#发送邮件) 获取验证码。
 
 ```dart
 static Future<AuthResult> bindEmail(String email, String code) async
@@ -566,7 +564,7 @@ static Future<AuthResult> bindEmail(String email, String code) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.bindEmail("1@gmail.com", "1234");
+AuthResult result = await AuthClient.bindEmail("test@example.com", "1234");
 var code = result.code;
 ```
 
@@ -617,7 +615,7 @@ static Future<AuthResult> updateEmail(String email, String emailCode,
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.updateEmail("1@gmail.com", "1234");
+AuthResult result = await AuthClient.updateEmail("test@example.com", "1234");
 ```
 
 **错误码**
@@ -735,7 +733,7 @@ Map result = await AuthClient.updateIdToken();
 
 ## 获取当前用户能够访问的应用
 
-获取当前用户能够访问的应用。注意返回的结果数据结构为 NSArray
+获取当前用户能够访问的应用。注意返回的结果数据结构为 NSArray。
 
 ```dart
 static Future<Result> listApplications([int? page = 1, int? limit = 10]) async
@@ -788,7 +786,7 @@ int count = result.data["totalCount"];
 
 ## 获取用户所在组织机构
 
-获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 NSArray
+获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 NSArray。
 
 ```dart
 static Future<Result> listOrgs() async
@@ -815,7 +813,7 @@ String name = list[0][3]["name"]; // 返回第一层，第四级部门的名称
 
 ## 获取角色
 
-获取当前登录用户的角色。注意返回的数据结构为 NSArray
+获取当前登录用户的角色。注意返回的数据结构为 NSArray。
 
 ```dart
 static Future<Result> listRoles([String? namespace]) async
@@ -907,7 +905,7 @@ String result["list"][0]["code"];
 
 ## 首次登录重置密码
 
-在 Authing 控制台启用该功能后，用户首次登录后必须重置密码
+在 Authing 控制台启用该功能后，用户首次登录后必须重置密码。
 
 ```dart
 static Future<AuthResult> resetPasswordByFirstLoginToken(String token, String password) async

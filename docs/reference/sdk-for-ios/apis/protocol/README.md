@@ -15,9 +15,7 @@ OIDCClient 会自动获取控制台默认回调，如需要自定义 scope, redi
 ```swift
 let authRequest = AuthRequest()
 authRequest.scope = "openid"
-OIDCClient(authRequest).loginByAccount(account: account, password: password) { code,  message,  userInfo in
-    //userInfo
-}
+OIDCClient(authRequest).loginByXXX()
 ```
 <br>
 
@@ -97,7 +95,7 @@ func registerByUserName(username: String, password: String, completion: @escapin
 **示例**
 
 ```swift
-OIDCClient().registerByUserName(username: "username", password: "strong") { code, message, userInfo in
+OIDCClient().registerByUserName(username: "test", password: "strong") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -158,7 +156,7 @@ func loginByAccount(account: String, password: String, completion: @escaping(Int
 **示例**
 
 ```swift
-OIDCClient().loginByAccount(account: account, password: password) { code,  message,  userInfo in
+OIDCClient().loginByAccount(account: "test", password: "password") { code,  message,  userInfo in
     print("\(userInfo?.accessToken ?? "")")
     print("\(userInfo?.idToken ?? "")")
     print("\(userInfo?.refreshToken ?? "")")
@@ -230,7 +228,7 @@ func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?
 **示例**
 
 ```swift
-OIDCClient().loginByWechat(authCode) { code, message, userInfo in
+OIDCClient().loginByWechat("authCode") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }

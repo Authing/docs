@@ -4,7 +4,7 @@
 
 ## MFA 检测
 
-检测手机号或者邮箱是否可以被用作 MFA
+检测手机号或者邮箱是否可以被用作 MFA。
 
 ```dart
 static Future<bool> mfaCheck(String? phone, String? email) async
@@ -26,7 +26,7 @@ bool r2 = await AuthClient.mfaCheck(null, "abc@gmail.com");
 
 ## 短信验证
 
-通过短信进行多因素认证
+通过短信进行多因素认证，调用此接口之前，需要先调用[发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-flutter/authentication/#发送短信验证码)接口以获取短信验证码。
 
 ```dart
 static Future<AuthResult> mfaVerifyByPhone(String phone, String code) async
@@ -47,7 +47,7 @@ AuthResult result = await AuthClient.mfaVerifyByPhone("13012345678", "1234");
 
 ## 邮箱验证
 
-通过邮件验证码进行多因素认证
+通过邮件验证码进行多因素认证，调用此接口之前，需要先调用[发送邮件](https://docs.authing.cn/v2/reference/sdk-for-flutter/authentication/#发送邮件)获取验证码。
 
 ```dart
 static Future<AuthResult> mfaVerifyByEmail(String email, String code) async
@@ -68,7 +68,7 @@ AuthResult result = await AuthClient.mfaVerifyByEmail("1@gmail.com", "1234");
 
 ## TOTP 验证
 
-通过一次性密码 TOTP (Time-based One Time Password) 进行多因素认证
+通过一次性密码 TOTP (Time-based One Time Password) 进行多因素认证。
 
 ```dart
 static Future<AuthResult> mfaVerifyByTOTP(String code) async
@@ -90,7 +90,7 @@ AuthResult result = await AuthClient.mfaVerifyByTOTP("1234");
 
 用户在绑定 TOTP 时会得到一个恢复码，用户需要安全保存该恢复码，在调用此 API 时，将其作为参数传入。
 
-注意，恢复码验证成功后，会生成新的恢复码，旧的恢复码失效
+注意，恢复码验证成功后，会生成新的恢复码，旧的恢复码失效。
 
 ```dart
 static Future<AuthResult> mfaVerifyByRecoveryCode(String code) async
