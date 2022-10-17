@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在企业微信管理后台及 Authing 管理控制台进行配置请参阅[企业微信移动端（代开发模式）](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/)
+在企业微信管理后台及 Authing 管理控制台进行配置请参阅 [企业微信移动端（代开发模式）](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/)。
 
 <br>
 
