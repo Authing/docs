@@ -32,7 +32,7 @@ sdkConfig:
     icon: Flutter
   javascript:
     name: JavaScript
-    link: /reference/guard/v3/mpa.html
+    link: /reference/guard/v2/web.html
     icon: JavaScript
   reactNative:
     name: React Native
@@ -44,15 +44,15 @@ sdkConfig:
     icon: csharp
   react:
     name: React
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: React-Native
   angular:
     name: Angular
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: Angular
   vue:
     name: Vue
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: Vue
   python:
     name: Python

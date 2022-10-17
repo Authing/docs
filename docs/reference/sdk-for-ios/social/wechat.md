@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在[微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)及 [Authing 管理控制台](https://www.authing.cn/) 进行配置请参阅[微信移动端](https://docs.authing.cn/v2/guides/connections/social/wechat-mobile/)
+在 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN) 及 [Authing 管理控制台](https://www.authing.cn/) 进行配置请参阅 [微信移动端](https://docs.authing.cn/v2/guides/connections/social/wechat-mobile/)。
 
 
 <br>

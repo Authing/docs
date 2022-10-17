@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-## 第一步：新建 Flutter 工程
+## 步骤 1：新建 Flutter 工程
 
 ![](./images/create_project1.png)
 
@@ -11,8 +11,7 @@
 ![](./images/create_project3.png)
 
 
-
-## 第二步：添加依赖
+## 步骤 2：添加 SDK 依赖
 
 在工程的 pubspec.yaml 中，添加以下依赖：
 
@@ -20,11 +19,9 @@
 authing_sdk: ^1.0.0
 ```
 
+## 步骤 3：初始化 SDK
 
-
-## 第三步：初始化
-
-App 启动时，初始化 Authing Flutter SDK
+App 启动时，初始化 Authing Flutter SDK。
 
 ```dart
 import 'package:authing_sdk/authing.dart';
@@ -32,6 +29,6 @@ import 'package:authing_sdk/authing.dart';
 Authing.init(String userPoolId, String appId)
 ```
 
-`userPoolId` 为 Authing 控制台用户池 ID
+**userPoolId** 为 Authing 控制台[用户池 ID](https://docs.authing.cn/v2/guides/faqs/get-userpool-id-and-secret.html)。
 
- `appId` 为 Authing 控制台应用 ID
+**appId** 为 Authing 控制台[应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)。
