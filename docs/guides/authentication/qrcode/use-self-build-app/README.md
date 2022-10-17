@@ -124,8 +124,45 @@ Web 端生成的二维码中包含的原始信息为一串字符串，转换为 
 
 <img src="https://cdn.authing.cn/blog/image%20%28579%29.png" style="display:block;margin: 0 auto;" height="250">
 
-
 这个时候，整个登录流程也就完成了，开发者可以使用 ticket 去换取用户信息了。
+
+Android Nativie：
+
+请先确保已经依赖并初始化 [Android Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-android/)
+
+```java
+// 初始化 Android SDK
+Authing.init(context, "AUTHING_APP_ID");
+
+// 使用 ticket 去换取用户信息
+AuthClient.loginByScannedTicket("ticket", (code, message, data) -> {
+    if (code == 200) {
+        // 登录成功，data：用户信息，包含 token 信息
+    }
+});
+```
+
+IOS Nativie：
+
+请先确保已经依赖并初始化 [IOS Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-ios/)
+
+```swift
+import Guard
+
+// 初始化IOS SDK
+Authing.start(<#AUTHING_APP_ID#>)
+
+// 使用 ticket 去换取用户信息
+AuthClient().loginByScannedTicket(ticket: "ticket") { code, message, data in
+    if (code == 200) {
+        // 登录成功，data：用户信息，包含 token 信息
+    }
+}
+```
+
+其它场景：
+
+请先确保已依赖并初始化 [IOS Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-ios/)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
@@ -134,6 +171,8 @@ const authenticationClient = new AuthenticationClient({
 })
 const user = await authenticationClient.qrcode.exchangeUserInfo('TICKET')
 ```
+
+
 
 ## 接下来
 
