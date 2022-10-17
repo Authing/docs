@@ -17,9 +17,9 @@ implementation 'cn.authing:guard:+'
 implementation 'io.github.yidun:quicklogin:3.1.1'
 ```
 
-> Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
+> Guard 只是 compileOnly 依赖易盾，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-混淆配置，请参考[易顿官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
+混淆配置，请参考[易盾官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
 
 ### 步骤 2：初始化 Guard Android SDK
 
