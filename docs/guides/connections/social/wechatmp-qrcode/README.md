@@ -13,7 +13,7 @@
 ## 注意事项
 
 - 受微信平台要求限制，只有服务号具备 [生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)API 能力，请确保你的公众号是服务号类型。
-- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：开启服务器配置
 
