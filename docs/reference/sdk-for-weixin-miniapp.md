@@ -892,7 +892,7 @@ Page({
   async updatePassword () {
     const [error, res] = await authing.updatePassword({
       newPassword: 'USER_NEW_PASSWORD',
-      oldPassword: 'USER_OLS_PASSWORD',
+      oldPassword: 'USER_OLD_PASSWORD',
       // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
       // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction
       passwordEncryptType: 'sm2'
@@ -915,7 +915,7 @@ export default class Index extends Component<PropsWithChildren> {
   async updatePassword () {
     const [error, res] = await authing.updatePassword({
       newPassword: 'USER_NEW_PASSWORD',
-      oldPassword: 'USER_OLS_PASSWORD',
+      oldPassword: 'USER_OLD_PASSWORD',
       // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
       // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction
       passwordEncryptType: 'sm2'
@@ -934,7 +934,7 @@ export default {
     async updatePassword () {
       const [error, res] = await authing.updatePassword({
         newPassword: 'USER_NEW_PASSWORD',
-        oldPassword: 'USER_OLS_PASSWORD',
+        oldPassword: 'USER_OLD_PASSWORD',
         // 如果使用 rsa，则需要安装 @authing/miniapp-jsencrypt 并在初始化 SDK 时传入 encryptFunction 
         // 如果使用 sm2，则需要安装 @authing/miniapp-sm2encrypt 并在初始化 SDK 时传入 encryptFunction
         passwordEncryptType: 'sm2'
