@@ -88,6 +88,10 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 ::: tab NPM
 ``` shell
 npm install --save @authing/weixin-official-account
+
+or
+
+yarn add @authing/weixin-official-account
 ```
 :::
 

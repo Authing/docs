@@ -1,6 +1,6 @@
-本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}}  提供的 SDK，实现[单点登录](/guides/app-new/sso/)及多个应用之间共享登录态。
+本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}} 提供的 SDK，实现[单点登录](/guides/app-new/sso/)。
 
-本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：@authing/web
+本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：[@authing/web](https://www.npmjs.com/package/@authing/web)
 
 ## Authing Web SDK
 
