@@ -17,7 +17,7 @@
 ```js
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 
@@ -72,105 +72,27 @@ Web 端生成的二维码中包含的原始信息为一串字符串，转换为 
 
 > 要了解这个三个接口的详情，请见完整接口列表页。
 
-下面以 Objective-C 为例，实现同意授权登录：
+**以上三个接口移动端 Android Guard SDK 和 iOS Guard SDK 提供了对应的 API：**
 
-- api 地址为：[http://core.authing.cn/api/v2/qrcode/confirm](http://core.authing.cn/api/v2/qrcode/confirm)
-- 第 9 行在请求头带上了用户登录凭证。
+**Android ：**请先确保移动应用已依赖并初始化 [Android Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-android/)，然后在扫码认证流程中使用[扫码认证 API](https://docs.authing.cn/v2/reference/sdk-for-android/apis/scan/)。
 
-```objectivec
-- (void) ConfirmAuthorization:(NSString *) random{
-    NSURL * api =[NSURL URLWithString:@"http://core.authing.cn/api/v2/qrcode/confirm"];
-    NSDictionary *bodyDict = @{
-        @"random": random,
-    };
-    NSData *body = [NSJSONSerialization dataWithJSONObject:bodyDict options:kNilOptions error:nil];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:api];
-    request.HTTPMethod = @"POST";
-    [request setValue:self.ID_TOKEN forHTTPHeaderField:@"Authorization"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setHTTPBody:body];
+**iOS：**请先确保移动应用已依赖并初始化 [IOS Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-ios/)，然后在扫码认证流程中使用[扫码认证 API](https://docs.authing.cn/v2/reference/sdk-for-ios/apis/scan/)。
 
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        if(httpResponse.statusCode == 200)
-        {
-            NSError *parseError = nil;
-            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-            NSLog(@"The response is - %@",responseDictionary);
-            NSInteger code = [[responseDictionary objectForKey:@"code"] integerValue];
-            if(code == 200)
-            {
-                NSLog(@"SUCCESS");
-            }
-            else
-            {
-                NSLog(@"FAILURE");
-            }
-        }
-        else
-        {
-            NSLog(@"Network Error");
-        }
-    }];
-
-    [dataTask resume];
-}
-```
-
-移动端确认授权之后，Web 将会看到相关提示。
+移动端确认扫码之后，Web 将会看到相关提示。
 
 <img src="https://cdn.authing.cn/blog/image%20%28579%29.png" style="display:block;margin: 0 auto;" height="250">
 
-这个时候，整个登录流程也就完成了，开发者可以使用 ticket 去换取用户信息了。
-
-Android Nativie：
-
-请先确保已经依赖并初始化 [Android Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-android/)
-
-```java
-// 初始化 Android Guard SDK
-Authing.init(context, "AUTHING_APP_ID");
-
-// 使用 ticket 去换取用户信息
-AuthClient.loginByScannedTicket("ticket", (code, message, data) -> {
-    if (code == 200) {
-        // 登录成功，data：用户信息，包含 token 信息
-    }
-});
-```
-
-IOS Nativie：
-
-请先确保已经依赖并初始化 [IOS Guard SDK](https://docs.authing.cn/v2/reference/sdk-for-ios/)
-
-```swift
-import Guard
-
-// 初始化IOS Guard SDK
-Authing.start(<#AUTHING_APP_ID#>)
-
-// 使用 ticket 去换取用户信息
-AuthClient().loginByScannedTicket(ticket: "ticket") { code, message, data in
-    if (code == 200) {
-        // 登录成功，data：用户信息，包含 token 信息
-    }
-}
-```
-
-其它场景：
-
-请先确保已安装 [Authing JavaScript/Node SDK](https://docs.authing.cn/v2/reference/sdk-for-node/)
+移动端同意授权之后，整个登录流程也就完成了，开发者可以使用 ticket 去换取用户信息了。
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 const user = await authenticationClient.qrcode.exchangeUserInfo('TICKET')
 ```
+
+> 你可以在此 [获取 appId 和 appHost](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)。
 
 
 
