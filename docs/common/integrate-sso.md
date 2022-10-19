@@ -252,7 +252,7 @@ Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种�
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
-```tsx{22-27}
+```tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Authing } from '@authing/web'
@@ -275,26 +275,26 @@ function App() {
 
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
-    });
-  }, []);
+    })
+  }, [])
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
+  const [loginState, setLoginState] = useState<LoginState | null>()
 
   /**
    * 以跳转方式打开 Authing 托管的登录页
    */
-  const login = () => {
+  const loginWithRedirect = () => {
     // 将用户重定向到 Authing 认证端点进行登录，需要配合 handleRedirectCallback 使用
-    authing.loginWithRedirect();
-  };
+    authing.loginWithRedirect()
+  }
 
   /**
    * 获取用户的登录状态
    */
   const getLoginState = useCallback(async () => {
-    const state = await authing.getLoginState();
-    setLoginState(state);
-  }, [authing]);
+    const loginState = await authing.getLoginState()
+    setLoginState(loginState)
+  }, [])
 
   useEffect(() => {
     // 判断当前 URL 是否为 Authing 登录回调 URL
@@ -309,14 +309,14 @@ function App() {
         window.location.replace('/');
       });
     } else {
-      getLoginState();
+      getLoginState()
     }
-  }, [getLoginState, authing]);
+  }, [])
 
   return (
     <div className="App">
       <p>
-        <button onClick={login}>loginWithRedirect</button>
+        <button onClick={loginWithRedirect}>Login With Redirect</button>
       </p>
       <p>
         <code>{JSON.stringify(loginState)}</code>
@@ -325,7 +325,7 @@ function App() {
   );
 }
 
-export default App;
+export default App
 ```
 :::
 
@@ -582,16 +582,12 @@ const params: {
   // 发起登录的 URL，若实例化 Authing 时设置了 redirectToOriginalUri， 会在登录结束后重定向回到此页面，默认为当前 URL
   originalUri?: string;
 
-  // 即使在用户已登录时也提示用户再次登录
+  // 即使在用户已登录时也提示用户再次登录，默认为 false
   forced?: boolean;
-
-  // 自定义的中间状态，会被传递到回调端点
-  customState?: any;
 } = {
   redirectUri: 'YOUR_REDIRECT_URL',
   originalUri: 'YOUR_ORIGINAL_URL',
-  forced: false,
-  customState: {}
+  forced: true
 }
 
 authing.loginWithRedirect(params);
@@ -609,11 +605,8 @@ export default {
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: 'YOUR_ORIGINAL_URL',
 
-        // 即使在用户已登录时也提示用户再次登录
-        forced: false,
-
-        // 自定义的中间状态，会被传递到回调端点
-        customState: {},
+        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        forced: true
       }
 
       this.authing.loginWithRedirect(params)
@@ -634,11 +627,8 @@ export default {
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: 'YOUR_ORIGINAL_URL',
 
-        // 即使在用户已登录时也提示用户再次登录
-        forced: false,
-
-        // 自定义的中间状态，会被传递到回调端点
-        customState: {},
+        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        forced: true
       }
 
       authing.loginWithRedirect(params)
@@ -663,16 +653,12 @@ export class AppComponent {
       // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
       originalUri?: string;
 
-      // 即使在用户已登录时也提示用户再次登录
-      forced?: boolean;
-
-      // 自定义的中间状态，会被传递到回调端点
-      customState?: any;
+      // 即使在用户已登录时也提示用户再次登录，默认为 false
+      forced?: boolean
     } = {
       redirectUri: 'YOUR_REDIRECT_URL',
       originalUri: 'YOUR_ORIGINAL_URL',
-      forced: false,
-      customState: {}
+      forced: true
     }
 
     this.authing.loginWithRedirect(params)
@@ -681,7 +667,7 @@ export class AppComponent {
 ```
 :::
 
-::: CDN
+::: tab CDN
 ``` javascript
 const params = {
   redirectUri: 'YOUR_REDIRECT_URL',
@@ -689,11 +675,8 @@ const params = {
   // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
   originalUri: 'YOUR_ORIGINAL_URL',
 
-  // 即使在用户已登录时也提示用户再次登录
-  forced: false,
-
-  // 自定义的中间状态，会被传递到回调端点
-  customState: {}
+  // 即使在用户已登录时也提示用户再次登录，默认为 false
+  forced: true
 }
 
 authing.loginWithRedirect(params)
@@ -707,9 +690,11 @@ authing.loginWithRedirect(params)
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ```tsx{22-28}
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { Authing } from '@authing/web'
+
+import type { LoginState } from '@authing/web/dist/typings/src/global'
 
 function App() {
   const authing = useMemo(() => {
@@ -726,34 +711,34 @@ function App() {
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
     })
-  }, []);
+  }, [])
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
+  const [loginState, setLoginState] = useState<LoginState | null>()
 
   /**
    * 以弹窗方式打开 Authing 托管的登录页
    */
-  const login = async () => {
-    const res = await authing.loginWithPopup();
-    setLoginState(res);
-  };
+  const loginWithPopup = async () => {
+    const loginState = await authing.loginWithPopup()
+    setLoginState(loginState)
+  }
 
   /**
    * 获取用户的登录状态
    */
   const getLoginState = useCallback(async () => {
-    const state = await authing.getLoginState();
-    setLoginState(state);
-  }, []);
+    const state = await authing.getLoginState()
+    setLoginState(state)
+  }, [])
 
   useEffect(() => {
-    getLoginState();
+    getLoginState()
   }, []);
 
   return (
     <div className="App">
       <p>
-        <button onClick={login}>login</button>
+        <button onClick={loginWithPopup}>Login With Popup</button>
       </p>
       <p>
         <code>{JSON.stringify(loginState)}</code>
@@ -877,9 +862,14 @@ export default defineComponent({
 
 ::: tab Angular
 ```ts{31-39}
-import { Component } from '@angular/core';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import { Component } from '@angular/core'
+
+import { Authing } from '@authing/web'
+
+import type {
+  LoginState,
+  NormalError
+} from '@authing/web/dist/typings/src/global';
 
 @Component({
   selector: 'app-root',
@@ -887,7 +877,6 @@ import type { LoginState } from '@authing/web/dist/typings/src/global';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   loginState: LoginState | null = null;
 
   private authing = new Authing({
@@ -903,7 +892,19 @@ export class AppComponent {
     // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
     userPoolId: 'AUTHING_USER_POOL_ID'
   });
+
+  /**
+   * 以弹窗方式打开 Authing 托管的登录页
+   */
+  async loginWithPopup() {
+    const res = await this.authing.loginWithPopup()
+
+    console.log('loginWithPopup res: ', res)
+    
+    this.loginState = res
+  }
 }
+
 ```
 :::
 
@@ -923,7 +924,7 @@ const authing = new AuthingFactory.Authing({
   userPoolId: 'AUTHING_USER_POOL_ID'
 });
 
-loginWithPopup.onclick = function () {
+document.querySelector('#loginWithPopup').onclick = function () {
   authing.loginWithPopup().then(loginState => {
     console.log('loginState: ', loginState)
   })
@@ -941,13 +942,15 @@ loginWithPopup.onclick = function () {
 ```ts
 const login = async () => {
   const params: {
-    // 即使在用户已登录时也提示用户再次登录
+    // 即使在用户已登录时也提示用户再次登录，默认为 false
     forced?: boolean;
   } = {
-    forced: false,
+    forced: true,
   };
-  const res = await authing.loginWithPopup(params);
-  setLoginState(res);
+
+  const res = await authing.loginWithPopup(params)
+  
+  console.log(res)
 };
 ```
 :::
@@ -967,10 +970,8 @@ export default {
      */
     async login() {
       const params = {
-        redirectUri: "YOUR_REDIRECT_URL",
-
-        // 即使在用户已登录时也提示用户再次登录
-        forced: false,
+        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        forced: true,
       };
       const res = await this.authing.loginWithPopup(params);
       this.loginState = res;
@@ -989,10 +990,8 @@ export default {
      */
     const login = async () => {
       const params = {
-        redirectUri: "YOUR_REDIRECT_URL",
-
-        // 即使在用户已登录时也提示用户再次登录
-        forced: false,
+        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        forced: true,
       };
       const res = await authing.loginWithPopup(params);
       state.loginState = res;
@@ -1014,17 +1013,15 @@ export class AppComponent {
    */
   async login() {
     const params: {
-      // 回调登录 URL，默认为初始化参数中的 redirectUri
-      redirectUri?: string;
-
-      // 即使在用户已登录时也提示用户再次登录
+      // 即使在用户已登录时也提示用户再次登录，默认为 false
       forced?: boolean;
     } = {
-      redirectUri: 'YOUR_REDIRECT_URL',
-      forced: false,
-    };
+      forced: true,
+    }
+
     const res = await this.authing.loginWithPopup(params);
-    this.loginState = res;
+    
+    console.log(res)
   };
 }
 ```
@@ -1033,14 +1030,11 @@ export class AppComponent {
 ::: tab CDN
 ``` javascript
 const params = {
-  // 回调登录 URL，默认为初始化参数中的 redirectUri
-  redirectUri: "YOUR_REDIRECT_URL",
-
-  // 即使在用户已登录时也提示用户再次登录
-  forced: false
+  // 即使在用户已登录时也提示用户再次登录，默认为 false
+  forced: true
 }
 
-authing.loginWithRedirect(params)
+authing.loginWithPopup(params)
 ```
 :::
 
@@ -1052,9 +1046,11 @@ authing.loginWithRedirect(params)
 
 ::: tab React
 ```tsx{22-44}
-import React, { useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import React, { useEffect, useMemo, useState } from 'react'
+
+import { Authing } from '@authing/web'
+
+import type { LoginState } from '@authing/web/dist/typings/src/global'
 
 function App() {
   const authing = useMemo(() => {
@@ -1070,10 +1066,10 @@ function App() {
 
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
-    });
-  }, []);
+    })
+  }, [])
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
+  const [loginState, setLoginState] = useState<LoginState | null>()
 
   useEffect(() => {
     // 判断当前 URL 是否为 Authing 登录回调 URL
@@ -1245,7 +1241,6 @@ export default defineComponent({
         });
       } else {
         console.log("normal");
-
         // 静默登录，直接获取到用户信息
         getLoginState();
       }
@@ -1346,11 +1341,16 @@ if (authing.isRedirectCallback()) {
   console.log('redirect')
   authing.handleRedirectCallback().then((loginState) => {
     console.log('loginState: ', loginState)
+    // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
     window.location.replace('/')
   })
 } else {
   authing.getLoginState().then(loginState => {
     console.log('loginState: ', loginState)
+    if (!loginState) {
+      // 静默登录。取不到用户信息直接跳转到授权中心
+      authing.loginWithRedirect();
+    }
   })
 }
 ```
@@ -1360,10 +1360,10 @@ if (authing.isRedirectCallback()) {
 
 ### 四、高级使用
 
-每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Web SDK 默认会使用缺省参数。如果你你需要精细控制登录请求参数，可以参考本示例。
+每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Web SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
-import { Authing } from '@authing/web';
+import { Authing } from '@authing/web'
 
 const authing = new Authing({
   // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
@@ -1409,17 +1409,19 @@ const authing = new Authing({
 
 ## 第七步：登录后的处理
 
-### 检查登录态并获取 Token
+### 获取 Token
 
-如果你你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，该方法会抛出错误：
+如果你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，登录状态为 `null`：
 
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
 ```tsx{29-36}
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { Authing } from '@authing/web'
+
+import type { LoginState } from '@authing/web/dist/typings/src/global'
 
 function App() {
   const authing = useMemo(() => {
@@ -1436,47 +1438,20 @@ function App() {
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
     });
-  }, []);
+  }, [])
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  const login = () => {
-    authing.loginWithRedirect();
-  };
+  const [loginState, setLoginState] = useState<LoginState | null>()
 
   /**
    * 获取用户的登录状态
    */
   const getLoginState = useCallback(async () => {
-    const state = await authing.getLoginState();
-    setLoginState(state);
-  }, [authing]);
-
-  useEffect(() => {
-    // 判断当前 URL 是否为 Authing 登录回调 URL
-    if (authing.isRedirectCallback()) {
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      authing.handleRedirectCallback().then((res) => {
-        setLoginState(res);
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      getLoginState();
-    }
-  }, [getLoginState, authing]);
+    const loginState = await authing.getLoginState()
+    setLoginState(loginState)
+  }, [])
 
   return (
     <div className="App">
-      <p>
-        <button onClick={login}>login</button>
-      </p>
       <p>
         <code>{JSON.stringify(loginState)}</code>
       </p>
@@ -1545,15 +1520,8 @@ export default {
      * 获取用户的登录状态
      */
     async getLoginState() {
-      const state = await this.authing.getLoginState();
+      const state = await this.authing.getLoginState({ ignoreCache: true });
       this.loginState = state;
-    },
-
-    /**
-     * 以跳转方式打开 Authing 托管的登录页
-     */
-    login() {
-      this.authing.loginWithRedirect();
     },
   },
 };
@@ -1594,19 +1562,12 @@ export default defineComponent({
      * 获取用户的登录状态
      */
     const getLoginState = async () => {
-      const res = await authing.getLoginState();
+      const res = await authing.getLoginState({ ignoreCache: true });
       state.loginState = res;
 
       if (!res) {
         authing.loginWithRedirect();
       }
-    };
-
-    /**
-     * 以跳转方式打开 Authing 托管的登录页
-     */
-    const login = () => {
-      authing.loginWithRedirect();
     };
 
     onMounted(() => {
@@ -1633,7 +1594,6 @@ export default defineComponent({
 
     return {
       ...toRefs(state),
-      login,
     };
   },
 });
@@ -1643,9 +1603,11 @@ export default defineComponent({
 
 ::: tab Angular
 ```ts{53-59}
-import { Component } from '@angular/core';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import { Component } from '@angular/core'
+
+import { Authing } from '@authing/web'
+
+import type { LoginState } from '@authing/web/dist/typings/src/global'
 
 @Component({
   selector: 'app-root',
@@ -1668,40 +1630,13 @@ export class AppComponent {
 
     // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
     userPoolId: 'AUTHING_USER_POOL_ID'
-  });
-
-  ngOnInit() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log('redirect');
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      this.getLoginState();
-    }
-  }
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  login() {
-    this.authing.loginWithRedirect();
-  }
+  })
 
   /**
    * 获取用户的登录状态
    */
   async getLoginState() {
-    const state = await this.authing.getLoginState();
-    this.loginState = state;
+    this.loginState = await this.authing.getLoginState()
   }
 }
 ```
@@ -1709,26 +1644,24 @@ export class AppComponent {
 
 ::: tab CDN
 ``` javascript
-authing.getLoginState().then(loginState => {
+authing.getLoginState({ ignoreCache: true }).then(loginState => {
   console.log('loginState: ', loginState)
 })
 ```
 :::
 ::::
+
 ### 获取用户信息
-
-你需要使用 Access Token 获取用户的个人信息：
-
-1. 用户初次登录成功时可以在回调函数中拿到用户的 Access Token，然后使用 Access Token 获取用户信息；
-2. 如果用户已经登录，你你可以先获取用户的 Access Token ，然后使用 Access Token 获取用户信息。
 
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
 ```tsx{38-50}
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/web';
-import type { LoginState, IUserInfo, NormalError } from '@authing/web/dist/typings/src/global';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { Authing } from '@authing/web'
+
+import type { IUserInfo, NormalError } from '@authing/web/dist/typings/src/global'
 
 function App() {
   const authing = useMemo(() => {
@@ -1744,67 +1677,26 @@ function App() {
 
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
-    });
-  }, []);
+    })
+  }, [])
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
-  const [userInfo, setUserInfo] = useState<IUserInfo | NormalError | null>();
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  const login = () => {
-    authing.loginWithRedirect();
-  };
-
-  /**
-   * 获取用户的登录状态
-   */
-  const getLoginState = useCallback(async () => {
-    const state = await authing.getLoginState();
-    setLoginState(state);
-  }, [authing]);
+  const [userInfo, setUserInfo] = useState<IUserInfo | NormalError | null>()
 
   /**
    * 用 Access Token 获取用户身份信息
    */
   const getUserInfo = async () => {
-    if (!loginState) {
-      alert("用户未登录");
-      return;
-    }
-    const userInfo = await authing.getUserInfo({
-      accessToken: loginState?.accessToken,
-    });
-    setUserInfo(userInfo);
-  };
-
-  useEffect(() => {
-    // 判断当前 URL 是否为 Authing 登录回调 URL
-    if (authing.isRedirectCallback()) {
-      console.log('redirect');
-      authing.handleRedirectCallback().then((res) => {
-        setLoginState(res);
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      getLoginState();
-    }
-  }, [getLoginState, authing]);
+    const userInfo = await authing.getUserInfo()
+    setUserInfo(userInfo)
+  }
 
   return (
     <div className="App">
       <p>
-        <button onClick={login}>login</button>&nbsp;
-        <button onClick={getUserInfo}>getUserInfo</button>&nbsp;
+        <button onClick={getUserInfo}>Get User Info</button>
       </p>
       <p>
-        loginState：
-        <code>{JSON.stringify(loginState)}</code>
-      </p>
-      <p>
-        userInfo：
+        User Info：
         <code>{JSON.stringify(userInfo)}</code>
       </p>
     </div>
@@ -1887,15 +1779,11 @@ export default {
      * 获取用户的登录状态
      */
     async getLoginState() {
-      const state = await this.authing.getLoginState();
-      this.loginState = state;
-    },
-
-    /**
-     * 以跳转方式打开 Authing 托管的登录页
-     */
-    login() {
-      this.authing.loginWithRedirect();
+      const res = await this.authing.getLoginState({ ignoreCache: true });
+      if (res) {
+        this.loginState = res;
+        this.getUserInfo();
+      }
     },
   },
 };
@@ -1932,17 +1820,6 @@ export default defineComponent({
       userInfo: null,
     });
 
-    /**
-     * 获取用户的登录状态
-     */
-    const getLoginState = async () => {
-      const res = await authing.getLoginState();
-      state.loginState = res;
-
-      if (!res) {
-        authing.loginWithRedirect();
-      }
-    };
 
     /**
      * 以跳转方式打开 Authing 托管的登录页
@@ -1963,6 +1840,17 @@ export default defineComponent({
         accessToken: state.loginState.accessToken,
       });
       state.userInfo = userInfo;
+    };
+
+    /**
+     * 获取用户的登录状态
+     */
+    const getLoginState = async () => {
+      const res = await authing.getLoginState({ ignoreCache: true });
+      if (res) {
+        state.loginState = res;
+        getUserInfo();
+      }
     };
 
     onMounted(() => {
@@ -1999,20 +1887,26 @@ export default defineComponent({
 :::
 
 ::: tab Angular
+``` html
+<!-- app.component.html -->
+<button (click)="getUserInfo()">Get User Info</button>
+```
 ```ts{46-60}
-import { Component } from '@angular/core';
-import { Authing } from '@authing/web';
-import type { LoginState, IUserInfo, NormalError } from '@authing/web/dist/typings/src/global';
+// app.component.ts
+import { Component } from '@angular/core'
+
+import { Authing } from '@authing/web'
+
+import type { IUserInfo, NormalError } from '@authing/web/dist/typings/src/global'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  loginState: LoginState | null = null;
-  userInfo: IUserInfo | NormalError | null = null;
+  userInfo: IUserInfo | NormalError | null = null
 
   private authing = new Authing({
     // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
@@ -2026,54 +1920,13 @@ export class AppComponent {
 
     // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
     userPoolId: 'AUTHING_USER_POOL_ID'
-  });
-
-  ngOnInit() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log('redirect');
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      this.getLoginState();
-    }
-  }
+  })
 
   /**
-   * 用 Access Token 获取用户身份信息
+   * 获取用户身份信息
    */
   async getUserInfo() {
-    if (!this.loginState) {
-      alert('用户未登录');
-      return;
-    }
-    const userInfo = await this.authing.getUserInfo({
-      accessToken: this.loginState.accessToken,
-    });
-    this.userInfo = userInfo;
-  }
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  login() {
-    this.authing.loginWithRedirect();
-  }
-
-  /**
-   * 获取用户的登录状态
-   */
-  async getLoginState() {
-    const state = await this.authing.getLoginState();
-    this.loginState = state;
+    this.userInfo = await this.authing.getUserInfo()
   }
 }
 ```
@@ -2095,13 +1948,17 @@ document.querySelector('#getUserInfo').onclick = function () {
 
 可以调用 SDK 的 `logoutWithRedirect` 方法退出登录。
 
+::: hint-info
+注意：如果是【单点登出】的场景，则实例化 SDK 时需要传入 `introspectAccessToken` 参数并设置为 `true`
+:::
+
 :::: tabs :options="{ useUrlFragment: false }"
- 
+
 ::: tab React
 ```tsx{36-43}
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { Authing } from '@authing/web'
 
 function App() {
   const authing = useMemo(() => {
@@ -2116,63 +1973,28 @@ function App() {
       redirectUri: 'YOUR_REDIRECT_URL',
 
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
-      userPoolId: 'AUTHING_USER_POOL_ID'
-    });
-  }, []);
+      userPoolId: 'AUTHING_USER_POOL_ID',
 
-  const [loginState, setLoginState] = useState<LoginState | null>();
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  const login = () => {
-    authing.loginWithRedirect();
-  };
+      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
+      // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+      introspectAccessToken: true
+    })
+  }, [])
 
   /**
-   * 获取用户的登录状态
+   * 退出登录
    */
-  const getLoginState = useCallback(async () => {
-    const state = await authing.getLoginState();
-    setLoginState(state);
-  }, [authing]);
-
-  /**
-   * 登出
-   */
-  const logout = async () => {
+  const logoutWithRedirect = async () => {
     await authing.logoutWithRedirect({
       // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
-      redirectUri: '退出登录后的跳转地址'
+      redirectUri: 'YOUR_REDIRECT_URL'
     });
   };
-
-  useEffect(() => {
-    // 判断当前 URL 是否为 Authing 登录回调 URL
-    if (authing.isRedirectCallback()) {
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      authing.handleRedirectCallback().then((res) => {
-        setLoginState(res);
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      getLoginState();
-    }
-  }, [getLoginState, authing]);
 
   return (
     <div className="App">
       <p>
-        <button onClick={login}>login</button>&nbsp;
-        <button onClick={logout}>logout</button>&nbsp;
-      </p>
-      <p>
-        loginState：
-        <code>{JSON.stringify(loginState)}</code>
+        <button onClick={logoutWithRedirect}>Logout With Redirect</button>
       </p>
     </div>
   );
@@ -2193,7 +2015,6 @@ export default {
   data() {
     return {
       authing: null,
-      loginState: null,
     };
   },
 
@@ -2213,49 +2034,15 @@ export default {
     });
   },
 
-  mounted() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log("redirect");
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace("/");
-      });
-    } else {
-      this.getLoginState();
-    }
-  },
-
   methods: {
-    /**
-     * 以跳转方式打开 Authing 托管的登录页
-     */
-    login() {
-      this.authing.loginWithRedirect();
-    },
-
     /**
      * 登出
      */
     logout() {
       this.authing.logoutWithRedirect({
         // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
-        redirectUri: '退出登录后的跳转地址'
+        redirectUri: 'YOUR_REDIRECT_URL'
       });
-    },
-
-    /**
-     * 获取用户的登录状态
-     */
-    async getLoginState() {
-      const state = await this.authing.getLoginState();
-      this.loginState = state;
     },
   },
 };
@@ -2307,19 +2094,20 @@ export default defineComponent({
 :::
 
 ::: tab Angular
+``` html
+<button (click)="logoutWithRedirect()">Logout With Redirect</button>
+```
 ```ts{52-59}
-import { Component } from '@angular/core';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+import { Component } from '@angular/core'
+
+import { Authing } from '@authing/web'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  loginState: LoginState | null = null;
 
   private authing = new Authing({
     // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
@@ -2332,56 +2120,37 @@ export class AppComponent {
     redirectUri: 'YOUR_REDIRECT_URL',
 
     // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
-    userPoolId: 'AUTHING_USER_POOL_ID'
-  });
+    userPoolId: 'AUTHING_USER_POOL_ID',
 
-  ngOnInit() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log('redirect');
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace('/');
-      });
-    } else {
-      this.getLoginState();
-    }
-  }
-
-  /**
-   * 以跳转方式打开 Authing 托管的登录页
-   */
-  login() {
-    this.authing.loginWithRedirect();
-  }
+    // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
+    // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+    introspectAccessToken: true
+  })
 
   /**
    * 登出
    */
-  logout() {
+  logoutWithRedirect() {
     this.authing.logoutWithRedirect({
       // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
       redirectUri: 'YOUR_REDIRECT_URL'
-    });
-  }
-
-  /**
-   * 获取用户的登录状态
-   */
-  async getLoginState() {
-    const state = await this.authing.getLoginState();
-    this.loginState = state;
+    })
   }
 }
 ```
 :::
+::: tab CDN
+``` javascript
+document.querySelector('#logoutWithRedirect').onclick = function () {
+  authing.logoutWithRedirect({
+    // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+    redirectUri: 'YOUR_REDIRECT_URL'
+  })
+}
+```
+:::
 ::::
+
 
 ## 获取帮助 <a id="get-help"></a>
 
