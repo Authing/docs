@@ -130,8 +130,12 @@ export default App;
 :::
 
 ::: tab Vue2
-``` javascript
-// App.vue
+``` vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app"></div>
+</template>
+<script>
 import { Authing } from "@authing/web"
 
 export default {
@@ -145,7 +149,7 @@ export default {
     this.authing = new Authing({
       // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
       domain: 'AUTHING_DOMAIN_URL',
-      
+
       // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
       appId: 'AUTHING_APP_ID',
 
@@ -157,11 +161,14 @@ export default {
     })
   }
 }
+</script>
 ```
 :::
 
 ::: tab Vue3
-``` typescript
+``` vue
+<script>
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue
 // App.vue
 import { defineComponent } from 'vue'
 
@@ -174,7 +181,7 @@ export default defineComponent({
     const authing = new Authing({
       // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
       domain: 'AUTHING_DOMAIN_URL',
-      
+
       // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
       appId: 'AUTHING_APP_ID',
 
@@ -186,6 +193,7 @@ export default defineComponent({
     })
   },
 })
+</script>
 ```
 :::
 
@@ -330,7 +338,13 @@ export default App;
 :::
 
 ::: tab Vue2
-```html{54-59}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="login">Login With Redirect</button>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -340,7 +354,6 @@ export default {
   data() {
     return {
       authing: null,
-      loginState: null,
     };
   },
 
@@ -348,7 +361,7 @@ export default {
     this.authing = new Authing({
       // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
       domain: 'AUTHING_DOMAIN_URL',
-      
+
       // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
       appId: 'AUTHING_APP_ID',
 
@@ -358,20 +371,6 @@ export default {
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID'
     });
-  },
-
-  mounted() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log("redirect");
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace("/");
-      });
-    } else {
-      this.getLoginState();
-    }
   },
 
   methods: {
@@ -381,14 +380,6 @@ export default {
     login() {
       this.authing.loginWithRedirect();
     },
-
-    /**
-     * 获取用户的登录状态
-     */
-    async getLoginState() {
-      const state = await this.authing.getLoginState();
-      this.loginState = state;
-    },
   },
 };
 </script>
@@ -396,9 +387,15 @@ export default {
 :::
 
 ::: tab Vue3
-```html{47-54}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div>
+    <button @click="login">Login With Redirect</button>
+  </div>
+</template>
 <script>
-import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { defineComponent } from "vue";
 
 import { Authing } from "@authing/web";
 
@@ -408,7 +405,7 @@ export default defineComponent({
     const authing = new Authing({
       // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
       domain: 'AUTHING_DOMAIN_URL',
-      
+
       // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
       appId: 'AUTHING_APP_ID',
 
@@ -419,18 +416,6 @@ export default defineComponent({
       userPoolId: 'AUTHING_USER_POOL_ID'
     });
 
-    const state = reactive({
-      loginState: null,
-    });
-
-    /**
-     * 获取用户的登录状态
-     */
-    const getLoginState = async () => {
-      const res = await authing.getLoginState();
-      state.loginState = res;
-    };
-
     /**
      * 以跳转方式打开 Authing 托管的登录页
      */
@@ -438,27 +423,7 @@ export default defineComponent({
       authing.loginWithRedirect();
     };
 
-    onMounted(() => {
-      // 校验当前 url 是否是登录回调 URL
-      if (authing.isRedirectCallback()) {
-        console.log("redirect");
-
-        /**
-         * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-         * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-         */
-        authing.handleRedirectCallback().then((res) => {
-          state.loginState = res;
-          // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-          window.location.replace("/");
-        });
-      } else {
-        getLoginState();
-      }
-    });
-
     return {
-      ...toRefs(state),
       login,
     };
   },
@@ -548,19 +513,6 @@ const authing = new AuthingFactory.Authing({
   // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
   userPoolId: 'AUTHING_USER_POOL_ID'
 })
-
-if (authing.isRedirectCallback()) {
-  console.log('redirect')
-  authing.handleRedirectCallback().then((loginState) => {
-    console.log('loginState: ', loginState)
-    // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-    window.location.replace('/')
-  })
-} else {
-  authing.getLoginState().then(loginState => {
-    console.log('loginState: ', loginState)
-  })
-}
 
 document.querySelector('#loginWithRedirect').onclick = function () {
   authing.loginWithRedirect()
@@ -767,7 +719,21 @@ export default App;
 :::
 
 ::: tab Vue2
-``` html
+``` vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="login">Login With Popup</button>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -794,9 +760,6 @@ export default {
       userPoolId: 'AUTHING_USER_POOL_ID'
     });
   },
-  mounted() {
-    this.getLoginState();
-  },
   methods: {
     /**
      * 以弹窗方式打开 Authing 托管的登录页
@@ -805,13 +768,6 @@ export default {
       const res = await this.authing.loginWithPopup();
       this.loginState = res;
     },
-    /**
-     * 获取用户的登录状态
-     */
-    async getLoginState() {
-      const state = await this.authing.getLoginState();
-      this.loginState = state;
-    },
   },
 };
 </script>
@@ -819,9 +775,23 @@ export default {
 :::
 
 ::: tab Vue3
-```html
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div>
+    <button @click="login">Login With Popup</button>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
-import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from "vue";
 
 import { Authing } from "@authing/web";
 
@@ -848,22 +818,12 @@ export default defineComponent({
     });
 
     /**
-     * 获取用户的登录状态
-     */
-    const getLoginState = async () => {
-      const res = await authing.getLoginState();
-      state.loginState = res;
-    };
-
-    /**
      * 以弹窗方式打开 Authing 托管的登录页
      */
     const login = async () => {
       const res = await authing.loginWithPopup();
       state.loginState = res;
     };
-
-    onMounted(getLoginState);
 
     return {
       ...toRefs(state),
@@ -955,12 +915,6 @@ const login = async () => {
 ::: tab Vue2
 ```js
 export default {
-  data() {
-    return {
-      authing: null,
-      loginState: null,
-    }
-  },
   methods: {
     /**
      * 以弹窗方式打开 Authing 托管的登录页
@@ -970,8 +924,7 @@ export default {
         // 即使在用户已登录时也提示用户再次登录
         forced: true,
       };
-      const res = await this.authing.loginWithPopup(params);
-      this.loginState = res;
+      await this.authing.loginWithPopup(params);
     },
   },
 }
@@ -990,8 +943,7 @@ export default {
         // 即使在用户已登录时也提示用户再次登录
         forced: true,
       };
-      const res = await authing.loginWithPopup(params);
-      state.loginState = res;
+      await authing.loginWithPopup(params);
     };
 
     return {
@@ -1116,7 +1068,20 @@ export default App;
 :::
 
 ::: tab Vue2
-```html{39-62}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -1164,9 +1129,8 @@ export default {
       console.log("normal");
 
       this.authing.getLoginState().then((res) => {
-        if (res) {
-          this.loginState = res;
-        } else {
+        this.loginState = res;
+        if (!res) {
           // 静默登录。取不到用户信息直接跳转到授权中心
           this.authing.loginWithRedirect();
         }
@@ -1179,7 +1143,20 @@ export default {
 :::
 
 ::: tab Vue3
-```html{48-65}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
 import { defineComponent, onMounted, reactive, toRefs } from "vue";
 import { Authing } from "@authing/web";
@@ -1482,7 +1459,21 @@ export default App;
 :::
 
 ::: tab Vue2
-``` html
+``` vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="getLoginState">Get Login State</button>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -1512,33 +1503,12 @@ export default {
     });
   },
 
-  mounted() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log("redirect");
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace("/");
-      });
-    } else {
-      console.log("normal");
-
-      this.getLoginState();
-    }
-  },
-
   methods: {
     /**
      * 获取用户的登录状态
      */
     async getLoginState() {
-      const state = await this.authing.getLoginState({ ignoreCache: true });
+      const state = await this.authing.getLoginState();
       this.loginState = state;
     },
   },
@@ -1548,9 +1518,23 @@ export default {
 :::
 
 ::: tab Vue3
-```html{39-51}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div>
+    <button @click="getLoginState">Get Login State</button>
+    <p v-if="loginState">
+      <textarea
+        cols="100"
+        rows="20"
+        readOnly
+        :value="JSON.stringify(loginState, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
-import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from "vue";
 
 import { Authing } from "@authing/web";
 
@@ -1580,38 +1564,13 @@ export default defineComponent({
      * 获取用户的登录状态
      */
     const getLoginState = async () => {
-      const res = await authing.getLoginState({ ignoreCache: true });
+      const res = await authing.getLoginState();
       state.loginState = res;
-
-      if (!res) {
-        authing.loginWithRedirect();
-      }
     };
-
-    onMounted(() => {
-      // 校验当前 url 是否是登录回调 URL
-      if (authing.isRedirectCallback()) {
-        console.log("redirect");
-
-        /**
-         * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-         * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-         */
-        authing.handleRedirectCallback().then((res) => {
-          state.loginState = res;
-          // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-          window.location.replace("/");
-        });
-      } else {
-        console.log("normal");
-
-        // 静默登录，直接获取到用户信息
-        getLoginState();
-      }
-    });
 
     return {
       ...toRefs(state),
+      getLoginState
     };
   },
 });
@@ -1671,7 +1630,7 @@ export class AppComponent {
    * 获取用户的登录状态
    */
   async getLoginState() {
-    const state = await this.authing.getLoginState({ ignoreCache: true });
+    const state = await this.authing.getLoginState();
     this.loginState = state;
   }
 }
@@ -1680,9 +1639,25 @@ export class AppComponent {
 
 ::: tab CDN
 ``` javascript
-authing.getLoginState({ ignoreCache: true }).then(loginState => {
-  console.log('loginState: ', loginState)
-})
+const authing = new AuthingFactory.Authing({
+  // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
+  domain: 'AUTHING_DOMAIN_URL',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
+  appId: 'AUTHING_APP_ID',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 认证配置 -> 登录回调 URL
+  redirectUri: 'YOUR_REDIRECT_URL',
+
+  // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
+  userPoolId: 'AUTHING_USER_POOL_ID'
+});
+
+document.querySelector('#getLoginState').onclick = function () {
+  authing.getLoginState().then(loginState => {
+    console.log('loginState: ', loginState)
+  })
+}
 ```
 :::
 ::::
@@ -1787,7 +1762,21 @@ export default App;
 :::
   
 ::: tab Vue2
-```html{71-83}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="getUserInfo">Get User Info</button>
+    <p v-if="userInfo">
+      <textarea
+        cols="100"
+        rows="15"
+        readOnly
+        :value="JSON.stringify(userInfo, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -1797,7 +1786,6 @@ export default {
   data() {
     return {
       authing: null,
-      loginState: null,
       userInfo: null,
     };
   },
@@ -1818,51 +1806,13 @@ export default {
     });
   },
 
-  mounted() {
-    // 校验当前 url 是否是登录回调 URL
-    if (this.authing.isRedirectCallback()) {
-      console.log("redirect");
-
-      /**
-       * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-       * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-       */
-      this.authing.handleRedirectCallback().then((res) => {
-        this.loginState = res;
-        // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-        window.location.replace("/");
-      });
-    } else {
-      console.log("normal");
-
-      this.getLoginState();
-    }
-  },
-
   methods: {
     /**
-     * 用 Access Token 获取用户身份信息
+     * 获取用户身份信息
      */
     async getUserInfo() {
-      if (!this.loginState) {
-        alert("用户未登录");
-        return;
-      }
-      const userInfo = await this.authing.getUserInfo({
-        accessToken: this.loginState.accessToken,
-      });
+      const userInfo = await this.authing.getUserInfo();
       this.userInfo = userInfo;
-    },
-
-    /**
-     * 获取用户的登录状态
-     */
-    async getLoginState() {
-      const res = await this.authing.getLoginState({ ignoreCache: true });
-      if (res) {
-        this.loginState = res;
-        this.getUserInfo();
-      }
     },
   },
 };
@@ -1871,9 +1821,23 @@ export default {
 :::
 
 ::: tab Vue3
-```html{70-84}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="getUserInfo">Get User Info</button>
+    <p v-if="userInfo">
+      <textarea
+        cols="100"
+        rows="15"
+        readOnly
+        :value="JSON.stringify(userInfo, null, 2)"
+      ></textarea>
+    </p>
+  </div>
+</template>
 <script>
-import { defineComponent, onMounted, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from "vue";
 import { Authing } from "@authing/web";
 
 export default defineComponent({
@@ -1895,68 +1859,19 @@ export default defineComponent({
     });
 
     const state = reactive({
-      loginState: null,
       userInfo: null,
     });
 
-
     /**
-     * 以跳转方式打开 Authing 托管的登录页
-     */
-    const login = () => {
-      authing.loginWithRedirect();
-    };
-
-    /**
-     * 用 Access Token 获取用户身份信息
+     * 获取用户身份信息
      */
     const getUserInfo = async () => {
-      if (!state.loginState) {
-        alert("用户未登录");
-        return;
-      }
-      const userInfo = await authing.getUserInfo({
-        accessToken: state.loginState.accessToken,
-      });
+      const userInfo = await authing.getUserInfo();
       state.userInfo = userInfo;
     };
 
-    /**
-     * 获取用户的登录状态
-     */
-    const getLoginState = async () => {
-      const res = await authing.getLoginState({ ignoreCache: true });
-      if (res) {
-        state.loginState = res;
-        getUserInfo();
-      }
-    };
-
-    onMounted(() => {
-      // 校验当前 url 是否是登录回调 URL
-      if (authing.isRedirectCallback()) {
-        console.log("redirect");
-
-        /**
-         * 以跳转方式打开 Authing 托管的登录页，认证成功后需要配合 handleRedirectCallback 方法，
-         * 在回调端点处理 Authing 发送的授权码或 token，获取用户登录态
-         */
-        authing.handleRedirectCallback().then((res) => {
-          state.loginState = res;
-          // 因 code 只能使用一次，所以这里需要将页面重定向到其他地址，这里以刷新当前页面为例：
-          window.location.replace("/");
-        });
-      } else {
-        console.log("normal");
-
-        // 静默登录，直接获取到用户信息
-        getLoginState();
-      }
-    });
-
     return {
       ...toRefs(state),
-      login,
       getUserInfo,
     };
   },
@@ -2048,6 +1963,20 @@ export class AppComponent {
 
 ::: tab CDN
 ``` javascript
+const authing = new AuthingFactory.Authing({
+  // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
+  domain: 'AUTHING_DOMAIN_URL',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
+  appId: 'AUTHING_APP_ID',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 认证配置 -> 登录回调 URL
+  redirectUri: 'YOUR_REDIRECT_URL',
+
+  // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
+  userPoolId: 'AUTHING_USER_POOL_ID'
+});
+
 document.querySelector('#getUserInfo').onclick = function () {
   authing.getUserInfo().then(userInfo => {
     console.log('userInfo: ', userInfo)
@@ -2110,7 +2039,7 @@ function App() {
   const logout = async () => {
     await authing.logoutWithRedirect({
       // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
-      redirectUri: '退出登录后的跳转地址'
+      redirectUri: 'YOUR_REDIRECT_URL'
     });
   };
 
@@ -2150,7 +2079,13 @@ export default App;
 :::
 
 ::: tab Vue2
-```html{61-66}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue2/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="logout">Logout</button>
+  </div>
+</template>
 <script>
 import { Authing } from "@authing/web";
 
@@ -2196,7 +2131,13 @@ export default {
 :::
 
 ::: tab Vue3
-```html{25-32}
+```vue
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/vue3/website1/src/App.vue -->
+<template>
+  <div id="app">
+    <button @click="logout">Logout</button>
+  </div>
+</template>
 <script>
 import { defineComponent } from "vue";
 import { Authing } from "@authing/web";
@@ -2278,6 +2219,20 @@ export class AppComponent {
 :::
 ::: tab CDN
 ``` javascript
+const authing = new AuthingFactory.Authing({
+  // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
+  domain: 'AUTHING_DOMAIN_URL',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 端点信息 -> APP ID
+  appId: 'AUTHING_APP_ID',
+
+  // 控制台 -> 自建应用 -> 点击进入相应的应用 -> 认证配置 -> 登录回调 URL
+  redirectUri: 'YOUR_REDIRECT_URL',
+
+  // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
+  userPoolId: 'AUTHING_USER_POOL_ID'
+});
+
 document.querySelector('#logoutWithRedirect').onclick = function () {
   authing.logoutWithRedirect({
     // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
