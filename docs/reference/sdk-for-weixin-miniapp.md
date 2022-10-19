@@ -117,11 +117,19 @@ yarn add @authing/miniapp-uniapp
 ::: tab rsa加密
 ``` shell
 npm install --save @authing/miniapp-jsencrypt
+
+or
+
+yarn add @authing/miniapp-jsencrypt
 ```
 :::
 ::: tab sm2加密
 ``` shell
 npm install --save @authing/miniapp-sm2encrypt
+
+or
+
+yarn add @authing/miniapp-sm2encrypt
 ```
 :::
 ::::
