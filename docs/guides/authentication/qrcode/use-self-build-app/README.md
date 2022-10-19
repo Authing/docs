@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-随着移动互联网的普及，手机已经成为人们生活中的必需品，通过手机扫描二维码完成认证的方式变得越来越常见。越来越多的移动应用集成了扫码二维码登录 PC 端网站应用的功能，这对于用户来说是一种既方便又安全的体验。借助 {{$localeConfig.brandName}} 提供的扫描登录能力，可以帮助快速、安全地实现此功能。
+随着移动互联网的普及，手机已经成为人们生活中的必需品，通过手机扫描二维码完成认证的方式变得越来越常见。越来越多的移动应用集成了扫描二维码登录 PC 端网站应用的功能，这对于用户来说是一种既方便又安全的体验。借助 {{$localeConfig.brandName}} 提供的扫码登录能力，可以帮助快速、安全地实现此功能。
 
 要实现使用自建移动应用扫码登录网站应用，大致可以分为以下几步：
 
@@ -103,8 +103,6 @@ const user = await authenticationClient.qrcode.exchangeUserInfo('TICKET')
 :::hint-info
 在此 [获取 AUTHING_APP_ID 和 APP HOST](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 :::
-
-
 
 ## 第三步：登录成功
 
