@@ -582,7 +582,7 @@ const params: {
   // 发起登录的 URL，若实例化 Authing 时设置了 redirectToOriginalUri， 会在登录结束后重定向回到此页面，默认为当前 URL
   originalUri?: string;
 
-  // 即使在用户已登录时也提示用户再次登录，默认为 false
+  // 即使在用户已登录时也强制用户再次登录，默认为 false
   forced?: boolean;
 } = {
   redirectUri: 'YOUR_REDIRECT_URL',
@@ -605,7 +605,7 @@ export default {
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: 'YOUR_ORIGINAL_URL',
 
-        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true
       }
 
@@ -627,7 +627,7 @@ export default {
         // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
         originalUri: 'YOUR_ORIGINAL_URL',
 
-        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true
       }
 
@@ -653,7 +653,7 @@ export class AppComponent {
       // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
       originalUri?: string;
 
-      // 即使在用户已登录时也提示用户再次登录，默认为 false
+      // 即使在用户已登录时也强制用户再次登录，默认为 false
       forced?: boolean
     } = {
       redirectUri: 'YOUR_REDIRECT_URL',
@@ -675,7 +675,7 @@ const params = {
   // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
   originalUri: 'YOUR_ORIGINAL_URL',
 
-  // 即使在用户已登录时也提示用户再次登录，默认为 false
+  // 即使在用户已登录时也强制用户再次登录，默认为 false
   forced: true
 }
 
@@ -942,7 +942,7 @@ document.querySelector('#loginWithPopup').onclick = function () {
 ```ts
 const login = async () => {
   const params: {
-    // 即使在用户已登录时也提示用户再次登录，默认为 false
+    // 即使在用户已登录时也强制用户再次登录，默认为 false
     forced?: boolean;
   } = {
     forced: true,
@@ -970,7 +970,7 @@ export default {
      */
     async login() {
       const params = {
-        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true,
       };
       const res = await this.authing.loginWithPopup(params);
@@ -990,7 +990,7 @@ export default {
      */
     const login = async () => {
       const params = {
-        // 即使在用户已登录时也提示用户再次登录，默认为 false
+        // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true,
       };
       const res = await authing.loginWithPopup(params);
@@ -1013,7 +1013,7 @@ export class AppComponent {
    */
   async login() {
     const params: {
-      // 即使在用户已登录时也提示用户再次登录，默认为 false
+      // 即使在用户已登录时也强制用户再次登录，默认为 false
       forced?: boolean;
     } = {
       forced: true,
@@ -1030,7 +1030,7 @@ export class AppComponent {
 ::: tab CDN
 ``` javascript
 const params = {
-  // 即使在用户已登录时也提示用户再次登录，默认为 false
+  // 即使在用户已登录时也强制用户再次登录，默认为 false
   forced: true
 }
 
@@ -1360,7 +1360,7 @@ if (authing.isRedirectCallback()) {
 
 ### 四、高级使用
 
-每次发起登录本质是访问一个 URL 地址，可以携带许多参数。Authing Web SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
+Authing Web SDK 默认会使用缺省参数。如果你需要精细控制登录请求参数，可以参考本示例。
 
 ```js
 import { Authing } from '@authing/web'
