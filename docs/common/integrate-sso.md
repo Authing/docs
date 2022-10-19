@@ -744,11 +744,11 @@ function App() {
   const getLoginState = useCallback(async () => {
     const state = await authing.getLoginState();
     setLoginState(state);
-  }, [authing]);
+  }, []);
 
   useEffect(() => {
     getLoginState();
-  }, [getLoginState]);
+  }, []);
 
   return (
     <div className="App">
