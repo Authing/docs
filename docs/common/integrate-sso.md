@@ -941,13 +941,9 @@ loginWithPopup.onclick = function () {
 ```ts
 const login = async () => {
   const params: {
-    // 回调登录 URL，默认为初始化参数中的 redirectUri
-    redirectUri?: string;
-
     // 即使在用户已登录时也提示用户再次登录
     forced?: boolean;
   } = {
-    redirectUri: 'YOUR_REDIRECT_URL',
     forced: false,
   };
   const res = await authing.loginWithPopup(params);
