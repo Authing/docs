@@ -197,15 +197,13 @@ style="display:block;margin: 0 auto;">
 6. 填写认证信息，点击 **提交认证**。
 
 <img src="./images/individual-certification.png" style="display:block;margin: 0 auto;">
-
-::: img-description​
-个人实名认证​
+::: img-description
+个人实名认证
 :::
 
 <img src="./images/enterprise-certification.png" style="display:block;margin: 0 auto;">
-
-::: img-description​
-企业认证​
+::: img-description
+企业认证
 :::
 
 系统提示认证成功，几秒后返回 **费用管理->版本升级** 页面。
