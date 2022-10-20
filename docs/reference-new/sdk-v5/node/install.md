@@ -8,15 +8,15 @@ meta:
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} Node SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClient`。
+{{$localeConfig.brandName}} Node SDK 由两部分组成：用户认证模块（`ManagementClient`） 和管理模块（`AuthenticationClient`）。
 
-`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)。
+用户认证模块（`ManagementClient`） 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)。
 
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。
+管理模块（`AuthenticationClient`） 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。
 
 你应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次），而 `AuthenticationClient` 应该每次请求初始化一个。
 
-## GitHub / NPM 地址
+### GitHub / NPM 地址
 
 | 条目     | 说明                                        |
 | -------- | ------------------------------------------- |
@@ -26,8 +26,6 @@ meta:
 
 
 ## 安装
-
-<LastUpdated/>
 
 ### NPM
 
@@ -51,11 +49,11 @@ yarn add authing-node-sdk
 
 初始化认证模块（`AuthenticationClient`）需要获取应用的相关信息，你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** 中获取到相关信息。下面是你会经常使用到的几个配置项：
 
-- 应用 ID（App ID）：应用的唯一标志；
-- 应用密钥（App Secret）：取决于你的应用类型和配置的**换取 token 身份验证方式**，你在初始化 AuthenticationClient 时需要传递应用密钥，以对客户端的身份进行验证。
+- 应用 ID（App ID）：应用的唯一标志。
+- 应用密钥（App Secret）：用于验证客户端合法性的密钥。
 
 <details>
-<summary>点击展开详情</summary>
+<summary>取决于你的应用类型和配置的换取 token 身份验证方式，你在初始化 AuthenticationClient 时需要传递应用密钥，以对客户端的身份进行验证。点击展开详情</summary>
 
 <br>
 
@@ -76,6 +74,13 @@ yarn add authing-node-sdk
 
 </details>
 
+- 应用域名（App Host）：如 https://example.authing.cn 。
+- 登录回调 URL（Redirect Uri）：当用户使用 Authing 的托管登录页进行认证，认证完成之后，会通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起登录时可以选择任意一个。
+- 退出登录回调 URL（Logout Redirect Uri）：当用户在浏览器端退出登录时，可以通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起退出登录时可以选择任意一个。
+- 换取 token 身份验证方式（Token Endpoint Auth Method）：调用 OIDC 获取 Token 接口或者 Signin 接口时客户端需要提供的校验方式。
+- 检验 token 身份验证方式（Introspection Endpoint Auth Method）：调用 OIDC 校验 Token 合法性时客户端需要提供的校验方式。
+- 撤回 token 身份验证方式（Revoke Endpoint Auth Method）：调用 OIDC 校验 Token 合法性时客户端需要提供的校验方式。
+
 #### 初始化
 
 初始化 `AuthenticationClient` 时必须传入 `appId` 和 `appHost` 参数:
@@ -92,7 +97,7 @@ const authenticationClient = new AuthenticationClient({
 完整的参数和释义如下：
 
 - `appId`: Authing 应用 ID；
-- `appHost`: 应用域名，例如 example.authing.cn；
+- `appHost`: 应用域名，例如 https://example.authing.cn；
 - `appSecret`: Authing 应用密钥；
 - `redirectUri`: 认证完成后的重定向目标 URL, 会进行校验，需要和控制台的设置保持一致。可选，默认使用控制台中配置的第一个回调地址。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL。会进行校验，需要和控制台的设置保持一致。

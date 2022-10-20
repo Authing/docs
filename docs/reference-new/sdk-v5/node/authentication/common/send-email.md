@@ -1,0 +1,69 @@
+# 发送邮件
+
+<!--
+  警告⚠️：
+  不要直接修改该文档，
+  https://github.com/Authing/authing-docs-factory
+  使用该项目进行生成
+-->
+
+<LastUpdated />
+
+发送邮件时必须指定邮件 Channel，每个邮箱同一 Channel 在一分钟内只能发送一次。
+
+## 请求参数
+
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| channel | string | 是 | - | 短信通道，指定发送此短信的目的，如 CHANNEL_LOGIN 用于登录、CHANNEL_REGISTER 用于注册。。  枚举值：`CHANNEL_LOGIN`,`CHANNEL_REGISTER`,`CHANNEL_RESET_PASSWORD`,`CHANNEL_VERIFY_EMAIL_LINK`,`CHANNEL_BIND_EMAIL`,`CHANNEL_UNBIND_EMAIL`,`CHANNEL_VERIFY_MFA`,`CHANNEL_UNLOCK_ACCOUNT`,`CHANNEL_COMPLETE_EMAIL` | `CHANNEL_LOGIN` |
+| email | string | 是 | - | 邮箱，不区分大小写。   | `test@example.com` |
+
+
+## 示例代码
+
+```ts
+import { ManagementClient } from 'authing-node-sdk';
+// 在 Node.js 中引用：
+// const { ManagementClient } = require('authing-node-sdk');
+
+const managementClient = new ManagementClient({
+  accessKeyId: 'AUTHING_USERPOOL_ID',
+  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
+});
+
+(async () => {
+  const result = await managementClient.sendEmail({
+    email: 'test@example.com',
+    channel: 'CHANNEL_LOGIN',
+ });
+})();
+```
+
+
+
+## 请求响应
+
+类型： `SendEmailRespDto`
+
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| requestId | string | 请求 ID。当请求失败时会返回。 |
+
+
+
+示例结果：
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c"
+}
+```
+
+## 数据结构
+
+

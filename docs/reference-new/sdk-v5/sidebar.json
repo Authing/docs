@@ -1,0 +1,2048 @@
+[
+  {
+    "title": "C#",
+    "path": "/reference-new/sdk-v5/csharp/",
+    "redirect": "/reference-new/sdk-v5/csharp/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/csharp/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/csharp/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/csharp/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/csharp/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/csharp/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/csharp/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/csharp/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/csharp/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/csharp/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/csharp/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/csharp/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/csharp/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/csharp/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/csharp/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/csharp/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/csharp/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/csharp/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/csharp/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/csharp/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/csharp/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/csharp/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/csharp/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/csharp/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/csharp/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/csharp/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/csharp/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/csharp/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/csharp/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/csharp/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/csharp/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/csharp/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/csharp/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/csharp/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/csharp/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/csharp/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/csharp/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Go",
+    "path": "/reference-new/sdk-v5/go/",
+    "redirect": "/reference-new/sdk-v5/go/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/go/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/go/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/go/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/go/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/go/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/go/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/go/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/go/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/go/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/go/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/go/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/go/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/go/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/go/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/go/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/go/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/go/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/go/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/go/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/go/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/go/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/go/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/go/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/go/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/go/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/go/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/go/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/go/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/go/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/go/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/go/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/go/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/go/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/go/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/go/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/go/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/go/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/go/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/go/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/go/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/go/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/go/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/go/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/go/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/go/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/go/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/go/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/go/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/go/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/go/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/go/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Java",
+    "path": "/reference-new/sdk-v5/java/",
+    "redirect": "/reference-new/sdk-v5/java/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/java/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/java/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/java/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/java/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/java/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/java/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/java/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/java/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/java/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/java/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/java/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/java/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/java/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/java/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/java/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/java/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/java/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/java/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/java/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/java/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/java/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/java/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/java/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/java/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/java/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/java/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/java/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/java/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/java/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/java/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/java/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/java/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/java/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/java/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/java/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/java/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/java/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/java/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/java/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/java/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/java/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/java/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/java/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/java/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/java/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/java/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/java/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/java/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/java/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/java/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/java/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Node.js",
+    "path": "/reference-new/sdk-v5/node/",
+    "redirect": "/reference-new/sdk-v5/node/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/node/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/node/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/node/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/node/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/node/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/node/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/node/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/node/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/node/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/node/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/node/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/node/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/node/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/node/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/node/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/node/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/node/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/node/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/node/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/node/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/node/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/node/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/node/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/node/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/node/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/node/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/node/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/node/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/node/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/node/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/node/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/node/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/node/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/node/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/node/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/node/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/node/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/node/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/node/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/node/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/node/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/node/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/node/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/node/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/node/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/node/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/node/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/node/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/node/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/node/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/node/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "PHP",
+    "path": "/reference-new/sdk-v5/php/",
+    "redirect": "/reference-new/sdk-v5/php/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/php/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/php/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/php/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/php/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/php/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/php/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/php/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/php/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/php/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/php/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/php/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/php/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/php/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/php/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/php/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/php/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/php/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/php/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/php/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/php/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/php/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/php/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/php/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/php/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/php/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/php/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/php/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/php/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/php/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/php/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/php/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/php/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/php/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/php/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/php/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/php/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/php/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/php/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/php/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/php/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/php/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/php/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/php/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/php/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/php/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/php/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/php/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/php/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/php/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/php/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/php/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Python",
+    "path": "/reference-new/sdk-v5/python/",
+    "redirect": "/reference-new/sdk-v5/python/install.html",
+    "children": [
+      {
+        "title": "安装使用",
+        "path": "/reference-new/sdk-v5/python/install.md"
+      },
+      {
+        "title": "用户认证模块",
+        "children": [
+          {
+            "title": "核心模块",
+            "path": "/reference-new/sdk-v5/python/authentication/common.md"
+          },
+          {
+            "title": "OIDC 模块",
+            "path": "/reference-new/sdk-v5/python/authentication/oidc.md"
+          },
+          {
+            "title": "OAuth 模块",
+            "path": "/reference-new/sdk-v5/python/authentication/oauth.md"
+          },
+          {
+            "title": "SAML 模块",
+            "path": "/reference-new/sdk-v5/python/authentication/saml.md"
+          },
+          {
+            "title": "CAS 模块",
+            "path": "/reference-new/sdk-v5/python/authentication/cas.md"
+          }
+        ]
+      },
+      {
+        "title": "管理模块",
+        "children": [
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用用户凭证登录",
+                "path": "/reference-new/sdk-v5/python/登录/signin"
+              },
+              {
+                "title": "生成图形验证码",
+                "path": "/reference-new/sdk-v5/python/登录/captcha-code"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "使用移动端社会化登录",
+                "path": "/reference-new/sdk-v5/python/登录/signin-by-mobile"
+              },
+              {
+                "title": "获取支付宝 AuthInfo",
+                "path": "/reference-new/sdk-v5/python/登录/get-alipay-authinfo"
+              }
+            ]
+          },
+          {
+            "title": "登录",
+            "children": [
+              {
+                "title": "生成用于登录的二维码",
+                "path": "/reference-new/sdk-v5/python/登录/gene-qrcode"
+              },
+              {
+                "title": "查询二维码状态",
+                "path": "/reference-new/sdk-v5/python/登录/check-qrcode-status"
+              },
+              {
+                "title": "使用二维码 ticket 换取 TokenSet",
+                "path": "/reference-new/sdk-v5/python/登录/exchange-tokenset-with-qrcode-ticket"
+              },
+              {
+                "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                "path": "/reference-new/sdk-v5/python/登录/change-qrcode-status"
+              }
+            ]
+          },
+          {
+            "title": "注册",
+            "children": [
+              {
+                "title": "注册",
+                "path": "/reference-new/sdk-v5/python/注册/signup"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "获取用户资料",
+                "path": "/reference-new/sdk-v5/python/用户资料/get-profile"
+              },
+              {
+                "title": "修改用户资料",
+                "path": "/reference-new/sdk-v5/python/用户资料/update-profile"
+              },
+              {
+                "title": "获取密码强度和账号安全等级评分",
+                "path": "/reference-new/sdk-v5/python/用户资料/get-security-info"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定邮箱",
+                "path": "/reference-new/sdk-v5/python/用户资料/bind-email"
+              },
+              {
+                "title": "解绑邮箱",
+                "path": "/reference-new/sdk-v5/python/用户资料/unbind-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "绑定手机号",
+                "path": "/reference-new/sdk-v5/python/用户资料/bind-phone"
+              },
+              {
+                "title": "解绑手机号",
+                "path": "/reference-new/sdk-v5/python/用户资料/unbind-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改邮箱的验证请求",
+                "path": "/reference-new/sdk-v5/python/用户资料/veirfy-update-email-request"
+              },
+              {
+                "title": "修改邮箱",
+                "path": "/reference-new/sdk-v5/python/用户资料/update-email"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起修改手机号的验证请求",
+                "path": "/reference-new/sdk-v5/python/用户资料/veirfy-update-phone-request"
+              },
+              {
+                "title": "修改手机号",
+                "path": "/reference-new/sdk-v5/python/用户资料/update-phone"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "修改密码",
+                "path": "/reference-new/sdk-v5/python/用户资料/update-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起忘记密码请求",
+                "path": "/reference-new/sdk-v5/python/用户资料/verify-reset-password-request"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/reference-new/sdk-v5/python/用户资料/reset-password"
+              }
+            ]
+          },
+          {
+            "title": "用户资料",
+            "children": [
+              {
+                "title": "发起注销账号请求",
+                "path": "/reference-new/sdk-v5/python/用户资料/verify-delete-account-request"
+              },
+              {
+                "title": "注销账户",
+                "path": "/reference-new/sdk-v5/python/用户资料/delete-account"
+              }
+            ]
+          },
+          {
+            "title": "账号绑定",
+            "children": [
+              {
+                "title": "绑定外部身份源",
+                "path": "/reference-new/sdk-v5/python/账号绑定/link-extidp"
+              },
+              {
+                "title": "生成绑定外部身份源的链接",
+                "path": "/reference-new/sdk-v5/python/账号绑定/generate-link-extidp-url"
+              },
+              {
+                "title": "解绑外部身份源",
+                "path": "/reference-new/sdk-v5/python/账号绑定/unlink-extidp"
+              },
+              {
+                "title": "获取绑定的外部身份源",
+                "path": "/reference-new/sdk-v5/python/账号绑定/get-identities"
+              },
+              {
+                "title": "获取应用开启的外部身份源列表",
+                "path": "/reference-new/sdk-v5/python/账号绑定/get-extidps"
+              }
+            ]
+          },
+          {
+            "title": "MFA 要素管理",
+            "children": [
+              {
+                "title": "发起绑定 MFA 认证要素请求",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/send-enroll-factor-request"
+              },
+              {
+                "title": "绑定 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/enroll-factor"
+              },
+              {
+                "title": "解绑 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/reset-factor"
+              },
+              {
+                "title": "获取绑定的所有 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/list-enrolled-factors"
+              },
+              {
+                "title": "获取绑定的某个 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/get-factor"
+              },
+              {
+                "title": "获取可绑定的 MFA 认证要素",
+                "path": "/reference-new/sdk-v5/python/mfa-要素管理/list-factors-to-enroll"
+              }
+            ]
+          },
+          {
+            "title": "用户相关资源",
+            "children": [
+              {
+                "title": "获取登录日志",
+                "path": "/reference-new/sdk-v5/python/用户相关资源/get-login-history"
+              },
+              {
+                "title": "获取登录应用",
+                "path": "/reference-new/sdk-v5/python/用户相关资源/get-logged-in-apps"
+              },
+              {
+                "title": "获取具备访问权限的应用",
+                "path": "/reference-new/sdk-v5/python/用户相关资源/get-accessible-apps"
+              },
+              {
+                "title": "获取部门列表",
+                "path": "/reference-new/sdk-v5/python/用户相关资源/get-department-list"
+              },
+              {
+                "title": "获取被授权的资源列表",
+                "path": "/reference-new/sdk-v5/python/用户相关资源/get-authorized-resources"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送短信",
+                "path": "/reference-new/sdk-v5/python/消息服务/send-sms"
+              }
+            ]
+          },
+          {
+            "title": "消息服务",
+            "children": [
+              {
+                "title": "发送邮件",
+                "path": "/reference-new/sdk-v5/python/消息服务/send-email"
+              }
+            ]
+          },
+          {
+            "title": "微信相关接口",
+            "children": [
+              {
+                "title": "解密微信小程序数据",
+                "path": "/reference-new/sdk-v5/python/微信相关接口/decrypt-wechat-miniprogram-data"
+              },
+              {
+                "title": "获取小程序的手机号",
+                "path": "/reference-new/sdk-v5/python/微信相关接口/get-wechat-miniprogram-phone"
+              },
+              {
+                "title": "获取 Authing 服务器缓存的微信小程序、公众号 Access Token",
+                "path": "/reference-new/sdk-v5/python/微信相关接口/get-wechat-access-token"
+              }
+            ]
+          },
+          {
+            "title": "文件上传",
+            "children": [
+              {
+                "title": "文件上传",
+                "path": "/reference-new/sdk-v5/python/文件上传//api/v2/upload"
+              }
+            ]
+          },
+          {
+            "title": "其他",
+            "children": [
+              {
+                "title": "获取应用公开配置",
+                "path": "/reference-new/sdk-v5/python/其他/get-application-public-config"
+              },
+              {
+                "title": "获取服务器公开信息",
+                "path": "/reference-new/sdk-v5/python/其他/system"
+              },
+              {
+                "title": "获取国家列表",
+                "path": "/reference-new/sdk-v5/python/其他/get-country-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
