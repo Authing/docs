@@ -36,7 +36,7 @@ Authing Web SDK 目前支持的功能如下：
 ## 第二步：配置单点登录
 
 ::: hint-info
-参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app/sso.html)。
+参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app/sso.html)
 :::
 
 ## 第三步：修改配置
@@ -71,9 +71,11 @@ Authing Web SDK 支持通过包管理器安装、script 标签引入的方式集
 ::: tab NPM
 ``` shell
 npm install --save @authing/web
+```
+:::
 
-or
-
+::: tab Yarn
+``` shell
 yarn add @authing/web
 ```
 :::
@@ -95,7 +97,7 @@ yarn add @authing/web
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ```tsx
-// 代码示例：
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 // App.tsx
 import { Authing } from '@authing/web'
 
@@ -199,6 +201,7 @@ export default defineComponent({
 
 ::: tab Angular
 ``` typescript
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 // app.component.ts
 import { Component } from '@angular/core'
 
@@ -229,6 +232,7 @@ export class AppComponent {
 
 ::: tab CDN
 ```html
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js -->
 <script>
   const authing = new AuthingFactory.Authing({
     // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
@@ -261,6 +265,7 @@ Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种�
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
 ```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Authing } from '@authing/web'
@@ -519,10 +524,11 @@ export default defineComponent({
   <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
 </p>
 ```
-```ts{45-52}
-import { Component } from '@angular/core';
-import { Authing } from '@authing/web';
-import type { LoginState } from '@authing/web/dist/typings/src/global';
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
+import { Component } from '@angular/core'
+import { Authing } from '@authing/web'
+import type { LoginState } from '@authing/web/dist/typings/src/global'
 
 @Component({
   selector: 'app-root',
@@ -586,6 +592,7 @@ export class AppComponent {
 
 ::: tab CDN
 ``` html
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js -->
 <button id="loginWithRedirect">Login With Redirect</button>
 ```
 ``` javascript
@@ -743,7 +750,8 @@ authing.loginWithRedirect(params)
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab React
-```tsx{22-28}
+```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Authing } from '@authing/web'
@@ -916,7 +924,8 @@ export default defineComponent({
   <textarea cols="100" rows="20" readOnly>{{ loginState | json }}</textarea>
 </p>
 ```
-```ts{31-39}
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 import { Component } from '@angular/core'
 
 import { Authing } from '@authing/web'
@@ -961,6 +970,7 @@ export class AppComponent {
 
 ::: tab CDN
 ``` html
+<!-- 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js -->
 <button id="loginWithPopup">Login With Popup</button>
 ```
 ``` javascript
@@ -1091,7 +1101,8 @@ authing.loginWithPopup(params)
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
-```tsx{22-44}
+```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useEffect, useMemo, useState } from 'react'
 
 import { Authing } from '@authing/web'
@@ -1328,7 +1339,8 @@ export default defineComponent({
 :::
 
 ::: tab Angular
-```ts{26-44}
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 import { Component } from '@angular/core'
 
 import { Authing } from '@authing/web'
@@ -1397,6 +1409,7 @@ export class AppComponent {
 
 ::: tab CDN
 ``` javascript
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js
 var authing = new AuthingFactory.Authing({
   // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
   domain: 'AUTHING_DOMAIN_URL',
@@ -1490,7 +1503,8 @@ const authing = new Authing({
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
-```tsx{29-36}
+```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Authing } from '@authing/web'
@@ -1658,7 +1672,8 @@ export default defineComponent({
 :::
 
 ::: tab Angular
-```ts{53-59}
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 import { Component } from '@angular/core'
 
 import { Authing } from '@authing/web'
@@ -1700,6 +1715,7 @@ export class AppComponent {
 
 ::: tab CDN
 ``` javascript
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js
 const authing = new AuthingFactory.Authing({
   // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
   domain: 'AUTHING_DOMAIN_URL',
@@ -1728,7 +1744,8 @@ document.querySelector('#getLoginState').onclick = function () {
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
-```tsx{38-50}
+```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Authing } from '@authing/web'
@@ -1907,7 +1924,8 @@ export default defineComponent({
   <textarea cols="100" rows="15" readOnly>{{ userInfo | json }}</textarea>
 </p>
 ```
-```ts{46-60}
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 // app.component.ts
 import { Component } from '@angular/core'
 
@@ -1953,6 +1971,7 @@ export class AppComponent {
 <button id="getUserInfo">Get User Info</button>
 ```
 ``` javascript
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js
 const authing = new AuthingFactory.Authing({
   // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
   domain: 'AUTHING_DOMAIN_URL',
@@ -1988,7 +2007,8 @@ document.querySelector('#getUserInfo').onclick = function () {
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
-```tsx{36-43}
+```tsx
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/react/website1/src/App.tsx
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Authing } from '@authing/web'
@@ -2150,7 +2170,8 @@ export default defineComponent({
 ``` html
 <button (click)="logoutWithRedirect()">Logout With Redirect</button>
 ```
-```ts{52-59}
+```ts
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/angular/website1/src/app/app.component.ts
 import { Component } from '@angular/core'
 
 import { Authing } from '@authing/web'
@@ -2197,6 +2218,7 @@ export class AppComponent {
 <button id="logoutWithRedirect">Logout With Redirect</button>
 ```
 ``` javascript
+// 代码示例：https://github.com/Authing/authing-js-sdk/blob/master/examples/web/sso/cdn/website1/index.js
 const authing = new AuthingFactory.Authing({
   // 控制台 -> 应用 -> 单点登录 SSO -> 配置 -> 应用面板地址，如：https://my-awesome-sso.authing.cn
   domain: 'AUTHING_DOMAIN_URL',
