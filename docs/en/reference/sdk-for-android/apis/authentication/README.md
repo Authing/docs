@@ -270,7 +270,7 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 **Example**
 
 ```java
-AuthClient.sendSms("13012345678", "+86", (code, message, data)->{});
+AuthClient.sendSms("+86", "13012345678", (code, message, data)->{});
 ```
 
 **Error Code**

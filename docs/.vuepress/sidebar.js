@@ -1493,6 +1493,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
+            "/reference/sdk-for-android/social/google",
           ],
         },
         {
@@ -1514,6 +1515,10 @@ const zhCnNavBar = {
         {
           title: "Android Guard 更新日志",
           path: "/reference/sdk-for-android/version",
+        },
+        {
+          title: "返回码对照表",
+          path: "/reference/sdk-for-android/errorcode",
         },
       ],
     },
@@ -1702,7 +1707,7 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-flutter/onpremise",
-        },       
+        },
         {
           title: "Flutter SDK Changelog",
           path: "/reference/sdk-for-flutter/flutter-changelog",

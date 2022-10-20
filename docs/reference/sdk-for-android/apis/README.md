@@ -7,5 +7,3 @@
 若存粹完全使用 API 的方式来完成登录注册等认证流程，你需要独立构建自己的登录注册等 UI 界面。
 
 > 注意：超组件也可帮助你快速构建 UI 界面，组件已集成相应 API
-
-[错误码查询](https://docs.authing.cn/v2/reference/error-code.html)
