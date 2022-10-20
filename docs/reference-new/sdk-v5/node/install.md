@@ -8,13 +8,13 @@ meta:
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} Node SDK 由两部分组成：用户认证模块（`ManagementClient`） 和管理模块（`AuthenticationClient`）。
+{{$localeConfig.brandName}} Node.js SDK 由两部分组成：用户认证模块（AuthenticationClient） 和管理模块（ManagementClient）。
 
-用户认证模块（`AuthenticationClient`） 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)。
+!!!include(reference-new/sdk-v5/common/authentication_client_desc.md)!!!
 
-管理模块（`ManagementClient`） 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。
+!!!include(reference-new/sdk-v5/common/management_client_desc.md)!!!
 
-你应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次），而 `AuthenticationClient` 应该每次请求初始化一个。
+在一个项目中，ManagementClient 应该只应该被初始化一次，而 AuthenticationClient 一个实例对应一个终端用户，应该在每次请求中初始化一次。
 
 ### GitHub / NPM 地址
 
@@ -41,77 +41,147 @@ yarn add authing-node-sdk
 
 ## 使用认证模块
 
-`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)。
+!!!include(reference-new/sdk-v5/common/authentication_client_desc.md)!!!
 
 ### 初始化
 
 #### 获取应用信息
 
-初始化认证模块（`AuthenticationClient`）需要获取应用的相关信息，你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** 中获取到相关信息。下面是你会经常使用到的几个配置项：
-
-- 应用 ID（App ID）：应用的唯一标志。
-- 应用密钥（App Secret）：用于验证客户端合法性的密钥。
-
-<details>
-<summary>取决于你的应用类型和配置的换取 token 身份验证方式，你在初始化 AuthenticationClient 时需要传递应用密钥，以对客户端的身份进行验证。点击展开详情</summary>
-
-<br>
-
-你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
-中找到**换取 token 身份验证方式** 配置项：
-
-> 单页 Web 应用和客户端应用隐藏，默认为 \`none\`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
-
-![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
-
-#### 换取 token 身份验证方式为 none 时
-
-初始化 AuthenticationClient 不需要传应用密钥。
-
-#### 换取 token 身份验证方式为 client_secret_post 或 client_secret_basic 时
-
-初始化 AuthenticationClient 需要传应用密钥。
-
-</details>
-
-- 应用域名（App Host）：如 https://example.authing.cn 。
-- 登录回调 URL（Redirect Uri）：当用户使用 Authing 的托管登录页进行认证，认证完成之后，会通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起登录时可以选择任意一个。
-- 退出登录回调 URL（Logout Redirect Uri）：当用户在浏览器端退出登录时，可以通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起退出登录时可以选择任意一个。
-- 换取 token 身份验证方式（Token Endpoint Auth Method）：调用 OIDC 获取 Token 接口或者 Signin 接口时客户端需要提供的校验方式。
-- 检验 token 身份验证方式（Introspection Endpoint Auth Method）：调用 OIDC 校验 Token 合法性时客户端需要提供的校验方式。
-- 撤回 token 身份验证方式（Revoke Endpoint Auth Method）：调用 OIDC 校验 Token 合法性时客户端需要提供的校验方式。
+!!!include(reference-new/sdk-v5/common/get_app_info.md)!!!
 
 #### 初始化
 
-初始化 `AuthenticationClient` 时必须传入 `appId` 和 `appHost` 参数:
+初始化示例代码如下所示：
 
 ```typescript
 import { AuthenticationClient } from "authing-node-sdk";
 
 const authenticationClient = new AuthenticationClient({
   appId: "AUTHING_APP_ID",
+  appSecret: "AUTHING_APP_SECRET",
   appHost: "AUTHING_APP_HOST",
 });
 ```
 
-完整的参数和释义如下：
+<details>
+<summary>点此展开 AuthenticationClient 的完整参数及释义</summary>
 
-- `appId`: Authing 应用 ID；
-- `appHost`: 应用域名，例如 https://example.authing.cn；
-- `appSecret`: Authing 应用密钥；
-- `redirectUri`: 认证完成后的重定向目标 URL, 会进行校验，需要和控制台的设置保持一致。可选，默认使用控制台中配置的第一个回调地址。
-- `logoutRedirectUri`: 登出完成后的重定向目标 URL。会进行校验，需要和控制台的设置保持一致。
-- `scope`: 令牌具备的资源权限（应用侧向 Authing 请求的权限），以空格分隔，默认为 'openid profile'，成功获取的权限会出现在 Access Token 的 scope 字段中。更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
-- `protocol`: 应用协议类型，默认为 oidc。
-- `tokenEndPointAuthMethod`: 获取 token 端点认证方式，可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。（客户端应用和单页应用默认为 `none` 且不可修改）
-- `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**校验 token 身份验证方式** 配置保持一致。（客户端应用和单页应用默认为 `none` 且不可修改）
-- `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。（客户端应用和单页应用默认为 `none` 且不可修改）
-- `timeout`: 请求超时时间（可选），位为毫秒，默认为 10000（10 秒）。
-- `rejectUnauthorized`: 是否拒绝非法的 HTTPS 请求，默认为 true；如果是私有化部署的场景且证书不被信任，可以设置为 false。
-- `cookieKey`: 存储认证上下文的 Cookie 名称,用于 方法 loginWithRedirect 和 handleRedirectCallback 上存储用户的认证状态。
+- `appId`: Authing 应用 ID，必填。
+- `appSecret`: Authing 应用密钥，必填。
+- `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。
+- `redirectUri`: 认证完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
+- `logoutRedirectUri`: 登出完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
+- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。一些示例：
+    - `openid`: OIDC 标准规定的权限，必须包含。
+    - `profile`: 获取用户的基本身份信息。
+    - `offline_access`: 认证时获取 `refresh_token`，可以通过 `refresh_token` 请求新的 `access_token`。
+- `protocol`: 应用协议类型，默认为 `oidc`。可选值为 `oidc`、`oauth`、`cas`、`saml`。
+- `tokenEndPointAuthMethod`: 获取 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。
+- `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
+- `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
+- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
 
-认证侧相关的使用和方法说明，你可以在 [Authing Nodejs SDK 用户认证模块查看](./authentication.html) 中查看。
+
+</details>
+
+### 快速开始
+
+初始化完成用户认证模块（AuthenticationClient）之后，你可以获取 AuthenticationClient 的实例，然后调用此实例上的方法。
+
+#### 使用在线托管登录页登录
+
+Authing 为所有开发者提供了开箱即用的在线托管登录页，Java SDK 提供了自动生成登录链接、处理登录回调等方法。
+
+<details>
+<summary>点此展开 Authing 托管登录页的详细介绍</summary>
+
+Authing 托管登录页是最简单，最安全的集成方式。这是因为登录流程由 Authing 维护，并由 Authing 保持安全。对于大多数集成，建议使用 Authing 托管的登录流程。你的业务系统将用户重定向到 Authing，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。此设计被认为是安全性最佳实践。在自定义配置方面，托管模式提供了中等程度的登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。[点此在线体验](https://sample-sso.authing.cn/)。
+
+![](~@imagesZhCn/reference-new/sample-sso-app.jpg)
+
+</details>
+
+使用这种方式，Nodejs SDK 生成了登录地址之后，可以引导用户在浏览器访问此链接。终端用户点击此链接之，会通过浏览器 302 重定向跳转到你在 Authing 托管的在线登录页进行认证，认证完成之后回调到你的应用系统。Authing 托管登录页支持 Authing 现支持所有的认证能力，包含密码认证、社会化登录认证、扫码登录等，这也是我们最推荐的认证方式。
+
+##### 生成一次性登录链接
+
+生成用于登录的一次性地址，并引导用户访问此链接。
+
+```javascript
+import { AuthenticationClient } from "authing-node-sdk";
+
+const authenticationClient = new AuthenticationClient({
+  appId: "AUTHING_APP_ID",
+  appSecret: "AUTHING_APP_SECRET",
+  appHost: "AUTHING_APP_HOST",
+  redirectUri: "AUTHING_APP_REDIRECT_URI"
+});
+
+// 生成用于登录的一次性地址，之后可以引导用户访问此地址
+const { url } = authenticationClient.buildAuthorizeUrl();
+console.log(url);
+```
+
+##### 处理登录回调
+
+当用户在 Authing 的托管登录页完成登录之后，将会回调到你配置的登录回调地址（及初始化 AuthenticationClient 时传入的 `redirectUri`），并且会在 URL 的 Query 参数中携带一次性临时凭证 `code`，你可以使用此 `code` 换取 `access_token`。
+
+```javascript
+import { AuthenticationClient } from "authing-node-sdk";
+
+const authenticationClient = new AuthenticationClient({
+  appId: "AUTHING_APP_ID",
+  appSecret: "AUTHING_APP_SECRET",
+  appHost: "AUTHING_APP_HOST",
+  redirectUri: "AUTHING_APP_REDIRECT_URI"
+});
+
+// 生成用于登录的一次性地址，之后可以引导用户访问此地址
+const { url } = authenticationClient.buildAuthorizeUrl();
+console.log(url);
+```
+
+#### 邮箱 + 密码登录
+
+除了上述使用托管登录页的认证方式，如果你需要自建登录页面，Authing 也提供接口形式的认证方法，如果认证成功，也可以拿到用户的 `access_token`。拿到 `access_token` 之后，就可以调用修改用户信息等方法了。
+
+```java
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.*;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+
+public static void main(String[] args) {
+    // 设置初始化参数
+    AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+    clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+    clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+    clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
+
+    // 初始化 AuthenticationClient
+    AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+
+    // 调用 AuthenticationClient 的方法，如 signInByEmailPassword
+    LoginTokenRespDto signInresp = authenticationClient.signInByEmailPassword(
+        "test@example.com",
+        "passw0rd",
+        new SignInOptionsDto()
+    );
+
+    // 你可以从 LoginTokenRespDto 中得到用户的 access_token，此 access_token 代表了用户访问接口的凭证
+    String accessToken = signInresp.getData().getAccessToken();
+    // 之后使用此 accessToken 调用 AuthenticationClient 的 setAccessToken 方法，AuthenticationClient 便可以调用获取用户资料、修改用户资料、获取角色列表等要求登录才能访问的接口了。
+    authenticationClient.setAccessToken(accessToken)
+
+    // 调用其他需要登录才能访问的接口，如修改用户资料
+    UpdateUserProfileDto updateProfileDto = new UpdateUserProfileDto();
+    updateProfileDto.setNickname("张三"); // 修改昵称为张三
+    UserSingleRespDto resp = authenticationClient.updateProfile(updateProfileDto);
+    System.out.println(resp);
+}
+```
+
 
 
 ## 使用管理模块
