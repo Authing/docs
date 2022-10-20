@@ -109,6 +109,7 @@ function descendantIsActive(route, item) {
       ) {
         return descendantIsActive(route, child)
       } else {
+        console.log(child)
         return isActive(route, child.path)
       }
     })
