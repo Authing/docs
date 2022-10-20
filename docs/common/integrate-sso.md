@@ -55,7 +55,7 @@ Authing Web SDK 目前支持的功能如下：
 
 3. 如果你创建的是 **标准 Web 应用**，则以下 `token` 验证方式勾选 **none**。
 
-​<img src="./images/sso-authorization-token-new.png">
+![](~@imagesZhCn/common/integrate-sso/sso-authorization-token-new.png)
 
 4. 保存当前配置。
 
