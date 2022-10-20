@@ -1,6 +1,6 @@
 本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}} 提供的 SDK，实现[单点登录](/guides/app-new/sso/)。
 
-本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：[@authing/web](https://www.npmjs.com/package/@authing/web)
+本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：[@authing/web](https://www.npmjs.com/package/@authing/web)。
 
 ## Authing Web SDK
 
@@ -30,13 +30,13 @@ Authing Web SDK 目前支持的功能如下：
 ## 第一步：创建自建应用
 
 ::: hint-info
-参考 [创建自建应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)
+参考 [创建自建应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 :::
 
 ## 第二步：配置单点登录
 
 ::: hint-info
-参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app/sso.html)
+参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app/sso.html)。
 :::
 
 ## 第三步：修改配置
@@ -49,18 +49,18 @@ Authing Web SDK 目前支持的功能如下：
 
 ![](~@imagesZhCn/common/integrate-sso/sso-callback.png)
 
-2. **授权配置**：**授权模式** 开启 **authorization_code**，**返回类型** 开启 **code**
+2. **授权配置**：**授权模式** 开启 **authorization_code**，**返回类型** 开启 **code**。
 
 ![](~@imagesZhCn/common/integrate-sso/sso-authorization-configuration.png)
 
-3. 如果你创建的是 **标准 Web 应用**，则以下 `token` 验证方式勾选 `none`
+3. 如果你创建的是 **标准 Web 应用**，则以下 `token` 验证方式勾选 **none**。
 
-![](~@imagesZhCn/common/integrate-sso/sso-authorization-token.png)
+​<img src="./images/sso-authorization-token-new.png">
 
 4. 保存当前配置。
 
 ::: hint-info
-注意，如果使用社会化身份源或企业身份源登录，且登录后获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考[身份源连接的账号关联](/guides/connections/account-association.html)
+注意，如果使用社会化身份源或企业身份源登录，且登录后获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考[身份源连接的账号关联](/guides/connections/account-association.html)。
 :::
 
 ## 第四步：安装 SDK
@@ -91,7 +91,7 @@ yarn add @authing/web
 ## 第五步：实例化 SDK
 
 ::: hint-info
-注意：实现单点登录至少需要两个应用，所以 SDK 也需要分别实例化两次并传入不同的参数。
+实现单点登录至少需要两个应用，所以 SDK 也需要分别实例化两次并传入不同的参数。
 :::
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -2001,7 +2001,7 @@ document.querySelector('#getUserInfo').onclick = function () {
 可以调用 SDK 的 `logoutWithRedirect` 方法退出登录。
 
 ::: hint-info
-注意：如果是「单点登出」的场景，则实例化 SDK 时需要传入 `introspectAccessToken` 参数并设置为 `true`
+如果是「单点登出」的场景，则实例化 SDK 时需要传入 `introspectAccessToken` 参数并设置为 `true`。
 :::
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -2249,4 +2249,4 @@ document.querySelector('#logoutWithRedirect').onclick = function () {
 
 ## 获取帮助 <a id="get-help"></a>
 
-[#论坛](https://forum.authing.cn/)
+请访问 [#Authing 论坛](https://forum.authing.cn/)。
