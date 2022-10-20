@@ -1011,7 +1011,7 @@ const zhCnNavBar = {
                 },
                 {
                   title: "用户拓展字段",
-                  path: "/guides/users/user-defined-field",
+                  path: "/guides/users/user-defined-field/",
                 },
               ],
             },
