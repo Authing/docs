@@ -13,7 +13,7 @@ Authing Web SDK 目前支持的功能如下：
 |功能|说明|
 |----|----|
 |loginWithRedirect|跳转登录|
-|loginWithPopup|弹窗窗口登录|
+|loginWithPopup|弹窗登录|
 |isRedirectCallback|判断当前 URL 是否为 Authing 登录回调 URL，结合 getLoginState 实现静默登录|
 |getLoginState|获取登录态|
 |getUserInfo|获取用户信息|
@@ -1483,7 +1483,7 @@ const authing = new Authing({
   implicitResponseType: 'token id_token',
 
   // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于单点登出场景，默认为 false
-  // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+  // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
   introspectAccessToken: false,
 
   // 弹出窗口的宽度
@@ -2001,7 +2001,7 @@ document.querySelector('#getUserInfo').onclick = function () {
 可以调用 SDK 的 `logoutWithRedirect` 方法退出登录。
 
 ::: hint-info
-注意：如果是【单点登出】的场景，则实例化 SDK 时需要传入 `introspectAccessToken` 参数并设置为 `true`
+注意：如果是「单点登出」的场景，则实例化 SDK 时需要传入 `introspectAccessToken` 参数并设置为 `true`
 :::
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -2028,8 +2028,8 @@ function App() {
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID',
 
-      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
-      // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于「单点登出」场景，默认为 false
+      // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
       introspectAccessToken: true
     })
   }, [])
@@ -2039,7 +2039,7 @@ function App() {
    */
   const logoutWithRedirect = async () => {
     await authing.logoutWithRedirect({
-      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
       redirectUri: 'YOUR_REDIRECT_URL'
     });
   };
@@ -2091,8 +2091,8 @@ export default {
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID',
 
-      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
-      // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于「单点登出」场景，默认为 false
+      // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
       introspectAccessToken: true
     });
   },
@@ -2103,7 +2103,7 @@ export default {
      */
     logoutWithRedirect() {
       this.authing.logoutWithRedirect({
-        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
         redirectUri: 'YOUR_REDIRECT_URL'
       });
     },
@@ -2142,8 +2142,8 @@ export default defineComponent({
       // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
       userPoolId: 'AUTHING_USER_POOL_ID',
 
-      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
-      // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+      // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于「单点登出」场景，默认为 false
+      // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
       introspectAccessToken: true
     });
 
@@ -2152,7 +2152,7 @@ export default defineComponent({
      */
     const logoutWithRedirect = () => {
       authing.logoutWithRedirect({
-        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
         redirectUri: 'YOUR_REDIRECT_URL'
       });
     };
@@ -2196,8 +2196,8 @@ export class AppComponent {
     // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
     userPoolId: 'AUTHING_USER_POOL_ID',
 
-    // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
-    // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+    // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于「单点登出」场景，默认为 false
+    // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
     introspectAccessToken: true
   })
 
@@ -2206,7 +2206,7 @@ export class AppComponent {
    */
   logoutWithRedirect() {
     this.authing.logoutWithRedirect({
-      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
       redirectUri: 'YOUR_REDIRECT_URL'
     })
   }
@@ -2232,14 +2232,14 @@ const authing = new AuthingFactory.Authing({
   // 控制台 -> 设置 -> 基础设置 -> 基础信息 -> 用户池 ID
   userPoolId: 'AUTHING_USER_POOL_ID',
 
-  // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于『单点登出』场景，默认为 false
-  // 如果设为 true，需要在控制台中将『应用配置』-『其他配置』-『检验 token 身份验证方式』设为 none
+  // 是否在每次获取登录态时请求 Authing 检查 Access Token 有效性，可用于「单点登出」场景，默认为 false
+  // 如果设为 true，需要在控制台中将「应用配置」-「其他配置」-「检验 token 身份验证方式」设为 none
   introspectAccessToken: true
 });
 
 document.querySelector('#logoutWithRedirect').onclick = function () {
   authing.logoutWithRedirect({
-    // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+    // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
     redirectUri: 'YOUR_REDIRECT_URL'
   })
 }
@@ -2249,4 +2249,4 @@ document.querySelector('#logoutWithRedirect').onclick = function () {
 
 ## 获取帮助 <a id="get-help"></a>
 
-[#authing-chat](https://forum.authing.cn/)
+[#论坛](https://forum.authing.cn/)
