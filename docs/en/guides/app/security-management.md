@@ -37,7 +37,7 @@ The user can specify the login valid time (i.e. when the cookie expires) in this
 
 {{$localeConfig.brandName}} provides login security policies for both **Account Lock** and **Verification code** scenarios.
 
-![](../images/login-anti-bruteforcing-en.png)
+![](./images/login-anti-bruteforcing-en.png)
 
 ### Account Lock
 
