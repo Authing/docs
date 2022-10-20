@@ -1000,15 +1000,20 @@ const zhCnNavBar = {
           path: "/guides/userpool-config/basic-config",
         },
         {
-          title: "开发者",
-          path: "/guides/userpool-config/developer-config",
-        },
-        {
           title: "字段管理",
           children: [
             {
               title: "用户字段管理",
-              path: "/guides/authentication/extensibility/user-defined-field",
+              children: [
+                {
+                  title: "用户基础字段",
+                  path: "/guides/user/user-profile",
+                },
+                {
+                  title: "用户拓展字段",
+                  path: "/guides/users/user-defined-field",
+                },
+              ],
             },
             {
               title: "角色字段管理",
@@ -1019,6 +1024,10 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/department-extend",
             },
           ],
+        },
+        {
+          title: "开发者",
+          path: "/guides/userpool-config/developer-config",
         },
         {
           title: "管理员",
@@ -5662,6 +5671,10 @@ const translatedZhCnNavBar = {
         {
           title: "Customize login box style",
           path: "/guides/app/custom-styles",
+        },
+        {
+          title: "Security management",
+          path: "/guides/app/security-management",
         },
         {
           title: "Become a source of federal authentication identity",

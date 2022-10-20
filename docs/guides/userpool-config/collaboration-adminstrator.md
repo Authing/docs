@@ -8,8 +8,22 @@
 
 你既可以邀请当前用户池中的用户作为内部管理员，又可以邀请非当前用户池内的其他 {{$localeConfig.brandName}} 用户作为外部管理员。
 
-## 内部管理员
+![](./images/administrator.png)
 
-## 外部管理员
+::: img-description​
+管理员列表
+:::
+
+![](./images/add-internal-admin.png)
+
+::: img-description​
+添加内部管理员
+:::
+
+![](./images/add-external-admin.png)
+
+::: img-description​
+邀请外部管理员
+:::
 
 
