@@ -1853,7 +1853,7 @@ function App() {
    */
   const logout = async () => {
     await authing.logoutWithRedirect({
-      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
       redirectUri: '退出登录后的跳转地址'
     });
   };
@@ -1947,7 +1947,7 @@ export default {
      */
     logout() {
       this.authing.logoutWithRedirect({
-        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
         redirectUri: '退出登录后的跳转地址'
       });
     },
@@ -1987,7 +1987,7 @@ export default defineComponent({
      */
     const logout = () => {
       authing.logoutWithRedirect({
-        // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+        // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
         redirectUri: '退出登录后的跳转地址'
       });
     };
@@ -2053,7 +2053,7 @@ export class AppComponent {
    */
   logout() {
     this.authing.logoutWithRedirect({
-      // 可选项，如果传入此参数，需要在控制台配置【登出回调 URL】
+      // 可选项，如果传入此参数，需要在控制台配置「登出回调 URL」
       redirectUri: '退出登录后的跳转地址'
     });
   }
