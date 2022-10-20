@@ -58,7 +58,7 @@ AuthClient.markQRCodeScanned(random, (code, message, data) -> {
 
 ## 确认二维码登录
 
-使用二维码登录。分两步的好处是，App 可以在扫描之后给用户一个提示，待用户确认之后再登录。
+使用二维码登录。分两步的好处是，App 可以在扫描之后给用户一个提示，待用户确认之后再授权登录。
 
 >注意：调用此接口之前必须先调用 [标记二维码](#标记二维码)
 
@@ -77,6 +77,36 @@ public static void loginByScannedTicket(String ticket, @NotNull AuthCallback<JSO
 AuthClient.loginByScannedTicket(random, (code, message, data) -> {
     if (code == 200) {
         // logged in
+    }
+});
+```
+
+**错误码**
+
+* `500` 无效二维码
+* `2020` 未登录
+
+<br>
+
+## 取消二维码登录
+
+App 可以在扫描之后，若想取消授权登录，调用此接口。
+
+
+```java
+public static void cancelByScannedTicket(String ticket, @NotNull AuthCallback<JSONObject> callback)
+```
+
+**参数**
+
+* `ticket` 二维码数据里面的 random 字段
+
+**示例**
+
+```java
+AuthClient.cancelByScannedTicket(random, (code, message, data) -> {
+    if (code == 200) {
+        // Success to cancel
     }
 });
 ```

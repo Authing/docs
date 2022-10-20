@@ -2,25 +2,25 @@
     directoryList: [
         {
             name: 'React',
-            link: 'reference/guard/v3/spa.html',
+            link: 'reference/guard/v2/web.html',
             img: 'react@2x.png',
             github: "https://github.com/authing/guard",
         },
         {
             name: 'Vue',
-            link: 'reference/guard/v3/spa.html',
+            link: 'reference/guard/v2/web.html',
             img: 'vue@2x.png',
             github: "https://github.com/authing/guard",
         },
         {
             name: 'Angular',
-            link: 'reference/guard/v3/spa.html',
+            link: 'reference/guard/v2/web.html',
             img: 'angular@2x.png',
             github: "https://github.com/authing/guard",
         },
         {
             name: 'JavaScript',
-            link: 'reference/guard/v3/mpa.html',
+            link: 'reference/guard/v2/web.html',
             img: 'javascript@2x.png',
             github: "https://github.com/authing/guard",
         }
