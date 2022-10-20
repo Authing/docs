@@ -15,7 +15,7 @@
 
 要开通体验期，管理员需执行以下步骤：
 
-1. 新用户在托管页按照提示进行注册，认证成功后点击 **开始使用**。
+1. 新用户在官网按照提示进行注册，认证成功后点击 **开始使用**。
 
 <img src="./images/new-register-start-use-trial.png" 
 style="display:block;margin: 0 auto;">
