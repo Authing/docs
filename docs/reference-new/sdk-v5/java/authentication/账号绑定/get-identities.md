@@ -48,25 +48,30 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
+import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class ManagementClientTest {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
+class Test {
     public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
+        // 设置初始化参数
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
     
+        // 初始化 AuthenticationClient
+        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+    
+        
         
         
         GetIdentitiesRespDto response = managementClient.getIdentities(request);
@@ -74,8 +79,7 @@ class ManagementClientTest {
     }
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -114,13 +118,13 @@ class ManagementClientTest {
 
 ### <a id="IdentityDto"></a> IdentityDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| identityId | string | 是 | 身份源 ID。  |  `62299d8b866d2dab79a89dc4` |
-| extIdpId | string | 是 | 身份源连接 ID。  |  `6076bacxxxxxxxxd80d993b5` |
-| provider | string | 是 | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br>    。  | 可选枚举值：`oidc`,`oauth2`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`wechat`,`google`,`qq`,`wechatwork`,`dingtalk`,`weibo`,`github`,`alipay`,`apple`,`baidu`,`lark`,`gitlab`,`twitter`,`facebook`,`slack`,`linkedin`,`yidun`,`qingcloud`,`gitee`,`instagram`,`welink` |
-| type | string | 是 | Identity 类型，如 unionid, openid, primary。  |  `openid` |
-| userIdInIdp | string | 是 | 在外部身份源中的 ID。  |  `oj7Nq05R-RRaqak0_YlMLnnIwsvg` |
-| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表。  |  `["605492ac41xxxxe0362f0707"]` |
+| identityId | string | 是 | 身份源 ID   |  `62299d8b866d2dab79a89dc4` |
+| extIdpId | string | 是 | 身份源连接 ID   |  `6076bacxxxxxxxxd80d993b5` |
+| provider | string | 是 | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br>       | oidc |
+| type | string | 是 | Identity 类型，如 unionid, openid, primary   |  `openid` |
+| userIdInIdp | string | 是 | 在外部身份源中的 ID   |  `oj7Nq05R-RRaqak0_YlMLnnIwsvg` |
+| originConnIds | array | 是 | 身份来自的身份源连接 ID 列表   |  `["605492ac41xxxxe0362f0707"]` |
 
 

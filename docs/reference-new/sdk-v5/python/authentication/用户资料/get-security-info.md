@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -31,8 +31,7 @@ data = management_client.get_security_info(
   
 )
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -64,13 +63,13 @@ data = management_client.get_security_info(
 
 ### <a id="GetSecurityInfoDto"></a> GetSecurityInfoDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| passwordSecurityLevel | number | 是 | 密码强度等级。  |  |
-| mfaEnrolled | boolean | 是 | 是否绑定了 MFA。  |  |
-| passwordSet | boolean | 是 | 是否设置了密码。  |  |
-| emailBinded | boolean | 是 | 是否绑定了邮箱。  |  |
-| phoneBinded | boolean | 是 | 是否绑定了手机号。  |  |
-| securityScore | number | 是 | 账号等级评分。  |  |
+| passwordSecurityLevel | number | 是 | 密码强度等级   |  |
+| mfaEnrolled | boolean | 是 | 是否绑定了 MFA   |  |
+| passwordSet | boolean | 是 | 是否设置了密码   |  |
+| emailBinded | boolean | 是 | 是否绑定了邮箱   |  |
+| phoneBinded | boolean | 是 | 是否绑定了手机号   |  |
+| securityScore | number | 是 | 账号等级评分   |  |
 
 

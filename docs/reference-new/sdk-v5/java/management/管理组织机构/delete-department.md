@@ -13,21 +13,21 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）。   | `60b49eb83fd80adb96f26e68` |
-| organizationCode | string | 是 | - | 组织 Code（organizationCode）。   | `steamory` |
-| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型。  枚举值：`department_id`,`open_department_id` | `department_id` |
+| departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）  | `60b49eb83fd80adb96f26e68` |
+| organizationCode | string | 是 | - | 组织 Code（organizationCode）  | `steamory` |
+| departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class ManagementClientTest {
+class Test {
     private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -45,7 +45,7 @@ class ManagementClientTest {
     }
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -80,8 +80,8 @@ class ManagementClientTest {
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| success | boolean | 是 | 操作是否成功。  |  `true` |
+| success | boolean | 是 | 操作是否成功   |  `true` |
 
 

@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -37,8 +37,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -74,10 +73,10 @@ const managementClient = new ManagementClient({
 
 ### <a id="RoleDto"></a> RoleDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限分组内角色的唯一标识符。  |  `role1` |
-| description | string | 是 | 角色描述。  |  `this is description` |
-| namespace | string | 是 | 所属权限分组的 code。  |  `default` |
+| code | string | 是 | 权限分组内角色的唯一标识符   |  `role1` |
+| description | string | 是 | 角色描述   |  `this is description` |
+| namespace | string | 是 | 所属权限分组的 code   |  `default` |
 
 

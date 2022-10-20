@@ -13,40 +13,33 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| channel | string | 是 | - | 短信通道，指定发送此短信的目的：
-- `CHANNEL_LOGIN`: 用于用户登录
-- `CHANNEL_REGISTER`: 用于用户注册
-- `CHANNEL_RESET_PASSWORD`: 用于重置密码
-- `CHANNEL_BIND_PHONE`: 用于绑定手机号
-- `CHANNEL_UNBIND_PHONE`: 用于解绑手机号
-- `CHANNEL_BIND_MFA`: 用于绑定 MFA
-- `CHANNEL_VERIFY_MFA`: 用于验证 MFA
-- `CHANNEL_UNBIND_MFA`: 用于解绑 MFA
-- `CHANNEL_COMPLETE_PHONE`: 用于在注册/登录时补全手机号信息  
-- `CHANNEL_IDENTITY_VERIFICATION`: 用于进行用户实名认证
-- `CHANNEL_DELETE_ACCOUNT`: 用于注销账号
-      。  枚举值：`CHANNEL_LOGIN`,`CHANNEL_REGISTER`,`CHANNEL_RESET_PASSWORD`,`CHANNEL_BIND_PHONE`,`CHANNEL_UNBIND_PHONE`,`CHANNEL_BIND_MFA`,`CHANNEL_VERIFY_MFA`,`CHANNEL_UNBIND_MFA`,`CHANNEL_COMPLETE_PHONE`,`CHANNEL_IDENTITY_VERIFICATION`,`CHANNEL_DELETE_ACCOUNT` | `CHANNEL_LOGIN` |
-| phoneNumber | string | 是 | - | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。。   | `188xxxx8888` |
-| phoneCountryCode | string | 否 | - | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。。   | `+86` |
+| channel | string | 是 | - | 短信通道，指定发送此短信的目的：<br>- `CHANNEL_LOGIN`: 用于用户登录<br>- `CHANNEL_REGISTER`: 用于用户注册<br>- `CHANNEL_RESET_PASSWORD`: 用于重置密码<br>- `CHANNEL_BIND_PHONE`: 用于绑定手机号<br>- `CHANNEL_UNBIND_PHONE`: 用于解绑手机号<br>- `CHANNEL_BIND_MFA`: 用于绑定 MFA<br>- `CHANNEL_VERIFY_MFA`: 用于验证 MFA<br>- `CHANNEL_UNBIND_MFA`: 用于解绑 MFA<br>- `CHANNEL_COMPLETE_PHONE`: 用于在注册/登录时补全手机号信息  <br>- `CHANNEL_IDENTITY_VERIFICATION`: 用于进行用户实名认证<br>- `CHANNEL_DELETE_ACCOUNT`: 用于注销账号<br>        | `CHANNEL_LOGIN` |
+| phoneNumber | string | 是 | - | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。  | `188xxxx8888` |
+| phoneCountryCode | string | 否 | - | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。  | `+86` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
+import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class ManagementClientTest {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
+class Test {
     public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
+        // 设置初始化参数
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
     
+        // 初始化 AuthenticationClient
+        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+    
+        
         SendSMSDto request = new SendSMSDto();
         request.setPhoneNumber("188xxxx8888");
         request.setChannel(SendSMSDto.channel.CHANNEL_LOGIN);
@@ -57,8 +50,7 @@ class ManagementClientTest {
     }
 }
 ```
-
-
+ -->
 
 ## 请求响应
 

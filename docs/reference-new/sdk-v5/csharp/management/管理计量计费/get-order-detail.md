@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| orderNo | string  | 是 | - | 订单号。  | `2022080410062060e26f7fd6b9` |
+ | orderNo | string  | 是 | - | 订单号  | `2022080410062060e26f7fd6b9` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -62,7 +62,7 @@ namespace Example
 }
 
 ```
-
+ -->
 
 
 ## 请求响应
@@ -99,17 +99,17 @@ namespace Example
 
 ### <a id="OrderItem"></a> OrderItem
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| orderNo | string | 是 | 订单号。  |  `202209251234224` |
-| goodsName | string | 是 | 套餐包名中文。  |  |
-| goodsNameEn | string | 是 | 套餐包名英文。  |  |
-| goodsUnitPrice | string | 是 | 单价。  |  |
-| quantity | string | 是 | 数量。  |  |
-| actualAmount | string | 是 | 实际金额。  |  |
-| status | string | 是 | 订单状态。  |  `1：未支付，2：已支付，3：已完成，4：已取消，5：已过期` |
-| orderType | string | 是 | 订单类型。  |  `New：新购，Upgrade：升级，Renew：续费，Overdue_Correct：逾期纠正，Overflowed_Correct：逾量纠正` |
-| createTime | string | 是 | 创建时间。  |  |
-| source | string | 是 | Licence：license 订单，Offline：线下交易，Eadmin：后台开通，SelfHelp：自助下单，Cdkey：Cdkey 活动兑换。  |  |
+| orderNo | string | 是 | 订单号   |  `202209251234224` |
+| goodsName | string | 是 | 套餐包名中文   |  |
+| goodsNameEn | string | 是 | 套餐包名英文   |  |
+| goodsUnitPrice | string | 是 | 单价   |  |
+| quantity | string | 是 | 数量   |  |
+| actualAmount | string | 是 | 实际金额   |  |
+| status | string | 是 | 订单状态   |  `1：未支付，2：已支付，3：已完成，4：已取消，5：已过期` |
+| orderType | string | 是 | 订单类型   |  `New：新购，Upgrade：升级，Renew：续费，Overdue_Correct：逾期纠正，Overflowed_Correct：逾量纠正` |
+| createTime | string | 是 | 创建时间   |  |
+| source | string | 是 | Licence：license 订单，Offline：线下交易，Eadmin：后台开通，SelfHelp：自助下单，Cdkey：Cdkey 活动兑换   |  |
 
 

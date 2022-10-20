@@ -13,19 +13,19 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| webhookId | string  | 是 | - | Webhook ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+ | webhookId | string  | 是 | - | Webhook ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class ManagementClientTest {
+class Test {
     private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -41,7 +41,7 @@ class ManagementClientTest {
     }
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -84,16 +84,16 @@ class ManagementClientTest {
 
 ### <a id="WebhookDto"></a> WebhookDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| webhookId | string | 是 | Webhook ID。  |  `6229ffaxxxxxxxxcade3e3d9` |
-| createdAt | string | 是 | 创建时间。  |  `2022-07-03T02:20:30.000Z` |
-| updatedAt | string | 是 | 更新时间。  |  `2022-07-03T02:20:30.000Z` |
-| name | string | 是 | Webhook 名称。  |  `用户创建事件` |
-| url | string | 是 | Webhook 回调地址。  |  `https://example.com/callback` |
-| contentType | string | 是 | 请求数据格式。  | 可选枚举值：`application/json`,`application/x-www-form-urlencoded` |
-| enabled | boolean | 是 | 是否启用。  |  `true` |
-| events | array | 否 | 用户真实名称，不具备唯一性。 示例值: 张三。  |  `["user:created"]` |
-| secret | string | 否 | 请求密钥。  |  `xxxxxxxxxxxx` |
+| webhookId | string | 是 | Webhook ID   |  `6229ffaxxxxxxxxcade3e3d9` |
+| createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
+| updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
+| name | string | 是 | Webhook 名称   |  `用户创建事件` |
+| url | string | 是 | Webhook 回调地址   |  `https://example.com/callback` |
+| contentType | string | 是 | 请求数据格式   | application/json |
+| enabled | boolean | 是 | 是否启用   |  `true` |
+| events | array | 否 | 用户真实名称，不具备唯一性。 示例值: 张三   |  `["user:created"]` |
+| secret | string | 否 | 请求密钥   |  `xxxxxxxxxxxx` |
 
 

@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -31,8 +31,7 @@ data = management_client.get_extidps(
   
 )
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -66,17 +65,17 @@ data = management_client.get_extidps(
 
 ### <a id="ExtIdpInfoDto"></a> ExtIdpInfoDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| identifier | string | 是 | 身份源连接唯一标志。  |  `wechat` |
-| extIdpId | string | 是 | 身份源 ID。  |  |
-| type | string | 是 | 身份源类型。  | 可选枚举值：`oidc`,`oauth2`,`saml`,`ldap`,`ad`,`cas`,`azure-ad`,`wechat`,`google`,`qq`,`wechatwork`,`dingtalk`,`weibo`,`github`,`alipay`,`apple`,`baidu`,`lark`,`gitlab`,`twitter`,`facebook`,`slack`,`linkedin`,`yidun`,`qingcloud`,`gitee`,`instagram`,`welink` |
-| extIdpType | string | 是 | 认证类型。  | 可选枚举值：`social`,`enterprise` |
-| bindUrl | string | 是 | 认证地址。  |  |
-| name | string | 是 | 身份源显示名称。  |  |
-| name_en | string | 否 | 身份源显示名称（英文）。  |  |
-| desc | string | 否 | 描述。  |  |
-| desc_en | string | 否 | 描述英文。  |  |
-| logo | string | 否 | 图标。  |  |
+| identifier | string | 是 | 身份源连接唯一标志   |  `wechat` |
+| extIdpId | string | 是 | 身份源 ID   |  |
+| type | string | 是 | 身份源类型   | oidc |
+| extIdpType | string | 是 | 认证类型   | social |
+| bindUrl | string | 是 | 认证地址   |  |
+| name | string | 是 | 身份源显示名称   |  |
+| name_en | string | 否 | 身份源显示名称（英文）   |  |
+| desc | string | 否 | 描述   |  |
+| desc_en | string | 否 | 描述英文   |  |
+| logo | string | 否 | 图标   |  |
 
 

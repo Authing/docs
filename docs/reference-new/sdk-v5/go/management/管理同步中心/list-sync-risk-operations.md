@@ -13,20 +13,17 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| syncTaskId | number  | 是 | - | 同步任务 ID。  | `1000` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| status | string[]  | 否 | - | 根据执行状态筛选。数组长度限制：50。  | `["SUCCESS","FAILED"]` |
-| objectType | string[]  | 否 | - | 根据操作对象类型，默认获取所有类型的记录：
-- `department`: 部门
-- `user`: 用户
-    。  | `["DEPARTMENT","USER"]` |
+ | syncTaskId | number  | 是 | - | 同步任务 ID  | `1000` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+ | status | string[]  | 否 | - | 根据执行状态筛选 数组长度限制：50。 | `["SUCCESS","FAILED"]` |
+ | objectType | string[]  | 否 | - | 根据操作对象类型，默认获取所有类型的记录：<br>- `department`: 部门<br>- `user`: 用户<br>      | `["DEPARTMENT","USER"]` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -59,7 +56,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -103,25 +100,25 @@ func main() {
 
 ### <a id="SyncRiskOperationPagingDto"></a> SyncRiskOperationPagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 数据列表。嵌套类型：<a href="#SyncRiskOperationDto">SyncRiskOperationDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 数据列表 嵌套类型：<a href="#SyncRiskOperationDto">SyncRiskOperationDto</a>。  |  |
 
 
 ### <a id="SyncRiskOperationDto"></a> SyncRiskOperationDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| syncRiskOperationId | number | 是 | 同步任务风险操作 ID。  |  `1` |
-| syncTaskId | number | 是 | 同步任务 ID。  |  `1000` |
-| createdAt | string | 是 | 创建时间。  |  `2022-07-03T02:20:30.000Z` |
-| updatedAt | string | 是 | 更新时间。  |  `2022-07-03T02:20:30.000Z` |
-| status | string | 是 | 执行状态:<br>- `PENDING`: 待执行<br>- `SUCCESS`: 成功<br>- `FAILED`: 失败<br>- `CANCELED`: 已取消<br>- `EXECUTING`: 执行中<br>    。  | 可选枚举值：`PENDING`,`SUCCESS`,`FAILED`,`CANCELED`,`EXECUTING` |
-| level | number | 是 | 优先级，数字越小表示优先级越高。。  |  |
-| objectType | string | 是 | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>    。  | 可选枚举值：`DEPARTMENT`,`USER` |
-| objectName | string | 是 | 操作对象（用户、分组、部门）名称。  |  `张三` |
-| objectId | string | 是 | 操作对象 ID。  |  `624cf96f7axxx7918478ee7` |
-| errMsg | string | 否 | 执行失败的错误信息。  |  |
+| syncRiskOperationId | number | 是 | 同步任务风险操作 ID   |  `1` |
+| syncTaskId | number | 是 | 同步任务 ID   |  `1000` |
+| createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
+| updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
+| status | string | 是 | 执行状态:<br>- `PENDING`: 待执行<br>- `SUCCESS`: 成功<br>- `FAILED`: 失败<br>- `CANCELED`: 已取消<br>- `EXECUTING`: 执行中<br>       | PENDING |
+| level | number | 是 | 优先级，数字越小表示优先级越高。   |  |
+| objectType | string | 是 | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>       | DEPARTMENT |
+| objectName | string | 是 | 操作对象（用户、分组、部门）名称   |  `张三` |
+| objectId | string | 是 | 操作对象 ID   |  `624cf96f7axxx7918478ee7` |
+| errMsg | string | 否 | 执行失败的错误信息   |  |
 
 

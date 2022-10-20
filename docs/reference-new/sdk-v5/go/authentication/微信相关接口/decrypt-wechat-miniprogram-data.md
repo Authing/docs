@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 | - | `wx.login` 接口返回的用户 `code`。   |  |
-| iv | string | 是 | - | 对称解密算法初始向量，由微信返回。   |  |
-| encryptedData | string | 是 | - | 获取微信开放数据返回的加密数据（encryptedData）。   |  |
-| extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符。   | `my-wxapp` |
+| code | string | 是 | - | `wx.login` 接口返回的用户 `code`  |  |
+| iv | string | 是 | - | 对称解密算法初始向量，由微信返回  |  |
+| encryptedData | string | 是 | - | 获取微信开放数据返回的加密数据（encryptedData）  |  |
+| extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -54,8 +54,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 

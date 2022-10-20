@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 | - | 分组 code。  | `developer` |
+ | code | string  | 是 | - | 分组 code  | `developer` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -37,7 +37,7 @@ $data = $management->getGroup(array(
     "code" => "developer",
 
 ));
-```
+``` -->
 
 
 ## 请求响应
@@ -74,10 +74,10 @@ $data = $management->getGroup(array(
 
 ### <a id="GroupDto"></a> GroupDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 分组 code。  |  `developer` |
-| name | string | 是 | 分组名称。  |  `开发者` |
-| description | string | 是 | 分组描述。  |  `描述内容` |
+| code | string | 是 | 分组 code   |  `developer` |
+| name | string | 是 | 分组名称   |  `开发者` |
+| description | string | 是 | 分组描述   |  `描述内容` |
 
 

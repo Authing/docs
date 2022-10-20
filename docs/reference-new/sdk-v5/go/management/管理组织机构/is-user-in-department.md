@@ -13,17 +13,17 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。departmentId 和 departmentCode 必传其一。。  | `root` |
-| organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
-| userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。。  | `6229ffaxxxxxxxxcade3e3d9` |
-| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
-| includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门。  |  |
+ | departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。departmentId 和 departmentCode 必传其一。  | `root` |
+ | organizationCode | string  | 是 | - | 组织 code  | `steamory` |
+ | userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+ | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
+ | includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -56,7 +56,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -91,8 +91,8 @@ func main() {
 
 ### <a id="IsUserInDepartmentDataDto"></a> IsUserInDepartmentDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| inDepartment | boolean | 是 | 是否在此部门内。  |  `true` |
+| inDepartment | boolean | 是 | 是否在此部门内   |  `true` |
 
 

@@ -13,15 +13,15 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| departmentId | string  | 是 | - | 部门 ID，根部门传 `root`。  | `root` |
-| organizationCode | string  | 是 | - | 组织 code。  | `steamory` |
-| departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型。 枚举值：`department_id`,`open_department_id` | `department_id` |
+ | departmentId | string  | 是 | - | 部门 ID，根部门传 `root`  | `root` |
+ | organizationCode | string  | 是 | - | 组织 code  | `steamory` |
+ | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -43,7 +43,7 @@ $data = $management->listDepartmentMemberIds(array(
     "departmentIdType" => "department_id",
 
 ));
-```
+``` -->
 
 
 ## 请求响应

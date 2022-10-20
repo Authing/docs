@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -46,8 +46,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -85,24 +84,24 @@ func main() {
 
 ### <a id="SystmeInfoRSAConfig"></a> SystmeInfoRSAConfig
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| publicKey | string | 是 | RSA256 公钥。  |  `xxxxxxxxxxxxxxxxxxxxxx` |
+| publicKey | string | 是 | RSA256 公钥   |  `xxxxxxxxxxxxxxxxxxxxxx` |
 
 
 ### <a id="SystmeInfoSM2Config"></a> SystmeInfoSM2Config
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| publicKey | string | 是 | SM2 公钥。  |  `xxxxxxxxxxxxxxxxxxxxxx` |
+| publicKey | string | 是 | SM2 公钥   |  `xxxxxxxxxxxxxxxxxxxxxx` |
 
 
 ### <a id="SystmeInfoVersion"></a> SystmeInfoVersion
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| server | string | 是 | Authing 核心服务版本号。  |  `2.0.0` |
-| console | string | 是 | Authing 控制台版本号。  |  `2.0.0` |
-| login | string | 是 | Authing 托管登录页版本号。  |  `2.0.0` |
+| server | string | 是 | Authing 核心服务版本号   |  `2.0.0` |
+| console | string | 是 | Authing 控制台版本号   |  `2.0.0` |
+| login | string | 是 | Authing 托管登录页版本号   |  `2.0.0` |
 
 

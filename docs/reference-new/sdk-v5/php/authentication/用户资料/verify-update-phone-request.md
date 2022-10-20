@@ -13,16 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| phonePassCodePayload | <a href="#UpdatePhoneByPhonePassCodeDto">UpdatePhoneByPhonePassCodeDto</a> | 是 | - | 使用手机号验证码方式验证的数据。   |  |
-| verifyMethod | string | 是 | - | 修改手机号的验证方式：
-- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。
-    。  枚举值：`PHONE_PASSCODE` |  |
+| phonePassCodePayload | <a href="#UpdatePhoneByPhonePassCodeDto">UpdatePhoneByPhonePassCodeDto</a> | 是 | - | 使用手机号验证码方式验证的数据  |  |
+| verifyMethod | string | 是 | - | 修改手机号的验证方式：<br>- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。<br>      |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -47,8 +45,7 @@ $data = $management->verifyUpdatePhoneRequest(array(
     ),
 
 ));
-```
-
+``` -->
 
 ## 请求响应
 
@@ -80,21 +77,21 @@ $data = $management->verifyUpdatePhoneRequest(array(
 
 ### <a id="UpdatePhoneByPhonePassCodeDto"></a> UpdatePhoneByPhonePassCodeDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| newPhoneNumber | string | 是 | 新手机号码，不带区号。如果是国外手机号，请在 newPhoneCountryCode 参数中指定区号。。  |  `188xxxx8888` |
-| newPhonePassCode | string | 是 | 验证码。  |  `123456` |
-| newPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。。  |  `+86` |
-| oldPhoneNumber | string | 否 | 旧手机号码，不带区号。如果是国外手机号，请在 oldPhoneCountryCode 参数中指定区号。如果用户池开启了修改手机号需要验证之前的手机号，此参数必填。。  |  `188xxxx8888` |
-| oldPhonePassCode | string | 否 | 旧手机号的验证码，如果用户池开启了修改手机号需要验证之前的手机号，此参数必填。  |  `123456` |
-| oldPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。。  |  `+86` |
+| newPhoneNumber | string | 是 | 新手机号码，不带区号。如果是国外手机号，请在 newPhoneCountryCode 参数中指定区号。   |  `188xxxx8888` |
+| newPhonePassCode | string | 是 | 验证码   |  `123456` |
+| newPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。   |  `+86` |
+| oldPhoneNumber | string | 否 | 旧手机号码，不带区号。如果是国外手机号，请在 oldPhoneCountryCode 参数中指定区号。如果用户池开启了修改手机号需要验证之前的手机号，此参数必填。   |  `188xxxx8888` |
+| oldPhonePassCode | string | 否 | 旧手机号的验证码，如果用户池开启了修改手机号需要验证之前的手机号，此参数必填   |  `123456` |
+| oldPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。   |  `+86` |
 
 
 ### <a id="VerifyUpdatePhoneRequestData"></a> VerifyUpdatePhoneRequestData
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| updatePhoneToken | string | 是 | 用于修改当前手机号 token，你需要使用此 token 请求**修改手机号**的接口。。  |  |
-| tokenExpiresIn | number | 是 | 过期时间。  |  |
+| updatePhoneToken | string | 是 | 用于修改当前手机号 token，你需要使用此 token 请求**修改手机号**的接口。   |  |
+| tokenExpiresIn | number | 是 | 过期时间   |  |
 
 

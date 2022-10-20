@@ -83,15 +83,15 @@ const { success, errMsg, identities } = await sdk.bindExtIdpWithPopup({
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id_token | string  | 是 | - | 用户的 id_token。  |  |
-| app_id | string  | 是 | - | Authing 应用 ID。  |  |
-| ext_idp_conn_identifier | string  | 是 | - | 外部身份源连接唯一标志。  | `my-wechat` |
+ | id_token | string  | 是 | - | 用户的 id_token  |  |
+ | app_id | string  | 是 | - | Authing 应用 ID  |  |
+ | ext_idp_conn_identifier | string  | 是 | - | 外部身份源连接唯一标志  | `my-wechat` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -113,8 +113,7 @@ $data = $management->generateLinkExtidpUrl(array(
     "ext_idp_conn_identifier" => "my-wechat",
 
 ));
-```
-
+``` -->
 
 ## 请求响应
 
@@ -146,8 +145,8 @@ $data = $management->generateLinkExtidpUrl(array(
 
 ### <a id="GenerateBindExtIdpLinkDataDto"></a> GenerateBindExtIdpLinkDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| url | string | 是 | 用户绑定外部身份源的链接。  |  |
+| url | string | 是 | 用户绑定外部身份源的链接   |  |
 
 

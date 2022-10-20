@@ -13,16 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| emailPasscodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据。   |  |
-| verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：
-- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。
-    。  枚举值：`EMAIL_PASSCODE` | `EMAIL_PASSCODE` |
+| emailPasscodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
+| verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -45,8 +43,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -80,19 +77,19 @@ const managementClient = new ManagementClient({
 
 ### <a id="UpdateEmailByEmailPassCodeDto"></a> UpdateEmailByEmailPassCodeDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| newEmail | string | 是 | 新邮箱。  |  `new@example.com` |
-| newEmailPassCode | string | 是 | 新邮箱验证码。  |  `123456` |
-| oldEmail | string | 否 | 旧邮箱，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。。  |  `old@example.com` |
-| oldEmailPassCode | string | 否 | 旧邮箱验证码，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。。  |  `123456` |
+| newEmail | string | 是 | 新邮箱   |  `new@example.com` |
+| newEmailPassCode | string | 是 | 新邮箱验证码   |  `123456` |
+| oldEmail | string | 否 | 旧邮箱，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。   |  `old@example.com` |
+| oldEmailPassCode | string | 否 | 旧邮箱验证码，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。   |  `123456` |
 
 
 ### <a id="VerifyUpdateEmailRequestData"></a> VerifyUpdateEmailRequestData
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| updateEmailToken | string | 是 | 用于修改当前邮箱的 token，你需要使用此 token 调用**修改邮箱**接口。。  |  |
-| tokenExpiresIn | number | 是 | Token 有效时间，时间为 60 秒。。  |  `60` |
+| updateEmailToken | string | 是 | 用于修改当前邮箱的 token，你需要使用此 token 调用**修改邮箱**接口。   |  |
+| tokenExpiresIn | number | 是 | Token 有效时间，时间为 60 秒。   |  `60` |
 
 

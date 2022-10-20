@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | string  | 是 | - | 身份源 ID。  | `6268b0e5e4b9a0e8ffa8fd60` |
-| tenantId | string  | 否 | - | 租户 ID。  | `60b49eb83fd80adb96f26e68` |
-| appId | string  | 否 | - | 应用 ID。  | `60b49eb83fd80adb96f26e68` |
-| type | string  | 否 | - | 身份源类型。 枚举值：`social`,`enterprise` |  |
+ | id | string  | 是 | - | 身份源 ID  | `6268b0e5e4b9a0e8ffa8fd60` |
+ | tenantId | string  | 否 | - | 租户 ID  | `60b49eb83fd80adb96f26e68` |
+ | appId | string  | 否 | - | 应用 ID  | `60b49eb83fd80adb96f26e68` |
+ | type | string  | 否 | - | 身份源类型  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +43,7 @@ data = management_client.get_ext_idp(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -83,14 +83,14 @@ data = management_client.get_ext_idp(
 
 ### <a id="ExtIdpDetail"></a> ExtIdpDetail
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| id | string | 是 | 身份源 id。  |  `60b49eb83fd80adb96f26e68` |
-| name | string | 是 | 身份源名称。  |  `default` |
-| logo | string | 是 | 身份源的 Logo。  |  `https://files.authing.co/authing-console/social-connections/wechatIdentitySource.svg` |
-| tenantId | string | 否 | 租户 ID。  |  `60b49eb83fd80adb96f26e68` |
-| type | string | 是 | 身份源类型。  |  `wechat` |
-| connections | object | 是 | 身份源的连接列表。  |  |
-| autoJoin | boolean | 是 | 租户场景下自动加入。  |  `true` |
+| id | string | 是 | 身份源 id   |  `60b49eb83fd80adb96f26e68` |
+| name | string | 是 | 身份源名称   |  `default` |
+| logo | string | 是 | 身份源的 Logo   |  `https://files.authing.co/authing-console/social-connections/wechatIdentitySource.svg` |
+| tenantId | string | 否 | 租户 ID   |  `60b49eb83fd80adb96f26e68` |
+| type | string | 是 | 身份源类型   |  `wechat` |
+| connections | object | 是 | 身份源的连接列表   |  |
+| autoJoin | boolean | 是 | 租户场景下自动加入   |  `true` |
 
 

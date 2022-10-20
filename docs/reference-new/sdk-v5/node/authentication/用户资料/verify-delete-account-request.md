@@ -13,20 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| verifyMethod | string | 是 | - | 注销账号的验证手段：
-- `PHONE_PASSCODE`: 使用手机号验证码方式进行验证。
-- `EMAIL_PASSCODE`: 使用邮箱验证码方式进行验证。
-- `PASSWORD`: 如果用户既没有绑定手机号又没有绑定邮箱，可以使用密码作为验证手段。
-    。  枚举值：`PHONE_PASSCODE`,`EMAIL_PASSCODE`,`PASSWORD` | `PHONE_PASSCODE` |
-| phonePassCodePayload | <a href="#DeleteAccountByPhonePassCodeDto">DeleteAccountByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据。   |  |
-| emailPassCodePayload | <a href="#DeleteAccountByEmailPassCodeDto">DeleteAccountByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据。   |  |
-| passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据。   |  |
+| verifyMethod | string | 是 | - | 注销账号的验证手段：<br>- `PHONE_PASSCODE`: 使用手机号验证码方式进行验证。<br>- `EMAIL_PASSCODE`: 使用邮箱验证码方式进行验证。<br>- `PASSWORD`: 如果用户既没有绑定手机号又没有绑定邮箱，可以使用密码作为验证手段。<br>      | `PHONE_PASSCODE` |
+| phonePassCodePayload | <a href="#DeleteAccountByPhonePassCodeDto">DeleteAccountByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
+| emailPassCodePayload | <a href="#DeleteAccountByEmailPassCodeDto">DeleteAccountByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
+| passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -56,8 +52,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -92,34 +87,34 @@ const managementClient = new ManagementClient({
 
 ### <a id="DeleteAccountByPhonePassCodeDto"></a> DeleteAccountByPhonePassCodeDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| phoneNumber | string | 是 | 此账号绑定的手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。。  |  `188xxxx8888` |
-| passCode | string | 是 | 短信验证码，一个短信验证码只能使用一次，有效时间为一分钟。你需要通过**发送短信**接口获取。。  |  `123456` |
-| phoneCountryCode | string | 否 | 手机区号。  |  `+86` |
+| phoneNumber | string | 是 | 此账号绑定的手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |
+| passCode | string | 是 | 短信验证码，一个短信验证码只能使用一次，有效时间为一分钟。你需要通过**发送短信**接口获取。   |  `123456` |
+| phoneCountryCode | string | 否 | 手机区号   |  `+86` |
 
 
 ### <a id="DeleteAccountByEmailPassCodeDto"></a> DeleteAccountByEmailPassCodeDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| email | string | 否 | 此账号绑定的邮箱，不区分大小写。。  |  |
-| passCode | string | 是 | 邮箱验证码，一个短信验证码只能使用一次，默认有效时间为 5 分钟。你需要通过**发送邮件**接口获取。。  |  |
+| email | string | 否 | 此账号绑定的邮箱，不区分大小写。   |  |
+| passCode | string | 是 | 邮箱验证码，一个短信验证码只能使用一次，默认有效时间为 5 分钟。你需要通过**发送邮件**接口获取。   |  |
 
 
 ### <a id="DeleteAccountByPasswordDto"></a> DeleteAccountByPasswordDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| password | string | 是 | 用户密码。  |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>  。  | 可选枚举值：`sm2`,`rsa`,`none` |
+| password | string | 是 | 用户密码   |  |
+| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="VerifyDeleteAccountRequestDataDto"></a> VerifyDeleteAccountRequestDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| deleteAccountToken | string | 是 | 用于注销账号的临时 Token，你需要调用**注销账号**接口执行实际注销账号操作。。  |  `xxxx` |
-| tokenExpiresIn | number | 是 | Token 有效时间，默认为 60 秒。。  |  `60` |
+| deleteAccountToken | string | 是 | 用于注销账号的临时 Token，你需要调用**注销账号**接口执行实际注销账号操作。   |  `xxxx` |
+| tokenExpiresIn | number | 是 | Token 有效时间，默认为 60 秒。   |  `60` |
 
 

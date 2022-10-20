@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| keywords | string  | 否 | - | 搜索角色 code。  | `admin` |
-| namespace | string  | 否 | default | 所属权限分组的 code。  | `default` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+ | keywords | string  | 否 | - | 搜索角色 code  | `admin` |
+ | namespace | string  | 否 | default | 所属权限分组的 code  | `default` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +43,7 @@ data = management_client.list_roles(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -82,18 +82,18 @@ data = management_client.list_roles(
 
 ### <a id="RolePagingDto"></a> RolePagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 响应数据。嵌套类型：<a href="#RoleDto">RoleDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 响应数据 嵌套类型：<a href="#RoleDto">RoleDto</a>。  |  |
 
 
 ### <a id="RoleDto"></a> RoleDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限分组内角色的唯一标识符。  |  `role1` |
-| description | string | 是 | 角色描述。  |  `this is description` |
-| namespace | string | 是 | 所属权限分组的 code。  |  `default` |
+| code | string | 是 | 权限分组内角色的唯一标识符   |  `role1` |
+| description | string | 是 | 角色描述   |  `this is description` |
+| namespace | string | 是 | 所属权限分组的 code   |  `default` |
 
 

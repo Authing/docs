@@ -13,15 +13,15 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 | - | 分组 code。  | `developer` |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
-| resourceType | string  | 否 | - | 资源类型。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |  |
+ | code | string  | 是 | - | 分组 code  | `developer` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
+ | resourceType | string  | 否 | - | 资源类型  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -52,7 +52,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -97,23 +97,23 @@ func main() {
 
 ### <a id="AuthorizedResourceDto"></a> AuthorizedResourceDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| resourceCode | string | 是 | 资源描述符。  |  `ecs:1` |
-| description | string | 否 | 资源描述信息。  |  `服务器` |
-| condition | array | 否 | 策略 Condition。嵌套类型：<a href="#PolicyCondition">PolicyCondition</a>。  |  |
-| resourceType | string | 是 | 资源类型。  | 可选枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |
-| apiIdentifier | string | 是 | API URL。  |  `/api/v1/example` |
-| actions | array | 是 | 授权的操作列表。  |  `["ecs:Start","ecs:Stop"]` |
-| effect | string | 是 | 允许还是拒绝。  | 可选枚举值：`ALLOW`,`DENY` |
+| resourceCode | string | 是 | 资源描述符   |  `ecs:1` |
+| description | string | 否 | 资源描述信息   |  `服务器` |
+| condition | array | 否 | 策略 Condition 嵌套类型：<a href="#PolicyCondition">PolicyCondition</a>。  |  |
+| resourceType | string | 是 | 资源类型   | DATA |
+| apiIdentifier | string | 是 | API URL   |  `/api/v1/example` |
+| actions | array | 是 | 授权的操作列表   |  `["ecs:Start","ecs:Stop"]` |
+| effect | string | 是 | 允许还是拒绝   | ALLOW |
 
 
 ### <a id="PolicyCondition"></a> PolicyCondition
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| param | string | 是 | Condition Param。  | 可选枚举值：`UserPoolId`,`AppId`,`RequestFrom`,`UserId`,`UserArn`,`CurrentTime`,`EpochTime`,`SourceIp`,`User`,`MultiFactorAuthPresent`,`MultiFactorAuthAge`,`UserAgent`,`Referer`,`Device`,`OS`,`Country`,`Province`,`City`,`DeviceChanged`,`DeviceUntrusted`,`ProxyUntrusted`,`LoggedInApps`,`Namespace` |
-| operator | string | 是 | Condition Operator。  | 可选枚举值：`Bool`,`DateEquals`,`DateNotEquals`,`DateLessThan`,`DateLessThanEquals`,`DateGreaterThan`,`DateGreaterThanEquals`,`IpAddress`,`NotIpAddress`,`NumericEquals`,`NumericNotEquals`,`NumericLessThan`,`NumericLessThanEquals`,`NumericGreaterThan`,`NumericGreaterThanEquals`,`StringEquals`,`StringNotEquals`,`StringEqualsIgnoreCase`,`StringNotEqualsIgnoreCase`,`StringLike`,`StringNotLike`,`ListContains` |
-| value | string | 是 | Condition Value。  |  `1` |
+| param | string | 是 | Condition Param   | UserPoolId |
+| operator | string | 是 | Condition Operator   | Bool |
+| value | string | 是 | Condition Value   |  `1` |
 
 

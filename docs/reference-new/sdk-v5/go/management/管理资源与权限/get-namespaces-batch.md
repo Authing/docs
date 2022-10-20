@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔。数组长度限制：50。  | `code1,code2` |
+ | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -48,7 +48,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -85,10 +85,10 @@ func main() {
 
 ### <a id="NamespaceDto"></a> NamespaceDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限分组唯一标志符。  |  `my-namespace` |
-| name | string | 否 | 权限分组名称。  |  `我的权限分组` |
-| description | string | 否 | 权限分组描述信息。  |  `我的权限分组描述` |
+| code | string | 是 | 权限分组唯一标志符   |  `my-namespace` |
+| name | string | 否 | 权限分组名称   |  `我的权限分组` |
+| description | string | 否 | 权限分组描述信息   |  `我的权限分组描述` |
 
 

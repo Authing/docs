@@ -13,21 +13,21 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 | - | 权限分组内角色的唯一标识符。  | `60b49eb83fd80adb96f26e68` |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
-| resourceType | string  | 否 | - | 资源类型，如 数据、API、按钮、菜单。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` | `DATA` |
+ | code | string  | 是 | - | 权限分组内角色的唯一标识符  | `60b49eb83fd80adb96f26e68` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
+ | resourceType | string  | 否 | - | 资源类型，如 数据、API、按钮、菜单  | `DATA` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class ManagementClientTest {
+class Test {
     private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -45,7 +45,7 @@ class ManagementClientTest {
     }
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -85,19 +85,19 @@ class ManagementClientTest {
 
 ### <a id="RoleAuthorizedResourcePagingDto"></a> RoleAuthorizedResourcePagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 数据。嵌套类型：<a href="#RoleAuthorizedResourcesRespDto">RoleAuthorizedResourcesRespDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 数据 嵌套类型：<a href="#RoleAuthorizedResourcesRespDto">RoleAuthorizedResourcesRespDto</a>。  |  |
 
 
 ### <a id="RoleAuthorizedResourcesRespDto"></a> RoleAuthorizedResourcesRespDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| resourceCode | string | 是 | 资源描述符。  |  `ecs` |
-| resourceType | string | 是 | 资源类型。  | 可选枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |
-| actions | array | 是 | 被授权的操作列表。  |  `["ecs:Start","ecs:Stop"]` |
-| apiIdentifier | string | 是 | 资源对应的 API Identifier。  |  `dd8d7stf44` |
+| resourceCode | string | 是 | 资源描述符   |  `ecs` |
+| resourceType | string | 是 | 资源类型   | DATA |
+| actions | array | 是 | 被授权的操作列表   |  `["ecs:Start","ecs:Stop"]` |
+| apiIdentifier | string | 是 | 资源对应的 API Identifier   |  `dd8d7stf44` |
 
 

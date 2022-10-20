@@ -13,31 +13,32 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| action | string | 是 | - | 修改二维码状态的动作:
-- `SCAN`: 修改二维码状态为已扫码状态，当移动 APP 扫了码之后，应当立即执行此操作；
-- `CONFIRM`: 修改二维码状态为已授权，执行此操作前必须先执行 `SCAN 操作；
-- `CANCEL`: 修改二维码状态为已取消，执行此操作前必须先执行 `SCAN 操作；
-    。  枚举值：`SCAN`,`CONFIRM`,`CANCEL` | `CONFIRM` |
-| qrcodeId | string | 是 | - | 二维码唯一 ID。   |  |
+| action | string | 是 | - | 修改二维码状态的动作:<br>- `SCAN`: 修改二维码状态为已扫码状态，当移动 APP 扫了码之后，应当立即执行此操作；<br>- `CONFIRM`: 修改二维码状态为已授权，执行此操作前必须先执行 `SCAN 操作；<br>- `CANCEL`: 修改二维码状态为已取消，执行此操作前必须先执行 `SCAN 操作；<br>      | `CONFIRM` |
+| qrcodeId | string | 是 | - | 二维码唯一 ID  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
+import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class ManagementClientTest {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
+class Test {
     public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
+        // 设置初始化参数
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
     
+        // 初始化 AuthenticationClient
+        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+    
+        
         ChangeQRCodeStatusDto request = new ChangeQRCodeStatusDto();
         request.setQrcodeId("");
         request.setAction(ChangeQRCodeStatusDto.action.CONFIRM);
@@ -47,8 +48,7 @@ class ManagementClientTest {
     }
 }
 ```
-
-
+ -->
 
 ## 请求响应
 

@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| webhookIds | string[] | 是 | - | webhookId 数组。   | `["xxxx"]` |
+| webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -36,7 +36,7 @@ $data = $management->deleteWebhook(array(
       "webhookIds" => array("xxxx"),
 
 ));
-```
+``` -->
 
 
 ## 请求响应

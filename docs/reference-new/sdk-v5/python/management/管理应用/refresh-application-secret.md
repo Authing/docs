@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appId | string | 是 | - | 应用 ID。   | `6229ffaxxxxxxxxcade3e3d9` |
+| appId | string | 是 | - | 应用 ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +33,7 @@ data = management_client.refresh_application_secret(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -68,8 +68,8 @@ data = management_client.refresh_application_secret(
 
 ### <a id="RefreshApplicationSecretDataDto"></a> RefreshApplicationSecretDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| secret | string | 是 | 新的应用密钥。  |  `860830c5a647xxxxxx7bd4d0dd94bf23` |
+| secret | string | 是 | 新的应用密钥   |  `860830c5a647xxxxxx7bd4d0dd94bf23` |
 
 

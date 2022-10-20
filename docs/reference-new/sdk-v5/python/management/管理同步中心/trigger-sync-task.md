@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| syncTaskId | number | 是 | - | 同步任务 ID。   | `1000` |
+| syncTaskId | number | 是 | - | 同步任务 ID  | `1000` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +33,7 @@ data = management_client.trigger_sync_task(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -68,8 +68,8 @@ data = management_client.trigger_sync_task(
 
 ### <a id="TriggerSyncTaskDataDto"></a> TriggerSyncTaskDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| syncJobId | number | 是 | 此次执行同步任务的同步作业 ID。  |  `1` |
+| syncJobId | number | 是 | 此次执行同步任务的同步作业 ID   |  `1` |
 
 

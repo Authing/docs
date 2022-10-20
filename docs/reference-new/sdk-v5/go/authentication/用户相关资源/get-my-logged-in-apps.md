@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -46,8 +46,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -85,12 +84,12 @@ func main() {
 
 ### <a id="LoggedInAppsDto"></a> LoggedInAppsDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| appId | string | 是 | 应用 ID。  |  `xxx` |
-| appName | string | 是 | 应用名称。  |  `示例应用` |
-| appLoginUrl | string | 是 | 应用登录地址。  |  `https://example.authing.cn/login` |
-| appLogo | string | 是 | 应用 Logo。  |  `https://files.authing.co/authing-console/default-app-logo.png` |
-| active | boolean | 是 | 当前是否处于登录态。  |  `true` |
+| appId | string | 是 | 应用 ID   |  `xxx` |
+| appName | string | 是 | 应用名称   |  `示例应用` |
+| appLoginUrl | string | 是 | 应用登录地址   |  `https://example.authing.cn/login` |
+| appLogo | string | 是 | 应用 Logo   |  `https://files.authing.co/authing-console/default-app-logo.png` |
+| active | boolean | 是 | 当前是否处于登录态   |  `true` |
 
 

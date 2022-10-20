@@ -13,24 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。。  | `6229ffaxxxxxxxxcade3e3d9` |
-| userIdType | string  | 否 | user_id | 用户 ID 类型，默认值为 `user_id`，可选值为：
-- `user_id`: Authing 用户 ID，如 `6319a1504f3xxxxf214dd5b7`
-- `phone`: 用户手机号
-- `email`: 用户邮箱
-- `username`: 用户名
-- `external_id`: 用户在外部系统的 ID，对应 Authing 用户信息的 `externalId` 字段
-- `identity`: 用户的外部身份源信息，格式为 `<extIdpId>:<userIdInIdp>`，其中 `<extIdpId>` 为 Authing 身份源的 ID，`<userIdInIdp>` 为用户在外部身份源的 ID。
-示例值：`62f20932716fbcc10d966ee5:ou_8bae746eac07cd2564654140d2a9ac61`。
-。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`,`identity` | `user_id` |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
-| resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮。 枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |  |
+ | userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+ | userIdType | string  | 否 | user_id | 用户 ID 类型，默认值为 `user_id`，可选值为：<br>- `user_id`: Authing 用户 ID，如 `6319a1504f3xxxxf214dd5b7`<br>- `phone`: 用户手机号<br>- `email`: 用户邮箱<br>- `username`: 用户名<br>- `external_id`: 用户在外部系统的 ID，对应 Authing 用户信息的 `externalId` 字段<br>- `identity`: 用户的外部身份源信息，格式为 `<extIdpId>:<userIdInIdp>`，其中 `<extIdpId>` 为 Authing 身份源的 ID，`<userIdInIdp>` 为用户在外部身份源的 ID。<br>示例值：`62f20932716fbcc10d966ee5:ou_8bae746eac07cd2564654140d2a9ac61`。<br>  | `user_id` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
+ | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -76,7 +68,7 @@ namespace Example
 }
 
 ```
-
+ -->
 
 
 ## 请求响应
@@ -123,31 +115,31 @@ namespace Example
 
 ### <a id="AuthorizedResourcePagingDto"></a> AuthorizedResourcePagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 响应数据。嵌套类型：<a href="#AuthorizedResourceDto">AuthorizedResourceDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 响应数据 嵌套类型：<a href="#AuthorizedResourceDto">AuthorizedResourceDto</a>。  |  |
 
 
 ### <a id="AuthorizedResourceDto"></a> AuthorizedResourceDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| resourceCode | string | 是 | 资源描述符。  |  `ecs:1` |
-| description | string | 否 | 资源描述信息。  |  `服务器` |
-| condition | array | 否 | 策略 Condition。嵌套类型：<a href="#PolicyCondition">PolicyCondition</a>。  |  |
-| resourceType | string | 是 | 资源类型。  | 可选枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |
-| apiIdentifier | string | 是 | API URL。  |  `/api/v1/example` |
-| actions | array | 是 | 授权的操作列表。  |  `["ecs:Start","ecs:Stop"]` |
-| effect | string | 是 | 允许还是拒绝。  | 可选枚举值：`ALLOW`,`DENY` |
+| resourceCode | string | 是 | 资源描述符   |  `ecs:1` |
+| description | string | 否 | 资源描述信息   |  `服务器` |
+| condition | array | 否 | 策略 Condition 嵌套类型：<a href="#PolicyCondition">PolicyCondition</a>。  |  |
+| resourceType | string | 是 | 资源类型   | DATA |
+| apiIdentifier | string | 是 | API URL   |  `/api/v1/example` |
+| actions | array | 是 | 授权的操作列表   |  `["ecs:Start","ecs:Stop"]` |
+| effect | string | 是 | 允许还是拒绝   | ALLOW |
 
 
 ### <a id="PolicyCondition"></a> PolicyCondition
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| param | string | 是 | Condition Param。  | 可选枚举值：`UserPoolId`,`AppId`,`RequestFrom`,`UserId`,`UserArn`,`CurrentTime`,`EpochTime`,`SourceIp`,`User`,`MultiFactorAuthPresent`,`MultiFactorAuthAge`,`UserAgent`,`Referer`,`Device`,`OS`,`Country`,`Province`,`City`,`DeviceChanged`,`DeviceUntrusted`,`ProxyUntrusted`,`LoggedInApps`,`Namespace` |
-| operator | string | 是 | Condition Operator。  | 可选枚举值：`Bool`,`DateEquals`,`DateNotEquals`,`DateLessThan`,`DateLessThanEquals`,`DateGreaterThan`,`DateGreaterThanEquals`,`IpAddress`,`NotIpAddress`,`NumericEquals`,`NumericNotEquals`,`NumericLessThan`,`NumericLessThanEquals`,`NumericGreaterThan`,`NumericGreaterThanEquals`,`StringEquals`,`StringNotEquals`,`StringEqualsIgnoreCase`,`StringNotEqualsIgnoreCase`,`StringLike`,`StringNotLike`,`ListContains` |
-| value | string | 是 | Condition Value。  |  `1` |
+| param | string | 是 | Condition Param   | UserPoolId |
+| operator | string | 是 | Condition Operator   | Bool |
+| value | string | 是 | Condition Value   |  `1` |
 
 

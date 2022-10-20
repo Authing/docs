@@ -13,28 +13,20 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。。  | `6229ffaxxxxxxxxcade3e3d9` |
-| userIdType | string  | 否 | user_id | 用户 ID 类型，默认值为 `user_id`，可选值为：
-- `user_id`: Authing 用户 ID，如 `6319a1504f3xxxxf214dd5b7`
-- `phone`: 用户手机号
-- `email`: 用户邮箱
-- `username`: 用户名
-- `external_id`: 用户在外部系统的 ID，对应 Authing 用户信息的 `externalId` 字段
-- `identity`: 用户的外部身份源信息，格式为 `<extIdpId>:<userIdInIdp>`，其中 `<extIdpId>` 为 Authing 身份源的 ID，`<userIdInIdp>` 为用户在外部身份源的 ID。
-示例值：`62f20932716fbcc10d966ee5:ou_8bae746eac07cd2564654140d2a9ac61`。
-。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`,`identity` | `user_id` |
-| appId | string  | 否 | - | 应用 ID。  |  |
-| clientIp | string  | 否 | - | 客户端 IP。  | `127.0.0.1` |
-| start | number  | 否 | - | 开始时间戳（毫秒）。  | `1647360000000` |
-| end | number  | 否 | - | 结束时间戳（毫秒）。  | `1648051199000` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+ | userId | string  | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
+ | userIdType | string  | 否 | user_id | 用户 ID 类型，默认值为 `user_id`，可选值为：<br>- `user_id`: Authing 用户 ID，如 `6319a1504f3xxxxf214dd5b7`<br>- `phone`: 用户手机号<br>- `email`: 用户邮箱<br>- `username`: 用户名<br>- `external_id`: 用户在外部系统的 ID，对应 Authing 用户信息的 `externalId` 字段<br>- `identity`: 用户的外部身份源信息，格式为 `<extIdpId>:<userIdInIdp>`，其中 `<extIdpId>` 为 Authing 身份源的 ID，`<userIdInIdp>` 为用户在外部身份源的 ID。<br>示例值：`62f20932716fbcc10d966ee5:ou_8bae746eac07cd2564654140d2a9ac61`。<br>  | `user_id` |
+ | appId | string  | 否 | - | 应用 ID  |  |
+ | clientIp | string  | 否 | - | 客户端 IP  | `127.0.0.1` |
+ | start | number  | 否 | - | 开始时间戳（毫秒）  | `1647360000000` |
+ | end | number  | 否 | - | 结束时间戳（毫秒）  | `1648051199000` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -66,7 +58,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
+ -->
 
 
 ## 请求响应
@@ -108,22 +100,22 @@ const managementClient = new ManagementClient({
 
 ### <a id="UserLoginHistoryPagingDto"></a> UserLoginHistoryPagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 响应数据。嵌套类型：<a href="#UserLoginHistoryDto">UserLoginHistoryDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 响应数据 嵌套类型：<a href="#UserLoginHistoryDto">UserLoginHistoryDto</a>。  |  |
 
 
 ### <a id="UserLoginHistoryDto"></a> UserLoginHistoryDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| appId | string | 是 | App ID。  |  `app1` |
-| appName | string | 是 | App 名称。  |  `App Name` |
-| appLogo | string | 是 | App Logo。  |  `https://example.com/logo.png` |
-| appLoginUrl | string | 是 | App 登录地址。  |  `https://example.com/login` |
-| clientIp | string | 是 | 客户端 IP。  |  `127.0.0.1` |
-| userAgent | string | 否 | 登录时使用的 user agent。  |  `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36` |
-| time | string | 是 | 登录时间。  |  |
+| appId | string | 是 | App ID   |  `app1` |
+| appName | string | 是 | App 名称   |  `App Name` |
+| appLogo | string | 是 | App Logo   |  `https://example.com/logo.png` |
+| appLoginUrl | string | 是 | App 登录地址   |  `https://example.com/login` |
+| clientIp | string | 是 | 客户端 IP   |  `127.0.0.1` |
+| userAgent | string | 否 | 登录时使用的 user agent   |  `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36` |
+| time | string | 是 | 登录时间   |  |
 
 

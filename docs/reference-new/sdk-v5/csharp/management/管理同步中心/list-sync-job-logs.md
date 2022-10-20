@@ -13,36 +13,18 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| syncJobId | number  | 是 | - | 同步作业 ID。  | `1000` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| success | boolean  | 否 | - | 根据是否操作成功进行筛选。  | `true` |
-| action | string  | 否 | - | 根据操作类型进行筛选：
-- `CreateUser`: 创建用户
-- `UpdateUser`: 修改用户信息
-- `DeleteUser`: 删除用户
-- `UpdateUserIdentifier`: 修改用户唯一标志符
-- `ChangeUserDepartment`: 修改用户部门
-- `CreateDepartment`: 创建部门
-- `UpdateDepartment`: 修改部门信息
-- `DeleteDepartment`: 删除部门
-- `MoveDepartment`: 移动部门
-- `UpdateDepartmentLeader`: 同步部门负责人
-- `CreateGroup`: 创建分组
-- `UpdateGroup`: 修改分组
-- `DeleteGroup`: 删除分组
-- `Updateless`: 无更新
-    。 枚举值：`CreateUser`,`UpdateUser`,`DeleteUser`,`UpdateUserIdentifier`,`ChangeUserDepartment`,`CreateDepartment`,`UpdateDepartment`,`DeleteDepartment`,`MoveDepartment`,`UpdateDepartmentLeader`,`CreateGroup`,`UpdateGroup`,`DeleteGroup`,`Updateless` | `CreateUser` |
-| objectType | string  | 否 | - | 操作对象类型:
-- `department`: 部门
-- `user`: 用户
-    。 枚举值：`DEPARTMENT`,`USER` | `DEPARTMENT` |
+ | syncJobId | number  | 是 | - | 同步作业 ID  | `1000` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+ | success | boolean  | 否 | - | 根据是否操作成功进行筛选  | `true` |
+ | action | string  | 否 | - | 根据操作类型进行筛选：<br>- `CreateUser`: 创建用户<br>- `UpdateUser`: 修改用户信息<br>- `DeleteUser`: 删除用户<br>- `UpdateUserIdentifier`: 修改用户唯一标志符<br>- `ChangeUserDepartment`: 修改用户部门<br>- `CreateDepartment`: 创建部门<br>- `UpdateDepartment`: 修改部门信息<br>- `DeleteDepartment`: 删除部门<br>- `MoveDepartment`: 移动部门<br>- `UpdateDepartmentLeader`: 同步部门负责人<br>- `CreateGroup`: 创建分组<br>- `UpdateGroup`: 修改分组<br>- `DeleteGroup`: 删除分组<br>- `Updateless`: 无更新<br>      | `CreateUser` |
+ | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -90,7 +72,7 @@ namespace Example
 }
 
 ```
-
+ -->
 
 
 ## 请求响应
@@ -125,8 +107,8 @@ namespace Example
 
 ### <a id="TriggerSyncTaskDataDto"></a> TriggerSyncTaskDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| syncJobId | number | 是 | 此次执行同步任务的同步作业 ID。  |  `1` |
+| syncJobId | number | 是 | 此次执行同步任务的同步作业 ID   |  `1` |
 
 

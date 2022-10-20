@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appId | string | 是 | - | App ID。   | `app1` |
-| userId | string | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。。   | `6229ffaxxxxxxxxcade3e3d9` |
+| appId | string | 是 | - | App ID  | `app1` |
+| userId | string | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -38,7 +38,7 @@ $data = $management->checkSessionStatus(array(
     "appId" => "app1",
 
 ));
-```
+``` -->
 
 
 ## 请求响应
@@ -73,8 +73,8 @@ $data = $management->checkSessionStatus(array(
 
 ### <a id="CheckSessionStatusDataDto"></a> CheckSessionStatusDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| active | boolean | 是 | 是否具有登录态。  |  `true` |
+| active | boolean | 是 | 是否具有登录态   |  `true` |
 
 

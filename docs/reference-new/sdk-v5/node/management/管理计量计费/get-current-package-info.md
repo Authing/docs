@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
+ -->
 
 
 ## 请求响应
@@ -72,24 +72,24 @@ const managementClient = new ManagementClient({
 
 ### <a id="CostCurrentPackageInfo"></a> CostCurrentPackageInfo
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 套餐包编码。  |  `V4_B2C_Enterprise:1000` |
-| endTime | string | 是 | 套餐结束时间。  |  `2022-09-09 00:00:00` |
-| overdueDays | string | 是 | 套餐逾期天数。  |  `0` |
-| goodsPackage |  | 是 | 套餐包信息。嵌套类型：<a href="#GoodsPackageDto">GoodsPackageDto</a>。  |  `套餐包信息` |
+| code | string | 是 | 套餐包编码   |  `V4_B2C_Enterprise:1000` |
+| endTime | string | 是 | 套餐结束时间   |  `2022-09-09 00:00:00` |
+| overdueDays | string | 是 | 套餐逾期天数   |  `0` |
+| goodsPackage |  | 是 | 套餐包信息 嵌套类型：<a href="#GoodsPackageDto">GoodsPackageDto</a>。  |  `套餐包信息` |
 
 
 ### <a id="GoodsPackageDto"></a> GoodsPackageDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name | string | 是 | 套餐包名称 name。  |  `测试套餐包` |
-| nameEn | string | 是 | 套餐包名称 nameEn。  |  `test package` |
-| unitPrice | string | 是 | 套餐包单价。  |  `99.00` |
-| code | string | 是 | 套餐包编码 code。  |  `V4_B2C_Enterprise:1000` |
-| group | string | 是 | 套餐包版本。  |  `Enterprise` |
-| sceneCode | string | 是 | 套餐包场景编码。  |  `B2C` |
-| amount | string | 是 | 套餐包 MAU 数量。  |  `1000` |
+| name | string | 是 | 套餐包名称 name   |  `测试套餐包` |
+| nameEn | string | 是 | 套餐包名称 nameEn   |  `test package` |
+| unitPrice | string | 是 | 套餐包单价   |  `99.00` |
+| code | string | 是 | 套餐包编码 code   |  `V4_B2C_Enterprise:1000` |
+| group | string | 是 | 套餐包版本   |  `Enterprise` |
+| sceneCode | string | 是 | 套餐包场景编码   |  `B2C` |
+| amount | string | 是 | 套餐包 MAU 数量   |  `1000` |
 
 

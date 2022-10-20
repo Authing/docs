@@ -13,17 +13,17 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| withCustomData | boolean  | 否 | - | 是否获取部门的自定义数据。  | `true` |
-| sortBy | string  | 否 | JoinDepartmentAt | 排序依据，如 部门创建时间、加入部门时间、部门名称、部门标志符。 枚举值：`DepartmentCreatedAt`,`JoinDepartmentAt`,`DepartmentName`,`DepartmemtCode` | `JoinDepartmentAt` |
-| orderBy | string  | 否 | Desc | 增序或降序。 枚举值：`Asc`,`Desc` | `Desc` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+ | withCustomData | boolean  | 否 | - | 是否获取部门的自定义数据  | `true` |
+ | sortBy | string  | 否 | JoinDepartmentAt | 排序依据，如 部门创建时间、加入部门时间、部门名称、部门标志符  | `JoinDepartmentAt` |
+ | orderBy | string  | 否 | Desc | 增序或降序  | `Desc` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -70,8 +70,7 @@ namespace Example
 }
 
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -131,53 +130,53 @@ namespace Example
 
 ### <a id="UserDepartmentPagingDto"></a> UserDepartmentPagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 响应数据。嵌套类型：<a href="#UserDepartmentRespDto">UserDepartmentRespDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 响应数据 嵌套类型：<a href="#UserDepartmentRespDto">UserDepartmentRespDto</a>。  |  |
 
 
 ### <a id="UserDepartmentRespDto"></a> UserDepartmentRespDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| organizationCode | string | 是 | 组织 Code（organizationCode）。  |  `steamory` |
-| departmentId | string | 是 | 部门 ID。  |  `60b49eb83fd80adb96f26e68` |
-| createdAt | string | 是 | 部门创建时间。  |  `2022-07-03T02:20:30.000Z` |
-| name | string | 是 | 部门名称。  |  `dd8d7stf44` |
-| description | string | 是 | 部门描述。  |  `dd8d7stf44` |
-| openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID。  |  `ou_7dab8a3d3cdccxxxxxx777c7ad535d62` |
-| isLeader | boolean | 是 | 是否是部门 Leader。  |  `true` |
-| code | string | 是 | 部门识别码。  |  `6229c4deb3e4d8a20b6021ff` |
-| isMainDepartment | boolean | 是 | 是否是主部门。  |  `true` |
-| joinedAt | string | 是 | 加入部门时间。  |  `2022-07-03T02:20:30.000Z` |
-| isVirtualNode | boolean | 是 | 是否是虚拟部门。  |  |
-| i18n |  | 否 | 多语言设置。嵌套类型：<a href="#DepartmentI18nDto">DepartmentI18nDto</a>。  |  `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
-| customData | object | 否 | 部门的扩展字段数据。  |  `{"icon":"https://example.com/logo"}` |
+| organizationCode | string | 是 | 组织 Code（organizationCode）   |  `steamory` |
+| departmentId | string | 是 | 部门 ID   |  `60b49eb83fd80adb96f26e68` |
+| createdAt | string | 是 | 部门创建时间   |  `2022-07-03T02:20:30.000Z` |
+| name | string | 是 | 部门名称   |  `dd8d7stf44` |
+| description | string | 是 | 部门描述   |  `dd8d7stf44` |
+| openDepartmentId | string | 否 | 自定义部门 ID，用于存储自定义的 ID   |  `ou_7dab8a3d3cdccxxxxxx777c7ad535d62` |
+| isLeader | boolean | 是 | 是否是部门 Leader   |  `true` |
+| code | string | 是 | 部门识别码   |  `6229c4deb3e4d8a20b6021ff` |
+| isMainDepartment | boolean | 是 | 是否是主部门   |  `true` |
+| joinedAt | string | 是 | 加入部门时间   |  `2022-07-03T02:20:30.000Z` |
+| isVirtualNode | boolean | 是 | 是否是虚拟部门   |  |
+| i18n |  | 否 | 多语言设置 嵌套类型：<a href="#DepartmentI18nDto">DepartmentI18nDto</a>。  |  `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
+| customData | object | 否 | 部门的扩展字段数据   |  `{"icon":"https://example.com/logo"}` |
 
 
 ### <a id="DepartmentI18nDto"></a> DepartmentI18nDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name |  | 是 | 支持多语言的字段。嵌套类型：<a href="#LangObject">LangObject</a>。  |  `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}` |
+| name |  | 是 | 支持多语言的字段 嵌套类型：<a href="#LangObject">LangObject</a>。  |  `{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}` |
 
 
 ### <a id="LangObject"></a> LangObject
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| zh-CN |  | 是 | 多语言的中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"中文"}` |
-| en-US |  | 是 | 多语言的英文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"English"}` |
-| zh-TW |  | 是 | 多语言的繁体中文内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"繁體中文"}` |
-| ja-JP |  | 是 | 多语言的日语内容。嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"日本語"}` |
+| zh-CN |  | 是 | 多语言的中文内容 嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"中文"}` |
+| en-US |  | 是 | 多语言的英文内容 嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"English"}` |
+| zh-TW |  | 是 | 多语言的繁体中文内容 嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"繁體中文"}` |
+| ja-JP |  | 是 | 多语言的日语内容 嵌套类型：<a href="#LangUnit">LangUnit</a>。  |  `{"enabled":false,"value":"日本語"}` |
 
 
 ### <a id="LangUnit"></a> LangUnit
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）。  |  |
-| value | boolean | 是 | 多语言内容。  |  |
+| enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
+| value | boolean | 是 | 多语言内容   |  |
 
 

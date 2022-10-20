@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
+ -->
 
 
 ## 请求响应
@@ -79,28 +79,28 @@ const managementClient = new ManagementClient({
 
 ### <a id="WebhookEventListData"></a> WebhookEventListData
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| categories | array | 是 | 分类列表。嵌套类型：<a href="#WebhookCategoryDto">WebhookCategoryDto</a>。  |  |
-| events | array | 是 | 事件列表。嵌套类型：<a href="#WebhookEventDto">WebhookEventDto</a>。  |  |
+| categories | array | 是 | 分类列表 嵌套类型：<a href="#WebhookCategoryDto">WebhookCategoryDto</a>。  |  |
+| events | array | 是 | 事件列表 嵌套类型：<a href="#WebhookEventDto">WebhookEventDto</a>。  |  |
 
 
 ### <a id="WebhookCategoryDto"></a> WebhookCategoryDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name | string | 是 | Webhook 类型名称。  |  `用户` |
-| nameEn | string | 是 | Webhook 类型英文名称。  |  `User` |
-| value | string | 是 | Webhook 类型。  |  `user` |
+| name | string | 是 | Webhook 类型名称   |  `用户` |
+| nameEn | string | 是 | Webhook 类型英文名称   |  `User` |
+| value | string | 是 | Webhook 类型   |  `user` |
 
 
 ### <a id="WebhookEventDto"></a> WebhookEventDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name | string | 是 | Webhook 名称。  |  `创建用户` |
-| nameEn | string | 是 | Webhook 英文名称。  |  `Create User` |
-| value | string | 是 | Webhook 事件。  |  `user:created` |
-| category | string | 是 | Webhook 事件分类。  |  `user` |
+| name | string | 是 | Webhook 名称   |  `创建用户` |
+| nameEn | string | 是 | Webhook 英文名称   |  `Create User` |
+| value | string | 是 | Webhook 事件   |  `user:created` |
+| category | string | 是 | Webhook 事件分类   |  `user` |
 
 

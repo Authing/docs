@@ -13,21 +13,21 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 | - | 权限分组内角色的唯一标识符。   | `manager` |
-| namespace | string | 否 | default | 所属权限分组的 code。   | `default` |
-| description | string | 否 | - | 角色描述。   | `this is manager` |
+| code | string | 是 | - | 权限分组内角色的唯一标识符  | `manager` |
+| namespace | string | 否 | default | 所属权限分组的 code  | `default` |
+| description | string | 否 | - | 角色描述  | `this is manager` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class ManagementClientTest {
+class Test {
     private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -45,7 +45,7 @@ class ManagementClientTest {
     }
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -82,10 +82,10 @@ class ManagementClientTest {
 
 ### <a id="RoleDto"></a> RoleDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限分组内角色的唯一标识符。  |  `role1` |
-| description | string | 是 | 角色描述。  |  `this is description` |
-| namespace | string | 是 | 所属权限分组的 code。  |  `default` |
+| code | string | 是 | 权限分组内角色的唯一标识符   |  `role1` |
+| description | string | 是 | 角色描述   |  `this is description` |
+| namespace | string | 是 | 所属权限分组的 code   |  `default` |
 
 

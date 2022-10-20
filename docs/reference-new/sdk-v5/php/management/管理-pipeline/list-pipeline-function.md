@@ -13,21 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| scene | string  | 是 | - | 通过函数的触发场景进行筛选（可选，默认返回所有）：
-- `PRE_REGISTER`: 注册前
-- `POST_REGISTER`: 注册后
-- `PRE_AUTHENTICATION`: 认证前
-- `POST_AUTHENTICATION`: 认证后
-- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前
-- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前
-- `PRE_COMPLETE_USER_INFO`: 补全用户信息前
-    。 枚举值：`PRE_REGISTER`,`POST_REGISTER`,`PRE_AUTHENTICATION`,`POST_AUTHENTICATION`,`PRE_OIDC_ID_TOKEN_ISSUED`,`PRE_OIDC_ACCESS_TOKEN_ISSUED`,`PRE_COMPLETE_USER_INFO` | `PRE_REGISTER` |
+ | scene | string  | 是 | - | 通过函数的触发场景进行筛选（可选，默认返回所有）：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>      | `PRE_REGISTER` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -45,7 +37,7 @@ $data = $management->listPipelineFunction(array(
     "scene" => "PRE_REGISTER",
 
 ));
-```
+``` -->
 
 
 ## 请求响应
@@ -90,26 +82,26 @@ $data = $management->listPipelineFunction(array(
 
 ### <a id="PipelineFunctionPagingDto"></a> PipelineFunctionPagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 总数。  |  |
-| list | array | 是 | 数据列表。嵌套类型：<a href="#PipelineFunctionDto">PipelineFunctionDto</a>。  |  |
+| totalCount | number | 是 | 总数   |  |
+| list | array | 是 | 数据列表 嵌套类型：<a href="#PipelineFunctionDto">PipelineFunctionDto</a>。  |  |
 
 
 ### <a id="PipelineFunctionDto"></a> PipelineFunctionDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| funcId | string | 是 | 函数 ID。  |  `62ce9135dxxxxb83e373f5d6` |
-| funcName | string | 是 | 函数名称。  |  `每周日凌晨 3-6 点系统维护禁止注册/登录` |
-| funcDescription | string | 否 | 函数描述。  |  `每周日凌晨 3-6 点系统维护禁止注册/登录。` |
-| scene | string | 是 | 函数的触发场景：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>    。  | 可选枚举值：`PRE_REGISTER`,`POST_REGISTER`,`PRE_AUTHENTICATION`,`POST_AUTHENTICATION`,`PRE_OIDC_ID_TOKEN_ISSUED`,`PRE_OIDC_ACCESS_TOKEN_ISSUED`,`PRE_COMPLETE_USER_INFO` |
-| createdAt | string | 是 | 函数创建时间。  |  `2022-07-03T02:20:30.000Z` |
-| updatedAt | string | 是 | 函数修改时间。  |  `2022-07-03T02:20:30.000Z` |
-| isAsynchronous | boolean | 是 | 是否异步执行。设置为异步执行的函数不会阻塞整个流程的执行，适用于异步通知的场景，比如飞书群通知、钉钉群通知等。。  |  |
-| timeout | number | 是 | 函数运行超时时间，最短为 1 秒，最长为 60 秒，默认为 3 秒。。  |  `3` |
-| terminateOnTimeout | boolean | 是 | 如果函数运行超时，是否终止整个流程，默认为否。。  |  |
-| sourceCode | string | 是 | 函数源代码。  |  `async function pipe(user, context, callback) {
+| funcId | string | 是 | 函数 ID   |  `62ce9135dxxxxb83e373f5d6` |
+| funcName | string | 是 | 函数名称   |  `每周日凌晨 3-6 点系统维护禁止注册/登录` |
+| funcDescription | string | 否 | 函数描述   |  `每周日凌晨 3-6 点系统维护禁止注册/登录。` |
+| scene | string | 是 | 函数的触发场景：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>       | PRE_REGISTER |
+| createdAt | string | 是 | 函数创建时间   |  `2022-07-03T02:20:30.000Z` |
+| updatedAt | string | 是 | 函数修改时间   |  `2022-07-03T02:20:30.000Z` |
+| isAsynchronous | boolean | 是 | 是否异步执行。设置为异步执行的函数不会阻塞整个流程的执行，适用于异步通知的场景，比如飞书群通知、钉钉群通知等。   |  |
+| timeout | number | 是 | 函数运行超时时间，最短为 1 秒，最长为 60 秒，默认为 3 秒。   |  `3` |
+| terminateOnTimeout | boolean | 是 | 如果函数运行超时，是否终止整个流程，默认为否。   |  |
+| sourceCode | string | 是 | 函数源代码   |  `async function pipe(user, context, callback) {
   const date = new Date();
   const d = date.getDay();
   const n = date.getHours();
@@ -119,8 +111,8 @@ $data = $management->listPipelineFunction(array(
   }
   callback(null, user, context)
 }` |
-| status | string | 是 | 函数当前状态：<br>- `uploading`: 上传中<br>- `success`: 上传成功<br>- `failed`: 上传失败    <br>。  | 可选枚举值：`uploading`,`success`,`failed` |
-| uploadErrMsg | string | 否 | 上传失败的错误提示。  |  |
-| enabled | boolean | 是 | 此 Pipeline 是否被启用。  |  |
+| status | string | 是 | 函数当前状态：<br>- `uploading`: 上传中<br>- `success`: 上传成功<br>- `failed`: 上传失败    <br>   | uploading |
+| uploadErrMsg | string | 否 | 上传失败的错误提示   |  |
+| enabled | boolean | 是 | 此 Pipeline 是否被启用   |  |
 
 

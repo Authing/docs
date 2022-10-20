@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appSecret | string | 是 | - | 微信小程序或微信公众号的 AppSecret。   |  |
-| appId | string | 是 | - | 微信小程序或微信公众号的 AppId。   |  |
+| appSecret | string | 是 | - | 微信小程序或微信公众号的 AppSecret  |  |
+| appId | string | 是 | - | 微信小程序或微信公众号的 AppId  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -50,8 +50,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -83,9 +82,9 @@ func main() {
 
 ### <a id="GetWechatAccessTokenDataDto"></a> GetWechatAccessTokenDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| accessToken | string | 是 | Authing 服务器缓存的微信 Access Token。  |  |
-| expiresAt | number | 是 | Access Token 到期时间，为单位为秒的时间戳。  |  |
+| accessToken | string | 是 | Authing 服务器缓存的微信 Access Token   |  |
+| expiresAt | number | 是 | Access Token 到期时间，为单位为秒的时间戳   |  |
 
 

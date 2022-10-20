@@ -13,12 +13,12 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -34,8 +34,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -74,10 +73,10 @@ const managementClient = new ManagementClient({
 
 ### <a id="FactorDto"></a> FactorDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| factorId | string | 是 | MFA 认证要素ID。  |  `6229ffaxxxxxxxxcade3e3d9` |
-| factorType | string | 是 | MFA 认证要素类型。  | 可选枚举值：`OTP`,`SMS`,`EMAIL`,`FACE` |
-| profile | object | 是 | MFA 认证要素信息。  |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
+| factorId | string | 是 | MFA 认证要素ID   |  `6229ffaxxxxxxxxcade3e3d9` |
+| factorType | string | 是 | MFA 认证要素类型   | OTP |
+| profile | object | 是 | MFA 认证要素信息   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
 
 

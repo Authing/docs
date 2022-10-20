@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表。 数组长度限制：50。  | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+| list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表 数组长度限制：50。 | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -37,7 +37,7 @@ data = management_client.create_roles_batch(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -72,17 +72,17 @@ data = management_client.create_roles_batch(
 
 ### <a id="RoleListItem"></a> RoleListItem
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限分组内角色的唯一标识符。  |  `my-role-code` |
-| description | string | 否 | 角色描述。  |  `this is a description about the role` |
-| namespace | string | 否 | 所属权限分组的 code。  |  `default` |
+| code | string | 是 | 权限分组内角色的唯一标识符   |  `my-role-code` |
+| description | string | 否 | 角色描述   |  `this is a description about the role` |
+| namespace | string | 否 | 所属权限分组的 code   |  `default` |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| success | boolean | 是 | 操作是否成功。  |  `true` |
+| success | boolean | 是 | 操作是否成功   |  `true` |
 
 

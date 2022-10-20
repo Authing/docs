@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 是 | - | `open-type=getphonecode` 接口返回的 `code`。   |  |
-| extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符。   | `my-wxapp` |
+| code | string | 是 | - | `open-type=getphonecode` 接口返回的 `code`  |  |
+| extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -50,8 +50,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -87,10 +86,10 @@ func main() {
 
 ### <a id="GetWechatMiniProgramPhoneDataDto"></a> GetWechatMiniProgramPhoneDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| phoneNumber | string | 是 | 包含区号的手机号。  |  `+86188xxxx8888` |
-| purePhoneNumber | string | 是 | 不包含区号的手机号。  |  `188xxxx8888` |
-| countryCode | string | 是 | 区号。  |  `86` |
+| phoneNumber | string | 是 | 包含区号的手机号   |  `+86188xxxx8888` |
+| purePhoneNumber | string | 是 | 不包含区号的手机号   |  `188xxxx8888` |
+| countryCode | string | 是 | 区号   |  `86` |
 
 

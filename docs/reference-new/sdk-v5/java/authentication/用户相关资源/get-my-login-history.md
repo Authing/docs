@@ -13,32 +13,37 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| appId | string  | 否 | - | 应用 ID，可根据应用 ID 筛选。默认不传获取所有应用的登录历史。。  | `5f6265c67fxxxxae64ec516e` |
-| clientIp | string  | 否 | - | 客户端 IP，可根据登录时的客户端 IP 进行筛选。默认不传获取所有登录 IP 的登录历史。。  | `127.0.0.1` |
-| success | boolean  | 否 | - | 是否登录成功，可根据是否登录成功进行筛选。默认不传获取的记录中既包含成功也包含失败的的登录历史。。  | `true` |
-| start | number  | 否 | - | 开始时间，为单位为毫秒的时间戳。  | `1660828100000` |
-| end | number  | 否 | - | 结束时间，为单位为毫秒的时间戳。  | `1660828100000` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+ | appId | string  | 否 | - | 应用 ID，可根据应用 ID 筛选。默认不传获取所有应用的登录历史。  | `5f6265c67fxxxxae64ec516e` |
+ | clientIp | string  | 否 | - | 客户端 IP，可根据登录时的客户端 IP 进行筛选。默认不传获取所有登录 IP 的登录历史。  | `127.0.0.1` |
+ | success | boolean  | 否 | - | 是否登录成功，可根据是否登录成功进行筛选。默认不传获取的记录中既包含成功也包含失败的的登录历史。  | `true` |
+ | start | number  | 否 | - | 开始时间，为单位为毫秒的时间戳  | `1660828100000` |
+ | end | number  | 否 | - | 结束时间，为单位为毫秒的时间戳  | `1660828100000` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
+import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class ManagementClientTest {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
+class Test {
     public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
+        // 设置初始化参数
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
     
+        // 初始化 AuthenticationClient
+        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+    
+        
         
          
         request.setAppId("5f6265c67fxxxxae64ec516e"); 
@@ -53,8 +58,7 @@ class ManagementClientTest {
     }
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -119,60 +123,60 @@ class ManagementClientTest {
 
 ### <a id="LoginHistoryPaginatedRespDto"></a> LoginHistoryPaginatedRespDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 记录列表。嵌套类型：<a href="#LoginHistoryDto">LoginHistoryDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 记录列表 嵌套类型：<a href="#LoginHistoryDto">LoginHistoryDto</a>。  |  |
 
 
 ### <a id="LoginHistoryDto"></a> LoginHistoryDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| userId | string | 是 | 用户 ID。  |  `xxx` |
-| appId | string | 是 | 应用 ID。  |  `xxx` |
-| appName | string | 是 | 应用名称。  |  `示例应用` |
-| appLoginUrl | string | 是 | 应用登录地址。  |  `https://example.authing.cn/login` |
-| appLogo | string | 是 | 应用 Logo。  |  `https://files.authing.co/authing-console/default-app-logo.png` |
-| loginAt | string | 是 | 登录时间。  |  `2022-07-03T02:20:30.000Z` |
-| clientIp | string | 是 | 登录时使用的客户端 IP。  |  `127.0.0.1` |
-| success | boolean | 是 | 是否登录成功。  |  `true` |
-| errorMessage | string | 否 | 登录失败时的具体错误信息。  |  `账号或密码不正确` |
-| userAgent | string | 是 | User Agent。  |  `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36` |
-| parsedUserAgent |  | 是 | 解析过后的 User Agent。嵌套类型：<a href="#ParsedUserAgent">ParsedUserAgent</a>。  |  |
-| loginMethod | string | 是 | 使用的登录方式。  |  `loginByEmail` |
-| geoip |  | 是 | 地理位置。嵌套类型：<a href="#GeoIp">GeoIp</a>。  |  |
+| userId | string | 是 | 用户 ID   |  `xxx` |
+| appId | string | 是 | 应用 ID   |  `xxx` |
+| appName | string | 是 | 应用名称   |  `示例应用` |
+| appLoginUrl | string | 是 | 应用登录地址   |  `https://example.authing.cn/login` |
+| appLogo | string | 是 | 应用 Logo   |  `https://files.authing.co/authing-console/default-app-logo.png` |
+| loginAt | string | 是 | 登录时间   |  `2022-07-03T02:20:30.000Z` |
+| clientIp | string | 是 | 登录时使用的客户端 IP   |  `127.0.0.1` |
+| success | boolean | 是 | 是否登录成功   |  `true` |
+| errorMessage | string | 否 | 登录失败时的具体错误信息   |  `账号或密码不正确` |
+| userAgent | string | 是 | User Agent   |  `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36` |
+| parsedUserAgent |  | 是 | 解析过后的 User Agent 嵌套类型：<a href="#ParsedUserAgent">ParsedUserAgent</a>。  |  |
+| loginMethod | string | 是 | 使用的登录方式   |  `loginByEmail` |
+| geoip |  | 是 | 地理位置 嵌套类型：<a href="#GeoIp">GeoIp</a>。  |  |
 
 
 ### <a id="ParsedUserAgent"></a> ParsedUserAgent
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| device | string | 是 | 使用的设备类型。  |  `Desktop` |
-| browser | string | 是 | 浏览器名称。  |  `Chrome` |
-| os | string | 是 | 操作系统。  |  `Windows` |
+| device | string | 是 | 使用的设备类型   |  `Desktop` |
+| browser | string | 是 | 浏览器名称   |  `Chrome` |
+| os | string | 是 | 操作系统   |  `Windows` |
 
 
 ### <a id="GeoIp"></a> GeoIp
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| location |  | 是 | 地理位置。嵌套类型：<a href="#GeoIpLocation">GeoIpLocation</a>。  |  |
-| country_name | string | 是 | Country Name。  |  `China` |
-| country_code2 | string | 是 | Country Code 2。  |  `CN` |
-| country_code3 | string | 是 | Country Code 3。  |  `CN` |
-| region_name | string | 是 | Region Name。  |  `Beijing` |
-| region_code | string | 是 | Region Code。  |  `BJ` |
-| city_name | string | 是 | 城市名称。  |  `Beijing` |
-| continent_code | string | 是 | Continent Code。  |  `AS` |
-| timezone | string | 是 | 时区。  |  `Asia/Shanghai` |
+| location |  | 是 | 地理位置 嵌套类型：<a href="#GeoIpLocation">GeoIpLocation</a>。  |  |
+| country_name | string | 是 | Country Name   |  `China` |
+| country_code2 | string | 是 | Country Code 2   |  `CN` |
+| country_code3 | string | 是 | Country Code 3   |  `CN` |
+| region_name | string | 是 | Region Name   |  `Beijing` |
+| region_code | string | 是 | Region Code   |  `BJ` |
+| city_name | string | 是 | 城市名称   |  `Beijing` |
+| continent_code | string | 是 | Continent Code   |  `AS` |
+| timezone | string | 是 | 时区   |  `Asia/Shanghai` |
 
 
 ### <a id="GeoIpLocation"></a> GeoIpLocation
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| lon | number | 是 | 经度。  |  `116.3889` |
-| lat | number | 是 | 纬度。  |  `39.9288` |
+| lon | number | 是 | 经度   |  `116.3889` |
+| lat | number | 是 | 纬度   |  `39.9288` |
 
 

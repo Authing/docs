@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 | - | 权限分组内角色的唯一标识符。  | `manager` |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
+ | code | string  | 是 | - | 权限分组内角色的唯一标识符  | `manager` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -68,7 +68,7 @@ namespace Example
 }
 
 ```
-
+ -->
 
 
 ## 请求响应
@@ -108,19 +108,19 @@ namespace Example
 
 ### <a id="RoleDepartmentListPagingDto"></a> RoleDepartmentListPagingDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 记录总数。  |  |
-| list | array | 是 | 数据。嵌套类型：<a href="#RoleDepartmentRespDto">RoleDepartmentRespDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  |
+| list | array | 是 | 数据 嵌套类型：<a href="#RoleDepartmentRespDto">RoleDepartmentRespDto</a>。  |  |
 
 
 ### <a id="RoleDepartmentRespDto"></a> RoleDepartmentRespDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| id | string | 是 | 部门 ID。  |  `60b49eb83fd80adb96f26e68` |
-| code | string | 是 | 部门 code。  |  `code` |
-| name | string | 是 | 部门名称。  |  `departmentName` |
-| description | string | 是 | 部门描述信息。  |  `dd8d7stf44` |
+| id | string | 是 | 部门 ID   |  `60b49eb83fd80adb96f26e68` |
+| code | string | 是 | 部门 code   |  `code` |
+| name | string | 是 | 部门名称   |  `departmentName` |
+| description | string | 是 | 部门描述信息   |  `dd8d7stf44` |
 
 

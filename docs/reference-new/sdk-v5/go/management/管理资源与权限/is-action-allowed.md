@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| action | string | 是 | - | 资源对应的操作。   | `ecs:Start` |
-| resource | string | 是 | - | 资源标识符。   | `ecs:1` |
-| userId | string | 是 | - | 用户 ID。   | `userId1` |
-| namespace | string | 否 | - | 所属权限分组的 code。   | `default` |
+| action | string | 是 | - | 资源对应的操作  | `ecs:Start` |
+| resource | string | 是 | - | 资源标识符  | `ecs:1` |
+| userId | string | 是 | - | 用户 ID  | `userId1` |
+| namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -54,7 +54,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -89,8 +89,8 @@ func main() {
 
 ### <a id="IsActionAllowedDataDto"></a> IsActionAllowedDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| allowed | boolean | 是 | 是否允许。  |  `true` |
+| allowed | boolean | 是 | 是否允许   |  `true` |
 
 

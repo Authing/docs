@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -34,7 +34,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
+ -->
 
 
 ## 请求响应
@@ -74,18 +74,18 @@ const managementClient = new ManagementClient({
 
 ### <a id="RightItemRes"></a> RightItemRes
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| rightsItems | array | 是 | 响应数据。嵌套类型：<a href="#RightItemDto">RightItemDto</a>。  |  |
+| rightsItems | array | 是 | 响应数据 嵌套类型：<a href="#RightItemDto">RightItemDto</a>。  |  |
 
 
 ### <a id="RightItemDto"></a> RightItemDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| rightsModelCode | string | 是 | 权益编码。  |  `SocialConnections` |
-| rightsModelName | string | 是 | 权益名称。  |  `SocialConnections` |
-| dataType | string | 是 | 权益数据类型。  |  `1：数量类型，2：数字只读，不做计量，3：断言类型，4：字符串只读` |
-| dataValue | string | 是 | 权益值。  |  `0` |
+| rightsModelCode | string | 是 | 权益编码   |  `SocialConnections` |
+| rightsModelName | string | 是 | 权益名称   |  `SocialConnections` |
+| dataType | string | 是 | 权益数据类型   |  `1：数量类型，2：数字只读，不做计量，3：断言类型，4：字符串只读` |
+| dataValue | string | 是 | 权益值   |  `0` |
 
 

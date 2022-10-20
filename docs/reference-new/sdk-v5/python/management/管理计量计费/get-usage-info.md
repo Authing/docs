@@ -13,12 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -31,7 +31,7 @@ data = management_client.get_usage_info(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -72,19 +72,19 @@ data = management_client.get_usage_info(
 
 ### <a id="CurrentUsageRespDto"></a> CurrentUsageRespDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| usages | array | 是 | 当前用量实体。嵌套类型：<a href="#CurrentUsageDto">CurrentUsageDto</a>。  |  |
+| usages | array | 是 | 当前用量实体 嵌套类型：<a href="#CurrentUsageDto">CurrentUsageDto</a>。  |  |
 
 
 ### <a id="CurrentUsageDto"></a> CurrentUsageDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| amount | string | 是 | 权益总量。  |  `0` |
-| current | string | 是 | 权益当前使用量。  |  `0` |
-| experience | boolean | 是 | 是否是体验期权益。  |  `true` |
-| modelCode | string | 是 | 权益编码。  |  `SocialConnections` |
-| modelName | string | 是 | 权益名称。  |  `SocialConnections：社交账号链接` |
+| amount | string | 是 | 权益总量   |  `0` |
+| current | string | 是 | 权益当前使用量   |  `0` |
+| experience | boolean | 是 | 是否是体验期权益   |  `true` |
+| modelCode | string | 是 | 权益编码   |  `SocialConnections` |
+| modelName | string | 是 | 权益名称   |  `SocialConnections：社交账号链接` |
 
 

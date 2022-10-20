@@ -13,22 +13,17 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| resource | string | 是 | - | 资源。   | `ecs:1` |
-| namespace | string | 否 | default | 权限分组。   |  |
-| targetType | string | 否 | - | 目标对象类型：
-- `USER`: 用户
-- `ROLE`: 角色
-- `GROUP`: 分组
-- `DEPARTMENT`: 部门
-    。  枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
-| page | number | 否 | 1 | 当前页数，从 1 开始。   | `1` |
-| limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。   | `10` |
+| resource | string | 是 | - | 资源  | `ecs:1` |
+| namespace | string | 否 | default | 权限分组  |  |
+| targetType | string | 否 | - | 目标对象类型：<br>- `USER`: 用户<br>- `ROLE`: 角色<br>- `GROUP`: 分组<br>- `DEPARTMENT`: 部门<br>      | `USER` |
+| page | number | 否 | 1 | 当前页数，从 1 开始  | `1` |
+| limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -46,7 +41,7 @@ data = management_client.get_resource_authorized_targets(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -86,18 +81,18 @@ data = management_client.get_resource_authorized_targets(
 
 ### <a id="GetResourceAuthorizedTargetDataDto"></a> GetResourceAuthorizedTargetDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| totalCount | number | 是 | 总数。  |  `10` |
-| list | array | 是 | 元素列表。嵌套类型：<a href="#ResourceAuthorizedTargetDto">ResourceAuthorizedTargetDto</a>。  |  |
+| totalCount | number | 是 | 总数   |  `10` |
+| list | array | 是 | 元素列表 嵌套类型：<a href="#ResourceAuthorizedTargetDto">ResourceAuthorizedTargetDto</a>。  |  |
 
 
 ### <a id="ResourceAuthorizedTargetDto"></a> ResourceAuthorizedTargetDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| targetType | string | 是 | 主体类型。  | 可选枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` |
-| targetIdentifier | string | 是 | 主体唯一标志符。  |  `code` |
-| actions | array | 是 | 操作列表。  |  `["ecs:Start","ecs:Stop"]` |
+| targetType | string | 是 | 主体类型   | USER |
+| targetIdentifier | string | 是 | 主体唯一标志符   |  `code` |
+| actions | array | 是 | 操作列表   |  `["ecs:Start","ecs:Stop"]` |
 
 

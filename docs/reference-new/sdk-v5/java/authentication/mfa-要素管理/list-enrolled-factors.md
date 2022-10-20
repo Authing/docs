@@ -13,25 +13,30 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
+import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class ManagementClientTest {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
+class Test {
     public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
+        // 设置初始化参数
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
+        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
+        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
     
+        // 初始化 AuthenticationClient
+        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+    
+        
         
         
         ListEnrolledFactorsRespDto response = managementClient.listEnrolledFactors(request);
@@ -39,8 +44,7 @@ class ManagementClientTest {
     }
 }
 ```
-
-
+ -->
 
 ## 请求响应
 
@@ -79,10 +83,10 @@ class ManagementClientTest {
 
 ### <a id="FactorDto"></a> FactorDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| factorId | string | 是 | MFA 认证要素ID。  |  `6229ffaxxxxxxxxcade3e3d9` |
-| factorType | string | 是 | MFA 认证要素类型。  | 可选枚举值：`OTP`,`SMS`,`EMAIL`,`FACE` |
-| profile | object | 是 | MFA 认证要素信息。  |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
+| factorId | string | 是 | MFA 认证要素ID   |  `6229ffaxxxxxxxxcade3e3d9` |
+| factorType | string | 是 | MFA 认证要素类型   | OTP |
+| profile | object | 是 | MFA 认证要素信息   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
 
 

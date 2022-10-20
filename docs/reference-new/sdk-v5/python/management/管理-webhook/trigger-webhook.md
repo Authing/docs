@@ -13,15 +13,15 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| webhookId | string | 是 | - | Webhook ID。   | `6229ffaxxxxxxxxcade3e3d9` |
-| requestHeaders | object | 否 | - | 请求头。   | `{"eventName":"test","data":{"description":"A test from authing"}}` |
-| requestBody | object | 否 | - | 请求体。   | `{"eventName":"test","data":{"description":"A test from authing"}}` |
+| webhookId | string | 是 | - | Webhook ID  | `6229ffaxxxxxxxxcade3e3d9` |
+| requestHeaders | object | 否 | - | 请求头  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
+| requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -47,7 +47,7 @@ data = management_client.trigger_webhook(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -82,14 +82,14 @@ data = management_client.trigger_webhook(
 
 ### <a id="TriggerWebhookData"></a> TriggerWebhookData
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| response |  | 是 | 原来接口返回的 response 数据。嵌套类型：<a href="#Any">Any</a>。  |  |
+| response |  | 是 | 原来接口返回的 response 数据 嵌套类型：<a href="#Any">Any</a>。  |  |
 
 
 ### <a id="Any"></a> Any
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 
 

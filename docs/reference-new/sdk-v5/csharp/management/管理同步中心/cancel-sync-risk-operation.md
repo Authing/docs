@@ -13,13 +13,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| syncRiskOperationIds | array[] | 是 | - | 同步任务风险操作 ID。   | `[1,2]` |
+| syncRiskOperationIds | array[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -62,7 +62,7 @@ namespace Example
 }
 
 ```
-
+ -->
 
 
 ## 请求响应
@@ -98,9 +98,9 @@ namespace Example
 
 ### <a id="CancelSyncRiskOperationsDataDto"></a> CancelSyncRiskOperationsDataDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| successList | array | 是 | 成功取消的风险操作任务。  |  `[1,2]` |
-| faildList | array | 是 | 取消失败的风险操作任务。  |  `[3,4]` |
+| successList | array | 是 | 成功取消的风险操作任务   |  `[1,2]` |
+| faildList | array | 是 | 取消失败的风险操作任务   |  `[3,4]` |
 
 

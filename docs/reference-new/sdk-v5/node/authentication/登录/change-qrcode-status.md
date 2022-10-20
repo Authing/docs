@@ -13,18 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| action | string | 是 | - | 修改二维码状态的动作:
-- `SCAN`: 修改二维码状态为已扫码状态，当移动 APP 扫了码之后，应当立即执行此操作；
-- `CONFIRM`: 修改二维码状态为已授权，执行此操作前必须先执行 `SCAN 操作；
-- `CANCEL`: 修改二维码状态为已取消，执行此操作前必须先执行 `SCAN 操作；
-    。  枚举值：`SCAN`,`CONFIRM`,`CANCEL` | `CONFIRM` |
-| qrcodeId | string | 是 | - | 二维码唯一 ID。   |  |
+| action | string | 是 | - | 修改二维码状态的动作:<br>- `SCAN`: 修改二维码状态为已扫码状态，当移动 APP 扫了码之后，应当立即执行此操作；<br>- `CONFIRM`: 修改二维码状态为已授权，执行此操作前必须先执行 `SCAN 操作；<br>- `CANCEL`: 修改二维码状态为已取消，执行此操作前必须先执行 `SCAN 操作；<br>      | `CONFIRM` |
+| qrcodeId | string | 是 | - | 二维码唯一 ID  |  |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -42,8 +38,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
-
+ -->
 
 ## 请求响应
 

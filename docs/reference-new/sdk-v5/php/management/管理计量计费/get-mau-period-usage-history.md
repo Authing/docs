@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| endTime | string  | 是 | - | 截止时间（年月日）。  | `20220802` |
-| startTime | string  | 是 | - | 起始时间（年月日）。  | `20220202` |
+ | endTime | string  | 是 | - | 截止时间（年月日）  | `20220802` |
+ | startTime | string  | 是 | - | 起始时间（年月日）  | `20220202` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```php
 <?php
 
@@ -40,7 +40,7 @@ $data = $management->getMauPeriodUsageHistory(array(
     "startTime" => "20220202",
 
 ));
-```
+``` -->
 
 
 ## 请求响应
@@ -80,18 +80,18 @@ $data = $management->getMauPeriodUsageHistory(array(
 
 ### <a id="MauPeriodUsageHistory"></a> MauPeriodUsageHistory
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| records | array | 是 | 响应数据。嵌套类型：<a href="#MauPeriodUsageHistoryDto">MauPeriodUsageHistoryDto</a>。  |  |
+| records | array | 是 | 响应数据 嵌套类型：<a href="#MauPeriodUsageHistoryDto">MauPeriodUsageHistoryDto</a>。  |  |
 
 
 ### <a id="MauPeriodUsageHistoryDto"></a> MauPeriodUsageHistoryDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| periodStartTime | string | 是 | 周期开始时间(年月日)。  |  `20210901` |
-| periodEndTime | string | 是 | 周期结束时间(年月日)。  |  `20220901` |
-| amount | string | 是 | 当前周期使用的 mau 总数量。  |  `0` |
-| current | string | 是 | 当前周期使用的 mau 数量。  |  `0` |
+| periodStartTime | string | 是 | 周期开始时间(年月日)   |  `20210901` |
+| periodEndTime | string | 是 | 周期结束时间(年月日)   |  `20220901` |
+| amount | string | 是 | 当前周期使用的 mau 总数量   |  `0` |
+| current | string | 是 | 当前周期使用的 mau 数量   |  `0` |
 
 

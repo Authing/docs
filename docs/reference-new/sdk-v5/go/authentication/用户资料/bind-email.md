@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| passCode | string | 是 | - | 邮箱验证码，一个邮箱验证码只能使用一次，且有一定有效时间。。   | `123456` |
-| email | string | 是 | - | 邮箱，不区分大小写。。   | `test@example.com` |
+| passCode | string | 是 | - | 邮箱验证码，一个邮箱验证码只能使用一次，且有一定有效时间。  | `123456` |
+| email | string | 是 | - | 邮箱，不区分大小写。  | `test@example.com` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -50,8 +50,7 @@ func main() {
   )
 }
 ```
-
-
+ -->
 
 ## 请求响应
 

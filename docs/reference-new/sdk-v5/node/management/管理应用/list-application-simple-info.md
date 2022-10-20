@@ -13,18 +13,18 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| page | number  | 否 | 1 | 当前页数，从 1 开始。  | `1` |
-| limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10。  | `10` |
-| isIntegrateApp | boolean  | 否 | - | 是否为集成应用。  |  |
-| isSelfBuiltApp | boolean  | 否 | - | 是否为自建应用。  |  |
-| ssoEnabled | boolean  | 否 | - | 是否开启单点登录。  |  |
-| keyword | string  | 否 | - | 模糊搜索字符串。  | `test` |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+ | isIntegrateApp | boolean  | 否 | - | 是否为集成应用  |  |
+ | isSelfBuiltApp | boolean  | 否 | - | 是否为自建应用  |  |
+ | ssoEnabled | boolean  | 否 | - | 是否开启单点登录  |  |
+ | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -52,7 +52,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
-
+ -->
 
 
 ## 请求响应
@@ -92,14 +92,14 @@ const managementClient = new ManagementClient({
 
 ### <a id="ApplicationSimpleInfoDto"></a> ApplicationSimpleInfoDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| appId | string | 是 | 应用 ID。  |  `62eaa95fe0xxxx9a5295bf7c` |
-| appIdentifier | string | 是 | 应用唯一标志。  |  `example` |
-| appName | string | 是 | 应用名称。  |  `示例应用` |
-| appLogo | string | 是 | 应用 Logo 链接。  |  `示例应用` |
-| appDescription | string | 否 | 应用描述信息。  |  `示例描述信息` |
-| appType | string | 是 | 应用类型。  | 可选枚举值：`web`,`spa`,`native`,`api` |
-| isIntegrateApp | boolean | 是 | 是否为集成应用。  |  |
+| appId | string | 是 | 应用 ID   |  `62eaa95fe0xxxx9a5295bf7c` |
+| appIdentifier | string | 是 | 应用唯一标志   |  `example` |
+| appName | string | 是 | 应用名称   |  `示例应用` |
+| appLogo | string | 是 | 应用 Logo 链接   |  `示例应用` |
+| appDescription | string | 否 | 应用描述信息   |  `示例描述信息` |
+| appType | string | 是 | 应用类型   | web |
+| isIntegrateApp | boolean | 是 | 是否为集成应用   |  |
 
 

@@ -13,22 +13,22 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| newCode | string | 是 | - | 角色新的权限分组内唯一识别码。   | `code2` |
-| code | string | 是 | - | 权限分组内角色的唯一标识符。   | `code1` |
-| namespace | string | 否 | default | 所属权限分组的 code。   | `default` |
-| description | string | 否 | - | 角色描述。   | `this is description` |
+| newCode | string | 是 | - | 角色新的权限分组内唯一识别码  | `code2` |
+| code | string | 是 | - | 权限分组内角色的唯一标识符  | `code1` |
+| namespace | string | 否 | default | 所属权限分组的 code  | `default` |
+| description | string | 否 | - | 角色描述  | `this is description` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class ManagementClientTest {
+class Test {
     private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
     private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
 
@@ -47,7 +47,7 @@ class ManagementClientTest {
     }
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -82,8 +82,8 @@ class ManagementClientTest {
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| success | boolean | 是 | 操作是否成功。  |  `true` |
+| success | boolean | 是 | 操作是否成功   |  `true` |
 
 

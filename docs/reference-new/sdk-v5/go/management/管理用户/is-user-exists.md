@@ -13,16 +13,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| username | string | 否 | - | 用户名，用户池内唯一。   | `bob` |
-| email | string | 否 | - | 邮箱，不区分大小写。   | `test@example.com` |
-| phone | string | 否 | - | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。。   | `188xxxx8888` |
-| externalId | string | 否 | - | 第三方外部 ID。   | `10010` |
+| username | string | 否 | - | 用户名，用户池内唯一  | `bob` |
+| email | string | 否 | - | 邮箱，不区分大小写  | `test@example.com` |
+| phone | string | 否 | - | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。  | `188xxxx8888` |
+| externalId | string | 否 | - | 第三方外部 ID  | `10010` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```go
 package main
 
@@ -54,7 +54,7 @@ func main() {
   )
 }
 ```
-
+ -->
 
 
 ## 请求响应
@@ -89,8 +89,8 @@ func main() {
 
 ### <a id="IsUserExistsDto"></a> IsUserExistsDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| exists | boolean | 是 | 用户是否存在。  |  `true` |
+| exists | boolean | 是 | 用户是否存在   |  `true` |
 
 

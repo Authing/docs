@@ -13,14 +13,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string  | 是 | - | 资源唯一标志符。  | `ecs` |
-| namespace | string  | 否 | - | 所属权限分组的 code。  | `default` |
+ | code | string  | 是 | - | 资源唯一标志符  | `ecs` |
+ | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-
+<!-- 暂时不显示示例代码 -->
+<!-- ## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -37,7 +37,7 @@ data = management_client.get_resource(
   
 )
 ```
-
+ -->
 
 
 ## 请求响应
@@ -78,23 +78,23 @@ data = management_client.get_resource(
 
 ### <a id="ResourceDto"></a> ResourceDto
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 资源唯一标志符。  |  `ecs` |
-| description | string | 否 | 资源描述。  |  `服务器` |
-| name | string | 否 | 资源名称。  |  `服务器` |
-| type | string | 是 | 资源类型，如数据、API、按钮、菜单。  | 可选枚举值：`DATA`,`API`,`MENU`,`BUTTON`,`UI` |
-| actions | array | 否 | 资源定义的操作类型。嵌套类型：<a href="#ResourceAction">ResourceAction</a>。数组长度限制：100。  |  `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
-| apiIdentifier | string | 否 | API 资源的 URL 标识。  |  `https://my-awesome-api.com/api` |
-| namespace | string | 否 | 所属权限分组的 code。  |  `default` |
-| linkedToTenant | boolean | 否 | 租户应用是否关联自建应用资源。  |  |
+| code | string | 是 | 资源唯一标志符   |  `ecs` |
+| description | string | 否 | 资源描述   |  `服务器` |
+| name | string | 否 | 资源名称   |  `服务器` |
+| type | string | 是 | 资源类型，如数据、API、按钮、菜单   | DATA |
+| actions | array | 否 | 资源定义的操作类型 嵌套类型：<a href="#ResourceAction">ResourceAction</a>。数组长度限制：100。  |  `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
+| apiIdentifier | string | 否 | API 资源的 URL 标识   |  `https://my-awesome-api.com/api` |
+| namespace | string | 否 | 所属权限分组的 code   |  `default` |
+| linkedToTenant | boolean | 否 | 租户应用是否关联自建应用资源   |  |
 
 
 ### <a id="ResourceAction"></a> ResourceAction
 
-| 名称 | 类型 | 必填 | 描述 | 示例值 |
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name | string | 是 | 资源操作名称。  |  `ecs:Start` |
-| description | string | 是 | 资源操作描述。  |  `ecs:Start` |
+| name | string | 是 | 资源操作名称   |  `ecs:Start` |
+| description | string | 是 | 资源操作描述   |  `ecs:Start` |
 
 

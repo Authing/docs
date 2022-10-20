@@ -2145,6 +2145,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/java/authentication/登录/signin"
                     },
@@ -2177,6 +2209,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/java/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/java/authentication/登录/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/java/authentication/注册/signup"
@@ -3179,6 +3227,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/node/authentication/登录/signin"
                     },
@@ -3211,6 +3291,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/node/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/node/authentication/登录/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/node/authentication/注册/signup"
@@ -4213,6 +4309,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/go/authentication/登录/signin"
                     },
@@ -4245,6 +4373,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/go/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/go/authentication/登录/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/go/authentication/注册/signup"
@@ -5247,6 +5391,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/python/authentication/登录/signin"
                     },
@@ -5279,6 +5455,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/python/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/python/authentication/登录/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/python/authentication/注册/signup"
@@ -6281,6 +6473,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/php/authentication/登录/signin"
                     },
@@ -6313,6 +6537,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/php/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/php/authentication/登录/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/php/authentication/注册/signup"
@@ -7315,6 +7555,38 @@ const zhCnNavBar = {
                   "title": "登录",
                   "children": [
                     {
+                      "title": "账号密码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-account-password.md"
+                    },
+                    {
+                      "title": "用户名密码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-username-password.md"
+                    },
+                    {
+                      "title": "手机号密码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-phone-password.md"
+                    },
+                    {
+                      "title": "邮箱密码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-email-password.md"
+                    },
+                    {
+                      "title": "邮箱验证码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-email-passcode.md"
+                    },
+                    {
+                      "title": "手机号验证码登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "LDAP 账号登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-ldap.md"
+                    },
+                    {
+                      "title": "AD 账号登录",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin-by-ad.md"
+                    },
+                    {
                       "title": "使用用户凭证登录",
                       "path": "/reference-new/sdk-v5/csharp/authentication/登录/signin"
                     },
@@ -7347,6 +7619,22 @@ const zhCnNavBar = {
                 {
                   "title": "注册",
                   "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/注册/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/注册/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference-new/sdk-v5/csharp/authentication/注册/signup-by-email-passcode.md"
+                    },
                     {
                       "title": "注册",
                       "path": "/reference-new/sdk-v5/csharp/authentication/注册/signup"
