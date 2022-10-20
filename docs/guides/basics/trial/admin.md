@@ -198,11 +198,13 @@ style="display:block;margin: 0 auto;">
 6. 填写认证信息，点击 **提交认证**。
 
 <img src="./images/individual-certification.png" style="display:block;margin: 0 auto;">
+
 ::: img-description
 个人实名认证
 :::
 
 <img src="./images/enterprise-certification.png" style="display:block;margin: 0 auto;">
+
 ::: img-description
 企业认证
 :::
@@ -241,12 +243,12 @@ style="display:block;margin: 0 auto;">
 
 1. 在 **版本升级** 模块点击 **高级版本** 所在卡片 **立即升级** 按钮。
 
-2. 若尚未进行实名认证，如 [升级到基础版本步骤 5、6](#升级到基础版) 所述进行个人 / 企业实名认证。
+2. 若尚未进行实名认证，如 [升级到基础版本步骤 5、6](#升级到基础版本) 所述进行个人 / 企业实名认证。
 
 3. 再次点击 **高级版本** 所在卡片 **立即升级** 按钮。</br>进入付费方式选择页面。
 
 <img src="./images/advanced-version-payment.png" style="display:block;margin: 0 auto;">
 
-4. 参考 [升级到基础版本步骤 8-10](#升级到基础版) 进行付款。
+4. 参考 [升级到基础版本步骤 8-10](#升级到基础版本) 进行付款。
 
 至此，完成到高级版本的升级。
