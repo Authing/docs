@@ -127,6 +127,20 @@ const zhCnNavBar = {
           ],
         },
         {
+          title: "体验期",
+          path: "/guides/basics/trial/",
+          children: [
+            {
+              title: `管理员相关操作`,
+              path: "/guides/basics/trial/admin",
+            },
+            {
+              title: `终端用户相关操作`,
+              path: "/guides/basics/trial/end-user",
+            },
+          ],
+        },
+        {
           title: "控制台概览",
           path: "/guides/basics/console/",
         },
@@ -888,20 +902,6 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "审计日志",
-      path: "/guides/audit/",
-      children: [
-        {
-          title: "用户行为的审计",
-          path: "/guides/audit/user-action",
-        },
-        {
-          title: "管理员行为的审计",
-          path: "/guides/audit/administrator-action",
-        },
-      ],
-    },
-    {
       title: "安全设置",
       children: [
         {
@@ -960,33 +960,78 @@ const zhCnNavBar = {
           path: "/guides/customize/global-guard/",
         },
         {
+          title: "消息设置",
+          children: [
+            {
+              title: "配置邮件服务和模版",
+              path: "/guides/userpool-config/email/",
+            },
+            {
+              title: "配置短信服务和模版",
+              path: "/guides/userpool-config/sms/",
+            },
+          ],
+        },
+        {
           title: "自定义域名",
           path: "/guides/customize/domain/customized-domain",
         },
                 ],
     },
     {
-      title: "配置用户池信息",
+      title: "审计日志",
+      path: "/guides/audit/",
       children: [
         {
-          title: "修改用户池基础信息",
+          title: "用户行为的审计",
+          path: "/guides/audit/user-action",
+        },
+        {
+          title: "管理员行为的审计",
+          path: "/guides/audit/administrator-action",
+        },
+      ],
+    },
+    {
+      title: "设置",
+      children: [
+        {
+          title: "基础设置",
           path: "/guides/userpool-config/basic-config",
         },
         {
-          title: "配置邮件服务和模版",
-          path: "/guides/userpool-config/email/",
+          title: "字段管理",
+          children: [
+            {
+              title: "用户字段管理",
+              children: [
+                {
+                  title: "用户基础字段",
+                  path: "/guides/user/user-profile",
+                },
+                {
+                  title: "用户拓展字段",
+                  path: "/guides/users/user-defined-field/",
+                },
+              ],
+            },
+            {
+              title: "角色字段管理",
+              path: "/guides/authentication/extensibility/role-extend",
+            },
+            {
+              title: "部门字段管理",
+              path: "/guides/authentication/extensibility/department-extend",
+            },
+          ],
         },
         {
-          title: "配置短信服务和模版",
-          path: "/guides/userpool-config/sms/",
-        },
-        {
-          title: "添加用户池协作管理员",
-          path: "/guides/userpool-config/collaboration-adminstrator",
-        },
-        {
-          title: "开发者配置",
+          title: "开发者",
           path: "/guides/userpool-config/developer-config",
+        },
+        {
+          title: "管理员",
+          path: "/guides/userpool-config/collaboration-adminstrator",
         },
       ],
     },
@@ -1006,10 +1051,6 @@ const zhCnNavBar = {
           title: "Kubernetes 部署模式",
           path: "/guides/deployment/kubernetes",
         },
-        {
-          title: "自定义域名配置方案",
-          path: "/guides/deployment/custom-domain",
-        },
       ],
     },
     {
@@ -1026,6 +1067,10 @@ const zhCnNavBar = {
         {
           title: "如何验证用户身份凭证（token）",
           path: "/guides/faqs/how-to-validate-user-token",
+        },
+        {
+          title: `使用统一域名的用户池`,
+          path: "/guides/faqs/union-domain",
         },
         {
           title: "如何识别用户来源",
@@ -1068,16 +1113,33 @@ const zhCnNavBar = {
       path: "/reference/guard/v2/",
       children: [
         {
-          title: "单页应用",
-          path: "/reference/guard/v3/spa.md",
+          title: "Web Guard",
+          path: "/reference/guard/v2/web",
         },
         {
-          title: "标准 WEB 应用",
-          path: "/reference/guard/v3/mpa.md",
+          title: "iOS Guard",
+          path: "/reference/sdk-for-ios/",
         },
         {
-          title: "Guard Changelog",
-          path: "/reference/guard/guard-changelog",
+          title: "Android Guard",
+          path: "/reference/sdk-for-android/",
+        },
+        {
+          title: "更新日志",
+          children: [
+            {
+              title: "Web Guard 更新日志",
+              path: "/reference/guard/v2/guard-changelog.md",
+            },
+            {
+              title: "iOS Guard 更新日志",
+              path: "/reference/sdk-for-ios/ios-guard-changelog.md",
+            },
+            {
+              title: "Android Guard 更新日志",
+              path: "/reference/sdk-for-android/version.md",
+            },
+         ],
         }
       ],
     },
@@ -1476,6 +1538,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/alipay",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
+            "/reference/sdk-for-android/social/google",
           ],
         },
         {
@@ -1495,8 +1558,12 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-android/onpremise",
         },
         {
-          title: "版本历史",
+          title: "Android Guard 更新日志",
           path: "/reference/sdk-for-android/version",
+        },
+        {
+          title: "返回码对照表",
+          path: "/reference/sdk-for-android/errorcode",
         },
       ],
     },
@@ -1655,7 +1722,7 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-ios/onpremise",
         },
         {
-          title: "Guard iOS Changelog",
+          title: "iOS Guard 更新日志",
           path: "/reference/sdk-for-ios/ios-guard-changelog"
         },
         {
@@ -1685,7 +1752,7 @@ const zhCnNavBar = {
         {
           title: "私有化部署",
           path: "/reference/sdk-for-flutter/onpremise",
-        },       
+        },
         {
           title: "Flutter SDK Changelog",
           path: "/reference/sdk-for-flutter/flutter-changelog",
@@ -5604,6 +5671,10 @@ const translatedZhCnNavBar = {
         {
           title: "Customize login box style",
           path: "/guides/app/custom-styles",
+        },
+        {
+          title: "Security management",
+          path: "/guides/app/security-management",
         },
         {
           title: "Become a source of federal authentication identity",

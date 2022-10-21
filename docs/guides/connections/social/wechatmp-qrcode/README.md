@@ -4,7 +4,7 @@
 
 ## 场景介绍
 
-- **概述**：「关注公众号登录」指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用「关注公众号登录」可以快速为公众号引流，提升品牌粘性。借助 {{$localeConfig.brandName}} 的「关注公众号登录」，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。
+- **概述**：**关注公众号登录** 指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用 **关注公众号登录** 可以快速为公众号引流，提升品牌粘性。借助 {{$localeConfig.brandName}} 的 **关注公众号登录**，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。
 - **应用场景**：PC 网站
 - **终端用户预览图**：
 
@@ -12,24 +12,24 @@
 
 ## 注意事项
 
-- 受微信平台要求限制，只有服务号具备 [生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)API 能力，请确保你的公众号是服务号类型。
-- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
+- 受微信平台要求限制，只有服务号具备[生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)API 能力，请确保你的公众号是服务号类型。
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 ## 步骤 1：开启服务器配置
 
 ### 获取公众号开发信息
 
-你可以在微信公众平台后台的 **设置与开发 -> 基本配置** 页面获取**开发者 ID(AppID)** 和**开发者密码(AppSecret)**，后面步骤2会用到。
+你可以在微信公众平台后台的 **设置与开发 -> 基本配置** 页面获取 **开发者 ID(AppID)** 和 **开发者密码(AppSecret)**，后面步骤2会用到。
 ![](./images/step1-1.jpg)
 
 ### 设置 IP 白名单
 
-你需要将 {{$localeConfig.brandName}} 服务器的 IP 加入到微信公众号的 IP 白名单中，你可以 [点击此处](https://core.authing.cn/api/v2/system/public-ips)获取 {{$localeConfig.brandName}} 服务器对外的 IP 列表。
+你需要将 {{$localeConfig.brandName}} 服务器的 IP 加入到微信公众号的 IP 白名单中，你可以[点击此处](https://core.authing.cn/api/v2/system/public-ips)获取 {{$localeConfig.brandName}} 服务器对外的 IP 列表。
 ![](./images/step1-2.jpg)
 
 ### 添加 API 权限
 
-你需要在微信公众号平台的设置与开发-接口权限页面添加 [生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)接口权限：
+你需要在微信公众号平台的设置与开发-接口权限页面添加[生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)接口权限：
 ![](./images/step1-3.jpg)
 
 ### 选择服务器配置模式
@@ -45,7 +45,7 @@
 
 ![](./images/step1-4.jpg)
 
-- **URL**：设置为 `https://core.authing.cn/connections/social/{Identifier}/{USERPOOL_ID}/events`，将其中的`{Identifier}`替换为你在 {{$localeConfig.brandName}} 控制台配置区输入的**唯一标识**，并将其中的`{USERPOOL_ID}`替换为你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret)。
+- **URL**：设置为 `https://core.authing.cn/connections/social/{Identifier}/{USERPOOL_ID}/events`，将其中的`{Identifier}`替换为你在 {{$localeConfig.brandName}} 控制台配置区输入的 **唯一标识**，并将其中的`{USERPOOL_ID}`替换为你的[用户池 ID](/guides/faqs/get-userpool-id-and-secret)。
 > 如果还没有 `Identifier`，可以之后创建好身份源再回这里修改。
 - **Token**：你可以在微信公众号内设置 Token 为任意字符串，必须为英文或数字，长度为 3-32 字符，并确保你在 {{$localeConfig.brandName}} 控制台配置的 token 和所需接入的公众号提供的 token 一致。
 - **EncodingAESKey**：消息加密密钥由 43 位字符组成，可随机修改，字符范围为 A-Z，a-z，0-9。
@@ -63,23 +63,23 @@
 
 #### 模式二
 
-配置流程和模式一完全一致，只需要将`URL`设置为你自己的服务器地址即可。你需要在自己配置的服务器端点完成接口验证、消息转发操作。
+配置流程和模式一完全一致，只需要将 `URL` 设置为你自己的服务器地址即可。你需要在自己配置的服务器端点完成接口验证、消息转发操作。
 
 具体流程和示例代码，请见此 [Demo](https://github.com/Authing/authing-wechat-official-account)。
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信公众号关注
 
-2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
+2.1 请在 {{$localeConfig.brandName}} 控制台的 **社会化身份源** 页面，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
 ![](~@imagesZhCn/guides/connections/create-social-idp.jpg)
 
-2.2 在「选择社会化身份源」页面，点击「微信」卡片，进入「微信登录模式」页面。
+2.2 在 **选择社会化身份源** 页面，点击 **微信** 卡片，进入 **微信登录模式** 页面。
 ![](../wechat-pc/images/add-app-1.jpg)
 
-2.3 继续点击「微信公众号关注」登录模式，或者点击 **… 添加** 打开「微信公众号关注」配置页面。
+2.3 继续点击 **微信公众号关注** 登录模式，或者点击 **添加** 打开 **微信公众号关注** 配置页面。
 ![](./images/add-app1.jpg)
 
-2.4 在「微信公众号关注」配置页面，填入从第一步中获取的相关字段信息。
+2.4 在 **微信公众号关注** 配置页面，填入从步骤一中获取的相关字段信息。
 ![](./images/add-app2.jpg)
 
 | 字段           | 描述                                                                                                                                                         |
@@ -91,10 +91,10 @@
 | 令牌          | 必须为英文或数字，长度为 3-32 字符。                                                                                                                         |
 | 消息加解密密钥 | 消息加密密钥由 43 位字符组成，可随机修改，字符范围为 A-Z，a-z，0-9。如果你选择的消息加解密方式为明文模式，此项可以留空。                                     |
 | 消息加解密方式 | 请选择你在微信公众号选择的相同的消息加解密方式。                                                                                                             |
-| 登录模式       | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                         |
-| 账号身份关联   | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
+| 登录模式       | 开启 **仅登录模式** 后，只能登录既有账号，不能创建新账号，请谨慎选择。                                                                                         |
+| 账号身份关联   | 不开启 **账号身份关联** 时，用户通过身份源登录时默认创建新用户。开启 **账号身份关联** 后，可以允许用户通过 **字段匹配** 或 **询问绑定** 的方式直接登录到已有的账号。 |
 
-2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
+2.5 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
 ## 步骤 3：开发接入
 
@@ -104,10 +104,10 @@
 
 3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
-3.2 在已创建好的「微信公众号关注」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+3.2 在已创建好的 **微信公众号关注** 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 ![](./images/step3.2.jpg)
 
-3.3 点击 {{$localeConfig.brandName}} 控制台的应用「体验登录」按钮，在弹出的登录窗口体验「微信公众号关注」登录
+3.3 点击 {{$localeConfig.brandName}} 控制台的应用 **体验登录** 按钮，在弹出的登录窗口体验 **微信公众号关注** 登录
 ![](../wechat-pc/images/step3.3-1.jpg)
 
 ![](./images/step3.3-2.jpg)

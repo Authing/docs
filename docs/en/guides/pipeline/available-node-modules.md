@@ -18,7 +18,7 @@ meta:
 ## {{$localeConfig.brandName}} SDK for Node.js
 
 ::: hint-danger
-出于安全考虑， {{$localeConfig.brandName}} 会通过特殊方式，Use 你的用户池 ID（userPoolId） 和用户池密钥（secret） 初始化 authing-js-sdk，此过程不会将你的用户池密钥发送到公网。你可以 Use Use 全局变量 **authing**，**请勿再次初始化 SDK！**
+出于安全考虑， {{$localeConfig.brandName}} 会通过特殊方式，Use 你的用户池 ID（userPoolId） 和用户池密钥（secret） 初始化 authing-js-sdk，此过程不会将你的用户池密钥发送到公网。你可以 Use 全局变量 **authing**，**请勿再次初始化 SDK！**
 :::
 
 开发者可以直接 Use [初始化](/reference/sdk-for-node/README.md)过后的 authing 实例，**无需手动初始化**！{{$localeConfig.brandName}} Pipeline 会自动帮助开发者 take care 初始化过程。
