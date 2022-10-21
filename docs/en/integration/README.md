@@ -6,7 +6,7 @@
     [
       {
         name: "keywords",
-        content: "单点登录 SSO，应用生态，应用市场，服务市场，解决方案，项目管理，企业服务，第三方应用，Authing，Authing开放平台，Authing应用市场",
+        content: "单点登录 SSO、应用生态、应用市场、服务市场、解决方案、项目管理、企业服务、第三方应用、Authing、Authing 开放平台、Authing 应用市场",
       },
     ],
   noSidebar: true,
