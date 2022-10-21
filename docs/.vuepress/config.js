@@ -141,7 +141,22 @@ module.exports = {
           { text: "快速开始", link: "/quickstarts/" },
           { text: "概念", link: "/concepts/" },
           { text: "使用指南", link: "/guides/" },
-          { text: "开发集成", link: "/reference/" },
+          {
+            text: "开发集成",
+            link: "/reference/",
+            tag: 'V2',
+            links: [
+              {
+                text: "v2 文档",
+                link: "/reference/",
+                isRouter: true
+              },
+              {
+                text: "v3 文档",
+                link: "/v3/reference/"
+              }
+            ]
+          },
           {
             text: "应用集成",
             link: "/integration/"
