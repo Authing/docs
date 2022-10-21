@@ -12,7 +12,6 @@
     <template v-else-if="!$frontmatter.noSidebar">
       <div class="current-nav-text" v-if="currentNav && currentNav.text">
         {{ currentNav.text }}
-        <Tag v-if="currentNav.tag">{{ currentNav.tag }}</Tag>
       </div>
 
       <SidebarSearch
@@ -34,7 +33,6 @@ import { getUserNavLinks, getLanguageNavLinks } from "@theme/util/navLinks";
 import GoOldVersion from "@theme/components/GoOldVersion.vue";
 import PageSidebar from "@theme/components/PageSidebar.vue";
 import SidebarSearch from "@theme/components/SidebarSearch.vue";
-import Tag from "@theme/components/Tag.vue";
 
 export default {
   name: "Sidebar",
@@ -45,7 +43,6 @@ export default {
     GoOldVersion,
     PageSidebar,
     SidebarSearch,
-    Tag,
   },
 
   props: ["items"],

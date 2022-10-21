@@ -2,19 +2,26 @@
   <div
     ref="dropdownElm"
     class="authing-dropdown"
-    :class="[{ 'dropdown-active': active }]"
+    :class="[{ 'dropdown-active': activeLink === link }]"
   >
-    <slot name="text"></slot>
-    <slot v-if="active" name="active"></slot>
-    <img
-      class="arrow-down"
-      :src="require(`@theme/assets/images/arrow-down-line.svg`)"
-      :class="[drop && (visible ? 'dropdown-visible' : 'dropdown-hide')]"
-      alt="arrow"
-    />
+    <div>
+      <slot name="text"></slot>
+      <slot v-if="activeLink === link" name="active"></slot>
+      <img
+        class="arrow-down"
+        :src="require(`@theme/assets/images/arrow-down-line.svg`)"
+        :class="[drop && (visible ? 'dropdown-visible' : 'dropdown-hide')]"
+        alt="arrow"
+      />
+    </div>
     <transition name="fadeOpacity">
       <ul class="authing-dropdown-menu" v-show="visible">
-        <li v-for="(item, index) in list" :key="index" @click="onLink(item)">
+        <li
+          v-for="(item, index) in list"
+          :key="index"
+          @click="onLink(item)"
+          :class="{ 'link-active': activeLink === item.link }"
+        >
           {{ item.text }}
         </li>
       </ul>
@@ -46,16 +53,25 @@ export default {
     };
   },
   mounted() {
-    if (this.trigger === "hover") {
-      this.$refs.dropdownElm.addEventListener("mouseenter", this.show);
-      this.$refs.dropdownElm.addEventListener("mouseleave", this.hide);
-    } else if (this.trigger === "click") {
-      this.triggerElm.addEventListener("click", this.handleClick);
-    }
+    this.$refs.dropdownElm.addEventListener("mouseenter", () => {
+      if (this.trigger === "hover") {
+        this.show();
+      }
+    });
+    this.$refs.dropdownElm.addEventListener("mouseleave", () => {
+      if (this.trigger === "hover") {
+        this.hide();
+      }
+    });
+    this.$refs.dropdownElm.addEventListener("click", () => {
+      if (this.trigger === "click") {
+        this.handleClick();
+      }
+    });
   },
   computed: {
-    active() {
-      return this.$route.path === this.link;
+    activeLink() {
+      return this.$route.path;
     },
   },
   methods: {
@@ -92,7 +108,7 @@ $color: #4b5a78;
   position: relative;
   display: flex;
   align-items: center;
-  color: $color;
+  color: inherit;
   cursor: pointer;
   .arrow-down {
     margin-left: 6px;
@@ -114,7 +130,7 @@ $color: #4b5a78;
       min-width: 102px;
       box-sizing: border-box;
       border-radius: 4px;
-      color: $color !important;
+      color: $color;
       &:hover {
         background: #f2f3f5;
       }
@@ -124,22 +140,6 @@ $color: #4b5a78;
     animation: fadeIn 0.2s forwards;
   }
 }
-$accentColor: #215ae5;
-.dropdown-active {
-  position: relative;
-  color: $accentColor;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -12px;
-    height: 2px;
-    background-color: lighten($accentColor, 8%);
-  }
-}
 
 .dropdown-visible {
   animation: fadeIn 0.2s forwards;
@@ -147,14 +147,63 @@ $accentColor: #215ae5;
 .dropdown-hide {
   animation: fadeOut 0.2s forwards;
 }
-.fadeOpacity-enter-active,
-.fadeOpacity-leave-active {
-  transition: opacity 0.2s;
+
+$accentColor: #215ae5;
+.dropdown-active {
+  position: relative;
+  color: $accentColor;
+}
+@media (min-width: 1060px) {
+  .authing-dropdown {
+    position: relative;
+  }
+  .dropdown-active {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -12px;
+      height: 2px;
+      background-color: lighten($accentColor, 8%);
+    }
+  }
+  .fadeOpacity-enter-active,
+  .fadeOpacity-leave-active {
+    transition: opacity 0.2s;
+  }
+
+  .fadeOpacity-enter,
+  .fadeOpacity-leave-to {
+    opacity: 0;
+  }
 }
 
-.fadeOpacity-enter,
-.fadeOpacity-leave-to {
-  opacity: 0;
+@media (max-width: 1060px) {
+  .authing-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .authing-dropdown-menu {
+    position: relative;
+    top: 0;
+    border: none;
+    box-shadow: none;
+    li {
+      line-height: 26px;
+      font-size: 14px;
+      padding: 0.5rem 0 0 1.5rem !important;
+      color: #333333;
+      &:hover {
+        background: inherit !important;
+      }
+    }
+  }
+  .link-active {
+    color: $accentColor !important;
+  }
 }
 
 @keyframes fadeOut {

@@ -16,7 +16,12 @@
           <span class="arrow-outline-down"></span>
         </template>
       </DropdownLink>
-      <Dropdown v-else-if="item.links" :list="item.links" :link="item.link">
+      <Dropdown
+        v-else-if="item.links"
+        :list="item.links"
+        :link="item.link"
+        :trigger="isMobile ? 'click' : 'hover'"
+      >
         <template #text>{{ item.text }}</template>
         <template #active>
           <Tag>{{ item.tag }}</Tag>
@@ -32,6 +37,8 @@ import DropdownLink from "@theme/components/DropdownLink.vue";
 import NavLink from "@theme/components/NavLink.vue";
 import Dropdown from "@theme/components/Dropdown.vue";
 import Tag from "@theme/components/Tag.vue";
+import debounce from "lodash/debounce";
+import { MQMobile } from "@theme/util/constants";
 
 export default {
   name: "NavLinks",
@@ -43,11 +50,32 @@ export default {
     },
   },
 
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+
   components: {
     NavLink,
     DropdownLink,
     Dropdown,
     Tag,
+  },
+
+  mounted() {
+    this.setType();
+    window.addEventListener("resize", this.setType);
+  },
+
+  methods: {
+    setType: debounce(function () {
+      if (document.body.offsetWidth > MQMobile) {
+        this.isMobile = false;
+      } else {
+        this.isMobile = true;
+      }
+    }, 200),
   },
 };
 </script>
