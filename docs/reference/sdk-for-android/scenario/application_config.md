@@ -30,14 +30,14 @@
 
 ## 登录成功获取到 accessToken
 
-    如你的业务需求要求登录之后获取到 `accessToken`，请在**应用配置-授权模式**下勾选 `authing_token`。
+​	如你的业务需求要求登录之后获取到 `accessToken`，请在**应用配置-授权模式**下勾选 `authing_token`。
 
 ![](../images/authorization_flow.png)
 
-​		如果使用 SDK 中的托管页或者 Guard 登录/注册组件，需要代码中设置：
+​	如果使用 SDK 中的托管页或者 Guard 登录/注册组件，需要代码中设置：
 
 ```java
 Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC);
 ```
 
-​		如果只是使用 API 的调用方式，请使用 `OIDCClient` 中的[登录/注册 API](../apis/protocol/#获取-access-token、id-token-和-refresh-token)。
+​	如果只是使用 API 的调用方式，请使用 `OIDCClient` 中的[登录/注册 API](../apis/protocol/#获取-access-token、id-token-和-refresh-token)。

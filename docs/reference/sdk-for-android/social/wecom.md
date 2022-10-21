@@ -21,7 +21,7 @@ implementation 'cn.authing:guard:+'
 implementation files('libs/lib_wwapi-2.0.12.11.aar')
 ```
 
-> Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
+> Guard 只是 compileOnly 依赖企业微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
 ​	如果需要混淆代码，为了保证sdk的正常使用，需要在proguard.cfg加上下面两行配置：
 
