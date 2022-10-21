@@ -82,18 +82,30 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
 # 原生小程序 npm 支持：
 # https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html
 npm install --save @authing/miniapp-wx
+
+or
+
+yarn add @authing/miniapp-wx
 ```
 :::
 
 ::: tab Taro
 ``` shell
 npm install --save @authing/miniapp-taro
+
+or
+
+yarn add @authing/miniapp-taro
 ```
 :::
 
 ::: tab uni-app
 ``` shell
 npm install --save @authing/miniapp-uniapp
+
+or
+
+yarn add @authing/miniapp-uniapp
 ```
 :::
 ::::
@@ -105,11 +117,19 @@ npm install --save @authing/miniapp-uniapp
 ::: tab rsa加密
 ``` shell
 npm install --save @authing/miniapp-jsencrypt
+
+or
+
+yarn add @authing/miniapp-jsencrypt
 ```
 :::
 ::: tab sm2加密
 ``` shell
 npm install --save @authing/miniapp-sm2encrypt
+
+or
+
+yarn add @authing/miniapp-sm2encrypt
 ```
 :::
 ::::

@@ -1,4 +1,4 @@
-# 单点登录 SSO
+# 自建应用 SSO 方案
 
 <LastUpdated/>
 
@@ -8,7 +8,7 @@
 
 ### 第一步：创建两个应用
 
-首先你可以按照 [指引](/guides/app-new/create-app/create-app.md)创建两个应用。
+首先你可以按照 [指引](/guides/app-new/create-app/create-app.md) 创建两个应用。
 
 ### 第二步：配置单点登录
 
@@ -28,7 +28,7 @@
 
 ![](../images/03.png)
 
-2. 在登录页面完成登录：
+2. 在登录页面完成登录。
 
 <img src="../images/sso04.png" height=550 style="display:block;margin: 0 auto;">
 

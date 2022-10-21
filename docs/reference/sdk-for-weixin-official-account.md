@@ -91,6 +91,12 @@ npm install --save @authing/weixin-official-account
 ```
 :::
 
+::: tab Yarn
+``` shell
+yarn add @authing/weixin-official-account
+```
+:::
+
 ::: tab CDN
 ```html
 <script src="https://cdn.authing.co/packages/weixin-official-account/5.1.0/weixin-official-account.min.js"></script>

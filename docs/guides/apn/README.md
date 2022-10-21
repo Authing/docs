@@ -1,4 +1,4 @@
-# {{$localeConfig.brandName}} 应用市场
+# 集成应用 SSO 方案
 
 <LastUpdated/>
 

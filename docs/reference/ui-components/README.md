@@ -71,4 +71,4 @@ Guard 内置了多因素认证（MFA）功能，当你的[应用开启了多因�
 
 ## 获取帮助
 
-Join us on forum: [#authing-chat](https://forum.authing.cn/)
+请访问 [Authing 论坛](https://forum.authing.cn/)。
