@@ -211,8 +211,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -905,10 +905,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.0.5/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.0.6/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -2696,8 +2696,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
