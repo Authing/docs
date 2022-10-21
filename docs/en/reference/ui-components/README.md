@@ -72,4 +72,4 @@ You can include the `@authing/native-js-ui-components` package in your native Ja
 
 ## Get help
 
-Join us on forum: [#authing-chat](https://forum.authing.cn/)
+请访问 [#Authing 论坛](https://forum.authing.cn/)。

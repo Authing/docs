@@ -324,4 +324,4 @@ Note that in React, event listeners should be named with small camels, such as: 
 
 ## Get help
 
-Join us on forum: [#authing-chat](https://forum.authing.cn/)
+Join us on [#Authing Chat](https://forum.authing.cn/)。
