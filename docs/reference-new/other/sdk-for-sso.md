@@ -376,4 +376,4 @@ let res = await auth.trackSession();
 
 ## 获取帮助 <a id="get-help"></a>
 
-1. 请访问 [#Authing 论坛](https://forum.authing.cn/)
+1. 请访问 [Authing 论坛](https://forum.authing.cn/)

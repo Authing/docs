@@ -216,4 +216,4 @@ Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，�
 
 ## 获取帮助
 
-请访问 [#Authing 论坛](https://forum.authing.cn/)。
+请访问 [Authing 论坛](https://forum.authing.cn/)。

@@ -322,4 +322,4 @@ const App = () => {
 
 ## 获取帮助
 
-请访问 [#Authing 论坛](https://forum.authing.cn/)。
+请访问 [Authing 论坛](https://forum.authing.cn/)。

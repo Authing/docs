@@ -72,4 +72,4 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 
 ## 获取帮助
 
-请访问 [#Authing 论坛](https://forum.authing.cn/)。
+请访问 [Authing 论坛](https://forum.authing.cn/)。
