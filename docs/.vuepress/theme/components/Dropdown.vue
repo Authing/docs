@@ -2,21 +2,23 @@
   <div
     ref="dropdownElm"
     class="authing-dropdown"
-    :class="{ 'dropdown-active': active }"
+    :class="[{ 'dropdown-active': active }]"
   >
     <slot name="text"></slot>
     <slot v-if="active" name="active"></slot>
     <img
       class="arrow-down"
-      :class="[drop && (visible ? 'arrow-down--up' : 'arrow-down--down')]"
       :src="require(`@theme/assets/images/arrow-down-line.svg`)"
+      :class="[drop && (visible ? 'dropdown-visible' : 'dropdown-hide')]"
       alt="arrow"
     />
-    <ul class="authing-dropdown-menu" v-show="visible">
-      <li v-for="(item, index) in list" :key="index" @click="onLink(item)">
-        {{ item.text }}
-      </li>
-    </ul>
+    <transition name="fadeOpacity">
+      <ul class="authing-dropdown-menu" v-show="visible">
+        <li v-for="(item, index) in list" :key="index" @click="onLink(item)">
+          {{ item.text }}
+        </li>
+      </ul>
+    </transition>
   </div>
 </template>
 <script>
@@ -73,7 +75,7 @@ export default {
     },
     onLink(item) {
       if (item.isRouter) {
-        this.$router.push(item.link);
+        item.link !== this.$route.path && this.$router.push(item.link);
         setTimeout(() => {
           this.$eventBus.$emit("onChangeIndex");
         }, 200);
@@ -95,12 +97,6 @@ $color: #4b5a78;
   .arrow-down {
     margin-left: 6px;
     height: 6.5px;
-    &--up {
-      animation: fadeOut 0.2s forwards;
-    }
-    &--down {
-      animation: fade 0.2s forwards;
-    }
   }
   &-menu {
     padding: 6px;
@@ -124,10 +120,44 @@ $color: #4b5a78;
       }
     }
   }
+  .visible {
+    animation: fadeIn 0.2s forwards;
+  }
 }
+$accentColor: #215ae5;
 .dropdown-active {
+  position: relative;
+  color: $accentColor;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 2px;
+    background-color: lighten($accentColor, 8%);
+  }
 }
-@keyframes fade {
+
+.dropdown-visible {
+  animation: fadeIn 0.2s forwards;
+}
+.dropdown-hide {
+  animation: fadeOut 0.2s forwards;
+}
+.fadeOpacity-enter-active,
+.fadeOpacity-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fadeOpacity-enter,
+.fadeOpacity-leave-to {
+  opacity: 0;
+}
+
+@keyframes fadeOut {
   0% {
     transform: rotate(180deg);
   }
@@ -135,7 +165,7 @@ $color: #4b5a78;
     transform: rotate(0deg);
   }
 }
-@keyframes fadeOut {
+@keyframes fadeIn {
   0% {
     transform: rotate(0deg);
   }

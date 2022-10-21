@@ -49,9 +49,6 @@ export default {
     Dropdown,
     Tag,
   },
-  computed: {
-    active() {},
-  },
 };
 </script>
 
@@ -135,22 +132,6 @@ export default {
         height: 2px;
         background-color: lighten($accentColor, 8%);
       }
-    }
-  }
-
-  .nav-item > .dropdown-active {
-    position: relative;
-    color: $accentColor;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -12px;
-      height: 2px;
-      background-color: lighten($accentColor, 8%);
     }
   }
 }

@@ -153,7 +153,7 @@ module.exports = {
               },
               {
                 text: "v3 文档",
-                link: "/v3/reference/"
+                link: "https://docs.authing.cn/v3/reference/"
               }
             ]
           },

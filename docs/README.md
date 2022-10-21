@@ -9,6 +9,7 @@ exploreUse: 探索使用 {{$localeConfig.brandName}}
 banner:
   title: Authing API/SDK V3 正式上线！
   text: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
+  url: https://docs.authing.cn/v3/reference/
 hotSearch:
   - text: 如何对用户进行认证
     link: /guides/authentication/

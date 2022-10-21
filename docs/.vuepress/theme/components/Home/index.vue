@@ -14,7 +14,11 @@
           content-layout-container content-layout-container__without-sidebar
         "
       >
-        <banner-card :title="data.banner.title" :text="data.banner.text" />
+        <banner-card
+          :title="data.banner.title"
+          :text="data.banner.text"
+          :url="data.banner.url"
+        />
         <h1 class="home-title">
           {{ data.mainTitle }}
         </h1>
