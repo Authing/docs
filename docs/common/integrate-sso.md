@@ -43,7 +43,7 @@ Authing Web SDK 目前支持的功能如下：
 
 ## STEP 2: 配置单点登录
 
-> 参考 [自建应用 SSO 方案](/guides/app/sso.md)
+> 参考 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)
 
 ## STEP 3: 修改配置
 
@@ -885,7 +885,7 @@ export class AppComponent {
 
 ### 三、静默登录
 
-在 [自建应用 SSO 方案](/guides/app/sso.md) 一文中有提到，可以将多个自建应用添加到「 **单点登录 SSO」** 面板，。如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
+在 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md) 一文中有提到，可以将多个自建应用添加到「 **单点登录 SSO」** 面板，。如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab CDN
