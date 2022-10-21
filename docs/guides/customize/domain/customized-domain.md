@@ -102,11 +102,11 @@
 
 <img src="../images/non-unified-domainname-userpool.png" style="display:block;margin: 0 auto;">
 
-而在使用统一域名的用户池中，自定义域名配置完成后，由于用户池中的所有应用（包括应用面板、集成应用以及所有的自建应用）均使用统一的、用户池级别的域名，因此自定义域名配置完成后，将对该用户池中的所有应用生效。
+而在使用统一域名的用户池中，自定义域名配置完成后，由于用户池中的所有应用（包括应用面板、集成应用以及所有的自建应用）均使用统一的、用户池级别的域名。因此自定义域名配置完成后，将对该用户池中的所有应用生效。
 
 <img src="../images/unified-domainname-userpool.png" style="display:block;margin: 0 auto;">
 
-如果你还不清楚是否该使用统一域名的用户池，请前往 [了解何时应该使用统一域名的用户池](/guides/faqs/union-domain.md)。
+如果不能明确是否该使用统一域名的用户池，请前往 [了解何时应该使用统一域名的用户池](/guides/faqs/union-domain.md)。
 
 ### 涉及到应用域名的邮件模板​
 
