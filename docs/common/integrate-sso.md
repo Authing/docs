@@ -4,7 +4,7 @@
 
 ## Authing Web SDK
 
-Authing Web SDK 为开发者提供了简单易用的函数来实现浏览器端的单点登录效果，它是一款基于 [OIDC](https://docs.authing.cn/v2/guides/federation/oidc.html) 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，帮你实现浏览器内多个应用跨主域的 [单点登录](/guides/app-new/sso/)效果。
+Authing Web SDK 为开发者提供了简单易用的函数来实现浏览器端的单点登录效果，它是一款基于 [OIDC](https://docs.authing.cn/v2/guides/federation/oidc.html) 标准的 Web 应用认证侧 SDK，你可以通过调用 SDK 与 Authing 完成集成，帮你实现浏览器内多个应用跨主域的[单点登录](/guides/app-new/sso/)效果。
 
 Authing Web SDK 可以帮你实现浏览器内多个应用跨主域的单点登录效果，**目前只适合单独使用**，暂不支持与 Guard 或其他 SDK 混用。
 
