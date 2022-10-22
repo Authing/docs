@@ -3,7 +3,7 @@ tags:
 - 发版记录
 ---
 
-# Guard Changelog
+# Web Guard Changelog
 
 <LastUpdated/>
 
