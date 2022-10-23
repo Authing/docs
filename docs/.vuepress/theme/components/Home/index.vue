@@ -15,9 +15,9 @@
         "
       >
         <banner-card
-          :title="data.bannerTitle"
-          :text="data.bannerText"
-          :url="data.bannerUrl"
+          :title="data.banner.title"
+          :text="data.banner.text"
+          :url="data.banner.url"
         />
         <h1 class="home-title">
           {{ data.mainTitle }}

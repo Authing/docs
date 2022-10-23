@@ -6,9 +6,10 @@ subTitle: "在这里，开启激动人心的第一步！学习如何使用 {{$lo
 searchPlaceholder: 请输入关键词搜索产品文档
 hotSearchText: 热门搜索
 exploreUse: 探索使用 {{$localeConfig.brandName}}
-bannerTitle: Authing API/SDK V3 正式上线！
-bannerText: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
-bannerUrl: https://docs.authing.cn/v3
+banner:
+  title: Authing API/SDK V3 正式上线！
+  text: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
+  url: https://docs.authing.cn/v3
 hotSearch:
   - text: 如何对用户进行认证
     link: /guides/authentication/
