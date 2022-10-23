@@ -108,7 +108,7 @@ $color: #4b5a78;
   position: relative;
   display: flex;
   align-items: center;
-  color: inherit;
+  color: $color;
   cursor: pointer;
   .arrow-down {
     margin-left: 6px;
@@ -185,6 +185,7 @@ $accentColor: #215ae5;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    color: #333333;
   }
   .authing-dropdown-menu {
     position: relative;
