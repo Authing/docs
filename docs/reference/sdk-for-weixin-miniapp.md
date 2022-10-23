@@ -20,7 +20,7 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
 
 |条目|说明|
 |-----|----|
-|最新版本|5.1.1|
+|最新版本|5.1.2|
 |仓库地址|https://github.com/authing/authing-js-sdk|
 
 ## 第一步：创建应用
@@ -1490,8 +1490,9 @@ interface ErrorData {
 ### <p id="GetUserPhoneResponseData">GetUserPhoneResponseData</p>
 |名称|类型|描述|
 |-----|----|----|
-|countryCode|String|+86|
-|phoneNumber|String|手机号
+|countryCode|String|区号，默认为 86|
+|phoneNumber|String|用户绑定的手机号（国外手机号会有区号）|
+|purePhoneNumber|string|没有区号的手机号|
 |watermark|Watermark|微信返回的其他信息|
 
 **Watermark**
