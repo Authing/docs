@@ -250,7 +250,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="getLoginState">getLoginState</button>
+<button bindtap="getLoginState">Get Login State</button>
 ```
 ``` typescript
 // index.js
@@ -274,7 +274,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.getLoginState()}>getLoginState</Button>
+        <Button onClick={() => this.getLoginState()}>Get Login State</Button>
       </View>
     )
   }
@@ -349,7 +349,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByCode">loginByCode</button>
+<button bindtap="loginByCode">Login By Code</button>
 ```
 ``` typescript
 // index.js
@@ -389,7 +389,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByCode()}>loginByCode</Button>
+        <Button onClick={() => this.loginByCode()}>Login By Code</Button>
       </View>
     )
   }
@@ -489,7 +489,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByPassword">loginByPassword</button>
+<button bindtap="loginByPassword">Login By Password</button>
 ```
 ``` typescript
 // index.js
@@ -519,7 +519,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByPassword()}>loginByPassword</Button>
+        <Button onClick={() => this.loginByPassword()}>Login By Password</Button>
       </View>
     )
   }
@@ -594,7 +594,7 @@ Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="sendSms">sendSms</button>
+<button bindtap="sendSms">Send Sms</button>
 ```
 ``` typescript
 // index.js
@@ -616,7 +616,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.sendSms()}>sendSms</Button>
+        <Button onClick={() => this.sendSms()}>Send Sms</Button>
       </View>
     )
   }
@@ -634,7 +634,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="sendSms">sendSms</button>
+<button @click="sendSms">Send Sms</button>
 ```
 ``` typescript
 export default {
@@ -682,7 +682,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByPassCode">loginByPassCode</button>
+<button bindtap="loginByPassCode">Login By Pass Code</button>
 ```
 ``` typescript
 // index.js
@@ -709,7 +709,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByPassCode()}>loginByPassCode</Button>
+        <Button onClick={() => this.loginByPassCode()}>Login By Pass Code</Button>
       </View>
     )
   }
@@ -771,7 +771,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="refreshToken">refreshToken</button>
+<button bindtap="refreshToken">Refresh Token</button>
 ```
 ``` typescript
 // index.js
@@ -788,7 +788,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.refreshToken()}>refreshToken</Button>
+        <Button onClick={() => this.refreshToken()}>Refresh Token</Button>
       </View>
     )
   }
@@ -801,7 +801,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="refreshToken">refreshToken</button>
+<button @click="refreshToken">Refresh Token</button>
 ```
 ``` typescript
 export default {
@@ -835,7 +835,7 @@ Promise<[SDKResponse](#SDKResponse)<[GetUserPhoneResponseData](#GetUserPhoneResp
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button open-type="getPhoneNumber" bindgetphonenumber="getPhone">getPhone</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhone">Get Phone</button>
 ```
 ``` typescript
 // index.js
@@ -862,7 +862,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>getPhone</Button>
+        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>Get Phone</Button>
       </View>
     )
   }
@@ -884,7 +884,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button open-type="getPhoneNumber" @getphonenumber="getPhone">getPhone</button>
+<button open-type="getPhoneNumber" @getphonenumber="getPhone">Get Phone</button>
 ```
 ``` typescript
 export default {
@@ -929,7 +929,7 @@ Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updatePassword">updatePassword</button>
+<button bindtap="updatePassword">Update Password</button>
 ```
 ``` typescript
 // index.js
@@ -952,7 +952,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updatePassword()}>updatePassword</Button>
+        <Button onClick={() => this.updatePassword()}>Update Password</Button>
       </View>
     )
   }
@@ -971,7 +971,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updatePassword">updatePassword</button>
+<button @click="updatePassword">Update Password</button>
 ```
 ``` typescript
 export default {
@@ -1008,7 +1008,7 @@ Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="getUserInfo">getUserInfo</button>
+<button bindtap="getUserInfo">Get User Info</button>
 ```
 ``` typescript
 // index.js
@@ -1025,7 +1025,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.getUserInfo()}>getUserInfo</Button>
+        <Button onClick={() => this.getUserInfo()}>Get User Info</Button>
       </View>
     )
   }
@@ -1038,7 +1038,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="getUserInfo">getUserInfo</button>
+<button @click="getUserInfo">Get User Info</button>
 ```
 ``` typescript
 export default {
@@ -1069,7 +1069,7 @@ Promise<[SDKResponse](#SDKResponse)<[UploadFileResponseData](#UploadFileResponse
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updateAvatar">updateAvatar</button>
+<button bindtap="updateAvatar">Update Avatar</button>
 ```
 ``` typescript
 // index.js
@@ -1086,7 +1086,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updateAvatar()}>updateAvatar</Button>
+        <Button onClick={() => this.updateAvatar()}>Update Avatar</Button>
       </View>
     )
   }
@@ -1099,7 +1099,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updateAvatar">updateAvatar</button>
+<button @click="updateAvatar">Update Avatar</button>
 ```
 ``` typescript
 export default {
@@ -1130,7 +1130,7 @@ Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updateUserInfo">updateUserInfo</button>
+<button bindtap="updateUserInfo">Update User Info</button>
 ```
 ``` typescript
 // index.js
@@ -1149,7 +1149,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updateUserInfo()}>updateUserInfo</Button>
+        <Button onClick={() => this.updateUserInfo()}>Update User Info</Button>
       </View>
     )
   }
@@ -1164,7 +1164,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updateUserInfo">updateUserInfo</button>
+<button @click="updateUserInfo">Update User Info</button>
 ```
 ``` typescript
 export default {
@@ -1199,7 +1199,7 @@ Promise<SDKResponse<boolean>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="logout">logout</button>
+<button bindtap="logout">Logout</button>
 ```
 ``` typescript
 // index.js
@@ -1216,7 +1216,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.logout()}>logout</Button>
+        <Button onClick={() => this.logout()}>Logout</Button>
       </View>
     )
   }
@@ -1229,7 +1229,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="logout">logout</button>
+<button @click="logout">Logout</button>
 ```
 ``` typescript
 export default {
