@@ -14,8 +14,14 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
   - 支持的小程序框架更多：包括 **微信原生小程序**、**Taro**、**uni-app** 框架。
 - 支持完整的 TS 类型提示，操作更便捷。
 - 运行更流畅：包体积更小，不到 5 分钟即可完成接入。
+- 支持小程序基础库 2.14.1+。
 
 升级版 SDK 为开发者提供了更稳定、更便捷的开发环境，建议您尽快升级。
+
+|条目|说明|
+|-----|----|
+|最新版本|5.1.0|
+|仓库地址|https://github.com/authing/authing-js-sdk|
 
 ## 第一步：创建应用
 
@@ -238,12 +244,6 @@ const authing = new Authing({
 
 Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
-#### 说明
-
-- 如果返回值为 `null`，说明用户未登录，或登录态已过期
-
-- 如果返回值不为 `null`，说明用户已登录，且登录态未过期
-
 #### 示例代码
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -257,6 +257,13 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 Page({
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 })
 ```
@@ -273,6 +280,13 @@ export default class Index extends Component<PropsWithChildren> {
   }
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 }
 ```
@@ -283,6 +297,13 @@ export default {
   methods: {
     async getLoginState () {      
       const [error, loginState] = await authing.getLoginState()
+
+      if (error) {
+        // 用户未登录，或登录态已过期
+      } else {
+        // 用户已登录，且登录态未过期
+        console.log(loginState)
+      }
     }
   }
 }

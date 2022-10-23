@@ -9,7 +9,7 @@ tags:
 <LastUpdated/>
 
 ::: hint-info
-本文对应 {{$localeConfig.brandName}} 老版本产品。如想了解最新功能说明，请查看 [接入 Authing Guard](https://docs.authing.cn/v2/reference/guard/v2/)。
+本文对应 {{$localeConfig.brandName}} 老版本产品。如需了解最新功能说明，请查看 [接入 Authing Guard](https://docs.authing.cn/v2/reference/guard/v2/)。
 ::: 
 
 Authing 登录组件（Guard）是一种可嵌入的登录表单，可根据你的需求进行配置，建议用于单页面应用程序。它使你可以轻松添加各种社会化登录方式，以便你的用户可以无缝登录，并且在不同平台拥有一致的登录体验。Guard 为开发者屏蔽了很多底层认证的实现细节，同时也包括繁琐的 UI 开发。
@@ -391,4 +391,4 @@ authClient.getCurrentUser().then((user) => console.log(user));
 
 ## 获取帮助
 
-请访问 [#Authing 论坛](https://forum.authing.cn/)。
+请访问 [Authing 论坛](https://forum.authing.cn/)。

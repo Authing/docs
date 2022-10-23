@@ -54,7 +54,7 @@ const authenticators = await authenticationClient.principal.detail()
   "updatedAt": "2021-05-31T12:31:43.416Z",
   "userPoolId": "607fe30c14d1650eb1d888ca",
   "userId": "60a336dc179abb512dd64ae7",
-  "principalType": "P", // "P" 表示个人认证，"E" 表示个人认证
+  "principalType": "P", // "P" 表示个人认证，"E" 表示企业认证
   "principalName": "xxx",
   "principalCode": "xxxxxxxxxxxxxxx",
   "authenticationTime": "2021-05-31T12:31:43.414Z"

@@ -8,13 +8,13 @@
 
 我们通过一个例子来说明，假设有一所大学，内部有两个系统，一个是邮箱系统，一个是课表查询系统。现在想实现这样的效果：在邮箱系统中登录一遍，然后此时进入课表系统的网站，无需再次登录，课表网站系统直接跳转到个人课表页面，反之亦然。比较专业的定义如下：
 
-如果你还没有创建过应用，可以了解[如何创建第一个应用](/guides/app-new/create-app/create-app.md)。
+如果你还没有创建过应用，可以了解 [如何创建第一个应用](/guides/app-new/create-app/create-app.md)。
 
-如果你想快速体验一下单点登录，可以先了解[自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)的内容。
+如果你想快速体验一下单点登录，可以先了解 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)的内容。
 
 以下内容不分先后顺序，你可以选择自己感兴趣的内容进行阅读：
 
-- [应用面板](/guides/dashboard/README.md)，用于展示企业所需的各类应用，是提供员工单点登录、提高工作效率、保证信息安全的好地方。
-- [集成应用 SSO 方案](/guides/apn/README.md)，是一套 Authing 预先与第三方应用集成的目录，可以让 Authing 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
-- [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)，当你有多个应用的时候，你可以快速实现用户池应用间的单点登录，用户切换应用的时候不需要再次登录，给用户更好的使用体验。
-- [第三方 SSO 方案](/guides/app-new/sso/third-party-sso/README.md)，以飞书、企业微信、钉钉、Welink 等作为企业单一身份源实现 SSO 的集成方案。
+- [应用面板](/guides/dashboard/README.md)：用于展示企业所需的各类应用，是提供员工单点登录、提高工作效率、保证信息安全的好地方。
+- [集成应用 SSO 方案](/guides/apn/README.md)：是一套 Authing 预先与第三方应用集成的目录，可以让 Authing 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
+- [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md)：当你有多个应用的时候，你可以快速实现用户池应用间的单点登录，用户切换应用的时候不需要再次登录，给用户更好的使用体验。
+- [第三方 SSO 方案](/guides/app-new/sso/third-party-sso/README.md)：以飞书、企业微信、钉钉、Welink 等作为企业单一身份源实现 SSO 的集成方案。

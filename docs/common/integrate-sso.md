@@ -1,4 +1,4 @@
-本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}} 提供的 SDK，实现[单点登录](/guides/app-new/sso/)。
+本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}} 提供的 SDK，实现 [单点登录](/guides/app-new/sso/)。
 
 本文使用的 **SDK 名称**：Authing Web SDK，**NPM 包名**：[@authing/web](https://www.npmjs.com/package/@authing/web)。
 
@@ -36,7 +36,7 @@ Authing Web SDK 目前支持的功能如下：
 ## 第二步：配置单点登录
 
 ::: hint-info
-参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app/sso.html)。
+参考 [自建应用 SSO 方案](https://docs.authing.cn/v2/guides/app-new/sso/create-app-sso.html)。
 :::
 
 ## 第三步：修改配置
@@ -60,7 +60,7 @@ Authing Web SDK 目前支持的功能如下：
 4. 保存当前配置。
 
 ::: hint-info
-注意，如果使用社会化身份源或企业身份源登录，且登录后获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考[身份源连接的账号关联](/guides/connections/account-association.html)。
+注意，如果使用社会化身份源或企业身份源登录，且登录后获取用户信息时需要返回包含所有身份源的 `identities` 字段，则需要开启账号关联配置，具体参考 [身份源连接的账号关联](/guides/connections/account-association.html)。
 :::
 
 ## 第四步：安装 SDK
@@ -258,7 +258,7 @@ Authing Web SDK 可以向 Authing 发起认证授权请求，目前支持三种�
 
 1. 跳转登录：从当前页面跳转到 Authing 的托管登录页进行登录。
 2. 弹窗登录：弹出一个窗口，在弹出窗口中加载 Authing 托管的登录页，无需页面跳转。
-3. 静默登录：在 [自建应用 SSO 方案](/guides/app/sso.md) 一文中有提到，可以将多个自建应用添加到 **单点登录 SSO** 面板。如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
+3. 静默登录：在 [自建应用 SSO 方案](/guides/app-new/sso/create-app-sso.md) 一文中有提到，可以将多个自建应用添加到 **单点登录 SSO** 面板。如果用户已经登录过其中的一个应用，那么在同一浏览器另一个标签页访问其他应用的时候，就可以实现静默登录，直接获取到用户信息，实现单点登录效果。
 
 ### 一、跳转登录
 
@@ -2249,4 +2249,4 @@ document.querySelector('#logoutWithRedirect').onclick = function () {
 
 ## 获取帮助 <a id="get-help"></a>
 
-请访问 [#Authing 论坛](https://forum.authing.cn/)。
+请访问 [Authing 论坛](https://forum.authing.cn/)。
