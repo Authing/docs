@@ -1492,7 +1492,7 @@ interface ErrorData {
 |-----|----|----|
 |countryCode|String|区号，默认为 86|
 |phoneNumber|String|用户绑定的手机号（国外手机号会有区号）|
-|purePhoneNumber|string|没有区号的手机号|
+|purePhoneNumber|String|没有区号的手机号|
 |watermark|Watermark|微信返回的其他信息|
 
 **Watermark**
