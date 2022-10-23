@@ -147,12 +147,12 @@ module.exports = {
             tag: 'V2',
             links: [
               {
-                text: "v2 文档",
+                text: "V2 文档",
                 link: "/reference/",
                 isRouter: true
               },
               {
-                text: "v3 文档",
+                text: "V3 文档",
                 link: "https://docs.authing.cn/v3"
               }
             ]
