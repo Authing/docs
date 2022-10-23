@@ -2,11 +2,11 @@
   <div
     ref="dropdownElm"
     class="authing-dropdown"
-    :class="[{ 'dropdown-active': activeLink === link }]"
+    :class="[{ 'dropdown-active': active }]"
   >
     <div>
       <slot name="text"></slot>
-      <slot v-if="activeLink === link" name="active"></slot>
+      <slot v-if="active" name="active"></slot>
       <img
         class="arrow-down"
         :src="require(`@theme/assets/images/arrow-down-line.svg`)"
@@ -20,7 +20,7 @@
           v-for="(item, index) in list"
           :key="index"
           @click="onLink(item)"
-          :class="{ 'link-active': activeLink === item.link }"
+          :class="{ 'link-active': activeLink.indexOf(item.link) === 0 }"
         >
           {{ item.text }}
         </li>
@@ -53,25 +53,33 @@ export default {
     };
   },
   mounted() {
-    this.$refs.dropdownElm.addEventListener("mouseenter", () => {
-      if (this.trigger === "hover") {
-        this.show();
-      }
-    });
-    this.$refs.dropdownElm.addEventListener("mouseleave", () => {
-      if (this.trigger === "hover") {
-        this.hide();
-      }
-    });
-    this.$refs.dropdownElm.addEventListener("click", () => {
-      if (this.trigger === "click") {
-        this.handleClick();
-      }
-    });
+    this.$refs.dropdownElm.addEventListener(
+      "mouseenter",
+      this.handleMouseEnter
+    );
+    this.$refs.dropdownElm.addEventListener(
+      "mouseleave",
+      this.handleMouseLeave
+    );
+    this.$refs.dropdownElm.addEventListener("click", this.handleClick);
+  },
+  unMounted() {
+    this.$refs.dropdownElm.removeEventListener(
+      "mouseenter",
+      this.handleMouseEnter
+    );
+    this.$refs.dropdownElm.removeEventListener(
+      "mouseleave",
+      this.handleMouseLeave
+    );
+    this.$refs.dropdownElm.removeEventListener("click", this.handleClick);
   },
   computed: {
     activeLink() {
       return this.$route.path;
+    },
+    active() {
+      return this.$route.path.indexOf(this.link) === 0;
     },
   },
   methods: {
@@ -82,7 +90,20 @@ export default {
     hide() {
       this.visible = false;
     },
+    handleMouseEnter() {
+      if (this.trigger === "hover") {
+        this.show();
+      }
+    },
+    handleMouseLeave() {
+      if (this.trigger === "hover") {
+        this.hide();
+      }
+    },
     handleClick() {
+      if (this.trigger !== "click") {
+        return;
+      }
       if (this.visible) {
         this.hide();
       } else {

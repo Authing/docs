@@ -3,7 +3,9 @@
     <div class="docs-banner-card">
       <h1>{{ title }}</h1>
       <p>{{ text }}</p>
-      <authing-button class="button" @click="check"> 查看文档 </authing-button>
+      <authing-button class="button" @click="check">
+        {{ btnText }}
+      </authing-button>
     </div>
     <img
       class="docs-banner-img"
@@ -25,6 +27,10 @@ export default {
       default: "",
     },
     url: {
+      type: String,
+      default: "",
+    },
+    btnText: {
       type: String,
       default: "",
     },

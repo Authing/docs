@@ -6,10 +6,6 @@ subTitle: Here, start an exciting first step! Learn how to use {{$localeConfig.b
 searchPlaceholder: Please enter keywords to search product documents
 hotSearchText: Popular Searches
 exploreUse: Explore the use of {{$localeConfig.brandName}}
-banner:
-  title: Authoring API/SDK V3 is officially launched!
-  text: The AuthingAPI/SDK V3 is new. It provides HTTP APIs and SDKs in more than 10 different languages an frameworks. You can flexibly build a secure and stable authentication process in 5 minutes!
-  url: https://docs.authing.cn/en/v3
 hotSearch:
   - text: How to authenticate users
     link: /en/guides/authentication/

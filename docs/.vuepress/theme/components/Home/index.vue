@@ -14,11 +14,14 @@
           content-layout-container content-layout-container__without-sidebar
         "
       >
-        <banner-card
-          :title="data.banner.title"
-          :text="data.banner.text"
-          :url="data.banner.url"
-        />
+        <template v-if="data.banner">
+          <banner-card
+            :title="data.banner.title"
+            :text="data.banner.text"
+            :url="data.banner.url"
+            :btnText="data.banner.btnText"
+          />
+        </template>
         <h1 class="home-title">
           {{ data.mainTitle }}
         </h1>
