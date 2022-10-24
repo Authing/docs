@@ -15,6 +15,11 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 现在开始跟随引导将 Authing Guard 接入到你的项目中吧！
 
+|条目|说明|
+|-----|----|
+|最新版本|5.0.6|
+|仓库地址|https://github.com/authing/Guard|
+
 ## 第一步：在 Authing 控制台创建应用
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
@@ -51,6 +56,10 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ```shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
+
+or
+
+yarn add @authing/guard-react
 ```
 
 :::
@@ -60,6 +69,10 @@ npm install --save @authing/guard-react
 ```shell
 # 兼容 Vue 2
 npm install --save @authing/guard-vue2
+
+or
+
+yarn add @authing/guard-vue2
 ```
 
 :::
@@ -69,6 +82,10 @@ npm install --save @authing/guard-vue2
 ```shell
 # 兼容 Vue 3
 npm install --save @authing/guard-vue3
+
+or
+
+yarn add @authing/guard-vue3
 ```
 
 :::
@@ -78,6 +95,10 @@ npm install --save @authing/guard-vue3
 ```shell
 # 兼容 Angular 14
 npm install --save @authing/guard-angular
+
+or
+
+yarn add @authing/guard-angular
 ```
 
 :::
@@ -211,8 +232,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -905,10 +926,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.0.5/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.0.6/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -2696,8 +2717,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.0.5/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.5/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
@@ -3421,7 +3442,7 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 | autoRegister          | 是否将注册和登录合并，合并后如果用户不存在将自动注册 | Boolean                                                   | 否          | false                                              |
 | disableRegister       | 是否禁止注册，禁止的话会隐藏「注册」入口                                                                                                                                                                         | Boolean                                                   | 否          | false                                              |
 | disableResetPwd| 是否禁止重置密码，禁止的话会隐藏「忘记密码」入口 | Boolean |否 | Authing 控制台中的配置|
-| clickCloseable | Modal 模式时是否隐藏登录框右上角的关闭按钮，如果隐藏，用户将不能通过点击按钮关闭登录框 | Boolean | 否 | Authing 控制台中的配置 |
+| clickCloseable | Modal 模式时是否隐藏登录框左上角的关闭按钮，如果隐藏，用户将不能通过点击按钮关闭登录框 | Boolean | 否 | Authing 控制台中的配置 |
 | escCloseable          | Modal 模式时是否可以通过键盘 ESC 键关闭登录框  |  Boolean |否|Authing 控制台中的配置 |
 | isSSO                 | 是否是单点登录                                                                                                                                                                                                       | Boolean                                                   | 否          | false                                              |
 | qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                                   | 否          | null                                               |     |     |

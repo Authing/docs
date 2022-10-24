@@ -23,24 +23,24 @@
 
 ![](./images/create-web-app-2.jpg)
 
-请确保该应用获取到了**微信登录**的权限，并将授权回调域设置为`core.authing.cn`
+请确保该应用获取到了**微信登录**的权限，并将授权回调域设置为 `core.authing.cn`
 
 ![](./images/domain.png)
 
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信网站应用
 
-2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
+2.1 请在 {{$localeConfig.brandName}} 控制台的 **社会化身份源** 页面，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
 ![](~@imagesZhCn/guides/connections/create-social-idp.jpg)
 
-2.2 在「选择社会化身份源」页面，点击「微信」卡片，进入「微信登录模式」页面。
+2.2 在 **选择社会化身份源** 页面，点击 **微信** 卡片，进入 **微信登录模式** 页面。
 ![](./images/add-app-1.jpg)
 
-2.3 继续点击「PC 微信扫码」登录模式，或者点击 **… 添加** 打开「PC 微信扫码」配置页面。
+2.3 继续点击 **PC 微信扫码** 登录模式，或者点击 **添加** 打开 **PC 微信扫码** 配置页面。
 ![](./images/add-app-2.jpg)
 
-2.4 在「PC 微信扫码」配置页面，填写相关的字段信息。
+2.4 在 **PC 微信扫码** 配置页面，填写相关的字段信息。
 ![](./images/add-app-3.jpg)
 
 | 字段    | 描述  |
@@ -50,10 +50,10 @@
 | AppID        | 微信应用 ID。   |
 | AppSecret    | 微信应用密钥    |
 | Callback URL | 如果你想直接跳转到社会化身份源进行认证，中间不出现任何 {{$localeConfig.brandName}} 的页面，你可以配置这个参数作为认证成功后的业务回调地址，{{$localeConfig.brandName}} 会将用户的 ID Token 发送到这个 URL。比如你的网站域名是 https://example.com，处理 {{$localeConfig.brandName}} 回调请求的 url 为 /auth/callback，那么你应该填写为 https://example.com/auth/callback。**这个参数和应用配置里的回调链接没有任何关联**。|
-| 登录模式      | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。   |
-| 账号身份关联   | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
+| 登录模式      | 开启 **仅登录模式** 后，只能登录既有账号，不能创建新账号，请谨慎选择。   |
+| 账号身份关联   | 不开启 **账号身份关联** 时，用户通过身份源登录时默认创建新用户。开启 **账号身份关联** 后，可以允许用户通过 **字段匹配** 或 **询问绑定** 的方式直接登录到已有的账号。 |
 
-2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
+2.5 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
 
 ## 步骤 3：开发接入
@@ -64,10 +64,10 @@
 
 3.1 在 {{$localeConfig.brandName}} 控制台创建一个应用，详情查看：[如何在 {{$localeConfig.brandName}} 创建一个应用](/guides/app-new/create-app/create-app.md)
 
-3.2 在已创建好的「PC 微信扫码」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
+3.2 在已创建好的 **PC 微信扫码** 身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的应用
 ![](./images/step3.2.jpg)
 
-3.3 点击 {{$localeConfig.brandName}} 控制台的应用「体验登录」按钮，在弹出的登录窗口体验「PC 微信扫码」登录
+3.3 点击 {{$localeConfig.brandName}} 控制台的应用 **体验登录** 按钮，在弹出的登录窗口体验 **PC 微信扫码** 登录
 ![](./images/step3.3-1.jpg)
 
 ![](./images/step3.3-2.jpg)

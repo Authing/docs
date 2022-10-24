@@ -3,9 +3,40 @@ tags:
 - 发版记录
 ---
 
-# Guard Changelog
+# Web Guard Changelog
 
 <LastUpdated/>
+
+- ## 5.0.5
+
+> 更新时间：2022.10.17
+
+1. 修复一些 bug 并且集成最新版的 `authing-ui-components`
+2. 更新示例代码
+
+- ## 5.0.4
+
+> 更新时间：2022.10.3
+
+更新 Guard options 参数
+
+- ## 5.0.3
+
+> 更新时间：2022.9.14
+
+修复 Guard visible bug
+
+- ## 5.0.2
+
+> 更新时间：2022.9.8
+
+适配 SSR
+
+- ## 5.0.1
+
+> 更新时间：2022.8.25
+
+修复 `logout` 功能
 
 - ## 5.0.0
 

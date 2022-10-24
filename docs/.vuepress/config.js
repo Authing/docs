@@ -141,7 +141,22 @@ module.exports = {
           { text: "快速开始", link: "/quickstarts/" },
           { text: "概念", link: "/concepts/" },
           { text: "使用指南", link: "/guides/" },
-          { text: "开发集成", link: "/reference/" },
+          {
+            text: "开发集成",
+            link: "/reference/",
+            tag: 'V2',
+            links: [
+              {
+                text: "V2 文档",
+                link: "/reference/",
+                isRouter: true
+              },
+              {
+                text: "V3 文档",
+                link: "https://docs.authing.cn/v3"
+              }
+            ]
+          },
           {
             text: "应用集成",
             link: "/integration/"

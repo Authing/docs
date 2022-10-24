@@ -14,8 +14,14 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
   - 支持的小程序框架更多：包括 **微信原生小程序**、**Taro**、**uni-app** 框架。
 - 支持完整的 TS 类型提示，操作更便捷。
 - 运行更流畅：包体积更小，不到 5 分钟即可完成接入。
+- 支持小程序基础库 2.14.1+。
 
 升级版 SDK 为开发者提供了更稳定、更便捷的开发环境，建议您尽快升级。
+
+|条目|说明|
+|-----|----|
+|最新版本|5.1.2|
+|仓库地址|https://github.com/authing/authing-js-sdk|
 
 ## 第一步：创建应用
 
@@ -82,18 +88,30 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
 # 原生小程序 npm 支持：
 # https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html
 npm install --save @authing/miniapp-wx
+
+or
+
+yarn add @authing/miniapp-wx
 ```
 :::
 
 ::: tab Taro
 ``` shell
 npm install --save @authing/miniapp-taro
+
+or
+
+yarn add @authing/miniapp-taro
 ```
 :::
 
 ::: tab uni-app
 ``` shell
 npm install --save @authing/miniapp-uniapp
+
+or
+
+yarn add @authing/miniapp-uniapp
 ```
 :::
 ::::
@@ -105,11 +123,19 @@ npm install --save @authing/miniapp-uniapp
 ::: tab rsa加密
 ``` shell
 npm install --save @authing/miniapp-jsencrypt
+
+or
+
+yarn add @authing/miniapp-jsencrypt
 ```
 :::
 ::: tab sm2加密
 ``` shell
 npm install --save @authing/miniapp-sm2encrypt
+
+or
+
+yarn add @authing/miniapp-sm2encrypt
 ```
 :::
 ::::
@@ -218,25 +244,26 @@ const authing = new Authing({
 
 Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
-#### 说明
-
-- 如果返回值为 `null`，说明用户未登录，或登录态已过期
-
-- 如果返回值不为 `null`，说明用户已登录，且登录态未过期
-
 #### 示例代码
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="getLoginState">getLoginState</button>
+<button bindtap="getLoginState">Get Login State</button>
 ```
 ``` typescript
 // index.js
 Page({
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 })
 ```
@@ -247,12 +274,19 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.getLoginState()}>getLoginState</Button>
+        <Button onClick={() => this.getLoginState()}>Get Login State</Button>
       </View>
     )
   }
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 }
 ```
@@ -263,6 +297,13 @@ export default {
   methods: {
     async getLoginState () {      
       const [error, loginState] = await authing.getLoginState()
+
+      if (error) {
+        // 用户未登录，或登录态已过期
+      } else {
+        // 用户已登录，且登录态未过期
+        console.log(loginState)
+      }
     }
   }
 }
@@ -308,7 +349,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByCode">loginByCode</button>
+<button bindtap="loginByCode">Login By Code</button>
 ```
 ``` typescript
 // index.js
@@ -348,7 +389,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByCode()}>loginByCode</Button>
+        <Button onClick={() => this.loginByCode()}>Login By Code</Button>
       </View>
     )
   }
@@ -448,7 +489,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByPassword">loginByPassword</button>
+<button bindtap="loginByPassword">Login By Password</button>
 ```
 ``` typescript
 // index.js
@@ -478,7 +519,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByPassword()}>loginByPassword</Button>
+        <Button onClick={() => this.loginByPassword()}>Login By Password</Button>
       </View>
     )
   }
@@ -553,7 +594,7 @@ Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="sendSms">sendSms</button>
+<button bindtap="sendSms">Send Sms</button>
 ```
 ``` typescript
 // index.js
@@ -575,7 +616,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.sendSms()}>sendSms</Button>
+        <Button onClick={() => this.sendSms()}>Send Sms</Button>
       </View>
     )
   }
@@ -593,7 +634,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="sendSms">sendSms</button>
+<button @click="sendSms">Send Sms</button>
 ```
 ``` typescript
 export default {
@@ -641,7 +682,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="loginByPassCode">loginByPassCode</button>
+<button bindtap="loginByPassCode">Login By Pass Code</button>
 ```
 ``` typescript
 // index.js
@@ -668,7 +709,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.loginByPassCode()}>loginByPassCode</Button>
+        <Button onClick={() => this.loginByPassCode()}>Login By Pass Code</Button>
       </View>
     )
   }
@@ -713,6 +754,10 @@ export default {
 
 刷新 Token 需要用到登录接口返回的 `refresh_token` 字段，使用登录相关方法时需传入参数 `scope`，并包含 `offline_access`，具体参考：[WxLoginOptions](#WxLoginOptions) 和 [NormalLoginOptions](#NormalLoginOptions)。
 
+::: hint-info
+请前往控制台进入当前小程序应用，找到 **应用配置 -> 其他配置 -> 授权配置 -> 授权模式**，勾选 **refresh_token**。
+:::
+
 #### 入参
 
 无
@@ -726,7 +771,7 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="refreshToken">refreshToken</button>
+<button bindtap="refreshToken">Refresh Token</button>
 ```
 ``` typescript
 // index.js
@@ -743,7 +788,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.refreshToken()}>refreshToken</Button>
+        <Button onClick={() => this.refreshToken()}>Refresh Token</Button>
       </View>
     )
   }
@@ -756,7 +801,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="refreshToken">refreshToken</button>
+<button @click="refreshToken">Refresh Token</button>
 ```
 ``` typescript
 export default {
@@ -790,7 +835,7 @@ Promise<[SDKResponse](#SDKResponse)<[GetUserPhoneResponseData](#GetUserPhoneResp
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button open-type="getPhoneNumber" bindgetphonenumber="getPhone">getPhone</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhone">Get Phone</button>
 ```
 ``` typescript
 // index.js
@@ -817,7 +862,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>getPhone</Button>
+        <Button openType="getPhoneNumber" onGetPhoneNumber={(e) => this.getPhone(e)}>Get Phone</Button>
       </View>
     )
   }
@@ -839,7 +884,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button open-type="getPhoneNumber" @getphonenumber="getPhone">getPhone</button>
+<button open-type="getPhoneNumber" @getphonenumber="getPhone">Get Phone</button>
 ```
 ``` typescript
 export default {
@@ -884,7 +929,7 @@ Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updatePassword">updatePassword</button>
+<button bindtap="updatePassword">Update Password</button>
 ```
 ``` typescript
 // index.js
@@ -907,7 +952,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updatePassword()}>updatePassword</Button>
+        <Button onClick={() => this.updatePassword()}>Update Password</Button>
       </View>
     )
   }
@@ -926,7 +971,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updatePassword">updatePassword</button>
+<button @click="updatePassword">Update Password</button>
 ```
 ``` typescript
 export default {
@@ -963,7 +1008,7 @@ Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="getUserInfo">getUserInfo</button>
+<button bindtap="getUserInfo">Get User Info</button>
 ```
 ``` typescript
 // index.js
@@ -980,7 +1025,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.getUserInfo()}>getUserInfo</Button>
+        <Button onClick={() => this.getUserInfo()}>Get User Info</Button>
       </View>
     )
   }
@@ -993,7 +1038,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="getUserInfo">getUserInfo</button>
+<button @click="getUserInfo">Get User Info</button>
 ```
 ``` typescript
 export default {
@@ -1024,7 +1069,7 @@ Promise<[SDKResponse](#SDKResponse)<[UploadFileResponseData](#UploadFileResponse
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updateAvatar">updateAvatar</button>
+<button bindtap="updateAvatar">Update Avatar</button>
 ```
 ``` typescript
 // index.js
@@ -1041,7 +1086,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updateAvatar()}>updateAvatar</Button>
+        <Button onClick={() => this.updateAvatar()}>Update Avatar</Button>
       </View>
     )
   }
@@ -1054,7 +1099,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updateAvatar">updateAvatar</button>
+<button @click="updateAvatar">Update Avatar</button>
 ```
 ``` typescript
 export default {
@@ -1085,7 +1130,7 @@ Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="updateUserInfo">updateUserInfo</button>
+<button bindtap="updateUserInfo">Update User Info</button>
 ```
 ``` typescript
 // index.js
@@ -1104,7 +1149,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.updateUserInfo()}>updateUserInfo</Button>
+        <Button onClick={() => this.updateUserInfo()}>Update User Info</Button>
       </View>
     )
   }
@@ -1119,7 +1164,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="updateUserInfo">updateUserInfo</button>
+<button @click="updateUserInfo">Update User Info</button>
 ```
 ``` typescript
 export default {
@@ -1154,7 +1199,7 @@ Promise<SDKResponse<boolean>>
 ::: tab 微信原生小程序
 ``` html
 <!-- index.wxml -->
-<button bindtap="logout">logout</button>
+<button bindtap="logout">Logout</button>
 ```
 ``` typescript
 // index.js
@@ -1171,7 +1216,7 @@ export default class Index extends Component<PropsWithChildren> {
   render () {
     return (
       <View className='index'>
-        <Button onClick={() => this.logout()}>logout</Button>
+        <Button onClick={() => this.logout()}>Logout</Button>
       </View>
     )
   }
@@ -1184,7 +1229,7 @@ export default class Index extends Component<PropsWithChildren> {
 :::
 ::: tab uni-app
 ```html
-<button @click="logout">logout</button>
+<button @click="logout">Logout</button>
 ```
 ``` typescript
 export default {
@@ -1445,8 +1490,9 @@ interface ErrorData {
 ### <p id="GetUserPhoneResponseData">GetUserPhoneResponseData</p>
 |名称|类型|描述|
 |-----|----|----|
-|countryCode|String|+86|
-|phoneNumber|String|手机号
+|countryCode|String|区号，默认为 86|
+|phoneNumber|String|用户绑定的手机号（国外手机号会有区号）|
+|purePhoneNumber|String|没有区号的手机号|
 |watermark|Watermark|微信返回的其他信息|
 
 **Watermark**

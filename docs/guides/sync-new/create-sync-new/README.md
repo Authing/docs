@@ -35,7 +35,7 @@
 
 5. 配置用户同步字段映射。</br>有关同步字段映射的配置详情，请参阅 [配置用户同步字段映射](/guides/sync-new/create-sync-new/field-mapping-new.md)。
 
-6. 选择适用的同步时机(提供**手动**、**定时同步**、**实时同步**三种同步方式)。</br>有关同步时机详情，请参阅 [配置同步时机](/guides/sync-new/create-sync-new/sync-type-new.md)。
+6. 选择适用的同步时机（提供 **手动**、**定时同步**、**实时同步** 三种同步方式)。</br>有关同步时机详情，请参阅 [配置同步时机](/guides/sync-new/create-sync-new/sync-type-new.md)。
 
 7. 配置同步策略。</br>有关同步策略详情，请参阅 [配置同步策略](/guides/sync-new/create-sync-new/sync-policy-new.md)。
 
