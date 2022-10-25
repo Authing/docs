@@ -124,6 +124,7 @@ module.exports = {
     sidebarDepth: 0,
     locales: {
       "/": {
+        logoTooltip: "前往 Authing 官网",
         selectText: "中文 / EN",
         label: "简体中文",
         editLinkText: "在 GitHub 上编辑此页",
@@ -317,6 +318,7 @@ module.exports = {
         }
       },
       "/en/": {
+        logoTooltip: "Go to the Authoring official website",
         // text for the language dropdown
         selectText: "中文 / EN",
         // label for this locale in the language dropdown
