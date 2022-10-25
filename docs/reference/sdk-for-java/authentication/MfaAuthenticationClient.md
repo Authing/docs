@@ -9,7 +9,7 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk';
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 
@@ -44,7 +44,7 @@ MfaAuthenticationClient().getMfaAuthenticators()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.getMfaAuthenticators({
@@ -73,7 +73,7 @@ MfaAuthenticationClient().assosicateMfaAuthenticator(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.assosicateMfaAuthenticator({ authenticatorType: 'totp' });
@@ -101,7 +101,7 @@ MfaAuthenticationClient().confirmAssosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.confirmAssosicateMfaAuthenticator({ authenticatorType: 'totp', totp: '112233' });
@@ -127,7 +127,7 @@ MfaAuthenticationClient().verifyTotpMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.verifyTotpMfa({
@@ -156,7 +156,7 @@ MfaAuthenticationClient().verifyTotpRecoveryCode()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.verifyTotpRecoveryCode({
@@ -181,7 +181,7 @@ MfaAuthenticationClient().deleteMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.deleteMfaAuthenticator();
@@ -210,12 +210,12 @@ MfaAuthenticationClient().verifyAppSmsMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.verifySmsMfa({
   mfaToken: 'xxxxxx',
-  phone: '173xxxxxxxx',
+  phone: '188xxxx8888',
   code: 'xxxx',
 });
 ```
@@ -239,7 +239,7 @@ MfaAuthenticationClient().phoneOrEmailBindable()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.phoneOrEmailBindable({
@@ -271,7 +271,7 @@ MfaAuthenticationClient().verifyAppEmailMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.verifyAppEmailMfa({
@@ -301,7 +301,7 @@ MfaAuthenticationClient().phoneOrEmailBindable()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.phoneOrEmailBindable({
@@ -333,7 +333,7 @@ MfaAuthenticationClient().associateFaceByUrl(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.associateFaceByUrl({
@@ -364,7 +364,7 @@ MfaAuthenticationClient().associateFaceByBlob(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 })
 const authenticators = await authenticationClient.mfa.associateFaceByBlob({
@@ -392,7 +392,7 @@ MfaAuthenticationClient().associateFaceByLocalFile()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.associateFaceByLocalFile();
@@ -416,7 +416,7 @@ MfaAuthenticationClient().verifyFaceMfa(url)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 const authenticators = await authenticationClient.mfa.verifyFaceMfa('http://example.com/photo/photo.jpg');

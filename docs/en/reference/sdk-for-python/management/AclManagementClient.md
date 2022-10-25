@@ -32,7 +32,7 @@ AclManagementClient().allow(userId, action, resource)
 management_client.acl.allow(
     resource='books:123',
     action='books:edit',
-    userId='USERID'
+    userId='60b4a136d9xxxxcc3d87e55a'
 )
 
 # 允许某个角色操作某个角色
@@ -59,7 +59,7 @@ AclManagementClient().is_allowed(userId, action, resource)
 
 ```python
 is_allowed = management_client.acl.is_allowed(
-    userId='USERID',
+    userId='60b4a136d9xxxxcc3d87e55a',
     resource='books:*',
     action='books:edit',
 )

@@ -17,7 +17,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
 | email | string | 否 | - | 邮箱。  | `test@example.com` |
-| phone | string | 否 | - | 手机号。  | `176xxxx6754` |
+| phone | string | 否 | - | 手机号。  | `188xxxx8888` |
 | externalId | string | 否 | - | 第三方外部 ID。  | `10010` |
 
 
@@ -34,7 +34,7 @@ management_client = ManagementClient(
 data = management_client.is_user_exists(
      username: "bob",
      email: "test@example.com",
-     phone: "176xxxx6754",
+     phone: "188xxxx8888",
      external_id: "10010",
   
 )

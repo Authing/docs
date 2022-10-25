@@ -3,5 +3,5 @@
 Use `sendSmsCode` 方法：
 
 ```javascript
-authenticationClient.sendSmsCode("176xxxx6754");
+authenticationClient.sendSmsCode("188xxxx8888");
 ```

@@ -7,7 +7,7 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -160,7 +160,7 @@ AuthenticationClient().registerByPhoneCode(phone, code, password, profile, optio
 - 使用手机号验证码注册
 
 ```javascript
-authenticationClient.registerByPhoneCode('176xxxx6754', '1234')
+authenticationClient.registerByPhoneCode('188xxxx8888', '1234')
 
 // 国外号码
 authenticationClient.registerByPhoneCode(
@@ -178,7 +178,7 @@ authenticationClient.registerByPhoneCode(
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  '176xxxx6754',
+  '188xxxx8888',
   '1234',
   'passw0rd',
   {
@@ -192,7 +192,7 @@ authenticationClient.registerByPhoneCode(
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  '176xxxx6754',
+  '188xxxx8888',
   '1234',
   null,
   {
@@ -206,7 +206,7 @@ authenticationClient.registerByPhoneCode(
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  '176xxxx6754',
+  '188xxxx8888',
   '1234',
   null,
   null,
@@ -231,7 +231,7 @@ AuthenticationClient().loginByEmail(email, password, options)
 
 ![](https://cdn.authing.cn/img/20210414145613.png)
 
-如果你的用户池配置了登录失败检测，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（code 为 2000)。
+如果你的用户池配置了登录失败检测，当同一 IP 下登录多次失败的时候会要求用户输入图形验证码（返回的错误码 为 2000)。
 
 #### 参数
 
@@ -370,7 +370,7 @@ AuthenticationClient().loginByPhoneCode(phone, code)
 - 使用手机号验证码登录
 
 ```javascript
-authenticationClient.loginByPhoneCode('176xxxx6754', '1234')
+authenticationClient.loginByPhoneCode('188xxxx8888', '1234')
 // 国外号码
 authenticationClient.loginByPhoneCode("788xxxx637", "1234", { phoneCountryCode: '+44' });
 
@@ -379,7 +379,7 @@ authenticationClient.loginByPhoneCode("788xxxx637", "1234", { phoneCountryCode: 
 - 登录的同时传递终端用户的真实 IP 地址（纯在后端与 Authing 交互的场景）
 
 ```javascript
-authenticationClient.loginByPhoneCode('176xxxx6754', '1234', {
+authenticationClient.loginByPhoneCode('188xxxx8888', '1234', {
   clientIp: '1.1.1.1'
 })
 ```
@@ -388,7 +388,7 @@ authenticationClient.loginByPhoneCode('176xxxx6754', '1234', {
 
 ```javascript
 authenticationClient.loginByPhoneCode(
- '176xxxx6754',
+ '188xxxx8888',
  '1234',
  {
    customData: {
@@ -425,18 +425,18 @@ AuthenticationClient().loginByPhonePassword(phone, password, options)
 - 使用手机号密码登录
 
 ```javascript
-authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd')
+authenticationClient.loginByPhonePassword('188xxxx8888', 'passw0rd')
 ```
 
 - 屡次登录失败，当需要输入图形验证码时
 
 ```javascript
 try {
-  await authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd')
+  await authenticationClient.loginByPhonePassword('188xxxx8888', 'passw0rd')
 } catch (error) {
   const { code, message } = error
   if (code === 2000) {
-    await authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd', {
+    await authenticationClient.loginByPhonePassword('188xxxx8888', 'passw0rd', {
       captchaCode: 'xj72',
     })
   }
@@ -446,7 +446,7 @@ try {
 - 登录的同时设置自定义数据
 
 ```javascript
-authenticationClient.loginByPhonePassword('176xxxx6754', 'passw0rd', {
+authenticationClient.loginByPhonePassword('188xxxx8888', 'passw0rd', {
   customData: {
     source: 'google'
   },
@@ -601,12 +601,12 @@ AuthenticationClient().logout()
 
 1. 清空 localStorage 中保存的的用户信息和用户的 `id_token`；
 2. 清空用户在 appHost 域名下的 session；
-3. 将用户当前的 `id_token` 标记为已失效，使用此 `id_token`将调用 {{$localeConfig.brandName}} 接口无法获取到相关数据。
+3. 将用户当前的 `id_token` 标记为已失效，后续再使用此 `id_token`将调用 {{$localeConfig.brandName}} 相关接口会提示 `id_token` 已失效。
 
 如果在后端服务器环境下使用，会执行以下操作：
 
 1. 清空该用户在当前应用下的 session 会话信息；
-2. 将用户当前的 `id_token` 标记为已失效，使用此 `id_token`将调用 {{$localeConfig.brandName}} 接口无法获取到相关数据。
+2. 将用户当前的 `id_token` 标记为已失效，后续再使用此 `id_token`将调用 {{$localeConfig.brandName}} 相关接口会提示 `id_token` 已失效。
 
 #### 示例
 
@@ -634,7 +634,7 @@ AuthenticationClient().sendSmsCode(phone)
 #### 示例
 
 ```javascript
-authenticationClient.sendSmsCode('176xxxx6754')
+authenticationClient.sendSmsCode('188xxxx8888')
 
 // 发国际短信
 authenticationClient.sendSmsCode("788xxxx637", "+44")
@@ -706,11 +706,12 @@ AuthenticationClient().checkPasswordStrength(password)
 #### 示例
 
 ```javascript
-authenticationClient.checkPasswordStrength('weak')
+authenticationClient.checkPasswordStrength('strongPassw0rd!')
 ```
 
+
 ```javascript
-authenticationClient.checkPasswordStrength('strongPassw0rd!')
+authenticationClient.checkPasswordStrength('weak')
 ```
 
 #### 示例数据
@@ -914,7 +915,7 @@ AuthenticationClient().resetPasswordByPhoneCode(phone, code, newPassword)
 #### 示例
 
 ```javascript
-authenticationClient.resetPasswordByPhoneCode('176xxxx6754', '1234', 'passw0rd')
+authenticationClient.resetPasswordByPhoneCode('188xxxx8888', '1234', 'passw0rd')
 
 // 国外号码
 authenticationClient.resetPasswordByPhoneCode('788xxxx637', '1234', 'passw0rd', '+44')
@@ -1010,7 +1011,7 @@ authenticationClient.updateProfile({
 ```js
 try {
   await authenticationClient.updateProfile({
-    phone: '176xxxx6754'
+    phone: '188xxxx8888'
   })
 } catch (error) {
   // this will fail, you can't change your phone directly, must verify by phone code
@@ -1074,9 +1075,9 @@ AuthenticationClient().bindPhone(phone, phoneCode)
 authenticationClient.getCurrentUser().then(user => {
   if (!user.phone) {
     // 1. 第一步：发送短信验证码
-    authenticationClient.sendSmsCode('176xxxx6754').then(() => {
+    authenticationClient.sendSmsCode('188xxxx8888').then(() => {
       // 2. 第二步：使用手机号验证码绑定手机号
-      authenticationClient.bindPhone('176xxxx6754', '1234')
+      authenticationClient.bindPhone('188xxxx8888', '1234')
     })
 
     /* 国外手机号
@@ -1153,7 +1154,7 @@ AuthenticationClient().updatePhone(phone, phoneCode, oldPhone, oldPhoneCode, pho
 - 关闭了“验证原有手机号”选项
 
 ```javascript
-authenticationClient.updatePhone('176xxxx6754', '1234') // 关闭了“验证原有手机号“选项
+authenticationClient.updatePhone('188xxxx8888', '1234') // 关闭了“验证原有手机号“选项
 
 // 国际号码
 authenticationClient.updatePhone('788xxxx637', '1234', '+44')
@@ -1161,7 +1162,7 @@ authenticationClient.updatePhone('788xxxx637', '1234', '+44')
 ```
 - 开启了“验证原有手机号”选项
 ```javascript
-authenticationClient.updatePhone('176xxxx6754', '1234', '156xxxx9876', '1234') // 开启了“验证原有手机号“选项
+authenticationClient.updatePhone('188xxxx8888', '1234', '156xxxx9876', '1234') // 开启了“验证原有手机号“选项
 
 // 国际号码
 authenticationClient.updatePhone('156xxxx9876', '1234', '788xxxx637', '1234', '+86', '+44')
@@ -1732,18 +1733,24 @@ AuthenticationClient().isUserExists(options)
 ```
 
 判断用户是否存在
+
 #### 参数
 - `options` \<object\> 
-- `options.user_name` \<string\> 用户名
+- `options.username` \<string\> 用户名
 - `options.email`  \<string\> 邮箱
 - `options.phone`  \<string\> 电话
-- `options.externalId`  \<string\> 数据源ID
+- `options.externalId`  \<string\> 外部系统 ID
+
+
 #### 示例
 
 ```js
-const res = await authing.isUserExists({username:"xx"})
+const res = await authing.isUserExists({ username: "xx" })
 ```
+
 #### 示例数据
+
 ```js
-boolean
+true / false
 ```
+

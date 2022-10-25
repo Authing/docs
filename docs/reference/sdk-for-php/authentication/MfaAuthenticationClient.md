@@ -230,7 +230,7 @@ $authenticationClient =  new AuthenticatioClnient(function ($opts) {
 $mfaClient = $authenticationClient->mfa;
 $mfaClient->verifySmsMfa([
   'mfaToken' => 'xxxxxx',
-  'phone' => '173xxxxxxxx',
+  'phone' => '188xxxx8888',
   'code' => 'xxxx',
 ]);
 ```

@@ -85,7 +85,7 @@ $userpool = $management->userpool()->update(
 
 UserPoolManagementClient->listEnv()
 
-获取用户池环境变量列表。用户池配置的环境变量可以在 pipeline 场景下使用，详情请见：https://docs.authing.co/extensibility/pipeline/env.html
+获取用户池环境变量列表。用户池配置的环境变量可以在 pipeline 场景下使用，详情请见：https://docs.authing.cn/v2/guides/pipeline/env.html
 
 #### 参数
 

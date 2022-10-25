@@ -2,6 +2,6 @@
 
 ```python
 authentication_client.send_sms_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
 )
 ```

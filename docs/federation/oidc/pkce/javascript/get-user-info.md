@@ -1,6 +1,6 @@
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });

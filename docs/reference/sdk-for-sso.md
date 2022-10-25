@@ -62,7 +62,7 @@ $ yarn add @authing/sso
 
 <script>
   var authingSSO = new AuthingSSO.AuthingSSO({
-    appId: '应用 ID',
+    appId: 'AUTHING_APP_ID',
     origin: 'https://{用户池域名}.authing.cn',
     redirectUri: '你的业务软件路由地址',
   })
@@ -95,7 +95,7 @@ $ yarn add @authing/sso
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -115,7 +115,7 @@ import { AuthingSSO } from '@authing/sso/es5'
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -138,7 +138,7 @@ Authing SSO SDK 可以向 Authing 发起认证授权请求，目前支持两种�
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -164,7 +164,7 @@ authing.login({
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -185,7 +185,7 @@ const userInfo = await authing.getUserInfoByAccessToken(access_token)
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -216,7 +216,7 @@ authing.onPopUpLoginCancel(async () => {
 import { AuthingSSO } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -256,7 +256,7 @@ import {
 } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -296,7 +296,7 @@ import {
 } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })
@@ -327,7 +327,7 @@ main()
 import { AuthingSSO, AuthenticationError } from '@authing/sso'
 
 const authing = new AuthingSSO({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   origin: 'https://{用户池域名}.authing.cn',
   redirectUri: '你的业务软件路由地址',
 })

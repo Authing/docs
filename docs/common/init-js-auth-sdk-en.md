@@ -3,7 +3,7 @@ Use the [AppID](/guides/faqs/get-app-id-and-secret.md) to initialize the `Authen
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxxx.authing.cn"
 });
 ```

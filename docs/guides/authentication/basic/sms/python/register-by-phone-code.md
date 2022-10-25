@@ -3,7 +3,7 @@
 首先调用发送短信验证码接口发送短信验证码，然后使用 `register_by_phone_code` 方法：
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',

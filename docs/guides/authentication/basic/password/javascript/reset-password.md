@@ -4,7 +4,7 @@
 
 ```javascript
 authenticationClient.resetPasswordByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd"
 );

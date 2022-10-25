@@ -601,7 +601,7 @@ Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
 Page({
   async sendSms () {
     const [error, res] = await authing.sendSms({
-      phoneNumber: '131xxxxxxxx',
+      phoneNumber: '188xxxx8888',
       phoneCountryCode: '+86',
       // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
       channel: 'CHANNEL_LOGIN'
@@ -623,7 +623,7 @@ export default class Index extends Component<PropsWithChildren> {
   
   async sendSms () {
     const [error, res] = await authing.sendSms({
-      phoneNumber: '131xxxxxxxx',
+      phoneNumber: '188xxxx8888',
       phoneCountryCode: '+86',
       // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
       channel: 'CHANNEL_LOGIN'
@@ -641,7 +641,7 @@ export default {
   methods: {
     async sendSms () {
       const [error, res] = await authing.sendSms({
-        phoneNumber: '131xxxxxxxx',
+        phoneNumber: '188xxxx8888',
         phoneCountryCode: '+86',
         // 指定 channel 为 CHANNEL_LOGIN，发送登录所用的验证码
         channel: 'CHANNEL_LOGIN'
@@ -692,7 +692,7 @@ Page({
       passCodePayload: {
         // 手机收到的短信验证码
         passCode: 'xxxx',
-        phone: '131xxxxxxxx',
+        phone: '188xxxx8888',
         phoneCountryCode: '+86'
       },
       options: {
@@ -718,7 +718,7 @@ export default class Index extends Component<PropsWithChildren> {
       passCodePayload: {
         // 手机收到的短信验证码
         passCode: 'xxxx',
-        phone: '131xxxxxxxx',
+        phone: '188xxxx8888',
         phoneCountryCode: '+86'
       }
     })
@@ -735,7 +735,7 @@ export default {
         passCodePayload: {
           // 手机收到的短信验证码
           passCode: 'xxxx',
-          phone: '131xxxxxxxx',
+          phone: '188xxxx8888',
           phoneCountryCode: '+86'
         }
       })

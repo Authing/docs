@@ -34,8 +34,8 @@ OrgManagementClient().create(name, description, code)
 ```javascript
 const org = await managementClient.org.create(
   "Beijing Feifan Tech",
-  "Beijing Feifan Technology LLC",
-  "feifan"
+  "Beijing Example Technology LLC",
+  "example"
 );
 ```
 
@@ -98,8 +98,8 @@ OrgManagementClient().addNode(orgId, parentNodeId, data)
 ```javascript
 const org = await managementClient.org.create(
   "Beijing Feifan Tech",
-  "Beijing Feifan Technology LLC",
-  "feifan"
+  "Beijing Example Technology LLC",
+  "example"
 );
 const { id: orgId, rootNode } = org;
 const node = await managementClient.org.addNode(orgId, rootNode.id, {
@@ -169,8 +169,8 @@ OrgManagementClient().deleteNode(orgId, nodeId)
 ```javascript
 const org = await managementClient.org.create(
   "Beijing Feifan Tech",
-  "Beijing Feifan Technology LLC",
-  "feifan"
+  "Beijing Example Technology LLC",
+  "example"
 );
 const { id: orgId, rootNode } = org;
 const node = await managementClient.org.deleteNode(orgId, rootNode.id);
@@ -274,8 +274,8 @@ OrgManagementClient().importByJson(json)
 
 ```javascript
 const tree = {
-  name: "Beijing Feifan Technology",
-  code: "feifan",
+  name: "Beijing Example Technology",
+  code: "example",
   children: [
     {
       code: "operation",

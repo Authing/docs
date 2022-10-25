@@ -4,7 +4,7 @@ Use 手机号验证码重置密码：
 
 ```python
 authentication_client.reset_password_by_phone_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
   code="1234",
   new_password="passw0rd"
 )

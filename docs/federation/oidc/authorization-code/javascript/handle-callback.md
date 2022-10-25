@@ -1,8 +1,8 @@
 ```js
 // 初始化 authing-js-sdk
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });

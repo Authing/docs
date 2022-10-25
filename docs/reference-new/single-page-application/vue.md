@@ -288,7 +288,7 @@ Guard 组件本身基于 [Authing JavaScript SDK](../web/sdk-for-node/) 进行�
 import { initAuthClient } from "@authing/vue-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
 });
 ```
 

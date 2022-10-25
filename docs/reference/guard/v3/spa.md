@@ -112,7 +112,7 @@ import { GuardPlugin } from '@authing/guard-vue2'
 import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
-  appId: ''
+  appId: 'AUTHING_APP_ID'
 })
 ```
 :::
@@ -132,7 +132,7 @@ const app = createApp(App)
 
 app.use(
   createGuard({
-    appId: ''
+    appId: 'AUTHING_APP_ID'
   })
 )
 ```
@@ -172,7 +172,7 @@ import { GuardModule } from '@authing/guard-angular'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: ''
+      appId: 'AUTHING_APP_ID'
     })
   ],
   providers: [],
@@ -279,7 +279,7 @@ export class LoginComponent {
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: ''
+      appId: 'AUTHING_APP_ID'
     })
   </script>
 </body>
@@ -1416,7 +1416,7 @@ import { GuardPlugin } from '@authing/guard-vue2'
 import '@authing/guard-vue2/dist/esm/guard.min.css'
 
 Vue.use(GuardPlugin, {
-  appId: '',
+  appId: 'AUTHING_APP_ID',
   facePlugin: facePlugin
 })
 ```
@@ -1443,7 +1443,7 @@ const app = createApp(App)
 
 app.use(
   createGuard({
-    appId: '',
+    appId: 'AUTHING_APP_ID',
     facePlugin: facePlugin
   })
 )
@@ -1475,7 +1475,7 @@ import * as facePlugin from 'face-api.js'
     BrowserModule,
     AppRoutingModule,
     GuardModule.forRoot({
-      appId: '',
+      appId: 'AUTHING_APP_ID',
       facePlugin: facePlugin
     })
   ],
@@ -1504,7 +1504,7 @@ export class AppModule { }
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: '',
+      appId: 'AUTHING_APP_ID',
       facePlugin: faceapi
     })
   </script>

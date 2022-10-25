@@ -9,7 +9,7 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk';
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 
@@ -44,7 +44,7 @@ def get_mfa_authenticators(self, mfa_token=None, type='totp', source='SELF'):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.get_mfa_authenticators(mfa_token=tt['token'])
 ```
 #### 示例数据
@@ -84,7 +84,7 @@ def assosicate_mfa_authenticator(self, mfa_token=None, authenticator_type='totp'
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 res = self.authentication.assosicate_mfa_authenticator(tt['token'])
 ```
 #### 示例数据
@@ -115,7 +115,7 @@ def delete_mfa_authenticator(self):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 res = authentication.delete_mfa_authenticator()
 ```
 #### 示例数据
@@ -148,7 +148,7 @@ def confirm_assosicate_mfa_authenticator(self,
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.confirm_assosicate_mfa_authenticator(tt['token'])
 ```
 
@@ -168,7 +168,7 @@ def verify_totp_mfa(self, totp, mfa_token):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_totp_mfa("",tt['token'])
 ```
 
@@ -190,7 +190,7 @@ def verify_app_sms_mfa(self, phone, code, mfa_token):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_app_sms_mfa("phone","11",tt['token'])
 ```
 
@@ -213,7 +213,7 @@ def verify_app_email_mfa(self, email, code, mfa_token):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_app_email_mfa("email","11",tt['token'])
 ```
 
@@ -236,7 +236,7 @@ def phone_or_email_bindable(self, mfa_token, phone=None, email=None):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.phone_or_email_bindable("email",tt['token'])
 ```
 
@@ -259,7 +259,7 @@ def verify_totp_recovery_code(self, recovery_code, mfa_token):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_totp_recovery_code("xxx",tt['token'])
 ```
 
@@ -282,7 +282,7 @@ def associate_face_by_url(self, base_face, compare_face, mfa_token=None):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.associate_face_by_url("url",otherUrl",tt['token'])
 ```
 
@@ -304,6 +304,6 @@ def verify_face_mfa(self, photo, mfa_token):
 #### 示例
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_face_mfa("otherUrl",tt['token'])
 ```

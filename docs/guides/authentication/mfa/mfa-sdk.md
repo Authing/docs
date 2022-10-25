@@ -421,7 +421,7 @@ $ http-server
 import { AuthenticationClient } from 'authing-js-sdk'
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -436,7 +436,7 @@ await authenticationClient.mfa.assosicateMfaAuthenticator({
 import { AuthenticationClient } from 'authing-js-sdk'
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -454,7 +454,7 @@ MfaAuthenticationClient().getMfaAuthenticators()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -477,7 +477,7 @@ MfaAuthenticationClient().assosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -500,7 +500,7 @@ MfaAuthenticationClient().deleteMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -521,7 +521,7 @@ MfaAuthenticationClient().confirmAssosicateMfaAuthenticator()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -544,7 +544,7 @@ MfaAuthenticationClient().verifyTotpMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -573,13 +573,13 @@ MfaAuthenticationClient().verifyAppSmsMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
 const authenticators = await authenticationClient.mfa.verifySmsMfa({
   mfaToken: 'xxxxxx',
-  phone: '173xxxxxxxx',
+  phone: '188xxxx8888',
   code: 'xxxx',
 })
 ```
@@ -603,7 +603,7 @@ MfaAuthenticationClient().verifyAppEmailMfa()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -635,7 +635,7 @@ MfaAuthenticationClient().phoneOrEmailBindable()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -657,7 +657,7 @@ MfaAuthenticationClient().verifyTotpRecoveryCode()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

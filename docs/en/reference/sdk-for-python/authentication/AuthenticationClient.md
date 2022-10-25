@@ -202,7 +202,7 @@ Use your mobile phone number to register, you can set the initial password of th
 - Use the mobile phone number verification code to register
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -212,7 +212,7 @@ user = authentication_client.register_by_phone_code(
 - Set password while registering
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -223,7 +223,7 @@ user = authentication_client.register_by_phone_code(
 - Set up user information while registering (nickname and company)
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -238,7 +238,7 @@ user = authentication_client.register_by_phone_code(
 - Add settings custom data while registering, you need to define a `source` custom field to the user first
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -432,7 +432,7 @@ Use the mobile phone number verification code to log in. You need to use it firs
 - Use the mobile phone number verification code to log in
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 # Mobile phone number verification code login, if the user does not exist automatically to create an account
 user = authentication_client.login_by_phone_code(
     phone=phone,
@@ -443,7 +443,7 @@ user = authentication_client.login_by_phone_code(
 - Set custom data while logging in
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 # Mobile phone number verification code login, if the user does not exist automatically to create an account
 user = authentication_client.login_by_phone_code(
     phone=phone,
@@ -486,7 +486,7 @@ If the user is bound to the phone number and set the password, you can log in to
 - Use the mobile phone number password to log in
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.login_by_phone_password(
     phone=phone,
     password='passw0rd',
@@ -496,7 +496,7 @@ user = authentication_client.login_by_phone_password(
 - Repeated login failed, when you need to enter a graphic verification code
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 try:
   user = authentication_client.login_by_phone_password(
     phone=phone,
@@ -514,7 +514,7 @@ except AuthingException as e:
 - Set custom data while logging in
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.login_by_phone_password(
     phone=phone,
     password='passw0rd',
@@ -674,7 +674,7 @@ Send SMS verification code, currently only support domestic mobile phone number;
 
 ```python
 authentication_client.send_sms_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
 )
 ```
 
@@ -855,7 +855,7 @@ Reset your password by SMS verification code, you can pass[send_sms_code](#ÂèëÈÄ
 
 ```python
 authentication_client.reset_password_by_phone_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
   code="1234",
   new_password="passw0rd"
 )
@@ -941,7 +941,7 @@ user = authentication_client.update_profile({
 ```python
 try:
   authentication_client.update_profile({
-    'phone': '176xxxx6754'
+    'phone': '188xxxx8888'
   })
 except AuthingException as e:
   // this will fail, you can't change your phone directly, must verify by phone code
@@ -1011,7 +1011,7 @@ Terminal users can also[bind mobile phone number in personal center buffet](/gui
 #### Example
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.bind_phone(
     phone=phone,
     phoneCode='1234',
@@ -1835,7 +1835,7 @@ Determine if the user exists
 #### Example
 
 ```python
-authentication.is_user_exists(email="fptvmzqyxn@authing.cn")
+authentication.is_user_exists(email="test@example.com")
 ```
 
 #### Sample data

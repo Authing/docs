@@ -231,7 +231,7 @@ import { PolicyAssignmentTargetType } from "authing-js-sdk";
 await managementClient.policies.addAssignments(
   ["code1", "code2"],
   PolicyAssignmentTargetType.User,
-  ["USERID"]
+  ["60b4a136d9xxxxcc3d87e55a"]
 );
 
 await managementClient.policies.addAssignments(
@@ -267,7 +267,7 @@ import { PolicyAssignmentTargetType } from "authing-js-sdk";
 await managementClient.policies.removeAssignments(
   ["code1", "code2"],
   PolicyAssignmentTargetType.User,
-  ["USERID"]
+  ["60b4a136d9xxxxcc3d87e55a"]
 );
 
 await managementClient.policies.removeAssignments(
