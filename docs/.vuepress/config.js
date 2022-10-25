@@ -318,7 +318,7 @@ module.exports = {
         }
       },
       "/en/": {
-        logoTooltip: "Go to the Authoring official website",
+        logoTooltip: "Visit authing.cn",
         // text for the language dropdown
         selectText: "中文 / EN",
         // label for this locale in the language dropdown
