@@ -10,6 +10,9 @@
         <a :href="$site.themeConfig.officeSiteUrl" class="nav-bar-new-logo">
           <img
             v-if="$site.themeConfig.logo"
+            v-tooltip="{
+              content: $themeLocaleConfig.logoTooltip,
+            }"
             class="logo"
             :src="$withBase($site.themeConfig.logo)"
             :alt="$siteTitle"
