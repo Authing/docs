@@ -2,6 +2,16 @@
 
 <LastUpdated/>
 
+## OIDC 
+
+OpenID Connect 简称 [OIDC](https://docs.authing.cn/v2/apn/#关于-oidc)，是 OAuth 2.0 的一个扩展，主要增加了语义化的用户信息字段。
+
+ ### 初始化 
+
+OIDCClient 会自动获取控制台默认回调，如需要自定义 scope, redirect_uri 等参数，可创建 AuthRequest 对象，重新给 scope 或 redirect_uri 属性赋值。
+
+
+
 ## 生成 OIDC 协议的用户登录链接
 
 生成登录 URL，传给 WebView 加载
@@ -87,7 +97,7 @@ myWebView.setWebViewClient(new WebViewClient() {
 
 ## 获取用户信息
 
-通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象
+通过 access token 获取用户信息。返回的 userInfo 对像和参数传入的是同一个 userInfo 对象，此接口只返回协议相关用户信息字段。
 
 ```java
 public void getUserInfoByAccessToken(UserInfo userInfo, @NotNull AuthCallback<UserInfo> callback)
@@ -157,7 +167,7 @@ public void registerByEmail(String email, String password, @NotNull AuthCallback
 **示例**
 
 ```java
-new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+new OIDCClient().registerByEmail("test@example.com", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -173,7 +183,7 @@ new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userI
 
 ### 邮箱验证码注册
 
-使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮箱](./authentication/#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮件](./../authentication/#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
 public void registerByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
@@ -187,7 +197,7 @@ public void registerByEmailCode(String email, String vCode, @NotNull AuthCallbac
 **示例**
 
 ```java
-new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+new OIDCClient().registerByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -203,7 +213,7 @@ new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, use
 
 ### 短信验证码注册
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./authentication/#发送短信验证码) 接口以获取短信验证码
+通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./../authentication/#发送短信验证码) 接口以获取短信验证码
 
 ```java
 public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
@@ -219,7 +229,7 @@ public void registerByPhoneCode(String phoneCountryCode, String phone, String co
 **示例**
 
 ```java
-new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
+new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -247,7 +257,7 @@ public void loginByAccount(String account, String password, @NotNull AuthCallbac
 **示例**
 
 ```java
-new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->{
+new OIDCClient().loginByAccount("test", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -262,7 +272,7 @@ new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->
 
 ### 邮箱验证码登录
 
-通过邮箱验证码登录，需要先调用 [发送邮箱](./authentication/#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+通过邮箱验证码登录，需要先调用 [发送邮件](./../authentication/#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
 public void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
@@ -276,7 +286,7 @@ public void loginByEmailCode(String email, String code, @NotNull AuthCallback<Us
 **示例**
 
 ```java
-new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+new OIDCClient().loginByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -291,7 +301,7 @@ new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userIn
 
 ### 短信验证码登录
 
-通过短信验证码登录，需要先调用 [发送短信验证码](./authentication/#发送短信验证码) 接口。
+通过短信验证码登录，需要先调用 [发送短信验证码](./../authentication/#发送短信验证码) 接口。
 
 ```java
 public void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)

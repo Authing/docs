@@ -2,42 +2,38 @@
 
 <LastUpdated/>
 
-集成手机号一键登录需要三个主要步骤：
+## 准备工作
 
-* 在网易易盾开放平台进行配置
-* 在 Authing 管理控制台进行配置
-* 集成 Android SDK
+在[易盾服务管理后台 ](https://dun.163.com/dashboard#/m/verification/index)及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅 [网易易盾（一键登录）](../../../guides/oneauth/README.md)。
 
 <br>
 
-STEP1 和 STEP2 请参考：
+## 集成一键登录登录步骤
 
-[手机号一键登录配置](../../../guides/oneauth/README.md)
-
-
-
-## STEP3：集成 Android SDK 步骤
-
-1. 添加依赖
+### 步骤 1：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
 implementation 'io.github.yidun:quicklogin:3.1.1'
 ```
 
-> Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
+> Guard 只是 compileOnly 依赖易盾，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-2. 在应用启动时初始化 Authing
+混淆配置，请参考[易盾官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
+
+### 步骤 2：初始化 Guard Android SDK
+
+在应用启动的时候初始化：
 
 ```java
 // context is application or initial activity
-// ”your_authing_app_id“ is obtained from the Authing console
-Authing.init(context, "your_authing_app_id");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
 
 
-**通过以上 3 步即可简单快速的通过 Authing 管理控制台配置后自动拥有一键登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
+**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动拥有一键登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 
@@ -67,6 +63,8 @@ button.setOnLoginListener((ok, data) -> {
 });
 ```
 
+<br>
+
 * 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 一键登录登录 API：
 
 ```java
@@ -76,6 +74,8 @@ new oneClick(this).start("your_yidun_business_id", null, ((code, message, userIn
     }
 }));
 ```
+
+<br>
 
 * 若需要自定义 UI，首先参考 [易盾文档](https://gitee.com/netease_yidun/quickpass-android-demo) 生成 UnifyUiConfig 对象，然后调用：
 
@@ -90,6 +90,8 @@ new OneClick(this).start("your_yidun_business_id", config, ((code, message, user
 }));
 ```
 
+<br>
+
 - 若想基于易盾自己实现一键登录流程，在拿到 token 和 access token 后，可以调用：
 
 ```java
@@ -98,8 +100,8 @@ public static void loginByOneAuth(String token, String accessToken, @NotNull Aut
 
 **参数**
 
-- *token* 运营商返回
-- *accessToken* 运营商返回
+- *`token`* 运营商返回
+- *`accessToken`* 运营商返回
 
 **示例**
 

@@ -26,7 +26,7 @@ AuthClient.mfaCheck("188xxxx8888", null, (code, message, ok) -> {
     }
 });
 
-AuthClient.mfaCheck(null, "abc@gmail.com", (code, message, ok) -> {
+AuthClient.mfaCheck(null, "test@example.com", (code, message, ok) -> {
     if (code == 200) {
         if (ok) {
             
@@ -76,7 +76,7 @@ public static void mfaVerifyByEmail(String email, String code, @NotNull AuthCall
 **示例**
 
 ```java
-AuthClient.mfaVerifyByEmail("abc@gmail.com", "1234", (code, message, userInfo)->{
+AuthClient.mfaVerifyByEmail("test@example.com", "1234", (code, message, userInfo)->{
     // userInfo 用户信息
 });
 ```

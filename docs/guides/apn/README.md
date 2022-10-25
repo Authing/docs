@@ -1,8 +1,10 @@
-# {{$localeConfig.brandName}} 应用市场
+# 集成应用 SSO 方案
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} 应用市场（又名合作网络）是一套 {{$localeConfig.brandName}} 预先与第三方应用集成的目录，可以让 {{$localeConfig.brandName}} 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。
+{{$localeConfig.brandName}} 提供集成应用。集成应用是为用户准备好的已对接应用，可以让 {{$localeConfig.brandName}} 的用户通过简单的配置快速对接所需应用以实现单点登录、身份供给等能力。 
+
+而 {{$localeConfig.brandName}} 应用市场（又名合作网络）是一套 {{$localeConfig.brandName}} 预先与第三方应用集成的目录，是你获取集成应用的地方。
 
 ![](~@imagesZhCn/guides/application-market/01.png)
 

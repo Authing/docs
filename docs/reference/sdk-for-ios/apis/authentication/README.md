@@ -18,7 +18,7 @@ func registerByEmail(email: String, password: String, completion: @escaping(Int,
 **示例**
 
 ```swift
-AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, message, userInfo in
+AuthClient().registerByEmail(email: "test@example.com", password: "password") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -34,7 +34,7 @@ AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 
 ## 邮箱验证码注册
 
-使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](#发送邮件) 接口以获取邮箱验证码
+使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
 func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -48,7 +48,7 @@ func registerByEmailCode(email: String, code: String, completion: @escaping(Int,
 **示例**
 
 ```swift
-AuthClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, message, userInfo in
+AuthClient().registerByEmailCode(email: "test@example.com", code: "1234") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -93,7 +93,7 @@ AuthClient().registerByUserName(username: "username", password: "strong") { code
 
 ## 短信验证码注册
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码
+通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码。
 
 ```swift
 func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -136,7 +136,7 @@ func loginByEmail(email: String, code: String, completion: @escaping(Int, String
 **示例**
 
 ```swift
-AuthClient().loginByEmail(email: "email", code: "code") { code, message, userInfo in
+AuthClient().loginByEmail(email: "test@example.com", code: "1234") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -207,7 +207,7 @@ AuthClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { code, messag
 
 ## 手机号一键登录
 
-参考 [手机号一键登录开发指南](/guides/oneauth/)
+参考 [手机号一键登录开发指南](/guides/oneauth/)。
 
 ```swift
 func loginByOneAuth(token: String, accessToken: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -236,7 +236,7 @@ AuthClient().loginByOneAuth(token: "token", accessToken: "accessToken") { code, 
 
 ## 获取当前登录的用户信息
 
-获取当前登录的用户信息，需要先登录
+获取当前登录的用户信息，需要先登录。
 
 ```swift
 func getCurrentUser(completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -260,7 +260,7 @@ AuthClient().getCurrentUser { code, message, userInfo in
 
 ## 退出登录
 
-退出登录。同时清除内存以及本地持久化的 token 和用户信息
+退出登录。同时清除内存以及本地持久化的 token 和用户信息。
 
 ```swift
 func logout(completion: @escaping(Int, String?) -> Void)
@@ -281,7 +281,7 @@ AuthClient().logout { code, message in
 
 ## 发送短信验证码
 
-向指定的手机发送短信验证码
+向指定的手机发送短信验证码。
 
 ```swift
 func sendSms(phone: String, phoneCountryCode: String? = nil, completion: @escaping(Int, String?) -> Void)
@@ -307,7 +307,7 @@ AuthClient().sendSms(phone: "188xxxx8888", phoneCountryCode: "+86") { code, mess
 
 ## 发送邮件
 
-给指定邮箱发送邮件
+给指定邮箱发送邮件。
 
 ```swift
 func sendEmail(email: String, scene: String, completion: @escaping(Int, String?) -> Void)
@@ -325,7 +325,7 @@ func sendEmail(email: String, scene: String, completion: @escaping(Int, String?)
 **示例**
 
 ```swift
-AuthClient().sendEmail(email: "cool@gmail.com", scene: "RESET_PASSWORD") { code, message in
+AuthClient().sendEmail(email: "test@example.com", scene: "RESET_PASSWORD") { code, message in
     if (code == 200) {
         // 发送成功
     }
@@ -340,11 +340,7 @@ AuthClient().sendEmail(email: "cool@gmail.com", scene: "RESET_PASSWORD") { code,
 
 ## 获取用户自定义数据
 
-获取用户自定义数据，你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)
-
-用户自定义数据会添加到传入的 userInfo 对象里面
-
-调用此接口需要先登录
+获取用户自定义数据，你需要先在用户池 [定义用户自定义数据元信息](/guides/users/user-defined-field/)，用户自定义数据会添加到传入的 userInfo 对象里面。调用此接口需要先登录。
 
 ```swift
 func getCustomUserData(userInfo: UserInfo, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -403,9 +399,7 @@ AuthClient().setCustomUserData(customData: object) { code, message, data in
 
 ## 更新用户头像
 
-通过从系统选择一张图片来更新用户头像
-
-调用此接口需要先登录
+通过从系统选择一张图片来更新用户头像，调用此接口需要先登录。
 
 ```swift
 func uploadAvatar(image: UIImage, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -417,7 +411,7 @@ func uploadAvatar(image: UIImage, completion: @escaping(Int, String?, UserInfo?)
 
 **示例**
 
-启动系统默认图片选择器
+启动系统默认图片选择器。
 
 ```swift
 let picker = UIImagePickerController()
@@ -429,7 +423,7 @@ self.viewController?.present(picker, animated: true, completion: nil)
 
 启动代码中，picker.delegate 需要实现 UINavigationControllerDelegate, UIImagePickerControllerDelegate 协议
 
-通过以下回调拿到图片，并调用更新头像接口
+通过以下回调拿到图片，并调用更新头像接口。
 
 ```swift
 public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -457,7 +451,7 @@ public func imagePickerController(_ picker: UIImagePickerController, didFinishPi
 
 ## 通过短信验证码重置密码
 
-通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码
+通过短信验证码重置密码，你可以通过 [发送短信验证码](#发送短信验证码) 方法发送短信验证码。
 
 ```swift
 func resetPasswordByPhone(phone: String, code: String, newPassword: String, completion: @escaping(Int, String?) -> Void)
@@ -487,7 +481,7 @@ AuthClient().resetPasswordByPhone(phone: "188xxxx8888", code: "1234", newPasswor
 
 ## 通过首次登录的 Token 重置密码
 
-通过首次登录的 Token 重置密码，需要在创建用户时设置“强制用户首次登录时修改密码”
+通过首次登录的 Token 重置密码，需要在创建用户时设置“强制用户首次登录时修改密码”。
 
 ```swift
 func resetPasswordByFirstTimeLoginToken(token: String, password: String, completion: @escaping(Int, String?) -> Void)
@@ -527,7 +521,7 @@ func resetPasswordByEmail(email: String, code: String, newPassword: String, comp
 **示例**
 
 ```swift
-AuthClient().resetPasswordByEmailCode(email: "me@gmail.com", code: "1234", newPassword: "strong") { code, message, in
+AuthClient().resetPasswordByEmailCode(email: "test@example.com", code: "1234", newPassword: "newPassword") { code, message, in
     if (code == 200) {
 
     }
@@ -542,7 +536,7 @@ AuthClient().resetPasswordByEmailCode(email: "me@gmail.com", code: "1234", newPa
 
 ## 修改用户资料
 
-修改用户资料，此接口不能用于修改手机号、邮箱、密码
+修改用户资料，此接口不能用于修改手机号、邮箱、密码。
 
 ```swift
 func updateProfile(_ object: NSDictionary, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -697,7 +691,7 @@ func bindEmail(email: String, code: String, completion: @escaping(Int, String?, 
 **示例**
 
 ```swift
-AuthClient().bindEmail(email: "me@gmail.com", code: "1234") { code, message, userInfo in
+AuthClient().bindEmail(email: "test@example.com", code: "1234") { code, message, userInfo in
     if (code == 200) {
 
     }
@@ -796,7 +790,7 @@ AuthClient().updateIdToken { code, message, userInfo in
 
 ## 获取当前用户能够访问的应用
 
-获取当前用户能够访问的应用。注意返回的结果数据结构为 NSArray
+获取当前用户能够访问的应用。注意返回的结果数据结构为 NSArray。
 
 ```swift
 func listApplications(page: Int = 1, limit: Int = 10, completion: @escaping(Int, String?, NSArray?) -> Void)
@@ -852,7 +846,7 @@ AuthClient().listApplications { code, message, applications in
 
 ## 获取用户所在组织机构
 
-获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 NSArray
+获取用户所在组织机构。由于用户可以在多个独立的组织机构树下，所以本接口返回了一个二位数组。注意返回的结果数据结构为 NSArray。
 
 ```swift
 func listOrgs(completion: @escaping(Int, String?, NSArray?) -> Void)
@@ -1043,7 +1037,7 @@ AuthClient().listOrgs { code, message, organizations in
 
 ## 获取角色
 
-获取当前登录用户的角色。注意返回的数据结构为 NSArray
+获取当前登录用户的角色。注意返回的数据结构为 NSArray。
 
 ```swift
 func listRoles(namespace: String? = nil, completion: @escaping(Int, String?, NSArray?) -> Void)
@@ -1143,7 +1137,7 @@ AuthClient().listAuthorizedResources { code, message, resources in
 
 用户自助删除当前登录帐号。
 
->此操作不可逆，请务必给用户足够的提示
+> 此操作不可逆，请谨慎操作。
 
 ```swift
 func deleteAccount(completion: @escaping(Int, String?) -> Void)

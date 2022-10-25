@@ -866,7 +866,7 @@ export class AppComponent {
 | isSSO                 | Boolean                                                   | 是否是单点登录                                                                                                                                                                                                                    | Authing 控制台中的配置 |
 | lang                  | 'zh-CN'                                                   | 使用语言，可选值为 zh-CN、en-US                                                                                                                                                                                                   | 'en-US'                |
 | langRange             | ('zh-CN'｜ 'en-US')[]                                     | 语言切换可选的范围，如果填入空数组 或 一个项时，则不会显示语言切换按钮                                                                                                                                                            | ['zh-CN', 'en-US']     |
-| host                  | String                                                    | 私自建应用的【认证地址】，如果是开启了单点登录，则应填写单点登录的【应用面板地址】                                                                                                                                                                                                         | -                      |
+| host                  | String                                                    | 私自建应用的「认证地址」，如果是开启了单点登录，则应填写单点登录的「应用面板地址」                                                                                                                                                                                                         | -                      |
 
 #### GuardMode
 

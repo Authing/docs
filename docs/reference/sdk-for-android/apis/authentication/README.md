@@ -18,7 +18,7 @@ public static void registerByEmail(String email, String password, @NotNull AuthC
 **示例**
 
 ```java
-AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+AuthClient.registerByEmail("test@example.com", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -34,7 +34,7 @@ AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->
 
 ## 邮箱验证码注册
 
-使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮箱 ](#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮件 ](#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
 public static void registerByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
@@ -48,7 +48,7 @@ public static void registerByEmailCode(String email, String code, @NotNull AuthC
 **示例**
 
 ```java
-AuthClient.registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+AuthClient.registerByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -78,7 +78,7 @@ public static void registerByUserName(String username, String password, @NotNull
 **示例**
 
 ```java
-AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
+AuthClient.registerByUserName("test", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -110,7 +110,7 @@ public static void registerByPhoneCode(String phoneCountryCode, String phone, St
 **示例**
 
 ```java
-AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
+AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -138,7 +138,7 @@ public static void loginByAccount(String account, String password, @NotNull Auth
 **示例**
 
 ```java
-AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
+AuthClient.loginByAccount("test", "xxxxxx", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -153,7 +153,7 @@ AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
 
 ## 邮箱验证码登录
 
-通过邮箱验证码登录，需要先调用 [发送邮箱](#发送邮箱) 接口（场景值为 `VERIFY_CODE`）。
+通过邮箱验证码登录，需要先调用 [发送邮件](#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
 public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
@@ -167,7 +167,7 @@ public static void loginByEmailCode(String email, String code, @NotNull AuthCall
 **示例**
 
 ```java
-AuthClient.loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+AuthClient.loginByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -306,7 +306,7 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 **示例**
 
 ```java
-AuthClient.sendEmail("cool@gmail.com", "RESET_PASSWORD",  (code, message, data)->{
+AuthClient.sendEmail("test@example.com", "RESET_PASSWORD",  (code, message, data)->{
     if (code == 200) {
         // 发送成功
     }
@@ -456,7 +456,7 @@ public static void resetPasswordByPhoneCode(String phoneCountryCode, String phon
 **示例**
 
 ```java
-AuthClient.resetPasswordByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -486,7 +486,7 @@ public static void resetPasswordByEmailCode(String emailAddress, String code, St
 **示例**
 
 ```java
-AuthClient.resetPasswordByEmailCode("me@gmail.com", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByEmailCode("test@example.com", "1234", "xxxxxx", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -543,8 +543,8 @@ public static void updateProfile(JSONObject object, @NotNull AuthCallback<UserIn
 
 ```java
 JSONObject body = new JSONObject();
-body.put("username", "elonmusk");
-body.put("nickname", "Ironman");
+body.put("username", "test");
+body.put("nickname", "张三");
 AuthClient.updateProfile(body, (code, message, userInfo)->{
     if (code == 200) {
 
@@ -574,7 +574,7 @@ public static void updatePassword(String newPassword, String oldPassword, @NotNu
 **示例**
 
 ```java
-AuthClient.updatePassword("newStrong", "oldStrong", (code, message, data) -> {
+AuthClient.updatePassword("newPassword", "oldPassword", (code, message, data) -> {
     if (code == 200) {
 
     }
@@ -610,7 +610,7 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 **示例**
 
 ```java
-AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "166xxxx6666", "1234",(code, message, data)->{
     if (code == 200) {
     }
 });
@@ -691,7 +691,7 @@ public static void bindEmail(String email, String code, @NotNull AuthCallback<Us
 **示例**
 
 ```java
-AuthClient.bindEmail("me@gmail.com", "1234", (code, message, data)->{
+AuthClient.bindEmail("test@example.com", "1234", (code, message, data)->{
     if (code == 200) {
     }
 });
@@ -1194,6 +1194,31 @@ private void deleteAccount() {
             }))
             .setNegativeButton(android.R.string.no, null).show();
 }
+```
+
+<br>
+
+## 判断用户是否存在
+
+```java
+public static void checkAccount(String paramsName, String paramsValue, @NotNull AuthCallback<JSONObject> callback)
+```
+
+**参数**
+
+* `paramsName` 参数名称，email(邮箱)、phone(手机号)、username(用户名)、externalId(自定义的id) 传其中一个
+* `paramsValue` 对应参数的值
+
+**示例**
+
+```java
+AuthClient.checkAccount("phone", "188xxxx8888", (code, message, data) -> {
+    if (code == 200) {
+        //hasAccount = true   账号存在
+        //hasAccount = false  账号不存在
+				boolean hasAccount = data.has("result") && data.optBoolean("result");
+    }
+});
 ```
 
 <br>

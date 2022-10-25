@@ -2,30 +2,41 @@
 
 <LastUpdated/>
 
-## 接入步骤
+## 准备工作
 
-### 添加依赖
+请参阅 [易盾一键登录](https://docs.authing.cn/v2/guides/connections/social/yidun/)。
 
-> Guard-iOS-binary 依赖于 Guard 组件（Version 1.2.4 之后）
+## 集成一键登录登录步骤
 
-- 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
+### 步骤 1：添加一键登录登录依赖
 
-- 依赖规则选择 Up to Next Major Version 1.0.0
+1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
-- Add Package 后勾选 OneAuth
+2. 选择 [Authing-binary](https://github.com/Authing/authing-binary)。
+> [Authing-binary](https://github.com/Authing/authing-binary) 依赖于 [Guard-iOS SDK](https://github.com/Authing/guard-ios)。
+
+3. 依赖规则选择 **Up to Next Major Version 1.0.0** 。
+
+4. Add Package 后勾选 **OneAuth** 。
 
 <br>
 
-### 在应用启动的时候设置：
+### 步骤 2：初始化一键登录
+
+1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import OneAuth 。
+
+2. 调用 Authing.start() 初始化 Guard SDK 。
+
+3. OneAuth.register 需要传入易盾控制台发放的 **businessId** 。
 
 ```swift
 import Guard
 import OneAuth
-Authing.start(<#Authing AppId#>);
+Authing.start(<#AUTHING_APP_ID#>)
 OneAuth.register(businessId:<#your_businessId#>)
  ```
 
-### 发起认证
+### 步骤 3：发起一键登录认证
 
 ```Swift
 OneAuth.start(self) { code, message, userInfo in

@@ -6,6 +6,11 @@ subTitle: "在这里，开启激动人心的第一步！学习如何使用 {{$lo
 searchPlaceholder: 请输入关键词搜索产品文档
 hotSearchText: 热门搜索
 exploreUse: 探索使用 {{$localeConfig.brandName}}
+banner:
+  title: Authing API/SDK V3 正式上线！
+  text: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
+  url: https://docs.authing.cn/v3
+  btnText: 查看文档
 hotSearch:
   - text: 如何对用户进行认证
     link: /guides/authentication/
@@ -32,7 +37,7 @@ sdkConfig:
     icon: Flutter
   javascript:
     name: JavaScript
-    link: /reference/guard/v3/mpa.html
+    link: /reference/guard/v2/web.html
     icon: JavaScript
   reactNative:
     name: React Native
@@ -44,15 +49,15 @@ sdkConfig:
     icon: csharp
   react:
     name: React
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: React-Native
   angular:
     name: Angular
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: Angular
   vue:
     name: Vue
-    link: /reference/guard/v3/spa.html
+    link: /reference/guard/v2/web.html
     icon: Vue
   python:
     name: Python

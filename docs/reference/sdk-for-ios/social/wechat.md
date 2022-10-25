@@ -2,60 +2,29 @@
 
 <LastUpdated/>
 
-集成微信需要三个主要步骤：
-* 在微信开放平台进行配置
-* 在 Authing 管理控制台进行配置
-* 集成 Authing iOS 微信登录
+## 准备工作
+
+在 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN) 及 [Authing 管理控制台](https://www.authing.cn/) 进行配置请参阅 [微信移动端](https://docs.authing.cn/v2/guides/connections/social/wechat-mobile/)。
+
 
 <br>
 
-## STEP 1：在 [微信开放平台](https://open.weixin.qq.com/) 进行配置
+## 集成微信登录
 
->使用微信登录需要开发人员在微信开放平台认证，认证主体需要是个体商户，企事业单位，不支持个人开发人员，当前认证费用为 300 RMB
+### 步骤 1：添加微信登录依赖
 
-1. 获取 AppID 和 AppSecret
+1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
-![](./images/wechat/1.png)
+2. 选择 [Authing-binary](https://github.com/Authing/authing-binary)。
+> [Authing-binary](https://github.com/Authing/authing-binary) 依赖于 [Guard-iOS SDK](https://github.com/Authing/guard-ios)。
 
-2. 设置 iOS 应用信息
+3. 依赖规则选择 **Up to Next Major Version 1.0.0** 。
 
-![](./images/wechat/2.png)
-
-> 微信要求通过 [Universal Links](https://developer.apple.com/ios/universal-links/) 的方式回调
-
-<br>
-
-## STEP 2：在 Authing 管理控制台的操作步骤
-
-1. 在控制台的 “连接身份源” 菜单选择 “创建社交身份源“
-
-![](./images/wechat/3.png)
-
-2. 选择 “微信移动端”
-
-![](./images/wechat/4.png)
-
-3. 填入微信开放平台对应的 AppID 和 AppSecret
-
-![](./images/wechat/5.png)
+4. Add Package 后勾选 **Wechat** 。
 
 <br>
 
-## STEP 3：集成 Authing iOS 微信登录
-
-### 添加依赖
-
-> Guard-iOS-binary 依赖于 Guard 组件（Version 1.2.4 之后）
-
-- 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary
-
-- 依赖规则选择 Up to Next Major Version 1.0.0
-
-- Add Package 后勾选 Wechat
-
-<br>
-
-### Info.plist 里面添加启动微信白名单
+### 步骤 2：Info.plist 里面添加启动微信白名单
 
 key: LSApplicationQueriesSchemes
 
@@ -83,28 +52,28 @@ value: weixin, weixinULAPI
 
 <br>
 
-### 在应用启动的时候设置微信：
+### 步骤 3：初始化微信登录
 
 ```swift
 import Guard
 import Wechat
-Authing.start(<#Authing AppId#>);
+Authing.start(<#AUTHING_APP_ID#>)
 WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep_link#>)
  ```
 
->第一个参数为微信应用 id；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
+> 第一个参数为微信应用 ID；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
 
 <br>
 
-### 设置 Associated Domains：
+### 步骤 4：设置 Associated Domains：
 
-> 替换为自己 Universal Link 对应的 host
+> 填入开发者的 Universal Link 对应的 host 。
 
 ![](./images/wechat/7.png)
 
 <br>
 
-### 处理微信回调
+### 步骤 5：处理微信登录回调
 
 微信返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -114,7 +83,7 @@ func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
 }
 ```
 
-如果未使用 SceneDelegate，则需要在 AppDelegate 里面重载
+如果未使用 SceneDelegate，则需要在 AppDelegate 里面重载：
 
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -125,7 +94,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 <br>
 
-### 发起微信授权
+### 步骤 6：发起微信登录授权
 
 推荐通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 

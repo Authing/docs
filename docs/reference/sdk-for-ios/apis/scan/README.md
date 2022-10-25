@@ -22,13 +22,13 @@
 }
 ```
 
-在 App 侧，确保 App 处于登录状态，在需要授权登录时，依次调用下面 API
+在 App 侧，确保 App 处于登录状态，在需要授权登录时，依次调用下面 API:
 
 ## 标记二维码
 
-此接口调用成功后，网页的二维码上面会显示用户头像
+此接口调用成功后，网页的二维码上面会显示“扫码成功”状态。
 
->注意：调用此接口前，App 必须处于登录状态
+> 调用此接口前，App 必须处于登录状态
 
 
 ```swift
@@ -58,9 +58,9 @@ AuthClient().markQRCodeScanned(ticket: "5e05f0c57fde537d950f7da5") { code, messa
 
 ## 确认二维码登录
 
-使用二维码登录。分两步的好处是，App 可以在扫描之后给用户一个提示，待用户确认之后再登录。
+使用二维码登录。分两步的好处是，App 可以在扫描之后给用户一个提示，待用户确认之后再授权登录。
 
->注意：调用此接口之前必须先调用 [标记二维码](#标记二维码)
+> 调用此接口之前必须先调用 [标记二维码](#标记二维码)。
 
 
 ```swift
@@ -74,7 +74,37 @@ func loginByScannedTicket(ticket: String, completion: @escaping(Int, String?, NS
 **示例**
 
 ```swift
-AuthClient().loginByScannedTicket(ticket: "5e05f0c57fde537d950f7da5") { code, message, data in
+AuthClient().loginByScannedTicket(ticket: "ticket") { code, message, data in
+    if (code == 200) {
+        // logged in
+    }
+}
+```
+
+**错误码**
+
+* 500 无效二维码
+* 2020 未登录
+
+<br>
+
+## 取消二维码登录
+
+App 可以在扫描之后，若想取消授权登录，调用此接口。
+
+
+```swift
+func cancelByScannedTicket(ticket: String, completion: @escaping(Int, String?, NSDictionary?) -> Void)
+```
+
+**参数**
+
+* *ticket* 二维码数据里面的 random 字段
+
+**示例**
+
+```swift
+AuthClient().cancelByScannedTicket(ticket: "ticket") { code, message, data in
     if (code == 200) {
         // logged in
     }

@@ -12,7 +12,7 @@
 
 ## 第二步：添加 Guard 依赖
 
-在工程根目录的 build.gradle 文件里面需包含 mavenCentral
+在工程根目录的 build.gradle	(4.2+以后的版本 AndroidStudio 创建的新工程在 setting.gradle) 文件里面需包含 mavenCentral
 
  ```groovy
  buildscript {
@@ -35,19 +35,21 @@ implementation 'cn.authing:guard:+'
 
 ```java
 // context is application or initial activity
-// ”appId“ is obtained from the Authing console
-Authing.init(context, "appId");
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
 ```
 
-> 注意：appId 是应用 ID，不是用户池 ID
+> 注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
 
 ## 第四步：常用操作
 
 ### 1. 注册/登录并获取用户信息
 
-- [使用 SDK 托管页](./develop.md)
-- [使用 SDK 超组件](./component/)
-- [使用 SDK API](./apis/)
+我们提供了三种方式来帮助开发者实现认证流程： 
+
+- 如果想独立构建自己的登录注册等 UI 界面，只调用认证相关接口，推荐[使用 SDK API](./apis/)。
+- 如果想两行代码实现包括 UI 的整个认证流程，推荐[使用 SDK 托管页](./develop.md)。
+- 如果想通过[语义化编程模型](https://github.com/Authing/guard-android/blob/master/doc/topics/design.md)快速构建自定义风格的认证流程，推荐[使用 SDK 超组件](./component/)。
 
 ### 2. [第三方身份源登录](./social/)
 

@@ -64,7 +64,7 @@ Authing 登录组件（Guard）提供了很多高级配置，如自定义 UI，�
 | qrCodeScanOptions     | 扫码登录配置，详情请查看 [QrCodeAuthenticationClient().startScanning(domId, options)](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/QrCodeAuthenticationClient.html#一键开始扫码) 的 options 参数 | Objcect                                   | 否             | null                                               |                                            |
 | lang                  | **使用语言**                                                                                                                                                                                                         | [Lang](#lang)                             | 否             | Lang.zhCn                                          |                                            |
 | localesConfig         | **语言环境配置**                                                                                                                                                                                                     | [LocalesConfig](#localesconfig)           | 否             | -                                                  |                                            |
-| host                  | 私自建应用的【认证地址】，如果是开启了单点登录，则应填写单点登录的【应用面板地址】                                                                                                                                                                                            | String                                    | 私有部署时必传 | [{{$localeConfig.brandName}} 官方 api 地址]        |                                            |
+| host                  | 私自建应用的「认证地址」，如果是开启了单点登录，则应填写单点登录的「应用面板地址」                                                                                                                                                                                            | String                                    | 私有部署时必传 | [{{$localeConfig.brandName}} 官方 api 地址]        |                                            |
 
 ## GuardMode
 
@@ -171,4 +171,4 @@ Guard 语言环境配置
 
 ## 获取帮助
 
-Join us on forum: [#authing-chat](https://forum.authing.cn/)
+请访问 [Authing 论坛](https://forum.authing.cn/)。
