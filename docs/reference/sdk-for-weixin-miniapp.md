@@ -1500,7 +1500,7 @@ interface ErrorData {
 |名称|类型|描述|
 |-----|----|----|
 |appid|String|app id|
-|timestamp|Number|时间戳
+|timestamp|Number|时间戳|
 
 ### <p id="UploadFileResponseData">UploadFileResponseData</p>
 |名称|类型|描述|
