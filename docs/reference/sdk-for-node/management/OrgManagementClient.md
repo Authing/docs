@@ -38,9 +38,9 @@ OrgManagementClient().create(name, description, code, tenantId)
 
 ```javascript
 const org = await managementClient.org.create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan'
+  '北京某某公司',
+  '北京某某科技有限公司',
+  'example'
 )
 ```
 
@@ -105,7 +105,8 @@ OrgManagementClient().deleteById(id)
 ```
 
 ## 获取用户池组织机构列表
-> 获取用户池组织机构列表
+
+> 获取用户池组织机构列表，此方法已经不推荐使用。
 
 ```js
 OrgManagementClient().list(page, limit)
@@ -336,9 +337,9 @@ OrgManagementClient().addNode(orgId, parentNodeId, data)
 
 ```javascript
 const org = await managementClient.org.create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan'
+  '北京某某公司',
+  '北京某某科技有限公司',
+  'example'
 )
 const { id: orgId, rootNode } = org
 const node = await managementClient.org.addNode(orgId, rootNode.id, {
@@ -553,9 +554,9 @@ OrgManagementClient().deleteNode(orgId, nodeId)
 
 ```javascript
 const org = await managementClient.org.create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan'
+  '北京某某公司',
+  '北京某某科技有限公司',
+  'example'
 )
 const { id: orgId, rootNode } = org
 const node = await managementClient.org.deleteNode(orgId, rootNode.id)
@@ -786,8 +787,8 @@ OrgManagementClient().importByJson(json)
 
 ```javascript
 const tree = {
-  name: '北京非凡科技有限公司',
-  code: 'feifan',
+  name: '北京某某科技有限公司',
+  code: 'example',
   children: [
     {
       code: 'operation',
@@ -876,7 +877,7 @@ const { totalCount, list } = await managementClient.org.addMembers("NODE_ID", ["
 			"externalId": null,
 			"isDeleted": false,
 			"postalCode": null,
-			"email": "fptvmzqyxn@authing.cn",
+			"email": "test@example.com",
 			"username": null,
 			"openid": null,
 			"company": null,
@@ -973,7 +974,7 @@ const { totalCount, list } = await managementClient.org.listMembers('NODE_ID')
 			"externalId": null,
 			"isDeleted": false,
 			"postalCode": null,
-			"email": "fptvmzqyxn@authing.cn",
+			"email": "test@example.com",
 			"username": null,
 			"openid": null,
 			"company": null,

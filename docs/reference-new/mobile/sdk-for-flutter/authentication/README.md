@@ -72,7 +72,7 @@ static Future<AuthResult> registerByPhoneCode(String phone, String code, String 
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.registerByPhoneCode("13012345678", "1121", "strong");
+AuthResult result = await AuthClient.registerByPhoneCode("188xxxx8888", "1121", "strong");
 User user = result.user;
 ```
 
@@ -123,7 +123,7 @@ static Future<AuthResult> loginByPhoneCode(String phone, String code) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.loginByPhoneCode("13012345678", "1234");
+AuthResult result = await AuthClient.loginByPhoneCode("188xxxx8888", "1234");
 User user = result.user; // get user info
 ```
 
@@ -237,7 +237,7 @@ static Future<AuthResult> sendSms(String phone, [String? phoneCountryCode]) asyn
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.sendSms("13012345678", "+86");
+AuthResult result = await AuthClient.sendSms("188xxxx8888", "+86");
 var code = result.code;
 ```
 
@@ -350,7 +350,7 @@ static Future<AuthResult> resetPasswordByPhoneCode(String phone, String code, St
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong");
+AuthResult result = await AuthClient.resetPasswordByPhoneCode("188xxxx8888", "1234", "strong");
 expect(result.code, 200);
 ```
 
@@ -485,7 +485,7 @@ static Future<AuthResult> bindPhone(String phone, String code) async
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.bindPhone("13012345678", "1234");
+AuthResult result = await AuthClient.bindPhone("188xxxx8888", "1234");
 var code = result.code;
 ```
 

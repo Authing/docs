@@ -1017,9 +1017,9 @@ OrgManagementClient().create(name, description, code, tenantId)
 
 ```javascript
 const org = await managementClient.org.create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan',
+  '北京某某公司',
+  '北京某某公司有限公司',
+  'example',
   '61d6899f58c07514981da4a3'
 )
 ```
@@ -1032,12 +1032,12 @@ const org = await managementClient.org.create(
   rootNode: {
     id: '61d69c0cf11e11e83d64b87b',
     orgId: '61d69c0c4011cffeea9ac887',
-    name: '北京非凡科技',
+    name: '北京某某公司',
     nameI18n: null,
-    description: '北京非凡科技有限公司',
+    description: '北京某某公司有限公司',
     descriptionI18n: null,
     order: null,
-    code: 'feifan',
+    code: 'example',
     root: true,
     depth: null,
     path: [ '61d69c0cf11e11e83d64b87b' ],
@@ -1049,12 +1049,12 @@ const org = await managementClient.org.create(
     {
       id: '61d69c0cf11e11e83d64b87b',
       orgId: '61d69c0c4011cffeea9ac887',
-      name: '北京非凡科技',
+      name: '北京某某公司',
       nameI18n: null,
-      description: '北京非凡科技有限公司',
+      description: '北京某某公司有限公司',
       descriptionI18n: null,
       order: null,
-      code: 'feifan',
+      code: 'example',
       root: true,
       depth: 0,
       path: [Array],

@@ -34,9 +34,9 @@ OrgManagementClient->create(string $name, string $description, string  $code)
 
 ```php
 $orgManagementClient->create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan'
+  '北京某某公司',
+  '北京某某公司有限公司',
+  'example'
 );
 ```
 
@@ -319,8 +319,8 @@ OrgManagementClient->importByJson(string $json)
 
 ```php
 $tree = (object)[
-  'name'=> '北京非凡科技有限公司',
-  'code'=> 'feifan',
+  'name'=> '北京某某公司有限公司',
+  'code'=> 'example',
   'children': [
     (object)[
       'code'=> 'operation',

@@ -124,6 +124,7 @@ module.exports = {
     sidebarDepth: 0,
     locales: {
       "/": {
+        logoTooltip: "前往 Authing 官网",
         selectText: "中文 / EN",
         label: "简体中文",
         editLinkText: "在 GitHub 上编辑此页",
@@ -141,7 +142,22 @@ module.exports = {
           { text: "快速开始", link: "/quickstarts/" },
           { text: "概念", link: "/concepts/" },
           { text: "使用指南", link: "/guides/" },
-          { text: "开发集成", link: "/reference/" },
+          {
+            text: "开发集成",
+            link: "/reference/",
+            tag: 'V2',
+            links: [
+              {
+                text: "V2 文档",
+                link: "/reference/",
+                isRouter: true
+              },
+              {
+                text: "V3 文档",
+                link: "https://docs.authing.cn/v3"
+              }
+            ]
+          },
           {
             text: "应用集成",
             link: "/integration/"
@@ -302,6 +318,7 @@ module.exports = {
         }
       },
       "/en/": {
+        logoTooltip: "Visit authing.cn",
         // text for the language dropdown
         selectText: "中文 / EN",
         // label for this locale in the language dropdown

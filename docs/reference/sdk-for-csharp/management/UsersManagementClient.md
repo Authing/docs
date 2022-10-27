@@ -297,7 +297,7 @@ managementClient.Users.HasRole(string userId, string roleCode, string _namespace
 #### 示例
 
 ```csharp
-managementClient.Users.HasRole("USERID", "roleCode", "default");
+managementClient.Users.HasRole("60b4a136d9xxxxcc3d87e55a", "roleCode", "default");
 ```
 
 #### 示例数据

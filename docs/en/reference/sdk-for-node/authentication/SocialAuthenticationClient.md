@@ -11,7 +11,7 @@ Initiate a social login authorization request:
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 await authenticationClient.social.authorize("github", {
@@ -46,7 +46,7 @@ SocialAuthenticationClient().authorize(provider, options)
 // Log in with GitHub
 
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 
@@ -64,7 +64,7 @@ await authenticationClient.social.authorize("github", {
 // Use the new browser tab to open the social login page
 
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 

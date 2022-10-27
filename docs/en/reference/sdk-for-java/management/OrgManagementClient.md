@@ -267,8 +267,8 @@ OrgManagementClient().importByJson(json)
 json examples:
 
 {
-  name: '北京非凡科技有限公司',
-  code: 'feifan',
+  name: '北京某某公司有限公司',
+  code: 'example',
   children: [
      {
          code: 'operation',

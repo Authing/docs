@@ -172,7 +172,7 @@ def add_assignments(self, policies, targetType, targetIdentifiers)
 management_client.policies.add_assignments(
     policies=['PolicyCode'],
     targetType='USER', # 授权给用户
-    targetIdentifiers=['USERID'] # 用户的 ID
+    targetIdentifiers=['60b4a136d9xxxxcc3d87e55a'] # 用户的 ID
 )
 
 management_client.policies.add_assignments(

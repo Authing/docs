@@ -6,7 +6,7 @@ const sdk = new Authing({
   // 很重要，请仔细填写！
   // 如果应用开启 SSO，这儿就要写单点登录的“应用面板地址”；否则填写应用的“认证地址”。
   domain: '认证域名',
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   // 登录回调地址，需要在控制台『应用配置 - 登录回调 URL』中指定
   redirectUri: '登录回调地址',
 

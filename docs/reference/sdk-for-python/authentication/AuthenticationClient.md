@@ -206,7 +206,7 @@ def register_by_phone_code(
 - 使用手机号验证码注册
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -216,7 +216,7 @@ user = authentication_client.register_by_phone_code(
 - 注册的同时设置密码
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -228,7 +228,7 @@ user = authentication_client.register_by_phone_code(
 
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -244,7 +244,7 @@ user = authentication_client.register_by_phone_code(
 
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -443,7 +443,7 @@ def login_by_phone_code(
 - 使用手机号验证码登录
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 # 手机号验证码登录，如果用户不存在会自动创建账号
 user = authentication_client.login_by_phone_code(
     phone=phone,
@@ -454,7 +454,7 @@ user = authentication_client.login_by_phone_code(
 - 登录的同时设置自定义数据
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 # 手机号验证码登录，如果用户不存在会自动创建账号
 user = authentication_client.login_by_phone_code(
     phone=phone,
@@ -497,7 +497,7 @@ def login_by_phone_password(
 - 使用手机号密码登录
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.login_by_phone_password(
     phone=phone,
     password='passw0rd',
@@ -507,7 +507,7 @@ user = authentication_client.login_by_phone_password(
 - 屡次登录失败，当需要输入图形验证码时
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 try:
   user = authentication_client.login_by_phone_password(
     phone=phone,
@@ -525,7 +525,7 @@ except AuthingException as e:
 - 登录的同时设置自定义数据
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.login_by_phone_password(
     phone=phone,
     password='passw0rd',
@@ -685,7 +685,7 @@ def send_sms_code(self, phone):
 
 ```python
 authentication_client.send_sms_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
 )
 ```
 
@@ -866,7 +866,7 @@ def reset_password_by_phone_code(self, phone, code, new_password):
 
 ```python
 authentication_client.reset_password_by_phone_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
   code="1234",
   new_password="passw0rd"
 )
@@ -952,7 +952,7 @@ user = authentication_client.update_profile({
 ```python
 try:
   authentication_client.update_profile({
-    'phone': '176xxxx6754'
+    'phone': '188xxxx8888'
   })
 except AuthingException as e:
   // this will fail, you can't change your phone directly, must verify by phone code
@@ -1023,7 +1023,7 @@ def bind_phone(self, phone, phone_code):
 #### 示例
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.bind_phone(
     phone=phone,
     phoneCode='1234',
@@ -1801,7 +1801,7 @@ def is_user_exists(self,
 #### 示例
 
 ```python
-authentication.is_user_exists(email="fptvmzqyxn@authing.cn")
+authentication.is_user_exists(email="test@example.com")
 ```
 #### 示例数据
 ```python

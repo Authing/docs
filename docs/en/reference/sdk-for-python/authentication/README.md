@@ -88,7 +88,7 @@ AuthenticationClient().register_by_phone_code(phone, code, password, profile, op
 #### Example
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.register_by_phone_code(
     phone=phone,
     code='1234',
@@ -113,7 +113,7 @@ AuthenticationClient().send_sms_code(phone)
 
 ```python
 authentication_client.send_sms_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
 )
 ```
 
@@ -187,7 +187,7 @@ AuthenticationClient().login_by_phone_code(phone, code)
 #### Example
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 # log in by SMS code, if user doesn't exist, it will automatically register a new account
 user = authentication_client.login_by_phone_code(
     phone=phone,
@@ -212,7 +212,7 @@ AuthenticationClient().login_by_phone_password(phone, password, options)
 #### Example
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.login_by_phone_password(
     phone=phone,
     password='passw0rd',
@@ -276,7 +276,7 @@ AuthenticationClient().reset_password_by_phone_code(phone, code, newPassword)
 
 ```python
 authentication_client.reset_password_by_phone_code(
-  phone="176xxxx6754",
+  phone="188xxxx8888",
   code="1234",
   new_password="passw0rd"
 )
@@ -464,7 +464,7 @@ AuthenticationClient().bind_phone(phone, phoneCode)
 #### Example
 
 ```python
-phone = '176xxxx6754'
+phone = '188xxxx8888'
 user = authentication_client.bind_phone(
     phone=phone,
     phoneCode='1234',

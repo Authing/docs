@@ -688,8 +688,8 @@ func (c *Client) ImportNodeByJSON(jsonStr string) (*string, error)
 ```go
     json := `
 	{	
-		"name": "北京非凡科技有限公司",
-		"code": "feifan",
+		"name": "北京某某公司有限公司",
+		"code": "example",
 		"children": []
 	}`
 	resp, _ := client.ImportNodeByJSON(json)
@@ -755,7 +755,7 @@ resp, _ := client.AddMembers("61722ece541df9301478b17d", []string{"6141876341abe
 			"externalId": null,
 			"isDeleted": false,
 			"postalCode": null,
-			"email": "fptvmzqyxn@authing.cn",
+			"email": "test@example.com",
 			"username": null,
 			"openid": null,
 			"company": null,
@@ -856,7 +856,7 @@ func (c *Client) ListMembers(req *model.ListMemberRequest) (*model.Node, error)
 			"externalId": null,
 			"isDeleted": false,
 			"postalCode": null,
-			"email": "fptvmzqyxn@authing.cn",
+			"email": "test@example.com",
 			"username": null,
 			"openid": null,
 			"company": null,

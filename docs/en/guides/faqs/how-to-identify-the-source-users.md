@@ -42,7 +42,7 @@ meta:
 const { AuthenticationClient } = require("authing-js-sdk");
 
 const authing = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "YOUR_APP_HOST"
 });
 const email = "test@example.com";
@@ -60,7 +60,7 @@ const user = await authing.registerByEmail(email, password, null, {
 const { AuthenticationClient } = require("authing-js-sdk");
 
 const authing = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "YOUR_APP_HOST"
 });
 authing.social.authorize("google", {
@@ -79,7 +79,7 @@ authing.social.authorize("google", {
 const { AuthenticationClient } = require("authing-js-sdk");
 
 const authing = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "YOUR_APP_HOST"
 });
 authing.wxqrcode.startScanning("domId", {

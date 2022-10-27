@@ -18,7 +18,7 @@ func mfaCheck(phone: String?, email: String?, completion: @escaping(Int, String?
 **示例**
 
 ```swift
-AuthClient().mfaCheck(phone: "13012345678", email: nil) { code, message, ok in
+AuthClient().mfaCheck(phone: "188xxxx8888", email: nil) { code, message, ok in
     if (code == 200) {
         if (ok) {
             
@@ -53,7 +53,7 @@ func mfaVerifyByPhone(phone: String, code: String, completion: @escaping(Int, St
 **示例**
 
 ```swift
-AuthClient().mfaVerifyByPhone(phone: "13012345678", code: "1234") { code, message, userInfo in
+AuthClient().mfaVerifyByPhone(phone: "188xxxx8888", code: "1234") { code, message, userInfo in
     // userInfo 用户信息
 }
 ```

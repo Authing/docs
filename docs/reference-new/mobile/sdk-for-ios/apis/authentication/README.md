@@ -108,7 +108,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 **示例**
 
 ```swift
-AuthClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "strong") { code, message, userInfo in
+AuthClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "strong") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -192,7 +192,7 @@ func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, St
 **示例**
 
 ```swift
-AuthClient().loginByPhoneCode(phone: "13012345678", code: "1234") { code, message, userInfo in
+AuthClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { code, message, userInfo in
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -318,7 +318,7 @@ func sendSms(phone: String, phoneCountryCode: String? = nil, completion: @escapi
 **示例**
 
 ```swift
-AuthClient().sendSms(phone: "13012345678", phoneCountryCode: "+86") { code, message in
+AuthClient().sendSms(phone: "188xxxx8888", phoneCountryCode: "+86") { code, message in
 }
 ```
 
@@ -495,7 +495,7 @@ func resetPasswordByPhone(phone: String, code: String, newPassword: String, comp
 **示例**
 
 ```swift
-AuthClient().resetPasswordByPhone(phone: "13012345678", code: "1234", newPassword: "strong") { code, message in
+AuthClient().resetPasswordByPhone(phone: "188xxxx8888", code: "1234", newPassword: "strong") { code, message in
     if (code == 200) {
 
     }
@@ -666,7 +666,7 @@ func bindPhone(phone: String, code: String, completion: @escaping(Int, String?, 
 **示例**
 
 ```swift
-AuthClient().bindPhone(phone: "13012345678", code: "1234") { code, message, userInfo in
+AuthClient().bindPhone(phone: "188xxxx8888", code: "1234") { code, message, userInfo in
     if (code == 200) {
 
     }

@@ -86,7 +86,7 @@ const user = await managementClient.users.create({
 ```javascript
 const user = await managementClient.users.create({
    nickname: 'Nick',
-   phone: '176xxxx6754', // since this is an admin operation, SMS code verification is required. If you need it, please use AuthenticationClient
+   phone: '188xxxx8888', // since this is an admin operation, SMS code verification is required. If you need it, please use AuthenticationClient
    loginsCount: 2 // user login counter in original user system
    signedUp: '2020-10-15T17:55:37+08:00' // user register time logged by original system
 })
@@ -150,15 +150,15 @@ UsersManagementClient \*().update(id, updates)
 #### Example
 
 ```javascript
-const user = await managementClient.users.update("USERID", {
+const user = await managementClient.users.update("60b4a136d9xxxxcc3d87e55a", {
   nickname: "Nick"
 });
 ```
 
 ```javascript
-const user = await managementClient.users.update("USERID", {
+const user = await managementClient.users.update("60b4a136d9xxxxcc3d87e55a", {
   nickname: "Nick",
-  phone: "176xxxx6754", // since this is an admin operation, SMS code verification is required. If you need it, please use AuthenticationClient
+  phone: "188xxxx8888", // since this is an admin operation, SMS code verification is required. If you need it, please use AuthenticationClient
   tokenExpiredAt: "2020-10-15T17:55:37+08:00"
 });
 ```
@@ -180,7 +180,7 @@ UsersManagementClient().detail(userId)
 #### Example
 
 ```javascript
-const user = await managementClient.users.detail("USERID");
+const user = await managementClient.users.detail("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### Return value
@@ -326,7 +326,7 @@ UsersManagementClient().delete(userId)
 #### Example
 
 ```javascript
-const user = await managementClient.users.delete("USERID");
+const user = await managementClient.users.delete("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### Return value
@@ -346,7 +346,7 @@ UsersManagementClient().deleteMany(userIds)
 #### Example
 
 ```javascript
-const user = await managementClient.users.deleteMany(["USERID"]);
+const user = await managementClient.users.deleteMany(["60b4a136d9xxxxcc3d87e55a"]);
 ```
 
 #### Return value
@@ -366,7 +366,7 @@ UsersManagementClient().batch(userIds)
 #### Example
 
 ```javascript
-const users = await managementClient.users.batch(["USERID"]);
+const users = await managementClient.users.batch(["60b4a136d9xxxxcc3d87e55a"]);
 ```
 
 #### Return value
@@ -473,7 +473,7 @@ UsersManagementClient().refreshToken(id)
 #### Example
 
 ```javascript
-const { token } = await managementClient.users.refreshToken("USERID");
+const { token } = await managementClient.users.refreshToken("60b4a136d9xxxxcc3d87e55a");
 
 // check the latest status of the token. It can get user's token
 
@@ -499,7 +499,7 @@ UsersManagementClient().listGroups(userId)
 #### Example
 
 ```javascript
-const { list, totalCount } = await managementClient.users.listGroups("USERID");
+const { list, totalCount } = await managementClient.users.listGroups("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### Return value
@@ -521,7 +521,7 @@ UsersManagementClient().addGroup(userId, group)
 
 ```javascript
 const { code, message } = await managementClient.users.addGroup(
-  "USERID",
+  "60b4a136d9xxxxcc3d87e55a",
   "GROUP_CODE"
 );
 ```
@@ -545,7 +545,7 @@ UsersManagementClient().removeGroup(userId, group)
 
 ```javascript
 const { code, message } = await managementClient.users.removeGroup(
-  "USERID",
+  "60b4a136d9xxxxcc3d87e55a",
   "GROUP_CODE"
 );
 ```
@@ -567,7 +567,7 @@ UsersManagementClient().listRoles(userId)
 #### Example
 
 ```javascript
-const { list, totalCount } = await managementClient.users.listRoles("USERID");
+const { list, totalCount } = await managementClient.users.listRoles("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### Return value
@@ -588,7 +588,7 @@ UsersManagementClient().addRoles(userId, roles)
 #### Example
 
 ```javascript
-const { code, message } = await managementClient.users.addRoles("USERID", [
+const { code, message } = await managementClient.users.addRoles("60b4a136d9xxxxcc3d87e55a", [
   "ROLEA"
 ]);
 ```
@@ -611,7 +611,7 @@ UsersManagementClient().removeRoles(userId, roles)
 #### Example
 
 ```javascript
-const { code, message } = await managementClient.users.removeRoles("USERID", [
+const { code, message } = await managementClient.users.removeRoles("60b4a136d9xxxxcc3d87e55a", [
   "ROLEA"
 ]);
 ```
@@ -634,7 +634,7 @@ UsersManagementClient.listAuthorizedResources(userId, namespace)
 #### Example
 
 ```javascript
-managementClient.users.listAuthorizedResources("USERID", "code");
+managementClient.users.listAuthorizedResources("60b4a136d9xxxxcc3d87e55a", "code");
 ```
 
 #### Sample data
