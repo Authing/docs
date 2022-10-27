@@ -1,6 +1,6 @@
 !!!include(common/init-java-mngmt-sdk.md)!!!
 
-使用 `OrgManagementClient` 的 `create` 方法创建组织机构：
+使用 `ManagementClient` 的 `org` 方法获取 `OrgManagement` 对象，然后用该对象调用 `create` 方法创建组织机构：
 
 ```javascript
 const org = await managementClient.org.create('北京非凡科技', '北京非凡科技有限公司', 'feifan');

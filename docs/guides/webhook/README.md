@@ -29,12 +29,12 @@ Webhook 列表
 :::
 
 ![](~@imagesZhCn/webhooks/webhook-zh-04.png)
-创建成功后会进入 Webhook 列表页面
 
 ::: img-description
 配置 Webhook
 :::
 
+创建成功后会进入 Webhook 列表页面。
 ### 参数解释
 
 | 参数名称     | 参数解释                                                                                                                                 |
@@ -48,7 +48,7 @@ Webhook 列表
 
 ## 调试 Webhook
 
-刚创建好的 Hook 请求事件都为空，这时你可以点击「测试」触发一个「测试事件」：
+刚创建好的 Hook 请求事件都为空，这时你可以点击「调试」触发一个「测试事件」：
 
 ![](~@imagesZhCn/webhooks/webhook-zh-05.png)
 

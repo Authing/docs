@@ -3694,7 +3694,7 @@ Guard 可展示的界面
 | error                | Error 页面            |
 | mfa                  | MFA                   |
 | forgetPassword       | 重置密码              |
-| forcedPasswordReset  | 登陆安全策略 修改密码 |
+| forcedPasswordReset  | 登录安全策略 修改密码 |
 | noticePasswordReset  | 提示 修改密码         |
 | firstLoginPassword   | 首次登录 修改密码     |
 | unsafePasswordReset  | 密码强度不符 修改密码 |

@@ -905,16 +905,21 @@ const zhCnNavBar = {
       title: "安全设置",
       children: [
         {
-          title: "配置 Web 安全域",
-          path: "/guides/security/config-domain",
-        },
-        {
-          title: "配置注册频率限制",
-          path: "/guides/security/config-register-limit",
-        },
-        {
-          title: "配置登录失败次数限制",
-          path: "/guides/security/config-login-fail-limit",
+          title: "通用安全",
+          children: [
+            {
+              title: "配置 Web 安全域",
+              path: "/guides/security/config-domain",
+            },
+            {
+              title: "配置注册频率限制",
+              path: "/guides/security/config-register-limit",
+            },
+            {
+              title: "配置登录失败次数限制",
+              path: "/guides/security/config-login-fail-limit",
+            },
+          ],
         },
         {
           title: "密码安全",
@@ -1036,7 +1041,7 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "部署方案",
+      title: "私有化部署方案",
       path: "/guides/deployment/",
       children: [
         {

@@ -8,17 +8,17 @@ meta:
 
 <LastUpdated/>
 
-如果你 Use [托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md)或者[嵌入登录组件](/reference/guard/)，{{BRAND_NAME}} 支持自动识别请求参数将用户来源写入到用户的自定义字段；同时 {{BRAND_NAME}} 提供的 SDK 也可以在登录注册时将注册来源信息写入到用户的自定义字段，从而达到识别用户来源的目的。
+如果你使用 [托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md)或者[嵌入登录组件](/reference/guard/)，{{$localeConfig.brandName}} 支持自动识别请求参数将用户来源写入到用户的自定义字段；同时 {{$localeConfig.brandName}} 提供的 SDK 也可以在登录注册时将注册来源信息写入到用户的自定义字段，从而达到识别用户来源的目的。
 
 ## Use 托管登录页面
 
-[Authing 托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md)模式被认为是最简单，最安全的集成方式。这是因为登录流程由 Authing 维护，并由 Authing 保持安全。对于大多数集成，建议 Use Authing 托管的登录流程。你的业务系统将用户重定向到 Authing，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。
+[Authing 托管登录页](/guides/basics/authenticate-first-user/use-hosted-login-page.md) 模式被认为是最简单，最安全的集成方式。这是因为登录流程由 Authing 维护，并由 Authing 保持安全。对于大多数集成，建议 Use Authing 托管的登录流程。你的业务系统将用户重定向到 Authing，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。
 
 在托管登录页面中识别用户来源，可以分为以下几步。
 
-1. 在 Authing 控制台定义一个用户自定义字段（如 `source`），用于存储用户的来源数据，详情请见[添加自定义用户字段](/guides/users/user-defined-field/)；
+1. 在 Authing 控制台定义一个用户自定义字段（如 `source`），用于存储用户的来源数据，详情请见 [添加自定义用户字段](/guides/users/user-defined-field/)；
 2. 访问应用域名的时候带上指定的 `query` 参数，如 `https://your-app.authing.cn?source=someWhere`；
-3. 当用户登录注册的时候，{{BRAND_NAME}} 将会将此数据写入到用户的自定义字段中；
+3. 当用户登录注册的时候，{{$localeConfig.brandName}} 将会将此数据写入到用户的自定义字段中；
 4. 之后你可以 Use Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。
 
 ## Use 嵌入登录组件
@@ -92,5 +92,5 @@ authing.wxqrcode.startScanning("domId", {
 });
 ```
 
-3. 用户完成登录注册之后，{{BRAND_NAME}} 将会将此数据写入到用户的自定义字段中；
+3. 用户完成登录注册之后，{{$localeConfig.brandName}} 将会将此数据写入到用户的自定义字段中；
 4. 之后你可以 Use Authing 提供的 SDK 管理用户的自定义字段，详情请见 [SDK - 管理自定义数据](/reference/sdk-for-node/management/UsersManagementClient.md#获取自定义数据)。

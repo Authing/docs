@@ -1,5 +1,15 @@
-你可以在控制台的 **用户管理** - **组织机构** 中手动创建组织机构：
+你可以在控制台的 **用户管理->组织机构** 中手动创建组织机构：
 
-![](~@imagesZhCn/guides/org/Xnip2021-02-24_19-52-07.png)
+<img src="../../images/add-department-old.png" style="display:block;margin: 0 auto;">
 
-输入组织机构名称、组织机构代码（必须是唯一的合法的英文标志符）、组织机构描述信息即可。
+::: img-description
+添加子部门-旧版本
+:::
+
+<img src="../../images/add-department-new.png" style="display:block;margin: 0 auto;">
+
+::: img-description
+添加子部门-新版本
+:::
+
+输入部门名称、部门标识符（旧版本）/ 部门 Code（新版本）（必须是唯一的合法的英文标志符）、部门描述信息即可。
