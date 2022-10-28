@@ -24,7 +24,7 @@ To use your organization and users for SAML2 authentication, you need to enable 
 In the "SAML2 Identity Provider" card, turn on the Enable SAML2 Provider switch and fill in the **default ACS address** and **settings** information. Then click “Save”. The specific ACS address will be provided by the SAML SP, and the specific setting items need to be configured according to the requirements of the SAML SP.
 
 ::: hint-info
-When you create a SAML2 IdP in Authing, some SPs may ask you to upload the IdP metadata first, then providing you with the corresponding configuration information. At this time, it is recommended to fill in an **arbitrary** ACS address and the default setting information. Then **download** the Authing IdP **metadata** and upload it to the SP. Then **modify** the ACS address and setting information to the correct content obtained from the SP.
+When you create a SAML2 IdP in Authing, some SPs may ask you to upload the IdP Metadata first, then providing you with the corresponding configuration information. At this time, it is recommended to fill in an **arbitrary** ACS address and the default setting information. Then **download** the Authing IdP **Metadata** and upload it to the SP. Then **modify** the ACS address and setting information to the correct content obtained from the SP.
 :::
 
 ![](~@imagesZhCn/guides/federation/saml/1-3.png)

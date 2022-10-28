@@ -14,7 +14,7 @@ Webhook 允许你对用户注册、登录等行为进行监听，从而对其做
 
 ## 配置 Webhooks
 
-在 **扩展能力** - **Webhooks** 页面，可以管理你定义的 webhook：
+在 **自动化->Webhooks** 页面，可以管理你定义的 webhook：
 
 ![](~@imagesZhCn/webhooks/webhook-zh-01.png)
 点击添加 Webhook 按钮 可以创建新的 Webhook 订阅特定事件
@@ -29,12 +29,12 @@ Webhook 列表
 :::
 
 ![](~@imagesZhCn/webhooks/webhook-zh-04.png)
-创建成功后会进入 Webhook 列表页面
 
 ::: img-description
 配置 Webhook
 :::
 
+创建成功后会进入 Webhook 列表页面。
 ### 参数解释
 
 | 参数名称     | 参数解释                                                                                                                                 |
@@ -48,7 +48,7 @@ Webhook 列表
 
 ## 调试 Webhook
 
-刚创建好的 Hook 请求事件都为空，这时你可以点击「测试」触发一个「测试事件」：
+刚创建好的 Hook 请求事件都为空，这时你可以点击「调试」触发一个「测试事件」：
 
 ![](~@imagesZhCn/webhooks/webhook-zh-05.png)
 
