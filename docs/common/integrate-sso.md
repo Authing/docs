@@ -324,9 +324,7 @@ function App() {
         window.location.replace('/');
       });
     } else {
-      getLoginState({
-        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
-      })
+      getLoginState()
     }
   }, [])
 
@@ -407,9 +405,7 @@ export default {
     } else {
       console.log('normal')
 
-      this.getLoginState({
-        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
-      })
+      this.getLoginState()
     }
   },
   methods: {
@@ -511,9 +507,7 @@ export default defineComponent({
       } else {
         console.log('normal')
         
-        getLoginState({
-          ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
-        })
+        getLoginState()
       }
     })
 
@@ -580,9 +574,7 @@ export class AppComponent {
         window.location.replace('/')
       });
     } else {
-      this.getLoginState({
-        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
-      })
+      this.getLoginState()
     }
   }
 
