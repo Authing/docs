@@ -7,7 +7,7 @@
 使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
 
 ```swift
-func registerByEmail(email: String, password: String, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmail(email: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -38,7 +38,7 @@ AuthClient().registerByEmail(email: "test@example.com", password: "password") { 
 使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
-func registerByEmailCode(email: String, code: String, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmailCode(email: String, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -69,7 +69,7 @@ AuthClient().registerByEmailCode(email: "test@example.com", code: "1234") { code
 通过用户名注册帐号。用户名区分大小写且用户池内唯一。
 
 ```swift
-func registerByUserName(username: String, password: String, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByUserName(username: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -99,7 +99,7 @@ AuthClient().registerByUserName(username: "username", password: "strong") { code
 通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码。
 
 ```swift
-func registerByPhoneCode(phone: String, code: String, password: String, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByPhoneCode(phone: String, code: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -129,7 +129,7 @@ AuthClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "
 ## 邮箱登录
 
 ```swift
-func loginByEmail(email: String, code: String, _ autoRegister: Bool = false, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByEmail(email: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -158,7 +158,7 @@ AuthClient().loginByEmail(email: "test@example.com", code: "1234") { code, messa
 ## 帐号密码登录
 
 ```swift
-func loginByAccount(account: String, password: String, _ autoRegister: Bool = false, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByAccount(account: String, password: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -189,7 +189,7 @@ AuthClient().loginByAccount(account: "account", password: "strong") { code, mess
 通过短信验证码登录，需要先调用 [发送短信验证码](#发送短信验证码) 接口。
 
 ```swift
-func loginByPhoneCode(phone: String, code: String, _ autoRegister: Bool = false, _ context: NSDictionary? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByPhoneCode(phone: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
