@@ -215,7 +215,7 @@ $name = 'new name';
 
 $updates = (new UpdateUserInput())->withEmail($email)->withUsername($name);
 $res = $userManageClient->update(
-    'USERID',
+    '60b4a136d9xxxxcc3d87e55a',
     $updates
 );
 ```
@@ -292,7 +292,7 @@ UsersManagementClient->detail(string $userId)
 #### 示例
 
 ```php
-$userManageClient->detail("USERID");
+$userManageClient->detail("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -368,7 +368,7 @@ UsersManagementClient->getUdfValue(string $userId)
 #### 示例
 
 ```php
-$userManageClient->getUdfValue("USERID");
+$userManageClient->getUdfValue("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -445,7 +445,7 @@ UsersManagementClient->setUdfValue(string $userId, array $data)
 #### 示例
 
 ```php
-$userManageClient->setUdfValue("USERID", [
+$userManageClient->setUdfValue("60b4a136d9xxxxcc3d87e55a", [
     'school' => '华中科技大学',
     'age' => 20,
 ]);
@@ -596,7 +596,7 @@ UsersManagementClient->removeUdfValue(string $userId, string $key)
 #### 示例
 
 ```php
-$userManageClient->removeUdfValue('USERID', 'school');
+$userManageClient->removeUdfValue('60b4a136d9xxxxcc3d87e55a', 'school');
 ```
 
 #### 示例数据
@@ -618,7 +618,7 @@ UsersManagementClient->delete(string $userId)
 #### 示例
 
 ```php
-$userManageClient->delete("USERID");
+$userManageClient->delete("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -1255,7 +1255,7 @@ UsersManagementClient->listGroups(string $userId)
 #### 示例
 
 ```php
-$userManageClient->listGroups("USERID");
+$userManageClient->listGroups("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -1290,7 +1290,7 @@ UsersManagementClient->listOrgs(string $userId)
 #### 示例
 
 ```php
-$userManageClient->listOrgs("USERID");
+$userManageClient->listOrgs("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -1405,7 +1405,7 @@ UsersManagementClient->listDepartment(string $userId)
 #### 示例
 
 ```php
-$userManageClient->listDepartment("USERID");
+$userManageClient->listDepartment("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -1517,7 +1517,7 @@ UsersManagementClient->addGroup(string $userId, string $group)
 #### 示例
 
 ```php
-$userManageClient->addGroup("USERID", "GROUP_CODE");
+$userManageClient->addGroup("60b4a136d9xxxxcc3d87e55a", "GROUP_CODE");
 ```
 
 
@@ -1544,7 +1544,7 @@ UsersManagementClient->removeGroup(string $userId, string $group)
 #### 示例
 
 ```php
-$userManageClient->removeGroup("USERID", "GROUP_CODE");
+$userManageClient->removeGroup("60b4a136d9xxxxcc3d87e55a", "GROUP_CODE");
 ```
 
 #### 示例数据
@@ -1569,7 +1569,7 @@ UsersManagementClient->listRoles(string $userId, string $namespace = '')
 #### 示例
 
 ```php
-$userManageClient->listRoles("USERID");
+$userManageClient->listRoles("60b4a136d9xxxxcc3d87e55a");
 ```
 
 #### 示例数据
@@ -1666,7 +1666,7 @@ UsersManagementClient->hasRole(string $userId, string $roleCode, string $namespa
 ```php
 $namespace = 'NAMESPACE_CODE';
 $roleCode = 'ROLECODE';
-$userManageClient->hasRole('USERID', $roleCode, $namespace);
+$userManageClient->hasRole('60b4a136d9xxxxcc3d87e55a', $roleCode, $namespace);
 ```
 
 #### 示例数据
@@ -1697,7 +1697,7 @@ UsersManagementClient->listAuthorizedResources(string $userId, string $namespace
 ```php
 $userManagementClient = $managementClient->users();
 
-$res = $userManageClient->listAuthorizedResources('USERID', "NAMESPACE_CODE");
+$res = $userManageClient->listAuthorizedResources('60b4a136d9xxxxcc3d87e55a', "NAMESPACE_CODE");
 ```
 
 #### 示例数据

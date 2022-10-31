@@ -197,7 +197,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 **Example**
 
 ```swift
-OIDCClient().registerByPhoneCode(phone: "13012345678", code: "1234", password: "strong") { code, message, userInfo in
+OIDCClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "strong") { code, message, userInfo in
     if (code == 200) {
         // userInfo
     }

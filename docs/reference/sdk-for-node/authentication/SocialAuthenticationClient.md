@@ -9,7 +9,7 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 await authenticationClient.social.authorize('github', {
@@ -42,7 +42,7 @@ SocialAuthenticationClient().authorize(provider, options)
 // 使用 GitHub 登录
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -63,7 +63,7 @@ await authenticationClient.social.authorize('github', {
 // 使用新建浏览器 tab 的形式打开社会化登录页面
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

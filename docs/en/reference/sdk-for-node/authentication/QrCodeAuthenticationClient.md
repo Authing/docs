@@ -9,7 +9,7 @@ Use APP QR code scan to login:
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 authenticationClient.qrcode.startScanning() # begin to login
@@ -80,7 +80,7 @@ QrCodeAuthenticationClient().geneCode()
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 const { url, random } = await authenticationClient.wxqrcode.geneCode()
@@ -107,7 +107,7 @@ QrCodeAuthenticationClient().checkStatus(random)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 const { random, status, ticket, userInfo } = await authenticationClient.wxqrcode.checkStatus('RANDOM')
@@ -134,7 +134,7 @@ QrCodeAuthenticationClient().exchangeUserInfo(ticket)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 const user = await authenticationClient.wxqrcode.exchangeUserInfo('TICKET')

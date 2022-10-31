@@ -9,7 +9,7 @@ Running a corporate identity source login authorization request:
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk'
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 await authenticationClient.enterprise.authorize('oidc', 'xxxx', {
@@ -42,7 +42,7 @@ EnterpriseAuthenticationClient().authorize(provider, identifier, options)
 // Log in with SAML service provider
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -63,7 +63,7 @@ await authenticationClient.enterprise.authorize('saml', 'xxxx', {
 // Use the form of the new browser tab open source enterprise identity login page
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

@@ -61,7 +61,7 @@ Initialization of `AuthenticationClient` needs `AppId`：
 import { AuthenticationClient } from "authing-js-sdk";
 
 const authing = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 ```
@@ -102,7 +102,7 @@ Example:
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 
@@ -257,7 +257,7 @@ The **privatization deployment** scenario needs to specify the GraphQL endpoint 
 import { AuthenticationClient, ManagementClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   host: "https://core.you-authing-service.com"
 });
 

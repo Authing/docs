@@ -106,7 +106,7 @@ namespace Example
       "updatedAt": "2022-07-03T02:20:30.000Z",
       "status": "Activated",
       "email": "test@example.com",
-      "phone": "176xxxx6754",
+      "phone": "188xxxx8888",
       "phoneCountryCode": "+86",
       "username": "bob",
       "name": "张三",
@@ -166,7 +166,7 @@ namespace Example
 | updatedAt | string | 是 | 账号更新时间。 示例值： `2022-07-03T02:20:30.000Z`  |
 | status | string | 是 | 账户当前状态。 枚举值：`Suspended`,`Resigned`,`Activated`,`Archived`  |
 | email | string | 否 | 邮箱。 示例值： `test@example.com`  |
-| phone | string | 否 | 手机号。 示例值： `176xxxx6754`  |
+| phone | string | 否 | 手机号。 示例值： `188xxxx8888`  |
 | phoneCountryCode | string | 否 | 手机区号。 示例值： `+86`  |
 | username | string | 否 | 用户名，用户池内唯一。 示例值： `bob`  |
 | name | string | 否 | 用户真实名称，不具备唯一性。 示例值： `张三`  |

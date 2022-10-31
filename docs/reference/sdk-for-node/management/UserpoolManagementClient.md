@@ -82,7 +82,7 @@ const userpool = await managementClient.userpool.update({
 - `Promise<UserPool>`
 
 ## 获取环境变量列表
-> 获取用户池环境变量列表。用户池配置的环境变量可以在 pipeline 场景下使用，详情请见：https://docs.authing.co/extensibility/pipeline/env.html
+> 获取用户池环境变量列表。用户池配置的环境变量可以在 pipeline 场景下使用，详情请见：https://docs.authing.cn/v2/guides/pipeline/env.html
 
 ```js
 UserPoolManagementClient().listEnv()
@@ -117,7 +117,7 @@ UserPoolManagementClient().addEnv(key, value)
 const envList = await managementClient.userpool.addEnv(
   "LARK_WEBHOOK",
   "xxxxxxx"
-); // 添加一个飞书群机器人 webhook 地址，之后可以在 pipeline 函数中使用（详细请见: https://docs.authing.co/extensibility/pipeline/usage.html）
+); // 添加一个飞书群机器人 webhook 地址，之后可以在 pipeline 函数中使用（详细请见: https://docs.authing.cn/v2/guides/pipeline/）
 ```
 
 #### 返回值

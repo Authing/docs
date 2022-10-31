@@ -219,7 +219,7 @@ public void registerByPhoneCode(String phoneCountryCode, String phone, String co
 **示例**
 
 ```java
-new OIDCClient().registerByPhoneCode("+86", "13012345678", "1234", "strong", (code, message, userInfo)->{
+new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -306,7 +306,7 @@ public void loginByPhoneCode(String phoneCountryCode, String phone, String code,
 **示例**
 
 ```java
-new OIDCClient().loginByPhoneCode("+86", "13012345678", "1234", (code, message, userInfo)->{
+new OIDCClient().loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }

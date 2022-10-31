@@ -172,7 +172,7 @@ $profile = new RegisterProfile();
 $profile->nickname = 'Nick';
 $profile->company = '字节跳动';
 $authenticationClient->registerByPhoneCode(
-  '176xxxx6754',
+  '188xxxx8888',
   '1234',
   null,
   $profile,
@@ -183,7 +183,7 @@ $authenticationClient->registerByPhoneCode(
 
 ```php
 $authenticationClient->registerByPhoneCode(
-  '176xxxx6754',
+  '188xxxx8888',
   '1234',
   null,
   null,

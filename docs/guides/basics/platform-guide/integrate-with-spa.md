@@ -63,7 +63,7 @@ ReactDOM.render(<App />, root)
 import { initAuthClient } from '@authing/react-ui-components'
 // 在项目入口文件中初始化 AuthenticationClient
 initAuthClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
 })
 ```
 
@@ -88,7 +88,7 @@ export default LogoutButton
 import { initAuthClient } from '@authing/react-ui-components'
 // 在项目入口文件中初始化 AuthenticationClient
 initAuthClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
 })
 ```
 

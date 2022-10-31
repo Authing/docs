@@ -4,7 +4,7 @@
 
 
 ```javascript
-authenticationClient.registerByPhoneCode("176xxxx6754", "1234");
+authenticationClient.registerByPhoneCode("188xxxx8888", "1234");
 
 // 国外号码
 authenticationClient.registerByPhoneCode(
@@ -22,7 +22,7 @@ authenticationClient.registerByPhoneCode(
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd",
   {

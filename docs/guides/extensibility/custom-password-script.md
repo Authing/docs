@@ -19,9 +19,11 @@ meta:
 
 ## 配置步骤
 
-进入用户池，依次点击**扩展能力** -&gt; **自定义密码加密** ，如下图所示：
+路径：**安全设置->密码安全->自定义密码加密方法**
 
-![](~@imagesZhCn/guides/migrations/1616578690192.jpg)
+如下图所示：
+
+<img src="./images/1616578690192.png" style="display:block;margin: 0 auto;">
 
 ::: img-description
 自定义密码加密方法
@@ -29,7 +31,7 @@ meta:
 
 ### 下载模版
 
-点击页面中的「下载模版」下载 Node.js 代码模版，模版代码如下所示：
+点击页面中的 [下载模版](https://console.authing.cn/console/62c6aac0e65730661e1c5f17/safety-management/password?password_policy=custom_password) 下载 Node.js 代码模版，模版代码如下所示：
 
 ```js
 var getRawBody = require('raw-body');
@@ -115,7 +117,7 @@ module.exports.validate = function(request, response, context) {
 
 ### 编写代码
 
-你需要在 `encryptPassword` 函数中编写相应的密码加密方法，以及在 `comparePassword` 函数中编写相应的验证密码加密方法。
+你需要在 `encryptPassword` 函数中编写相应的密码加密方法，以及在 `vlidatePassword` 函数中编写相应的验证密码加密方法。
 
 若开发者需要引入第三方 NPM 包，请直接使用 NPM 直接安装。
 

@@ -18,7 +18,7 @@ downloadDemo:
 
 ## 配置 Authing
 
-你需要先在 Authing 创建一个应用。进入[**控制台**](https://console.authing.cn) > **应用**，点击右上角的「添加应用」。
+你需要先在 Authing 创建一个应用。进入[**控制台**](https://console.authing.cn) > **应用**，点击「添加应用」。
 
 ![](~@imagesZhCn/quickstarts/create-app.png)
 

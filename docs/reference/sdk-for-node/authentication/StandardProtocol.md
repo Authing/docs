@@ -9,8 +9,8 @@
 ```javascript
 import { AuthenticationClient } from 'authing-js-sdk';
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'oidc',
 });
@@ -49,8 +49,8 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
@@ -67,7 +67,7 @@ AuthenticationClient().buildAuthorizeUrl(options)
 #### 参数
 
 - `options` \<object\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
-- `options.scope` \<string\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
+- `options.scope` \<string\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，完整的 scope 列表请见：[OIDC Scope 字段及含义](/concepts/oidc-common-questions.html#scope-参数对应的用户信息)；OAuth 2.0 协议默认为 `user`。
 - `options.nonce` \<string\> 随机字符串，选填，默认自动生成。
 - `options.state` \<string\> 随机字符串，选填，默认自动生成。
 - `options.responseMode` \<string\> 响应类型，选填，可选值为 `query`、`fragment`、`form_post`；默认为 `query`，即通过浏览器重定向发送 code 到回调地址。
@@ -81,7 +81,7 @@ AuthenticationClient().buildAuthorizeUrl(options)
 ```javascript
 // 拼接 OIDC 授权链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
@@ -96,7 +96,7 @@ let codeChallengeDigest = client.getCodeChallengeDigest({ codeChallenge, method:
 let url2 = client.buildAuthorizeUrl({ codeChallenge: codeChallengeDigest, codeChallengeMethod: 'S256' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/oidc/auth?nonce=5485323897342262&state=7400704296715694&scope=openid+profile+offline_access&client_id=5f17a529f64fb009b794a2ff&response_mode=query&redirect_uri=https%3A%2F%2Fbaidu.com&response_type=code&prompt=consent
@@ -120,8 +120,8 @@ AuthenticationClient().getAccessTokenByCode(code, options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
@@ -131,7 +131,7 @@ let res2 = await authenticationClient.getAccessTokenByCode('授权码 code', {
 });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -169,15 +169,15 @@ AuthenticationClient().getUserInfoByAccessToken('access_token')
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getUserInfoByAccessToken('Access token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -255,15 +255,15 @@ AuthenticationClient().getNewAccessTokenByRefreshToken(refreshToken)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getNewAccessTokenByRefreshToken('Access token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -292,29 +292,29 @@ AuthenticationClient().introspectToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.introspectToken('Access token 或 Refresh token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 Token 合法时返回：
 
 ```json
 {
-  "active": true,
+  "active": true, // 是否有效
   "sub": "60097f4d5bc08f75da104d18", // subject 的缩写，为用户 ID
-  "client_id": "60097391b1358c17c5fb0f4e",
-  "exp": 1612445888,
-  "iat": 1611236288,
-  "iss": "https://core.littleimp.cn/oidc",
+  "client_id": "60097391b1358c17c5fb0f4e", // 为 Authing 应用 ID
+  "exp": 1612445888, // Token 到期时间戳，单位为秒
+  "iat": 1611236288, // Token 签发时间戳，单位为秒
+  "iss": "https://example.authing.cn/oidc", // OIDC Issuer
   "jti": "TV4J0gAbe4KR4-8CtYcOa",
-  "scope": "openid profile email phone offline_access",
-  "token_type": "Bearer"
+  "scope": "openid profile email phone offline_access", // 此 token 对应的 scope，完整的 scope 列表请见：https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF
+  "token_type": "Bearer" // Token 类型，默认为 Bearer
 }
 ```
 
@@ -322,13 +322,14 @@ Token 不合法时返回：
 
 ```json
 {
-  "active": false
+  "active": false // 是否有效
 }
 ```
 
 检验过程失败会抛出错误。
 
 ### 在线检验 Id Token 或 Access Token 的合法性
+
 >通过 Authing 提供的在线接口验证 Id token 或 Access token。会产生网络请求。
 
 ```js
@@ -345,12 +346,12 @@ AuthenticationClient().validateToken(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
 });
 let res = await authing.validateToken({ idToken: 'ID Token' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 id_token 验证合法时返回：
 
@@ -434,15 +435,15 @@ AuthenticationClient().revokeToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.revokeToken('Access token 或 Refresh token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 撤回成功时返回 true。
 
@@ -470,7 +471,7 @@ AuthenticationClient().buildLogoutUrl(options)
 ```javascript
 // 拼接前端万能登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
@@ -482,8 +483,8 @@ let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn
 ```js
 // 拼接符合 OIDC 协议标准的登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
   protocol: 'oidc',
@@ -510,14 +511,14 @@ AuthenticationClient().getAccessTokenByClientCredentials(scope, options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getAccessTokenByClientCredentials('email openid profile phone', { accessKey: '编程访问账号 AK', secretKey: '编程访问账号 SK' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -542,7 +543,7 @@ AuthenticationClient().generateCodeChallenge()
 let codeChallenge = client.generateCodeChallenge()
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```
 VrpGRU_3FQ5au1TqCvzeh1nTij7HkcnpP1qWzJMGX_Y
@@ -571,7 +572,7 @@ let codeChallenge = client.generateCodeChallenge()
 let codeChallengeDigest = client.getCodeChallengeDigest({ codeChallenge, method: 'S256' })
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```
 Bu6RP796BBiAwGwdUpHpKfhmQqahszBcGep8qT31XOy
@@ -598,8 +599,8 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
   protocol: 'oauth',
@@ -627,8 +628,8 @@ AuthenticationClient().buildAuthorizeUrl(options)
 ```javascript
 // 拼接 OAuth 2.0 授权链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
   protocol: 'oauth',
@@ -636,7 +637,7 @@ const authenticationClient = new AuthenticationClient({
 let url = authenticationClient.buildAuthorizeUrl({ scope: 'user' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/oauth/auth?state=7400704296715694&scope=user&client_id=5f17a529f64fb009b794a2ff&redirect_uri=https%3A%2F%2Fbaidu.com&response_type=code
@@ -658,15 +659,15 @@ AuthenticationClient().getAccessTokenByCode(code)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getAccessTokenByCode('授权码 code');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -703,15 +704,15 @@ AuthenticationClient().getUserInfoByAccessToken('access_token')
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getUserInfoByAccessToken('Access token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -790,15 +791,15 @@ AuthenticationClient().getNewAccessTokenByRefreshToken(refreshToken)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.getNewAccessTokenByRefreshToken('Access token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -826,15 +827,15 @@ AuthenticationClient().introspectToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.introspectToken('Access token 或 Refresh token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 Token 合法时返回：
 
@@ -878,15 +879,15 @@ AuthenticationClient().revokeToken(token)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
-  secret: '应用密钥',
+  appId: 'AUTHING_APP_ID',
+  secret: 'AUTHING_APP_SECRET',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
 });
 let res = await authenticationClient.revokeToken('Access token 或 Refresh token');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 撤回成功时返回 true。
 
@@ -910,7 +911,7 @@ AuthenticationClient().buildLogoutUrl(options)
 ```javascript
 // 拼接前端万能登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
   protocol: 'oauth',
@@ -934,7 +935,7 @@ let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'saml',
 });
@@ -952,14 +953,14 @@ AuthenticationClient().buildAuthorizeUrl(options)
 ```javascript
 // 拼接 SAML2 登录链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'saml',
 });
 let url = authenticationClient.buildAuthorizeUrl();
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/api/v2/saml-idp/5f17a529f64fb009b794a2ff
@@ -982,7 +983,7 @@ AuthenticationClient().buildLogoutUrl(options)
 ```javascript
 // 拼接前端万能登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   redirectUri: '业务回调地址',
   protocol: 'saml',
@@ -990,7 +991,7 @@ const authenticationClient = new AuthenticationClient({
 let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/login/profile/logout?redirect_uri=https://authing.cn
@@ -1012,7 +1013,7 @@ CAS 是 Central Authentication Service 的缩写，中央认证服务，一种�
 
 ```js
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'cas',
 });
@@ -1036,14 +1037,14 @@ AuthenticationClient().buildAuthorizeUrl(options)
 ```js
 // 拼接 CAS 登录链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'cas',
 });
 let url = authenticationClient.buildAuthorizeUrl({ service: 'service 地址' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/cas-idp/5f17a529f64fb009b794a2ff/login?service=https://example.com
@@ -1066,13 +1067,13 @@ AuthenticationClient().validateTicketV1(ticket, service)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 let res = await authenticationClient.validateTicketV1('ticket 内容', 'service 地址');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ticket 合法时返回：
 
@@ -1109,13 +1110,13 @@ AuthenticationClient().validateTicketV2(ticket, service, format)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
 });
 let res = await authenticationClient.validateTicketV2('ticket 内容', 'service 地址');
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ticket 合法时返回，JSON 格式：
 
@@ -1226,14 +1227,14 @@ AuthenticationClient().buildLogoutUrl(options)
 ```javascript
 // 拼接 cas 登出链接
 const authenticationClient = new AuthenticationClient({
-  appId: '应用 ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://{YOUR_DOMAIN}.authing.cn',
   protocol: 'cas',
 });
 let url = authenticationClient.buildLogoutUrl({ redirectUri: 'https://authing.cn' });
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```http
 https://oidc1.authing.cn/cas-idp/5f17a529f64fb009b794a2ff/logout?service=https://example.com

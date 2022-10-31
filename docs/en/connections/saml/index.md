@@ -47,7 +47,7 @@ Enable SAML2 identity provider in Authing to provide **identity assertion** for 
 | 2.3.8  | SAML Request Digest Algorithm | Defaults is sha256.                          |
 | 2.3.9  | SAML Request Protocol Binding | Default is HTTP-Redirect.              |
 | 2.3.10 | ACS URL           | Assert consumption address.                    |
-| 2.3.11 | metaData XML Url | The address of the SAML Identity Provider metadata. |
+| 2.3.11 | metaData XML Url | The address of the SAML Identity Provider Metadata. |
 | 2.3.12 | Login Mode | After enabling the "Login Only Mode", you can only log in to an existing account and cannot create a new account. Please choose carefully. |
 
 After the configuration is complete, click the "Save" button to complete the creation.

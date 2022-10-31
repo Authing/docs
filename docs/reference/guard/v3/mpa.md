@@ -62,7 +62,7 @@ npm install --save @authing/guard
 import { Guard } from '@authing/guard'
 
 const guard = new Guard({
-  appId: ''
+  appId: 'AUTHING_APP_ID'
 })
 ```
 
@@ -88,7 +88,7 @@ const guard = new Guard({
 
   <script>
     const guard = new GuardFactory.Guard({
-      appId: ''
+      appId: 'AUTHING_APP_ID'
     })
   </script>
 </body>
@@ -227,7 +227,7 @@ guard.checkLoginStatus().then(user => {
 
 <script>
   const guard = new GuardFactory.Guard({
-    appId: '',
+    appId: 'AUTHING_APP_ID',
     facePlugin: faceapi
   })
 </script>
