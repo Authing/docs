@@ -156,18 +156,21 @@ new OIDCClient().getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
 使用邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
 
 ```java
-public void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
+public void registerByEmail(String email, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
 * `email` 邮箱
 * `password` 明文密码
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().registerByEmail("test@example.com", "xxxxxx", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByEmail("test@example.com", "xxxxxx", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -186,18 +189,21 @@ new OIDCClient().registerByEmail("test@example.com", "xxxxxx", (code, message, u
 使用邮箱验证码注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false，需要先调用 [发送邮件](./../authentication/#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
-public void registerByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+public void registerByEmailCode(String email, String vCode, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
 * `email` 邮箱
 * `vCode` 验证码
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().registerByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByEmailCode("test@example.com", "1234", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -216,20 +222,23 @@ new OIDCClient().registerByEmailCode("test@example.com", "1234", (code, message,
 通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./../authentication/#发送短信验证码) 接口以获取短信验证码
 
 ```java
-public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
-* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 `+86`
 * `phone` 手机号
 * `code` 短信验证码
-* `password` 明文密码，如果没有可传 “” 或者 null
+* `password` 明文密码，如果没有可传 `“”` 或者 `null`
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -246,18 +255,22 @@ new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", (co
 ### 帐号密码登录
 
 ```java
-public void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
+public void loginByAccount(String account, String password, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
 * `account` 可以是手机号 / 邮箱 / 用户名
 * `password` 明文密码
+* `autoRegister` 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().loginByAccount("test", "xxxxxx", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByAccount("test", "xxxxxx", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -275,18 +288,22 @@ new OIDCClient().loginByAccount("test", "xxxxxx", (code, message, userInfo)->{
 通过邮箱验证码登录，需要先调用 [发送邮件](./../authentication/#发送邮件) 接口（场景值为 `VERIFY_CODE`）。
 
 ```java
-public void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+public void loginByEmailCode(String email, String code, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
 * `email` 邮箱
 * `code` 验证码
+* `autoRegister` 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().loginByEmailCode("test@example.com", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByEmailCode("test@example.com", "1234", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
@@ -304,19 +321,23 @@ new OIDCClient().loginByEmailCode("test@example.com", "1234", (code, message, us
 通过短信验证码登录，需要先调用 [发送短信验证码](./../authentication/#发送短信验证码) 接口。
 
 ```java
-public void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public void loginByPhoneCode(String phoneCountryCode, String phone, String code, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
-* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 +86
+* `phoneCountryCode` 电话国家码。可以为空，为空时默认为 `+86`
 * `phone` 手机号
 * `code` 短信验证码
+* `autoRegister` 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
 
 **示例**
 
 ```java
-new OIDCClient().loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByPhoneCode("+86", "188xxxx8888", "1234", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo：用户信息
     }
