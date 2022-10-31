@@ -10,8 +10,8 @@
       <PageSidebar />
     </template>
     <template v-else-if="!$frontmatter.noSidebar">
-      <div class="current-nav-text" v-if="currentNavText">
-        {{ currentNavText }}
+      <div class="current-nav-text" v-if="currentNav && currentNav.text">
+        {{ currentNav.text }}
       </div>
 
       <SidebarSearch
@@ -42,19 +42,19 @@ export default {
     NavLinks,
     GoOldVersion,
     PageSidebar,
-    SidebarSearch
+    SidebarSearch,
   },
 
   props: ["items"],
 
   data() {
     return {
-      dataIndex: ''
-    }
+      dataIndex: "",
+    };
   },
 
   computed: {
-    currentNavText() {
+    currentNav() {
       const path = this.$route.path;
       if (path.startsWith("/reference-new")) {
         return "";
@@ -65,9 +65,9 @@ export default {
         return "";
       }
 
-      const currNav = navLinks.find(item => path.startsWith(item.link));
+      const currNav = navLinks.find((item) => path.startsWith(item.link));
 
-      return currNav && currNav.text;
+      return currNav;
     },
 
     userNavLinks() {
@@ -76,7 +76,7 @@ export default {
 
     languageNavLinks() {
       return getLanguageNavLinks(this);
-    }
+    },
   },
   mounted() {
     const sidebar = this.$refs.sidebarRef;
@@ -87,124 +87,159 @@ export default {
     }
 
     if (activeItem) {
-      let parentNode = activeItem.parentNode
-      while(parentNode) {
-        if (parentNode.getAttribute('data-index')) {
-          this.dataIndex = parentNode.getAttribute('data-index')
-          parentNode = null
+      let parentNode = activeItem.parentNode;
+      while (parentNode) {
+        if (parentNode.getAttribute("data-index")) {
+          this.dataIndex = parentNode.getAttribute("data-index");
+          parentNode = null;
         } else {
-          parentNode = parentNode.parentNode
+          parentNode = parentNode.parentNode;
         }
       }
     }
-    this.$eventBus.$on('onChangeIndex', (index) => {
-      this.dataIndex = index || ''
-    })
+    this.$eventBus.$on("onChangeIndex", (index) => {
+      this.dataIndex = index || "";
+    });
   },
   methods: {
     getUserNavLinks,
     getLanguageNavLinks,
-  }
+  },
 };
 </script>
 
 <style lang="stylus">
-.sidebar
-  position sticky
-  max-height 'calc(%s - %s - %s)' % (100vh $navbarHeight $headerContentGutter)
-  top calc(3.6rem + 36px)
-  align-self flex-start
-  width 250px
-  overflow-y unset
-  .sidebar-search
-    width: 94%
-    .suggestions
-      li
+.sidebar {
+  position: sticky;
+  max-height: 'calc(%s - %s - %s)' % (100vh $navbarHeight $headerContentGutter);
+  top: calc(3.6rem + 36px);
+  align-self: flex-start;
+  width: 250px;
+  overflow-y: unset;
+
+  .sidebar-search {
+    width: 94%;
+
+    .suggestions {
+      li {
         padding: 16px;
-  .current-nav-text
-    margin-bottom: 16px
-    font-size: 20px
-    font-weight: 500
-    color: #1D2129
-    line-height: 32px
-
-  .old-version
-    display none
-
-  ul:not(.sidebar-group-items)
-    padding 0
-
-  ul
-    line-height 1
-    margin 0
-    list-style-type none
-
-  a
-    display inline-block
-
-  .nav-links
-    display none
-    border-bottom 1px solid $borderColor
-    padding 0.5rem 0 0.75rem 0
-
-    .nav-item, .repo-link
-      display block
-      line-height 26px
-      font-size 14px
-      padding 0.5rem 0 0.5rem 1.5rem
-
-  & > .sidebar-links
-    margin-top: 16px
-    margin-left -8px
-    overflow-y: scroll
-    max-height 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter)
-
-    & > li > a.sidebar-link
-      // font-size 14px
-  .depth-0 > ul > li
-    & > .sidebar-group > .sidebar-heading, & > .sidebar-link
-      // font-size: 14px
-      line-height 22px
-      padding 10px 1.5rem
-  & > .sidebar-links > li > a {
-    padding-left 1.5rem
+      }
+    }
   }
 
-@media (max-width: $MQMobile)
-  .sidebar
-    position fixed
-    top 0
-    left unset
-    right 0
-    max-height unset
-    height 100%
-    transform translateX(100%)
-    border-right none
-    border-left 1px solid #eee
+  .current-nav-text {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1D2129;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+  }
 
-    .sidebar-search
-      margin-left 1.5rem
-      width 82%
+  .old-version {
+    display: none;
+  }
 
-    .nav-links
-      display block
+  ul:not(.sidebar-group-items) {
+    padding: 0;
+  }
 
-      .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
-        top calc(1rem - 2px)
+  ul {
+    line-height: 1;
+    margin: 0;
+    list-style-type: none;
+  }
 
-    & > .sidebar-links
-      padding 0 0 1rem 1.5rem !important
-      margin-top 0
+  a {
+    display: inline-block;
+  }
 
-    .current-nav-text
-      padding 1rem 0 1rem 1.5rem
+  .nav-links {
+    display: none;
+    border-bottom: 1px solid $borderColor;
+    padding: 0.5rem 0 0.75rem 0;
 
-    .old-version
-      margin-top 1rem
-@media (max-width: $MQMobile)
-  .sidebar
-    overflow-y auto
-  .current-nav-text
-    padding-bottom 0 !important
-    margin-bottom 0.67rem !important
+    .nav-item, .repo-link {
+      display: block;
+      line-height: 26px;
+      font-size: 14px;
+      padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+  }
+
+  & > .sidebar-links {
+    margin-top: 16px;
+    margin-left: -8px;
+    overflow-y: scroll;
+    max-height: 'calc(%s - %s - %s - 100px)' % (100vh $navbarHeight $headerContentGutter);
+
+    & > li > a.sidebar-link {
+      // font-size 14px
+    }
+  }
+
+  .depth-0 > ul > li {
+    & > .sidebar-group > .sidebar-heading, & > .sidebar-link {
+      // font-size: 14px
+      line-height: 22px;
+      padding: 10px 1.5rem;
+    }
+  }
+
+  & > .sidebar-links > li > a {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: unset;
+    right: 0;
+    max-height: unset;
+    height: 100%;
+    transform: translateX(100%);
+    border-right: none;
+    border-left: 1px solid #eee;
+
+    .sidebar-search {
+      margin-left: 1.5rem;
+      width: 82%;
+    }
+
+    .nav-links {
+      display: block;
+
+      .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after {
+        top: calc(1rem - 2px);
+      }
+    }
+
+    & > .sidebar-links {
+      padding: 0 0 1rem 1.5rem !important;
+      margin-top: 0;
+    }
+
+    .current-nav-text {
+      padding: 1rem 0 1rem 1.5rem;
+    }
+
+    .old-version {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .sidebar {
+    overflow-y: auto;
+  }
+
+  .current-nav-text {
+    padding-bottom: 0 !important;
+    margin-bottom: 0.67rem !important;
+  }
+}
 </style>

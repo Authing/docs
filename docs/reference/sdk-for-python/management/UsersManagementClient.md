@@ -93,7 +93,7 @@ user = management_client.users.create(
   userInfo={
     'username': 'bob',
     'password': '123456',
-    'phone': '176xxxx6754', # 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
+    'phone': '188xxxx8888', # 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
     'nickname': 'Nick',
     'loginsCount': 2, # 原有用户系统记录的用户登录次数
     'signedUpd': '2020-10-15T17:55:37+08:00', # 原有用户系统记录的用户注册时间
@@ -228,7 +228,7 @@ user = management_client.users.update(
   id='xxxxxxx'
   updates={
     'nickname': 'Nick',
-    'phone': '176xxxx6754', # 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
+    'phone': '188xxxx8888', # 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
     'tokenExpiredAt': '2020-10-15T17:55:37+08:00',
 })
 ```
@@ -322,7 +322,7 @@ def detail(self, user_id, with_custom_data=False)
 
 ```python
 data = management_client.users.detail(
-  user_id="USERID"
+  user_id="60b4a136d9xxxxcc3d87e55a"
 )
 ```
 
@@ -330,7 +330,7 @@ data = management_client.users.detail(
 
 ```python
 data = management_client.users.detail(
-  user_id="USERID",
+  user_id="60b4a136d9xxxxcc3d87e55a",
   with_custom_data=True
 )
 ```
@@ -611,7 +611,7 @@ data = management_client.users.batch_get(
 
 ```python
 data = management_client.users.batch_get(
-  identifiers=["176xxxx6754", "158xxxx4186"],
+  identifiers=["188xxxx8888", "158xxxx4186"],
   query_field='phone'
 )
 ```
@@ -620,7 +620,7 @@ data = management_client.users.batch_get(
 
 ```python
 data = management_client.users.batch_get(
-  identifiers=["176xxxx6754", "158xxxx4186"],
+  identifiers=["188xxxx8888", "158xxxx4186"],
   query_field='phone',
   with_custom_data=True
 )
@@ -834,7 +834,7 @@ exists = management_client.users.exists(
 
 ```python
 exists = management_client.users.exists(
-  phone='176xxxx6754'
+  phone='188xxxx8888'
 )
 ```
 
@@ -883,7 +883,7 @@ user = management_client.users.find(
 
 ```python
 user = management_client.users.find(
-  phone='176xxxx6754'
+  phone='188xxxx8888'
 )
 ```
 
@@ -891,7 +891,7 @@ user = management_client.users.find(
 
 ```python
 user = management_client.users.find(
-  phone='176xxxx6754',
+  phone='188xxxx8888',
   with_custom_data=True
 )
 ```
@@ -1303,7 +1303,7 @@ def add_roles(self, userId, roles, namespace=None)
 
 ```python
 data = management_client.users.add_roles(
-   userId='USERID',
+   userId='60b4a136d9xxxxcc3d87e55a',
    roles=['ROLE1', 'ROLE2']
 )
 totalCount = data['totalCount'] # 最新的总数
@@ -1327,7 +1327,7 @@ def remove_roles(self, userId, roles, namespace=None)
 
 ```python
 data = management_client.users.remove_roles(
-   userId='USERID',
+   userId='60b4a136d9xxxxcc3d87e55a',
    roles=['ROLE1', 'ROLE2']
 )
 totalCount = data['totalCount'] # 最新的总数
@@ -1352,7 +1352,7 @@ def has_role(self, user_id, role_code, namespace=None)
 
 ```python
 has_role = management_client.users.has_role(
-  user_id='USERID',
+  user_id='60b4a136d9xxxxcc3d87e55a',
   role_code='roleCode',
   namespace='default'
 )

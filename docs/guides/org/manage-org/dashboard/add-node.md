@@ -1,7 +1,7 @@
-你可以点击其中一个节点，选择 **添加子节点**:
+你可以点击其中一个部门，选择 **添加子部门**:
 
-![](https://cdn.authing.cn/blog/20201020144542.png)
+<img src="../../images/20201020144542.png" style="display:block;margin: 0 auto;">
 
-输入节点名称和唯一标志（可选）即可：
+输入 **部门名称** 和 **部门 Code**（可选）即可：
 
-<img src="https://cdn.authing.cn/blog/20201020144628.png" height="300" style="display:block;margin: 0 auto;">
+<img src="../../images/20201020144628.png" style="display:block;margin: 0 auto;">

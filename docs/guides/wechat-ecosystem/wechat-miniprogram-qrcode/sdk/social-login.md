@@ -8,7 +8,7 @@
 import { AuthenticationClient } from 'authing-js-sdk'
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

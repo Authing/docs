@@ -35,9 +35,9 @@ If you want to import a complete organization tree, use the importByJson method.
 
 ```php
 $orgManagementClient->create(
-  '北京非凡科技',
-  '北京非凡科技有限公司',
-  'feifan'
+  '北京某某公司',
+  '北京某某公司有限公司',
+  'example'
 );
 ```
 
@@ -279,8 +279,8 @@ Import organization through a JSON tree structure
 
 ```php
 $tree = (object)[
-  'name'=> '北京非凡科技有限公司',
-  'code'=> 'feifan',
+  'name'=> '北京某某公司有限公司',
+  'code'=> 'example',
   'children': [
     (object)[
       'code'=> 'operation',

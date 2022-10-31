@@ -1,4 +1,4 @@
-在控制台组织机构管理页面，点击右上角的 **导入组织机构** - **从 Excel 导入** 按钮：
+在控制台组织机构管理页面，点击 **导入组织机构** - **从 Excel 导入** 按钮：
 
 ![](~@imagesZhCn/guides/org/import-from-excel.jpg)
 

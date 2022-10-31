@@ -15,6 +15,11 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 现在开始跟随引导将 Authing Guard 接入到你的项目中吧！
 
+|条目|说明|
+|-----|----|
+|最新版本|5.0.6|
+|仓库地址|https://github.com/authing/Guard|
+
 ## 第一步：在 Authing 控制台创建应用
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
@@ -3689,7 +3694,7 @@ Guard 可展示的界面
 | error                | Error 页面            |
 | mfa                  | MFA                   |
 | forgetPassword       | 重置密码              |
-| forcedPasswordReset  | 登陆安全策略 修改密码 |
+| forcedPasswordReset  | 登录安全策略 修改密码 |
 | noticePasswordReset  | 提示 修改密码         |
 | firstLoginPassword   | 首次登录 修改密码     |
 | unsafePasswordReset  | 密码强度不符 修改密码 |

@@ -9,7 +9,7 @@
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 authenticationClient.wxqrcode.startScanning() // 开始扫码登录
@@ -20,7 +20,7 @@ authenticationClient.wxqrcode.startScanning() // 开始扫码登录
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 authenticationClient.qrcode.startScanning() // 开始扫码登录
@@ -31,7 +31,7 @@ authenticationClient.qrcode.startScanning() // 开始扫码登录
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk"
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 authenticationClient.wechatmpqrcode.startScanning() // 开始扫码登录
@@ -82,10 +82,18 @@ QrCodeAuthenticationClient().startScanning(domId, options)
 
 #### 示例
 
+HTML 示例：
+
+```html
+<!-- 创建一个 id 为 authing-qrcode-container 的 div 元素，用于挂载 Authing 扫码登录的二维码 -->
+<div id="authing-qrcode-container"></div>
+```
+
 - 小程序扫码登录
 
 ```javascript
-authenticationClient.wxqrcode.startScanning('DOM_ID', {
+// 在调用 startScanning 时传入指定的 DOM 元素 ID，这里以 id 为 authing-qrcode-container 的 DOM 元素为例
+authenticationClient.wxqrcode.startScanning('authing-qrcode-container', {
   customData: {
     source: 'google'
   },
@@ -102,7 +110,8 @@ authenticationClient.wxqrcode.startScanning('DOM_ID', {
 - APP 扫码登录
 
 ```javascript
-authenticationClient.qrcode.startScanning('DOM_ID', {
+// 在调用 startScanning 时传入指定的 DOM 元素 ID，这里以 id 为 authing-qrcode-container 的 DOM 元素为例
+authenticationClient.qrcode.startScanning('authing-qrcode-container', {
   customData: {
     source: 'google'
   },
@@ -133,7 +142,7 @@ QrCodeAuthenticationClient().geneCode(options)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
    appHost: 'https://xxx.authing.cn',
 })
 
@@ -171,7 +180,7 @@ QrCodeAuthenticationClient().checkStatus(random)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-   appId: "YOUR_APP_ID",
+   appId: "AUTHING_APP_ID",
 })
 const { random, status, ticket, userInfo } = await authenticationClient.wxqrcode.checkStatus('RANDOM')
 ```
@@ -194,7 +203,7 @@ QrCodeAuthenticationClient().exchangeUserInfo(ticket)
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -227,7 +236,8 @@ QrCodeAuthenticationClient().startPolling(random, options)
 #### 示例
 
 ```javascript
-authenticationClient.wxqrcode.startPolling('UNIQUE_ID', {
+// 调用 startPolling 方法时，传入二维码的唯一 ID
+authenticationClient.wxqrcode.startPolling('ramdom', {
   onSuccess: (userInfo, ticket) => {
     console.log(userInfo, ticket)
   },

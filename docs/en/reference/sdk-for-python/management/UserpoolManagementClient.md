@@ -67,7 +67,7 @@ UserPoolManagementClient().update(updates)
 
 UserPoolManagementClient().list_env()
 
-> Get the list of user pool environment variables. The environment variables configured by the user pool can be used in the pipeline scenario. For details, please see:https://docs.authing.co/extensibility/pipeline/env.html
+> Get the list of user pool environment variables. The environment variables configured by the user pool can be used in the pipeline scenario. For details, please see:https://docs.authing.cn/v2/guides/pipeline/env.html
 
 #### parameter
 

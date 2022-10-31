@@ -9,7 +9,7 @@ How to use it:
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://xxx.authing.cn"
 });
 authenticationClient.registerByEmail; // register by email
@@ -115,7 +115,7 @@ AuthenticationClient().registerByPhoneCode(phone, code, password, profile, optio
 
 ```javascript
 authenticationClient.registerByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd",
   {
@@ -128,7 +128,7 @@ authenticationClient.registerByPhoneCode(
 ```
 
 ```javascript
-authenticationClient.registerByPhoneCode("176xxxx6754", "1234");
+authenticationClient.registerByPhoneCode("188xxxx8888", "1234");
 ```
 
 #### Return value
@@ -172,7 +172,7 @@ AuthenticationClient().sendSmsCode(phone)
 #### Example
 
 ```javascript
-authenticationClient.sendSmsCode("176xxxx6754");
+authenticationClient.sendSmsCode("188xxxx8888");
 ```
 
 #### 返 Return value
@@ -270,7 +270,7 @@ AuthenticationClient().loginByPhoneCode(phone, code)
 #### Example
 
 ```javascript
-authenticationClient.loginByPhoneCode("176xxxx6754", "1234");
+authenticationClient.loginByPhoneCode("188xxxx8888", "1234");
 ```
 
 #### Return value
@@ -294,13 +294,13 @@ AuthenticationClient().loginByPhonePassword(phone, password, options)
 #### Example
 
 ```javascript
-authenticationClient.loginByPhonePassword("176xxxx6754", "passw0rd", {
+authenticationClient.loginByPhonePassword("188xxxx8888", "passw0rd", {
   captchaCode: "xj72"
 });
 ```
 
 ```javascript
-authenticationClient.loginByPhonePassword("176xxxx6754", "passw0rd");
+authenticationClient.loginByPhonePassword("188xxxx8888", "passw0rd");
 ```
 
 #### Return value
@@ -482,7 +482,7 @@ AuthenticationClient().resetPasswordByPhoneCode(phone, code, newPassword)
 
 ```javascript
 authenticationClient.resetPasswordByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd"
 );
@@ -611,11 +611,11 @@ AuthenticationClient().updatePhone(phone, phoneCode, oldPhone, oldPhoneCode)
 #### Example
 
 ```javascript
-authenticationClient.updatePhone("176xxxx6754", "1234"); // verify old phone number function disabled
+authenticationClient.updatePhone("188xxxx8888", "1234"); // verify old phone number function disabled
 ```
 
 ```javascript
-authenticationClient.updatePhone("176xxxx6754", "1234", "156xxxx9876", "1234"); // verify old phone number function enabled
+authenticationClient.updatePhone("188xxxx8888", "1234", "156xxxx9876", "1234"); // verify old phone number function enabled
 ```
 
 #### Return value
@@ -717,7 +717,7 @@ AuthenticationClient().bindPhone(phone, phoneCode)
 #### Example
 
 ```javascript
-authenticationClient.bindPhone("176xxxx6754", "1234");
+authenticationClient.bindPhone("188xxxx8888", "1234");
 ```
 
 #### Return value

@@ -439,7 +439,7 @@ def allow(self, resource, action, namespace, user_id=None)
 management_client.acl.allow(
     resource='books:123',
     action='books:edit',
-    userId='USERID',
+    userId='60b4a136d9xxxxcc3d87e55a',
     namespace='default'
 )
 ```
@@ -514,7 +514,7 @@ def is_allowed(self, user_id, action, resource, namespace)
 
 ```python
 is_allowed = management_client.acl.is_allowed(
-    userId='USERID',
+    userId='60b4a136d9xxxxcc3d87e55a',
     resource='books:*',
     action='books:edit',
     namespace='default'

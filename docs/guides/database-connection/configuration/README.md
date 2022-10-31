@@ -27,7 +27,7 @@ Authing 支持直接连接以下几种主流的数据库以及自定义 Web Serv
 开启自定义数据库后会立即生效，在你还没有编写自定义脚本之前，用户尝试登录会提示类似 `Please implement the Login script for this database connection` 的错误，这是从默认的脚本提示的错误，请前往修改脚本，或暂时关闭自定义数据库连接。
 :::
 
-登录 [Authing 控制台](https://console.authing.cn/console/userpool)，在 **连接身份源** - **自定义数据库** 页面，点击右上角的**开启**按钮：
+登录 [Authing 控制台](https://console.authing.cn/console/userpool)，在 **连接身份源** - **自定义数据库** 页面，点击 **开启**按钮：
 
 ![](https://cdn.authing.cn/img/20210111180702.png)
 

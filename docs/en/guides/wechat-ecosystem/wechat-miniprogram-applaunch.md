@@ -127,7 +127,7 @@ User agrees that the developer can use Ticket to exchange user information, Tick
   signedUp: "2020-02-27T05:30:55.875Z",
   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvMHBxRTZGYnI1TS1leFN1X1BlTF9zandONDRVIiwiaWQiOiI1ZTU3NTQwZjg0NjIyYWUyNjMyOTRhNDIiLCJjbGllbnRJZCI6IjVlNGNkZDA1NWRmM2RmNjVkYzU4Yjk3ZCJ9LCJpYXQiOjE1ODI3ODE2MDAsImV4cCI6MTU4NDA3NzYwMH0.pd7HJu5Ft8uytxIy4VgHdQiaAKuo96P_LcABFwM7OPI',
   tokenExpiredAt: "2020-03-13T05:33:20.000Z",
-  phone: '176xxxx6754'
+  phone: '188xxxx8888'
 }
 ```
 

@@ -35,7 +35,7 @@ const managementClient = new ManagementClient({
   secret: 'YOUR_USERPOOL_SECRET',
 })
 
-const principalInfo = await managementClient.principal.detail('xxxxxxxxxxxxx')
+const principalInfo = await managementClient.principal.detail('60b4a136d9xxxxcc3d87e55a')
 ```
 
 #### return value

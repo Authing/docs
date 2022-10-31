@@ -4,7 +4,7 @@ Use 手机号验证码重置密码：
 
 ```javascript
 authenticationClient.resetPasswordByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd"
 );

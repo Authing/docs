@@ -8,7 +8,7 @@ To implement WeChat applet scan code login, you only need to implement the follo
 import { AuthenticationClient } from "authing-js-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 
 const onScanningSuccess = async (userInfo: any, ticket: string) => {

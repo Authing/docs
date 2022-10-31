@@ -68,7 +68,7 @@ yarn add authing-js-sdk
 import { AuthenticationClient } from 'authing-js-sdk'
 
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'YOUR_APP_HOST', // https://YOUR_DOMAIN.authing.cn e.g.
 })
 ```
@@ -78,7 +78,7 @@ const authing = new AuthenticationClient({
 - `appId`: {{$localeConfig.brandName}} [应用 ID](/guides/faqs/get-app-id-and-secret.md)（必填）；
 - `appHost`: {{$localeConfig.brandName}} [应用地址](/guides/faqs/get-app-id-and-secret.md)（必填），格式为 `https://YOUR_DOMAIN.authing.cn`；
 - `token`: 用户的 [id_token](/concepts/id-token.md)（可选），你可以在前端 localStorage 中缓存用户 `id_token`，然后使用 `id_token` 初始化 SDK，从而实现记住登录的目的；
-- `timeout`: 请求超时时间（可选），位为毫秒，默认为 10000（10 秒）；
+- `timeout`: 请求超时时间（可选），单位为毫秒，默认为 10000（10 秒）；
 - `onError`: 错误处理函数（可选），你可以用其来全局捕捉 {{$localeConfig.brandName}} 客户端请求的所有异常。完整的错误代码请见[此文档](/reference/error-code.md)。函数定义为：
 
 ```js
@@ -125,7 +125,7 @@ axios
 
 ```javascript
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 
@@ -284,7 +284,7 @@ try {
 ```js
 import { message } from 'antd'
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://core.you-authing-service.com',
   onError: (code, msg: any) => {
     message.error(msg)
@@ -300,7 +300,7 @@ const authing = new AuthenticationClient({
 import { AuthenticationClient, ManagementClient } from 'authing-js-sdk'
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://your-app.you-authing-service.com',
   publicKey: 'YOUR_PUBLIC_KEY',
 })
