@@ -9,7 +9,7 @@ Sample code:
 ```javascript
 import { AuthenticationClient } from "authing-js-sdk";
 const authenticationClient = new AuthenticationClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
   appHost: "https://{YOUR_DOMAIN}.authing.cn"
 });
 
@@ -46,7 +46,7 @@ Get MFA certifiers
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.get_mfa_authenticators(mfa_token=tt['token'])
 ```
 
@@ -78,7 +78,7 @@ Request MFA QR code and key information
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 res = self.authentication.assosicate_mfa_authenticator(tt['token'])
 ```
 
@@ -110,7 +110,7 @@ Mensize MFA
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 res = authentication.delete_mfa_authenticator()
 ```
 
@@ -146,7 +146,7 @@ Confirm binding MFA
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.confirm_assosicate_mfa_authenticator(tt['token'])
 ```
 
@@ -167,7 +167,7 @@ Test secondary verification MFA password
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_totp_mfa("",tt['token'])
 ```
 
@@ -189,7 +189,7 @@ Test secondary verification MFA SMS verification code
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_app_sms_mfa("phone","11",tt['token'])
 ```
 
@@ -211,7 +211,7 @@ Test secondary verification MFA mailbox verification code
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_app_email_mfa("email","11",tt['token'])
 ```
 
@@ -233,7 +233,7 @@ Check if the phone number or mailbox has been bound
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.phone_or_email_bindable("email",tt['token'])
 ```
 
@@ -254,7 +254,7 @@ Test secondary verification MFA recovery code
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_totp_recovery_code("xxx",tt['token'])
 ```
 
@@ -276,7 +276,7 @@ Bind people through pictures URL
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.associate_face_by_url("url",otherUrl",tt['token'])
 ```
 
@@ -297,6 +297,6 @@ Face-faced two certification
 #### Example
 
 ```python
-tt = self.authentication.login_by_email("fptvmzqyxn@authing.cn", "pwd")
+tt = self.authentication.login_by_email("test@example.com", "pwd")
 authentication.verify_face_mfa("otherUrl",tt['token'])
 ```

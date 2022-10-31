@@ -79,7 +79,7 @@ import AuthingWxmp from "@authing/wxmp";
 ```javascript
 const authingWx = new AuthingWxmp({
     identifier: "wechat-mp-service",
-    appId: "YOUR_APP_ID",
+    appId: "AUTHING_APP_ID",
     host: "https://my-awesome-app.authing.cn",
     redirectUrl: 'http://localhost:8080'
 })
@@ -90,7 +90,7 @@ const authingWx = new AuthingWxmp({
 ```javascript
 const authingWx = new AuthingWxmp({
     identifier: "",
-    appId: "YOUR_APP_ID",
+    appId: "AUTHING_APP_ID",
     host: "https://my-awesome-app.authing.cn",
     redirectUrl: 'http://localhost:8080'
 })

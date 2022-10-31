@@ -12,4 +12,4 @@ Authing.start(<#AUTHING_APP_ID#>)
 * **host** 是[私有化域名](https://docs.authing.cn/v2/guides/customize/domain/customized-domain.html)，如：mycompany.com
 * **publicKey** 是私有化版本的密码加密公钥
 
-如果不清楚上述配置，请联系 Authing 售后。
+如果不清楚上述配置，请联系 [Authing 售后服务人员](csm@authing.cn)。

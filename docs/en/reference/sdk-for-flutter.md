@@ -186,7 +186,7 @@ static Future<AuthResult> registerByPhoneCode(String phone, String code, String 
 **example**
 
 ```dart
-AuthResult result = await AuthClient.registerByPhoneCode("13012345678", "1121", "strong");
+AuthResult result = await AuthClient.registerByPhoneCode("188xxxx8888", "1121", "strong");
 User user = result.user;
 ```
 
@@ -237,7 +237,7 @@ static Future<AuthResult> loginByPhoneCode(String phone, String code) async
 **example**
 
 ```dart
-AuthResult result = await AuthClient.loginByPhoneCode("13012345678", "1234");
+AuthResult result = await AuthClient.loginByPhoneCode("188xxxx8888", "1234");
 User user = result.user; // get user info
 ```
 
@@ -353,7 +353,7 @@ static Future<AuthResult> sendSms(String phone, [String? phoneCountryCode]) asyn
 **example**
 
 ```dart
-AuthResult result = await AuthClient.sendSms("13012345678", "+86");
+AuthResult result = await AuthClient.sendSms("188xxxx8888", "+86");
 var code = result.code;
 ```
 
@@ -460,7 +460,7 @@ static Future<AuthResult> resetPasswordByPhoneCode(String phone, String code, St
 **example**
 
 ```dart
-AuthResult result = await AuthClient.resetPasswordByPhoneCode("13012345678", "1234", "strong");
+AuthResult result = await AuthClient.resetPasswordByPhoneCode("188xxxx8888", "1234", "strong");
 expect(result.code, 200);
 ```
 
@@ -599,7 +599,7 @@ static Future<AuthResult> bindPhone(String phone, String code) async
 **example**
 
 ```dart
-AuthResult result = await AuthClient.bindPhone("13012345678", "1234");
+AuthResult result = await AuthClient.bindPhone("188xxxx8888", "1234");
 var code = result.code;
 ```
 
@@ -658,7 +658,7 @@ static Future<AuthResult> updatePhone(String phone, String phoneCode,
 **example**
 
 ```dart
-AuthResult result = await AuthClient.updatePhone("13012345678", "1234");
+AuthResult result = await AuthClient.updatePhone("188xxxx8888", "1234");
 ```
 
 **error**
@@ -1172,7 +1172,7 @@ static Future<bool> mfaCheck(String? phone, String? email) async
 **example**
 
 ```dart
-bool r1 = await AuthClient.mfaCheck("13012345678", null);
+bool r1 = await AuthClient.mfaCheck("188xxxx8888", null);
 bool r2 = await AuthClient.mfaCheck(null, "abc@gmail.com");
 ```
 
@@ -1194,7 +1194,7 @@ static Future<AuthResult> mfaVerifyByPhone(String phone, String code) async
 **example**
 
 ```dart
-AuthResult result = await AuthClient.mfaVerifyByPhone("13012345678", "1234");
+AuthResult result = await AuthClient.mfaVerifyByPhone("188xxxx8888", "1234");
 ```
 
 

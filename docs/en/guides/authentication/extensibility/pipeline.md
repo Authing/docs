@@ -17,7 +17,7 @@ You can use Authing Pipeline to achieve the following functions:
 - Whitelist: Such as the whitelist of registered email suffixes, the whitelist of registered IPs, etc.
 - Event notification: Such as sending group notification after user registration, notification of user login IP exception, etc.
 - Privilege control: Such as adding users to a user group based on their email after logging in.
-- Extended user fields: such as adding custom metadata to the requesting user.
+- Extended user fields: such as adding custom Metadata to the requesting user.
 - Custom token: For example, add custom fields to the token.
 - ... and more, the imagination is endless.
 

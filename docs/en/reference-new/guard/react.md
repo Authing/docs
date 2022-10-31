@@ -151,7 +151,7 @@ function App() {
 
 ### 退出登录
 
-使用 `Guard` 组件，组件加载完成后回触发的 `onLoad` 事件与登陆成功触发的 `onLogin` 事件都会返回 `AuthClient`。获取到 `AuthClient` 进行手动单例保存，可以在需要调用退出登录的时候使用。
+使用 `Guard` 组件，组件加载完成后回触发的 `onLoad` 事件与登录成功触发的 `onLogin` 事件都会返回 `AuthClient`。获取到 `AuthClient` 进行手动单例保存，可以在需要调用退出登录的时候使用。
 
 ```javascript
 import { Guard, SocialConnections } from "@authing/react-ui-components";
@@ -243,7 +243,7 @@ Guard 组件本身基于 [Authing JavaScript SDK](../Standard-web-application/sd
 import { initAuthClient } from "@authing/react-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

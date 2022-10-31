@@ -63,7 +63,7 @@ AclManagementClient().isAllowed(userId, action, resource)
 #### Example
 
 ```javascript
-managementClient.acl.isAllowed("USERID", "books:*", "books:edit");
+managementClient.acl.isAllowed("60b4a136d9xxxxcc3d87e55a", "books:*", "books:edit");
 ```
 
 #### Return value
@@ -84,7 +84,7 @@ UsersManagementClient.listAuthorizedResources(userId, namespace)
 #### Example
 
 ```javascript
-managementClient.users.listAuthorizedResources("USERID", "code");
+managementClient.users.listAuthorizedResources("60b4a136d9xxxxcc3d87e55a", "code");
 ```
 
 #### Sample data

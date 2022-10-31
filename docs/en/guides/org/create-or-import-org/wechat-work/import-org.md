@@ -56,7 +56,7 @@ https://core.authing.cn/connections/enterprise/wechatwork/59f86b4832eb28071bdd92
 
 #### 初次同步
 
-点击右上角的**从企业微信导入**。
+点击 **从企业微信导入**。
 
 ![](https://cdn.authing.cn/blog/20201019221744.png)
 

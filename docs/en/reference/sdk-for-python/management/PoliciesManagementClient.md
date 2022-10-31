@@ -183,7 +183,7 @@ PoliciesManagementClient().add_assignments(policies, targetType, targetIdentifie
 management_client.policies.add_assignments(
     policies=['PolicyCode'],
     targetType='USER', # Authorized to users
-    targetIdentifiers=['USERID'] # user ID
+    targetIdentifiers=['60b4a136d9xxxxcc3d87e55a'] # user ID
 )
 
 management_client.policies.add_assignments(

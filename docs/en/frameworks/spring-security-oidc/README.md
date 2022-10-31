@@ -192,7 +192,7 @@ Simply, OIDC is an abbreviation, OIDC = (Identity, Authentication) + OAuth 2.0. 
 OIDC itself has several specifications, including a core specification, multiple optional support specifications to provide extended support, simple to look at:
 
 - Core：required. Define the core function of OIDC, build an identity authentication above OAuth 2.0, and how to use Claims to deliver users.
-- Discovery：Optional. Discover the service to make the client can dynamically obtain metadata description information related to OIDC services (such as supporting those specification, what is the interface address, etc.).
+- Discovery：Optional. Discover the service to make the client can dynamically obtain Metadata description information related to OIDC services (such as supporting those specification, what is the interface address, etc.).
 - Dynamic Registration：Optional. Dynamic registration service allows the client to register the OP's OP (this abbreviation will explain).
 - OAuth 2.0 Multiple Response Types：Optional. For OAuth 2.0 extensions, there are several new response_types.
 - OAuth 2.0 Form Post Response Mode：Optional. For OAuth 2.0 expansion, OAuth 2.0 return information gives the client two ways of querystring and fragment, which provides a mechanism for the client based on the form of forms.

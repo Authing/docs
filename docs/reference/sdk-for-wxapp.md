@@ -88,7 +88,7 @@ yarn add authing-wxapp-sdk
 const { AuthenticationClient } = require('authing-wxapp-sdk')
 
 const authing = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
 })
 ```
 
@@ -262,8 +262,8 @@ getPhone: async function(e) {
 ```json
 {
   "countryCode": "86",
-  "phoneNumber": "176xxxx6754",
-  "purePhoneNumber": "176xxxx6754",
+  "phoneNumber": "188xxxx8888",
+  "purePhoneNumber": "188xxxx8888",
   "openid": "o1p9H4wAgb9uTqpxG5Z1g0pIr3FE",
   "unionid": "o0pqE6Fbr5M-exSu_PeL_sjwN44U"
 }

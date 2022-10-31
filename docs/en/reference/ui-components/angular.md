@@ -137,7 +137,7 @@ export class AppComponent {
 import { initAuthClient } from "@authing/ng-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 
@@ -184,7 +184,7 @@ The Guard component itself is packaged based on the [authing JavaScript SDK](../
 import { initAuthClient } from "@authing/ng-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID"
+  appId: "AUTHING_APP_ID"
 });
 ```
 

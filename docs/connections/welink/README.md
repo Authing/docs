@@ -17,7 +17,7 @@
 
 ## 步骤1：创建 WeLink 应用
 
-前往 [WeLink后台](https://open.welink.huaweicloud.com/wecode-site/index.html#/wecode/guide/guide)，创建We码应用。
+前往 [WeLink 后台](https://open.welink.huaweicloud.com/wecode-site/index.html#/wecode/guide/guide)，创建We码应用。
 
 <img src="./images/create-app.png" >
 

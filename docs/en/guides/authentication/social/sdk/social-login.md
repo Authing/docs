@@ -8,7 +8,7 @@ Taking GitHub social login as an example, only the following lines of code need 
 import { AuthenticationClient } from 'authing-js-sdk'
 
 const authenticationClient = new AuthenticationClient({
-  appId: 'YOUR_APP_ID',
+  appId: 'AUTHING_APP_ID',
   appHost: 'https://xxx.authing.cn',
 })
 

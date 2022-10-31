@@ -69,7 +69,7 @@ user = management_client.users.create(
   userInfo={
     'username': 'bob',
     'password': '123456',
-    'phone': '176xxxx6754', # Since this is an admin operation, SMS authentication is needed. If you need it, please use AuthenticationClient
+    'phone': '188xxxx8888', # Since this is an admin operation, SMS authentication is needed. If you need it, please use AuthenticationClient
     'nickname': 'Nick',
     'loginsCount': 2, # login counter of the user in original system
     'signedUpd': '2020-10-15T17:55:37+08:00', # register time of the user in original system
@@ -143,7 +143,7 @@ UsersManagementClient().detail(userId)
 
 ```python
 data = management_client.users.detail(
-  userId="USERID"
+  userId="60b4a136d9xxxxcc3d87e55a"
 )
 ```
 
@@ -272,7 +272,7 @@ UsersManagementClient().refresh_token(id)
 
 ```python
 data = management_client.users.refresh_token(
-    userId="USERID"
+    userId="60b4a136d9xxxxcc3d87e55a"
 )
 token, iat, exp = data['token'], data['iat'], data['exp']
 ```
@@ -364,7 +364,7 @@ UsersManagementClient().add_roles(userId, roles)
 
 ```python
 data = management_client.users.add_roles(
-   userId='USERID',
+   userId='60b4a136d9xxxxcc3d87e55a',
    roles=['ROLE1', 'ROLE2']
 )
 totalCount = data['totalCount'] # the latest amount
@@ -386,7 +386,7 @@ UsersManagementClient().remove_roles(userId, roles)
 
 ```python
 data = management_client.users.remove_roles(
-   userId='USERID',
+   userId='60b4a136d9xxxxcc3d87e55a',
    roles=['ROLE1', 'ROLE2']
 )
 totalCount = data['totalCount'] # the latest amount

@@ -108,7 +108,7 @@ UdfManagementClient->listUdv(string $targetType, string $targetId)
 ```php
 use Authing\Types\UDFTargetType;
 
-$res = $udfsManagementClient->listUdv(UDFTargetType::USER, 'USERID');
+$res = $udfsManagementClient->listUdv(UDFTargetType::USER, '60b4a136d9xxxxcc3d87e55a');
 ```
 
 #### 示例数据
@@ -142,7 +142,7 @@ UdfManagementClient->setUdvBatch(string $targetType, string $targetId, array $ud
 ```php
 use Authing\Types\UDFTargetType;
 
-$res = $udfManageClient->setUdvBatch(UDFTargetType::USER, 'USERID', [
+$res = $udfManageClient->setUdvBatch(UDFTargetType::USER, '60b4a136d9xxxxcc3d87e55a', [
     (object) [
         'key' => 'key name',
         'value' => 'this is value',

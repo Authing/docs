@@ -160,7 +160,7 @@ export class AppComponent {
 import { initAuthClient } from "@authing/ng-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
 });
 ```
 
@@ -205,7 +205,7 @@ Guard 组件本身基于 [Authing JavaScript SDK](../sdk-for-node/) 进行封装
 import { initAuthClient } from "@authing/ng-ui-components";
 
 initAuthClient({
-  appId: "YOUR_APP_ID",
+  appId: "AUTHING_APP_ID",
 });
 ```
 

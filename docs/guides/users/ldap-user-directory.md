@@ -109,7 +109,7 @@ objectclass: users
 cn: root
 uid: 5a597f35085a2000144a10ed
 
-# 用户池下的用户信息（17602502507）
+# 用户池下的用户信息（188xxxx8888）
 dn: uid=601d59a5f04ee72cb058bdbb,ou=users,o=59f86b4832eb28071bdd9214,dc=authin
  g,dc=cn
 id: 601d59a5f04ee72cb058bdbb
@@ -118,7 +118,7 @@ createdAt:: RnJpIEZlYiAwNSAyMDIxIDIyOjQzOjQ5IEdNVCswODAwICjkuK3lm73moIflh4bml7
 updatedAt:: RnJpIEZlYiAwNSAyMDIxIDIyOjQzOjQ5IEdNVCswODAwICjkuK3lm73moIflh4bml7
  bpl7Qp
 userPoolId: 59f86b4832eb28071bdd9214
-phone: 17602502507
+phone: 188xxxx8888
 photo: https://files.authing.co/authing-console/default-user-avatar.png
 gender: U
 registerSource: import:manual
@@ -171,7 +171,7 @@ objectclass: organizationalPerson
 cn: test
 uid: 601d54c27569df18f85e2c71
 
-# 用户池下的小白组织下的用户信息（17602502507）
+# 用户池下的小白组织下的用户信息（188xxxx8888）
 dn: uid=601d59a5f04ee72cb058bdbb,o=601d14d1267b84c06a32e463,ou=users,o=59f86b4
  832eb28071bdd9214,dc=authing,dc=cn
 id: 601d59a5f04ee72cb058bdbb
@@ -180,7 +180,7 @@ createdAt:: RnJpIEZlYiAwNSAyMDIxIDIyOjQzOjQ5IEdNVCswODAwICjkuK3lm73moIflh4bml7
 updatedAt:: RnJpIEZlYiAwNSAyMDIxIDIyOjQzOjQ5IEdNVCswODAwICjkuK3lm73moIflh4bml7
  bpl7Qp
 userPoolId: 59f86b4832eb28071bdd9214
-phone: 17602502507
+phone: 188xxxx8888
 photo: https://files.authing.co/authing-console/default-user-avatar.png
 gender: U
 registerSource: import:manual

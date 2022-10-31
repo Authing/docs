@@ -85,7 +85,7 @@ const user = await managementClient.users.create({
 ```javascript
 const user = await managementClient.users.create({
    nickname: 'Nick',
-   phone: '176xxxx6754', // 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
+   phone: '188xxxx8888', // 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
    loginsCount: 2, // 原有用户系统记录的用户登录次数
    signedUp: '2020-10-15T17:55:37+08:00' // 原有用户系统记录的用户注册时间
 })
@@ -95,7 +95,7 @@ const user = await managementClient.users.create({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -153,7 +153,9 @@ const user = await managementClient.users.create({
 ```
 
 ## 修改用户资料
-> 修改用户资料
+
+> 修改用户资料，可以通过 `blocked` 字段对用户进行禁用/解除禁用操作。
+
 ```js
 UsersManagementClient().update(id, updates)
 ```
@@ -208,15 +210,15 @@ UsersManagementClient().update(id, updates)
 #### 示例
 
 ```javascript
-const user = await managementClient.users.update('USERID', {
+const user = await managementClient.users.update('60b4a136d9xxxxcc3d87e55a', {
   nickname: 'Nick',
 })
 ```
 
 ```javascript
-const user = await managementClient.users.update('USERID', {
+const user = await managementClient.users.update('60b4a136d9xxxxcc3d87e55a', {
   nickname: 'Nick',
-  phone: '176xxxx6754', // 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
+  phone: '188xxxx8888', // 由于是管理员操作，所以不需要检验手机号验证码, 如果你需要检验，请使用  AuthenticationClient
   tokenExpiredAt: '2020-10-15T17:55:37+08:00',
 })
 ```
@@ -225,7 +227,7 @@ const user = await managementClient.users.update('USERID', {
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -293,30 +295,20 @@ UsersManagementClient().detail(userId, options)
 #### 参数
 
 - `userId` \<string\> 用户 ID
-- `options.withCustomData`: \<boolean\> 是否获取自定义数据，默认为 false；如果设置为 true，将会在 `customData` 字段返回用户的所有自定义数据。示例：
-
-```json
-{
-  "id": "604a12a261a85949c8ad0259",
-  "customData": {
-    "school": "清华大学",
-    "age": 19
-  }
-}
-```
+- `options.withCustomData`: \<boolean\> 是否获取自定义数据，默认为 false；如果设置为 true，将会在 `customData` 字段返回用户的所有自定义数据。
 
 #### 示例
 
 - 通过用户 ID 获取用户详情
 
 ```javascript
-const user = await managementClient.users.detail('USERID')
+const user = await managementClient.users.detail('60b4a136d9xxxxcc3d87e55a')
 ```
 
 - 同时获取用户的自定义数据
 
 ```js
-const user = await managementClient.users.detail('USERID', {
+const user = await managementClient.users.detail('60b4a136d9xxxxcc3d87e55a', {
   withCustomData: true
 })
 ```
@@ -325,7 +317,7 @@ const user = await managementClient.users.detail('USERID', {
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -380,7 +372,7 @@ const user = await managementClient.users.detail('USERID', {
   "createdAt": "2021-03-11T20:52:50+08:00",
   "updatedAt": "2021-03-11T20:52:50+08:00",
   "externalId": null,
-  "customData": {
+  "customData": { // 用户的自定义数据
     "school": "清华大学",
     "age": 19
   }
@@ -404,7 +396,7 @@ UsersManagementClient().getUdfValue(userId)
 const data = await managementClient.users.getUdfValue('USER_ID')
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -434,7 +426,7 @@ const data = await managementClient.users.getUdfValueBatch([
 ])
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -536,7 +528,7 @@ UsersManagementClient().delete(userId)
 #### 示例
 
 ```javascript
-const user = await managementClient.users.delete('USERID')
+const user = await managementClient.users.delete('60b4a136d9xxxxcc3d87e55a')
 ```
 
 #### 返回值
@@ -557,7 +549,7 @@ UsersManagementClient().deleteMany(userIds)
 #### 示例
 
 ```javascript
-const user = await managementClient.users.deleteMany(['USERID'])
+const user = await managementClient.users.deleteMany(['60b4a136d9xxxxcc3d87e55a'])
 ```
 
 #### 返回值
@@ -594,7 +586,7 @@ UsersManagementClient().batch(identifiers, options)
 - 通过 ID 批量获取用户
 
 ```javascript
-const users = await managementClient.users.batch(['USERID', 'USERID2'], {
+const users = await managementClient.users.batch(['60b4a136d9xxxxcc3d87e55a', 'USERID2'], {
   queryField: 'id',
 })
 ```
@@ -602,7 +594,7 @@ const users = await managementClient.users.batch(['USERID', 'USERID2'], {
 - 通过手机号批量获取用户
 
 ```javascript
-const users = await managementClient.users.batch(['176xxxx6754', '158xxxx6954'], {
+const users = await managementClient.users.batch(['188xxxx8888', '158xxxx6954'], {
   queryField: 'phone',
 })
 ```
@@ -610,13 +602,13 @@ const users = await managementClient.users.batch(['176xxxx6754', '158xxxx6954'],
 - 同时获取用户自定义数据
 
 ```javascript
-const users = await managementClient.users.batch(['USERID', 'USERID2'], {
+const users = await managementClient.users.batch(['60b4a136d9xxxxcc3d87e55a', 'USERID2'], {
   queryField: 'id',
   withCustomData: true
 })
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 [
@@ -726,7 +718,7 @@ const { totalCount, list } = await managementClient.users.list(1, 10, {
 
 - `Promise<PaginatedUsers>`
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -815,23 +807,7 @@ const user = await managementClient.users.listArchivedUsers()
 
 - `Promise<PaginatedUsers>`
 
-示例数据：
-
-```json
-{
-  "totalCount": 20,
-  "list": [
-    {
-      // user info
-    },
-    {
-      // user info
-    }
-  ]
-}
-```
-
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -922,13 +898,19 @@ const exists = await managementClient.users.exists({
 
 ```javascript
 const exists = await managementClient.users.exists({
-  phone: '176xxxx6754',
+  phone: '188xxxx8888',
 })
 ```
 
-#### 返回值
-```text
-如果用户存在，返回 `true`；如果用户不存在，返回 `false`。
+#### 响应数据示例
+
+
+```javascript
+true // 用户存在
+```
+
+```javascript
+false // 用户不存在
 ```
 
 ## 查找用户
@@ -989,7 +971,7 @@ const users = await managementClient.users.find({
 
 - [Promise\<User\>](/guides/user/user-profile.md)
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -1109,7 +1091,7 @@ const { totalCount, list } = await managementClient.users.search('Bob', {
 })
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -1247,14 +1229,14 @@ UsersManagementClient().listGroups(userId)
 #### 示例
 
 ```javascript
-const { list, totalCount } = await managementClient.users.listGroups('USERID')
+const { list, totalCount } = await managementClient.users.listGroups('60b4a136d9xxxxcc3d87e55a')
 ```
 
 #### 返回值
 
 - `Promise<DeepPartial<PaginatedGroups>>`
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 {
@@ -1288,7 +1270,7 @@ UsersManagementClient().addGroup(userId, group)
 
 ```javascript
 const { code, message } = await managementClient.users.addGroup(
-  'USERID',
+  '60b4a136d9xxxxcc3d87e55a',
   'admin'
 )
 ```
@@ -1314,7 +1296,7 @@ UsersManagementClient().removeGroup(userId, group)
 
 ```javascript
 const { code, message } = await managementClient.users.removeGroup(
-  'USERID',
+  '60b4a136d9xxxxcc3d87e55a',
   'GROUP_CODE'
 )
 ```
@@ -1339,14 +1321,14 @@ UsersManagementClient().listRoles(userId, namespace)
 #### 示例
 
 ```javascript
-const { list, totalCount } = await managementClient.users.listRoles('USERID')
+const { list, totalCount } = await managementClient.users.listRoles('60b4a136d9xxxxcc3d87e55a')
 ```
 
 #### 返回值
 
 - `Promise<DeepPartial<PaginatedRoles>>`
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 
@@ -1394,7 +1376,7 @@ UsersManagementClient().addRoles(userId, roles, namespace)
 #### 示例
 
 ```javascript
-const { code, message } = await managementClient.users.addRoles('USERID', [
+const { code, message } = await managementClient.users.addRoles('60b4a136d9xxxxcc3d87e55a', [
   'ROLEA',
 ])
 ```
@@ -1419,7 +1401,7 @@ UsersManagementClient().removeRoles(userId, roles, namespace)
 #### 示例
 
 ```javascript
-const { code, message } = await managementClient.users.removeRoles('USERID', [
+const { code, message } = await managementClient.users.removeRoles('60b4a136d9xxxxcc3d87e55a', [
   'ROLEA',
 ])
 ```
@@ -1445,10 +1427,10 @@ UsersManagementClient.hasRole(userId, roleCode, namespace)
 #### 示例
 
 ```javascript
-managementClient.users.hasRole('USERID', 'roleCode', 'default')
+managementClient.users.hasRole('60b4a136d9xxxxcc3d87e55a', 'roleCode', 'default')
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 ```json
 true
@@ -1470,10 +1452,10 @@ UsersManagementClient.listAuthorizedResources(userId, namespace)
 #### 示例
 
 ```javascript
-managementClient.users.listAuthorizedResources('USERID', 'code')
+managementClient.users.listAuthorizedResources('60b4a136d9xxxxcc3d87e55a', 'code')
 ```
 
-#### 示例数据
+#### 响应示例数据
 
 - `type` 为资源类型，一共有以下几种资源类型
   - `DATA`: 数据类型；
@@ -1550,7 +1532,7 @@ UsersManagementClient().refreshToken(id)
   });
   const { token } = await managementClient.users.refreshToken(user.id);
 ```
-#### 示例数据
+#### 响应示例数据
 ```json
 {
 	"iat": 1632462741,
@@ -1588,7 +1570,7 @@ UsersManagementClient().listDepartment(userId)
 ```js
 management.users.listDepartment('613872b19c90be7d4da44466')
 ```
-#### 示例数据
+#### 响应示例数据
 ```json
 {
 	"departments": {
@@ -1615,7 +1597,7 @@ UsersManagementClient().sendFirstLoginVerifyEmail(options)
 ```js
 management.users.sendFirstLoginVerifyEmail({appId:"6139c4d24e78a4d706b7545b", userId:"613872b19c90be7d4da44466"})
 ```
-#### 示例数据
+#### 响应示例数据
 ```json
 {
   "message": "发送成功",
@@ -1640,7 +1622,7 @@ UsersManagementClient().logout(options)
 ```js
 management.users.logout("613872b19c90be7d4da44466")
 ```
-#### 示例数据
+#### 响应示例数据
 ```json
 {
   "message": "退出成功",

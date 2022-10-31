@@ -92,7 +92,7 @@ server {
 
 #### 在 Xcode 中配置 Associated Domains
 
-加下来在 Xcode 中配置 Associated Domains。 在 Xcode **Targets** -&gt; **Signing & Capabilities** 页面点击右上角的 **+Capability** :
+加下来在 Xcode 中配置 Associated Domains。 在 Xcode **Targets** -&gt; **Signing & Capabilities** 页面点击 **+Capability** :
 
 ![](https://cdn.authing.cn/blog/image%20%28471%29.png)
 

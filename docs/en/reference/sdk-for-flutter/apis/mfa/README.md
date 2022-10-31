@@ -18,7 +18,7 @@ static Future<bool> mfaCheck(String? phone, String? email) async
 **example**
 
 ```dart
-bool r1 = await AuthClient.mfaCheck("13012345678", null);
+bool r1 = await AuthClient.mfaCheck("188xxxx8888", null);
 bool r2 = await AuthClient.mfaCheck(null, "abc@gmail.com");
 ```
 
@@ -40,7 +40,7 @@ static Future<AuthResult> mfaVerifyByPhone(String phone, String code) async
 **example**
 
 ```dart
-AuthResult result = await AuthClient.mfaVerifyByPhone("13012345678", "1234");
+AuthResult result = await AuthClient.mfaVerifyByPhone("188xxxx8888", "1234");
 ```
 
 

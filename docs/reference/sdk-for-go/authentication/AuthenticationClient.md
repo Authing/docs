@@ -190,7 +190,7 @@ func (c *Client) RegisterByPhoneCode(request *model.RegisterByPhoneCodeInput) (*
 authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 req := &model.RegisterByPhoneCodeInput{
-	Phone:  "1586xxxx492",
+	Phone:  "188xxxx8888",
 	Code:   "123456",
 }
 resp, err := authenticationClient.RegisterByPhoneCode(req)
@@ -203,7 +203,7 @@ authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 password:="password"
 req := &model.RegisterByPhoneCodeInput{
-	Phone:  "1586xxxx492",
+	Phone:  "188xxxx8888",
 	Code:   "123456",
     Password: &password,
 }
@@ -219,7 +219,7 @@ authenticationClient.userPoolId = UserPool
 company:="company"
 nickName:="nickName"
 req := &model.RegisterByPhoneCodeInput{
-	Phone:  "1586xxxx492",
+	Phone:  "188xxxx8888",
     Code:   "123456",
     Profile: &model.RegisterProfile{
        	Nickname: &nickName,
@@ -237,7 +237,7 @@ authenticationClient.userPoolId = UserPool
 data, e := jsoniter.Marshal([]model.KeyValuePair{{Key: "source", Value: "qq"}})
 p := string(data)
 req := &model.RegisterByPhoneCodeInput{
-	Phone:  "1586xxxx492",
+	Phone:  "188xxxx8888",
     Code:   "123456",
 	Params:   &p,
 }
@@ -405,7 +405,7 @@ authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 req := &model.LoginByPhoneCodeInput{
 	Code:  "3289",
-	Phone: "189xxxx1835",
+	Phone: "188xxxx8888",
 }
 resp, err := authenticationClient.LoginByPhoneCode(req)
 ```
@@ -419,7 +419,7 @@ data, e := jsoniter.Marshal([]model.KeyValuePair{{Key: "source", Value: "qq"}})
 p := string(data)
 req := &model.LoginByPhoneCodeInput{
 	Code:  "3289",
-	Phone: "189xxxx1835",
+	Phone: "188xxxx8888",
     Params:       &p,
 }
 resp, err := authenticationClient.LoginByPhoneCode(req)
@@ -455,7 +455,7 @@ authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 req := model.LoginByPhonePasswordInput{
 	Code:  "3289",
-	Phone: "189xxxx1835",
+	Phone: "188xxxx8888",
 }
 resp, err := authenticationClient.LoginByPhonePassword(req)
 ```
@@ -469,7 +469,7 @@ data, e := jsoniter.Marshal([]model.KeyValuePair{{Key: "source", Value: "qq"}})
 p := string(data)
 req := model.LoginByPhonePasswordInput{
 	Code:  "3289",
-	Phone: "189xxxx1835",
+	Phone: "188xxxx8888",
     Params:       &p,
 }
 resp, err := authenticationClient.LoginByPhonePassword(req)
@@ -569,7 +569,7 @@ authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
 req := &model.LoginByPhoneCodeInput{
 	Code:  "3289",
-	Phone: "189xxxx1835",
+	Phone: "188xxxx8888",
 }
 authenticationClient.LoginByPhoneCode(req)
 resp, err := authenticationClient.GetCurrentUser(nil)
@@ -635,7 +635,7 @@ func (c *Client) SendSmsCode(phone string) (*struct {
 ```go
 authenticationClient := NewClient(AppId, Secret)
 authenticationClient.userPoolId = UserPool
-resp, err := authenticationClient.SendSmsCode("189xxxx1835")
+resp, err := authenticationClient.SendSmsCode("188xxxx8888")
 ```
 
 ## 发送邮件
@@ -847,7 +847,7 @@ func (c *Client) ResetPasswordByPhoneCode(phone, code, newPassword string) (*mod
 
 ```go
 authenticationClient.ResetPasswordByPhoneCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd"
 )
@@ -873,7 +873,7 @@ func (c *Client) ResetPasswordByEmailCode(email, code, newPassword string) (*mod
 
 ```go
 authenticationClient.ResetPasswordByEmailCode(
-  "176xxxx6754",
+  "188xxxx8888",
   "1234",
   "passw0rd"
 )
