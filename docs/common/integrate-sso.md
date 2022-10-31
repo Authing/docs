@@ -1528,9 +1528,9 @@ const authing = new Authing({
 
 ## 第七步：登录后的处理
 
-### 获取 Token
+### 获取登录态
 
-如果你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，登录状态为 `null`：
+如果你想获取 `Access Token`、`ID Token` 等用户登录态，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，登录状态为 `null`：
 
 :::: tabs :options="{ useUrlFragment: false }"
 
