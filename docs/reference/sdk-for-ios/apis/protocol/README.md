@@ -24,13 +24,14 @@ OIDCClient(authRequest).loginByXXX()
 使用 OIDC 邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
 
 ```swift
-func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmail(email: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
 * *email* 邮箱
 * *password* 明文密码
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -54,13 +55,14 @@ OIDCClient().registerByEmail(email: "test@example.com", password: "strong") { co
 使用 OIDC 邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
-func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmailCode(email: String, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
 * *email* 邮箱
 * *password* 明文密码
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -84,13 +86,14 @@ OIDCClient().registerByEmailCode(email: "test@example.com", code: "code") { code
 通过 OIDC 用户名注册帐号。用户名区分大小写且用户池内唯一。
 
 ```swift
-func registerByUserName(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByUserName(username: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
 * *username* 用户名
 * *password* 明文密码
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -113,7 +116,7 @@ OIDCClient().registerByUserName(username: "test", password: "strong") { code, me
 通过 OIDC 手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口以获取短信验证码。
 
 ```swift
-func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByPhoneCode(phone: String, code: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
@@ -121,6 +124,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 * *phone* 手机号
 * *code* 短信验证码
 * *password* 明文密码
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -145,13 +149,15 @@ OIDCClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "
 通过 OIDC 账号密码登录，返回的 UserInfo 里面包含 access token , id token 和 refresh token。
 
 ```swift
-func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByAccount(account: String, password: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
 * *account* 账号
 * *password* 密码
+* *autoRegister* 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -170,13 +176,15 @@ OIDCClient().loginByAccount(account: "test", password: "password") { code,  mess
 通过 OIDC 手机号验证码登录，需要先调用 [发送短信验证码](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送短信验证码) 接口。返回的 UserInfo 里面包含 access token , id token 和 refresh token。
 
 ```swift
-func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByPhoneCode(phone: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
 * *phone* 手机号
 * *code* 验证码
+* *autoRegister* 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
@@ -195,13 +203,15 @@ OIDCClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { code, messag
 使用 OIDC 邮箱验证码登录，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](https://docs.authing.cn/v2/reference/sdk-for-ios/authentication/#发送邮件) 接口以获取邮箱验证码。
 
 ```swift
-func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
+func loginByEmail(email: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void) 
 ```
 
 **参数**
 
 * *email* 邮箱
 * *code* 验证码
+* *autoRegister* 是否自动注册。如果检测到用户不存在，会根据登录账密自动创建一个账号。
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
