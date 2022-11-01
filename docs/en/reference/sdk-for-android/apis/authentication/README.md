@@ -7,18 +7,21 @@
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```java
-public static void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByEmail(String email, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email` email address
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.registerByEmail("test@example.com", "xxxxxx", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -37,18 +40,21 @@ AuthClient.registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false. You need to use it first [sendEmail](#send-email) sends a SMS verification code.
 
 ```java
-public static void registerByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByEmailCode(String email, String code, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email` email address
 * `code` email verification code
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.registerByEmailCode("test@example.com", "1234", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -67,18 +73,21 @@ AuthClient.registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)
 Use the username to register, the username is case sensitive and the only user pool.
 
 ```java
-public static void registerByUserName(String username, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByUserName(String username, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `username` username
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.registerByUserName("username", "strong", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -96,20 +105,23 @@ AuthClient.registerByUserName("username", "strong", (code, message, userInfo)->{
 Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#send-verification-code) method sends SMS verification code.
 
 ```java
-public static void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
-* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phoneCountryCode` Telephone country code, If null, the default value is `+86`
 * `phone` The phone number
 * `code` SMS verification code
-* `password` initial password, it can be null
+* `password` initial password, it can be `null`
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -126,18 +138,22 @@ AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, me
 ## Use the username to login
 
 ```java
-public static void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByAccount(String account, String password, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `account` The phone number / email address / username
-* `password` password
+* `password` Password
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.loginByAccount("account", "xxxxxx", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -155,18 +171,22 @@ AuthClient.loginByAccount("account", "strong", (code, message, userInfo)->{
 Use the email verification code to log in. You need to use it first [sendEmail](#send-email) sends a email verification code.
 
 ```java
-public static void loginByEmailCode(String email, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByEmailCode(String email, String code, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email`  email address
 * `code` email verification code
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.loginByEmailCode("email", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.loginByEmailCode("test@example.com", "xxxxxx", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -184,7 +204,7 @@ AuthClient.loginByEmailCode("email", "strong", (code, message, userInfo)->{
 Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#send-verification-code) sends a SMS verification code.
 
 ```java
-public static void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByPhoneCode(String phoneCountryCode, String phone, String code, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
@@ -192,11 +212,15 @@ public static void loginByPhoneCode(String phoneCountryCode, String phone, Strin
 * `phoneCountryCode` Telephone country code, If null, the default value is +86
 * `phone` The phone number
 * `code` SMS verification code
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-AuthClient.loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.loginByPhoneCode("+86", "188xxxx8888", "1234", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -270,7 +294,7 @@ public static void sendSms(String phoneCountryCode, String phone, @NotNull AuthC
 **Example**
 
 ```java
-AuthClient.sendSms("+86", "13012345678", (code, message, data)->{});
+AuthClient.sendSms("+86", "188xxxx8888", (code, message, data)->{});
 ```
 
 **Error Code**
@@ -300,7 +324,7 @@ public static void sendEmail(String emailAddress, String scene, @NotNull AuthCal
 **Example**
 
 ```java
-AuthClient.sendEmail("cool@gmail.com", "RESET_PASSWORD",  (code, message, data)->{
+AuthClient.sendEmail("test@example.com", "RESET_PASSWORD",  (code, message, data)->{
     if (code == 200) {
         // success
     }
@@ -440,7 +464,7 @@ public static void resetPasswordByPhoneCode(String phone, String code, String ne
 **Example**
 
 ```java
-AuthClient.resetPasswordByPhoneCode("188xxxx8888", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByPhoneCode("188xxxx8888", "1234", "xxxxxx", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -470,7 +494,7 @@ public static void resetPasswordByEmailCode(String emailAddress, String code, St
 **Example**
 
 ```java
-AuthClient.resetPasswordByEmailCode("me@gmail.com", "1234", "strong", (code, message, data)->{
+AuthClient.resetPasswordByEmailCode("test@example.com", "1234", "xxxxxx", (code, message, data)->{
     if (code == 200) {
 
     }
@@ -594,7 +618,7 @@ public static void updatePhone(String phoneCountryCode, String phone, String cod
 **Example**
 
 ```java
-AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "1882025101", "1234",(code, message, data)->{
+AuthClient.updatePhone("+86", "188xxxx8888", "1234", "+86", "188xxxx1111", "1234",(code, message, data)->{
     if (code == 200) {
     }
 });
@@ -675,7 +699,7 @@ public static void bindEmail(String email, String code, @NotNull AuthCallback<Us
 **Example**
 
 ```java
-AuthClient.bindEmail("me@gmail.com", "1234", (code, message, data)->{
+AuthClient.bindEmail("test@example.com", "1234", (code, message, data)->{
     if (code == 200) {
     }
 });
