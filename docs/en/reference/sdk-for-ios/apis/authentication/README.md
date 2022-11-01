@@ -7,13 +7,15 @@
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```swift
-func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmail(email: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `email` email address
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
+
 
 **Example**
 
@@ -37,14 +39,15 @@ AuthClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique, you need to call [sendEmail](#Send-email) interface to send a reset password message (the scene value `VERIFY_CODE`).
 
 ```swift
-func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmailCode(email: String, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `email` email address
 * `code` code
-
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
+  
 **Example**
 
 ```swift
@@ -67,14 +70,15 @@ AuthClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, me
 Use the username to register, the username is case sensitive and the only user pool.
 
 ```swift
-func registerByUserName(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByUserName(username: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `username` username
 * `password` password
-
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
+  
 **Example**
 
 ```swift
@@ -96,7 +100,7 @@ AuthClient().registerByUserName(username: "username", password: "strong") { code
 Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send-verification-code) method sends SMS verification code.
 
 ```swift
-func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByPhoneCode(phone: String, code: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
@@ -104,6 +108,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 * `phone` The phone number
 * `code` SMS verification code
 * `password` initial password, it can be null
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -125,13 +130,15 @@ AuthClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "
 ## Use the email to login
 
 ```swift
-func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByEmail(email: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `email`  email address
 * `code` email verification code
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -152,13 +159,15 @@ AuthClient().loginByEmail(email: "email", code: "code") { code, message, userInf
 ## Use the username to login
 
 ```swift
-func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByAccount(account: String, password: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `account` The phone number / email address / username
 * `password` password
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -181,13 +190,15 @@ AuthClient().loginByAccount(account: "account", password: "strong") { code, mess
 Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#Send-verification-code) sends a SMS verification code.
 
 ```swift
-func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func loginByPhoneCode(phone: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `phone` The phone number
 * `code` SMS verification code
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -205,43 +216,18 @@ AuthClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { code, messag
 
 <br>
 
-```swift
-func loginByAD(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
-**Parameter**
-
-* `username` AD username
-* `password` password
-
-**Example**
-
-```swift
-AuthClient().loginByAD(username: "username", password: "strong") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo
-    }
-}
-```
-
-**Error Code**
-
-* `2333` The account or password is incorrect
-
-<br>
-
 ## Mobile Fast Auth
 
 ```swift
 func loginByOneAuth(token: String, accessToken: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
-**参数**
+**Parameter**
 
-* *token* Operators return
-* *accessToken* Operators return
+* `token` Operators return
+* `accessToken` Operators return
 
-**示例**
+**Example**
 
 ```swift
 AuthClient().loginByOneAuth(token: "token", accessToken: "accessToken") { code, message, userInfo in

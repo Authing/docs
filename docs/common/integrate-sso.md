@@ -305,7 +305,9 @@ function App() {
    * 获取用户的登录状态
    */
   const getLoginState = useCallback(async () => {
-    const loginState = await authing.getLoginState()
+    const loginState = await authing.getLoginState({
+      ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+    })
     setLoginState(loginState)
   }, [])
 
@@ -417,7 +419,9 @@ export default {
      * 获取用户的登录状态
      */
      async getLoginState() {
-      const state = await this.authing.getLoginState()
+      const state = await this.authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      })
       this.loginState = state
     }
   }
@@ -480,7 +484,9 @@ export default defineComponent({
      * 获取用户的登录状态
      */
      const getLoginState = async () => {
-      const res = await authing.getLoginState()
+      const res = await authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      })
       state.loginState = res
     }
 
@@ -583,7 +589,9 @@ export class AppComponent {
    * 获取用户的登录状态
    */
   async getLoginState() {
-    const state = await this.authing.getLoginState()
+    const state = await this.authing.getLoginState({
+      ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+    })
     this.loginState = state
   }
 }
@@ -618,7 +626,9 @@ if (authing.isRedirectCallback()) {
     window.location.replace('/')
   })
 } else {
-  authing.getLoginState().then(loginState => {
+  authing.getLoginState({
+    ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+  }).then(loginState => {
     console.log('loginState: ', loginState)
   })
 }
@@ -1145,7 +1155,9 @@ function App() {
       console.log('normal')
 
       // 获取用户的登录状态
-      authing.getLoginState().then((res) => {
+      authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      }).then((res) => {
         if (res) {
           setLoginState(res)
         } else {
@@ -1240,7 +1252,9 @@ export default {
     } else {
       console.log('normal')
 
-      this.authing.getLoginState().then((res) => {
+      this.authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      }).then((res) => {
         this.loginState = res
         if (!res) {
           // 静默登录。取不到用户信息直接跳转到授权中心
@@ -1300,7 +1314,9 @@ export default defineComponent({
      * 获取用户的登录状态
      */
     const getLoginState = async () => {
-      const res = await authing.getLoginState()
+      const res = await authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      })
       state.loginState = res
 
       if (!res) {
@@ -1325,7 +1341,9 @@ export default defineComponent({
       } else {
         console.log('normal')
         // 静默登录，直接获取到用户信息
-        getLoginState();
+        getLoginState({
+          ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+        });
       }
     });
 
@@ -1387,7 +1405,9 @@ export class AppComponent {
     } else {
       console.log('normal')
 
-      this.getLoginState()
+      this.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      })
     }
   }
 
@@ -1395,7 +1415,9 @@ export class AppComponent {
    * 获取用户的登录状态
    */
   async getLoginState() {
-    const res = await this.authing.getLoginState();
+    const res = await this.authing.getLoginState({
+      ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+    });
     if (res) {
       this.loginState = res;
     } else {
@@ -1432,7 +1454,9 @@ if (authing.isRedirectCallback()) {
     window.location.replace('/')
   })
 } else {
-  authing.getLoginState().then(loginState => {
+  authing.getLoginState({
+    ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+  }).then(loginState => {
     console.log('loginState: ', loginState)
     if (!loginState) {
       // 静默登录。取不到用户信息直接跳转到授权中心
@@ -1496,9 +1520,9 @@ const authing = new Authing({
 
 ## 第七步：登录后的处理
 
-### 获取 Token
+### 获取登录态
 
-如果你想检查用户的登录态，并获取用户的 `Access Token`、`ID Token`，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，登录状态为 `null`：
+如果你想获取 `Access Token`、`ID Token` 等用户登录态，可以调用 `getLoginState` 方法，如果用户没有在 Authing 登录，登录状态为 `null`：
 
 :::: tabs :options="{ useUrlFragment: false }"
 
@@ -1534,7 +1558,9 @@ function App() {
    * 获取用户的登录状态
    */
   const getLoginState = useCallback(async () => {
-    const loginState = await authing.getLoginState()
+    const loginState = await authing.getLoginState({
+      ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+    })
     setLoginState(loginState)
   }, [])
 
@@ -1601,7 +1627,9 @@ export default {
      * 获取用户的登录状态
      */
     async getLoginState() {
-      const state = await this.authing.getLoginState();
+      const state = await this.authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      });
       this.loginState = state;
     },
   },
@@ -1657,7 +1685,9 @@ export default defineComponent({
      * 获取用户的登录状态
      */
     const getLoginState = async () => {
-      const res = await authing.getLoginState();
+      const res = await authing.getLoginState({
+        ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+      });
       state.loginState = res;
     };
 
@@ -1707,7 +1737,9 @@ export class AppComponent {
    * 获取用户的登录状态
    */
   async getLoginState() {
-    this.loginState = await this.authing.getLoginState()
+    this.loginState = await this.authing.getLoginState({
+      ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+    })
   }
 }
 ```
@@ -1731,7 +1763,9 @@ const authing = new AuthingFactory.Authing({
 });
 
 document.querySelector('#getLoginState').onclick = function () {
-  authing.getLoginState().then(loginState => {
+  authing.getLoginState({
+    ignoreCache: true // 是否忽略本地缓存，忽略后从远端实时校验用户登录状态
+  }).then(loginState => {
     console.log('loginState: ', loginState)
   })
 }
