@@ -1406,7 +1406,7 @@ def check_password_strength(self, password):
   pass
 ```
 
-检查密码强度，详情请见 [密码安全](/guides/security/pw-security.md)
+默认为任意非空字符，你可以 [在此配置用户池的密码强度等级](/guides/security/pw-security/pw-policy.md) 。
 
 #### 参数
 -  `password` \<str\> 密码

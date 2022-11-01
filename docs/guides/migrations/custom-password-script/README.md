@@ -1,27 +1,27 @@
 ---
 meta:
     - name: description
-      content: 配置自定义密码函数
+      content: 自定义密码加密方法
 ---
 
-# 配置自定义密码函数
+# 自定义密码加密方法
 
 <LastUpdated/>
 
-如果你想自定义密码加密函数，请在此上传函数片段（目前仅支持 Node.js），函数模版请[点击这里下载](https://console.authing.cn/api/v2/password/template/download)（Authing 不会存储用户的密码原文）。
+如果你想自定义密码加密函数，请在此上传函数片段（目前仅支持 Node.js），函数模版请 [点击这里下载](https://console.authing.cn/api/v2/password/template/download)（Authing 不会存储用户的密码原文）。
 
 此功能适用于以下场景：
 
-1. 你将所有用户迁移进了 Authing，但不想让用户修改密码；
-2. 你不信任 {{$localeConfig.brandName}} 的密码加密算法，想使用自己的密码加密算法；
+1. 你将所有用户迁移进了 Authing，但不想让用户修改密码。
+2. 你不信任 {{$localeConfig.brandName}} 的密码加密算法，想使用自己的密码加密算法。
 
 本文档介绍了如何配置密码加密函数。
 
 ## 配置步骤
 
-进入用户池，依次点击**扩展能力** -&gt; **自定义密码加密** ，如下图所示：
+进入用户池，依次点击 **安全设置->密码安全->自定义密码加密方法**，如下图所示：
 
-![](~@imagesZhCn/guides/migrations/1616578690192.jpg)
+<img src="../../../images/guides/migrations/1616578690192.png" style="display:block;margin: 0 auto;"/>
 
 ::: img-description
 自定义密码加密方法
@@ -29,7 +29,7 @@ meta:
 
 ### 下载模版
 
-点击页面中的「下载模版」下载 Node.js 代码模版，模版代码如下所示：
+点击页面中的 [下载模版](https://console.authing.cn/console/62c6aac05fc4c051820a41e1/safety-management/password?password_policy=custom_password) 下载 Node.js 代码模版，模版代码如下所示：
 
 ```js
 var getRawBody = require('raw-body');
@@ -115,7 +115,7 @@ module.exports.validate = function(request, response, context) {
 
 ### 编写代码
 
-你需要在 `encryptPassword` 函数中编写相应的密码加密方法，以及在 `comparePassword` 函数中编写相应的验证密码加密方法。
+你需要在 `encryptPassword` 函数中编写相应的密码加密方法，以及在 `vlidatePassword` 函数中编写相应的验证密码加密方法。
 
 若开发者需要引入第三方 NPM 包，请直接使用 NPM 直接安装。
 
@@ -176,5 +176,5 @@ const vlidatePassword = (plainText, encrypted) => {
 ::: hint-info
 密码加密函数上传后即生效，会影响原用户，建议此功能在完全新的用户池中使用。
 
-若你需要在旧用户池中修改密码加密函数，请联系我们：+86 17602502507。
+若你需要在旧用户池中修改密码加密函数，[请联系我们](csm@authing.cn)。
 :::

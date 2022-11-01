@@ -83,7 +83,7 @@
 8. 配置安全信息
 
    - [配置 Web 安全域](/guides/security/config-domain.md)
-   - [配置密码安全](/guides/security/pw-security.md)
+   - [配置密码安全](/guides/security/pw-security/)
 9. 配置用户池信息
    - [修改用户池基础信息](/guides/userpool-config/basic-config.md)
    - [配置邮件服务和模版](/guides/userpool-config/email/)
