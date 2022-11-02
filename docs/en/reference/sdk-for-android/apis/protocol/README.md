@@ -145,18 +145,21 @@ OIDCClient.getNewAccessTokenByRefreshToken(rt, (code, message, data)->{
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```java
-public void registerByEmail(String email, String password, @NotNull AuthCallback<UserInfo> callback)
+public void registerByEmail(String email, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email` email address
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **example**
 
 ```java
-new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByEmail("test@example.com", "xxxxxx", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -175,18 +178,21 @@ new OIDCClient().registerByEmail("me@gmail.com", "strong", (code, message, userI
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false. You need to use it first [sendEmail](./authentication/#send-email) sends a email verification code.（scene is `VERIFY_CODE`）.
 
 ```java
-public void registerByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+public void registerByEmailCode(String email, String vCode, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email` email address
 * `vCode` code
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **example**
 
 ```java
-new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByEmailCode("test@example.com", "1234", context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -205,20 +211,23 @@ new OIDCClient().registerByEmailCode("me@gmail.com", "1234", (code, message, use
 Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#send-verification-code) method sends SMS verification code.
 
 ```java
-public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, @NotNull AuthCallback<UserInfo> callback)
+public void registerByPhoneCode(String phoneCountryCode, String phone, String code, String password, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
-* `phoneCountryCode` Telephone country code, If null, the default value is +86
+* `phoneCountryCode` Telephone country code, If null, the default value is `+86`.
 * `phone` The phone number
 * `code` SMS verification code
-* `password` initial password, it can be null
+* `password` initial password, it can be `null`
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **example**
 
 ```java
-new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -235,18 +244,22 @@ new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", (co
 ### Use the username to login
 
 ```java
-public void loginByAccount(String account, String password, @NotNull AuthCallback<UserInfo> callback)
+public void loginByAccount(String account, String password, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `account`  The phone number / email address / username
 * `password` password
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByAccount("account", "xxxxxx", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -264,18 +277,22 @@ new OIDCClient().loginByAccount("account", "strong", (code, message, userInfo)->
 Use the email verification code to log in. You need to use it first [sendEmail](./authentication/#send-email) sends a email verification code.（scene is`VERIFY_CODE`）。
 
 ```java
-public void loginByEmailCode(String email, String vCode, @NotNull AuthCallback<UserInfo> callback)
+public void loginByEmailCode(String email, String vCode, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
 
 * `email` email address
 * `vCode` code
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByEmailCode("test@example.com", "1234", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }
@@ -293,7 +310,7 @@ new OIDCClient().loginByEmailCode("me@gmail.com", "1234", (code, message, userIn
 Use the mobile phone number verification code to log in. You need to use it first [sendSmsCode](#send-verification-code) sends a SMS verification code.
 
 ```java
-public void loginByPhoneCode(String phoneCountryCode, String phone, String code, @NotNull AuthCallback<UserInfo> callback)
+public void loginByPhoneCode(String phoneCountryCode, String phone, String code, boolean autoRegister, String context, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **Parameter**
@@ -301,11 +318,15 @@ public void loginByPhoneCode(String phoneCountryCode, String phone, String code,
 * `phoneCountryCode` Telephone country code, If null, the default value is +86
 * `phone` The phone number
 * `code` SMS verification code
+* `autoRegister` Whether it is automatically registered. If the user does not exist, an account is automatically created according to the login book.
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
 
 **Example**
 
 ```java
-new OIDCClient().loginByPhoneCode("+86", "188xxxx8888", "1234", (code, message, userInfo)->{
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().loginByPhoneCode("+86", "188xxxx8888", "1234", false, context.toString(), (code, message, userInfo)->{
     if (code == 200) {
         // userInfo
     }

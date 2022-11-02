@@ -873,6 +873,13 @@
         image2x: "ali-cloud@2x.png",
         category: "cloud",
       },
+      {
+        key: "showDoc",
+        name: "showDoc",
+        image: "showdocIcon.png",
+        image2x: "showdocIcon.png",
+        category: "devtools",
+      },
       # {
       #   key: "eteams",
       #   name: "泛微(公有云)",

@@ -96,13 +96,14 @@ func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigatio
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique. This interface does not require the user to verify the mailbox, after the user registration, the emailVerified field will be false.
 
 ```swift
-func registerByEmail(email: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmail(email: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `email` email address
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -126,13 +127,14 @@ OIDCClient().registerByEmail(email: "me@gmail.com", password: "strong") { code, 
 Use the email registration, the mailbox is not case sensitive and the only userpool is unique, you need to call [sendEmail](#Send-email) interface to send a reset password message (the scene value `VERIFY_CODE`).
 
 ```swift
-func registerByEmailCode(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByEmailCode(email: String, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `email` email address
 * `code` code
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -156,13 +158,14 @@ OIDCClient().registerByEmailCode(email: "me@gmail.com", code: "code") { code, me
 Use the username to register, the username is case sensitive and the only user pool.
 
 ```swift
-func registerByUserName(username: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByUserName(username: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
 
 * `username` username
 * `password` password
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -185,7 +188,7 @@ OIDCClient().registerByUserName(username: "username", password: "strong") { code
 Use your mobile phone number to register, you can set the initial password of the account at the same time. You can pass [sendSmsCode](#Send-verification-code) method sends SMS verification code.
 
 ```swift
-func registerByPhoneCode(phone: String, code: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func registerByPhoneCode(phone: String, code: String, password: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **Parameter**
@@ -193,6 +196,7 @@ func registerByPhoneCode(phone: String, code: String, password: String, completi
 * `phone` The phone number
 * `code` SMS verification code
 * `password` initial password, it can be null
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
 
@@ -216,13 +220,15 @@ OIDCClient().registerByPhoneCode(phone: "188xxxx8888", code: "1234", password: "
 Use the username to login，The returned `UserInfo` contains the `Access token`, `ID token`, and `Refresh token`.
 
 ```swift
-public func loginByAccount(account: String, password: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func loginByAccount(account: String, password: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **param**
 
 * `account` The phone number / email address / username
 * `password` password
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **example**
 
@@ -241,13 +247,15 @@ OIDCClient().loginByAccount(account: account, password: password) { code,  messa
 login by phone number and a verification code. Must call [sendSms](#Send-verification-code) method to get an SMS verification code before calling this method.
 
 ```swift
-public func loginByPhoneCode(phone: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+public func loginByPhoneCode(phone: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **params**
 
 - `phone` phone number
 - `code` SMS code
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **example**
 
@@ -264,13 +272,15 @@ OIDCClient().loginByPhoneCode(phone: phone, code: code) { code, message, userInf
 ### Login by email code
 
 ```swift
-public func loginByEmail(email: String, code: String, completion: @escaping(Int, String?, UserInfo?) -> Void) 
+public func loginByEmail(email: String, code: String, _ autoRegister: Bool = false, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void) 
 ```
 
 **params**
 
-* *email* email
-* *code* code
+* `email` email
+* `code` code
+* `autoRegister` Whether to register automatically.If it detects that the user does not exist, an account will be automatically created based on the login account password.
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **example**
 
