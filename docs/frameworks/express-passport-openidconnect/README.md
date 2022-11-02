@@ -28,11 +28,11 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
 
 配置后，同时保存 OIDC 有效信息，便于后文 Express 集成使用。
 
-- App ID：5f34e94bece50b891729e345
-- App Secret：8226514d6740e5a9cd94fad4991e02e9
-- Issuer：https://aj00.authing.cn/oauth/oidc
-- 配置信息：https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
-- 回调地址：http://localhost:3004/auth/cb
+- App ID：如 63478e2xxxxd84e7
+- App Secret：如 266206xxxx079d96c0e46
+- Issuer：如 http://api-test.authing.localhost:3000/oidc
+- 服务发现地址：如 http://api-test.authing.localhost:3000/oidc/.well-known/openid-configuration
+- 回调地址：如 http://localhost:3004/auth/cb
 
 <img src="@imagesZhCn/integration/express/step.png" height=400 style="display:block;margin:50px auto;">
 

@@ -13,28 +13,27 @@ downloadDemo:
 
 # Spring Security 集成 Authing CAS 快速开始
 
-> 本文以 Spring 生态中用于提供认证及访问权限控制的 Spring Security 5 为例，详细介绍 Spring Security 5 如何接入 Authing CAS
+> 本文以 Spring 生态中用于提供认证及访问权限控制的 [Spring Security 5](https://spring.io/projects/spring-security/) 为例，详细介绍 [Spring Security 5](https://spring.io/projects/spring-security/) 如何接入 Authing CAS
 
-Spring Security 是一个**提供安全访问控制解决方案的安全框架**。它提供了一组可以在 Spring 应用上下文中配置的 Bean，充分利用了 Spring IOC（控制反转）、DI（依赖注入）和 AOP（面向切面编程）功能，为应用系统**提供声明式的安全访问控制功能**，**增强**了企业**系统的安全性**，也**减轻**了编写大量**重复代码**的负担。
+Spring Security 是一个 **提供安全访问控制解决方案的安全框架**。它提供了一组可以在 Spring 应用上下文中配置的 Bean，充分利用了 Spring IOC（控制反转）、DI（依赖注入）和 AOP（面向切面编程）功能，为应用系统 **提供声明式的安全访问控制功能**，**增强** 了企业 **系统的安全性**，也 **减轻** 了编写大量 **重复代码** 的负担。
 
 Spring Security 的主要功能主要包括：
 
-- 认证
-- 授权
-- 攻击防护
+- 认证（认证是关于验证你的凭据，如用户名/手机号/邮箱和密码，以验证访问者的身份。）
+- 授权（授权发生在系统完成身份认证之后，最终会授予你访问资源的完全权限，决定了你访问系统的能力以及达到的程度。）
+- 攻击防护（用于预防和抵御网络上的恶意攻击。）
 
 ##  集成介绍
 
-&emsp;&emsp;单点登录 (**Single Sign On**)，英文名称缩写 **SSO**，**SSO** 的意思就是在多系统的环境中，登录单方系统，就可以**不用再次登录**的情况下**访问相关受信任的系统**。也就是说**只要登录一次**单体系统就可以。  
-&emsp;&emsp;Authing CAS 就是 SSO 解决方案的一种**具体实现**方式，即在多个系统中，用户只需要到一个中央服务器登录一次即可访问这些系统中的任何一个，无须多次登录。 并且**支持多种认证机制**、**安全策略**、**支持授权**以及**提供高可用性**的方式。不需要客户关注于如何实现 CAS Server、配置 HTTPS 以及提供个性化的登录、登出的页面等等。
-Authing **简化配置流程**，为用户提供一站式应用集成，用户只需要在平台自行配置各种需要的方式即可
+&emsp;&emsp;单点登录 (**Single Sign On**)，英文名称缩写 **SSO**，**SSO** 的意思就是在多系统的环境中，任意一个单体系统，就可以 **不用再次登录** 的情况下 **访问相关受信任的系统**。也就是说 **只要登录一次** 单体系统就可以。  
+&emsp;&emsp;Authing CAS 就是 SSO 解决方案的一种 **具体实现** 方式，即在多个系统中，用户只需要到一个中央服务器登录一次即可访问这些系统中的任何一个，无须多次登录。 并且 **支持多种认证机制**、**安全策略**、**支持授权** 以及 **提供高可用性** 的方式。不需要客户关注于如何实现 CAS Server、配置 HTTPS 以及提供个性化的登录、登出的页面等等。
+Authing CAS **简化配置流程**，为用户提供一站式应用集成，用户只需要在平台自行配置各种需要的方式即可
 
 下面以 Authing 提供的 CAS 服务为例，将详细介绍使用 Spring Security 5 集成 Authing CAS 单点登录的方法
 
 - 开发工具：IDEA
 - 项目管理工具：Maven
 - JDK版本：1.8
-- 版本控制工具：Git
 
 ## 配置 Authing
 
@@ -55,21 +54,27 @@ Authing **简化配置流程**，为用户提供一站式应用集成，用户�
 后面搭建项目需要用到这些信息。
 <img src="@imagesZhCn/integration/spring-security/cas3.png" height=350 style="display:block;margin:5px auto;">
 
-##  项目搭建
+##  Spring Boot 项目搭建
+> 本文会介绍 Spring Initializr 和 maven 两种搭建方式。
+### 开发环境
 
-###  快速构建项目
+- 开发工具：IDEA
+- 项目管理工具：Maven
+- JDK版本：1.8
 
-打开 IDEA，点击 New Project 创建一个新项目，选择 Spring Initializr 创建一个 Spring Boot 项目，输入项目的 Group 以及 Artifact 信息
-<img src="@imagesZhCn/integration/spring-security/cas1.png" height=550 style="display:block;margin:5px auto;">
+###  使用 Spring Initializr 快速构建项目
 
-集成过程中需要在 pom.xml 中添加一些其他的依赖包，如下：
+打开 IDEA，点击 New Project 创建一个新项目，选择 Spring Initializr 创建一个 Spring Boot 项目，输入项目的 Group 以及 Artifact 信息。
+<img src="@imagesZhCn/integration/spring-security/cas-spring-1.png" height=550 style="display:block;margin:5px auto;">
 
-```
-<dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
+
+添加 Spring Web， Spring Security 依赖。
+<img src="@imagesZhCn/integration/spring-security/stepnew1-2.png" height=550 style="display:block;margin:5px auto;">
+
+
+另外，集成过程中需要在 pom.xml 中添加一些其他的依赖包，如下：
+```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -87,9 +92,7 @@ Authing **简化配置流程**，为用户提供一站式应用集成，用户�
             <artifactId>hutool-all</artifactId>
             <version>5.7.11</version>
         </dependency>
-    </dependencies>
 ```
-
 其中，hutool 工具包的作用是远程调用接口，当收到回调请求时，会使用该工具包远程调用 CAS Service Ticket 的 serviceValidate 接口，检验端点的合法性，后续自动回调接口编码会使用到。
 
 最后，需要在启动类中添加 @EnableCasClient 注解，开启 CAS client 的支持，如下：
@@ -106,17 +109,66 @@ public class AuthingCasApplication {
 }
 ```
 
+### 使用 maven 工具构建项目
+
+打开 IDEA，点击 New Project 创建一个新项目，选择 maven 创建一个 maven 项目，然后点击 Next，填写项目名称，最后 Finish 即可。
+<img src="@imagesZhCn/integration/spring-security/cas-spring-2.png" height=550 style="display:block;margin:5px auto;">
+
+接下来在 pom.xml 中添加父工程依赖和集成过程中需要的其它依赖包。
+```xml
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.unicon.cas</groupId>
+            <artifactId>cas-client-autoconfig-support</artifactId>
+            <version>2.3.0-GA</version>
+        </dependency>
+
+        <!--远程调用接口使用-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.11</version>
+        </dependency>
+        
+```
+
+🎉🎉🎉至此，你已经完成了 使用 Spring Initializr 和 maven 两种方式构建项目，请选择一种适合自己项目开发的方式即可。
+
+
 ###  配置项目中的配置文件
 
 找到 `src/main/resources/application.properties`，将其重命名为 `application.yml`，并添加如下内容：
 
-```
+```yaml
 server:
   port: 9999
 
 cas:
-  server-url-prefix: {替换为你的 server-url-prefix，如：https://cjtjls-demo.authing.cn/cas-idp/61319680ea8b30c9ca9ca071}
-  server-login-url: {替换为你的 server-url-prefix，如：https://cjtjls-demo.authing.cn/cas-idp/61319680ea8b30c9ca9ca071/login}
+  server-url-prefix: {替换为你的 server-url-prefix，如：https://cjtjls-demo.authing.cn/cas-idp/613196xxxxxc9ca9ca071}
+  server-login-url: {替换为你的 server-url-prefix，如：https://cjtjls-demo.authing.cn/cas-idp/613196xxxxx0c9ca9ca071/login}
   client-host-url: {替换为你的 client-host-url，如：http://localhost:9999/}
   validation-url-patterns:
     - /**
@@ -127,7 +179,7 @@ cas:
 ###  自动回调接口编码
 
 在项目下新建一个 package，然后新建一个 CallBackController，此接口作用是通过 CAS 的 ticket 获取用户信息。
-注意，下面的参数 service，ticket 都是 Authing CAS 的标准，不能乱改，这也是标准协议的规定，service 参数所对应的值也就是之前在 Authing 平台应用所配置的那些
+注意，下面的参数 service，ticket 都是 Authing CAS 的标准，也是标准协议的规定（如果要修改，请遵循 CAS 协议标准进行修改），service 参数所对应的值也就是之前在 Authing 平台应用所配置的那些。
 
 ```java
 package com.authing.cas.authingcas.controller;
@@ -138,11 +190,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.HashMap;
 
-@Controller
+@RestController
 public class CallbackController {
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_XML_VALUE)
-    @ResponseBody
     public String getTicket(String ticket) {
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("service", "http://localhost:9999/");
