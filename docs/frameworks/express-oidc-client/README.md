@@ -28,34 +28,40 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
 
 配置后，同时保存 OIDC 有效信息，便于后文 Express 集成使用。
 
-- App ID：5f34e94bece50b891729e345
-- App Secret：8226514d6740e5a9cd94fad4991e02e9
-- Issuer：https://aj00.authing.cn/oauth/oidc
-- 配置信息：https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration
-- 回调地址：http://localhost:3004/auth/cb
+- App ID：如 63478e2xxxxd84e7
+- App Secret：如 266206xxxx079d96c0e46
+- Issuer：如 http://api-test.authing.localhost:3000/oidc
+- 服务发现地址：如 http://api-test.authing.localhost:3000/oidc/.well-known/openid-configuration
+- 回调地址：如 http://localhost:3004/auth/cb
 
 <img src="@imagesZhCn/integration/express/step.png" height=400 style="display:block;margin:50px auto;">
 
 ## 集成 Authing OIDC 应用
+**示例项目**：https://jihulab.com/authing/developer/wangzhilin/express-oidc-client-demo
 
-1. Express 搭建本地服务
+1. 安装依赖。
+
+    ```yaml
+    yarn add express passport openid-client express-session
+    ```
+2. 在 src 目录下创建 index.js 文件，Express 搭建本地服务。
     ```javascript
     const express = require('express');
     var app = express();
     app.listen(3004, () => console.log(`Example app listening on port 3004!`))
     ```
-2. 连接 OIDC 应用，注册 'oidc' 策略
+3. 连接 OIDC 应用，注册 'oidc' 策略。
 
     ```javascript
     const passport = require('passport');
     const { Strategy, Issuer } = require('openid-client');
     const config = { // oidc 配置信息
-            appID:'5f34e94bece50b891729e345',
-            appSecret:'8226514d6740e5a9cd94fad4991e02e9',
-            issuer:'https://aj00.authing.cn/oauth/oidc',
-            configInfo:'https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration',
-            callbackUrl:'http://localhost:3004/auth/cb'
-    }
+            appID:'{替换成你的 App ID: 如 5f34e94bexxxxx29e34}',
+            appSecret:'{替换成你的 App Secret: 如 8226514dxxxxxxad4991e02e9}',
+            issuer:'{替换成你的 issuer: 如 https://aj00.authing.cn/oauth/oidc}',
+            configInfo:'{替换成你的服务发现地址: 如 https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration}',
+            callbackUrl:'{替换成你的回调地址: 如 http://localhost:3004/auth/cb}'
+    };
     
     (async () => {
         const issuer = await Issuer.discover(config.configInfo) // 连接 oidc 应用
@@ -79,7 +85,7 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
     
     ```
 
-3. 定义 OIDC 访问、回调、用户信息查询等接口
+4. 定义 OIDC 访问、回调、用户信息查询等接口。
 
     ```javascript
     app.get('/auth', passport.authenticate('oidc'));
@@ -96,7 +102,7 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
     
     ```
 
-4. 除了以上核心步骤，存储 sesssion 信息、序列化用户信息、退出等内容，请参考以下本文完整的 Express 集成 Authing OIDC 的代码文件。
+5. 除了以上核心步骤，存储 sesssion 信息、序列化用户信息、退出等内容，请参考以下本文完整的 Express 集成 Authing OIDC 的代码文件。
 
     ```javascript
     const express = require('express');
@@ -104,12 +110,12 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
     const passport = require('passport');
     const { Strategy, Issuer } = require('openid-client');
     const config = {
-            appID:'5f34e94bece50b891729e345',
-            appSecret:'8226514d6740e5a9cd94fad4991e02e9',
-            issuer:'https://aj00.authing.cn/oauth/oidc',
-            configInfo:'https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration',
-            callbackUrl:'http://localhost:3004/auth/cb'
-    }
+            appID:'{替换成你的 App ID: 如 5f34e94bexxxxx29e34}',
+            appSecret:'{替换成你的 App Secret: 如 8226514dxxxxxxad4991e02e9}',
+            issuer:'{替换成你的 issuer: 如 https://aj00.authing.cn/oauth/oidc}',
+            configInfo:'{替换成你的服务发现地址: 如 https://aj00.authing.cn/oauth/oidc/.well-known/openid-configuration}',
+            callbackUrl:'{替换成你的回调地址: 如 http://localhost:3004/auth/cb}'
+    };
     
     (async () => {
     
@@ -148,6 +154,7 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
         app.get('/', (req, res) => {
             res.send("home")
         })
+        // logout 详细参数参考的链接: https://docs.authing.cn/v2/guides/basics/authenticate-first-user/how-to-logout-user.html#
         app.get('/logout', (req, res) => {
             const logoutBaseURL = 'https://aj00.authing.cn/login/profile/logout'
             const appId = '5f17f5d6f64fb07b7094a41b'
@@ -166,6 +173,13 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
     })()
     
     ```
+
+## 启动测试验证
+1. 控制台输入 node src/index.js 启动项目。
+2. 启动后访问 3004 端口， http://localhost:3004/ 显示 home 表示启动成功。
+- 登录： http://localhost:3004/auth，跳转 Authing 登录组件，登录认证成功后跳转到 home 页面，否则跳转到用户信息页面（认证失败时核对下 Authing 配置是否与上述相符）。
+- 查看用户信息： http://localhost:3004/user，未登录认证成功或退出登录后显示为空白，已登录显示为 json 格式用户数据。
+- 退出登录： http://localhost:3004/logout，退出登录后跳转到 home 页面。
 ## 你可能还需要
 
 使用 passport-openidconnect 集成

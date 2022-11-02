@@ -1779,6 +1779,28 @@ const zhCnNavBar = {
     {
       title: "框架集成",
       path: "/reference/frameworks",
+      children: [
+        {
+          title: "Spring Security OIDC",
+          path: "/frameworks/spring-security-oidc/",
+        },
+        {
+          title: "Spring Security OAuth 2.0",
+          path: "/frameworks/spring-security-oauth/",
+        },
+        {
+          title: "Spring Security CAS",
+          path: "/frameworks/spring-security-cas/",
+        },
+        {
+          title: "Express OIDC Client",
+          path: "/frameworks/express-oidc-client/",
+        },
+        {
+          title: "Express Passport OpenIdConnect",
+          path: "/frameworks/express-passport-openidconnect/",
+        }
+      ],
     },
     {
       title: "Radius",
