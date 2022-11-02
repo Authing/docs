@@ -154,6 +154,7 @@ Passport ：Passport 是 Node.js 的认证中间件，特别灵活和模块化�
         app.get('/', (req, res) => {
             res.send("home")
         })
+        // logout 详细参数参考的链接: https://docs.authing.cn/v2/guides/basics/authenticate-first-user/how-to-logout-user.html#
         app.get('/logout', (req, res) => {
             const logoutBaseURL = 'https://aj00.authing.cn/login/profile/logout'
             const appId = '5f17f5d6f64fb07b7094a41b'

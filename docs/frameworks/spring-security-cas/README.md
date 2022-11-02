@@ -212,6 +212,7 @@ public class CallbackController {
 
 接下来，可以输入用户名、密码来进行登录，查看登录后的结果
 <img src="@imagesZhCn/integration/spring-security/cas10.png" height=300 style="display:block;margin:5px auto;">
+此处可参考该 [链接](https://docs.authing.cn/v2/federation/cas/cas20/?step=3)
 ```xml
 <cas:serviceResponse xmlns:cas="http://www.yale.edu/tp/cas">
   <cas:authenticationSuccess>
