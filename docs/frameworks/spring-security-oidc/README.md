@@ -46,7 +46,7 @@ Spring Security 的主要功能主要包括：
 
 
 
-添加 Spring Web， Spring Security 依赖。
+添加 Spring Web 和 Spring Security 依赖。
 <img src="@imagesZhCn/integration/spring-security/stepnew1-2.png" height=550 style="display:block;margin:5px auto;">
 
 

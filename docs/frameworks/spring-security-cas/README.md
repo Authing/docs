@@ -13,7 +13,7 @@ downloadDemo:
 
 # Spring Security 集成 Authing CAS 快速开始
 
-> 本文以 Spring 生态中用于提供认证及访问权限控制的 [Spring Security 5](https://spring.io/projects/spring-security/) 为例，详细介绍 [Spring Security 5](https://spring.io/projects/spring-security/) 如何接入 Authing CAS
+> 本文以 Spring 生态中用于提供认证及访问权限控制的 [Spring Security 5](https://spring.io/projects/spring-security/) 为例，详细介绍 [Spring Security 5](https://spring.io/projects/spring-security/) 如何接入 Authing CAS。
 
 Spring Security 是一个 **提供安全访问控制解决方案的安全框架**。它提供了一组可以在 Spring 应用上下文中配置的 Bean，充分利用了 Spring IOC（控制反转）、DI（依赖注入）和 AOP（面向切面编程）功能，为应用系统 **提供声明式的安全访问控制功能**，**增强** 了企业 **系统的安全性**，也 **减轻** 了编写大量 **重复代码** 的负担。
 
@@ -27,9 +27,9 @@ Spring Security 的主要功能主要包括：
 
 &emsp;&emsp;单点登录 (**Single Sign On**)，英文名称缩写 **SSO**，**SSO** 的意思就是在多系统的环境中，任意一个单体系统，就可以 **不用再次登录** 的情况下 **访问相关受信任的系统**。也就是说 **只要登录一次** 单体系统就可以。  
 &emsp;&emsp;Authing CAS 就是 SSO 解决方案的一种 **具体实现** 方式，即在多个系统中，用户只需要到一个中央服务器登录一次即可访问这些系统中的任何一个，无须多次登录。 并且 **支持多种认证机制**、**安全策略**、**支持授权** 以及 **提供高可用性** 的方式。不需要客户关注于如何实现 CAS Server、配置 HTTPS 以及提供个性化的登录、登出的页面等等。
-Authing CAS **简化配置流程**，为用户提供一站式应用集成，用户只需要在平台自行配置各种需要的方式即可
+Authing CAS **简化配置流程**，为用户提供一站式应用集成，用户只需要在平台自行配置各种需要的方式即可。
 
-下面以 Authing 提供的 CAS 服务为例，将详细介绍使用 Spring Security 5 集成 Authing CAS 单点登录的方法
+下面以 Authing 提供的 CAS 服务为例，将详细介绍使用 Spring Security 5 集成 Authing CAS 单点登录的方法。
 
 - 开发工具：IDEA
 - 项目管理工具：Maven
@@ -44,14 +44,13 @@ Authing CAS **简化配置流程**，为用户提供一站式应用集成，用�
 
 <img src="@imagesZhCn/integration/spring-security/stepnew2-1.png" height=350 style="display:block;margin:5px auto;">
 
-点击「配置」，在应用页下找到认证配置，并配置自己的登录回调 URL，并且将默认协议类型改为 CAS。
+点击「配置」，在应用页下找到认证配置，并配置自己的登录回调 URL。
 <img src="@imagesZhCn/integration/spring-security/cas4.png" height=350 style="display:block;margin:5px auto;">
 
-配置完上述，继续往下配置，你会看到更多身份协议，点击展开。
+配置完上述，继续往下配置，点击「其他配置」你会看到更多协议这一栏。
 <img src="@imagesZhCn/integration/spring-security/cas2.png" height=350 style="display:block;margin:5px auto;">
 
-进入到更多身份协议详细页，切换到 CAS 身份提供商，启用 CAS IdP，记录登录端点、登出端点、service ticket 检验端点（CAS 2.0）的地址，
-后面搭建项目需要用到这些信息。
+切换到 CAS 身份提供商，启用 CAS IdP，记录登录端点、登出端点、service ticket 检验端点（CAS 2.0）的地址，后面搭建项目需要用到这些信息。
 <img src="@imagesZhCn/integration/spring-security/cas3.png" height=350 style="display:block;margin:5px auto;">
 
 ##  Spring Boot 项目搭建
@@ -69,7 +68,7 @@ Authing CAS **简化配置流程**，为用户提供一站式应用集成，用�
 
 
 
-添加 Spring Web， Spring Security 依赖。
+添加 Spring Web 和 Spring Security 依赖。
 <img src="@imagesZhCn/integration/spring-security/stepnew1-2.png" height=550 style="display:block;margin:5px auto;">
 
 
@@ -174,7 +173,7 @@ cas:
     - /**
 ```
 
-需要将这里的 {server-url-prefix}、{server-login-url}、{client-host-url} 替换成上一步应用配置中的实际信息
+需要将这里的 {server-url-prefix}、{server-login-url}、{client-host-url} 替换成上一步应用配置中的实际信息。
 
 ###  自动回调接口编码
 
@@ -207,10 +206,10 @@ public class CallbackController {
 
 ###  测试项目
 
-一切准备就绪了，现在启动项目并访问 `http://localhost:9999`，即可看到 Authing 登录窗口
+一切准备就绪了，现在启动项目并访问 `http://localhost:9999`，即可看到 Authing 登录窗口。
 <img src="@imagesZhCn/integration/spring-security/cas6.png" height=400 style="display:block;margin:5px auto;">
 
-接下来，可以输入用户名、密码来进行登录，查看登录后的结果
+接下来，可以输入用户名、密码来进行登录，查看登录后的结果。
 <img src="@imagesZhCn/integration/spring-security/cas10.png" height=300 style="display:block;margin:5px auto;">
 此处可参考该 [链接](https://docs.authing.cn/v2/federation/cas/cas20/?step=3)
 ```xml
@@ -235,7 +234,7 @@ public class CallbackController {
 </cas:serviceResponse>
 ```
 
-此外，Authing 还会保存用户的登录态，用户短时间内再次登录无需进行认证。 另外，如果 ticket 验证失败，Authing 将返回格式如下的 xml 文档
+此外，Authing 还会保存用户的登录态，用户短时间内再次登录无需进行认证。 另外，如果 ticket 验证失败，Authing 将返回格式如下的 xml 文档。
 
 ```xml
 <cas:serviceResponse xmlns:cas="http://www.yale.edu/tp/cas">
@@ -243,7 +242,7 @@ public class CallbackController {
 </cas:serviceResponse>
 ```
 
-恭喜 🎉🎉🎉 ，到此你已经学会了 Spring Security 5 集成 Authing CAS 认证授权
+恭喜 🎉🎉🎉 ，到此你已经学会了 Spring Security 5 集成 Authing CAS 认证授权。
 
 ##  其他知识学习
 
@@ -257,11 +256,11 @@ public class CallbackController {
 
 ###  CAS 术语
 
-**Ticket Granting ticket (TGT)** ：可以认为是 CAS Server 根据用户名密码生成的一张票，存在 Server 端
+**Ticket Granting ticket (TGT)** ：可以认为是 CAS Server 根据用户名密码生成的一张票，存在 Server 端。
 
-**Ticket-granting cookie (TGC)** ：其实就是一个 Cookie，存放用户身份信息，由 Server 发给 Client 端
+**Ticket-granting cookie (TGC)** ：其实就是一个 Cookie，存放用户身份信息，由 Server 发给 Client 端。
 
-**Service ticket (ST)** ：由 TGT 生成的一次性票据，用于验证，只能用一次。相当于 Server 发给 Client 一张票，然后 Client 拿着这个票再来找 Server 验证，看看是不是 Server 签发的
+**Service ticket (ST)** ：由 TGT 生成的一次性票据，用于验证，只能用一次。相当于 Server 发给 Client 一张票，然后 Client 拿着这个票再来找 Server 验证，看看是不是 Server 签发的。
 
 
 ## 接下来你可能需要

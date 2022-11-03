@@ -52,7 +52,7 @@ Spring Security 的主要功能包括：
 
 <img alt="默认回调地址" src="@imagesZhCn/integration/spring-security/oauth-callback.png" height=350 style="display:block;margin:5px auto;">
  
-确认开启 OAuth 2.0 服务并进行配置
+确认开启 OAuth 2.0 服务并进行配置。
 <img alt="开启OAuth" src="@imagesZhCn/integration/spring-security/oauth-more.png" height=350 style="display:block;margin:5px auto;">
 
 
@@ -71,7 +71,7 @@ Spring Security 的主要功能包括：
 
 
 
-添加 Spring Web， Spring Security 依赖。
+添加 Spring Web、Spring Security 和 OAuth2 Client 依赖。
 <img src="@imagesZhCn/integration/spring-security/oauth-create-2.png" height=550 style="display:block;margin:5px auto;">
 
 
@@ -246,7 +246,7 @@ spring.security.oauth2.client.provider.authing.token-uri=https://{替换为你�
 
 <img  alt="密码模式" src="@imagesZhCn/integration/spring-security/oauth-client_credentials.png" height=350 style="display:block;margin:5px auto;">
 
-客户端模式与密码模式类似，通过应用 ID 和应用秘钥换取令牌
+客户端模式与密码模式类似，通过应用 ID 和应用秘钥换取令牌。
 
 > 认证地址 https://{域名}.authing.cn/oauth/token?grant_type=client_credentials&scope={Scope}&client_id={客户端 ID}&client_secret={客户端秘钥}
 
@@ -268,17 +268,17 @@ spring.security.oauth2.client.registration.authing.scope=profile
 spring.security.oauth2.client.provider.authing.token-uri=https://{替换为你的Issuer，如：authing-net-sdk-demo}.authing.cn/oauth/token
 ```
 
-需要将这里的 {client-id}、{client-secret}、{token-uri}、{redirect-uri} 替换成上一步「应用配置」中的实际信息
+需要将这里的 {client-id}、{client-secret}、{token-uri}、{redirect-uri} 替换成上一步「应用配置」中的实际信息。
 
 <img  alt="简化模式" src="@imagesZhCn/integration/spring-security/oauth-implicit.png" height=350 style="display:block;margin:5px auto;">
 
-简化模式下，用户通过浏览器直接发起令牌交换操作，无需后台参与
+简化模式下，用户通过浏览器直接发起令牌交换操作，无需后台参与。
 
 > 认证地址 https://{域名}.authing.cn/oauth/authorize?response_type=token&client_id={客户端 ID}&redirect_uri={回调地址}&scope={SCOPE}&state={state}
 
 <img  alt="简化模式访问" src="@imagesZhCn/integration/spring-security/oauth-implicit-url.png" height=350 style="display:block;margin:5px auto;">
 
-认证授权之后，浏览器重定向到回调地址并携带访问令牌
+认证授权之后，浏览器重定向到回调地址并携带访问令牌。
 <img  alt="简化模式成功" src="@imagesZhCn/integration/spring-security/oauth-implicit-success.png" height=350 style="display:block;margin:5px auto;">
 
 ## 单点登录
@@ -348,13 +348,13 @@ spring.security.oauth2.client.provider.authing.user-info-uri=https://core.authin
 
 #### 访问受保护资源
 
-此时无论访问 server-file 还是 server-pic 都会被重定向到 Authing 认证页面
+此时无论访问 server-file 还是 server-pic 都会被重定向到 Authing 认证页面。
 
 <img alt="重定向登录" src="@imagesZhCn/integration/spring-security/oauth-sso-redirct.png" height=350 style="display:block;margin:5px auto;">
 
 #### 登录后访问受保护资源
 
-完成登录后,直接访问 server-pic 的资源也不需要重新进行认证，可直接返回响应结果
+完成登录后,直接访问 server-pic 的资源也不需要重新进行认证，可直接返回响应结果。
 
 <img alt="登录成功" src="@imagesZhCn/integration/spring-security/oauth-sso-success.png" height=350 style="display:block;margin:5px auto;">
 
