@@ -69,7 +69,7 @@ axios
 
 注意第五行前面有 **Bearer 类型。**
 
-### **Bearer 是什么意思?**
+### 什么是 Bearer?
 
 Bearer Token \([RFC 6750](http://www.rfcreader.com/#rfc6750)\) 用于授权访问资源，任何 Bearer 持有者都可以无差别地用它来访问相关的资源，而无需证明持有加密 key。一个 Bearer 代表授权范围、有效期，以及其他授权事项；一个 Bearer 在存储和传输过程中应当防止泄露，需实现 Transport Layer Security \(TLS\)；一个 Bearer 有效期不能过长，过期后可用 Refresh Token 申请更新。
 

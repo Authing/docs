@@ -8,23 +8,25 @@
 
 ## 关注公众号登录
 
-「关注公众号登录」指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用「关注公众号登录」可以快速为公众号引流，提升品牌粘性。借助 Authing 的「关注公众号登录」，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。[查看详情](/guides/connections/social/wechatmp-qrcode/)。
+「关注公众号登录」指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用「关注公众号登录」可以快速为公众号引流，提升品牌粘性。借助 Authing 的「关注公众号登录」，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。有关详情，请参阅 [微信公众号关注](/guides/connections/social/wechatmp-qrcode/)。
 
-> 受微信平台要求限制，只有**服务号**具备[生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) API 能力，请确保你的公众号是**服务号**类型。
+::: hint-info
+根据微信平台要求，只有 **服务号** 具备 [生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) API 能力，请确保你的公众号是 **服务号** 类型。
+:::
 
 - 应用场景：PC 网站；
 - 概述：PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录；
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)。
+- 查看 [网站应用微信登录开发指南](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) 了解详情。
 
-<img src="https://cdn.authing.cn/img/20220314121523.png" height="400px" style="display:block;margin: 0 auto;"/>
+<img src="https://cdn.authing.cn/img/20220314121523.png" style="display:block;margin: 0 auto;"/>
 
 ## PC 网站使用微信扫码登录
 
-微信 PC 扫码登录可以让用户使用微信身份安全登录第三方应用或网站，在 {{$localeConfig.brandName}} 中开启微信扫码登录之后，可实现通过 {{$localeConfig.brandName}} 快速获取微信用户基本开放信息和帮助用户实现基础开放功能。[查看详情](/guides/connections/social/wechat-pc/)。
+微信 PC 扫码登录可以让用户使用微信身份安全登录第三方应用或网站，在 {{$localeConfig.brandName}} 中开启微信扫码登录之后，可实现通过 {{$localeConfig.brandName}} 快速获取微信用户基本开放信息和帮助用户实现基础开放功能。有关详情，请查看 [微信 PC 扫码](/guides/connections/social/wechat-pc/)。
 
-- 应用场景：PC 网站；
-- 概述：在 PC 网站应用中跳转到微信二维码页面，然后使用微信扫码登录应用；
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)。
+- 应用场景：PC 网站
+- 概述：在 PC 网站应用中跳转到微信二维码页面，然后使用微信扫码登录应用。
+- 查看[微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html) 了解微信登录功能。
 
 <img src="./images/wechat-pc-scan-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 

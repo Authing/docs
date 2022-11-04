@@ -1,10 +1,10 @@
 ---
 meta:
     - name: description
-      content: 配置自定义密码函数
+      content: 自定义密码加密方法
 ---
 
-# 配置自定义密码函数
+# 自定义密码加密方法
 
 <LastUpdated/>
 

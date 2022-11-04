@@ -1365,7 +1365,7 @@ func (c *Client) CheckPasswordStrength(password string) (*struct {
 }, error)
 ```
 
-检查密码强度，详情请见 [密码安全](guides/security/pw-security.md)
+检查密码强度，详情请见 [密码策略](/guides/security/pw-security/pw-policy.md)。
 
 #### 参数
 

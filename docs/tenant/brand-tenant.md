@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-Authing 提供了非常灵活的的登录页面个性化配置，你可以在租户的**品牌化**中进行配置。
+Authing 提供了非常灵活的的登录页面个性化配置，你可以在租户的 **品牌化** 中进行配置。
 
 <img src="./images/brand-setting.png" >
 

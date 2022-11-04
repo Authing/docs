@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-如果你使用 {{$localeConfig.brandName}} ，你的用户资料将安全地存储在 {{$localeConfig.brandName}} 云上的数据库中，你不需要额外保存一份用户资料。你需要在本地将你的业务数据与 {{$localeConfig.brandName}} 用户进行联表，通过用户 ID（User ID）和业务数据进行关联。
+如果你使用 {{$localeConfig.brandName}} ，你的用户资料将被安全地存储在 {{$localeConfig.brandName}} 云上的数据库中，你不需要额外保存一份用户资料。你需要在本地将你的业务数据与 {{$localeConfig.brandName}} 用户进行联表，通过用户 ID（User ID）和业务数据进行关联。
 
 比如你的业务系统中有一个订单表（orders），他自身的表结构如下：
 

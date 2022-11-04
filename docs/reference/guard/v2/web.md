@@ -40,7 +40,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 有两种方式可以供你选择：**安装 Authing library** 或 **直接通过浏览器加载**。
 
-无论使用哪一种安装方式，你都需要用到应用的 **APP ID**，请先[前往控制台获取](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
+无论使用哪一种安装方式，你都需要用到应用的 **APP ID**，请先 [前往控制台获取](https://console.authing.cn)。关于 **APP ID** 所在位置，请参阅 [应用配置](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 
 #### 方法一：安装 Authing library
 

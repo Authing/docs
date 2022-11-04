@@ -43,7 +43,7 @@
 
 ![](../../images/disable-unverified-email-login.png)
 
-用户登录成功之后，将回调到你配置的回调链接，你可以在此获取用户信息，详情请见：使用 {{$localeConfig.brandName}} 托管登录页完成认证 。
+用户登录成功之后，将回调到你配置的回调链接，你可以在此获取用户信息，详情请见 [使用 {{$localeConfig.brandName}} 托管登录页完成认证](/guides/basics/authenticate-first-user/use-hosted-login-page.md) 。
 
 ### 重置密码
 
