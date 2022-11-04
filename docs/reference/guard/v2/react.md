@@ -96,6 +96,10 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components/lib/index.min.js) 下载）。
 
+:::: tabs :options="{ useUrlFragment: false }"
+
+::: tab React
+
 ```html
 <html lang="en">
 
@@ -141,6 +145,60 @@ Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供�
 
 </html>
 ```
+
+:::
+
+::: tab React18
+
+```html
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- 引入 babel，支持 jsx -->
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+
+  <!-- 引入 React -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- JavaScript 代码 -->
+  <script>
+    window.react = React
+    window['react-dom'] = ReactDOM
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/react18-ui-components"></script>
+
+  <!-- CSS 文件 -->
+  <link href="https://cdn.jsdelivr.net/npm/@authing/react18-ui-components/lib/index.min.css" rel="stylesheet">
+  </link>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    var App = () => {
+      const appId = "AUTHING_APP_ID";
+      const onLogin = userInfo => {
+        console.log(userInfo);
+      };
+      return React.createElement(
+        AuthingReactUIComponents.Guard, {
+          appId: appId,
+          onLogin: onLogin,
+        },
+      )
+    };
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+</body>
+
+</html>
+```
+
+:::
+
+::::
 
 **无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
 
