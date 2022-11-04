@@ -17,7 +17,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 |条目|说明|
 |-----|----|
-|最新版本|5.0.6|
+|最新版本|5.0.8|
 |仓库地址|https://github.com/authing/Guard|
 
 ## 第一步：在 Authing 控制台创建应用
@@ -116,13 +116,15 @@ yarn add @authing/guard-angular
 // React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
+import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from '@authing/guard-react18';
+import "@authing/guard-react18/dist/esm/guard.min.css";
 
 import React from "react";
-import "@authing/guard-react/dist/esm/guard.min.css";
+
 // 你的业务代码根组件
 import RouterComponent from "./router";
 
@@ -260,8 +262,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.0.8/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.8/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -959,10 +961,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.0.6/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.0.8/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.8/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -1989,7 +1991,7 @@ import { useGuard } from "@authing/guard-react";
 
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
-import { useGuard } from "@authing/guard-react18";
+// import { useGuard } from "@authing/guard-react18";
 
 import React from "react";
 
@@ -2915,8 +2917,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.0.8/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.8/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
@@ -3426,6 +3428,8 @@ function App() {
       host="https://my-authing-app.example.com"
 
       // 控制台登录回调 URL
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
       redirectUri="https://my-authing-app.example.com/callback"
 
       // modal 弹框模式
@@ -3472,6 +3476,8 @@ Vue.use(GuardPlugin, {
   host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
   redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
@@ -3517,6 +3523,8 @@ app.use(
     host: "https://my-authing-app.example.com",
 
     // 控制台登录回调 URL
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
     redirectUri: "https://my-authing-app.example.com/callback",
 
     // modal 弹框模式
@@ -3579,6 +3587,8 @@ import { GuardModule } from "@authing/guard-angular";
       host: "https://my-authing-app.example.com",
 
       // 控制台登录回调 URL
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
       redirectUri: "https://my-authing-app.example.com/callback",
 
       // modal 弹框模式
@@ -3619,6 +3629,8 @@ const guard = new GuardFactory.Guard({
   host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
   redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
