@@ -94,11 +94,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 **首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `AuthingReactUIComponents`。**
 
-Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components/lib/index.min.js) 下载）。
-
 :::: tabs :options="{ useUrlFragment: false }"
 
 ::: tab React
+Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components/lib/index.min.js) 下载）。
+
 
 ```html
 <html lang="en">
@@ -149,6 +149,7 @@ Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供�
 :::
 
 ::: tab React18
+Authing npm 发布包内的 `@authing/react18-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react18-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react18-ui-components/lib/index.min.js) 下载）。
 
 ```html
 <html lang="en">
