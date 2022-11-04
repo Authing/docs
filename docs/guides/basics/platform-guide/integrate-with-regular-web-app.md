@@ -45,7 +45,7 @@
 yarn add express express-session passport openid-client
 ```
 
-> Java 开发者可以使用 Spring 框架的 [spring-security](https://spring.io/projects/spring-security)，[详细接入流程请见文档](/frameworks/spring-security/)。
+> Java 开发者可以使用 Spring 框架的 [spring-security](https://spring.io/projects/spring-security)，详细接入流程请见[文档](/frameworks/spring-security/)。
 
 
 

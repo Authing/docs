@@ -26,7 +26,9 @@ downloadDemo:
 
 ![](~@imagesZhCn/quickstarts/webApp/create-app-2.png)
 
-在应用列表找到你的应用，进入应用详情。在右方的「高级配置」模块中，**id_token 签名算法**选择 **RS256**，然后点击保存。
+在应用列表找到你的应用，进入应用详情。在下方的「其他配置」模块中，**id_token 签名算法**选择 **RS256**，然后点击保存。
+
+![](~@imagesZhCn/quickstarts/webApp/config-RS256.png)
 
 ### 配置登录回调地址
 

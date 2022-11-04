@@ -11,7 +11,7 @@
 | grant_type    | 填写 client_credentials。  |
 | client_id     | 编程访问账号 Key。    |
 | client_secret | 编程访问账号 Secret。   |
-| scope   | 请求的权限项目，每个权限项目的格式为 `资源标识符:操作` 以空格分隔。具体的 scope 请参考：https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#scope-%E6%9D%83%E9%99%90%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83 |
+| scope   | 请求的权限项目，每个权限项目的格式为 `资源标识符:操作` 以空格分隔。具体的 scope  [点此了解](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#scope-%E6%9D%83%E9%99%90%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83)。 |
 
 
 ```bash

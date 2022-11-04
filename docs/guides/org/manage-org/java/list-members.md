@@ -4,9 +4,9 @@
 
 ```java
 ListDepartmentMembersDto listDepartmentMembersDto = new ListDepartmentMembersDto();
-        listDepartmentMembersDto.setOrganizationCode("steamory");
-        listDepartmentMembersDto.setDepartmentId("AUTHING_DEP_ID");
-        listDepartmentMembersDto.setSortBy("JoinDepartmentAt");
-        listDepartmentMembersDto.setOrderBy("Asc");
-        UserPaginatedRespDto userPaginatedRespDto = client.listDepartmentMembers(listDepartmentMembersDto);
+listDepartmentMembersDto.setOrganizationCode("steamory");
+listDepartmentMembersDto.setDepartmentId("AUTHING_DEP_ID");
+listDepartmentMembersDto.setSortBy("JoinDepartmentAt");
+listDepartmentMembersDto.setOrderBy("Asc");
+UserPaginatedRespDto userPaginatedRespDto = client.listDepartmentMembers(listDepartmentMembersDto);
 ```

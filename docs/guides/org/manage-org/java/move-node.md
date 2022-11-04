@@ -6,8 +6,8 @@
 
 ```java
 UpdateDepartmentReqDto updateDepartmentReqDto = new UpdateDepartmentReqDto();
-        updateDepartmentReqDto.setOrganizationCode("steamory");
-        updateDepartmentReqDto.setDepartmentId("AUTHING_DEP_ID");
-        updateDepartmentReqDto.setParentDepartmentId("AUTHING_DEP_ID");
-        DepartmentSingleRespDto departmentSingleRespDto = client.updateDepartment(updateDepartmentReqDto);
+updateDepartmentReqDto.setOrganizationCode("steamory");
+updateDepartmentReqDto.setDepartmentId("AUTHING_DEP_ID");
+updateDepartmentReqDto.setParentDepartmentId("AUTHING_DEP_ID");
+DepartmentSingleRespDto departmentSingleRespDto = client.updateDepartment(updateDepartmentReqDto);
 ```

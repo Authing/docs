@@ -4,11 +4,11 @@
 
 ```java
 AddDepartmentMembersReqDto addDepartmentMembersReqDto = new AddDepartmentMembersReqDto();
-        addDepartmentMembersReqDto.setOrganizationCode("steamory");
-        addDepartmentMembersReqDto.setDepartmentId("AUTHING_DEP_ID");
-        List<String> userIdList = new ArrayList<>();
-        userIdList.add("AUTHING_USERID");
-        addDepartmentMembersReqDto.setUserIds(userIdList);
-        IsSuccessRespDto isSuccessRespDto = client.addDepartmentMembers(addDepartmentMembersReqDto);
+addDepartmentMembersReqDto.setOrganizationCode("steamory");
+addDepartmentMembersReqDto.setDepartmentId("AUTHING_DEP_ID");
+List<String> userIdList = new ArrayList<>();
+userIdList.add("AUTHING_USERID");
+addDepartmentMembersReqDto.setUserIds(userIdList);
+IsSuccessRespDto isSuccessRespDto = client.addDepartmentMembers(addDepartmentMembersReqDto);
 ```
 

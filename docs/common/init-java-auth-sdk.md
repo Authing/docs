@@ -5,11 +5,9 @@
 ```java
 import cn.authing.core.auth.AuthenticationClient;
 // 使用 AppId, App Secret 和 AppHost 进行初始化
-		AuthenticationClientOptions options = 
-      new AuthenticationClientOptions();
-    options.setAppId("AUTHING_APP_ID");
-		options.setAppSecret("AUTHING_APP_SECRET");
-    options.setAppHost("AUTHING_APP_HOST");
-		AuthenticationClient authenticationClient = 
-      new AuthenticationClient(options);
+AuthenticationClientOptions options = new AuthenticationClientOptions();
+options.setAppId("AUTHING_APP_ID");
+options.setAppSecret("AUTHING_APP_SECRET");
+options.setAppHost("AUTHING_APP_HOST");
+AuthenticationClient authenticationClient = new AuthenticationClient(options);
 ```

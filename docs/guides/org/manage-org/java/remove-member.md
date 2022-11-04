@@ -4,12 +4,12 @@
 
 ```java
 RemoveDepartmentMembersReqDto removeDepartmentMembersReqDto = new RemoveDepartmentMembersReqDto();
-        removeDepartmentMembersReqDto.setOrganizationCode("steamory");
-        removeDepartmentMembersReqDto.setDepartmentId("AUTHING_DEP_ID");
-        List<String> userIdList = new ArrayList<>();
-        userIdList.add("AUTHING_USERID)");
-        removeDepartmentMembersReqDto.setUserIds(userIdList);
-        IsSuccessRespDto isSuccessRespDto = client.removeDepartmentMembers(removeDepartmentMembersReqDto);
+removeDepartmentMembersReqDto.setOrganizationCode("steamory");
+removeDepartmentMembersReqDto.setDepartmentId("AUTHING_DEP_ID");
+List<String> userIdList = new ArrayList<>();
+userIdList.add("AUTHING_USERID)");
+removeDepartmentMembersReqDto.setUserIds(userIdList);
+IsSuccessRespDto isSuccessRespDto = client.removeDepartmentMembers(removeDepartmentMembersReqDto);
 ```
 
 > 如果某用户仅属于一个部门，无法移除。

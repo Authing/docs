@@ -4,6 +4,6 @@
 
 ```java
 DeleteDepartmentReqDto deleteDepartmentReqDto = new DeleteDepartmentReqDto();
-        deleteDepartmentReqDto.setDepartmentId("AUTHING_DEP_ID");
-        IsSuccessRespDto isSuccessRespDto = client.deleteDepartment(deleteDepartmentReqDto);
+deleteDepartmentReqDto.setDepartmentId("AUTHING_DEP_ID");
+IsSuccessRespDto isSuccessRespDto = client.deleteDepartment(deleteDepartmentReqDto);
 ```

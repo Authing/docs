@@ -6,13 +6,13 @@
 
 ```java
 GetOrganizationDto getOrganizationDto = new GetOrganizationDto();
-        getOrganizationDto.setOrganizationCode("code");
-        OrganizationSingleRespDto organization = client.getOrganization(getOrganizationDto);
-        System.out.println(JsonUtils.serialize(organization));
+getOrganizationDto.setOrganizationCode("code");
+OrganizationSingleRespDto organization = client.getOrganization(getOrganizationDto);
+System.out.println(JsonUtils.serialize(organization));
 
-        CreateDepartmentReqDto createDepartmentReqDto = new CreateDepartmentReqDto();
-        createDepartmentReqDto.setParentDepartmentId("AUTHING_DEP_ID");
-        createDepartmentReqDto.setName("开发部");
-        createDepartmentReqDto.setOrganizationCode("steamory");
-        DepartmentSingleRespDto department = client.createDepartment(createDepartmentReqDto);
+CreateDepartmentReqDto createDepartmentReqDto = new CreateDepartmentReqDto();
+createDepartmentReqDto.setParentDepartmentId("AUTHING_DEP_ID");
+createDepartmentReqDto.setName("开发部");
+createDepartmentReqDto.setOrganizationCode("steamory");
+DepartmentSingleRespDto department = client.createDepartment(createDepartmentReqDto);
 ```

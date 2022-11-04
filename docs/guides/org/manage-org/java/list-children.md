@@ -4,7 +4,7 @@
 
 ```java
 ListChildrenDepartmentsDto listChildrenDepartmentsDto = new ListChildrenDepartmentsDto();
-        listChildrenDepartmentsDto.setDepartmentId("AUTHING_DEP_ID");
-        listChildrenDepartmentsDto.setOrganizationCode("steamory");
-        DepartmentPaginatedRespDto departmentPaginatedRespDto = client.listChildrenDepartments(listChildrenDepartmentsDto);
+listChildrenDepartmentsDto.setDepartmentId("AUTHING_DEP_ID");
+listChildrenDepartmentsDto.setOrganizationCode("steamory");
+DepartmentPaginatedRespDto departmentPaginatedRespDto = client.listChildrenDepartments(listChildrenDepartmentsDto);
 ```

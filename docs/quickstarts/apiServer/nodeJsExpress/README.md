@@ -32,7 +32,9 @@ downloadDemo:
 
 ![](~@imagesZhCn/quickstarts/spa/create-app-2.png)
 
-> 在后续的代码中，我们会使用 RS256 方式对用户的 token 进行校验。
+在应用列表找到你的应用，进入应用详情。在下方的「其他配置」模块中，**id_token 签名算法**选择 **RS256**，然后点击保存。
+
+![](~@imagesZhCn/quickstarts/webApp/config-RS256.png)
 
 
 ### 创建权限项目
@@ -87,12 +89,12 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://{应用域名}.authing.cn/oidc/.well-known/jwks.json`
+    jwksUri: `https://{AUTHING_APP_HOST}.authing.cn/oidc/.well-known/jwks.json`
   }),
 
   // 验证受众和颁发者
   audience: 'APP_ID',
-  issuer: [`https://{应用域名}.authing.cn/oidc`],
+  issuer: [`https://{AUTHING_APP_HOST}.authing.cn/oidc`],
   algorithms: ['RS256']
 });
 ```
@@ -134,12 +136,12 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://{应用域名}.authing.cn/.well-known/jwks.json`,
+    jwksUri: `https://{AUTHING_APP_HOST}.authing.cn/.well-known/jwks.json`,
   }),
 
   // 验证受众和颁发者
   audience: '编程访问账号 AK',
-  issuer: [`https://{应用域名}.authng.cn/oidc`],
+  issuer: [`https://{AUTHING_APP_HOST}.authng.cn/oidc`],
   algorithms: ['RS256'],
 });
 ```
