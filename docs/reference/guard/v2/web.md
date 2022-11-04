@@ -56,10 +56,13 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ```shell
 # 兼容 React 16 / 17
 npm install --save @authing/guard-react
-
 or
-
 yarn add @authing/guard-react
+
+# 兼容 React 18
+npm install --save @authing/guard-react18
+or
+yarn add @authing/guard-react18
 ```
 
 :::
@@ -108,10 +111,16 @@ yarn add @authing/guard-angular
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from '@authing/guard-react18';
+
+import React from "react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 // 你的业务代码根组件
 import RouterComponent from "./router";
@@ -128,7 +137,6 @@ function App() {
   );
 }
 ```
-
 :::
 
 ::: tab Vue2
@@ -265,8 +273,13 @@ export class AppModule {}
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from '@authing/guard-react18';
 
 export default function Login() {
   const guard = useGuard();
@@ -392,9 +405,14 @@ console.log("guard instance: ", guard);
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
 // Jump.tsx
+// React16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Jump.tsx
+// import { useGuard } from '@authing/guard-react18'
 
 export default function Jump() {
   const guard = useGuard();
@@ -415,12 +433,17 @@ export default function Jump() {
 ```
 
 ``` tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
 // Callback.tsx
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
+import { JwtTokenStatus, useGuard, User } from '@authing/guard-react';
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Callback.tsx
+// import { JwtTokenStatus, useGuard, User } from '@authing/guard-react18';
+
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-
-import { JwtTokenStatus, useGuard, User } from '@authing/guard-react'
 
 export default function Callback() {
   const history = useHistory()
@@ -480,10 +503,16 @@ export default function Callback() {
 ```
 
 ``` tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
 // Personal.tsx
-import React, { useEffect, useState } from 'react'
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
 import { useGuard, User } from '@authing/guard-react'
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// import { useGuard, User } from '@authing/guard-react18'
+
+import React, { useEffect, useState } from 'react'
 
 export default function Personal() {
   const [userInfo, setUserInfo] = useState('')
@@ -985,10 +1014,15 @@ async function handleAuthingLoginCallback () {
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Login() {
   // 获取 Guard 实例
@@ -1124,11 +1158,18 @@ guard.start("#authing-guard-container").then((userInfo) => {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
 // App.tsx
-import React from "react";
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 import RouterComponent from "./router";
 
 function App() {
@@ -1146,9 +1187,14 @@ function App() {
 ```
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
 // Embed.tsx
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
 
 export default function Embed() {
   const guard = useGuard();
@@ -1424,10 +1470,17 @@ function showGuard() {
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
-import React from "react";
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 项目根组件
 import RouterComponent from "./router";
 
@@ -1546,9 +1599,15 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Logout() {
   const guard = useGuard();
@@ -1648,11 +1707,18 @@ function Logout() {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 项目根组件
 import RouterComponent from "./router";
 
@@ -1671,9 +1737,15 @@ function App() {
 ```
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Logout() {
   const guard = useGuard();
@@ -1836,9 +1908,15 @@ function Logout() {
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Register() {
   const guard = useGuard();
@@ -1938,13 +2016,17 @@ function startRegister() {
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
-import React from "react";
-
 import { GuardProvider } from "@authing/guard-react";
-
 import "@authing/guard-react/dist/esm/guard.min.css";
 
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 用户业务根组件
 import RouterComponent from "./router";
 
@@ -2072,9 +2154,15 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function GetUserInfo() {
   const guard = useGuard();
@@ -2191,10 +2279,15 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect, useState } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect, useState } from "react";
 
 export default function ChangeLanguage() {
   const [langCache, setLangCache] = useState("");
@@ -2394,9 +2487,15 @@ function changeLang(event) {
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function ChangeContentCSS() {
   const guard = useGuard();
@@ -2590,16 +2689,19 @@ npm install --save face-api.js
 ```
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 // App.tsx
-import React from 'react'
-
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import { GuardProvider } from '@authing/guard-react'
-
 import '@authing/guard-react/dist/esm/guard.min.css'
 
-import * as facePlugin from 'face-api.js'
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { GuardProvider } from '@authing/guard-react18'
+// import '@authing/guard-react18/dist/esm/guard.min.css'
 
+import React from 'react'
+import * as facePlugin from 'face-api.js'
 // 你的业务根组件
 import RouterComponent from './router'
 
@@ -2747,9 +2849,15 @@ Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.a
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
-import React, { useEffect } from "react";
 import { useGuard, AuthenticationClient, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// import { useGuard, AuthenticationClient, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Personal() {
   const guard = useGuard();
@@ -2922,14 +3030,18 @@ async function updateProfile() {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
-
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
-
 import "@authing/guard-react/dist/esm/guard.min.css";
 
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 用户业务根组件
 import RouterComponent from "./router";
 
@@ -3046,12 +3158,17 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import {
   AuthenticationClient,
   RefreshToken,
   useGuard,
 } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { AuthenticationClient, RefreshToken, useGuard, } from "@authing/guard-react18";
 
 export default function Login() {
   const guard = useGuard();
@@ -3168,9 +3285,15 @@ async function refreshToken() {
 
 ```tsx
 // App.tsx
-import React from "react";
+// React 16 / 17
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 你的业务代码根组件
 import RouterComponent from "./router";
 
@@ -3481,10 +3604,15 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 ::: tab React
 
 ```tsx
+// React 16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Login() {
   const guard = useGuard();
