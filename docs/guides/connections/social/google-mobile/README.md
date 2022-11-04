@@ -26,7 +26,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 ## 配置步骤
 
-### 步骤一：在谷歌开放平台分别创建三个 OAuth client ID
+### 第一步：在谷歌开放平台分别创建三个 OAuth client ID
 
 #### Web application
 
@@ -91,7 +91,7 @@ Team ID
 
 <img src="./images/ios-google.jpg" style="display:block;margin: 0 auto;">
 
-### 步骤二：在 Authing 控制台配置谷歌移动端登录
+### 第二步：在 Authing 控制台配置谷歌移动端登录
 
 1. 在 Atuhing 控制台 的 **社会化身份源** 页面点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
@@ -168,7 +168,7 @@ Team ID
 
 <img src="./images/google_11-mobile.png" >
 
-### 步骤三：开发接入
+### 第三步：开发接入
 
 ---
 

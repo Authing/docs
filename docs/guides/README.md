@@ -9,16 +9,16 @@
 1. 集成认证，我们将一步一步地通过示例和代码引导你如何快速集成认证功能到你的应用系统中；
 2. 管理资源，如何管理你在 {{$localeConfig.brandName}} 中的资源，如应用、角色、用户目录、配置等。
 
-在你正式开始进行开发之前，我们推荐你先了解 [{{$localeConfig.brandName}} 是什么](/concepts/)，以及 {{$localeConfig.brandName}} 中几个最核心的概念：[用户池](/concepts/user-pool.md)、[应用](/concepts/application.md)、[认证和授权的区别](/concepts/authentication-vs-authorization.md)。
+在你正式开始进行开发之前，我们推荐你先了解 [什么是 {{$localeConfig.brandName}}](/concepts/)，以及 {{$localeConfig.brandName}} 中几个最核心的概念：[认证和授权的区别](/concepts/authentication-vs-authorization.md)、[用户池](/concepts/user-pool.md) 及 [应用](/concepts/application.md)。
 
 ## 集成认证到你的应用中
 
-推荐首先阅读[快速开始：认证你的第一个用户](/guides/basics/authenticate-first-user/)，你将了解集成 {{$localeConfig.brandName}} 的完整步骤，帮助你快速上手。
+推荐首先阅读 [快速开始：认证你的第一个用户](/guides/basics/authenticate-first-user/)，你将了解集成 {{$localeConfig.brandName}} 的完整步骤，帮助你快速上手。
 
 之后你可以按照主题来阅读指引：
 
 1. 对用户进行认证
-   - 最基础的[账号密码认证](./authentication/basic/password/README.md)、[手机号验证码认证](./authentication/basic/sms/README.md) 手段；
+   - 最基础的 [账号密码认证](./authentication/basic/password/README.md)、[手机号验证码认证](./authentication/basic/sms/README.md) 手段；
    - [如何接入社会化登录认证](/guides/authentication/social/)；
    - [如何接入扫码登录认证](/guides/authentication/qrcode/use-self-build-app/)；
    - [如何在小程序中进行认证](/guides/authentication/wechat-mini-program/)；
@@ -83,7 +83,7 @@
 8. 配置安全信息
 
    - [配置 Web 安全域](/guides/security/config-domain.md)
-   - [配置密码安全](/guides/security/pw-security.md)
+   - [配置密码安全](/guides/security/pw-security/)
 9. 配置用户池信息
    - [修改用户池基础信息](/guides/userpool-config/basic-config.md)
    - [配置邮件服务和模版](/guides/userpool-config/email/)

@@ -1,10 +1,10 @@
 ---
 meta:
   - name: description
-    content: 使用 Webhook 监听用户事件
+    content: Webhooks
 ---
 
-# 使用 Webhook 监听用户事件
+# Webhooks
 
 <LastUpdated/>
 

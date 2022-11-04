@@ -1,4 +1,4 @@
-# 单点登录 SSO 综述
+# 实现单点登录 SSO
 
 <LastUpdated/>
 
