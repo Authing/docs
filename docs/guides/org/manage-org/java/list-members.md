@@ -1,7 +1,12 @@
 !!!include(common/init-java-mngmt-sdk.md)!!!
 
-使用 `OrgManagementClient` 的 `listMembers` 方法获取节点的成员列表：
+使用 `ManagementClient` 的 `listDepartmentMembers` 方法获取部门的成员列表：
 
 ```java
-Node node = managementClient.org().listMembers(new NodeByIdWithMembersParam("nodeId")).execute();
+ListDepartmentMembersDto listDepartmentMembersDto = new ListDepartmentMembersDto();
+        listDepartmentMembersDto.setOrganizationCode("steamory");
+        listDepartmentMembersDto.setDepartmentId("AUTHING_DEP_ID");
+        listDepartmentMembersDto.setSortBy("JoinDepartmentAt");
+        listDepartmentMembersDto.setOrderBy("Asc");
+        UserPaginatedRespDto userPaginatedRespDto = client.listDepartmentMembers(listDepartmentMembersDto);
 ```

@@ -31,7 +31,7 @@
 完成创建后，你会看到关于这个 App 的基本信息（Basic Information）。向下滑动到 App Credentials，这里记录着 `App ID`、`Client ID`、`Client Secret`、`Signing Secret`，你后续可能会用到它们。
 ![](~@imagesZhCn/connections/slack/slack-docs-4.png)
 
-最后，在侧边栏点击「OAuth & Permissions」，找到页面中的「Redirect URLs」设置区域，点击「Add New Redirect URL」添加如下回调地址：`https://core.authing.cn/connection/social/{ 唯一标识 }/{ 用户池 ID }/callback`，你需要将其中的 `{ 唯一标识 }` 替换为你正在 Authing 创建的身份源所填写的`唯一标识`， `{ 用户池 ID }` 替换为你的[用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)。添加完成后，点击「Save URLs」保存设置。
+最后，在侧边栏点击「OAuth & Permissions」，找到页面中的「Redirect URLs」设置区域，点击「Add New Redirect URL」添加如下回调地址：`https://core.authing.cn/connection/social/{ YOUR_IDENTITYSOURCE_ID }/{ AUTHING_USERPOOL_ID }/callback`，你需要将其中的 `{ YOUR_IDENTITYSOURCE_ID }` 替换为你正在 Authing 创建的身份源所填写的`唯一标识`， `{ AUTHING_USERPOOL_ID }` 替换为你的[用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)。添加完成后，点击「Save URLs」保存设置。
 ![](~@imagesZhCn/connections/slack/slack-docs-5.png)
 
 ## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Slack API 应用

@@ -33,23 +33,21 @@
 用户在 {{$localeConfig.brandName}} 托管登录页退出登录之后，你需要配置退出登录之后的回调地址（Logout URLs）。你必须配置此回调链接，否则用户将无法退出，而会显示 `misconfiguration` 错误提示。
 此示例代码的回调链接为 `http://localhost:3000`，将其复制到退出回调 URL 配置项中，然后点击保存。
 
-### 获取应用 ID 和密钥
 
-最后，你需要复制并保存好以下内容：
-
-- clientId: 应用 ID。
-- clientSecet: 应用的密钥。
-- Issuer URL: https://sample-app.authing.cn/oidc
 
 ## 集成 {{$localeConfig.brandName}} 到你的系统
 
 ### 安装依赖
 
-你需要安装支持标准 OIDC 协议的 [openid-client](http://github.com/panva/node-openid-client) 和 [passportjs](http://www.passportjs.org/) ，Java 开发者可以使用 Spring 框架的 [spring-security](https://spring.io/projects/spring-security)，[详细接入流程请见文档](/frameworks/spring-security/)。
+此处是 node.js 示例，你需要安装支持标准 OIDC 协议的 [openid-client](http://github.com/panva/node-openid-client) 和 [passportjs](http://www.passportjs.org/) 。
 
 ```bash
 yarn add express express-session passport openid-client
 ```
+
+> Java 开发者可以使用 Spring 框架的 [spring-security](https://spring.io/projects/spring-security)，[详细接入流程请见文档](/frameworks/spring-security/)。
+
+
 
 ### 初始化
 
@@ -58,6 +56,10 @@ yarn add express express-session passport openid-client
 - client_id: OIDC Client ID，在 {{$localeConfig.brandName}} 中即你的[应用 ID](/guides/faqs/get-app-id-and-secret.md)；
 - client_secret: OIDC Client Secret，在 {{$localeConfig.brandName}} 中即你[应用的密钥](/guides/faqs/get-app-id-and-secret.md)；
 - issuer: OIDC Issuer，你可以在应用的端点信息中获取。
+
+
+
+获取方式如图所示，你需要保存好这些内容或记住获取方式，以后可能会频繁使用：
 
 ![](./images/secret-show.png)
 

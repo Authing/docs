@@ -57,13 +57,14 @@ downloadDemo:
 ### 修改 Demo 配置
 
 如果你下载了[示例 Demo 代码](https://github.com/Authing/mvc-demo-express)，需要修改 app.js 第 7 行，修改配置为你的应用配置。
+> 该示例代码环境为 Linux/Mac OS，Windows 环境无法直接使用
 
 ```js
 const authing = new AuthenticationClient({
-  appId: 'APP_ID',
-  secret: 'APP_SECRET',
-  appHost: 'https://{你的域名}.authing.cn',
-  redirectUri: 'http://localhost:5000/callback'
+  appId: 'AUHTING_APP_ID',
+  secret: 'AUHTING_APP_SECRET',
+  appHost: 'https://{AUHTING_APP_HOST}.authing.cn',
+  redirectUri: 'AUTHING_APP_REDIRECTURI'
 });
 ```
 
@@ -85,10 +86,10 @@ $ npm install authing-js-sdk
 ```js
 const { AuthenticationClient } = require('authing-js-sdk');
 const authing = new AuthenticationClient({
-  appId: 'APP_ID',
-  secret: 'APP_SECRET',
-  appHost: 'https://{你的域名}.authing.cn',
-  redirectUri: 'http://localhost:5000/callback',
+  appId: 'AUHTING_APP_ID',
+  secret: 'AUHTING_APP_SECRET',
+  appHost: 'https://{AUHTING_APP_HOST}.authing.cn',
+  redirectUri: 'AUTHING_APP_REDIRECTURI'
 });
 ```
 

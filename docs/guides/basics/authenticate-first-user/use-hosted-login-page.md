@@ -10,14 +10,19 @@
 
 [用户池](/concepts/user-pool.md)是你用户系统的隔离的最小单位，你可以把不同场景的用户划分在不同的用户池。每个用户池下都可以有用户和应用程序，不同用户池之间的权限、应用、组织是完全隔离的。
 
-如果你还没有 {{$localeConfig.brandName}} 开发者账号，你需要先在[控制台](https://console.authing.cn)注册一个 {{$localeConfig.brandName}} 开发者账号。如果你还没有创建一个用户池，可以按照指引创建你的第一个用户池：
+如果你还没有 {{$localeConfig.brandName}} 开发者账号，你需要先在[控制台](https://console.authing.cn)注册一个 {{$localeConfig.brandName}} 开发者账号。注册完成之后，会引导你创建自己的用户池。
 
-<!-- <img src="~@imagesZhCn/guides/basics/create-user-pool.png" alt="drawing"/> -->
-![](./images/create-userpool.png)
+如果你已经有账号，想再创建一个用户池，可以点击左侧导航栏最上方的按钮：
+
+<img src="./images/create-userpool-3.png" width="300" alt="drawing"/>
 
 选择用户池类型：
 
 ![](./images/create-userpool-2.png)
+
+输入名称：
+
+<img src="./images/create-userpool-4.png" width="300" alt="drawing"/>
 
 创建成功之后，你将自动跳转到用户池详情页。
 
@@ -62,13 +67,13 @@ const axios = require("axios");
 const qs = require("querystring");
 const code2tokenResponse = await axios.post(
   // 修改为你的应用域名
-  "https://sample-app.authing.cn/oidc/token",
+  "https://AUTHING_APP_HOST/oidc/token",
   qs.stringify({
     code,
-    client_id: "APP_ID",
-    client_secret: "APP_SECRET",
+    client_id: "AUTHING_APP_ID",
+    client_secret: "AUTHING_APP_SECRET",
     grant_type: "authorization_code",
-    redirect_uri: "REDIRECT_URI",
+    redirect_uri: "AUTHING_APP_REDIRECTURI",
   }),
   {
     headers: {
@@ -91,7 +96,7 @@ const { id_token, access_token } = code2tokenResponse.data;
 }
 ```
 
-将 `id_token` [解码](https://jwt.yelexin.cn) 之后，得到的示例数据如下：
+将 `id_token` [解码](https://jwt.yelexin.cn) 之后，得到的示例数据如下，各字段含义参见上述 [id_token](/concepts/id-token.md)：
 
 ```json
 {
@@ -127,7 +132,7 @@ const token2UserInfoResponse = await axios.get(
 console.log(token2UserInfoResponse.data);
 ```
 
-之后你需要将 `id_token` 传递返回给前端，前端应该保存 `id_token`，并在每次请求后端接口时携带，后端接口应当先验证前端传来的 `id_token` 合法性，再处理用户请求。如何验证 Token 合法性请[参考文档](/guides/faqs/how-to-validate-user-token.md)。
+之后你需要将 `id_token` 传递返回给前端，前端应该保存 `id_token`，并在每次请求后端接口时携带，后端接口应当先验证前端传来的 `id_token` 合法性，再处理用户请求。如何验证 Token 合法性请参考此[文档](/guides/faqs/how-to-validate-user-token.md)。
 
 ::: hint-info
 

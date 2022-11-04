@@ -1,19 +1,40 @@
 !!!include(common/init-java-auth-sdk.md)!!!
 
-首先使用用户的 token 初始化 SDK：
+首先在调用 SDK 登录成功后返回的对象中获取 [AccessToken](https://docs.authing.cn/v2/concepts/access-token.html) 并赋予 AuthenticationClient：
 
 ```java
-authenticationClient.setAccessToken("ID_TOKEN");
+authenticationClient.setAccessToken("AUTHING_ACCESSTOKEN");
 ```
 
-设置自定义字段：
+在一个实体类中设置自定义字段：
+
+CustomData 类：
 
 ```java
-List<UserDefinedData> list = authenticationClient.setUdv('school', '华中科技大学').execute();
+public class CustomData {
+    private String school;
+    public CustomData() {}
+    public String getSchool() { return school; }
+    public void setSchool(String school) { this.school = school; }
+}
+```
+
+updateProfile 方法：
+
+```java
+	UpdateUserProfileDto updateUserProfileDto = new UpdateUserProfileDto();
+  CustomData customData = new CustomData();
+  customData.setSchool("YOUR_SCHOOL");
+  updateUserProfileDto.setCustomData(customData);
+  authenticationClient.updateProfile(updateUserProfileDto);
 ```
 
 获取该用户最新的自定义数据：
 
 ```java
-List<UserDefinedData> list = authenticationClient.listUdv().execute();
+	GetProfileDto getProfileDto = new GetProfileDto();
+	// 设置获取用户自定义数据
+  getProfileDto.setWithCustomData(true);
+  UserSingleRespDto userSingleRespDto = authenticationClient.getProfile(getProfileDto);
+  CustomData res = 	(CustomData)userSingleRespDto.getData().getCustomData();
 ```
