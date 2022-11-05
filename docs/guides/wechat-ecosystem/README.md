@@ -1,92 +1,185 @@
-# 打通微信生态账号体系
+# 微信生态全场景能力
 
 <LastUpdated/>
 
-当你基于微信生态开始开发一个激动人心的应用时，如何利用好微信多场景的开放能力、如何处理复杂的 [OpenID、UnionID 机制](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html)将会是你需要去考虑的问题。微信生态非常庞大，登录场景就有好几个（如 PC 网站扫码、公众号网页授权、小程序内授权等等），其需要调用完全不同的接口，对于开发者而言，无疑加大了理解和开发成本。
+::: hint-info​
+通过 {{$localeConfig.brandName}}，更便捷地纵享微信生态能力!
+:::​
+​
+作为一名微信生态的开发者，在为你的应用实现微信登录能力时，你可能会面临重重困惑：​
 
-{{$localeConfig.brandName}} 针对微信生态的复杂场景，在前端为开发者提供了简洁、统一的 SDK，在后端基于 OpenID、UnionID、手机号三个维度自动处理同一身份识别、账号合并等逻辑。开发者只需要调用前端 SDK，而无需操心各种复杂的身份识别逻辑，{{$localeConfig.brandName}} 最终会返回[标准化过后的用户信息](/guides/user/user-profile.md)。
+* 不同类型应用在微信的应用创建和配置流程是什么？​
 
-## 关注公众号登录
+* 作为不同类型应用的开发者，在实现微信登录能力时，有哪些方式可供选择？​
 
-「关注公众号登录」指的是在 PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录的过程。使用「关注公众号登录」可以快速为公众号引流，提升品牌粘性。借助 Authing 的「关注公众号登录」，你几乎不需要开发任何代码，只需简单的配置，几分钟就能完成。有关详情，请参阅 [微信公众号关注](/guides/connections/social/wechatmp-qrcode/)。
+* 各种类型的微信登录方式，要怎么完成配置，怎么实现登录？​
 
-::: hint-info
-根据微信平台要求，只有 **服务号** 具备 [生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) API 能力，请确保你的公众号是 **服务号** 类型。
-:::
+* 微信用户在登录你新开发的应用后，你要如何管理微信生态中的用户身份？
 
-- 应用场景：PC 网站；
-- 概述：PC 网站上生成微信公众号的二维码，用户使用微信 APP 扫码，关注公众号之后实现自动登录；
-- 查看 [网站应用微信登录开发指南](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html) 了解详情。
+## {{$localeConfig.brandName}} 微信生态功能全景
 
-<img src="https://cdn.authing.cn/img/20220314121523.png" style="display:block;margin: 0 auto;"/>
+如果你有上述困惑不知如何下手，{{$localeConfig.brandName}} 微信生态全场景能力可以助力你实现各个场景的微信登录流程，下表是 {{$localeConfig.brandName}} 支持的全场景的微信生态操作流程以及对应场景下可供选择的微信登录能力类型，你可以直接点击前往了解所需功能：
 
-## PC 网站使用微信扫码登录
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">场景</th>
+      <th style="text-align:left">微信生态操作流程</th>
+       <th style="text-align:left">微信登录能力类型</th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><a href="https://open.weixin.qq.com/cgi-bin/appcreate?t=manage/createMobile&type=app&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd">移动应用开发</a></td>
+      <td style="text-align:left"><ul>
+          <li>创建应用。</li>
+          <li>提交审核。</li>
+          <li>审核通过上线。</li>
+        </ul></td>
+      <td style="text-align:left"><ul>
+          <li><a href="/guides/connections/social/wechat-mobile/README.md">移动 APP 拉起微信 APP</a></li>
+          <li><a href="/guides/connections/social/wechat-miniprogram-applaunch/README.md">APP 拉起小程序登录</a></li>
+        </ul></td>
+    </tr>
+        <tr>
+      <td style="text-align:left"><a href="https://open.weixin.qq.com/cgi-bin/appcreate?t=manage/createMobile&type=app&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd">网站应用开发</a></td>
+      <td style="text-align:left"><ul>
+          <li>常见应用。</li>
+          <li>提交审核。</li>
+          <li>审核通过上线。</li>
+        </ul></td>
+      <td style="text-align:left"><ul>
+          <li><a href="/guides/connections/social/wechat-pc/README.md">PC 微信扫码</a></li>
+          <li><a href="/guides/connections/social/wechat-miniprogram-qrconnect/README.md">PC 小程序扫码</a></li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">微信公众号开发</td>
+      <td style="text-align:left"><ol>
+          <li><a href="https://mp.weixin.qq.com/">在微信公众平台完成注册和认证。</a>
+          <ul>
+          <li>注册公众账号。</li>
+          <li>成为开发者。</li>
+          <li>申请微信认证。</li>
+        </ul></li>
+          <li><a href="https://open.weixin.qq.com/cgi-bin/frame?alert=1&t=wxverify/bind_account_tmpl&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd&type=biz&verify=1">在微信开放平台绑定微信公众号。</a><ul>
+          <li>输入基本信息。</li>
+          <li>安全验证。</li>
+          <li>绑定成功。</li>
+        </ul></li>
+        </ol></td>
+      <td style="text-align:left"><ul>
+          <li><a href="/guides/connections/social/wechatmp-qrcode/README.md">微信公众号扫码登录</a></li>
+          <li><a href="/reference/sdk-for-weixin-official-account.md">微信浏览器拉起微信 APP 登录</a></li>
+        </ul></td>
+    </tr>
+        <tr>
+      <td style="text-align:left">小程序开发</td>
+      <td style="text-align:left"><ol>
+          <li><a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1">注册微信小程序并完成开发。</a>
+          <ul>
+          <li>注册小程序。</li>
+          <li>开发起步。</li>
+          <li>代码实现。</li>
+          <li>提交审核并发布。</li>
+        </ul></li>
+          <li><a href="https://open.weixin.qq.com/cgi-bin/frame?alert=1&t=wxverify/bind_account_tmpl&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd&type=weapp&verify=1">在微信开放平台绑定微信小程序。</a><ul>
+          <li>输入基本信息。</li>
+          <li>安全验证。</li>
+          <li>绑定成功。</li>
+        </ul></li>
+        </ol></td>
+      <td style="text-align:left"><a href="/reference/sdk-for-weixin-miniapp.md">小程序一键登录</a></td>
+    </tr>
+  </tbody>
+</table>
 
-微信 PC 扫码登录可以让用户使用微信身份安全登录第三方应用或网站，在 {{$localeConfig.brandName}} 中开启微信扫码登录之后，可实现通过 {{$localeConfig.brandName}} 快速获取微信用户基本开放信息和帮助用户实现基础开放功能。有关详情，请查看 [微信 PC 扫码](/guides/connections/social/wechat-pc/)。
+## {{$localeConfig.brandName}} 微信生态账号体系
 
-- 应用场景：PC 网站
-- 概述：在 PC 网站应用中跳转到微信二维码页面，然后使用微信扫码登录应用。
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html) 了解微信登录功能。
+### 微信用户账号体系的基本概念
 
-<img src="./images/wechat-pc-scan-login.png" height="400px" style="display:block;margin: 0 auto;"/>
+微信提供 `OpenID` 和 `UnionID` 作为用户标识。两者区别如下：
 
-## PC 网站使用小程序扫码登录
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">ID 名称</th>
+      <th style="text-align:left">说明</th>   
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">OpenID</td>
+      <td style="text-align:left"><ul>
+          <li>OpenID 是微信用户在不同类型产品的身份 ID。​</li>
+          <li>微信用户访问公众号、小程序、移动应用、网站应用、小商店等都会有唯一的 OpenID 。​</li>
+          <li>同一个微信用户访问不同的产品生成的 OpenID 也是不一样的。例如，对于不同公众号，同一用户的 OpenID 不同；同理，对于不同的小程序，同一用户的 OpenID 也是不同的。</li>
+        </ul></td>
+    </tr>
+      <tr>
+      <td style="text-align:left">UnionID</td>
+      <td style="text-align:left"><ul>
+          <li>UnionID 是微信用户在同一个开放平台下的产品的身份 ID。​​</li>
+          <li>如果开发者拥有多个移动应用、网站应用、和公众帐号（即公众号和小程序），可通过 UnionID  来区分用户的唯一性。因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号，用户的 UnionID 是唯一的，即同一用户对于同一个微信开放平台下的不同应用，UnionID 是相同的。​</li>
+        </ul></td>
+    </tr>  
+  </tbody>
+</table>
 
-这是 {{$localeConfig.brandName}} 的一个开创性的设计，在 {{$localeConfig.brandName}} 中开启扫描小登录二维码登录后可以获得微信官方的实名用户信息， 用户一键授权即可以真实号码完成注册或者登录，为开发者建立以手机号码为基础的账号体系。[查看详情](/guides/connections/social/wechat-miniprogram-qrconnect/)。
+形象来说，一个独立的微信用户，在微信的不同登录场景下的唯一标识可以用下图展示：
 
-- 应用场景：PC 网站；
-- 概述：在 PC 网站应用中展示小程序二维码，然后使用微信扫码登录应用；
+<img src="./images/unionid-openid.jpg" style="display:block;margin: 0 auto;">
 
-<img src="./images/wechat-mini-login-scan.png" height="400px" style="display:block;margin: 0 auto;"/>
+### 微信用户在 {{$localeConfig.brandName}} 的登录流程
 
-## 微信内网页使用微信授权登录
+在了解了微信用户的账号体系之后，接着你就更易于理解一名微信用户在 {{$localeConfig.brandName}} 的登录旅程：
 
-{{$localeConfig.brandName}} 通过 SDK 为开发者提供了一种快速在微信网页中获取用户信息并完成登录的方法。如果用户在微信客户端中访问第三方网页、公众号可以通过微信网页授权机制，来获取用户基本信息，进而实现业务逻辑。[查看详情](/guides/connections/social/wechat-mp/)。
+<img src="./images/wechat-user-login-authing.jpg" style="display:block;margin: 0 auto;">
 
-- 应用场景：微信网页、公众号；
-- 概述：在微信 APP 内的网页内弹出微信授权框，用户授权之后可以获取当前用户的信息；
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)
+* 首先，你的用户使用 {{$localeConfig.brandName}} 支持的七种登录方式之一进行登录。登录时 {{$localeConfig.brandName}} 会判断该用户在你的用户池中是否已经存在。如果已经存在，你的用户将直接通过这种身份源登录到已有账号。​
 
-<img src="./images/wechat-web-authorize.png" height="400px" style="display:block;margin: 0 auto;"/>
+* 如果不存在，并且你的 {{$localeConfig.brandName}} 控制台已经对这种身份源开启了「账号绑定」，会根据具体生效的功能逻辑进行判断：​
 
-## 小程序内使用微信登录
+  * 用户成功绑定已有账号，并成功登录​。
 
-{{$localeConfig.brandName}} 通过 SDK 为开发者提供了一种快速在小程序中获取用户信息并完成登录的方法。通过 {{$localeConfig.brandName}} 的 SDK 可以方便地获取微信提供的用户身份标识，快速建立以手机号码为基础的账号体系。[查看详情](/guides/connections/social/wechat-miniprogram/)。
+  * 自动匹配上已有账号（手机 / 邮箱），并完成登录​。
 
-- 应用场景：小程序；
-- 概述：在微信小程序内使用，弹出微信授权框，用户授权之后可以获取当前用户的信息；
-- 查看[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+  * 未匹配成功 / 绑定不成功，用户不能登录，则创建新账号。
 
-<img src="./images/wechat-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
 
-## 移动 APP 使用微信登录
+### {{$localeConfig.brandName}} 基于微信生态的账号解决方案
 
-{{$localeConfig.brandName}} 为开发者提供了一种在移动端（iOS or 安卓）应用中快速跳转微信登录获取用户信息的方式，通过简单的调用 {{$localeConfig.brandName}} 移动端 SDK 可以完成微信账号接入。[查看详情](/guides/connections/social/wechat-mobile/)。
+根据「用户在 {{$localeConfig.brandName}} 用户池是否存在」以及「你的微信应用是否已经接入微信开放平台」，针对你的账号处理，有四种场景：
 
-- 应用场景：移动 APP；
-- 概述：在移动应用中拉起微信 APP 进行登录；
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+<img src="./images/wechat-binding-solution.jpg" style="display:block;margin: 0 auto;">
 
-<img src="./images/wechat-mobile-login.png" height="400px" style="display:block;margin: 0 auto;"/>
+当微信生态的用户通过微信登录方式进入到 {{$localeConfig.brandName}} 用户池，有四种可能的场景，通过两个维度进行考量：
 
-## 移动 APP 使用小程序登录
+- 该用户在微信开放平台是否拥有 `UnionID`？
 
-移动端拉起小程序登录是建立移动端以手机号为中心用户体系的关键方式，{{$localeConfig.brandName}} 通过 SDK 为开发者大大降低了开发的复杂度，一行代码即可通过移动端获取用户在小程序中授权的手机号，建立以手机号码为基础的账号体系。[查看详情](/guides/connections/social/wechat-miniprogram-applaunch/)。
+- 该用户在 {{$localeConfig.brandName}} 用户池是否是新用户？
 
-- 应用场景：移动 APP；
-- 概述：在移动应用中拉起微信小程序进行登录。
-- 查看[微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+由此分为四种场景：
 
-<img src="./images/wechat-mobile-mini-program-login.png" height="400px" style="display:block;margin: 0 auto;"/>
+* 用户在微信开放平台有 `UnionID`，是 {{$localeConfig.brandName}} 用户池中的新用户（第一象限）。</br>在这种情况下，用户首次通过微信登录已经集成在 {{$localeConfig.brandName}} 的应用时，将会在你的 {{$localeConfig.brandName}} 用户池中创建新账号，该用户账号信息中会包含从微信开放平台上获取到的该用户的 `OpneID` 和 `UnionID`。
 
-## 总结对比
+* 用户在微信开放平台无 `UnionID`，是 {{$localeConfig.brandName}} 用户池中的新用户（第二象限）。</br>在这种情况下，用户首次通过微信登录已经集成在 {{$localeConfig.brandName}} 的应用时，将会在你的 {{$localeConfig.brandName}} 用户池中创建新账号，该用户账号信息会同时包含从微信接口获得的 `OpneID`，但由于该微信应用并未加入微信开放平台，因此这个账号信息并不包含 `UnionID`。
 
-| 名称                       | 使用场景         | 能够直接获取手机号 | 是否为 {{$localeConfig.brandName}} 独创 |
-| -------------------------- | ---------------- | ------------------ | --------------------------------------- |
-| 关注公众号登录             | PC 网站          | 否                 | 否                                      |
-| PC 网站使用微信扫码登录    | PC 网站          | 否                 | 否                                      |
-| PC 网站使用小程序扫码登录  | PC 网站          | 是                 | 是                                      |
-| 微信内网页使用微信授权登录 | 微信网页、公众号 | 否                 | 否                                      |
-| 小程序内使用微信登录       | 小程序           | 是                 | 否                                      |
-| 移动 APP 使用微信登录      | 移动 APP         | 否                 | 否                                      |
-| 移动 APP 使用小程序登录    | 移动 APP         | 是                 | 是                                      |
+* 用户在微信开放平台无 `UnionID`，是 {{$localeConfig.brandName}} 用户池中的老用户（第三象限）。</br>在这种情况下，用户在通过微信登录已经集成在 {{$localeConfig.brandName}} 的应用时，由于该账号已存在，因此登录时会通过 `OpneID` 和 `UnionID` 都进行匹配。当同一个微信账号由于其 `OpneID` 和 `UnionID` 的具备情况不一、而能够在你的用户池中对应多个账号时，将会支持账号选择，选择完成后会完成登录。
+
+* 用户在微信开放平台有 `UnionID`，是 {{$localeConfig.brandName}} 用户池中的老用户（第四象限）。</br>在这种情况下，用户通过微信登录已经集成在 {{$localeConfig.brandName}} 的应用时，由于该账号已经存在，并且并不会出现不存在 `UnionID` 的情况，因此会通过 `UnionID` 直接匹配成功并完成登录。
+
+## 在什么场景下，{{$localeConfig.brandName}} 微信生态能够帮到你？
+
+* 更便捷地使用微信全场景的登录能力：
+
+  * [当你使用移动端微信应用进行开发]()
+
+  * [当你使用网页端微信应用进行开发]()
+
+  * [当你使用微信公众号进行开发]()
+
+  * [当你使用微信小程序进行开发]()
+
+* 更灵活地管理来自微信的用户账号。</br>出于安全以及用户的使用便捷性的考虑，你可能并不希望你的用户在使用微信账号在 {{$localeConfig.brandName}} 登录时每次都重新创建一个新账号。{{$localeConfig.brandName}} 支持通过「字段匹配」和「询问绑定」两种方式，保障你的用户在 {{$localeConfig.brandName}} 的唯一身份，确保用户账号信息统一。
+有关「账号绑定」功能和使用详情，请参阅 [账号绑定](/guides/connections/account-binding.md)。
