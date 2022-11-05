@@ -42,7 +42,8 @@ async function pipe(user, context, callback) {
 }
 ```
 
-在 addUsers() 中我们使用了 env.ROOT\_GROUP\_ID 通过环境变量来获取组 ID，这样可以避免硬编码。关于如何在 Pipelien 函数中使用环境变量，请见[使用环境变量](env.md)。
+在 addUsers() 中我们使用了 env.ROOT\_GROUP\_ID 通过环境变量来获取组 ID，这样可以避免硬编码。关于如何在 Pipeline 函数中使用环境变量，请见[使用环境变量](env.md)。
+关于如何使用 callback 以及 Pipeline 函数的完整 API，请见 [Pipeline 函数 API 文档](pipeline-function-api-doc.md)。
 
 ## 网络请求库
 

@@ -10,7 +10,7 @@ meta:
 
 控制台是你管理和配置所有 Authing 资源的地方，这篇文章会帮助你学会使用 Authing 控制台提升生产力！
 
-在 [Authing 控制台](https://console.authing.cn/console/userpool)中你可以对 Authing 的资源、用户等信息进行配置和修改。
+在 [Authing 控制台](https://console.authing.cn/console/userpool) 中你可以对 Authing 的资源、用户等信息进行配置和修改。
 
 ![](./images/overview.png)
 
@@ -70,19 +70,19 @@ meta:
         </ul>
       </td>
     </tr>
-    <tr>​
-      <td style="text-align:left"><b>用户管理</b></td>​
-      <td style="text-align:left">​
-        <p>管理系统中的所有组织和用户信息，包括：</p>​
-        <ul>​
-          <li>创建、管理用户。</li>​
-          <li>创建、管理用户组。</li>​
-          <li>创建、管理组织机构。</li>​
-          <li>创建同步任务，实现组织信息和用户信息的上 / 下游同步。</li>​
-          <li>使用 LDAP 协议查看、修改、增加和删除用户信息。</li>​
-          <li>配置注册白名单。开启后，只有白名单内的用户才可进行注册。</li>​
-        </ul>​
-      </td>​
+    <tr>
+<td style="text-align:left"><b>用户管理</b></td>
+      <td style="text-align:left">
+        <p>管理系统中的所有组织和用户信息，包括：</p>
+        <ul>
+          <li>创建、管理用户。</li>
+          <li>创建、管理用户组。</li>
+          <li>创建、管理组织机构。</li>
+<li>创建同步任务，实现组织信息和用户信息的上 / 下游同步。</li>
+<li>使用 LDAP 协议查看、修改、增加和删除用户信息。</li>
+<li>配置注册白名单。开启后，只有白名单内的用户才可进行注册。</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><b>权限管理</b></td>
@@ -158,5 +158,3 @@ meta:
     </tr>
   </tbody>
 </table>
-
-<ConsoleBanner />
