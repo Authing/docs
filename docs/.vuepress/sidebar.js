@@ -558,7 +558,7 @@ const zhCnNavBar = {
           path: "/guides/connections/social.html",
           children: [
             {
-              title: "微信 PC 扫码",
+              title: "PC 微信扫码",
               path: "/guides/connections/social/wechat-pc/",
             },
             {
@@ -771,8 +771,26 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "打通微信生态",
+      title: "微信生态全场景能力",
       path: "/guides/wechat-ecosystem/",
+      children: [
+      {
+      title: "当你使用移动端微信应用进行开发",
+      path: "/guides/wechat-ecosystem/wechat-mobile-app"
+      },
+      {
+      title: "当你使用网页端微信应用进行开发",
+      path: "/guides/wechat-ecosystem/wechat-web-app"
+      },
+      {
+        title: "当你使用微信公众号进行开发",
+        path: "/guides/wechat-ecosystem/wechat-public-account-app"
+        },
+        {
+          title: "当你使用微信小程序进行开发",
+          path: "/guides/wechat-ecosystem/wechat-miniprogram-app"
+          },
+ ]
       // children: [
       //   {
       //     title: "关注公众号登录",

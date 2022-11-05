@@ -30,7 +30,7 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="https://open.weixin.qq.com/cgi-bin/appcreate?t=manage/createMobile&type=app&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd">移动应用开发</a></td>
+      <td style="text-align:left"><a href="https://open.weixin.qq.com/">移动应用开发</a></td>
       <td style="text-align:left"><ul>
           <li>创建应用。</li>
           <li>提交审核。</li>
@@ -62,14 +62,14 @@
           <li>成为开发者。</li>
           <li>申请微信认证。</li>
         </ul></li>
-          <li><a href="https://open.weixin.qq.com/cgi-bin/frame?alert=1&t=wxverify/bind_account_tmpl&lang=zh_CN&token=80f12d12f38917f152e7641d3ec14c50cd1d1cdd&type=biz&verify=1">在微信开放平台绑定微信公众号。</a><ul>
+          <li><a href="https://open.weixin.qq.com/">在微信开放平台绑定微信公众号。</a><ul>
           <li>输入基本信息。</li>
           <li>安全验证。</li>
           <li>绑定成功。</li>
         </ul></li>
         </ol></td>
       <td style="text-align:left"><ul>
-          <li><a href="/guides/connections/social/wechatmp-qrcode/README.md">微信公众号扫码登录</a></li>
+          <li><a href="/guides/connections/social/wechatmp-qrcode/README.md">微信公众号关注</a></li>
           <li><a href="/reference/sdk-for-weixin-official-account.md">微信浏览器拉起微信 APP 登录</a></li>
         </ul></td>
     </tr>
@@ -144,7 +144,7 @@
 
   * 自动匹配上已有账号（手机 / 邮箱），并完成登录​。
 
-  * 未匹配成功 / 绑定不成功，用户不能登录，则创建新账号。
+  * 未匹配成功 / 绑定不成功，用户不能登录。
 
 
 ### {{$localeConfig.brandName}} 基于微信生态的账号解决方案
@@ -171,15 +171,18 @@
 
 ## 在什么场景下，{{$localeConfig.brandName}} 微信生态能够帮到你？
 
-* 更便捷地使用微信全场景的登录能力：
+### 更便捷地使用微信全场景的登录能力
 
-  * [当你使用移动端微信应用进行开发]()
+  * [当你使用移动端微信应用进行开发](/guides/wechat-ecosystem/wechat-mobile-app.md)
 
-  * [当你使用网页端微信应用进行开发]()
+  * [当你使用网页端微信应用进行开发](/guides/wechat-ecosystem/wechat-web-app.md)
 
-  * [当你使用微信公众号进行开发]()
+  * [当你使用微信公众号进行开发](/guides/wechat-ecosystem/wechat-public-account-app.md)
 
-  * [当你使用微信小程序进行开发]()
+  * [当你使用微信小程序进行开发](/guides/wechat-ecosystem/wechat-miniprogram-app.md)
 
-* 更灵活地管理来自微信的用户账号。</br>出于安全以及用户的使用便捷性的考虑，你可能并不希望你的用户在使用微信账号在 {{$localeConfig.brandName}} 登录时每次都重新创建一个新账号。{{$localeConfig.brandName}} 支持通过「字段匹配」和「询问绑定」两种方式，保障你的用户在 {{$localeConfig.brandName}} 的唯一身份，确保用户账号信息统一。
+### 更灵活地管理来自微信的用户账号
+
+出于安全以及用户的使用便捷性的考虑，你可能并不希望你的用户在使用微信账号在 {{$localeConfig.brandName}} 登录时每次都重新创建一个新账号。{{$localeConfig.brandName}} 支持通过「字段匹配」和「询问绑定」两种方式，保障你的用户在 {{$localeConfig.brandName}} 的唯一身份，确保用户账号信息统一。
+
 有关「账号绑定」功能和使用详情，请参阅 [账号绑定](/guides/connections/account-binding.md)。

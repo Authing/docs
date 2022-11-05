@@ -1,6 +1,6 @@
 | 社会化登录方式             | 使用场景   | 使用文档                                                                                                              |
 | -------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 微信 PC 扫码               | PC 网站    | <router-link to="/guides/connections/social/wechat-pc/" target="_blank">使用文档</router-link>                    |
+| PC 微信扫码               | PC 网站    | <router-link to="/guides/connections/social/wechat-pc/" target="_blank">使用文档</router-link>                    |
 | 微信移动端                 | 移动 APP   | <router-link to="/guides/connections/social/wechat-mobile/" target="_blank">使用文档</router-link>                |
 | 微信网页授权               | 微信内网页 | <router-link to="/guides/connections/social/wechat-mp/" target="_blank">使用文档</router-link>                    |
 | 微信公众号关注                 | PC 网站    | <router-link to="/guides/connections/social/wechatmp-qrcode/" target="_blank">使用文档</router-link>              |
