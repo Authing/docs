@@ -3,7 +3,7 @@
 <LastUpdated/>
 
 <!-- ::: hint-warning
-只有**企业版**用户能够Use 连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 176-0250-2507 或 xuziqiang@authing.cn。
+只有**企业版**用户能够Use 连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 [Authing 售后服务人员](csm@authing.cn)。
 ::: -->
 
 ## Migration process
