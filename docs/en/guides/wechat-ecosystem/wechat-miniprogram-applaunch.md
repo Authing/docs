@@ -22,7 +22,7 @@ By default, the app pulls a mini program login. {{$localeConfig.brandName}} defa
 
 Please go to the [WeChat public platform](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN) guide creates a WeChat applet, you need to record the **App ID** and **App Secret** of the app, will be used later.
 
-At the same time, you need to contact us to get the source code of your login. For details, please consult: 176-0250-2507.
+At the same time, you need to contact us to get the source code of your login. For details, please consult [Authing Contact](csm@authing.cn).
 
 ## Step 3: Configure "App Pull up a Small Program Login" app in the {{$localeConfig.brandName}} console (optional)
 

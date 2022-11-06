@@ -22,7 +22,7 @@ By default, the Mini Program scan code login will use the default Mini Program p
 
 Please go to [WeChat public platform](https://mp.weixin.qq.com/wxopen/waregister?action=step1) Guide to create a WeChat applet, you need to record the **App ID** and **App Secret** of the application , which will be used later.
 
-At the same time, you need to contact us to obtain the source code of the small login. For details, please consult: 176-0250-2507.
+At the same time, you need to contact us to obtain the source code of the small login. For details, please consult [Authing Contact](csm@authing.cn).
 
 ## Configure the WeChat applet scan code application in the Authing console
 

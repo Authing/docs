@@ -1,10 +1,9 @@
 # 微信生态全场景能力
 
 <LastUpdated/>
-​
-::: hint-info
-通过 {{$localeConfig.brandName}}，更便捷地纵享微信生态能力!
-:::
+
+
+> 通过 {{$localeConfig.brandName}}，更便捷地纵享微信生态能力!
 
 作为一名微信生态的开发者，在为你的应用实现微信登录能力时，你可能会面临重重困惑：​
 

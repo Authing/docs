@@ -176,5 +176,5 @@ After the upload is successful, the developer can test the password encryption e
 ::: hint-info
 The password encryption function takes effect after uploading and will affect the original user. It is recommended that this function be used in a completely new user pool.
 
-If you need to modify the password encryption function in the old user pool, please contact us: +86 17602502507。
+If you need to modify the password encryption function in the old user pool, please contact us: csm@authing.cn。
 :::
