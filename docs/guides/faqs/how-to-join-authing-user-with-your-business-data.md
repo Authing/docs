@@ -4,10 +4,10 @@
 
 如果你使用 {{$localeConfig.brandName}} ，你的用户资料将被安全地存储在 {{$localeConfig.brandName}} 云上的数据库中，你不需要额外保存一份用户资料。你需要在本地将你的业务数据与 {{$localeConfig.brandName}} 用户进行联表，通过用户 ID（User ID）和业务数据进行关联。
 
-比如你的业务系统中有一个订单表（orders），他自身的表结构如下：
+比如你的业务系统中有一个订单表（orders），它自身的表结构如下：
 
 ```sql
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_no` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '订单编号',
   `order_sn` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易号',
@@ -34,7 +34,7 @@ CREATE TABLE `order` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `order_order_sn_unique` (`order_sn`),
-  KEY `order_order_sn_member_id_order_status_out_trade_no_index` (`order_sn`,`member_id`,`order_status`,`out_trade_no`(191))
+  KEY `order_order_sn_order_status_out_trade_no_index` (`order_sn`,`order_status`,`out_trade_no`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 

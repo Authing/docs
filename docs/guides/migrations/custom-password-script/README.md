@@ -123,7 +123,7 @@ module.exports.validate = function(request, response, context) {
 NPM 是 Node.js 生态的包管理工具。
 :::
 
-以下是引入 `bcrypt` 包的一个代码示例：
+以下是引入 `bcrypt` 包的一个代码示例（先切换目录到你的项目文件夹）：
 
 ```haskell
 $ npm install bcrypt

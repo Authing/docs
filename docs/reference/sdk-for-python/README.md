@@ -30,7 +30,7 @@ meta:
 ## 安装
 
 ```
-pip install authing
+pip install authing==4.5.18
 ```
 
 ## 使用管理模块

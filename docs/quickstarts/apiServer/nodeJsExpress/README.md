@@ -32,11 +32,9 @@ downloadDemo:
 
 ![](~@imagesZhCn/quickstarts/spa/create-app-2.png)
 
-然后进入应用详情，在下方的「授权」卡片中，授权模式中勾选 `client_credentials`，`authorization_code` 然后点击保存。
-在「高级配置」模块中**id_token 签名算法**选择 **RS256**。
+在应用列表找到你的应用，进入应用详情。在下方的「其他配置」模块中，**id_token 签名算法**选择 **RS256**，然后点击保存。
 
-![](~@imagesZhCn/quickstarts/set-app.png)
-![](~@imagesZhCn/quickstarts/set-app-2.png)
+![](~@imagesZhCn/quickstarts/webApp/config-RS256.png)
 
 
 ### 创建权限项目
@@ -81,7 +79,7 @@ downloadDemo:
 
 ### 修改 Demo 配置
 
-如果你下载了[示例 Demo 代码](https://github.com/Authing/m2m-demo-express)，需要修改 app.js 第 12 行，修改配置为你的应用配置：
+如果你下载了[示例 Demo 代码](https://github.com/Authing/m2m-demo-express)，需要修改 app.js，修改配置为你的应用配置：
 
 ```js
 // 授权中间件，Access token 必须存在，并且能被 Authing 应用公钥验签
@@ -91,12 +89,12 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://{应用域名}.authing.cn/oidc/.well-known/jwks.json`
+    jwksUri: `https://{AUTHING_APP_HOST}.authing.cn/oidc/.well-known/jwks.json`
   }),
 
   // 验证受众和颁发者
   audience: 'APP_ID',
-  issuer: [`https://{应用域名}.authing.cn/oidc`],
+  issuer: [`https://{AUTHING_APP_HOST}.authing.cn/oidc`],
   algorithms: ['RS256']
 });
 ```
@@ -138,12 +136,12 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://{应用域名}.authing.cn/.well-known/jwks.json`,
+    jwksUri: `https://{AUTHING_APP_HOST}.authing.cn/.well-known/jwks.json`,
   }),
 
   // 验证受众和颁发者
   audience: '编程访问账号 AK',
-  issuer: [`https://{应用域名}.authng.cn/oidc`],
+  issuer: [`https://{AUTHING_APP_HOST}.authng.cn/oidc`],
   algorithms: ['RS256'],
 });
 ```
@@ -158,9 +156,9 @@ checkJwt 中间件会检验请求中携带的 Access token 合法性，但光知
 ```js
 const checkScopes = jwtAuthz(['order:read']);
 
-app.get('/api/private-scoped', checkJwt, checkScopes, function(req, res) {
+app.get('/api/private-scoped', checkJwt, checkScopes, async (req, res)  => {
   res.json({
-    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.',
+    message: '受保护的接口',
   });
 });
 ```
@@ -171,7 +169,7 @@ app.get('/api/private-scoped', checkJwt, checkScopes, function(req, res) {
 
 调用 API 端点时，需要考虑一件事：这个接口只要知道调用者是来自哪个服务器的请求就可以了，还是需要知道调用者具体是哪个用户。
 
-举例来说，公司总部的资源服务器的资源接口，只要知道来访者是从分部服务器来的，并且具备权限，就直接返回资源；用户想要获取购物车数据，此时资源接口需要知道用户是谁，用户是否有权限查看购物车数据，然后再将用户他自己的购物车数据返回。
+
 
 ### 获取 Access token
 

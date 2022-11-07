@@ -3,14 +3,14 @@
 <LastUpdated/>
 
 
-不管你在开发什么类型的应用 —— 内部员工 IT 系统、toC 账号体系或者是给其他开发者暴露的 API，用户认证都是其中至关重要的一环，{{$localeConfig.brandName}} 都将为你提供合适的认证方式支持。
+不管你在开发什么类型的应用 —— 内部员工 IT 系统、toC 账号体系或者是给其他开发者暴露的 API，用户认证都是其中至关重要的一环，{{$localeConfig.brandName}} 提供了丰富的认证方式供开发者选择。
 
 
 ::: hint-warning
  注意：部分浏览器已经开始默认禁用第三方 Cookie，这会影响到 {{$localeConfig.brandName}} 在某些场景下的部分功能。详细说明请见：[FAQ：浏览器禁用第三方 Cookie 将如何影响 {{$localeConfig.brandName}} 功能？](/guides/faqs/block-third-party-cookie-impact.md) 
 :::
 
-登录体验是软件开发者需要考虑的最重要的用户体验之一，为用户提供一个无缝、便捷而又安全的认证体验不是一件很容易的事。一般而言，登录逻辑同时关联着注册、重置密码、关联账号等逻辑。更重要的是，在登录过程中以强健和自适应身份验证的形式增强安全性通常对于许多实现至关重要。
+登录体验是软件开发者需要考虑的最重要的用户体验之一，为用户提供一个无缝、便捷而又安全的认证体验不是一件很容易的事。一般而言，登录逻辑同时关联着注册、重置密码、关联账号等逻辑。更重要的是，对于很多应用而言，在登录过程中以强健和自适应身份验证的形式增强安全性是很重要的。
 
 {{$localeConfig.brandName}} 提供了非常多的认证方式给开发者选择、组合，密码策略、登录频繁检测、自定义认证流程等都可以通过管理控制台轻松完成（这些操作基本上也可以通过 Management API 来完成）。
 
@@ -21,12 +21,14 @@
 {{$localeConfig.brandName}} 也可以作为 Service Provider，通过 OIDC、OAuth2.0、SAML、LDAP、AD 等标准协议去连接第三方 Identity Provider。比如你可以通过 Azure AD、本地的 Windows AD 登录你的应用。
 {{$localeConfig.brandName}} 还可以使用第三方社会化登录，自动拉取社会化登录用户的用户资料到你的用户目录。
 
-你可以分别了解 [OIDC、OAuth2.0](/concepts/oidc/oidc-overview.md)、[SAML](/concepts/saml/saml-overview.md)、[LDAP](/concepts/ldap.md)、AD 的实现原理。
+你可以分别了解 [OIDC、OAuth2.0](/concepts/oidc/oidc-overview.md)、[SAML](/concepts/saml/saml-overview.md)、[LDAP](/concepts/ldap.md)、[AD](https://en.wikipedia.org/wiki/Active_Directory) 的实现原理。
 
 ## 托管登录页认证
 
 {{$localeConfig.brandName}} 中每个用户池都拥有一个独立的二级域名，以及配备了在线的登录页，访问 `https://YOUR_DOMAIN.authing.cn/login`
 即可访问此登录页面。你不需要编写一行代码来维护该登录页，你可以通过控制台的应用配置做一些定制化配置。
+
+可以试用 Authing 提供的[示例认证页](https://sample-sso.authing.cn)。
 
 ## 嵌入登录表单认证
 
