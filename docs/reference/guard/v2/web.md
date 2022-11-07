@@ -121,7 +121,7 @@ import "@authing/guard-react/dist/esm/guard.min.css";
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from '@authing/guard-react18';
-import "@authing/guard-react18/dist/esm/guard.min.css";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
 
 import React from "react";
 
@@ -436,6 +436,7 @@ console.log("guard instance: ", guard);
 
 ```tsx
 // Jump.tsx
+
 // React16 / 17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
 import { useGuard } from "@authing/guard-react";
