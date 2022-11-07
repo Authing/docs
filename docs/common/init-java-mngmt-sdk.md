@@ -5,12 +5,10 @@ import cn.authing.core.mgmt.ManagementClient;
 
 public class ManagementClientTest {
     public static void main(String[] args){
-      ManagementClient managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
-      // 获取管理员权限
-      managementClient.requestToken().execute();
-
-      // 之后就可以使用 managementClient 进行管理员操作了，比如获取用户列表。
-      PaginatedUsers users = managementClient.users().list().execute();
+        ManagementClientOptions options = new ManagementClientOptions();
+        options.setAccessKeyId(AUTHING_USERPOOL_ID);
+        options.setAccessKeySecret(AUTHING_USERPOOL_SECRET);
+        ManagementClient client = new ManagementClient(options);
     }
 }
 ```

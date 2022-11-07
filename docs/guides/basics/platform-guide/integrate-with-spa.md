@@ -31,7 +31,7 @@ npm i @authing/react-ui-components --save
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { AuthingGuard } from '@authing/react-ui-components'
+import { Guard } from '@authing/react-ui-components'
 // 引入 css 文件
 import '@authing/react-ui-components/lib/index.min.css'
 

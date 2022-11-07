@@ -115,6 +115,7 @@ async function pipe(context, callback) {
   const email = context.data.userInfo.email;
   // 非邮箱注册方式, 跳过此 pipe 函数
   if (!email) {
+    // 注意参数
     return callback(null, context);
   }
 
@@ -122,12 +123,7 @@ async function pipe(context, callback) {
   if (!email.endsWith("@example.com")) {
     return callback(new Error("Access denied."));
   }
+  // 进入下一个 pipe 函数（如果有）
   return callback(null, context);
 }
 ```
-
-简要解释一下代码：
-
-- 2-6 行判断请求参数中是否包含 email, 如果有的话说明是邮箱注册方式。如果没有，直接跳过此 pipe 函数，调用 callback 的参数分别为 null 和 context（**请勿忘记此参数！**）。当然，如果你只是希望邮箱方式注册，这一步如果没有邮箱返回错误也是可以的 ～
-- 8-10 行判断邮箱域名是否为`example.com`，如果不是调用 callback 函数，第一个参数为 `new Error('Access Denied.')`。
-- 11 行，调用 `return callback(null, context)`，接着进入下一个 pipe 函数，如果有的话。

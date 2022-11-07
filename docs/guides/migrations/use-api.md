@@ -20,12 +20,12 @@
 
 ## 第二步：导出你的用户数据
 
-请将你的用户数据导出为 JSON 格式，内容为一个数组，每个元素是一个对象，其中一个元素对应一条用户的信息，例如：
+请将你的用户数据导出为 JSON 格式，内容为一个数组，每个元素是一个对象，其中一个元素对应一条用户的信息，保存为例如 users.json：
 
 ```json
 [
   {
-    "uid": "1",
+    "uid": "AUTHING_USER_1",
     "nickname": "zhang",
     "account_id": "zhang",
     "mail": "test1@123.com",
@@ -35,7 +35,7 @@
     "loginsCount": 4
   },
   {
-    "uid": "2",
+    "uid": "AUTHING_USER_2",
     "nickname": "wang",
     "account_id": "wang",
     "mail": "test2@123.com",
@@ -45,7 +45,7 @@
     "loginsCount": 12
   },
   {
-    "uid": "3",
+    "uid": "AUTHING_USER_3",
     "nickname": "zhao",
     "account_id": "zhao",
     "mail": "test3@123.com",
@@ -78,7 +78,7 @@ const userPoolId = 'xxxxxxxxxxxxxxxxxxx'
 const secret = 'xxxxxxxxxxxxxxxxxxx'
 
 // 如果文件较大建议分批次读入
-// 请将用户信息与本文件保存在同一个目录，文件内容为用户数据的数组 JSON，一个元素为一个用户的信息对象
+// 请将用户信息与本文件保存在同一个目录，文件内容为用户数据的数组 JSON，一个元素为一个用户的信息对象，此处读取上文中的 users.json
 let users = fs.readFileSync(path.resolve('users.json'), { encoding: 'utf8' })
 users = JSON.parse(users)
 async function main() {
@@ -134,7 +134,7 @@ $ npm install authing-js-sdk
 $ node index.js
 ```
 
-代码可在 GitHub 查看：[users-migration](https://github.com/Authing/users-migration)
+代码可在 GitHub 查看：[users-migration](https://github.com/authing/authing-js-sdk/tree/master-backups-20220901)
 
 ## 获取帮助
 
