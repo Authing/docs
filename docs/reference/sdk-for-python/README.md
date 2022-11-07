@@ -128,7 +128,7 @@ data = management_client.users.list()
 
 初始化 `AuthenticationClient` 需要 `app_id`（应用 ID）和 `app_host`（应用端点，如 `https://YOUR_DOMAIN.authing.cn`）：
 
-> 你可以在此[获取 app_id 和 app_host](/guides/faqs/get-app-id-and-secret.md)。
+> 你可以在此[获取 app_id 和 app_host](/guides/app-new/create-app/app-configuration.md)。
 
 ```python
 from authing.v2.authentication import AuthenticationClient, AuthenticationClientOptions
