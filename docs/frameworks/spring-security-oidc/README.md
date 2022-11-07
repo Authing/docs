@@ -251,7 +251,7 @@ Spring Security 默认会保护首页，在访问首页时会进行认证，未�
 
 ##  其他知识学习
 
-###  什么是OIDC
+###  什么是 OIDC
 
 看一下官方的介绍 [http://openid.net/connect/](http://openid.net/connect/)
 

@@ -21,7 +21,7 @@
 
 如果你属于这两种场景的一种，请前往 [微信公众平台](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN)指引创建一个微信小程序，你需要记录下该应用的 `App ID` 和 `App Secret`，后面需要用到。
 
-同时你需要联系我们获取小登录的源码，详情请咨询：176-0250-2507。
+同时你需要联系我们获取小登录的源码，详情请咨询 [Authing 售后服务人员](csm@authing.cn)。
 
 ![](./images/register-wechat-miniprogram.jpg)
 

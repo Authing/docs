@@ -43,9 +43,6 @@ context 对象中保存了当前认证流程的上下文，包括认证手段、
 
 身份提供方。
 
-
-身份提供方。
-
 <table>
   <thead>
     <tr>
@@ -79,9 +76,9 @@ context 对象中保存了当前认证流程的上下文，包括认证手段、
         <p></p>
         <p>wechat</p>
       </td>
-      <td style="text-align:left">微信 PC 扫码登录。详情见
+      <td style="text-align:left">PC 微信扫码登录。详情见
         <a
-        href="../../connections/wechat-pc/">接入微信 PC 扫码登录</a>。</td>
+        href="../../connections/wechat-pc/">接入 PC 微信扫码登录</a>。</td>
     </tr>
     <tr>
       <td style="text-align:left">wechat:miniprogram</td>
@@ -120,6 +117,7 @@ context 对象中保存了当前认证流程的上下文，包括认证手段、
     </tr>
   </tbody>
 </table>
+
 
 ## data 对象
 

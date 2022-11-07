@@ -1,4 +1,4 @@
-# {{$localeConfig.brandName}} 是什么
+# 什么是 {{$localeConfig.brandName}}
 
 <LastUpdated/>
 

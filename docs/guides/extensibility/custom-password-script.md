@@ -1,10 +1,10 @@
 ---
 meta:
     - name: description
-      content: 配置自定义密码函数
+      content: 自定义密码加密方法
 ---
 
-# 配置自定义密码函数
+# 自定义密码加密方法
 
 <LastUpdated/>
 
@@ -178,5 +178,5 @@ const vlidatePassword = (plainText, encrypted) => {
 ::: hint-info
 密码加密函数上传后即生效，会影响原用户，建议此功能在完全新的用户池中使用。
 
-若你需要在旧用户池中修改密码加密函数，请联系我们：+86 17602502507。
+若你需要在旧用户池中修改密码加密函数，请联系 [Authing 售后服务人员](csm@authing.cn)。
 :::

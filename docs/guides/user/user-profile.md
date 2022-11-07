@@ -10,11 +10,11 @@ meta:
 
 {{$localeConfig.brandName}} 用户的所有字段及其释义如下：
 
-- `id`: 用户 ID，格式为 `5f927f5daa7ba859b6b5c21f`，是 {{$localeConfig.brandName}} 自动生成的唯一 ID。
+- `id`: 用户 ID，示例为 `5f927f5daa7ba859b6b5c21f`，是 {{$localeConfig.brandName}} 自动生成的唯一 ID。
 - `arn`: ARN
 - `status`: 用户状态
 - `token`: 用户的身份凭证，值为一个 [OIDC IdToken](/concepts/id-token.md)。通过此字段可以验证用户身份以及判断用户登录态，详情请见 [验证 Token](../faqs/how-to-validate-user-token.md)。
-- `userPoolId`: 用户池 ID，格式为 `5f927f5daa7ba859b6b5c21f`，是 {{$localeConfig.brandName}} 自动生成的唯一 ID。
+- `userPoolId`: 用户池 ID，示例为 `5f927f5daa7ba859b6b5c21f`，是 {{$localeConfig.brandName}} 自动生成的唯一 ID。
 - `username`: 用户名，用户池内唯一，区分大小写。
 - `email`: 邮箱，用户池内唯一，不区分大小写，如 `Bob@example.com` 和 `bob@example.com` 会识别为同一个邮箱。
 - `emailVerified`: 邮箱是否已验证，{{$localeConfig.brandName}} 默认不会阻止邮箱未验证的用户登录，如果你希望强制要求用户邮箱验证之后才能登录，请见[此](/guides/users/settings.html#%E7%A6%81%E6%AD%A2%E9%82%AE%E7%AE%B1%E6%9C%AA%E9%AA%8C%E8%AF%81%E7%9A%84%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95)。

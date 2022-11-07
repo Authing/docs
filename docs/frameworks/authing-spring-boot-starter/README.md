@@ -49,13 +49,11 @@ Authing Spring Boot Starter 可以为你提供拦截校验 token 的功能。
 
 为你的示例应用创建一些测试用户。
 
-![image-20220825161101516](D:\authing\TempCode\doc framework starter.assets\image-20220825161101516.png)
+<img src="../images/image-20220825161101516.png" style="display:block;margin: 0 auto;">
 
 如果想看某个用户的 token, 可在示例应用中点击「体验登录」模拟以此用户身份登录。
 
-![image-20220825161351907](D:\authing\TempCode\doc framework starter.assets\image-20220825161351907.png)
-
-
+<img src="../images/image-20220825161351907.png" style="display:block;margin: 0 auto;">
 
 ## 项目搭建
 
@@ -163,7 +161,7 @@ authing:
 - `authing.app.app-id`：应用ID。
 - `authing.app.app-host`：应用域名，格式为 `https://YOUR_DOMAIN.authing.cn`
 
-> 你可以在此[了解如何获取 UserPoolId](https://docs.authing.cn/v2/guides/faqs/get-userpool-id-and-secret.html), 在控制台的**应用**中查看自己的应用列表。
+> 你可以在此 [了解如何获取 UserPoolId](https://docs.authing.cn/v2/guides/faqs/get-userpool-id-and-secret.html), 在控制台的**应用**中查看自己的应用列表。
 
 #### 配置授权规则
 
@@ -172,11 +170,11 @@ authing:
 
 默认情况下，所有资源都为受保护资源，需要特定用户拥有特定权限才可访问。
 
-细节请参考这里[对用户进行权限管理](https://docs.authing.cn/v2/guides/access-control/) 创建相应的`资源`以及`授权`。
+细节请参考这里 [对用户进行权限管理](https://docs.authing.cn/v2/guides/access-control/) 创建相应的 `资源` 以及 `授权`。
 
 注意，资源操作请填 'read'，目前仅支持 read 操作。
 
-![](D:\authing\TempCode\doc framework starter.assets\ins.png)
+<img src="../images/ins.png" style="display:block;margin: 0 auto;">
 
 
 

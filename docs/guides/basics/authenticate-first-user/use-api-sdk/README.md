@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-在前面的指引中你已经了解了如何使用 [{{$localeConfig.brandName}} 托管的登录页](../use-hosted-login-page.md)和[内嵌登录组件](../use-embeded-login-component/README.md)实现登录注册流程，不仅如此，我们还提供 RESTful、 GraphQL 两种形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活得组合出你需要的认证流程。
+在前面的指引中你已经了解了如何使用 [{{$localeConfig.brandName}} 托管的登录页](../use-hosted-login-page.md)和[内嵌登录组件](../use-embeded-login-component/README.md)实现登录注册流程，不仅如此，我们还提供 RESTful、 GraphQL 两种形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活地组合你需要的认证流程。
 
 ## 选择熟悉的 SDK
 

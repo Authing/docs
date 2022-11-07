@@ -95,7 +95,7 @@ const zhCnNavBar = {
               path: "/guides/basics/authenticate-first-user/how-to-implement-access-control",
             },
             {
-              title: "实现退出登录",
+              title: "退出登录",
               path: "/guides/basics/authenticate-first-user/how-to-logout-user",
             },
             {
@@ -341,7 +341,7 @@ const zhCnNavBar = {
           path: "/guides/user/application-access",
         },
         {
-          title: "用户分组",
+          title: "用户组管理",
           path: "/guides/user/user-group",
         },
       ],
@@ -558,7 +558,7 @@ const zhCnNavBar = {
           path: "/guides/connections/social.html",
           children: [
             {
-              title: "微信 PC 扫码",
+              title: "PC 微信扫码",
               path: "/guides/connections/social/wechat-pc/",
             },
             {
@@ -764,11 +764,33 @@ const zhCnNavBar = {
             },
           ],
         },
+        {
+          title: "账号绑定",
+          path: "/guides/connections/account-binding.md",
+        },
       ],
     },
     {
-      title: "打通微信生态",
+      title: "微信生态全场景能力",
       path: "/guides/wechat-ecosystem/",
+      children: [
+      {
+      title: "当你使用移动端微信应用进行开发",
+      path: "/guides/wechat-ecosystem/wechat-mobile-app"
+      },
+      {
+      title: "当你使用网页端微信应用进行开发",
+      path: "/guides/wechat-ecosystem/wechat-web-app"
+      },
+      {
+        title: "当你使用微信公众号进行开发",
+        path: "/guides/wechat-ecosystem/wechat-public-account-app"
+        },
+        {
+          title: "当你使用微信小程序进行开发",
+          path: "/guides/wechat-ecosystem/wechat-miniprogram-app"
+          },
+ ]
       // children: [
       //   {
       //     title: "关注公众号登录",
@@ -809,8 +831,8 @@ const zhCnNavBar = {
           path: "/guides/migrations/use-api",
         },
         {
-          title: "配置自定义密码函数",
-          path: "/guides/migrations/custom-password-script/",
+          title: "自定义密码加密方法",
+          path: "/guides/extensibility/custom-password-script",
         },
         {
           title: "从企业微信、钉钉等第三方身份源导入用户",
@@ -841,67 +863,6 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "自动化",
-      path: "/guides/extensibility/",
-      children: [
-        {
-          title: "使用 Webhook 监听用户事件",
-          path: "/guides/webhook/",
-        },
-        {
-          title: "自定义认证流程（Pipeline）",
-          path: "/guides/pipeline/",
-          children: [
-            {
-              title: "创建你的第一个 Pipeline 函数",
-              path: "/guides/pipeline/write-your-first-pipeline-function",
-            },
-            {
-              title: "Pipeline API Reference",
-              path: "/guides/pipeline/pipeline-function-api-doc",
-            },
-            {
-              title: "Pipeline 的应用场景",
-              path: "/guides/pipeline/usage",
-            },
-            {
-              title: "Pipeline User 对象",
-              path: "/guides/pipeline/user-object",
-            },
-            {
-              title: "Pipeline Context 对象",
-              path: "/guides/pipeline/context-object",
-            },
-            {
-              title: "在 Pipeline 中使用环境变量",
-              path: "/guides/pipeline/env",
-            },
-            {
-              title: "可用的 Node Modules",
-              path: "/guides/pipeline/available-node-modules",
-            },
-            {
-              title: "如何调试",
-              path: "/guides/pipeline/how-to-debug",
-            },
-            {
-              title: "常见问题",
-              path: "/guides/pipeline/faq",
-            },
-            {
-              title: "私有化部署",
-              path: "/guides/pipeline/private-cloud",
-            },
-          ],
-        },
-        // DATABASE_CONNECTION_MENU,
-        {
-          title: "配置自定义密码函数",
-          path: "/guides/extensibility/custom-password-script",
-        },
-      ],
-    },
-    {
       title: "安全设置",
       children: [
         {
@@ -923,7 +884,17 @@ const zhCnNavBar = {
         },
         {
           title: "密码安全",
-          path: "/guides/security/pw-security",
+          path: "/guides/security/pw-security/",
+          children: [
+            {
+              title: "密码策略",
+              path: "/guides/security/pw-security/pw-policy",
+            },
+            {
+              title: "自定义密码加密方法",
+              path: "/guides/extensibility/custom-password-script",
+            },
+          ],
         },
         {
           title: "多因素认证",
@@ -982,6 +953,63 @@ const zhCnNavBar = {
           path: "/guides/customize/domain/customized-domain",
         },
                 ],
+    },
+    {
+      title: "自动化",
+      path: "/guides/extensibility/",
+      children: [
+        {
+          title: "流水线 Pipeline",
+          path: "/guides/pipeline/",
+          children: [
+            {
+              title: "创建你的第一个 Pipeline 函数",
+              path: "/guides/pipeline/write-your-first-pipeline-function",
+            },
+            {
+              title: "Pipeline API Reference",
+              path: "/guides/pipeline/pipeline-function-api-doc",
+            },
+            {
+              title: "Pipeline 的应用场景",
+              path: "/guides/pipeline/usage",
+            },
+            {
+              title: "Pipeline User 对象",
+              path: "/guides/pipeline/user-object",
+            },
+            {
+              title: "Pipeline Context 对象",
+              path: "/guides/pipeline/context-object",
+            },
+            {
+              title: "在 Pipeline 中使用环境变量",
+              path: "/guides/pipeline/env",
+            },
+            {
+              title: "可用的 Node Modules",
+              path: "/guides/pipeline/available-node-modules",
+            },
+            {
+              title: "如何调试",
+              path: "/guides/pipeline/how-to-debug",
+            },
+            {
+              title: "常见问题",
+              path: "/guides/pipeline/faq",
+            },
+            {
+              title: "私有化部署",
+              path: "/guides/pipeline/private-cloud",
+            },
+          ],
+        },
+        {
+          title: "Webhooks",
+          path: "/guides/webhook/",
+        },
+        // DATABASE_CONNECTION_MENU,
+      ],
     },
     {
       title: "审计日志",
@@ -2294,7 +2322,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/csharp/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/csharp/用户管理/get-user-groups",
                     },
                     {
@@ -2731,7 +2759,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/go/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/go/用户管理/get-user-groups",
                     },
                     {
@@ -3168,7 +3196,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/java/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/java/用户管理/get-user-groups",
                     },
                     {
@@ -3605,7 +3633,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/node/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/node/用户管理/get-user-groups",
                     },
                     {
@@ -4042,7 +4070,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/php/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/php/用户管理/get-user-groups",
                     },
                     {
@@ -4479,7 +4507,7 @@ const zhCnNavBar = {
                       path: "/reference-new/sdk-v5/python/用户管理/set-user-departments",
                     },
                     {
-                      title: "获取用户分组列表",
+                      title: "获取分组列表",
                       path: "/reference-new/sdk-v5/python/用户管理/get-user-groups",
                     },
                     {
@@ -5968,7 +5996,7 @@ const translatedZhCnNavBar = {
         },
         {
           title: "Configure custom password function",
-          path: "/guides/migrations/custom-password-script/",
+          path: "/guides/extensibility/custom-password-script",
         },
         {
           title:
