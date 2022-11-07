@@ -56,12 +56,12 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ```shell
 # 兼容 React 16/17
 npm install --save @authing/guard-react
-or
+# OR
 yarn add @authing/guard-react
 
 # 兼容 React 18
 npm install --save @authing/guard-react18
-or
+# OR
 yarn add @authing/guard-react18
 ```
 
@@ -73,7 +73,7 @@ yarn add @authing/guard-react18
 # 兼容 Vue 2
 npm install --save @authing/guard-vue2
 
-or
+# OR
 
 yarn add @authing/guard-vue2
 ```
@@ -86,7 +86,7 @@ yarn add @authing/guard-vue2
 # 兼容 Vue 3
 npm install --save @authing/guard-vue3
 
-or
+# OR
 
 yarn add @authing/guard-vue3
 ```
@@ -99,7 +99,7 @@ yarn add @authing/guard-vue3
 # 兼容 Angular 14
 npm install --save @authing/guard-angular
 
-or
+# OR
 
 yarn add @authing/guard-angular
 ```
