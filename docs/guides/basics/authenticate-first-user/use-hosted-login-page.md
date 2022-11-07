@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} 托管登录页是最简单、安全的集成方式。这是因为登录流程由 {{$localeConfig.brandName}} 维护，并由 {{$localeConfig.brandName}} 保证安全。对于大多数集成，建议使用 {{$localeConfig.brandName}} 托管的登录流程。你的业务系统将用户重定向到 {{$localeConfig.brandName}} 登录页，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。此设计被认为是安全性最佳实践。在自定义配置方面，托管模式提供了中等程度的登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
+{{$localeConfig.brandName}} 托管登录页是最简单、安全的集成方式。这是因为登录流程由 {{$localeConfig.brandName}} 维护，并由 {{$localeConfig.brandName}} 保证安全。对于应用集成，建议使用 {{$localeConfig.brandName}} 托管的登录流程。你的业务系统将用户重定向到 {{$localeConfig.brandName}} 登录页，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。此设计被认为是安全性最佳实践。在自定义配置方面，托管模式提供了登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
 
 本文档将会介绍如何使用 {{$localeConfig.brandName}} 托管的登录页快速实现一个完整的用户认证流程。
 
