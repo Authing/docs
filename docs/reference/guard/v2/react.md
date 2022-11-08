@@ -12,6 +12,10 @@ npm：[@authing/react-ui-components](https://www.npmjs.com/package/@authing/reac
 
 React 版本：React 16/17
 
+npm：[@authing/react18-ui-components](https://www.npmjs.com/package/@authing/react18-ui-components)
+
+React 版本：React 18
+
 ## STEP 1: 在 Authing 控制台创建应用
 
 **首先，你需要将你的应用接入 Authing 控制台**。如果你还没有创建，请先[在 Authing 控制台创建一个应用](/guides/app-new/create-app/create-app.md)。
@@ -41,21 +45,32 @@ React 版本：React 16/17
 运行下列命令行安装 Authing React.JS library：
 
 ```sh
+# React 16/17
 $ yarn add @authing/react-ui-components
-
 # OR
-
 $ npm install @authing/react-ui-components --save
+
+# React 18
+$ yarn add @authing/react18-ui-components
+# OR
+$ npm install @authing/react18-ui-components --save
 ```
 
 **然后，在你的 React 应用中完成配置：**
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -68,14 +83,22 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 方法二：直接通过浏览器加载
 
 **首先，在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `AuthingReactUIComponents`。**
 
+:::: tabs :options="{ useUrlFragment: false }"
+
+::: tab React
 Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react-ui-components/lib/index.min.js) 下载）。
+
 
 ```html
 <html lang="en">
@@ -123,6 +146,61 @@ Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供�
 </html>
 ```
 
+:::
+
+::: tab React18
+Authing npm 发布包内的 `@authing/react18-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/react18-ui-components) 或者 [unpkg](https://unpkg.com/@authing/react18-ui-components/lib/index.min.js) 下载）。
+
+```html
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- 引入 babel，支持 jsx -->
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+
+  <!-- 引入 React -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- JavaScript 代码 -->
+  <script>
+    window.react = React
+    window['react-dom'] = ReactDOM
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@authing/react18-ui-components"></script>
+
+  <!-- CSS 文件 -->
+  <link href="https://cdn.jsdelivr.net/npm/@authing/react18-ui-components/lib/index.min.css" rel="stylesheet">
+  </link>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    var App = () => {
+      const appId = "AUTHING_APP_ID";
+      const onLogin = userInfo => {
+        console.log(userInfo);
+      };
+      return React.createElement(
+        AuthingReactUIComponents.Guard, {
+          appId: appId,
+          onLogin: onLogin,
+        },
+      )
+    };
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+</body>
+
+</html>
+```
+
+:::
+
+::::
+
 **无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
 
 接下来，你可以根据实际的需要，直接阅读对应的使用指南和代码示例。
@@ -149,11 +227,18 @@ Authing npm 发布包内的 `@authing/react-ui-components/lib` 目录下提供�
 用户在登录成功后会触发 `onLogin` 事件，并且在事件中会返回用户的详细信息。`onLogin` 具体的使用方法如下：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -166,7 +251,11 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 2. 判断用户登录状态
@@ -176,17 +265,24 @@ ReactDOM.render(<App />, document.getElementById("root"));
 你可以使用 `authClient` 中的 `checkLoginStatus` 方法检测 token 登录状态。下方代码是优先检测登录态，如果用户处于登录态，则显示用户的头像。
 
 ```JS
+// React 16/17
+import ReactDOM from "react-dom";
 import {
   AuthClientProvider,
   Guard,
   GuardMode,
   User,
 } from "@authing/react-ui-components";
-import React from "react";
-import ReactDOM from "react-dom";
-import { AuthenticationClient } from "authing-js-sdk";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { AuthClientProvider, Guard, GuardMode, User, } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authClient = new AuthenticationClient({
   // 替换你的 AppId
@@ -263,7 +359,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 3. 退出登录
@@ -271,17 +371,24 @@ ReactDOM.render(<App />, document.getElementById("root"));
 你可以使用 `authClient` 中的 `logout` 方法完成退出登录的操作：
 
 ```js
+// React 16/17
+import ReactDOM from "react-dom";
 import {
   AuthClientProvider,
   Guard,
   GuardMode,
   User,
 } from "@authing/react-ui-components";
-import React from "react";
-import ReactDOM from "react-dom";
-import { AuthenticationClient } from "authing-js-sdk";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { AuthClientProvider, Guard, GuardMode, User, } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { AuthenticationClient } from "authing-js-sdk";
 
 const authClient = new AuthenticationClient({
   // 替换你的 AppId
@@ -379,7 +486,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 4. 用户注册
@@ -387,11 +498,18 @@ ReactDOM.render(<App />, document.getElementById("root"));
 Guard 初始化参数 `config` 字段，主要用于控制 Guard 具体渲染的配置。可以在 `config` 中传入 `defaultScenes` 字段，来控制 Guard 渲染的默认场景。如果只使用注册场景的话，传入 `GuardModuleType.REGISTER` 即可。具体的使用方法如下：
 
 ```js
-import { Guard, GuardModuleType } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard, GuardModuleType } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard, GuardModuleType } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -409,7 +527,11 @@ const App = () => {
   return <Guard appId={appId} onRegister={onRegister} config={config} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 5. 第三方身份源登录
@@ -429,12 +551,19 @@ ReactDOM.render(<App />, document.getElementById("root"));
 此处以 Github 身份源为例：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
-import { SocialConnectionProvider } from "authing-js-sdk";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { SocialConnectionProvider } from "authing-js-sdk";
 
 const App = () => {
   // 替换你的 AppId
@@ -452,7 +581,11 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} config={config} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 6. 实现单点登录
@@ -460,11 +593,18 @@ ReactDOM.render(<App />, document.getElementById("root"));
 为你的 Guard 设置 `isSSO` 参数，让用户能够在所有接入 Authing 的应用之间单点登录，即：一次登录，即可使用所有应用。具体实现方法如下：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -481,7 +621,11 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} config={config} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 7. 多语言能力
@@ -489,10 +633,17 @@ ReactDOM.render(<App />, document.getElementById("root"));
 你可以通过下面的方法为 Guard 增加「切换语言」按钮，目前支持中/英切换。如果你的 Guard 并未配置「切换语言」按钮，界面语言将会默认采用浏览器语言。特别的，如果用户的浏览器语言并非中/英，Guard 界面将会展示为中文。
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -534,7 +685,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 8. 自定义样式
@@ -544,11 +699,18 @@ ReactDOM.render(<App />, document.getElementById("root"));
 在这里以 「隐藏应用 Logo」为例：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -565,7 +727,11 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} config={config} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 9. 使用弹窗形式的登录框
@@ -573,11 +739,17 @@ ReactDOM.render(<App />, document.getElementById("root"));
 Authing 提供的默认的 Guard 是独立页面。如果你需要使用弹窗形式的登录框，请参考下面的代码示例：
 
 ```js
-import { Guard, GuardMode } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard, GuardMode } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -628,16 +800,23 @@ const App = () => {
 具体代码示例如下：
 
 ```js
+// React 16/17
+import ReactDOM from "react-dom";
 import {
   AuthClientProvider,
   Guard,
   useGlobalAuthClient,
 } from "@authing/react-ui-components";
-import React from "react";
-import ReactDOM from "react-dom";
-import { AuthenticationClient } from "authing-js-sdk";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { AuthClientProvider, Guard, useGlobalAuthClient } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { AuthenticationClient } from "authing-js-sdk";
 
 // 初始化 AuthenticationClient
 const authClient = new AuthenticationClient({
@@ -680,7 +859,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 **第二种方式：** 在使用 Guard 组件时，通过 Props 传入初始化完成的 `AuthClient`，使用需要你单独进行维护。
@@ -688,12 +871,19 @@ ReactDOM.render(<App />, document.getElementById("root"));
 代码示例如下：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
-import { AuthenticationClient } from "authing-js-sdk";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { AuthenticationClient } from "authing-js-sdk";
 
 const App = () => {
   // 初始化 AuthenticationClient
@@ -726,7 +916,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ### 11. 私有化部署
@@ -734,11 +928,18 @@ ReactDOM.render(<App />, document.getElementById("root"));
 如果你是通过「私有化部署」的方式使用 Authing 服务，需要指定你私有化的端点（**不带 Path**），具体方式如下：
 
 ```js
-import { Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
+import { Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
 
 const App = () => {
   // 替换你的 AppId
@@ -755,7 +956,11 @@ const App = () => {
   return <Guard appId={appId} onLogin={onLogin} config={config} />;
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 如果你不清楚具体的操作方式，请直接在你的**私有化服务群**中联系相应的 Authing 工作人员，他们将为你提供直接支持。
@@ -767,12 +972,19 @@ ReactDOM.render(<App />, document.getElementById("root"));
 以**刷新 Token** 为例：
 
 ```js
-import { AuthClientProvider, Guard } from "@authing/react-ui-components";
-import React from "react";
+// React 16/17
 import ReactDOM from "react-dom";
-import { AuthenticationClient } from "authing-js-sdk";
+import { AuthClientProvider, Guard } from "@authing/react-ui-components";
 // 引入 css 文件
 import "@authing/react-ui-components/lib/index.min.css";
+
+// React 18
+// import { createRoot } from 'react-dom/client'
+// import { AuthClientProvider, Guard } from "@authing/react18-ui-components";
+// import "@authing/react18-ui-components/lib/index.min.css";
+
+import React from "react";
+import { AuthenticationClient } from "authing-js-sdk";
 
 const App = () => {
   // 替换你的 AppId
@@ -802,7 +1014,11 @@ const App = () => {
   );
 };
 
+// React 16/17
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+// createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ## 附录：常用的事件及参数列表

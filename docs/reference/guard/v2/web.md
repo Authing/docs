@@ -17,7 +17,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 |条目|说明|
 |-----|----|
-|最新版本|5.0.6|
+|最新版本|5.1.0|
 |仓库地址|https://github.com/authing/Guard|
 
 ## 第一步：在 Authing 控制台创建应用
@@ -54,12 +54,15 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 ::: tab React
 
 ```shell
-# 兼容 React 16 / 17
+# 兼容 React 16/17
 npm install --save @authing/guard-react
-
-or
-
+# OR
 yarn add @authing/guard-react
+
+# 兼容 React 18
+npm install --save @authing/guard-react18
+# OR
+yarn add @authing/guard-react18
 ```
 
 :::
@@ -70,7 +73,7 @@ yarn add @authing/guard-react
 # 兼容 Vue 2
 npm install --save @authing/guard-vue2
 
-or
+# OR
 
 yarn add @authing/guard-vue2
 ```
@@ -83,7 +86,7 @@ yarn add @authing/guard-vue2
 # 兼容 Vue 3
 npm install --save @authing/guard-vue3
 
-or
+# OR
 
 yarn add @authing/guard-vue3
 ```
@@ -96,7 +99,7 @@ yarn add @authing/guard-vue3
 # 兼容 Angular 14
 npm install --save @authing/guard-angular
 
-or
+# OR
 
 yarn add @authing/guard-angular
 ```
@@ -108,11 +111,20 @@ yarn add @authing/guard-angular
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
+
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from '@authing/guard-react18';
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
+
 // 你的业务代码根组件
 import RouterComponent from "./router";
 
@@ -120,15 +132,19 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+      
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
   );
 }
 ```
-
 :::
 
 ::: tab Vue2
@@ -142,8 +158,13 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -165,8 +186,12 @@ const app = createApp(App);
 app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-    // host: 'https://my-authing-app.example.com'
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+    // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI"
   })
 );
 ```
@@ -205,8 +230,13 @@ import { GuardModule } from "@authing/guard-angular";
     AppRoutingModule,
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host: 'https://my-authing-app.example.com'
+      
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI",
     }),
   ],
   providers: [],
@@ -232,8 +262,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -243,8 +273,12 @@ export class AppModule {}
         // 你可以前往 Authing 控制台的本应用详情页查看你的 APP ID
         appId: "AUTHING_APP_ID",
 
-        // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-        // host: 'https://my-authing-app.example.com'
+        // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+        // host: 'https://my-authing-app.example.com',
+
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        // redirectUri: "YOUR_REDIRECT_URI"
       });
 
       // 挂载 Authing Guard
@@ -265,8 +299,13 @@ export class AppModule {}
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from '@authing/guard-react18';
 
 export default function Login() {
   const guard = useGuard();
@@ -340,8 +379,12 @@ const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 console.log("guard instance: ", guard);
@@ -392,9 +435,15 @@ console.log("guard instance: ", guard);
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
 // Jump.tsx
+
+// React16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Jump.tsx
+// import { useGuard } from '@authing/guard-react18';
 
 export default function Jump() {
   const guard = useGuard();
@@ -415,12 +464,18 @@ export default function Jump() {
 ```
 
 ``` tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
 // Callback.tsx
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
 
-import { JwtTokenStatus, useGuard, User } from '@authing/guard-react'
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
+import { JwtTokenStatus, useGuard, User } from '@authing/guard-react';
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Callback.tsx
+// import { JwtTokenStatus, useGuard, User } from '@authing/guard-react18';
+
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function Callback() {
   const history = useHistory()
@@ -437,10 +492,7 @@ export default function Callback() {
 
       if (!loginStatus) {
         guard.startWithRedirect({
-          scope: 'openid profile',
-          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-          redirectUri: 'http://localhost:3000/callback'
+          scope: 'openid profile'
         })
         return
       }
@@ -463,10 +515,7 @@ export default function Callback() {
     } catch (e) {
       // 登录失败，推荐再次跳转到登录页面
       guard.startWithRedirect({
-        scope: 'openid profile',
-        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-        redirectUri: 'http://localhost:3000/callback'
+        scope: 'openid profile'
       })
     }
   }
@@ -480,10 +529,17 @@ export default function Callback() {
 ```
 
 ``` tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
 // Personal.tsx
-import React, { useEffect, useState } from 'react'
-import { useGuard, User } from '@authing/guard-react'
+
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
+import { useGuard, User } from '@authing/guard-react';
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// import { useGuard, User } from '@authing/guard-react18';
+
+import React, { useEffect, useState } from 'react';
 
 export default function Personal() {
   const [userInfo, setUserInfo] = useState('')
@@ -547,10 +603,7 @@ export default {
         const loginStatus = await this.$guard.checkLoginStatus()
         if (!loginStatus) {
           this.$guard.startWithRedirect({
-            scope: 'openid profile',
-            // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-            // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-            redirectUri: 'http://localhost:3000/callback'
+            scope: 'openid profile'
           })
           return
         }
@@ -568,10 +621,7 @@ export default {
       } catch (e) {
         // 登录失败，推荐再次跳转到登录页面
         this.$guard.startWithRedirect({
-          scope: 'openid profile',
-          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-          redirectUri: 'http://localhost:3000/callback'
+          scope: 'openid profile'
         })
       }
     }
@@ -652,10 +702,7 @@ const handleAuthingLoginCallback = async () => {
     const loginStatus: JwtTokenStatus | undefined = await guard.checkLoginStatus()
     if (!loginStatus) {
       guard.startWithRedirect({
-        scope: 'openid profile',
-        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-        redirectUri: 'http://localhost:3000/callback'
+        scope: 'openid profile'
       })
       return
     }
@@ -675,10 +722,7 @@ const handleAuthingLoginCallback = async () => {
   } catch (e) {
     // 登录失败，推荐再次跳转到登录页面
     guard.startWithRedirect({
-      scope: 'openid profile',
-      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-      redirectUri: 'http://localhost:3000/callback'
+      scope: 'openid profile'
     })
   }
 }
@@ -779,10 +823,7 @@ export class CallbackComponent {
 
       if (!loginStatus) {
         this.guard.client.startWithRedirect({
-          scope: 'openid profile',
-          // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-          // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-          redirectUri: 'http://localhost:3000/callback'
+          scope: 'openid profile'
         })
         return
       }
@@ -807,10 +848,7 @@ export class CallbackComponent {
     } catch (e) {
       // 登录失败，推荐再次跳转到登录页面
       this.guard.client.startWithRedirect({
-        scope: 'openid profile',
-        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-        redirectUri: 'http://localhost:3000/callback'
+        scope: 'openid profile'
       })
     }
   }
@@ -855,8 +893,12 @@ const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 function startWithRedirect() {
@@ -883,10 +925,7 @@ async function handleAuthingLoginCallback () {
 
     if (!loginStatus) {
       guard.startWithRedirect({
-        scope: 'openid profile',
-        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-        redirectUri: callbackPageUrl
+        scope: 'openid profile'
       })
       return
     }
@@ -909,10 +948,7 @@ async function handleAuthingLoginCallback () {
   } catch (e) {
     // 登录失败，推荐再次跳转到登录页面
     guard.startWithRedirect({
-      scope: 'openid profile',
-      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
-      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
-      redirectUri: callbackPageUrl
+      scope: 'openid profile'
     })
   }
 }
@@ -926,10 +962,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.0.6/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.1.0/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -985,10 +1021,15 @@ async function handleAuthingLoginCallback () {
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Login() {
   // 获取 Guard 实例
@@ -1099,8 +1140,12 @@ const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
 
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
@@ -1124,11 +1169,19 @@ guard.start("#authing-guard-container").then((userInfo) => {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
 // App.tsx
-import React from "react";
+
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 import RouterComponent from "./router";
 
 function App() {
@@ -1136,8 +1189,12 @@ function App() {
     <GuardProvider
       appId="AUTHING_APP_ID"
       mode="modal"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -1146,9 +1203,15 @@ function App() {
 ```
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
 // Embed.tsx
+
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
 
 export default function Embed() {
   const guard = useGuard();
@@ -1197,8 +1260,12 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
   mode: "modal",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -1257,8 +1324,12 @@ app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
     mode: "modal",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-    // host: 'https://my-authing-app.example.com'
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+    // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI"
   })
 );
 ```
@@ -1321,8 +1392,12 @@ import { GuardModule } from "@authing/guard-angular";
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
       mode: "modal",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host: 'https://my-authing-app.example.com'
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI"
     }),
   ],
   providers: [],
@@ -1385,8 +1460,12 @@ export class EmbedComponent {
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   mode: "modal",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 guard.start("#authing-guard-container").then((userInfo) => {
@@ -1424,10 +1503,17 @@ function showGuard() {
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
-import React from "react";
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 项目根组件
 import RouterComponent from "./router";
 
@@ -1435,8 +1521,12 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host="https://my-authing-app.example.com",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
       isSSO={true}
     >
       <RouterComponent></RouterComponent>
@@ -1457,9 +1547,13 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
   isSSO: true,
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -1479,9 +1573,13 @@ const app = createApp(App);
 app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-    // host: 'https://my-authing-app.example.com',
     isSSO: true,
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+    // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI"
   })
 );
 ```
@@ -1507,9 +1605,13 @@ import { GuardModule } from "@authing/guard-angular";
     AppRoutingModule,
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host: 'https://my-authing-app.example.com',
       isSSO: true,
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI"
     }),
   ],
   providers: [],
@@ -1526,9 +1628,13 @@ export class AppModule {}
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
   isSSO: true,
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -1546,9 +1652,15 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Logout() {
   const guard = useGuard();
@@ -1626,8 +1738,12 @@ export class LoginComponent {
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com'
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 function Logout() {
@@ -1648,11 +1764,19 @@ function Logout() {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
+
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 项目根组件
 import RouterComponent from "./router";
 
@@ -1660,9 +1784,13 @@ function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host="https://my-authing-app.example.com"
       isSSO={true}
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -1671,9 +1799,15 @@ function App() {
 ```
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Logout() {
   const guard = useGuard();
@@ -1702,9 +1836,13 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
   isSSO: true,
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -1736,9 +1874,13 @@ const app = createApp(App);
 app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-    // host: 'https://my-authing-app.example.com',
     isSSO: true,
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+    // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI"
   })
 );
 ```
@@ -1775,9 +1917,13 @@ import { GuardModule } from "@authing/guard-angular";
     AppRoutingModule,
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host: 'https://my-authing-app.example.com',
       isSSO: true,
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI"
     }),
   ],
   providers: [],
@@ -1813,9 +1959,13 @@ export class LoginComponent {
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  // host: 'https://my-authing-app.example.com',
   isSSO: true,
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 
 function Logout() {
@@ -1836,9 +1986,15 @@ function Logout() {
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function Register() {
   const guard = useGuard();
@@ -1938,13 +2094,17 @@ function startRegister() {
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
-import React from "react";
-
 import { GuardProvider } from "@authing/guard-react";
-
 import "@authing/guard-react/dist/esm/guard.min.css";
 
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 用户业务根组件
 import RouterComponent from "./router";
 
@@ -1952,8 +2112,12 @@ export default function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      // host="https://my-authing-app.example.com",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
       config={{
         socialConnectionList: ["github"],
       }}
@@ -1976,8 +2140,12 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
   // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI",
   config: {
     socialConnectionList: ["github"],
   },
@@ -1999,8 +2167,12 @@ const app = createApp(App);
 app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
     // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI",
     config: {
       socialConnectionList: ["github"],
     },
@@ -2030,8 +2202,12 @@ import { GuardModule } from "@authing/guard-angular";
     AppRoutingModule,
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI",
       config: {
         socialConnectionList: ["github"],
       },
@@ -2050,8 +2226,12 @@ export class AppModule {}
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
   // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI",
   config: {
     socialConnectionList: ["github"],
   },
@@ -2072,9 +2252,15 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React from "react";
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React from "react";
 
 export default function GetUserInfo() {
   const guard = useGuard();
@@ -2191,10 +2377,15 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect, useState } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect, useState } from "react";
 
 export default function ChangeLanguage() {
   const [langCache, setLangCache] = useState("");
@@ -2394,9 +2585,15 @@ function changeLang(event) {
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function ChangeContentCSS() {
   const guard = useGuard();
@@ -2590,18 +2787,22 @@ npm install --save face-api.js
 ```
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 // App.tsx
-import React from 'react'
 
-import { GuardProvider } from '@authing/guard-react'
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+import { GuardProvider } from '@authing/guard-react';
+import '@authing/guard-react/dist/esm/guard.min.css';
 
-import '@authing/guard-react/dist/esm/guard.min.css'
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { GuardProvider } from '@authing/guard-react18';
+// import '@authing/guard-react18/dist/esm/guard.min.css';
 
-import * as facePlugin from 'face-api.js'
-
+import React from 'react';
+import * as facePlugin from 'face-api.js';
 // 你的业务根组件
-import RouterComponent from './router'
+import RouterComponent from './router';
 
 function App() {
   return (
@@ -2717,8 +2918,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.0.6/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.0.6/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
@@ -2747,9 +2948,15 @@ Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.a
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
-import React, { useEffect } from "react";
 import { useGuard, AuthenticationClient, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// import { useGuard, AuthenticationClient, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Personal() {
   const guard = useGuard();
@@ -2922,14 +3129,19 @@ async function updateProfile() {
 ::: tab React
 
 ```tsx
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 // App.tsx
-import React from "react";
 
+// React 16/17
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
-
 import "@authing/guard-react/dist/esm/guard.min.css";
 
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 用户业务根组件
 import RouterComponent from "./router";
 
@@ -2937,8 +3149,12 @@ export default function App() {
   return (
     <GuardProvider
       appId="AUTHING_APP_ID"
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host="https://my-authing-app.example.com"
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri="YOUR_REDIRECT_URI"
     >
       <RouterComponent></RouterComponent>
     </GuardProvider>
@@ -2959,8 +3175,12 @@ import "@authing/guard-vue2/dist/esm/guard.min.css";
 
 Vue.use(GuardPlugin, {
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  host: "https://my-authing-app.example.com",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 
@@ -2980,8 +3200,12 @@ const app = createApp(App);
 app.use(
   createGuard({
     appId: "AUTHING_APP_ID",
-    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-    host: "https://my-authing-app.example.com",
+    // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+    // host: 'https://my-authing-app.example.com',
+
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+    // redirectUri: "YOUR_REDIRECT_URI"
   })
 );
 ```
@@ -3008,8 +3232,12 @@ import { GuardModule } from "@authing/guard-angular";
     AppRoutingModule,
     GuardModule.forRoot({
       appId: "AUTHING_APP_ID",
-      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-      host: "https://my-authing-app.example.com",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI"
     }),
   ],
   providers: [],
@@ -3025,8 +3253,12 @@ export class AppModule {}
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
-  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如
-  host: "https://my-authing-app.example.com",
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
 });
 ```
 :::
@@ -3046,12 +3278,17 @@ const guard = new GuardFactory.Guard({
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
 import {
   AuthenticationClient,
   RefreshToken,
   useGuard,
 } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { AuthenticationClient, RefreshToken, useGuard, } from "@authing/guard-react18";
 
 export default function Login() {
   const guard = useGuard();
@@ -3168,9 +3405,16 @@ async function refreshToken() {
 
 ```tsx
 // App.tsx
-import React from "react";
+
+// React 16/17
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
+
+// React 18
+// import { GuardProvider } from "@authing/guard-react18";
+// import "@authing/guard-react18/dist/esm/guard.min.css";
+
+import React from "react";
 // 你的业务代码根组件
 import RouterComponent from "./router";
 
@@ -3185,6 +3429,8 @@ function App() {
       host="https://my-authing-app.example.com"
 
       // 控制台登录回调 URL
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
       redirectUri="https://my-authing-app.example.com/callback"
 
       // modal 弹框模式
@@ -3231,6 +3477,8 @@ Vue.use(GuardPlugin, {
   host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
   redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
@@ -3276,6 +3524,8 @@ app.use(
     host: "https://my-authing-app.example.com",
 
     // 控制台登录回调 URL
+    // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+    // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
     redirectUri: "https://my-authing-app.example.com/callback",
 
     // modal 弹框模式
@@ -3338,6 +3588,8 @@ import { GuardModule } from "@authing/guard-angular";
       host: "https://my-authing-app.example.com",
 
       // 控制台登录回调 URL
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
       redirectUri: "https://my-authing-app.example.com/callback",
 
       // modal 弹框模式
@@ -3378,6 +3630,8 @@ const guard = new GuardFactory.Guard({
   host: "https://my-authing-app.example.com",
 
   // 控制台登录回调 URL
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
   redirectUri: "https://my-authing-app.example.com/callback",
 
   // modal 弹框模式
@@ -3481,10 +3735,15 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 ::: tab React
 
 ```tsx
+// React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import React, { useEffect } from "react";
-
 import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
 
 export default function Login() {
   const guard = useGuard();

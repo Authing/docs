@@ -1,9 +1,13 @@
 !!!include(common/init-java-mngmt-sdk.md)!!!
 
-使用 `OrgManagementClient` 的 `moveNode` 方法移动节点：
+**仍**使用 `ManagementClient` 的 `updateDepartment` 方法移动部门：
 
-> 需要指定所移动节点的新父节点（targetParentId）。
+> 需要指定所移动节点的新父节点（ParentDepartmentId）。
 
 ```java
-Org org = managementClient.org().moveNode("orgId", "nodeId", "targetParentId").execute();
+UpdateDepartmentReqDto updateDepartmentReqDto = new UpdateDepartmentReqDto();
+updateDepartmentReqDto.setOrganizationCode("steamory");
+updateDepartmentReqDto.setDepartmentId("AUTHING_DEP_ID");
+updateDepartmentReqDto.setParentDepartmentId("AUTHING_DEP_ID");
+DepartmentSingleRespDto departmentSingleRespDto = client.updateDepartment(updateDepartmentReqDto);
 ```

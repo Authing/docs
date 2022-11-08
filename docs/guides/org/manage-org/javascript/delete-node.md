@@ -1,4 +1,4 @@
-!!!include(common/init-java-mngmt-sdk.md)!!!
+!!!include(common/init-js-mngmt-sdk.md)!!!
 
 使用 `OrgManagementClient` 的 `deleteNode` 方法删除节点：
 

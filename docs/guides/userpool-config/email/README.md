@@ -35,19 +35,19 @@
 		<tbody>
 			<tr>
 				<th valign="middle" style="height: 25px; line-height: 25px; padding: 15px 35px; border-bottom-color: rgba(18, 24, 37, 0.87); background-color: #484f60; border-bottom-color: #C46200; background-color: #484f60; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;">
-					<font face="微软雅黑" size="5" style="color: rgb(255, 255, 255); ">{{client_name}} </font>
+					<font face="微软雅黑" size="5" style="color: rgb(255, 255, 255); ">{{AUTHING_CLIENT_NAME}} </font>
 				</th>
 			</tr>
 			<tr>
 				<td>
 					<div style="padding:25px 35px 40px; background-color:#fff;">
-						<h2 style="margin: 5px 0px; "><font color="#333333" style="line-height: 20px; "><font style="line-height: 22px; " size="4">你好，{{user_email}}</font></font></h2>
-						<p>欢迎加入 {{client_name}}</p>
+						<h2 style="margin: 5px 0px; "><font color="#333333" style="line-height: 20px; "><font style="line-height: 22px; " size="4">你好，{{AUTHING_USER_EMAIL}}</font></font></h2>
+						<p>欢迎加入 {{AUTHING_CLIENT_NAME}}</p>
 						<p>
-							{{client_description}}
+							{{AUTHING_CLIENT_DESCRIPTION}}
 						</p>
-						<p align="right">{{client_name}} 团队</p>
-						<p align="right">{{time}}</p>
+						<p align="right">{{AUTHING_CLIENT_NAME}} 团队</p>
+						<p align="right">{{TIME}}</p>
 					</div>
 				</td>
 			</tr>
@@ -56,20 +56,20 @@
 </div>
 ```
 
-这篇邮件中的 <span v-pre>{{client_name}}</span>、<span v-pre>{{client_description}}</span>、<span v-pre>{{time}}</span>、<span v-pre>{{user_email}}</span> 都属于宏命令，这篇邮件在 Authing 经过解析后的结果会类似于下面这样：
+这篇邮件中的 <span v-pre>{{AUTHING_CLIENT_NAME}}</span>、<span v-pre>{{AUTHING_CLIENT_DESCRIPTION}}</span>、<span v-pre>{{TIME}}</span>、<span v-pre>{{AUTHING_USER_EMAIL}}</span> 都属于宏命令，这篇邮件在 Authing 经过解析后的结果会类似于下面这样：
 
 ![](../images/basic-config-email-template.png)
 
 目前支持的所有宏命令如下表所示：
 
-| 宏命令                                                 | 作用                                        |
-| :----------------------------------------------------- | :------------------------------------------ |
-| <span v-pre>{{client_name}}</span>        | 创建的 Authing 应用名称                     |
-| <span v-pre>{{time}}</span>               | 当前时间                                    |
-| <span v-pre>{{user_email}}</span>         | 当前注册用户的邮箱                          |
-| <span v-pre>{{client_description}}</span> | 创建的 Authing 应用描述                     |
-| <span v-pre>{{verify_link}}</span>        | 验证邮箱邮件中的验证链接（由 Authing 生成） |
-| <span v-pre>{{verify_code}}</span>        | 重置密码前发送的验证码                      |
+| 宏命令                                            | 作用                                        |
+| :------------------------------------------------ | :------------------------------------------ |
+| <span v-pre>{{AUTHING_CLIENT_NAME}}</span>        | 创建的 Authing 应用名称                     |
+| <span v-pre>{{TIME}}</span>                       | 当前时间                                    |
+| <span v-pre>{{AUTHING_USER_EMAIL}}</span>         | 当前注册用户的邮箱                          |
+| <span v-pre>{{AUTHING_CLIENT_DESCRIPTION}}</span> | 创建的 Authing 应用描述                     |
+| <span v-pre>{{AUTHING_VERIFY_LINK}}</span>        | 验证邮箱邮件中的验证链接（由 Authing 生成） |
+| <span v-pre>{{AUTHING_VERIFY_CODE}}</span>        | 重置密码前发送的验证码                      |
 
 ## 配置第三方邮件服务
 

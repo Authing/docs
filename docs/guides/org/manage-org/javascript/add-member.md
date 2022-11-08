@@ -1,4 +1,4 @@
-!!!include(common/init-java-mngmt-sdk.md)!!!
+!!!include(common/init-js-mngmt-sdk.md)!!!
 
 使用 `OrgManagementClient` 的 `addMembers` 方法往节点中添加成员：
 

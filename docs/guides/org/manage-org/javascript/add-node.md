@@ -1,4 +1,4 @@
-!!!include(common/init-java-mngmt-sdk.md)!!!
+!!!include(common/init-js-mngmt-sdk.md)!!!
 
 使用 `OrgManagementClient` 的 `addNode` 方法添加节点：
 

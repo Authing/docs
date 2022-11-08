@@ -26,7 +26,13 @@ Webhook 允许你对用户注册、登录等行为进行监听，从而对其做
 ![](~@imagesZhCn/webhooks/webhook-zh-02.png)
 填写表单勾选 Webhook 事件
 
+::: img-description
+配置 Webhook
+:::
+
 ![](~@imagesZhCn/webhooks/webhook-zh-03.png)
+
+创建成功后会进入 Webhook 列表页面。
 
 ::: img-description
 Webhook 列表
@@ -34,11 +40,9 @@ Webhook 列表
 
 ![](~@imagesZhCn/webhooks/webhook-zh-04.png)
 
-::: img-description
-配置 Webhook
-:::
 
-创建成功后会进入 Webhook 列表页面。
+
+
 ### 参数解释
 
 | 参数名称     | 参数解释                                                                                                                                 |
