@@ -31,7 +31,6 @@ downloadDemo:
 
 ![](~@imagesZhCn/common/integrate-sso/sso-create-app-2.png)
 
-
 ### 配置应用
 
 在「自建应用」列表中，找到上一步创建好的应用，点击应用卡片进入「应用配置」页面，修改如下配置项并保存：
@@ -46,7 +45,6 @@ downloadDemo:
 
 至此，配置完成。
 
-
 ### 记录应用信息
 
 为了下面方便顺利地使用 Authing Browser SDK，你需要记下该应用的这几个信息：
@@ -57,19 +55,16 @@ downloadDemo:
 
 ![](~@imagesZhCn/quickstarts/spa/app-info.png)
 
-
 ## 集成 Authing
 
 Authing Browser SDK 支持通过包管理器安装、script 标签引入的方式的方式集成到你的前端业务软件。
 
 ### 安装 SDK
-
 #### 使用 NPM 安装
 
 ```bash
 $ npm install @authing/web
 ```
-
 #### 使用 Yarn 安装
 
 ```bash
@@ -583,19 +578,19 @@ $ npm start
 
 #### 创建一个用户
 
-在**用户管理** > **用户列表**，点击右侧的「创建」按钮。
+在 **用户列表** 页面点击右上角 **创建** 按钮。
 
 创建一个测试用户。
 
-![](~@imagesZhCn/quickstarts/spa/create-user.png)
+![](~@imagesZhCn/quickstarts/spa/create-user-quickstarts.png)
 
 #### 创建资源
 
-在应用详情页面，点击「授权」选项卡，在「API 资源」卡片点击添加。
+在应用详情页面，点击 **访问授权** 选项卡，在 **API 资源** 片点击 **添加**。
 
 ![](~@imagesZhCn/quickstarts/apiServer/create-resource-1.png)
 
-填写资源名称：order，资源描述：订单，API 接口的 URL 地址：`http://localhost:5000/api/protected`，为资源定义一个**操作**，本教程为**订单资源**定义一个**读取操作**，点击添加操作，操作类型填 `read`，描述填读取订单。最后点击保存。
+填写资源名称：order，资源描述：订单，API 接口的 URL 地址：`http://localhost:5000/api/protected`，为资源定义一个 **操作**，本教程为 **订单资源** 定义一个 **读取操作**（**操作类型** 填 `read`），描述填「读取订单」。最后点击 **保存**。
 
 ![](~@imagesZhCn/quickstarts/apiServer/create-resource-2.png)
 
@@ -605,12 +600,9 @@ $ npm start
 
 ![](~@imagesZhCn/quickstarts/spa/resource-acl.png)
 
-「**被授权主体类型**」选择「**用户**」，「**被授权主体**」搜索刚才创建的测试用户，「**授权作用**」选择允许，「**资源类型**」选择刚刚定义的订单资源，「**资源标识符**」保留默认，「**操作**」选择特定操作，选择读取订单操作。最后点击确定。
+「**被授权主体类型**」选择「**用户**」，「**被授权主体**」搜索刚才创建的测试用户，「**授权作用**」选择允许，「**资源类型**」选择刚刚定义的订单资源，「**资源标识符**」保留默认，「**操作**」选择特定操作，选择「读取订单」操作。最后点击 **确定**。
 
 ![](~@imagesZhCn/quickstarts/spa/resource-authz-1.png)
-
-![](~@imagesZhCn/quickstarts/spa/resource-authz-2.png)
-
 
 ### 使用 Access Token 调用资源 API
 

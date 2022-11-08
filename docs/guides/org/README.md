@@ -2,6 +2,10 @@
 
 <LastUpdated/>
 
+::: hint-info
+有关支持「组织机构」功能各项权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
+
 借助 {{$localeConfig.brandName}}, 可以快速[实现基于角色的访问控制（RBAC）](/guides/access-control/rbac.md)。简单来说，RBAC 指的是通过用户的角色（Role）授权其相关权限，这相比直接授予用户权限，要更加灵活、高效、可扩展。 
 
 而在现实生活中，组、角色往往是分层嵌套的，呈树状结构，最常见的就是组织机构，如公司、学校等等。

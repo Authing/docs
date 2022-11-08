@@ -2,9 +2,9 @@
 
 <LastUpdated/>
 
-<!-- ::: hint-warning
-只有**企业版**用户能够使用连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 [Authing 售后服务人员](csm@authing.cn)。
-::: -->
+::: hint-info
+有关支持「自定义数据库」功能权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
 
 使用自定义数据库可以满足以下场景的需求：
 

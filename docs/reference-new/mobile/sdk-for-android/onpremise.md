@@ -11,4 +11,4 @@ Authing.setOnPremiseInfo(String host, String publicKey)
 - *host* 是私有化域名，如：mycompany.com
 - *publicKey* 是私有化版本的公钥
 
-如果不清楚上述配置，请联系 [Authing 售后服务人员](csm@authing.cn)。
+如果不清楚上述配置，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。

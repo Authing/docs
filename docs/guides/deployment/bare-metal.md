@@ -56,7 +56,7 @@ Authing IDaaS 平台架构中主要组件包括：对象存储服务、Redis、E
 |   《Authing IDaaS 平台使用指南 1.2.0 版本》    |        介绍 Authing IDaaS 平台操作指导         |
 |   《Authing IDaaS 平台产品文档 1.2.0 版本》    |        介绍 Authing IDaaS 平台产品功能         |
 
-**注：以上资源请联系售前人员获取**
+**注：以上资源请联系 <a href="mailto:sales@authing.cn">Authing 售前人员</a> 获取。**
 
 **4. 安装包**
 
@@ -70,4 +70,4 @@ Authing IDaaS 平台架构中主要组件包括：对象存储服务、Redis、E
 |       postgres-12.5-linux-x86_64.tar.gz        |             PostgreSQL 服务安装包              |
 |        redis-4.0.0-linux-x86_64.tar.gz         |                Redis 服务安装包                |
 
-**注：以上资源请联系售前人员获取**
+**注：以上资源请联系 <a href="mailto:sales@authing.cn">Authing 售前人员</a> 获取。**

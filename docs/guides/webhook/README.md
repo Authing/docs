@@ -8,6 +8,10 @@ meta:
 
 <LastUpdated/>
 
+::: hint-info
+有关支持「Webhooks」功能权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
+
 Webhook 允许你对用户注册、登录等行为进行监听，从而对其做一些自定义处理。
 
 使用 Webhook 的方法是在 Authing 平台中配置 HTTP URL，当你的用户登录、注册、修改密码后，都会给远程 HTTP URL 发送一个 POST 请求。

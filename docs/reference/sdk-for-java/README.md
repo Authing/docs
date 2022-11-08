@@ -79,7 +79,7 @@ public class ManagementClientTest {
 
 - `setAppId` {{$localeConfig.brandName}} [应用 ID](/guides/faqs/get-app-id-and-secret.md)；
 - `setHost` {{$localeConfig.brandName}} 服务器地址。如果你使用的是公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填。格式如下: `https://authing-api.mydomain.com`，最后不带 `/`。
-- `setPublicKey` 密码非对称加密公钥，如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
+- `setPublicKey` 密码非对称加密公钥，如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a> 。
 - `setClientTimeOut` 设置请求超时时间，默认为 10 秒（10000 毫秒）。
   - `connectTimeOut` \<Long\> 连接超时时间。
   - `readTimeOut` \<Long\> 读取超时时间。
@@ -115,7 +115,7 @@ public class AuthenticationClientTest {
 
 - `setUserPoolId` 用户池 ID。
 - `setSecret` 用户池密钥。
-- `setPublicKey` 密码非对称加密公钥，如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
+- `setPublicKey` 密码非对称加密公钥，如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 - `setClientTimeOut` 设置请求超时时间。默认为 10 秒（10000 毫秒）
   - `connectTimeOut` \<Long\> 连接超时时间。
   - `readTimeOut` \<Long\> 读取超时时间。
