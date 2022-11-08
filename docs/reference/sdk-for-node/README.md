@@ -85,7 +85,7 @@ const authing = new AuthenticationClient({
 (code: number, message: string, data: any) => void
 ```
 
-- `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
+- `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 `zh-CN` 和 `en-US`，默认为 `zh-CN`。
 
 ### 快速开始
@@ -224,7 +224,7 @@ const managementClient = new ManagementClient({
 > 完整的错误代码请见[此文档](/reference/error-code.md)。
 
 - `host`: {{$localeConfig.brandName}} 服务器地址。如果你使用的是公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填。格式如下: `https://authing-api.mydomain.com`，最后不带 `/`。
-- `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
+- `publicKey`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 `zh-CN` 和 `en-US`，默认为 `zh-CN`。
 
 ### 快速开始
