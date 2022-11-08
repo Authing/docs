@@ -18,11 +18,6 @@
 
 ![](https://cdn.authing.cn/blog/authing-pipeline.png)
 
-
-::: hint-info
-有关支持「Pipeline」的版本信息，请查看 **设置->费用管理->版本信息->版本对比**。
-::: 
-
 ## 应用场景
 
 借助 {{$localeConfig.brandName}} Pipeline，开发者可以实现以下功能：
