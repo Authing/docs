@@ -443,7 +443,7 @@ import { useGuard } from "@authing/guard-react";
 
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Jump.tsx
-// import { useGuard } from '@authing/guard-react18'
+// import { useGuard } from '@authing/guard-react18';
 
 export default function Jump() {
   const guard = useGuard();
@@ -474,8 +474,8 @@ import { JwtTokenStatus, useGuard, User } from '@authing/guard-react';
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Callback.tsx
 // import { JwtTokenStatus, useGuard, User } from '@authing/guard-react18';
 
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function Callback() {
   const history = useHistory()
@@ -533,13 +533,13 @@ export default function Callback() {
 
 // React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
-import { useGuard, User } from '@authing/guard-react'
+import { useGuard, User } from '@authing/guard-react';
 
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
-// import { useGuard, User } from '@authing/guard-react18'
+// import { useGuard, User } from '@authing/guard-react18';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 export default function Personal() {
   const [userInfo, setUserInfo] = useState('')
@@ -2791,18 +2791,18 @@ npm install --save face-api.js
 
 // React 16/17
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
-import { GuardProvider } from '@authing/guard-react'
-import '@authing/guard-react/dist/esm/guard.min.css'
+import { GuardProvider } from '@authing/guard-react';
+import '@authing/guard-react/dist/esm/guard.min.css';
 
 // React 18
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
-// import { GuardProvider } from '@authing/guard-react18'
-// import '@authing/guard-react18/dist/esm/guard.min.css'
+// import { GuardProvider } from '@authing/guard-react18';
+// import '@authing/guard-react18/dist/esm/guard.min.css';
 
-import React from 'react'
-import * as facePlugin from 'face-api.js'
+import React from 'react';
+import * as facePlugin from 'face-api.js';
 // 你的业务根组件
-import RouterComponent from './router'
+import RouterComponent from './router';
 
 function App() {
   return (
