@@ -4,6 +4,10 @@
 
 ## 简介
 
+::: hint-info
+有关支持「Pipeline」功能各项权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
+
 {{$localeConfig.brandName}} Pipeline 为一组运行在云端的用户自定义 JavaScript 代码，可以让开发者扩展、自定义  {{$localeConfig.brandName}} 能力。
 
 {{$localeConfig.brandName}} Pipeline 函数均为用户可自定义，同时我们还提供了[丰富的函数模版](https://github.com/authing/pipeline)，帮助开发者快速上手开发。
@@ -14,6 +18,10 @@
 
 ![](https://cdn.authing.cn/blog/authing-pipeline.png)
 
+
+::: hint-info
+有关支持「Pipeline」的版本信息，请查看 **设置->费用管理->版本信息->版本对比**。
+::: 
 
 ## 应用场景
 

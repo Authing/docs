@@ -26,4 +26,4 @@
 
 ## 配置步骤
 
-具体配置步骤较为繁琐，请联系 [Authing 售后服务人员](csm@authing.cn) 协助进行配置。
+具体配置步骤较为繁琐，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。

@@ -2,6 +2,10 @@
 
 <LastUpdated/>
 
+::: hint-info
+有关支持「企业身份源」功能权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
+
 企业身份源登录，是指用户使用企业的身份认证信息在公司内部应用或第三方应用进行认证登录的流程。在 {{$localeConfig.brandName}} 控制台中，企业身份源包含两类：办公应用（比如飞书、企业微信、钉钉）与标准协议应用（比如 OIDC、SAML、CAS 等标准协议），你可以通过配置企业身份源连接，实现使用第三方身份源登录 {{$localeConfig.brandName}} 应用 及[从第三方身份源导入组织机构和用户](/guides/org/create-or-import-org/#导入组织机构)。
 
 ![](./images/add_enterprise.png)

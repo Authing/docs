@@ -6,7 +6,7 @@ Authing Flutter SDK 提供了以下认证 API：
 
 * [核心认证 API](./authentication/README.md)
 * [标准协议 API](./protocol/README.md)
-* [多因素验证 API](./mfa/README.md)
+* [多因素认证 API](./mfa/README.md)
 * [社会化登录 API](./social/README.md)
 * [私有化部署](./onpremise.md)
 

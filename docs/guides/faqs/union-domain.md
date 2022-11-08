@@ -59,4 +59,4 @@
 
   * 新建统一域名的用户池，迁移已有数据。
 
-  * 联系 [Authing 售后服务人员](csm@authing.cn) 寻求技术支持，或 [提交工单](https://app.treelab.com/share/view/shr3wyakgz14SQDnZof781JGj/0x128330/viwddWVILK0EbeJ?)。
+  * 联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a> 寻求技术支持，或 [提交工单](https://app.treelab.com/share/view/shr3wyakgz14SQDnZof781JGj/0x128330/viwddWVILK0EbeJ?)。
