@@ -83,7 +83,7 @@ Kubernetes Worker 节点配置要求：
 |   《Authing IDaaS 平台使用指南 1.2.0 版本》    |        介绍 Authing IDaaS 平台操作指导         |
 |   《Authing IDaaS 平台产品文档 1.2.0 版本》    |        介绍 Authing IDaaS 平台产品功能         |
 
-**注：以上资源请联系售前人员获取**
+**注：以上资源请联系 <a href="mailto:sales@authing.cn">Authing 售前人员</a> 获取。**
 
 **4. 镜像安装包**
 
@@ -97,7 +97,7 @@ Kubernetes Worker 节点配置要求：
 |           postgres-12.5-386fd8c60839.tar           |                数据库服务镜像包                |
 |            redis-4.0.0-3189e099eb0f.tar            |                 缓存服务镜像包                 |
 
-**注：以上资源请联系售前人员获取**
+**注：以上资源请联系 <a href="mailto:sales@authing.cn">Authing 售前人员</a> 获取。**
 
 **5. 编排文件**
 
@@ -112,4 +112,4 @@ Kubernetes Worker 节点配置要求：
 |            postgres-deployment.yaml            |               数据库服务编排文件               |
 |             redis-deployment.yaml              |                缓存服务编排文件                |
 
-**注：以上资源请联系售前人员获取**
+**注：以上资源请联系 <a href="mailto:sales@authing.cn">Authing 售前人员</a> 获取。**

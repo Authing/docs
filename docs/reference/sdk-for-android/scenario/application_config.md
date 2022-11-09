@@ -22,9 +22,9 @@
 
    在**品牌化-登录注册信息补全**中添加![](../images/config_infomation_complete.png)
 
-## 自定义MFA
+## 自定义 MFA
 
-   在**安全管理-多因素认证**中添加
+   在 **安全管理-多因素认证** 中添加
 
    ![](../images/config_mfa.png)
 

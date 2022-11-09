@@ -92,9 +92,7 @@
 
 ## 下一步计划
 
-这仅仅是 {{$localeConfig.brandName}} 应用市场的开始，我们接下来会集成 2000+ SaaS 应用，如果你想要合作，请联系我们，我们非常期待合作！
-
-邮箱：[partners@authing.cn](partners@authing.cn)
+这仅仅是 {{$localeConfig.brandName}} 应用市场的开始，我们接下来会集成 2000+ SaaS 应用，如果你想要合作，请 <a href="mailto:partners@authing.cn">联系我们</a>，我们非常期待合作！
 
 同时，我们希望应用市场为开发者带来最优质的用户体验，因此，你的反馈对我们十分重要。请在我们的社区论坛里提出你的看法或问题，并让我们知道你期待的新功能体验。
 

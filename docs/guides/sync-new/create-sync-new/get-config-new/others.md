@@ -18,12 +18,12 @@
 
 ## LDAP
 
-请联系 [Authing 售后服务人员](csm@authing.cn) 获取配置。
+请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 
 ## Windows AD
 
-请联系 [Authing 售后服务人员](csm@authing.cn) 获取配置。
+请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 
 ## SCIM
 
-请联系 [Authing 售后服务人员](csm@authing.cn) 获取配置。
+请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。

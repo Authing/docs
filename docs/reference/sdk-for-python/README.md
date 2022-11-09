@@ -128,7 +128,7 @@ data = management_client.users.list()
 
 初始化 `AuthenticationClient` 需要 `app_id`（应用 ID）和 `app_host`（应用端点，如 `https://YOUR_DOMAIN.authing.cn`）：
 
-> 你可以在此[获取 app_id 和 app_host](/guides/faqs/get-app-id-and-secret.md)。
+> 你可以在此[获取 app_id 和 app_host](/guides/app-new/create-app/app-configuration.md)。
 
 ```python
 from authing.v2.authentication import AuthenticationClient, AuthenticationClientOptions
@@ -153,7 +153,7 @@ def on_error(code, message):
     raise AuthingException(code=code, errmsg=message)
 ```
 
-- `enc_public_key`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 {{$localeConfig.brandName}} IDaaS 服务管理员。
+- `enc_public_key`: 密码非对称加密公钥（可选），如果你使用的是 {{$localeConfig.brandName}} 公有云服务，可以忽略；如果你使用的是私有化部署的 {{$localeConfig.brandName}}，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 `zh-CN` 和 `en-US`，默认为 `zh-CN`。
 
 ### 快速开始

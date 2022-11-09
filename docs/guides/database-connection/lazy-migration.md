@@ -3,7 +3,7 @@
 <LastUpdated/>
 
 <!-- ::: hint-warning
-只有**企业版**用户能够使用连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 [Authing 售后服务人员](csm@authing.cn)。
+只有**企业版**用户能够使用连接自定义数据库功能，详情请见 [https://authing.cn/pricing](https://authing.cn/pricing)。如果你想试用，请联系 <a href="mailto:csm@authing.cn">Authing 售后服务人员</a>。
 ::: -->
 
 ## 迁移流程

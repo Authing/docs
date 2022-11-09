@@ -2,6 +2,10 @@
 ​
 <LastUpdated/>
 
+::: hint-info
+有关支持「应用」功能各项权益的 {{$localeConfig.brandName}} 用户池版本信息，请查看 [官网「价格」页](https://authing.cn/pricing)。如你的版本不支持此权益，且想试用，可开通体验期。有关体验期介绍及开通方式，请查看 [体验期](/guides/basics/trial/README.md)。
+::: 
+
 路径：**应用**
 
 应用模块下包含 **自建应用** 及 **单点登录SSO**：​
