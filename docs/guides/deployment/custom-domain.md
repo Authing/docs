@@ -26,9 +26,9 @@
 
 **1. 登录 {{$localeConfig.brandName}} 控制台，创建一个新的应用，并指定应用域名**
 
-<img src="./images/custom-domain-1.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-1.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
-<img src="./images/custom-domain-2.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-2.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
 如上所示，我们创建了一个 {{$localeConfig.brandName}} 应用，并配置了应用域名为：**`https://custom-domain.{{$themeConfig.officeSiteDomain}}`**。
 
@@ -38,9 +38,9 @@
 
 **2. 创建一个用户，用于登录 {{$localeConfig.brandName}} 应用**
 
-<img src="./images/custom-domain-3.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-3.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
-<img src="./images/custom-domain-4.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-4.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
 **3. 将上述创建的 {{$localeConfig.brandName}} 应用域名配置于 Nginx 反向代理中**
 
@@ -94,12 +94,12 @@ server {
 
 **4. 通过示例的自定义域名 `https://custom-domain.littleimp.cn` 访问 {{$localeConfig.brandName}} 应用**
 
-<img src="./images/custom-domain-5.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-5.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
 **5. 输入上述创建的用户和密码登录 {{$localeConfig.brandName}} 应用**
 
-<img src="./images/custom-domain-6.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-6.jpeg" style="margin-top: 20px;" class="md-img-padding" />
 
 **6. 成功通过自定义域名登录 {{$localeConfig.brandName}} 应用，并访问个人中心**
 
-<img src="./images/custom-domain-7.png" style="margin-top: 20px;" class="md-img-padding" />
+<img src="./images/custom-domain-7.jpeg" style="margin-top: 20px;" class="md-img-padding" />

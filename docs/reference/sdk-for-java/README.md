@@ -90,7 +90,7 @@ public class ManagementClientTest {
 
 `AuthenticationClient` 初始化需要传入 `appId` （应用 ID）和 `appHost`（应用域名，格式为 `https://YOUR_DOMAIN.authing.cn`）：
 
-> 你可以在此[了解如何获取 UserPoolId](/guides/faqs/get-userpool-id-and-secret.md), 在控制台的**应用**中查看自己的应用列表。
+> 你可以在此 [了解如何获取 APP_ID 和如何获取 APP_HOST](/guides/app-new/create-app/app-configuration.md), 在控制台的**应用**中查看自己的应用列表。
 
 ```java
 import cn.authing.core.auth.AuthenticationClient;
@@ -176,7 +176,7 @@ public class AuthenticationClientTest {
 }
 ```
 
-你也可以通过用户的 `token` 初始化 SDK，不需要每次都调用 `LoginByXXX` 方法：
+你也可以通过用户的 `token` 初始化 SDK，不需要每次都调用类似 `loginByEmail` 的方法：
 
 ```java
 import cn.authing.core.auth.AuthenticationClient;

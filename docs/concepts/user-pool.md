@@ -14,7 +14,7 @@
 
 ## 用户池的 URL 地址
 
-在创建 {{$localeConfig.brandName}} 的用户池的时候，会为每个用户池分配了一个 URL。典型的组织 URL 是租户名称（子域），然后是域名（如 `you-tenant-domain.authing.cn`）。你可以通过使用自己的域名替换 {{$localeConfig.brandName}} 域名来自定义 {{$localeConfig.brandName}} 用户池的 URL，[详情请查看此文档](/guides/deployment/custom-domain.md)。
+在创建 {{$localeConfig.brandName}} 的用户池的时候，会为每个用户池分配了一个 URL（即进入用户池后浏览器地址栏地址）。典型的组织 URL 是租户名称（子域），然后是域名（如 `you-tenant-domain.authing.cn`）。你可以通过使用自己的域名替换 {{$localeConfig.brandName}} 域名来自定义 {{$localeConfig.brandName}} 用户池的 URL，[详情请查看此文档](/guides/deployment/custom-domain.md)。
 
 ## 管理员控制台
 
