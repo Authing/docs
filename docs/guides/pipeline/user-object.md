@@ -12,6 +12,8 @@ user 对象中保存了当前用户的各种数据，以及用于添加自定义
 
 ::: hint-info
 Pre-Register（注册前） Pipeline 的 user 对象含有用户注册时填入的信息，但没有实际写入数据库。
+
+仅支持在认证前、后在 Pipeline 中修改用户信息 ( user 对象 )。在其他节点（如 Token 签发前、后）并不支持直接在 Pipeline 中修改用户信息。
 :::
 
 ## 属性
