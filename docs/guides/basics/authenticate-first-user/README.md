@@ -7,7 +7,7 @@
 
 使用 {{$localeConfig.brandName}} 接入用户认证流程，一共有以下几种方式：
 
-1. [使用 {{$localeConfig.brandName}} 托管登录页](./use-hosted-login-page.md)，无需一行代码，你可以通过 [{{$localeConfig.brandName}} 在线示例](https://sample-sso.authing.cn/) 体验。
+1. [使用 {{$localeConfig.brandName}} 托管登录页](./use-hosted-login-page.md)。
 2. [使用 {{$localeConfig.brandName}} 提供的内嵌登录组件](./use-embeded-login-component/)，可以集成到你的 Web 和移动端项目中，你不需要自己实现登录表单 UI。
 3. [使用 API & SDK](./use-api-sdk/)，{{$localeConfig.brandName}} 提供 RESTFul 和 GraphQL 两种形式的 API 以及 10 余种语言或框架的 SDK，你可以基于此自定义 UI 和认证流程。
 
