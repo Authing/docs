@@ -6,20 +6,20 @@
 运行下列命令行安装 Authing React.JS library：
 
 ```sh
-$ yarn add @authing/guard-react
+$ yarn add @authing/guard-react18
 
 # OR
 
-$ npm install @authing/guard-react --save
+$ npm install @authing/guard-react18 --save
 ```
 
 **然后，在你的 React 应用中完成配置：**
 
 ```js
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
 import React from "react";
-import { GuardProvider } from "@authing/guard-react";
-import "@authing/guard-react/dist/esm/guard.min.css";
+import { GuardProvider } from '@authing/guard-react18';
+import "@authing/guard-react18/dist/esm/guard.min.css";
 
 // 你的业务代码根组件
 import RouterComponent from "./router";

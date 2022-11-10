@@ -1,79 +1,35 @@
-有两种方式可以供你选择：「安装 Authing library」或「直接通过浏览器加载」。
-
-无论使用哪一种安装方式，你都需要用到应用的 `appId` ，请先 [前往控制台获取](https://console.authing.cn)。关于 **APP ID** 所在位置，请参阅 [应用配置](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
-
-### 方法一：安装 Authing library
-
-**首先，通过 npm/yarn/cnpm 安装 Authing library.**
-
-推荐使用 npm （稳定版本 v3.1.21）或 yarn，它们能更好的和 [webpack](https://webpack.js.org/) 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
-如果你的网络环境不佳，也可使用 [cnpm](https://github.com/cnpm/cnpm) 。
-
-运行下列命令行安装 Authing Native.JS library：
-
-```sh
-$ yarn add @authing/native-js-ui-components
-
-# OR
-
-$ npm install @authing/native-js-ui-components --save
-```
-
-**然后，在你的 native 应用中完成配置：**
-
-```js
-const { Guard } = require("@authing/native-js-ui-components");
-
-// 替换你的 AppId
-const appId = "your_appId_at_authing_console";
-
-const guardInstance = new Guard({ appId });
-
-guardInstance.on("login", (userInfo) => {
-  console.log(userInfo);
-});
-```
-
-### 方法二：直接通过浏览器加载
-
-**首先，在你的 HTML 文件中使用 script 和 link 标签直接引入文件，并使用全局变量 AuthingNativeJsUIComponents。**
-
-Authing npm 发布包内的 `@authing/native-ui-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/native-js-ui-components) 或者 [unpkg](https://unpkg.com/@authing/native-js-ui-components/lib/index.min.js) 下载）。
+**在你的 HTML 文件中使用 `script` 和 `link` 标签直接引入文件，并使用全局变量 `GuardFactory`。**
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authing Guard Demo</title>
+    <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
+  </head>
+  <body>
+    <div id="authing-guard-container"></div>
 
-<head>
-  <meta charset="UTF-8">
-  <!-- JavaScript 代码 -->
-  <script src="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components"></script>
+    <script>
+      const guard = new GuardFactory.Guard({
+        // 你可以前往 Authing 控制台的本应用详情页查看你的 APP ID
+        appId: "AUTHING_APP_ID",
 
-  <!-- CSS 文件 -->
-  <link href="https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components/lib/index.min.css"
-    rel="stylesheet">
-  </link>
+        // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+        // host: 'https://my-authing-app.example.com',
 
+        // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+        // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+        // redirectUri: "YOUR_REDIRECT_URI"
+      });
 
-  <title>native demo</title>
-</head>
-
-<body>
-  <script>
-    // 替换你的 AppId
-    const appId = "your_appId_at_authing_console";
-
-    const guardInstance = new AuthingNativeJsUIComponents.Guard({ appId });
-
-    guardInstance.on("login", (userInfo) => {
-      console.log(userInfo);
-    });
-
-
-  </script>
-</body>
-
+      // 挂载 Authing Guard
+      guard.start("#authing-guard-container");
+    </script>
+  </body>
 </html>
 ```
-
-**无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
