@@ -88,9 +88,9 @@ public class ManagementClientTest {
 
 ## 使用认证模块
 
-`AuthenticationClient` 初始化需要传入 `appId` （应用 ID）和 `appHost`（应用域名，格式为 `https://YOUR_DOMAIN.authing.cn`）：
+`AuthenticationClient` 初始化需要传入 `appId` （应用 ID）和 `appHost`（应用地址，格式为 `https://YOUR_DOMAIN.authing.cn`）：
 
-> 你可以在此 [了解如何获取 APP_ID 和如何获取 APP_HOST](/guides/app-new/create-app/app-configuration.md), 在控制台的**应用**中查看自己的应用列表。
+> 你可以在此 [了解如何获取 APP_ID 和 APP_HOST](/guides/app-new/create-app/app-configuration.md), 在控制台的**应用**中查看自己的应用列表。
 
 ```java
 import cn.authing.core.auth.AuthenticationClient;
