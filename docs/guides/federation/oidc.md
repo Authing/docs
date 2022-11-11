@@ -24,7 +24,9 @@ OpenID Connect 协议有以下几种授权模式，分别是
 
 ![](~@imagesZhCn/guides/federation/oidc/1-1.png)
 
-填写你的**应用名称**，例如：网络笔记项目，为你的项目指定一个**认证地址**，将来你的用户会在这个地址完成认证。**回调链接**填写你的项目**后端路由**，Authing 会将用户信息（确切地说是一个授权码 code）发送到这个地址。最后点击创建。
+填写你的**应用名称**，例如：网络笔记项目，为你的项目指定一个**认证地址**，将来你的用户会在这个地址完成认证。
+
+**回调链接**填写你的项目**后端路由**，Authing 会将用户信息（确切地说是一个授权码 code）发送到这个地址。最后点击创建。
 
 ![](~@imagesZhCn/guides/federation/oidc/1-2.png)
 
@@ -36,7 +38,7 @@ OpenID Connect 协议有以下几种授权模式，分别是
 
 ![](~@imagesZhCn/guides/federation/oidc/1-3.png)
 
-整体上，有以下流程。
+整体上，有以下流程：
 
 1. 在你的应用中，让用户访问登录链接，浏览器跳转到 Authing，用户在 Authing 完成**认证**。
 2. 浏览器接收到一个从 Authing 服务器发来的**授权码**。
@@ -249,98 +251,3 @@ POST https://${你的应用域名}/oidc/token?grant_type=password
   "token_type": "Bearer"
 }
 ```
-
-## 使用 OIDC JWE 加密 ID Token
-
-阅读下面的内容之前，需要先理解加密、解密、签名、验签、摘要、编码概念之间的区别。请参考[这篇文档](/concepts/cryptography.md)。
-
-Authing 默认不启用 ID Token 加密功能，返回的 ID Token 是附带签名信息的 base64 编码明文：
-
-```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZmY3MDFkODQ2YjkyMDNlMmY2YWM2ZjMiLCJiaXJ0aGRhdGUiOm51bGwsImZhbWlseV9uYW1lIjpudWxsLCJnZW5kZXIiOiJVIiwiZ2l2ZW5fbmFtZSI6bnVsbCwibG9jYWxlIjpudWxsLCJtaWRkbGVfbmFtZSI6bnVsbCwibmFtZSI6bnVsbCwibmlja25hbWUiOm51bGwsInBpY3R1cmUiOiJodHRwczovL2ZpbGVzLmF1dGhpbmcuY28vYXV0aGluZy1jb25zb2xlL2RlZmF1bHQtdXNlci1hdmF0YXIucG5nIiwicHJlZmVycmVkX3VzZXJuYW1lIjpudWxsLCJwcm9maWxlIjpudWxsLCJ1cGRhdGVkX2F0IjoiMjAyMS0wMi0yM1QxNDo0NDoxOC4wODVaIiwid2Vic2l0ZSI6bnVsbCwiem9uZWluZm8iOm51bGwsImF0X2hhc2giOiIxaWRJSUxaWExpZkRscXJMY3ZNeV9BIiwiS0VZIjoiVkFMVUUiLCJhdWQiOiI1ZjE3YTUyOWY2NGZiMDA5Yjc5NGEyZmYiLCJleHAiOjE2MTQwOTUwOTgsImlhdCI6MTYxNDA5MTQ5OSwiaXNzIjoiaHR0cHM6Ly9vaWRjMS5hdXRoaW5nLmNuL29pZGMifQ._H59237sqpsY0OgyY_RM7CvuG6cFo1x03y-DBhd5hik
-```
-
-将以上 ID Token 以 `.` 分段进行 [base64 解码](https://www.base64decode.org/)后可以直接看到信息明文：
-
-```
-{"alg":"HS256","typ":"JWT"}
-.
-{"sub":"5ff701d846b9203e2f6ac6f3","birthdate":null,"family_name":null,"gender":"U","given_name":null,"locale":null,"middle_name":null,"name":null,"nickname":null,"picture":"https://files.authing.co/authing-console/default-user-avatar.png","preferred_username":null,"profile":null,"updated_at":"2021-02-23T14:44:18.085Z","website":null,"zoneinfo":null,"at_hash":"1idIILZXLifDlqrLcvMy_A","KEY":"VALUE","aud":"5f17a529f64fb009b794a2ff","exp":1614095098,"iat":1614091499,"iss":"https://oidc1.authing.cn/oidc"}
-.
-签名内容
-```
-
-如果希望返回加密的 ID Token，可以在[**控制台**](https://console.authing.cn) > **应用** > **应用详情** > **高级配置**，在「安全性」卡片中，打开启用 JWE 加密开关。
-
-选择一种对称加密算法，Authing 将使用该算法加密 ID Token Payload。
-
-选择一种非对称加密算法，Authing 将使用该算法加密上述对称加密算法的密钥。
-
-填写非对称加密算法公钥，格式为 [PEM](https://www.ssl.com/guide/pem-der-crt-and-cer-x-509-encodings-and-conversions/)。目前 Authing 支持 RSA、EC 两种公钥。
-
-PEM 格式的 RSA 公钥示例：
-
-```
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsxXMniW8Cu3vclf/eYwJ
-ynqwe6E6DzL75kz8UuuC+Gdj6t9Rb0/7gZXi/zp3WsUoNvR3dUqgf0ABWmDilymX
-uz4wwHf0mAmCWK/EAOXJvBymCWzIYWXohTFhKOog+C5BHHGfctfeaG/sbxqlPkfw
-GHO0OM7gmfvejVHdOE7GPuXDdJWHEnh4G+wJySFfHJb0YYIOObPi+z06ZmrO5jWp
-i/UCDcwoyn1IvYnCJz2NoFr0qNMBjYi6jzoFXm1y3BTIULsdvpxMsAwFOoEMswsv
-qycJLdQ/ZQ9xyf0OqcLYVfj0EBTUaU5BRqj28H7Yg/y35KwQRFxjLsvEAhYMTnlN
-vQIDAQAB
------END PUBLIC KEY-----
-```
-
-PEM 格式的 EC 公钥示例：
-
-```
------BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETsrE5ULfyfiKkbE3EN1tP5BRLkKs
-5BBWQUa/XEqInUeC2eWI00mS0ejCQgTLHxki/L/TuMT87rrd2tTCA38fZg==
------END PUBLIC KEY-----
-```
-
-::: hint-danger
-不要将上面的公钥填入到你自己的 Authing 应用配置中。
-:::
-
-下面介绍如何在本地生成 RSA 公钥或 EC 公钥。
-
-如果你没有 openssl，需要先[安装](https://github.com/openssl/openssl)。
-
-### 生成 RSA 密钥对
-
-打开终端窗口，输入以下命令：
-
-```shell
-$ openssl genrsa -out key.pem 2048
-$ openssl rsa -in key.pem -outform PEM -pubout -out public.pem
-$ openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in key.pem -out pkcs8-private.pem
-```
-
-你将得到私钥文件 pkcs8-private.pem 和公钥文件 public.pem。
-
-你需要将 public.pem 中的内容复制到 Authing 应用的 JWE 公钥配置中。然后点击「保存」。
-
-### 生成 EC 密钥对
-
-打开终端窗口，输入以下命令：
-
-```shell
-$ openssl ecparam -name prime256v1 -genkey -noout -out key.pem
-$ openssl ec -in key.pem -pubout -out public.pem
-$ openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in key.pem -out pkcs8-private.pem
-```
-
-你将得到私钥文件 pkcs8-private.pem 和公钥文件 public.pem。
-
-你需要将 public.pem 中的内容复制到 Authing 应用的 JWE 公钥配置中。然后点击「保存」。
-
-### 获取 ID Token
-
-经过上面的配置，Authing 会始终返回加密的 ID Token。你可以参考[授权码模式](#授权码模式)、[隐式模式](#隐式模式)、[混合模式](#混合模式)、[密码模式](#密码模式)获取 ID Token 的文档来获取 ID Token。不同的是，此时获取到的 ID Token 是经过加密的。
-
-### 验签 ID Token
-
-请参考验签 ID Token 的[文档](/guides/faqs/how-to-validate-user-token.md)。

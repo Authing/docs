@@ -4,7 +4,7 @@
 
 ## 每刻报销
 
-1. 请联系每刻相关技术人员获取 **App Code**、**App Secrete**。
+1. 请联系每刻相关技术人员获取 **App Code**、**App Secret**。
 
 2. 访问环境域名，线上环境填写 `https://www.maycur.com`， 测试环境填写 `https://uat.maycur.com`。
 
