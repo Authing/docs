@@ -10,7 +10,7 @@
 
 ## 集成一键登录登录步骤
 
-### 步骤 1：添加依赖
+### 第一步：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
@@ -21,7 +21,7 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 
 混淆配置，请参考[易盾官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
 
-### 步骤 2：初始化 Guard Android SDK
+### 第二步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
 

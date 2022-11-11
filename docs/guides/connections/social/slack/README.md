@@ -15,7 +15,7 @@
 - 如果你还没有 Slack 账号，请先前往 [slack.com](https://slack.com/get-started#/createnew)注册账号
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
 
-## 步骤 1：在 Slack API 平台创建一个应用
+## 第一步：在 Slack API 平台创建一个应用
 
 请按照 [Slack API 文档](https://api.slack.com/authentication/sign-in-with-slack#implementation)指引创建一个应用，你需要记录下该应用的 `App ID`、`Client ID`、`Client Secret`、`Signing Secret`，后面需要用到。也可以参考以下流程。
 
@@ -34,7 +34,7 @@
 最后，在侧边栏点击「OAuth & Permissions」，找到页面中的「Redirect URLs」设置区域，点击「Add New Redirect URL」添加如下回调地址：`https://core.authing.cn/connection/social/{ YOUR_IDENTITYSOURCE_ID }/{ AUTHING_USERPOOL_ID }/callback`，你需要将其中的 `{ YOUR_IDENTITYSOURCE_ID }` 替换为你正在 Authing 创建的身份源所填写的`唯一标识`， `{ AUTHING_USERPOOL_ID }` 替换为你的[用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)。添加完成后，点击「Save URLs」保存设置。
 ![](~@imagesZhCn/connections/slack/slack-docs-5.png)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Slack API 应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Slack API 应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -59,7 +59,7 @@
 2.4 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。

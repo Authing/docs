@@ -19,7 +19,7 @@
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
-## 步骤1：在 QQ 开放平台创建一个网站应用
+## 第一步：在 QQ 开放平台创建一个网站应用
 
 前往 [QQ 互联中心](https://connect.qq.com/manage.html#/)，创建一个网站应用。
 
@@ -31,7 +31,7 @@
 
 
 
-## 步骤2：在 {{$localeConfig.brandName}} 控制台配置腾讯 QQ
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置腾讯 QQ
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -63,7 +63,7 @@
 
 <img src="./images/qq_6.png" >
 
-## 步骤3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

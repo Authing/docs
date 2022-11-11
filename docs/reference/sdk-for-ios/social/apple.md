@@ -2,23 +2,23 @@
 
 <LastUpdated/>
 
-### 步骤 1：配置苹果帐号登录
+### 第一步：配置苹果帐号登录
 
 首先登录到苹果开发者网站，然后参考这里进行配置：[详细步骤](/connections/apple/)
 
 <br>
 
-### 步骤 2：初始化 Guard SDK
+### 第二步：初始化 Guard SDK
 
 通过 Swift Package Manager 引入 Guard 依赖并调用初始化函数。[详细步骤](/reference/sdk-for-ios/develop.html)
 
 <br>
 
-### 步骤 3：在工程里面启动 Sign in with Apple
+### 第三步：在工程里面启动 Sign in with Apple
 
 ![](./images/apple/1.png)
 
-### 步骤 4：发起苹果认证
+### 第四步：发起苹果认证
 
 通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 

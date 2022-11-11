@@ -15,7 +15,7 @@
 - 如果你未开通 Facebook 开放平台账号，请先前往 [Facebook 开放平台](https://developers.facebook.com/) 注册开发者账号。
 - 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤1：创建 Facebook 应用
+## 第一步：创建 Facebook 应用
 
 前往 [developers.facebook.com](https://developers.facebook.com/)，点击**我的应用**，然后创建新应用并选择**消费者**或**无应用类型**，填写应用名称。
 
@@ -60,7 +60,7 @@
 
 ![](./images/9-oauthUrl.png)
 
-## 步骤3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

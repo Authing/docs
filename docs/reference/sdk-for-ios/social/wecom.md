@@ -10,7 +10,7 @@
 
 ## 集成企业微信登录步骤
 
-### 步骤 1：添加依赖
+### 第一步：添加依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -23,7 +23,7 @@
 
 <br>
 
-### 步骤 2：修改项目配置
+### 第二步：修改项目配置
 
 - 配置跳转 Scheme: LSApplicationQueriesSchemes Key 下添加 wxwork 和 wxworklocal
 
@@ -33,7 +33,7 @@
 
 <br>
 
-### 步骤 3：初始化 WeCom
+### 第三步：初始化 WeCom
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import WeCom 。
 
@@ -49,7 +49,7 @@ WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>)
  
 <br>
 
-### 步骤 4：添加回调
+### 第四步：添加回调
 
 企业微信返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -72,7 +72,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 <br>
 
 
-### 步骤 5：发起企业微信授权
+### 第五步：发起企业微信授权
 
 SDK 提供了三种授权方式：
 

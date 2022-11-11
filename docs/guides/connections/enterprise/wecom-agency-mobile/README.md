@@ -16,7 +16,7 @@
 - 开发过程中，还需要一个企业微信的企业管理员账号，对代开发应用模板进行授权操作，你可以在[企业微信权限管理页面](https://work.weixin.qq.com/wework_admin/frame#profile/role)进行管理员权限的修改；
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：创建代开发应用
+## 第一步：创建代开发应用
 
 前往 [企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)，点击**应用代开发**，选择**创建代开发应用模板**，填写相应内容。进入配置开发信息页面
 
@@ -28,7 +28,7 @@
 
 ![](./images/save_token.png)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端（代开发模式）
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端（代开发模式）
 
 2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
@@ -52,7 +52,7 @@
 
 ![](./images/save_event_url.png)
 
-## 步骤 3：上线企业微信代开发应用模板
+## 第三步：上线企业微信代开发应用模板
 
 3.1 在企业微信服务商后台，选择应用管理，在**代开发应用上线**中，点击**提交上线按钮**，提交刚创建的代开发模板
 
@@ -81,7 +81,7 @@
 
 ![](./images/ip_whitelist.png)
 
-## 步骤 4：企业授权代开发模板并开发代开发应用
+## 第四步：企业授权代开发模板并开发代开发应用
 
 4.1 在应用代开发页面，点击刚才创建的应用代开发模板，企业管理员扫描授权二维码.
 
@@ -97,7 +97,7 @@
 
 ![](./images/auth_url.png)
 
-## 步骤 5：配置并上线代开发应用
+## 第五步：配置并上线代开发应用
 
 点击完成后，回到代开发应用模板详情页面，点击**查看**
 
@@ -168,7 +168,7 @@
 ![](./images/chose_premission_1.png)
 ![](./images/chose_premission_2.png)
 
-## 步骤 6：开发接入
+## 第六步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

@@ -9,7 +9,7 @@
 
 ## 集成 Google 登录步骤
 
-### 步骤 1：添加 Google 登录组件依赖
+### 第一步：添加 Google 登录组件依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -22,7 +22,7 @@
 
 <br>
 
-### 步骤 2：修改项目配置
+### 第二步：修改项目配置
 
 配置 Google 登录组件回跳 URL：
 1. 选择 Xcode 工程，在 **Targets** -> **Info** -> **URL Types** 中点击加号。
@@ -42,7 +42,7 @@ iOS URL scheme
 
 <br>
 
-### 步骤 3：初始化 Google 组件
+### 第三步：初始化 Google 组件
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import Google 。
 
@@ -65,7 +65,7 @@ Google.register(clientID: <#iOS ClientId#>, serverClientId: <#Oauth Web ClientId
  
 <br>
 
-### 步骤 4：添加回调
+### 第四步：添加回调
 
 登录成功返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -87,7 +87,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 <br>
 
-### 步骤 5：发起 Google 授权
+### 第五步：发起 Google 授权
 Google 登录组件提供了三种授权方式：
 
 - 开发者在需要登录时调用一键登录 API：

@@ -12,11 +12,11 @@
 
 ## 如何实现
 
-### 步骤一：将钉钉配置为 Authing 身份源
+### 第一步：将钉钉配置为 Authing 身份源
 
 具体钉钉的身份源配置操作可见文档，[钉钉 H5 微应用（企业内部开发）](https://docs.authing.cn/v2/guides/connections/enterprise/dingtalk/)
 
-### 步骤二：使用钉钉单点登录阿里云
+### 第二步：使用钉钉单点登录阿里云
 
 ### 集成应用
 

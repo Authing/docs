@@ -15,7 +15,7 @@
 - 如果你未开通微信公众平台账号，请先前往 [微信公众平台](https://mp.weixin.qq.com/wxopen/waregister?action=step1&token=&lang=zh_CN)注册并登录。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在微信公众平台创建一个小程序（可选）
+## 第一步：在微信公众平台创建一个小程序（可选）
 
 默认情况下，小程序扫码登录会使用 {{$localeConfig.brandName}} 提供的默认小程序，如果你需要有更强的品牌定制能力，或者想让通过小程序扫码登录的用户微信账号和自己的其他微信公众平台打通，你需要申请自己的小程序。
 
@@ -25,7 +25,7 @@
 
 ![](./images/register-wechat-miniprogram.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信小程序
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信小程序
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的 **社会化身份源** 页面，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
@@ -55,7 +55,7 @@
 2.5 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。

@@ -16,7 +16,7 @@
 - 请按照 [GitHub 文档](https://docs.github.com/cn/developers/apps/building-oauth-apps/creating-an-oauth-app)指引创建一个 GitHub OAuth 应用，并记录应用的 Client ID 和 Client Secret。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在 Github 创建一个 OAuth 应用程序
+## 第一步：在 Github 创建一个 OAuth 应用程序
 
 - 在 Github 任何页面的右上角，单击你的个人资料照片，然后单击 Settings（设置）。
 
@@ -37,7 +37,7 @@
 创建应用过程中，需要配置允许的回调地址，请使用以下设置：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Github
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Github
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -71,7 +71,7 @@
 <img src="./images/github_6.png" >
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

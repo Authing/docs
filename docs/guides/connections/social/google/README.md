@@ -15,7 +15,7 @@
 - 如果你未开通 Google 账号，请先前往 [Google 开发者控制台](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册电子邮箱。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在 Google 开发者控制台创建一个 OAuth 应用程序
+## 第一步：在 Google 开发者控制台创建一个 OAuth 应用程序
 
 - 打开 [Google API Console Credentials](https://console.cloud.google.com/apis/credentials)控制台。
 
@@ -36,7 +36,7 @@
 <img src="./images/google_6.png" >
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Google
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Google
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -72,7 +72,7 @@
 <img src="./images/google_10.png" >
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

@@ -11,7 +11,7 @@
 
 ## 集成微信登录
 
-### 步骤 1：添加微信登录依赖
+### 第一步：添加微信登录依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -24,7 +24,7 @@
 
 <br>
 
-### 步骤 2：Info.plist 里面添加启动微信白名单
+### 第二步：Info.plist 里面添加启动微信白名单
 
 key: LSApplicationQueriesSchemes
 
@@ -52,7 +52,7 @@ value: weixin, weixinULAPI
 
 <br>
 
-### 步骤 3：初始化微信登录
+### 第三步：初始化微信登录
 
 ```swift
 import Guard
@@ -65,7 +65,7 @@ WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep
 
 <br>
 
-### 步骤 4：设置 Associated Domains：
+### 第四步：设置 Associated Domains：
 
 > 填入开发者的 Universal Link 对应的 host 。
 
@@ -73,7 +73,7 @@ WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep
 
 <br>
 
-### 步骤 5：处理微信登录回调
+### 第五步：处理微信登录回调
 
 微信返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -94,7 +94,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 <br>
 
-### 步骤 6：发起微信登录授权
+### 第六步：发起微信登录授权
 
 推荐通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 
