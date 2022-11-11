@@ -243,15 +243,29 @@
 
 ### 设为负责人
 
+你可以为不同层级的组织 / 部门设定负责人。
+
+::: hint-info
+可以跨部门设置负责人。但只有在所选人为被选部门直属成员时才会打上负责人标签。
+:::
+
+有两种方式设置部门负责人：
+
+* 在组织树中点击待设定部门后更多按钮，选择 **设置部门负责人**。
+
+<img src="../images/select-manager-in-org-tree.png" height=450 style="display:block;margin: 0 auto;">
+
+* 在组织对应的用户列表中设定负责人：
+
+  1. 在左侧组织机构列表中选定组织 / 部门。
+
+  2. 在右侧当前组织 / 部门的用户列表中点击相应成员所在行 **设为负责人**。
+
 <img src="../images/set-to-manager.png" style="display:block;margin: 0 auto;">
 
-可以为不同层级的组织 / 部门设定负责人。要设定负责人，执行以下步骤：
+则所选成员成为该组织 / 部门的负责人。
 
-1. 在左侧组织机构列表中选定组织 / 部门。
-
-2. 在右侧当前组织 / 部门的用户列表中点击相应成员所在行 **设为负责人**。
-
-则所选成员成为该 组织 / 部门的负责人。
+<img src="../images/person-in-charge.png" style="display:block;margin: 0 auto;">
 
 ### 办理离职
 
