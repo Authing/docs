@@ -11,7 +11,7 @@
 ## 终端用户的操作说明
 
 ### 1. 登录应用面板
-终端用户在访问应用面板前需要登录 {{$localeConfig.brandName}}  。首先，用户需要在浏览器输入应用面板的登录地址 URL，比如 https://org-name.authing.cn （其中 org-name 是公司或组织的名称）。接下来，用户需要输入他的用户名和密码，或者通过第三方账号登录。如果用户不知道自己的用户名或忘记了密码，他需要联系所在企业的 IT 部门，IT 管理员会为他设置 {{$localeConfig.brandName}}  帐户或重置密码。
+终端用户在访问应用面板前需要登录 {{$localeConfig.brandName}}  。首先，用户需要在浏览器输入应用面板的登录地址 URL，比如「https://org-name.authing.cn 」（其中「org-name」是公司或组织的名称）。接下来，用户需要输入他的用户名和密码，或者通过第三方账号登录。如果用户不知道自己的用户名或忘记了密码，他需要联系所在企业的 IT 部门，IT 管理员会为他设置 {{$localeConfig.brandName}}  帐户或重置密码。
 
 ![](~@imagesZhCn/guides/dashboard/2.png)
 

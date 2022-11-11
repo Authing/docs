@@ -14,11 +14,11 @@
 
 如果你已经有账号，想再创建一个用户池，可以点击左侧导航栏最上方的按钮：
 
-<img src="./images/create-userpool-3.png" width="300" alt="drawing"/>
+<img src="./images/create-userpool-3.png" height=360 style="display:block;margin: 0 auto;">
 
 选择用户池类型：
 
-<img src="./images/select-trial-userpool.png" height=400 style="display:block;margin: 0 auto;">
+<img src="./images/select-trial-userpool.png" height=480 style="display:block;margin: 0 auto;">
 
 有关创建用户池详情，请参阅 [新老用户如何创建用户池](/guides/basics/trial/admin.md)。
 
@@ -34,7 +34,7 @@
 
 在弹出的新窗口中，你可以看到这个由 [{{$localeConfig.brandName}} 托管的在线登录页](https://custom-domain.authing.cn/login)，该登录页集成了登录、注册、忘记密码、社交登录、MFA 等功能：
 
-<img src="./images/login-page.png" height=450 style="display:block;margin: 0 auto;">
+<img src="./images/login-page.png" height=500 style="display:block;margin: 0 auto;">
 
 有关创建和配置应用详情，请参阅 [自建应用综述](/guides/app-new/create-app/)。
 
@@ -43,7 +43,7 @@
 点击 **立即注册**，选择 **密码注册**，输入邮箱和密码，再次确认密码，勾选同意隐私和服务条款后，点击 **注册** 按钮。
 
 
-<img src="./images/register.png" height=450 style="display:block;margin: 0 auto;">
+<img src="./images/register.png" height=500 style="display:block;margin: 0 auto;">
 
 注册成功之后，你可以在控制台的 [用户列表](控制台 **用户管理** 菜单下) 页看到该用户。
 

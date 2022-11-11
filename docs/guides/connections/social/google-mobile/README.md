@@ -16,7 +16,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 在移动应用中拉起谷歌页面进行登录。
 
-<img src="./images/google-mobile.png" height=550 style="display:block;margin: 0 auto;">
+<img src="./images/google-mobile.png" style="display:block;margin: 0 auto;">
 
 ## 准备工作
 
