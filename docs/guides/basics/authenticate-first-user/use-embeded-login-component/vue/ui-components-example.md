@@ -15,9 +15,10 @@ $ npm install @authing/guard-vue2 --save
 
 **然后，在你的 Vue 应用中完成配置：**
 
+`main.js`
+
 ```js
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
-// main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
 import "@authing/guard-vue2/dist/esm/guard.min.css";
@@ -33,4 +34,23 @@ Vue.use(GuardPlugin, {
   // redirectUri: "YOUR_REDIRECT_URI"
 });
 
+```
+
+`Embed.vue`
+
+```vue
+<template>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
+  <div id="authing-guard-container"></div>
+</template>
+<script>
+export default {
+  mounted() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
+    });
+  },
+};
+</script>
 ```

@@ -64,3 +64,28 @@ import { GuardModule } from "@authing/guard-angular";
 })
 export class AppModule {}
 ```
+
+`embed.component.ts`
+```js
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
+
+@Component({
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
+})
+export class LoginComponent {
+  constructor(private guard: GuardService) {}
+
+  ngOnInit() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log("userInfo: ", userInfo);
+      });
+  }
+}
+```
