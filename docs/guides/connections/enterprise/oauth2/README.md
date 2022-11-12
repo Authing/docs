@@ -15,13 +15,13 @@
 - 需要一个支持 OAuth2.0 协议能力的服务；
 - 如果你未开通 Authing 控制台账号，请先前往 [Authing Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：创建 OAuth2.0 身份源
+## 第一步：创建 OAuth2.0 身份源
 
 现有很多网站提供的第三方登录都遵循 OAuth2.0 标准协议，可能很多网站处理细节不一致也可以基于 OAuth2.0 协议进行扩展，但整体授权认证流程都是一样的。所以可以使用支持 OAuth2.0 认证的第三方登录应用作为身份源。
 
 如果没有可使用的身份源，也可以让 Authing 成为 OAuth2.0 身份源，其他系统可以通过 OAuth2.0 协议接入 Authing 作为身份提供商。详细可以参考：[成为 OAuth2.0 身份源](https://docs.authing.cn/v2/guides/federation/oauth.html)。
 
-## 步骤 2：在 Authing 控制台配置 OAuth2.0 身份源
+## 第二步：在 Authing 控制台配置 OAuth2.0 身份源
 
 2.1 打开 **Authing 控制台**，进入想要连接 OAuth2.0 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 

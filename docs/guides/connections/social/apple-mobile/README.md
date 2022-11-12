@@ -15,7 +15,7 @@
 - 请确保你已经申请了苹果开发者账号，否则无法进行以下操作。[申请个人、公司账号地址](https://developer.apple.com/programs/) ，[ 申请企业账号地址](https://developer.apple.com/programs/enterprise/)；
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：在 Apple 开发者中心进行配置
+## 第一步：在 Apple 开发者中心进行配置
 
 ### 1.1 获取 Team ID
 
@@ -91,7 +91,7 @@
 
 ![](~@imagesZhCn/guides/connections/apple/step1-16.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Apple 应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Apple 应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -121,7 +121,7 @@
 
 2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：SDK 
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。

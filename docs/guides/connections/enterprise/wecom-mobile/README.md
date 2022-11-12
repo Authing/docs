@@ -15,7 +15,7 @@
 - 如果你未开通 企业微信管理 账号，请先前往 [企业微信管理后台](https://work.weixin.qq.com/) 进行注册；
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：创建企业微信自建应用
+## 第一步：创建企业微信自建应用
 
 前往 [企业微信管理后台](https://work.weixin.qq.com/)，
 
@@ -30,7 +30,7 @@
 点击 IOS 或 Android 选项，获取 schema 并填入应用的应用签名和包名
 <img src="./images/schema.png" >
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 企业微信移动端
 
 2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
@@ -63,7 +63,7 @@
 
 ![](./images/get-agentid-secret.png)
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：SDK
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。

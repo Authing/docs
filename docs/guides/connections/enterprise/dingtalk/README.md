@@ -15,7 +15,7 @@
 - 如果你未开通钉钉开放平台账号，请先前往 [钉钉开放平台](https://open-dev.dingtalk.com/#/) 注册账号。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在钉钉开放平台开发者控制台创建一个网站应用
+## 第一步：在钉钉开放平台开发者控制台创建一个网站应用
 
 - 打开[钉钉开放平台](https://open-dev.dingtalk.com/#/)，点击企业应用进行快捷创建。
 
@@ -28,7 +28,7 @@
 
 - 在登录与分享中，填写回调域名为：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置钉钉 H5 微应用（企业内部开发）
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置钉钉 H5 微应用（企业内部开发）
 
 2.1 请在 {{$localeConfig.brandName}} 控制台 的「企业化身份源」页面，点击「创建企业化身份源」按钮，进入「选择企业化身份源」页面。
 
@@ -65,7 +65,7 @@
 
 <img src="./images/dingtalk_8.png" >
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

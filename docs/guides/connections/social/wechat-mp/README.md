@@ -14,7 +14,7 @@
 
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：在微信公众平台创建一个微信服务号
+## 第一步：在微信公众平台创建一个微信服务号
 
 前往 [微信公众平台](https://mp.weixin.qq.com/cgi-bin/readtemplate?t=register/step1_tmpl&lang=zh_CN)创建一个 **微信服务号**。
 ![](./images/create-account.jpg)
@@ -26,7 +26,7 @@
 出于安全验证考虑，微信服务器需要和 Authing 服务器做一次请求验证，开发者需要下载 txt 文件，并记录 **文件名** 和 **文本内容**。
 ![](./images/step1-2.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信网页授权应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信网页授权应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -56,7 +56,7 @@
 
 2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 > 你可以在此获取示例代码：[https://github.com/authing/wechat-eco-solution](https://github.com/authing/wechat-eco-solution)，访问线上[示例应用](https://www.authing.cn/sample-wx.html)。
 

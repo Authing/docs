@@ -116,7 +116,7 @@ await authenticationClient.UpdateProfile(new UpdateUserInput() {
 })
 ```
 
-你也可以在初始化后设置 `Token` 参数, 不需要每次都调用 `LoginByXXX` 方法:
+你也可以在初始化后设置 `Token` 参数, 不需要每次都调用类似 `loginByEmail` 方法:
 
 ```csharp
 using Authing.ApiClient.Domain.Client.Impl.AuthenticationClient;

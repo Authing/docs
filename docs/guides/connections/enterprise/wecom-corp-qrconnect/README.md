@@ -15,7 +15,7 @@
 - 如果你未开通 企业微信管理员 账号，请先前往 [企业微信管理员后台](https://work.weixin.qq.com/) 进行注册；
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://{{$localeConfig.brandName}}.cn/) 注册开发者账号；
 
-## 步骤 1：创建企业微信自建应用
+## 第一步：创建企业微信自建应用
 
 前往 [企业微信管理员后台](https://work.weixin.qq.com/wework_admin/frame#profile)，
 
@@ -33,7 +33,7 @@
 创建完成后，进入应用详情页，设置网页授权及 JS-SDK 域名，域名地址填写 `core.authing.cn`
 <img src="./images/configure-sdk-domain.png" >
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 企业微信自建应用扫码
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 企业微信自建应用扫码
 
 2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「企业微信」身份源按钮
 
@@ -65,7 +65,7 @@
 
 ![](./images/get-agentid-secret.png)
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

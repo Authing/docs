@@ -16,7 +16,7 @@
 - 你的微软账号需要注册 Azure 账号，请先前往 [Azure 平台](https://signup.azure.com/signup) 进行账号注册。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} Console 控制台](https://{{$localeConfig.brandName}}.cn/) 注册开发者账号；
 
-## 步骤 1：创建 Azure Active Directory 应用
+## 第一步：创建 Azure Active Directory 应用
 
 前往 [Azure 平台](https://portal.azure.com/#home)，点击**管理 Azure Active Directory**。
 
@@ -32,7 +32,7 @@
 
 点击**注册**。
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Azure AD
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Azure AD
 
 2.1 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，选择「Azure AD」身份源按钮，进入 「Azure AD 登录模式」页面。
 
@@ -65,7 +65,7 @@
 
 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 
@@ -83,7 +83,7 @@
 
 <img src="./images/09.png" >
 
-## 步骤 4：常见报错问题解决
+## 第四步：常见报错问题解决
 
 4.1 如果你选择的受支持的账户类型是**仅此组织目录（仅 默认目录 - 单一租户）中的账户**，当其他组织的用户尝试使用 Azure AD 登录时，会提示类似以下的错误：
 

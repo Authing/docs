@@ -15,13 +15,13 @@
 - 需要一个支持 SAML 协议能力的服务；
 - 如果你未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/)注册开发者账号；
 
-## 步骤 1：创建 SAML 身份源
+## 第一步：创建 SAML 身份源
 
 在 Authing 开启 SAML2 身份提供商，为其他服务商提供**身份断言**。让 Authing 成为 SAML 身份源，其他系统可以通过 SAML 协议接入 Authing 作为身份提供商。详细可以参考：[成为 SAML 身份源](https://docs.authing.cn/v2/guides/federation/saml.html)。
 
 ![](./images/opensaml.png)
 
-## 步骤 2：在 Authing 控制台配置 SAML 身份源
+## 第二步：在 Authing 控制台配置 SAML 身份源
 
 2.1 打开 **Authing 控制台**，进入想要连接 SAML 身份源的用户池，这里称其为 **「用户池 B」**。在左侧菜单中选择 「连接身份源」 > 「企业身份源」，在右侧面板选择「创建企业身份源」。
 

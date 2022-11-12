@@ -15,7 +15,7 @@
 - 如果你未开通微信开放平台账号，请先前往 [微信开放平台](https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN)注册并登录。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：创建网站应用
+## 第一步：创建网站应用
 
 前往[微信开放平台](https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN)，点击 **管理中心 -> 网站应用 -> 创建网站应用**。创建完成之后，你需要记录下该应用的 `AppID` 和 `AppSecret`，后面需要用到。
 
@@ -28,7 +28,7 @@
 ![](./images/domain.png)
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信网站应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信网站应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的 **社会化身份源** 页面，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
@@ -56,7 +56,7 @@
 2.5 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。

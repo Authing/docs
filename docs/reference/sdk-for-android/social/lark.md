@@ -10,7 +10,7 @@
 
 ## 集成飞书登录步骤
 
-### 步骤 1：添加依赖
+### 第一步：添加依赖
 
 - 下载[飞书授权 sdk 库](https://sf3-cn.feishucdn.com/obj/lark-eco-passport/LarkSSOSDKAndroid-3.0.8.zip)；
 - 将下载的 sdk aar 文件拷贝到 app/libs 目录下；
@@ -24,7 +24,7 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 
 > Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 步骤 2：初始化 Guard Android SDK
+### 第二步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
 

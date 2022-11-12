@@ -20,28 +20,19 @@ Webhook 允许你对用户注册、登录等行为进行监听，从而对其做
 
 在 **自动化->Webhooks** 页面，可以管理你定义的 webhook：
 
+1. 点击添加 Webhook 按钮 可以创建新的 Webhook 订阅特定事件。
+
 ![](~@imagesZhCn/webhooks/webhook-zh-01.png)
-点击添加 Webhook 按钮 可以创建新的 Webhook 订阅特定事件
+
+2. 填写表单勾选 Webhook 事件。
 
 ![](~@imagesZhCn/webhooks/webhook-zh-02.png)
-填写表单勾选 Webhook 事件
-
-::: img-description
-配置 Webhook
-:::
 
 ![](~@imagesZhCn/webhooks/webhook-zh-03.png)
 
-创建成功后会进入 Webhook 列表页面。
-
-::: img-description
-Webhook 列表
-:::
+3. 创建成功后会进入 Webhook 列表页面。
 
 ![](~@imagesZhCn/webhooks/webhook-zh-04.png)
-
-
-
 
 ### 参数解释
 
@@ -76,7 +67,6 @@ Webhook 测试
 ```
 
 测试成功后你将看到详细的请求信息和返回信息。
-
 
 ## 支持的事件
 
@@ -152,7 +142,7 @@ Webhook 测试
 
 ### 请求类型
 
-指定发起 Webhook 请求时 Request body 的数据格式，可选值有 `application/json` 和 `application/x-www-form-urlencoded`
+指定发起 Webhook 请求时 Request body 的数据格式，可选值有 `application/json` 和 `application/x-www-form-urlencoded`。
 
 ## 附带的数据
 

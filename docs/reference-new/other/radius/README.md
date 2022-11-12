@@ -2,11 +2,11 @@
 
 <LastUpdated/>
 
-## 步骤一：[下载 Authing Radius Agent](https://authing-public-cn.oss-cn-beijing.aliyuncs.com/public/AuthingRadius/AuthingRadius-2.0.0.zip)
+## 第一步：[下载 Authing Radius Agent](https://authing-public-cn.oss-cn-beijing.aliyuncs.com/public/AuthingRadius/AuthingRadius-2.0.0.zip)
 
 <br>
 
-## 步骤二：安装 Authing Radius Agent
+## 第二步：安装 Authing Radius Agent
 
 - 首先要准备一台支持 java 的服务器用来安装 Authing Radius Agent
 
@@ -16,7 +16,7 @@
 
 <br>
 
-## 步骤三：在 Authing 控制台创建 Radius 应用
+## 第三步：在 Authing 控制台创建 Radius 应用
 
 在 Authing 控制 **应用** -> **单点登录 SSO** 页面点击「添加应用」
 
@@ -40,7 +40,7 @@
 
 <br>
 
-## 步骤四：配置 Authing Radius Agent
+## 第四步：配置 Authing Radius Agent
 
 cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配置信息：
 
@@ -68,7 +68,7 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 
 <br>
 
-## 步骤五：配置服务器证书
+## 第五步：配置服务器证书
 
 Authing Radius Agent 支持协议包括：
 
@@ -87,7 +87,7 @@ Authing Radius Agent 支持协议包括：
 
 <br>
 
-## 步骤六：启动 Authing Radius Agent
+## 第六步：启动 Authing Radius Agent
 
 在 Authing Radius Agent 所在目录下，运行
 
@@ -97,7 +97,7 @@ java -jar AuthingRadius.jar
 
 <br>
 
-## 步骤七：测试 / 验证 Radius 服务
+## 第七步：测试 / 验证 Radius 服务
 
 可以用支持 Radius 的设备 / 应用程序进行测试。也可以下载我们的 [Authing Radius 测试客户端](https://github.com/Authing/radius/releases/download/1.0.0/AuthingRadiusClient.jar)
 

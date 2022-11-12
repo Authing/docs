@@ -28,7 +28,7 @@ Access Token 内容示例：
 
 注意 Access Token 不包含除 id 之外的任何用户信息。包含 scope 权限项目，用于调用受保护的 API 接口。所以 Access Token 用于**调用接口**，**而不是用作用户认证**。
 
-在很多场景下，你希望通过 Access Token 获取更多的用户信息，可以携带 Access Token 调用 Authing 的**用户信息端点**来获取完整的用户信息。
+在很多场景下，你希望通过 Access Token 获取更多的用户信息，可以携带 Access Token 调用 Authing 的**用户信息端点**（自建应用 **应用配置** 标签页 **认证配置** 模块）来获取完整的用户信息。
 
 ## Id Token
 

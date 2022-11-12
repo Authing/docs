@@ -32,7 +32,7 @@
 
 ![](./images/try-login.png)
 
-在弹出的新窗口中，你可以看到这个由 {{$localeConfig.brandName}} 托管的在线登录页，该登录页集成了登录、注册、忘记密码、社交登录、MFA 等功能：
+在弹出的新窗口中，你可以看到这个由 [{{$localeConfig.brandName}} 托管的在线登录页](https://custom-domain.authing.cn/login)，该登录页集成了登录、注册、忘记密码、社交登录、MFA 等功能：
 
 <img src="./images/login-page.png" height=500 style="display:block;margin: 0 auto;">
 
@@ -147,7 +147,7 @@ console.log(token2UserInfoResponse.data);
 GET https://sample-app.authing.cn/oidc/auth?client_id=AUTHING_APP_ID&redirect_uri={回调地址}&scope=openid%20profile&response_type=id_token%20token&state={随机字符串}&nonce={随机字符串}
 ```
 
-{{$localeConfig.brandName}} 以 URL hash 的形式直接返回 `id_token` 和 `access_token` 到回调地址，例如：
+{{$localeConfig.brandName}} 以 URL hash 的形式直接返回 `id_token` 和 `access_token` 到回调地址（自建应用 **应用配置** 标签页 **认证配置** 模块），例如：
 
 ```
 https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiI4YzgzN2I5My01OTNlLTQzZjctYWMzNC0yYjRmZDU3ZGFhMTciLCJhdF9oYXNoIjoiVFFtbFlEVTVPZGF1Zjl0U0VKdHY5USIsInNfaGFzaCI6Ind3SDNXclV2b0hiSUp5TWVZVHU4bHciLCJhdWQiOiI1ZDAxZTM4OTk4NWY4MWM2YzFkZDMxZGUiLCJleHAiOjE1NjA0MDkzNjgsImlhdCI6MTU2MDQwNTc2OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5hdXRoaW5nLmNuL29hdXRoL29pZGMifQ.T9M0s6rk4Teq6VOOBRIElgHK9KyM3q0ZJj2aS0VD_Fw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OE9XcVJNVXJEUXpMMXpHVzVtUWoiLCJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJpc3MiOiJodHRwczovL29hdXRoLmF1dGhpbmcuY24vb2F1dGgvb2lkYyIsImlhdCI6MTU2MDQwNTc2OCwiZXhwIjoxNTYwNDA5MzY4LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiYXVkIjoiNWQwMWUzODk5ODVmODFjNmMxZGQzMWRlIn0.mR0MZDwlZWGRMsAZjQ27sDFFqYoDgZ6WHTK4C7JbML4&expires_in=3600&token_type=Bearer&state=jazz&session_state=26ec053be9f47d68dc430f84b97efb1095469fe10169a9e00ef4092718714b8b

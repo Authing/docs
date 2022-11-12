@@ -10,7 +10,7 @@
 
 ## 集成企业微信（代开发模式）登录步骤
 
-### 步骤 1：添加依赖
+### 第一步：添加依赖
 
 - 下载[企业微信 SDK](http://dldir1.qq.com/foxmail/wwopen_docFile/sdk/lib_wwapi-2.0.12.11.aar)；
 - 将下载的 sdk  jar 文件拷贝到工程的 libs 目录下；
@@ -31,7 +31,7 @@ implementation files('libs/lib_wwapi-2.0.12.11.aar')
 }
 ```
 
-### 步骤 2：初始化 Guard Android SDK
+### 第二步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
 

@@ -15,7 +15,7 @@
 - 受微信平台要求限制，只有服务号具备[生成带参数的二维码](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)API 能力，请确保你的公众号是服务号类型。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：开启服务器配置
+## 第一步：开启服务器配置
 
 ### 获取公众号开发信息
 
@@ -67,7 +67,7 @@
 
 具体流程和示例代码，请见此 [Demo](https://github.com/Authing/authing-wechat-official-account)。
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信公众号关注
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信公众号关注
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的 **社会化身份源** 页面，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
@@ -96,7 +96,7 @@
 
 2.5 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。
