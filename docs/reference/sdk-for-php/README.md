@@ -151,7 +151,7 @@ $authentication->loginByEmail(new LoginByEmailInput("test@example.com", "123456"
 $user = $authentication->updateProfile((new UpdateUserInput())->withNickname("nickname"));
 ```
 
-你也可以在初始化后设置 `AccessToken` 参数, 不需要每次都调用 `LoginByXXX` 方法:
+你也可以在初始化后设置 `AccessToken` 参数, 不需要每次都调用类似 `loginByEmail` 方法:
 
 ```php
 use Authing\Auth\AuthenticationClient;

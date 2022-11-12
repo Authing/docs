@@ -31,7 +31,7 @@ meta:
    <tr>
       <td style="text-align:left"><b>概览</b></td>
       <td style="text-align:left">
-        <p>展示系统和用户的多种统计信息，包括：</p>
+    展示系统和用户的多种统计信息，包括：
         <ul>
             <li>展示总应用数量。</li>
             <li>展示总用户数量。</li>
@@ -43,10 +43,10 @@ meta:
         <tr>
       <td style="text-align:left"><b>应用</b></td>
       <td style="text-align:left">
-        <p>可以在 <b>应用</b> 模块配置单点登录（SSO），包括：</p>
+      可以在 <b>应用</b> 模块配置单点登录（SSO），包括：
         <ul>
           <li>集成第三方应用。</li>
-          <li>作为服务提供商（SP），将 APP集成至 Authing：
+          <li>作为服务提供商（SP），将 APP集成至 Authing：</li>
           <ul> ​
          <li>可配置应用基本信息、默认页面显示，为应用集成 OIDC / SAML2 / CAS / OAuth 2.0 / 协议。</li>​
          <li>配置登录方式。</li>​
@@ -134,12 +134,6 @@ meta:
       <td style="text-align:left"><b>审计日志</b></td>
       <td style="text-align:left">
         <p>在此可以查看用户操作日志和管理员日志。</p>
-      </td>
-    </tr>
-     <tr>
-      <td style="text-align:left"><b>费用管理</b></td>
-      <td style="text-align:left">
-      <p>在此可以服务升级以及查看订单详情。</p>
       </td>
     </tr>
     <tr>
