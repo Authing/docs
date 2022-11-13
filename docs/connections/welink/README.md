@@ -15,7 +15,7 @@
 - 如果你未开通 WeLink 开放平台账号，请先前往 [WeLink 开放平台](https://open.welink.huaweicloud.com/wecode-site/index.html#/home) 注册开发者账号。
 - 如果你未开通 Authing 控制台账号，请先前往 [Authing 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤1：创建 WeLink 应用
+## 第一步：创建 WeLink 应用
 
 前往 [WeLink 后台](https://open.welink.huaweicloud.com/wecode-site/index.html#/wecode/guide/guide)，创建We码应用。
 
@@ -28,7 +28,7 @@
 
 然后点击**提交**。
 
-## 步骤2：在 Authing 控制台配置 WeLink
+## 第二步：在 Authing 控制台配置 WeLink
 
 2.1 请在 Authing 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面。
 
@@ -59,7 +59,7 @@
 <img src="./images/add-enterprise-04.png" >
 
 
-## 步骤3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

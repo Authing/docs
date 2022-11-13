@@ -23,7 +23,7 @@ PC 网站
 
 ## 配置步骤
 
-### 步骤一：在 {{$localeConfig.brandName}} 控制台配置 GitLab 的唯一标识
+### 第一步：在 {{$localeConfig.brandName}} 控制台配置 GitLab 的唯一标识
 
 1. 在 {{$localeConfig.brandName}} 控制台的 **身份源管理->社会化身份源**，点击 **创建社会化身份源** 按钮，进入 **选择社会化身份源** 页面。
 
@@ -41,7 +41,7 @@ PC 网站
 
 ![step1-4](./images/step1-4.png)
 
-### 步骤二：在 GitLab（或者你的 GitLab 实例）上创建一个应用
+### 第二步：在 GitLab（或者你的 GitLab 实例）上创建一个应用
 
 1. 点击右上角个人头像然后点击 **Edit Profile**。
 
@@ -69,7 +69,7 @@ PC 网站
 
 ![step2-6](./images/step2-6.png)
 
-### 步骤三：在控制台将 Gitlab 其他信息配置完成
+### 第三步：在控制台将 Gitlab 其他信息配置完成
 
 1. 填写刚才记录的 **Application ID** 和 **Secret**。
 
@@ -91,7 +91,7 @@ PC 网站
 
 3. 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
 
-### 步骤四：开发接入
+### 第四步：开发接入
 
 #### 推荐开发接入方式
 

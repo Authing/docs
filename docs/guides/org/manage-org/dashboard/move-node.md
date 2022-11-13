@@ -1,13 +1,15 @@
-如下图所示，我们想将 **运维** 节点移动到 **研发** 下面：
+#### 旧版
 
-<img src="https://cdn.authing.cn/blog/20201020144735.png" height="300" style="display:block;margin: 0 auto;">
+1. 在组织树中点击待移动部门后的 **移动部门** 按钮。
 
-选中 **运维** 节点，点击 **移动节点**：
+<img src="../../images/move-department-old.png" style="display:block;margin: 0 auto;">
 
+2. 在弹出窗口选择移至的新上级部门：
 
-<img src="https://cdn.authing.cn/blog/20201020144847.png" height="300" style="display:block;margin: 0 auto;">
+<img src="../../images/move-to.png" style="display:block;margin: 0 auto;">
 
+3. 点击 **确定**。
 
-在弹出的操作框中，选择移动到 **非凡科技/研发** 节点下：
+#### 新版
 
-![](https://cdn.authing.cn/blog/20201020145014.png)
+敬请期待！

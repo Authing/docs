@@ -11,13 +11,13 @@
 
 ## 集成支付宝登录步骤
 
-### 步骤 1：下载支付宝 SDK
+### 第一步：下载支付宝 SDK
 
 在这个页面下载 [支付宝 Android SDK](https://opendocs.alipay.com/open/54/104509)
 
 >支付宝将 Android、iOS 的 SDK 和 Demo 打包到一个 zip 包里面，找到里面的安卓 SDK，拷贝到 app 的 libs 目录
 
-### 步骤 2：添加依赖
+### 第二步：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
@@ -26,7 +26,7 @@ implementation files('libs/alipaysdk.aar')
 
 >Guard 只是 compileOnly 依赖支付宝 SDK，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 步骤 3：初始化 Guard Android SDK
+### 第三步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
 

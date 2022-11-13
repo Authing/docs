@@ -14,11 +14,11 @@
 
 ## 如何实现
 
-### 步骤一：将企业微信配置为 Authing 身份源
+### 第一步：将企业微信配置为 Authing 身份源
 
 具体企微的身份源配置操作可见文档，[企业微信自建应用扫码（代开发模式）](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-qrconnect/)
 
-### 步骤二：以 GitLab 为例，使用企微账号单点登录 GitLab
+### 第二步：以 GitLab 为例，使用企微账号单点登录 GitLab
 
 ### 集成应用
 

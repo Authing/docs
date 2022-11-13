@@ -4,7 +4,7 @@
 
 ## 场景介绍
 
-- **概述**：Windows AD 是 Microsoft 提供的本地化用户目录管理服务。在 {{$localeConfig.brandName}}中配置并开启 Windows AD 服务商应用扫码 的企业登录，即可实现通过 {{$localeConfig.brandName}}快速获取 Windows AD 基本开放的信息和帮助用户实现免密登录功能。
+- **概述**：Windows AD 是 Microsoft 提供的本地化用户目录管理服务。在 {{$localeConfig.brandName}} 中配置并开启 Windows AD 服务商应用扫码 的企业登录，即可实现通过 {{$localeConfig.brandName}} 快速获取 Windows AD 基本开放的信息和帮助用户实现免密登录功能。
 - **应用场景**：企业 PC 免登场景
 - **终端用户预览图**：
 
@@ -16,7 +16,7 @@
 - 服务器安装了 Active Directory；
 - 运行 Authing AD Connector 的机器上，能够连通 Active Directory；
 - 一个具有 Active Directory 的读取权限的用户账密。
-- 如果你未开通 {{$localeConfig.brandName}}控制台账号，请先前往 [ {{$localeConfig.brandName}}Console 控制台](https://authing.cn/) 注册开发者账号；
+- 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [ {{$localeConfig.brandName}} Console 控制台](https://authing.cn/) 注册开发者账号；
 
 ## 本章节包含以下内容：
 
@@ -30,7 +30,7 @@
 - **`AD 相关策略`** 的 `修改` 与 `测试`
 - 相关 **`服务`** 以及 **`配置`** 的目的
 
-## 步骤 1：Windows AD 在 Windows Server 下的安装
+## 第一步：Windows AD 在 Windows Server 下的安装
 
 ### 1. 安装 **AD 域服务**
 
@@ -411,7 +411,7 @@
 
 - 安装 **AD CS**
 
-  > **AD CS** 为 AD 的传输提供了安全的加密套件， 支持 ldaps 协议， 既能保证信息安全传输， 以及不可篡改等。 一些对于信息数据极其敏感的操作需要在 ldsps 下完成， 比如 新增一个用户并设置密码， 调整一个用户状态为启用 等. 该项功能的缺失， 会导致 {{$localeConfig.brandName}}数据同步的用户信息的状态是不可用的
+  > **AD CS** 为 AD 的传输提供了安全的加密套件， 支持 ldaps 协议， 既能保证信息安全传输， 以及不可篡改等。 一些对于信息数据极其敏感的操作需要在 ldsps 下完成， 比如新增一个用户并设置密码， 调整一个用户状态为启用 等. 该项功能的缺失， 会导致 {{$localeConfig.brandName}} 数据同步的用户信息的状态是不可用的
 
 - 配置 **AD CS**
 
@@ -422,14 +422,14 @@
   > 测试 **AD CS** 的相关配置是否出现问题， 是否是可用的。
 
 - **`AD 相关策略`** 的 `修改` 与 `测试`
-  > 此项行为主要为了引导用户注意 AD 服务中的密码相关策略， 因为可能导致在 {{$localeConfig.brandName}}中新增的用户在同步到 AD 的过程中， 出现一些问题。
+  > 此项行为主要为了引导用户注意 AD 服务中的密码相关策略， 因为可能导致在 {{$localeConfig.brandName}} 中新增的用户在同步到 AD 的过程中， 出现一些问题。
 
 场景如下：
 
 - {{$localeConfig.brandName}} 中的当前密码强度等级较低， 用户新增加了一个弱密码账户， 而 AD 中的密码当前设置状态要求一定的复杂度， 当用户同步过去的时候， 就会因为这些问题造成同步状态异常（用户虽然可以同步， 但是状态一直是禁用状态，因为密码会设置不成功，不符合 AD 的策略，会导致用户启用不成功）。
 - {{$localeConfig.brandName}} 中的用户名现在并没有存在设置特殊的规则进行验证筛选， 也就是默认 {{$localeConfig.brandName}} 中的用户的 username 可以是任何字符串。但是 AD 中的用户名却不是， AD 中的 sAMAccountName 属性， 有一定的限制， 这样就导致了 {{$localeConfig.brandName}} 到 AD 的数据需要处理这些差异性， 而这些差异性的导致来自于不同的系统， 又是较为合理常见的， 我们假设增加一个 {{$localeConfig.brandName}} 用户 username 为 `authing@gmail.com`， 当进行同步的时候， 常规意义下 `username` 与 `sAMAccountName` 意义相同的， 这两个字段应该作为映射双方， 但是 `authing@gmail.com` 赋值给 `sAMAccountName` 是非法的， 必会引起错误。
 
-## 步骤 2：在 {{$localeConfig.brandName}}控制台配置 Windows AD
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Windows AD
 
 请在 {{$localeConfig.brandName}} Console 控制台 的「企业身份源」页面，点击「创建企业身份源」按钮，进入「选择企业身份源」页面，点击「Windows AD」，进入 「Windows AD 登录模式」页面。
 
@@ -439,15 +439,46 @@
 
 <img src="./images/windowsAD02.png" >
 
-| 字段/功能    | 描述                                                         |
-| ------------ | ------------------------------------------------------------ |
-| 唯一标识 | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。|
-| 显示名称 |这个名称会显示在终端用户的登录界面的按钮上。|
-| 应用 Logo |如果设置，Authing 登录表单将在 "使用 {Display Name} 登录" 的按钮上显示此图标，该图标会展示为 20 * 20。 |
-| 同步 AD 域密码 | 如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在 {{$localeConfig.brandName}} 的密码 |
-| {{$localeConfig.brandName}} 用户密码修改之后，同步修改到 AD| 如果设置，当用户在 {{$localeConfig.brandName}} 的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。|
-| 登录模式 | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
-| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。 |
+<table>
+  <thead>
+    <tr>
+      <th>字段 / 功能</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+<tr>
+<td>唯一标识</td>
+<td>
+<ul>
+<li>唯一标识由小写字母、数字、- 组成，且长度小于 32 位。</li>
+<li>这是此连接的唯一标识，设置之后不能修改。</li>
+</ul></td>
+</tr>
+<tr>
+<td>显示名称</td>
+<td>这个名称会显示在终端用户的登录界面的按钮上。</td>
+</tr>
+<tr>
+<td>应用 Logo</td>
+<td>如果设置，Authing 登录表单将在 "使用 {Display Name} 登录" 的按钮上显示此图标，该图标会展示为 20 * 20。</td>
+</tr>
+<tr>
+<td>同步 AD 域密码</td>
+<td>如果设置，当 AD 认证成功时，会将用户在 AD 域的密码同步至其在 {{$localeConfig.brandName}} 的密码。</td>
+</tr>
+<tr>
+<td>{{$localeConfig.brandName}} 用户密码修改之后，同步修改到 AD</td>
+<td>如果设置，当用户在 {{$localeConfig.brandName}} 的密码被修改之后（包含管理员修改密码和用户自己手动重置密码），会将用户在 AD 中的密码也同步修改。</td>
+</tr>
+<tr>
+<td>登录模式</td>
+<td>开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。</td>
+</tr>
+<tr>
+<td>账号身份关联</td>
+<td>不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。</td>
+</tr>
+</table>
 
 配置完成后，点击「创建」按钮完成创建。
 
@@ -530,14 +561,14 @@
 如果遇到 AD 相关的错误，请检查 AD 服务器链接、账密信息是否正确。
 :::
 
-## 步骤 3：可选操作：Windows Active Directory 用户目录双向同步"
+## 第三步：可选操作：Windows Active Directory 用户目录双向同步
 
 本部分包含以下章节：
 
 - **`AD 双向同步`** 的开启时间
 - **`AD 双向同步`** 的功能点
 - **`AD 同步到 Authing`**
-- **`{{$localeConfig.brandName}}同步到 AD`**
+- **`{{$localeConfig.brandName}} 同步到 AD`**
 - **`用户验证相关同步`**
 - **`一个完整的双向同步过程`**
 
@@ -562,7 +593,7 @@
 - 删除组织成员
 - 删除组织节点
 
-2. 从 {{$localeConfig.brandName}}同步到 AD
+2. 从 {{$localeConfig.brandName}} 同步到 AD
 
 - 用户新增（增加组织成员）
 - 用户更改
@@ -576,7 +607,7 @@
 3. 用户认证
 
 - AD 用户导入
-- {{$localeConfig.brandName}}用户同步到 AD
+- {{$localeConfig.brandName}} 用户同步到 AD
 
 ### 初始化测试环境
 
@@ -600,10 +631,10 @@
 
 <img src="./images/5-4-复制该组织单位的dn.png" class="md-img-padding" />
 
-6. 在 {{$localeConfig.brandName}}控制台，进入同步中心，创建同步任务，选择 **创建 Windows AD 同步任务**，填写 唯一标识后 保存。
+6. 在 {{$localeConfig.brandName}} 控制台，进入同步中心，创建同步任务，选择 **创建 Windows AD 同步任务**，填写 唯一标识后 保存。
    <img src="./images/adconnector04.png" class="md-img-padding" />
 
-7. 填写 `AD-Connector` 相关配置，并进行保存。注意：只有 `AD-Connector` 和 `{{$localeConfig.brandName}}控制台` 都**保存后**，控制台的同步任务的**测试连通才是可用的**
+7. 填写 `AD-Connector` 相关配置，并进行保存。注意：只有 `AD-Connector` 和 `{{$localeConfig.brandName}} 控制台` 都**保存后**，控制台的同步任务的**测试连通才是可用的**
 
 <img src="./images/adconnector02.png" class="md-img-padding" />
 
@@ -625,11 +656,11 @@
 
 #### 删除组织节点
 
-### **`{{$localeConfig.brandName}}同步到 AD`**
+### **`{{$localeConfig.brandName}} 同步到 AD`**
 
 #### 用户新增（增加组织成员）
 
-1. 在 {{$localeConfig.brandName}}中新增一个 `用户`
+1. 在 {{$localeConfig.brandName}} 中新增一个 `用户`
 
 <img src="./images/6-Authing2AD-新建用户.png" class="md-img-padding" />
 

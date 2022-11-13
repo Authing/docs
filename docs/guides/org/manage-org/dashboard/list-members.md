@@ -1,3 +1,3 @@
-你可以在每个节点的**节点成员**查看该节点的所有成员：
+点击组织树任意层级组织 / 部门，即可在右侧列表显示当前部门下直属或所有成员（取决于是否勾选用户列表上方 **仅展示部门的直属成员**）。
 
-<img src="~@imagesZhCn/guides/org/Xnip2021-02-27_14-25-38.png" alt="drawing"/>
+<img src="../../images/list-members.png" style="display:block;margin: 0 auto;">

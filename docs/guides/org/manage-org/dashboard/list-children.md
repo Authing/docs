@@ -1,3 +1,13 @@
-你可以在每个节点的**下级节点**查看该节点的所有子节点：
+你可以点击节点前的收起按钮展开当前节点，显示该节点下所有子节点。
 
-<img src="~@imagesZhCn/guides/org/Xnip2021-02-27_14-22-08.png" alt="drawing"/>
+<img src="../../images/before-expansion.png" style="display:block;margin: 0 auto;">
+
+::: img-description
+展开前
+:::
+
+<img src="../../images/after-expansion.png" style="display:block;margin: 0 auto;">
+
+::: img-description
+展开后
+:::

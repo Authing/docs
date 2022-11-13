@@ -995,10 +995,6 @@ const zhCnNavBar = {
               path: "/guides/pipeline/how-to-debug",
             },
             {
-              title: "常见问题",
-              path: "/guides/pipeline/faq",
-            },
-            {
               title: "私有化部署",
               path: "/guides/pipeline/private-cloud",
             },
@@ -1128,6 +1124,10 @@ const zhCnNavBar = {
         {
           title: `同步中心常见问题`,
           path: "/guides/faqs/sync",
+        },
+        {
+          title: "Pipeline 常见问题",
+          path: "/guides/faqs/pipeline",
         },
         {
           title: `企业微信扫码登录常见问题`,

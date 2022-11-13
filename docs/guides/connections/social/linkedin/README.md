@@ -17,7 +17,7 @@
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
-## 步骤 1：在 LinkedIn 创建应用
+## 第一步：在 LinkedIn 创建应用
 
 - 在 [LinkedIn Developers](https://developer.linkedin.com/) 上，点击 Create app 开始创建你的应用。
 
@@ -40,7 +40,7 @@
 > 将其中的 { 唯一标识 } 替换为你正在 Authing 创建的身份源所填写的唯一标识， {YOUR_USERPOOL_ID} 替换为你的用户池 ID
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 LinkedIn
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 LinkedIn
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -55,7 +55,7 @@
 <img src="./images/linkedin_7.png" >
 
 | 字段/功能    | 描述                                                         |
-| ----- | ------------ | ------------------------------------------------------------ |
+| ------------ | ------------------------------------------------------------ |
 | 唯一标识     | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。 |
 | 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                 |
 | Client ID      |  LinkedIn 应用 ID，需要在 linkedIn developers 上获取。                  |
@@ -71,7 +71,7 @@
 <img src="./images/linkedin_3.png" >
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

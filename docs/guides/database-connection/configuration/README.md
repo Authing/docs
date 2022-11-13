@@ -8,12 +8,12 @@
 
 你可以自定义数据库认证用户，为此你需要配置数据库连接、编写数据库操作脚本、配置环境变量（可选）。
 
-> 请确保你的数据库有 Authing 用户资料必须的一些字段，如 `id`, `email`, `photo`, `nickname`, `username`, `phone` 等，详情请见[Authing 用户 Profile 详细字段及其释义](/guides/user/user-profile.md) 了解 Authing 用户资料 Schema。
+> 请确保你的数据库有 Authing 用户资料必须的一些字段，如 `id`、`email`、`photo`、`nickname`、`username`、`phone` 等，详情请见 [Authing 用户 Profile 详细字段及其释义](/guides/user/user-profile.md) 了解 Authing 用户资料 Schema。
 
 Authing 支持直接连接以下几种主流的数据库以及自定义 Web Service：
 
 - MySQL
-- PostgresQL
+- PostgreSQL
 - MongoDB
 - Web Services: 你可以将数据库封装成一个服务，不直接对外暴露数据库连接，如你可以把认证操作封装成一个 API: `https://mydomain.com/auth`。
 
@@ -77,7 +77,7 @@ await client.connect()
 
 ## 编写数据库操作脚本
 
-我们目前提供了 **MySQL**、**PostgresQL**、**MongoDB**、**自定义服务** 四种方式的模版，你可以根据需要编写对应的脚本。
+我们目前提供了 **MySQL**、**PostgreSQL**、**MongoDB**、**自定义服务** 四种方式的模版，你可以根据需要编写对应的脚本。
 
 选择 **迁移用户数据到 Authing（LAZY_MIGRATION）** 模式时，你一共需要编写两个函数：
 
