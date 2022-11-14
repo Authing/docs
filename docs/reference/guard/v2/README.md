@@ -102,7 +102,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
 	</tr>
 	<tr>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/vue.html" _target="blank">
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/angular.html" _target="blank">
                 将 Guard 接入到 Angular 项目
             </a>
         </td>
