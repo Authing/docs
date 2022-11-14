@@ -67,10 +67,9 @@ import cn.authing.core.mgmt.ManagementClient;
 
 public class ManagementClientTest {
     public static void main(String[] args){
-      ManagementClientOptions managementClientOptions = new ManagementClientOptions();
-        managementClientOptions.setAccessKeyId("AUTHING_USERPOOL_ID");
-        managementClientOptions.setAccessKeySecret("AUTHING_USERPOOL_SECRET");
-        ManagementClient managementClient = new ManagementClient(managementClientOptions);
+      ManagementClient managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
+      // 获取管理员权限
+      managementClient.requestToken().execute();
     }
 }
 ```
@@ -83,6 +82,19 @@ public class ManagementClientTest {
 - `setClientTimeOut` 设置请求超时时间，默认为 10 秒（10000 毫秒）。
   - `connectTimeOut` \<Long\> 连接超时时间。
   - `readTimeOut` \<Long\> 读取超时时间。
+
+```java
+import cn.authing.core.mgmt.ManagementClient;
+public class ManagementClientTest {
+    public static void main(String[] args){
+        ManagementClient managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
+        // 获取管理员权限
+        managementClient.requestToken().execute();
+
+        PaginatedUsers users = managementClient.users().list().execute();
+    }
+}
+```
 
 
 
@@ -98,15 +110,8 @@ import cn.authing.core.auth.AuthenticationClient;
 public class AuthenticationClientTest {
     public static void main(String[] args){
         // 使用 AppId 和 AppHost 进行初始化
-        AuthenticationClientOptions options = new AuthenticationClientOptions();
-        options.setAppId("AUTHING_APP_ID");
-        options.setAppHost("AUTHING_APP_HOST");
-        AuthenticationClient authenticationClient = null;
-        try {
-            authenticationClient = new AuthenticationClient(options);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+      AuthenticationClient authentication = new AuthenticationClient("AUTHING_APP_ID", "AUTHING_APP_HOST");
+      authenticationClient.setSecret("AUTHING_APP_SECRET");
     }
 }
 ```
@@ -128,20 +133,13 @@ import cn.authing.core.auth.AuthenticationClient;
 public class AuthenticationClientTest {
     public static void main(String[] args){
         // 使用 AppId 和 AppHost 进行初始化
-        AuthenticationClientOptions options = new AuthenticationClientOptions();
-        options.setAppId("AUTHING_APP_ID");
-        options.setAppHost("AUTHING_APP_HOST");
-        AuthenticationClient authenticationClient = null;
-        try {
-            authenticationClient = new AuthenticationClient(options);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+      AuthenticationClient authentication = new AuthenticationClient(AUTHING_APP_ID, AUTHING_APP_HOST);
+
+      authenticationClient.setSecret("AUTHING_APP_SECRET");
 
         String email = "test@example.com";
         String password = "example";
-        LoginTokenRespDto loginTokenRespDto = 
-                authenticationClient.signInByEmailPassword(email, password, new SignInOptionsDto());
+        User user = authenticationClient.registerByEmail(new RegisterByEmailInput(email, password)).execute();
     }
 }
 ```
@@ -154,24 +152,15 @@ import cn.authing.core.auth.AuthenticationClient;
 public class AuthenticationClientTest {
     public static void main(String[] args){
         // 使用 AppId 和 AppHost 进行初始化
-        AuthenticationClientOptions options = new AuthenticationClientOptions();
-        options.setAppId("AUTHING_APP_ID");
-        options.setAppHost("AUTHING_APP_HOST");
-        AuthenticationClient authenticationClient = null;
-        try {
-            authenticationClient = new AuthenticationClient(options);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+      AuthenticationClient authentication = new AuthenticationClient(AUTHING_APP_ID, AUTHING_APP_HOST);
+
+      authenticationClient.setSecret("AUTHING_APP_SECRET");
 
         String email = "test@example.com";
         String password = "example";
-        LoginTokenRespDto loginTokenRespDto = 
-                authenticationClient.signInByEmailPassword(email, password, new SignInOptionsDto());
+        authenticationClient.loginByEmail(new LoginByEmailInput(email, password)).execute();
 
-        UpdateUserProfileDto updateUserProfileDto = new UpdateUserProfileDto();
-        updateUserProfileDto.setNickname("example");
-        UserSingleRespDto userSingleRespDto = authenticationClient.updateProfile(updateUserProfileDto);
+        User user = authenticationClient.updateProfile(new UpdateUserInput().withNickname("example")).execute();
     }
 }
 ```
@@ -184,16 +173,10 @@ import cn.authing.core.auth.AuthenticationClient;
 public class AuthenticationClientTest {
     public static void main(String[] args){
         // 使用 AppId 和 AppHost 进行初始化
-        AuthenticationClientOptions options = new AuthenticationClientOptions();
-        options.setAppId("AUTHING_APP_ID");
-        options.setAppHost("AUTHING_APP_HOST");
-        AuthenticationClient authenticationClient = null;
-        try {
-            authenticationClient = new AuthenticationClient(options);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-        authenticationClient.setAccessToken("AUTHING_ACCESS_TOKEN");
+      AuthenticationClient authentication = new AuthenticationClient(AUTHING_APP_ID, AUTHING_APP_HOST);
+
+      authenticationClient.setSecret("AUTHING_APP_SECRET");
+      authenticationClient.setToken("AUTHING_ID_TOKEN");
     }
 }
 ```
@@ -205,23 +188,37 @@ import cn.authing.core.auth.AuthenticationClient;
 
 public class AuthenticationClientTest {
     public static void main(String[] args){
-        AuthenticationClientOptions options = new AuthenticationClientOptions();
-        options.setAppId("AUTHING_APP_ID");
-        options.setAppHost("AUTHING_APP_HOST");
-        AuthenticationClient authenticationClient = null;
-        try {
-            authenticationClient = new AuthenticationClient(options);
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-        authenticationClient.setAccessToken("AUTHING_ACCESS_TOKEN");
-      
-        UpdateUserProfileDto updateUserProfileDto = new UpdateUserProfileDto();
-        updateUserProfileDto.setNickname("example");
-        UserSingleRespDto userSingleRespDto = authenticationClient.updateProfile(updateUserProfileDto);
+        AuthenticationClient authentication = new AuthenticationClient(AUTHING_APP_ID, AUTHING_APP_HOST);
+        
+        authenticationClient.setSecret("AUTHING_APP_SECRET");
+        authenticationClient.setToken("AUTHING_ID_TOKEN");
+        User user = authenticationClient.updateProfile(new UpdateUserInput().withNickname("example")).execute();
     }
 }
 ```
+
+## 错误处理
+
+```java
+import cn.authing.core.auth.AuthenticationClient;
+import cn.authing.core.graphql.GraphQLException;
+import java.io.IOException;
+public class AuthenticationClientTest { 
+    public static void main(String[] args){
+      // 使用 AppId 和 AppHost 进行初始化
+      AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
+  
+      authenticationClient.setSecret("AUTHING_APP_SECRET");
+      authenticationClient.setToken("AUTHING_ID_TOKEN");
+      try {
+        User user = authenticationClient.updateProfile(new UpdateUserInput().withNickname("example")).execute();
+      } catch (GraphQLException | IOException e) {
+        e.printStackTrace();
+      }
+    }
+}
+```
+    
 
 
 
@@ -241,35 +238,35 @@ managementClient.setPublicKey("public key");
 
 ### 使用管理模块
 
-初始化 `ManagementClient` 需要 `userPoolId`（用户池 ID） 和 `secret`（用户池密钥）：
+初始化 `ManagementClient` 需要 `userPoolId`（用户池 ID） 和 `userPoolSecret`（用户池密钥）：
 
 ```java
 import cn.authing.core.mgmt.ManagementClient;
 
 public class ManagementClientTest {
     public static void main(String[] args){
-      ManagementClientOptions managementClientOptions = new ManagementClientOptions();
-        managementClientOptions.setAccessKeyId("AUTHING_USERPOOL_ID");
-        managementClientOptions.setAccessKeySecret("AUTHING_USERPOOL_SECRET");
-        ManagementClient managementClient = new ManagementClient(managementClientOptions);
+      ManagementClient managementClient = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
+      // 获取管理员权限
+      managementClient.requestToken().execute();
     }
 }
 ```
 
 ### 使用认证模块
 
-初始化 `AuthenticationClient` 需要  `APP Id `和  `APP HOST`：
+初始化 `AuthenticationClient` 需要 `userPoolId`（用户池 ID）：
 
 ```java
 import cn.authing.core.auth.AuthenticationClient;
 
 public class AuthenticationClientTest {
     public static void main(String[] args){
-        AuthenticationClient authentication = new AuthenticationClient(USER_POOL_ID);
+        // 使用 UserPoolId 进行初始化
+        AuthenticationClient authentication = new AuthenticationClient(AUTHING_USERPOOL_ID);
         // 配置应用 ID
-        authenticationClient.setAppId(APP_ID);
+        authenticationClient.setAppId(AUTHING_APP_ID);
         // 配置应用秘钥
-        authenticationClient.setSecret(APP_SECRET);
+        authenticationClient.setSecret(AUTHING_APP_SECRET);
         // 配置自定义公钥
         authenticationClient.setPublicKey("public key");
     }
