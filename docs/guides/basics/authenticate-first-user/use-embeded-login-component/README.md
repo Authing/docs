@@ -34,12 +34,11 @@
 
 </br>
 
-Authing Web 端 Guard 3.0 版本已于 2021.12.31 正式上线，关于本次更新主要涉及嵌入式 Guard 组件的 MFA、登录安全策略、自定义 CSS 以及登录注册协议相关功能的实现，同时对嵌入式和托管式 Guard 登录框的 UI 进行了全面翻新。
-关于本次更新的详细内容请查看：[从 Guard V1 迁移](/reference/guard/migration.md)。
-
 ## 不同前端框架的接入流程
 
-<StackSelector snippet="ui-components-example" selectLabel="选择前端框架" :order="['react', 'vue', 'angular', 'native-javascript']"/>
+无论使用哪一种框架，你都需要用到应用的 `appId` ，请先 [前往控制台获取](https://console.authing.cn)。关于 **APP ID** 所在位置，请参阅 [应用配置](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
+
+<StackSelector snippet="ui-components-example" selectLabel="选择前端框架" :order="['react', 'react18', 'vue', 'vue3', 'angular', 'native-javascript']"/>
 
 ## 在后端验证用户的 Token 是否有效
 
