@@ -16,14 +16,6 @@ meta:
 
 你应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次），而 `AuthenticationClient` 应该每次请求初始化一个。
 
-
-## GitHub 下载地址
-
-| 条目     | 说明                                        |
-| -------- | ------------------------------------------- |
-| 支持版本 | Node 12.0.0 +                                    |
-| 仓库地址 | [https://github.com/Authing/authing.js](https://github.com/Authing/authing.js) |
-
 ## 安装
 
 使用 `npm`:
