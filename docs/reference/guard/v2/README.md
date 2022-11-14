@@ -44,8 +44,43 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <th>描述</th>
 	    <th>快速开始</th>  
 	</tr>
+    <tr>
+        <td rowspan="4">Guard 5.0</td>
+        <td rowspan="4">
+            <p>具备 Guard 4.0 的全部能力，并在此基础上做了以下优化：</p>
+            <p>1. 内置 Authing 认证 JS SDK，并在此基础上将登录功能 API 化。</p>
+            <p>2. 针对 React、Vue、Angular 分别封装了 hooks、plugin、service，使用更方便。</p>
+            <p>3. 兼容 React18。</p>
+        </td>
+        <td>
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+                将 Guard 接入到 React 项目
+            </a>
+        </td>
+	</tr>
 	<tr>
-        <td rowspan="4">Guard 4.x</td>
+        <td>
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+                将 Guard 接入到 Vue 项目
+            </a>
+        </td>
+	</tr>
+	<tr>
+        <td>
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+                将 Guard 接入到 Angular 项目
+            </a>
+        </td>
+	</tr>
+    <tr>
+        <td>
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            将 Guard 接入到原生 JS 项目
+            </a>
+        </td>
+    </tr>
+	<tr>
+        <td rowspan="4">Guard 4.0</td>
         <td rowspan="4">
             <p>1. 拥有丰富的登录注册方式。</p>
             <p>2. 内置多种功能，无需额外编写代码。</p>
@@ -75,41 +110,6 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
     <tr>
         <td>
             <a href="https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html" _target="blank">
-            将 Guard 接入到原生 JS 项目
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="4">Guard 5.x</td>
-        <td rowspan="4">
-            <p>具备 Guard 4.x 的全部能力，并在此基础上做了以下优化：</p>
-            <p>1. 内置 Authing 认证 JS SDK，并在此基础上将登录功能 API 化。</p>
-            <p>2. 针对 React、Vue、Angular 分别封装了 hooks、plugin、service，使用更方便。</p>
-            <p>3. 兼容 React18。</p>
-        </td>
-        <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
-                将 Guard 接入到 React 项目
-            </a>
-        </td>
-	</tr>
-	<tr>
-        <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
-                将 Guard 接入到 Vue 项目
-            </a>
-        </td>
-	</tr>
-	<tr>
-        <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
-                将 Guard 接入到 Angular 项目
-            </a>
-        </td>
-	</tr>
-    <tr>
-        <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
             将 Guard 接入到原生 JS 项目
             </a>
         </td>
