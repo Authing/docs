@@ -12,7 +12,7 @@
 
 ## 集成飞书登录步骤
 
-### 步骤 1：添加飞书登录组件依赖
+### 第一步：添加飞书登录组件依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -25,7 +25,7 @@
 
 <br>
 
-### 步骤 2：修改项目配置
+### 第二步：修改项目配置
 
 - 前往 [飞书开发平台](https://open.feishu.cn/document/uAjLw4CM/uYjL24iN/mobile-app/sdk) 下载 iOS LarkSS0Demo。
 
@@ -40,7 +40,7 @@
 
 <br>
 
-### 步骤 3：初始化飞书登录
+### 第三步：初始化飞书登录
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import LarkLogin 。
 2. Authing.start 需要传入 Authing 的应用 ID 。
@@ -56,7 +56,7 @@ LarkLogin.setupLark(<#Lark App ID#>, Scheme: <#Lark Scheme#>)
 
 <br>
 
-### 步骤 4：添加飞书登录回调
+### 第四步：添加飞书登录回调
 
 飞书返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -79,7 +79,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 <br>
 
 
-### 步骤 5：发起飞书授权
+### 第五步：发起飞书授权
 
 推荐通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个：
 

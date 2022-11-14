@@ -15,7 +15,7 @@
 - 请确保你已经申请了苹果开发者账号，否则无法进行以下操作。申请个人、公司账号地址：[https://developer.apple.com/programs/](https://developer.apple.com/programs/) ， 申请企业账号地址：[https://developer.apple.com/programs/enterprise/](https://developer.apple.com/programs/enterprise/)
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号
 
-## 步骤 1：在 Apple 开发者中心进行配置
+## 第一步：在 Apple 开发者中心进行配置
 
 ### 获取 Team ID
 
@@ -89,7 +89,7 @@
 
 ![](~@imagesZhCn/guides/connections/apple/step1-16.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Apple 应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Apple 应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -104,8 +104,8 @@
 2.4 在「Apple Web 端」配置页面，填写相关的字段信息。
 ![](./images/add-app-3.jpg)
 
-| 字段                | 描述                                                                                                                                                         |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 字段                | 描述|
+| ------------------- | ------------- |
 | 唯一标识            | a. 唯一标识由小写字母、数字、- 组成，且长度小于 32 位。<br />b. 这是此连接的唯一标识，设置之后不能修改。                                                     |
 | 显示名称            | 这个名称会显示在终端用户的登录界面的按钮上。                                                                                                                 |
 | Services Identifier | Apple Service 的 ID。                                                                                                                                          |
@@ -118,7 +118,7 @@
 
 2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 - **优劣势描述**：运维简单，由 {{$localeConfig.brandName}} 负责运维。每个用户池有一个独立的二级域名；如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 {{$localeConfig.brandName}} 托管的登录页面，或者将浏览器重定向到 {{$localeConfig.brandName}} 托管的登录页。

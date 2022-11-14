@@ -3,13 +3,13 @@
 <LastUpdated/>
 
 ## 操作步骤
-### 步骤 1：新建 iOS 工程
+### 第一步：新建 iOS 工程
 
 ![](./images/create_project1.png)
 
 ![](./images/create_project2.png)
 
-### 步骤 2：在工程中添加 Guard 依赖
+### 第二步：在工程中添加 Guard 依赖
 
 - 在 Xcode 菜单栏右上角选择 **File** 点击 **Add Packages** 。
 
@@ -25,7 +25,7 @@
 
 ![](./images/create_project5.png)
 
-### 步骤 3：初始化
+### 第三步：初始化
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard。
 

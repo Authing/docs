@@ -10,7 +10,7 @@
 
 ## 集成微信登录步骤
 
-### 步骤 1：添加依赖
+### 第一步：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
@@ -19,7 +19,7 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 
 >Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 步骤 2：初始化 Guard Android SDK
+### 第二步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
 
@@ -29,7 +29,7 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 Authing.init(context, "AUTHING_APP_ID");
 ```
 
-### 步骤 3：创建WXEntryActivity
+### 第三步：创建WXEntryActivity
 
 由于微信的限制，必须在应用包名所在的目录下创建一个 wxapi/WXEntryActivity。假设你的应用包名为：
 
@@ -50,7 +50,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 }
 ```
 
-### 步骤 4：在 Manifest 里面声明微信回调 Activity
+### 第四步：在 Manifest 里面声明微信回调 Activity
 
 ```xml
 <activity

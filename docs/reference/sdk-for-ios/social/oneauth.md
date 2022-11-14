@@ -8,7 +8,7 @@
 
 ## 集成一键登录登录步骤
 
-### 步骤 1：添加一键登录登录依赖
+### 第一步：添加一键登录登录依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
@@ -21,7 +21,7 @@
 
 <br>
 
-### 步骤 2：初始化一键登录
+### 第二步：初始化一键登录
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import OneAuth 。
 
@@ -36,7 +36,7 @@ Authing.start(<#AUTHING_APP_ID#>)
 OneAuth.register(businessId:<#your_businessId#>)
  ```
 
-### 步骤 3：发起一键登录认证
+### 第三步：发起一键登录认证
 
 ```Swift
 OneAuth.start(self) { code, message, userInfo in

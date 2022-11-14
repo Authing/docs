@@ -14,7 +14,7 @@
 - 如果你未开通微信开放平台账号，请前往[微信开放台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN) 注册开发者账号；
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：在微信开放平台创建一个微信移动应用
+## 第一步：在微信开放平台创建一个微信移动应用
 前往 [微信开放平台](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN)创建一个 **微信移动应用**。
 ![](./images/open1.jpg)
 
@@ -23,7 +23,7 @@
 
 ![](./images/open2.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信移动端登录
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信移动端登录
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
 ![](~@imagesZhCn/guides/connections/create-social-idp.jpg)
@@ -50,7 +50,7 @@
 2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：SDK 
 - **优劣势描述**：接入简单，只需要几行代码。可自定义程度最高。

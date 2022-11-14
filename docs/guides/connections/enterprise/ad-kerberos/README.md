@@ -12,7 +12,7 @@
 
 ## 注意事项
 
-- Windows Domain Controller 域控制器, Schema Windows 2003 或以上
+- Windows Domain Controller 域控制器，Schema Windows 2003 或以上
 - 需要提供域内 Windows 终端 CA 信任的证书，实现高网络安全环境 (SSL/TLS)
 - 需要建立域内一个系统账户（不需任何权限）
 - 需要域管理员 (Domain Admin) 在 DC 上执行命令权限

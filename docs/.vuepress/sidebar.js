@@ -995,10 +995,6 @@ const zhCnNavBar = {
               path: "/guides/pipeline/how-to-debug",
             },
             {
-              title: "常见问题",
-              path: "/guides/pipeline/faq",
-            },
-            {
               title: "私有化部署",
               path: "/guides/pipeline/private-cloud",
             },
@@ -1130,6 +1126,10 @@ const zhCnNavBar = {
           path: "/guides/faqs/sync",
         },
         {
+          title: "Pipeline 常见问题",
+          path: "/guides/faqs/pipeline",
+        },
+        {
           title: `企业微信扫码登录常见问题`,
           path: "/guides/faqs/sso-phone-binding",
         },
@@ -1138,8 +1138,22 @@ const zhCnNavBar = {
   ],
   "/reference/": [
     {
-      title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso-spa",
+      title: 'Authing JavaScript SDK',
+      path: '/reference/authing-js-sdk',
+      children: [
+        {
+          title: "单点登录（SSO）",
+          path: "/reference/sdk-for-sso-spa",
+        },
+        {
+          title: "微信小程序",
+          path: "/reference/sdk-for-weixin-miniapp",
+        },
+        {
+          title: "微信网页授权",
+          path: "/reference/sdk-for-weixin-official-account",
+        }
+      ]
     },
     {
       title: "登录组件 (Guard)",
@@ -1795,14 +1809,6 @@ const zhCnNavBar = {
     {
       title: "React Native",
       path: "/reference/sdk-for-react-native",
-    },
-    {
-      title: "微信小程序",
-      path: "/reference/sdk-for-weixin-miniapp",
-    },
-    {
-      title: "微信网页授权",
-      path: "/reference/sdk-for-weixin-official-account",
     },
     {
       title: "框架集成",

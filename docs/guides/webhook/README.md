@@ -20,28 +20,19 @@ Webhook 允许你对用户注册、登录等行为进行监听，从而对其做
 
 在 **自动化->Webhooks** 页面，可以管理你定义的 webhook：
 
+1. 点击添加 Webhook 按钮 可以创建新的 Webhook 订阅特定事件。
+
 ![](~@imagesZhCn/webhooks/webhook-zh-01.png)
-点击添加 Webhook 按钮 可以创建新的 Webhook 订阅特定事件
+
+2. 填写表单勾选 Webhook 事件。
 
 ![](~@imagesZhCn/webhooks/webhook-zh-02.png)
-填写表单勾选 Webhook 事件
-
-::: img-description
-配置 Webhook
-:::
 
 ![](~@imagesZhCn/webhooks/webhook-zh-03.png)
 
-创建成功后会进入 Webhook 列表页面。
-
-::: img-description
-Webhook 列表
-:::
+3. 创建成功后会进入 Webhook 列表页面。
 
 ![](~@imagesZhCn/webhooks/webhook-zh-04.png)
-
-
-
 
 ### 参数解释
 
@@ -77,7 +68,6 @@ Webhook 测试
 
 测试成功后你将看到详细的请求信息和返回信息。
 
-
 ## 支持的事件
 
 ### 事件列表
@@ -92,6 +82,7 @@ Webhook 测试
 | user:udv-changed                    | 修改用户拓展信息事件，当用户修改自己的拓展信息或管理员手动修改用户拓展信息时触发此事件 | `data.user`: 用户信息，`data.udv`: 更新后的自定义字段信息，`data.udf`: 自定义字段配置信息 |
 | user:deleted                        | 管理员删除用户事件                                           | `data.users`: 删除的用户列表（自定义数据库模式此字段为用删除的用户 ID 列表） |
 | user:password-changed               | 修改密码事件，当用户修改密码或管理员手动修改密码时会触发此事件，无论成功与否都会触发 | 密码被修改的用户的用户信息                                   |
+| user:password-update-remind         | 用户密码到期，给用户发送提醒邮件时触发此事件 | `data.userpool`：用户池信息，`data.user`：用户信息|
 | user:email-verified                 | 用户邮箱被验证事件                                           | `data.userId`: 验证的用户 ID，`data.email`: 验证的邮箱       |
 | user:register-whitelist-added       | 添加注册白名单事件                                           | `data.phones`: 添加的手机号列表，`data.emails`: 添加的邮箱列表，`data.usernames`: 添加的用户名列表 |
 | user:register-whitelist-deleted     | 删除注册白名单事件                                           | `data.phones`: 删除的手机号列表，`data.emails`: 删除的邮箱列表，`data.usernames`: 删除的用户名列表 |
@@ -130,6 +121,7 @@ Webhook 测试
 | organization:node-deleted           | 删除子部门事件                                               | `data.nodes`: 删除的部门列表                                 |
 | organization:member-added           | 添加成员到部门                                               | `data.node`: 添加到的部门，`data.user`: 添加的用户           |
 | organization:member-removed         | 从部门移除成员                                               | `data.node`: 被移除成员所属部门，`data.user`: 移除的用户     |
+| organization:udv-changed         | 修改部门自定义字段值事件 | `data.department`: 部门信息，`data.udv` : 更新后的自定义字段信息，`data.udf`: 自定义字段配置信息|
 | organization:imported               | 导入组织机构树                                               | `data.organization`: 导入的组织机构树，`data.source`: 导入源，可能值有 `LDAP`, `ACTIVE_DIRECTORY`(Windows AD), `WECHATWORK`(企业微信), `DINGTALK`(钉钉), `LARK`(飞书), `EXCEL`(Excel), `JSON`(json 数据) |
 | organization:tree-updated           | 组织机构树更新                                               | `data.organization`: 更新的组织机构，`data.newNodes`: 新增的节点，`data.modifyNodes`: 修改的节点，`data.removeNodes`: 移除的节点，`data.source`: 更新源，可能值有 `LDAP`, `ACTIVE_DIRECTORY`(Windows AD), `WECHATWORK`(企业微信), `DINGTALK`(钉钉), `LARK`(飞书), `EXCEL`(Excel), `JSON`(json 数据) |
 | user-pool:cooperator-added          | 用户池添加协作管理员事件                                     | `data.userId`: 添加的协作管理员用户 ID，`data.policies`: 添加的策略 code 列表， |
@@ -150,7 +142,7 @@ Webhook 测试
 
 ### 请求类型
 
-指定发起 Webhook 请求时 Request body 的数据格式，可选值有 `application/json` 和 `application/x-www-form-urlencoded`
+指定发起 Webhook 请求时 Request body 的数据格式，可选值有 `application/json` 和 `application/x-www-form-urlencoded`。
 
 ## 附带的数据
 

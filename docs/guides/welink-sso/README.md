@@ -12,11 +12,11 @@
 
 ## 如何实现
 
-### 步骤一：将 Welink 配置为 Authing 身份源
+### 第一步：将 Welink 配置为 Authing 身份源
 
 具体 Welink 的身份源配置操作可见文档，[Welink](https://docs.authing.cn/v2/guides/connections/enterprise/welink/) 。
 
-### 步骤二：使用 Welink 单点登录阿里云
+### 第二步：使用 Welink 单点登录阿里云
 
 ### 集成应用
 

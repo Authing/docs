@@ -15,7 +15,7 @@
 - 如果你未开通 Google 账号，请先前往 [Google 开发者控制台](https://accounts.google.com/signin/v2/identifier?hl=zh-TW&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession) 注册电子邮箱。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在 Google 开发者控制台创建一个 OAuth 应用程序
+## 第一步：在 Google 开发者控制台创建一个 OAuth 应用程序
 
 - 打开 [Google API Console Credentials](https://console.cloud.google.com/apis/credentials)控制台。
 
@@ -36,7 +36,7 @@
 <img src="./images/google_6.png" >
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Google
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Google
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -52,7 +52,7 @@
 
 
 | 字段/功能    | 描述                                                         |
-| ----- | ------------ | ------------------------------------------------------------ |
+| ------------ | ------------------------------------------------------------ |
 | 唯一标识     | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。 |
 | 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                 |
 | Client ID      | Google 编号，需要在 Google 开放平台上获取。                  |
@@ -63,7 +63,7 @@
 | Scopes     | 默认情况下，{{$localeConfig.brandName}} 只会向用户申请基础用户信息（如头像、昵称等）的授权，如果你需要更多高级权限，可以勾选上对应的选项。 |
 | 回调地址     |  Google 有效跳转 URI。需要将此 URL 配置到  Google 开放平台上。 |
 | 登录模式     | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
-| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。a.关联方式：选择 |
+| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。|
 
 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
@@ -72,7 +72,7 @@
 <img src="./images/google_10.png" >
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

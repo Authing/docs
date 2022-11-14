@@ -16,7 +16,7 @@
 - 请按照 [GitHub 文档](https://docs.github.com/cn/developers/apps/building-oauth-apps/creating-an-oauth-app)指引创建一个 GitHub OAuth 应用，并记录应用的 Client ID 和 Client Secret。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 步骤 1：在 Github 创建一个 OAuth 应用程序
+## 第一步：在 Github 创建一个 OAuth 应用程序
 
 - 在 Github 任何页面的右上角，单击你的个人资料照片，然后单击 Settings（设置）。
 
@@ -37,7 +37,7 @@
 创建应用过程中，需要配置允许的回调地址，请使用以下设置：`https://core.authing.cn/connection/social/<Unique Identifier>/<USERPOOL_ID>/callback`，你需要将其中的 `<Unique Identifier>` 替换成你的`唯一标识`，`<USERPOOL_ID>` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置 Github
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置 Github
 
 2.1 请在 {{$localeConfig.brandName}}  控制台 的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -53,7 +53,7 @@
 
 
 | 字段/功能    | 描述                                                         |
-| ----- | ------------ | ------------------------------------------------------------ |
+| ------------ | ------------------------------------------------------------ |
 | 唯一标识     | a.唯一标识由小写字母、数字、- 组成，且长度小于 32 位。b.这是此连接的唯一标识，设置之后不能修改。 |
 | 显示名称     | 这个名称会显示在终端用户的登录界面的按钮上。                 |
 | Client ID      | Github 编号，需要在  Github 上获取。                  |
@@ -62,7 +62,7 @@
 | Scopes     | 默认情况下，{{$localeConfig.brandName}} 只会向用户申请基础用户信息（如头像、昵称等）的授权，如果你需要更多高级权限，可以勾选上对应的选项。 |
 | 回调地址     |  Github 有效跳转 URI。需要将此 URL 配置到  Github上。 |
 | 登录模式     | 开启「仅登录模式」后，只能登录既有账号，不能创建新账号，请谨慎选择。 |
-| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。a.关联方式：选择 |
+| 账号身份关联 | 不开启「账号身份关联」时，用户通过身份源登录时默认创建新用户。开启「账号身份关联」后，可以允许用户通过「字段匹配」或「询问绑定」的方式直接登录到已有的账号。|
 
 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
@@ -71,7 +71,7 @@
 <img src="./images/github_6.png" >
 
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 - **推荐开发接入方式**：使用托管登录页
 

@@ -14,7 +14,7 @@
 
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号；
 
-## 步骤 1：在微信公众平台创建一个小程序
+## 第一步：在微信公众平台创建一个小程序
 
 ### 创建微信小程序
 
@@ -42,7 +42,7 @@
 扫码登录后，在业务域名配置中填入你的应用认证地址，并且下载校验文件备用
 ![](./images/step1-4.jpg)
 
-## 步骤 2：在 {{$localeConfig.brandName}} 控制台配置微信小程序应用
+## 第二步：在 {{$localeConfig.brandName}} 控制台配置微信小程序应用
 
 2.1 请在 {{$localeConfig.brandName}} 控制台的「社会化身份源」页面，点击「创建社会化身份源」按钮，进入「选择社会化身份源」页面。
 
@@ -68,7 +68,7 @@
 
 2.5 配置完成后，点击「创建」或者「保存」按钮完成创建。
 
-## 步骤 3：开发接入
+## 第三步：开发接入
 
 从小程序基础库版本 2.2.1 或以上、及开发者工具 1.02.1808300 或以上开始，小程序支持使用 npm 安装第三方包，详情请见: [npm 支持 | 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
