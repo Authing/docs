@@ -10,7 +10,7 @@
     ]"
   >
     <p
-      v-if="item.path"
+      v-if="item.path && !item.path.includes('undefined')"
       class="sidebar-heading clickable"
       :class="{
         open,

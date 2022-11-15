@@ -892,7 +892,7 @@ const zhCnNavBar = {
             },
             {
               title: "自定义密码加密方法",
-              path: "/guides/extensibility/custom-password-script",
+              path: "/guides/security/pw-security/custom-password-script",
             },
           ],
         },
@@ -6089,10 +6089,6 @@ const translatedZhCnNavBar = {
           ],
         },
         // DATABASE_CONNECTION_MENU_EN,
-        {
-          title: "Configure custom password function",
-          path: "/guides/extensibility/custom-password-script",
-        },
       ],
     },
 
@@ -6114,23 +6110,37 @@ const translatedZhCnNavBar = {
       title: "Configure security information",
       children: [
         {
-          title: "Configure Web Security Domain",
-          path: "/guides/security/config-domain",
+          title: "General security",
+          children: [
+            {
+              title: "Configure web security domain",
+              path: "/guides/security/config-domain",
+            },
+            {
+              title: "Configure registration frequency limit",
+              path: "/guides/security/config-register-limit",
+            },
+            {
+              title: "Configure the limit on the number of failed login attempts",
+              path: "/guides/security/config-login-fail-limit",
+            },
+          ],
         },
         {
-          title: "Configure password strength",
-          path: "/guides/security/config-password",
-        },
-        {
-          title: "Configure registration frequency limit",
-          path: "/guides/security/config-register-limit",
-        },
-        {
-          title: "Configure the limit on the number of failed login attempts",
-          path: "/guides/security/config-login-fail-limit",
-        },
+          title: "Configure password security",
+          children: [
+            {
+              title: "Configure password policy",
+              path: "/guides/security/pw-security/config-password",
+            },
+            {
+              title: "Configure user-defined password function",
+              path: "/guides/security/pw-security/custom-password-script",
+            },
       ],
     },
+  ]
+},
     {
       title: "Configure user pool information",
       children: [
