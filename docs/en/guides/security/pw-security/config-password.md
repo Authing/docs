@@ -1,4 +1,4 @@
-# Configure password strength
+# Configure password policy
 
 ## Configure user pool password strength
 
