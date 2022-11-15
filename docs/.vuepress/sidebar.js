@@ -892,7 +892,7 @@ const zhCnNavBar = {
             },
             {
               title: "自定义密码加密方法",
-              path: "/guides/extensibility/custom-password-script",
+              path: "/guides/security/pw-security/custom-password-script",
             },
           ],
         },
