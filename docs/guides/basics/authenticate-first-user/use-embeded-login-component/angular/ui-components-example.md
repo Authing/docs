@@ -6,20 +6,29 @@
 运行下列命令行安装 Authing Angular.JS library：
 
 ```sh
-$ yarn add @authing/ng-ui-components
+$ yarn add @authing/guard-angular
 
 # OR
 
-$ npm install @authing/ng-ui-components --save
+$ npm install @authing/guard-angular --save
 ```
 
 **接下来，在你的 Angular 应用中完成配置：**
 
 
-首先你需要在项目的 tsconfig.json 里面的 compilerOptions 添加:
+首先你需要在项目的 angular.json 添加:
 
 ```json
-"skipLibCheck": true
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/angular.json
+{
+  "projects": {
+    "architect": {
+      "build": {
+        "styles": ["node_modules/@authing/guard-angular/dist/guard.min.css"]
+      }
+    }
+  }
+}
 ```
 
 在 Angular 项目中初始化：
@@ -27,45 +36,56 @@ $ npm install @authing/ng-ui-components --save
 `app.module.ts`
 
 ```js
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
-import { GuardModule } from "@authing/ng-ui-components";
+import { GuardModule } from "@authing/guard-angular";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, GuardModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GuardModule.forRoot({
+      appId: "AUTHING_APP_ID",
+      // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+      // host: 'https://my-authing-app.example.com',
+
+      // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+      // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+      // redirectUri: "YOUR_REDIRECT_URI",
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
-
 export class AppModule {}
 ```
 
-`app.component.ts`
-
+`embed.component.ts`
 ```js
-import { Component } from '@angular/core';
-import { User, AuthenticationClient } from '@authing/ng-ui-components';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-})
-export class AppComponent {
-  // 替换你的 AppId
-  appId = 'your_appId_at_authing_console';
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
 
-  onLogin([user]: [User, AuthenticationClient]): void {
-    console.log(user);
+@Component({
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
+})
+export class LoginComponent {
+  constructor(private guard: GuardService) {}
+
+  ngOnInit() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.guard.client
+      .start("#authing-guard-container")
+      .then((userInfo: User) => {
+        console.log("userInfo: ", userInfo);
+      });
   }
 }
-```
-
-`app.component.html`
-
-```html
-<guard [appId]="appId" (onLogin)="onLogin($event)"></guard>
 ```

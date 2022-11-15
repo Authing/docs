@@ -1,9 +1,3 @@
-有两种方式可以供你选择：**「安装 Authing library」** 或 **「直接通过浏览器加载」**。
-
-无论使用哪一种安装方式，你都需要用到应用的 `appId` ，请先 [前往控制台获取](https://console.authing.cn)。关于 **APP ID** 所在位置，请参阅 [应用配置](https://docs.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
-
-### 方法一：安装 Authing library
-
 **首先，通过 npm/yarn/cnpm 安装 Authing library.**
 
 推荐使用 npm （稳定版本 v3.1.21）或 yarn，它们能更好的和 [webpack](https://webpack.js.org/) 打包工具进行配合，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
@@ -12,87 +6,51 @@
 运行下列命令行安装 Authing Vue.JS library：
 
 ```sh
-$ yarn add @authing/vue-ui-components
+$ yarn add @authing/guard-vue2
 
 # OR
 
-$ npm install @authing/vue-ui-components --save
+$ npm install @authing/guard-vue2 --save
 ```
 
 **然后，在你的 Vue 应用中完成配置：**
 
+`main.js`
+
+```js
+// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+import Vue from "vue";
+import { GuardPlugin } from "@authing/guard-vue2";
+import "@authing/guard-vue2/dist/esm/guard.min.css";
+
+Vue.use(GuardPlugin, {
+  appId: "AUTHING_APP_ID",
+
+  // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
+  // host: 'https://my-authing-app.example.com',
+
+  // 默认情况下，会使用你在 Authing 控制台中配置的第一个回调地址为此次认证使用的回调地址。
+  // 如果你配置了多个回调地址，也可以手动指定（此地址也需要加入到应用的「登录回调 URL」中）：
+  // redirectUri: "YOUR_REDIRECT_URI"
+});
+
+```
+
+`Embed.vue`
+
 ```vue
 <template>
-  <Guard :appId="appId" @login="onLogin"></Guard>
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
+  <div id="authing-guard-container"></div>
 </template>
-
 <script>
-import { Guard } from "@authing/vue-ui-components";
-
-// 引入 CSS 样式
-import "@authing/vue-ui-components/lib/index.min.css";
-
 export default {
-  components: {
-    Guard,
-  },
-  data: () => ({
-    // 替换你的 AppId
-    appId: "your_appId_at_authing_console",
-  }),
-  methods: {
-    onLogin(userInfo) {
-      console.log(userInfo);
-    },
+  mounted() {
+    // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
+    this.$guard.start("#authing-guard-container").then((userInfo) => {
+      console.log("userInfo: ", userInfo);
+    });
   },
 };
 </script>
 ```
-
-### 方法二：直接通过浏览器加载
-
-**首先，在你的 HTML 文件中使用 script 和 link 标签直接引入文件，并使用全局变量 AuthingVueUIComponents。**
-
-Authing npm 发布包内的 `@authing/vue-components/lib` 目录下提供了 `index.min.css` 以及 `index.min.js`，你可以直接调用，也可以通过 [jsdelivr](https://www.jsdelivr.com/package/npm/@authing/vue-ui-components) 或者 [unpkg](https://unpkg.com/@authing/vue-ui-components/lib/index.min.js) 下载）。
-
-```html
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="utf-8" />
-    <!-- 引入 Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@authing/vue-ui-components/lib/index.min.js"></script>
-
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@authing/vue-ui-components/lib/index.min.css">
-    </link>
-</head>
-
-<body>
-    <div id="app"></div>
-
-    <script>
-        // 这可以替换你的 AppId
-        const appId = 'your_appId_at_authing_console'
-
-        const app = new Vue({
-            el: '#app',
-            render: (h) => h(AuthingVueUIComponents.Guard, {
-                props: {
-                    appId,
-                },
-            }),
-        })
-
-        window.app = app
-
-    </script>
-</body>
-
-</html>
-```
-
-**无论通过哪一种方式，你都可以完成 Authing Guard 在你项目中的安装和初始化。**
