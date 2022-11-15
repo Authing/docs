@@ -6128,7 +6128,6 @@ const translatedZhCnNavBar = {
         },
         {
           title: "Configure password security",
-          path: "/guides/security/pw-security/",
           children: [
             {
               title: "Configure password policy",
