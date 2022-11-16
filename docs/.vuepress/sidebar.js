@@ -252,9 +252,6 @@ const zhCnNavBar = {
       title: "对用户进行权限管理",
       path: "/guides/access-control/",
       children: [
-        {
-          title: "旧版权限管理",
-          children: [
             {
               title: "选择合适的权限模型",
               path: "/guides/access-control/choose-the-right-access-control-model",
@@ -275,11 +272,6 @@ const zhCnNavBar = {
               title: `管理资源权限`,
               path: "/guides/access-control/resource-acl",
             },
-          ],
-        },
-        {
-          title: `新版权限管理`,
-        },
       ],
     },
     {
