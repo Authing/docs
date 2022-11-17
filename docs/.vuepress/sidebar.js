@@ -252,26 +252,26 @@ const zhCnNavBar = {
       title: "对用户进行权限管理",
       path: "/guides/access-control/",
       children: [
-        {
-          title: "选择合适的权限模型",
-          path: "/guides/access-control/choose-the-right-access-control-model",
-        },
-        {
-          title: `集成 RBAC 权限模型到你的应用系统`,
-          path: "/guides/access-control/rbac",
-        },
-        {
-          title: `集成 ABAC 权限模型到你的应用系统`,
-          path: "/guides/access-control/abac",
-        },
-        {
-          title: `使用权限分组管理权限资源`,
-          path: "/guides/access-control/resource-group",
-        },
-        {
-          title: `管理资源权限`,
-          path: "/guides/access-control/resource-acl",
-        },
+            {
+              title: "选择合适的权限模型",
+              path: "/guides/access-control/choose-the-right-access-control-model",
+            },
+            {
+              title: `集成 RBAC 权限模型到你的应用系统`,
+              path: "/guides/access-control/rbac",
+            },
+            {
+              title: `集成 ABAC 权限模型到你的应用系统`,
+              path: "/guides/access-control/abac",
+            },
+            {
+              title: `使用权限分组管理权限资源`,
+              path: "/guides/access-control/resource-group",
+            },
+            {
+              title: `管理资源权限`,
+              path: "/guides/access-control/resource-acl",
+            },
       ],
     },
     {
