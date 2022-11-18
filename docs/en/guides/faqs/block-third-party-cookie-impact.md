@@ -25,7 +25,7 @@ When Ajax cross-domain request Authing API interface is used, for example/cas/se
 
 ## How to solve it?
 
-In addition to using trackSession, you have many other options, such as maintaining the login state of the application yourself instead of relying only on the central authentication server, and [using OIDC](/en/guides/federation/oidc.md) to complete single sign-on, or using [Single Sign-On (SSO)](/en/reference/sdk-for-sso-spa.md) to complete single sign-on.
+In addition to using trackSession, you have many other options, such as maintaining the login state of the application yourself instead of relying only on the central authentication server, and [using OIDC](/en/guides/federation/oidc.md) to complete single sign-on, or using [Single Sign-On (SSO)](/en/reference/sdk-for-sso.md) to complete single sign-on.
 
 If you want to use trackSession, you can change the application domain name into your custom domain name from the perspective of the browser.To configure a custom domain name, please check the [documentation](/en/guides/deployment/custom-domain.md). In this way, the original three-party cookie becomes a one-party cookie. Ajax request sent to Authing domain name and application domain are same-origin, will not trigger the browser&#39;s mechanism to block third-party cookies.
 

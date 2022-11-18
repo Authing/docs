@@ -24,7 +24,7 @@
 
 ![](./images/app-panel3.png)
 
-添加应用后，用户在登录应用 A 之后，访问应用 B 时将会自动登录。更多详情请查看 [实现单点登录（SSO）](/guides/app-new/sso/)指引和 [单点登录 SDK](/reference/sdk-for-sso-spa.md)。
+添加应用后，用户在登录应用 A 之后，访问应用 B 时将会自动登录。更多详情请查看 [实现单点登录（SSO）](/guides/app-new/sso/)指引和 [单点登录 SDK](/reference/sdk-for-sso.md)。
 
 ## 访问在线版的登录表单
 

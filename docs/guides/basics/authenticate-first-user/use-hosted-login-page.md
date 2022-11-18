@@ -159,7 +159,7 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 Authing 提供另外一种简单的前端获取用户信息的方式，无需处理回调或进行其他配置。
 
-详细使用方式请查看 [单点登录（SSO）](/reference/sdk-for-sso-spa.md)。
+详细使用方式请查看 [单点登录（SSO）](/reference/sdk-for-sso.md)。
 
 :::
 

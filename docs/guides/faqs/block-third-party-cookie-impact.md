@@ -27,7 +27,7 @@ Safari 在 13.1 版本中首先引入这个功能，在 2020 年 3 月发布更�
 
 ## 如何解决？
 
-除了使用 trackSession，你还有很多其他选择，例如自行**维护应用的登录态**，而不仅仅依赖于中央认证服务器，以及 [使用 OIDC](/guides/federation/oidc.md) 完成单点登录，或者使用 [单点登录（SSO）](/reference/sdk-for-sso-spa.md) 完成单点登录。
+除了使用 trackSession，你还有很多其他选择，例如自行**维护应用的登录态**，而不仅仅依赖于中央认证服务器，以及 [使用 OIDC](/guides/federation/oidc.md) 完成单点登录，或者使用 [Web SDK](https://docs.authing.cn/v3/reference/sdk/web/) 完成单点登录。
 
 如果希望使用 trackSession，你可以在浏览器的角度上，将应用的域名变成你的自定义域名。配置自定义域名请查看[文档](/guides/deployment/custom-domain.md)。这样一来，原来的三方 Cookie 就变成了一方 Cookie。请求 Authing 的 Ajax 请求域名将与应用域名[同源](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)，不会触发浏览器阻止三方 Cookie 的机制。
 
