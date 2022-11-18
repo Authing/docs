@@ -1138,22 +1138,12 @@ const zhCnNavBar = {
   ],
   "/reference/": [
     {
-      title: 'Authing JavaScript SDK',
-      path: '/reference/authing-js-sdk',
-      children: [
-        {
-          title: "单点登录（SSO）",
-          path: "/reference/sdk-for-sso-spa",
-        },
-        {
-          title: "微信小程序",
-          path: "/reference/sdk-for-weixin-miniapp",
-        },
-        {
-          title: "微信网页授权",
-          path: "/reference/sdk-for-weixin-official-account",
-        }
-      ]
+      title: 'JavaScript SDK 索引',
+      path: '/reference/authing-js-sdk'
+    },
+    {
+      title: "单点登录（SSO）",
+      path: "/reference/sdk-for-sso-spa"
     },
     {
       title: "登录组件 (Guard)",
@@ -1805,6 +1795,14 @@ const zhCnNavBar = {
           path: "/reference/sdk-for-flutter/flutter-changelog",
         },
       ],
+    },
+    {
+      title: "微信小程序",
+      path: "/reference/sdk-for-weixin-miniapp",
+    },
+    {
+      title: "微信网页授权",
+      path: "/reference/sdk-for-weixin-official-account",
     },
     {
       title: "React Native",
