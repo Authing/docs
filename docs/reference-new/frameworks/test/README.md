@@ -460,7 +460,7 @@ export default {
 
 > API 服务器 http://localhost:5000/api/protected 要求 order:read 权限 scope。
 
-恭喜 🎉，到此你学会了在 Vue 单页应用中集成 Authing 认证授权，并调用外部的资源服务器接口。
+恭喜 🎉，到此你学会了在 Vue 单页 Web 应用中集成 Authing 认证授权，并调用外部的资源服务器接口。
 
 ## 接下来你可能需要
 

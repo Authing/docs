@@ -32,7 +32,7 @@ const DATABASE_CONNECTION_MENU_EN = {
 const zhCnNavBar = {
   "/quickstarts/": [
     {
-      title: "单页应用",
+      title: "单页 Web 应用",
       path: "/quickstarts/spa/",
       redirect: "/quickstarts/",
       children: [
@@ -108,15 +108,15 @@ const zhCnNavBar = {
           title: "不同类型应用的接入方式",
           children: [
             {
-              title: `在传统  Web App 中集成 ${BRAND_NAME_ZH_CN}`,
+              title: `在标准 Web 应用 中集成 ${BRAND_NAME_ZH_CN}`,
               path: "/guides/basics/platform-guide/integrate-with-regular-web-app",
             },
             {
-              title: `在单页应用（SPA）中集成 ${BRAND_NAME_ZH_CN}`,
+              title: `在单页 Web 应用中集成 ${BRAND_NAME_ZH_CN}`,
               path: "/guides/basics/platform-guide/integrate-with-spa",
             },
             {
-              title: `在移动端（iOS、Andriod）中集成 ${BRAND_NAME_ZH_CN}`,
+              title: `在客户端应用中集成 ${BRAND_NAME_ZH_CN}`,
               path: "/guides/basics/platform-guide/integrate-with-mobile-app",
             },
             // {
@@ -1874,7 +1874,7 @@ const zhCnNavBar = {
   ],
   "/reference-new/": [
     {
-      title: "单页应用",
+      title: "单页 Web 应用",
       path: "/reference-new/single-page-application/",
       redirect: "/reference-new/single-page-application/native-javascript",
       children: [

@@ -1,4 +1,4 @@
-# 在本地如何联表 {{$localeConfig.brandName}} 用户与你的业务数据
+#  将你的业务数据与 {{$localeConfig.brandName}} 用户联表
 
 <LastUpdated/>
 

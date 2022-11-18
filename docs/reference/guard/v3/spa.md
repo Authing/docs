@@ -1,4 +1,4 @@
-# 将 Guard 接入到单页应用
+# 将 Guard 接入到单页 Web 应用
 
 <LastUpdated />
 
@@ -12,7 +12,7 @@
 
 ## 简介
 
-Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的 SPA（Single Page Application）应用中，一站式处理复杂的用户认证流程。
+Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的单页 Web 应用中，一站式处理复杂的用户认证流程。
 
 准备好你的 SPA 项目，跟随引导将 Authing Guard 接入到你的 SPA 项目中吧！
 
