@@ -59,6 +59,7 @@ export const COMMON_NAME_TO_FANCY_NAME = {
   'native-javascript': 'CDN',
   aliyun: '阿里云',
   253: '创蓝253',
+  tencent: '腾讯云',
   aliyunInt: '阿里云国际',
   mxhichina: "阿里邮箱企业版",
   exmail: '腾讯企业邮箱',

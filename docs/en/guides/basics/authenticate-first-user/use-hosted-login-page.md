@@ -146,7 +146,7 @@ You can extract `id_token` from `url hash`, and then you can get user informatio
 
 Authing provides another simple way for the front end to get user information without dealing with callbacks or other configuration.
 
-Please check the [Single Sign-On (SSO)](/en/reference/sdk-for-sso-spa.md) for detailed usage.
+Please check the [Single Sign-On (SSO)](/en/reference/sdk-for-sso.md) for detailed usage.
 
 :::
 

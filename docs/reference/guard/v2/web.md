@@ -1496,7 +1496,7 @@ function showGuard() {
 
 之后在初始化 Authing Guard 时，需要将 `isSSO` 设置为 `true`。
 
-具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。
+具体详情请参考：[单点登录（SSO）](https://docs.authing.co/v2/reference/sdk-for-sso.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。
 
 :::: tabs :options="{ useUrlFragment: false }"
 

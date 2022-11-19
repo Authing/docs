@@ -21,12 +21,6 @@ Authing Web SDK 目前支持的功能如下：
 
 除此之外，Authing Web SDK 未来将陆续从 [authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 中迁移所有可在浏览器中运行的 Authing 大部分认证类功能，并集成 Authing 最新的 V3 版认证类 API，为用户提供更好的使用体验。
 
-## 什么是单点登录
-
-我们通过一个例子来说明，假设有一所大学，内部有两个系统，一个是邮箱系统，一个是课表查询系统。现在想实现这样的效果：在邮箱系统中登录一遍，然后此时进入课表系统的网站，无需再次登录，课表网站系统直接跳转到个人课表页面，反之亦然。比较专业的定义如下：
-
-**[单点登录](/guides/app-new/sso/)**（Single Sign On），简称为 **[SSO](/guides/app-new/sso/)**，是目前比较流行的企业业务整合的解决方案之一。 [SSO](/guides/app-new/sso/) 的定义是在多个应用系统中，**用户只需要登录一次**就可以**访问所有**相互信任的应用系统。
-
 ## 第一步：创建自建应用
 
 ::: hint-info
