@@ -97,7 +97,7 @@ applicationSdks:
       - flutter
       - reactNative
       - cSharp
-  - title: 单页应用
+  - title: 单页 Web 应用
     description: 只有单个页面的纯前端网页应用
     color: "#75A3FF"
     sdks:

@@ -17,7 +17,7 @@
             unLanguage: []
         },
         {
-            title: '单页应用',
+            title: '单页 Web 应用',
             description: '只有单个页面的纯前端网页应用',
             icon: 'authing-danye',
             link: 'quickstarts/spa',

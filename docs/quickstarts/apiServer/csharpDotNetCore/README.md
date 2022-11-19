@@ -291,9 +291,9 @@ dotnet run
 
 ### 获取 Access token
 
-在发起 API 调用之前，需要**先获取 Access token**。如果你在单页应用或移动端应用中完成登录，会得到一个 Access token，可以携带这个 Access token 调用 API。详情请查看：
+在发起 API 调用之前，需要**先获取 Access token**。如果你在单页 Web 应用或客户端应用中完成登录，会得到一个 Access token，可以携带这个 Access token 调用 API。详情请查看：
 
-- [React 单页应用快速开始](../../spa/react.md#调用资源-api)
+- [React 单页 Web 应用快速开始](../../spa/react.md#调用资源-api)
 
 如果你要在命令行工具或其他服务端应用请求 API 端点，你需要使用上文提到的 AK、SK 密钥对，通过 OIDC Client Credentials 模式获取 Access token。以下是获取 token 的方式：
 
@@ -355,6 +355,6 @@ token2 解析内容
 ::: page-ref /guides/faqs/how-to-validate-user-token.md
 :::
 
-在 React 单页应用调用 API：
+在 React 单页 Web 应用调用 API：
 ::: page-ref /quickstarts/spa/react.md
 :::

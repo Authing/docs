@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的 SPA（Single Page Application）应用中，一站式处理复杂的用户认证流程。
+Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入在你任何的单页 Web 应用中，一站式处理复杂的用户认证流程。
 
 准备好你的 React 项目，跟随引导将 Authing Guard 接入到你的 React 项目中吧！
 

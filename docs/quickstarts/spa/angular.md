@@ -780,7 +780,7 @@ export class AppComponent {
 ```
 
 
-恭喜 🎉，到此你学会了在 Angular 单页应用中集成 Authing 认证授权，并调用外部的资源服务器接口。
+恭喜 🎉，到此你学会了在 Angular 单页 Web 应用中集成 Authing 认证授权，并调用外部的资源服务器接口。
 
 ## 接下来你可能需要
 

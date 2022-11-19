@@ -1,4 +1,4 @@
-# 在传统 Web App 中集成 {{$localeConfig.brandName}}
+# 在标准 Web 应用中集成 {{$localeConfig.brandName}}
 
 <LastUpdated/>
 
