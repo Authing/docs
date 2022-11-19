@@ -40,4 +40,4 @@
 
 ## 使用 SDK 接入单点登录
 
-详细的接入流程请见 [单点登录 SDK](/reference/sdk-for-sso.md) 文档。
+详细的接入流程请见 [单点登录 SDK](https://docs.authing.cn/v3/reference/sdk/web/) 文档。
