@@ -2,58 +2,59 @@
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} 托管登录页是最简单、安全的集成方式。这是因为登录流程由 {{$localeConfig.brandName}} 维护，并由 {{$localeConfig.brandName}} 保证安全。对于应用集成，建议使用 {{$localeConfig.brandName}} 托管的登录流程。你的业务系统将用户重定向到 {{$localeConfig.brandName}} 登录页，在此用户进行身份验证，然后重定向回在控制台配置的应用回调连接。此设计被认为是安全性最佳实践。在自定义配置方面，托管模式提供了登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
+{{$localeConfig.brandName}} 托管登录页是最简单、安全的集成方式。这是因为登录流程由 {{$localeConfig.brandName}} 维护，并由 {{$localeConfig.brandName}} 保证安全。对于应用集成，建议使用 {{$localeConfig.brandName}} 托管的登录流程。你的业务系统将用户重定向到 {{$localeConfig.brandName}} 登录页，在此用户进行身份验证，然后重定向回在控制台配置的应用登录回调 URL。此设计被认为是安全性最佳实践。在自定义配置方面，托管模式提供了登录注册表单自定义配置，可通过控制台配置和 CSS 进行界面自定义。
 
-本文档将会介绍如何使用 {{$localeConfig.brandName}} 托管的登录页快速实现一个完整的用户认证流程。
+本文档将会介绍如何使用 {{$localeConfig.brandName}} 托管登录页快速实现一个完整的用户认证流程。
 
-## 创建一个用户池
+## 第一步：创建一个用户池
 
-[用户池](/concepts/user-pool.md) 是你用户系统的隔离的最小单位，你可以把不同场景的用户划分在不同的用户池。每个用户池下都可以有用户和应用程序，不同用户池之间的权限、应用、组织是完全隔离的。
+[用户池](/concepts/user-pool.md) 是你用户系统隔离的最小单位，你可以把不同场景的用户划分在不同的用户池。每个用户池下都可以有用户和应用程序，不同用户池之间的权限、应用、组织是完全隔离的。
 
-如果你还没有 {{$localeConfig.brandName}} 开发者账号，你需要先在[控制台](https://console.authing.cn)注册一个 {{$localeConfig.brandName}} 开发者账号。注册完成之后，会引导你创建自己的用户池。
+* 如果你还没有 {{$localeConfig.brandName}} 开发者账号，你需要先在 [控制台](https://console.authing.cn) 注册一个 {{$localeConfig.brandName}} 开发者账号。注册完成之后，会引导你创建自己的用户池。
 
-如果你已经有账号，想再创建一个用户池，可以点击左侧导航栏最上方的按钮：
+* 如果你已经有账号，想再创建一个用户池，可以点击左侧导航栏最上方的下拉按钮：
+  
+  <img src="./images/create-userpool-3.png" height=360 style="display:block;margin: 0 auto;">
+  
+  选择用户池类型：
+  
+  <img src="./images/select-trial-userpool.png" height=480 style="display:block;margin: 0 auto;">
 
-<img src="./images/create-userpool-3.png" height=360 style="display:block;margin: 0 auto;">
+有关创建用户池详情，请参阅 [新老用户如何创建用户池](/guides/basics/trial/admin.md#新用户开通体验期)。
 
-选择用户池类型：
+## 第二步：创建一个应用
 
-<img src="./images/select-trial-userpool.png" height=480 style="display:block;margin: 0 auto;">
-
-有关创建用户池详情，请参阅 [新老用户如何创建用户池](/guides/basics/trial/admin.md)。
-
-## 创建一个应用
-
-在控制台 **自建应用** 页，你可以查看自己的应用列表：
+在控制台 **应用->自建应用** 页，你可以查看自己的应用列表：
 
 ![](./images/app-list.png)
+
+有关创建和配置自建应用详情，请参阅 [自建应用综述](/guides/app-new/create-app/README.md) 。
 
 应用创建成功后，点击右侧的 **体验登录** 按钮体验登录该应用：
 
 ![](./images/try-login.png)
 
-在弹出的新窗口中，你可以看到这个由 [{{$localeConfig.brandName}} 托管的在线登录页](https://custom-domain.authing.cn/login)，该登录页集成了登录、注册、忘记密码、社交登录、MFA 等功能：
+在弹出的新窗口中，你可以看到这个 [{{$localeConfig.brandName}} 托管在线登录页](https://custom-domain.authing.cn/login)，该登录页集成了登录、注册、忘记密码、社交登录、MFA 等功能：
 
 <img src="./images/login-page.png" height=500 style="display:block;margin: 0 auto;">
 
 有关创建和配置应用详情，请参阅 [自建应用综述](/guides/app-new/create-app/)。
 
-## 创建一个用户
+## 第三步：创建一个用户
 
 点击 **立即注册**，选择 **密码注册**，输入邮箱和密码，再次确认密码，勾选同意隐私和服务条款后，点击 **注册** 按钮。
 
-
 <img src="./images/register.png" height=500 style="display:block;margin: 0 auto;">
 
-注册成功之后，你可以在控制台的 [用户列表](控制台 **用户管理** 菜单下) 页看到该用户。
+注册成功之后，你可以在控制台的 **用户列表** 页（控制台 **用户管理** 菜单下）看到该用户。
 
-## 体验登录
+## 第四步：体验登录
 
 回到登录页面，输入刚刚创建账号的邮箱和密码，点击 **登录**，登录成功之后，你将跳转到一个回调指引页面（在这个页面你可以查看后续详细的指引流程以及最佳实践，建议完整阅读一遍），你可以看到在 URL 中包含了 `code` 查询参数，我们下一步会用此 `code` 换取 `token`。
 
 ![](./images/success-callback.png)
 
-## 使用 code 换取 token
+## 第五步：使用 Code 换取 Token
 
 在实际应用中，你需要 **修改回调地址为实际业务地址**，该地址需要为一个后端地址。
 
@@ -137,7 +138,7 @@ console.log(token2UserInfoResponse.data);
 
 ### 无后端场景该如何处理？
 
-前面提到的 `code 换 token` 需要在后端完成，如果你属于无后端场景，可以使用以下两种模式：
+前面提到的 `Code 换 Token` 需要在后端完成，如果你属于无后端场景，可以使用以下两种模式：
 
 #### 使用 OIDC implicit 模式
 
@@ -153,7 +154,7 @@ GET https://sample-app.authing.cn/oidc/auth?client_id=AUTHING_APP_ID&redirect_ur
 https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJub25jZSI6IjE4MzEyODkiLCJzaWQiOiI4YzgzN2I5My01OTNlLTQzZjctYWMzNC0yYjRmZDU3ZGFhMTciLCJhdF9oYXNoIjoiVFFtbFlEVTVPZGF1Zjl0U0VKdHY5USIsInNfaGFzaCI6Ind3SDNXclV2b0hiSUp5TWVZVHU4bHciLCJhdWQiOiI1ZDAxZTM4OTk4NWY4MWM2YzFkZDMxZGUiLCJleHAiOjE1NjA0MDkzNjgsImlhdCI6MTU2MDQwNTc2OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5hdXRoaW5nLmNuL29hdXRoL29pZGMifQ.T9M0s6rk4Teq6VOOBRIElgHK9KyM3q0ZJj2aS0VD_Fw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OE9XcVJNVXJEUXpMMXpHVzVtUWoiLCJzdWIiOiI1Y2QwMjZlZjNlZDlmOTRkODBmZTM2YWUiLCJpc3MiOiJodHRwczovL29hdXRoLmF1dGhpbmcuY24vb2F1dGgvb2lkYyIsImlhdCI6MTU2MDQwNTc2OCwiZXhwIjoxNTYwNDA5MzY4LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiYXVkIjoiNWQwMWUzODk5ODVmODFjNmMxZGQzMWRlIn0.mR0MZDwlZWGRMsAZjQ27sDFFqYoDgZ6WHTK4C7JbML4&expires_in=3600&token_type=Bearer&state=jazz&session_state=26ec053be9f47d68dc430f84b97efb1095469fe10169a9e00ef4092718714b8b
 ```
 
-你可以从 `url hash` 中取出 `id_token`，然后可以通过解码 `id_token` 获取用户信息，详情请见 [验证用户身份凭证（token）](/guides/faqs/how-to-validate-user-token.md)。
+你可以从 `url hash` 中取出 `id_token`，然后可以通过解码 `id_token` 获取用户信息。详情请见 [如何验证用户身份凭证（token）](/guides/faqs/how-to-validate-user-token.md)。
 
 #### 使用 Authing Browser SDK
 
@@ -165,7 +166,7 @@ Authing 提供另外一种简单的前端获取用户信息的方式，无需处
 
 ## 访问个人中心
 
-在 {{$localeConfig.brandName}} 中创建的每个应用都有一个内置的给终端用户的个人中心页，<span v-pre>地址为 `{YOUR_APP_DOMAIN}/u`</span>，如 `https://sample-app.authing.cn/u`，你可以通过浏览器直接访问该地址：
+在 {{$localeConfig.brandName}} 中创建的每个应用都有一个内置的给终端用户的个人中心页，<span v-pre>地址为 `{YOUR_APP_DOMAIN}/u`</span>，如「https://sample-app.authing.cn/u」，你可以通过浏览器直接访问该地址。
 
 ![](./images/personal-center.png)
 

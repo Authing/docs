@@ -1,28 +1,32 @@
 # 示例：基于 Authing 开发一个叫做 Uthing 的 SaaS 应用
 
-
-
-让我们把 Uthing 作为一个需要实现多租户功能的 SaaS 应用，你可以亲自动手来体验 Authing 的多租户功能。以下操作需要一定的技术基础，如果你想直接体验完成后的效果，请在阅读完本文后到文章最后部分直接利用我们提供的[测试账号](#idTest)开始体验。
-
-
+让我们把 Uthing 作为一个需要实现多租户功能的 SaaS 应用，你可以亲自动手来体验 Authing 的多租户功能。以下操作需要一定的技术基础。如果你想直接体验完成后的效果，请在阅读完本文后到文章最后部分直接利用我们提供的 [测试账号](#idTest) 开始体验。
 
 ![](./images/demo1-main.png)
 
 ## 在本地运行示例应用
 
-你可以在[代码](https://github.com/Authing/demo-multi-tenant-with-authing) 克隆代码到本地部署 Uthing。代码 clone 完成后，首先你需要到 `client` 和 `server` 分别执行 `npm install` 安装依赖。然后到 Authing 控制台新建一个应用，在应用详情中找到「租户配置」，将「哪类用户可以访问此应用」改为**全部。**
+::: hint-info
+在安装 node.js 时,建议使用 V18 或以下版本！
+:::
+
+1. 你可以在 [代码](https://github.com/Authing/demo-multi-tenant-with-authing) 克隆代码到本地部署 Uthing。
+
+2. 代码 clone 完成后，首先你需要到 `client` 和 `server` 分别执行 `npm install` 安装依赖。
+
+3. 然后到 {{$localeConfig.brandName}} 控制台新建一个应用，在应用详情中找到 **租户配置**，在 **哪类用户可以访问此应用** 选择 **全部**。
 
 ![](./images/demo2-tennatConfig.png)
 
-在应用配置中找到应用 ID 、密钥和应用域名
+4. 在应用配置中找到应用 ID 、密钥和应用域名。
 
 ![](./images/demo-appInfo.png)
 
-在用户池设置中找到用户池 ID 和密钥
+5. 在用户池设置中找到用户池 ID 和密钥。
 
 ![](./images/demo-userpoolInfo.png)
 
-粘贴到项目的`server/config.js` 
+6. 粘贴到项目的 `server/config.js`。
 
 ![](./images/demo-serverConfig.png)
 
@@ -30,19 +34,15 @@
 
 ![](./images/demo-clientconfig.png)
 
-然后打开终端，在 `server` 目录中执行 `npm run start`，打开另一个终端，在 `client` 目录下执行 `npm run start` ，在浏览器打开 `http://localhost:3007` 就能看到 Uthing 界面。
+7. 然后打开终端，在 `server` 目录中执行 `npm run start`，打开另一个终端，在 `client` 目录下执行 `npm run start` ，在浏览器打开 `http://localhost:3007` 就能看到 Uthing 界面。
 
 ![](./images/demo1-main.png)
-
-
 
 ## 在 Uthing 中注册一个企业（租户）
 
 点击首页头部「登录」按钮，进入登录界面，点击「立即注册」。 
 
 ![](./images/demo-loginpage.png)
-
-
 
 输入一个邮箱和密码，注册账号，注册完成回到登录界面，输入邮箱密码，点击「登录」，即可进入到选择企业界面，由于是新账号，没有可选择的企业，所以你可以选择在 Uthing 中创建一个企业。点击「创建」按钮。
 
@@ -66,29 +66,15 @@
 
 ![](./images/demo-addmember.png)
 
-
-
-
-
 输入用户名邮箱等信息点击确定，即可添加成员。
-
-
 
 ![](./images/demo-addmemeberinfo.png)
 
-
-
 此时在 Uthing 成员列表和 Authing 租户成员列表中都可看到此用户。
-
-
 
 <img src="./images/demo-memberlist.png">
 
-
-
 ![](./images/demo-memberlist2.png)
-
-
 
 ## 为企业设置登录框样式
 
@@ -116,8 +102,6 @@
 
 不同的企业在 Uthing 添加的身份源是相互隔离的，上面演示了租户 A 如何添加身份源，如果另一个租户 B 同样添加了 GitLab 身份源，他们是互不影响的。
 
-
-
 ## <span id="idTest" >直接开始体验</span>
 
 你可以使用以下账号和密码在 [Authing 官网](https://www.authing.cn/) 登录具备多租户功能的控制台，登录后可以看到我们已经在**应用**中集成好了 Uthing。
@@ -126,8 +110,6 @@
 账号：tenant-demo@authing.cn
 密码：Authing!
 ```
-
-
 
 ![](./images/demo-uthingapp.png)
 
