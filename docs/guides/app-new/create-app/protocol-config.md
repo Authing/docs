@@ -118,7 +118,7 @@ Authing 的所有自建应用默认基于 OIDC 协议进行认证和授权。如
 
 创建自建应用后，找到「协议配置」功能区：
 
-![Untitled](../images/protocol-config1.png)
+![Untitled](../images/protocol-config2.png)
 
 ### 第二步: 完成协议配置
 
@@ -168,4 +168,4 @@ Authing 的所有自建应用默认基于 OIDC 协议进行认证和授权。如
 
 完成配置后，如果你直接使用托管登录页，那么你可以直接在「默认协议类型」中切换至你新配置的协议类型：
 
-![协议配置2](../images/protocol-config2.png)
+![协议配置2](../images/protocol-config1.png)
