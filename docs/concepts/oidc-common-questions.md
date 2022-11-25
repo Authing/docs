@@ -62,7 +62,7 @@ OIDC 的全称是 OpenID Connect，是一个基于 OAuth 2.0 的轻量级认证 
 | external_id | 用户在原有系统的用户 ID |
 | extended_fields           | 用户的扩展字段信息，内容为一个对象，key 为扩展字段名，value 为扩展字段值      |
 
-
+以上为 Authing 默认支持的 Scope，你也可以在应用的[「协议配置」](/guides/app-new/create-app/protocol-config.md)功能区中进行[「自定义 OIDC Scope」](/guides/app-new/create-app/oidc-scope.md)的配置。
 
 ## OIDC 用户信息字段含义
 
