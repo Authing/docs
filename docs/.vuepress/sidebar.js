@@ -455,6 +455,32 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/app-configuration",
             },
             {
+              title:"协议配置",
+              path: "/guides/app-new/create-app/protocol-config",
+              children:[
+                {
+                  title: "配置 OIDC 协议",
+                  path: "/guides/federation/oidc",
+                },
+                {
+                  title: "自定义 OIDC Scope",
+                  path: "/guides/app-new/create-app/oidc-scope",
+                },
+                {
+                  title: "配置 OAuth 协议",
+                  path: "/guides/federation/oauth",
+                },
+                {
+                  title: "配置 SAML 协议",
+                  path: "/guides/federation/saml",
+                },
+                {
+                  title: "配置 CAS 协议",
+                  path: "/guides/federation/cas",
+                }
+              ]
+            },
+            {
               title: "登录控制",
               path: "/guides/app-new/create-app/login-control",
             },
