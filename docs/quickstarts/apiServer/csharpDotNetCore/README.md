@@ -15,7 +15,7 @@ downloadDemo:
 本教程会引导你使用 Authing 保护你的应用 API 端点。
 
 环境要求：
-- DotNet SDK 版本 3.1，5.0+
+- .Net Core 3.1
 
 ## 配置 Authing
 

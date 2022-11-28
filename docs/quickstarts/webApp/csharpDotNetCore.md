@@ -14,7 +14,7 @@ downloadDemo:
 
 本教程讲述在 .Net Core 框架下处理用户登录、检查登录状态、获取用户信息、登出的方式。
 
-环境要求：**.Net SDK 3.1，5.0+**，**VS Code**
+环境要求：**.Net SDK 3.1，visual studio 2019**
 
 ## 配置 Authing
 
@@ -86,14 +86,14 @@ dotnet new WebApi -n AuthingWebApi
 
 ### 添加 Authing.ApiClient
 
-接下来需要添加 [Authing.ApiClient](https://www.nuget.org/packages/Authing.ApiClient/)
+接下来需要添加 [Authing.Library](https://www.nuget.org/packages/Authing.Library)
 
 ```bash
 # 可以访问 nuget 地址使用最新版本 SDK，SDK 持续更新中，文档写时使用版本如下
-dotnet add package Authing.ApiClient --version {LATEST_VERSION}
+dotnet add package Authing.Library --version {LATEST_VERSION}
 ```
 
-注意检查最新版本号，格式如：`4.2.4.12`。
+注意检查最新版本号，格式如：`0.0.32`。
 
 之后在 `StartUp.cs` 中完成初始化，并作为单例注册到容器中去，同时为了方便常见 `HttpException` 的抛出，注册使用 [Opw.HttpExceptions.AspNetCore](https://www.nuget.org/packages/Opw.HttpExceptions.AspNetCore/)
 
@@ -107,11 +107,9 @@ public void ConfigureServices(IServiceCollection services)
     var authenticationClient = new AuthenticationClient(options =>
     {
         options.AppId = Configuration["Authing.Config:AppId"];
-        options.Host = Configuration["Authing.Config:AppHost"];
+        options.AppHost = Configuration["Authing.Config:AppHost"];
         options.Secret = Configuration["Authing.Config:Secret"];
         options.RedirectUri = Configuration["Authing.Config:RedirectUri"];
-        options.TokenEndPointAuthMethod = TokenEndPointAuthMethod.CLIENT_SECRET_POST;
-        options.Protocol = Protocol.OIDC;
     });
     // 将 authenticationClient 注册为单例，并加入容器中去
     services.AddSingleton(typeof(AuthenticationClient), authenticationClient);
@@ -188,18 +186,17 @@ public class AuthController : ControllerBase
     /// <returns>string</returns>
     [HttpGet]
     [Route("login")]
-    public string GetLoginUrl()
+    public Task<RedirectResult> GetLoginUrl()
     {
         // 配置 OIDC 相关信息
         var oauthOption = new OidcOption
         {
             AppId = _configuration["Authing.Config:AppId"],
-            RedirectUri = _configuration["Authing.Config:RedirectUri"],
-            State = "state",
+            RedirectUri = _configuration["Authing.Config:RedirectUri"]
         };
         // 生成对应的 loginUrl
         var loginUri = _authenticationClient.BuildAuthorizeUrl(oauthOption);
-        return loginUri;
+        return Redirect(loginUri);
     }
 }
 ```
@@ -314,6 +311,7 @@ public class AuthController : ControllerBase
         }
         // 将 userInfo 存储到 Session 中
         HttpContext.Session.Set("user", userInfo);
+        HttpContext.Session.Set("useridtoken", tokenInfo.IdToken);
         return Redirect("/auth/profile");
     }
 }
@@ -351,9 +349,9 @@ public class AuthController : ControllerBase
         var url = _authenticationClient.BuildLogoutUrl(new LogoutParams
         {
             Expert = true,
-            IdToken = HttpContext.Session.Get<User>("user")?.Token,
+            IdToken = HttpContext.Session.GetString("useridtoken").Trim('"'),
             // 跳转 url 可以自定义，当用户登出成功时将跳转到这个地址，此处默认为 "http://localhost:5000"
-            RedirectUri = "http://localhost:5000",
+            RedirectUri = "http://localhost:5000/auth/login",
         });
         // 清除 Session 中的用户信息
         HttpContext.Session.Clear();
