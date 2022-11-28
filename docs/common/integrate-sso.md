@@ -644,14 +644,10 @@ const params: {
   // 回调登录 URL，默认为初始化参数中的 redirectUri
   redirectUri?: string;
 
-  // 发起登录的 URL，若实例化 Authing 时设置了 redirectToOriginalUri， 会在登录结束后重定向回到此页面，默认为当前 URL
-  originalUri?: string;
-
   // 即使在用户已登录时也强制用户再次登录，默认为 false
   forced?: boolean;
 } = {
   redirectUri: 'YOUR_REDIRECT_URL',
-  originalUri: 'YOUR_ORIGINAL_URL',
   forced: true
 }
 
@@ -666,9 +662,6 @@ export default {
     login() {
       const params = {
         redirectUri: 'YOUR_REDIRECT_URL',
-
-        // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
-        originalUri: 'YOUR_ORIGINAL_URL',
 
         // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true
@@ -688,9 +681,6 @@ export default {
     const login = () => {
       const params = {
         redirectUri: 'YOUR_REDIRECT_URL',
-
-        // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
-        originalUri: 'YOUR_ORIGINAL_URL',
 
         // 即使在用户已登录时也强制用户再次登录，默认为 false
         forced: true
@@ -715,14 +705,10 @@ export class AppComponent {
       // 回调登录 URL，默认为初始化参数中的 redirectUri
       redirectUri?: string;
 
-      // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
-      originalUri?: string;
-
       // 即使在用户已登录时也强制用户再次登录，默认为 false
       forced?: boolean
     } = {
       redirectUri: 'YOUR_REDIRECT_URL',
-      originalUri: 'YOUR_ORIGINAL_URL',
       forced: true
     }
 
@@ -736,9 +722,6 @@ export class AppComponent {
 ``` javascript
 const params = {
   redirectUri: 'YOUR_REDIRECT_URL',
-
-  // 发起登录的 URL，若设置了 redirectToOriginalUri 会在登录结束后重定向回到此页面，默认为当前 URL
-  originalUri: 'YOUR_ORIGINAL_URL',
 
   // 即使在用户已登录时也强制用户再次登录，默认为 false
   forced: true
