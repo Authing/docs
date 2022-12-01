@@ -4,7 +4,9 @@
 
 1. Go to this page to download [Alipay Android SDK](https://opendocs.alipay.com/open/54/104509)
 
->Alipay put Android、iOS SDK, as well as Demo into one single folder. Locate Android SDK inside this folder and copy it to app's libs folder
+:::hint-info
+Alipay put Android、iOS SDK, as well as Demo into one single folder. Locate Android SDK inside this folder and copy it to app's libs folder.
+:::
 
 2. Add dependency：
 ```groovy
@@ -14,8 +16,8 @@ implementation files('libs/alipaysdk.aar')
 
 3. Init Authing upon App startup. e.g. Application's onCreate:
 ```java
-// appId is Authing app id which can be obtained at Authing console
-Authing.init(context, appId);
+// AUTHING_APP_ID is Authing app id which can be obtained at Authing console
+Authing.init(context, “AUTHING_APP_ID”);
 ```
 
 Next, we recommend to use our UI component, all you need to do is 'place' it on the layout xml where you think appropriate, you can also create an instance of this component via code:
@@ -47,7 +49,8 @@ button.setOnLoginListener((ok, data) -> {
 In case you don't want to use our UI component, you can have your own Button, and then inside your Button's onClick event, you can start alipay authentication and handle callback event like this:
 
 ```java
-Alipay.login(appContext, ((ok, data) -> {
+Alipay alipay = new Alipy();
+alipay.login(appContext, ((ok, data) -> {
     if (ok) {
         // login success, data is user info
     } else {
@@ -64,7 +67,7 @@ public static void loginByAlipay(String authCode, @NotNull AuthCallback<UserInfo
 
 **param**
 
-* *authCode* auth code from alipay
+* *`authCode`* auth code from alipay
 
 **example**
 
@@ -75,3 +78,7 @@ AuthClient.loginByAlipay(authCode, (code, message, userInfo)->{
     }
 });
 ```
+
+`userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.), if you want to get `accessToken`  and `refreshToken`, you need to call
+
+ `Authing.init(context, "AUTHING_APP_ID")`  after you call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`.
