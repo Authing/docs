@@ -127,3 +127,7 @@ AuthClient.loginByWechat(authCode, (code, message, userInfo)->{
     }
 });
 ```
+
+`userInfo` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等），如果你想获取到 `accessToken` 和 `refreshToken`，需要在调用
+
+`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC);`
