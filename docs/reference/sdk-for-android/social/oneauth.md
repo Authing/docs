@@ -68,11 +68,17 @@ button.setOnLoginListener((ok, data) -> {
 * 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 一键登录登录 API：
 
 ```java
-new oneClick(this).start("your_yidun_business_id", null, ((code, message, userInfo) -> {
-    if (code == 200) {
-        // userInfo：用户信息
+OneClick onClick = new OneClick(appContext);
+onClick.start("your_yidun_business_id", null, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息
+    		} else {
+        	// 登录失败
+    		}
     }
-}));
+});
 ```
 
 <br>
@@ -85,14 +91,22 @@ UnifyUiConfig config = new UnifyUiConfig.Builder()
                 .build(this);
 new OneClick(this).start("your_yidun_business_id", config, ((code, message, userInfo) -> {
     if (code == 200) {
-        // userInfo：用户信息
+       // 登录成功，data 是用户信息
+    } else {
+       // 登录失败
     }
 }));
 ```
 
+`data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
+
+当你使用组件 `OneClickAuthButton`  或者登录授权类  `OneClick`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
+
+`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
+
 <br>
 
-- 若想基于易盾自己实现一键登录流程，在拿到 token 和 access token 后，可以调用：
+- 若想基于易盾自己实现一键登录流程，在拿到 `token` 和 `access token` 后，可以调用：
 
 ```java
 public static void loginByOneAuth(String token, String accessToken, @NotNull AuthCallback<UserInfo> callback)
@@ -105,10 +119,34 @@ public static void loginByOneAuth(String token, String accessToken, @NotNull Aut
 
 **示例**
 
+如果你只需要获取到用户信息（`用户名`、`昵称`、`姓名`等）和 `idToken`，调用：
+
 ```java
-AuthClient.loginByOneAuth(token, accessToken, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
+AuthClient.loginByOneAuth(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken。
+    		} else {
+        	// 登录失败
+    		}
     }
 });
 ```
+
+如果你需要获取到用户信息（`用户名`、`昵称`、`姓名`等）、`idToken`、`accessToken` 和 `refreshToken`，调用：
+
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByOneAuth(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+    		} else {
+        	// 登录失败
+    		}
+    }
+});
+```
+

@@ -63,29 +63,41 @@ Authing.init(context, "AUTHING_APP_ID");
 
 ```java
 WeComLoginButton button = findViewById(R.id.btn_wecom_login);
-button.setOnLoginListener((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息，里面有 accessToken
-    } else {
-        // 登录失败
+button.setOnLoginListener(new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+        	// 登录成功，data 是用户信息
+       	} else {
+        	// 登录失败
+      	}
     }
 });
 ```
 
 <br>
 
-- 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录 API：
+- 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录授权类：
 
 ```java
 WeCom weCom = new WeCom();
-weCom.login(appContext, ((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息，里面有 accessToken
-    } else {
-        // 登录失败
+weCom.login(appContext, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息
+    		} else {
+        	// 登录失败
+    		}
     }
-}));
+});
 ```
+
+`data` 包含用户信息（`用户名`、`昵称`、`姓名`等）以及 `idToken`。
+
+当你使用组件 `WeComLoginButton`  或者登录授权类 `WeCom`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
+
+`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 <br>
 
@@ -98,14 +110,37 @@ public static void loginByWecom(String authCode, @NotNull AuthCallback<UserInfo>
 
 **参数**
 
-- *`authCode`*  企业微信授权码
+*`authCode`*  企业微信授权码
 
 **示例**
 
+如果你只需要获取到用户信息（`用户名`、`昵称`、`姓名`等）和 `idToken`，调用：
+
 ```java
-AuthClient.loginByWecom(authCode, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
+AuthClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken。
+    		} else {
+        	// 登录失败
+    		}
+    }
+});
+```
+
+如果你需要获取到用户信息（`用户名`、`昵称`、`姓名`等）、`idToken`、`accessToken` 和 `refreshToken`，调用：
+
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+    		} else {
+        	// 登录失败
+    		}
     }
 });
 ```
