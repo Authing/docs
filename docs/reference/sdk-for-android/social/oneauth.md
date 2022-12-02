@@ -72,11 +72,11 @@ OneClick onClick = new OneClick(appContext);
 onClick.start("your_yidun_business_id", null, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+            // 登录成功，data 是用户信息
+        } else {
+            // 登录失败
+        }
     }
 });
 ```
@@ -125,11 +125,11 @@ public static void loginByOneAuth(String token, String accessToken, @NotNull Aut
 AuthClient.loginByOneAuth(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息, 包含 idToken。
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+            // 登录成功，data 是用户信息, 包含 idToken。
+        } else {
+            // 登录失败
+        }
     }
 });
 ```
@@ -141,11 +141,11 @@ OIDCClient oidcClient = new OIDCClient();
 oidcClient.loginByOneAuth(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+            // 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+        } else {
+            // 登录失败
+        }
     }
 });
 ```

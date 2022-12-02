@@ -79,11 +79,11 @@ Alipay alipay = new Alipy();
 alipay.login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+          // 登录成功，data 是用户信息
+        } else {
+          // 登录失败
+        }
     }
 });
 ```
@@ -113,11 +113,11 @@ public static void loginByAlipay(String authCode, @NotNull AuthCallback<UserInfo
 AuthClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息, 包含 idToken。
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+          // 登录成功，data 是用户信息, 包含 idToken。
+        } else {
+          // 登录失败
+        }
     }
 });
 ```
@@ -129,11 +129,11 @@ OIDCClient oidcClient = new OIDCClient();
 oidcClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
-    		} else {
-        	// 登录失败
-    		}
+        if (code == 200) {
+          // 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+        } else {
+          // 登录失败
+        }
     }
 });
 ```

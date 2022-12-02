@@ -131,11 +131,11 @@ Wechat wechat = new Wechat();
 wechat.login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	 // login success, data is user info.
-    		} else {
-        	// login fail
-    		}
+        if (code == 200) {
+           // login success, data is user info.
+        } else {
+          // login fail
+        }
     }
 });
 ```
@@ -167,11 +167,11 @@ If all you need is access to user information (`username`, `nickname`, `name`, e
 AuthClient.loginByWechat(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// login success, data is user info, contains idToken.
-    		} else {
-        	// login fail
-    		}
+        if (code == 200) {
+          // login success, data is user info, contains idToken.
+        } else {
+          // login fail
+        }
     }
 });
 ```
@@ -183,11 +183,11 @@ OIDCClient oidcClient = new OIDCClient();
 oidcClient.loginByWechat(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
-				if (code == 200) {
-        	// ogin success, data is user info, contains idToken、accessToken and refreshToken.
-    		} else {
-        	// login fail
-    		}
+        if (code == 200) {
+          // ogin success, data is user info, contains idToken、accessToken and refreshToken.
+        } else {
+          // login fail
+        }
     }
 });
 ```
