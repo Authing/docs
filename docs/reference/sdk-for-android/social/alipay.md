@@ -57,11 +57,14 @@ Authing.init(context, "AUTHING_APP_ID");
 
 ```java
 AlipayLoginButton button = findViewById(R.id.btn_alipay_login);
-button.setOnLoginListener((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息
-    } else {
-        // 登录失败
+button.setOnLoginListener(new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+        	// 登录成功，data 是用户信息
+       	} else {
+        	// 登录失败
+      	}
     }
 });
 ```
@@ -73,14 +76,23 @@ button.setOnLoginListener((ok, data) -> {
 
 ```java
 Alipay alipay = new Alipy();
-alipay.login(appContext, ((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息
-    } else {
-        // 登录失败
+alipay.login(appContext, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息
+    		} else {
+        	// 登录失败
+    		}
     }
-}));
+});
 ```
+
+`data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
+
+当你使用组件 `AlipayLoginButton`  或者登录授权类  `Alipay`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
+
+`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 - 如果想完全自己实现支付宝登录，拿到授权码后，可以调用下面 API 换取用户信息：
 
@@ -91,14 +103,37 @@ public static void loginByAlipay(String authCode, @NotNull AuthCallback<UserInfo
 
 **参数**
 
-* *`authCode`* 支付宝授权码
+*`authCode`* 支付宝授权码
 
 **示例**
 
+如果你只需要获取到用户信息（`用户名`、`昵称`、`姓名`等）和 `idToken`，调用：
+
 ```java
-AuthClient.loginByAlipay(authCode, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
+AuthClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken。
+    		} else {
+        	// 登录失败
+    		}
+    }
+});
+```
+
+如果你需要获取到用户信息（`用户名`、`昵称`、`姓名`等）、`idToken`、`accessToken` 和 `refreshToken`，调用：
+
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+    		} else {
+        	// 登录失败
+    		}
     }
 });
 ```

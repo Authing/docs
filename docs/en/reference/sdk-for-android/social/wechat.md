@@ -109,12 +109,15 @@ Next, we recommend to use our UI component, all you need to do is 'place' it on 
 Then handle callback event after wechat login:
 
 ```java
-WechatLoginButton button = findViewById(R.id.btn_wechat_login);
-button.setOnLoginListener((ok, data) -> {
-    if (ok) {
-        // login success, data is user info
-    } else {
-        // login fail
+WechatLoginButton wechatLoginButton = findViewById(R.id.btn_wechat_login);
+wechatLoginButton.setOnLoginListener(new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+        	// login success, data is user info
+       	} else {
+        	// login fail
+      	}
     }
 });
 ```
@@ -125,14 +128,23 @@ In case you don't want to use our UI component, you can have your own Button, an
 
 ```java
 Wechat wechat = new Wechat();
-wechat.login(appContext, ((ok, data) -> {
-    if (ok) {
-        // login success, data is user info
-    } else {
-        // login fail
+wechat.login(appContext, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	 // login success, data is user info.
+    		} else {
+        	// login fail
+    		}
     }
-}));
+});
 ```
+
+`userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.).
+
+When you use component  `WechatLoginButton` or Login Authorization class `Wechat`, if you also want to get `accessToken` and `refreshToken`,  you need to call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC) ` after
+
+` Authing.init(context, "AUTHING_APP_ID") ` , data included in the callback ` data `.
 
 <br>
 
@@ -145,18 +157,38 @@ public static void loginByWechat(String authCode, @NotNull AuthCallback<UserInfo
 
 **param**
 
-* *`authCode`* wechat authorization code
+*`authCode`* wechat authorization code
 
 **sample**
 
+If all you need is access to user information (`username`, `nickname`, `name`, etc.) and `idToken`，call like this:
+
 ```java
-AuthClient.loginByWechat(authCode, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：User Information
+AuthClient.loginByWechat(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// login success, data is user info, contains idToken.
+    		} else {
+        	// login fail
+    		}
     }
 });
 ```
 
-`userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.), if you want to get `accessToken`  and `refreshToken`, you need to call
+If you need to get user information (`username`, `nickname`, `name`, etc.) , `idToken`, `accessToken` and `refreshToken`, call like this:
 
- `Authing.init(context, "AUTHING_APP_ID")`  after you call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`.
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByWechat(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// ogin success, data is user info, contains idToken、accessToken and refreshToken.
+    		} else {
+        	// login fail
+    		}
+    }
+});
+```
+

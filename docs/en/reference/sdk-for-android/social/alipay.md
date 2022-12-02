@@ -35,11 +35,14 @@ Then handle callback event after login:
 
 ```java
 AlipayLoginButton button = findViewById(R.id.btn_alipay_login);
-button.setOnLoginListener((ok, data) -> {
-    if (ok) {
-        // login success, data is user info
-    } else {
-        // login fail
+button.setOnLoginListener(new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+        	// login success, data is user info.
+       	} else {
+        	// login fail
+      	}
     }
 });
 ```
@@ -50,14 +53,25 @@ In case you don't want to use our UI component, you can have your own Button, an
 
 ```java
 Alipay alipay = new Alipy();
-alipay.login(appContext, ((ok, data) -> {
-    if (ok) {
-        // login success, data is user info
-    } else {
-        // login fail
+alipay.login(appContext, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// login success, data is user info.
+    		} else {
+        	// login fail
+    		}
     }
-}));
+});
 ```
+
+`userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.).
+
+When you use component  `AlipayLoginButton` or Login Authorization class `Alipay`, if you also want to get `accessToken` and `refreshToken`,  you need to call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC) ` after
+
+` Authing.init(context, "AUTHING_APP_ID") ` , data included in the callback ` data `.
+
+<br>
 
 If you want to implement the whole process by your own, right after you get auth code, please call this API to get Authing user info:
 
@@ -67,18 +81,38 @@ public static void loginByAlipay(String authCode, @NotNull AuthCallback<UserInfo
 
 **param**
 
-* *`authCode`* auth code from alipay
+*`authCode`* auth code from alipay
 
 **example**
 
+If all you need is access to user information (`username`, `nickname`, `name`, etc.) and `idToken`，call like this:
+
 ```java
-AuthClient.loginByAlipay(authCode, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo
+AuthClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// login success, data is user info, contains idToken.
+    		} else {
+        	// login fail
+    		}
     }
 });
 ```
 
-`userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.), if you want to get `accessToken`  and `refreshToken`, you need to call
+If you need to get user information (`username`, `nickname`, `name`, etc.) , `idToken`, `accessToken` and `refreshToken`, call like this:
 
- `Authing.init(context, "AUTHING_APP_ID")`  after you call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`.
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByAlipay(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+				if (code == 200) {
+        	// ogin success, data is user info, contains idToken、accessToken and refreshToken.
+    		} else {
+        	// login fail
+    		}
+    }
+});
+```
+
