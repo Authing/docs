@@ -135,29 +135,58 @@ WechatLoginButton
 In case you don't want to use our UI component, you can have your own Button, and then inside your Button's onClick event, you can start wechat authentication and handle callback event like this:
 
 ```swift
-WechatLogin.login(viewController: <#ViewController#>) { code, message, userInfo in
+// context is optional Parameters
+WechatLogin.login(viewController: <#AuthViewController#>, "context") { code, message, userInfo in
     if (code == 200) {
+        // login successful
         // userInfo
+    } else if (code == 1640) {
+        // Only an existing account can be bound
+        // userInfo.socialBindingData return method(login method) and key(intermediate state key)
+    } else if (code == 1641) {
+        // Allows you to bind existing accounts or create new accounts
+        // userInfo.socialBindingData return method(login method) and key(intermediate state key)
+    } else if (code == 2921) {
+        // Select multiple accounts and bind them
+        // userInfo.socialBindingData return accounts(account list) and key(intermediate state key)
     }
 }
 ```
+
+If you want to obtain only wechat authorization code:
+```swift
+WechatLogin.getAuthCode(viewController: <#AuthViewController#>) { authCode in
+    // authCode: wechat authorization code
+}
+` ` `
 
 If you want to implement the whole process by your own, right after you get auth code, please call this API to get Authing user info:
 
 ```swift
-func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
+func getDataByWechatlogin(authData: AuthRequest? = nil, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
 **Parameter**
 
-* *authCode* auth code from wechat
+* *code* wechat auth code
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
 
 **Example**
-
 ```swift
-AuthClient().loginByWechat(authCode) { code, message, userInfo in
+AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, userInfo in
     if (code == 200) {
+        // login successful
         // userInfo
+    } else if (code == 1640) {
+        // Only an existing account can be bound
+        // userInfo.socialBindingData return method(login method) and key(intermediate state key)
+    } else if (code == 1641) {
+        // Allows you to bind existing accounts or create new accounts
+        // userInfo.socialBindingData return method(login method) and key(intermediate state key)
+    } else if (code == 2921) {
+        // Select multiple accounts and bind them
+        // userInfo.socialBindingData return accounts(account list) 以及 key(intermediate state key)
     }
 }
 ```
+
+<br>
