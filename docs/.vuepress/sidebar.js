@@ -1754,6 +1754,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/apis/protocol/",
             "/reference/sdk-for-ios/apis/mfa/",
             "/reference/sdk-for-ios/apis/scan/",
+            "/reference/sdk-for-ios/apis/user/",
             "/reference/sdk-for-ios/apis/util/",
           ],
         },
@@ -6749,6 +6750,10 @@ const translatedZhCnNavBar = {
             {
               title: "MFA",
               path: "/reference/sdk-for-ios/apis/mfa/",
+            },
+            {
+              title: "User management",
+              path: "/reference/sdk-for-ios/apis/user/",
             },
             {
               title: "Scan to login",
