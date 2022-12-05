@@ -107,7 +107,8 @@ WechatLoginButton
 如果不想使用我们内置的按钮，需要自定义按钮样式，则可以在自定义按钮点击事件里面调用 Authing 微信登录 API，只需一行代码即可完成微信授权登录：
 
 ```swift
-WechatLogin.login(viewController: <#承载视图的 AuthViewController#>) { code, message, userInfo in
+// context 为可选参数
+WechatLogin.login(viewController: <#承载视图的 AuthViewController#>, "context") { code, message, userInfo in
     if (code == 200) {
         // 登录成功
         // userInfo
@@ -134,19 +135,30 @@ WechatLogin.getAuthCode(viewController: <#承载视图的 AuthViewController#>) 
 如果开发者自己集成微信登录，拿到授权码后，可以调用以下 API 换取 Authing 用户信息：
 
 ```swift
-func loginByWechat(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+func getDataByWechatlogin(authData: AuthRequest? = nil, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ```
 
 **参数**
 
-* *authCode* 微信授权码
+* *code* 微信授权码
+* *context* 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
 
 **示例**
 
 ```swift
-AuthClient().loginByWechat(authCode) { code, message, userInfo in
+AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, userInfo in
     if (code == 200) {
-        // userInfo：用户信息
+        // 登录成功
+        // userInfo
+    } else if (code == 1640) {
+        // 只允许绑定已有账号
+        // userInfo.socialBindingData 中返回 method(登录方式) 以及 key(中间态键)
+    } else if (code == 1641) {
+        // 允许绑定已有账号，或者创建新账号
+        // userInfo.socialBindingData 中返回 method(登录方式) 以及 key(中间态键)
+    } else if (code == 2921) {
+        // 多账号选择后绑定
+        // userInfo.socialBindingData 中返回 accounts(账号列表) 以及 key(中间态键)
     }
 }
 ```

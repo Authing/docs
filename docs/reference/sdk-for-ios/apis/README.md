@@ -12,4 +12,5 @@
 - [标准协议认证](./protocol/README.md)
 - [多因素认证](./mfa/README.md)
 - [扫码认证](./scan/README.md)
+- [用户管理](./user/README.md)
 - [工具使用类](./util/README.md)
