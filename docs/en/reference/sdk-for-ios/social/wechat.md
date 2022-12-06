@@ -203,7 +203,21 @@ AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, use
 
 ## Binding API
 
-### Register a new account and bind it to wechat
+If you want to ask whether to bind an existing account when you log in with your wechat account, you can enable the query binding function in  [Authing Console](https://authing.cn/)，
+
+**Authentication -> Social -> WeChat -> WeChat Mobile** **-> Bind to Existing Account：**
+
+![](./images/wechat/8.png)
+
+:::hint-info
+If using our **AuthFlow** hosting page, after opening the **Bind to Existing Account**, relevant business processes are processed in the hosting page.
+:::
+
+If you have selected the  **Login Mode**  and enabled the **Bind to Existing Account** function, use the following API to build the subsequent business process:
+
+### Register a new account and binding to wechat
+
+If **Login Mode** is selected for **Sign in & sign up** and **Bind to Existing Account** is enabled, the Wechat login interface will return `1641` status code and `key`. At this time, this interface can be called to directly create an account.
 
 ```swift
 func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -221,7 +235,9 @@ AuthClient().bindWechatWithRegister(key: "key") { code, message, userInfo in
 
 <br>
 
-### Wechat is bound by the account password
+### Binding Wechat by account password
+
+If **Login Mode** is selected，the Wechat login interface will return `1640` or`1641` status code, supported binding modes and `key`，If the supported binding modes include `username-password`, `phone-password`, and `email-password,` you can invoke this interface.
 
 ```swift
 func bindWechatByAccount(account: String, password: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -241,7 +257,9 @@ AuthClient().bindWechatByAccount(account: "account", password: "password", key: 
 
 <br>
 
-### Wechat is bound by mobile verification code
+### Binding Wechat by mobile verification code
+
+If **Login Mode** is selected，the Wechat login interface will return `1640` or`1641` status code, supported binding modes and `key`，If the supported binding modes include `phone-code`, you can invoke this interface.
 
 ```swift
 func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -261,7 +279,9 @@ AuthClient().bindWechatByPhoneCode(phone: "188xxxx8888", code: "1234", key: "key
 
 <br>
 
-### Wechat is bound by email verification code
+### Binding Wechat by email verification code
+
+If **Login Mode** is selected，the wechat login interface will return `1640` or`1641` status code, supported binding modes and `key`，If the supported binding modes include `email-code`, you can invoke this interface.
 
 ```swift
 func bindWechatByEmailCode(email: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -282,6 +302,8 @@ AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key:
 <br>
 
 ### Bind Wechat by account ID
+
+If **Login Mode** is selected，the wechat login interface will return`2921` status code, supported binding account data and `key`，you can invoke this interface.
 
 ```swift
 func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)

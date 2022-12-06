@@ -394,7 +394,7 @@ AuthClient.bindWechatByPhoneCode("key", "+86", "188xxxx8888", "1234", new AuthCa
 
 ### Binding by email verification code
 
-If **Login Mode** is selected，tthe `loginByWechatWithBind` interface will return `1640` or`1641` status code, supported binding modes and `key`，If the supported binding modes include `email-code`, you can invoke **Binding by email verification code** interface.
+If **Login Mode** is selected，the `loginByWechatWithBind` interface will return `1640` or`1641` status code, supported binding modes and `key`，If the supported binding modes include `email-code`, you can invoke **Binding by email verification code** interface.
 
 ```java
 public static void bindWechatByEmailCode(String key, String email, String code, @NotNull AuthCallback<UserInfo> callback)
