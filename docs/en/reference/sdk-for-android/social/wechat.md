@@ -158,15 +158,15 @@ wechat.login(appContext, context, new AuthCallback<UserInfo>() {
         if (code == 200) {
           // login successfully, data is user info.
         }  else if (code == 1640) {
-        	// Only an existing account can be bound
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 1641) {
-        	// Allows you to bind existing accounts or create new accounts
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 2921) {
-        	// Select multiple accounts and bind them
-        	// data.getSocialBindData() return accounts(account list) and key(intermediate state key)
-    		} else {
+          // Only an existing account can be bound
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 1641) {
+          // Allows you to bind existing accounts or create new accounts
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 2921) {
+          // Select multiple accounts and bind them
+          // data.getSocialBindData() return accounts(account list) and key(intermediate state key)
+        } else {
           //login failure
         }
     }
@@ -219,15 +219,15 @@ AuthClient.loginByWechatWithBind(authCode, context, new AuthCallback<UserInfo>()
         if (code == 200) {
           // login success, data is user info, contains idToken.
         } else if (code == 1640) {
-        	// Only an existing account can be bound
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 1641) {
-        	// Allows you to bind existing accounts or create new accounts
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 2921) {
-        	// Select multiple accounts and bind them
-        	// data.getSocialBindData() return accounts(account list) and key(intermediate state key)
-    		} else {
+          // Only an existing account can be bound
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 1641) {
+          // Allows you to bind existing accounts or create new accounts
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 2921) {
+          // Select multiple accounts and bind them
+          // data.getSocialBindData() return accounts(account list) and key(intermediate state key)
+        } else {
           //login failure
         }
     }
@@ -244,15 +244,15 @@ oidcClient.loginByWechatWithBind(authCode, context, new AuthCallback<UserInfo>()
         if (code == 200) {
           // login success, data is user info, contains idToken、accessToken and refreshToken.
         } else if (code == 1640) {
-        	// Only an existing account can be bound
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 1641) {
-        	// Allows you to bind existing accounts or create new accounts
-        	// data.getSocialBindData() return methods(login method) and key(intermediate state key)
-    		} else if (code == 2921) {
-        	// Select multiple accounts and bind them
-        	// data.getSocialBindData() return accounts(account list) and key(intermediate state key)
-    		} else {
+          // Only an existing account can be bound
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 1641) {
+          // Allows you to bind existing accounts or create new accounts
+          // data.getSocialBindData() return methods(login method) and key(intermediate state key)
+        } else if (code == 2921) {
+          // Select multiple accounts and bind them
+          // data.getSocialBindData() return accounts(account list) and key(intermediate state key)
+        } else {
           //login failure
         }
     }

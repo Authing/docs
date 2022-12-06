@@ -241,6 +241,40 @@ new OIDCClient().registerByPhoneCode("+86", "188xxxx8888", "1234", "strong", fal
 
 <br>
 
+## Custom field registration
+
+You can directly log in to an account registered with a user-defined field using the account password.
+
+```java
+public static void registerByExtendField(String fieldName, String account, String password, String context, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**Parameter**
+
+- `fieldName` custom field name
+
+* `account` account
+* `password`  initial password, it can be `null`
+* `context` Request context, set here `context` you can get [pipeline context](https://docs.authing.cn/v2/guides/pipeline/context-object.html). This parameter can be passed to `null` if not required.
+
+**Example**
+
+```java
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+new OIDCClient().registerByExtendField("extendId", "188xxxx8888", "xxxxxx", context.toString(), (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo
+    }
+});
+```
+
+**Error Code**
+
+* `2026` The user name already exists
+
+<br>
+
 ### Use the username to login
 
 ```java
