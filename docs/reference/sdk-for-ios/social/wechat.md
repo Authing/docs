@@ -96,19 +96,21 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 ### 第六步：发起微信登录授权
 
-通过我们提供的语义化 Hyper Component，只需要在 xib 里面放置一个 WechatLoginButton，即可使用微信登录授权，所有的逻辑由我们语义化引擎自动处理：
+#### 微信授权登录
 
 ```swift
-WechatLoginButton
+func login(viewController: UIViewController, _ context: String? = nil, completion: @escaping Authing.AuthCompletion) -> Void
 ```
-设置 Module 为 Wechat
-![](./images/wechat/9.png)
 
-如果不想使用我们内置的按钮，需要自定义按钮样式，则可以在自定义按钮点击事件里面调用 Authing 微信登录 API，只需一行代码即可完成微信授权登录：
+**参数**
+
+* *viewController* 承载视图的 AuthViewController
+* *context* 可选参数，请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](/guides/pipeline/context-object.md) 中获取到。
+
+**示例**
 
 ```swift
-// context 为可选参数
-WechatLogin.login(viewController: <#承载视图的 AuthViewController#>, "context") { code, message, userInfo in
+WechatLogin.login(viewController: <#ViewController#>) { code, message, userInfo in
     if (code == 200) {
         // 登录成功
         // userInfo
@@ -125,14 +127,21 @@ WechatLogin.login(viewController: <#承载视图的 AuthViewController#>, "conte
 }
 ```
 
-如果想只获取微信的授权码：
+<br>
+
+如果只需获取微信的授权码：
+
 ```swift
-WechatLogin.getAuthCode(viewController: <#承载视图的 AuthViewController#>) { authCode in
+WechatLogin.getAuthCode(viewController: <#ViewController#>) { authCode in
     // authCode：微信授权码
 }
 ```
 
+<br>
+
 如果开发者自己集成微信登录，拿到授权码后，可以调用以下 API 换取 Authing 用户信息：
+
+#### 获取微信登录返回的数据
 
 ```swift
 func getDataByWechatlogin(authData: AuthRequest? = nil, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -162,4 +171,111 @@ AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, use
     }
 }
 ```
+
+## 询问绑定 API
+
+### 注册新账号绑定微信
+
+```swift
+func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatWithRegister(key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### 通过账号密码绑定微信
+
+```swift
+func bindWechatByAccount(account: String, password: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *account* 账号
+* *password* 密码
+* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatByAccount(account: "account", password: "password", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### 通过手机验证码绑定微信
+
+```swift
+func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *phone* 手机号
+* *code* 验证码
+* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatByPhoneCode(phone: "188xxxx8888", code: "1234", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### 通过邮箱验证码绑定微信
+
+```swift
+func bindWechatByEmailCode(email: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *email* 邮箱
+* *code* 验证码
+* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### 通过账号 ID 绑定微信
+
+```swift
+func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *accountId* 账号 id
+* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatByAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+
+
 
