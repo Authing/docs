@@ -131,15 +131,15 @@ wechat.login(appContext, context, new AuthCallback<UserInfo>() {
         if (code == 200) {
           // 登录成功，data 是用户信息
         } else if (code == 1640) {
-        	// 只允许绑定已有账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 1641) {
-        	// 允许绑定已有账号，或者创建新账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 2921) {
-        	// 多账号选择后绑定
-        	// data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
-    		} else {
+          // 只允许绑定已有账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 1641) {
+          // 允许绑定已有账号，或者创建新账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 2921) {
+          // 多账号选择后绑定
+          // data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
+        } else {
           // 登录失败
         }
     }
@@ -192,15 +192,15 @@ AuthClient.loginByWechatWithBind(authCode, context, new AuthCallback<UserInfo>()
         if (code == 200) {
           // 登录成功，data 是用户信息，包含 idToken。
         } else if (code == 1640) {
-        	// 只允许绑定已有账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 1641) {
-        	// 允许绑定已有账号，或者创建新账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 2921) {
-        	// 多账号选择后绑定
-        	// data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
-    		}  else {
+          // 只允许绑定已有账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 1641) {
+          // 允许绑定已有账号，或者创建新账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 2921) {
+          // 多账号选择后绑定
+          // data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
+        }  else {
           // 登录失败
         }
     }
@@ -217,15 +217,15 @@ oidcClient.loginByWechatWithBind(authCode, context, new AuthCallback<UserInfo>()
         if (code == 200) {
           // 登录成功，data 是用户信息，包含 idToken、accessToken 和 refreshToken。
         } else if (code == 1640) {
-        	// 只允许绑定已有账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 1641) {
-        	// 允许绑定已有账号，或者创建新账号
-        	// data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
-    		} else if (code == 2921) {
-        	// 多账号选择后绑定
-        	// data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
-    		}  else {
+          // 只允许绑定已有账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 1641) {
+          // 允许绑定已有账号，或者创建新账号
+          // data.getSocialBindData() 中返回 method(登录方式) 以及 key(中间态键)
+        } else if (code == 2921) {
+          // 多账号选择后绑定
+          // data.getSocialBindData() 中返回 accounts(账号列表) 以及 key(中间态键)
+        }  else {
           // 登录失败
         }
     }
