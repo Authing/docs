@@ -129,3 +129,43 @@ AuthClient.mfaVerifyByRecoveryCode("1234", (code, message, userInfo)->{
 ```
 
 <br>
+
+## 解绑 MFA 手机号
+
+解除 MFA 绑定手机号。
+
+```java
+public static void unBindMfaPhone(@NotNull AuthCallback<JSONObject> callback)
+```
+
+**示例**
+
+```java
+AuthClient.unBindMfaPhone((code, message, data)->{
+    if (code == 200) {
+      //请求成功
+    }
+});
+```
+
+<br>
+
+## 解绑 MFA 邮箱
+
+解除 MFA 绑定邮箱。
+
+```java
+public static void unBindMfaEmail(@NotNull AuthCallback<JSONObject> callback)
+```
+
+**示例**
+
+```java
+AuthClient.unBindMfaEmail((code, message, data)->{
+    if (code == 200) {
+      //请求成功
+    }
+});
+```
+
+<br>

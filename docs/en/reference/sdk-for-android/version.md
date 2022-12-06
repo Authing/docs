@@ -1,143 +1,239 @@
-# 版本记录
+# Android Guard Change Log
 
 <LastUpdated/>
 
-### 1.3.8
+- ## 1.4.5
 
-1.新增移动端企业微信代理模式开发
 
-2.新增校验账号、密码 api
+> Update time：2022.12.6
 
-### 1.3.7
-
-1.updateProfile 支持字段下划线转驼峰格式
-
-2.社会化登录跟隐私协议联动
-
-<br>
-
-### 1.3.6
-
-1.升级了 OIDC 身份认证协议
+1. WeChat login authorization class `WeChat` support return wechat authorization code.
+2. AuthFlow page support wechat login inquiry binding process.
+3. Added API related to wechat mobile terminal login query binding.
+4. Added API for untying MFA phone number and email。
+5. AuthFlow pages support custom extended field login registration.
+6. Added custom extension field login registration API.
 
 <br>
 
-### 1.3.5
+- ## 1.4.4
 
-1.优化更新令牌 api
 
-<br>
+> Update time：2022.10.26
 
-### 1.3.4
-
-1.优化注册登录获取 code 接口，支持自定义参数
-
-<br>
-
-### 1.3.3
-
-1.支持邮箱验证码注册
-
-2.支持控制台一键登录配置的联动
-
-3.支持登录注册返回 code
+1. Supports login registration to pass additional request contexts to the Pipeline.
+2. You can configure the automatic detection network to re-initialize SDK data.
+3. Mobile phone number one-click login Adds carrier specific audit log operation parameters.
+4. API Request source identity changed"Guard-Android@x.x.x"。
 
 <br>
 
-### 1.3.2
+- ## 1.4.3
 
-1.更新个人中心
 
-<br>
+> Update time：2022.10.12
 
-### 1.3.1
-
-1.修复登出和注销账号时未清理 cookie 问题
-
-<br>
-
-### 1.3.0
-
-1.注册支持 OIDC 模式
-
-2.支持电话号码+验证码注册
-
-3.社会化登录全部支持 OIDC 模式	
+1. Support login, registration and merger.
+2. Supports dynamic configuration of the verification code input box to automatically trigger login.
+3. Optimize the prompt in the account input box.
+4. Optimize the error code.
 
 <br>
 
-### 1.2.9
+- ## 1.4.2
 
-1.优化自动登录逻辑
 
-2.GetVerifyCodeButton 超组件支持多个电话号码
+> Update time：2022.9.5
 
-3.账号输入框支持动态设置是否记住上次输入
-
-<br>
-
-### 1.2.8
-
-1.一键登录、微信登录获取 Access token、Refresh token
-
-2.增加 startWeb API
+1. You can configure secondary application domain names in private deployment.
 
 <br>
 
-### 1.2.7
+- ## 1.4.1
 
-1.自定义属性名称 src 改为 loginSource
+> Update time：2022.8.30
 
-<br>
-
-### 1.2.6
-
-1.新增 updatePhone 接口
-
-2.用户中心支持 Fragment
+1. Access to AccessToken is supported by the login component。
 
 <br>
 
-### 1.2.5
+- ## 1.4.0
 
-1.登录界面增加 loading 动画
+> Update time：2022.8.21
 
-2.微信登录英文接入文档
-
-<br>
-
-### 1.2.4
-
-1.解决国家码筛选器问题
+1. Support for Google identity source login.
 
 <br>
 
-### 1.2.3
+- ## 1.3.9
 
-1.布局没有添加国家码筛选器登录或者注册失败问题
+> Update time：2022.8.10
 
-2.用户登录注册信息补全界面获取手机验证码按钮样式问题
-
-<br>
-
-### 1.2.2
-
-1.支持邮箱验证码登录
-
-2.支持国家化短信服务
-
-3.解决社会化登录在 android 11 及以上版本拉起登录页面失败问题
+1. Information completion field Display name Linkage with the console is supported.
 
 <br>
 
-### 1.2.1
+- ## 1.3.8
 
-1.支持企业微信登录
+> Update time：2022.8.5
 
-2.解决 Use OIDC 方式调用 loginByAccount 登录失败问题
+1. New mobile terminal enterprise wechat agent model development.
+2. Added the verification account and password API.
 
 <br>
 
-### 1.2.0
+- ## 1.3.7
 
-1.支持飞书登录
+> Update time：2022.7.24
+
+1. UpdateProfile support field underline to hump format.
+2. Social logins are linked to privacy agreements.
+
+<br>
+
+- ## 1.3.6
+
+> Update time：2022.7.5
+
+1. The OIDC authentication protocol was upgraded. Procedure
+
+<br>
+
+- ## 1.3.5
+
+> Update time：2022.6.21
+
+1. Optimize the update token API.
+
+<br>
+
+- ## 1.3.4
+
+> Update time：2022.6.10
+
+1. Optimize the code interface for registration and login, and support custom parameters.
+
+<br>
+
+- ## 1.3.3
+
+> Update time：2022.6.8
+
+1. Support email verification code registration.
+2. Supports linkage of console one-click login configuration.
+3. Support login registration return code.
+
+<br>
+
+- ## 1.3.2
+
+> Update time：2022.5.23
+
+1. Update the Personal center.
+
+<br>
+
+- ## 1.3.1
+
+> Update time：2022.5.10
+
+1. Fixed cookies not cleared when logging out or logout.
+
+<br>
+
+- ## 1.3.0
+
+> Update time：2022.5.10
+
+1. Registration supports the OIDC mode.
+2. Support phone number and verification code registration.
+3. All social logins support the OIDC mode.	
+
+<br>
+
+- ## 1.2.9
+
+> Update time：2022.4.27
+
+1. Optimize the automatic login logic.
+2. The GetVerifyCodeButton supercomponent supports multiple phone numbers.
+3. The account input box can dynamically set whether to remember the last input.
+
+<br>
+
+- ## 1.2.8
+
+> Update time：2022.4.25
+
+1. One key login, wechat login to obtain Access token、Refresh token。
+2. Add startWeb API。
+
+<br>
+
+- ## 1.2.7
+
+> Update time：2022.4.25
+
+1. Change the custom attribute name src to loginSource.
+
+<br>
+
+- ## 1.2.6
+
+> Update time：2022.4.22
+
+1. Added updatePhone interface.
+2. The user center supports fragments.
+
+<br>
+
+- ## 1.2.5
+
+> Update time：2022.4.21
+
+1. The loading animation is added on the login page.
+2. Wechat login English access document.
+
+<br>
+
+- ## 1.2.4
+
+> Update time：2022.4.18
+
+1. Solve the country code filter problem.
+
+<br>
+
+- ## 1.2.3
+
+> Update time：2022.4.6
+
+1. Resolve the login or registration failure problem that the layout does not add country code filter.
+2. The style of the button to obtain the mobile phone verification code on the user login and registration information completion interface is solved.
+
+<br>
+
+- ## 1.2.2
+
+> Update time：2022.4.5
+
+1. Supports email verification code for login.
+2. Supports international SMS service.
+3. Solve the problem that social login fails to pull up the login page on android 11 or later
+
+<br>
+
+- ## 1.2.1
+
+> Update time：2022.3.25
+
+1. Support wechat work login.
+2. Troubleshoot the failure to invoke the loginByAccount in OIDC mode.
+
+<br>
+
+- ## 1.2.0
+
+> Update time：2022.3.22
+
+1. Support lark login.
