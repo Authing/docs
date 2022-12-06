@@ -6721,6 +6721,10 @@ const translatedZhCnNavBar = {
           title: "On-premise",
           path: "/reference/sdk-for-android/onpremise",
         },
+        {
+          title: "Android Guard Change log",
+          path: "/reference/sdk-for-android/version",
+        },
       ],
     },
     {

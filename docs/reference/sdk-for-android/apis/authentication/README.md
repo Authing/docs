@@ -136,6 +136,40 @@ AuthClient.registerByPhoneCode("+86", "188xxxx8888", "1234", "xxxxxx", context.t
 
 <br>
 
+## 自定义字段注册
+
+使用自定义字段注册的账号，可直接使用账号密码登录。
+
+```java
+public static void registerByExtendField(String fieldName, String account, String password, String context, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+- `fieldName` 字段名称
+
+* `account` 账号
+* `password` 明文密码，如果没有可传 `“”` 或者 `null`
+* `context` 请求上下文，这里设置的 `context` 可以在 [pipeline 的 context](https://docs.authing.cn/v2/guides/pipeline/context-object.html) 中获取到，如不需要可传 `null`。
+
+**示例**
+
+```java
+JSONObject context = new JSONObject();
+context.put("userId", "userId");
+AuthClient.registerByExtendField("extendId", "188xxxx8888", "xxxxxx", context.toString(), (code, message, userInfo)->{
+    if (code == 200) {
+        // userInfo：用户信息
+    }
+});
+```
+
+**错误码**
+
+* `2026` 用户名已存在
+
+<br>
+
 ## 帐号密码登录
 
 ```java
