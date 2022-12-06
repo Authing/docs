@@ -126,3 +126,43 @@ AuthClient.mfaVerifyByRecoveryCode("1234", (code, message, userInfo)->{
 ```
 
 <br>
+
+## Unbind the MFA phone number
+
+Unbind the MFA phone number。
+
+```java
+public static void unBindMfaPhone(@NotNull AuthCallback<JSONObject> callback)
+```
+
+**example**
+
+```java
+AuthClient.unBindMfaPhone((code, message, data)->{
+    if (code == 200) {
+      //successful
+    }
+});
+```
+
+<br>
+
+## Unbind the MFA email
+
+Unbind the MFA email。
+
+```java
+public static void unBindMfaEmail(@NotNull AuthCallback<JSONObject> callback)
+```
+
+**example**
+
+```java
+AuthClient.unBindMfaEmail((code, message, data)->{
+    if (code == 200) {
+      //successful
+    }
+});
+```
+
+<br>
