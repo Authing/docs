@@ -141,7 +141,7 @@ WechatLogin.getAuthCode(viewController: <#ViewController#>) { authCode in
 
 如果开发者自己集成微信登录，拿到授权码后，可以调用以下 API 换取 Authing 用户信息：
 
-#### 获取微信登录返回的数据
+#### 通过微信授权码登录
 
 ```swift
 func getDataByWechatlogin(authData: AuthRequest? = nil, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -174,7 +174,22 @@ AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, use
 
 ## 询问绑定 API
 
+如果你想在微信账号登录的时候绑定实现询问是否绑定已有账号，可以在  [Authing Console 控制台](https://authing.cn/)中开启询问绑定功能，
+
+**身份源管理 -> 社会化身份源 -> 微信 -> 微信移动端** **-> 账号绑定：**
+
+![](./images/wechat/5.png)
+
+:::hint-info
+如果使用我们的 **AuthFlow** 托管页，开启了**账号绑定**后，托管页中处理了相关业务流程。
+:::
+
+如果已经选择了**登录模式**，并且开启了**账号绑定**功能，通过如下 API 构建后续业务流程：
+
 ### 注册新账号绑定微信
+
+如果**登录模式**选择了可用于**登录注册**，并且开启了**账号绑定**，在调用微信登录接口时会返回 `1641` 状态码以及 `key`，这个时候可以调用此接口直接创建账号。
+
 
 ```swift
 func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -194,6 +209,8 @@ AuthClient().bindWechatWithRegister(key: "key") { code, message, userInfo in
 <br>
 
 ### 通过账号密码绑定微信
+
+如果开启了**账号绑定**，在调用微信登录接口时会返回 `1640` 状态码、支持的绑定方式以及 `key`，如果支持的绑定方式包含`username-password`、`phone-password`、`email-password`，这个时候可以调用此接口绑定已有账号。
 
 ```swift
 func bindWechatByAccount(account: String, password: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -216,6 +233,8 @@ AuthClient().bindWechatByAccount(account: "account", password: "password", key: 
 
 ### 通过手机验证码绑定微信
 
+如果开启了**账号绑定**，在调用微信登录接口时会返回 `1640` 状态码、支持的绑定方式以及 `key`，如果支持的绑定方式包含`phone-code`，这个时候可以调用此接口绑定已有账号。
+
 ```swift
 func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ``` 
@@ -237,6 +256,8 @@ AuthClient().bindWechatByPhoneCode(phone: "188xxxx8888", code: "1234", key: "key
 
 ### 通过邮箱验证码绑定微信
 
+如果开启了**账号绑定**，在调用微信登录接口时会返回 `1640` 状态码、支持的绑定方式以及 `key`，如果支持的绑定方式包含`email-code`，这个时候可以调用此接口绑定已有账号。
+
 ```swift
 func bindWechatByEmailCode(email: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
 ``` 
@@ -257,6 +278,8 @@ AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key:
 <br>
 
 ### 通过账号 ID 绑定微信
+
+如果开启了**账号绑定**，在调用微信登录接口时会返回 `2921` 状态码、支持的绑定的账号数据以及 `key`，这个时候可以调用此接口绑定已有账号。
 
 ```swift
 func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
