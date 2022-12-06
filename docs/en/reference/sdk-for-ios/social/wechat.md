@@ -126,14 +126,18 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 ### Initiate wechat authorization
 
-With the semantic Hyper Component we provide, you only need to place one in the xib:
+#### Wechat Login
 
 ```swift
-WechatLoginButton
-```
+func login(viewController: UIViewController, _ context: String? = nil, completion: @escaping Authing.AuthCompletion) -> Void
+``` 
 
-In case you don't want to use our UI component, you can have your own Button, and then inside your Button's onClick event, you can start wechat authentication and handle callback event like this:
+**Parameter**
 
+* *viewController* AuthViewController
+* `context` Request context, set here `context` you can get [pipeline context](/guides/pipeline/context-object.md) .
+
+**Example**
 ```swift
 // context is optional Parameters
 WechatLogin.login(viewController: <#AuthViewController#>, "context") { code, message, userInfo in
@@ -153,14 +157,20 @@ WechatLogin.login(viewController: <#AuthViewController#>, "context") { code, mes
 }
 ```
 
+</br>
+
 If you want to obtain only wechat authorization code:
 ```swift
 WechatLogin.getAuthCode(viewController: <#AuthViewController#>) { authCode in
     // authCode: wechat authorization code
 }
-` ` `
+```
+
+</br>
 
 If you want to implement the whole process by your own, right after you get auth code, please call this API to get Authing user info:
+
+#### Get the data by wechat login
 
 ```swift
 func getDataByWechatlogin(authData: AuthRequest? = nil, code: String, _ context: String? = nil, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -190,3 +200,106 @@ AuthClient().getDataByWechatlogin(code: "Wechat auth code") { code, message, use
 ```
 
 <br>
+
+## Binding API
+
+### Register a new account and bind it to wechat
+
+```swift
+func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+
+**Example**
+```swift
+AuthClient().bindWechatWithRegister(key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### Wechat is bound by the account password
+
+```swift
+func bindWechatByAccount(account: String, password: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *account* account
+* *password* password
+* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+
+**Example**
+```swift
+AuthClient().bindWechatByAccount(account: "account", password: "password", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### Wechat is bound by mobile verification code
+
+```swift
+func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *phone* phone
+* *code* code
+* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+
+**Example**
+```swift
+AuthClient().bindWechatByPhoneCode(phone: "188xxxx8888", code: "1234", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### Wechat is bound by email verification code
+
+```swift
+func bindWechatByEmailCode(email: String, code: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *email* email
+* *code* code
+* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+
+**Example**
+```swift
+AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+### Bind Wechat by account ID
+
+```swift
+func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *accountId* account id
+* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+
+**Example**
+```swift
+AuthClient().bindWechatByAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+
+
+
