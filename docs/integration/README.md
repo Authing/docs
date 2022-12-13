@@ -874,6 +874,13 @@
         category: "cloud",
       },
       {
+        key: "ali-exmail-v2",
+        name: "阿里企业邮箱（v2）",
+        image: "ali-cloud.png",
+        image2x: "ali-cloud@2x.png",
+        category: "office",
+      },
+      {
         key: "showDoc",
         name: "showDoc",
         image: "showdocIcon.png",
