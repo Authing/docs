@@ -880,6 +880,13 @@
         image2x: "showdocIcon.png",
         category: "devtools",
       },
+      {
+        key: "xinrenxinshi",
+        name: "薪人薪事",
+        image: "xinrenxinshiIcon.png",
+        image2x: "xinrenxinshiIcon.png",
+        category: "hr",
+      },
       # {
       #   key: "eteams",
       #   name: "泛微(公有云)",
