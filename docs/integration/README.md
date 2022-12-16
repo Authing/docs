@@ -741,6 +741,13 @@
         category: "office",
       },
       {
+        key: "kingdee-cloud-galaxy",
+        name: "金蝶云星空",
+        image: "kingdeecloud_logo.svg",
+        image2x: "kingdeecloud_logo@2x.png",
+        category: "office",
+      },
+      {
         key: "guance",
         name: "观测云",
         image: "logo_Guanceyun_logo.svg",
