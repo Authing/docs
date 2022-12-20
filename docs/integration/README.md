@@ -169,8 +169,8 @@
       {
         key: "dataease",
         name: "飞致云 DataEase",
-        image: "dataease.svg",
-        image2x: "dataease.svg",
+        image: "dataease_logo.svg",
+        image2x: "dataease_logo.svg",
         category: "marketing",
       },
       {
