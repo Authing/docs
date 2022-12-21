@@ -167,6 +167,13 @@
         category: "marketing",
       },
       {
+        key: "dataease",
+        name: "飞致云 DataEase",
+        image: "dataease_logo.svg",
+        image2x: "dataease_logo.svg",
+        category: "marketing",
+      },
+      {
         key: "github-enterprise",
         name: "GitHub Enterprise",
         image: "github1.svg",
