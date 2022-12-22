@@ -915,6 +915,13 @@
       #   image2x: "weaver_logo@3x.png",
       #   category: "office",
       # }
+      {
+        key: "coremail",
+        name: "Coremail",
+        image: "coremail_logo.svg",
+        image2x: "coremail_logo.svg",
+        category: "office",
+      },
     ],
   categories:
     [
