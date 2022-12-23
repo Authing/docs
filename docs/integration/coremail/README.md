@@ -20,7 +20,6 @@
         title: '在 {{$localeConfig.brandName}} 中创建应用',
         subTitle: '从 {{$localeConfig.brandName}} 应用市场中获取并创建应用',
       },
-      { title: '在 {{$localeConfig.brandName}} 中创建用户' },
       { title: '体验登录' },
     ],
 }
