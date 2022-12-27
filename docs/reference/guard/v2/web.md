@@ -3469,6 +3469,8 @@ export default function Login() {
     });
 
     guard.on("login", (userInfo: User) => {
+      // 自定义登录成功后的业务逻辑
+      // 比如跳转到对应的某个页面等
       console.log("userInfo in login: ", userInfo);
     });
   }, []);
@@ -3495,6 +3497,8 @@ export default {
     });
 
     this.$guard.on("login", (userInfo) => {
+      // 自定义登录成功后的业务逻辑
+      // 比如跳转到对应的某个页面等
       console.log("userInfo in login: ", userInfo);
     });
   },
@@ -3523,6 +3527,8 @@ export default {
     });
 
     guard.on("login", (userInfo: User) => {
+      // 自定义登录成功后的业务逻辑
+      // 比如跳转到对应的某个页面等
       console.log("userInfo in login: ", userInfo);
     });
   });
@@ -3556,6 +3562,8 @@ export class EmbedComponent {
       });
 
     this.guard.client.on("login", (userInfo: User) => {
+      // 自定义登录成功后的业务逻辑
+      // 比如跳转到对应的某个页面等
       console.log("userInfo in login: ", userInfo);
     });
   }
@@ -3568,6 +3576,8 @@ export class EmbedComponent {
 ```javascript
 // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
 guard.on("login", (userInfo) => {
+  // 自定义登录成功后的业务逻辑
+  // 比如跳转到对应的某个页面等
   console.log(userInfo);
 });
 ```
@@ -3586,7 +3596,7 @@ guard.on("login", (userInfo) => {
 | load                       | Guard 初始化完成，开始渲染页面                                                            | authenticationClient                  | [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)                                                                                                                                                                 |
 | load-error                  | Guard 初始化失败                                                                          | error                                 | 错误信息                                                                                                                                                                                                                                                  |
 | before-login                | 用户触发登录前（返回\<boolean ｜ Promise\<boolean>>用于控制本次登录是否继续）。| loginParams , authenticationClient    | <p>loginParams: [NomalLoginParams](#NomalLoginParams) ｜</p><p> [VerifyCodeLoginParams](#VerifyCodeLoginParams) ｜</p><p>[ScanLoginParams](#ScanLoginParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p> |
-| login                      | 用户登录成功                                                                              | user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
+| login                      | 用户登录成功，可以在回调函数中自定义登录后的业务逻辑| user，authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
 | login-error                 | 用户登录失败                                                                              | error                                 | 错误信息，包含字段缺失／非法或服务器错误等信息                                                                                                                                                                                                            |
 | before-register             | 用户触发注册前（返回\<boolean ｜ Promise\<boolean>>用于控制本次注册是否继续）。             | registerParams，authenticationClient  | <p>registerParams: [RegisterParams](#RegisterParams)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                            |
 | register                   | 用户注册成功                                                                              | user, authenticationClient            | <p>user: [User](#User)</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                                          |
