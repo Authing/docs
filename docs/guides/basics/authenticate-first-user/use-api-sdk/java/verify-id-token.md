@@ -8,7 +8,12 @@ try {
         .withIssuer("auth0")
         .build(); //Reusable verifier instance
     DecodedJWT jwt = verifier.verify(token);
-} catch (JWTVerificationException exception){
+
+    //Get user info
+    JWTClaimsSet jwtClaimSet = JWTParser.parse(token)
+        .getJWTClaimsSet();
+    Map<String, Object> map = jwtClaimSet.getClaims();
+} catch (JWTVerificationException | ParseException exception){
     //Invalid signature/claims
 }
 ```
