@@ -908,6 +908,13 @@
         image2x: "xinrenxinshiIcon.png",
         category: "hr",
       },
+      {
+        key: "dingyuefeng",
+        name: "订阅蜂",
+        image: "dingyuefeng.png",
+        image2x: "dingyuefeng@2x.png",
+        category: "marketing",
+      },
       # {
       #   key: "eteams",
       #   name: "泛微(公有云)",
