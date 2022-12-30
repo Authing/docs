@@ -12,7 +12,7 @@
 
 **以上场景中的参与者**
 
-<img src="./images/userStory/1-1.png" >
+![](./images/userStory/1-1.png)
 
 - **好天气平台开发者（黎开发）**：负责通过 Authing 控制台及 API 接口接入多租户及提供应用资源给到相关的客户；
 - **好天气平台多租户管理员（王运营）**：负责管理京西快递、美丽团、有点饿等租户；
@@ -21,23 +21,23 @@
 
 **用户旅程中的步骤**
 
-<img src="./images/userStory/1-2.png" >
+![](./images/userStory/1-2.png)
 
 ## 好天气平台开发者（黎开发）的用户旅程
 
 ### 1. 新建应用「好天气」
 
-<img src="./images/userStory/1-3.png" >
+![](./images/userStory/1-3.png)
 
 为了接入 Authing，黎开发需要在 Authing 创建一个自建应用，名字就为好天气，它代表的就是好天气这个 SaaS 应用。
 
-<img src="./images/userStory/1-4.png" >
+![](./images/userStory/1-4.png)
 
 ### 2. 新建租户-同时关联应用
 
 为了体验 Authing 的多租户功能，黎开发尝试创建一个**租户**，将其关联到好天气这个应用，这个租户就代表了好天气中的某一个租户。进入**多租户**菜单，点击「创建租户」，进入创建租户页面。输入**租户名称、描述**，**关联应用**选择**好天气**，点击「创建」即可完成创建。
 
-<img src="./images/userStory/1-5.png" >
+![](./images/userStory/1-5.png)
 
 黎开发还看到了如下提示：如果你想使用 API 创建租户，可以调用如下 API：
 
@@ -60,13 +60,13 @@ fetch('https://api.authing.cn/api/v3/create-tenant', {
 
 然后黎开发开始体验登录，会跳转至租户登录页，可以看到带有应用信息和租户信息的登录页：
 
-<img src="./images/userStory/1-6.png" >
+![](./images/userStory/1-6.png)
 
 ### 4. 登录成功并集成 SaaS 应用
 
 输入账号密码，即可登录到 Authing 提供的示例 SaaS 应用：
 
-<img src="./images/userStory/1-7.png" >
+![](./images/userStory/1-7.png)
 
 在上一步中黎开发体验登录了 Authing 提供的示例 SaaS 应用，现在黎开发应该将租户的登录接入到好天气系统中。Authing 提供了两种方式用于接入登录，区别可参考：[托管登录页 vs 可嵌入登录组件](https://docs.authing.cn/v2/concepts/embeded-vs-hosted.html)
 
@@ -76,7 +76,7 @@ fetch('https://api.authing.cn/api/v3/create-tenant', {
 
 然后需要修改应用的**登录回调 URL**：
 
-<img src="./images/userStory/1-8.png" >
+![](./images/userStory/1-8.png)
 
 此 URL 表示好天气接收 OIDC code 的地址。
 
@@ -108,11 +108,11 @@ res.redirect(url)
 
 其中 `AUTHING_APP_ID`、`AUTHING_APP_SECRET`、`AUTHING_APP_DOMAIN` 分别在如下位置获取：
 
-<img src="./images/userStory/1-9.png" >
+![](./images/userStory/1-9.png)
 
 `tenantId` 是你的租户 ID，获取方式如下：
 
-<img src="./images/userStory/1-10.png" >
+![](./images/userStory/1-10.png)
 
 若不知道用户希望登录哪个租户，`tenantId` 可以为空，Authing 登录页在用户输入完账密校验通过后，会让用户自主选择需要登录的租户。
 
@@ -215,11 +215,11 @@ export default function Login() {
 ### 5. 通过 API 管理租户
 登录接入完成后，黎开发为了让好天气的租户管理员能够在好天气的界面中管理他们的租户，他决定接入 Authing 的管理侧 API。黎开发需要先在 Authing 控制台获取用户池 ID 和秘钥。
 
-<img src="./images/userStory/1-11.png" >
+![](./images/userStory/1-11.png)
 
 然后获取 **accessToken**：
 
-<img src="./images/userStory/1-12.png" >
+![](./images/userStory/1-12.png)
 
 然后使用 **accessToken** 请求租户管理接口。以下以租户、租户成员的简单管理为例：
 
@@ -296,8 +296,8 @@ fetch('https://api.authing.cn/api/v3/update-tenant-user', {
 ### 1. 配置租户
 
 作为好天气的运营同学，王运营的账号也在好天气用户池中，当需要作为多租户管理员管理京西快递、美丽团、有点饿。同时他可以直接一键登录到租户控制台，对租户进行相关品牌化的配置。
-<img src="./images/userStory/1-13.png" >
-<img src="./images/userStory/1-14.png" >
+![](./images/userStory/1-13.png)
+![](./images/userStory/1-14.png)
 
 ### 2. 通过 API 接口对某个租户增删改查
 
@@ -363,8 +363,9 @@ fetch('https://api.authing.cn/api/v3/delete-tenant', {
 ### 1. 注册账户
 温小姐通过千度搜索进入了好天气官网，点击登录进入了 Authing 提供的的托管登录界面，通过手机号和邮箱注册并登录了账号。登录完成后，跳转回好天气的 OIDC Callback URL，通过 OIDC 流程，好天气系统获取到了用户信息。这时候，系统检验出了她不属于任何租户，同时引导她去创建一个组织。
 
-<img src="./images/userStory/1-15.png" >
-<img src="./images/userStory/1-16.png" >
+![](./images/userStory/1-15.png)
+
+![](./images/userStory/1-16.png)
 
 温小姐注册账号时会调用 Authing 的如下 API
 ```JavaScript
@@ -385,7 +386,7 @@ fetch('https://api.authing.cn/api/v3/signup', {
 
 温小姐点击了界面上的「**创建组织**」按钮，输入企业名、logo 等必要信息，保存时会调用 Authing 的认证侧接口 /v3/api/create-my-tenant ，Authing 会创建租户并关联到好天气应用，同时将温小姐设置为**租户管理员**。
 
-<img src="./images/userStory/1-17.png" >
+![](./images/userStory/1-17.png)
 
 同时可以调用 Authing 的如下 API
 
@@ -406,7 +407,7 @@ fetch('https://api.authing.cn/api/v3/create-my-tenant', {
 
 完成基本设置后，温小姐可以通过邮件方式邀请更多的同事加入到美丽团中，也可以直接发送链接，每个链接都可以设定有效期。
 
-<img src="./images/userStory/1-18.png" >
+![](./images/userStory/1-18.png)
 
 ```JavaScript
 fetch('https://api.authing.cn/api/v3/invitate-tenant-user', {
@@ -428,13 +429,13 @@ fetch('https://api.authing.cn/api/v3/invitate-tenant-user', {
 
 而后，温小姐会进入**美丽团**管理界面。温小姐将登录页面背景、loading 动画等改成了与自己企业相关的样式。[点击查看更多的配置]() >>
 
-<img src="./images/userStory/1-19.png" >
+![](./images/userStory/1-19.png)
 
 ### 5. 通过 API 管理美丽团的用户
 
 基本设置完成后，温小姐为了在美丽团的界面中管理自己的用户，她决定接入 Authing 的管理侧 API。温小姐需要先在美丽团控制台获取租户 ID 和秘钥。
 
-<img src="./images/userStory/1-20.png" >
+![](./images/userStory/1-20.png)
 
 然后获取 **accessToken：**
 
@@ -522,12 +523,12 @@ fetch('https://api.authing.cn/api/v3/update-tenant-user', {
 
 赵博士收到好天气的美丽团企业邀请链接，点击到了 Authing 提供的账号激活界面，通过输入验证码、密码等操作，完成了账号注册，登录后跳转到了好天气 OIDC Callback URL，通过 OIDC 协议，好天气系统获取到了带有 `tenantId` 的用户信息，好天气将用户重定向到了美丽团在好天气的功能界面。
 
-<img src="./images/userStory/1-21.png" >
+![](./images/userStory/1-21.png)
 
-<img src="./images/userStory/1-22.png" >
+![](./images/userStory/1-22.png)
 
 ### 2. 查看天气情况
 
 使用好天气查看最近的天气情况。
 
-<img src="./images/userStory/1-23.png" >
+![](./images/userStory/1-23.png)
