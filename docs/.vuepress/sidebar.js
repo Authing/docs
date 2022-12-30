@@ -5436,6 +5436,36 @@ const zhCnNavBar = {
       title: "概览",
       path: "/multi-tenant-console/",
     },
+    {
+      title: "快速开始",
+      path: "/multi-tenant-console/quick-start/",
+    },
+    {
+      title: "用户故事",
+      path: "/multi-tenant-console/user-story/",
+    },
+    {
+      title: "租户管理",
+      path: "/multi-tenant-console/tenant-anagement/",
+      children: [
+        {
+          title: "租户管理",
+          path: "/multi-tenant-console/tenant-management/",
+        },
+        {
+          title: "如何对租户进行增、删、改、查",
+          path: "/multi-tenant-console/operation-tenant/",
+        },
+        {
+          title: "配置租户关联应用",
+          path: "/multi-tenant-console/association-apps/",
+        },
+        {
+          title: "管理租户成员 & 管理员",
+          path: "/multi-tenant-console/admin-management/",
+        },
+      ],
+    },
   ],
   "/tenant-console/": [
     {
