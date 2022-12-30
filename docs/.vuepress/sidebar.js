@@ -5466,6 +5466,14 @@ const zhCnNavBar = {
         },
       ],
     },
+    {
+      title: "多租户管理员",
+      path: "/multi-tenant-console/multi-tenant-admin/",
+    },
+    {
+      title: "多租户配置",
+      path: "/multi-tenant-console/multi-tenant-config/",
+    },
   ],
   "/tenant-console/": [
     {

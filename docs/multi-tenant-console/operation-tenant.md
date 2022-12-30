@@ -2,6 +2,8 @@
 
 ## 创建/编辑租户
 
+<LastUpdated/>
+
 打开多租户模块，点击「创建租户」button：
 
 <img src="./images/tenantManagement/2-1.png" >
