@@ -5431,6 +5431,24 @@ const zhCnNavBar = {
       path: "/android/version",
     },
   ],
+  "/multi-tenant-console/": [
+    {
+      title: "概览",
+      path: "/multi-tenant-console/",
+    },
+  ],
+  "/tenant-console/": [
+    {
+      title: "关联应用",
+      path: "/tenant-console/association-apps/",
+    },
+  ],
+  "/tenant-app-demo/": [
+    {
+      title: "注册登录应用",
+      path: "/tenant-app-demo/register-login-app/",
+    },
+  ]
 };
 
 /**
