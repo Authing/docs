@@ -929,6 +929,13 @@
         image2x: "coremail_logo.svg",
         category: "office",
       },
+      {
+        key: "successfactors",
+        name: "SuccessFactors",
+        image: "successfactors_logo.svg",
+        image2x: "successfactors_logo.svg",
+        category: "hr",
+      },
     ],
   categories:
     [
