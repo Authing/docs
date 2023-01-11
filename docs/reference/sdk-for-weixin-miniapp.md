@@ -20,36 +20,22 @@ Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
 
 |条目|说明|
 |-----|----|
-|最新版本|5.1.2|
+|最新版本|5.1.3|
 |仓库地址|https://github.com/authing/authing-js-sdk|
 
 ## 第一步：创建应用
 
-1. 使用 Authing 创建一个应用：
+使用 Authing 创建一个应用：
 
 <ul style="padding-left: 50px">
   <li>进入<a href="https://console.authing.cn/" target="blank">控制台</a>；</li>
   <li>展开左侧 <strong>应用</strong> 菜单，点击 <strong>自建应用</strong> 菜单；</li>
   <li>点击右上角 <strong>创建自建应用</strong> 按钮；</li>
-  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>标准 Web 应用</strong>；</li>
+  <li>填写 <strong>应用名称</strong>、<strong>认证地址</strong>、选择 <strong>小程序应用</strong>；</li>
   <li>点击 <strong>创建</strong>。</li>
 </ul>
 
 ![sdk-for-app-1](./images/sdk-for-app-1.png)
-
-2. 以下身份验证方式选择 <strong>none</strong>
-
-<p>应用创建成功之后，在 <strong>自建应用</strong> 列表，点击该应用，点击 <strong>应用配置</strong> 标签，找到 <strong>其他配置</strong>，点击展开，找到以下三种身份认证方式并全部设置为 <strong>none</strong>。</p>
-
-::: hint-info
-前端应用不适合存储密钥，这会造成密钥泄漏。
-:::
-
-![sdk-for-app-2](./images/sdk-for-app-2.png)
-
-<br />
-
-3. 点击页面底部 **保存** 按钮，保存当前配置。
 
 ## 第二步：创建社会化身份源
 
@@ -226,7 +212,7 @@ const authing = new Authing({
 :::
 ::::
 
-`userPoolId` 可通过 **控制台 -> 设置 -> 基础设置 -> 密钥管理** 获取。
+`userPoolId` 可通过 **控制台 -> 设置 -> 基础设置** 获取。
 
 ![userPoolId](./images/sdk-for-get-user-pool-id.png)
 
