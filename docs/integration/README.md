@@ -908,6 +908,13 @@
         image2x: "xinrenxinshiIcon.png",
         category: "hr",
       },
+      {
+        key: "dingyuefeng",
+        name: "订阅蜂",
+        image: "dingyuefeng.png",
+        image2x: "dingyuefeng@2x.png",
+        category: "marketing",
+      },
       # {
       #   key: "eteams",
       #   name: "泛微(公有云)",
@@ -915,6 +922,27 @@
       #   image2x: "weaver_logo@3x.png",
       #   category: "office",
       # }
+      {
+        key: "coremail",
+        name: "Coremail",
+        image: "coremail_logo.svg",
+        image2x: "coremail_logo.svg",
+        category: "office",
+      },
+      {
+        key: "successfactors",
+        name: "SuccessFactors",
+        image: "successfactors_logo.svg",
+        image2x: "successfactors_logo.svg",
+        category: "hr",
+      },
+      {
+        key: "datart",
+        name: "Datart",
+        image: "datart_logo.svg",
+        image2x: "datart_logo.svg",
+        category: "devtools",
+      },
     ],
   categories:
     [

@@ -5431,6 +5431,98 @@ const zhCnNavBar = {
       path: "/android/version",
     },
   ],
+  "/multi-tenant-console/": [
+    {
+      title: "概览",
+      path: "/multi-tenant-console/",
+    },
+    {
+      title: "快速开始",
+      path: "/multi-tenant-console/quick-start",
+    },
+    {
+      title: "用户故事",
+      path: "/multi-tenant-console/user-story",
+    },
+    {
+      title: "租户管理",
+      path: "",
+      children: [
+        {
+          title: "租户管理",
+          path: "/multi-tenant-console/tenant-management",
+        },
+        {
+          title: "如何对租户进行增、删、改、查",
+          path: "/multi-tenant-console/operation-tenant",
+        },
+        {
+          title: "配置租户关联应用",
+          path: "/multi-tenant-console/association-apps",
+        },
+        {
+          title: "管理租户成员 & 管理员",
+          path: "/multi-tenant-console/admin-management",
+        },
+      ],
+    },
+    {
+      title: "多租户管理员",
+      path: "/multi-tenant-console/multi-tenant-admin",
+    },
+    {
+      title: "多租户配置",
+      path: "/multi-tenant-console/multi-tenant-config",
+    },
+  ],
+  "/tenant-console/": [
+    {
+      title: "关联应用",
+      path: "/tenant-console/association-apps",
+    },
+    {
+      title: "单点登录",
+      path: "/tenant-console/sso",
+    },
+    {
+      title: "身份源",
+      path: "/tenant-console/source",
+    },
+    {
+      title: "用户管理",
+      path: "/tenant-console/user-management",
+    },
+    // {
+    //   title: "组织机构",
+    //   path: "/tenant-console/organization",
+    // },
+    {
+      title: "品牌化",
+      path: "/tenant-console/brandize",
+    },
+    {
+      title: "基础设置",
+      path: "/tenant-console/setting",
+    },
+    // {
+    //   title: "管理员",
+    //   path: "/tenant-console/admin",
+    // },
+  ],
+  "/tenant-app-demo/": [
+    {
+      title: "注册登录应用",
+      path: "/tenant-app-demo/register-login-app",
+    },
+    {
+      title: "创建/切换/配置组织",
+      path: "/tenant-app-demo/org",
+    },
+    // {
+    //   title: "个人中心",
+    //   path: "/tenant-app-demo/personal-center",
+    // },
+  ]
 };
 
 /**

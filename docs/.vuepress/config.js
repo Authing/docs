@@ -180,7 +180,22 @@ module.exports = {
             link: "/console-using/",
             text: "控制台文档",
             hidden: true
-          }
+          },
+          {
+            link: "/multi-tenant-console/",
+            text: "多租户控制台",
+            hidden: true
+          },
+          {
+            link: "/tenant-console/",
+            text: "租户控制台",
+            hidden: true
+          },
+          {
+            link: "/tenant-app-demo/",
+            text: "Saas 应用 Demo",
+            hidden: true
+          },
         ],
         sidebar: sidebar.zhCnNavBar,
         feedback: {

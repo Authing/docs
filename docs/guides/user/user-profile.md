@@ -18,7 +18,7 @@ meta:
 - `username`: 用户名，用户池内唯一，区分大小写。
 - `email`: 邮箱，用户池内唯一，不区分大小写，如 `Bob@example.com` 和 `bob@example.com` 会识别为同一个邮箱。
 - `emailVerified`: 邮箱是否已验证，{{$localeConfig.brandName}} 默认不会阻止邮箱未验证的用户登录，如果你希望强制要求用户邮箱验证之后才能登录，[请见此](/guides/users/settings.html#%E7%A6%81%E6%AD%A2%E9%82%AE%E7%AE%B1%E6%9C%AA%E9%AA%8C%E8%AF%81%E7%9A%84%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95)。
-- `phone`: 手机号。
+- `phone`: 手机号，用户池内唯一。
 - `phoneVerified`: 手机号是否已验证，使用手机号验证码注册、登录的用户该字段为 `true`，管理员手动创建的用户此字段为 `false` 。
 - `unionid`: 使用第三方身份源或社会化登录的用户，该字段为用户在第三方的 ID。
 - `openid`: 第三方身份源用户，返回的 openid。
