@@ -936,6 +936,13 @@
         image2x: "successfactors_logo.svg",
         category: "hr",
       },
+      {
+        key: "datart",
+        name: "Datart",
+        image: "datart_logo.svg",
+        image2x: "datart_logo.svg",
+        category: "devtools",
+      },
     ],
   categories:
     [
