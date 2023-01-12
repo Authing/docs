@@ -37,14 +37,14 @@
 
 1. 在 AppDelegate 或 SceneDelegate 中加入 import Guard 和 import WeCom 。
 
-2. WeCom.registerApp 需要传入企业微信发放的 **Scheme**、**AgentID**、**CorpID** 。
+2. WeCom.registerApp 需要传入企业微信发放的 **Scheme**、**AgentID**、**CorpID**, **isProxyDevelopment** 选择是否为代开发模式。
 
 ```swift
 import Guard
 import WeCom
 
 Authing.start(<#AUTHING_APP_ID#>)
-WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>)
+WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>, isProxyDevelopment: <#Bool#>)
  ```
  
 <br>
