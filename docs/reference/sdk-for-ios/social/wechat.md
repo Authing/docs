@@ -197,7 +197,7 @@ func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, Use
 
 **参数**
 
-* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
 
 **示例**
 
@@ -220,7 +220,7 @@ func bindWechatByAccount(account: String, password: String, key: String, complet
 
 * *account* 账号
 * *password* 密码
-* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
 
 **示例**
 
@@ -243,7 +243,7 @@ func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code:
 
 * *phone* 手机号
 * *code* 验证码
-* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
 
 **示例**
 
@@ -266,7 +266,7 @@ func bindWechatByEmailCode(email: String, code: String, key: String, completion:
 
 * *email* 邮箱
 * *code* 验证码
-* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
 
 **示例**
 
@@ -277,9 +277,33 @@ AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key:
 
 <br>
 
+### 通过 accounts 列表的账号 ID 绑定微信
+
+如果开启了**账号绑定**，在调用微信登录接口时会返回 `2921` 状态码、支持的绑定的账号数据以及 `key`。
+> 注意此 API 只能绑定[ getDataByWechatlogin ](#-通过微信授权码登录)返回的 accounts 中的账号，只针对同一微信身份源对应了多个 Authing 账号的场景。如果想直接调用绑定 API 无特殊场景处理，查看此 API ：[通过账号 ID 绑定微信](#-通过账号-ID-绑定微信)。
+  
+```swift
+func bindWechatBySelectedAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**参数**
+
+* *accountId* 账号 id
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
+
+**示例**
+
+```swift
+AuthClient().bindWechatBySelectedAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
+
 ### 通过账号 ID 绑定微信
 
-如果开启了**账号绑定**，在调用微信登录接口时会返回 `2921` 状态码、支持的绑定的账号数据以及 `key`，这个时候可以调用此接口绑定已有账号。
+如果开启了**账号绑定**，调用此接口可绑定用户池中已有账号。
 
 ```swift
 func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -288,7 +312,7 @@ func bindWechatByAccountId(accountId: String, key: String, completion: @escaping
 **参数**
 
 * *accountId* 账号 id
-* *key* 中间态键，通过[微信授权登录](####-微信授权登录)返回
+* *key* 中间态键，通过[微信授权登录](#-微信授权登录)返回
 
 **示例**
 
@@ -298,7 +322,4 @@ AuthClient().bindWechatByAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") 
 ```
 
 <br>
-
-
-
 

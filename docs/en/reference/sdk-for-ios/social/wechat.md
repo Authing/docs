@@ -225,7 +225,7 @@ func bindWechatWithRegister(key: String, completion: @escaping(Int, String?, Use
 
 **Parameter**
 
-* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
 
 **Example**
 ```swift
@@ -247,7 +247,7 @@ func bindWechatByAccount(account: String, password: String, key: String, complet
 
 * *account* account
 * *password* password
-* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
 
 **Example**
 ```swift
@@ -269,7 +269,7 @@ func bindWechatByPhoneCode(phoneCountryCode: String? = nil, phone: String, code:
 
 * *phone* phone
 * *code* code
-* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
 
 **Example**
 ```swift
@@ -291,7 +291,7 @@ func bindWechatByEmailCode(email: String, code: String, key: String, completion:
 
 * *email* email
 * *code* code
-* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
 
 **Example**
 ```swift
@@ -301,9 +301,32 @@ AuthClient().bindWechatByEmailCode(email: "test@example.com", code: "1234", key:
 
 <br>
 
+
+### Bind Wechat by account ID in the accounts list
+
+If **account binding** is enabled, it will return `2921` status code, supported binding account data and `key` when calling wechat login interface.
+> Note that this API can only bind the accounts returned by [getDataByWechatlogin](#-get-the-data-by-wechatlogin), and only applies to scenarios where multiple Authing accounts correspond to the same wechat identity source. If you want to directly call the binding API without special scenarios, check this API: [Bind wechat by account ID](#-Bind-wechat-by-account-ID).
+
+```swift
+func bindWechatBySelectedAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+``` 
+
+**Parameter**
+
+* *accountId* account id
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
+
+**Example**
+```swift
+AuthClient().bindWechatBySelectedAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") { code, message, userInfo in
+}
+```
+
+<br>
+
 ### Bind Wechat by account ID
 
-If **Login Mode** is selected，the wechat login interface will return`2921` status code, supported binding account data and `key`，you can invoke this interface.
+If **Login Mode** is selected，this interface can be invoked to bind existing accounts in the user pool.
 
 ```swift
 func bindWechatByAccountId(accountId: String, key: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
@@ -312,7 +335,7 @@ func bindWechatByAccountId(accountId: String, key: String, completion: @escaping
 **Parameter**
 
 * *accountId* account id
-* *key* intermediate state key，return by [Wechat Login](####-Wechat-Login)
+* *key* intermediate state key，return by [Wechat Login](#-Get-the-data-by-wechat-login)
 
 **Example**
 ```swift
@@ -321,7 +344,6 @@ AuthClient().bindWechatByAccountId(accountId: "AUTHING_ACCOUNT_ID", key: "key") 
 ```
 
 <br>
-
 
 
 
