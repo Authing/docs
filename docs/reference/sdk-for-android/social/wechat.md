@@ -404,13 +404,41 @@ AuthClient.bindWechatByEmailCode("key", "test@example.com", "1234", new AuthCall
 如果开启了**账号绑定**，在调用 `loginByWechatWithBind` 接口时会返回 `2921` 状态码、支持的绑定的账号数据以及 `key`，这个时候可以调用**通过多账号选择绑定**接口绑定已有账号。
 
 ```java
-public static void bindWechatByAccountId(String key, String account, @NotNull AuthCallback<UserInfo> callback)
+public static void bindWechatBySelectedAccountId(String key, String account, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
 - `key` 中间态键，由 `loginByWechatWithBind` 接口返回。
 - `account` 选定的账号 ID（Authing 用户），由 `loginByWechatWithBind` 接口返回。
+
+**示例**
+
+```java
+AuthClient.bindWechatBySelectedAccountId("key", "638xxxxxxxxxxxxxx", new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+      	  // 成功，data 是用户信息
+       	} 
+    }
+});
+```
+
+<br>
+
+### 通过账号 Id 绑定
+
+如果开启了**账号绑定**，在调用 `loginByWechatWithBind` 接口时会返回 `1640` 或者 `1641` 状态码、支持的绑定的账号数据以及 `key`，这个时候可以调用**通过账号 Id 绑定**接口绑定已有账号。
+
+```java
+public static void bindWechatByAccountId(String key, String accountId, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**参数**
+
+- `key` 中间态键，由 `loginByWechatWithBind` 接口返回。
+- `accountId` 账号 ID（Authing 用户 ID）。
 
 **示例**
 
