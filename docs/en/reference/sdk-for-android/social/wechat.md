@@ -431,13 +431,41 @@ AuthClient.bindWechatByEmailCode("key", "test@example.com", "1234", new AuthCall
 If **Login Mode** is selected，the `loginByWechatWithBind` interface will return`2921` status code, supported binding account data and `key`，you can invoke **Select binding by multiple accounts** interface.
 
 ```java
-public static void bindWechatByAccountId(String key, String account, @NotNull AuthCallback<UserInfo> callback)
+public static void bindWechatBySelectedAccountId(String key, String account, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **param**
 
 - `key` intermediate state key，Returned by the `loginByWechatWithBind` interface.
 - `account` the selected account ID (Authing user) is returned by the `loginByWechatWithBind` interface.
+
+**sample**
+
+```java
+AuthClient.bindWechatBySelectedAccountId("key", "638xxxxxxxxxxxxxx", new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+      	  // successfully, data is user info.
+       	} 
+    }
+});
+```
+
+<br>
+
+### Binding by Account ID
+
+If **Login Mode** is selected，the `loginByWechatWithBind` interface will return `1640`  or `1641`status code, supported binding account data and `key`，you can invoke **Binding by Account ID** interface.
+
+```java
+public static void bindWechatByAccountId(String key, String accountId, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**param**
+
+- `key` intermediate state key，Returned by the `loginByWechatWithBind` interface.
+- `accountId` the account ID (Authing user ID) .
 
 **sample**
 
