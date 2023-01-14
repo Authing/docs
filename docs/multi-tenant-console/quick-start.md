@@ -14,11 +14,11 @@
 
 ![](./images/quickStart/1-3.png)
 
-## Step 3: 体验登录创建好的 Saas 应用
+## Step 3: 体验登录创建好的 SaaS 应用
 
 ![](./images/quickStart/1-4.png)
 
-## Step 4: 登录成功并集成 Saas 应用
+## Step 4: 登录成功并集成 SaaS 应用
 
 ![](./images/quickStart/1-5.png)
 
