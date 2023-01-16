@@ -252,26 +252,26 @@ const zhCnNavBar = {
       title: "对用户进行权限管理",
       path: "/guides/access-control/",
       children: [
-            {
-              title: "选择合适的权限模型",
-              path: "/guides/access-control/choose-the-right-access-control-model",
-            },
-            {
-              title: `集成 RBAC 权限模型到你的应用系统`,
-              path: "/guides/access-control/rbac",
-            },
-            {
-              title: `集成 ABAC 权限模型到你的应用系统`,
-              path: "/guides/access-control/abac",
-            },
-            {
-              title: `使用权限分组管理权限资源`,
-              path: "/guides/access-control/resource-group",
-            },
-            {
-              title: `管理资源权限`,
-              path: "/guides/access-control/resource-acl",
-            },
+        {
+          title: "选择合适的权限模型",
+          path: "/guides/access-control/choose-the-right-access-control-model",
+        },
+        {
+          title: `集成 RBAC 权限模型到你的应用系统`,
+          path: "/guides/access-control/rbac",
+        },
+        {
+          title: `集成 ABAC 权限模型到你的应用系统`,
+          path: "/guides/access-control/abac",
+        },
+        {
+          title: `使用权限分组管理权限资源`,
+          path: "/guides/access-control/resource-group",
+        },
+        {
+          title: `管理资源权限`,
+          path: "/guides/access-control/resource-acl",
+        },
       ],
     },
     {
@@ -455,9 +455,9 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/app-configuration",
             },
             {
-              title:"协议配置",
+              title: "协议配置",
               path: "/guides/app-new/create-app/protocol-config",
-              children:[
+              children: [
                 {
                   title: "配置 OIDC 协议",
                   path: "/guides/federation/oidc",
@@ -800,23 +800,23 @@ const zhCnNavBar = {
       title: "微信生态全场景能力",
       path: "/guides/wechat-ecosystem/",
       children: [
-      {
-      title: "当你使用移动端微信应用进行开发",
-      path: "/guides/wechat-ecosystem/wechat-mobile-app"
-      },
-      {
-      title: "当你使用网页端微信应用进行开发",
-      path: "/guides/wechat-ecosystem/wechat-web-app"
-      },
-      {
-        title: "当你使用微信公众号进行开发",
-        path: "/guides/wechat-ecosystem/wechat-public-account-app"
+        {
+          title: "当你使用移动端微信应用进行开发",
+          path: "/guides/wechat-ecosystem/wechat-mobile-app"
+        },
+        {
+          title: "当你使用网页端微信应用进行开发",
+          path: "/guides/wechat-ecosystem/wechat-web-app"
+        },
+        {
+          title: "当你使用微信公众号进行开发",
+          path: "/guides/wechat-ecosystem/wechat-public-account-app"
         },
         {
           title: "当你使用微信小程序进行开发",
           path: "/guides/wechat-ecosystem/wechat-miniprogram-app"
-          },
- ]
+        },
+      ]
       // children: [
       //   {
       //     title: "关注公众号登录",
@@ -950,7 +950,7 @@ const zhCnNavBar = {
               title: "MFA 策略配置",
               path: "/guides/security/mfa/policy-based-mfa-configuration",
             },
-                    ],
+          ],
         },
       ],
     },
@@ -978,7 +978,7 @@ const zhCnNavBar = {
           title: "自定义域名",
           path: "/guides/customize/domain/customized-domain",
         },
-                ],
+      ],
     },
     {
       title: "自动化",
@@ -1029,6 +1029,2190 @@ const zhCnNavBar = {
         {
           title: "Webhooks",
           path: "/guides/webhook/",
+        },
+        {
+          title: "身份自动化",
+          path: "/guides/workflow/",
+          children: [
+            {
+              title: "应用",
+              path: "/guides/workflow/apps/",
+              children: [
+                {
+                  "title": "AMQPSender",
+                  "path": "/guides/workflow/apps/AMQPSender"
+                },
+                {
+                  "title": "APITemplate.io",
+                  "path": "/guides/workflow/apps/APITemplate.io"
+                },
+                {
+                  "title": "AWSCertificateManager",
+                  "path": "/guides/workflow/apps/AWSCertificateManager"
+                },
+                {
+                  "title": "AWSComprehend",
+                  "path": "/guides/workflow/apps/AWSComprehend"
+                },
+                {
+                  "title": "AWSDynamoDB",
+                  "path": "/guides/workflow/apps/AWSDynamoDB"
+                },
+                {
+                  "title": "AWSElasticLoadBalancing",
+                  "path": "/guides/workflow/apps/AWSElasticLoadBalancing"
+                },
+                {
+                  "title": "AWSLambda",
+                  "path": "/guides/workflow/apps/AWSLambda"
+                },
+                {
+                  "title": "AWSRekognition",
+                  "path": "/guides/workflow/apps/AWSRekognition"
+                },
+                {
+                  "title": "AWSS3",
+                  "path": "/guides/workflow/apps/AWSS3"
+                },
+                {
+                  "title": "AWSSES",
+                  "path": "/guides/workflow/apps/AWSSES"
+                },
+                {
+                  "title": "AWSSNS",
+                  "path": "/guides/workflow/apps/AWSSNS"
+                },
+                {
+                  "title": "AWSSQS",
+                  "path": "/guides/workflow/apps/AWSSQS"
+                },
+                {
+                  "title": "AWSTextract",
+                  "path": "/guides/workflow/apps/AWSTextract"
+                },
+                {
+                  "title": "AWSTranscribe",
+                  "path": "/guides/workflow/apps/AWSTranscribe"
+                },
+                {
+                  "title": "ActionNetwork",
+                  "path": "/guides/workflow/apps/ActionNetwork"
+                },
+                {
+                  "title": "ActiveCampaign",
+                  "path": "/guides/workflow/apps/ActiveCampaign"
+                },
+                {
+                  "title": "Adalo",
+                  "path": "/guides/workflow/apps/Adalo"
+                },
+                {
+                  "title": "Affinity",
+                  "path": "/guides/workflow/apps/Affinity"
+                },
+                {
+                  "title": "AgileCRM",
+                  "path": "/guides/workflow/apps/AgileCRM"
+                },
+                {
+                  "title": "Airtable",
+                  "path": "/guides/workflow/apps/Airtable"
+                },
+                {
+                  "title": "Asana",
+                  "path": "/guides/workflow/apps/Asana"
+                },
+                {
+                  "title": "Automizy",
+                  "path": "/guides/workflow/apps/Automizy"
+                },
+                {
+                  "title": "Autopilot",
+                  "path": "/guides/workflow/apps/Autopilot"
+                },
+                {
+                  "title": "BambooHR",
+                  "path": "/guides/workflow/apps/BambooHR"
+                },
+                {
+                  "title": "Bannerbear",
+                  "path": "/guides/workflow/apps/Bannerbear"
+                },
+                {
+                  "title": "Baserow",
+                  "path": "/guides/workflow/apps/Baserow"
+                },
+                {
+                  "title": "Beeminder",
+                  "path": "/guides/workflow/apps/Beeminder"
+                },
+                {
+                  "title": "Bitly",
+                  "path": "/guides/workflow/apps/Bitly"
+                },
+                {
+                  "title": "Bitwarden",
+                  "path": "/guides/workflow/apps/Bitwarden"
+                },
+                {
+                  "title": "Box",
+                  "path": "/guides/workflow/apps/Box"
+                },
+                {
+                  "title": "Brandfetch",
+                  "path": "/guides/workflow/apps/Brandfetch"
+                },
+                {
+                  "title": "Bubble",
+                  "path": "/guides/workflow/apps/Bubble"
+                },
+                {
+                  "title": "Chargebee",
+                  "path": "/guides/workflow/apps/Chargebee"
+                },
+                {
+                  "title": "CircleCI",
+                  "path": "/guides/workflow/apps/CircleCI"
+                },
+                {
+                  "title": "CitrixADC",
+                  "path": "/guides/workflow/apps/CitrixADC"
+                },
+                {
+                  "title": "Clearbit",
+                  "path": "/guides/workflow/apps/Clearbit"
+                },
+                {
+                  "title": "ClickUp",
+                  "path": "/guides/workflow/apps/ClickUp"
+                },
+                {
+                  "title": "Clockify",
+                  "path": "/guides/workflow/apps/Clockify"
+                },
+                {
+                  "title": "Cloudflare",
+                  "path": "/guides/workflow/apps/Cloudflare"
+                },
+                {
+                  "title": "Cockpit",
+                  "path": "/guides/workflow/apps/Cockpit"
+                },
+                {
+                  "title": "Coda",
+                  "path": "/guides/workflow/apps/Coda"
+                },
+                {
+                  "title": "CoinGecko",
+                  "path": "/guides/workflow/apps/CoinGecko"
+                },
+                {
+                  "title": "Contentful",
+                  "path": "/guides/workflow/apps/Contentful"
+                },
+                {
+                  "title": "ConvertKit",
+                  "path": "/guides/workflow/apps/ConvertKit"
+                },
+                {
+                  "title": "Copper",
+                  "path": "/guides/workflow/apps/Copper"
+                },
+                {
+                  "title": "Cortex",
+                  "path": "/guides/workflow/apps/Cortex"
+                },
+                {
+                  "title": "CrateDB",
+                  "path": "/guides/workflow/apps/CrateDB"
+                },
+                {
+                  "title": "Customer.io",
+                  "path": "/guides/workflow/apps/Customer.io"
+                },
+                {
+                  "title": "CustomerDatastore(n8nTraining)",
+                  "path": "/guides/workflow/apps/CustomerDatastore(n8nTraining)"
+                },
+                {
+                  "title": "CustomerMessenger(n8nTraining)",
+                  "path": "/guides/workflow/apps/CustomerMessenger(n8nTraining)"
+                },
+                {
+                  "title": "DHL",
+                  "path": "/guides/workflow/apps/DHL"
+                },
+                {
+                  "title": "DeepL",
+                  "path": "/guides/workflow/apps/DeepL"
+                },
+                {
+                  "title": "Demio",
+                  "path": "/guides/workflow/apps/Demio"
+                },
+                {
+                  "title": "Discord",
+                  "path": "/guides/workflow/apps/Discord"
+                },
+                {
+                  "title": "Discourse",
+                  "path": "/guides/workflow/apps/Discourse"
+                },
+                {
+                  "title": "Disqus",
+                  "path": "/guides/workflow/apps/Disqus"
+                },
+                {
+                  "title": "Drift",
+                  "path": "/guides/workflow/apps/Drift"
+                },
+                {
+                  "title": "Dropbox",
+                  "path": "/guides/workflow/apps/Dropbox"
+                },
+                {
+                  "title": "Dropcontact",
+                  "path": "/guides/workflow/apps/Dropcontact"
+                },
+                {
+                  "title": "E-goi",
+                  "path": "/guides/workflow/apps/E-goi"
+                },
+                {
+                  "title": "ERPNext",
+                  "path": "/guides/workflow/apps/ERPNext"
+                },
+                {
+                  "title": "ElasticSecurity",
+                  "path": "/guides/workflow/apps/ElasticSecurity"
+                },
+                {
+                  "title": "Elasticsearch",
+                  "path": "/guides/workflow/apps/Elasticsearch"
+                },
+                {
+                  "title": "Emelia",
+                  "path": "/guides/workflow/apps/Emelia"
+                },
+                {
+                  "title": "FacebookGraphAPI",
+                  "path": "/guides/workflow/apps/FacebookGraphAPI"
+                },
+                {
+                  "title": "FileMaker",
+                  "path": "/guides/workflow/apps/FileMaker"
+                },
+                {
+                  "title": "Flow",
+                  "path": "/guides/workflow/apps/Flow"
+                },
+                {
+                  "title": "Freshdesk",
+                  "path": "/guides/workflow/apps/Freshdesk"
+                },
+                {
+                  "title": "Freshservice",
+                  "path": "/guides/workflow/apps/Freshservice"
+                },
+                {
+                  "title": "FreshworksCRM",
+                  "path": "/guides/workflow/apps/FreshworksCRM"
+                },
+                {
+                  "title": "GSuiteAdmin",
+                  "path": "/guides/workflow/apps/GSuiteAdmin"
+                },
+                {
+                  "title": "GetResponse",
+                  "path": "/guides/workflow/apps/GetResponse"
+                },
+                {
+                  "title": "Ghost",
+                  "path": "/guides/workflow/apps/Ghost"
+                },
+                {
+                  "title": "GitHub",
+                  "path": "/guides/workflow/apps/GitHub"
+                },
+                {
+                  "title": "GitLab",
+                  "path": "/guides/workflow/apps/GitLab"
+                },
+                {
+                  "title": "Gmail",
+                  "path": "/guides/workflow/apps/Gmail"
+                },
+                {
+                  "title": "GoToWebinar",
+                  "path": "/guides/workflow/apps/GoToWebinar"
+                },
+                {
+                  "title": "GoogleAdsnode",
+                  "path": "/guides/workflow/apps/GoogleAdsnode"
+                },
+                {
+                  "title": "GoogleAnalytics",
+                  "path": "/guides/workflow/apps/GoogleAnalytics"
+                },
+                {
+                  "title": "GoogleBigQuery",
+                  "path": "/guides/workflow/apps/GoogleBigQuery"
+                },
+                {
+                  "title": "GoogleBooks",
+                  "path": "/guides/workflow/apps/GoogleBooks"
+                },
+                {
+                  "title": "GoogleCalendar",
+                  "path": "/guides/workflow/apps/GoogleCalendar"
+                },
+                {
+                  "title": "GoogleChat",
+                  "path": "/guides/workflow/apps/GoogleChat"
+                },
+                {
+                  "title": "GoogleCloudFirestore",
+                  "path": "/guides/workflow/apps/GoogleCloudFirestore"
+                },
+                {
+                  "title": "GoogleCloudNaturalLanguage",
+                  "path": "/guides/workflow/apps/GoogleCloudNaturalLanguage"
+                },
+                {
+                  "title": "GoogleCloudRealtimeDatabase",
+                  "path": "/guides/workflow/apps/GoogleCloudRealtimeDatabase"
+                },
+                {
+                  "title": "GoogleCloudStorage",
+                  "path": "/guides/workflow/apps/GoogleCloudStorage"
+                },
+                {
+                  "title": "GoogleContacts",
+                  "path": "/guides/workflow/apps/GoogleContacts"
+                },
+                {
+                  "title": "GoogleDocs",
+                  "path": "/guides/workflow/apps/GoogleDocs"
+                },
+                {
+                  "title": "GoogleDrive",
+                  "path": "/guides/workflow/apps/GoogleDrive"
+                },
+                {
+                  "title": "GooglePerspective",
+                  "path": "/guides/workflow/apps/GooglePerspective"
+                },
+                {
+                  "title": "GoogleSheets",
+                  "path": "/guides/workflow/apps/GoogleSheets"
+                },
+                {
+                  "title": "GoogleSlides",
+                  "path": "/guides/workflow/apps/GoogleSlides"
+                },
+                {
+                  "title": "GoogleTasks",
+                  "path": "/guides/workflow/apps/GoogleTasks"
+                },
+                {
+                  "title": "GoogleTranslate",
+                  "path": "/guides/workflow/apps/GoogleTranslate"
+                },
+                {
+                  "title": "Gotify",
+                  "path": "/guides/workflow/apps/Gotify"
+                },
+                {
+                  "title": "Grafana",
+                  "path": "/guides/workflow/apps/Grafana"
+                },
+                {
+                  "title": "Grist",
+                  "path": "/guides/workflow/apps/Grist"
+                },
+                {
+                  "title": "HackerNews",
+                  "path": "/guides/workflow/apps/HackerNews"
+                },
+                {
+                  "title": "HaloPSA",
+                  "path": "/guides/workflow/apps/HaloPSA"
+                },
+                {
+                  "title": "Harvest",
+                  "path": "/guides/workflow/apps/Harvest"
+                },
+                {
+                  "title": "HelpScout",
+                  "path": "/guides/workflow/apps/HelpScout"
+                },
+                {
+                  "title": "HighLevel",
+                  "path": "/guides/workflow/apps/HighLevel"
+                },
+                {
+                  "title": "HomeAssistant",
+                  "path": "/guides/workflow/apps/HomeAssistant"
+                },
+                {
+                  "title": "HubSpot",
+                  "path": "/guides/workflow/apps/HubSpot"
+                },
+                {
+                  "title": "HumanticAI",
+                  "path": "/guides/workflow/apps/HumanticAI"
+                },
+                {
+                  "title": "Hunter",
+                  "path": "/guides/workflow/apps/Hunter"
+                },
+                {
+                  "title": "Intercom",
+                  "path": "/guides/workflow/apps/Intercom"
+                },
+                {
+                  "title": "InvoiceNinja",
+                  "path": "/guides/workflow/apps/InvoiceNinja"
+                },
+                {
+                  "title": "Iterable",
+                  "path": "/guides/workflow/apps/Iterable"
+                },
+                {
+                  "title": "Jenkins",
+                  "path": "/guides/workflow/apps/Jenkins"
+                },
+                {
+                  "title": "Jira",
+                  "path": "/guides/workflow/apps/Jira"
+                },
+                {
+                  "title": "Kafka",
+                  "path": "/guides/workflow/apps/Kafka"
+                },
+                {
+                  "title": "Keap",
+                  "path": "/guides/workflow/apps/Keap"
+                },
+                {
+                  "title": "Kitemaker",
+                  "path": "/guides/workflow/apps/Kitemaker"
+                },
+                {
+                  "title": "KoBoToolbox",
+                  "path": "/guides/workflow/apps/KoBoToolbox"
+                },
+                {
+                  "title": "Lemlist",
+                  "path": "/guides/workflow/apps/Lemlist"
+                },
+                {
+                  "title": "Line",
+                  "path": "/guides/workflow/apps/Line"
+                },
+                {
+                  "title": "Linear",
+                  "path": "/guides/workflow/apps/Linear"
+                },
+                {
+                  "title": "LingvaNex",
+                  "path": "/guides/workflow/apps/LingvaNex"
+                },
+                {
+                  "title": "LinkedIn",
+                  "path": "/guides/workflow/apps/LinkedIn"
+                },
+                {
+                  "title": "MISP",
+                  "path": "/guides/workflow/apps/MISP"
+                },
+                {
+                  "title": "MQTT",
+                  "path": "/guides/workflow/apps/MQTT"
+                },
+                {
+                  "title": "MSG91",
+                  "path": "/guides/workflow/apps/MSG91"
+                },
+                {
+                  "title": "Magento2",
+                  "path": "/guides/workflow/apps/Magento2"
+                },
+                {
+                  "title": "Mailcheck",
+                  "path": "/guides/workflow/apps/Mailcheck"
+                },
+                {
+                  "title": "Mailchimp",
+                  "path": "/guides/workflow/apps/Mailchimp"
+                },
+                {
+                  "title": "MailerLite",
+                  "path": "/guides/workflow/apps/MailerLite"
+                },
+                {
+                  "title": "Mailgun",
+                  "path": "/guides/workflow/apps/Mailgun"
+                },
+                {
+                  "title": "Mailjet",
+                  "path": "/guides/workflow/apps/Mailjet"
+                },
+                {
+                  "title": "Mandrill",
+                  "path": "/guides/workflow/apps/Mandrill"
+                },
+                {
+                  "title": "Marketstack",
+                  "path": "/guides/workflow/apps/Marketstack"
+                },
+                {
+                  "title": "Matrix",
+                  "path": "/guides/workflow/apps/Matrix"
+                },
+                {
+                  "title": "Mattermost",
+                  "path": "/guides/workflow/apps/Mattermost"
+                },
+                {
+                  "title": "Mautic",
+                  "path": "/guides/workflow/apps/Mautic"
+                },
+                {
+                  "title": "Medium",
+                  "path": "/guides/workflow/apps/Medium"
+                },
+                {
+                  "title": "MessageBird",
+                  "path": "/guides/workflow/apps/MessageBird"
+                },
+                {
+                  "title": "Metabase",
+                  "path": "/guides/workflow/apps/Metabase"
+                },
+                {
+                  "title": "MicrosoftDynamicsCRM",
+                  "path": "/guides/workflow/apps/MicrosoftDynamicsCRM"
+                },
+                {
+                  "title": "MicrosoftExcel",
+                  "path": "/guides/workflow/apps/MicrosoftExcel"
+                },
+                {
+                  "title": "MicrosoftGraphSecurity",
+                  "path": "/guides/workflow/apps/MicrosoftGraphSecurity"
+                },
+                {
+                  "title": "MicrosoftOneDrive",
+                  "path": "/guides/workflow/apps/MicrosoftOneDrive"
+                },
+                {
+                  "title": "MicrosoftOutlook",
+                  "path": "/guides/workflow/apps/MicrosoftOutlook"
+                },
+                {
+                  "title": "MicrosoftSQL",
+                  "path": "/guides/workflow/apps/MicrosoftSQL"
+                },
+                {
+                  "title": "MicrosoftTeams",
+                  "path": "/guides/workflow/apps/MicrosoftTeams"
+                },
+                {
+                  "title": "MicrosoftToDo",
+                  "path": "/guides/workflow/apps/MicrosoftToDo"
+                },
+                {
+                  "title": "Mindee",
+                  "path": "/guides/workflow/apps/Mindee"
+                },
+                {
+                  "title": "Mocean",
+                  "path": "/guides/workflow/apps/Mocean"
+                },
+                {
+                  "title": "MongoDB",
+                  "path": "/guides/workflow/apps/MongoDB"
+                },
+                {
+                  "title": "MonicaCRM",
+                  "path": "/guides/workflow/apps/MonicaCRM"
+                },
+                {
+                  "title": "MySQL",
+                  "path": "/guides/workflow/apps/MySQL"
+                },
+                {
+                  "title": "NASA",
+                  "path": "/guides/workflow/apps/NASA"
+                },
+                {
+                  "title": "Netlify",
+                  "path": "/guides/workflow/apps/Netlify"
+                },
+                {
+                  "title": "Nextcloud",
+                  "path": "/guides/workflow/apps/Nextcloud"
+                },
+                {
+                  "title": "NocoDB",
+                  "path": "/guides/workflow/apps/NocoDB"
+                },
+                {
+                  "title": "Notion",
+                  "path": "/guides/workflow/apps/Notion"
+                },
+                {
+                  "title": "Odoo",
+                  "path": "/guides/workflow/apps/Odoo"
+                },
+                {
+                  "title": "OneSimpleAPI",
+                  "path": "/guides/workflow/apps/OneSimpleAPI"
+                },
+                {
+                  "title": "Onfleet",
+                  "path": "/guides/workflow/apps/Onfleet"
+                },
+                {
+                  "title": "OpenAI",
+                  "path": "/guides/workflow/apps/OpenAI"
+                },
+                {
+                  "title": "OpenThesaurus",
+                  "path": "/guides/workflow/apps/OpenThesaurus"
+                },
+                {
+                  "title": "OpenWeatherMap",
+                  "path": "/guides/workflow/apps/OpenWeatherMap"
+                },
+                {
+                  "title": "Orbit",
+                  "path": "/guides/workflow/apps/Orbit"
+                },
+                {
+                  "title": "Oura",
+                  "path": "/guides/workflow/apps/Oura"
+                },
+                {
+                  "title": "Paddle",
+                  "path": "/guides/workflow/apps/Paddle"
+                },
+                {
+                  "title": "PagerDuty",
+                  "path": "/guides/workflow/apps/PagerDuty"
+                },
+                {
+                  "title": "PayPal",
+                  "path": "/guides/workflow/apps/PayPal"
+                },
+                {
+                  "title": "Peekalink",
+                  "path": "/guides/workflow/apps/Peekalink"
+                },
+                {
+                  "title": "Phantombuster",
+                  "path": "/guides/workflow/apps/Phantombuster"
+                },
+                {
+                  "title": "PhilipsHue",
+                  "path": "/guides/workflow/apps/PhilipsHue"
+                },
+                {
+                  "title": "Pipedrive",
+                  "path": "/guides/workflow/apps/Pipedrive"
+                },
+                {
+                  "title": "Plivo",
+                  "path": "/guides/workflow/apps/Plivo"
+                },
+                {
+                  "title": "PostHog",
+                  "path": "/guides/workflow/apps/PostHog"
+                },
+                {
+                  "title": "Postbin",
+                  "path": "/guides/workflow/apps/Postbin"
+                },
+                {
+                  "title": "Postgres",
+                  "path": "/guides/workflow/apps/Postgres"
+                },
+                {
+                  "title": "ProfitWell",
+                  "path": "/guides/workflow/apps/ProfitWell"
+                },
+                {
+                  "title": "Pushbullet",
+                  "path": "/guides/workflow/apps/Pushbullet"
+                },
+                {
+                  "title": "Pushcut",
+                  "path": "/guides/workflow/apps/Pushcut"
+                },
+                {
+                  "title": "Pushover",
+                  "path": "/guides/workflow/apps/Pushover"
+                },
+                {
+                  "title": "QuestDB",
+                  "path": "/guides/workflow/apps/QuestDB"
+                },
+                {
+                  "title": "QuickBase",
+                  "path": "/guides/workflow/apps/QuickBase"
+                },
+                {
+                  "title": "QuickBooks",
+                  "path": "/guides/workflow/apps/QuickBooks"
+                },
+                {
+                  "title": "RabbitMQ",
+                  "path": "/guides/workflow/apps/RabbitMQ"
+                },
+                {
+                  "title": "Raindrop",
+                  "path": "/guides/workflow/apps/Raindrop"
+                },
+                {
+                  "title": "Reddit",
+                  "path": "/guides/workflow/apps/Reddit"
+                },
+                {
+                  "title": "Redis",
+                  "path": "/guides/workflow/apps/Redis"
+                },
+                {
+                  "title": "Rocket.Chat",
+                  "path": "/guides/workflow/apps/Rocket.Chat"
+                },
+                {
+                  "title": "Rundeck",
+                  "path": "/guides/workflow/apps/Rundeck"
+                },
+                {
+                  "title": "S3",
+                  "path": "/guides/workflow/apps/S3"
+                },
+                {
+                  "title": "SIGNL4",
+                  "path": "/guides/workflow/apps/SIGNL4"
+                },
+                {
+                  "title": "Salesforce",
+                  "path": "/guides/workflow/apps/Salesforce"
+                },
+                {
+                  "title": "Salesmate",
+                  "path": "/guides/workflow/apps/Salesmate"
+                },
+                {
+                  "title": "SeaTable",
+                  "path": "/guides/workflow/apps/SeaTable"
+                },
+                {
+                  "title": "SecurityScorecard",
+                  "path": "/guides/workflow/apps/SecurityScorecard"
+                },
+                {
+                  "title": "Segment",
+                  "path": "/guides/workflow/apps/Segment"
+                },
+                {
+                  "title": "SendGrid",
+                  "path": "/guides/workflow/apps/SendGrid"
+                },
+                {
+                  "title": "Sendinblue",
+                  "path": "/guides/workflow/apps/Sendinblue"
+                },
+                {
+                  "title": "Sendy",
+                  "path": "/guides/workflow/apps/Sendy"
+                },
+                {
+                  "title": "Sentry.io",
+                  "path": "/guides/workflow/apps/Sentry.io"
+                },
+                {
+                  "title": "ServiceNow",
+                  "path": "/guides/workflow/apps/ServiceNow"
+                },
+                {
+                  "title": "Shopify",
+                  "path": "/guides/workflow/apps/Shopify"
+                },
+                {
+                  "title": "Slack",
+                  "path": "/guides/workflow/apps/Slack"
+                },
+                {
+                  "title": "Snowflake",
+                  "path": "/guides/workflow/apps/Snowflake"
+                },
+                {
+                  "title": "Splunk",
+                  "path": "/guides/workflow/apps/Splunk"
+                },
+                {
+                  "title": "Spontit",
+                  "path": "/guides/workflow/apps/Spontit"
+                },
+                {
+                  "title": "Spotify",
+                  "path": "/guides/workflow/apps/Spotify"
+                },
+                {
+                  "title": "Stackby",
+                  "path": "/guides/workflow/apps/Stackby"
+                },
+                {
+                  "title": "Storyblok",
+                  "path": "/guides/workflow/apps/Storyblok"
+                },
+                {
+                  "title": "Strapi",
+                  "path": "/guides/workflow/apps/Strapi"
+                },
+                {
+                  "title": "Strava",
+                  "path": "/guides/workflow/apps/Strava"
+                },
+                {
+                  "title": "Stripe",
+                  "path": "/guides/workflow/apps/Stripe"
+                },
+                {
+                  "title": "Supabase",
+                  "path": "/guides/workflow/apps/Supabase"
+                },
+                {
+                  "title": "SyncroMSP",
+                  "path": "/guides/workflow/apps/SyncroMSP"
+                },
+                {
+                  "title": "Taiga",
+                  "path": "/guides/workflow/apps/Taiga"
+                },
+                {
+                  "title": "Tapfiliate",
+                  "path": "/guides/workflow/apps/Tapfiliate"
+                },
+                {
+                  "title": "Telegram",
+                  "path": "/guides/workflow/apps/Telegram"
+                },
+                {
+                  "title": "TheHive",
+                  "path": "/guides/workflow/apps/TheHive"
+                },
+                {
+                  "title": "TimescaleDB",
+                  "path": "/guides/workflow/apps/TimescaleDB"
+                },
+                {
+                  "title": "Todoist",
+                  "path": "/guides/workflow/apps/Todoist"
+                },
+                {
+                  "title": "TravisCI",
+                  "path": "/guides/workflow/apps/TravisCI"
+                },
+                {
+                  "title": "Trello",
+                  "path": "/guides/workflow/apps/Trello"
+                },
+                {
+                  "title": "Twake",
+                  "path": "/guides/workflow/apps/Twake"
+                },
+                {
+                  "title": "Twilio",
+                  "path": "/guides/workflow/apps/Twilio"
+                },
+                {
+                  "title": "Twist",
+                  "path": "/guides/workflow/apps/Twist"
+                },
+                {
+                  "title": "Twitter",
+                  "path": "/guides/workflow/apps/Twitter"
+                },
+                {
+                  "title": "UnleashedSoftware",
+                  "path": "/guides/workflow/apps/UnleashedSoftware"
+                },
+                {
+                  "title": "UpLead",
+                  "path": "/guides/workflow/apps/UpLead"
+                },
+                {
+                  "title": "UptimeRobot",
+                  "path": "/guides/workflow/apps/UptimeRobot"
+                },
+                {
+                  "title": "VenafiTLSProtectCloud",
+                  "path": "/guides/workflow/apps/VenafiTLSProtectCloud"
+                },
+                {
+                  "title": "VenafiTLSProtectDatacenter",
+                  "path": "/guides/workflow/apps/VenafiTLSProtectDatacenter"
+                },
+                {
+                  "title": "Vero",
+                  "path": "/guides/workflow/apps/Vero"
+                },
+                {
+                  "title": "Vonage",
+                  "path": "/guides/workflow/apps/Vonage"
+                },
+                {
+                  "title": "WebexbyCisco",
+                  "path": "/guides/workflow/apps/WebexbyCisco"
+                },
+                {
+                  "title": "Webflow",
+                  "path": "/guides/workflow/apps/Webflow"
+                },
+                {
+                  "title": "Wekan",
+                  "path": "/guides/workflow/apps/Wekan"
+                },
+                {
+                  "title": "WhatsAppBusinessPlatform",
+                  "path": "/guides/workflow/apps/WhatsAppBusinessPlatform"
+                },
+                {
+                  "title": "Wise",
+                  "path": "/guides/workflow/apps/Wise"
+                },
+                {
+                  "title": "WooCommerce",
+                  "path": "/guides/workflow/apps/WooCommerce"
+                },
+                {
+                  "title": "WordPress",
+                  "path": "/guides/workflow/apps/WordPress"
+                },
+                {
+                  "title": "Xero",
+                  "path": "/guides/workflow/apps/Xero"
+                },
+                {
+                  "title": "YouTube",
+                  "path": "/guides/workflow/apps/YouTube"
+                },
+                {
+                  "title": "Yourls",
+                  "path": "/guides/workflow/apps/Yourls"
+                },
+                {
+                  "title": "Zammad",
+                  "path": "/guides/workflow/apps/Zammad"
+                },
+                {
+                  "title": "Zendesk",
+                  "path": "/guides/workflow/apps/Zendesk"
+                },
+                {
+                  "title": "ZohoCRM",
+                  "path": "/guides/workflow/apps/ZohoCRM"
+                },
+                {
+                  "title": "Zoom",
+                  "path": "/guides/workflow/apps/Zoom"
+                },
+                {
+                  "title": "Zulip",
+                  "path": "/guides/workflow/apps/Zulip"
+                },
+                {
+                  "title": "monday.com",
+                  "path": "/guides/workflow/apps/monday.com"
+                },
+                {
+                  "title": "sms77",
+                  "path": "/guides/workflow/apps/sms77"
+                },
+                {
+                  "title": "uProc",
+                  "path": "/guides/workflow/apps/uProc"
+                },
+                {
+                  "title": "urlscan.io",
+                  "path": "/guides/workflow/apps/urlscan.io"
+                }
+              ]
+            },
+            {
+              title: "核心节点",
+              path: "/guides/workflow/core/",
+              children: [
+                {
+                  "title": "ActivationTrigger",
+                  "path": "/guides/workflow/core/ActivationTrigger"
+                },
+                {
+                  "title": "Code",
+                  "path": "/guides/workflow/core/Code"
+                },
+                {
+                  "title": "CompareDatasets",
+                  "path": "/guides/workflow/core/CompareDatasets"
+                },
+                {
+                  "title": "Compression",
+                  "path": "/guides/workflow/core/Compression"
+                },
+                {
+                  "title": "Crypto",
+                  "path": "/guides/workflow/core/Crypto"
+                },
+                {
+                  "title": "Date&Time",
+                  "path": "/guides/workflow/core/Date&Time"
+                },
+                {
+                  "title": "EditImage",
+                  "path": "/guides/workflow/core/EditImage"
+                },
+                {
+                  "title": "EmailTrigger(IMAP)",
+                  "path": "/guides/workflow/core/EmailTrigger(IMAP)"
+                },
+                {
+                  "title": "ErrorTrigger",
+                  "path": "/guides/workflow/core/ErrorTrigger"
+                },
+                {
+                  "title": "ExecuteCommand",
+                  "path": "/guides/workflow/core/ExecuteCommand"
+                },
+                {
+                  "title": "ExecuteWorkflow",
+                  "path": "/guides/workflow/core/ExecuteWorkflow"
+                },
+                {
+                  "title": "ExecuteWorkflowTrigger",
+                  "path": "/guides/workflow/core/ExecuteWorkflowTrigger"
+                },
+                {
+                  "title": "FTP",
+                  "path": "/guides/workflow/core/FTP"
+                },
+                {
+                  "title": "Git",
+                  "path": "/guides/workflow/core/Git"
+                },
+                {
+                  "title": "GraphQL",
+                  "path": "/guides/workflow/core/GraphQL"
+                },
+                {
+                  "title": "HTMLExtract",
+                  "path": "/guides/workflow/core/HTMLExtract"
+                },
+                {
+                  "title": "HTTPRequest",
+                  "path": "/guides/workflow/core/HTTPRequest"
+                },
+                {
+                  "title": "IF",
+                  "path": "/guides/workflow/core/IF"
+                },
+                {
+                  "title": "Interval",
+                  "path": "/guides/workflow/core/Interval"
+                },
+                {
+                  "title": "ItemLists",
+                  "path": "/guides/workflow/core/ItemLists"
+                },
+                {
+                  "title": "LocalFileTrigger",
+                  "path": "/guides/workflow/core/LocalFileTrigger"
+                },
+                {
+                  "title": "ManualTrigger",
+                  "path": "/guides/workflow/core/ManualTrigger"
+                },
+                {
+                  "title": "Markdown",
+                  "path": "/guides/workflow/core/Markdown"
+                },
+                {
+                  "title": "Merge",
+                  "path": "/guides/workflow/core/Merge"
+                },
+                {
+                  "title": "MoveBinaryData",
+                  "path": "/guides/workflow/core/MoveBinaryData"
+                },
+                {
+                  "title": "NoOperation,donothing",
+                  "path": "/guides/workflow/core/NoOperation,donothing"
+                },
+                {
+                  "title": "RSSRead",
+                  "path": "/guides/workflow/core/RSSRead"
+                },
+                {
+                  "title": "ReadBinaryFile",
+                  "path": "/guides/workflow/core/ReadBinaryFile"
+                },
+                {
+                  "title": "ReadBinaryFiles",
+                  "path": "/guides/workflow/core/ReadBinaryFiles"
+                },
+                {
+                  "title": "ReadPDF",
+                  "path": "/guides/workflow/core/ReadPDF"
+                },
+                {
+                  "title": "RenameKeys",
+                  "path": "/guides/workflow/core/RenameKeys"
+                },
+                {
+                  "title": "RespondtoWebhook",
+                  "path": "/guides/workflow/core/RespondtoWebhook"
+                },
+                {
+                  "title": "SSETrigger",
+                  "path": "/guides/workflow/core/SSETrigger"
+                },
+                {
+                  "title": "SSH",
+                  "path": "/guides/workflow/core/SSH"
+                },
+                {
+                  "title": "ScheduleTrigger",
+                  "path": "/guides/workflow/core/ScheduleTrigger"
+                },
+                {
+                  "title": "SendEmail",
+                  "path": "/guides/workflow/core/SendEmail"
+                },
+                {
+                  "title": "Set",
+                  "path": "/guides/workflow/core/Set"
+                },
+                {
+                  "title": "SplitInBatches",
+                  "path": "/guides/workflow/core/SplitInBatches"
+                },
+                {
+                  "title": "SpreadsheetFile",
+                  "path": "/guides/workflow/core/SpreadsheetFile"
+                },
+                {
+                  "title": "Start",
+                  "path": "/guides/workflow/core/Start"
+                },
+                {
+                  "title": "StopAndError",
+                  "path": "/guides/workflow/core/StopAndError"
+                },
+                {
+                  "title": "Switch",
+                  "path": "/guides/workflow/core/Switch"
+                },
+                {
+                  "title": "Wait",
+                  "path": "/guides/workflow/core/Wait"
+                },
+                {
+                  "title": "Webhook",
+                  "path": "/guides/workflow/core/Webhook"
+                },
+                {
+                  "title": "WorkflowTrigger",
+                  "path": "/guides/workflow/core/WorkflowTrigger"
+                },
+                {
+                  "title": "WriteBinaryFile",
+                  "path": "/guides/workflow/core/WriteBinaryFile"
+                },
+                {
+                  "title": "XML",
+                  "path": "/guides/workflow/core/XML"
+                },
+                {
+                  "title": "iCalendar",
+                  "path": "/guides/workflow/core/iCalendar"
+                },
+                {
+                  "title": "n8n",
+                  "path": "/guides/workflow/core/n8n"
+                },
+                {
+                  "title": "n8nTrigger",
+                  "path": "/guides/workflow/core/n8nTrigger"
+                }
+              ]
+            },
+            {
+              title: "密钥",
+              path: "/guides/workflow/credentials/",
+              children: [
+                {
+                  "title": "AMQP",
+                  "path": "/guides/workflow/credentials/AMQP"
+                },
+                {
+                  "title": "APITemplate.io",
+                  "path": "/guides/workflow/credentials/APITemplate.io"
+                },
+                {
+                  "title": "AWS",
+                  "path": "/guides/workflow/credentials/AWS"
+                },
+                {
+                  "title": "ActionNetwork",
+                  "path": "/guides/workflow/credentials/ActionNetwork"
+                },
+                {
+                  "title": "ActiveCampaign",
+                  "path": "/guides/workflow/credentials/ActiveCampaign"
+                },
+                {
+                  "title": "AcuityScheduling",
+                  "path": "/guides/workflow/credentials/AcuityScheduling"
+                },
+                {
+                  "title": "Adalo",
+                  "path": "/guides/workflow/credentials/Adalo"
+                },
+                {
+                  "title": "Affinity",
+                  "path": "/guides/workflow/credentials/Affinity"
+                },
+                {
+                  "title": "AgileCRM",
+                  "path": "/guides/workflow/credentials/AgileCRM"
+                },
+                {
+                  "title": "Airtable",
+                  "path": "/guides/workflow/credentials/Airtable"
+                },
+                {
+                  "title": "Asana",
+                  "path": "/guides/workflow/credentials/Asana"
+                },
+                {
+                  "title": "Automizy",
+                  "path": "/guides/workflow/credentials/Automizy"
+                },
+                {
+                  "title": "Autopilot",
+                  "path": "/guides/workflow/credentials/Autopilot"
+                },
+                {
+                  "title": "BambooHR",
+                  "path": "/guides/workflow/credentials/BambooHR"
+                },
+                {
+                  "title": "Bannerbear",
+                  "path": "/guides/workflow/credentials/Bannerbear"
+                },
+                {
+                  "title": "Baserow",
+                  "path": "/guides/workflow/credentials/Baserow"
+                },
+                {
+                  "title": "Beeminder",
+                  "path": "/guides/workflow/credentials/Beeminder"
+                },
+                {
+                  "title": "Bitbucket",
+                  "path": "/guides/workflow/credentials/Bitbucket"
+                },
+                {
+                  "title": "Bitly",
+                  "path": "/guides/workflow/credentials/Bitly"
+                },
+                {
+                  "title": "Bitwarden",
+                  "path": "/guides/workflow/credentials/Bitwarden"
+                },
+                {
+                  "title": "Box",
+                  "path": "/guides/workflow/credentials/Box"
+                },
+                {
+                  "title": "Brandfetch",
+                  "path": "/guides/workflow/credentials/Brandfetch"
+                },
+                {
+                  "title": "Bubble",
+                  "path": "/guides/workflow/credentials/Bubble"
+                },
+                {
+                  "title": "Cal",
+                  "path": "/guides/workflow/credentials/Cal"
+                },
+                {
+                  "title": "Calendly",
+                  "path": "/guides/workflow/credentials/Calendly"
+                },
+                {
+                  "title": "Chargebee",
+                  "path": "/guides/workflow/credentials/Chargebee"
+                },
+                {
+                  "title": "CircleCI",
+                  "path": "/guides/workflow/credentials/CircleCI"
+                },
+                {
+                  "title": "CitrixADC",
+                  "path": "/guides/workflow/credentials/CitrixADC"
+                },
+                {
+                  "title": "Clearbit",
+                  "path": "/guides/workflow/credentials/Clearbit"
+                },
+                {
+                  "title": "ClickUp",
+                  "path": "/guides/workflow/credentials/ClickUp"
+                },
+                {
+                  "title": "Clockify",
+                  "path": "/guides/workflow/credentials/Clockify"
+                },
+                {
+                  "title": "Cloudflare",
+                  "path": "/guides/workflow/credentials/Cloudflare"
+                },
+                {
+                  "title": "Cockpit",
+                  "path": "/guides/workflow/credentials/Cockpit"
+                },
+                {
+                  "title": "Coda",
+                  "path": "/guides/workflow/credentials/Coda"
+                },
+                {
+                  "title": "Contentful",
+                  "path": "/guides/workflow/credentials/Contentful"
+                },
+                {
+                  "title": "ConvertKit",
+                  "path": "/guides/workflow/credentials/ConvertKit"
+                },
+                {
+                  "title": "Copper",
+                  "path": "/guides/workflow/credentials/Copper"
+                },
+                {
+                  "title": "Cortex",
+                  "path": "/guides/workflow/credentials/Cortex"
+                },
+                {
+                  "title": "CrateDB",
+                  "path": "/guides/workflow/credentials/CrateDB"
+                },
+                {
+                  "title": "Createandedit",
+                  "path": "/guides/workflow/credentials/Createandedit"
+                },
+                {
+                  "title": "Credentials",
+                  "path": "/guides/workflow/credentials/Credentials"
+                },
+                {
+                  "title": "Credentialsfiles",
+                  "path": "/guides/workflow/credentials/Credentialsfiles"
+                },
+                {
+                  "title": "Credentialsharing",
+                  "path": "/guides/workflow/credentials/Credentialsharing"
+                },
+                {
+                  "title": "Customer.io",
+                  "path": "/guides/workflow/credentials/Customer.io"
+                },
+                {
+                  "title": "DHL",
+                  "path": "/guides/workflow/credentials/DHL"
+                },
+                {
+                  "title": "DeepL",
+                  "path": "/guides/workflow/credentials/DeepL"
+                },
+                {
+                  "title": "Demio",
+                  "path": "/guides/workflow/credentials/Demio"
+                },
+                {
+                  "title": "Discord",
+                  "path": "/guides/workflow/credentials/Discord"
+                },
+                {
+                  "title": "Discourse",
+                  "path": "/guides/workflow/credentials/Discourse"
+                },
+                {
+                  "title": "Disqus",
+                  "path": "/guides/workflow/credentials/Disqus"
+                },
+                {
+                  "title": "Drift",
+                  "path": "/guides/workflow/credentials/Drift"
+                },
+                {
+                  "title": "Dropbox",
+                  "path": "/guides/workflow/credentials/Dropbox"
+                },
+                {
+                  "title": "Dropcontact",
+                  "path": "/guides/workflow/credentials/Dropcontact"
+                },
+                {
+                  "title": "E-goi",
+                  "path": "/guides/workflow/credentials/E-goi"
+                },
+                {
+                  "title": "ERPNext",
+                  "path": "/guides/workflow/credentials/ERPNext"
+                },
+                {
+                  "title": "ElasticSecurity",
+                  "path": "/guides/workflow/credentials/ElasticSecurity"
+                },
+                {
+                  "title": "Elasticsearch",
+                  "path": "/guides/workflow/credentials/Elasticsearch"
+                },
+                {
+                  "title": "Emelia",
+                  "path": "/guides/workflow/credentials/Emelia"
+                },
+                {
+                  "title": "Eventbrite",
+                  "path": "/guides/workflow/credentials/Eventbrite"
+                },
+                {
+                  "title": "FTP",
+                  "path": "/guides/workflow/credentials/FTP"
+                },
+                {
+                  "title": "FacebookApp",
+                  "path": "/guides/workflow/credentials/FacebookApp"
+                },
+                {
+                  "title": "FacebookGraphAPI",
+                  "path": "/guides/workflow/credentials/FacebookGraphAPI"
+                },
+                {
+                  "title": "Figma",
+                  "path": "/guides/workflow/credentials/Figma"
+                },
+                {
+                  "title": "FileMaker",
+                  "path": "/guides/workflow/credentials/FileMaker"
+                },
+                {
+                  "title": "Flow",
+                  "path": "/guides/workflow/credentials/Flow"
+                },
+                {
+                  "title": "Form.ioTrigger",
+                  "path": "/guides/workflow/credentials/Form.ioTrigger"
+                },
+                {
+                  "title": "FormstackTrigger",
+                  "path": "/guides/workflow/credentials/FormstackTrigger"
+                },
+                {
+                  "title": "Freshdesk",
+                  "path": "/guides/workflow/credentials/Freshdesk"
+                },
+                {
+                  "title": "Freshservice",
+                  "path": "/guides/workflow/credentials/Freshservice"
+                },
+                {
+                  "title": "FreshworksCRM",
+                  "path": "/guides/workflow/credentials/FreshworksCRM"
+                },
+                {
+                  "title": "GetResponse",
+                  "path": "/guides/workflow/credentials/GetResponse"
+                },
+                {
+                  "title": "Ghost",
+                  "path": "/guides/workflow/credentials/Ghost"
+                },
+                {
+                  "title": "Git",
+                  "path": "/guides/workflow/credentials/Git"
+                },
+                {
+                  "title": "GitHub",
+                  "path": "/guides/workflow/credentials/GitHub"
+                },
+                {
+                  "title": "GitLab",
+                  "path": "/guides/workflow/credentials/GitLab"
+                },
+                {
+                  "title": "GoToWebinar",
+                  "path": "/guides/workflow/credentials/GoToWebinar"
+                },
+                {
+                  "title": "Google",
+                  "path": "/guides/workflow/credentials/Google"
+                },
+                {
+                  "title": "Google:OAuth2generic",
+                  "path": "/guides/workflow/credentials/Google:OAuth2generic"
+                },
+                {
+                  "title": "Google:OAuth2singleservice",
+                  "path": "/guides/workflow/credentials/Google:OAuth2singleservice"
+                },
+                {
+                  "title": "Google:ServiceAccount",
+                  "path": "/guides/workflow/credentials/Google:ServiceAccount"
+                },
+                {
+                  "title": "Gotify",
+                  "path": "/guides/workflow/credentials/Gotify"
+                },
+                {
+                  "title": "Grafana",
+                  "path": "/guides/workflow/credentials/Grafana"
+                },
+                {
+                  "title": "Grist",
+                  "path": "/guides/workflow/credentials/Grist"
+                },
+                {
+                  "title": "Gumroad",
+                  "path": "/guides/workflow/credentials/Gumroad"
+                },
+                {
+                  "title": "HTTPRequest",
+                  "path": "/guides/workflow/credentials/HTTPRequest"
+                },
+                {
+                  "title": "HaloPSA",
+                  "path": "/guides/workflow/credentials/HaloPSA"
+                },
+                {
+                  "title": "Harvest",
+                  "path": "/guides/workflow/credentials/Harvest"
+                },
+                {
+                  "title": "HelpScout",
+                  "path": "/guides/workflow/credentials/HelpScout"
+                },
+                {
+                  "title": "HighLevel",
+                  "path": "/guides/workflow/credentials/HighLevel"
+                },
+                {
+                  "title": "HomeAssistant",
+                  "path": "/guides/workflow/credentials/HomeAssistant"
+                },
+                {
+                  "title": "HubSpot",
+                  "path": "/guides/workflow/credentials/HubSpot"
+                },
+                {
+                  "title": "HumanticAI",
+                  "path": "/guides/workflow/credentials/HumanticAI"
+                },
+                {
+                  "title": "Hunter",
+                  "path": "/guides/workflow/credentials/Hunter"
+                },
+                {
+                  "title": "IMAP",
+                  "path": "/guides/workflow/credentials/IMAP"
+                },
+                {
+                  "title": "Intercom",
+                  "path": "/guides/workflow/credentials/Intercom"
+                },
+                {
+                  "title": "InvoiceNinja",
+                  "path": "/guides/workflow/credentials/InvoiceNinja"
+                },
+                {
+                  "title": "Iterable",
+                  "path": "/guides/workflow/credentials/Iterable"
+                },
+                {
+                  "title": "Jenkins",
+                  "path": "/guides/workflow/credentials/Jenkins"
+                },
+                {
+                  "title": "Jira",
+                  "path": "/guides/workflow/credentials/Jira"
+                },
+                {
+                  "title": "JotForm",
+                  "path": "/guides/workflow/credentials/JotForm"
+                },
+                {
+                  "title": "Kafka",
+                  "path": "/guides/workflow/credentials/Kafka"
+                },
+                {
+                  "title": "Keap",
+                  "path": "/guides/workflow/credentials/Keap"
+                },
+                {
+                  "title": "Kitemaker",
+                  "path": "/guides/workflow/credentials/Kitemaker"
+                },
+                {
+                  "title": "KoBoToolbox",
+                  "path": "/guides/workflow/credentials/KoBoToolbox"
+                },
+                {
+                  "title": "Lemlist",
+                  "path": "/guides/workflow/credentials/Lemlist"
+                },
+                {
+                  "title": "Line",
+                  "path": "/guides/workflow/credentials/Line"
+                },
+                {
+                  "title": "Linear",
+                  "path": "/guides/workflow/credentials/Linear"
+                },
+                {
+                  "title": "LingvaNex",
+                  "path": "/guides/workflow/credentials/LingvaNex"
+                },
+                {
+                  "title": "LinkedIn",
+                  "path": "/guides/workflow/credentials/LinkedIn"
+                },
+                {
+                  "title": "MISP",
+                  "path": "/guides/workflow/credentials/MISP"
+                },
+                {
+                  "title": "MQTT",
+                  "path": "/guides/workflow/credentials/MQTT"
+                },
+                {
+                  "title": "MSG91",
+                  "path": "/guides/workflow/credentials/MSG91"
+                },
+                {
+                  "title": "Magento2",
+                  "path": "/guides/workflow/credentials/Magento2"
+                },
+                {
+                  "title": "Mailcheck",
+                  "path": "/guides/workflow/credentials/Mailcheck"
+                },
+                {
+                  "title": "Mailchimp",
+                  "path": "/guides/workflow/credentials/Mailchimp"
+                },
+                {
+                  "title": "MailerLite",
+                  "path": "/guides/workflow/credentials/MailerLite"
+                },
+                {
+                  "title": "Mailgun",
+                  "path": "/guides/workflow/credentials/Mailgun"
+                },
+                {
+                  "title": "Mailjet",
+                  "path": "/guides/workflow/credentials/Mailjet"
+                },
+                {
+                  "title": "Managecredentials",
+                  "path": "/guides/workflow/credentials/Managecredentials"
+                },
+                {
+                  "title": "Mandrill",
+                  "path": "/guides/workflow/credentials/Mandrill"
+                },
+                {
+                  "title": "Marketstack",
+                  "path": "/guides/workflow/credentials/Marketstack"
+                },
+                {
+                  "title": "Matrix",
+                  "path": "/guides/workflow/credentials/Matrix"
+                },
+                {
+                  "title": "Mattermost",
+                  "path": "/guides/workflow/credentials/Mattermost"
+                },
+                {
+                  "title": "Mautic",
+                  "path": "/guides/workflow/credentials/Mautic"
+                },
+                {
+                  "title": "Medium",
+                  "path": "/guides/workflow/credentials/Medium"
+                },
+                {
+                  "title": "MessageBird",
+                  "path": "/guides/workflow/credentials/MessageBird"
+                },
+                {
+                  "title": "Metabase",
+                  "path": "/guides/workflow/credentials/Metabase"
+                },
+                {
+                  "title": "Microsoft",
+                  "path": "/guides/workflow/credentials/Microsoft"
+                },
+                {
+                  "title": "MicrosoftSQL",
+                  "path": "/guides/workflow/credentials/MicrosoftSQL"
+                },
+                {
+                  "title": "Mindee",
+                  "path": "/guides/workflow/credentials/Mindee"
+                },
+                {
+                  "title": "Mocean",
+                  "path": "/guides/workflow/credentials/Mocean"
+                },
+                {
+                  "title": "MongoDB",
+                  "path": "/guides/workflow/credentials/MongoDB"
+                },
+                {
+                  "title": "MonicaCRM",
+                  "path": "/guides/workflow/credentials/MonicaCRM"
+                },
+                {
+                  "title": "MySQL",
+                  "path": "/guides/workflow/credentials/MySQL"
+                },
+                {
+                  "title": "NASA",
+                  "path": "/guides/workflow/credentials/NASA"
+                },
+                {
+                  "title": "Netlify",
+                  "path": "/guides/workflow/credentials/Netlify"
+                },
+                {
+                  "title": "Nextcloud",
+                  "path": "/guides/workflow/credentials/Nextcloud"
+                },
+                {
+                  "title": "NocoDB",
+                  "path": "/guides/workflow/credentials/NocoDB"
+                },
+                {
+                  "title": "Notion",
+                  "path": "/guides/workflow/credentials/Notion"
+                },
+                {
+                  "title": "Odoocredentials",
+                  "path": "/guides/workflow/credentials/Odoocredentials"
+                },
+                {
+                  "title": "OneSimpleAPI",
+                  "path": "/guides/workflow/credentials/OneSimpleAPI"
+                },
+                {
+                  "title": "Onfleetcredentials",
+                  "path": "/guides/workflow/credentials/Onfleetcredentials"
+                },
+                {
+                  "title": "OpenAI",
+                  "path": "/guides/workflow/credentials/OpenAI"
+                },
+                {
+                  "title": "OpenWeatherMap",
+                  "path": "/guides/workflow/credentials/OpenWeatherMap"
+                },
+                {
+                  "title": "Orbit",
+                  "path": "/guides/workflow/credentials/Orbit"
+                },
+                {
+                  "title": "Oura",
+                  "path": "/guides/workflow/credentials/Oura"
+                },
+                {
+                  "title": "Paddle",
+                  "path": "/guides/workflow/credentials/Paddle"
+                },
+                {
+                  "title": "PagerDuty",
+                  "path": "/guides/workflow/credentials/PagerDuty"
+                },
+                {
+                  "title": "PayPal",
+                  "path": "/guides/workflow/credentials/PayPal"
+                },
+                {
+                  "title": "Peekalink",
+                  "path": "/guides/workflow/credentials/Peekalink"
+                },
+                {
+                  "title": "Phantombuster",
+                  "path": "/guides/workflow/credentials/Phantombuster"
+                },
+                {
+                  "title": "PhilipsHue",
+                  "path": "/guides/workflow/credentials/PhilipsHue"
+                },
+                {
+                  "title": "Pipedrive",
+                  "path": "/guides/workflow/credentials/Pipedrive"
+                },
+                {
+                  "title": "Plivo",
+                  "path": "/guides/workflow/credentials/Plivo"
+                },
+                {
+                  "title": "PostHog",
+                  "path": "/guides/workflow/credentials/PostHog"
+                },
+                {
+                  "title": "Postgres",
+                  "path": "/guides/workflow/credentials/Postgres"
+                },
+                {
+                  "title": "Postmark",
+                  "path": "/guides/workflow/credentials/Postmark"
+                },
+                {
+                  "title": "ProfitWell",
+                  "path": "/guides/workflow/credentials/ProfitWell"
+                },
+                {
+                  "title": "Pushbullet",
+                  "path": "/guides/workflow/credentials/Pushbullet"
+                },
+                {
+                  "title": "Pushcut",
+                  "path": "/guides/workflow/credentials/Pushcut"
+                },
+                {
+                  "title": "Pushover",
+                  "path": "/guides/workflow/credentials/Pushover"
+                },
+                {
+                  "title": "QuestDB",
+                  "path": "/guides/workflow/credentials/QuestDB"
+                },
+                {
+                  "title": "QuickBase",
+                  "path": "/guides/workflow/credentials/QuickBase"
+                },
+                {
+                  "title": "QuickBooks",
+                  "path": "/guides/workflow/credentials/QuickBooks"
+                },
+                {
+                  "title": "RabbitMQ",
+                  "path": "/guides/workflow/credentials/RabbitMQ"
+                },
+                {
+                  "title": "Raindrop",
+                  "path": "/guides/workflow/credentials/Raindrop"
+                },
+                {
+                  "title": "Reddit",
+                  "path": "/guides/workflow/credentials/Reddit"
+                },
+                {
+                  "title": "Redis",
+                  "path": "/guides/workflow/credentials/Redis"
+                },
+                {
+                  "title": "Rocket.Chat",
+                  "path": "/guides/workflow/credentials/Rocket.Chat"
+                },
+                {
+                  "title": "Rundeck",
+                  "path": "/guides/workflow/credentials/Rundeck"
+                },
+                {
+                  "title": "S3",
+                  "path": "/guides/workflow/credentials/S3"
+                },
+                {
+                  "title": "SIGNL4",
+                  "path": "/guides/workflow/credentials/SIGNL4"
+                },
+                {
+                  "title": "SSH",
+                  "path": "/guides/workflow/credentials/SSH"
+                },
+                {
+                  "title": "Salesforce",
+                  "path": "/guides/workflow/credentials/Salesforce"
+                },
+                {
+                  "title": "Salesmate",
+                  "path": "/guides/workflow/credentials/Salesmate"
+                },
+                {
+                  "title": "SeaTable",
+                  "path": "/guides/workflow/credentials/SeaTable"
+                },
+                {
+                  "title": "SecurityScorecard",
+                  "path": "/guides/workflow/credentials/SecurityScorecard"
+                },
+                {
+                  "title": "Segment",
+                  "path": "/guides/workflow/credentials/Segment"
+                },
+                {
+                  "title": "SendEmail",
+                  "path": "/guides/workflow/credentials/SendEmail"
+                },
+                {
+                  "title": "SendGrid",
+                  "path": "/guides/workflow/credentials/SendGrid"
+                },
+                {
+                  "title": "Sendinblue",
+                  "path": "/guides/workflow/credentials/Sendinblue"
+                },
+                {
+                  "title": "Sendy",
+                  "path": "/guides/workflow/credentials/Sendy"
+                },
+                {
+                  "title": "Sentry.io",
+                  "path": "/guides/workflow/credentials/Sentry.io"
+                },
+                {
+                  "title": "ServiceNow",
+                  "path": "/guides/workflow/credentials/ServiceNow"
+                },
+                {
+                  "title": "Shopify",
+                  "path": "/guides/workflow/credentials/Shopify"
+                },
+                {
+                  "title": "Slack",
+                  "path": "/guides/workflow/credentials/Slack"
+                },
+                {
+                  "title": "Snowflake",
+                  "path": "/guides/workflow/credentials/Snowflake"
+                },
+                {
+                  "title": "Splunk",
+                  "path": "/guides/workflow/credentials/Splunk"
+                },
+                {
+                  "title": "Spontit",
+                  "path": "/guides/workflow/credentials/Spontit"
+                },
+                {
+                  "title": "Spotify",
+                  "path": "/guides/workflow/credentials/Spotify"
+                },
+                {
+                  "title": "Stackby",
+                  "path": "/guides/workflow/credentials/Stackby"
+                },
+                {
+                  "title": "Storyblok",
+                  "path": "/guides/workflow/credentials/Storyblok"
+                },
+                {
+                  "title": "Strapi",
+                  "path": "/guides/workflow/credentials/Strapi"
+                },
+                {
+                  "title": "Strava",
+                  "path": "/guides/workflow/credentials/Strava"
+                },
+                {
+                  "title": "Stripe",
+                  "path": "/guides/workflow/credentials/Stripe"
+                },
+                {
+                  "title": "Supabase",
+                  "path": "/guides/workflow/credentials/Supabase"
+                },
+                {
+                  "title": "SurveyMonkey",
+                  "path": "/guides/workflow/credentials/SurveyMonkey"
+                },
+                {
+                  "title": "SyncroMSP",
+                  "path": "/guides/workflow/credentials/SyncroMSP"
+                },
+                {
+                  "title": "Taiga",
+                  "path": "/guides/workflow/credentials/Taiga"
+                },
+                {
+                  "title": "Tapfiliate",
+                  "path": "/guides/workflow/credentials/Tapfiliate"
+                },
+                {
+                  "title": "Telegram",
+                  "path": "/guides/workflow/credentials/Telegram"
+                },
+                {
+                  "title": "TheHive",
+                  "path": "/guides/workflow/credentials/TheHive"
+                },
+                {
+                  "title": "TimescaleDB",
+                  "path": "/guides/workflow/credentials/TimescaleDB"
+                },
+                {
+                  "title": "Todoist",
+                  "path": "/guides/workflow/credentials/Todoist"
+                },
+                {
+                  "title": "Toggl",
+                  "path": "/guides/workflow/credentials/Toggl"
+                },
+                {
+                  "title": "TravisCI",
+                  "path": "/guides/workflow/credentials/TravisCI"
+                },
+                {
+                  "title": "Trello",
+                  "path": "/guides/workflow/credentials/Trello"
+                },
+                {
+                  "title": "Twake",
+                  "path": "/guides/workflow/credentials/Twake"
+                },
+                {
+                  "title": "Twilio",
+                  "path": "/guides/workflow/credentials/Twilio"
+                },
+                {
+                  "title": "Twist",
+                  "path": "/guides/workflow/credentials/Twist"
+                },
+                {
+                  "title": "Twitter",
+                  "path": "/guides/workflow/credentials/Twitter"
+                },
+                {
+                  "title": "Typeform",
+                  "path": "/guides/workflow/credentials/Typeform"
+                },
+                {
+                  "title": "UnleashedSoftware",
+                  "path": "/guides/workflow/credentials/UnleashedSoftware"
+                },
+                {
+                  "title": "UpLead",
+                  "path": "/guides/workflow/credentials/UpLead"
+                },
+                {
+                  "title": "UptimeRobot",
+                  "path": "/guides/workflow/credentials/UptimeRobot"
+                },
+                {
+                  "title": "VenafiTLSProtectCloud",
+                  "path": "/guides/workflow/credentials/VenafiTLSProtectCloud"
+                },
+                {
+                  "title": "VenafiTLSProtectDatacenter",
+                  "path": "/guides/workflow/credentials/VenafiTLSProtectDatacenter"
+                },
+                {
+                  "title": "Vero",
+                  "path": "/guides/workflow/credentials/Vero"
+                },
+                {
+                  "title": "Vonage",
+                  "path": "/guides/workflow/credentials/Vonage"
+                },
+                {
+                  "title": "WebexbyCisco",
+                  "path": "/guides/workflow/credentials/WebexbyCisco"
+                },
+                {
+                  "title": "Webflow",
+                  "path": "/guides/workflow/credentials/Webflow"
+                },
+                {
+                  "title": "Wekan",
+                  "path": "/guides/workflow/credentials/Wekan"
+                },
+                {
+                  "title": "WhatsAppBusiness",
+                  "path": "/guides/workflow/credentials/WhatsAppBusiness"
+                },
+                {
+                  "title": "Wise",
+                  "path": "/guides/workflow/credentials/Wise"
+                },
+                {
+                  "title": "WooCommerce",
+                  "path": "/guides/workflow/credentials/WooCommerce"
+                },
+                {
+                  "title": "WordPress",
+                  "path": "/guides/workflow/credentials/WordPress"
+                },
+                {
+                  "title": "Workable",
+                  "path": "/guides/workflow/credentials/Workable"
+                },
+                {
+                  "title": "Wufoo",
+                  "path": "/guides/workflow/credentials/Wufoo"
+                },
+                {
+                  "title": "Xero",
+                  "path": "/guides/workflow/credentials/Xero"
+                },
+                {
+                  "title": "Yourls",
+                  "path": "/guides/workflow/credentials/Yourls"
+                },
+                {
+                  "title": "Zammad",
+                  "path": "/guides/workflow/credentials/Zammad"
+                },
+                {
+                  "title": "Zendesk",
+                  "path": "/guides/workflow/credentials/Zendesk"
+                },
+                {
+                  "title": "Zoho",
+                  "path": "/guides/workflow/credentials/Zoho"
+                },
+                {
+                  "title": "Zoom",
+                  "path": "/guides/workflow/credentials/Zoom"
+                },
+                {
+                  "title": "Zulip",
+                  "path": "/guides/workflow/credentials/Zulip"
+                },
+                {
+                  "title": "monday.com",
+                  "path": "/guides/workflow/credentials/monday.com"
+                },
+                {
+                  "title": "sms77",
+                  "path": "/guides/workflow/credentials/sms77"
+                },
+                {
+                  "title": "uProc",
+                  "path": "/guides/workflow/credentials/uProc"
+                },
+                {
+                  "title": "urlscan.io",
+                  "path": "/guides/workflow/credentials/urlscan.io"
+                }
+              ]
+            }
+          ]
         },
         // DATABASE_CONNECTION_MENU,
       ],
@@ -1202,7 +3386,7 @@ const zhCnNavBar = {
               title: "Android Guard 更新日志",
               path: "/reference/sdk-for-android/version.md",
             },
-         ],
+          ],
         }
       ],
     },
@@ -6254,10 +8438,10 @@ const translatedZhCnNavBar = {
               title: "Configure user-defined password function",
               path: "/guides/security/pw-security/custom-password-script",
             },
-      ],
+          ],
+        },
+      ]
     },
-  ]
-},
     {
       title: "Configure user pool information",
       children: [
