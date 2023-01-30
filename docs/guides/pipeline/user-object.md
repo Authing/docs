@@ -31,8 +31,8 @@ Pre-Register（注册前） Pipeline 的 user 对象含有用户注册时填入�
 | gender         | string  | 性别                                          |
 | lastLogin      | string  | 上次登录时间，格式为 2020-02-07T04:29:40.877Z |
 | company        | string  | 公司名                                        |
-| browser        | string  | 访问浏览器                                    |
-| device         | string  | 访问设备                                      |
+| browser        | string  | 注册浏览器                                    |
+| device         | string  | 注册设备                                      |
 | country        | string  | 国家                                          |
 | region         | string  | 地区                                          |
 | address        | string  | 地址                                          |
