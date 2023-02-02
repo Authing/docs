@@ -943,6 +943,13 @@
         image2x: "datart_logo.svg",
         category: "devtools",
       },
+      {
+        key: "office365cn",
+        name: "Office365（世纪互联）",
+        image: "microsoft-logo@2x.png",
+        image2x: "microsoft-logo@2x.png",
+        category: "office",
+      },
     ],
   categories:
     [
