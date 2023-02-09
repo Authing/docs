@@ -8,7 +8,7 @@
 
 ![](./images/tenantManagement/1-1.png)
 
-相关操作说明：[如何创建/批量导入/删除租户](http://localhost:8888/v2/multi-tenant-console/operation-tenant.html)
+相关操作说明：[如何创建/批量导入/删除租户](https://docs.authing.cn/v2/multi-tenant-console/operation-tenant.html)
 
 ## 多租户管理员
 
@@ -16,7 +16,7 @@
 
 ![](./images/tenantManagement/1-2.png)
 
-相关操作说明：[多租户管理员](http://localhost:8888/v2/multi-tenant-console/association-apps.html)
+相关操作说明：[多租户管理员](https://docs.authing.cn/v2/multi-tenant-console/association-apps.html)
 
 ## 多租户配置
 
@@ -24,4 +24,4 @@
 
 ![](./images/tenantManagement/1-3.png)
 
-相关操作说明：[多租户配置](http://localhost:8888/v2/multi-tenant-console/admin-management.html)
+相关操作说明：[多租户配置](https://docs.authing.cn/v2/multi-tenant-console/admin-management.html)
