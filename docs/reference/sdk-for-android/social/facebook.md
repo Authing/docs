@@ -6,6 +6,9 @@
 
 在 [Facebook 开放平台](https://developers.facebook.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [FaceBook 接入准备](../../../guides/connections/social/facebook/README.md)、[FaceBook 官方文档](https://developers.facebook.com/docs/facebook-login/android)。
 
+:::hint-info
+此功能在 guard sdk 1.4.8 版本新增。
+:::
 
 
 <br>

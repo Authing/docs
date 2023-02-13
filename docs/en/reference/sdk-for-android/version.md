@@ -2,6 +2,16 @@
 
 <LastUpdated/>
 
+- ## 1.4.8
+
+
+> Update time：2023.2.13
+
+1. Add FaceBook login.
+2. International phone number format verification optimization.
+
+<br>
+
 - ## 1.4.7
 
 

@@ -6,6 +6,10 @@
 
 Configure in [Facebook open platform](https://developers.facebook.com/) and [Authing Console](https://authing.cn/)，See [Preparing for FaceBook](../../../guides/connections/social/facebook/README.md)、[FaceBook document](https://developers.facebook.com/docs/facebook-login/android)。 
 
+:::hint-info
+This feature was added in guard sdk 1.4.8 version.
+:::
+
 <br>
 
 ## Integrate FaceBook login steps
