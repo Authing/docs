@@ -95,6 +95,19 @@ google.login(appContext, new AuthCallback<UserInfo>() {
 
 `Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
+**注意：使用 Google 登录按钮或者 Google 登录授权类时，需要在 Activity 的 onActivityResult 函数中加入如下代码：**
+
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == Google.RC_SIGN_IN && data != null) {
+        data.setAction("cn.authing.guard.broadcast.GOOGLE_LOGIN");
+        sendBroadcast(data);
+    }
+}
+```
+
 - #### 使用 Google 登录 API 
 
   如果想完全自己实现 Google 登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：

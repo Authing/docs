@@ -2,6 +2,24 @@
 
 <LastUpdated/>
 
+- ## 1.4.7
+
+
+> Update time：2023.1.12
+
+1. New wechat mobile terminal login through the account ID binding to an existing account API.
+
+<br>
+
+- ## 1.4.6
+
+
+> Update time：2022.12.9
+
+1. Fixed the bug of wechat login API.
+
+<br>
+
 - ## 1.4.5
 
 

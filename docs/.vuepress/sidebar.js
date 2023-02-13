@@ -1606,6 +1606,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
             "/reference/sdk-for-android/social/google",
+            "/reference/sdk-for-android/social/facebook",
           ],
         },
         {
@@ -6800,6 +6801,14 @@ const translatedZhCnNavBar = {
             {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
+            },
+            {
+              title: "Google",
+              path: "/reference/sdk-for-android/social/google",
+            },
+            {
+              title: "FaceBook",
+              path: "/reference/sdk-for-android/social/facebook",
             },
           ],
         },

@@ -92,6 +92,40 @@ lark.login(appContext, new AuthCallback<UserInfo>() {
 
 `Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
+**注意：使用飞书登录按钮或者飞书登录授权类时，需要在 Activity 的 onResume、onNewIntent、onActivityResult 函数中加入如下代码：**
+
+```java
+@Override
+protected void onResume() {
+    super.onResume();
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, getIntent());
+    } catch( ClassNotFoundException e ) {
+    }
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, intent);
+    } catch( ClassNotFoundException e ) {
+    }
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, data);
+    } catch( ClassNotFoundException e ) {
+    }
+}
+```
+
 <br>
 
 - 如果想完全自己实现飞书登录，拿到授权码后，可以调用下面 API 换取用户信息
