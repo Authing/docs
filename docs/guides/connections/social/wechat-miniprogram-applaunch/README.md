@@ -74,8 +74,7 @@
 
 - **详细接入方法**：
  
-1. SDK 开发者接入文档:暂无。
-
+1. 参阅 SDK 开发者接入文档 [Android](./../../../../reference/sdk-for-android/social/miniprogram.md) 及 [iOS](./../../../../reference/sdk-for-ios/social/miniprogram.md)。
 2. 在已创建好的「APP 拉起小程序」身份源连接详情页面，开启并关联一个在 {{$localeConfig.brandName}} 控制台创建的移动端应用。
  
 ![](./images/miniprogram3.jpg)
