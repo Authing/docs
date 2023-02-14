@@ -5,10 +5,11 @@
 - ## 1.4.8
 
 
-> Update time：2023.2.13
+> Update time：2023.2.14
 
-1. Add FaceBook login.
-2. International phone number format verification optimization.
+1. Add Facebook login.
+2. Add APP pull-up wechat miniprogram authorization login.
+3. International phone number format verification optimization.
 
 <br>
 

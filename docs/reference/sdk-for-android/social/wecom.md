@@ -39,6 +39,7 @@ implementation files('libs/lib_wwapi-2.0.12.11.aar')
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
@@ -94,10 +95,6 @@ weCom.login(appContext, new AuthCallback<UserInfo>() {
 ```
 
 `data` 包含用户信息（`用户名`、`昵称`、`姓名`等）以及 `idToken`。
-
-当你使用组件 `WeComLoginButton`  或者登录授权类 `WeCom`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
-
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 <br>
 

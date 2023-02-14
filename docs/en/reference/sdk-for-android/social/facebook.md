@@ -7,12 +7,12 @@
 Configure in [Facebook open platform](https://developers.facebook.com/) and [Authing Console](https://authing.cn/)，See [Preparing for FaceBook](../../../guides/connections/social/facebook/README.md)、[FaceBook document](https://developers.facebook.com/docs/facebook-login/android)。 
 
 :::hint-info
-This feature was added in guard sdk 1.4.8 version.
+This feature was added in android guard sdk 1.4.8 version.
 :::
 
 <br>
 
-## Integrate FaceBook login steps
+## Integrate Facebook login steps
 
 ### Step 1：Add dependency
 
@@ -97,6 +97,7 @@ To initialize when the application starts:
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 ### Step 4：Use in different scenarios
@@ -110,10 +111,10 @@ AuthFlow.start(this);
 
 By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the FaceBook login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
 
-- #### Use the FaceBook sign In button
-    If you use the FaceBook login button we provide.
+- #### Use the Facebook sign In button
+    If you use the facebook login button we provide.
 
-​		1. Add (or initialize) the following code to the layout file:
+​		1. Add the following code to the layout file:
 
 ```xml
  <cn.authing.guard.social.FaceBookLoginButton
@@ -140,8 +141,8 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### Log in to the authorization class using FaceBook
-  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the FaceBook class authorization function inside the button click event, which integrates the business logic to pull up the FaceBook authorization login:
+- #### Log in to the authorization class using Facebook
+  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `FaceBook` class authorization function inside the button click event, which integrates the business logic to pull up the FaceBook authorization login:
 
 ```java
 FaceBook faceBook = FaceBook.getInstance();
@@ -159,10 +160,6 @@ faceBook.login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
 
-​	When you use component `FaceBookLoginButton` or log into authorization class `FaceBook`, if you also want to get `accessToken` and `refreshToken`, need to be called
-
-` Authing. Init (context, "AUTHING_APP_ID") ` called after ` Authing. SetAuthProtocol (Authing. AuthProtocol. EOIDC) `, data included in the callback ` data `.
-
 **Note: When using the FaceBook login button or the FaceBook login authorization class, you need to add the following code to the Activity's onActivityResult function:**
 
 ```java
@@ -173,9 +170,9 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 }
 ```
 
-- #### Log into the API using FaceBook
+- #### Log into the API using Facebook
 
-  If you want to fully implement the FaceBook login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
+  If you want to fully implement the Facebook login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
 
 ```java
 public static void loginByFaceBook(String accessToken, @NotNull AuthCallback<UserInfo> callback)
@@ -183,7 +180,7 @@ public static void loginByFaceBook(String accessToken, @NotNull AuthCallback<Use
 
 **param**
 
-*`accessToken`* FaceBook token
+*`accessToken`* Facebook token
 
 **example**
 

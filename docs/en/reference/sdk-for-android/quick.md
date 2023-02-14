@@ -47,11 +47,16 @@ at app startup, call:
 // context is application or initial activity
 // ”appId“ is obtained from the Authing console
 Authing.init(context, "appId");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC);
 ```
 
 :::hint-info
 Note：AUTHING_APP_ID application ID，not the user pool ID，Please go to the [console](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html) first to obtain.
 :::
+
+Please select `authing_token` in Application Configuration-Authorization mode.
+
+<img src="./images/authing_token.png"/>
 
 ## Step 5: Common operations
 

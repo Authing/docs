@@ -29,6 +29,7 @@ To initialize when the application starts:
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 ### Step 3：Use in different scenarios
@@ -45,7 +46,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 - #### Use the Google sign In button
     If you use the Google login button we provide.
     
-    1. Add (or initialize) the following code to the layout file:
+    1. Add the following code to the layout file:
 
 ```xml
  <cn.authing.guard.social.GoogleLoginButton
@@ -91,10 +92,6 @@ google.login(appContext, new AuthCallback<UserInfo>() {
 ```
 
 ​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
-
-​	When you use component `FaceBookLoginButton` or log into authorization class `FaceBook`, if you also want to get `accessToken` and `refreshToken`, need to be called
-
-` Authing. Init (context, "AUTHING_APP_ID") ` called after ` Authing. SetAuthProtocol (Authing. AuthProtocol. EOIDC) `, data included in the callback ` data `.
 
 **Note: When using the Google login button or the FaceBook login authorization class, you need to add the following code to the Activity's onActivityResult function:**
 

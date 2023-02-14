@@ -66,6 +66,7 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 ```java
 // AUTHING_APP_ID is Authing app id which can be obtained at Authing console
 Authing.init(context, “AUTHING_APP_ID”);
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 3. According to wechat rules, developer MUST create an Activity called WXEntryActivity and it MUST be put under a package call 'wxapi' and further more, the 'wxapi' package MUST be under your application's package directly. Here is an example, suppose your android application package is:
@@ -95,7 +96,7 @@ Add the `exported`, `taskAffinity` and `launchMode` attributes to the manifest f
 <activity
     android:name=".wxapi.WXEntryActivity"
     android:exported="true"
- 		android:taskAffinity="you package nmae"
+ 		android:taskAffinity="package nmae"
     android:launchMode="singleTask"/>
 ```
 
@@ -174,10 +175,6 @@ wechat.login(appContext, context, new AuthCallback<UserInfo>() {
 ```
 
 `userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.).
-
-When you use component  `WechatLoginButton` or Login Authorization class `Wechat`, if you also want to get `accessToken` and `refreshToken`,  you need to call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC) ` after
-
-` Authing.init(context, "AUTHING_APP_ID") ` , data included in the callback ` data `.
 
 If you want to obtain only wechat authorization code:
 
