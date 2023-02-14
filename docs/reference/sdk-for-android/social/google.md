@@ -29,6 +29,7 @@ Guard 只是 compileOnly 依赖 gms，这样可以让 App 按需引入，防止 
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 ### 第三步：分场景使用
@@ -91,9 +92,18 @@ google.login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
 
-​	当你使用组件 `GoogleLoginButton`  或者登录授权类  `Google`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
+**注意：使用 Google 登录按钮或者 Google 登录授权类时，需要在 Activity 的 onActivityResult 函数中加入如下代码：**
 
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == Google.RC_SIGN_IN && data != null) {
+        data.setAction("cn.authing.guard.broadcast.GOOGLE_LOGIN");
+        sendBroadcast(data);
+    }
+}
+```
 
 - #### 使用 Google 登录 API 
 

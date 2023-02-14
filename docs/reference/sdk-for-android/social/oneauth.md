@@ -29,6 +29,7 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
@@ -99,10 +100,6 @@ new OneClick(this).start("your_yidun_business_id", config, ((code, message, user
 ```
 
 `data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
-
-当你使用组件 `OneClickAuthButton`  或者登录授权类  `OneClick`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
-
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 <br>
 

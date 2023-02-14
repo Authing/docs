@@ -2,6 +2,35 @@
 
 <LastUpdated/>
 
+- ## 1.4.8
+
+
+> Update time：2023.2.14
+
+1. Add Facebook login.
+2. Add APP pull-up wechat miniprogram authorization login.
+3. International phone number format verification optimization.
+
+<br>
+
+- ## 1.4.7
+
+
+> Update time：2023.1.12
+
+1. New wechat mobile terminal login through the account ID binding to an existing account API.
+
+<br>
+
+- ## 1.4.6
+
+
+> Update time：2022.12.9
+
+1. Fixed the bug of wechat login API.
+
+<br>
+
 - ## 1.4.5
 
 

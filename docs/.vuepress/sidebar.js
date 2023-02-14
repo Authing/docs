@@ -1606,6 +1606,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
             "/reference/sdk-for-android/social/google",
+            "/reference/sdk-for-android/social/facebook",
+            "/reference/sdk-for-android/social/miniprogram",
           ],
         },
         {
@@ -6801,6 +6803,18 @@ const translatedZhCnNavBar = {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
             },
+            {
+              title: "Google",
+              path: "/reference/sdk-for-android/social/google",
+            },
+            {
+              title: "FaceBook",
+              path: "/reference/sdk-for-android/social/facebook",
+            },
+            {
+              title: "MiniProgram",
+              path: "/reference/sdk-for-android/social/miniprogram",
+            },
           ],
         },
         {
@@ -6820,6 +6834,10 @@ const translatedZhCnNavBar = {
         {
           title: "Android Guard Change log",
           path: "/reference/sdk-for-android/version",
+        },
+        {
+          title: "Error code",
+          path: "/reference/sdk-for-android/errorcode",
         },
       ],
     },
