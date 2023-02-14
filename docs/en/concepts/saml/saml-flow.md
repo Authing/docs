@@ -34,7 +34,7 @@ SP send SAML request via HTTP Redirect Binding. This SAML message is carried dir
 
 ### HTTP POST Binding
 
-IdP send SAML response to SP via HTTP POST Binding. 
+The SP sends the SAML Request to the IdP in the form of a POST request through the immediately submitted Form. The IdP sends the SAML Response to the SP in the form of a POST request through the immediately submitted Form.
 
 ![](~@imagesZhCn/concepts/saml/http-post-binding.png)
 
