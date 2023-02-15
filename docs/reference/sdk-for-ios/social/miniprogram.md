@@ -77,12 +77,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #### 小程序授权登录
 
 ```swift
-func loginByMiniProgram(launchMiniProgramReq: WXLaunchMiniProgramReq, completion: @escaping Authing.AuthCompletion) -> Void
+func loginByMiniProgram(_ launchMiniProgramReq: WXLaunchMiniProgramReq? = nil, completion: @escaping Authing.AuthCompletion) -> Void
 ```
 
 **参数**
 
-* *launchMiniProgramReq* 发送给微信的请求，其中包含小程序 username、页面路径、小程序版本等参数。
+* *launchMiniProgramReq* 发送给微信的请求，其中包含小程序 originalID、页面路径、小程序版本等参数，如果不传此参数，默认取 Authing 控制台 App 拉起小程序配置的 originalID。
   
 **示例**
 
