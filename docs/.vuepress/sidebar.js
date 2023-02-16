@@ -1778,6 +1778,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
             "/reference/sdk-for-ios/social/google",
+            "/reference/sdk-for-ios/social/facebook",
+            "/reference/sdk-for-ios/social/miniprogram",
           ],
         },
         {
@@ -6894,6 +6896,18 @@ const translatedZhCnNavBar = {
             {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
+            },
+            {
+              title: "Google",
+              path: "/reference/sdk-for-ios/social/google",
+            },
+            {
+              title: "Facebook",
+              path: "/reference/sdk-for-ios/social/facebook",
+            },
+            {
+              title: "Mini Program",
+              path: "/reference/sdk-for-ios/social/miniprogram",
             },
           ],
         },
