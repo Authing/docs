@@ -616,6 +616,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/huawei/",
             },
             {
+              title: "荣耀",
+              path: "/guides/connections/social/honor/",
+            },
+            {
               title: "腾讯 QQ",
               path: "/guides/connections/social/qq/",
             },
