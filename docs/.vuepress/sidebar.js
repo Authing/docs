@@ -620,6 +620,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/honor/",
             },
             {
+              title: "小米",
+              path: "/guides/connections/social/xiaomi/",
+            },
+            {
               title: "腾讯 QQ",
               path: "/guides/connections/social/qq/",
             },
