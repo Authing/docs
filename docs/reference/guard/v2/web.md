@@ -418,11 +418,11 @@ console.log("guard instance: ", guard);
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
-- 在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，<strong>授权模式</strong> 选择      <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
+- 在应用详情的 <strong>协议配置 -> 授权配置</strong> 中，<strong>授权模式</strong> 选择      <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 如果是标准 Web 应用，请在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，请确保应用的 <strong>换取 token 身份验证方式</strong> 设置为了 <strong>none</strong>。
+- 如果是标准 Web 应用，请在应用详情的 <strong>协议配置 -> 授权配置</strong> 中，请确保应用的 <strong>换取 token 身份验证方式</strong> 设置为了 <strong>none</strong>。
 
 ::: hint-info
 如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况。
