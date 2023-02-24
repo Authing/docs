@@ -3614,6 +3614,7 @@ guard.on("login", (userInfo) => {
 | register-info-completed-error | 注册补全失败事件                                                                          | error，udfs，authenticationClient | <p>error: 错误信息</p><p>udfs: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
 | lang-change                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
 | before-change-module         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
+| after-change-module         | Guard 内部 Module 切换后事件| options                  | <p>options: [OnAfterChangeModuleOptions](#OnAfterChangeModuleOptions)</p> |
 
 ## 附录
 
@@ -4104,3 +4105,16 @@ interface RegisterParams {
 <p id="User"></p>
 
 详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
+
+### OnAfterChangeModuleOptions
+
+<p id="OnAfterChangeModuleOptions"></p>
+
+``` typescript
+interface OnAfterChangeModuleOptions {
+  currentView: string
+  currentModule: IGuardModuleType
+  currentTab?: string
+  data?: any
+}
+```
