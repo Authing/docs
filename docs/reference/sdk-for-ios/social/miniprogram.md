@@ -56,24 +56,38 @@ value: weixin, weixinULAPI
 ### 第三步：初始化小程序登录
 ```swift
 import Guard
-import Facebook
+import WechatLogin
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Authing.start(<#AUTHING_APP_ID#>)
-        Facebook.register(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if "\(url)".contains(Facebook.getAppId()) {
-            return Facebook.application(app, open: url, options: options)
-        }
-    }
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    Authing.start(<#AUTHING_APP_ID#>)
+    WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep_link#>)
 }
  ```
 <br>
 
-### 第四步：发起小程序登录授权
+### 第四步：处理微信登录回调
+
+微信返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
+
+```swift
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wechatLoginOK"), object: userActivity)
+    _ =  WechatLogin.handleOpenURL(url: url)
+}
+```
+
+如果未使用 SceneDelegate，则需要在 AppDelegate 里面重载：
+
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wechatLoginOK"), object: userActivity)
+    return WechatLogin.handleOpenURL(url: url)
+}
+```
+
+<br>
+
+### 第五步：发起小程序登录授权
 #### 小程序授权登录
 
 ```swift
