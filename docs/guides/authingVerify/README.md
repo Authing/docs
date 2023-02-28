@@ -19,7 +19,7 @@
 - 注册并登录成为 Authing Console 控制台开发者：  
   Authing Console 开发者注册 / 登录地址：[https://console.authing.cn](https://console.authing.cn/)
 
-## 功能 1：OTP 口令录入/读取/认证；
+## 功能 1：OTP 口令录入/读取/认证
 
 Authing 为账号提供多因素认证能力，为账号绑定 OTP ，随时对 Web 应用提供认证及登录能力；
 
