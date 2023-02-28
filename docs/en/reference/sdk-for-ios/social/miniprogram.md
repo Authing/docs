@@ -73,7 +73,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ```
 <br>
 
-### Step 4: Initiate Mini Program Login Authorization
+### Step 3: Initialize the Miniprogram login
+```swift
+import Guard
+import WechatLogin
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     Authing.start(<#AUTHING_APP_ID#>)
+     WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep_link#>)
+}
+ ```
+<br>
+
+### Step 4: Handle wechat login callback
+
+After wechat returns to the application, if SceneDelegate is used, you need to reload the following function in Scenedelegate. swift:
+
+```swift
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wechatLoginOK"), object: userActivity)
+    _ =  WechatLogin.handleOpenURL(url: url)
+}
+```
+
+If SceneDelegate is not used, reload the AppDelegate:
+
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wechatLoginOK"), object: userActivity)
+    return WechatLogin.handleOpenURL(url: url)
+}
+```
+
+
+### Step 5: Initiate Mini Program Login Authorization
 #### Mini Program authorization login
 
 ```swift
