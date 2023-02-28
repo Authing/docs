@@ -1103,6 +1103,10 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: 'Authing 令牌',
+      path:"/guides/authingVerify/"
+    },
+    {
       title: "私有化部署方案",
       path: "/guides/deployment/",
       children: [
