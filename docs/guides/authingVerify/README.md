@@ -17,7 +17,7 @@
   - iOS 下载地址：[https://apps.apple.com/app/authing-令牌/id1603744061](https://apps.apple.com/app/authing-令牌/id1603744061)
   - 安卓下载地址：[https://mobile.baidu.com/item?docid=5000565464&source=appbaidu](https://mobile.baidu.com/item?docid=5000565464&source=appbaidu)
 - 注册并登录成为 Authing Console 控制台开发者：  
-  Authing Console 开发者注册 / 登录地址：[https://console.authing.cn]https://console.authing.cn/
+  Authing Console 开发者注册 / 登录地址：[https://console.authing.cn](https://console.authing.cn/)
 
 ## 功能 1：OTP 口令录入/读取/认证；
 
