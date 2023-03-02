@@ -14,3 +14,5 @@
 - [苹果账号登录](./apple.md)
 - [手机号一键登录](./oneauth.md)
 - [Google 登录](./google.md)
+- [Facebook 登录](./facebook.md)
+- [App 拉起小程序登录](./miniprogram.md)

@@ -1747,6 +1747,10 @@ const zhCnNavBar = {
                   title: "跳转注册按钮",
                   path: "/reference/sdk-for-ios/component/basic/go-register-button",
                 },
+                {
+                  title: "生物认证按钮",
+                  path: "/reference/sdk-for-ios/component/basic/biometric-login-button",
+                },
               ],
             },
             {
@@ -1795,11 +1799,16 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/scenario/webview",
             "/reference/sdk-for-ios/scenario/logout",
             "/reference/sdk-for-ios/scenario/splash",
+            "/reference/sdk-for-ios/scenario/webauthn",
           ],
         },
         {
           title: "私有化部署",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "生物认证",
+          path: "/reference/sdk-for-ios/webauthn",
         },
         {
           title: "iOS Guard 更新日志",
@@ -6916,8 +6925,22 @@ const translatedZhCnNavBar = {
           ],
         },
         {
+          title: "Typical scene",
+          path: "/reference/sdk-for-ios/scenario/",
+          children: [
+            {
+              title: "WebAuthn",
+              path: "/reference/sdk-for-ios/webauthn",
+            },
+          ],
+        },
+        {
           title: "On-premise",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "WebAuthn",
+          path: "/reference/sdk-for-ios/webauthn",
         },
         {
           title: "Error Code List",

@@ -2,6 +2,15 @@
 
 <LastUpdated/>
 
+- ## 1.4.0
+
+> 更新时间：2023.03.01
+
+1. 新增 WebAuthn 无密码生物认证。
+2. 新增 Debug 模式，开启后关闭 log 打印。
+3. 修复 UI 及主线程 bug。
+4. Breaking change: SDK 通过 Swift 5.7.2 编译（Xcode 14.2）。
+
 - ## 1.3.8
 
 > 更新时间：2023.02.14
