@@ -17,16 +17,16 @@
 
 ## 第一步：在 华为 创建一个服务器应用
 
-登录[华为开发者联盟官网](https://developer.huawei.com/consumer/cn/)，点击 “管理中心”：
+登录[华为开发者联盟官网](https://developer.huawei.com/consumer/cn/)，点击 **管理中心**：
 ![](./images/open-manage-center-1.jpeg)
 
-在“管理中心”页面，点击“帐号”:
+在**管理中心**页面，点击**帐号**:
 ![](./images/open-account-1.jpeg)
 
-在“帐号”页面，点击“申请帐号服务”:
+在**帐号**页面，点击**申请帐号服务**:
 ![](./images/apply-account-1.jpeg)
 
-选择“服务器应用”，选择 **创建产品** 并配置**应用的回调地址**
+选择**服务器应用**，选择 **创建产品** 并配置**应用的回调地址**
 - 应用回调地址：填写`https://core.authing.cn/connection/social/{唯一标识}/{用户池ID}/callback`，你需要将其中的 `{唯一标识}` 替换为你正在 {{$localeConfig.brandName}} 创建的身份源所填写的`唯一标识`，`{用户池ID}` 替换成你的 [用户池 ID](/guides/faqs/get-userpool-id-and-secret.md)
 
 ![](./images/create-client-1.jpeg)

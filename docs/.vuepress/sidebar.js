@@ -660,6 +660,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/apple-web/",
             },
             {
+              title: "AWS",
+              path: "/guides/connections/social/aws/",
+            },
+            {
               title: "支付宝",
               path: "/guides/connections/social/alipay-web/",
             },
@@ -1101,6 +1105,10 @@ const zhCnNavBar = {
           path: "/guides/userpool-config/collaboration-adminstrator",
         },
       ],
+    },
+    {
+      title: 'Authing 令牌',
+      path:"/guides/authingVerify/"
     },
     {
       title: "私有化部署方案",
