@@ -17,13 +17,13 @@
 
 ## 第一步：在 荣耀 创建一个服务器应用
 
-登录[荣耀开发者服务平台](https://developer.hihonor.com/)，点击 “管理中心”：
+登录[荣耀开发者服务平台](https://developer.hihonor.com/)，点击 **管理中心**：
 ![](./images/open-manage-center-1.jpeg)
 
-在“管理中心”页面，点击“帐号服务”:
+在**管理中心**页面，点击**帐号服务**:
 ![](./images/open-account-1.jpeg)
 
-在“帐号服务”页面，依次点击操作 请选择应用 → Web应用 → 新建应用:
+在**帐号服务**页面，依次点击操作 请选择应用 → Web应用 → 新建应用:
 ![](./images/create-client-1.jpeg)
 
 ![](./images/create-client-2.jpeg)
@@ -32,7 +32,7 @@
 
 ![](./images/create-client-3.jpeg)
 
-回到 “账号服务页面” 点击 “启用“
+回到 **账号服务页面** 点击 **启用**
 
 ![](./images/create-client-4.jpeg)
 
@@ -42,7 +42,7 @@
 ![](./images/add-client-callback.jpeg)
 
 
-最后点击「**提交**」，创建完成之后，你需要记录下 `应用 ID` 和 `APP SECRET`，下一步需要用到。
+最后点击「提交」，创建完成之后，你需要记录下 `应用 ID` 和 `APP SECRET`，下一步需要用到。
 ![](./images/get-client-info.jpeg)
 
 ## 第二步：在 {{$localeConfig.brandName}} 控制台配置 荣耀 应用配置
