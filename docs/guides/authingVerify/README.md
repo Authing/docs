@@ -5,7 +5,7 @@
 ## Authing 令牌介绍
 
 - Authing 令牌是北京蒸汽记忆科技有限公司针对手机设备开发的认证、登录及授权的工具型应用。目前支持 iOS 及 Android 系统，它是 Authing 云原生身份管理产品的重要组成部分。该产品具备以下核心功能：
-  - OTP 口令录入/读取/认证 - 为账号绑定 OTP 口令，随时对应用提供认证及登录能力；；
+  - OTP 口令录入/读取/认证 - 为账号绑定 OTP 口令，随时对应用提供认证及登录能力；
   - Authing 客户端应用注册/登录能力- 绑定 & 体验登录 Authing 控制台客户端应用及 Guard，并查看用户信息；
   - 生物认证登录方式 - 支持系统、设备级别的指纹识别及人脸识别能力；
   - 免密快速登录认证 Web 端应用- 移动端推送登录认证、扫码登录认证 Web 端应用；
@@ -102,7 +102,7 @@ Authing 令牌支持绑定控制台客户端应用，并体验登录 Guard 能�
   <source src="./webauthn-test.mp4" type="video/mp4">
 </video>
 
-iOS 指纹登录体验：
+iOS 人脸识别登录体验：
 
 <video controls>
   <source src="./iOSWebauthn.mp4" type="video/mp4">
