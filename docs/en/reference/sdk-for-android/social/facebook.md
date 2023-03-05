@@ -170,7 +170,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 }
 ```
 
-- #### Log into the API using Facebook
+- #### Log in to the API using Facebook
 
   If you want to fully implement the Facebook login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
 

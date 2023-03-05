@@ -31,7 +31,7 @@ Add dependencies to the build.gradle file of the main project:
 implementation 'cn.authing:guard:+'
 ```
 
-## Step 3：Add permission
+## Step 3: Add permission
 
 In AndroidManifest.xml ：
 
