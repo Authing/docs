@@ -1796,6 +1796,9 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/google",
             "/reference/sdk-for-ios/social/facebook",
             "/reference/sdk-for-ios/social/miniprogram",
+            "/reference/sdk-for-ios/social/tencent",
+            "/reference/sdk-for-ios/social/weibo",
+            "/reference/sdk-for-ios/social/baidu",
           ],
         },
         {

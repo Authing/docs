@@ -16,3 +16,6 @@
 - [Google 登录](./google.md)
 - [Facebook 登录](./facebook.md)
 - [App 拉起小程序登录](./miniprogram.md)
+- [QQ 登录](./tencent.md)
+- [微博登录](./weibo.md)
+- [百度登录](./baidu.md)
