@@ -1624,6 +1624,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/google",
             "/reference/sdk-for-android/social/facebook",
             "/reference/sdk-for-android/social/miniprogram",
+            "/reference/sdk-for-android/social/qq",
+            "/reference/sdk-for-android/social/weibo",
           ],
         },
         {
@@ -1636,6 +1638,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
             "/reference/sdk-for-android/scenario/webview",
+            "/reference/sdk-for-android/scenario/overseas",
+            "/reference/sdk-for-android/scenario/biometric",
           ],
         },
         {
@@ -6838,12 +6842,20 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/google",
             },
             {
-              title: "FaceBook",
+              title: "Facebook",
               path: "/reference/sdk-for-android/social/facebook",
             },
             {
               title: "MiniProgram",
               path: "/reference/sdk-for-android/social/miniprogram",
+            },
+            {
+              title: "QQ",
+              path: "/reference/sdk-for-android/social/qq",
+            },
+            {
+              title: "Weibo",
+              path: "/reference/sdk-for-android/social/weibo",
             },
           ],
         },
@@ -6854,6 +6866,10 @@ const translatedZhCnNavBar = {
             {
               title: "logout",
               path: "/reference/sdk-for-android/scenario/logout",
+            },
+            {
+              title: "overseas",
+              path: "/reference/sdk-for-android/scenario/overseas",
             },
           ],
         },
