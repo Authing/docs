@@ -38,7 +38,7 @@
 
 ### 使用 WebAuthn API
 
-如果开发者想自己实现 WebAuthn 认证流程，可参阅[自定义-WebAuthn-认证流程](../scenario/webauthn.md)，结合以下 API 进行开发。
+如果开发者想自己实现 WebAuthn 认证流程，可参阅[自定义-WebAuthn-认证流程](./scenario/webauthn.md)，结合以下 API 进行开发。
 
 #### 获取 WebAuthn 凭证创建初始化参数
 
