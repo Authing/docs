@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.4.8 version.
 
 <br>
 
-## Integrate APP to pull up wechat mini program login step
+## Integrate APP to pull up wechat miniprogram login step
 
 ### Step 1：Add dependency
 

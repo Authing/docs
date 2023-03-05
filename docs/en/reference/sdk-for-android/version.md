@@ -2,6 +2,21 @@
 
 <LastUpdated/>
 
+- ## 1.5.0
+
+
+> Update time：2023.3.5
+
+1. New UI style.
+2. Add biometric login authentication for WebAuthn.
+3. Add push login.
+4. Add QQ login.
+5. Add Sina Weibo login.
+6. Add event subscription API.
+7. Supports overseas domain name configuration.
+
+<br>
+
 - ## 1.4.8
 
 
