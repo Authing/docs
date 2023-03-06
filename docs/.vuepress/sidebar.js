@@ -628,8 +628,16 @@ const zhCnNavBar = {
               path: "/guides/connections/social/qq/",
             },
             {
+              title: "腾讯 QQ 移动端",
+              path: "/guides/connections/social/qq-mobile/",
+            },
+            {
               title: "新浪微博",
               path: "/guides/connections/social/weibo/",
+            },
+            {
+              title: "新浪微博移动端",
+              path: "/guides/connections/social/weibo-mobile/",
             },
             {
               title: "GitHub",
@@ -638,6 +646,10 @@ const zhCnNavBar = {
             {
               title: "Facebook",
               path: "/guides/connections/social/facebook/",
+            },
+            {
+              title: "Facebook 移动端",
+              path: "/guides/connections/social/facebook-mobile/",
             },
             {
               title: "Twitter",
@@ -682,6 +694,10 @@ const zhCnNavBar = {
             {
               title: "百度",
               path: "/guides/connections/social/baidu/",
+            },
+            {
+              title: "百度 移动端",
+              path: "/guides/connections/social/baidu-mobile/",
             },
             {
               title: "网易易盾（一键登录）",
