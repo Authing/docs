@@ -8,7 +8,7 @@
 - **应用场景**：移动端
 - **终端用户预览图**：
 
-<img src="./images/baidu_0.png" >
+<img src="./images/baidu_0.png">
 
 ## 注意事项
 

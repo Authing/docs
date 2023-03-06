@@ -54,67 +54,26 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
    <img src="./images/facebook-view-appid.png" style="display:block;margin: 0 auto;">
 
-
-#### Web application
-
-1. 在「设置」->「基本」中，点击「添加平台」, 选择「WebSite」，点击「下一步」
- 
-   <img src="./images/facebook-webapp.png" style="display:block;margin: 0 auto;">
-
-2. 输入网站地址，「保存更改」
-   
-   <img src="./images/facebook-webapp-site.png" style="display:block;margin: 0 auto;">
-
-3. 在 「产品」 中，设置 **Facebook 登录**。
+4. 在 「产品」 中，设置 **Facebook 登录**。
 
    <img src="./images/facebook-set-facebooklogin.png" >
 
 #### Android
 
-1. 打开 [Google API Console Credentials](https://console.cloud.google.com/apis/credentials) 控制台。
-
-2. 在 **Credentials** 页面，选择顶部 **CREATE CREDENTIALS->OAuth client ID**。
-
-3. 选择 **Application type** 为 **Android**，填写 **Name**、**Package name** 和 **SHA-1 certificate fingerprint**，点击 **CREATE** 按钮。
+请参阅 [Android 版 Facebook 登录 — 快速入门](https://developers.facebook.com/docs/facebook-login/android)
 
 ::: hint-info
 * 需要登录你的移动端应用后台获取 **Package name**（安卓应用包名）和 **SHA-1 certificate fingerprint**（安卓应用的 SHA-1）。
 * 设置保存后到生效需一段时间，请耐心等待。
 :::
 
-4. 在查看页面下载并保存 JSON 文件，交给安卓开发工程师（有关后续详细操作，请参阅 Google 移动端开发者文档 - Android）。
-
-<img src="./images/Android-after configuration.jpg" style="display:block;margin: 0 auto;">
-
 #### iOS
 
-1. 打开 [Google API Console Credentials](https://console.cloud.google.com/apis/credentials) 控制台。
-
-2. 在 **Credentials** 页面，选择顶部 **CREATE CREDENTIALS->OAuth client ID**。
-
-3. 选择 **Application type** 为 **iOS**，填写 **Bundle ID**、**App Store ID** 和 **Team ID**，点击 **CREATE** 按钮。
-
-<img src="./images/bundleid-appstoreid.png" height=500 style="display:block;margin: 0 auto;">
-
-::: img-description
-Bundle ID 和 App Store ID
-:::
-
-<img src="./images/team-id.png" style="display:block;margin: 0 auto;">
-
-::: img-description
-Team ID
-:::
+请参阅 [iOS 版 Facebook 登录 — 快速入门](https://developers.facebook.com/docs/facebook-login/ios)
 
 ::: hint-info
-* 可以在 [Apple Store Connect](https://appstoreconnect.apple.com/apps) 获取 **Bundle ID** 和 **App Store ID**。
-* 可以在 [Apple 开发者后台](https://developer.apple.com/account/resources/certificates/list) 获取 **Team ID**。
-* 设置保存后到生效需一段时间，请耐心等待。
+* 可以在 [Apple Store Connect](https://appstoreconnect.apple.com/apps) 获取 **Bundle ID**。
 :::
-
-4. 下载并保存相应的 PLIST 文件并交给 iOS 开发工程师（有关后续详细操作，请参阅 Google 移动端开发者文档 - iOS）。
-
-<img src="./images/ios-google.jpg" style="display:block;margin: 0 auto;">
 
 ### 第二步：在 Authing 控制台配置 Facebook 移动端登录
 
@@ -128,11 +87,11 @@ Team ID
 
 3. 选择 **Facebook 移动端** 进入。
 
-<img src="./images/facebook-authing-idp-mobile.png.png" >
+<img src="./images/facebook-authing-idp-mobile.png" >
 
-4. 在 Authing 控制台 的 **Facebook 移动端** 页面，配置相关字段信息。
+4. 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「Facebook 移动端」页面，配置相关的字段信息。
 
-<img src="./facebook-authing-idp-mobile-detail.png" >
+<img src="./images/facebook-authing-idp-mobile-detail.png" >
 
 <table>
 <tr>
@@ -175,31 +134,24 @@ Team ID
 </tr>
 </table>
 
-5. 配置完成后，点击 **创建** 或者 **保存** 按钮完成创建。
-
-<img src="./images/google_11-mobile.png" >
-
 ### 第三步：开发接入
 
 ---
 
-#### 推荐开发接入方式
+- **推荐开发接入方式**：SDK
 
-SDK
 
-#### 优劣势描述
+- **优劣势描述**：运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
 
-运维简单，由 Authing 负责运维。每个用户池有一个独立的二级域名;如果需要嵌入到你的应用，需要使用弹窗模式登录，即：点击登录按钮后，会弹出一个窗口，内容是 Authing 托管的登录页面，或者将浏览器重定向到 Authing 托管的登录页。
+- **详细接入方法**：
 
-#### 详细接入方法
+3.1 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](/guides/app-new/create-app/create-app.md)。
 
-1. 在 Authing 控制台创建一个应用，详情查看：[如何在 Authing 创建一个应用](/guides/app-new/create-app/create-app.md)。
+3.2 在已创建好的 Facebook 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
 
-2. 在已创建好的 Facebook 身份源连接详情页面，开启并关联一个在 Authing 控制台创建的应用。
+<img src="./images/facebook-mobile-idp-open.png" >
 
-<img src="./images/google_12-mobile.png" >
-
-3. 在登录页面体验 Facebook 第三方登录（如 [终端用户预览图](#终端用户预览图) 所示）。
+3.3 在登录页面体验 Facebook 第三方登录（如 [终端用户预览图](#终端用户预览图) 所示）。
 
 
 
