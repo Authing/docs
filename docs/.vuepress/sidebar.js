@@ -696,7 +696,7 @@ const zhCnNavBar = {
               path: "/guides/connections/social/baidu/",
             },
             {
-              title: "百度 移动端",
+              title: "百度移动端",
               path: "/guides/connections/social/baidu-mobile/",
             },
             {
@@ -714,6 +714,10 @@ const zhCnNavBar = {
             {
               title: "LinkedIn",
               path: "/guides/connections/social/linkedin/",
+            },
+            {
+              title: "LinkedIn 移动端",
+              path: "/guides/connections/social/linkedin-mobile/",
             },
           ],
         },
@@ -1819,6 +1823,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/tencent",
             "/reference/sdk-for-ios/social/weibo",
             "/reference/sdk-for-ios/social/baidu",
+            "/reference/sdk-for-ios/social/linkedin",
+            "/reference/sdk-for-ios/social/dingtalk",
           ],
         },
         {

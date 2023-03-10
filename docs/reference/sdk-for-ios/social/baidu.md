@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [百度开发者中心](https://developer.baidu.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [百度接入准备](../../../guides/connections/social/baidu/README.md)、[百度 iOS OAuth 接入指南](https://openauth.baidu.com/doc/ios.html)。
+在 [百度开发者中心](https://developer.baidu.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [百度接入准备](../../../guides/connections/social/baidu-mobile/README.md)、[百度 iOS OAuth 接入指南](https://openauth.baidu.com/doc/ios.html)。
 
 <br>
 
