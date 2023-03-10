@@ -17,9 +17,9 @@
 
 ## 多因素认证（MFA）API
 
-[参考认证侧 API 文档](https://api.authing.cn/openapi/v3/authentication/#tag/MFA%20%E8%A6%81%E7%B4%A0%E7%AE%A1%E7%90%86/API%20%E5%88%97%E8%A1%A8)
+[参考认证侧 API 文档](https://api-explorer.authing.cn?tag=tag/MFA%20要素管理/API%20列表/operation/FactorsV3Controller_sendEnrollFactorRequest)
 
-[参考管理侧 API 文档](https://api.authing.cn/openapi/v3/management/#tag/%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/API%20%E5%88%97%E8%A1%A8/operation/UsersManagementController_getUserMfaInfo)
+[参考管理侧 API 文档](https://api-explorer.authing.cn?tag=tag/管理用户/API%20列表/operation/UsersManagementController_getUserMfaInfo)
 
 ## 多因素认证（MFA）SDK
 

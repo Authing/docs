@@ -290,7 +290,7 @@ fetch('https://api.authing.cn/api/v3/update-tenant-user', {
 })
 ```
 
-更多 API 可以查看 [https://api.authing.cn/openapi/v3/management/](https://api.authing.cn/openapi/v3/management/)
+更多 API 可以查看 [https://api.authing.cn/openapi/v3/tenant-management/](https://api.authing.cn/openapi/v3/tenant-management/)
 
 ## 好天气平台的多租户管理员（王运营）的用户旅程
 ### 1. 配置租户
@@ -515,7 +515,7 @@ fetch('https://api.authing.cn/api/v3/update-tenant-user', {
 })
 ```
 
-更多 API 可以查看 [https://api.authing.cn/openapi/v3/management/](https://api.authing.cn/openapi/v3/management/)
+更多 API 可以查看 [https://api.authing.cn/openapi/v3/tenant-management/](https://api.authing.cn/openapi/v3/tenant-management/)
 
 ## 美丽团普通用户（赵博士）的用户旅程
 
