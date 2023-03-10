@@ -132,8 +132,8 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         </td>
     </tr> 
 	<tr>
-        <td rowspan="4">Guard 4.0</td>
-        <td rowspan="4">
+        <td rowspan="5">Guard 4.0</td>
+        <td rowspan="5">
             <p>1. 拥有丰富的登录注册方式。</p>
             <p>2. 内置多种功能，无需额外编写代码。</p>
             <p>3. 拥有响应式布局，兼容移动端和 PC 端。</p>
@@ -148,6 +148,19 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <td>
             <a href="https://docs.authing.cn/v2/reference/guard/v2/react.html" _target="blank">
                 将 Guard 接入到 React 项目
+            </a>
+        </td>
+	</tr>
+    <tr>
+    <td>
+        @authing/react18-ui-components
+        </td>
+        <td>
+        <a href="https://www.npmjs.com/package/@authing/react18-ui-components" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Freact18-ui-components.svg" alt="npm version"><OutboundLink /></a>
+        </td>
+        <td>
+            <a href="https://docs.authing.cn/v2/reference/guard/v2/react.html" _target="blank">
+                将 Guard 接入到 React18 项目
             </a>
         </td>
 	</tr>
