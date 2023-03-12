@@ -719,6 +719,10 @@ const zhCnNavBar = {
               title: "LinkedIn 移动端",
               path: "/guides/connections/social/linkedin-mobile/",
             },
+            {
+              title: "钉钉移动端",
+              path: "/guides/connections/social/dingtalk-mobile/",
+            },
           ],
         },
         {
