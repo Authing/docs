@@ -696,7 +696,7 @@ const zhCnNavBar = {
               path: "/guides/connections/social/baidu/",
             },
             {
-              title: "百度 移动端",
+              title: "百度移动端",
               path: "/guides/connections/social/baidu-mobile/",
             },
             {
@@ -714,6 +714,14 @@ const zhCnNavBar = {
             {
               title: "LinkedIn",
               path: "/guides/connections/social/linkedin/",
+            },
+            {
+              title: "LinkedIn 移动端",
+              path: "/guides/connections/social/linkedin-mobile/",
+            },
+            {
+              title: "钉钉移动端",
+              path: "/guides/connections/social/dingtalk-mobile/",
             },
           ],
         },
@@ -1642,6 +1650,9 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/miniprogram",
             "/reference/sdk-for-android/social/qq",
             "/reference/sdk-for-android/social/weibo",
+            "/reference/sdk-for-android/social/baidu",
+            "/reference/sdk-for-android/social/linkedin",
+            "/reference/sdk-for-android/social/dingtalk",
           ],
         },
         {
@@ -1819,6 +1830,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/tencent",
             "/reference/sdk-for-ios/social/weibo",
             "/reference/sdk-for-ios/social/baidu",
+            "/reference/sdk-for-ios/social/linkedin",
+            "/reference/sdk-for-ios/social/dingtalk",
           ],
         },
         {
@@ -6850,6 +6863,10 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/wechat",
             },
             {
+              title: "Wecom",
+              path: "/reference/sdk-for-android/social/wecom",
+            },
+            {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
             },
@@ -6862,7 +6879,7 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/facebook",
             },
             {
-              title: "MiniProgram",
+              title: "Mini Program",
               path: "/reference/sdk-for-android/social/miniprogram",
             },
             {
@@ -6872,6 +6889,18 @@ const translatedZhCnNavBar = {
             {
               title: "Weibo",
               path: "/reference/sdk-for-android/social/weibo",
+            },
+            {
+              title: "Baidu",
+              path: "/reference/sdk-for-android/social/baidu",
+            },
+            {
+              title: "Linkedin",
+              path: "/reference/sdk-for-android/social/linkedin",
+            },
+            {
+              title: "DingTalk",
+              path: "/reference/sdk-for-android/social/dingtalk",
             },
           ],
         },

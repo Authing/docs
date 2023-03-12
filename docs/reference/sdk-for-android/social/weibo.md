@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [新浪微博开放平台](https://open.weibo.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [新浪微博接入准备](../../../guides/connections/social/weibo/README.md)、[新浪微博官方文档](https://open.weibo.com/apps/884123079/info/basic)。
+在 [新浪微博开放平台](https://open.weibo.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [新浪微博接入准备](../../../guides/connections/social/weibo-mobile/README.md)、[新浪微博官方文档](https://open.weibo.com/wiki/Connect/login)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.0 版本新增。
@@ -50,7 +50,7 @@ AuthFlow.start(this);
 - #### 使用微博登录按钮
     如果使用我们提供的微博登录按钮。
 
-​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
+​		1. 布局文件里面加上如下代码：
 
 ```xml
  <cn.authing.guard.social.WeiboLoginButton

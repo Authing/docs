@@ -26,3 +26,9 @@ The following error codes are unique to the Android SDK：
 | 10008 | SMS already send within the last 60 seconds         | This error is returned when the SMS verification code is frequently sent. |                                                              |
 | 10009 | Upload avatar failed                                | This error is returned when updating the avatar fails.       | Check the printing table for detailed error and locate the specific cause. |
 | 10010 | Login by FaceBook canceled/Login by FaceBook failed | Login by FaceBook canceled or Login by FaceBook failed       |                                                              |
+| 10011 |                                                     | Login by WebAuthn canceled or Login by WebAuthn failed       |                                                              |
+| 10012 | Login by Weibo canceled/Login by Weibo failed       | Login by Weibo canceled or Login by Weibo failed             |                                                              |
+| 10013 | Login by QQ canceled/Login by QQ failed             | Login by QQ canceled or Login by QQ failed                   |                                                              |
+| 10014 | Login by Baidu canceled/Login by Baidu failed       | Login by Baidu canceled or Login by Baidu failed             |                                                              |
+| 10015 | Login by Linkedin canceled/Login by Linkedin failed | Login by Linkedin canceled or Login by Linkedin failed       |                                                              |
+| 10016 | Login by DingTalk canceled/Login by DingTalk failed | Login by DingTalk canceled or Login by DingTalk failed       |                                                              |

@@ -19,3 +19,5 @@
 - [QQ 登录](./tencent.md)
 - [微博登录](./weibo.md)
 - [百度登录](./baidu.md)
+- [领英登录](./linkedin.md)
+- [钉钉登录](./dingtalk.md)

@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [Weibo open platform](https://open.weibo.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Weibo](../../../guides/connections/social/weibo/README.md)、[Weibo document](https://open.weibo.com/apps/884123079/info/basic)。
+Configure in [Weibo open platform](https://open.weibo.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Weibo](../../../guides/connections/social/weibo-mobile/README.md)、[Weibo document](https://open.weibo.com/apps/884123079/info/basic)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.0 version.
@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.0 version.
 
 <br>
 
-## Integrate QQ login steps
+## Integrate Weibo login steps
 
 ### Step 1：Add dependency
 
@@ -85,8 +85,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
   If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Weibo` class authorization function inside the button click event, which integrates the business logic to pull up the Weibo authorization login:
 
 ```java
-Weibo weibo= Weibo.getInstance();
-weibo.login(appContext, new AuthCallback<UserInfo>() {
+Weibo.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

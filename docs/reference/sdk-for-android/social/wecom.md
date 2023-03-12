@@ -1,14 +1,14 @@
-# 企业微信（代开发模式）登录
+# 企业微信登录
 
 <LastUpdated/>
 
 ## 准备工作
 
-在[企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅[企业微信移动端（代开发模式）](../../../guides/connections/enterprise/wecom-agency-mobile/README.md)。
+在[企业微信服务商后台](https://open.work.weixin.qq.com/wwopen/developer#/index)及 [Authing Console 控制台](https://authing.cn/) 进行配置，请参阅[企业微信移动端](../../../guides/connections/enterprise/wecom-mobile/README.md)、[企业微信移动端（代开发模式）](../../../guides/connections/enterprise/wecom-agency-mobile/README.md)。
 
 <br>
 
-## 集成企业微信（代开发模式）登录步骤
+## 集成企业微信登录步骤
 
 ### 第一步：添加依赖
 
@@ -64,6 +64,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 
 ```java
 WeComLoginButton button = findViewById(R.id.btn_wecom_login);
+//button.setType(Const.TYPE_WECHAT_COM_AGENCY);//代开发模式
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -82,6 +83,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 
 ```java
 WeCom weCom = new WeCom();
+//WeCom weCom = new WeCom(Const.TYPE_WECHAT_COM_AGENCY);//代开发模式
 weCom.login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -124,6 +126,18 @@ AuthClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
         }
     }
 });
+
+//代开发模式
+AuthClient.loginByWecomAgency(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // 登录成功，data 是用户信息, 包含 idToken。
+        } else {
+          // 登录失败
+        }
+    }
+});
 ```
 
 如果你需要获取到用户信息（`用户名`、`昵称`、`姓名`等）、`idToken`、`accessToken` 和 `refreshToken`，调用：
@@ -131,6 +145,18 @@ AuthClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
 ```java
 OIDCClient oidcClient = new OIDCClient();
 oidcClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // 登录成功，data 是用户信息, 包含 idToken、accessToke and refreshToken。
+        } else {
+          // 登录失败
+        }
+    }
+});
+
+//代开发模式
+oidcClient.loginByWecomAgency(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

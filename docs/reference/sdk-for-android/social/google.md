@@ -21,6 +21,14 @@ implementation 'com.google.android.gms:play-services-auth:20.2.0'
 Guard 只是 compileOnly 依赖 gms，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
 
+**注意事项**
+
+如果需要混淆代码，为了保证 sdk 的正常使用，需要在 proguard.cfg 加上下面配置：
+
+```
+-keep class com.google.android.gms.** { *; }
+```
+
 ### 第二步：初始化 Guard Android SDK
 
 在应用启动的时候初始化：
