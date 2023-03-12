@@ -1646,6 +1646,9 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/miniprogram",
             "/reference/sdk-for-android/social/qq",
             "/reference/sdk-for-android/social/weibo",
+            "/reference/sdk-for-android/social/baidu",
+            "/reference/sdk-for-android/social/linkedin",
+            "/reference/sdk-for-android/social/dingtalk",
           ],
         },
         {
@@ -6856,6 +6859,10 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/wechat",
             },
             {
+              title: "Wecom",
+              path: "/reference/sdk-for-android/social/wecom",
+            },
+            {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
             },
@@ -6868,7 +6875,7 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/facebook",
             },
             {
-              title: "MiniProgram",
+              title: "Mini Program",
               path: "/reference/sdk-for-android/social/miniprogram",
             },
             {
@@ -6878,6 +6885,18 @@ const translatedZhCnNavBar = {
             {
               title: "Weibo",
               path: "/reference/sdk-for-android/social/weibo",
+            },
+            {
+              title: "Baidu",
+              path: "/reference/sdk-for-android/social/baidu",
+            },
+            {
+              title: "Linkedin",
+              path: "/reference/sdk-for-android/social/linkedin",
+            },
+            {
+              title: "DingTalk",
+              path: "/reference/sdk-for-android/social/dingtalk",
             },
           ],
         },
