@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [QQ 互联](https://developer.baidu.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [QQ 接入准备](../../../guides/connections/social/qq/README.md)、[QQ 互联 iOS 应用](https://wiki.connect.qq.com/ios_sdk%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba)。
+在 [QQ 互联](https://developer.baidu.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [QQ 接入准备](../../../guides/connections/social/qq-mobile/README.md)、[QQ 互联 iOS 应用](https://wiki.connect.qq.com/ios_sdk%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba)。
 
 <br>
 

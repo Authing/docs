@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [微博开发平台](https://open.weibo.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [微博接入准备](../../../guides/connections/social/weibo/README.md)。
+在 [微博开发平台](https://open.weibo.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [微博接入准备](../../../guides/connections/social/weibo-mobile/README.md)。
 
 <br>
 

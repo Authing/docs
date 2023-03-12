@@ -16,7 +16,7 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 
 在移动应用中拉起 Facebook 页面进行登录。
 
-<img src="./images/facebook-mobile.png" style="display:block;margin: 0 auto;">
+<img src="./images/facebook-mobile.png" alt="drawing" width="500"/>
 
 ## 准备工作
 
@@ -152,6 +152,3 @@ Authing 为开发者提供了一种在移动端（iOS 或安卓）应用中快�
 <img src="./images/facebook-mobile-idp-open.png" >
 
 3.3 在登录页面体验 Facebook 第三方登录（如 [终端用户预览图](#终端用户预览图) 所示）。
-
-
-
