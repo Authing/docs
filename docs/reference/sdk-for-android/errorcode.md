@@ -26,3 +26,9 @@ API 错误码列表请参阅：[错误代码](https://docs.authing.cn/v2/referen
 | 10008 | 在 60 秒内已发送短信验证码                          | 短信验证码发送频繁时，返回此错误。                           |                                                              |
 | 10009 | Upload avatar failed                                | 更新头像失败时，返回此错误。                                 | 查看打印台详细报错，定位具体原因。                           |
 | 10010 | Login by FaceBook canceled/Login by FaceBook failed | Facebook登录取消或者失败                                     |                                                              |
+| 10011 |                                                     | WebAuthn 登录取消或者失败                                    |                                                              |
+| 10012 | Login by Weibo canceled/Login by Weibo failed       | 微博登录取消或者失败                                         |                                                              |
+| 10013 | Login by QQ canceled/Login by QQ failed             | QQ 登录取消或者失败                                          |                                                              |
+| 10014 | Login by Baidu canceled/Login by Baidu failed       | 百度登录取消或者失败                                         |                                                              |
+| 10015 | Login by Linkedin canceled/Login by Linkedin failed | Linkedin 登录取消或者失败                                    |                                                              |
+| 10016 | Login by DingTalk canceled/Login by DingTalk failed | 钉钉登录取消或者失败                                         |                                                              |

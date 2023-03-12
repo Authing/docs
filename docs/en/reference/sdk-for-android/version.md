@@ -2,6 +2,18 @@
 
 <LastUpdated/>
 
+- ## 1.5.1
+
+
+> Update time：2023.3.12
+
+1. Add Baidu login.
+2. Add Linkedin login.
+3. Add DingTalk login.
+4. Supports graphic code verification for account and password login errors.
+
+<br>
+
 - ## 1.5.0
 
 
