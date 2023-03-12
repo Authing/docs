@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [QQ open platform](https://connect.qq.com/index.html/) and [Authing Console](https://authing.cn/)，See [Preparing for  QQ](../../../guides/connections/social/qq/README.md)、[QQ document](https://wiki.connect.qq.com/qq%e7%99%bb%e5%bd%95)。
+Configure in [QQ open platform](https://connect.qq.com/index.html/) and [Authing Console](https://authing.cn/)，See [Preparing for  QQ](../../../guides/connections/social/qq-mobile/README.md)、[QQ document](https://wiki.connect.qq.com/qq%e7%99%bb%e5%bd%95)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.0 version.
@@ -114,8 +114,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
   If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `QQ` class authorization function inside the button click event, which integrates the business logic to pull up the QQ authorization login:
 
 ```java
-QQ qq = QQ.getInstance();
-qq.login(appContext, new AuthCallback<UserInfo>() {
+QQ.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

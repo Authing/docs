@@ -1,29 +1,38 @@
-# 新浪微博登录
+# 钉钉登录
 
 <LastUpdated/>
 
 ## 准备工作
 
-在 [新浪微博开放平台](https://open.weibo.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [新浪微博接入准备](../../../guides/connections/social/weibo-mobile/README.md)、[新浪微博官方文档](https://open.weibo.com/wiki/Connect/login)。
+在 [钉钉开放平台](https://open.dingtalk.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [钉钉接入准备](../../../guides/connections/social/dingtalk-mobile/README.md)、[钉钉官方文档](https://open.dingtalk.com/document/orgapp/android-platform-application-authorization-login-access)。
 
 :::hint-info
-此功能在 android guard sdk 1.5.0 版本新增。
+此功能在 android guard sdk 1.5.1 版本新增。
 :::
 
 <br>
 
-## 集成新浪微博登录步骤
+## 集成钉钉登录步骤
 
 ### 第一步：添加依赖
 
 ```groovy
 implementation 'cn.authing:guard:+'
-implementation 'io.github.sinaweibosdk:core:12.5.0@aar'
+implementation 'com.alibaba.android:ddopenauth:1.5.0.8'
+implementation 'com.alibaba.android:ddsharesdk:1.1.0'
 ```
 
 :::hint-info
-Guard 只是 compileOnly 依赖 sinaweibosdk，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
+Guard 只是 compileOnly 依赖钉钉 sdk，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
+
+**注意事项**
+
+如果需要混淆代码，为了保证 sdk 的正常使用，需要在 proguard.cfg 加上下面配置：
+
+```
+-keep class com.android.dingtalk.openauth.**{*;}
+```
 
 ### 第二步：初始化 Guard Android SDK
 
@@ -45,16 +54,16 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 AuthFlow.start(this);
 ```
 
-通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有微博登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
+通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有钉钉登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
 
-- #### 使用微博登录按钮
-    如果使用我们提供的微博登录按钮。
+- #### 使用钉钉登录按钮
+    如果使用我们提供的钉钉登录按钮。
 
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.WeiboLoginButton
-    android:id="@+id/btn_weibo_login"
+ <cn.authing.guard.social.DingTalkLoginButton
+    android:id="@+id/btn_ding_talk_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -64,7 +73,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-WeiboLoginButton button = findViewById(R.id.btn_weibo_login);
+DingTalkLoginButton button = findViewById(R.id.btn_ding_talk_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -77,12 +86,11 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### 使用微博登录授权类
-  如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `Weibo` 类的授权函数，此类集成了拉起微博授权登录的业务逻辑：
+- #### 使用钉钉登录授权类
+  如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `DingTalk` 类的授权函数，此类集成了拉起钉钉授权登录的业务逻辑：
 
 ```java
-Weibo weibo = Weibo.getInstance();
-weibo.login(appContext, new AuthCallback<UserInfo>() {
+DingTalk.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -96,34 +104,24 @@ weibo.login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
 
-**注意：使用微博登录按钮或者微博登录授权类时，需要在 Activity 的 onActivityResult 函数中加入如下代码：**
+- #### 使用钉钉登录 API 
+
+  如果想完全自己实现钉钉登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：
 
 ```java
-@Override
-protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    Weibo.getInstance().onActivityResult(this, requestCode, resultCode, data);
-}
-```
-
-- #### 使用微博登录 API 
-
-  如果想完全自己实现微博登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：
-
-```java
-public static void loginByWeibo(String accessToken, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByDingTalk(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
-*`accessToken`* 微博 token
+*`authCode`* 钉钉 code
 
 **示例**
 
 如果你只需要获取到用户信息（`用户名`、`昵称`、`姓名`等）和 `idToken`，调用：
 
 ```java
-AuthClient.loginByWeibo(accessToken, new AuthCallback<UserInfo>() {
+AuthClient.loginByDingTalk(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -139,7 +137,7 @@ AuthClient.loginByWeibo(accessToken, new AuthCallback<UserInfo>() {
 
 ```java
 OIDCClient oidcClient = new OIDCClient();
-oidcClient.loginByWeibo(accessToken, new AuthCallback<UserInfo>() {
+oidcClient.loginByDingTalk(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

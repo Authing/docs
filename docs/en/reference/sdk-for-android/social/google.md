@@ -21,6 +21,14 @@ implementation 'com.google.android.gms:play-services-auth:20.2.0'
 The Guard compileOnly relies on gms, which allows apps to import on demand, preventing the Guard aar package from getting bigger as more third party logins are supported. Therefore, every time a third-party identity source is added, the App needs to manually add the dependency of the identity source.
 :::
 
+**Precautions**
+
+If you need to obfuscate code, add the following configuration to proguard.cfg to ensure proper use of the sdk:
+
+```
+-keep class com.google.android.gms.** { *; }
+```
+
 ### Step 2：Initialization Guard Android SDK
 
 To initialize when the application starts:

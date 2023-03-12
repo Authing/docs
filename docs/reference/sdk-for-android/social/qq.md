@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [QQ 开放平台](https://connect.qq.com/index.html/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [腾讯 QQ 接入准备](../../../guides/connections/social/qq/README.md)、[腾讯 QQ 官方文档](https://wiki.connect.qq.com/qq%e7%99%bb%e5%bd%95)。
+在 [QQ 开放平台](https://connect.qq.com/index.html/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [腾讯 QQ 接入准备](../../../guides/connections/social/qq-mobile/README.md)、[腾讯 QQ 官方文档](https://wiki.connect.qq.com/qq%e7%99%bb%e5%bd%95)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.0 版本新增。
@@ -83,7 +83,7 @@ AuthFlow.start(this);
 - #### 使用 QQ 登录按钮
     如果使用我们提供的 QQ 登录按钮。
 
-​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
+​		1. 布局文件里面加上如下代码：
 
 ```xml
  <cn.authing.guard.social.QQLoginButton
@@ -114,8 +114,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
   如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `QQ` 类的授权函数，此类集成了拉起  QQ 授权登录的业务逻辑：
 
 ```java
-QQ qq = QQ.getInstance();
-qq.login(appContext, new AuthCallback<UserInfo>() {
+QQ.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

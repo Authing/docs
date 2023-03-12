@@ -1,29 +1,24 @@
-# Login by Weibo
+# Login by LinkedIn
 
 <LastUpdated/>
 
 ## Preparatory work
 
-Configure in [Weibo open platform](https://open.weibo.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Weibo](../../../guides/connections/social/weibo-mobile/README.md)、[Weibo document](https://open.weibo.com/apps/884123079/info/basic)。
+Configure in [Linkedin developers platform](https://developer.linkedin.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Linkedin](../../../guides/connections/social/linkedin/README.md)、[Linkedin document](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)。
 
 :::hint-info
-This feature was added in android guard sdk 1.5.0 version.
+This feature was added in android guard sdk 1.5.1 version.
 :::
 
 <br>
 
-## Integrate Weibo login steps
+## Integrate Linkedin login steps
 
 ### Step 1：Add dependency
 
 ```groovy
 implementation 'cn.authing:guard:+'
-implementation 'io.github.sinaweibosdk:core:12.5.0@aar'
 ```
-
-:::hint-info
-The Guard compileOnly relies on sinaweibosdk, which allows apps to import on demand, preventing the Guard aar package from getting bigger as more third party logins are supported. Therefore, every time a third-party identity source is added, the App needs to manually add the dependency of the identity source.
-:::
 
 ### Step 2：Initialization Guard Android SDK
 
@@ -47,17 +42,17 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 AuthFlow.start(this);
 ```
 
-By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the Weibo login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
+By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the Linkedin login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
 
-- #### Use the Weibo sign In button
+- #### Use the Linkedin sign In button
 
-  If you use the Weibo login button we provide.
+  If you use the Linkedin login button we provide.
 
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.WeiboLoginButton
-    android:id="@+id/btn_weibo_login"
+ <cn.authing.guard.social.LinkedinLoginButton
+    android:id="@+id/btn_linkedin_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -67,7 +62,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-WeiboLoginButton button = findViewById(R.id.btn_weibo_login);
+LinkedinLoginButton button = findViewById(R.id.btn_linkedin_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -80,12 +75,12 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### Log in to the authorization class using Weibo
+- #### Log in to the authorization class using Linkedin
 
-  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Weibo` class authorization function inside the button click event, which integrates the business logic to pull up the Weibo authorization login:
+  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Linkedin` class authorization function inside the button click event, which integrates the business logic to pull up the Linkedin authorization login:
 
 ```java
-Weibo.getInstance().login(appContext, new AuthCallback<UserInfo>() {
+Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -99,34 +94,34 @@ Weibo.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
 
-**Note: When using the Weibo login button or the Weibo login authorization class, you need to add the following code to the Activity's onActivityResult function:**
+**Note: When using the Linkedin login button or the Linkedin login authorization class, you need to add the following code to the Activity's onActivityResult function:**
 
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Weibo.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Linkedin.getInstance().onActivityResult(this, requestCode, resultCode, data);
 }
 ```
 
-- #### Log in to the API using Weibo
+- #### Log in to the API using Linkedin
 
-  If you want to fully implement the Weibo login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
+  If you want to fully implement the Linkedin login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
 
 ```java
-public static void loginByWeibo(String accessToken, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByLinkedin(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **param**
 
-*`accessToken`* Weibo token
+*`authCode`* Linkedin authCode
 
 **example**
 
 If you only need to get the user information (`username`, `nickname`, `name`, etc.) and `idToken`, call:
 
 ```java
-AuthClient.loginByWeibo(accessToken, new AuthCallback<UserInfo>() {
+AuthClient.loginByLinkedin(accessToken, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -142,7 +137,7 @@ If you only need to get the user information (`username`, `nickname`, `name`, et
 
 ```java
 OIDCClient oidcClient = new OIDCClient();
-oidcClient.loginByWeibo(accessToken, new AuthCallback<UserInfo>() {
+oidcClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
