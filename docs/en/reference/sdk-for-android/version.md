@@ -2,6 +2,15 @@
 
 <LastUpdated/>
 
+- ## 1.5.2
+
+
+> Update time：2023.3.13
+
+1. fix some bug.
+
+<br>
+
 - ## 1.5.1
 
 
