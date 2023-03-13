@@ -719,10 +719,6 @@ const zhCnNavBar = {
               title: "LinkedIn 移动端",
               path: "/guides/connections/social/linkedin-mobile/",
             },
-            {
-              title: "钉钉移动端",
-              path: "/guides/connections/social/dingtalk-mobile/",
-            },
           ],
         },
         {
@@ -752,6 +748,10 @@ const zhCnNavBar = {
             {
               title: "钉钉 H5 微应用（企业内部开发）",
               path: "/guides/connections/enterprise/dingtalk/",
+            },
+            {
+              title: "钉钉移动端",
+              path: "/guides/connections/social/dingtalk-mobile/",
             },
             {
               title: "飞书应用商店应用",
