@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [QQ Internet](https://developer.baidu.com/) and [Authing Console](https://authing.cn/), please refer to [QQ access preparation](../. ./../guides/connections/social/qq-mobile/README.md), [QQ Connected iOS App](https://wiki.connect.qq.com/ios_sdk%e7%8e%af%e5%a2 %83%e6%90%ad%e5%bb%ba).
+Configure in [QQ Internet](https://developer.baidu.com/) and [Authing Console](https://authing.cn/), please refer to [QQ access preparation](https://docs.authing.cn/v2/guides/connections/social/qq-mobile), [QQ Connected iOS App](https://wiki.connect.qq.com/ios_sdk%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba).
 
 <br>
 

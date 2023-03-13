@@ -1,14 +1,14 @@
-# Enterprise WeChat login
+# Wecom login
 
 <LastUpdated/>
 
 ## Preparation
 
-For configuration in the enterprise WeChat management background and Authing management console, please refer to [Enterprise WeChat mobile terminal (generation development mode)](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/ ).
+For configuration in the Wecom management background and Authing management console, please refer to [Wecom mobile terminal (generation development mode)](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/).
 
 <br>
 
-## Integrated enterprise WeChat login steps
+## Integrated Wecom login steps
 
 ### Step 1: Add dependencies
 
@@ -51,7 +51,7 @@ WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>, i
 
 ### Step 4: Add callbacks
 
-After Enterprise WeChat returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
+After Wecom returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -72,7 +72,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication. O
 <br>
 
 
-### Step 5: Initiate enterprise WeChat authorization
+### Step 5: Initiate Wecom authorization
 
 The SDK provides three authorization methods:
 

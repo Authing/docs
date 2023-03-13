@@ -1,18 +1,18 @@
-# Feishu login
+# Lark login
 
 <LastUpdated/>
 
 ## Preparation
 
-- For the configuration of the Authing console of the enterprise's self-built application and the Feishu console, please refer to [Accessing Feishu's self-built application mobile application login](https://docs.authing.cn/v2/connections/lark-internal-mobile/ ).
+- For the configuration of the Authing console of the enterprise's self-built application and the Lark console, please refer to [Accessing Lark's self-built application mobile application login](https://docs.authing.cn/v2/connections/lark-internal-mobile/).
 
-- App store app Authing console and Feishu console configuration, please refer to [Access to Feishu app store app mobile app login](https://docs.authing.cn/v2/connections/lark-public-mobile/).
+- App store app Authing console and Lark console configuration, please refer to [Access to Lark app store app mobile app login](https://docs.authing.cn/v2/connections/lark-public-mobile/).
 
 <br>
 
-## Integrated Feishu login steps
+## Integrated Lark login steps
 
-### Step 1: Add Feishu Login Component Dependency
+### Step 1: Add Lark Login Component Dependency
 
 1. Enter: https://github.com/Authing/authing-binary in the swift package search bar.
 
@@ -27,24 +27,24 @@
 
 ### Step 2: Modify project configuration
 
-- Go to [Feishu Development Platform](https://open.feishu.cn/document/uAjLw4CM/uYjL24iN/mobile-app/sdk) to download iOS LarkSS0Demo.
+- Go to [Lark Development Platform](https://open.Lark.cn/document/uAjLw4CM/uYjL24iN/mobile-app/sdk) to download iOS LarkSS0Demo.
 
 - Drag LarkSSO.bundle from the LarkSSO directory into the project directory, and check Copy items if needed .
 
 - Add lark under Configuration Jump Scheme: LSApplicationQueriesSchemes Key.
 
-- Configure Feishu bounce URL: Add the app_id when registering under URL types Key (for example: clia0988c0addf81013). Note that the underscore in app_id needs to be removed.
+- Configure Lark bounce URL: Add the app_id when registering under URL types Key (for example: clia0988c0addf81013). Note that the underscore in app_id needs to be removed.
 
 ![](./images/lark/5.png)
 ![](./images/lark/4.png)
 
 <br>
 
-### Step 3: Initialize Feishu login
+### Step 3: Initialize Lark login
 
 1. Add import Guard and import LarkLogin to AppDelegate or SceneDelegate.
 2. Authing.start needs to pass in the application ID of Authing.
-3. LarkLogin.setupLark needs to pass in the **AppId** and **Scheme** issued by the Feishu Open Platform.
+3. LarkLogin.setupLark needs to pass in the **AppId** and **Scheme** issued by the Lark Open Platform.
 
 ```swift
 import Guard
@@ -56,9 +56,9 @@ LarkLogin.setupLark(<#Lark App ID#>, Scheme: <#Lark Scheme#>)
 
 <br>
 
-### Step 4: Add Feishu login callback
+### Step 4: Add Lark login callback
 
-After Feishu returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
+After Lark returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -87,7 +87,7 @@ It is recommended to use the semantic Hyper Component we provide, just place one
 Lark Login Button
 ```
 
-If you don't want to use our built-in button, you can call the Authing Feishu login API in the click event of your own button:
+If you don't want to use our built-in button, you can call the Authing Lark login API in the click event of your own button:
 
 ```swift
 LarkLogin.login(viewController: <#ViewController that presents the view#>) { (code, message, userInfo) in

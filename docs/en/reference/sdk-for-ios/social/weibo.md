@@ -4,7 +4,7 @@
 
 ## Preparation
 
-For configuration in the enterprise WeChat management background and Authing management console, please refer to [Enterprise WeChat mobile terminal (generation development mode)](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/ ).
+For configuration in the enterprise WeChat management background and Authing management console, please refer to [Enterprise WeChat mobile terminal (generation development mode)](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/).
 
 <br>
 
