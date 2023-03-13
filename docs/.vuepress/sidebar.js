@@ -6979,6 +6979,14 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/wechat",
             },
             {
+              title: "WeCom",
+              path: "/reference/sdk-for-ios/social/wecom",
+            },
+            {
+              title: "Lark",
+              path: "/reference/sdk-for-ios/social/lark",
+            },
+            {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
             },
@@ -6991,8 +6999,28 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/facebook",
             },
             {
-              title: "Mini Program",
+              title: "Wechat Miniprogram",
               path: "/reference/sdk-for-ios/social/miniprogram",
+            },
+            {
+              title: "Tencent",
+              path: "/reference/sdk-for-ios/social/tencent",
+            },
+            {
+              title: "Sina Weibo",
+              path: "/reference/sdk-for-ios/social/weibo",
+            },
+            {
+              title: "Baidu",
+              path: "/reference/sdk-for-ios/social/baidu",
+            },
+            {
+              title: "LinkedIn",
+              path: "/reference/sdk-for-ios/social/linkedin",
+            },
+            {
+              title: "DingTalk",
+              path: "/reference/sdk-for-ios/social/dingtalk",
             },
           ],
         },
