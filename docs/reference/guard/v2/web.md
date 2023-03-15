@@ -3970,7 +3970,7 @@ Guard 可展示的界面
 | bindTotp             | 绑定 TOTP             |
 | anyQuestions         | 问题反馈              |
 | loginCompleteInfo    | 登录信息补全          |
-| registerPassword     | 注册密码不全          |
+| registerPassword     | 注册密码补全          |
 | registerCompleteInfo | 注册信息补全          |
 | recoveryCode         | MFA TOTP 恢复码       |
 | submitSuccess        | 提交成功              |
