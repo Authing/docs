@@ -4,7 +4,7 @@
 
 ## Preparation
 
-In [WeChat Open Platform](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN) and [Authing Console](https://authing.cn/) For configuration, please refer to [APP Launches WeChat Mini Program](../../../guides/connections/social/wechat-miniprogram-applaunch/README.md), the mobile application APP needs to be associated with related mini programs.
+In [WeChat Open Platform](https://open.weixin.qq.com/cgi-bin/index?t=home/index&lang=zh_CN) and [Authing Console](https://authing.cn/) For configuration.
 
 <br>
 

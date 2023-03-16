@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [Linkedin Developer Center](https://www.linkedin.com/developers/apps) and [Authing Console Console](https://authing.cn/), please refer to [Linkedin Access Prepare](../../../guides/connections/social/linkedin-mobile/README.md).
+Configure in [Linkedin Developer Center](https://www.linkedin.com/developers/apps) and [Authing Console Console](https://authing.cn/).
 
 <br>
 

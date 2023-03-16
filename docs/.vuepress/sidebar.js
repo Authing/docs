@@ -719,10 +719,6 @@ const zhCnNavBar = {
               title: "LinkedIn 移动端",
               path: "/guides/connections/social/linkedin-mobile/",
             },
-            {
-              title: "钉钉移动端",
-              path: "/guides/connections/social/dingtalk-mobile/",
-            },
           ],
         },
         {
@@ -752,6 +748,10 @@ const zhCnNavBar = {
             {
               title: "钉钉 H5 微应用（企业内部开发）",
               path: "/guides/connections/enterprise/dingtalk/",
+            },
+            {
+              title: "钉钉移动端",
+              path: "/guides/connections/enterprise/dingtalk-mobile/",
             },
             {
               title: "飞书应用商店应用",
@@ -1816,12 +1816,10 @@ const zhCnNavBar = {
           ],
         },
         {
-          title: "社会化登录",
+          title: "第三方身份源",
           path: "/reference/sdk-for-ios/social/",
           children: [
             "/reference/sdk-for-ios/social/wechat",
-            "/reference/sdk-for-ios/social/wecom",
-            "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
             "/reference/sdk-for-ios/social/google",
@@ -1831,6 +1829,10 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/weibo",
             "/reference/sdk-for-ios/social/baidu",
             "/reference/sdk-for-ios/social/linkedin",
+            "/reference/sdk-for-ios/social/github",
+            "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/wecom",
+            "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/dingtalk",
           ],
         },
@@ -6971,20 +6973,12 @@ const translatedZhCnNavBar = {
           ],
         },
         {
-          title: "Social login",
+          title: "Third-party identity source",
           path: "/reference/sdk-for-ios/social/",
           children: [
             {
               title: "Wechat",
               path: "/reference/sdk-for-ios/social/wechat",
-            },
-            {
-              title: "WeCom",
-              path: "/reference/sdk-for-ios/social/wecom",
-            },
-            {
-              title: "Lark",
-              path: "/reference/sdk-for-ios/social/lark",
             },
             {
               title: "Apple",
@@ -7017,6 +7011,22 @@ const translatedZhCnNavBar = {
             {
               title: "LinkedIn",
               path: "/reference/sdk-for-ios/social/linkedin",
+            },
+            {
+              title: "Github",
+              path: "/reference/sdk-for-ios/social/github",
+            },
+            {
+              title: "Douyin",
+              path: "/reference/sdk-for-ios/social/douyin",
+            },
+            {
+              title: "WeCom",
+              path: "/reference/sdk-for-ios/social/wecom",
+            },
+            {
+              title: "Lark",
+              path: "/reference/sdk-for-ios/social/lark",
             },
             {
               title: "DingTalk",

@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure on [DingTalk Open Platform](https://open-dev.dingtalk.com/) and [Authing Console Console](https://authing.cn/), please refer to [DingTalk Access Preparation] (../../../guides/connections/social/dingtalk-mobile/README.md), [DingTalk iOS application authorization login access process] (https://open.dingtalk.com/document/orgapp /procedures-for-authorized-logon-to-ios-applications).
+Configure on [DingTalk Open Platform](https://open-dev.dingtalk.com/) and [Authing Console Console](https://authing.cn/), please refer to [DingTalk iOS application authorization login access process] (https://open.dingtalk.com/document/orgapp /procedures-for-authorized-logon-to-ios-applications).
 
 <br>
 

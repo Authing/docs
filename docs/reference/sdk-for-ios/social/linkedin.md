@@ -21,7 +21,7 @@
 
 4. Add Package 后勾选 **Linkedin** 。
 
-> **Linkedin** 依赖于 [Guard-iOS 1.4.3](https://github.com/Authing/guard-ios) 之后版本。
+> **Linkedin** 依赖于 [Guard-iOS 1.4.2](https://github.com/Authing/guard-ios) 之后版本。
 
 <br>
 

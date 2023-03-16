@@ -1,16 +1,16 @@
-# Enterprise WeChat login
+# Weibo login
 
 <LastUpdated/>
 
 ## Preparation
 
-For configuration in the enterprise WeChat management background and Authing management console, please refer to [Enterprise WeChat mobile terminal (generation development mode)](https://docs.authing.cn/v2/guides/connections/enterprise/wecom-agency-mobile/).
+Configure on [Weibo Development Platform](https://open.weibo.com/) and [Authing Console](https://authing.cn/).
 
 <br>
 
-## Integrated enterprise WeChat login steps
+## Integrated Weibo login
 
-### Step 1: Add dependencies
+### Step 1: Add Weibo dependency
 
 1. Enter: https://github.com/Authing/authing-binary in the swift package search bar.
 
@@ -19,97 +19,140 @@ For configuration in the enterprise WeChat management background and Authing man
 
 3. Select **Up to Next Major Version 1.0.0** for the dependency rule.
 
-4. Check **WeCom** after Add Package.
+4. Check **Weibo** after Add Package.
+
+> **Weibo** depends on the version after [Guard-iOS 1.4.1](https://github.com/Authing/guard-ios).
 
 <br>
 
 ### Step 2: Modify project configuration
 
-- Configure jump Scheme: add wxwork and wxworklocal under LSApplicationQueriesSchemes Key
+Configure the callback URL of the Weibo login component:
+1. Select the Xcode project, click the plus sign in **Targets** -> **Info** -> **URL Types**.
+2. **Identifier** fill in com.weibo
+3. **URL Schemes** fill in **wb** + **APP-ID** of the Weibo console, for example: wb884123079.
+<br>
 
-- Configure the corporate WeChat bounce URL: add the **Schema** applied for in the corporate WeChat management background under URL types Key (for example: wwauth803c38cb89ac1d57000002)
+### Step 3: Add a whitelist to start WeChat in Info.plist
 
-![](./images/wecom/5.png)
+key: LSApplicationQueriesSchemes
+
+value: sinaweibo, weibosdk, weibosdk2.5, weibosdk3.3, sinaweibohd
+
+> Pay attention to capitalization
+
+![](./images/weibo/weibo1.png)
+
+You can also open Info.plist via Source Code, and then copy and paste the following code:
+
+```xml
+<plist version="1.0">
+<dict>
+     ...
+     <key>LSApplicationQueriesSchemes</key>
+<array>
+<string>sinaweibo</string>
+<string>weibosdk</string>
+         <string>weibosdk2.5</string>
+<string>weibosdk3.3</string>
+<string>sinaweibohd</string>
+</array>
+     ...
+</dict>
+</plist>
+```
 
 <br>
 
-### Step 3: Initialize WeCom
+### Step 3: Set up Associated Domains:
 
-1. Add import Guard and import WeCom to AppDelegate or SceneDelegate.
+> Fill in the host corresponding to the developer's Universal Link.
 
-2. WeCom.registerApp needs to pass in the **Scheme**, **AgentID**, **CorpID** issued by WeChat Enterprise, **isProxyDevelopment** to select whether it is the agent development mode.
+![](./images/wechat/7.png)
 
+<br>
+
+### Step 4: Initialize Weibo login
 ```swift
 import Guard
-import WeCom
+import Weibo
 
-Authing.start(<#AUTHING_APP_ID#>)
-WeCom.registerApp(appId: <#Scheme#>, corpId: <#CorpID#>, agentId: <#AgentID#>, isProxyDevelopment: <#Bool#>)
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     Authing.start(<#AUTHING_APP_ID#>)
+     // appId: Weibo open platform appId
+     // scope: Weibo open platform scope, for example: all
+     // redirectURI: the redirectURI filled in the Weibo open platform
+     // universalLink: UniversalLink filled in on Weibo Open Platform
+     Weibo.register(appId: <#your_weibo_appid#>, scope: <#your_weibo_scope#, redirectURI: <#your_weibo_redirecturi#>, universalLink: <#your_weibo_universalLink#>)
+}
   ```
- 
 <br>
 
-### Step 4: Add callbacks
 
-After Enterprise WeChat returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
+### Step 4: Handle Weibo login callback
+
+After Weibo returns to the application, if SceneDelegate is used, the following functions need to be overloaded in SceneDelegate.swift:
 
 ```swift
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+     _ = Weibo. handleUniversalLink(userActivity: userActivity)
+}
+
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-     if let url = URLContexts.first?.url {
-         _ = WeCom. handleOpenURL(url: url)
-     }
+     _ = Weibo. handleURL(url: url)
 }
-  ```
+```
 
-If SceneDelegate is not used, it needs to be overloaded in AppDelegate
+If SceneDelegate is not used, it needs to be overloaded in AppDelegate:
 
 ```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplication. OpenURLOptionsKey : Any] = [:]) -> Bool {
-     return WeCom. handleOpenURL(url: url)
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+     return Weibo. handleUniversalLink(userActivity: userActivity)
 }
-  ```
+
+func application(_ app: UIApplication, open url: URL, options: [UIApplication. OpenURLOptionsKey : Any] = [:]) -> Bool {
+     return Weibo. handleURL(url: url)
+}
+```
 
 <br>
 
-
-### Step 5: Initiate enterprise WeChat authorization
-
-The SDK provides three authorization methods:
-
-1. The developer calls the API when login is required:
+### Step 5: Initiate Weibo login authorization
+#### Weibo authorized login
 
 ```swift
-WeCom.login { code, message, userInfo in
-     if (code == 200) {
-         // userInfo: user information
-     }
-}
+func login(completion: @escaping Authing.AuthCompletion) -> Void
 ```
-
-2. With the semantic Hyper Component we provide, you only need to place one in the xib:
-
-```swift
-WeComLoginButton
-```
-
-Set the Module to WeCom, click the button after Build success to log in.
-
-![](./images/wecom/9.png)
-
-3. If you want to access the whole process of Wecom authorization by yourself, after getting the authorization code, you can call the following API in exchange for Authing user information:
-
-```swift
-func loginbyWeComAgency(_ code: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
-```
-
-**parameter**
-
-* *authCode* Wecom authorization code
 
 **example**
 
 ```swift
-AuthClient().loginbyWeComAgency(authCode) { code, message, userInfo in
+Weibo.login { code, message, userInfo in
+     if (code == 200) {
+         // login successful
+         // userInfo
+     }
+}
+```
+
+<br>
+
+If the developer integrates Weibo login by himself, after getting the accessToken, he can call the following API in exchange for Authing user information:
+
+#### Login via Baidu authorization code
+
+```swift
+func loginByWeibo(_ accessToken: String, completion: @escaping(Int, String?, UserInfo?) -> Void)
+```
+
+**parameter**
+
+`accessToken` Weibo accessToken
+
+**example**
+
+```swift
+AuthClient().loginByWeibo(accessToken) { code, message, userInfo in
      if (code == 200) {
          // userInfo: user information
      }
