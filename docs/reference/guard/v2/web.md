@@ -262,8 +262,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.1.5/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -962,10 +962,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.1.0/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.1.5/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -2915,8 +2915,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.1.5/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
@@ -3407,6 +3407,7 @@ async function refreshToken() {
 | lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
 | isSSO        | Boolean                               | false                          | 否   | 是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。 |
 | config       | [IGuardConfig](#IGuardConfig)         | -                              | 否   | Guard 详细配置                                                                                                                                                                                   |
+|style|CSSProperties| - | 否 | 自定义 Guard CSS Style |
 
 ## Config 参数列表
 
@@ -3969,7 +3970,7 @@ Guard 可展示的界面
 | bindTotp             | 绑定 TOTP             |
 | anyQuestions         | 问题反馈              |
 | loginCompleteInfo    | 登录信息补全          |
-| registerPassword     | 注册密码不全          |
+| registerPassword     | 注册密码补全          |
 | registerCompleteInfo | 注册信息补全          |
 | recoveryCode         | MFA TOTP 恢复码       |
 | submitSuccess        | 提交成功              |
