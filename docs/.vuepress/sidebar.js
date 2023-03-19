@@ -1830,6 +1830,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/baidu",
             "/reference/sdk-for-ios/social/linkedin",
             "/reference/sdk-for-ios/social/github",
+            "/reference/sdk-for-ios/social/gitee",
             // "/reference/sdk-for-ios/social/douyin",
             "/reference/sdk-for-ios/social/wecom",
             "/reference/sdk-for-ios/social/lark",
