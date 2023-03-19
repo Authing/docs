@@ -86,7 +86,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.QQLoginButton
+ <cn.authing.guard.social.view.QQLoginButton
     android:id="@+id/btn_qq_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

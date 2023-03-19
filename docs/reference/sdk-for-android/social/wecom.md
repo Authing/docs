@@ -52,7 +52,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 
 
 ```xml
-<cn.authing.guard.WeComLoginButton
+<cn.authing.guard.social.view.WeComLoginButton
     android:id="@+id/btn_wecom_login"
     android:layout_width="44dp"
     android:layout_height="44dp"

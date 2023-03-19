@@ -41,7 +41,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 * 接下来，如果使用我们提供的一键登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
- <cn.authing.guard.oneclick.OneClickAuthButton
+ <cn.authing.guard.social.view.OneClickAuthButton
     android:id="@+id/btn_one_click_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

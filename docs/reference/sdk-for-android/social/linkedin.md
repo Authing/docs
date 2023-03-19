@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [Linkedin 开放平台](https://developer.linkedin.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Linkedin 接入准备](../../../guides/connections/social/linkedin/README.md)、[Linkedin 官方文档](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)。
+在 [Linkedin 开放平台](https://developer.linkedin.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Linkedin 接入准备](../../../guides/connections/social/linkedin-mobile/README.md)、[Linkedin 官方文档](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.1 版本新增。
@@ -48,7 +48,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
 
 ```xml
- <cn.authing.guard.social.LinkedinLoginButton
+ <cn.authing.guard.social.view.LinkedinLoginButton
     android:id="@+id/btn_linkedin_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -105,7 +105,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
   如果想完全自己实现 Linkedin 登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：
 
 ```java
-public static void loginByLinkedin(String accessToken, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByLinkedin(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**

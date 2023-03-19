@@ -46,7 +46,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 - 接下来，如果使用我们提供的支付宝登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
 
 ```xml
-<cn.authing.guard.AlipayLoginButton
+<cn.authing.guard.social.view.AlipayLoginButton
     android:id="@+id/btn_alipay_login"
     android:layout_width="44dp"
     android:layout_height="44dp"

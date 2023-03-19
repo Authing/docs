@@ -1637,13 +1637,11 @@ const zhCnNavBar = {
           ],
         },
         {
-          title: "社会化登录",
+          title: "第三方身份源",
           path: "/reference/sdk-for-android/social/",
           children: [
             "/reference/sdk-for-android/social/wechat",
-            "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/alipay",
-            "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
             "/reference/sdk-for-android/social/google",
             "/reference/sdk-for-android/social/facebook",
@@ -1652,6 +1650,10 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/weibo",
             "/reference/sdk-for-android/social/baidu",
             "/reference/sdk-for-android/social/linkedin",
+            "/reference/sdk-for-android/social/github",
+            "/reference/sdk-for-android/social/gitee",
+            "/reference/sdk-for-android/social/wecom",
+            "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/dingtalk",
           ],
         },
@@ -6858,16 +6860,12 @@ const translatedZhCnNavBar = {
           ],
         },
         {
-          title: "Social login",
+          title: "Third-party identity source",
           path: "/reference/sdk-for-android/social/",
           children: [
             {
               title: "Wechat",
               path: "/reference/sdk-for-android/social/wechat",
-            },
-            {
-              title: "Wecom",
-              path: "/reference/sdk-for-android/social/wecom",
             },
             {
               title: "Alipay",
@@ -6882,7 +6880,7 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/facebook",
             },
             {
-              title: "Mini Program",
+              title: "Wechat MiniProgram",
               path: "/reference/sdk-for-android/social/miniprogram",
             },
             {
@@ -6900,6 +6898,18 @@ const translatedZhCnNavBar = {
             {
               title: "Linkedin",
               path: "/reference/sdk-for-android/social/linkedin",
+            },
+            {
+              title: "Github",
+              path: "/reference/sdk-for-android/social/github",
+            },
+            {
+              title: "Gitee",
+              path: "/reference/sdk-for-android/social/gitee",
+            },
+            {
+              title: "Wecom",
+              path: "/reference/sdk-for-android/social/wecom",
             },
             {
               title: "DingTalk",

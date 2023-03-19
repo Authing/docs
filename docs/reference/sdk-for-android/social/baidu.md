@@ -63,7 +63,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.BaiduLoginButton
+ <cn.authing.guard.social.view.BaiduLoginButton
     android:id="@+id/btn_baidu_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

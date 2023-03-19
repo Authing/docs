@@ -45,7 +45,27 @@ Authing.init(context, "AUTHING_APP_ID");
 Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
-### 第三步：分场景使用
+### 第三步：创建 DDAuthActivity
+
+1. 在包名相应目录下新建 `ddauth` 文件夹，并新增 `DDAuthActivity`，假设你的包名为 `com.example.myapp`，其内容只需要继承我们的实现类：
+
+```java
+package com.example.myapp.ddauth;
+
+import cn.authing.guard.social.callback.ddauth.DDCallBackActivity;
+
+public class DDAuthActivity extends DDCallBackActivity {
+}
+```
+
+2. 在工程 `AndroidManifest.xml` 中添加声明：
+
+   ```xml
+   <activity android:name=".ddauth.DDAuthActivity"
+       android:exported="true"/>
+   ```
+
+### 第四步：分场景使用
 
 - #### 使用托管页
   在需要登录认证的地方启动托管页：
@@ -62,7 +82,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.DingTalkLoginButton
+ <cn.authing.guard.social.view.DingTalkLoginButton
     android:id="@+id/btn_ding_talk_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

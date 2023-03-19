@@ -51,7 +51,7 @@ Good news is that the content of this WXEntryActivity is really simple, since we
 ```java
 package com.example.myapp.wxapi;
 
-import cn.authing.guard.social.wechat.WXCallbackActivity;
+import cn.authing.guard.social.callback.wechat.WXCallbackActivity;
 
 public class WXEntryActivity extends WXCallbackActivity {
 }
@@ -126,7 +126,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.WechatMiniProgramLoginButton
+ <cn.authing.guard.social.view.WechatMiniProgramLoginButton
     android:id="@+id/btn_miniprogram_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

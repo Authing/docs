@@ -45,7 +45,27 @@ Authing.init(context, "AUTHING_APP_ID");
 Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
-### Step 3：Use in different scenarios
+### Step 3：Create DDAuthActivity
+
+1. Create a new `ddauth` folder in the directory corresponding to the package name and add `DDAuthActivity`. Suppose your package name is `com.example.myapp` and its contents only need to inherit from our implementation class:
+
+```java
+package com.example.myapp.ddauth;
+
+import cn.authing.guard.social.callback.ddauth.DDCallBackActivity;
+
+public class DDAuthActivity extends DDCallBackActivity {
+}
+```
+
+2. Add a declaration to the project `AndroidManifest.xml`：
+
+   ```xml
+   <activity android:name=".ddauth.DDAuthActivity"
+       android:exported="true"/>
+   ```
+
+### Step 4：Use in different scenarios
 
 - #### Use in different scenarios
 
@@ -65,7 +85,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.DingTalkLoginButton
+ <cn.authing.guard.social.view.DingTalkLoginButton
     android:id="@+id/btn_ding_talk_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
