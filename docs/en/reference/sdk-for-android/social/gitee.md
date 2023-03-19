@@ -1,18 +1,18 @@
-# Login by LinkedIn
+# Login by Gitee
 
 <LastUpdated/>
 
 ## Preparatory work
 
-Configure in [Linkedin developers platform](https://developer.linkedin.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Linkedin](../../../guides/connections/social/linkedin-mobile/README.md)、[Linkedin document](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)。
+Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for  Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
 
 :::hint-info
-This feature was added in android guard sdk 1.5.1 version.
+This feature was added in android guard sdk 1.5.3 version.
 :::
 
 <br>
 
-## Integrate Linkedin login steps
+## Integrate Gitee login steps
 
 ### Step 1：Add dependency
 
@@ -42,17 +42,17 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 AuthFlow.start(this);
 ```
 
-By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the Linkedin login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
+By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the Gitee login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
 
-- #### Use the Linkedin sign In button
+- #### Use the Gitee sign In button
 
-  If you use the Linkedin login button we provide.
+  If you use the Gitee login button we provide.
 
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.view.LinkedinLoginButton
-    android:id="@+id/btn_linkedin_login"
+ <cn.authing.guard.social.view.GiteeLoginButton
+    android:id="@+id/btn_gitee_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -62,7 +62,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-LinkedinLoginButton button = findViewById(R.id.btn_linkedin_login);
+GiteeLoginButton button = findViewById(R.id.btn_gitee_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -75,12 +75,12 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### Log in to the authorization class using Linkedin
+- #### Log in to the authorization class using Gitee
 
-  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Linkedin` class authorization function inside the button click event, which integrates the business logic to pull up the Linkedin authorization login:
+  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Gitee` class authorization function inside the button click event, which integrates the business logic to pull up the Gitee authorization login:
 
 ```java
-Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
+Gitee.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -94,34 +94,34 @@ Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
 
-**Note: When using the Linkedin login button or the Linkedin login authorization class, you need to add the following code to the Activity's onActivityResult function:**
+**Note: When using the Gitee login button or the Gitee login authorization class, you need to add the following code to the Activity's onActivityResult function:**
 
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Linkedin.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Gitee.getInstance().onActivityResult(this, requestCode, resultCode, data);
 }
 ```
 
-- #### Log in to the API using Linkedin
+- #### Log in to the API using Gitee
 
-  If you want to fully implement the Linkedin login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
+  If you want to fully implement the Gitee login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
 
 ```java
-public static void loginByLinkedin(String authCode, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByGitee(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **param**
 
-*`authCode`* Linkedin authCode
+*`authCode`* Gitee authCode
 
 **example**
 
 If you only need to get the user information (`username`, `nickname`, `name`, etc.) and `idToken`, call:
 
 ```java
-AuthClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
+AuthClient.loginByGitee(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -137,7 +137,7 @@ If you only need to get the user information (`username`, `nickname`, `name`, et
 
 ```java
 OIDCClient oidcClient = new OIDCClient();
-oidcClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
+oidcClient.loginByGitee(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

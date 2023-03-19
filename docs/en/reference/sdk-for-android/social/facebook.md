@@ -112,12 +112,12 @@ AuthFlow.start(this);
 By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the FaceBook login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
 
 - #### Use the Facebook sign In button
-    If you use the facebook login button we provide.
+    If you use the Facebook login button we provide.
 
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.FaceBookLoginButton
+ <cn.authing.guard.social.view.FaceBookLoginButton
     android:id="@+id/btn_face_book_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -145,8 +145,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
   If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `FaceBook` class authorization function inside the button click event, which integrates the business logic to pull up the FaceBook authorization login:
 
 ```java
-FaceBook faceBook = FaceBook.getInstance();
-faceBook.login(appContext, new AuthCallback<UserInfo>() {
+FaceBook.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

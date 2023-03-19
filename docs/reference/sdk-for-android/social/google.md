@@ -57,7 +57,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
 
 ```xml
- <cn.authing.guard.social.GoogleLoginButton
+ <cn.authing.guard.social.view.GoogleLoginButton
     android:id="@+id/btn_google_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -106,10 +106,13 @@ google.login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
+  	// Guard SDK 1.5.3 之前版本
     if (requestCode == Google.RC_SIGN_IN && data != null) {
         data.setAction("cn.authing.guard.broadcast.GOOGLE_LOGIN");
         sendBroadcast(data);
     }
+  	// Guard SDK 1.5.3 及之后版本
+  	Google.getInstance().onActivityResult(this, requestCode, resultCode, data);
 }
 ```
 

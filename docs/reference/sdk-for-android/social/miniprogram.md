@@ -51,7 +51,7 @@ com.example.myapp
 ```java
 package com.example.myapp.wxapi;
 
-import cn.authing.guard.social.wechat.WXCallbackActivity;
+import cn.authing.guard.social.callback.wechat.WXCallbackActivity;
 
 public class WXEntryActivity extends WXCallbackActivity {
 }
@@ -126,7 +126,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.WechatMiniProgramLoginButton
+ <cn.authing.guard.social.view.WechatMiniProgramLoginButton
     android:id="@+id/btn_miniprogram_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

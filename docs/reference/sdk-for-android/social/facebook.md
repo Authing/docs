@@ -118,7 +118,7 @@ AuthFlow.start(this);
 ​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
 
 ```xml
- <cn.authing.guard.social.FaceBookLoginButton
+ <cn.authing.guard.social.view.FaceBookLoginButton
     android:id="@+id/btn_face_book_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -146,8 +146,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
   如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `FaceBook` 类的授权函数，此类集成了拉起  FaceBook 授权登录的业务逻辑：
 
 ```java
-FaceBook faceBook = FaceBook.getInstance();
-faceBook.login(appContext, new AuthCallback<UserInfo>() {
+FaceBook.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

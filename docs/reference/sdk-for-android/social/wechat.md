@@ -47,7 +47,7 @@ com.example.myapp
 ```java
 package com.example.myapp.wxapi;
 
-import cn.authing.guard.social.wechat.WXCallbackActivity;
+import cn.authing.guard.social.callback.wechat.WXCallbackActivity;
 
 public class WXEntryActivity extends WXCallbackActivity {
 }
@@ -93,7 +93,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 
 
 ```xml
-<cn.authing.guard.WechatLoginButton
+<cn.authing.guard.social.view.WechatLoginButton
     android:id="@+id/btn_wechat_login"
     android:layout_width="44dp"
     android:layout_height="44dp"

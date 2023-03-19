@@ -68,7 +68,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.BaiduLoginButton
+ <cn.authing.guard.social.view.BaiduLoginButton
     android:id="@+id/btn_baidu_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"

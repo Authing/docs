@@ -47,7 +47,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 - 接下来，如果使用我们提供的飞书登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
-<cn.authing.guard.social.LarkLoginButton
+<cn.authing.guard.social.view.LarkLoginButton
     android:id="@+id/btn_lark_login"
     android:layout_width="48dp"
     android:layout_height="48dp" />

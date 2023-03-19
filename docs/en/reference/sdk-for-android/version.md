@@ -2,6 +2,16 @@
 
 <LastUpdated/>
 
+- ## 1.5.3
+
+
+> Update time：2023.3.18
+
+1. Add Github login。
+2. Add Gitee login。
+
+<br>
+
 - ## 1.5.2
 
 

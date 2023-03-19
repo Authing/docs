@@ -57,7 +57,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
     1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.GoogleLoginButton
+ <cn.authing.guard.social.view.GoogleLoginButton
     android:id="@+id/btn_google_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -107,10 +107,13 @@ google.login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
+  	// Guard SDK earlier than 1.5.3
     if (requestCode == Google.RC_SIGN_IN && data != null) {
         data.setAction("cn.authing.guard.broadcast.GOOGLE_LOGIN");
         sendBroadcast(data);
     }
+  	// Guard SDK 1.5.3 and later
+  	Google.getInstance().onActivityResult(this, requestCode, resultCode, data);
 }
 ```
 
