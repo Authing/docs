@@ -21,7 +21,7 @@
 - 如果你未开通钉钉开放平台账号，请先前往 [钉钉开放平台](https://open-dev.dingtalk.com/#/) 注册账号。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 第一步：在钉钉开放平台开发者控制台创建一个网站应用
+## 第一步：在钉钉开放平台开发者控制台创建一个移动应用
 
 - 打开[钉钉开放平台](https://open-dev.dingtalk.com/#/)，点击企业应用进行快捷创建。
 

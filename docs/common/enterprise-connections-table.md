@@ -5,6 +5,7 @@
 | 企业微信服务商应用扫码                 | PC 网站                | <router-link to="/guides/connections/enterprise/wecom-service-provider-qrconnect/" target="_blank">使用文档</router-link> |
 | 企业微信移动端                     | 移动 APP               | <router-link to="/guides/connections/enterprise/wecom-mobile/" target="_blank">使用文档</router-link>                     |
 | 钉钉 H5 微应用（企业内部开发）     | PC 网站                | <router-link to="/guides/connections/enterprise/dingtalk/" target="_blank">使用文档</router-link>                         |
+| 钉钉移动端     | 移动 APP               | <router-link to="/guides/connections/enterprise/dingtalk-mobile/" target="_blank">使用文档</router-link>                         |
 | 飞书企业自建应用                   | PC 网站/飞书浏览器/移动端/移动端     | <router-link to="/guides/connections/enterprise/lark-internal/" target="_blank">使用文档</router-link>                    |
 | 飞书应用商店应用                   | PC 网站/飞书浏览器/移动端/移动端     | <router-link to="/guides/connections/enterprise/lark-public/" target="_blank">使用文档</router-link>                      |
 | Windows Active Directory           | PC 网站                | <router-link to="/guides/connections/enterprise/windows-ad/" target="_blank">使用文档</router-link>                       |

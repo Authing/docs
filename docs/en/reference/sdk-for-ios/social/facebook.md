@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [Facebook Open Platform](https://developers.facebook.com/) and [Authing Console](https://authing.cn/), please refer to [FaceBook Access Preparation](../../../guides/connections/social/facebook/README.md), [FaceBook Official Documentation](https://developers.facebook.com/docs/facebook-login/ios).
+Configure in [Facebook Open Platform](https://developers.facebook.com/) and [Authing Console](https://authing.cn/), please refer to [FaceBook Official Documentation](https://developers.facebook.com/docs/facebook-login/ios).
 
 <br>
 

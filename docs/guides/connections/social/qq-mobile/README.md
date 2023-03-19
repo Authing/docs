@@ -24,7 +24,7 @@
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
 
-## 第一步：在 QQ 开放平台创建一个网站应用
+## 第一步：在 QQ 开放平台创建一个移动应用
 
 前往 [QQ 互联中心](https://connect.qq.com/manage.html#/)，创建一个移动应用。
 

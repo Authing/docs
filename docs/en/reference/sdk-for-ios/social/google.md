@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [Google API Console Credentials Console](https://console.cloud.google.com/apis/credentials) and [Authing Management Console](https://www.authing.cn/), please refer to [Google Mobile](https://docs.authing.cn/v2/guides/connections/social/google-mobile/).
+Configure in [Google API Console Credentials Console](https://console.cloud.google.com/apis/credentials) and [Authing Management Console](https://www.authing.cn/).
 
 
 ## Integrate Google login steps

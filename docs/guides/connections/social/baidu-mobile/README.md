@@ -22,7 +22,7 @@
 - 百度开发者中心-[用户中心](http://developer.baidu.com/user/info)
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
 
-## 第一步：在百度开放平台创建一个网站应用
+## 第一步：在百度开放平台创建一个移动应用
 
 - 注册[百度开发者中心](https://developer.baidu.com/)，登录后前往[百度开发者服务管理控制台](http://developer.baidu.com/console#app/project)，填写开发者信息，并创建一个工程（应用）：
 
