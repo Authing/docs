@@ -19,6 +19,8 @@
 - [微博登录](./weibo.md)
 - [百度登录](./baidu.md)
 - [领英登录](./linkedin.md)
+- [Github 登录](./github.md)
+- [Gitee 登录](./gitee.md)
 
 ## 企业身份源
 - [企业微信登录](./wecom.md)

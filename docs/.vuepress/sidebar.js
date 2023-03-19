@@ -1830,7 +1830,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/baidu",
             "/reference/sdk-for-ios/social/linkedin",
             "/reference/sdk-for-ios/social/github",
-            "/reference/sdk-for-ios/social/douyin",
+            // "/reference/sdk-for-ios/social/douyin",
             "/reference/sdk-for-ios/social/wecom",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/dingtalk",
@@ -7017,9 +7017,13 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-ios/social/github",
             },
             {
-              title: "Douyin",
-              path: "/reference/sdk-for-ios/social/douyin",
+              title: "Gitee",
+              path: "/reference/sdk-for-ios/social/gitee",
             },
+            // {
+            //   title: "Douyin",
+            //   path: "/reference/sdk-for-ios/social/douyin",
+            // },
             {
               title: "WeCom",
               path: "/reference/sdk-for-ios/social/wecom",
