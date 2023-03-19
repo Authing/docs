@@ -644,6 +644,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/github/",
             },
             {
+              title: "GitHub 移动端",
+              path: "/guides/connections/social/github-mobile/",
+            },
+            {
               title: "Facebook",
               path: "/guides/connections/social/facebook/",
             },
@@ -686,6 +690,10 @@ const zhCnNavBar = {
             {
               title: "Gitee",
               path: "/guides/connections/social/gitee/",
+            },
+            {
+              title: "Gitee 移动端",
+              path: "/guides/connections/social/gitee-mobile/",
             },
             {
               title: "GitLab",
