@@ -963,7 +963,7 @@
         image: "teamviewer_logo.svg",
         image2x: "teamviewer_logo.svg",
         category: "office",
-      },
+      }
     ],
   categories:
     [
