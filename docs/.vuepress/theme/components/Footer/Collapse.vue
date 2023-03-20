@@ -52,11 +52,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.footer .footer-link-wrapper, .footer .footer-text-wrapper:nth-child(3),.footer .footer-link-wrapper, .footer .footer-text-wrapper:nth-child(4)
-  line-height: 16px
-  padding-top: 7px
-  padding-bottom: 7px
-
 @media (max-width: $MQMobile)
   .footer-collapse
     .footer-collapse-content

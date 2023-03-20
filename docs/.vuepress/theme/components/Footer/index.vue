@@ -52,13 +52,13 @@
             </div>
             <div
               v-if="footerLocaleConfig.contactAddress"
-              class="footer-text-wrapper"
+              class="footer-text-wrapper text-paragh"
             >
               {{ footerLocaleConfig.contactAddress }}
             </div>
             <div
               v-if="footerLocaleConfig.contactChenduAddress"
-              class="footer-text-wrapper"
+              class="footer-text-wrapper text-paragh"
             >
               {{ footerLocaleConfig.contactChenduAddress }}
             </div>
@@ -131,6 +131,10 @@ export default {
   background #FAFAFB
   box-shadow 0px -1px 0px 0px #EEEEEE
   padding 50px 0
+  .text-paragh
+    line-height: 16px !important
+    padding-top: 7px
+    padding-bottom: 7px
   .footer-title
     color #A1ABC8
     font-weight 400
