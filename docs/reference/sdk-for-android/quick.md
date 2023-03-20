@@ -8,7 +8,9 @@
 
 <img src="./images/create_project2.png" alt="drawing" width="800"/>
 
-> 注意：Minimum SDK 版本 Android 7.0
+:::hint-info
+注意：Minimum SDK 版本 Android 7.0
+:::
 
 ## 第二步：添加 Guard 依赖
 
@@ -29,7 +31,15 @@
 implementation 'cn.authing:guard:+'
 ```
 
-## 第三步：初始化
+## 第三步：添加权限
+
+在 AndroidManifest.xml 中：
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+## 第四步：初始化
 
 在应用启动时调用：
 
@@ -39,9 +49,15 @@ implementation 'cn.authing:guard:+'
 Authing.init(context, "AUTHING_APP_ID");
 ```
 
-> 注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
+:::hint-info
+注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
+:::
 
-## 第四步：常用操作
+:::hint-info
+注意：如果需要登录成功后获取到 accessToken，请先参考[登录成功获取到 accessToken](https://docs.authing.cn/v2/reference/sdk-for-android/scenario/application_config.html#登录成功获取到-accesstoken) 配置
+:::
+
+## 第五步：常用操作
 
 ### 1. 注册/登录并获取用户信息
 

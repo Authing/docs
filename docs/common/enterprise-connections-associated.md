@@ -13,7 +13,7 @@
 | Windows Active Directory      | PC 网站   |-- |--|✅|手机号、邮箱|
 | Azure Active Directory      | PC 网站   |--|--|✅|手机号、邮箱|
 | OIDC                 | PC 网站  |--|--|✅|手机号、邮箱|
-| OAuth 2.0            | PC 网站 |--|--|✅|手机号、邮箱|
+| OAuth 2.0            | PC 网站 |--|--|✅|手机号、邮箱、用户名|
 | LDAP                   | PC 网站 |--|--|✅|手机号、邮箱|
 | SAML                               | PC 网站 |--|--|✅|手机号、邮箱|
 | CAS                               | PC 网站   |--|--|✅|手机号、邮箱|

@@ -24,7 +24,7 @@
 
 <br>
 
-### 第二步：Info.plist 里面添加启动微信白名单
+### 第二步：Info.plist 里面添加启动白名单
 
 key: LSApplicationQueriesSchemes
 

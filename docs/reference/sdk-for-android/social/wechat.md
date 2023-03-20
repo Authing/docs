@@ -29,6 +29,7 @@ Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防�
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 ### 第三步：创建WXEntryActivity
@@ -46,7 +47,7 @@ com.example.myapp
 ```java
 package com.example.myapp.wxapi;
 
-import cn.authing.guard.social.wechat.WXCallbackActivity;
+import cn.authing.guard.social.callback.wechat.WXCallbackActivity;
 
 public class WXEntryActivity extends WXCallbackActivity {
 }
@@ -92,7 +93,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 
 
 ```xml
-<cn.authing.guard.WechatLoginButton
+<cn.authing.guard.social.view.WechatLoginButton
     android:id="@+id/btn_wechat_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
@@ -146,11 +147,7 @@ wechat.login(appContext, context, new AuthCallback<UserInfo>() {
 });
 ```
 
-`data` 包含用户信息（`用户名`、`昵称`、`姓名`等）以及 `idToken`。
-
-当你使用组件 `WechatLoginButton`  或者登录授权类 `Wechat`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
-
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
+​	`data` 包含用户信息（`用户名`、`昵称`、`姓名`等）以及 `idToken`。
 
 ​	如果想只获取微信的授权码：
 

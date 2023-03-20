@@ -34,6 +34,7 @@ implementation files('libs/alipaysdk.aar')
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
@@ -45,7 +46,7 @@ Authing.init(context, "AUTHING_APP_ID");
 - 接下来，如果使用我们提供的支付宝登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
 
 ```xml
-<cn.authing.guard.AlipayLoginButton
+<cn.authing.guard.social.view.AlipayLoginButton
     android:id="@+id/btn_alipay_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
@@ -89,10 +90,6 @@ alipay.login(appContext, new AuthCallback<UserInfo>() {
 ```
 
 `data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
-
-当你使用组件 `AlipayLoginButton`  或者登录授权类  `Alipay`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
-
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 - 如果想完全自己实现支付宝登录，拿到授权码后，可以调用下面 API 换取用户信息：
 

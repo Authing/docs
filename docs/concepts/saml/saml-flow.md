@@ -45,7 +45,7 @@ SP 通过重定向 GET 请求把 SAML Request 发送到 IdP，IdP 通过立即�
 
 ### HTTP POST Binding
 
-IdP 通过立即提交的 Form 表单以 POST 请求的方式将 SAML Request 发到 SP。IdP 通过立即提交的 Form 表单以 POST 请求的方式将 SAML Response 发到 SP。
+SP 通过立即提交的 Form 表单以 POST 请求的方式将 SAML Request 发到 IdP。IdP 通过立即提交的 Form 表单以 POST 请求的方式将 SAML Response 发到 SP。
 
 ![](~@imagesZhCn/concepts/saml/http-post-binding.png)
 

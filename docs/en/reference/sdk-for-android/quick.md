@@ -8,7 +8,9 @@
 
 <img src="./images/create_project2.png" alt="drawing" width="800"/>
 
-> Note: Minimum OS version is Android 7.0
+:::hint-info
+Note: Minimum OS version is Android 7.0
+:::
 
 ## Step 2: Add dependency for Guard
 
@@ -29,7 +31,15 @@ Add dependencies to the build.gradle file of the main project:
 implementation 'cn.authing:guard:+'
 ```
 
-## Step 3: Initialization
+## Step 3: Add permission
+
+In AndroidManifest.xml ：
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+## Step 4: Initialization
 
 at app startup, call:
 
@@ -37,11 +47,18 @@ at app startup, call:
 // context is application or initial activity
 // ”appId“ is obtained from the Authing console
 Authing.init(context, "appId");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC);
 ```
 
-> Note: appId is the application ID, not the user pool ID
+:::hint-info
+Note：AUTHING_APP_ID application ID，not the user pool ID，Please go to the [console](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html) first to obtain.
+:::
 
-## Step 4: Common operations
+Please select `authing_token` in Application Configuration-Authorization mode.
+
+<img src="./images/authing_token.png"/>
+
+## Step 5: Common operations
 
 ###  1. Register/log in and get user information
 

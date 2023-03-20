@@ -612,20 +612,48 @@ const zhCnNavBar = {
               path: "/reference/sdk-for-weixin-miniapp",
             },
             {
+              title: "华为",
+              path: "/guides/connections/social/huawei/",
+            },
+            {
+              title: "荣耀",
+              path: "/guides/connections/social/honor/",
+            },
+            {
+              title: "小米",
+              path: "/guides/connections/social/xiaomi/",
+            },
+            {
               title: "腾讯 QQ",
               path: "/guides/connections/social/qq/",
+            },
+            {
+              title: "腾讯 QQ 移动端",
+              path: "/guides/connections/social/qq-mobile/",
             },
             {
               title: "新浪微博",
               path: "/guides/connections/social/weibo/",
             },
             {
+              title: "新浪微博移动端",
+              path: "/guides/connections/social/weibo-mobile/",
+            },
+            {
               title: "GitHub",
               path: "/guides/connections/social/github/",
             },
             {
+              title: "GitHub 移动端",
+              path: "/guides/connections/social/github-mobile/",
+            },
+            {
               title: "Facebook",
               path: "/guides/connections/social/facebook/",
+            },
+            {
+              title: "Facebook 移动端",
+              path: "/guides/connections/social/facebook-mobile/",
             },
             {
               title: "Twitter",
@@ -648,6 +676,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/apple-web/",
             },
             {
+              title: "AWS",
+              path: "/guides/connections/social/aws/",
+            },
+            {
               title: "支付宝",
               path: "/guides/connections/social/alipay-web/",
             },
@@ -660,12 +692,20 @@ const zhCnNavBar = {
               path: "/guides/connections/social/gitee/",
             },
             {
+              title: "Gitee 移动端",
+              path: "/guides/connections/social/gitee-mobile/",
+            },
+            {
               title: "GitLab",
               path: "/guides/connections/social/gitlab/",
             },
             {
               title: "百度",
               path: "/guides/connections/social/baidu/",
+            },
+            {
+              title: "百度移动端",
+              path: "/guides/connections/social/baidu-mobile/",
             },
             {
               title: "网易易盾（一键登录）",
@@ -682,6 +722,10 @@ const zhCnNavBar = {
             {
               title: "LinkedIn",
               path: "/guides/connections/social/linkedin/",
+            },
+            {
+              title: "LinkedIn 移动端",
+              path: "/guides/connections/social/linkedin-mobile/",
             },
           ],
         },
@@ -712,6 +756,10 @@ const zhCnNavBar = {
             {
               title: "钉钉 H5 微应用（企业内部开发）",
               path: "/guides/connections/enterprise/dingtalk/",
+            },
+            {
+              title: "钉钉移动端",
+              path: "/guides/connections/enterprise/dingtalk-mobile/",
             },
             {
               title: "飞书应用商店应用",
@@ -1089,6 +1137,10 @@ const zhCnNavBar = {
           path: "/guides/userpool-config/collaboration-adminstrator",
         },
       ],
+    },
+    {
+      title: 'Authing 令牌',
+      path:"/guides/authingVerify/"
     },
     {
       title: "私有化部署方案",
@@ -1593,15 +1645,24 @@ const zhCnNavBar = {
           ],
         },
         {
-          title: "社会化登录",
+          title: "第三方身份源",
           path: "/reference/sdk-for-android/social/",
           children: [
             "/reference/sdk-for-android/social/wechat",
-            "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/alipay",
-            "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/oneauth",
             "/reference/sdk-for-android/social/google",
+            "/reference/sdk-for-android/social/facebook",
+            "/reference/sdk-for-android/social/miniprogram",
+            "/reference/sdk-for-android/social/qq",
+            "/reference/sdk-for-android/social/weibo",
+            "/reference/sdk-for-android/social/baidu",
+            "/reference/sdk-for-android/social/linkedin",
+            "/reference/sdk-for-android/social/github",
+            "/reference/sdk-for-android/social/gitee",
+            "/reference/sdk-for-android/social/wecom",
+            "/reference/sdk-for-android/social/lark",
+            "/reference/sdk-for-android/social/dingtalk",
           ],
         },
         {
@@ -1614,6 +1675,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/tokens",
             "/reference/sdk-for-android/scenario/user-profile",
             "/reference/sdk-for-android/scenario/webview",
+            "/reference/sdk-for-android/scenario/overseas",
+            "/reference/sdk-for-android/scenario/biometric",
           ],
         },
         {
@@ -1733,6 +1796,10 @@ const zhCnNavBar = {
                   title: "跳转注册按钮",
                   path: "/reference/sdk-for-ios/component/basic/go-register-button",
                 },
+                {
+                  title: "生物认证按钮",
+                  path: "/reference/sdk-for-ios/component/basic/biometric-login-button",
+                },
               ],
             },
             {
@@ -1759,15 +1826,25 @@ const zhCnNavBar = {
           ],
         },
         {
-          title: "社会化登录",
+          title: "第三方身份源",
           path: "/reference/sdk-for-ios/social/",
           children: [
             "/reference/sdk-for-ios/social/wechat",
-            "/reference/sdk-for-ios/social/wecom",
-            "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/apple",
             "/reference/sdk-for-ios/social/oneauth",
             "/reference/sdk-for-ios/social/google",
+            "/reference/sdk-for-ios/social/facebook",
+            "/reference/sdk-for-ios/social/miniprogram",
+            "/reference/sdk-for-ios/social/tencent",
+            "/reference/sdk-for-ios/social/weibo",
+            "/reference/sdk-for-ios/social/baidu",
+            "/reference/sdk-for-ios/social/linkedin",
+            "/reference/sdk-for-ios/social/github",
+            "/reference/sdk-for-ios/social/gitee",
+            // "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/wecom",
+            "/reference/sdk-for-ios/social/lark",
+            "/reference/sdk-for-ios/social/dingtalk",
           ],
         },
         {
@@ -1779,11 +1856,16 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/scenario/webview",
             "/reference/sdk-for-ios/scenario/logout",
             "/reference/sdk-for-ios/scenario/splash",
+            "/reference/sdk-for-ios/scenario/webauthn",
           ],
         },
         {
           title: "私有化部署",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "生物认证",
+          path: "/reference/sdk-for-ios/webauthn",
         },
         {
           title: "iOS Guard 更新日志",
@@ -6786,7 +6868,7 @@ const translatedZhCnNavBar = {
           ],
         },
         {
-          title: "Social login",
+          title: "Third-party identity source",
           path: "/reference/sdk-for-android/social/",
           children: [
             {
@@ -6796,6 +6878,50 @@ const translatedZhCnNavBar = {
             {
               title: "Alipay",
               path: "/reference/sdk-for-android/social/alipay",
+            },
+            {
+              title: "Google",
+              path: "/reference/sdk-for-android/social/google",
+            },
+            {
+              title: "Facebook",
+              path: "/reference/sdk-for-android/social/facebook",
+            },
+            {
+              title: "Wechat MiniProgram",
+              path: "/reference/sdk-for-android/social/miniprogram",
+            },
+            {
+              title: "QQ",
+              path: "/reference/sdk-for-android/social/qq",
+            },
+            {
+              title: "Weibo",
+              path: "/reference/sdk-for-android/social/weibo",
+            },
+            {
+              title: "Baidu",
+              path: "/reference/sdk-for-android/social/baidu",
+            },
+            {
+              title: "Linkedin",
+              path: "/reference/sdk-for-android/social/linkedin",
+            },
+            {
+              title: "Github",
+              path: "/reference/sdk-for-android/social/github",
+            },
+            {
+              title: "Gitee",
+              path: "/reference/sdk-for-android/social/gitee",
+            },
+            {
+              title: "Wecom",
+              path: "/reference/sdk-for-android/social/wecom",
+            },
+            {
+              title: "DingTalk",
+              path: "/reference/sdk-for-android/social/dingtalk",
             },
           ],
         },
@@ -6807,6 +6933,10 @@ const translatedZhCnNavBar = {
               title: "logout",
               path: "/reference/sdk-for-android/scenario/logout",
             },
+            {
+              title: "overseas",
+              path: "/reference/sdk-for-android/scenario/overseas",
+            },
           ],
         },
         {
@@ -6816,6 +6946,10 @@ const translatedZhCnNavBar = {
         {
           title: "Android Guard Change log",
           path: "/reference/sdk-for-android/version",
+        },
+        {
+          title: "Error code",
+          path: "/reference/sdk-for-android/errorcode",
         },
       ],
     },
@@ -6858,7 +6992,7 @@ const translatedZhCnNavBar = {
           ],
         },
         {
-          title: "Social login",
+          title: "Third-party identity source",
           path: "/reference/sdk-for-ios/social/",
           children: [
             {
@@ -6869,11 +7003,77 @@ const translatedZhCnNavBar = {
               title: "Apple",
               path: "/reference/sdk-for-ios/social/apple",
             },
+            {
+              title: "Google",
+              path: "/reference/sdk-for-ios/social/google",
+            },
+            {
+              title: "Facebook",
+              path: "/reference/sdk-for-ios/social/facebook",
+            },
+            {
+              title: "Wechat Miniprogram",
+              path: "/reference/sdk-for-ios/social/miniprogram",
+            },
+            {
+              title: "Tencent",
+              path: "/reference/sdk-for-ios/social/tencent",
+            },
+            {
+              title: "Sina Weibo",
+              path: "/reference/sdk-for-ios/social/weibo",
+            },
+            {
+              title: "Baidu",
+              path: "/reference/sdk-for-ios/social/baidu",
+            },
+            {
+              title: "LinkedIn",
+              path: "/reference/sdk-for-ios/social/linkedin",
+            },
+            {
+              title: "Github",
+              path: "/reference/sdk-for-ios/social/github",
+            },
+            {
+              title: "Gitee",
+              path: "/reference/sdk-for-ios/social/gitee",
+            },
+            // {
+            //   title: "Douyin",
+            //   path: "/reference/sdk-for-ios/social/douyin",
+            // },
+            {
+              title: "WeCom",
+              path: "/reference/sdk-for-ios/social/wecom",
+            },
+            {
+              title: "Lark",
+              path: "/reference/sdk-for-ios/social/lark",
+            },
+            {
+              title: "DingTalk",
+              path: "/reference/sdk-for-ios/social/dingtalk",
+            },
+          ],
+        },
+        {
+          title: "Typical scene",
+          path: "/reference/sdk-for-ios/scenario/",
+          children: [
+            {
+              title: "WebAuthn",
+              path: "/reference/sdk-for-ios/webauthn",
+            },
           ],
         },
         {
           title: "On-premise",
           path: "/reference/sdk-for-ios/onpremise",
+        },
+        {
+          title: "WebAuthn",
+          path: "/reference/sdk-for-ios/webauthn",
         },
         {
           title: "Error Code List",

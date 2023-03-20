@@ -32,6 +32,7 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
@@ -46,7 +47,7 @@ Authing.init(context, "AUTHING_APP_ID");
 - 接下来，如果使用我们提供的飞书登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
-<cn.authing.guard.social.LarkLoginButton
+<cn.authing.guard.social.view.LarkLoginButton
     android:id="@+id/btn_lark_login"
     android:layout_width="48dp"
     android:layout_height="48dp" />
@@ -88,9 +89,41 @@ lark.login(appContext, new AuthCallback<UserInfo>() {
 
 `data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
 
-当你使用组件 `LarkLoginButton`  或者登录授权类  `Lark`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
 
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
+
+**注意：使用飞书登录按钮或者飞书登录授权类时，需要在 Activity 的 onResume、onNewIntent、onActivityResult 函数中加入如下代码：**
+
+```java
+@Override
+protected void onResume() {
+    super.onResume();
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, getIntent());
+    } catch( ClassNotFoundException e ) {
+    }
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, intent);
+    } catch( ClassNotFoundException e ) {
+    }
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    try {
+        Class.forName("com.ss.android.larksso.LarkSSO");
+        LarkSSO.inst().parseIntent(this, data);
+    } catch( ClassNotFoundException e ) {
+    }
+}
+```
 
 <br>
 

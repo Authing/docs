@@ -17,7 +17,7 @@ Guard 是 Authing 提供的一种轻便的认证组件，你可以把它嵌入�
 
 |条目|说明|
 |-----|----|
-|最新版本|5.1.0|
+|最新版本|5.1.5|
 |仓库地址|https://github.com/authing/Guard|
 
 ## 第一步：在 Authing 控制台创建应用
@@ -262,8 +262,8 @@ export class AppModule {}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authing Guard Demo</title>
-    <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
+    <script src="https://cdn.authing.co/packages/guard/5.1.5/guard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css" />
   </head>
   <body>
     <div id="authing-guard-container"></div>
@@ -418,11 +418,11 @@ console.log("guard instance: ", guard);
 
 ![guard-console-login-redirect-url](./images/guard-console-login-redirect-url.png)
 
-- 在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，<strong>授权模式</strong> 选择      <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
+- 在应用详情的 <strong>协议配置 -> 授权配置</strong> 中，<strong>授权模式</strong> 选择      <strong>authentication_code</strong>，<strong>返回类型</strong> 选择 <strong>code</strong>:
 
 ![guard-console-authentication-config](./images/guard-console-authentication-config.png)
 
-- 如果是标准 Web 应用，请在应用详情的 <strong>应用配置 -> 其他配置 -> 授权配置</strong> 中，请确保应用的 <strong>换取 token 身份验证方式</strong> 设置为了 <strong>none</strong>。
+- 如果是标准 Web 应用，请在应用详情的 <strong>协议配置 -> 授权配置</strong> 中，请确保应用的 <strong>换取 token 身份验证方式</strong> 设置为了 <strong>none</strong>。
 
 ::: hint-info
 如果你的应用类型为单页 Web 应用，此次选项会被隐藏，为正常情况。
@@ -962,10 +962,10 @@ async function handleAuthingLoginCallback () {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo - Personal</title>
-  <script src="https://cdn.authing.co//packages/guard/5.1.0/guard.min.js"></script>
+  <script src="https://cdn.authing.co//packages/guard/5.1.5/guard.min.js"></script>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
   <script src="./config.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css">
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css">
 </head>
 <body>
   <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
@@ -2915,8 +2915,8 @@ export class AppModule { }
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authing Guard Demo</title>
   <script src="https://cdn.authing.co/packages/face-api/face-api.min.js"></script>
-  <script src="https://cdn.authing.co/packages/guard/5.1.0/guard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.0/guard.min.css" />
+  <script src="https://cdn.authing.co/packages/guard/5.1.5/guard.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css" />
 </head>
 <body>
   <div id="authing-guard-container"></div>
@@ -3407,6 +3407,7 @@ async function refreshToken() {
 | lang         | [Lang](#Lang)                         | 如未设置，默认以控制台配置为准 | 否   | Guard 显示语言                                                                                                                                                                                   |
 | isSSO        | Boolean                               | false                          | 否   | 是否单点登录，详情请见[实现单点登录](https://docs.authing.cn/v2/concepts/application.html#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95)。 |
 | config       | [IGuardConfig](#IGuardConfig)         | -                              | 否   | Guard 详细配置                                                                                                                                                                                   |
+|style|CSSProperties| - | 否 | 自定义 Guard CSS Style |
 
 ## Config 参数列表
 
@@ -3614,6 +3615,7 @@ guard.on("login", (userInfo) => {
 | register-info-completed-error | 注册补全失败事件                                                                          | error，udfs，authenticationClient | <p>error: 错误信息</p><p>udfs: Object</p><p>authenticationClient: [AuthenticationClient](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/)</p>                                                                                       |
 | lang-change                 | 语言切换事件                                                                              | lang                                  | [Lang](#Lang)                                                                                                                                                                                                                                             |
 | before-change-module         | Guard 内部 Module 切换前事件(返回\<boolean ｜ Promise\<boolean>>用于控制本次切换是否继续) | moduleType，initData                  | <p>moduleType: [IGuardModuleType](#IGuardModuleType)</p><p>initData: 目标节点初始化所需数据</p>  |
+| after-change-module         | Guard 内部 Module 切换后事件| options                  | <p>options: [OnAfterChangeModuleOptions](#OnAfterChangeModuleOptions)</p> |
 
 ## 附录
 
@@ -3968,7 +3970,7 @@ Guard 可展示的界面
 | bindTotp             | 绑定 TOTP             |
 | anyQuestions         | 问题反馈              |
 | loginCompleteInfo    | 登录信息补全          |
-| registerPassword     | 注册密码不全          |
+| registerPassword     | 注册密码补全          |
 | registerCompleteInfo | 注册信息补全          |
 | recoveryCode         | MFA TOTP 恢复码       |
 | submitSuccess        | 提交成功              |
@@ -4104,3 +4106,16 @@ interface RegisterParams {
 <p id="User"></p>
 
 详情请见：[用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)。
+
+### OnAfterChangeModuleOptions
+
+<p id="OnAfterChangeModuleOptions"></p>
+
+``` typescript
+interface OnAfterChangeModuleOptions {
+  currentView: string
+  currentModule: IGuardModuleType
+  currentTab?: string
+  data?: any
+}
+```
