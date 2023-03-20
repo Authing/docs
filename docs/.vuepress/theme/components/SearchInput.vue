@@ -60,6 +60,16 @@ export default {
     };
   },
 
+  watch: {
+    $route: {
+      handler () {
+        this.query = '';
+      },
+      immediate: true,
+      deep: true
+    }
+  },
+
   computed: {
     showSuggestions() {
       return this.focused && this.suggestions && this.suggestions.length;

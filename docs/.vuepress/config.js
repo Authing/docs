@@ -311,7 +311,7 @@ module.exports = {
               title: "GitHub"
             },
             {
-              icon: "authing-gitter",
+              icon: "authing-chat-smile-line",
               link: "https://forum.authing.cn/",
               title: "Forum"
             },
@@ -475,7 +475,7 @@ module.exports = {
               title: "GitHub"
             },
             {
-              icon: "authing-gitter",
+              icon: "authing-chat-smile-line",
               link: "https://forum.authing.cn/",
               title: "Forum"
             },
