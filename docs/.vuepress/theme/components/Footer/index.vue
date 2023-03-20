@@ -48,7 +48,9 @@
               v-if="footerLocaleConfig.contactEmail"
               class="footer-text-wrapper"
             >
-              {{ footerLocaleConfig.contactEmail }}
+              <a :href="`mailto:${ footerLocaleConfig.contactEmail }`">
+                {{ footerLocaleConfig.contactEmail }}
+              </a>
             </div>
             <div
               v-if="footerLocaleConfig.contactAddress"
@@ -150,7 +152,7 @@ export default {
     color #4B5A78
     &:hover
       color $accentColor
-  .footer-link-wrapper, .footer-text-wrapper
+  .footer-link-wrapper, .footer-text-wrapper, .footer-text-wrapper a 
     color #4B5A78
     font-weight normal
     font-size 14px
