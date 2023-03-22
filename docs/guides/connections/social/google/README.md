@@ -42,7 +42,7 @@
 
 <img src="./images/google_7.png" >
 
-2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「Google」身份源按钮，进入 「Google 登录模式」页面。
+2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份源」页面，点击「Google」身份源按钮，进入 「Google 登录模式」页面。
 
 <img src="./images/google_8.png" >
 
