@@ -18,7 +18,7 @@
 
 ## 注意事项
 
-- 如果你未开通 快手开放平台 账号，请先前往 [快手开放平台](https://developer.open-kuaishou.com/) 注册开发者账号。
+- 如果你未开通 快手开放平台 账号，请先前往 [快手开放平台](https://open.kuaishou.com/) 注册开发者账号。
   - 在 快手开放平台 完成认证，[开发者入驻](https://open.kuaishou.com/platform/openApi?menu=6)。
   - 创建 [创建移动应用](https://open.kuaishou.com/platform/openApi?menu=7)。
 - 如果你未开通 {{$localeConfig.brandName}} 控制台账号，请先前往 [{{$localeConfig.brandName}} 控制台](https://authing.cn/) 注册开发者账号。
