@@ -3,12 +3,15 @@ import VueSelect from "vue-select";
 import "vue-select/src/scss/vue-select.scss";
 import Pagination from "vue-pagination-2";
 import VTooltip from "v-tooltip";
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 
 export default ({ Vue, options, router, siteData }) => {
   Vue.use(VueNotification);
   Vue.use(VTooltip);
   Vue.component("v-select", VueSelect);
   Vue.component("v-pagination", Pagination);
+  Vue.use(VueAwesomeSwiper)
   Vue.extend({
     mixins: [
       {
