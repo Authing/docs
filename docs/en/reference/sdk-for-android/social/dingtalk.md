@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [DingTalk open platform](https://open.dingtalk.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  DingTalk](../../../guides/connections/social/dingtalk-mobile/README.md)、[DingTalk document](https://open.dingtalk.com/document/orgapp/android-platform-application-authorization-login-access)。
+Configure in [DingTalk open platform](https://open.dingtalk.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  DingTalk](../../../guides/connections/enterprise/dingtalk-mobile/README.md)、[DingTalk document](https://open.dingtalk.com/document/orgapp/android-platform-application-authorization-login-access)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.1 version.

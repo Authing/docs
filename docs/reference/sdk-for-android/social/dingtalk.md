@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [钉钉开放平台](https://open.dingtalk.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [钉钉接入准备](../../../guides/connections/social/dingtalk-mobile/README.md)、[钉钉官方文档](https://open.dingtalk.com/document/orgapp/android-platform-application-authorization-login-access)。
+在 [钉钉开放平台](https://open.dingtalk.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [钉钉接入准备](../../../guides/connections/enterprise/dingtalk-mobile/README.md)、[钉钉官方文档](https://open.dingtalk.com/document/orgapp/android-platform-application-authorization-login-access)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.1 版本新增。
