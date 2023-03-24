@@ -113,7 +113,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
         sendBroadcast(data);
     }
   	// Guard SDK 1.5.3 and later
-  	Google.getInstance().onActivityResult(this, requestCode, resultCode, data);
+  	Google.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 

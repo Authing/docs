@@ -2,6 +2,18 @@
 
 <LastUpdated/>
 
+- ## 1.5.4
+
+
+> Update time：2023.3.24
+
+1. Add GitLab login。
+2. Add Douyin login。
+3. Add Kuaishou login。
+4. Add Xiaomi login。
+
+<br>
+
 - ## 1.5.3
 
 

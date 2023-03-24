@@ -32,3 +32,9 @@ The following error codes are unique to the Android SDK：
 | 10014 | Login by Baidu canceled/Login by Baidu failed       | Login by Baidu canceled or Login by Baidu failed             |                                                              |
 | 10015 | Login by Linkedin canceled/Login by Linkedin failed | Login by Linkedin canceled or Login by Linkedin failed       |                                                              |
 | 10016 | Login by DingTalk canceled/Login by DingTalk failed | Login by DingTalk canceled or Login by DingTalk failed       |                                                              |
+| 10017 | Login by Douyin canceled/Login by Douyin failed     | Login by Douyin canceled or Login by DingTalk failed         |                                                              |
+| 10018 | Login by Github canceled/Login by Github failed     | Login by Github canceled or Login by Github failed           |                                                              |
+| 10019 | Login by Gitee canceled/Login by Gitee failed       | Login by Gitee canceled or Login by Gitee failed             |                                                              |
+| 10020 | Login by GitLab canceled/Login by GitLab failed     | Login by GitLab canceled or Login by GitLab failed           |                                                              |
+| 10021 | Login by Xiaomi canceled/Login by Xiaomi failed     | Login by Xiaomi canceled or Login by Xiaomi failed           |                                                              |
+| 10022 | Login by Kuaishou canceled/Login by Kuaishou failed | Login by Kuaishou canceled or Login by Kuaishou failed       |                                                              |
