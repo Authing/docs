@@ -49,7 +49,7 @@ AuthFlow.start(this);
 
 ```xml
  <cn.authing.guard.social.view.GiteeLoginButton
-    android:id="@+id/btn_gitee_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -59,7 +59,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-GiteeLoginButton button = findViewById(R.id.btn_gitee_login);
+GiteeLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -96,7 +96,7 @@ Gitee.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Gitee.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Gitee.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 

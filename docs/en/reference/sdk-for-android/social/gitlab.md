@@ -1,18 +1,18 @@
-# Login by Gitee
+# Login by GitLab
 
 <LastUpdated/>
 
 ## Preparatory work
 
-Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for  Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
+Configure in [GitLab](https://github.com/settings/developers) and [Authing Console](https://authing.cn/)，See [Preparing for GitLab](../../../guides/connections/social/gitlab-mobile/README.md)、[GitLab document](https://docs.gitlab.cn/jh/api/oauth2.html#pkce-%E6%8E%88%E6%9D%83%E7%A0%81%E6%B5%81%E7%A8%8B)。
 
 :::hint-info
-This feature was added in android guard sdk 1.5.3 version.
+This feature was added in android guard sdk 1.5.4 version.
 :::
 
 <br>
 
-## Integrate Gitee login steps
+## Integrate GitLab login steps
 
 ### Step 1：Add dependency
 
@@ -42,16 +42,16 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 AuthFlow.start(this);
 ```
 
-By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the Gitee login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
+By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the GitLab login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
 
-- #### Use the Gitee sign In button
+- #### Use the GitLab sign In button
 
-  If you use the Gitee login button we provide.
+  If you use the GitLab login button we provide.
 
 ​		1. Add the following code to the layout file:
 
 ```xml
- <cn.authing.guard.social.view.GiteeLoginButton
+ <cn.authing.guard.social.view.GitLabLoginButton
     android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -62,7 +62,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-GiteeLoginButton button = findViewById(R.id.btn_login);
+GitLabLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -75,12 +75,12 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### Log in to the authorization class using Gitee
+- #### Log in to the authorization class using GitLab
 
-  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Gitee` class authorization function inside the button click event, which integrates the business logic to pull up the Gitee authorization login:
+  If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `GitLab` class authorization function inside the button click event, which integrates the business logic to pull up the GitLab authorization login:
 
 ```java
-Gitee.getInstance().login(appContext, new AuthCallback<UserInfo>() {
+GitLab.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -94,34 +94,34 @@ Gitee.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
 
-**Note: When using the Gitee login button or the Gitee login authorization class, you need to add the following code to the Activity's onActivityResult function:**
+**Note: When using the GitLab login button or the GitLab login authorization class, you need to add the following code to the Activity's onActivityResult function:**
 
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Gitee.getInstance().onActivityResult(requestCode, resultCode, data);
+    GitLab.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 
-- #### Log in to the API using Gitee
+- #### Log in to the API using GitLab
 
-  If you want to fully implement the Gitee login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
+  If you want to fully implement the GitLab login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
 
 ```java
-public static void loginByGitee(String authCode, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByGitLab(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **param**
 
-*`authCode`* Gitee authCode
+*`authCode`* GitLab authCode
 
 **example**
 
 If you only need to get the user information (`username`, `nickname`, `name`, etc.) and `idToken`, call:
 
 ```java
-AuthClient.loginByGitee(authCode, new AuthCallback<UserInfo>() {
+AuthClient.loginByGitLab(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -137,7 +137,7 @@ If you only need to get the user information (`username`, `nickname`, `name`, et
 
 ```java
 OIDCClient oidcClient = new OIDCClient();
-oidcClient.loginByGitee(authCode, new AuthCallback<UserInfo>() {
+oidcClient.loginByGitLab(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

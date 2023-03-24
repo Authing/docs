@@ -1676,6 +1676,10 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/linkedin",
             "/reference/sdk-for-android/social/github",
             "/reference/sdk-for-android/social/gitee",
+            "/reference/sdk-for-android/social/gitlab",
+            "/reference/sdk-for-android/social/douyin",
+            "/reference/sdk-for-android/social/kuaishou",
+            "/reference/sdk-for-android/social/xiaomi",
             "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/dingtalk",
@@ -6933,6 +6937,22 @@ const translatedZhCnNavBar = {
             {
               title: "Gitee",
               path: "/reference/sdk-for-android/social/gitee",
+            },
+            {
+              title: "GitLab",
+              path: "/reference/sdk-for-android/social/gitlab",
+            },
+            {
+              title: "Douyin",
+              path: "/reference/sdk-for-android/social/douyin",
+            },
+            {
+              title: "Kuaishou",
+              path: "/reference/sdk-for-android/social/kuaishou",
+            },
+            {
+              title: "Xiaomi",
+              path: "/reference/sdk-for-android/social/xiaomi",
             },
             {
               title: "Wecom",

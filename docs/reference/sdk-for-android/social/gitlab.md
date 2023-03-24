@@ -1,18 +1,18 @@
-# Linkedin 登录
+# GitLab 登录
 
 <LastUpdated/>
 
 ## 准备工作
 
-在 [Linkedin 开放平台](https://developer.linkedin.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Linkedin 接入准备](../../../guides/connections/social/linkedin-mobile/README.md)、[Linkedin 官方文档](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)。
+在 [GitLab](https://gitlab.com/-/profile/applications) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [GitLab 接入准备](../../../guides/connections/social/gitlab-mobile/README.md)、[GitLab 官方文档](https://docs.gitlab.cn/jh/api/oauth2.html#pkce-%E6%8E%88%E6%9D%83%E7%A0%81%E6%B5%81%E7%A8%8B)。
 
 :::hint-info
-此功能在 android guard sdk 1.5.1 版本新增。
+此功能在 android guard sdk 1.5.4 版本新增。
 :::
 
 <br>
 
-## 集成 Linkedin 登录步骤
+## 集成 GitLab 登录步骤
 
 ### 第一步：添加依赖
 
@@ -40,16 +40,16 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 AuthFlow.start(this);
 ```
 
-通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有 Linkedin 登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
+通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有 GitLab 登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
 
-- #### 使用 Linkedin 登录按钮
-    如果使用我们提供的 Linkedin 登录按钮。
+- #### 使用 GitLab 登录按钮
+    如果使用我们提供的 GitLib 登录按钮。
 
-​		1. 布局文件里面加上（或者代码初始化添加）如下代码：
+​		1. 布局文件里面加上如下代码：
 
 ```xml
- <cn.authing.guard.social.view.LinkedinLoginButton
-    android:id="@+id/btn_linkedin_login"
+ <cn.authing.guard.social.view.GitLabLoginButton
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -59,7 +59,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-LinkedinLoginButton button = findViewById(R.id.btn_linkedin_login);
+GitLabLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -72,11 +72,11 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 });
 ```
 
-- #### 使用 Linkedin 登录授权类
-  如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `Linkedin` 类的授权函数，此类集成了拉起微博授权登录的业务逻辑：
+- #### 使用 GitLab 登录授权类
+  如果不想使用我们内置的按钮，想完全自己实现 UI，则可以在按钮的点击事件里面调用 `GitLab` 类的授权函数，此类集成了拉起 GitLab 授权登录的业务逻辑：
 
 ```java
-Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
+GitLab.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -90,34 +90,34 @@ Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 
 ​	`data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
 
-**注意：使用 Linkedin 登录按钮或者 Linkedin 登录授权类时，需要在 Activity 的 onActivityResult 函数中加入如下代码：**
+**注意：使用 GitLab 登录按钮或者 GitLab 登录授权类时，需要在 Activity 的 onActivityResult 函数中加入如下代码：**
 
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Linkedin.getInstance().onActivityResult(requestCode, resultCode, data);
+    GitLab.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 
-- #### 使用 Linkedin 登录 API 
+- #### 使用 GitLab 登录 API 
 
-  如果想完全自己实现 Linkedin 登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：
+  如果想完全自己实现 GitLab 登录 UI 以及获取授权码逻辑，拿到授权码后，可以调用下面 API 换取用户信息：
 
 ```java
-public static void loginByLinkedin(String authCode, @NotNull AuthCallback<UserInfo> callback)
+public static void loginByGitLab(String authCode, @NotNull AuthCallback<UserInfo> callback)
 ```
 
 **参数**
 
-*`authCode`* Linkedin authCode
+*`authCode`* GitLab authCode
 
 **示例**
 
 如果你只需要获取到用户信息（`用户名`、`昵称`、`姓名`等）和 `idToken`，调用：
 
 ```java
-AuthClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
+AuthClient.loginByGitLab(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -133,7 +133,7 @@ AuthClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
 
 ```java
 OIDCClient oidcClient = new OIDCClient();
-oidcClient.loginByLinkedin(authCode, new AuthCallback<UserInfo>() {
+oidcClient.loginByGitLab(authCode, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {

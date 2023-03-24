@@ -52,7 +52,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.GithubLoginButton
-    android:id="@+id/btn_github_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -62,7 +62,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-GithubLoginButton button = findViewById(R.id.btn_github_login);
+GithubLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -100,7 +100,7 @@ Github.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Github.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Github.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 

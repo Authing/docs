@@ -100,7 +100,7 @@ Linkedin.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Linkedin.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Linkedin.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 
