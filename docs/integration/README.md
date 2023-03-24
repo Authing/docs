@@ -956,6 +956,13 @@
         image: "weaver_logo@2x.png",
         image2x: "weaver_logo@3x.png",
         category: "office",
+      },
+      {
+        key: "teamviewer",
+        name: "TeamViewer",
+        image: "teamviewer_logo.svg",
+        image2x: "teamviewer_logo.svg",
+        category: "office",
       }
     ],
   categories:
