@@ -21,7 +21,7 @@
 
 4. Add Package 后勾选 **Douyin** 。
 
-> **Douyin** 依赖于 [Guard-iOS 1.4.3](https://github.com/Authing/guard-ios) 之后版本。
+> **Douyin** 依赖于 [Guard-iOS 1.4.4](https://github.com/Authing/guard-ios) 之后版本。
 
 <br>
 
@@ -46,8 +46,16 @@ value: douyinopensdk, douyinliteopensdk, douyinv1opensdk, snssdk1128
 ```
 <br>
 
+### 第三步：修改项目配置
 
-### 第三步：初始化抖音登录
+配置抖音登录组件回跳 URL：
+1. 选择 Xcode 工程，在 **Targets** -> **Info** -> **URL Types** 中点击加号。
+2. **Identifier** 填写 **douyin**。
+3. **URL Schemes** 填写抖音开放平台的 **AppId**。
+<br>
+
+
+### 第四步：初始化抖音登录
 
 ```swift
 import Guard
@@ -66,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  ```
 <br>
 
-### 第四步：发起抖音登录授权
+### 第五步：发起抖音登录授权
 #### 抖音授权登录
 
 ```swift

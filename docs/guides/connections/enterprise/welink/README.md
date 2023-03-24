@@ -34,7 +34,7 @@
 
 <img src="./images/add-enterprise.png" >
 
-2.2 请在 Authing 控制台 的「企业身份源」-「选择企业身份也」页面，点击「WeLink」身份源按钮，进入 「WeLink 登录模式」页面。
+2.2 请在 Authing 控制台 的「企业身份源」-「选择企业身份源」页面，点击「WeLink」身份源按钮，进入 「WeLink 登录模式」页面。
 
 <img src="./images/add-enterprise-02.png" >
 

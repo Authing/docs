@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [gitee.com](https://gitee.com/login) and [Authing Console console](https://authing.cn/).
+Configure in [gitee.com](https://gitee.com/login) and [Authing Console](https://authing.cn/).
 
 <br>
 

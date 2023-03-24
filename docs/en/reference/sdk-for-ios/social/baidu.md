@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [Baidu Developer Center](https://developer.baidu.com/) and [Authing Console Console](https://authing.cn/), please refer to [Baidu iOS OAuth Access Guide](https://openauth.baidu.com/doc/ios.html).
+Configure in [Baidu Developer Center](https://developer.baidu.com/) and [Authing Console](https://authing.cn/), please refer to [Baidu iOS OAuth Access Guide](https://openauth.baidu.com/doc/ios.html).
 
 <br>
 

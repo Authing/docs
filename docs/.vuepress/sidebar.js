@@ -624,6 +624,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/xiaomi/",
             },
             {
+              title: "小米移动端",
+              path: "/guides/connections/social/xiaomi-mobile/",
+            },
+            {
               title: "腾讯 QQ",
               path: "/guides/connections/social/qq/",
             },
@@ -638,6 +642,14 @@ const zhCnNavBar = {
             {
               title: "新浪微博移动端",
               path: "/guides/connections/social/weibo-mobile/",
+            },
+            {
+              title: "抖音移动端",
+              path: "/guides/connections/social/douyin-mobile/",
+            },
+            {
+              title: "快手移动端",
+              path: "/guides/connections/social/kuaishou-mobile/",
             },
             {
               title: "GitHub",
@@ -698,6 +710,10 @@ const zhCnNavBar = {
             {
               title: "GitLab",
               path: "/guides/connections/social/gitlab/",
+            },
+            {
+              title: "GitLab 移动端",
+              path: "/guides/connections/social/gitlab-mobile/",
             },
             {
               title: "百度",
@@ -1841,7 +1857,10 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/linkedin",
             "/reference/sdk-for-ios/social/github",
             "/reference/sdk-for-ios/social/gitee",
-            // "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/gitlab",
+            "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/kuaishou",
+            "/reference/sdk-for-ios/social/xiaomi",
             "/reference/sdk-for-ios/social/wecom",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/dingtalk",
@@ -7039,10 +7058,14 @@ const translatedZhCnNavBar = {
               title: "Gitee",
               path: "/reference/sdk-for-ios/social/gitee",
             },
-            // {
-            //   title: "Douyin",
-            //   path: "/reference/sdk-for-ios/social/douyin",
-            // },
+            {
+              title: "GitLab",
+              path: "/reference/sdk-for-ios/social/gitlab",
+            },
+            {
+              title: "Xiaomi",
+              path: "/reference/sdk-for-ios/social/xiaomi",
+            },
             {
               title: "WeCom",
               path: "/reference/sdk-for-ios/social/wecom",

@@ -21,6 +21,10 @@
 - [领英登录](./linkedin.md)
 - [Github 登录](./github.md)
 - [Gitee 登录](./gitee.md)
+- [GitLab 登录](./gitlab.md)
+- [抖音登录](./douyin.md)
+- [快手登录](./kuaishou.md)
+- [小米登录](./xiaomi.md)
 
 ## 企业身份源
 - [企业微信登录](./wecom.md)

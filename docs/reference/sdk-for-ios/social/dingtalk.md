@@ -52,7 +52,7 @@ value: dingtalk, dingtalk-open, dingtalk-sso
 
 ### 第三步：修改项目配置
 
-配置 DingTalk 登录组件回跳 URL：
+配置钉钉登录组件回跳 URL：
 1. 选择 Xcode 工程，在 **Targets** -> **Info** -> **URL Types** 中点击加号。
 2. **Identifier** 填写 **dingtalk**。
 3. **URL Schemes** 钉钉控制台的 **AppKey**。
