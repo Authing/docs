@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [钉钉开放平台](https://open-dev.dingtalk.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [钉钉接入准备](../../../guides/connections/social/dingtalk-mobile/README.md)、[钉钉 iOS 应用授权登录接入流程](https://open.dingtalk.com/document/orgapp/procedures-for-authorized-logon-to-ios-applications)。
+在 [钉钉开放平台](https://open-dev.dingtalk.com/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [钉钉接入准备](../../../guides/connections/enterprise/dingtalk-mobile/README.md)、[钉钉 iOS 应用授权登录接入流程](https://open.dingtalk.com/document/orgapp/procedures-for-authorized-logon-to-ios-applications)。
 
 <br>
 
