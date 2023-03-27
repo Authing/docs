@@ -62,12 +62,12 @@ Authing 提供多种认证方式，提高企业身份安全性。
 
 <img src="./images/product-mfa-biology.png" height=500 style="display:block;margin: 0 auto;">
 
-### 小程序认证
+<!-- ### 小程序认证
 
 将 Authing 移动令牌验证器集成至微信小程序，免去安装 APP 的流程，快捷使用移动端验证器。
 
 
-<img src="./images/mfa-solution-miniprograme.png" height=500 style="display:block;margin: 0 auto;">
+<img src="./images/mfa-solution-miniprograme.png" height=500 style="display:block;margin: 0 auto;"> -->
 
 
 ## Authing 多因素认证的优势

@@ -577,7 +577,7 @@ export default {
 
 ### 8. 自定义样式
 
-你可以通过编写 CSS 代码注入到 Guard，原理是改变 `config` 中的 `contentCss` 属性，以此实现更个性化的登录框样式。
+Guard 默认水平垂直居中，你可以通过编写 CSS 代码注入到 Guard，原理是改变 `config` 中的 `contentCss` 属性，以此实现更个性化的登录框样式。
 
 在这里以 「隐藏应用 Logo」为例：
 
