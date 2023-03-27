@@ -12,7 +12,7 @@ MFA 是一种安全措施，可以提高身份验证的安全性，保护用户�
 
 |条目|说明|
 |-----|----|
-|最新版本|1.0.0-alpha.11|
+|最新版本|1.0.0-alpha.12|
 |仓库地址|https://github.com/authing/authing-mfa-component|
 
 ## 第一步：在 Authing 控制台创建应用
