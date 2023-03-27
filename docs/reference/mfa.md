@@ -252,7 +252,7 @@ export class AppModule {}
   <script>
     ;(function (window, document, AuthingMFAFactory) {
       const authingMFA = new AuthingMFAFactory.AuthingMFA({
-        appId: '630ed3137dd6f2fd7001da24'
+        appId: 'AUTHING_APP_ID'
       })
 
       authingMFA.start({
