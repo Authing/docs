@@ -12,7 +12,7 @@ MFA 是一种安全措施，可以提高身份验证的安全性，保护用户�
 
 |条目|说明|
 |-----|----|
-|最新版本|1.0.0-alpha.12|
+|最新版本|1.0.0-alpha.14|
 |仓库地址|https://github.com/authing/authing-mfa-component|
 
 ## 第一步：在 Authing 控制台创建应用
@@ -123,6 +123,9 @@ function App() {
   return (
     <AuthingMFAProvider
       appId="AUTHING_APP_ID"
+
+      // 可选值：normal 或 modal，对应普通模式和模态框模式
+      // mode="modal"
       
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host="https://my-authing-app.example.com"
@@ -145,6 +148,9 @@ import '@authing/mfa-component-vue2/dist/index.min.css'
 
 Vue.use(AuthingMFAPlugin, {
   appId: "AUTHING_APP_ID",
+
+  // 可选值：normal 或 modal，对应普通模式和模态框模式
+  // mode: "modal"
 
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
   // host: 'https://my-authing-app.example.com'
@@ -170,6 +176,9 @@ const app = createApp(App)
 app.use(
   createAuthingMFA({
     appId: "AUTHING_APP_ID",
+
+    // 可选值：normal 或 modal，对应普通模式和模态框模式
+    // mode: "modal"
 
     // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
     // host: 'https://my-authing-app.example.com'
@@ -211,6 +220,9 @@ import { AuthingMFAModule } from '@authing/mfa-component-angular'
     AppRoutingModule,
     AuthingMFAModule.forRoot({
       appId: "AUTHING_APP_ID",
+
+      // 可选值：normal 或 modal，对应普通模式和模态框模式
+      // mode: "modal"
       
       // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
       // host: 'https://my-authing-app.example.com'
@@ -252,7 +264,9 @@ export class AppModule {}
   <script>
     ;(function (window, document, AuthingMFAFactory) {
       const authingMFA = new AuthingMFAFactory.AuthingMFA({
-        appId: 'AUTHING_APP_ID'
+        appId: 'AUTHING_APP_ID',
+        // 可选值：normal 或 modal，对应普通模式和模态框模式
+        // mode: "modal"
       })
 
       authingMFA.start({
@@ -527,6 +541,217 @@ authingMFA.start({
 :::
 ::::
 
+如果初始化 Authing MFA 组件时配置了参数 `mode="modal"`，则可以使用 `show` 和 `hide` 方法操作模态框的显隐。
+
+:::: tabs :options="{ useUrlFragment: false }"
+
+::: tab React
+
+```tsx
+import { useEffect } from 'react'
+
+// React 16 / 17
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-react/src/pages/MFA.tsx
+import { useAuthingMFA } from '@authing/mfa-component-react'
+
+// React 18
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-react18/src/pages/MFA.tsx
+// import { useAuthingMFA } from '@authing/mfa-component-react18'
+
+export default function MFA() {
+  const authingMFA = useAuthingMFA()
+
+  const showModal = () => authingMFA.show()
+  const hideModal = () => authingMFA.hide()
+
+  useEffect(() => {
+    authingMFA.start({
+      el: document.querySelector('#authing-mfa-container') as Element,
+      mfaTriggerData: {}
+    })
+
+    // 监听 MFA 认证成功的事件
+    // 认证成功后，执行自定义操作
+    authingMFA.on('success', function (code, data) {
+      console.log('Authing MFA success: ', code, data)
+      // ..... more actions
+    })
+  }, [])
+
+  return (
+    <div>
+      <button onClick={showModal}>Show Modal</button>
+      <button onClick={hideModal}>Hide Modal</button>
+      <div id="authing-mfa-container"></div>
+    </div>
+  )
+}
+```
+
+:::
+
+::: tab Vue2
+
+``` html
+<div class="mfa-container">
+  <button @click="showModal">Show Modal</button>
+  <button @click="hideModal">Hide Modal</button>
+  <div id="authing-mfa-container"></div>
+</div>
+```
+
+```javascript
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-vue2/src/views/MFA.vue
+export default {
+  mounted() {
+    this.$authingMFA.start({
+      el: document.querySelector('#authing-mfa-container'),
+      mfaTriggerData: {}
+    })
+
+    // 监听 MFA 认证成功的事件
+    // 认证成功后，执行自定义操作
+    this.$authingMFA.on('success', function (code, data) {
+      console.log('Authing MFA success: ', code, data)
+      // ..... more actions
+    })
+  },
+
+  methods: {
+    showModal () {
+      this.$authingMFA.show()
+    },
+    hideModal () {
+      this.$authingMFA.hide()
+    }
+  }
+};
+```
+
+:::
+
+::: tab Vue3
+
+
+``` html
+<div class="mfa-container">
+  <button @click="showModal">Show Modal</button>
+  <button @click="hideModal">Hide Modal</button>
+  <div id="authing-mfa-container"></div>
+</div>
+```
+
+```javascript
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-vue3/src/views/MFA.vue
+import { onMounted } from 'vue'
+import { useAuthingMFA } from '@authing/mfa-component-vue3'
+
+const authingMFA = useAuthingMFA()
+
+onMounted(() => {
+  authingMFA.start({
+    el: document.querySelector('#authing-mfa-container'),
+    mfaTriggerData: {}
+  })
+
+  // 监听 MFA 认证成功的事件
+  // 认证成功后，执行自定义操作
+  authingMFA.on('success', function (code, data) {
+    console.log('Authing MFA success: ', code, data)
+    // ..... more actions
+  })
+})
+
+const showModal = () => authingMFA.show()
+const hideModal = () => authingMFA.hide()
+```
+
+:::
+
+::: tab Angular
+
+``` html
+<div class="mfa-container">
+  <button (click)="showModal()">Show Modal</button>
+  <button (click)="hideModal()">Hide Modal</button>
+  <div id="authing-mfa-container"></div>
+</div>
+
+```
+
+```typescript
+// Angular 组件中使用 Authing MFA API
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-angular/src/app/pages/mfa/mfa.component.ts
+import { Component } from '@angular/core'
+import { AuthingMFAService } from '@authing/mfa-component-angular'
+
+@Component({
+  selector: "mfa-container",
+  templateUrl: "./mfa.component.html",
+  styleUrls: ["./mfa.component.css"],
+})
+export class MFAComponent {
+  constructor(
+    // 使用 Angular 依赖注入，获取 Authing MFA 实例
+    private authingMFA: AuthingMFAService
+  ) {}
+
+  ngOnInit() {
+    this.authingMFA.client.start({
+      el: document.querySelector('#authing-mfa-container') as Element,
+      mfaTriggerData: {}
+    })
+
+    // 监听 MFA 认证成功的事件
+    // 认证成功后，执行自定义操作
+    this.authingMFA.client.on('success', function (code, data) {
+      console.log('Authing MFA success: ', code, data)
+      // ..... more actions
+    })
+  }
+
+  showModal () {
+    this.authingMFA.client.show()
+  }
+
+  hideModal () {
+    this.authingMFA.client.hide()
+  }
+}
+```
+
+:::
+
+::: tab CDN
+
+``` html
+<button id="show-modal">Show Modal</button>
+<button id="hide-modal">Hide Modal</button>
+<div id="authing-mfa-container"></div>
+```
+
+```javascript
+// 代码示例：https://github.com/Authing/authing-mfa-component/blob/master/examples/mfa-component-native/index.html
+const authingMFA = new AuthingMFAFactory.AuthingMFA({
+  appId: 'AUTHING_APP_ID'
+})
+
+authingMFA.start({
+  el: document.querySelector('#authing-mfa-container'),
+  mfaTriggerData: {}
+})
+
+document.querySelector('#show-modal').onclick = function () {
+  authingMFA.show()
+}
+
+document.querySelector('#hide-modal').onclick = function () {
+  authingMFA.hide()
+}
+```
+:::
+::::
+
 ## Authing MFA 初始化参数列表
 
 <p id="IMFAInitOptions"></p>
@@ -534,6 +759,7 @@ authingMFA.start({
 | 参数名| 参数说明 | 类型 | 是否必传 | 默认值|
 | ---- | ---- | ---- | ---- | ---- |
 | appId| Authing 自建应用 APP ID | String | 是 | - |
+|mode|MFA 组件展示形式：普通模式 或 模态框模式|[IAuthingMFAComponentMode](#IAuthingMFAComponentMode)|否|normal|
 | host | 私有化部署地址 | String | 否 | - |
 | style| 自定义 CSS 样式 | CSSProperties | 否 | - |
 |lang | 多语言配置 | [Lang](#Lang) | 否 | - |
@@ -553,6 +779,7 @@ authingMFA.start({
 
 ## 类型定义
 
+### 多语言
 <p id="Lang"></p>
 
 | 值    | 描述 |
@@ -561,3 +788,12 @@ authingMFA.start({
 | en-US | 英文 |
 | zh-TW | 繁体 |
 | ja-JP | 日语 |
+
+### 组件展示形式
+
+<p id="IAuthingMFAComponentMode"></p>
+
+| 值    | 描述 |
+| ----- | ---- |
+| normal | 普通模式 |
+| modal | 模态框模式 |
