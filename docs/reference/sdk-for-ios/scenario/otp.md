@@ -3,7 +3,8 @@
 <LastUpdated/>
 
 Authing OTP 组件用于生成多因素身份验证的一次性密码 （OTP），开发者也可以通过此组件快速实现 OTP 的增删改查。
-也可以下载 APP 体验 Authing 官方应用: https://apps.apple.com/cn/app/authing-%E4%BB%A4%E7%89%8C/id1603744061。
+
+也可以[下载 iOS APP](https://apps.apple.com/cn/app/authing-%E4%BB%A4%E7%89%8C/id1603744061) 体验 Authing 官方应用。
 
 <img src="./image/otp.png" alt="drawing" width="300"/>
 

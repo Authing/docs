@@ -10,7 +10,7 @@
 
 ## 集成 Line 登录
 
-### 第一步：添加 Weibo 依赖
+### 第一步：添加 Line 依赖
 
 1. 在 swift package 搜索栏输入：https://github.com/Authing/authing-binary 。
 
