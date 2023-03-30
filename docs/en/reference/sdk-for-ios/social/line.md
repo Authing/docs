@@ -10,7 +10,7 @@ Configure in [Line Development Platform](https://developers.line.biz/console/) a
 
 ## Integrated Line login
 
-### Step 1: Add Weibo dependency
+### Step 1: Add Line dependency
 
 1. Enter: https://github.com/Authing/authing-binary in the swift package search bar.
 
