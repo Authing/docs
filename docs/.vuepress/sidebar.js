@@ -700,6 +700,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/slack/",
             },
             {
+              title: "Slack-mobile",
+              path: "/guides/connections/social/slack-mobile/",
+            },
+            {
               title: "Gitee",
               path: "/guides/connections/social/gitee/",
             },
@@ -742,6 +746,10 @@ const zhCnNavBar = {
             {
               title: "LinkedIn 移动端",
               path: "/guides/connections/social/linkedin-mobile/",
+            },
+            {
+              title: "Line 移动端",
+              path: "/guides/connections/social/line-mobile/",
             },
           ],
         },
@@ -1868,6 +1876,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/wecom",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/dingtalk",
+            "/reference/sdk-for-ios/social/line",
+            "/reference/sdk-for-ios/social/slack",
           ],
         },
         {
@@ -1880,6 +1890,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/scenario/logout",
             "/reference/sdk-for-ios/scenario/splash",
             "/reference/sdk-for-ios/scenario/webauthn",
+            "/reference/sdk-for-ios/scenario/otp",
           ],
         },
         {
@@ -7097,6 +7108,14 @@ const translatedZhCnNavBar = {
             {
               title: "DingTalk",
               path: "/reference/sdk-for-ios/social/dingtalk",
+            },
+            {
+              title: "Line",
+              path: "/reference/sdk-for-ios/social/line",
+            },
+            {
+              title: "Slack",
+              path: "/reference/sdk-for-ios/social/slack",
             },
           ],
         },

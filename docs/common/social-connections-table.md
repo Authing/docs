@@ -23,8 +23,10 @@
 | 支付宝 Web 端              | PC 网站    | <router-link to="/guides/connections/social/alipay-web/" target="_blank">使用文档</router-link>                   |
 | 支付宝移动端               | 移动 APP   | <router-link to="/guides/connections/social/alipay-web/" target="_blank">使用文档</router-link>                       |
 | Slack                      | PC 网站    | <router-link to="/guides/connections/social/slack/" target="_blank">使用文档</router-link>                        |
+| Slack 移动端                     | 移动 APP  | <router-link to="/guides/connections/social/slack-mobile/" target="_blank">使用文档</router-link>                        |
 | Gitee                      | PC 网站    | <router-link to="/guides/connections/social/gitee/" target="_blank">使用文档</router-link>                        |
 | GitLab                     | PC 网站    | <router-link to="/guides/connections/social/gitlab/" target="_blank">使用文档</router-link>                       |
+| GitLab 移动端                | 移动 APP    | <router-link to="/guides/connections/social/gitlab-mobile/" target="_blank">使用文档</router-link>                       |
 | 百度                       | PC 网站    | <router-link to="/guides/connections/social/baidu/" target="_blank">使用文档</router-link>                        |
 | 百度移动端               | 移动 APP   | <router-link to="/guides/connections/social/baidu-mobile/" target="_blank">使用文档</router-link>                       |
 | LinkedIn                   | PC 网站    | <router-link to="/guides/connections/social/linkedin/" target="_blank">使用文档</router-link>                     |
@@ -32,4 +34,7 @@
 | 网易易盾（手机号一键登录） | 移动 APP   | <router-link to="/guides/connections/social/yidun/" target="_blank">使用文档</router-link>                        |
 | 青云 QingCloud             | PC 网站    | <router-link to="/guides/connections/social/qingcloud/" target="_blank">使用文档</router-link>                    |
 | Instagram                  | PC 网站    | <router-link to="/guides/connections/social/instagram/" target="_blank">使用文档</router-link>                    |
-| 抖音 | 移动 APP   | <router-link to="/guides/connections/social/douyin-mobile/" target="_blank">使用文档</router-link>                        |
+| 抖音移动端 | 移动 APP   | <router-link to="/guides/connections/social/douyin-mobile/" target="_blank">使用文档</router-link>                        |
+| 快手移动端 | 移动 APP   | <router-link to="/guides/connections/social/kuaishou-mobile/" target="_blank">使用文档</router-link>                        |
+| 小米移动端 | 移动 APP   | <router-link to="/guides/connections/social/xiaomi-mobile/" target="_blank">使用文档</router-link>                        |
+| Line 移动端 | 移动 APP   | <router-link to="/guides/connections/social/line-mobile/" target="_blank">使用文档</router-link>                        |

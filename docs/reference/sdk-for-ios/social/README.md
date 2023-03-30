@@ -25,6 +25,8 @@
 - [抖音登录](./douyin.md)
 - [快手登录](./kuaishou.md)
 - [小米登录](./xiaomi.md)
+- [Line 登录](./line.md)
+- [Slack 登录](./slack.md)
 
 ## 企业身份源
 - [企业微信登录](./wecom.md)
