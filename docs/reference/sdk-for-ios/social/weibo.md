@@ -64,7 +64,7 @@ value: sinaweibo, weibosdk, weibosdk2.5, weibosdk3.3, sinaweibohd
 
 <br>
 
-### 第三步：设置 Associated Domains：
+### 第四步：设置 Associated Domains：
 
 > 填入开发者的 Universal Link 对应的 host 。
 
@@ -72,7 +72,7 @@ value: sinaweibo, weibosdk, weibosdk2.5, weibosdk3.3, sinaweibohd
 
 <br>
 
-### 第四步：初始化微博登录
+### 第五步：初始化微博登录
 ```swift
 import Guard
 import Weibo
@@ -89,7 +89,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 <br>
 
 
-### 第四步：处理微博登录回调
+### 第六步：处理微博登录回调
 
 微博返回应用后，如果使用了 SceneDelegate，则需要在 SceneDelegate.swift 里面重载下面的函数：
 
@@ -117,7 +117,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 <br>
 
-### 第五步：发起微博登录授权
+### 第七步：发起微博登录授权
 #### 微博授权登录
 
 ```swift
@@ -139,7 +139,7 @@ Weibo.login { code, message, userInfo in
 
 如果开发者自己集成微博登录，拿到 accessToken 后，可以调用以下 API 换取 Authing 用户信息：
 
-#### 通过百度授权码登录
+#### 通过微博授权码登录
 
 ```swift
 func loginByWeibo(_ accessToken: String, completion: @escaping(Int, String?, UserInfo?) -> Void)

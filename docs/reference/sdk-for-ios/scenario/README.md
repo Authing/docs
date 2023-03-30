@@ -10,3 +10,4 @@
 - [退出登录](./logout.md)
 - [闪屏界面](./splash.md)
 - [WebAuthn-生物认证](./webauthn.md)
+- [Authing-OTP](./otp.md)
