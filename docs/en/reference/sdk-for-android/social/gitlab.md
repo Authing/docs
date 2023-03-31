@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.4 version.
 
 <br>
 
-## Integrate GitLab login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -20,9 +20,9 @@ This feature was added in android guard sdk 1.5.4 version.
 implementation 'cn.authing:guard:+'
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity

@@ -12,14 +12,14 @@ This feature was added in android guard sdk 1.5.4 version.
 
 <br>
 
-## Integrate Kuaishou login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
 ```groovy
 dependencies {
     implementation 'cn.authing:guard:+'
-		implementation "com.github.kwaisocial:kwai-opensdk-withauth:3.0.4"
+    implementation "com.github.kwaisocial:kwai-opensdk-withauth:3.0.4"
 }
 ```
 
@@ -43,9 +43,9 @@ android {
 }
 ```
 
-### Step 3：Initialization Guard Android SDK
+### Step 3：Initialization 
 
-Initialize in `Application` :
+Initialize Guard Android SDK in `Application` :
 
 ```java
 // context is application or initial activity

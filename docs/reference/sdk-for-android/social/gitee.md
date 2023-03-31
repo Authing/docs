@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成 Gitee 登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -20,9 +20,9 @@
 implementation 'cn.authing:guard:+'
 ```
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity

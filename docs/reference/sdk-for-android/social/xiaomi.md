@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成小米登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -27,13 +27,6 @@ repositories {
 dependencies {
     implementation 'cn.authing:guard:+'
   	implementation 'com.xiaomi.account:oauth-android:latest.release' 
-  
-  	//如果运行时提示如下错误，请这么配置
-  	//Duplicate class com.google.common.util.concurrent.ListenableFuture found in modules jetified-guava-18.0 			//(com.google.guava:guava:18.0) and jetified-listenablefuture-1.0 (com.google.guava:listenablefuture:1.0)
-		implementation ("com.xiaomi.account:oauth-android:latest.release"){
-        exclude group: 'com.google.guava', module: 'guava'
-        exclude group: 'com.google.guava', module: 'listenablefuture'
-    }
 }
 ```
 
@@ -50,9 +43,9 @@ Guard 只是 compileOnly 依赖小米 sdk，这样可以让 App 按需引入，�
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 ```
 
-### 第三步：初始化 Guard Android SDK
+### 第三步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity

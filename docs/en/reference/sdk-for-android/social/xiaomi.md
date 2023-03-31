@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.4 version.
 
 <br>
 
-## Integrate Xiaomi login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -27,13 +27,6 @@ repositories {
 dependencies {
     implementation 'cn.authing:guard:+'
   	implementation 'com.xiaomi.account:oauth-android:latest.release' 
-  
-  	//If the following error is displayed at runtime, do so
-  	//Duplicate class com.google.common.util.concurrent.ListenableFuture found in modules jetified-guava-18.0 			//(com.google.guava:guava:18.0) and jetified-listenablefuture-1.0 (com.google.guava:listenablefuture:1.0)
-		implementation ("com.xiaomi.account:oauth-android:latest.release"){
-        exclude group: 'com.google.guava', module: 'guava'
-        exclude group: 'com.google.guava', module: 'listenablefuture'
-    }
 }
 ```
 
@@ -50,9 +43,9 @@ Add permissions to `AndroidManifest.xml`:
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 ```
 
-### Step 3：Initialization Guard Android SDK
+### Step 3：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
