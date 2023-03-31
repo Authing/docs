@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-此模块用于进行扫码登录，扫码登录分为三种：[小程序扫码登录](/guides/authentication/qrcode/use-wechat-miniprogram/)（wxqrcode）、 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)（qrcode）和 [公众号扫码关注登录](/connections/wechatmp-qrcode/) 三种扫码登录方式 API 完全一致。
+此模块用于进行扫码登录，扫码登录分为三种：[小程序扫码登录](/guides/authentication/qrcode/use-wechat-miniprogram/)（wxqrcode）、 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/overview.md)（qrcode）和 [公众号扫码关注登录](/connections/wechatmp-qrcode/) 三种扫码登录方式 API 完全一致。
 
 1. 使用小程序扫码登录：
 
