@@ -21,7 +21,7 @@
 
 4. Add Package 后勾选 **Line** 。
 
-> **Weibo** 依赖于 [Guard-iOS 1.4.5](https://github.com/Authing/guard-ios) 之后版本。
+> **Line** 依赖于 [Guard-iOS 1.4.5](https://github.com/Authing/guard-ios) 之后版本。
 
 <br>
 

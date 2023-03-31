@@ -24,6 +24,11 @@ Authing OTP 组件用于生成多因素身份验证的一次性密码 （OTP）�
 
 ## 如何使用
 
+### 导入头文件
+```swift
+import AuthingOTP
+```
+
 ### 创建 OTP 对象
 ```swift
 let totp = TOTP(secret: data)

@@ -21,7 +21,7 @@ Configure in [Line Development Platform](https://developers.line.biz/console/) a
 
 4. Check **Line** after Add Package.
 
-> **Weibo** depends on the version after [Guard-iOS 1.4.5](https://github.com/Authing/guard-ios).
+> **Line** depends on the version after [Guard-iOS 1.4.5](https://github.com/Authing/guard-ios).
 
 <br>
 
