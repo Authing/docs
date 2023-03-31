@@ -212,7 +212,7 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 - [账号密码认证](/guides/authentication/basic/password/)
 - [短信验证码认证](/guides/authentication/basic/sms/)
 - [连接外部身份源认证](/guides/connections/)（[社交账号登录](/guides/authentication/social/)、[企业账号登录](/guides/connections/enterprise.html)）
-- [自建 APP 扫码认证](/guides/authentication/qrcode/use-self-build-app/)
+- [自建 APP 扫码认证](/guides/authentication/qrcode/use-self-build-app/overview.md)
 - [手机号一键登录](/guides/oneauth/)
 - [单点登录 SSO](https://docs.authing.cn/v3/reference/sdk/web/)
 - [多因素认证 MFA](/guides/security/mfa/README.md)

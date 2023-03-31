@@ -20,7 +20,7 @@ Guard 可以集成到你的 React、Vue.js、Angular 以及原生 JavaScript 项
 
 - 账号密码登录（包括手机号 + 密码、邮箱 + 密码、用户名 + 密码）；
 - 手机验证码登录；
-- APP 扫码登录（[需先接入 APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)）；
+- APP 扫码登录（[需先接入 APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/overview.md)）；
 - 小程序扫码登录（[需先在后台配置](/guides/authentication/qrcode/use-wechat-miniprogram/)）；
 - 社会化登录，如 GitHub 登录（[需先在后台配置](/guides/connections/social.md)）；
 - 企业身份源登录（[需要配置企业身份源](/guides/connections/enterprise.md)）；

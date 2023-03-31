@@ -24,7 +24,7 @@
 
 ![](./images/add_social.png)
 
-选择易盾一键登录
+选择网易易盾
 
 ![](./images/add_yidun.png)
 
@@ -36,9 +36,9 @@
 
 通过我们提供的 SDK，开发者只需要一行代码就能集成一键登录功能，请参考：
 
-[Android 集成指导](https://github.com/Authing/guard-android/blob/master/doc/topics/oneauth.md)
+[Android 集成指导](/reference/sdk-for-android/social/oneauth.md)
 
-[iOS 集成指导](https://github.com/Authing/guard-ios/blob/main/doc/topics/oneauth.md)
+[iOS 集成指导](/reference/sdk-for-ios/social/oneauth.md)
 
 成功集成后效果如下
 

@@ -162,7 +162,7 @@ authenticationClient.wxqrcode.startScanning('DOM_ID', {
 
 ### App 扫码登录
 
-随着移动互联网的普及，手机已经成为人们生活中的必需品，通过手机扫描二维码完成认证的方式变得越来越常见。越来越多的移动应用集成了扫描二维码登录 PC 端网站应用的功能，这对于用户来说是一种既方便又安全的体验。借助 Authing 提供的扫描登录能力，可以帮助快速、安全地实现此功能。[点此了解更多](/guides/authentication/qrcode/use-self-build-app/)。
+随着移动互联网的普及，手机已经成为人们生活中的必需品，通过手机扫描二维码完成认证的方式变得越来越常见。越来越多的移动应用集成了扫描二维码登录 PC 端网站应用的功能，这对于用户来说是一种既方便又安全的体验。借助 Authing 提供的扫描登录能力，可以帮助快速、安全地实现此功能。[点此了解更多](/guides/authentication/qrcode/use-self-build-app/overview.md)。
 
 你可以使用 5 行代码实现一个完整的扫码登录表单：
 

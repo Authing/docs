@@ -171,8 +171,12 @@ const zhCnNavBar = {
           children: [
             {
               title: "使用自建 App 扫码登录网站",
-              path: "/guides/authentication/qrcode/use-self-build-app/",
+              path: "/guides/authentication/qrcode/use-self-build-app/overview",
               children: [
+                {
+                  title: "概述",
+                  path: "/guides/authentication/qrcode/use-self-build-app/overview",
+                },
                 {
                   title: "完整接口列表",
                   path: "/guides/authentication/qrcode/use-self-build-app/full-api-list",
@@ -5735,13 +5739,16 @@ const translatedZhCnNavBar = {
         // },
         {
           title: "Use scan code login authentication",
-          path: "/guides/authentication/qrcode/use-self-build-app/",
           children: [
             {
               title:
                 "Use self-built App to scan the code to log in to the website",
-              path: "/guides/authentication/qrcode/use-self-build-app/",
+              path: "/guides/authentication/qrcode/use-self-build-app/overview",
               children: [
+                {
+                  title: "Overview",
+                  path: "/guides/authentication/qrcode/use-self-build-app/overview",
+                },
                 {
                   title: "Complete interface list",
                   path: "/guides/authentication/qrcode/use-self-build-app/full-api-list",

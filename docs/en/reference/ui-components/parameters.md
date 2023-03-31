@@ -65,7 +65,7 @@ Common login methods supported by Guard
 | key       | value        | Description                                                                                                |
 | :-------- | :----------- | :--------------------------------------------------------------------------------------------------------- |
 | LDAP      | 'ldap'       | LDAP identity directory login(Need to [configure LDAP service](/en/connections/ldap/))                     |
-| AppQr     | 'app-qrcode' | APP QR code login(Need to import [APP QR code login](/guides/authentication/qrcode/use-self-build-app/))   |
+| AppQr     | 'app-qrcode' | APP QR code login(Need to import [APP QR code login](/guides/authentication/qrcode/use-self-build-app/overview.md))   |
 | Password  | 'password'   | Account password login (including mobile phone number + password, email + password, user name + password.) |
 | PhoneCode | 'phone-code' | SMS code login                                                                                             |
 | AD        | 'ad'         | AD user directory login                                                                                    |
