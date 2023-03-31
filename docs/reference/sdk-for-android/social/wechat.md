@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成微信登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -21,9 +21,9 @@ implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 Guard 只是 compileOnly 依赖微信，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -94,7 +94,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 
 ```xml
 <cn.authing.guard.social.view.WechatLoginButton
-    android:id="@+id/btn_wechat_login"
+    android:id="@+id/btn_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -104,7 +104,7 @@ public class WXEntryActivity extends WXCallbackActivity {
 然后在 java 代码里面处理事件：
 
 ```java
-WechatLoginButton wechatLoginButton = findViewById(R.id.btn_wechat_login);
+WechatLoginButton wechatLoginButton = findViewById(R.id.btn_login);
 wechatLoginButton.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

@@ -12,14 +12,14 @@
 
 <br>
 
-## 集成快手登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
 ```groovy
 dependencies {
     implementation 'cn.authing:guard:+'
-		implementation "com.github.kwaisocial:kwai-opensdk-withauth:3.0.4"
+    implementation "com.github.kwaisocial:kwai-opensdk-withauth:3.0.4"
 }
 ```
 
@@ -43,9 +43,9 @@ android {
 }
 ```
 
-### 第三步：初始化 Guard Android SDK
+### 第三步：初始化
 
-在 `Application` 中初始化：
+在 `Application` 中初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity

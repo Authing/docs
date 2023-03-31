@@ -38,3 +38,5 @@ The following error codes are unique to the Android SDK：
 | 10020 | Login by GitLab canceled/Login by GitLab failed     | Login by GitLab canceled or Login by GitLab failed           |                                                              |
 | 10021 | Login by Xiaomi canceled/Login by Xiaomi failed     | Login by Xiaomi canceled or Login by Xiaomi failed           |                                                              |
 | 10022 | Login by Kuaishou canceled/Login by Kuaishou failed | Login by Kuaishou canceled or Login by Kuaishou failed       |                                                              |
+| 10023 | Login by Line canceled/Login by Line failed         | Login by Line canceled or Login by Line failed               |                                                              |
+| 10024 | Login by Slack canceled/Login by Slack failed       | Login by Slack canceled or Login by Slack failed             |                                                              |

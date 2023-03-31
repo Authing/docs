@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.4.8 version.
 
 <br>
 
-## Integrate Facebook login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -89,9 +89,9 @@ The Guard compileOnly relies on gms, which allows apps to import on demand, prev
    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
    ```
 
-### Step 3：Initialization Guard Android SDK
+### Step 3：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -118,7 +118,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.FaceBookLoginButton
-    android:id="@+id/btn_face_book_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -128,7 +128,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-FaceBookLoginButton button = findViewById(R.id.btn_face_book_login);
+FaceBookLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

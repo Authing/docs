@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成飞书登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -24,9 +24,9 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 
 > Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity

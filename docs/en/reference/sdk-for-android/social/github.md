@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [Github](https://github.com/settings/developers) and [Authing Console](https://authing.cn/)，See [Preparing for  Github](../../../guides/connections/social/github-mobile/README.md)、[Github document](https://docs.github.com/zh/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)。
+Configure in [Github](https://github.com/settings/developers) and [Authing Console](https://authing.cn/)，See [Preparing for Github](../../../guides/connections/social/github-mobile/README.md)、[Github document](https://docs.github.com/zh/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.3 version.
@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.3 version.
 
 <br>
 
-## Integrate Github login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -20,9 +20,9 @@ This feature was added in android guard sdk 1.5.3 version.
 implementation 'cn.authing:guard:+'
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity

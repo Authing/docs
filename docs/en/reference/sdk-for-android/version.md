@@ -2,15 +2,25 @@
 
 <LastUpdated/>
 
+- ## 1.5.5
+
+
+> Update time：2023.3.31
+
+1. Add Line loginq.
+2. Add Slack login.
+
+<br>
+
 - ## 1.5.4
 
 
 > Update time：2023.3.24
 
-1. Add GitLab login。
-2. Add Douyin login。
-3. Add Kuaishou login。
-4. Add Xiaomi login。
+1. Add GitLab login.
+2. Add Douyin login.
+3. Add Kuaishou login.
+4. Add Xiaomi login.
 
 <br>
 
@@ -19,8 +29,8 @@
 
 > Update time：2023.3.18
 
-1. Add Github login。
-2. Add Gitee login。
+1. Add Github login.
+2. Add Gitee login.
 
 <br>
 
