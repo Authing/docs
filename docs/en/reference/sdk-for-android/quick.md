@@ -31,15 +31,7 @@ Add dependencies to the build.gradle file of the main project:
 implementation 'cn.authing:guard:+'
 ```
 
-## Step 3: Add permission
-
-In AndroidManifest.xml ：
-
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-```
-
-## Step 4: Initialization
+## Step 3: Initialization
 
 at app startup, call:
 
@@ -58,7 +50,7 @@ Please select `authing_token` in Application Configuration-Authorization mode.
 
 <img src="./images/authing_token.png"/>
 
-## Step 5: Common operations
+## Step 4: Common operations
 
 ###  1. Register/log in and get user information
 

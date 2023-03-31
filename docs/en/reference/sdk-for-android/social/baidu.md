@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.0 version.
 
 <br>
 
-## Integrate Baidu login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -37,9 +37,9 @@ Add authorization callback page in Baidu application background `bdconnect://suc
 
 ### 
 
-### Step 3：Initialization Guard Android SDK
+### Step 3：Initialization
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -69,7 +69,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.BaiduLoginButton
-    android:id="@+id/btn_baidu_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -79,7 +79,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-BaiduLoginButton button = findViewById(R.id.btn_baidu_login);
+BaiduLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成企业微信登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -31,9 +31,9 @@ implementation files('libs/lib_wwapi-2.0.12.11.aar')
 }
 ```
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -53,7 +53,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 
 ```xml
 <cn.authing.guard.social.view.WeComLoginButton
-    android:id="@+id/btn_wecom_login"
+    android:id="@+id/btn_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -63,7 +63,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 然后在 java 代码里面处理事件：
 
 ```java
-WeComLoginButton button = findViewById(R.id.btn_wecom_login);
+WeComLoginButton button = findViewById(R.id.btn_login);
 //button.setType(Const.TYPE_WECHAT_COM_AGENCY);//代开发模式
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override

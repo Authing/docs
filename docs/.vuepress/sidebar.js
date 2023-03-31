@@ -1688,6 +1688,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/douyin",
             "/reference/sdk-for-android/social/kuaishou",
             "/reference/sdk-for-android/social/xiaomi",
+            "/reference/sdk-for-android/social/line",
+            "/reference/sdk-for-android/social/slack",
             "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/dingtalk",
@@ -1705,6 +1707,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/webview",
             "/reference/sdk-for-android/scenario/overseas",
             "/reference/sdk-for-android/scenario/biometric",
+            "/reference/sdk-for-android/scenario/otp",
           ],
         },
         {
@@ -6966,8 +6969,20 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/xiaomi",
             },
             {
+              title: "Line",
+              path: "/reference/sdk-for-android/social/line",
+            },
+            {
+              title: "Slack",
+              path: "/reference/sdk-for-android/social/slack",
+            },
+            {
               title: "Wecom",
               path: "/reference/sdk-for-android/social/wecom",
+            },
+            {
+              title: "Lark",
+              path: "/reference/sdk-for-android/social/lark",
             },
             {
               title: "DingTalk",
@@ -6980,12 +6995,16 @@ const translatedZhCnNavBar = {
           path: "/reference/sdk-for-android/scenario/",
           children: [
             {
-              title: "logout",
+              title: "Logout",
               path: "/reference/sdk-for-android/scenario/logout",
             },
             {
-              title: "overseas",
+              title: "Overseas",
               path: "/reference/sdk-for-android/scenario/overseas",
+            },
+            {
+              title: "Authing OTP",
+              path: "/reference/sdk-for-android/scenario/otp",
             },
           ],
         },

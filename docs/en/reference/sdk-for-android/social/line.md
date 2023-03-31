@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.5 version.
 
 <br>
 
-## Integrate Line login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -31,9 +31,9 @@ dependencies {
 The Guard compileOnly relies on line sdk, which allows apps to import on demand, preventing the Guard aar package from getting bigger as more third party logins are supported. Therefore, every time a third-party identity source is added, the App needs to manually add the dependency of the identity source.
 :::
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity

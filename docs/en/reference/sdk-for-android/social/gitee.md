@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for  Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
+Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.3 version.
@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.3 version.
 
 <br>
 
-## Integrate Gitee login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -20,9 +20,9 @@ This feature was added in android guard sdk 1.5.3 version.
 implementation 'cn.authing:guard:+'
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
