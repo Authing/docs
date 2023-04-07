@@ -704,7 +704,7 @@ const zhCnNavBar = {
               path: "/guides/connections/social/slack/",
             },
             {
-              title: "Slack-mobile",
+              title: "Slack 移动端",
               path: "/guides/connections/social/slack-mobile/",
             },
             {
@@ -1885,6 +1885,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/dingtalk",
             "/reference/sdk-for-ios/social/line",
             "/reference/sdk-for-ios/social/slack",
+            "/reference/sdk-for-ios/social/amazon"
           ],
         },
         {
