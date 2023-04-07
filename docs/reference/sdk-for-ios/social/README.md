@@ -27,6 +27,7 @@
 - [小米登录](./xiaomi.md)
 - [Line 登录](./line.md)
 - [Slack 登录](./slack.md)
+- [Slack 登录](./amazon.md)
 
 ## 企业身份源
 - [企业微信登录](./wecom.md)
