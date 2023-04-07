@@ -74,8 +74,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 - If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `Lark` class authorization function inside the button click event, which integrates the business logic to pull up the Line authorization login
 
 ```java
-Lark lark = new Lark();
-lark.login(appContext, new AuthCallback<UserInfo>() {
+Lark.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -97,31 +96,19 @@ lark.login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onResume() {
     super.onResume();
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, getIntent());
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onResume(this);
 }
 
 @Override
 protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, intent);
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onNewIntent(this, intent);
 }
 
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, data);
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onActivityResult(this, data);
 }
 ```
 

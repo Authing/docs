@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [Line 开发者](https://developers.line.biz/zh-hant/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Line 接入准备](../../../guides/connections/social/line-mobile/README.md)、[Line 官方文档](https://developers.line.biz/en/docs/android-sdk/)。
+在 [Line 开发者平台](https://developers.line.biz/zh-hant/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Line 接入准备](../../../guides/connections/social/line-mobile/README.md)、[Line 官方文档](https://developers.line.biz/en/docs/android-sdk/)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.5 版本新增。
@@ -44,7 +44,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
-### 第四步：分场景使用
+### 第三步：分场景使用
 
 - #### 使用托管页
   在需要登录认证的地方启动托管页：
