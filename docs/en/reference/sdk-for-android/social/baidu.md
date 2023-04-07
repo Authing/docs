@@ -1,10 +1,10 @@
-# Login by Weibo
+# Login by Baidu
 
 <LastUpdated/>
 
 ## Preparatory work
 
-Configure in [Baidu open platform](https://developer.baidu.com/) and [Authing Console](https://authing.cn/)，See [Preparing for  Baidu](../../../guides/connections/social/baidu-mobile/README.md)。
+Configure in [Baidu open platform](https://developer.baidu.com/) and [Authing Console](https://authing.cn/)，See [Preparing for Baidu](../../../guides/connections/social/baidu-mobile/README.md)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.0 version.
@@ -34,8 +34,6 @@ The Guard compileOnly relies on baidu-android-openapi-sdk, which allows apps to 
 Add authorization callback page in Baidu application background `bdconnect://success`：
 
 ![](./images/baidu/baidu.png)
-
-### 
 
 ### Step 3：Initialization
 

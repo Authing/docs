@@ -2,6 +2,17 @@
 
 <LastUpdated/>
 
+- ## 1.5.6
+
+
+> Update time：2023.4.8
+
+1. Add Huawei login.
+2. Add OPPO login.
+3. Add Amazon login.
+
+<br>
+
 - ## 1.5.5
 
 

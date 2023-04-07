@@ -1691,9 +1691,12 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/gitlab",
             "/reference/sdk-for-android/social/douyin",
             "/reference/sdk-for-android/social/kuaishou",
+            "/reference/sdk-for-android/social/huawei",
+            "/reference/sdk-for-android/social/oppo",
             "/reference/sdk-for-android/social/xiaomi",
             "/reference/sdk-for-android/social/line",
             "/reference/sdk-for-android/social/slack",
+            "/reference/sdk-for-android/social/amazon",
             "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/dingtalk",
@@ -6973,6 +6976,14 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/kuaishou",
             },
             {
+              title: "Huawei",
+              path: "/reference/sdk-for-android/social/huawei",
+            },
+            {
+              title: "OPPO",
+              path: "/reference/sdk-for-android/social/oppo",
+            },
+            {
               title: "Xiaomi",
               path: "/reference/sdk-for-android/social/xiaomi",
             },
@@ -6983,6 +6994,10 @@ const translatedZhCnNavBar = {
             {
               title: "Slack",
               path: "/reference/sdk-for-android/social/slack",
+            },
+            {
+              title: "Amazon",
+              path: "/reference/sdk-for-android/social/amazon",
             },
             {
               title: "Wecom",

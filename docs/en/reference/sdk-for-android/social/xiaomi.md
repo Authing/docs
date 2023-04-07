@@ -19,9 +19,9 @@ This feature was added in android guard sdk 1.5.4 version.
 ```groovy
 //gradle：
 repositories {
-  	// maven { url 'https://raw.githubusercontent.com/xiaomi-passport/maven-repository/master/releases' }
+  	maven { url 'https://raw.githubusercontent.com/xiaomi-passport/maven-repository/master/releases' }
     // github如果被X，需要换成下面这一行
-    maven { url 'https://gitlab.com/xiaomi-passport/maven-repository/raw/master/releases' }   
+    //maven { url 'https://gitlab.com/xiaomi-passport/maven-repository/raw/master/releases' }   
 }
 
 dependencies {
