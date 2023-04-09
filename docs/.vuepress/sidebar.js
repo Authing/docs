@@ -620,6 +620,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/huawei/",
             },
             {
+              title: "华为移动端",
+              path: "/guides/connections/social/huawei-mobile/",
+            },
+            {
               title: "荣耀",
               path: "/guides/connections/social/honor/",
             },
@@ -758,10 +762,6 @@ const zhCnNavBar = {
             {
               title: "Amazon 移动端",
               path: "/guides/connections/social/amazon-mobile/",
-            },
-            {
-              title: "华为移动端",
-              path: "/guides/connections/social/huawei-mobile/",
             },
             {
               title: "OPPO 移动端",
