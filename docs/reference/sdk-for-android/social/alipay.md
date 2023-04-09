@@ -9,7 +9,7 @@
 <br>
 
 
-## 集成支付宝登录步骤
+## 集成步骤
 
 ### 第一步：下载支付宝 SDK
 
@@ -26,9 +26,9 @@ implementation files('libs/alipaysdk.aar')
 
 >Guard 只是 compileOnly 依赖支付宝 SDK，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 第三步：初始化 Guard Android SDK
+### 第三步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -39,7 +39,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 
 
 
-**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动获取飞书身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
+**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动获取支付宝身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 
@@ -47,7 +47,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 
 ```xml
 <cn.authing.guard.social.view.AlipayLoginButton
-    android:id="@+id/btn_alipay_login"
+    android:id="@+id/btn_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -57,7 +57,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 然后在 java 代码里面处理事件：
 
 ```java
-AlipayLoginButton button = findViewById(R.id.btn_alipay_login);
+AlipayLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

@@ -38,7 +38,7 @@
 
 <img src="./images/weibo_3.png" >
 
-2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「新浪微博」身份源按钮，进入 「新浪微博登录模式」页面。
+2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份源」页面，点击「新浪微博」身份源按钮，进入 「新浪微博登录模式」页面。
 
 <img src="./images/weibo_4.png" >
 

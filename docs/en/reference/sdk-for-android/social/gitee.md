@@ -4,7 +4,7 @@
 
 ## Preparatory work
 
-Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for  Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
+Configure in [Gitee](https://gitee.com/oauth/applications) and [Authing Console](https://authing.cn/)，See [Preparing for Gitee](../../../guides/connections/social/gitee-mobile/README.md)、[Gitee document](https://gitee.com/api/v5/oauth_doc#/list-item-2)。
 
 :::hint-info
 This feature was added in android guard sdk 1.5.3 version.
@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.3 version.
 
 <br>
 
-## Integrate Gitee login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -20,9 +20,9 @@ This feature was added in android guard sdk 1.5.3 version.
 implementation 'cn.authing:guard:+'
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -52,7 +52,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.GiteeLoginButton
-    android:id="@+id/btn_gitee_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -62,7 +62,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-GiteeLoginButton button = findViewById(R.id.btn_gitee_login);
+GiteeLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -100,7 +100,7 @@ Gitee.getInstance().login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    Gitee.getInstance().onActivityResult(this, requestCode, resultCode, data);
+    Gitee.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 

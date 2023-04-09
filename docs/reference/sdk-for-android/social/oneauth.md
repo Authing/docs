@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成一键登录登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -21,9 +21,9 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 
 混淆配置，请参考[易盾官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -31,10 +31,6 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 Authing.init(context, "AUTHING_APP_ID");
 Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
-
-
-
-**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动拥有一键登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 

@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成飞书登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -24,9 +24,9 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 
 > Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -74,8 +74,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 - 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 飞书登录授权类
 
 ```java
-Lark lark = new Lark();
-lark.login(appContext, new AuthCallback<UserInfo>() {
+Lark.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -97,31 +96,19 @@ lark.login(appContext, new AuthCallback<UserInfo>() {
 @Override
 protected void onResume() {
     super.onResume();
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, getIntent());
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onResume(this);
 }
 
 @Override
 protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, intent);
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onNewIntent(this, intent);
 }
 
 @Override
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    try {
-        Class.forName("com.ss.android.larksso.LarkSSO");
-        LarkSSO.inst().parseIntent(this, data);
-    } catch( ClassNotFoundException e ) {
-    }
+    Lark.getInstance().onActivityResult(this, data);
 }
 ```
 

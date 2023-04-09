@@ -18,6 +18,12 @@ We provide convenient login authorization for the following third-party identity
 - [Weibo Login](./weibo.md)
 - [Baidu Login](./baidu.md)
 - [LinkedIn Login](./linkedin.md)
+- [Github Login](./github.md)
+- [Gitee Login](./gitee.md)
+- [GitLab Login](./gitlab.md)
+- [Xiaomi Login](./xiaomi.md)
+- [Line Login](./line.md)
+- [Slack Login](./slack.md)
 
 ## Enterprise Identity Source
 - [Enterprise WeChat Login](./wecom.md)

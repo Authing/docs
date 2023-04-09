@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成新浪微博登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -33,9 +33,9 @@ dependencies {
 Guard 只是 compileOnly 依赖抖音 sdk，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -80,14 +80,14 @@ AuthFlow.start(this);
 
 通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有抖音登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
 
-- #### 使用抖音等录按钮
+- #### 使用抖音登录按钮
     如果使用我们提供的抖音登录按钮。
 
 ​		1. 布局文件里面加上如下代码：
 
 ```xml
  <cn.authing.guard.social.view.DouYinLoginButton
-    android:id="@+id/btn_douyin_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -97,7 +97,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-DouYinLoginButton button = findViewById(R.id.btn_douyin_login);
+DouYinLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

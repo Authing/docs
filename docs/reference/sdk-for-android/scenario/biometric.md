@@ -16,7 +16,7 @@
 
 需要先在 Authing 控制台配置，在**自建应用-客户端应用-登录控制-生物认证登录**中勾选**指纹识别**。
 
-![image-20230228155442133](/Users/zhongjiahui/Library/Application Support/typora-user-images/image-20230228155442133.png)
+<img src="../images/biometric.png" alt="drawing" height="520"/>
 
 ## 第二步：添加依赖
 

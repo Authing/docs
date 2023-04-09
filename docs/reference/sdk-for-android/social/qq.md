@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成 QQ 登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -58,9 +58,9 @@ Guard 只是 compileOnly 依赖 qqopensdk，这样可以让 App 按需引入，�
    </activity>
    ```
 
-### 第三步：初始化 Guard Android SDK
+### 第三步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -87,7 +87,7 @@ AuthFlow.start(this);
 
 ```xml
  <cn.authing.guard.social.view.QQLoginButton
-    android:id="@+id/btn_qq_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -97,7 +97,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-QQLoginButton button = findViewById(R.id.btn_qq_login);
+QQLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

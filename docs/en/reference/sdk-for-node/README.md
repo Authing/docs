@@ -129,7 +129,7 @@ Authing currently supports more than 20 social logins around the world, such as 
 
 ### App QR code login
 
-App QR code login refers to use your own App scan QR code to log in to the website, [click here to learn more](/guides/authentication/qrcode/use-self-build-app/).
+App QR code login refers to use your own App scan QR code to log in to the website, [click here to learn more](/guides/authentication/qrcode/use-self-build-app/overview.md).
 
 You can use 5 lines of code to implement a complete scan code login form:
 

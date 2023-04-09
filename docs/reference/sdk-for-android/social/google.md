@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成 Google 登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -29,9 +29,9 @@ Guard 只是 compileOnly 依赖 gms，这样可以让 App 按需引入，防止 
 -keep class com.google.android.gms.** { *; }
 ```
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -58,7 +58,7 @@ AuthFlow.start(this);
 
 ```xml
  <cn.authing.guard.social.view.GoogleLoginButton
-    android:id="@+id/btn_google_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -68,7 +68,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-GoogleLoginButton button = findViewById(R.id.btn_google_login);
+GoogleLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
@@ -112,7 +112,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
         sendBroadcast(data);
     }
   	// Guard SDK 1.5.3 及之后版本
-  	Google.getInstance().onActivityResult(this, requestCode, resultCode, data);
+  	Google.getInstance().onActivityResult(requestCode, resultCode, data);
 }
 ```
 

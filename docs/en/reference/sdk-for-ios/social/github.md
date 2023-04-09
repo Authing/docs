@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Configure in [Github Developer Settings](https://github.com/settings/developers) and [Authing Console Console](https://authing.cn/).
+Configure in [Github Developer Settings](https://github.com/settings/developers) and [Authing Console](https://authing.cn/).
 
 <br>
 

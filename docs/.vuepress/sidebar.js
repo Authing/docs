@@ -170,8 +170,12 @@ const zhCnNavBar = {
           children: [
             {
               title: "使用自建 App 扫码登录网站",
-              path: "/guides/authentication/qrcode/use-self-build-app/",
+              path: "/guides/authentication/qrcode/use-self-build-app/overview",
               children: [
+                {
+                  title: "概述",
+                  path: "/guides/authentication/qrcode/use-self-build-app/overview",
+                },
                 {
                   title: "完整接口列表",
                   path: "/guides/authentication/qrcode/use-self-build-app/full-api-list",
@@ -615,12 +619,20 @@ const zhCnNavBar = {
               path: "/guides/connections/social/huawei/",
             },
             {
+              title: "华为移动端",
+              path: "/guides/connections/social/huawei-mobile/",
+            },
+            {
               title: "荣耀",
               path: "/guides/connections/social/honor/",
             },
             {
               title: "小米",
               path: "/guides/connections/social/xiaomi/",
+            },
+            {
+              title: "小米移动端",
+              path: "/guides/connections/social/xiaomi-mobile/",
             },
             {
               title: "腾讯 QQ",
@@ -637,6 +649,14 @@ const zhCnNavBar = {
             {
               title: "新浪微博移动端",
               path: "/guides/connections/social/weibo-mobile/",
+            },
+            {
+              title: "抖音移动端",
+              path: "/guides/connections/social/douyin-mobile/",
+            },
+            {
+              title: "快手移动端",
+              path: "/guides/connections/social/kuaishou-mobile/",
             },
             {
               title: "GitHub",
@@ -687,6 +707,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/slack/",
             },
             {
+              title: "Slack 移动端",
+              path: "/guides/connections/social/slack-mobile/",
+            },
+            {
               title: "Gitee",
               path: "/guides/connections/social/gitee/",
             },
@@ -697,6 +721,10 @@ const zhCnNavBar = {
             {
               title: "GitLab",
               path: "/guides/connections/social/gitlab/",
+            },
+            {
+              title: "GitLab 移动端",
+              path: "/guides/connections/social/gitlab-mobile/",
             },
             {
               title: "百度",
@@ -725,6 +753,18 @@ const zhCnNavBar = {
             {
               title: "LinkedIn 移动端",
               path: "/guides/connections/social/linkedin-mobile/",
+            },
+            {
+              title: "Amazon",
+              path: "/guides/connections/social/amazon/",
+            },
+            {
+              title: "Amazon 移动端",
+              path: "/guides/connections/social/amazon-mobile/",
+            },
+            {
+              title: "OPPO 移动端",
+              path: "/guides/connections/social/oppo-mobile/",
             },
           ],
         },
@@ -1659,6 +1699,15 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/social/linkedin",
             "/reference/sdk-for-android/social/github",
             "/reference/sdk-for-android/social/gitee",
+            "/reference/sdk-for-android/social/gitlab",
+            "/reference/sdk-for-android/social/douyin",
+            "/reference/sdk-for-android/social/kuaishou",
+            "/reference/sdk-for-android/social/huawei",
+            "/reference/sdk-for-android/social/oppo",
+            "/reference/sdk-for-android/social/xiaomi",
+            "/reference/sdk-for-android/social/line",
+            "/reference/sdk-for-android/social/slack",
+            "/reference/sdk-for-android/social/amazon",
             "/reference/sdk-for-android/social/wecom",
             "/reference/sdk-for-android/social/lark",
             "/reference/sdk-for-android/social/dingtalk",
@@ -1676,6 +1725,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/webview",
             "/reference/sdk-for-android/scenario/overseas",
             "/reference/sdk-for-android/scenario/biometric",
+            "/reference/sdk-for-android/scenario/otp",
           ],
         },
         {
@@ -1840,10 +1890,16 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/linkedin",
             "/reference/sdk-for-ios/social/github",
             "/reference/sdk-for-ios/social/gitee",
-            // "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/gitlab",
+            "/reference/sdk-for-ios/social/douyin",
+            "/reference/sdk-for-ios/social/kuaishou",
+            "/reference/sdk-for-ios/social/xiaomi",
             "/reference/sdk-for-ios/social/wecom",
             "/reference/sdk-for-ios/social/lark",
             "/reference/sdk-for-ios/social/dingtalk",
+            "/reference/sdk-for-ios/social/line",
+            "/reference/sdk-for-ios/social/slack",
+            "/reference/sdk-for-ios/social/amazon"
           ],
         },
         {
@@ -1856,6 +1912,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/scenario/logout",
             "/reference/sdk-for-ios/scenario/splash",
             "/reference/sdk-for-ios/scenario/webauthn",
+            "/reference/sdk-for-ios/scenario/otp",
           ],
         },
         {
@@ -5878,13 +5935,16 @@ const translatedZhCnNavBar = {
         // },
         {
           title: "Use scan code login authentication",
-          path: "/guides/authentication/qrcode/use-self-build-app/",
           children: [
             {
               title:
                 "Use self-built App to scan the code to log in to the website",
-              path: "/guides/authentication/qrcode/use-self-build-app/",
+              path: "/guides/authentication/qrcode/use-self-build-app/overview",
               children: [
+                {
+                  title: "Overview",
+                  path: "/guides/authentication/qrcode/use-self-build-app/overview",
+                },
                 {
                   title: "Complete interface list",
                   path: "/guides/authentication/qrcode/use-self-build-app/full-api-list",
@@ -7094,8 +7154,48 @@ const translatedZhCnNavBar = {
               path: "/reference/sdk-for-android/social/gitee",
             },
             {
+              title: "GitLab",
+              path: "/reference/sdk-for-android/social/gitlab",
+            },
+            {
+              title: "Douyin",
+              path: "/reference/sdk-for-android/social/douyin",
+            },
+            {
+              title: "Kuaishou",
+              path: "/reference/sdk-for-android/social/kuaishou",
+            },
+            {
+              title: "Huawei",
+              path: "/reference/sdk-for-android/social/huawei",
+            },
+            {
+              title: "OPPO",
+              path: "/reference/sdk-for-android/social/oppo",
+            },
+            {
+              title: "Xiaomi",
+              path: "/reference/sdk-for-android/social/xiaomi",
+            },
+            {
+              title: "Line",
+              path: "/reference/sdk-for-android/social/line",
+            },
+            {
+              title: "Slack",
+              path: "/reference/sdk-for-android/social/slack",
+            },
+            {
+              title: "Amazon",
+              path: "/reference/sdk-for-android/social/amazon",
+            },
+            {
               title: "Wecom",
               path: "/reference/sdk-for-android/social/wecom",
+            },
+            {
+              title: "Lark",
+              path: "/reference/sdk-for-android/social/lark",
             },
             {
               title: "DingTalk",
@@ -7108,12 +7208,16 @@ const translatedZhCnNavBar = {
           path: "/reference/sdk-for-android/scenario/",
           children: [
             {
-              title: "logout",
+              title: "Logout",
               path: "/reference/sdk-for-android/scenario/logout",
             },
             {
-              title: "overseas",
+              title: "Overseas",
               path: "/reference/sdk-for-android/scenario/overseas",
+            },
+            {
+              title: "Authing OTP",
+              path: "/reference/sdk-for-android/scenario/otp",
             },
           ],
         },
@@ -7217,10 +7321,14 @@ const translatedZhCnNavBar = {
               title: "Gitee",
               path: "/reference/sdk-for-ios/social/gitee",
             },
-            // {
-            //   title: "Douyin",
-            //   path: "/reference/sdk-for-ios/social/douyin",
-            // },
+            {
+              title: "GitLab",
+              path: "/reference/sdk-for-ios/social/gitlab",
+            },
+            {
+              title: "Xiaomi",
+              path: "/reference/sdk-for-ios/social/xiaomi",
+            },
             {
               title: "WeCom",
               path: "/reference/sdk-for-ios/social/wecom",
@@ -7232,6 +7340,14 @@ const translatedZhCnNavBar = {
             {
               title: "DingTalk",
               path: "/reference/sdk-for-ios/social/dingtalk",
+            },
+            {
+              title: "Line",
+              path: "/reference/sdk-for-ios/social/line",
+            },
+            {
+              title: "Slack",
+              path: "/reference/sdk-for-ios/social/slack",
             },
           ],
         },

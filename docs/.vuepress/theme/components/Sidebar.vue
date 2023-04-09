@@ -109,7 +109,7 @@ export default {
         const toPath = trimEndSlash(to?.path).split('/');
         const fromPath = trimEndSlash(from?.path).split('/');
         if(fromPath.length > 0 && toPath.length > 0 && fromPath[1] !== toPath[1]) {
-          const sidebar = document.querySelector('.sidebar-links');
+          const sidebar = typeof document !== 'undefined' && document.querySelector('.sidebar-links');
           if(sidebar) sidebar.scrollTop = 0;
         }
       }
