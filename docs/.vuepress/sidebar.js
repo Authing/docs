@@ -66,7 +66,6 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
-
     {
       title: "快速开始",
       children: [
@@ -252,26 +251,26 @@ const zhCnNavBar = {
       title: "对用户进行权限管理",
       path: "/guides/access-control/",
       children: [
-            {
-              title: "选择合适的权限模型",
-              path: "/guides/access-control/choose-the-right-access-control-model",
-            },
-            {
-              title: `集成 RBAC 权限模型到你的应用系统`,
-              path: "/guides/access-control/rbac",
-            },
-            {
-              title: `集成 ABAC 权限模型到你的应用系统`,
-              path: "/guides/access-control/abac",
-            },
-            {
-              title: `使用权限分组管理权限资源`,
-              path: "/guides/access-control/resource-group",
-            },
-            {
-              title: `管理资源权限`,
-              path: "/guides/access-control/resource-acl",
-            },
+        {
+          title: "选择合适的权限模型",
+          path: "/guides/access-control/choose-the-right-access-control-model",
+        },
+        {
+          title: `集成 RBAC 权限模型到你的应用系统`,
+          path: "/guides/access-control/rbac",
+        },
+        {
+          title: `集成 ABAC 权限模型到你的应用系统`,
+          path: "/guides/access-control/abac",
+        },
+        {
+          title: `使用权限分组管理权限资源`,
+          path: "/guides/access-control/resource-group",
+        },
+        {
+          title: `管理资源权限`,
+          path: "/guides/access-control/resource-acl",
+        },
       ],
     },
     {
@@ -455,9 +454,9 @@ const zhCnNavBar = {
               path: "/guides/app-new/create-app/app-configuration",
             },
             {
-              title:"协议配置",
+              title: "协议配置",
               path: "/guides/app-new/create-app/protocol-config",
-              children:[
+              children: [
                 {
                   title: "配置 OIDC 协议",
                   path: "/guides/federation/oidc",
@@ -477,8 +476,8 @@ const zhCnNavBar = {
                 {
                   title: "配置 CAS 协议",
                   path: "/guides/federation/cas",
-                }
-              ]
+                },
+              ],
             },
             {
               title: "登录控制",
@@ -504,7 +503,7 @@ const zhCnNavBar = {
               title: "租户配置",
               path: "/guides/app-new/create-app/tenant-config",
             },
-          ]
+          ],
         },
         {
           title: "单点登录 SSO",
@@ -543,7 +542,7 @@ const zhCnNavBar = {
                   title: "WeLink SSO 方案",
                   path: "/guides/welink-sso/",
                 },
-              ]
+              ],
             },
             {
               title: "ASA 表单代填",
@@ -848,23 +847,23 @@ const zhCnNavBar = {
       title: "微信生态全场景能力",
       path: "/guides/wechat-ecosystem/",
       children: [
-      {
-      title: "当你使用移动端微信应用进行开发",
-      path: "/guides/wechat-ecosystem/wechat-mobile-app"
-      },
-      {
-      title: "当你使用网页端微信应用进行开发",
-      path: "/guides/wechat-ecosystem/wechat-web-app"
-      },
-      {
-        title: "当你使用微信公众号进行开发",
-        path: "/guides/wechat-ecosystem/wechat-public-account-app"
+        {
+          title: "当你使用移动端微信应用进行开发",
+          path: "/guides/wechat-ecosystem/wechat-mobile-app",
+        },
+        {
+          title: "当你使用网页端微信应用进行开发",
+          path: "/guides/wechat-ecosystem/wechat-web-app",
+        },
+        {
+          title: "当你使用微信公众号进行开发",
+          path: "/guides/wechat-ecosystem/wechat-public-account-app",
         },
         {
           title: "当你使用微信小程序进行开发",
-          path: "/guides/wechat-ecosystem/wechat-miniprogram-app"
-          },
- ]
+          path: "/guides/wechat-ecosystem/wechat-miniprogram-app",
+        },
+      ],
       // children: [
       //   {
       //     title: "关注公众号登录",
@@ -998,7 +997,7 @@ const zhCnNavBar = {
               title: "MFA 策略配置",
               path: "/guides/security/mfa/policy-based-mfa-configuration",
             },
-                    ],
+          ],
         },
       ],
     },
@@ -1026,7 +1025,7 @@ const zhCnNavBar = {
           title: "自定义域名",
           path: "/guides/customize/domain/customized-domain",
         },
-                ],
+      ],
     },
     {
       title: "自动化",
@@ -1139,8 +1138,8 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: 'Authing 令牌',
-      path:"/guides/authingVerify/"
+      title: "Authing 令牌",
+      path: "/guides/authingVerify/",
     },
     {
       title: "私有化部署方案",
@@ -1216,12 +1215,12 @@ const zhCnNavBar = {
   ],
   "/reference/": [
     {
-      title: 'JavaScript SDK 索引',
-      path: '/reference/authing-js-sdk'
+      title: "JavaScript SDK 索引",
+      path: "/reference/authing-js-sdk",
     },
     {
       title: "单点登录（SSO）",
-      path: "/reference/sdk-for-sso"
+      path: "/reference/sdk-for-sso",
     },
     {
       title: "登录组件 (Guard)",
@@ -1254,8 +1253,8 @@ const zhCnNavBar = {
               title: "Android Guard 更新日志",
               path: "/reference/sdk-for-android/version.md",
             },
-         ],
-        }
+          ],
+        },
       ],
     },
     // {
@@ -1869,11 +1868,11 @@ const zhCnNavBar = {
         },
         {
           title: "iOS Guard 更新日志",
-          path: "/reference/sdk-for-ios/ios-guard-changelog"
+          path: "/reference/sdk-for-ios/ios-guard-changelog",
         },
         {
           title: "返回码对照表",
-          path: "/reference/sdk-for-ios/errorcode"
+          path: "/reference/sdk-for-ios/errorcode",
         },
       ],
     },
@@ -1940,7 +1939,7 @@ const zhCnNavBar = {
         {
           title: "Express Passport OpenIdConnect",
           path: "/frameworks/express-passport-openidconnect/",
-        }
+        },
       ],
     },
     {
@@ -5240,6 +5239,184 @@ const zhCnNavBar = {
       ],
     },
   ],
+  "/workflow/": [
+    {
+      title: "身份自动化概览",
+      path: "/workflow/overview/",
+    },
+    {
+      title: "快速开始",
+      children: [
+        {
+          title: "基本概念",
+          path: "/workflow/快速开始/基本概念",
+        },
+        {
+          title: "编写第一个 Workflow",
+          path: "/workflow/快速开始/编写第一个 workflow",
+        },
+        {
+          title: "使用模版创建 Workflow",
+          path: "/workflow/快速开始/使用模版创建 workflow",
+        }
+      ],
+    },
+    {
+      title: "编写 Workflow",
+      children: [
+        {
+          title: "创建 Workflow",
+          path: "/workflow/编写 Workflow/创建 Workflow",
+        },
+        {
+          title: "添加触发器",
+          path: "/workflow/编写 Workflow/配置触发器",
+        },
+        {
+          title: "添加节点",
+          path: "/workflow/编写 Workflow/添加节点",
+        },
+        {
+          title: "添加流程控制节点",
+          path: "/workflow/编写 Workflow/添加流程控制节点",
+        },
+        {
+          title: "为节点动态装配数据",
+          path: "/workflow/编写 Workflow/为节点动态装配数据",
+        },
+        {
+          title: "调试 Workflow",
+          path: "/workflow/编写 Workflow/调试 Workflow",
+        },
+        {
+          title: "复制 Workflow",
+          path: "/workflow/编写 Workflow/复制 Workflow",
+        },
+        {
+          title: "导入和导出 Workflow",
+          path: "/workflow/编写 Workflow/导入和导出 Workflow",
+        }
+      ],
+    },
+    {
+      title: "执行 Workflow",
+      children: [
+        {
+          title: "激活 Workflow",
+          path: "/workflow/执行 Workflow/激活 Workflow",
+        },
+        {
+          title: "通过 API 接口形式调用 Workflow",
+          path: "/workflow/执行 Workflow/通过 API 接口形式调用 Workflow",
+        },
+        {
+          title: "通过 Webhook 触发 Workflow",
+          path: "/workflow/执行 Workflow/通过 Webhook 触发 Workflow",
+        },
+        {
+          title: "手动执行",
+          path: "/workflow/执行 Workflow/手动执行",
+        },
+        {
+          title: "定时执行 Workflow",
+          path: "/workflow/执行 Workflow/定时执行 Workflow",
+        },
+        {
+          title: "通过事件触发 Workflow",
+          path: "/workflow/执行 Workflow/通过事件触发 Workflow",
+        },
+        {
+          title: "查看 Workflow 执行记录",
+          path: "/workflow/执行 Workflow/查看 Workflow 执行记录",
+        }
+      ],
+    },
+    {
+      title: "操作 Authing 内部资源",
+      path: "/workflow/操作 Authing 内部资源/"
+    },
+    {
+      title: "使用应用连接器",
+      path: "/workflow/使用应用连接器/",
+      children: [
+        {
+          title: "HTTP Request",
+          path: "/workflow/使用应用连接器/HTTP Request",
+        },
+        {
+          title: "PostgreSQL",
+          path: "/workflow/使用应用连接器/PostgreSQL",
+        },
+        {
+          title: "MySQL",
+          path: "/workflow/使用应用连接器/MySQL",
+        },
+        {
+          title: "MongoDB",
+          path: "/workflow/使用应用连接器/MongoDB",
+        },
+        {
+          title: "Microsoft SQL",
+          path: "/workflow/使用应用连接器/Microsoft SQL",
+        },
+        {
+          title: "飞书",
+          path: "/workflow/使用应用连接器/飞书",
+        }
+      ]
+    },
+    {
+      title: "流程控制节点",
+      path: "/workflow/流程控制节点/",
+      children: [
+        {
+          title: "分支",
+          path: "/workflow/流程控制节点/分支",
+        },
+        {
+          title: "SWITCH",
+          path: "/workflow/流程控制节点/SWITCH",
+        },
+        {
+          title: "IF",
+          path: "/workflow/流程控制节点/IF",
+        },
+        {
+          title: "循环",
+          path: "/workflow/流程控制节点/循环",
+        },
+        {
+          title: "子流程",
+          path: "/workflow/流程控制节点/子流程",
+        },
+        {
+          title: "等待",
+          path: "/workflow/流程控制节点/等待",
+        },
+        {
+          title: "终止",
+          path: "/workflow/流程控制节点/终止",
+        },
+      ]
+    },
+    {
+      title: "数据处理节点",
+      children: [
+        {
+          title: "自定义代码",
+          path: "/workflow/数据处理节点/自定义代码",
+        },
+        {
+          title: "数据转换",
+          path: "/workflow/数据处理节点/数据转换",
+        }
+      ]
+    },
+    {
+      title: "事件中心概述",
+      path: "/workflow/事件中心/"
+    },
+  ],
   "/tenant/": [
     {
       title: "概览",
@@ -5604,7 +5781,7 @@ const zhCnNavBar = {
     //   title: "个人中心",
     //   path: "/tenant-app-demo/personal-center",
     // },
-  ]
+  ],
 };
 
 /**
@@ -6320,7 +6497,8 @@ const translatedZhCnNavBar = {
               path: "/guides/security/config-register-limit",
             },
             {
-              title: "Configure the limit on the number of failed login attempts",
+              title:
+                "Configure the limit on the number of failed login attempts",
               path: "/guides/security/config-login-fail-limit",
             },
           ],
@@ -6336,10 +6514,10 @@ const translatedZhCnNavBar = {
               title: "Configure user-defined password function",
               path: "/guides/security/pw-security/custom-password-script",
             },
+          ],
+        },
       ],
     },
-  ]
-},
     {
       title: "Configure user pool information",
       children: [

@@ -159,6 +159,11 @@ module.exports = {
             ]
           },
           {
+            text: "身份自动化",
+            link: "/workflow/",
+            hidden: true
+          },
+          {
             text: "应用集成",
             link: "/integration/"
           },
