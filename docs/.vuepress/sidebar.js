@@ -752,8 +752,20 @@ const zhCnNavBar = {
               path: "/guides/connections/social/linkedin-mobile/",
             },
             {
-              title: "Line 移动端",
-              path: "/guides/connections/social/line-mobile/",
+              title: "Amazon",
+              path: "/guides/connections/social/amazon/",
+            },
+            {
+              title: "Amazon 移动端",
+              path: "/guides/connections/social/amazon-mobile/",
+            },
+            {
+              title: "华为移动端",
+              path: "/guides/connections/social/huawei-mobile/",
+            },
+            {
+              title: "OPPO 移动端",
+              path: "/guides/connections/social/oppo-mobile/",
             },
           ],
         },
