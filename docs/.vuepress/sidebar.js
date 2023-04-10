@@ -1301,6 +1301,10 @@ const zhCnNavBar = {
         },
       ],
     },
+    {
+      title: "多因素认证组件（MFA）",
+      path: "/reference/mfa",
+    },
     // {
     //   title: "登录组件",
     //   path: "/reference/ui-components/",
