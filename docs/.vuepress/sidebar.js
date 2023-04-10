@@ -755,6 +755,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/linkedin-mobile/",
             },
             {
+              title: "Line 移动端",
+              path: "/guides/connections/social/line-mobile/",
+            },
+            {
               title: "Amazon",
               path: "/guides/connections/social/amazon/",
             },
