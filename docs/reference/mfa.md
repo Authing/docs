@@ -10,10 +10,10 @@ MFA 是一种安全措施，可以提高身份验证的安全性，保护用户�
 
 现在开始跟随引导将 Authing MFA 组件接入到你的项目中吧！
 
-|条目|说明|
-|-----|----|
-|最新版本|1.0.0-alpha.14|
-|仓库地址|https://github.com/authing/authing-mfa-component|
+| 条目     | 说明                                             |
+| -------- | ------------------------------------------------ |
+| 最新版本 | 1.0.0-alpha.14                                   |
+| 仓库地址 | https://github.com/authing/authing-mfa-component |
 
 ## 第一步：在 Authing 控制台创建应用
 
@@ -22,7 +22,6 @@ MFA 是一种安全措施，可以提高身份验证的安全性，保护用户�
 从 Authing 控制台左侧导航进入 **自建应用** 功能区，点击右上角的 **创建自建应用** 按钮，填入以下信息：
 
 - 应用名称：填入你的应用名称；
-- 认证地址：选择一个二级域名，必须为合法的域名格式，例如 `my-awesome-app`；
 - 应用类型：选择 **MFA 应用**。
 
 ![create-mfa-application.png](./images/create-mfa-application.png)
@@ -84,6 +83,7 @@ npm install --save @authing/mfa-component-vue3
 
 yarn add @authing/mfa-component-vue3
 ```
+
 :::
 ::: tab Angular
 
@@ -95,6 +95,7 @@ npm install --save @authing/mfa-component-angular
 
 yarn add @authing/mfa-component-angular
 ```
+
 :::
 ::::
 
@@ -135,6 +136,7 @@ function App() {
   );
 }
 ```
+
 :::
 
 ::: tab Vue2
@@ -233,6 +235,7 @@ import { AuthingMFAModule } from '@authing/mfa-component-angular'
 })
 export class AppModule {}
 ```
+
 :::
 ::::
 
@@ -375,28 +378,52 @@ const authingMFA = new AuthingMFAFactory.AuthingMFA({
 
 console.log("authing mfa instance: ", authingMFA)
 ```
+
 :::
 ::::
 
 ## 第四步：获取 MFA `mfaTriggerData`
 
-你可以使用 Authing 『基础 MFA』、『自适应 MFA』或『持续自适应 MFA』能力获取 `mfaTriggerData`。
+你可以使用 Authing 『基础 MFA』能力，在服务端通过 [SDK](https://docs.authing.cn/v3/reference/sdk/node/install.html) 获取 `mfaTriggerData` 返回给客户端。
+ 以下是一个 `mfaTriggerData` 示例：
 
-以『基础 MFA』为例：
-
-``` javascript
-const url = 'https://core.authing.cn/api/v3/mfa-trigger-data'
-const { data: mfaTriggerData } = await axios.get(url, {
-  params: {
-    appId,
-    userId: username,
-    userIdType: 'username'
-  },
-  headers: {
-    'x-authing-userpool-id': userPoolId,
-    authorization: token
-  }
-})
+``` json
+{
+    "mfaToken": "xxxxxx", 
+    "nickname": null, 
+    "email": null, 
+    "phone": null, 
+    "phoneCountryCode": null, 
+    "mfaPhone": null, 
+    "mfaEmail": null, 
+    "mfaPhoneCountryCode": null, 
+    "username": "aaa", 
+    "avatar": "https://files.authing.co/authing-console/default-user-avatar.png", 
+    "faceMfaEnabled": false, 
+    "totpMfaEnabled": false, 
+    "applicationMfa": [
+        {
+            "mfaPolicy": "SMS", 
+            "status": 1, 
+            "sort": 1
+        }, 
+        {
+            "mfaPolicy": "EMAIL", 
+            "status": 1, 
+            "sort": 2
+        }, 
+        {
+            "mfaPolicy": "OTP", 
+            "status": 1, 
+            "sort": 3
+        }, 
+        {
+            "mfaPolicy": "FACE", 
+            "status": 1, 
+            "sort": 4
+        }
+    ]
+}
 ```
 
 ## 第五步：渲染 Authing MFA 组件
@@ -538,6 +565,7 @@ authingMFA.start({
   mfaTriggerData: {}
 })
 ```
+
 :::
 ::::
 
@@ -749,6 +777,7 @@ document.querySelector('#hide-modal').onclick = function () {
   authingMFA.hide()
 }
 ```
+
 :::
 ::::
 
@@ -756,30 +785,31 @@ document.querySelector('#hide-modal').onclick = function () {
 
 <p id="IMFAInitOptions"></p>
 
-| 参数名| 参数说明 | 类型 | 是否必传 | 默认值|
-| ---- | ---- | ---- | ---- | ---- |
-| appId| Authing 自建应用 APP ID | String | 是 | - |
-|mode|MFA 组件展示形式：普通模式 或 模态框模式|[IAuthingMFAComponentMode](#IAuthingMFAComponentMode)|否|normal|
-| host | 私有化部署地址 | String | 否 | - |
-| style| 自定义 CSS 样式 | CSSProperties | 否 | - |
-|lang | 多语言配置 | [Lang](#Lang) | 否 | - |
+| 参数名 | 参数说明                                 | 类型                                                  | 是否必传 | 默认值 |
+| ------ | ---------------------------------------- | ----------------------------------------------------- | -------- | ------ |
+| appId  | Authing 自建应用 APP ID                  | String                                                | 是       | -      |
+| mode   | MFA 组件展示形式：普通模式 或 模态框模式 | [IAuthingMFAComponentMode](#IAuthingMFAComponentMode) | 否       | normal |
+| host   | 私有化部署地址                           | String                                                | 否       | -      |
+| style  | 自定义 CSS 样式                          | CSSProperties                                         | 否       | -      |
+| lang   | 多语言配置                               | [Lang](#Lang)                                         | 否       | -      |
 
 ## 事件列表
 
 使用 Authing 提供的 `on` 方法可以对 Authing MFA 支持的事件进行监听：
 
-| 事件名称 | 说明 | 回调参数 |
-| ---- | ---- | ---- |
-| load | Authing MFA 基本数据加载完毕，尚未渲染 | - |
-| mount | Authing MFA 组件渲染完毕，可访问 DOM | - |
-| unmount | Authing MFA 组件销毁| - |
-| success|认证成功| <p>code</p> <p>data</p>|
-| fail|认证失败| <p>message</p>|
-| saveRecoveryCode|恢复码保存成功| - |
+| 事件名称         | 说明                                   | 回调参数                |
+| ---------------- | -------------------------------------- | ----------------------- |
+| load             | Authing MFA 基本数据加载完毕，尚未渲染 | -                       |
+| mount            | Authing MFA 组件渲染完毕，可访问 DOM   | -                       |
+| unmount          | Authing MFA 组件销毁                   | -                       |
+| success          | 认证成功                               | <p>code</p> <p>data</p> |
+| fail             | 认证失败                               | <p>message</p>          |
+| saveRecoveryCode | 恢复码保存成功                         | -                       |
 
 ## 类型定义
 
 ### 多语言
+
 <p id="Lang"></p>
 
 | 值    | 描述 |
@@ -793,7 +823,7 @@ document.querySelector('#hide-modal').onclick = function () {
 
 <p id="IAuthingMFAComponentMode"></p>
 
-| 值    | 描述 |
-| ----- | ---- |
-| normal | 普通模式 |
-| modal | 模态框模式 |
+| 值     | 描述       |
+| ------ | ---------- |
+| normal | 普通模式   |
+| modal  | 模态框模式 |
