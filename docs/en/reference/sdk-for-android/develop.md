@@ -21,7 +21,7 @@ Then, we can get authentication result using the following code:
   @Override
   protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    if (requestCode == RC_LOGIN && resultCode == OK && data != null) {
+    if (requestCode == AuthActivity.RC_LOGIN && resultCode == AuthActivity.OK && data != null) {
       //login success，do next task
     }
   }

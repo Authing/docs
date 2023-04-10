@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.1 version.
 
 <br>
 
-## Integrate DingTalk login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -34,9 +34,9 @@ If you need to obfuscate code, add the following configuration to proguard.cfg t
 -keep class com.android.dingtalk.openauth.**{*;}
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -86,7 +86,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.DingTalkLoginButton
-    android:id="@+id/btn_ding_talk_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -96,7 +96,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-DingTalkLoginButton button = findViewById(R.id.btn_ding_talk_login);
+DingTalkLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

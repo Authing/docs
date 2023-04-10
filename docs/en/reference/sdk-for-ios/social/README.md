@@ -22,6 +22,8 @@ We provide convenient login authorization for the following third-party identity
 - [Gitee Login](./gitee.md)
 - [GitLab Login](./gitlab.md)
 - [Xiaomi Login](./xiaomi.md)
+- [Line Login](./line.md)
+- [Slack Login](./slack.md)
 
 ## Enterprise Identity Source
 - [Enterprise WeChat Login](./wecom.md)

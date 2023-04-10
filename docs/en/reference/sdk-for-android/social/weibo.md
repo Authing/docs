@@ -12,7 +12,7 @@ This feature was added in android guard sdk 1.5.0 version.
 
 <br>
 
-## Integrate Weibo login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -25,9 +25,9 @@ implementation 'io.github.sinaweibosdk:core:12.5.0@aar'
 The Guard compileOnly relies on sinaweibosdk, which allows apps to import on demand, preventing the Guard aar package from getting bigger as more third party logins are supported. Therefore, every time a third-party identity source is added, the App needs to manually add the dependency of the identity source.
 :::
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -57,7 +57,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
  <cn.authing.guard.social.view.WeiboLoginButton
-    android:id="@+id/btn_weibo_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -67,7 +67,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 ​		2. Then handle the event in the code:
 
 ```java
-WeiboLoginButton button = findViewById(R.id.btn_weibo_login);
+WeiboLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

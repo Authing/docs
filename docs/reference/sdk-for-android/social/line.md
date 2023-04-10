@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-在 [Line 开发者](https://developers.line.biz/zh-hant/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Line 接入准备](../../../guides/connections/social/line-mobile/README.md)、[Line 官方文档](https://developers.line.biz/en/docs/android-sdk/)。
+在 [Line 开发者平台](https://developers.line.biz/zh-hant/) 及 [Authing Console 控制台](https://authing.cn/)进行配置，请参阅 [Line 接入准备](../../../guides/connections/social/line-mobile/README.md)、[Line 官方文档](https://developers.line.biz/en/docs/android-sdk/)。
 
 :::hint-info
 此功能在 android guard sdk 1.5.5 版本新增。
@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成 Line 登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -32,9 +32,9 @@ dependencies {
 Guard 只是 compileOnly 依赖 linesdk，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -44,7 +44,7 @@ Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
-### 第四步：分场景使用
+### 第三步：分场景使用
 
 - #### 使用托管页
   在需要登录认证的地方启动托管页：

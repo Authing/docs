@@ -897,7 +897,7 @@ export default {
 | 键        | 值                          | 说明                                                                                     |
 | :-------- | :-------------------------- | :--------------------------------------------------------------------------------------- |
 | LDAP      | 'ldap'                      | LDAP 身份目录登录(需要[配置 LDAP 服务](/connections/ldap/))                              |
-| AppQr     | 'app-qrcode'                | APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/)) |
+| AppQr     | 'app-qrcode'                | APP 扫码登录(需要接入 [APP 扫码登录](/guides/authentication/qrcode/use-self-build-app/overview.md)) |
 | Password  | 'password'                  | 账号密码登录(包括手机号 + 密码、邮箱 + 密码、用户名 + 密码。)                            |
 | PhoneCode | 'phone-code'                | 手机验证码登录                                                                           |
 | WxMinQr   | 'wechat-miniprogram-qrcode' | 微信 PC 小程序扫码登录                                                                   |

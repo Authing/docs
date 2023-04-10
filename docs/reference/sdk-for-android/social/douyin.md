@@ -12,7 +12,7 @@
 
 <br>
 
-## 集成抖音登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -33,9 +33,9 @@ dependencies {
 Guard 只是 compileOnly 依赖抖音 sdk，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖。
 :::
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -87,7 +87,7 @@ AuthFlow.start(this);
 
 ```xml
  <cn.authing.guard.social.view.DouYinLoginButton
-    android:id="@+id/btn_douyin_login"
+    android:id="@+id/btn_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
     android:layout_width="match_parent"
@@ -97,7 +97,7 @@ AuthFlow.start(this);
 ​		2. 然后在代码里面处理事件：
 
 ```java
-DouYinLoginButton button = findViewById(R.id.btn_douyin_login);
+DouYinLoginButton button = findViewById(R.id.btn_login);
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {

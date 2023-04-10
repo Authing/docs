@@ -8,7 +8,7 @@ Configure in [WeCom open platform](https://open.work.weixin.qq.com/wwopen/develo
 
 <br>
 
-## Integrate WeCom login steps
+## Integrate steps
 
 ### Step 1：Add dependency
 
@@ -33,9 +33,9 @@ If you need to obfuscate code, add the following two lines to proguard.cfg to en
 }
 ```
 
-### Step 2：Initialization Guard Android SDK
+### Step 2：Initialization 
 
-To initialize when the application starts:
+To initialize Guard Android SDK when the application starts:
 
 ```java
 // context is application or initial activity
@@ -55,7 +55,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 
 ```xml
 <cn.authing.guard.social.view.WeComLoginButton
-    android:id="@+id/btn_wecom_login"
+    android:id="@+id/btn_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -65,7 +65,7 @@ By following the preceding steps, you can quickly and easily configure the Authi
 Then handle the event in the code:
 
 ```java
-WeComLoginButton button = findViewById(R.id.btn_wecom_login);
+WeComLoginButton button = findViewById(R.id.btn_login);
 //button.setType(Const.TYPE_WECHAT_COM_AGENCY);//Agent development mode
 button.setOnLoginListener(new AuthCallback<UserInfo>() {
     @Override

@@ -38,3 +38,8 @@ API 错误码列表请参阅：[错误代码](https://docs.authing.cn/v2/referen
 | 10020 | Login by GitLab canceled/Login by GitLab failed     | GitLab 登录取消或者失败                                      |                                                              |
 | 10021 | Login by Xiaomi canceled/Login by Xiaomi failed     | 小米登录取消或者失败                                         |                                                              |
 | 10022 | Login by Kuaishou canceled/Login by Kuaishou failed | 快手登录取消或者失败                                         |                                                              |
+| 10023 | Login by Line canceled/Login by Line failed         | Line 登录取消或者失败                                        |                                                              |
+| 10024 | Login by Slack canceled/Login by Slack failed       | Slack 登录取消或者失败                                       |                                                              |
+| 10025 | Login by Huawei canceled/Login by Huawei failed     | 华为 登录取消或者失败                                        |                                                              |
+| 10027 | Login by OPPO canceled/Login by OPPO failed         | OPPO 登录取消或者失败                                        |                                                              |
+| 10028 | Login by Amazon canceled/Login by Amazon failed     | Amazon 登录取消或者失败                                      |                                                              |

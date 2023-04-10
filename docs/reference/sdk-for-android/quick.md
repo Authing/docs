@@ -31,15 +31,7 @@
 implementation 'cn.authing:guard:+'
 ```
 
-## 第三步：添加权限
-
-在 AndroidManifest.xml 中：
-
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-```
-
-## 第四步：初始化
+## 第三步：初始化
 
 在应用启动时调用：
 
@@ -57,7 +49,7 @@ Authing.init(context, "AUTHING_APP_ID");
 注意：如果需要登录成功后获取到 accessToken，请先参考[登录成功获取到 accessToken](https://docs.authing.cn/v2/reference/sdk-for-android/scenario/application_config.html#登录成功获取到-accesstoken) 配置
 :::
 
-## 第五步：常用操作
+## 第四步：常用操作
 
 ### 1. 注册/登录并获取用户信息
 

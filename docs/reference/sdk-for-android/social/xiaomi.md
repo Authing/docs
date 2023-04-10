@@ -12,28 +12,21 @@
 
 <br>
 
-## 集成小米登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
 ```groovy
 //gradle文件中添加：
 repositories {
-  	// maven { url 'https://raw.githubusercontent.com/xiaomi-passport/maven-repository/master/releases' }
+  	maven { url 'https://raw.githubusercontent.com/xiaomi-passport/maven-repository/master/releases' }
     // github如果被X，需要换成下面这一行
-    maven { url 'https://gitlab.com/xiaomi-passport/maven-repository/raw/master/releases' }   
+    //maven { url 'https://gitlab.com/xiaomi-passport/maven-repository/raw/master/releases' }   
 }
 
 dependencies {
     implementation 'cn.authing:guard:+'
   	implementation 'com.xiaomi.account:oauth-android:latest.release' 
-  
-  	//如果运行时提示如下错误，请这么配置
-  	//Duplicate class com.google.common.util.concurrent.ListenableFuture found in modules jetified-guava-18.0 			//(com.google.guava:guava:18.0) and jetified-listenablefuture-1.0 (com.google.guava:listenablefuture:1.0)
-		implementation ("com.xiaomi.account:oauth-android:latest.release"){
-        exclude group: 'com.google.guava', module: 'guava'
-        exclude group: 'com.google.guava', module: 'listenablefuture'
-    }
 }
 ```
 
@@ -50,9 +43,9 @@ Guard 只是 compileOnly 依赖小米 sdk，这样可以让 App 按需引入，�
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 ```
 
-### 第三步：初始化 Guard Android SDK
+### 第三步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
@@ -73,7 +66,7 @@ AuthFlow.start(this);
 
 通过以上步骤即可简单快速地通过配置 Authing 管理控制台后自动拥有小米登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现。
 
-- #### 使用小米录按钮
+- #### 使用小米登录按钮
     如果使用我们提供的小米登录按钮。
 
 ​		1. 布局文件里面加上如下代码：

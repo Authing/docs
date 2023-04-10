@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-{{$localeConfig.brandName}} 提供 [Android SDK](/reference/sdk-for-android.md) 和 [iOS SDK](/reference/sdk-for-swift.md) 帮助开发者在移动 APP 中快速集成 {{$localeConfig.brandName}}。
+{{$localeConfig.brandName}} 提供 [Android SDK](/reference/sdk-for-android/) 和 [iOS SDK](/reference/sdk-for-ios/) 帮助开发者在移动 APP 中快速集成 {{$localeConfig.brandName}}。
 
 下面以 Android 应用的集成方式为例。
 
