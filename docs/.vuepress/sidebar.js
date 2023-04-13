@@ -66,6 +66,7 @@ const zhCnNavBar = {
     },
   ],
   "/guides/": [
+
     {
       title: "快速开始",
       children: [
@@ -755,6 +756,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/linkedin-mobile/",
             },
             {
+              title: "Line 移动端",
+              path: "/guides/connections/social/line-mobile/",
+            },
+            {
               title: "Amazon",
               path: "/guides/connections/social/amazon/",
             },
@@ -959,19 +964,19 @@ const zhCnNavBar = {
       children: [
         {
           title: "创建或导入组织机构",
-          path: "/guides/org/create-or-import-org/",
+          path: "/guides/org/create-or-import-org",
         },
         {
           title: "管理组织机构",
-          path: "/guides/org/manage-org/",
+          path: "/guides/org/manage-org",
         },
         {
           title: "管理成员生命周期",
-          path: "/guides/org/staff-life-cycle-management/",
+          path: "/guides/org/staff-life-cycle-management",
         },
         {
           title: "使用 LDAP 协议对外开放组织机构数据",
-          path: "/guides/org/ldap-user-directory/",
+          path: "/guides/org/ldap-user-directory",
         },
       ],
     },
@@ -1296,6 +1301,10 @@ const zhCnNavBar = {
           ],
         },
       ],
+    },
+    {
+      title: "多因素认证组件（MFA）",
+      path: "/reference/mfa",
     },
     // {
     //   title: "登录组件",
