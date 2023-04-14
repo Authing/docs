@@ -74,6 +74,10 @@ const zhCnNavBar = {
           path: "/guides/basics/authenticate-first-user/",
           children: [
             {
+              title: `概述`,
+              path: "/guides/basics/authenticate-first-user/overview/",
+            },
+            {
               title: `使用托管登录页完成认证`,
               path: "/guides/basics/authenticate-first-user/use-hosted-login-page",
             },
@@ -150,6 +154,10 @@ const zhCnNavBar = {
       path: "/guides/authentication/",
       children: [
         {
+          title: "概述",
+          path: "/guides/authentication/overview/",
+        },
+        {
           title: "使用账号密码认证",
           path: "/guides/authentication/basic/password/",
         },
@@ -167,6 +175,7 @@ const zhCnNavBar = {
         // },
         {
           title: "使用扫码登录认证",
+          path: "/guides/authentication/qrcode/",
           children: [
             {
               title: "使用自建 App 扫码登录网站",
@@ -214,6 +223,7 @@ const zhCnNavBar = {
         },
         {
           title: "对认证流程进行扩展",
+          path: "/guides/authentication/extensibility/",
           children: [
             {
               title: "添加用户自定义字段",
@@ -228,7 +238,7 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/department-extend",
             },
             {
-              title: "IdToken 添加自定义字段",
+              title: "IdToken 添加扩展字段",
               path: "/guides/authentication/extensibility/customize-id-token",
             },
             {
@@ -5185,11 +5195,11 @@ const zhCnNavBar = {
           title: "选择 OIDC 授权模式",
           path: "/concepts/oidc/choose-flow",
         },
+        {
+          title: "OIDC 常见问题",
+          path: "/concepts/oidc-common-questions",
+        },
       ],
-    },
-    {
-      title: "OIDC 常见问题",
-      path: "/concepts/oidc-common-questions",
     },
     {
       title: "理解 SAML2 协议",
