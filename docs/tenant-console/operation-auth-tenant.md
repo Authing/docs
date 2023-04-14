@@ -6,7 +6,7 @@
 
 点击左上角的租户名称，会展示出所有该管理员所在的租户，通过点击租户名称，即可跳转到相应的租户控制台；
 
-![](./images/switch-tenant.png)
+![](./images/switch-tenant.jpeg)
 
 ## 创建租户
 

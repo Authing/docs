@@ -5857,10 +5857,10 @@ const zhCnNavBar = {
       title: "基础设置",
       path: "/tenant-console/setting",
     },
-    {
-      title: "管理员",
-      path: "/tenant-console/admin",
-    },
+    // {
+    //   title: "管理员",
+    //   path: "/tenant-console/admin",
+    // },
   ],
   "/tenant-app-demo/": [
     {

@@ -970,7 +970,7 @@
         image: "bytebase_logo@2x.png",
         image2x: "bytebase_logo@3x.png",
         category: "devtools",
-      },
+      }
     ],
   categories:
     [
