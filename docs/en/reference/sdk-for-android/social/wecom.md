@@ -1,150 +1,172 @@
-# 企业微信登录
+# Login by WeCom
 
 <LastUpdated/>
 
-集成企业微信需要三个主要步骤：
+## Preparatory work
 
-- 在企业微信管理控制台进行配置
+Configure in [WeCom open platform](https://open.work.weixin.qq.com/wwopen/developer#/index) and [Authing Console](https://authing.cn/)，See [WeCom mobile](../../../guides/connections/enterprise/wecom-mobile/README.md)、[WeCom mobile agent](../../../guides/connections/enterprise/wecom-agency-mobile/README.md)。
 
-- 在 Authing 管理控制台进行配置
+<br>
 
-- 集成 Android SDK
+## Integrate steps
 
-## STEP 1 ：在[企业微信管理控制台](https://work.weixin.qq.com/wework_admin)的操作步骤
+### Step 1：Add dependency
 
-1. 获取企业 ID（CorpID）
+- download [WeCom SDK](http://dldir1.qq.com/foxmail/wwopen_docFile/sdk/lib_wwapi-2.0.12.11.aar)；
+- Copy the downloaded sdk jar file to the libs directory of the project；
+- Import the jar into your project's build.gradle file, importing the dependencies。
 
-![](./images/wecom/1.png)
-
-2. 获取 AgentID 和 Secret
-
-你需要先在 [应用管理 - 应用管理](https://work.weixin.qq.com/wework_admin/frame#apps) 创建一个自建应用
-
-![](./images/wecom/2.png)
-
-创建完成之后，你可以获取该应用的 AgentId 和 Secret：
-
-![](./images/wecom/3.png)
-
-3. 启用企业微信授权登录
-
-在应用详情页，点击设置企业微信授权登录：
-
-![](./images/wecom/4.png)
-
-启用之后，再次点击 “已启用” 按钮，进入配置界面，填入 App 签名的 MD5 码和包名：
-
-![](./images/wecom/5.png)
-
-> 特别注意：这里的签名 MD5 不能包含冒号
-
-## STEP 2 ：在 Authing 管理控制台的操作步骤
-
-1. 选择或者创建一个用户池—>身份源管理—>企业身份源—>创建企业身份源—>选择企业微信
-
-   ![](./images/wecom/6.png)
-
-2) 填写配置信息
-
-   登录方式：企业微信企业内部应用移动端登录
-
-   唯一标志性：自定义
-
-   显示名称：自定义
-
-   CorpID：企业微信管理控制平台注册的应用 CorpID
-
-   AgentID：企业微信管理控制平台注册的应用 AgentID
-
-   Secret：企业微信管理控制平台注册的应用 Secret
-
-   Schema：企业微信管理控制平台注册的应用 Schema
-
-   ![](./images/wecom/7.png)
-
-## STEP 3 ：集成 Android SDK 步骤
-
-1. 设置依赖
-
-- 下载<a href="attachment/wechatwork.jar" target="_blank">企业微信 SDK</a>；
-- 将下载的 sdk jar 文件拷贝到工程的 libs 目录下；
-- 在工程的 build.gradle 文件中引入该 jar，引入相关依赖项。
-
-```java
+```groovy
 implementation 'cn.authing:guard:+'
-implementation files('libs/wechatwork.jar')
+implementation files('libs/lib_wwapi-2.0.12.11.aar')
 ```
 
-​ 如果需要混淆代码，为了保证 sdk 的正常 Use ，需要在 proguard.cfg 加上下面两行配置：
+:::hint-info
+The Guard compileOnly relies on wecom sdk, which allows apps to import on demand, preventing the Guard aar package from getting bigger as more third party logins are supported. Therefore, every time a third-party identity source is added, the App needs to manually add the dependency of the identity source.
+:::
+
+If you need to obfuscate code, add the following two lines to proguard.cfg to ensure normal use of the sdk:
 
 ```
--keep class com.tencent.wework.api.** {
-		*;
+-keep class com.tencent.wework.api.** {   
+		*; 
 }
 ```
 
-2. 在应用启动的时候初始化：
+### Step 2：Initialization 
+
+To initialize Guard Android SDK when the application starts:
 
 ```java
-// appId 是 authing 的应用 id，可以在 authing 控制台里面获取
-Authing.init(context, appId);
+// context is application or initial activity
+// ”AUTHING_APP_ID“ is obtained from the Authing console
+Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
-**通过以上三步即可简单快速的通过 Authing 管理控制台配置后自动获取企业微信身份源，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
-- 接下来，如果 Use 我们提供的企业微信登录按钮，则在布局文件里面加上（当然也可以用代码初始化）：
+
+By following the preceding steps, you can quickly and easily configure the Authing management console to automatically have the WeCom login function. The login entry is displayed in the social login button list on the built-in login interface of the Guard.
+
+
+
+- If you use the WeCom login button we provide.
+
 
 ```xml
-<cn.authing.guard.WeComLoginButton
-    android:id="@+id/btn_wecom_login"
+<cn.authing.guard.social.view.WeComLoginButton
+    android:id="@+id/btn_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"/>
 ```
 
-然后在 java 代码里面处理事件：
+Then handle the event in the code:
 
 ```java
-WeComLoginButton button = findViewById(R.id.btn_wecom_login);
-button.setOnLoginListener((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息，里面有 accessToken
-    } else {
-        // 登录失败
+WeComLoginButton button = findViewById(R.id.btn_login);
+//button.setType(Const.TYPE_WECHAT_COM_AGENCY);//Agent development mode
+button.setOnLoginListener(new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+      	if (code == 200) {
+        	// login success, data is user info.
+       	} else {
+        	// login fail
+      	}
     }
 });
 ```
 
-- 如果不想 Use 我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 企业微信登录 API：
+<br>
+
+- If you don't want to use our built-in buttons and want to implement the UI entirely yourself, you can call the `WeCom` class authorization function inside the button click event, which integrates the business logic to pull up the WeCom authorization login:
 
 ```java
 WeCom weCom = new WeCom();
-weCom.login(appContext, ((ok, data) -> {
-    if (ok) {
-        // 登录成功，data 是用户信息，里面有 accessToken
-    } else {
-        // 登录失败
-    }
-}));
-```
-
-- 如果想完全自己实现企业微信登录，拿到授权码后，可以调用下面 API 换取 Authing 用户信息：
-
-```
-public static void loginByWecom(String authCode, @NotNull AuthCallback<UserInfo> callback)
-```
-
-**参数**
-
-- _authCode_ 企业微信授权码
-
-**示例**
-
-```
-AuthClient.loginByWecom(authCode, (code, message, userInfo)->{
-    if (code == 200) {
-        // userInfo：用户信息
+//WeCom weCom = new WeCom(Const.TYPE_WECHAT_COM_AGENCY);//Agent development mode
+weCom.login(appContext, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+        	// login success, data is user info.
+       	} else {
+        	// login fail
+      	}
     }
 });
 ```
+
+​	`data` contains `idToken` and user information (`user name`, `nickname`, `name`, etc.).
+
+<br>
+
+- If you want to fully implement the WeCom login UI and obtain the authorization code logic yourself, after obtaining the authorization code, you can call the following API in exchange for user information:
+
+
+```java
+public static void loginByWecom(String authCode, @NotNull AuthCallback<UserInfo> callback)
+```
+
+**param**
+
+*`authCode`*  Wecom code
+
+**example**
+
+If you only need to get the user information (`username`, `nickname`, `name`, etc.) and `idToken`, call:
+
+```java
+AuthClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // login success, data is user info, contains idToken.
+        } else {
+          // login fail
+        }
+    }
+});
+
+//Agent development mode
+AuthClient.loginByWecomAgency(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // login success, data is user info, contains idToken.
+        } else {
+          // login fail
+        }
+    }
+});
+```
+
+If you only need to get the user information (`username`, `nickname`, `name`, etc.) and `idToken`、`accessToken` 和 `refreshToken`，call：
+
+```java
+OIDCClient oidcClient = new OIDCClient();
+oidcClient.loginByWecom(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // login success, data is user info, contains idToken.
+        } else {
+          // login fail
+        }
+    }
+});
+
+//Agent development mode
+oidcClient.loginByWecomAgency(authCode, new AuthCallback<UserInfo>() {
+    @Override
+    public void call(int code, String message, UserInfo data) {
+        if (code == 200) {
+          // login success, data is user info, contains idToken.
+        } else {
+          // login fail
+        }
+    }
+});
+```
+

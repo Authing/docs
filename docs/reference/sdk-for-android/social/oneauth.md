@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成一键登录登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -21,26 +21,23 @@ implementation 'io.github.yidun:quicklogin:3.1.1'
 
 混淆配置，请参考[易盾官方混淆规则](https://support.dun.163.com/documents/287305921855672320?docId=424017619994976256#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE)
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
-
-
-
-**通过以上步骤即可简单快速的通过 Authing 管理控制台配置后自动拥有一键登录功能，登录入口会在 Guard 内置登录界面的社会化登录按钮列表中体现**
 
 
 
 * 接下来，如果使用我们提供的一键登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
- <cn.authing.guard.oneclick.OneClickAuthButton
+ <cn.authing.guard.social.view.OneClickAuthButton
     android:id="@+id/btn_one_click_login"
     android:background="@drawable/authing_button_background"
     android:textColor="@color/white"
@@ -99,10 +96,6 @@ new OneClick(this).start("your_yidun_business_id", config, ((code, message, user
 ```
 
 `data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
-
-当你使用组件 `OneClickAuthButton`  或者登录授权类  `OneClick`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
-
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
 
 <br>
 

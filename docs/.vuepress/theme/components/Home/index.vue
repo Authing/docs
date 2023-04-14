@@ -16,10 +16,7 @@
       >
         <template v-if="data.banner">
           <banner-card
-            :title="data.banner.title"
-            :text="data.banner.text"
-            :url="data.banner.url"
-            :btnText="data.banner.btnText"
+            :banners="data.banner"
           />
         </template>
         <h1 class="home-title">

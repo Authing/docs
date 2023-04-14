@@ -20,7 +20,7 @@ After that, you can read the guidelines in accordance with the subject:
 1. Certification for users
    - the most basic[Account password authentication](./authentication/basic/password/README.md)、[Mobile phone number verification code authentication](./authentication/basic/sms/README.md)
    - [How to access social login certification](/guides/authentication/social/)
-   - [How to access scan code login authentication](/guides/authentication/qrcode/use-self-build-app/)
+   - [How to access scan code login authentication](/guides/authentication/qrcode/use-self-build-app/overview.md)
    - [How to verify in a small program](/guides/authentication/wechat-mini-program/)
    - [Realize single sign-on (SSO)](/guides/authentication/sso/)
    - [Implement single sign-on on the mobile](/guides/authentication/mobile-sso/)

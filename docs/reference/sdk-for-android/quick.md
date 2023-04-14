@@ -8,7 +8,9 @@
 
 <img src="./images/create_project2.png" alt="drawing" width="800"/>
 
-> 注意：Minimum SDK 版本 Android 7.0
+:::hint-info
+注意：Minimum SDK 版本 Android 7.0
+:::
 
 ## 第二步：添加 Guard 依赖
 
@@ -39,7 +41,13 @@ implementation 'cn.authing:guard:+'
 Authing.init(context, "AUTHING_APP_ID");
 ```
 
-> 注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
+:::hint-info
+注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)
+:::
+
+:::hint-info
+注意：如果需要登录成功后获取到 accessToken，请先参考[登录成功获取到 accessToken](https://docs.authing.cn/v2/reference/sdk-for-android/scenario/application_config.html#登录成功获取到-accesstoken) 配置
+:::
 
 ## 第四步：常用操作
 

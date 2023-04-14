@@ -24,7 +24,7 @@
 
 <br>
 
-### 第二步：Info.plist 里面添加启动微信白名单
+### 第二步：Info.plist 里面添加启动白名单
 
 key: LSApplicationQueriesSchemes
 
@@ -52,7 +52,15 @@ value: weixin, weixinULAPI
 
 <br>
 
-### 第三步：初始化微信登录
+### 第三步：设置 Associated Domains：
+
+> 填入开发者的 Universal Link 对应的 host 。
+
+![](./images/wechat/7.png)
+
+<br>
+
+### 第四步：初始化微信登录
 
 ```swift
 import Guard
@@ -62,14 +70,6 @@ WechatLogin.registerApp(appId: <#your_wechat_appid#>, universalLink: <#your_deep
  ```
 
 > 第一个参数为微信应用 ID；第二个参数为 iOS [Universal Link](https://developer.apple.com/ios/universal-links/)
-
-<br>
-
-### 第四步：设置 Associated Domains：
-
-> 填入开发者的 Universal Link 对应的 host 。
-
-![](./images/wechat/7.png)
 
 <br>
 

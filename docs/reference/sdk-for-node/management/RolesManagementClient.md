@@ -135,19 +135,22 @@ managementClient.roles.findByCode('manager')
 ## 获取角色列表
 > 获取角色列表
 ```javascript
-RolesManagementClient().list(page, limit,namespace)
+RolesManagementClient().list(options)
 ```
-
 
 #### 参数
 
-- `page` \<number\> 页码数 默认值为 : `1`。
-- `limit` \<number\> 每页个数 默认值为 : `10`。
-- `namespace` \<string\> 权限分组 code
+- `options` \<object\>
+- `options.page` \<number\> 页码数 默认值为 : `1`。
+- `options.limit` \<number\> 每页个数 默认值为 : `10`。
+- `options.namespace` \<string\> 权限分组 code
 #### 示例
 
 ```javascript
-managementClient.roles.list(2, 10)
+managementClient.roles.list({
+  page: 1,
+  limit: 10
+})
 ```
 
 #### 返回值

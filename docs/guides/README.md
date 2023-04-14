@@ -20,7 +20,7 @@
 1. 对用户进行认证
    - 最基础的 [账号密码认证](./authentication/basic/password/README.md)、[手机号验证码认证](./authentication/basic/sms/README.md) 手段；
    - [如何接入社会化登录认证](/guides/authentication/social/)；
-   - [如何接入扫码登录认证](/guides/authentication/qrcode/use-self-build-app/)；
+   - [如何接入扫码登录认证](/guides/authentication/qrcode/use-self-build-app/overview.md)；
    - [如何在小程序中进行认证](/guides/authentication/wechat-mini-program/)；
    - [实现单点登录（SSO）](/guides/app-new/sso/)；
    - [在移动端实现单点登录](/guides/authentication/mobile-sso/)；

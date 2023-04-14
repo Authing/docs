@@ -15,6 +15,7 @@ Guard iOS SDK 包含 **[Guard 登录组件](./component/README.md)** 及 **[用�
 | 支持版本 | iOS 11.0 +  
 | 支持设备 | iPhone 8 以上  
 | 仓库地址 | [https://github.com/Authing/guard-ios](https://github.com/Authing/guard-ios) |
+| 示例 Demo | [https://github.com/Authing/guard-ios-example](https://github.com/Authing/guard-ios-example) |
 
 ## 开始之前
 

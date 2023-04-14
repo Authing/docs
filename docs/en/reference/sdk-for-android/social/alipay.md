@@ -18,12 +18,13 @@ implementation files('libs/alipaysdk.aar')
 ```java
 // AUTHING_APP_ID is Authing app id which can be obtained at Authing console
 Authing.init(context, “AUTHING_APP_ID”);
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 Next, we recommend to use our UI component, all you need to do is 'place' it on the layout xml where you think appropriate, you can also create an instance of this component via code:
 
 ```xml
-<cn.authing.guard.AlipayLoginButton
+<cn.authing.guard.social.view.AlipayLoginButton
     android:id="@+id/btn_alipay_login"
     android:layout_width="44dp"
     android:layout_height="44dp"
@@ -66,10 +67,6 @@ alipay.login(appContext, new AuthCallback<UserInfo>() {
 ```
 
 `userInfo` contains  `idToken` and user information (`username`, `nickname`, `name`, etc.).
-
-When you use component  `AlipayLoginButton` or Login Authorization class `Alipay`, if you also want to get `accessToken` and `refreshToken`,  you need to call  `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC) ` after
-
-` Authing.init(context, "AUTHING_APP_ID") ` , data included in the callback ` data `.
 
 <br>
 

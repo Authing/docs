@@ -1,4 +1,4 @@
-# SDK for iOS
+# iOS Guard
 
 <LastUpdated/>
 
@@ -7,7 +7,8 @@
 |   Item   |           Instruction                              |
 | -------- | ------------------------------------------- |
 | OS version | iOS 11.0 + 
-| repo location | [https://github.com/Authing/guard-ios](https://github.com/Authing/guard-ios) |
+| Repo location | [https://github.com/Authing/guard-ios](https://github.com/Authing/guard-ios) |
+| Example | [https://github.com/Authing/guard-ios-example](https://github.com/Authing/guard-ios-example) |
 
 ## Prerequisite
 

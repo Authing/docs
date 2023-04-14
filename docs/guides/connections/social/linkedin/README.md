@@ -46,7 +46,7 @@
 
 <img src="./images/linkedin_5.png" >
 
-2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份也」页面，点击「LinkedIn」身份源按钮，进入 「LinkedIn 登录模式」页面。
+2.2 请在  {{$localeConfig.brandName}}  控制台 的「社会化身份源」-「选择社会化身份源」页面，点击「LinkedIn」身份源按钮，进入 「LinkedIn 登录模式」页面。
 
 <img src="./images/linkedin_6.png" >
 

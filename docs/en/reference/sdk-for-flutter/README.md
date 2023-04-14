@@ -15,7 +15,7 @@ Authing Flutter SDK ：
 |   Item   |           Instruction                              |
 | -------- | ------------------------------------------- |
 | Platform | Android, iOS
-| repo location | [https://pub.dev/packages/authing_sdk](https://pub.dev/packages/authing_sdk) |
+| Repo location | [https://pub.dev/packages/authing_sdk](https://pub.dev/packages/authing_sdk) |
 
 ## Prerequisite
 

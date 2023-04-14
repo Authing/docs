@@ -1,17 +1,17 @@
-# Chrome 手动安装插件
+# Chrome Manual Install Plugin
 
-下载 [Chrome 插件压缩包](https://authing-cdn-cn-prod.oss-cn-beijing.aliyuncs.com/packages/asa/latest/chrome/chrome.zip) 并解压。
+Download the [Chrome extension zip package](https://authing-cdn-cn-prod.oss-cn-beijing.aliyuncs.com/packages/asa/latest/chrome/chrome.zip) and unzip it.
 
 ![](~@imagesZhCn/guides/asa/install-1.png)
 
-在 Chrome 浏览器地址栏输入 **chrome://extensions/**，进入插件管理界面，打开「开发者模式」。
+Enter **chrome://extensions/** in the address bar of the Chrome browser to enter the extension management interface and open the "Developer Mode".
 
 ![](~@imagesZhCn/guides/asa/install-2.png)
 
-拖拽之前解压得到的文件夹到浏览器的插件管理界面上即可安装成功。
+Drag and drop the folder obtained before decompression to the plug-in management interface of the browser to install successfully.
 
 ![](~@imagesZhCn/guides/asa/install-3.png)
 
 ![](~@imagesZhCn/guides/asa/install-4.png)
 
-安装成功，[体验登录](./#体验登录)。
+The installation is successful, [Experience Login](./#experience-login).

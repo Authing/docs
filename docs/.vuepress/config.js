@@ -159,6 +159,11 @@ module.exports = {
             ]
           },
           {
+            text: "身份自动化",
+            link: "/workflow/",
+            hidden: true
+          },
+          {
             text: "应用集成",
             link: "/integration/"
           },
@@ -311,7 +316,7 @@ module.exports = {
               title: "GitHub"
             },
             {
-              icon: "authing-gitter",
+              icon: "authing-chat-smile-line",
               link: "https://forum.authing.cn/",
               title: "Forum"
             },
@@ -475,7 +480,7 @@ module.exports = {
               title: "GitHub"
             },
             {
-              icon: "authing-gitter",
+              icon: "authing-chat-smile-line",
               link: "https://forum.authing.cn/",
               title: "Forum"
             },

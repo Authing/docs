@@ -8,7 +8,7 @@
 
 <br>
 
-## 集成飞书登录步骤
+## 集成步骤
 
 ### 第一步：添加依赖
 
@@ -24,14 +24,15 @@ implementation 'com.alibaba:fastjson:1.1.58.android'
 
 > Guard 只是 compileOnly 依赖飞书，这样可以让 App 按需引入，防止 Guard aar 包随着支持的第三方登录增加而越来越大。所以每增加一个第三方身份源，都需要 App 手动加上该身份源的依赖
 
-### 第二步：初始化 Guard Android SDK
+### 第二步：初始化 
 
-在应用启动的时候初始化：
+在应用启动的时候初始化 Guard Android SDK：
 
 ```java
 // context is application or initial activity
 // ”AUTHING_APP_ID“ is obtained from the Authing console
 Authing.init(context, "AUTHING_APP_ID");
+Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)
 ```
 
 
@@ -46,7 +47,7 @@ Authing.init(context, "AUTHING_APP_ID");
 - 接下来，如果使用我们提供的飞书登录按钮，则在布局文件里面加上（或者代码初始化添加）
 
 ```xml
-<cn.authing.guard.social.LarkLoginButton
+<cn.authing.guard.social.view.LarkLoginButton
     android:id="@+id/btn_lark_login"
     android:layout_width="48dp"
     android:layout_height="48dp" />
@@ -73,8 +74,7 @@ button.setOnLoginListener(new AuthCallback<UserInfo>() {
 - 如果不想使用我们内置的按钮，则可以在自己按钮的点击事件里面调用 Authing 飞书登录授权类
 
 ```java
-Lark lark = new Lark();
-lark.login(appContext, new AuthCallback<UserInfo>() {
+Lark.getInstance().login(appContext, new AuthCallback<UserInfo>() {
     @Override
     public void call(int code, String message, UserInfo data) {
         if (code == 200) {
@@ -88,9 +88,29 @@ lark.login(appContext, new AuthCallback<UserInfo>() {
 
 `data` 包含 `idToken` 以及用户信息（`用户名`、`昵称`、`姓名`等）。
 
-当你使用组件 `LarkLoginButton`  或者登录授权类  `Lark`  时，如果你还想获取到 `accessToken` 和 `refreshToken`，需要在调用
 
-`Authing.init(context, “AUTHING_APP_ID”)` 之后调用 `Authing.setAuthProtocol(Authing.AuthProtocol.EOIDC)`，数据包含在回调的 `data` 中 。
+
+**注意：使用飞书登录按钮或者飞书登录授权类时，需要在 Activity 的 onResume、onNewIntent、onActivityResult 函数中加入如下代码：**
+
+```java
+@Override
+protected void onResume() {
+    super.onResume();
+    Lark.getInstance().onResume(this);
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    Lark.getInstance().onNewIntent(this, intent);
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    Lark.getInstance().onActivityResult(this, data);
+}
+```
 
 <br>
 

@@ -7,10 +7,19 @@ searchPlaceholder: 请输入关键词搜索产品文档
 hotSearchText: 热门搜索
 exploreUse: 探索使用 {{$localeConfig.brandName}}
 banner:
-  title: Authing API/SDK V3 正式上线！
-  text: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
-  url: https://docs.authing.cn/v3
-  btnText: 查看文档
+  - title: Authing API/SDK V3 正式上线！
+    text: Authing API/SDK V3 上新，提供 HTTP API、以及 10 余种不同语言和框架的 SDK，5 分钟即可灵活构建安全、稳定的认证流程！
+    url: https://docs.authing.cn/v3
+    btnText: 查看文档
+    icon: https://files.authing.co/authing-docs-v2/images/common/banner-icon.svg
+    background: https://files.authing.co/authing-docs-v2/images/common/banner-bg.png
+  - title: Authing API Explorer 正式上线！
+    text: Authing API Explorer 全新上线，为开发者提供在线调试中心，高效满足开发者的 API 调试、API 学习等相关需求。
+    url: https://api-explorer.authing.cn
+    btnText: 前往查看
+    icon: https://files.authing.co/authing-docs-v2/images/common/banner-icon-2.svg
+    background: https://files.authing.co/authing-docs-v2/images/common/banner-bg-2.png
+    open: true
 hotSearch:
   - text: 如何对用户进行认证
     link: /guides/authentication/

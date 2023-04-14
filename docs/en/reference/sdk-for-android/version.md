@@ -2,6 +2,114 @@
 
 <LastUpdated/>
 
+- ## 1.5.6
+
+
+> Update time：2023.4.8
+
+1. Add Huawei login.
+2. Add OPPO login.
+3. Add Amazon login.
+
+<br>
+
+- ## 1.5.5
+
+
+> Update time：2023.3.31
+
+1. Add Line loginq.
+2. Add Slack login.
+
+<br>
+
+- ## 1.5.4
+
+
+> Update time：2023.3.24
+
+1. Add GitLab login.
+2. Add Douyin login.
+3. Add Kuaishou login.
+4. Add Xiaomi login.
+
+<br>
+
+- ## 1.5.3
+
+
+> Update time：2023.3.18
+
+1. Add Github login.
+2. Add Gitee login.
+
+<br>
+
+- ## 1.5.2
+
+
+> Update time：2023.3.13
+
+1. fix some bug.
+
+<br>
+
+- ## 1.5.1
+
+
+> Update time：2023.3.12
+
+1. Add Baidu login.
+2. Add Linkedin login.
+3. Add DingTalk login.
+4. Supports graphic code verification for account and password login errors.
+
+<br>
+
+- ## 1.5.0
+
+
+> Update time：2023.3.5
+
+1. New UI style.
+2. Add biometric login authentication for WebAuthn.
+3. Add push login.
+4. Add QQ login.
+5. Add Sina Weibo login.
+6. Add event subscription API.
+7. Supports overseas domain name configuration.
+
+<br>
+
+- ## 1.4.8
+
+
+> Update time：2023.2.14
+
+1. Add Facebook login.
+2. Add APP pull-up wechat miniprogram authorization login.
+3. International phone number format verification optimization.
+
+<br>
+
+- ## 1.4.7
+
+
+> Update time：2023.1.12
+
+1. New wechat mobile terminal login through the account ID binding to an existing account API.
+
+<br>
+
+- ## 1.4.6
+
+
+> Update time：2022.12.9
+
+1. Fixed the bug of wechat login API.
+
+<br>
+
 - ## 1.4.5
 
 
