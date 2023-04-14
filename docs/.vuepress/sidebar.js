@@ -5804,6 +5804,10 @@ const zhCnNavBar = {
           title: "管理租户成员 & 管理员",
           path: "/multi-tenant-console/admin-management",
         },
+        {
+          title: "用户池计量/租户权益设置",
+          path: "/multi-tenant-console/tenant-cost",
+        },
       ],
     },
     {
@@ -5816,6 +5820,18 @@ const zhCnNavBar = {
     },
   ],
   "/tenant-console/": [
+    {
+      title: "切换/加入/创建租户",
+      path: "/tenant-console/operation-auth-tenant",
+    },
+    {
+      title: "个人中心",
+      path: "/tenant-console/personal-center",
+    },
+    {
+      title: "数据概览",
+      path: "/tenant-console/tenant-analysis",
+    },
     {
       title: "关联应用",
       path: "/tenant-console/association-apps",
@@ -5832,13 +5848,25 @@ const zhCnNavBar = {
       title: "用户管理",
       path: "/tenant-console/user-management",
     },
-    // {
-    //   title: "组织机构",
-    //   path: "/tenant-console/organization",
-    // },
+    {
+      title: "组织机构",
+      path: "/tenant-console/tenant-org",
+    },
     {
       title: "品牌化",
-      path: "/tenant-console/brandize",
+      path: "/tenant-console/tenant-branding",
+    },
+    {
+      title: "字段管理",
+      path: "/tenant-console/tenant-custom-fields",
+    },
+    {
+      title: "审计日志",
+      path: "/tenant-console/tenant-logs",
+    },
+    {
+      title: "用量信息",
+      path: "/tenant-console/tenant-usage",
     },
     {
       title: "基础设置",
