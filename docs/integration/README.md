@@ -963,6 +963,13 @@
         image: "teamviewer_logo.svg",
         image2x: "teamviewer_logo.svg",
         category: "office",
+      },
+      {
+        key: "bytebase",
+        name: "Bytebase",
+        image: "bytebase_logo@2x.png",
+        image2x: "bytebase_logo@3x.png",
+        category: "devtools",
       }
     ],
   categories:
