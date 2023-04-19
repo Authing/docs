@@ -74,6 +74,10 @@ const zhCnNavBar = {
           path: "/guides/basics/authenticate-first-user/",
           children: [
             {
+              title: `概述`,
+              path: "/guides/basics/authenticate-first-user/overview/",
+            },
+            {
               title: `使用托管登录页完成认证`,
               path: "/guides/basics/authenticate-first-user/use-hosted-login-page",
             },
@@ -150,6 +154,10 @@ const zhCnNavBar = {
       path: "/guides/authentication/",
       children: [
         {
+          title: "概述",
+          path: "/guides/authentication/overview/",
+        },
+        {
           title: "使用账号密码认证",
           path: "/guides/authentication/basic/password/",
         },
@@ -167,6 +175,7 @@ const zhCnNavBar = {
         // },
         {
           title: "使用扫码登录认证",
+          path: "/guides/authentication/qrcode/",
           children: [
             {
               title: "使用自建 App 扫码登录网站",
@@ -214,6 +223,7 @@ const zhCnNavBar = {
         },
         {
           title: "对认证流程进行扩展",
+          path: "/guides/authentication/extensibility/",
           children: [
             {
               title: "添加用户自定义字段",
@@ -228,7 +238,7 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/department-extend",
             },
             {
-              title: "IdToken 添加自定义字段",
+              title: "IdToken 添加扩展字段",
               path: "/guides/authentication/extensibility/customize-id-token",
             },
             {
@@ -963,15 +973,15 @@ const zhCnNavBar = {
       children: [
         {
           title: "创建或导入组织机构",
-          path: "/guides/org/create-or-import-org/",
+          path: "/guides/org/create-or-import-org",
         },
         {
           title: "管理组织机构",
-          path: "/guides/org/manage-org/",
+          path: "/guides/org/manage-org",
         },
         {
           title: "管理成员生命周期",
-          path: "/guides/org/staff-life-cycle-management/",
+          path: "/guides/org/staff-life-cycle-management",
         },
       ],
     },
@@ -1299,7 +1309,22 @@ const zhCnNavBar = {
     },
     {
       title: "多因素认证组件（MFA）",
-      path: "/reference/mfa",
+      path: "/reference/mfa/",
+      children: [
+        {
+          title: "Web MFA",
+          path: "/reference/mfa/web-mfa",
+        },
+        {
+          title: "更新日志",
+          children: [
+            {
+              title: "Web MFA 更新日志",
+              path: "/reference/mfa/web-mfa-changelog",
+            },
+          ],
+        },
+      ],
     },
     // {
     //   title: "登录组件",
@@ -5181,11 +5206,11 @@ const zhCnNavBar = {
           title: "选择 OIDC 授权模式",
           path: "/concepts/oidc/choose-flow",
         },
+        {
+          title: "OIDC 常见问题",
+          path: "/concepts/oidc-common-questions",
+        },
       ],
-    },
-    {
-      title: "OIDC 常见问题",
-      path: "/concepts/oidc-common-questions",
     },
     {
       title: "理解 SAML2 协议",
@@ -5784,6 +5809,10 @@ const zhCnNavBar = {
           title: "管理租户成员 & 管理员",
           path: "/multi-tenant-console/admin-management",
         },
+        {
+          title: "用户池计量/租户权益设置",
+          path: "/multi-tenant-console/tenant-cost",
+        },
       ],
     },
     {
@@ -5796,6 +5825,18 @@ const zhCnNavBar = {
     },
   ],
   "/tenant-console/": [
+    {
+      title: "切换/加入/创建租户",
+      path: "/tenant-console/operation-auth-tenant",
+    },
+    {
+      title: "个人中心",
+      path: "/tenant-console/personal-center",
+    },
+    {
+      title: "数据概览",
+      path: "/tenant-console/tenant-analysis",
+    },
     {
       title: "关联应用",
       path: "/tenant-console/association-apps",
@@ -5812,22 +5853,30 @@ const zhCnNavBar = {
       title: "用户管理",
       path: "/tenant-console/user-management",
     },
-    // {
-    //   title: "组织机构",
-    //   path: "/tenant-console/organization",
-    // },
+    {
+      title: "组织机构",
+      path: "/tenant-console/organization",
+    },
     {
       title: "品牌化",
-      path: "/tenant-console/brandize",
+      path: "/tenant-console/tenant-branding",
+    },
+    {
+      title: "字段管理",
+      path: "/tenant-console/tenant-custom-fields",
+    },
+    {
+      title: "审计日志",
+      path: "/tenant-console/tenant-logs",
+    },
+    {
+      title: "用量信息",
+      path: "/tenant-console/tenant-usage",
     },
     {
       title: "基础设置",
       path: "/tenant-console/setting",
     },
-    // {
-    //   title: "管理员",
-    //   path: "/tenant-console/admin",
-    // },
   ],
   "/tenant-app-demo/": [
     {
@@ -5838,10 +5887,6 @@ const zhCnNavBar = {
       title: "创建/切换/配置组织",
       path: "/tenant-app-demo/org",
     },
-    // {
-    //   title: "个人中心",
-    //   path: "/tenant-app-demo/personal-center",
-    // },
   ],
 };
 
