@@ -973,15 +973,15 @@ const zhCnNavBar = {
       children: [
         {
           title: "创建或导入组织机构",
-          path: "/guides/org/create-or-import-org",
+          path: "/guides/org/create-or-import-org/",
         },
         {
           title: "管理组织机构",
-          path: "/guides/org/manage-org",
+          path: "/guides/org/manage-org/",
         },
         {
           title: "管理成员生命周期",
-          path: "/guides/org/staff-life-cycle-management",
+          path: "/guides/org/staff-life-cycle-management/",
         },
       ],
     },
