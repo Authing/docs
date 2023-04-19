@@ -973,10 +973,6 @@ const zhCnNavBar = {
           title: "管理成员生命周期",
           path: "/guides/org/staff-life-cycle-management/",
         },
-        {
-          title: "使用 LDAP 协议对外开放组织机构数据",
-          path: "/guides/org/ldap-user-directory/",
-        },
       ],
     },
     {
@@ -1907,7 +1903,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/dingtalk",
             "/reference/sdk-for-ios/social/line",
             "/reference/sdk-for-ios/social/slack",
-            "/reference/sdk-for-ios/social/amazon"
+            "/reference/sdk-for-ios/social/amazon",
           ],
         },
         {
@@ -5323,7 +5319,7 @@ const zhCnNavBar = {
         {
           title: "使用模版创建 Workflow",
           path: "/workflow/快速开始/使用模版创建 workflow",
-        }
+        },
       ],
     },
     {
@@ -5360,7 +5356,7 @@ const zhCnNavBar = {
         {
           title: "导入和导出 Workflow",
           path: "/workflow/编写 Workflow/导入和导出 Workflow",
-        }
+        },
       ],
     },
     {
@@ -5393,12 +5389,12 @@ const zhCnNavBar = {
         {
           title: "查看 Workflow 执行记录",
           path: "/workflow/执行 Workflow/查看 Workflow 执行记录",
-        }
+        },
       ],
     },
     {
       title: "操作 Authing 内部资源",
-      path: "/workflow/操作 Authing 内部资源/"
+      path: "/workflow/操作 Authing 内部资源/",
     },
     {
       title: "使用应用连接器",
@@ -5427,8 +5423,8 @@ const zhCnNavBar = {
         {
           title: "飞书",
           path: "/workflow/使用应用连接器/飞书",
-        }
-      ]
+        },
+      ],
     },
     {
       title: "流程控制节点",
@@ -5462,7 +5458,7 @@ const zhCnNavBar = {
           title: "终止",
           path: "/workflow/流程控制节点/终止",
         },
-      ]
+      ],
     },
     {
       title: "数据处理节点",
@@ -5474,12 +5470,12 @@ const zhCnNavBar = {
         {
           title: "数据转换",
           path: "/workflow/数据处理节点/数据转换",
-        }
-      ]
+        },
+      ],
     },
     {
       title: "事件中心概述",
-      path: "/workflow/事件中心/"
+      path: "/workflow/事件中心/",
     },
   ],
   "/tenant/": [
@@ -6470,11 +6466,6 @@ const translatedZhCnNavBar = {
         {
           title: "Manage member life cycle",
           path: "/guides/org/staff-life-cycle-management/",
-        },
-        {
-          title:
-            "Use LDAP protocol to open organization data to the outside world",
-          path: "/guides/org/ldap-user-directory/",
         },
       ],
     },

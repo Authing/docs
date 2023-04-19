@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: DAP 用户目录
+    content: LDAP 用户目录
 ---
 
 # 使用 {{$localeConfig.brandName}} 的 LDAP 用户目录

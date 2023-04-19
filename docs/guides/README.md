@@ -65,6 +65,7 @@
    - [了解如何添加自定义用户字段](/guides/users/user-defined-field/)；
    - [了解如何搜索用户](/guides/users/search.md)；
    - [了解如何使用 LDAP 用户目录](/guides/users/ldap-user-directory.md)。
+
 2. [管理自建应用](/guides/app-new/)
 3. [管理多租户](/tenant/)
 4. [成为联邦认证身份源](/guides/federation/)
@@ -73,17 +74,19 @@
    - [配置社会化登录](/guides/connections/social.md)
    - [配置标准协议身份提供商](/guides/connections/enterprise.md)
    - [使用自定义数据库](/guides/database-connection/overview.md)
+
 6. [管理组织机构](/guides/org/)
 
    - [创建或导入组织机构](/guides/org/create-or-import-org/README.md)；
    - [管理组织机构](/guides/org/manage-org/README.md)；
    - [管理成员生命周期](/guides/org/staff-life-cycle-management/README.md)；
-   - [使用 LDAP 协议对外开放组织机构数据](/guides/org/ldap-user-directory/README.md)。
+
 7. [查看审计日志](/guides/audit/)
 8. 配置安全信息
 
    - [配置 Web 安全域](/guides/security/config-domain.md)
    - [配置密码安全](/guides/security/pw-security/)
+
 9. 配置用户池信息
    - [修改用户池基础信息](/guides/userpool-config/basic-config.md)
    - [配置邮件服务和模版](/guides/userpool-config/email/)
