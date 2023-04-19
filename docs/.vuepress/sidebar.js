@@ -5860,7 +5860,7 @@ const zhCnNavBar = {
     },
     {
       title: "组织机构",
-      path: "/tenant-console/tenant-org",
+      path: "/tenant-console/organization",
     },
     {
       title: "品牌化",
