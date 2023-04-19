@@ -5860,7 +5860,7 @@ const zhCnNavBar = {
     },
     {
       title: "组织机构",
-      path: "/tenant-console/tenant-org",
+      path: "/tenant-console/organization",
     },
     {
       title: "品牌化",
@@ -5882,10 +5882,6 @@ const zhCnNavBar = {
       title: "基础设置",
       path: "/tenant-console/setting",
     },
-    // {
-    //   title: "管理员",
-    //   path: "/tenant-console/admin",
-    // },
   ],
   "/tenant-app-demo/": [
     {
@@ -5896,10 +5892,6 @@ const zhCnNavBar = {
       title: "创建/切换/配置组织",
       path: "/tenant-app-demo/org",
     },
-    // {
-    //   title: "个人中心",
-    //   path: "/tenant-app-demo/personal-center",
-    // },
   ],
 };
 
