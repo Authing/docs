@@ -120,8 +120,8 @@ String myEventData = "{\"id\":\"myid\",\"createdAt\":1675579686427,\"updatedAt\"
 
 managementClient.pubtEvent 方法参数说明：
 
-- `eventCode` <String>  事件编码。
-- `data` <String> 事件体，json 格式。
+- `eventCode` `<String>`  事件编码。
+- `data` `<String>` 事件体，json 格式。
 
 ## 认证端 SDK 发布事件流程
 
