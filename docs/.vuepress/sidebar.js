@@ -285,6 +285,37 @@ const zhCnNavBar = {
           title: `管理资源权限`,
           path: "/guides/access-control/resource-acl",
         },
+        {
+          title: `管理新版数据资源权限`,
+          path: "/guides/access-control/data-permission/",
+          children: [
+            {
+              title: "权限空间",
+              path: "/guides/access-control/data-permission/permission-space",
+            },
+            {
+              title: "角色管理",
+              path: "/guides/access-control/data-permission/roles-management",
+            },
+            {
+              title: "数据资源",
+              path: "/guides/access-control/data-permission/data-resoources",
+            },
+            {
+              title: "数据策略与授权",
+              path: "/guides/access-control/data-permission/policy/",
+              children: [
+                {
+                  title: "数据策略与 OPA",
+                  path: "/guides/access-control/data-permission/policy/data-policy-and-opa",
+                }]
+            },
+            {
+              title: "权限视图",
+              path: "/guides/access-control/data-permission/data-permission-view",
+            },
+          ],
+        },
       ],
     },
     {
