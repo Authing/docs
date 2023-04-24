@@ -3,7 +3,7 @@ tags:
 - 发版记录
 ---
 
-# Web Guard Changelog
+# Web MFA Changelog
 
 <LastUpdated/>
 
