@@ -1083,7 +1083,7 @@ const zhCnNavBar = {
       ],
     },
     {
-      title: "Authing 自适应 MFA（Adaptive MFA）",
+      title: "自适应 MFA",
       children: [
         {
           title: "Authing Adaptive MFA 概述",

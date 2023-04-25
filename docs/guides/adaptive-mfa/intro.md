@@ -22,3 +22,5 @@ Adaptive MFA 可以分析用户的登录环境和行为模式，选择合适的�
 - 提供 SDK 与开放接口，助力开发者快速调用相关能力。
 
 ## 如何接入 Authing MFA？
+
+![如何接入 Authing MFA](./images/integrate.png)
