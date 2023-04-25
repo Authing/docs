@@ -23,4 +23,4 @@ Adaptive MFA 可以分析用户的登录环境和行为模式，选择合适的�
 
 ## 如何接入 Authing MFA？
 
-![如何接入 Authing MFA](./images/integrate.png)
+![如何接入 Authing MFA](./images/integrate.png) 
