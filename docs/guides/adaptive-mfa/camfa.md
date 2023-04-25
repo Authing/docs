@@ -20,6 +20,13 @@
 
 ![创建 Authing MFA 应用](./images/create_app.png)
 
+### Step 2. 基于 Authing 应用配置自适应 MFA
+进入[控制台](https://console.authing.cn/console) > 应用 >点击应用详情 >点击安全管理，找到多因素认证因子配置界面如下（点击对应开关即可启用认证因子）：
+![创建应用](./images/guard4.png)
+
+> 自适应 MFA 认证策略底层基于 Authing UEBA，可以针对用户行为和用户画像进行深度梳理分析，从而自动选择与当前行为相匹配的 MFA 策略。
+在自适应 MFA 认证策略中，Authing UEBA 引擎会根据用户的行为和画像进行分析和判断，例如用户的登录历史、设备信息、IP 地址、地理位置、活动模式等等，从而确定当前用户的身份和风险级别，并选择与之相匹配的 MFA 策略。
+
 ### Step 3. 从业务系统后端上报 UEBA 数据到 Authing 系统
 
 您需要在您的服务端系统中引入 Authing SDK，并使用 MetadataManagementClient 将用户行为数据上报到 Authing 系统，具体操作流程如下：
