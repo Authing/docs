@@ -1,4 +1,4 @@
-# IdToken 添加自定义字段
+# IdToken 添加扩展字段
 
 <LastUpdated/>
 
@@ -8,7 +8,7 @@
 
 在 {{$localeConfig.brandName}} 中，[用户信息](/guides/user/user-profile.md)的 `token` 字段就是一个 IdToken。
 
-## IdToken 默认包含字段
+## IdToken 默认字段
 
 一个 OIDC IdToken 默认包含以下字段，[参考 OIDC 规范](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)：
 
@@ -41,7 +41,7 @@
 | country | 国家 |
 | updated\_at | 信息更新时间 |
 
-## IdToken 添加自定义字段
+## IdToken 添加扩展字段
 
 你可以使用 {{$localeConfig.brandName}} 的 [Pipeline 能力](/guides/pipeline/)在用户认证流程中插入自定义代码段，给用户添加自定义 `IdToken` 字段。例如下面的例子中，我们给用户的 `id_token` 添加了 `KEY` 这个字段，值为 `VALUE`： 
 

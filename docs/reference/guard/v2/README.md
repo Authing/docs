@@ -1,31 +1,33 @@
 ---
-    directoryList: [
-        {
-            name: 'React',
-            link: 'reference/guard/v2/web.html',
-            img: 'react@2x.png',
-            github: "https://github.com/authing/guard",
-        },
-        {
-            name: 'Vue',
-            link: 'reference/guard/v2/web.html',
-            img: 'vue@2x.png',
-            github: "https://github.com/authing/guard",
-        },
-        {
-            name: 'Angular',
-            link: 'reference/guard/v2/web.html',
-            img: 'angular@2x.png',
-            github: "https://github.com/authing/guard",
-        },
-        {
-            name: 'JavaScript',
-            link: 'reference/guard/v2/web.html',
-            img: 'javascript@2x.png',
-            github: "https://github.com/authing/guard",
-        }
-    ]
+directoryList:
+  [
+    {
+      name: "React",
+      link: "reference/guard/v2/web.html",
+      img: "react@2x.png",
+      github: "https://github.com/authing/guard",
+    },
+    {
+      name: "Vue",
+      link: "reference/guard/v2/web.html",
+      img: "vue@2x.png",
+      github: "https://github.com/authing/guard",
+    },
+    {
+      name: "Angular",
+      link: "reference/guard/v2/web.html",
+      img: "angular@2x.png",
+      github: "https://github.com/authing/guard",
+    },
+    {
+      name: "JavaScript",
+      link: "reference/guard/v2/web.html",
+      img: "javascript@2x.png",
+      github: "https://github.com/authing/guard",
+    },
+  ]
 ---
+
 # 接入 Authing Guard
 
 <LastUpdated/>
@@ -222,7 +224,7 @@ Authing Guard 是 Authing 身份认证和用户管理能力的入口，在为你
 - [JWT](/concepts/jwt-token.html)
 - [OIDC、OAuth2.0](/concepts/oidc/oidc-overview.html)
 - [SAML](/concepts/saml/saml-overview.html)
-- [LDAP](/guides/org/ldap-user-directory/)
+- [LDAP](/guides/users/ldap-user-directory.md)
 
 ## [**自定义登录框样式**](/guides/authentication/branding/#样式配置)
 

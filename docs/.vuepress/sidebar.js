@@ -74,6 +74,10 @@ const zhCnNavBar = {
           path: "/guides/basics/authenticate-first-user/",
           children: [
             {
+              title: `概述`,
+              path: "/guides/basics/authenticate-first-user/overview/",
+            },
+            {
               title: `使用托管登录页完成认证`,
               path: "/guides/basics/authenticate-first-user/use-hosted-login-page",
             },
@@ -150,6 +154,10 @@ const zhCnNavBar = {
       path: "/guides/authentication/",
       children: [
         {
+          title: "概述",
+          path: "/guides/authentication/overview/",
+        },
+        {
           title: "使用账号密码认证",
           path: "/guides/authentication/basic/password/",
         },
@@ -167,6 +175,7 @@ const zhCnNavBar = {
         // },
         {
           title: "使用扫码登录认证",
+          path: "/guides/authentication/qrcode/",
           children: [
             {
               title: "使用自建 App 扫码登录网站",
@@ -214,6 +223,7 @@ const zhCnNavBar = {
         },
         {
           title: "对认证流程进行扩展",
+          path: "/guides/authentication/extensibility/",
           children: [
             {
               title: "添加用户自定义字段",
@@ -228,7 +238,7 @@ const zhCnNavBar = {
               path: "/guides/authentication/extensibility/department-extend",
             },
             {
-              title: "IdToken 添加自定义字段",
+              title: "IdToken 添加扩展字段",
               path: "/guides/authentication/extensibility/customize-id-token",
             },
             {
@@ -274,6 +284,37 @@ const zhCnNavBar = {
         {
           title: `管理资源权限`,
           path: "/guides/access-control/resource-acl",
+        },
+        {
+          title: `管理新版数据资源权限`,
+          path: "/guides/access-control/data-permission/",
+          children: [
+            {
+              title: "权限空间",
+              path: "/guides/access-control/data-permission/permission-space",
+            },
+            {
+              title: "角色管理",
+              path: "/guides/access-control/data-permission/roles-management",
+            },
+            {
+              title: "数据资源",
+              path: "/guides/access-control/data-permission/data-resoources",
+            },
+            {
+              title: "数据策略与授权",
+              path: "/guides/access-control/data-permission/policy/",
+              children: [
+                {
+                  title: "数据策略与 OPA",
+                  path: "/guides/access-control/data-permission/policy/data-policy-and-opa",
+                }]
+            },
+            {
+              title: "权限视图",
+              path: "/guides/access-control/data-permission/data-permission-view",
+            },
+          ],
         },
       ],
     },
@@ -973,10 +1014,6 @@ const zhCnNavBar = {
           title: "管理成员生命周期",
           path: "/guides/org/staff-life-cycle-management/",
         },
-        {
-          title: "使用 LDAP 协议对外开放组织机构数据",
-          path: "/guides/org/ldap-user-directory/",
-        },
       ],
     },
     {
@@ -1303,7 +1340,22 @@ const zhCnNavBar = {
     },
     {
       title: "多因素认证组件（MFA）",
-      path: "/reference/mfa",
+      path: "/reference/mfa/",
+      children: [
+        {
+          title: "Web MFA",
+          path: "/reference/mfa/web-mfa",
+        },
+        {
+          title: "更新日志",
+          children: [
+            {
+              title: "Web MFA 更新日志",
+              path: "/reference/mfa/web-mfa-changelog",
+            },
+          ],
+        },
+      ],
     },
     // {
     //   title: "登录组件",
@@ -1907,7 +1959,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/social/dingtalk",
             "/reference/sdk-for-ios/social/line",
             "/reference/sdk-for-ios/social/slack",
-            "/reference/sdk-for-ios/social/amazon"
+            "/reference/sdk-for-ios/social/amazon",
           ],
         },
         {
@@ -5185,11 +5237,11 @@ const zhCnNavBar = {
           title: "选择 OIDC 授权模式",
           path: "/concepts/oidc/choose-flow",
         },
+        {
+          title: "OIDC 常见问题",
+          path: "/concepts/oidc-common-questions",
+        },
       ],
-    },
-    {
-      title: "OIDC 常见问题",
-      path: "/concepts/oidc-common-questions",
     },
     {
       title: "理解 SAML2 协议",
@@ -5323,7 +5375,7 @@ const zhCnNavBar = {
         {
           title: "使用模版创建 Workflow",
           path: "/workflow/快速开始/使用模版创建 workflow",
-        }
+        },
       ],
     },
     {
@@ -5360,7 +5412,7 @@ const zhCnNavBar = {
         {
           title: "导入和导出 Workflow",
           path: "/workflow/编写 Workflow/导入和导出 Workflow",
-        }
+        },
       ],
     },
     {
@@ -5393,12 +5445,12 @@ const zhCnNavBar = {
         {
           title: "查看 Workflow 执行记录",
           path: "/workflow/执行 Workflow/查看 Workflow 执行记录",
-        }
+        },
       ],
     },
     {
       title: "操作 Authing 内部资源",
-      path: "/workflow/操作 Authing 内部资源/"
+      path: "/workflow/操作 Authing 内部资源/",
     },
     {
       title: "使用应用连接器",
@@ -5427,8 +5479,8 @@ const zhCnNavBar = {
         {
           title: "飞书",
           path: "/workflow/使用应用连接器/飞书",
-        }
-      ]
+        },
+      ],
     },
     {
       title: "流程控制节点",
@@ -5462,7 +5514,7 @@ const zhCnNavBar = {
           title: "终止",
           path: "/workflow/流程控制节点/终止",
         },
-      ]
+      ],
     },
     {
       title: "数据处理节点",
@@ -5474,12 +5526,12 @@ const zhCnNavBar = {
         {
           title: "数据转换",
           path: "/workflow/数据处理节点/数据转换",
-        }
-      ]
+        },
+      ],
     },
     {
       title: "事件中心概述",
-      path: "/workflow/事件中心/"
+      path: "/workflow/事件中心/",
     },
   ],
   "/tenant/": [
@@ -5788,6 +5840,10 @@ const zhCnNavBar = {
           title: "管理租户成员 & 管理员",
           path: "/multi-tenant-console/admin-management",
         },
+        {
+          title: "用户池计量/租户权益设置",
+          path: "/multi-tenant-console/tenant-cost",
+        },
       ],
     },
     {
@@ -5800,6 +5856,18 @@ const zhCnNavBar = {
     },
   ],
   "/tenant-console/": [
+    {
+      title: "切换/加入/创建租户",
+      path: "/tenant-console/operation-auth-tenant",
+    },
+    {
+      title: "个人中心",
+      path: "/tenant-console/personal-center",
+    },
+    {
+      title: "数据概览",
+      path: "/tenant-console/tenant-analysis",
+    },
     {
       title: "关联应用",
       path: "/tenant-console/association-apps",
@@ -5816,22 +5884,30 @@ const zhCnNavBar = {
       title: "用户管理",
       path: "/tenant-console/user-management",
     },
-    // {
-    //   title: "组织机构",
-    //   path: "/tenant-console/organization",
-    // },
+    {
+      title: "组织机构",
+      path: "/tenant-console/organization",
+    },
     {
       title: "品牌化",
-      path: "/tenant-console/brandize",
+      path: "/tenant-console/tenant-branding",
+    },
+    {
+      title: "字段管理",
+      path: "/tenant-console/tenant-custom-fields",
+    },
+    {
+      title: "审计日志",
+      path: "/tenant-console/tenant-logs",
+    },
+    {
+      title: "用量信息",
+      path: "/tenant-console/tenant-usage",
     },
     {
       title: "基础设置",
       path: "/tenant-console/setting",
     },
-    // {
-    //   title: "管理员",
-    //   path: "/tenant-console/admin",
-    // },
   ],
   "/tenant-app-demo/": [
     {
@@ -5842,10 +5918,6 @@ const zhCnNavBar = {
       title: "创建/切换/配置组织",
       path: "/tenant-app-demo/org",
     },
-    // {
-    //   title: "个人中心",
-    //   path: "/tenant-app-demo/personal-center",
-    // },
   ],
 };
 
@@ -6470,11 +6542,6 @@ const translatedZhCnNavBar = {
         {
           title: "Manage member life cycle",
           path: "/guides/org/staff-life-cycle-management/",
-        },
-        {
-          title:
-            "Use LDAP protocol to open organization data to the outside world",
-          path: "/guides/org/ldap-user-directory/",
         },
       ],
     },

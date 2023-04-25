@@ -48,4 +48,4 @@ LDAP 使用相对简单的基于字符串的查询从 Active Directory 中提取
 
 ## 使用 {{$localeConfig.brandName}} 提供的 LDAP 用户目录
 
-详细使用文档请见[使用 {{$localeConfig.brandName}} 的 LDAP 用户目录](/guides/users/ldap-user-directory.md)，了解如何使用 LDAP 协议对外输出组织机构数据，请见 [使用 LDAP 协议对外开放组织机构数据](/guides/org/ldap-user-directory/)。
+详细使用文档请见[使用 {{$localeConfig.brandName}} 的 LDAP 用户目录](/guides/users/ldap-user-directory.md)

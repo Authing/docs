@@ -46,6 +46,6 @@ Active Directory contains information about every user account on the entire net
 
 LDAP uses relatively simple string-based queries to extract information from Active Directory. LDAP can store and retrieve objects such as usernames and passwords in Active Directory, and share the object data throughout the network. Happily, all this happens behind the scenes. End users will never have to perform LDAP queries manually, because Outlook has LDAP enabled and knows how to perform all necessary queries on its own.
 
-## Use the LDAP user directory provided by {{$localeConfig.brandName}} 
+## Use the LDAP user directory provided by {{$localeConfig.brandName}}
 
-For more details, please refer to the [LDAP user directory using {{$localeConfig.brandName}}](/guides/users/ldap-user-directory.md). To learn how to use the LDAP protocol to export organization data, please refer to [Use LDAP protocol to open organization data](/guides/org/ldap-user-directory/).
+For more details, please refer to the [LDAP user directory using {{$localeConfig.brandName}}](/guides/users/ldap-user-directory.md).

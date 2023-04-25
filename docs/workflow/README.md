@@ -4,7 +4,11 @@
 
 Authing 身份自动化平台是基于事件驱动的下一代身份领域业务策略和数据策略的可视化工作流编排平台。旨在满足客户侧多元的针对<strong>用户</strong><strong>目录、组织架构、登录认证、安全</strong><strong>管理</strong>等功能灵活性的配置需求，能够进一步<strong>以面向变化设计系统架构、</strong><strong>敏捷</strong><strong>迭代</strong>的原则，支撑客户纷繁复杂的身份和组织架构自动化管理需求。
 
+![](static/AV3tbyIz3oSvhNxcAy4cCuKDnJg.png)
+
 Authing 身份自动化平台的核心设计理念是「<strong>事件驱动</strong>」架构，从而有效支撑了流程运转的实时性、可靠性和可维护性，并能够保证工作流具备更佳的<strong>并发性</strong>和<strong>可靠性</strong>。事件驱动方式可以将事件与流程处理过程有效分离，从而实现灵活的任务调度和执行。
+
+![](static/RhjHb7i17obfYtxc50EcIySunmb.png)
 
 Authing 身份自动化平台可以帮助企业免除身份和账号管理过程中繁杂的定制化开发过程，基于下一代<strong>「</strong><strong>低代码</strong><strong>、无代码」</strong>的设计理念和可视化、拖拉拽的配置方式，快速构建和管理您的身份管理工作流程，大幅降低企业内部身份管理成本及身份安全风险。
 
@@ -16,27 +20,23 @@ Authing 身份自动化平台可以帮助企业免除身份和账号管理过程
 
 ![](static/boxcnBiy4ZMOcL90PFtiGBL9Acc.png)
 
-
 ## 身份数据集成与分发
 
 平台同时为用户提供员工身份管理下最佳的数据流集成和分发模版，除了继承 Authing APN 优势对具备 OpenAPI SaaS 应用的事件及操作全面集成外，我们也提供了对主流 HR 应用、OA 应用、数据库等开箱即用的连接和 ETL 能力，帮助企业快速打通身份数据孤岛。
 
 ![](static/boxcnEpWJ7EJeWGfguJPkcE66gd.png)
 
-
 ## 身份安全风险实时监测
 
 平台也为用户提供了 20+ 开箱即用的安全风控策略及个性化安全策略编排能力，结合 Authing 可嵌入的独立 MFA 能力，帮助企业在身份管理的全生命周期中实现持续、自适应的风控策略自定义。例如：管理员可以基于网络信息、设备信息、地理位置、访问来源等上下文信息编排风险计算策略和自定义风险处置行为，并且能够将策略在其他场景中灵活复用，帮助企业快速构建自适应、可持续的身份安全体系。
 
-![](static/boxcncCD3hUdUDQoUjiciJVgGkb.png)
-
+![](static/Lm8Gb7eltoBKkUxGWjacsY3NnCA.png)
 
 ## 认证旅程原子化编排
 
 基于我们「API-First 理念」下最具开发者友好体验用户注册和认证配置能力，及我们高度解耦的认证状态机引擎，为您提供了灵活、强大的注册、认证、忘记密码等功能的节点化编排模版，并提供完善的 SDK 和示例 Demo，开发者可以基于模块快速完成用户认证旅程的自定义配置并接入自建应用。
 
 ![](static/boxcntac9zzc3ksn8rdS9O8p2Mf.png)
-
 
 ## 自定义编排
 

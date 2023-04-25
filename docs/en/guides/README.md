@@ -78,7 +78,6 @@ After that, you can read the guidelines in accordance with the subject:
    - [Create or import organization](/guides/org/create-or-import-org/README.md)；
    - [Management organization](/guides/org/manage-org/README.md)；
    - [Management member life cycle](/guides/org/staff-life-cycle-management/README.md)；
-   - [Open organization data using LDAP protocol](/guides/org/ldap-user-directory/README.md)。
 
 6. [View audit log](/guides/audit/)
 7. Configuring Security Information
