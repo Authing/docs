@@ -4,7 +4,7 @@ meta:
     content: LDAP 用户目录
 ---
 
-# 使用 {{$localeConfig.brandName}} 的 LDAP 用户目录
+# 使用 {{$localeConfig.brandName}} 的 Cloud LDAP 用户目录
 
 <LastUpdated/>
 
@@ -94,6 +94,7 @@ ou=DEPARTMENT_NAME,ou=DEPARTMENT_NAME,dc=DOMAIN1,dc=DOMAIN2,o=authing
 
 - 域名：即你输入的 LDAP 域名
 - LDAP 链接：LDAP 服务的域名、端口等信息
+- LDAPS 链接：使用 LDAPS 连接服务的域名、端口等信息
 - Bind DN：用于连接至 LDAP 服务的账号
 - Bind DN 密码：用于连接至 LDAP 服务的密码，无法手动修改，若需要修改，可点击「自动生成密码」，并保存
 - Base DN：搜索 LDAP 的基本 DN
