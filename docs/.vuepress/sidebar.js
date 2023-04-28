@@ -5534,6 +5534,37 @@ const zhCnNavBar = {
       path: "/workflow/事件中心/",
     },
   ],
+  "/metadata/": [
+    {
+      title: "元数据概览",
+      path: "/metadata/",
+    },
+    {
+      title: "元数据功能说明",
+      children: [
+        {
+          title: "功能一：数据对象管理功能入口",
+          path: "/metadata/元数据功能说明/功能一：数据对象管理功能入口",
+        },
+        {
+          title: "功能二：字段管理",
+          path: "/metadata/元数据功能说明/功能二：字段管理",
+        },
+        {
+          title: "功能三：操作管理",
+          path: "/metadata/元数据功能说明/功能三：操作管理",
+        },
+        {
+          title: "功能四：详情页管理",
+          path: "/metadata/元数据功能说明/功能四：详情页管理",
+        },
+        {
+          title: "功能五：领域模型",
+          path: "/metadata/元数据功能说明/功能五：领域模型",
+        },
+      ],
+    },
+  ],
   "/tenant/": [
     {
       title: "概览",
