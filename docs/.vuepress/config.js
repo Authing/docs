@@ -164,6 +164,11 @@ module.exports = {
             hidden: true
           },
           {
+            text: "元数据",
+            link: "/metadata/",
+            hidden: true
+          },
+          {
             text: "应用集成",
             link: "/integration/"
           },
