@@ -114,12 +114,12 @@ yarn add @authing/guard-angular
 // App.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from '@authing/guard-react18';
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -150,7 +150,7 @@ function App() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -173,7 +173,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -202,7 +202,7 @@ app.use(
 
 ```json
 // angular.json
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/angular.json
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/angular.json
 {
   "projects": {
     "architect": {
@@ -215,7 +215,7 @@ app.use(
 ```
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -300,11 +300,11 @@ export class AppModule {}
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard } from '@authing/guard-react18';
 
 export default function Login() {
@@ -321,7 +321,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Home.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Home.vue
 export default {
   created() {
     console.log("guard instance: ", this.$guard);
@@ -334,7 +334,7 @@ export default {
 ::: tab Vue3
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Home.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Home.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -347,7 +347,7 @@ console.log("guard instance: ", guard);
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
@@ -374,7 +374,7 @@ export class HomeComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
   appId: "AUTHING_APP_ID",
@@ -438,11 +438,11 @@ console.log("guard instance: ", guard);
 // Jump.tsx
 
 // React16 / 17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Jump.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Jump.tsx
 import { useGuard } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Jump.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Jump.tsx
 // import { useGuard } from '@authing/guard-react18';
 
 export default function Jump() {
@@ -467,11 +467,11 @@ export default function Jump() {
 // Callback.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Callback.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Callback.tsx
 import { JwtTokenStatus, useGuard, User } from '@authing/guard-react';
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Callback.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Callback.tsx
 // import { JwtTokenStatus, useGuard, User } from '@authing/guard-react18';
 
 import React, { useEffect } from 'react';
@@ -527,11 +527,11 @@ export default function Callback() {
 // Personal.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Personal.tsx
 import { useGuard, User } from '@authing/guard-react';
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Personal.tsx
 // import { useGuard, User } from '@authing/guard-react18';
 
 import React, { useEffect, useState } from 'react';
@@ -564,7 +564,7 @@ export default function Personal() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Jump.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Jump.vue
 // Jump.vue
 export default {
   methods: {
@@ -577,7 +577,7 @@ export default {
 ```
 
 ``` javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Callback.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Callback.vue
 // Callback.vue
 export default {
   data () {
@@ -624,7 +624,7 @@ export default {
 ``` html
 <template>
   <div class="personal-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Personal.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Personal.vue -->
     <!-- Personal.vue -->
     <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
   </div>
@@ -655,7 +655,7 @@ export default {
 ::: tab Vue3
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Jump.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Jump.vue
 // Jump.vue
 import { useGuard } from "@authing/guard-vue3";
 
@@ -670,7 +670,7 @@ const startWithRedirect = () => {
 ``` html
 <template>
   <div class="personal-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Callback.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Callback.vue -->
     <!-- Callback.vue -->
     <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
   </div>
@@ -725,7 +725,7 @@ onMounted(() => {
 ``` html
 <template>
   <div class="personal-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Personal.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Personal.vue -->
     <!-- Personal.vue -->
     <textarea id="" cols="100" rows="30" :value="userInfo"></textarea>
   </div>
@@ -755,7 +755,7 @@ onMounted(() => {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/jump/jump.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/jump/jump.component.ts
 // jump.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
@@ -780,7 +780,7 @@ export class HomeComponent {
 ```
 
 ``` typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/callback/callback.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/callback/callback.component.ts
 // callback.component.ts
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
@@ -841,7 +841,7 @@ export class CallbackComponent {
 ```
 
 ``` typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
 // personal.component.ts
 import { Component } from '@angular/core'
 import { GuardService, User } from '@authing/guard-angular'
@@ -872,7 +872,7 @@ export class PersonalComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/jump.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/jump.html
 // jump.html
 const guard = new GuardFactory.Guard({
   // 你可以前往 Authing 控制台的本应用详情页查看你的 App ID
@@ -893,7 +893,7 @@ function startWithRedirect() {
 ```
 
 ``` javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/callback.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/callback.html
 // callback.html
 const guard = new GuardFactory.Guard(guardOptions)
 
@@ -948,7 +948,7 @@ async function handleAuthingLoginCallback () {
   <link rel="stylesheet" href="https://cdn.authing.co/packages/guard/5.1.5/guard.min.css">
 </head>
 <body>
-  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/personal.html -->
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/personal.html -->
   <!-- personal.html -->
   <button onclick="getUserInfo()">Get User Info</button>
 
@@ -1001,11 +1001,11 @@ async function handleAuthingLoginCallback () {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 import React, { useEffect } from "react";
@@ -1035,7 +1035,7 @@ export default function Login() {
 
 ```vue
 <template>
-  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue -->
   <div id="authing-guard-container"></div>
 </template>
 <script>
@@ -1056,7 +1056,7 @@ export default {
 
 ```vue
 <template>
-  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue -->
   <div id="authing-guard-container"></div>
 </template>
 
@@ -1081,7 +1081,7 @@ onMounted(() => {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -1109,7 +1109,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```html
-<!-- https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
+<!-- https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html -->
 <div id="authing-guard-container"></div>
 ```
 
@@ -1151,12 +1151,12 @@ guard.start("#authing-guard-container").then((userInfo) => {
 // App.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/modal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/modal/src/App.tsx
 // import { GuardProvider } from "@authing/guard-react18";
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -1185,11 +1185,11 @@ function App() {
 // Embed.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/modal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/modal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/modal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/modal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 export default function Embed() {
@@ -1230,7 +1230,7 @@ export default function Embed() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/modal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/modal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -1250,7 +1250,7 @@ Vue.use(GuardPlugin, {
 
 ```html
 <template>
-  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/modal/src/views/Embed.vue -->
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/modal/src/views/Embed.vue -->
   <!-- Embed.vue -->
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
@@ -1290,7 +1290,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/modal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/modal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
@@ -1315,7 +1315,7 @@ app.use(
 
 ```html
 <template>
-  <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/modal/src/views/Embed.vue -->
+  <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/modal/src/views/Embed.vue -->
   <!-- Embed.vue -->
   <div class="embed-container">
     <button class="authing-button" @click="showGuard">Show Guard</button>
@@ -1356,7 +1356,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/modal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/modal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -1386,7 +1386,7 @@ export class AppModule {}
 ```
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/modal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/modal/src/app/pages/embed/embed.component.ts
 // embed.component.ts
 import { Component } from "@angular/core";
 
@@ -1423,7 +1423,7 @@ export class EmbedComponent {
 ::: tab CDN
 
 ```html
-<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/modal/embed.html -->
+<!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/modal/embed.html -->
 <button onclick="showGuard()">Show Guard</button>
 
 <div>
@@ -1481,12 +1481,12 @@ function showGuard() {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from "@authing/guard-react18";
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -1517,7 +1517,7 @@ function App() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
 import "@authing/guard-vue2/dist/esm/guard.min.css";
@@ -1539,7 +1539,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -1566,7 +1566,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -1602,7 +1602,7 @@ export class AppModule {}
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   isSSO: true,
@@ -1630,11 +1630,11 @@ const guard = new GuardFactory.Guard({
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard } from "@authing/guard-react18";
 
 import React from "react";
@@ -1658,7 +1658,7 @@ export default function Logout() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     // 登出后的回调地址请在 Authing 控制台应用 -> 自建应用 -> 应用详情 -> 应用配置 -> 登出回调 URL 中配置
@@ -1674,7 +1674,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -1688,7 +1688,7 @@ const logout = () => guard.logout();
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1712,7 +1712,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
@@ -1744,12 +1744,12 @@ function Logout() {
 // App.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from "@authing/guard-react18";
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -1777,11 +1777,11 @@ function App() {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard } from "@authing/guard-react18";
 
 import React from "react";
@@ -1805,7 +1805,7 @@ export default function Logout() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -1824,7 +1824,7 @@ Vue.use(GuardPlugin, {
 ```
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     logout() {
@@ -1840,7 +1840,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -1863,7 +1863,7 @@ app.use(
 ```
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -1877,7 +1877,7 @@ const logout = () => guard.logout();
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -1910,7 +1910,7 @@ export class AppModule {}
 ```
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -1933,7 +1933,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   isSSO: true,
@@ -1964,11 +1964,11 @@ function Logout() {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard } from "@authing/guard-react18";
 
 import React from "react";
@@ -1990,7 +1990,7 @@ export default function Register() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     startRegister() {
@@ -2005,7 +2005,7 @@ export default {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
 import { useGuard } from "@authing/guard-vue3";
 
 const guard = useGuard();
@@ -2018,7 +2018,7 @@ const startRegister = () => guard.startRegister();
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -2041,7 +2041,7 @@ export class LoginComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 function startRegister() {
   guard.startRegister();
 }
@@ -2072,12 +2072,12 @@ function startRegister() {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from "@authing/guard-react18";
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -2110,7 +2110,7 @@ export default function App() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
 import "@authing/guard-vue2/dist/esm/guard.min.css";
@@ -2134,7 +2134,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
 import "@authing/guard-vue3/dist/esm/guard.min.css";
@@ -2162,7 +2162,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -2200,7 +2200,7 @@ export class AppModule {}
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
@@ -2230,11 +2230,11 @@ const guard = new GuardFactory.Guard({
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 import React from "react";
@@ -2261,7 +2261,7 @@ export default function GetUserInfo() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     async getUserInfo() {
@@ -2279,7 +2279,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
-  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+  // 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
   import { useGuard } from "@authing/guard-vue3";
 
   import type { User } from "@authing/guard-vue3";
@@ -2299,7 +2299,7 @@ export default {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -2323,7 +2323,7 @@ export class GetUserInfoComponent {
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 async function getUserInfo() {
   // 获取用户信息
   const userInfo = await guard.trackSession();
@@ -2355,11 +2355,11 @@ Authing Guard 会持续新增对不同语言的支持，详情请参见 [Authing
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 import React, { useEffect, useState } from "react";
@@ -2407,7 +2407,7 @@ export default function ChangeLanguage() {
 ```vue
 <template>
   <div class="embed-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue -->
     <select v-model="langCache" @change="changeLang">
       <option value="zh-CN">zh-CN</option>
       <option value="zh-TW">zh-TW</option>
@@ -2452,7 +2452,7 @@ export default {
 ```vue
 <template>
   <div class="embed-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue -->
     <select v-model="langCache" @change="changeLang">
       <option value="zh-CN">zh-CN</option>
       <option value="zh-TW">zh-TW</option>
@@ -2493,7 +2493,7 @@ const changeLang = (event) => {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService } from "@authing/guard-angular";
 
@@ -2515,7 +2515,7 @@ export class GetUserInfoComponent {
 ```
 
 ```html
-<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
+<!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html -->
 <div class="change-lang-container">
   <select ng-model="langCache" (change)="changeLang($event)">
     <option ngValue="zh-CN">zh-CN</option>
@@ -2531,7 +2531,7 @@ export class GetUserInfoComponent {
 
 ::: tab CDN
 ```html
-<!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html -->
+<!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html -->
 <select onchange="changeLang(event)">
   <option value="zh-CN">zh-CN</option>
   <option value="zh-TW">zh-TW</option>
@@ -2563,11 +2563,11 @@ function changeLang(event) {
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 import React, { useEffect } from "react";
@@ -2608,7 +2608,7 @@ export default function ChangeContentCSS() {
 ```vue
 <template>
   <div class="embed-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue -->
     <button class="authing-button" @click="changeContentCSS">
       Change Content CSS
     </button>
@@ -2646,7 +2646,7 @@ export default {
 ```vue
 <template>
   <div class="embed-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue -->
     <button @click="changeContentCSS">Change Content CSS</button>
     <div id="authing-guard-container"></div>
   </div>
@@ -2681,7 +2681,7 @@ const changeContentCSS = () =>
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component } from "@angular/core";
 import { GuardService, User } from "@authing/guard-angular";
 
@@ -2726,7 +2726,7 @@ export class GetUserInfoComponent {
 ::: tab CDN
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 function changeContentCSS() {
   guard.changeContentCSS(`
     #authing-guard-container {
@@ -2767,12 +2767,12 @@ npm install --save face-api.js
 // App.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { GuardProvider } from '@authing/guard-react';
 import '@authing/guard-react/dist/esm/guard.min.css';
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { GuardProvider } from '@authing/guard-react18';
 // import '@authing/guard-react18/dist/esm/guard.min.css';
 
@@ -2801,7 +2801,7 @@ npm install --save face-api.js
 ```
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 // main.js
 import * as facePlugin from 'face-api.js'
 
@@ -2824,7 +2824,7 @@ npm install --save face-api.js
 ```
 
 ``` typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
 // main.ts
 import { createApp } from 'vue'
 
@@ -2853,7 +2853,7 @@ npm install --save face-api.js
 ```
 
 ``` typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // app.module.ts
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -2926,11 +2926,11 @@ Authing Guard 集成了 [authing-js-sdk 的 AuthenticationClient](https://docs.a
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Personal.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Personal.tsx
 import { useGuard, AuthenticationClient, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Personal.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Personal.tsx
 // import { useGuard, AuthenticationClient, User } from "@authing/guard-react18";
 
 import React, { useEffect } from "react";
@@ -2970,7 +2970,7 @@ export default function Personal() {
 ```vue
 <template>
   <div class="personal-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Personal.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Personal.vue -->
     <button class="authing-button" @click="updateProfile">
       Update Profile
     </button>
@@ -3006,7 +3006,7 @@ export default {
 ```vue
 <template>
   <div class="personal-container">
-    <!-- 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Personal.vue -->
+    <!-- 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Personal.vue -->
     <button @click="updateProfile">Update Profile</button>
   </div>
 </template>
@@ -3040,7 +3040,7 @@ const updateProfile = async () => {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/personal/personal.component.ts
 import { Component } from "@angular/core";
 import {
   AuthenticationClient,
@@ -3077,7 +3077,7 @@ export class PersonalComponent {
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 async function updateProfile() {
   const authenticationClient = await guard.getAuthClient();
 
@@ -3109,12 +3109,12 @@ async function updateProfile() {
 // App.tsx
 
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/App.tsx
 import { GuardProvider } from "@authing/guard-react";
 import "@authing/guard-react/dist/esm/guard.min.css";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/App.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/App.tsx
 // import { GuardProvider } from "@authing/guard-react18";
 // import "@authing/guard-react18/dist/esm/guard.min.css";
 
@@ -3144,7 +3144,7 @@ export default function App() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/main.js
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/main.js
 // main.js
 import Vue from "vue";
 import { GuardPlugin } from "@authing/guard-vue2";
@@ -3166,7 +3166,7 @@ Vue.use(GuardPlugin, {
 ::: tab Vue3
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/main.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/main.ts
 // main.ts
 import { createApp } from "vue";
 import { createGuard } from "@authing/guard-vue3";
@@ -3192,7 +3192,7 @@ app.use(
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/app.module.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/app.module.ts
 // app.module.ts
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -3227,7 +3227,7 @@ export class AppModule {}
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 const guard = new GuardFactory.Guard({
   appId: "AUTHING_APP_ID",
   // 如果你使用的是私有化部署的 Authing 服务，需要传入自定义 host，如:
@@ -3256,7 +3256,7 @@ const guard = new GuardFactory.Guard({
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import {
   AuthenticationClient,
   RefreshToken,
@@ -3264,7 +3264,7 @@ import {
 } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { AuthenticationClient, RefreshToken, useGuard, } from "@authing/guard-react18";
 
 export default function Login() {
@@ -3291,7 +3291,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   methods: {
     async refreshToken() {
@@ -3309,7 +3309,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
-  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+  // 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
   import { useGuard } from "@authing/guard-vue3";
 
   import type { RefreshToken, AuthenticationClient } from "@authing/guard-vue3";
@@ -3329,7 +3329,7 @@ export default {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 // Angular 组件中使用 Guard API
 import { Component } from "@angular/core";
 import {
@@ -3361,7 +3361,7 @@ export class HomeComponent {
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 async function refreshToken() {
   const authenticationClient = await guard.getAuthClient();
   const refreshedToken = await authenticationClient.refreshToken();
@@ -3431,11 +3431,11 @@ Authing Guard 提供了很多高级配置，如自定义 UI，使用特定登录
 
 ```tsx
 // React 16/17
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
 import { useGuard, User } from "@authing/guard-react";
 
 // React 18
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-react18/normal/src/pages/Embed.tsx
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
 // import { useGuard, User } from "@authing/guard-react18";
 
 import React, { useEffect } from "react";
@@ -3469,7 +3469,7 @@ export default function Login() {
 ::: tab Vue2
 
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue2/normal/src/views/Embed.vue
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
 export default {
   mounted() {
     // 使用 start 方法挂载 Guard 组件到你指定的 DOM 节点，登录成功后返回 userInfo
@@ -3492,7 +3492,7 @@ export default {
 
 ```html
 <script lang="ts" setup>
-  // 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-vue3/normal/src/views/Embed.vue
+  // 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
   import { onMounted } from "vue";
 
   import { useGuard } from "@authing/guard-vue3";
@@ -3521,7 +3521,7 @@ export default {
 ::: tab Angular
 
 ```typescript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
 import { Component, ChangeDetectorRef } from "@angular/core";
 
 import { GuardService, User } from "@authing/guard-angular";
@@ -3555,7 +3555,7 @@ export class EmbedComponent {
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/master/examples/guard/normal/embed.html
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
 guard.on("login", (userInfo) => {
   // 自定义登录成功后的业务逻辑
   // 比如跳转到对应的某个页面等
