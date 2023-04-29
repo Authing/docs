@@ -491,10 +491,7 @@ export default function Callback() {
       const loginStatus: JwtTokenStatus | undefined  = await guard.checkLoginStatus()
 
       if (!loginStatus) {
-        guard.startWithRedirect({
-          scope: 'openid profile'
-        })
-        return
+        return console.error('Guard is not get login status')
       }
 
       // 3. 获取到登录用户的用户信息
@@ -514,9 +511,7 @@ export default function Callback() {
       // 从 URL search 中解析 state
     } catch (e) {
       // 登录失败，推荐再次跳转到登录页面
-      guard.startWithRedirect({
-        scope: 'openid profile'
-      })
+      console.error('Guard handleAuthingLoginCallback error: ', e)
     }
   }
 
@@ -599,14 +594,13 @@ export default {
         // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
         // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
         await this.$guard.handleRedirectCallback()
+
         // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
         const loginStatus = await this.$guard.checkLoginStatus()
         if (!loginStatus) {
-          this.$guard.startWithRedirect({
-            scope: 'openid profile'
-          })
-          return
+          return console.error('Guard is not get login status')
         }
+
         // 3. 获取到登录用户的用户信息
         const userInfo = await this.$guard.trackSession()
         console.log(userInfo)
@@ -620,9 +614,7 @@ export default {
         // 从 URL search 中解析 state
       } catch (e) {
         // 登录失败，推荐再次跳转到登录页面
-        this.$guard.startWithRedirect({
-          scope: 'openid profile'
-        })
+        console.error('Guard handleAuthingLoginCallback error: ', e)
       }
     }
   }
@@ -698,14 +690,14 @@ const handleAuthingLoginCallback = async () => {
     // 1. 触发 guard.handleRedirectCallback() 方法完成登录认证
     // 用户认证成功之后，我们会将用户的身份凭证存到浏览器的本地缓存中
     await guard.handleRedirectCallback()
+
     // 2. 处理完 handleRedirectCallback 之后，你需要先检查用户登录态是否正常
     const loginStatus: JwtTokenStatus | undefined = await guard.checkLoginStatus()
+
     if (!loginStatus) {
-      guard.startWithRedirect({
-        scope: 'openid profile'
-      })
-      return
+      return console.error('Guard is not get login status')
     }
+
     // 3. 获取到登录用户的用户信息
     const userInfo: User | null = await guard.trackSession()
     console.log(userInfo)
@@ -721,9 +713,7 @@ const handleAuthingLoginCallback = async () => {
     // 从 URL search 中解析 state
   } catch (e) {
     // 登录失败，推荐再次跳转到登录页面
-    guard.startWithRedirect({
-      scope: 'openid profile'
-    })
+    console.error('Guard handleAuthingLoginCallback error: ', e)
   }
 }
 onMounted(() => {
@@ -822,10 +812,7 @@ export class CallbackComponent {
       const loginStatus: JwtTokenStatus | undefined = await this.guard.client.checkLoginStatus()
 
       if (!loginStatus) {
-        this.guard.client.startWithRedirect({
-          scope: 'openid profile'
-        })
-        return
+        return console.error('Guard is not get login status')
       }
 
       // 3. 获取到登录用户的用户信息
@@ -847,9 +834,7 @@ export class CallbackComponent {
       // 从 URL search 中解析 state
     } catch (e) {
       // 登录失败，推荐再次跳转到登录页面
-      this.guard.client.startWithRedirect({
-        scope: 'openid profile'
-      })
+      console.error('Guard handleAuthingLoginCallback error: ', e)
     }
   }
 }
@@ -924,10 +909,7 @@ async function handleAuthingLoginCallback () {
     const loginStatus = await guard.checkLoginStatus()
 
     if (!loginStatus) {
-      guard.startWithRedirect({
-        scope: 'openid profile'
-      })
-      return
+      return console.error('Guard is not get login status')
     }
 
     // 3. 获取到登录用户的用户信息
@@ -947,9 +929,7 @@ async function handleAuthingLoginCallback () {
     // 从 URL search 中解析 state
   } catch (e) {
     // 登录失败，推荐再次跳转到登录页面
-    guard.startWithRedirect({
-      scope: 'openid profile'
-    })
+    console.error('Guard handleAuthingLoginCallback error: ', e)
   }
 }
 ``` 
