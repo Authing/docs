@@ -1,4 +1,4 @@
-# 使用Authing 提供的事件 SDK 构建实时应用
+# 使用 Authing 提供的事件 SDK 构建实时应用
 
 ## 简介
 
@@ -50,10 +50,10 @@ event.sub('authing.user.resigned', async (userInfo) => {
 
 ```java
 ManagementClientOptions clientOptions = new ManagementClientOptions();
-clientOptions.setAccessKeyId(ACCESS_KEY_ID);  // 用户池 id
+clientOptions.setAccessKeyId(ACCESS_KEY_ID);  // 用户池 ID
 clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET); // 用户池密钥
 
-ManagementClient client = new ManagementClient(clientOptions);  // 初始化 sdk
+ManagementClient client = new ManagementClient(clientOptions);  // 初始化 SDK
 ```
 
 ¶  clientOptions 完整参数如下：
@@ -63,7 +63,7 @@ ManagementClient client = new ManagementClient(clientOptions);  // 初始化 sdk
 - `host`: Authing  API 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: [https://authing-api.my-authing-service.com](https://authing-api.my-authing-service.com)（最后不带斜杠 /）。
 - `timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
-- `websocketHost`: Authing  事件 websocket 服务器地址，默认为 `wss://``events.authing.com` 。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: `wss://``events.``my-authing-service.com` 最后不带斜杠 /）。
+- `websocketHost`: Authing 事件 Websocket 服务器地址，默认为 `wss://``events.authing.com` 。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: `wss://``events.``my-authing-service.com` 最后不带斜杠 /）。
 
 1. 订阅事件
 
@@ -83,8 +83,8 @@ client.subEvent("authing.user.login", new Receiver() {  // 订阅用户注册事
 ### 二、订阅用户池私有事件
 
 1. 在 Authing 控制台 xxx  查看事先定义好的事件编码（参考 [创建自定义事件](http://congsole.authing.cn)）。
-2. 按照 订阅公共事件步骤 的 1、2 流程完成 sdk 初始化。
-3. 然后调用 sdk 的订阅方法，示例代码如下：
+2. 按照 订阅公共事件步骤 的 1、2 流程完成 SDK 初始化。
+3. 然后调用 SDK 的订阅方法，示例代码如下：
 
 ```java
 client.subEvent("custom_aouaw.myEvent", new Receiver() {  // 订阅用户注册事件
