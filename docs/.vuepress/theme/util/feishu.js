@@ -65,11 +65,11 @@ export const feishuFeedback = ({
     ]);
   }
 
-  if (contactMethod) {
+  if (!helpful) {
     content.push([
       {
         tag: "text",
-        text: `联系方式：${contactMethod}`,
+        text: `联系方式：${contactMethod || "未填写"}`,
       },
     ]);
   }
