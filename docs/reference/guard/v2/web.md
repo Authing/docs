@@ -2476,11 +2476,16 @@ export class GetUserInfoComponent {
 
 ::: tab CDN
 ```javascript
-// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
-async function getUserInfo() {
-  // 获取用户信息
-  const userInfo = await guard.trackSession();
-  console.log(userInfo);
+async function getAccessTokenByIdToken () {
+  const userInfo = await guard.trackSession()
+  const authenticationClient = await guard.client.getAuthClient()
+  const res = await authenticationClient.getAccessTokenByIdToken({
+    // 控制台 -> 自建应用 -> 应用配置 -> 认证配置 -> 登录回调 URL
+    redirectUri: 'YOUR_REDIRECT_URI',
+    // 登录成功后，从用户信息中获取到的 ID Toten
+    idToken: userInfo.token
+  })
+  console.log('getAccessTokenByIdToken: ', res)
 }
 ```
 :::
