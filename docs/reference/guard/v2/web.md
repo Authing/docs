@@ -2334,6 +2334,158 @@ async function getUserInfo() {
 
 ::::
 
+### 获取 Access Token
+
+登录成功后，使用 ID Token 可换取 Access Token，控制台配置如下：
+
+- 授权模式勾选 `authing_token`
+- 返回类型勾选：`code token` 和 `code`
+- 『换取 token 身份验证方式』、『检验 token 身份验证方式』、『撤回 token 身份验证方式』 全部勾选 `none`
+
+![getAccessTokenByIdToken](./images/get-access-token-by-id-token.png)
+
+:::: tabs :options="{ useUrlFragment: false }"
+
+::: tab React
+
+```tsx
+// React 16 / 17
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react/normal/src/pages/Embed.tsx
+import { useGuard, User } from "@authing/guard-react";
+
+// React 18
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-react18/normal/src/pages/Embed.tsx
+// import { useGuard, User } from "@authing/guard-react18";
+
+import React, { useEffect } from "react";
+
+export default function Login() {
+  const guard = useGuard();
+
+  const [userInfo, setUserInfo] = useState<null | User>(null)
+
+  useEffect(() => {
+    guard.on('login', (userInfo: User) => {
+      console.log('userInfo in login: ', userInfo)
+      setUserInfo(userInfo)
+    })
+  }, [])
+
+  const getAccessTokenByIdToken = async () => {
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
+    const res = await authenticationClient.getAccessTokenByIdToken({
+      // 控制台 -> 自建应用 -> 应用配置 -> 认证配置 -> 登录回调 URL
+      redirectUri: 'YOUR_REDIRECT_URI',
+      // 登录成功后，从用户信息中获取到的 ID Toten
+      idToken: userInfo!.token as string
+    })
+    console.log('getAccessTokenByIdToken: ', res)
+  }
+
+  return (
+    <div>
+      <button className='authing-button' onClick={getAccessTokenByIdToken}>Get Access Token By ID Token</button>
+    </div>
+  );
+}
+```
+
+:::
+
+::: tab Vue2
+
+```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue2/normal/src/views/Embed.vue
+export default {
+  methods: {
+    async getAccessTokenByIdToken () {
+      const authenticationClient = await this.$guard.getAuthClient()
+      const res = await authenticationClient.getAccessTokenByIdToken({
+        // 控制台 -> 自建应用 -> 应用配置 -> 认证配置 -> 登录回调 URL
+        redirectUri: 'YOUR_REDIRECT_URI',
+        // 登录成功后，从用户信息中获取到的 ID Toten
+        idToken: this.userInfo.token
+      })
+      console.log('getAccessTokenByIdToken: ', res)
+    }
+  },
+};
+```
+
+:::
+
+::: tab Vue3
+
+```html
+<script lang="ts" setup>
+  // 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-vue3/normal/src/views/Embed.vue
+  import { useGuard } from "@authing/guard-vue3";
+
+  import type { User } from "@authing/guard-vue3";
+
+  const guard = useGuard();
+
+  const userInfo = ref<User | null>(null);
+
+  const getAccessTokenByIdToken = async () => {
+    const authenticationClient: AuthenticationClient = await guard.getAuthClient()
+    const res = await authenticationClient.getAccessTokenByIdToken({
+      // 控制台 -> 自建应用 -> 应用配置 -> 认证配置 -> 登录回调 URL
+      redirectUri: 'YOUR_REDIRECT_URI',
+      // 登录成功后，从用户信息中获取到的 ID Toten
+      idToken: userInfo.value?.token as string
+    })
+    console.log('getAccessTokenByIdToken: ', res)
+  }
+</script>
+```
+
+:::
+
+::: tab Angular
+
+```typescript
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard-angular/normal/src/app/pages/embed/embed.component.ts
+import { Component } from "@angular/core";
+import { GuardService, User } from "@authing/guard-angular";
+
+@Component({
+  selector: "embed-container",
+  templateUrl: "./embed.component.html",
+  styleUrls: ["./embed.component.css"]
+})
+export class GetUserInfoComponent {
+  constructor(private guard: GuardService) {}
+
+  userInfo: null | User = null
+
+  async getAccessTokenByIdToken () {
+    const authenticationClient: AuthenticationClient = await this.guard.client.getAuthClient()
+    const res = await authenticationClient.getAccessTokenByIdToken({
+      // 控制台 -> 自建应用 -> 应用配置 -> 认证配置 -> 登录回调 URL
+      redirectUri: 'YOUR_REDIRECT_URI',
+      // 登录成功后，从用户信息中获取到的 ID Toten
+      idToken: this.userInfo!.token as string
+    })
+    console.log('getAccessTokenByIdToken: ', res)
+  }
+}
+```
+
+:::
+
+::: tab CDN
+```javascript
+// 代码示例：https://github.com/Authing/Guard/blob/v5/examples/guard/normal/embed.html
+async function getUserInfo() {
+  // 获取用户信息
+  const userInfo = await guard.trackSession();
+  console.log(userInfo);
+}
+```
+:::
+::::
+
 ### 切换语言
 
 <p id="changeLang"></p>
