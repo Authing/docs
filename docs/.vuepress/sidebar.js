@@ -5531,7 +5531,7 @@ const zhCnNavBar = {
     },
     {
       title: "事件中心概述",
-      path: "/workflow/事件中心/",
+      path: "/workflow/事件中心概述/",
     },
   ],
   "/metadata/": [
