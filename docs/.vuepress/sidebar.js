@@ -5424,6 +5424,10 @@ const zhCnNavBar = {
       title: "执行 Workflow",
       children: [
         {
+          title: "手动执行",
+          path: "/workflow/执行 Workflow/手动执行",
+        },
+        {
           title: "激活 Workflow",
           path: "/workflow/执行 Workflow/激活 Workflow",
         },
@@ -5434,10 +5438,6 @@ const zhCnNavBar = {
         {
           title: "通过 Webhook 触发 Workflow",
           path: "/workflow/执行 Workflow/通过 Webhook 触发 Workflow",
-        },
-        {
-          title: "手动执行",
-          path: "/workflow/执行 Workflow/手动执行",
         },
         {
           title: "定时执行 Workflow",
@@ -5521,6 +5521,22 @@ const zhCnNavBar = {
       path: "/workflow/流程控制节点/",
       children: [
         {
+          title: "IF",
+          path: "/workflow/流程控制节点/IF",
+        },
+        {
+          title: "SWITCH",
+          path: "/workflow/流程控制节点/SWITCH",
+        },
+        {
+          title: "循环执行",
+          path: "/workflow/流程控制节点/循环",
+        },
+        {
+          title: "子流程",
+          path: "/workflow/流程控制节点/子流程",
+        },
+        {
           title: "数据检测",
           path: "/workflow/流程控制节点/数据检测",
         },
@@ -5529,28 +5545,12 @@ const zhCnNavBar = {
           path: "/workflow/流程控制节点/分支",
         },
         {
-          title: "SWITCH",
-          path: "/workflow/流程控制节点/SWITCH",
-        },
-        {
-          title: "IF",
-          path: "/workflow/流程控制节点/IF",
-        },
-        {
-          title: "循环",
-          path: "/workflow/流程控制节点/循环",
-        },
-        {
-          title: "子流程",
-          path: "/workflow/流程控制节点/子流程",
+          title: "终止流程",
+          path: "/workflow/流程控制节点/终止",
         },
         {
           title: "等待",
           path: "/workflow/流程控制节点/等待",
-        },
-        {
-          title: "终止",
-          path: "/workflow/流程控制节点/终止",
         },
       ],
     },
