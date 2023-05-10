@@ -2,6 +2,8 @@
 
 这篇文档将会如何从零开始创建一个 Workflow，将一个 mock 的用户数据源导入到 Authing。最终创建出来的流程图如下：
 
+> 线上用户池地址：[https://console.authing.cn/console/63bea7828f47719bfa80df93/workflow/detail?task_id=138&workflowId=138&defaultActiveKey=WORK_fLOW_CANVAS&page=1&group=custom](https://console.authing.cn/console/63bea7828f47719bfa80df93/workflow/detail?task_id=138&workflowId=138&defaultActiveKey=WORK_fLOW_CANVAS&page=1&group=custom)，如果想直接查看请联系 ou_05bf3085ffc4a9cbb4fda96a24ae3770 添加协作管理员。
+
 ![](../static/boxcn77nAoJnXNb7widUrbHdR9d.png)
 
 会涉及到以下几个核心节点：
@@ -201,7 +203,7 @@ $item.social_insurance_number ? $item.social_insurance_number.slice($item.social
 
 ![](../static/boxcnj9WCAzY4s0ZVu2QcNF3fcb.png)
 
-<!-- # 思考问题
+# 思考问题
 
 请你思考以下几个问题：
 
@@ -210,4 +212,4 @@ $item.social_insurance_number ? $item.social_insurance_number.slice($item.social
 ![](../static/boxcnAE630s9A0nV8gD2cio3Mcg.png)
 
 1. 假如 Authing 的 V3 API 无法支持通过 externalId 字段作为主键更新用户资料，必须传入 Authing 的用户 ID，你还有没有其他思路可以完成这件事情？
-2. 假如用户数据源非常大，一个 HTTP 请求无法完成，需要分页查询，你有没有什么思路。 -->
+2. 假如用户数据源非常大，一个 HTTP 请求无法完成，需要分页查询，你有没有什么思路。
