@@ -197,7 +197,7 @@ export default {
     & > .sidebar-group > .sidebar-heading, & > .sidebar-link {
       // font-size: 14px
       line-height: 22px;
-      padding: 10px 1rem;
+      padding: 10px 1rem 10px 1.3rem;
     }
   }
 

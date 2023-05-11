@@ -2,7 +2,7 @@
 
 MySQL 应用可以让你在 Authing 身份自动化中操作 MySQL 数据库，包含执行查询、插入数据、更新数据等。
 
-![](../static/boxcnWW6pTanXHBr0zSDUL8Z6ph.png)
+![](../static/EeW2bOfSXoHB2BxzO1PcNDxongb.png)
 
 ## 准备工作
 
@@ -32,10 +32,10 @@ INSERT INTO `users` (`id`, `name`, `email`) VALUES
 (2, 'Lucy', 'lucy@example.com');
 ```
 
-设置 MySQL 节点的操作为执行查询、在查询语句中写入 `select * from users`：
+设置 MySQL 节点的操作为执行查询、在查询语句中写入 `select * from users limit 10`：
 
-![](../static/boxcnY2HKXdE8XvV3RpvcNundWb.png)
+![](../static/IzaAbxyfVofugaxOHwJcttelnjc.png)
 
 执行节点：
 
-![](../static/boxcnyE7bQDLqJrrV0qw4RxmyHc.png)
+![](../static/AXy3bz6SeoD1fXxwrN3cPjK3n6c.png)

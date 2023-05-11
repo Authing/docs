@@ -1,10 +1,10 @@
-# 通过 API 接口形式调用 workflow
+# 通过 API 接口形式调用 Workflow
 
 就像你平时请求 API 接口一样，Authing workflow 可以暴露一个 public service API 地址，调用之后你可以通过 HTTP 响应拿到 workflow 的执行结果。
 
 在选择触发器时，选择「通过 HTTP 请求触发」方式：
 
-![](../static/boxcnX7QGvpPyxdpIW0xGTW9GHc.png)
+![](../static/DG72bShP4omJKexrcIbcwR7Enqm.png)
 
 可以在<strong> </strong><strong>API</strong><strong> 地址</strong>这一项中复制请求地址，还可以配置 HTTP 请求调用方式：
 
@@ -18,7 +18,7 @@
 8. 工作流执行完成后返回：阻塞式等到 workflow 执行完成之后再返回，和我们平时调用 API 接口类似，你可以同步得拿到 workflow 的执行结果。<strong>其中，workflow 的执行结果为你最后一个节点的输出值</strong>。
 9. HTTP 状态码：控制 HTTP 请求响应的状态码，默认为 200。
 
-![](../static/boxcnwXDlVzr9UTKpw20W6MMTee.png)
+![](../static/XintbpMOqoAchyxpzZCcfKINnpe.png)
 
 ## 快速示例
 
@@ -30,7 +30,7 @@
 }
 ```
 
-![](../static/boxcnJyLJKVhVqxvJ3KvJBoe0ij.png)
+![](../static/NovDbnkGao17k4xYdqDcXAl7nph.png)
 
 接下来我们复制 API 地址，在浏览器中进行访问，可以看到直接返回了 workflow 的执行结果：
 
@@ -40,7 +40,7 @@
 
 在上一个示例的基础上，我们设置认证方式为「<strong>基础认证</strong>」，将 Basic 认证用户名和密码设置为 test 和 test。
 
-![](../static/boxcnVVvLW8uSbfEqLK2yyMi4QN.png)
+![](../static/XmH5bmwcQo1D53xtvUucB6Vyned.png)
 
 为了测试方便，这里我们使用 [http://web.chacuo.net/safebasicauth](http://web.chacuo.net/safebasicauth) 此网站来生成 Basic 请求头值：
 
@@ -74,9 +74,9 @@ curl --location --request POST 'https://console.authing.cn/public/service/xxxxxx
 
 ## HTTP Header 认证方式
 
-我们再将认证方式设置为「<strong>请求头认证</strong>」，将请求头设置为 x-api-key，密钥设置为 my-secret-api-key：
+我们再将认证方式设置为「<strong>请求头认证</strong>」，将请求头设置为 `x-api-key`，密钥设置为 `my-secret-api-key`：
 
-![](../static/boxcn2cmG4GBywfblJIpzdpR7Pd.png)
+![](../static/TJbCbrKaFoYpKCx9DqbcgWZXnET.png)
 
 通过 Postman 或者 curl 请求，可以看到拿到了 workflow 的执行结果：
 
@@ -100,7 +100,7 @@ curl --location --request POST 'https://console.authing.cn/public/service/xxxxxx
 }
 ```
 
-![](../static/boxcnGLnE85b10mEf171PGCXK4c.png)
+![](../static/ZlllbS6bNoyzgGxHdVfcru7Nnfc.png)
 
 再次通过 Postman 或者 curl 请求，注意这里我们设置了请求头、请求体以及查询参数：
 

@@ -14,7 +14,7 @@ Authing 身份自动化的 IF 节点是一种简化过后的 SWITCH 节点，只
 
 如下图所示的规则含义为：当 $value1 的值为 true 或者 $value2 和 value3 同时为 true 的时候，满足条件。
 
-![](../static/boxcntdsY2fK6gPiIF1P9chU8Uh.png)
+![](../static/MD90bH10noaKUgxDGC8c50jan9c.png)
 
 ## 自定义代码模式
 
@@ -24,4 +24,4 @@ Authing 身份自动化的 IF 节点是一种简化过后的 SWITCH 节点，只
 return !!value1 || (!!value2 && !!value3);
 ```
 
-![](../static/boxcnXjRO9o7m050N3mzv4YCauc.png)
+![](../static/G3HUbaylIoUejgxFN5McWGvAnbe.png)

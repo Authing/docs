@@ -308,7 +308,8 @@ const zhCnNavBar = {
                 {
                   title: "数据策略与 OPA",
                   path: "/guides/access-control/data-permission/policy/data-policy-and-opa",
-                }]
+                },
+              ],
             },
             {
               title: "权限视图",
@@ -5370,11 +5371,11 @@ const zhCnNavBar = {
         },
         {
           title: "编写第一个 Workflow",
-          path: "/workflow/快速开始/编写第一个 workflow",
+          path: "/workflow/快速开始/编写第一个 Workflow",
         },
         {
           title: "使用模版创建 Workflow",
-          path: "/workflow/快速开始/使用模版创建 workflow",
+          path: "/workflow/快速开始/使用模版创建 Workflow",
         },
       ],
     },
@@ -5392,6 +5393,10 @@ const zhCnNavBar = {
         {
           title: "添加节点",
           path: "/workflow/编写 Workflow/添加节点",
+        },
+        {
+          title: "配置账号连接",
+          path: "/workflow/编写 Workflow/配置账号连接",
         },
         {
           title: "添加流程控制节点",
@@ -5419,28 +5424,28 @@ const zhCnNavBar = {
       title: "执行 Workflow",
       children: [
         {
+          title: "手动执行",
+          path: "/workflow/执行 Workflow/手动执行",
+        },
+        {
           title: "激活 Workflow",
           path: "/workflow/执行 Workflow/激活 Workflow",
         },
         {
-          title: "通过 API 接口形式调用 Workflow",
-          path: "/workflow/执行 Workflow/通过 API 接口形式调用 Workflow",
+          title: "通过应用事件触发 Workflow",
+          path: "/workflow/执行 Workflow/通过事件触发 Workflow",
+        },
+        {
+          title: "通过定时执行触发 Workflow",
+          path: "/workflow/执行 Workflow/定时执行 Workflow",
         },
         {
           title: "通过 Webhook 触发 Workflow",
           path: "/workflow/执行 Workflow/通过 Webhook 触发 Workflow",
         },
         {
-          title: "手动执行",
-          path: "/workflow/执行 Workflow/手动执行",
-        },
-        {
-          title: "定时执行 Workflow",
-          path: "/workflow/执行 Workflow/定时执行 Workflow",
-        },
-        {
-          title: "通过事件触发 Workflow",
-          path: "/workflow/执行 Workflow/通过事件触发 Workflow",
+          title: "通过 HTTP 请求触发 Workflow",
+          path: "/workflow/执行 Workflow/通过 API 接口形式调用 Workflow",
         },
         {
           title: "查看 Workflow 执行记录",
@@ -5454,7 +5459,6 @@ const zhCnNavBar = {
     },
     {
       title: "使用应用连接器",
-      path: "/workflow/使用应用连接器/",
       children: [
         {
           title: "HTTP Request",
@@ -5480,39 +5484,71 @@ const zhCnNavBar = {
           title: "飞书",
           path: "/workflow/使用应用连接器/飞书",
         },
+        // {
+        //   title: "邮件",
+        //   path: "/workflow/使用应用连接器/邮件",
+        // },
+        // {
+        //   title: "ZOOM",
+        //   path: "/workflow/使用应用连接器/ZOOM",
+        // },
+        // {
+        //   title: "企业微信",
+        //   path: "/workflow/使用应用连接器/企业微信",
+        // },
       ],
     },
+    // {
+    //   title: "配置应用密钥",
+    //   children: [
+    //     {
+    //       title: "Postgres",
+    //       path: "/workflow/配置应用密钥/Postgres",
+    //     },
+    //     {
+    //       title: "飞书",
+    //       path: "/workflow/配置应用密钥/飞书",
+    //     },
+    //     {
+    //       title: "企业微信",
+    //       path: "/workflow/配置应用密钥/企业微信",
+    //     },
+    //   ],
+    // },
     {
       title: "流程控制节点",
-      path: "/workflow/流程控制节点/",
       children: [
         {
-          title: "分支",
-          path: "/workflow/流程控制节点/分支",
+          title: "IF",
+          path: "/workflow/流程控制节点/IF",
         },
         {
           title: "SWITCH",
           path: "/workflow/流程控制节点/SWITCH",
         },
         {
-          title: "IF",
-          path: "/workflow/流程控制节点/IF",
-        },
-        {
-          title: "循环",
-          path: "/workflow/流程控制节点/循环",
+          title: "循环执行",
+          path: "/workflow/流程控制节点/循环执行",
         },
         {
           title: "子流程",
           path: "/workflow/流程控制节点/子流程",
         },
         {
-          title: "等待",
-          path: "/workflow/流程控制节点/等待",
+          title: "数据检测",
+          path: "/workflow/流程控制节点/数据检测",
+        },
+        // {
+        //   title: "分支",
+        //   path: "/workflow/流程控制节点/分支",
+        // },
+        {
+          title: "终止流程",
+          path: "/workflow/流程控制节点/终止流程",
         },
         {
-          title: "终止",
-          path: "/workflow/流程控制节点/终止",
+          title: "等待",
+          path: "/workflow/流程控制节点/等待",
         },
       ],
     },
@@ -5527,11 +5563,460 @@ const zhCnNavBar = {
           title: "数据转换",
           path: "/workflow/数据处理节点/数据转换",
         },
+        {
+          title: "数据过滤",
+          path: "/workflow/数据处理节点/数据过滤",
+        },
+        {
+          title: "传入 JSON 数据",
+          path: "/workflow/数据处理节点/传入 JSON 数据",
+        },
+        {
+          title: "XML",
+          path: "/workflow/数据处理节点/XML",
+        },
+        {
+          title: "拆分数组",
+          path: "/workflow/数据处理节点/拆分数组",
+        },
+        {
+          title: "数据合成",
+          path: "/workflow/数据处理节点/数据合成",
+        },
+        {
+          title: "数据接收",
+          path: "/workflow/数据处理节点/数据接收",
+        },
+        {
+          title: "数据加密",
+          path: "/workflow/数据处理节点/数据加密",
+        },
+        {
+          title: "读取 RSS",
+          path: "/workflow/数据处理节点/读取 RSS",
+        },
+        {
+          title: "数组合并",
+          path: "/workflow/数据处理节点/数组合并",
+        },
+        {
+          title: "数据集对比",
+          path: "/workflow/数据处理节点/数据集对比",
+        },
+        {
+          title: "树状结构转换",
+          path: "/workflow/数据处理节点/树状结构转换",
+        },
+        {
+          title: "解析循环数据",
+          path: "/workflow/数据处理节点/解析循环数据",
+        },
+        {
+          title: "HTML 提取",
+          path: "/workflow/数据处理节点/HTML 提取",
+        },
+        {
+          title: "Markdown",
+          path: "/workflow/数据处理节点/Markdown",
+        },
+        {
+          title: "Boolean",
+          children: [
+            {
+              title: "All False",
+              path: "/workflow/数据处理节点/Boolean/All False",
+            },
+            {
+              title: "And",
+              path: "/workflow/数据处理节点/Boolean/And",
+            },
+            {
+              title: "Any False",
+              path: "/workflow/数据处理节点/Boolean/Any False",
+            },
+            {
+              title: "Compare",
+              path: "/workflow/数据处理节点/Boolean/Compare",
+            },
+            {
+              title: "Not",
+              path: "/workflow/数据处理节点/Boolean/Not",
+            },
+            {
+              title: "Or",
+              path: "/workflow/数据处理节点/Boolean/Or",
+            },
+            {
+              title: "XOR",
+              path: "/workflow/数据处理节点/Boolean/XOR",
+            },
+            {
+              title: "XNOR",
+              path: "/workflow/数据处理节点/Boolean/XNOR",
+            },
+          ],
+        },
+        {
+          title: "Text",
+          children: [
+            { title: "At", path: "/workflow/数据处理节点/Text/At" },
+            {
+              title: "Base64 Decode",
+              path: "/workflow/数据处理节点/Text/Base64 Decode",
+            },
+            { title: "Base64", path: "/workflow/数据处理节点/Text/Base64" },
+            {
+              title: "Concatenate",
+              path: "/workflow/数据处理节点/Text/Concatenate",
+            },
+            {
+              title: "Find Email",
+              path: "/workflow/数据处理节点/Text/Find Email",
+            },
+            {
+              title: "Find Last",
+              path: "/workflow/数据处理节点/Text/Find Last",
+            },
+            { title: "Find", path: "/workflow/数据处理节点/Text/Find" },
+            { title: "Length", path: "/workflow/数据处理节点/Text/Length" },
+            { title: "Random", path: "/workflow/数据处理节点/Text/Random" },
+            { title: "Replace", path: "/workflow/数据处理节点/Text/Replace" },
+            { title: "Split", path: "/workflow/数据处理节点/Text/Split" },
+            {
+              title: "Text Segment",
+              path: "/workflow/数据处理节点/Text/Text Segment",
+            },
+            {
+              title: "To Lower Case",
+              path: "/workflow/数据处理节点/Text/To Lower Case",
+            },
+            {
+              title: "To Upper Case",
+              path: "/workflow/数据处理节点/Text/To Upper Case",
+            },
+            { title: "Trim", path: "/workflow/数据处理节点/Text/Trim" },
+            {
+              title: "Unique ID",
+              path: "/workflow/数据处理节点/Text/Unique ID",
+            },
+          ],
+        },
+        {
+          title: "Url",
+          children: [
+            {
+              title: "Decode Component",
+              path: "/workflow/数据处理节点/Url/Decode Component",
+            },
+            {
+              title: "Decode Query",
+              path: "/workflow/数据处理节点/Url/Decode Query",
+            },
+            {
+              title: "Encode Component",
+              path: "/workflow/数据处理节点/Url/Encode Component",
+            },
+            {
+              title: "Encode Query",
+              path: "/workflow/数据处理节点/Url/Encode Query",
+            },
+            { title: "Format", path: "/workflow/数据处理节点/Url/Format" },
+            { title: "Parse", path: "/workflow/数据处理节点/Url/Parse" },
+          ],
+        },
+        {
+          title: "Number",
+          children: [
+            {
+              title: "Absolute Value",
+              path: "/workflow/数据处理节点/Number/Absolute Value",
+            },
+            { title: "Add", path: "/workflow/数据处理节点/Number/Add" },
+            { title: "Divide", path: "/workflow/数据处理节点/Number/Divide" },
+            {
+              title: "Exponent",
+              path: "/workflow/数据处理节点/Number/Exponent",
+            },
+            {
+              title: "Factorial",
+              path: "/workflow/数据处理节点/Number/Factorial",
+            },
+            {
+              title: "Increment",
+              path: "/workflow/数据处理节点/Number/Increment",
+            },
+            { title: "Larger", path: "/workflow/数据处理节点/Number/Larger" },
+            { title: "Log", path: "/workflow/数据处理节点/Number/Log" },
+            {
+              title: "Multiply",
+              path: "/workflow/数据处理节点/Number/Multiply",
+            },
+            {
+              title: "Percentage",
+              path: "/workflow/数据处理节点/Number/Percentage",
+            },
+            { title: "Power", path: "/workflow/数据处理节点/Number/Power" },
+            {
+              title: "Random Integer",
+              path: "/workflow/数据处理节点/Number/Random Integer",
+            },
+            {
+              title: "Remainder",
+              path: "/workflow/数据处理节点/Number/Remainder",
+            },
+            { title: "Round", path: "/workflow/数据处理节点/Number/Round" },
+            { title: "Sign", path: "/workflow/数据处理节点/Number/Sign" },
+            { title: "Smaller", path: "/workflow/数据处理节点/Number/Smaller" },
+            {
+              title: "Square Root",
+              path: "/workflow/数据处理节点/Number/Square Root",
+            },
+            {
+              title: "Subtract",
+              path: "/workflow/数据处理节点/Number/Subtract",
+            },
+          ],
+        },
+        {
+          title: "Date",
+          children: [
+            {
+              title: "Add",
+              path: "/workflow/数据处理节点/Date/Add",
+            },
+            {
+              title: "Convert",
+              path: "/workflow/数据处理节点/Date/Convert",
+            },
+            {
+              title: "Date To Text",
+              path: "/workflow/数据处理节点/Date/Date to Text",
+            },
+            {
+              title: "Difference",
+              path: "/workflow/数据处理节点/Date/Difference",
+            },
+            {
+              title: "Epoch",
+              path: "/workflow/数据处理节点/Date/Epoch",
+            },
+            {
+              title: "ISO",
+              path: "/workflow/数据处理节点/Date/ISO",
+            },
+            {
+              title: "Now",
+              path: "/workflow/数据处理节点/Date/Now",
+            },
+            {
+              title: "Subtract",
+              path: "/workflow/数据处理节点/Date/Subtract",
+            },
+            {
+              title: "Text To Date",
+              path: "/workflow/数据处理节点/Date/Text to Date",
+            },
+            {
+              title: "UNIX",
+              path: "/workflow/数据处理节点/Date/UNIX",
+            },
+          ],
+        },
+        {
+          title: "Object",
+          children: [
+            {
+              title: "Clear Empty",
+              path: "/workflow/数据处理节点/Object/Clear Empty",
+            },
+            {
+              title: "Collapse",
+              path: "/workflow/数据处理节点/Object/Collapse",
+            },
+            { title: "Filter", path: "/workflow/数据处理节点/Object/Filter" },
+            { title: "Get", path: "/workflow/数据处理节点/Object/Get" },
+            { title: "Keys", path: "/workflow/数据处理节点/Object/Keys" },
+            { title: "Merge", path: "/workflow/数据处理节点/Object/Merge" },
+            { title: "Move", path: "/workflow/数据处理节点/Object/Move" },
+            { title: "Set", path: "/workflow/数据处理节点/Object/Set" },
+            { title: "Size", path: "/workflow/数据处理节点/Object/Size" },
+            { title: "Split", path: "/workflow/数据处理节点/Object/Split" },
+            { title: "Unset", path: "/workflow/数据处理节点/Object/Unset" },
+            { title: "Unzip", path: "/workflow/数据处理节点/Object/Unzip" },
+            { title: "Values", path: "/workflow/数据处理节点/Object/Values" },
+            { title: "Zip", path: "/workflow/数据处理节点/Object/Zip" },
+          ],
+        },
+        {
+          title: "List",
+          children: [
+            {
+              title: "Add to End",
+              path: "/workflow/数据处理节点/List/Add to End",
+            },
+            {
+              title: "Add to Front",
+              path: "/workflow/数据处理节点/List/Add to Front",
+            },
+            { title: "At", path: "/workflow/数据处理节点/List/At" },
+            { title: "Collapse", path: "/workflow/数据处理节点/List/Collapse" },
+            {
+              title: "Combine All",
+              path: "/workflow/数据处理节点/List/Combine All",
+            },
+            {
+              title: "Construct",
+              path: "/workflow/数据处理节点/List/Construct",
+            },
+            {
+              title: "Difference",
+              path: "/workflow/数据处理节点/List/Difference",
+            },
+            { title: "Filter", path: "/workflow/数据处理节点/List/Filter" },
+            { title: "Find", path: "/workflow/数据处理节点/List/Find" },
+            { title: "Flatten", path: "/workflow/数据处理节点/List/Flatten" },
+            { title: "For Each", path: "/workflow/数据处理节点/List/For Each" },
+            {
+              title: "Get First Item",
+              path: "/workflow/数据处理节点/List/Get First Item",
+            },
+            {
+              title: "Get Last Item",
+              path: "/workflow/数据处理节点/List/Get Last Item",
+            },
+            { title: "Group By", path: "/workflow/数据处理节点/List/Group By" },
+            { title: "Includes", path: "/workflow/数据处理节点/List/Includes" },
+            { title: "Index By", path: "/workflow/数据处理节点/List/Index By" },
+            {
+              title: "Intersection",
+              path: "/workflow/数据处理节点/List/Intersection",
+            },
+            { title: "Length", path: "/workflow/数据处理节点/List/Length" },
+            {
+              title: "List to Text",
+              path: "/workflow/数据处理节点/List/List to Text",
+            },
+            { title: "Map", path: "/workflow/数据处理节点/List/Map" },
+          ],
+        },
+        // {
+        //   title: "文件上传",
+        //   path: "/workflow/数据处理节点/文件上传",
+        // },
+      ],
+    },
+    // {
+    //   title: "事件中心",
+    //   children: [
+    //     {
+    //       title: "事件中心概述",
+    //       path: "/workflow/事件中心/事件中心概述",
+    //     },
+    //   ],
+    // },
+    {
+      title: "工作流自定义能力",
+      children: [
+        {
+          title: "自定义模版",
+          children: [
+            {
+              title: "发布自定义模版",
+              path: "/workflow/工作流自定义能力/自定义模版/发布自定义模版",
+            },
+          ],
+        },
+        {
+          title: "自定义应用",
+          children: [
+            {
+              title: "自定义应用概述",
+              path: "/workflow/工作流自定义能力/自定义应用/自定义应用概述",
+            },
+            {
+              title: "创建自定义应用",
+              path: "/workflow/工作流自定义能力/自定义应用/创建自定义应用",
+            },
+            {
+              title: "创建自定义动作",
+              path: "/workflow/工作流自定义能力/自定义应用/创建自定义动作",
+            },
+            {
+              title: "自定义动作说明",
+              path: "/workflow/工作流自定义能力/自定义应用/自定义动作说明",
+            },
+            {
+              title: "使用自定义应用",
+              path: "/workflow/工作流自定义能力/自定义应用/使用自定义应用",
+            },
+            {
+              title: "发布自定义应用",
+              path: "/workflow/工作流自定义能力/自定义应用/发布自定义应用",
+            },
+          ],
+        },
+        {
+          title: "自定义事件",
+          children: [
+            {
+              title: "发布自定义事件",
+              path: "/workflow/工作流自定义能力/自定义事件/发布自定义事件",
+            },
+          ],
+        },
       ],
     },
     {
-      title: "事件中心概述",
-      path: "/workflow/事件中心概述/",
+      title: "使用模版",
+      children: [
+        {
+          title: "常见问题",
+          path: "/workflow/使用模版/常见问题",
+        },
+        {
+          title: "上游同步",
+          path: "/workflow/使用模版/上游同步",
+          children: [
+            {
+              title: "创建用户节点",
+              path: "/workflow/使用模版/上游同步/创建用户节点",
+            },
+            {
+              title: "更新用户节点",
+              path: "/workflow/使用模版/上游同步/更新用户节点",
+            },
+            {
+              title: "删除用户节点",
+              path: "/workflow/使用模版/上游同步/删除用户节点",
+            },
+            {
+              title: "创建部门节点",
+              path: "/workflow/使用模版/上游同步/创建部门节点",
+            },
+            {
+              title: "更新部门节点",
+              path: "/workflow/使用模版/上游同步/更新部门节点",
+            },
+            {
+              title: "删除部门节点",
+              path: "/workflow/使用模版/上游同步/删除部门节点",
+            },
+          ],
+        },
+        {
+          title: "身份供给",
+          children: [
+            {
+              title: "企业微信",
+              path: "/workflow/使用模版/身份供给/企业微信/企业微信下游同步使用文档（客户使用）",
+            },
+            {
+              title: "飞书",
+              path: "/workflow/使用模版/身份供给/飞书",
+            },
+          ],
+        },
+      ],
     },
   ],
   "/metadata/": [

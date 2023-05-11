@@ -2,7 +2,7 @@
 
 Microsoft SQL 应用可以让你在 Authing 身份自动化中操作 Microsoft SQL 数据库，包含执行查询、插入数据、更新数据等。
 
-![](../static/boxcnNFFhqEgUbQrUu4Hd0HxxXK.png)
+![](../static/IHzQb6rgXoUm13x1JdjcXiqeneg.png)
 
 ## 准备工作
 

@@ -1,4 +1,4 @@
-# 创建 workflow
+# 创建 Workflow
 
 创建一个 workflow 有两种方式：
 
