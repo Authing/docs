@@ -1,12 +1,12 @@
-# 通过事件触发 workflow
+# 通过事件触发 Workflow
 
 和前面介绍的 workflow 触发方式不同，这种触发方式是“被动”的 —— 当一个外部的应用系统（也可以是 Authing）发生了某个事件之后，推送一个事件给 Authing workflow，将事件的内容作为 input 参数，触发 workflow 的执行。
 
-![](../static/boxcnHIXdIEjHi12Y0HkSWspSPe.png)
+![](../static/EC6YbHKXUoxC0JxUg8achbJKnLe.png)
 
 你可以看到 Authing 身份自动化当前支持的所有第三方事件：
 
-![](../static/boxcnyX4ibW7u0J3VoiXVrinZWe.png)
+![](../static/LcetbH8BfoWxjvxgzetcn2ujnLe.png)
 
 ## 配置事件连接器
 
@@ -18,17 +18,17 @@
 
 以飞书为例，我们集成了[飞书系统中支持的所有事件](https://open.feishu.cn/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)，你可以选择需要监听的事件。你可以通过 ${workflow.input.eventData} 获取到事件体的具体内容。
 
-![](../static/boxcnfnOfqNl5Lw0JVXkR6nKNvh.png)
+![](../static/RgiFbPR9IoCIIJxuiV6cqlTQnbf.png)
 
 ### 监听 Authing 内部事件
 
 选择 Authing 应用之后，你可以看到 Authing 系统内部的所有事件：
 
-![](../static/boxcn76Xza7gQuen9xxLE1TxIJG.png)
+![](../static/WdJrb6VshotblIxGmNXcfiPtnxg.png)
 
-你可以通过 ${workflow.input.eventData} 获取到事件体的具体内容：
+你可以通过 `${workflow.input.eventData}` 获取到事件体的具体内容：
 
-![](../static/boxcnQ3BVWYrn4S7xtvAb4Z6q0f.png)
+![](../static/ERDvbXATMo5EdCxImJLcewSlnug.png)
 
 ## 制造应用事件触发 workflow 执行
 
@@ -48,7 +48,7 @@
 ]
 ```
 
-![](../static/boxcn8yJk8CFH5tIHkqTPczyW3e.png)
+![](../static/PvRIbDRTMoDRl5x8NBncyx63nEg.png)
 
 配置完成点击激活，在 Authing 中创建一个用户：
 
@@ -60,4 +60,4 @@
 
 再看 workflow 的执行记录，可以看到 workflow 被成功触发了：
 
-![](../static/boxcnfynkd6Sg4xUW3vlEXf8m4g.png)
+![](../static/NPYhbqkwboDFuhxA1rxcWke8n4g.png)

@@ -1,4 +1,4 @@
-# 使用模版创建 workflow
+# 使用模版创建 Workflow
 
 Authing 针对一些“身份源”创建了模板，可以在模板的基础上简单配置即可创建 workflow。
 

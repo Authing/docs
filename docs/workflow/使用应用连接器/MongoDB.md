@@ -2,7 +2,7 @@
 
 MongoDB 应用可以让你在 Authing 身份自动化中操作 MongoDB 数据库，包含执行查询、插入数据、更新数据等。
 
-![](../static/boxcnGsXYl4EPPfNLL5x1zUs0ud.png)
+![](../static/WW6Nb6F0Io5k9Bxy5P1cWNcSnxc.png)
 
 ## 准备工作
 
@@ -36,7 +36,7 @@ db.users.insertOne(
 
 设置 MongoDB 节点的操作为 Find，Collection 设置为 Find、Query 查询语句设置为 `{}`：
 
-![](../static/boxcnaUnhOIShPa3k8aHExBH3yc.png)
+![](../static/PH50b1h5GoCXjkxWLaKceovln1c.png)
 
 执行节点：
 

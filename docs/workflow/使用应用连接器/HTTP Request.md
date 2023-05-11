@@ -2,8 +2,6 @@
 
 HTTP Request 节点是 Authing 身份自动化中最通用的节点之一。 它允许你使用 REST API 发出 HTTP 请求以查询来自任何应用程序或服务的数据。
 
-![](../static/boxcnw1SVD4IMqHzLJrL5B2fFye.png)
-
 ## 基本概念
 
 使用此节点前，你需要先了解一些基本的 HTTP 术语和概念。
@@ -63,13 +61,13 @@ HTTP Request 节点是 Authing 身份自动化中最通用的节点之一。 它
 
 创建一个新工作流并添加 HTTP 请求节点，在 URL 字段中输入 https://reqres.in/api/users。 后面所有示例都将调用此端点：
 
-![](../static/boxcnixnjEshy8MJk2YvmWdtclb.png)
+![](../static/MHsLbXgw8o3FtIxy0uSc85u2nxf.png)
 
 ### 获取用户列表
 
 确保方法设置为 GET。点击执行，可以看到拿到了数据：
 
-![](../static/boxcn3zXN13titcMQHPKGbJjOlh.png)
+![](../static/T7vAbofTgo9kzUx3L3ZcEl4Pnmh.png)
 
 ### 添加用户
 
@@ -82,11 +80,11 @@ HTTP Request 节点是 Authing 身份自动化中最通用的节点之一。 它
 7. 在<strong>名字</strong>字段中输入 `job`。
 8. 在<strong>值</strong>字段中输入 `Programmer`。
 
-![](../static/boxcnSh9W0NLfUpkhuTdA4pjAjf.png)
+![](../static/FsejbkWQsoxhH4xbJnVc2iJ8nzX.png)
 
 点击保存之后执行：
 
-![](../static/boxcnYEuu3kn7Gzd3x2KkLS8A5e.png)
+![](../static/Rj7wb8Sa3oAJIXxqVWIcYb9nnje.png)
 
 ## 更多示例
 

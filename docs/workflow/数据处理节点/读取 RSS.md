@@ -26,7 +26,7 @@
 
 在工作流画布中点击该节点或点击下方的「编辑」按钮，将进入节点的配置页面。
 
-![](../static/N5KVbvvMCobSTRxZseLc1Famnwh.png)
+![](../static/MlyEbdWQcooCbHx9eMvc2MUAnHg.png)
 
 按以下方式配置好节点的各个配置项：
 
@@ -50,5 +50,3 @@
 ![](../static/Itghbg7nOou3rHxBHFDcfZQOnDh.png)
 
 点击「运行日志」栏，依次点击最新的「执行批次」和「读取 RSS」节点左边的展开按钮，查看节点执行结果。
-
-![](../static/LSR2bViVYoIvNyxGHPCczhlbnff.png)
