@@ -5910,7 +5910,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "事件中心概述",
-          path: "/workflow/事件中心/事件中心概述",
+          path: "/workflow/事件中心/",
         },
       ],
     },
