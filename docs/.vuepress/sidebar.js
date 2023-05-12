@@ -5905,15 +5905,15 @@ const zhCnNavBar = {
         // },
       ],
     },
-    // {
-    //   title: "事件中心",
-    //   children: [
-    //     {
-    //       title: "事件中心概述",
-    //       path: "/workflow/事件中心/事件中心概述",
-    //     },
-    //   ],
-    // },
+    {
+      title: "使用事件驱动 SDK 构建实时应用",
+      children: [
+        {
+          title: "事件中心概述",
+          path: "/workflow/事件中心/事件中心概述",
+        },
+      ],
+    },
     {
       title: "工作流自定义能力",
       children: [
