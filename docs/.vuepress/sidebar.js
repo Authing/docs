@@ -5371,11 +5371,11 @@ const zhCnNavBar = {
         },
         {
           title: "编写第一个 Workflow",
-          path: "/workflow/快速开始/编写第一个 Workflow",
+          path: "/workflow/快速开始/编写第一个 workflow",
         },
         {
           title: "使用模版创建 Workflow",
-          path: "/workflow/快速开始/使用模版创建 Workflow",
+          path: "/workflow/快速开始/使用模版创建 workflow",
         },
       ],
     },
