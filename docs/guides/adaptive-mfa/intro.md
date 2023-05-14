@@ -1,20 +1,21 @@
 # Authing Adaptive MFA 概述
 
-## 什么是 MFA？
-MFA，全称为多因素认证（Multi-Factor Authentication），也被称为强制性身份验证（Strong Authentication），是一种安全措施，通过结合两个或更多不同的身份验证因素来保护用户的身份和信息安全。
-
+### 什么是 MFA？
+**MFA，全称为多因素认证（Multi-Factor Authentication）** 也被称为强制性身份验证（Strong Authentication），是一种安全措施，通过结合两个或更多不同的身份验证因素来保护用户的身份和信息安全。
 在 MFA 中，用户需要提供两个或多个不同的身份验证因素才能通过身份验证。例如，用户需要提供密码和生物识别才能登录到系统中，或者用户需要提供硬件令牌和手机验证码才能完成某个重要操作。
-
 MFA 是一种安全措施，可以提高身份验证的安全性，保护用户的身份和信息安全。
 
-## 什么是 Adaptive MFA
+### 什么是自适应 MFA
+**自适应 MFA（Adaptive Multi-Factor Authentication）** 是一种安全认证技术，它使用多个身份验证因素来确保用户的身份。与传统的 MFA 不同，Adaptive MFA 可以根据用户登录的上下文环境，自适应地选择使用哪些身份验证因素。
 
-Adaptive MFA（Adaptive Multi-Factor Authentication）是一种安全认证技术，它使用多个身份验证因素来确保用户的身份。与传统的 MFA 不同，Adaptive MFA 可以根据用户登录的上下文环境，自适应地选择使用哪些身份验证因素。
+**自适应 MFA** 可以分析用户的登录环境和行为模式，选择合适的身份验证因素来进行验证，从而提高了安全性和用户体验。例如，如果用户从常用的设备和网络登录，并且没有异常的行为模式，则可以仅使用密码进行验证；而如果用户从不常用的设备或网络登录，则可能需要使用更多的身份验证因素进行验证。
 
-Adaptive MFA 可以分析用户的登录环境和行为模式，选择合适的身份验证因素来进行验证，从而提高了安全性和用户体验。例如，如果用户从常用的设备和网络登录，并且没有异常的行为模式，则可以仅使用密码进行验证；而如果用户从不常用的设备或网络登录，则可能需要使用更多的身份验证因素进行验证。
+## 什么是持续自适应 MFA
+**持续自适应 MFA（Continuous Adaptive Multi-Factor Authentication，CAMFA）** 是一种安全身份验证方法，它结合了多个身份验证因素（如密码、生物识别、硬件令牌等），并在用户的访问生命周期过程中，使用行为风险评估技术对用户的关键行为进行持续地实时动态评估，当触发风险时会通过调用 MFA 认证对用户当前状态进行确认，从而提高账号的安全性，更好地保护业务系统内的数据与资源安全
+
+![Authing MFA 核心功能](./images/mfa-core.png) 
 
 ## Authing MFA 核心功能
-![Authing MFA 核心功能](./images/mfa-core.png) 
 
 - Authing 通过多种认证方式(短信验证/电子邮箱验证/OTP 验证/人脸识别验证)保障业务安全。
 - 支持多源行为环境数据上报，多维度分析安全级别。
@@ -25,3 +26,8 @@ Adaptive MFA 可以分析用户的登录环境和行为模式，选择合适的�
 ## 如何接入 Authing MFA？
 
 ![如何接入 Authing MFA](./images/integrate.png) 
+
+## 更多功能了解请参考
+- [基于 Authing Guard 登录组件接入 MFA](./guard)
+- [改造已有的 IAM/IDaaS/认证系统接入 Authing 自适应 MFA 能力](./legacy)
+- [进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南](./camfa)

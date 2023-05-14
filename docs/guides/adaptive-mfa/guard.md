@@ -69,3 +69,9 @@ console.log("guard instance: ", guard);
 
 ```
 如需了解更多安装方法请 [Web Guard](https://docs.authing.cn/v2/reference/guard/v2/web.html)
+
+
+## 更多功能了解请参考
+- [Authing Adaptive MFA 概述](./intro)
+- [改造已有的 IAM/IDaaS/认证系统接入 Authing 自适应 MFA 能力](./legacy)
+- [进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南](./camfa)

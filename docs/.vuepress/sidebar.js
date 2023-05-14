@@ -351,6 +351,10 @@ const zhCnNavBar = {
           title: "进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南",
           path: "/guides/adaptive-mfa/camfa",
         },
+        {
+          title: "自适应 MFA 编排/策略配置说明",
+          path: "/guides/adaptive-mfa/config",
+        },
       ],
     },
     {

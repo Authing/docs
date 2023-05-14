@@ -239,3 +239,8 @@ AuthingMFA(mfaTriggerData).start().then(mfaToken => {
 ##### Step 7.2 Authing 自动在 MFA 服务宕机时，实现对当用户放行的容灾机制
 
 在 authingUEBA.checkUserStatus 方法中，Authing 会内置 MFA 服务监控流程，在 MFA 服务返回的结果异常时，总是针对当前用户 MFA 进行放行处理
+
+## 更多功能了解请参考
+- [Authing Adaptive MFA 概述](./intro)
+- [基于 Authing Guard 登录组件接入 MFA](./guard)
+- [改造已有的 IAM/IDaaS/认证系统接入 Authing 自适应 MFA 能力](./legacy)

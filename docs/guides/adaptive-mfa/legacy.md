@@ -31,6 +31,8 @@
 以下是交互时序图
 ![交互时序图](./images/3.3.png)
 
+[Live Demo For MFA ](https://codesandbox.io/s/damp-paper-ub60yu?file=/src/index.js)
+
 ##### 客户端改造方案
 - 在代码中安装 Authing MFA SDK,  Authing SDK 并引入 AuthinMFA, MetadataClient
 - 使用 MetadataClient 获取当前系统中的用户行为数据，如 IP、浏览器等信息
@@ -402,3 +404,8 @@ function verifyMFA(mfaToken) {
     }
 }
 ```
+
+## 更多功能了解请参考
+- [Authing Adaptive MFA 概述](./intro)
+- [基于 Authing Guard 登录组件接入 MFA](./guard)
+- [进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南](./camfa)
