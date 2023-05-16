@@ -7,9 +7,9 @@ tags:
 
 <LastUpdated/>
 
-- ## 1.0.0-alpha.0
+- ## 1.0.0
 
 > 更新时间：2023.4.13
 
-Web MFA 组件 alpha 版
+Web MFA 组件
 
