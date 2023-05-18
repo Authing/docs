@@ -854,6 +854,10 @@ const zhCnNavBar = {
               title: "飞书企业自建应用",
               path: "/guides/connections/enterprise/lark-internal/",
             },
+           {
+              title: "飞书企业小组件",
+              path: "/guides/connections/enterprise/lark-block/",
+            },
             {
               title: "Windows AD",
               path: "/guides/connections/enterprise/windows-ad/",
