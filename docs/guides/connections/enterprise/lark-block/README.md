@@ -138,4 +138,4 @@ Block({
 
 4.3 上传提交发布你的飞书小组件
 
-<img src="./images/17.png" >
+<img src="./images/17.jpg" >
