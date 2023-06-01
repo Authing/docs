@@ -1019,6 +1019,10 @@ const zhCnNavBar = {
           title: "管理成员生命周期",
           path: "/guides/org/staff-life-cycle-management/",
         },
+        {
+          title: "管理终端设备",
+          path: "/guides/org/device-management/",
+        },
       ],
     },
     {
@@ -7062,6 +7066,10 @@ const translatedZhCnNavBar = {
         {
           title: "Manage member life cycle",
           path: "/guides/org/staff-life-cycle-management/",
+        },
+        {
+          title: "Manage devices",
+          path: "/guides/org/device-management/",
         },
       ],
     },
