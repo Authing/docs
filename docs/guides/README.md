@@ -80,6 +80,7 @@
    - [创建或导入组织机构](/guides/org/create-or-import-org/README.md)；
    - [管理组织机构](/guides/org/manage-org/README.md)；
    - [管理成员生命周期](/guides/org/staff-life-cycle-management/README.md)；
+   - [管理终端设备](/guides/org/device-management/README.md)；
 
 7. [查看审计日志](/guides/audit/)
 8. 配置安全信息
