@@ -1941,6 +1941,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/apis/scan/",
             "/reference/sdk-for-ios/apis/user/",
             "/reference/sdk-for-ios/apis/util/",
+            "/reference/sdk-for-ios/apis/device/",
           ],
         },
         {
