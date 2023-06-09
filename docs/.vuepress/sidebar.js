@@ -594,6 +594,11 @@ const zhCnNavBar = {
               title: "ASA 表单代填",
               path: "/guides/asa/",
             },
+            {
+              title: "ASAD 表单代填",
+              path: "/guides/asad/",
+            },
+
           ],
         },
       ],
