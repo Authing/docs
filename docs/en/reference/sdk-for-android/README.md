@@ -23,7 +23,3 @@ Before we start, please prepare for the following：
 </span>
 
 <br>
-
-If you got any question during development, please contact our senior Android developer on wechat:
-
-<img src="./images/zhongjiahui.jpg" alt="drawing" width="120" height="120"/>
