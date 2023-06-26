@@ -721,6 +721,10 @@ const zhCnNavBar = {
               path: "/guides/connections/social/twitter/",
             },
             {
+              title: "Twitter 移动端",
+              path: "/guides/connections/social/twitter-mobile/",
+            },
+            {
               title: "Google Web 端",
               path: "/guides/connections/social/google/",
             },
