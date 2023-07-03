@@ -26,7 +26,7 @@ Guard Android SDK 包含 **[Guard 登录组件](./component/README.md)** 及 **[
 3. 在 Authing 控制台 [创建一个客户端自建应用](/guides/app-new/create-app/create-app.md)。
 
   * 在 **选择类型** 时请选择：**客户端应用**。
- 
+
 <img src="./images/create_client_application.png" alt="drawing" width="620"/>
 
   * 创建完应用后，你可以根据你的业务需求来进行自定义配置，参考 [应用常用配置](./scenario/application_config.md)。
@@ -37,7 +37,3 @@ Guard Android SDK 包含 **[Guard 登录组件](./component/README.md)** 及 **[
 </span>
 
 <br>
-
-若在接入过程中有任何疑问，请添加我们资深 Android 工程师微信：
-
-<img src="./images/zhongjiahui.jpg" alt="drawing" width="120" height="120"/>

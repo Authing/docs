@@ -594,6 +594,11 @@ const zhCnNavBar = {
               title: "ASA 表单代填",
               path: "/guides/asa/",
             },
+            {
+              title: "ASAD 表单代填",
+              path: "/guides/asad/",
+            },
+
           ],
         },
       ],
@@ -1754,6 +1759,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/apis/protocol/",
             "/reference/sdk-for-android/apis/mfa/",
             "/reference/sdk-for-android/apis/scan/",
+            "/reference/sdk-for-android/apis/device/",
+            "/reference/sdk-for-android/apis/event/",
           ],
         },
         {
@@ -1799,6 +1806,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/overseas",
             "/reference/sdk-for-android/scenario/biometric",
             "/reference/sdk-for-android/scenario/otp",
+            "/reference/sdk-for-android/scenario/device",
           ],
         },
         {
@@ -7711,6 +7719,14 @@ const translatedZhCnNavBar = {
               title: "Scan to login",
               path: "/reference/sdk-for-android/apis/scan/",
             },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/apis/device/",
+            },
+            {
+              title: "Event subscription",
+              path: "/reference/sdk-for-android/apis/event/",
+            },
           ],
         },
         {
@@ -7826,6 +7842,10 @@ const translatedZhCnNavBar = {
             {
               title: "Authing OTP",
               path: "/reference/sdk-for-android/scenario/otp",
+            },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/scenario/device",
             },
           ],
         },
