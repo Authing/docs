@@ -1310,7 +1310,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "Web Guard",
-          path: "/reference/guard/v2/web",
+          path: "https://cdn.authing.co/packages/guard/doc/v5/guide/install.html",
         },
         {
           title: "iOS Guard",
