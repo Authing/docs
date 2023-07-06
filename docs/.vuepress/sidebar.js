@@ -594,6 +594,11 @@ const zhCnNavBar = {
               title: "ASA 表单代填",
               path: "/guides/asa/",
             },
+            {
+              title: "ASAD 表单代填",
+              path: "/guides/asad/",
+            },
+
           ],
         },
       ],
@@ -854,6 +859,10 @@ const zhCnNavBar = {
               title: "飞书企业自建应用",
               path: "/guides/connections/enterprise/lark-internal/",
             },
+           {
+              title: "飞书企业小组件",
+              path: "/guides/connections/enterprise/lark-block/",
+            },
             {
               title: "Windows AD",
               path: "/guides/connections/enterprise/windows-ad/",
@@ -1014,6 +1023,10 @@ const zhCnNavBar = {
         {
           title: "管理成员生命周期",
           path: "/guides/org/staff-life-cycle-management/",
+        },
+        {
+          title: "管理终端设备",
+          path: "/guides/org/device-management/",
         },
       ],
     },
@@ -1742,6 +1755,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/apis/protocol/",
             "/reference/sdk-for-android/apis/mfa/",
             "/reference/sdk-for-android/apis/scan/",
+            "/reference/sdk-for-android/apis/device/",
+            "/reference/sdk-for-android/apis/event/",
           ],
         },
         {
@@ -1787,6 +1802,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/overseas",
             "/reference/sdk-for-android/scenario/biometric",
             "/reference/sdk-for-android/scenario/otp",
+            "/reference/sdk-for-android/scenario/device",
           ],
         },
         {
@@ -1933,6 +1949,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/apis/scan/",
             "/reference/sdk-for-ios/apis/user/",
             "/reference/sdk-for-ios/apis/util/",
+            "/reference/sdk-for-ios/apis/device/",
           ],
         },
         {
@@ -5371,11 +5388,11 @@ const zhCnNavBar = {
         },
         {
           title: "编写第一个 Workflow",
-          path: "/workflow/快速开始/编写第一个 Workflow",
+          path: "/workflow/快速开始/编写第一个 workflow",
         },
         {
           title: "使用模版创建 Workflow",
-          path: "/workflow/快速开始/使用模版创建 Workflow",
+          path: "/workflow/快速开始/使用模版创建 workflow",
         },
       ],
     },
@@ -5905,15 +5922,15 @@ const zhCnNavBar = {
         // },
       ],
     },
-    // {
-    //   title: "事件中心",
-    //   children: [
-    //     {
-    //       title: "事件中心概述",
-    //       path: "/workflow/事件中心/事件中心概述",
-    //     },
-    //   ],
-    // },
+    {
+      title: "使用事件驱动 SDK 构建实时应用",
+      children: [
+        {
+          title: "事件中心概述",
+          path: "/workflow/事件中心/",
+        },
+      ],
+    },
     {
       title: "工作流自定义能力",
       children: [
@@ -7059,6 +7076,10 @@ const translatedZhCnNavBar = {
           title: "Manage member life cycle",
           path: "/guides/org/staff-life-cycle-management/",
         },
+        {
+          title: "Manage devices",
+          path: "/guides/org/device-management/",
+        },
       ],
     },
     {
@@ -7694,6 +7715,14 @@ const translatedZhCnNavBar = {
               title: "Scan to login",
               path: "/reference/sdk-for-android/apis/scan/",
             },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/apis/device/",
+            },
+            {
+              title: "Event subscription",
+              path: "/reference/sdk-for-android/apis/event/",
+            },
           ],
         },
         {
@@ -7809,6 +7838,10 @@ const translatedZhCnNavBar = {
             {
               title: "Authing OTP",
               path: "/reference/sdk-for-android/scenario/otp",
+            },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/scenario/device",
             },
           ],
         },
