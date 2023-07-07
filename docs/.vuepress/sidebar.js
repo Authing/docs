@@ -826,6 +826,10 @@ const zhCnNavBar = {
               path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
             },
             {
+              title: "企业微信自建应用扫码（Authing 代理模式）",
+              path: "/guides/connections/enterprise/wecom-agency-authing/",
+            },
+            {
               title: "企业微信服务商应用扫码",
               path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
             },
