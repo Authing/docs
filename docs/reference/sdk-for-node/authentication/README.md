@@ -44,3 +44,8 @@ meta:
 
 ::: page-ref /reference/sdk-for-node/authentication/PrincipalAuthentication.md
 :::
+
+如果你需要浏览器指纹，请使用：
+
+::: page-ref /reference/sdk-for-node/authentication/BrowserFingerprintClient.md
+:::
