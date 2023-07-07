@@ -26,11 +26,11 @@ PC 网站
 
 ### 第一步：企业授权代开发模板
 
-1. 企业管理员扫描授权二维码。
+1. 企业管理员通过企业微信应用扫描授权二维码。
 
 <img src="./images/qrcode_15cm.png" >
 
-2. 联系您的商务经理，提供您的企业名称，进行应用上线。
+2. 联系您的商务经理，提供您的企业名称，进行应用上线。 由于企业微信于 2023 年 6 月 30 起，开启了调用接口收费模式，收费详情请参考：[https://open.work.weixin.qq.com/wwopen/common/readDocument/38829](https://open.work.weixin.qq.com/wwopen/common/readDocument/38829)；具体付费流程，请咨询 Authing 销售顾问。
 
 3. 上线完成后，点击 [**企业管理后台**](https://work.weixin.qq.com/wework_admin/frame)，在授权企业的企业管理后台选择 **我的企业->企业信息**，拷贝 **企业 ID**。
 
@@ -76,7 +76,9 @@ PC 网站
 
 <img src="./images/38.png" >
 
-<img src="./images/39.png" >
+<img src="./images/39.jpg" >
+
+<img src="./images/app_auth_done.jpg" >
 
 ### 第六步：开发接入
 
