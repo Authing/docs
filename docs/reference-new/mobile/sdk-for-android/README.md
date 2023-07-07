@@ -25,7 +25,3 @@ Android App 通过 Guard 组件库接入。Guard 采用了全新的 [语义化�
 </span>
 
 <br>
-
-若在接入过程中有任何疑问，请添加我们资深 Android 工程师微信：
-
-<img src="./images/zhongjiahui.jpg" alt="drawing" width="120" height="120"/>

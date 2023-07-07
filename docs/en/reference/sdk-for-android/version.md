@@ -2,6 +2,16 @@
 
 <LastUpdated/>
 
+- ## 1.5.7
+
+
+> Update time：2023.6.9
+
+1. Add device management API.
+2. Add dark mode.
+
+<br>
+
 - ## 1.5.6
 
 

@@ -832,6 +832,10 @@ const zhCnNavBar = {
               path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
             },
             {
+              title: "企业微信自建应用扫码（Authing 代理模式）",
+              path: "/guides/connections/enterprise/wecom-agency-authing/",
+            },
+            {
               title: "企业微信服务商应用扫码",
               path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
             },
@@ -1023,6 +1027,10 @@ const zhCnNavBar = {
         {
           title: "管理成员生命周期",
           path: "/guides/org/staff-life-cycle-management/",
+        },
+        {
+          title: "管理终端设备",
+          path: "/guides/org/device-management/",
         },
       ],
     },
@@ -1319,7 +1327,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "Web Guard",
-          path: "/reference/guard/v2/web",
+          path: "https://cdn.authing.co/packages/guard/doc/v5/guide/install.html",
         },
         {
           title: "iOS Guard",
@@ -1753,6 +1761,8 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/apis/protocol/",
             "/reference/sdk-for-android/apis/mfa/",
             "/reference/sdk-for-android/apis/scan/",
+            "/reference/sdk-for-android/apis/device/",
+            "/reference/sdk-for-android/apis/event/",
           ],
         },
         {
@@ -1798,6 +1808,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-android/scenario/overseas",
             "/reference/sdk-for-android/scenario/biometric",
             "/reference/sdk-for-android/scenario/otp",
+            "/reference/sdk-for-android/scenario/device",
           ],
         },
         {
@@ -1944,6 +1955,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-ios/apis/scan/",
             "/reference/sdk-for-ios/apis/user/",
             "/reference/sdk-for-ios/apis/util/",
+            "/reference/sdk-for-ios/apis/device/",
           ],
         },
         {
@@ -7070,6 +7082,10 @@ const translatedZhCnNavBar = {
           title: "Manage member life cycle",
           path: "/guides/org/staff-life-cycle-management/",
         },
+        {
+          title: "Manage devices",
+          path: "/guides/org/device-management/",
+        },
       ],
     },
     {
@@ -7705,6 +7721,14 @@ const translatedZhCnNavBar = {
               title: "Scan to login",
               path: "/reference/sdk-for-android/apis/scan/",
             },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/apis/device/",
+            },
+            {
+              title: "Event subscription",
+              path: "/reference/sdk-for-android/apis/event/",
+            },
           ],
         },
         {
@@ -7820,6 +7844,10 @@ const translatedZhCnNavBar = {
             {
               title: "Authing OTP",
               path: "/reference/sdk-for-android/scenario/otp",
+            },
+            {
+              title: "Device management",
+              path: "/reference/sdk-for-android/scenario/device",
             },
           ],
         },
