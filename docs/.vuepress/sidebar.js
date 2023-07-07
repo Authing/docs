@@ -1414,6 +1414,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/authentication/SocialAuthenticationClient",
             "/reference/sdk-for-node/authentication/EnterpriseAuthenticationClient",
             "/reference/sdk-for-node/authentication/PrincipalAuthentication",
+            "/reference/sdk-for-node/authentication/BrowserFingerprintClient",
           ],
         },
         {
@@ -1434,6 +1435,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/management/MFAManagementClient",
             "/reference/sdk-for-node/management/PrincipalManagementClient",
             "/reference/sdk-for-node/management/TenantManagementClient",
+            "/reference/sdk-for-node/management/BrowserFingerprintClient",
           ],
         },
       ],
