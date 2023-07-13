@@ -389,6 +389,10 @@ const zhCnNavBar = {
           title: "用户组管理",
           path: "/guides/user/user-group",
         },
+        {
+          title: "公共账号管理",
+          path: "/guides/user/public-account",
+        },
       ],
     },
     {
