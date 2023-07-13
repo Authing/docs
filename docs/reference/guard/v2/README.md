@@ -63,7 +63,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard-react" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard-react.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
                 将 Guard 接入到 React 项目
             </a>
         </td>
@@ -76,7 +76,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard-react18" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard-react18.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
                 将 Guard 接入到 React18 项目
             </a>
         </td>
@@ -89,7 +89,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard-vue2" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard-vue2.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
                 将 Guard 接入到 Vue2 项目
             </a>
         </td>
@@ -102,7 +102,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard-vue3" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard-vue3.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
                 将 Guard 接入到 Vue3 项目
             </a>
         </td>
@@ -115,7 +115,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard-angular" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard-angular.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
                 将 Guard 接入到 Angular 项目
             </a>
         </td>
@@ -128,7 +128,7 @@ Authing Guard 是你「即取即用」的登录组件，根据下面的引导完
         <a href="https://www.npmjs.com/package/@authing/guard" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/@authing%2Fguard.svg" alt="npm version"><OutboundLink /></a>
         </td>
         <td>
-            <a href="https://docs.authing.cn/v2/reference/guard/v2/web.html" _target="blank">
+            <a href="https://cdn.authing.co/packages/guard/doc/v5/guide/install.html" _target="blank">
             将 Guard 接入到原生 JS 项目
             </a>
         </td>

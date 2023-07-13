@@ -182,6 +182,7 @@ authenticationClient.qrcode.startScanning('DOM_ID', {
 - [多因素认证模块](./authentication/MfaAuthenticationClient.md)
 - [社会化登录模块](./authentication/SocialAuthenticationClient.md)
 - [企业身份源登录模块](./authentication/EnterpriseAuthenticationClient.md)
+- [管理浏览器指纹模块](./authentication/BrowserFingerprintClient.md)
 
 ## 使用管理模块
 
@@ -255,6 +256,7 @@ const userpool = await managementClient.userpool.update({
 - [白名单管理模块](./management/WhitelistManagementClient.md)
 - [用户池设置管理模块](./management/UserpoolManagementClient.md)
 - [多租户管理模块](./management/TenantManagementClient.md)
+- [管理浏览器指纹模块](./management/BrowserFingerprintClient.md)
 
 ## 错误处理
 

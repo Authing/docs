@@ -836,6 +836,10 @@ const zhCnNavBar = {
               path: "/guides/connections/enterprise/wecom-agency-qrconnect/",
             },
             {
+              title: "企业微信自建应用扫码（Authing 代理模式）",
+              path: "/guides/connections/enterprise/wecom-agency-authing/",
+            },
+            {
               title: "企业微信服务商应用扫码",
               path: "/guides/connections/enterprise/wecom-service-provider-qrconnect/",
             },
@@ -1327,7 +1331,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "Web Guard",
-          path: "/reference/guard/v2/web",
+          path: "https://cdn.authing.co/packages/guard/doc/v5/guide/install.html",
         },
         {
           title: "iOS Guard",
@@ -1422,6 +1426,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/authentication/SocialAuthenticationClient",
             "/reference/sdk-for-node/authentication/EnterpriseAuthenticationClient",
             "/reference/sdk-for-node/authentication/PrincipalAuthentication",
+            "/reference/sdk-for-node/authentication/BrowserFingerprintClient",
           ],
         },
         {
@@ -1442,6 +1447,7 @@ const zhCnNavBar = {
             "/reference/sdk-for-node/management/MFAManagementClient",
             "/reference/sdk-for-node/management/PrincipalManagementClient",
             "/reference/sdk-for-node/management/TenantManagementClient",
+            "/reference/sdk-for-node/management/BrowserFingerprintClient",
           ],
         },
       ],
