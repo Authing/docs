@@ -389,6 +389,10 @@ const zhCnNavBar = {
           title: "用户组管理",
           path: "/guides/user/user-group",
         },
+        {
+          title: "公共账号管理",
+          path: "/guides/user/public-account",
+        },
       ],
     },
     {
@@ -724,6 +728,10 @@ const zhCnNavBar = {
             {
               title: "Twitter",
               path: "/guides/connections/social/twitter/",
+            },
+            {
+              title: "Twitter 移动端",
+              path: "/guides/connections/social/twitter-mobile/",
             },
             {
               title: "Google Web 端",

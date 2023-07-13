@@ -16,6 +16,7 @@
 | Facebook                   | PC 网站    | <router-link to="/guides/connections/social/facebook/" target="_blank">使用文档</router-link>                     |
 | Facebook 移动端               | 移动 APP   | <router-link to="/guides/connections/social/facebook-mobile/" target="_blank">使用文档</router-link>                       |
 | Twitter                    | PC 网站    | <router-link to="/guides/connections/social/twitter/" target="_blank">使用文档</router-link>                      |
+| Twitter 移动端              | 移动 APP   | <router-link to="/guides/connections/social/twitter-mobile/" target="_blank">使用文档</router-link>               |
 | Google Web 端                     | PC 网站    | <router-link to="/guides/connections/social/google/" target="_blank">使用文档</router-link>                       |
 | Google 移动端                     | 移动 APP    | <router-link to="/guides/connections/social/google-mobile/" target="_blank">使用文档</router-link>                       |
 | Apple Web 端               | PC 网站    | <router-link to="/guides/connections/social/apple-web/" target="_blank">使用文档</router-link>                    |
