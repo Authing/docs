@@ -13,12 +13,12 @@
 ![img](./images/public-account-2.png)
 
 
-![img]![img](./images/public-account-3.png)
+![img](./images/public-account-3.png)
 
 
 2. 你也可以通过点击「公共账号管理」-「创建公共账号」，调起创建弹窗，完成相应的创建并进入到公共账号详情页面：
 
-![img]![img](./images/public-account-4.png)
+![img](./images/public-account-4.png)
 
 
 ![img](./images/public-account-5.png)
@@ -116,7 +116,7 @@
 ![img](./images/public-account-25.png)
 
 
-## 关于 OPEN API 地址：
+## 关于 OPEN API 地址
 
 管理员可通过访问以下 API 文档地址，进行接口侧的相关操作：
 [管理公共账号](https://console.authing.cn/openapi/v3/management/#tag/%E7%AE%A1%E7%90%86%E5%85%AC%E5%85%B1%E8%B4%A6%E5%8F%B7/API%20%E5%88%97%E8%A1%A8)
