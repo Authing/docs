@@ -602,10 +602,13 @@ const zhCnNavBar = {
               title: "ASAD 表单代填",
               path: "/guides/asad/",
             },
-
           ],
         },
       ],
+    },
+    {
+      title: "M2M",
+      path: "/guides/m2m/",
     },
     {
       title: "成为联邦认证身份源",
@@ -871,7 +874,7 @@ const zhCnNavBar = {
               title: "飞书企业自建应用",
               path: "/guides/connections/enterprise/lark-internal/",
             },
-           {
+            {
               title: "飞书企业小组件",
               path: "/guides/connections/enterprise/lark-block/",
             },
