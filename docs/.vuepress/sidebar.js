@@ -553,6 +553,10 @@ const zhCnNavBar = {
               title: "租户配置",
               path: "/guides/app-new/create-app/tenant-config",
             },
+            {
+              title: "M2M",
+              path: "/guides/app-new/create-app/m2m/",
+            },
           ],
         },
         {
@@ -605,10 +609,6 @@ const zhCnNavBar = {
           ],
         },
       ],
-    },
-    {
-      title: "M2M",
-      path: "/guides/m2m/",
     },
     {
       title: "成为联邦认证身份源",

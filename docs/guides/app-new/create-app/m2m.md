@@ -212,7 +212,7 @@ M2M（Machine to Machine）授权是**无用户参与**的应用间授权。当�
 以 Authing 官网开发文档 里提供的 JavaScript/Node SDK 为例：（详情请访问：[Authing - Node.js/JavaScript | Authing 文档](/reference/sdk-for-node/)）
 
 Authing JavaScript/Node SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClient`。
-`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](./federation/oidc.md), [OAuth 2.0](./federation/oauth.md), [SAML](./federation/saml.md) 和 [CAS](./federation/cas.md)。此模块适合用于非受信任的浏览器环境和纯后端交互的服务器环境。
+`AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](/guides/federation/oidc.md), [OAuth 2.0](/guides/federation/oauth.md), [SAML](/guides/federation/saml.md) 和 [CAS](/guides/federation/cas.md)。此模块适合用于非受信任的浏览器环境和纯后端交互的服务器环境。
 `ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 Authing 控制台 (opens new window)中能做的所有操作，都能用此模块完成。此模块适合在后端或者可信任的前端环境下使用。
 
 你应该将初始化过后的 `ManagementClient` 实例设置为一个全局变量（只初始化一次），而 `AuthenticationClient` 应该每次请求初始化一个。
@@ -335,17 +335,17 @@ let res = await authenticationClient.getAccessTokenByClientCredentials(
 （3）注意事项
 
 - 要以 application/x-www-form-urlencoded 格式携带上参数请求 token 端点
-- Scope 中格式为 resourceName:resourceScope:action，其中 resourceName 表示资源名称，resourceScope 表示资源范围，_ 表示所有，action 表示操作。如所有书籍的阅读权限标识为 book:\*:read，多个范围用空格分隔 Authing 的 scope 权限项目以空格分隔，每一项的格式是资源标识符:资源操作。
+- Scope 中格式为 resourceName:resourceScope:action，其中 resourceName 表示资源名称，resourceScope 表示资源范围，\_ 表示所有，action 表示操作。如所有书籍的阅读权限标识为 book:\*:read，多个范围用空格分隔 Authing 的 scope 权限项目以空格分隔，每一项的格式是资源标识符:资源操作。
   以下是 Authing 支持的所有 scope 格式：
   - book:1:read 含义为编号为 1 的书籍资源的读取权限
   - book:\*:read 含义为所有书籍资源的读取权限
   - book:read 含义为所有书籍资源的读取权限
-  - book:\*: _ 含义为所有书籍资源的所有操作权限
+  - book:\*: \_ 含义为所有书籍资源的所有操作权限
   - book:\* 含义为所有书籍资源的所有操作权限
   - book 含义为所有书籍资源的所有操作权
-  \*: \*: \* 含义为所有资源的所有操作权限
-  \*: \* 含义为所有资源的所有操作权限
-  `*` 含义为所有资源的所有操作权限
+    \*: \*: \* 含义为所有资源的所有操作权限
+    \*: \* 含义为所有资源的所有操作权限
+    `*` 含义为所有资源的所有操作权限
 
 #### 利用 AccessToken 到资源服务器获取资源
 
