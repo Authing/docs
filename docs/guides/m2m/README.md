@@ -129,32 +129,53 @@ M2M（Machine to Machine）授权是**无用户参与**的应用间授权。当�
 ![Resource-panel](./images/resource-panel.png)
 资源可以是数据、API、菜单、按钮等等，你可以结合自身业务情况定义资源。
 如本例中定义一个数据资源：
-资源名称：revenue
-资源描述：营收
+
+- 资源名称：revenue
+- 资源描述：营收
+
 ![Data-resource](./images/data-resource.png)
+
 操作类型指的是可以对资源进行的行为动作，如本例中我们定义了对营收数据的增、删、改、查四种操作类型：
+
 ![Operation-type](./images/operation-type.png)
+
 点击保存后即可看到刚才创建的资源：
+
 ![Resource-list](./images/resource-list.png)
+
 当然，你可以根据需求创建多种资源用于调用方调用，比如利用同样的步骤我们又创建了客户（customer）资源：
+
 ![Customer-resource](./images/customer-resource.png)
 
 #### 将资源授权给编程访问账号
 
 仍然在权限面板，在我们创建好资源和编程访问账号后，现在就可以决定，哪些账号拥有哪些资源以及哪些操作了。
+
 （1）找到授权面板
+
 点击 授权 - 添加授权
+
 ![Authorization-panel](./images/authorization-panel.png)
+
 即可看到授权面板：
+
 ![Add-authorization](./images/add-authorization.png)
+
 （2）进行授权
 首先我们要选择为哪一个编程访问账号进行授权：选择【编写访问账号】，并选择具体的账号
+
 ![Authorization](./images/authorization.png)
+
 然后我们需要添加授权规则：比如我们只允许 A 公司对营收资源有读取权利
+
 ![Authorization-rule](./images/authorization-rule.png)
+
 点击保存后即可看到完成的授权：
+
 ![Authorization-list](./images/authorization-list.png)
+
 ![Authorization-detail](./images/authorization-detail.png)
+
 按照相同的步骤即可完成对不同调用方的授权操作，实现他们对不同资源有着不同的权限。
 
 #### 将编程访问账号对应的 AK、SK 交给调用方（即调用资源方）
@@ -173,6 +194,7 @@ M2M（Machine to Machine）授权是**无用户参与**的应用间授权。当�
 **OIDC** 授权框架提供了许多种授权模式。在本场景中，获取营收记录属于 **M2M**（机器对机器）授权，没有用户的参与，调用方以自己的身份去访问资源服务器的 API 接口，这里需要使用 **OIDC ClientCredentials** 模式。
 
 通过 OIDC ClientCredentials 授权模式，调用方需要向 Authing 提供他的 ClientCredentials（也就是**编程访问账号**的 Key 和 Secret）和需要请求的权限 scope（也就是**资源标识符**）来直接获得一个具有该 资源权限的 AccessToken。然后调用方携带着这个 AccessToken 请求资源服务器，通过后即可获得对应的资源。
+
 ![OIDC-permission](./images/oidc-permission.png)
 
 交互流程如下：
@@ -187,7 +209,7 @@ M2M（Machine to Machine）授权是**无用户参与**的应用间授权。当�
 
 （1）集成 Authing SDK ，利用 Client Credentials 模式获取 AccessToken
 
-以 Authing 官网开发文档 里提供的 JavaScript/Node SDK 为例：（详情请访问：[Authing - Node.js/JavaScript | Authing 文档](https://docs.authing.cn/v2/reference/sdk-for-node/)）
+以 Authing 官网开发文档 里提供的 JavaScript/Node SDK 为例：（详情请访问：[Authing - Node.js/JavaScript | Authing 文档](/reference/sdk-for-node/)）
 
 Authing JavaScript/Node SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClient`。
 `AuthenticationClient` 以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有管理用户身份的方法；此模块还提供了各种身份协议的 SDK，如 [OpenID Connect](./federation/oidc.md), [OAuth 2.0](./federation/oauth.md), [SAML](./federation/saml.md) 和 [CAS](./federation/cas.md)。此模块适合用于非受信任的浏览器环境和纯后端交互的服务器环境。
@@ -227,7 +249,7 @@ AuthenticationClient().getAccessTokenByClientCredentials(scope, options);
 
 参数
 
-- scope <string> 权限项目，空格分隔的字符串，每一项代表一个权限。
+- scope <string\> 权限项目，空格分隔的字符串，每一项代表一个权限。
 - options，编程访问账号的 AK 与 SK 信息。
 - options.accessKey，编程访问账号 AccessKey。
 - options.secretKey，编程访问账号 SecretKey。
@@ -272,6 +294,7 @@ let res = await authenticationClient.getAccessTokenByClientCredentials(
 上文中的应用 AccessToken 的请求地址为：https://openresource.authing.cn/oidc/token
 
 以 A 公司为例，A 公司希望能够读取资源服务器中营收记录，应该携带的参数为参数为：
+
 ![Postman](./images/postman.png)
 
 响应结果：
@@ -314,12 +337,12 @@ let res = await authenticationClient.getAccessTokenByClientCredentials(
 - 要以 application/x-www-form-urlencoded 格式携带上参数请求 token 端点
 - Scope 中格式为 resourceName:resourceScope:action，其中 resourceName 表示资源名称，resourceScope 表示资源范围，_ 表示所有，action 表示操作。如所有书籍的阅读权限标识为 book:\*:read，多个范围用空格分隔 Authing 的 scope 权限项目以空格分隔，每一项的格式是资源标识符:资源操作。
   以下是 Authing 支持的所有 scope 格式：
-  book:1:read 含义为编号为 1 的书籍资源的读取权限
-  book:\*:read 含义为所有书籍资源的读取权限
-  book:read 含义为所有书籍资源的读取权限
-  book:\*: _ 含义为所有书籍资源的所有操作权限
-  book:\* 含义为所有书籍资源的所有操作权限
-  book 含义为所有书籍资源的所有操作权限
+  - book:1:read 含义为编号为 1 的书籍资源的读取权限
+  - book:\*:read 含义为所有书籍资源的读取权限
+  - book:read 含义为所有书籍资源的读取权限
+  - book:\*: _ 含义为所有书籍资源的所有操作权限
+  - book:\* 含义为所有书籍资源的所有操作权限
+  - book 含义为所有书籍资源的所有操作权
   \*: \*: \* 含义为所有资源的所有操作权限
   \*: \* 含义为所有资源的所有操作权限
   `*` 含义为所有资源的所有操作权限
