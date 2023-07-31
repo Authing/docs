@@ -555,7 +555,7 @@ const zhCnNavBar = {
             },
             {
               title: "M2M",
-              path: "/guides/app-new/create-app/m2m/",
+              path: "/guides/app-new/create-app/m2m",
             },
           ],
         },
