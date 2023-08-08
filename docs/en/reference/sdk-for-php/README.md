@@ -16,7 +16,7 @@ We recommend using `composer` for installation, it can work well with some modul
 
 ```shell
 # latest stable
-$ composer require authing-sdk/php
+$ composer require authing-sdk/php:dev-main
 ```
 
 ## Use ManagementClient

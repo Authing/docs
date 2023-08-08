@@ -5,7 +5,7 @@
 我们推荐使用 `composer` 进行安装，它可以与一些模块打包工具很好地配合使用。
 
 ```bash
-composer require authing-sdk/php
+composer require authing-sdk/php:dev-main
 ```
 
 Github 仓库： <https://github.com/Authing/authing-php-sdk> （目前在 `v5.0` 分支）
