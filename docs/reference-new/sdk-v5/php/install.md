@@ -17,7 +17,7 @@ Github 仓库： <https://github.com/Authing/authing-php-sdk> （目前在 `v5.0
 ```php
 require "vendor/autoload.php";
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
 ```
@@ -64,7 +64,7 @@ $user = $management->getUser(array(
 ```php
 require "vendor/autoload.php";
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET");
 
@@ -87,7 +87,7 @@ try {
 ```php
 require "vendor/autoload.php";
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient("AUTHING_USERPOOL_ID", "AUTHING_USERPOOL_SECRET", "https://authing-api.my-authing-service.com");
 ```

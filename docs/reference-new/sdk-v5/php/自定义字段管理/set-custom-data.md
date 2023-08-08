@@ -13,12 +13,13 @@
 
 ## 请求参数
 
-| 名称             | 类型                                               | 必填 | 默认值 | 描述                                                                                  | 示例值    |
-| ---------------- | -------------------------------------------------- | ---- | ------ | ------------------------------------------------------------------------------------- | --------- |
-| list             | <a href="#SetCustomDataDto">SetCustomDataDto[]</a> | 是   | -      | 自定义数据列表。                                                                      |           |
-| targetIdentifier | string                                             | 是   | -      | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。     | `userId1` |
-| targetType       | string                                             | 是   | -      | 主体类型，目前支持用户、角色、分组、部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER`    |
-| namespace        | string                                             | 否   | -      | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。              | `default` |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| list | <a href="#SetCustomDataDto">SetCustomDataDto[]</a> | 是 | - | 自定义数据列表。  |  |
+| targetIdentifier | string | 是 | - | 主体类型的唯一标志符。如果是用户则为用户 ID，角色为角色的 code，部门为部门的 ID。  | `userId1` |
+| targetType | string | 是 | - | 主体类型，目前支持用户、角色、分组、部门。 枚举值：`USER`,`ROLE`,`GROUP`,`DEPARTMENT` | `USER` |
+| namespace | string | 否 | - | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略。  | `default` |
+
 
 ## 示例代码
 
@@ -27,7 +28,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -42,23 +43,26 @@ $data = $management->setCustomData(array(
       array(
             "key" => "school",
           "value" => "pku",
-
+      
       )
     ),
 
 ));
 ```
 
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`
 
-| 名称       | 类型                                     | 描述                                                         |
-| ---------- | ---------------------------------------- | ------------------------------------------------------------ |
-| statusCode | number                                   | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message    | string                                   | 描述信息                                                     |
-| apiCode    | number                                   | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| data       | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功                                                 |
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| data | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功 |
+
+
 
 示例结果：
 
@@ -75,15 +79,19 @@ $data = $management->setCustomData(array(
 
 ## 数据结构
 
+
 ### <a id="SetCustomDataDto"></a> SetCustomDataDto
 
-| 名称  | 类型   | 必填 | 描述                                                                                                  |
-| ----- | ------ | ---- | ----------------------------------------------------------------------------------------------------- |
-| key   | string | 是   | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`                                               |
-| value | string | 是   | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。 示例值： `pku` |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| key | string | 是 | 字段 key，不能和内置字段的 key 冲突。 示例值： `school`  |
+| value | string | 是 | 自定义数据，可以为任意类型，但是必须和创建时定义的自定义字段类型匹配，否则将设置失败。 示例值： `pku`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称    | 类型    | 必填 | 描述                           |
-| ------- | ------- | ---- | ------------------------------ |
-| success | boolean | 是   | 操作是否成功。 示例值： `true` |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
+
+

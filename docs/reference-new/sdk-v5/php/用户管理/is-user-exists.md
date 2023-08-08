@@ -13,12 +13,13 @@
 
 ## 请求参数
 
-| 名称       | 类型   | 必填 | 默认值 | 描述                   | 示例值             |
-| ---------- | ------ | ---- | ------ | ---------------------- | ------------------ |
-| username   | string | 否   | -      | 用户名，用户池内唯一。 | `bob`              |
-| email      | string | 否   | -      | 邮箱。                 | `test@example.com` |
-| phone      | string | 否   | -      | 手机号。               | `188xxxx8888`      |
-| externalId | string | 否   | -      | 第三方外部 ID。        | `10010`            |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| username | string | 否 | - | 用户名，用户池内唯一。  | `bob` |
+| email | string | 否 | - | 邮箱。  | `test@example.com` |
+| phone | string | 否 | - | 手机号。  | `188xxxx8888` |
+| externalId | string | 否 | - | 第三方外部 ID。  | `10010` |
+
 
 ## 示例代码
 
@@ -27,7 +28,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -43,16 +44,19 @@ $data = $management->isUserExists(array(
 ));
 ```
 
+
 ## 请求响应
 
 类型： `IsUserExistsRespDto`
 
-| 名称       | 类型                                           | 描述                                                         |
-| ---------- | ---------------------------------------------- | ------------------------------------------------------------ |
-| statusCode | number                                         | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message    | string                                         | 描述信息                                                     |
-| apiCode    | number                                         | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| data       | <a href="#IsUserExistsDto">IsUserExistsDto</a> | 响应数据                                                     |
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| data | <a href="#IsUserExistsDto">IsUserExistsDto</a> | 响应数据 |
+
+
 
 示例结果：
 
@@ -69,8 +73,11 @@ $data = $management->isUserExists(array(
 
 ## 数据结构
 
+
 ### <a id="IsUserExistsDto"></a> IsUserExistsDto
 
-| 名称   | 类型    | 必填 | 描述                           |
-| ------ | ------- | ---- | ------------------------------ |
-| exists | boolean | 是   | 用户是否存在。 示例值： `true` |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| exists | boolean | 是 | 用户是否存在。 示例值： `true`  |
+
+

@@ -13,11 +13,12 @@
 
 ## 请求参数
 
-| 名称    | 类型                                                   | 必填 | 默认值 | 描述          | 示例值                         |
-| ------- | ------------------------------------------------------ | ---- | ------ | ------------- | ------------------------------ |
-| appIds  | string[]                                               | 是   | -      | APP ID 列表。 | `["62188e71cxxxx3075289c580"]` |
-| userId  | string                                                 | 是   | -      | 用户 ID。     |                                |
-| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否   | -      | 可选参数。    | `{"userIdType":"user_id"}`     |
+| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| appIds | string[] | 是 | - | APP ID 列表。  | `["62188e71cxxxx3075289c580"]` |
+| userId | string | 是 | - | 用户 ID。  |  |
+| options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数。  | `{"userIdType":"user_id"}` |
+
 
 ## 示例代码
 
@@ -26,7 +27,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\Mgmt\ManagementClient;
+use Authing\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -43,16 +44,19 @@ $data = $management->kickUsers(array(
 ));
 ```
 
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`
 
-| 名称       | 类型                                     | 描述                                                         |
-| ---------- | ---------------------------------------- | ------------------------------------------------------------ |
-| statusCode | number                                   | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message    | string                                   | 描述信息                                                     |
-| apiCode    | number                                   | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| data       | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功                                                 |
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| data | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功 |
+
+
 
 示例结果：
 
@@ -69,14 +73,18 @@ $data = $management->kickUsers(array(
 
 ## 数据结构
 
+
 ### <a id="KickUsersOptionsDto"></a> KickUsersOptionsDto
 
-| 名称       | 类型   | 必填 | 描述                                                                                                                              |
-| ---------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------- |
-| userIdType | string | 否   | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| userIdType | string | 否 | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username`  |
+
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称    | 类型    | 必填 | 描述                           |
-| ------- | ------- | ---- | ------------------------------ |
-| success | boolean | 是   | 操作是否成功。 示例值： `true` |
+| 名称 | 类型 | 必填 | 描述 |
+| ---- |  ---- | ---- | ---- |
+| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
+
+

@@ -5,7 +5,7 @@
 ```php
 require "vendor/autoload.php";
 
-use Authing\Auth\AuthenticationClient;
+use Authing\AuthenticationClient;
 
 $authentication = new AuthenticationClient(options);//初始化
 
@@ -24,7 +24,7 @@ $authentication->logoutWithRedirect(); //将浏览器重定向到 Authing 的登
 ```php
 require "vendor/autoload.php";
 
-use Authing\Auth\AuthenticationClient;
+use Authing\AuthenticationClient;
 
 // 使用 appId、appSecret、host、redirectUri 进行初始化
 $authentication = new AuthenticationClient(options);
