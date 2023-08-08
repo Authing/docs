@@ -13,13 +13,12 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| newCode | string | 是 | - | 角色新的权限分组内唯一识别码。  | `code2` |
-| code | string | 是 | - | 权限分组内角色的唯一标识符。  | `code1` |
-| namespace | string | 否 | default | 所属权限分组的 code。  | `default` |
-| description | string | 否 | - | 角色描述。  | `this is description` |
-
+| 名称        | 类型   | 必填 | 默认值  | 描述                           | 示例值                |
+| ----------- | ------ | ---- | ------- | ------------------------------ | --------------------- |
+| newCode     | string | 是   | -       | 角色新的权限分组内唯一识别码。 | `code2`               |
+| code        | string | 是   | -       | 权限分组内角色的唯一标识符。   | `code1`               |
+| namespace   | string | 否   | default | 所属权限分组的 code。          | `default`             |
+| description | string | 否   | -       | 角色描述。                     | `this is description` |
 
 ## 示例代码
 
@@ -28,7 +27,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\ManagementClient;
+use Authing\Mgmt\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -44,19 +43,16 @@ $data = $management->updateRole(array(
 ));
 ```
 
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功 |
-
-
+| 名称       | 类型                                     | 描述                                                         |
+| ---------- | ---------------------------------------- | ------------------------------------------------------------ |
+| statusCode | number                                   | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message    | string                                   | 描述信息                                                     |
+| apiCode    | number                                   | 细分错误码，可通过此错误码得到具体的错误类型。               |
+| data       | <a href="#IsSuccessDto">IsSuccessDto</a> | 操作是否成功                                                 |
 
 示例结果：
 
@@ -73,11 +69,8 @@ $data = $management->updateRole(array(
 
 ## 数据结构
 
-
 ### <a id="IsSuccessDto"></a> IsSuccessDto
 
-| 名称 | 类型 | 必填 | 描述 |
-| ---- |  ---- | ---- | ---- |
-| success | boolean | 是 | 操作是否成功。 示例值： `true`  |
-
-
+| 名称    | 类型    | 必填 | 描述                           |
+| ------- | ------- | ---- | ------------------------------ |
+| success | boolean | 是   | 操作是否成功。 示例值： `true` |

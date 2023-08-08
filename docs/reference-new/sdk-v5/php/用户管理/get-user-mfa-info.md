@@ -13,11 +13,10 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| userId | string  | 是 | - | 用户 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
-| userIdType | string  | 否 | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id` |
-
+| 名称       | 类型   | 必填 | 默认值  | 描述                                                                                                                              | 示例值                     |
+| ---------- | ------ | ---- | ------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| userId     | string | 是   | -       | 用户 ID。                                                                                                                         | `6229ffaxxxxxxxxcade3e3d9` |
+| userIdType | string | 否   | user_id | 用户 ID 类型，可以指定为用户 ID、手机号、邮箱、用户名和 externalId。。 枚举值：`user_id`,`external_id`,`phone`,`email`,`username` | `user_id`                  |
 
 ## 示例代码
 
@@ -26,7 +25,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\ManagementClient;
+use Authing\Mgmt\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -34,7 +33,7 @@ $management = new ManagementClient(
 );
 
 $data = $management->getUserMfaInfo(array(
-  
+
     "userId" => "6229ffaxxxxxxxxcade3e3d9",
 
     "userIdType" => "user_id",
@@ -42,19 +41,16 @@ $data = $management->getUserMfaInfo(array(
 ));
 ```
 
-
 ## 请求响应
 
 类型： `UserMfaSingleRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | <a href="#UserMfaRespDto">UserMfaRespDto</a> | 响应数据 |
-
-
+| 名称       | 类型                                         | 描述                                                         |
+| ---------- | -------------------------------------------- | ------------------------------------------------------------ |
+| statusCode | number                                       | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message    | string                                       | 描述信息                                                     |
+| apiCode    | number                                       | 细分错误码，可通过此错误码得到具体的错误类型。               |
+| data       | <a href="#UserMfaRespDto">UserMfaRespDto</a> | 响应数据                                                     |
 
 示例结果：
 
@@ -72,12 +68,9 @@ $data = $management->getUserMfaInfo(array(
 
 ## 数据结构
 
-
 ### <a id="UserMfaRespDto"></a> UserMfaRespDto
 
-| 名称 | 类型 | 必填 | 描述 |
-| ---- |  ---- | ---- | ---- |
-| totpStatus | string | 是 | 是否绑定了 TOTP，可选值 enabled, disabled。 示例值： `true`  |
-| faceMfaStatus | string | 是 | 是否绑定了人脸 MFA，可选值 enabled, disabled。 示例值： `true`  |
-
-
+| 名称          | 类型   | 必填 | 描述                                                           |
+| ------------- | ------ | ---- | -------------------------------------------------------------- |
+| totpStatus    | string | 是   | 是否绑定了 TOTP，可选值 enabled, disabled。 示例值： `true`    |
+| faceMfaStatus | string | 是   | 是否绑定了人脸 MFA，可选值 enabled, disabled。 示例值： `true` |

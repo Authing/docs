@@ -13,10 +13,9 @@
 
 ## 请求参数
 
-| 名称 | 类型 | 必填 | 默认值 | 描述 | 示例值 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔。  | `code1,code2` |
-
+| 名称     | 类型     | 必填 | 默认值 | 描述                                   | 示例值        |
+| -------- | -------- | ---- | ------ | -------------------------------------- | ------------- |
+| codeList | string[] | 是   | -      | 资源 code 列表，批量可以使用逗号分隔。 | `code1,code2` |
 
 ## 示例代码
 
@@ -25,7 +24,7 @@
 
 require 'vendor/autoload.php';
 
-use Authing\ManagementClient;
+use Authing\Mgmt\ManagementClient;
 
 $management = new ManagementClient(
     "AUTHING_USERPOOL_ID",
@@ -33,25 +32,22 @@ $management = new ManagementClient(
 );
 
 $data = $management->getNamespacesBatch(array(
-  
+
     "codeList" => "code1,code2",
 
 ));
 ```
 
-
 ## 请求响应
 
 类型： `NamespaceListRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
+| 名称       | 类型   | 描述                                                         |
+| ---------- | ------ | ------------------------------------------------------------ |
 | statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | array | 权限分组列表 |
-
-
+| message    | string | 描述信息                                                     |
+| apiCode    | number | 细分错误码，可通过此错误码得到具体的错误类型。               |
+| data       | array  | 权限分组列表                                                 |
 
 示例结果：
 
@@ -70,13 +66,10 @@ $data = $management->getNamespacesBatch(array(
 
 ## 数据结构
 
-
 ### <a id="NamespaceDto"></a> NamespaceDto
 
-| 名称 | 类型 | 必填 | 描述 |
-| ---- |  ---- | ---- | ---- |
-| code | string | 是 | 权限分组唯一标志符。 示例值： `my-namespace`  |
-| name | string | 否 | 权限分组名称。 示例值： `我的权限分组`  |
-| description | string | 否 | 权限分组描述信息。 示例值： `我的权限分组描述`  |
-
-
+| 名称        | 类型   | 必填 | 描述                                           |
+| ----------- | ------ | ---- | ---------------------------------------------- |
+| code        | string | 是   | 权限分组唯一标志符。 示例值： `my-namespace`   |
+| name        | string | 否   | 权限分组名称。 示例值： `我的权限分组`         |
+| description | string | 否   | 权限分组描述信息。 示例值： `我的权限分组描述` |
