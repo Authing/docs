@@ -2,7 +2,7 @@
 
 Postgres 应用可以让你在 Authing 身份自动化中操作 Postgres 数据库，包含执行查询、插入数据、更新数据等。
 
-![](../static/boxcn2OPFc9wLVPS0oxATD9N6kc.png)
+![](../static/G65kbejxaoaL30xEm5vci5oinZc.png)
 
 ## 准备工作
 
@@ -35,10 +35,10 @@ INSERT INTO "public"."users" ("id", "name", "email") VALUES
 (2, 'Lucy', 'lucy@example.com');
 ```
 
-设置 Postgres 节点的操作为执行查询、在查询语句中写入 `select * from users`：
+设置 Postgres 节点的操作为执行查询、在查询语句中写入 `select * from users limit 10 `：
 
-![](../static/boxcnKcdRTmIrWKPcmaKoaLow5c.png)
+![](../static/E1v4bJbPaonGN5xFX6jc0HX9n8O.png)
 
 执行节点：
 
-![](../static/boxcnlvBjlEWP7PaYAltpZNh77u.png)
+![](../static/Smw3bIh64oDTsHxkpWPcdDFmnkc.png)

@@ -14,26 +14,10 @@ Authing 身份自动化的 SWITCH 支持下面几种非常灵活的判断表达�
 
 在<strong>设置</strong><strong>条件</strong><strong>分支组</strong>处：可以分别设置每个分支的满足条件，每个分组的名称和 SWITCH 分支名称对应。
 
-![](../static/boxcn7337DR8mL5bhw00I4PRIHc.png)
+![](../static/BrZSbk78WoJbXpx8nn2cJvZknJf.png)
 
-每个分支的条件可以支持嵌套的筛选条件，如下图所示，表示当 $value1 为 true 或者 $value2 和 $value3 全部为 true 的时候，走 case_44b8e 分支。
+每个分支的条件可以支持嵌套的筛选条件，如下图所示，表示当 $value1 为 true 或者 $value2 和 $value3 全部为 true 的时候，走「分支」。
 
-![](../static/boxcnxfRiAgq0I0Pl6VMXhwFsXg.png)
+![](../static/KBFXbLMZ6oa03xx7vQhc48EjnOc.png)
 
-## 自定义代码模式
-
-使用这种模式，可以编写任意的逻辑，以下面的代码为例：当 value1 为 1 时，走 case_1 分支，为 2 时走 case_2 分支，否则走 default 默认分支。
-
-```typescript
-// 假如你在上面的数据中定义了一个变量 data，你可以在此通过 data 引用此数据。
-// 此 JS 沙箱环境支持 Node.js 14 版本，支持 async/await 语法。
-// 如果此代码有返回值，你需要使用 return 返回对应的返回值。
-
-if (value1 === 1) {
-  return "case_1"
-} else if (value1 === 2) {
-  return "case_2"
-} else {
-  return "default"
-}
-```
+##

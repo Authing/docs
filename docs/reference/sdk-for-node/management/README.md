@@ -50,3 +50,6 @@ meta:
 
 ::: page-ref /reference/sdk-for-node/management/TenantManagementClient.md
 :::
+
+::: page-ref /reference/sdk-for-node/management/BrowserFingerprintClient.md
+:::

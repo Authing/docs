@@ -29,6 +29,29 @@
         @focus="focused = true"
         @blur="focused = false"
       ></textarea>
+
+      <div style="margin-top: 16px" v-if="type === 'bad'">
+        <div class="title" style="margin-bottom: 8px">
+          <span class="highlight">*</span>
+          手机号/邮箱
+        </div>
+        <input
+          v-model="contactMethod"
+          placeholder="我们很重视您的反馈，期待能够和您联系"
+          :class="{
+            contactMethod: true,
+            error: showContactMethodError,
+          }"
+        />
+        <div
+          :class="{
+            'input-error-msg': true,
+            show: showContactMethodError,
+          }"
+        >
+          {{ contactMethodErrorMsg }}
+        </div>
+      </div>
     </div>
 
     <div class="feedback-footer">
@@ -49,20 +72,20 @@ function createReasons() {
   return [
     {
       value: "A",
-      desc: "没找到想了解的信息"
+      desc: "没找到想了解的信息",
     },
     {
       value: "B",
-      desc: "步骤说明不清晰/看不懂"
+      desc: "步骤说明不清晰/看不懂",
     },
     {
       value: "C",
-      desc: "内容有错"
+      desc: "内容有错",
     },
     {
       value: "D",
-      desc: "其他"
-    }
+      desc: "其他",
+    },
   ];
 }
 
@@ -75,20 +98,20 @@ export default {
       },
       validator(value) {
         return ["good", "bad"].includes(value);
-      }
+      },
     },
     value: {
       type: Boolean,
       default() {
         return false;
-      }
+      },
     },
     styles: {
       type: String,
       default() {
         return "";
-      }
-    }
+      },
+    },
   },
   watch: {
     value(newVal) {
@@ -96,32 +119,65 @@ export default {
     },
     type() {
       this.resetStates();
-    }
+    },
+    contactMethod(v) {
+      if (!this.formSubmitted) {
+        return;
+      }
+      if (!v) {
+        this.contactMethodErrorMsg = "请输入手机号或邮箱";
+        this.showContactMethodError = true;
+      } else if (
+        !/^(?:(?:\+|00)86)?1[3-9]\d{9}$/.test(v) &&
+        !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+          v
+        )
+      ) {
+        this.contactMethodErrorMsg = "请输入正确的手机号或邮箱";
+        this.showContactMethodError = true;
+      } else {
+        this.showContactMethodError = false;
+      }
+    },
   },
   data() {
     return {
       reasons: createReasons(),
       selectedReasons: [],
       customReason: "",
-      focused: false
+      focused: false,
+      contactMethod: "",
+      showContactMethodError: false,
+      contactMethodErrorMsg: "请输入手机号或邮箱",
+      formSubmitted: false,
     };
   },
   computed: {
     textareaPlaceholder() {
       const map = {
         good: "你的建议会让我们做的更好...",
-        bad: "描述具体问题..."
+        bad: "描述具体问题...",
       };
       return map[this.type] || "";
-    }
+    },
   },
   methods: {
     submit() {
+      this.formSubmitted = true;
+      if (
+        this.type === "bad" &&
+        (!this.contactMethod || this.showContactMethodError)
+      ) {
+        this.showContactMethodError = true;
+        return;
+      }
+
       const params = {
         helpful: this.type === "good",
         docTitle: this.$page.title,
         docUrl: window.location.href,
-        customReason: this.xssCheck(this.customReason)
+        customReason: this.xssCheck(this.customReason),
+        contactMethod: this.xssCheck(this.contactMethod),
       };
 
       if (this.type === "bad") {
@@ -133,6 +189,10 @@ export default {
     resetStates() {
       this.selectedReasons = [];
       this.customReason = "";
+      this.contactMethod = "";
+      this.showContactMethodError = false;
+      this.contactMethodErrorMsg = "请输入手机号或邮箱";
+      this.formSubmitted = false;
     },
     xssCheck(str, reg) {
       const map = {
@@ -140,7 +200,7 @@ export default {
         "&": "&amp;",
         '"': "&quot;",
         ">": "&gt;",
-        "'": "&#39;"
+        "'": "&#39;",
       };
       return str
         ? str.replace(
@@ -150,8 +210,8 @@ export default {
             }
           )
         : "";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -178,6 +238,13 @@ export default {
       padding-right 10px
       box-sizing border-box
       color #E8353E
+  .input-error-msg
+    color: #E8353E
+    display: none
+    font-size: 12px
+    margin-top: 2px
+    &.show
+      display: block
   .content
     margin-bottom 16px
     .reasons
@@ -238,6 +305,23 @@ export default {
         outline none
         border none
       &.focused
+        background-color #fff
+        border 1px solid #165DFF
+    .contactMethod
+      border: 1px solid #f2f3f5;
+      outline: none;
+      font-size: 14px;
+      background: #f2f3f5;
+      color: #1d2129;
+      max-width: 320px;
+      width: 320px;
+      line-height: 20px;
+      box-sizing: border-box;
+      padding: 5px 12px;
+      &.error {
+        border 1px solid #E8353E
+      }
+      &:focused
         background-color #fff
         border 1px solid #165DFF
 

@@ -60,7 +60,7 @@ User user = result.user;
 通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](#发送短信验证码) 接口以获取短信验证码。
 
 ```dart
-static Future<AuthResult> registerByPhoneCode(String phone, String code, String password) async
+static Future<AuthResult> registerByPhoneCode(String phone, String code, String password, {String? phoneCountryCode}) async
 ```
 
 **参数**
@@ -68,11 +68,12 @@ static Future<AuthResult> registerByPhoneCode(String phone, String code, String 
 * *phone* 手机号
 * *code* 短信验证码
 * *password* 明文密码
+* *phoneCountryCode* 国家码
 
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.registerByPhoneCode("188xxxx8888", "code", "strong");
+AuthResult result = await AuthClient.registerByPhoneCode("188xxxx8888", "code", "strong", phoneCountryCode: "+86");
 User user = result.user;
 ```
 
@@ -112,18 +113,19 @@ User user = result.user; // user info
 通过短信验证码登录，需要先调用 [发送短信验证码](#发送短信验证码) 接口。
 
 ```dart
-static Future<AuthResult> loginByPhoneCode(String phone, String code) async
+static Future<AuthResult> loginByPhoneCode(String phone, String code, {String? phoneCountryCode}) async
 ```
 
 **参数**
 
 * *phone* 手机号
 * *code* 短信验证码
+* *phoneCountryCode* 国家码
 
 **示例**
 
 ```dart
-AuthResult result = await AuthClient.loginByPhoneCode("188xxxx8888", "code");
+AuthResult result = await AuthClient.loginByPhoneCode("188xxxx8888", "code", phoneCountryCode: "+86");
 User user = result.user; // get user info
 ```
 

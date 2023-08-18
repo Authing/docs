@@ -14,3 +14,4 @@
 - [扫码认证](./scan/README.md)
 - [用户管理](./user/README.md)
 - [工具使用类](./util/README.md)
+- [设备管理](./device/READKE.md)

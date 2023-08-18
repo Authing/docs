@@ -1,8 +1,8 @@
-# 定时执行 workflow
+# 定时执行 Workflow
 
 如果需要按照一定时间周期触发 workflow，需要将触发器设置为<strong>定时任务</strong>：
 
-![](../static/boxcnQ5ReTanTLkMVLhSvkl9Iec.png)
+![](../static/K75PbTbtyob4x0xmhWHcNUPqnyh.png)
 
 定时任务分为以下几种模式：
 
@@ -11,29 +11,31 @@
 3. 每天重复
 4. Cron 表达式
 
-![](../static/boxcnrnQ05TGYIfjB7ygMjMRICb.png)
+![](../static/F7XVbnSBNoyQnuxo5eucfhIrnbg.png)
 
 ## 每天重复
 
 设置每天的触发时间：
 
-![](../static/boxcnjUfJVAZsIa3zrzkUKzBvwf.png)
+![](../static/F6hgbaTHDo7Y0txIr0Ec3824nKc.png)
 
 ## 每月重复
 
 设置每月需要触发的日期，以及时间：
 
-![](../static/boxcnJZIunVQ2b2WGWZCCi3zNfg.png)
+![](../static/MQxOb1ZUXoqqpixzkBrcs4vgn3e.png)
 
 ## 每周重复
 
 设置星期几触发，以及具体时间：
 
-![](../static/boxcnOteGfi3TuDlK31kXOV1K6g.png)
+![](../static/SqSObNXBDocYUzxz3fEcwbwPnke.png)
 
 ## Cron 表达式
 
 这是最灵活的方式，你可以使用[第三方网站](https://cron.qqe2.com/)生成 cron 表达式，下面是一些常见的 cron 表达式：
+
+![](../static/K1iZb2gAUo6CMSxa1xycrFoNnzd.png)
 
 > 注：Authing 身份自动化允许 cron 表达式最小时间间隔为两小时。
 

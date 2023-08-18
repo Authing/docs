@@ -53,7 +53,7 @@ Authing 身份自动化中集成了 [Authing 所有的开放 API](https://api-ex
 ]
 ```
 
-- options：可选项，这里我们设置一下分页条件为第一页，拉取 50 条。你可能会问，如果我需要拉取所有用户呢？我们为你提供了循环节点，详情请查看文档：[循环](https://steamory.feishu.cn/wiki/wikcniY51qpnPcCeQbSbZLKq4mb?appStyle=UI4&domain=www.feishu.cn&locale=zh-CN&refresh=1&tabName=space&theme=light&userId=6738160787958792462)
+- options：可选项，这里我们设置一下分页条件为第一页，拉取 50 条。你可能会问，如果我需要拉取所有用户呢？我们为你提供了循环节点，详情请查看文档：[循环执行](/workflow/流程控制节点/循环执行.html)
 
 ```typescript
 {

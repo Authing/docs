@@ -18,9 +18,9 @@ Authing PHP SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClien
 
 ## GitHub 下载地址
 
-| 条目     | 说明                                        |
-| -------- | ------------------------------------------- |
-| 支持版本 |  PHP 7.1 +                                 |
+| 条目     | 说明                                                                                     |
+| -------- | ---------------------------------------------------------------------------------------- |
+| 支持版本 | PHP 7.1 +                                                                                |
 | 仓库地址 | [https://github.com/Authing/authing-php-sdk](https://github.com/Authing/authing-php-sdk) |
 
 ## 安装
@@ -41,7 +41,7 @@ Authing PHP SDK 由两部分组成：`ManagementClient` 和 `AuthenticationClien
 
 ```shell
 # 默认 sdk
-$ composer require authing-sdk/php
+$ composer require authing-sdk/php:dev-main
 
 # php-71
 $ composer require authing-sdk/php-71
@@ -59,7 +59,7 @@ $ composer require authing-sdk/php-74
 $ composer require authing-sdk/php-80
 ```
 
-`sdk` 的使用上并没有差异，只是每个版本各有自己的特性。详情可以参考 `php 版本` 相关语言特性说明。 
+`sdk` 的使用上并没有差异，只是每个版本各有自己的特性。详情可以参考 `php 版本` 相关语言特性说明。
 
 ## 使用管理模块
 
