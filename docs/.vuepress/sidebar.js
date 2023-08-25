@@ -1242,6 +1242,10 @@ const zhCnNavBar = {
           title: "管理员",
           path: "/guides/userpool-config/collaboration-adminstrator",
         },
+        {
+          title: "管理员 3.0",
+          path: "/guides/userpool-config/new-collaboration-adminstrator",
+        },
       ],
     },
     {
