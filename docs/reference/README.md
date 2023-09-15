@@ -42,7 +42,7 @@
 - [Swift](./sdk-for-swift.md)
 - [小程序](./sdk-for-wxapp.md)
 - [微信网页授权](./sdk-for-wxmp.md)
-- [Go](./sdk-for-go.md)
+- [Go](./sdk-for-go/README.md)
 - [Ruby](./sdk-for-ruby.md)
 - [Delphi](./sdk-for-delphi.md)
 
