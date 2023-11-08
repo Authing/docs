@@ -2,5 +2,4 @@ FROM docker-images.authing-inc.co/base-images/node:14-python3.10
 WORKDIR /tmp
 COPY package.json ./
 COPY yarn.lock ./
-COPY src/packages ./src/packages
 RUN yarn config set cache-folder /tmp/.yarn; yarn install
