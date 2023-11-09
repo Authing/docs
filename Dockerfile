@@ -1,4 +1,4 @@
-FROM docker-images.authing-inc.co/build-cache/docs AS build-stage
+FROM docker-images.authing-inc.co/build-cache/authing-docs-v2 AS build-stage
 WORKDIR /build
 COPY . .
 RUN ln -s /tmp/node_modules /build \
