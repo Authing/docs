@@ -8,7 +8,7 @@ RUN ln -s /tmp/node_modules /build \
 
 FROM docker-images.authing-inc.co/base-images/nginx:1.25.2-alpine
 WORKDIR /docs
-COPY --from=build-stage /build/.vuepress/dist .
-COPY --from=build-stage /build/.vuepress/dist ./v2
+COPY --from=build-stage /build/docs/.vuepress/dist .
+COPY --from=build-stage /build/docs/.vuepress/dist ./v2
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
