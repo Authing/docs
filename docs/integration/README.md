@@ -977,7 +977,14 @@
         image: "bytebase_logo@2x.png",
         image2x: "bytebase_logo@3x.png",
         category: "devtools",
-      }
+      },
+      {
+        key: "dingtalk",
+        name: "钉钉",
+        image: "dingtalk_logo.svg",
+        image2x: "dingtalk_logo.svg",
+        category: "office",
+      },
     ],
   categories:
     [
