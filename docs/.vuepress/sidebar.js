@@ -337,11 +337,11 @@ const zhCnNavBar = {
       title: "自适应 MFA",
       children: [
         {
-          title: "Authing Adaptive MFA 概述",
+          title: "Authing CAMFA 概述",
           path: "/guides/adaptive-mfa/intro"
         },
         {
-          title: "基于 Authing Guard 登录组件接入 MFA",
+          title: "基于 Authing Guard 接入 Authing 持续自适应 MFA",
           path: "/guides/adaptive-mfa/guard",
         },
         {
