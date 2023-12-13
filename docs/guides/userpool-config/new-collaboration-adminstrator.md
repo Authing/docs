@@ -35,7 +35,7 @@
 
 新版管理员不仅局限于超级管理员的权限分配与管理，还支持协作管理员将自己拥有的权限继续授权，达到层层下放的授权效果，实现灵活又严谨的权限管理能力。用户旅程如图:
 
-![usertrip](./images/usertrip.jpg)
+![usertrip](./images/usertrip.jpeg)
 
 
 

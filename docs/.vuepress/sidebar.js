@@ -1243,7 +1243,7 @@ const zhCnNavBar = {
           path: "/guides/userpool-config/collaboration-adminstrator",
         },
         {
-          title: "管理员 3.0",
+          title: "管理员权限（新）",
           path: "/guides/userpool-config/new-collaboration-adminstrator",
         },
       ],
