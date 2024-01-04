@@ -35,7 +35,7 @@ LINE 社会化登录是用户以 LINE 为身份源安全登录第三方应用或
 
 1.3 切换到「LINE Login」TAB 项，完成填写 iOS/Android APP 信息。
 
-![](images/mobile-package-info.png)
+![](./images/mobile-package-info.png)
 
 ## 第二步：在 {{$localeConfig.brandName}} 控制台配置 LINE 移动端
 
