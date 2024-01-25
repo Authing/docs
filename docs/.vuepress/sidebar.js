@@ -1184,6 +1184,7 @@ const zhCnNavBar = {
           title: "Webhooks",
           path: "/guides/webhook/",
         },
+        { title: "身份自动化", path: "/workflow/overview/" },
         // DATABASE_CONNECTION_MENU,
       ],
     },

@@ -161,7 +161,7 @@ module.exports = {
           {
             text: "身份自动化",
             link: "/workflow/",
-            hidden: true
+            // hidden: true
           },
           {
             text: "元数据",
