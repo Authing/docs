@@ -1,7 +1,6 @@
 # Authing CAMFA 概述
 
 ## 什么是持续自适应 MFA？
-
 持续自适应 MFA（Continuous Adaptive Multi-Factor Authentication，CAMFA） 是一种安全身份验证方法，它结合了多个身份验证因素（如密码、生物识别、硬件令牌等），并在用户的访问生命周期过程中，使用行为风险评估技术对用户的关键行为进行持续地实时动态评估，当触发风险时会通过调用 MFA 认证对用户当前状态进行确认，从而提高账号的安全性，更好地保护业务系统内的数据与资源安全。
 
 
@@ -33,9 +32,13 @@ Authing 持续自适应 MFA 具备以下特性：
 
 
 
-## 如何接入 Authing MFA？
+## 如何接入 Authing CAMFA？
 
 ![如何接入 Authing MFA](./images/integrate.png)
+
+
+
+***目前 Authing CAMFA 功能仅面向内测客户开放，如需获取内测资格可以联系你的商务顾问或者在线联系我们***
 
 ## 更多功能了解请参考
 
