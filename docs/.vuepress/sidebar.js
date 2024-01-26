@@ -334,6 +334,31 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: "自适应 MFA",
+      children: [
+        {
+          title: "Authing CAMFA 概述",
+          path: "/guides/adaptive-mfa/intro"
+        },
+        {
+          title: "基于 Authing Guard 接入 Authing 持续自适应 MFA",
+          path: "/guides/adaptive-mfa/guard",
+        },
+        {
+          title: "改造已有的 IAM/IDaaS/认证系统接入 Authing 自适应 MFA 能力",
+          path: "/guides/adaptive-mfa/legacy",
+        },
+        {
+          title: "进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南",
+          path: "/guides/adaptive-mfa/camfa",
+        },
+        {
+          title: "自适应 MFA 编排/策略配置说明",
+          path: "/guides/adaptive-mfa/config",
+        },
+      ],
+    },
+    {
       title: "管理用户账号",
       path: "/guides/user/",
       children: [
