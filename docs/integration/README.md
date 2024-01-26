@@ -762,6 +762,13 @@
         category: "office",
       },
       {
+        key: "kingdee-cloud-constellation",
+        name: "金蝶云星瀚",
+        image: "kdcloud_logo.svg",
+        image2x: "kdcloud_logo.svg",
+        category: "office",
+      },
+      {
         key: "guance",
         name: "观测云",
         image: "logo_Guanceyun_logo.svg",
@@ -977,7 +984,14 @@
         image: "bytebase_logo@2x.png",
         image2x: "bytebase_logo@3x.png",
         category: "devtools",
-      }
+      },
+      {
+        key: "dingtalk",
+        name: "钉钉",
+        image: "dingtalk_logo.svg",
+        image2x: "dingtalk_logo.svg",
+        category: "office",
+      },
     ],
   categories:
     [

@@ -1209,6 +1209,7 @@ const zhCnNavBar = {
           title: "Webhooks",
           path: "/guides/webhook/",
         },
+        { title: "身份自动化", path: "/workflow/overview/" },
         // DATABASE_CONNECTION_MENU,
       ],
     },
@@ -1266,6 +1267,10 @@ const zhCnNavBar = {
         {
           title: "管理员",
           path: "/guides/userpool-config/collaboration-adminstrator",
+        },
+        {
+          title: "管理员权限（新）",
+          path: "/guides/userpool-config/new-collaboration-adminstrator",
         },
       ],
     },

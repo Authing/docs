@@ -159,11 +159,6 @@ module.exports = {
             ]
           },
           {
-            text: "身份自动化",
-            link: "/workflow/",
-            hidden: true
-          },
-          {
             text: "元数据",
             link: "/metadata/",
             hidden: true
@@ -171,6 +166,11 @@ module.exports = {
           {
             text: "应用集成",
             link: "/integration/"
+          },
+          {
+            text: "身份自动化",
+            link: "/workflow/",
+            // hidden: true
           },
           {
             text: "加入 APN",
