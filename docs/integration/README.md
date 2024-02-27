@@ -992,6 +992,13 @@
         image2x: "dingtalk_logo.svg",
         category: "office",
       },
+      {
+        key: "aws-iam-identity-center",
+        name: "AWS IAM Identity Center",
+        image: "aws.svg",
+        image2x: "aws.svg",
+        category: "cloud",
+      },
     ],
   categories:
     [
