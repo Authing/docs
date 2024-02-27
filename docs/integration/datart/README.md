@@ -20,6 +20,10 @@
         title: "在 {{$localeConfig.brandName}} 中创建应用",
         subTitle: "从 {{$localeConfig.brandName}} 应用市场中获取并创建应用",
       },
+       {
+        title: "配置 datart",
+        subTitle: "配置 datart",
+      },
       {
         title: "体验登录",
         subTitle: "使用 {{$localeConfig.brandName}} IdP 登录 Datart",
