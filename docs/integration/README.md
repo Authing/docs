@@ -951,6 +951,13 @@
         category: "hr",
       },
       {
+        key: "knx",
+        name: "knx",
+        image: "knx_logo.svg",
+        image2x: "knx_logo.svg",
+        category: "hr",
+      },
+      {
         key: "datart",
         name: "Datart",
         image: "datart_logo.svg",
