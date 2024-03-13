@@ -36,6 +36,7 @@
 | 青云 QingCloud             | PC 网站    | <router-link to="/guides/connections/social/qingcloud/" target="_blank">使用文档</router-link>                    |
 | Instagram                  | PC 网站    | <router-link to="/guides/connections/social/instagram/" target="_blank">使用文档</router-link>                    |
 | 抖音移动端 | 移动 APP   | <router-link to="/guides/connections/social/douyin-mobile/" target="_blank">使用文档</router-link>                        |
+| 抖音小程序             | 抖音小程序 | <router-link to="/guides/connections/social/douyin-miniprogram/" <br/>target="_blank">使用文档</router-link>      |
 | 快手移动端 | 移动 APP   | <router-link to="/guides/connections/social/kuaishou-mobile/" target="_blank">使用文档</router-link>                        |
 | 小米移动端 | 移动 APP   | <router-link to="/guides/connections/social/xiaomi-mobile/" target="_blank">使用文档</router-link>                        |
 | Line 移动端 | 移动 APP   | <router-link to="/guides/connections/social/line-mobile/" target="_blank">使用文档</router-link>                        |
