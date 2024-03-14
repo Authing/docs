@@ -734,7 +734,7 @@ const zhCnNavBar = {
               path: "/guides/connections/social/douyin-mobile/",
             },
             {
-              title: "微信小程序",
+              title: "抖音小程序",
               path: "/guides/connections/social/douyin-miniprogram/",
             },
             {
