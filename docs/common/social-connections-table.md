@@ -1,10 +1,11 @@
+
 | 社会化登录方式             | 使用场景   | 使用文档                                                                                                              |
 | -------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
 | PC 微信扫码               | PC 网站    | <router-link to="/guides/connections/social/wechat-pc/" target="_blank">使用文档</router-link>                    |
 | 微信移动端                 | 移动 APP   | <router-link to="/guides/connections/social/wechat-mobile/" target="_blank">使用文档</router-link>                |
 | 微信网页授权               | 微信内网页 | <router-link to="/guides/connections/social/wechat-mp/" target="_blank">使用文档</router-link>                    |
 | 微信公众号关注                 | PC 网站    | <router-link to="/guides/connections/social/wechatmp-qrcode/" target="_blank">使用文档</router-link>              |
-| 微信小程序                 | 微信小程序 | <router-link to="/guides/connections/social/wechat-miniprogram/" target="_blank">使用文档</router-link>           |
+| 微信小程序                 | 微信小程序 | [使用文档](https://docs.authing.cn/v3/reference/sdk/miniapp/quick.html)    |
 | 微信 PC 小程序扫码             | PC 网站    | <router-link to="/guides/connections/social/wechat-miniprogram-qrconnect/" target="_blank">使用文档</router-link> |
 | App 拉起小程序             | 移动 APP   | <router-link to="/guides/connections/social/wechat-miniprogram-applaunch/" target="_blank">使用文档</router-link> |
 | 腾讯 QQ                    | PC 网站    | <router-link to="/guides/connections/social/qq/" target="_blank">使用文档</router-link>                           |
@@ -36,6 +37,7 @@
 | 青云 QingCloud             | PC 网站    | <router-link to="/guides/connections/social/qingcloud/" target="_blank">使用文档</router-link>                    |
 | Instagram                  | PC 网站    | <router-link to="/guides/connections/social/instagram/" target="_blank">使用文档</router-link>                    |
 | 抖音移动端 | 移动 APP   | <router-link to="/guides/connections/social/douyin-mobile/" target="_blank">使用文档</router-link>                        |
+| 抖音小程序 | 移动 APP   |  [使用文档](https://docs.authing.cn/v3/reference/sdk/miniapp/quick.html)                    |
 | 快手移动端 | 移动 APP   | <router-link to="/guides/connections/social/kuaishou-mobile/" target="_blank">使用文档</router-link>                        |
 | 小米移动端 | 移动 APP   | <router-link to="/guides/connections/social/xiaomi-mobile/" target="_blank">使用文档</router-link>                        |
 | Line 移动端 | 移动 APP   | <router-link to="/guides/connections/social/line-mobile/" target="_blank">使用文档</router-link>                        |

@@ -1,7 +1,8 @@
 # 微信小程序 SDK
 
 ::: hint-info
-Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
+Authing 小程序 SDK已经 于 2024 年 3 月 20 日使用新的文档。
+[Authing 小程序 SDK ](https://docs.authing.cn/v3/reference/sdk/miniapp/quick.html) 
 :::
 
 ## 说明
