@@ -2,6 +2,13 @@
 
 <LastUpdated />
 
+
+::: hint-info
+Authing 小程序 SDK已经 于 2024 年 3 月 20 日使用新的文档。
+[Authing 小程序 SDK ](https://docs.authing.cn/v3/reference/sdk/miniapp/quick.html) 
+:::
+
+
 ## 场景介绍
 
 - **概述**：{{$localeConfig.brandName}} 通过 SDK 为开发者提供了一种快速在小程序中获取用户信息并完成登录的方法。通过 Authing 的 SDK 可以方便地获取微信提供的用户身份标识，快速建立以手机号码为基础的账号体系。
