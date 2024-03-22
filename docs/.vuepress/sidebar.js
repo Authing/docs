@@ -338,7 +338,7 @@ const zhCnNavBar = {
       children: [
         {
           title: "Authing CAMFA 概述",
-          path: "/guides/adaptive-mfa/intro"
+          path: "/guides/adaptive-mfa/intro",
         },
         {
           title: "基于 Authing Guard 接入 Authing 持续自适应 MFA",
@@ -349,7 +349,8 @@ const zhCnNavBar = {
           path: "/guides/adaptive-mfa/legacy",
         },
         {
-          title: "进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南",
+          title:
+            "进阶 MFA：Continuous Adaptive Multi-Factor Authentication (CAMFA) 指南",
           path: "/guides/adaptive-mfa/camfa",
         },
         {
@@ -1859,6 +1860,10 @@ const zhCnNavBar = {
         {
           title: "Android Guard 更新日志",
           path: "/reference/sdk-for-android/version",
+        },
+        {
+          title: "合规使用指南",
+          path: "/reference/sdk-for-android/compliance-guidelines",
         },
         {
           title: "返回码对照表",

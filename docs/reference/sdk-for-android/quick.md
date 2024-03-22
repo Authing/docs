@@ -2,6 +2,19 @@
 
 <LastUpdated/>
 
+## 基本信息
+
+| 条目         | 说明                                                                                     |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| 支持版本     | Android 7.0 +                                                                            |
+| 仓库地址     | [https://github.com/Authing/guard-android](https://github.com/Authing/guard-android)     |
+| SDK 名称     | Guard Android SDK                                                                        |
+| 开发者       | 北京蒸汽记忆科技有限公司                                                                 |
+| 版本         | 2.0.0                                                                                    |
+| 主要功能     | 包含基本登录组件的封装，如账密登录、手机号验证码登录，以及对 Authing 登录认证 API 的封装 |
+| 个人信息收集 | 本 SDK 不收集个人隐私信息                                                                |
+| 合规使用说明 | 参考[合规使用指南](/reference/sdk-for-android/compliance-guidelines.md)                  |
+
 ## 第一步：新建 Android 工程
 
 <img src="./images/create_project1.png" alt="drawing" width="800"/>
@@ -14,16 +27,16 @@
 
 ## 第二步：添加 Guard 依赖
 
-在工程根目录的 build.gradle	(4.2+以后的版本 AndroidStudio 创建的新工程在 setting.gradle) 文件里面需包含 mavenCentral
+在工程根目录的 build.gradle (4.2+以后的版本 AndroidStudio 创建的新工程在 setting.gradle) 文件里面需包含 mavenCentral
 
- ```groovy
- buildscript {
-    repositories {
-        mavenCentral()
-        // other repositories
-    }
- }
- ```
+```groovy
+buildscript {
+   repositories {
+       mavenCentral()
+       // other repositories
+   }
+}
+```
 
 在主工程的 build.gradle 文件里面添加依赖
 
@@ -53,7 +66,7 @@ Authing.init(context, "AUTHING_APP_ID");
 
 ### 1. 注册/登录并获取用户信息
 
-我们提供了三种方式来帮助开发者实现认证流程： 
+我们提供了三种方式来帮助开发者实现认证流程：
 
 - 如果想独立构建自己的登录注册等 UI 界面，只调用认证相关接口，推荐[使用 SDK API](./apis/)。
 - 如果想两行代码实现包括 UI 的整个认证流程，推荐[使用 SDK 托管页](./develop.md)。
@@ -64,4 +77,3 @@ Authing.init(context, "AUTHING_APP_ID");
 ### 3. [典型场景](./scenario/)
 
 ### 4. [私有化部署](./onpremise.md)
-

@@ -76,6 +76,7 @@ Webhook 测试
 | :---------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | login                               | 登录事件，当用户进行登录时会触发此事件，无论是否登录成功都会触发。 | 登录用户的用户信息                                           |
 | register                            | 注册事件，当用户注册、管理员手动创建用户或导入用户时会触发此事件 | 注册用户的用户信息                                           |
+| refresh-token                       | oidc refresh token 事件 | `data.user`: 用户信息，`data.nextIdToken`：新的 idToken，`data.nextAccessToken`：新的 accessToken，`data.currRefreshToken`：当前 refresh token，`data.nextRefreshToken`：新的 refreshToken，若未开启 refresh token 轮换，将与 currRefreshToken 一致                                           |
 | user:created                        | 创建用户事件，当用户注册、管理员手动创建用户或导入用户时会触发此事件，与 `register` 触发的逻辑一样，一般只需监听其中一个事件即可 | 创建的用户的用户信息                                         |
 | mfa:verified                        | MFA 验证事件，当用户登录并触发了 MFA，并输入了 MFA 验证码二次登录后触发，无论成功与否都会触发 | `data.userId`: 验证的用户 ID，`data.isValid`: 是否验证通过，`data.type`: 验证的类型，可能值有 `OTP`, `FACE`, `SMS`, `EMAIL` |
 | user:updated                        | 修改用户信息事件，当用户修改自己的信息或管理员手动修改用户信息时会触发此事件，无论成功与否都会触发 | `data.user`: 更新后的用户信息，`data.updates`: 更新的字段对象 |
@@ -105,7 +106,7 @@ Webhook 测试
 | user:unarchived                     | 用户被取消归档成功事件                                       | `data.user`: 取消归档后的用户信息                            |
 | user:blocked                        | 用户被锁定事件                                               | `data.user`: 锁定后的用户信息                                |
 | user:unblocked                      | 用户被解除锁定事件                                           | `data.user`: 解除锁定后的用户信息                            |
-| user:link-account                   | 用户社交账号绑定事件                                         | ``data.primaryUser``: 主账号用户信息， ``data.secondaryUser``:社交账号用户信息 |
+| user:link-account                   | 用户社交账号绑定事件                                         | `data.primaryUser`: 主账号用户信息（已废弃），`data.secondaryUser`:社交账号用户信息（已废弃），`data.user`：用户信息，`data.extIdp`：身份源信息，`data.identity`：绑定的社交身份源信息 |
 | application:mfa:enabled             | 应用开启 MFA 认证                                            | `data.type`: 开启的 MFA 类型，`data.applicationId`: 应用 ID  |
 | application:mfa:disabled            | 应用关闭 MFA 认证                                            | `data.type`: 关闭的 MFA 类型，`data.applicationId`: 应用 ID  |
 | group:created                       | 创建用户分组                                                 | `data.group`: 创建的用户分组信息                             |
