@@ -1175,6 +1175,10 @@ const zhCnNavBar = {
           title: "自定义域名",
           path: "/guides/customize/domain/customized-domain",
         },
+        {
+          title: "应用面板",
+          path: "/guides/customize/app-panel/",
+        },
       ],
     },
     {
