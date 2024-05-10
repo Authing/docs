@@ -320,6 +320,20 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: "用户自助服务",
+      path: "/guides/user-self-service/",
+      children: [
+        {
+          title: "概述",
+          path: "/guides/user-self-service/summary",
+        },
+        {
+          title: "应用访问权限申请与审批",
+          path: "/guides/user-self-service/approval",
+        },
+      ]
+    },
+    {
       title: "授权",
       path: "/guides/authorization/",
       children: [
