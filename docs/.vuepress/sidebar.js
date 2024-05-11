@@ -321,7 +321,6 @@ const zhCnNavBar = {
     },
     {
       title: "用户自助服务",
-      path: "/guides/user-self-service/",
       children: [
         {
           title: "概述",
