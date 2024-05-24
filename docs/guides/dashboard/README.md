@@ -42,9 +42,11 @@
 
 ### 第二步：配置应用面板
 
-企业管理员或具有 {{$localeConfig.brandName}} 控制台权限的管理员可以进入控制台 **应用->单点登录 SSO->配置** 来配置应用面板的基本信息、登录注册方式、社交登录方式、企业登录方式等（有关详情，请参阅 [登录控制](/guides/app-new/create-app/login-control.html)）。
+企业管理员或具有 {{$localeConfig.brandName}} 控制台权限的管理员可以进入控制台 **品牌化->应用面板->基础设置** 和 **应用->单点登录 SSO->配置** 来配置应用面板的基本信息、登录注册方式、社交登录方式、企业登录方式等（有关详情，请参阅 [登录控制](/guides/app-new/create-app/login-control.html) 及 [应用面板配置](https://docs.authing.cn/v2/guides/customize/app-panel/#%E5%BA%94%E7%94%A8%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE)）。
 
-![](~@imagesZhCn/guides/dashboard/app-panel8.png)
+![](~@imagesZhCn/guides/dashboard/base-set.png)
+![](~@imagesZhCn/guides/dashboard/login-set.png)
+
 
 ### 第三步：查看用户或组织可访问的应用
 
