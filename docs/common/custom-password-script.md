@@ -28,12 +28,12 @@
 点击页面中的 [下载模版](https://console.authing.cn/console/62c6aac0e65730661e1c5f17/safety-management/password?password_policy=custom_password) 下载 Node.js 代码模版，模版代码如下所示：
 
 ```js
-var getRawBody = require('raw-body');
+var getRawBody = require("raw-body");
 
-const encryptPassword = password => {
-	// 在此编写加密密码的函数
+const encryptPassword = (password) => {
+  // 在此编写加密密码的函数
 
-	return password;
+  return password;
 };
 
 /**
@@ -42,70 +42,70 @@ const encryptPassword = password => {
  * @param {String} encryptedPassword 密文密码
  */
 const comparePassword = (password, encryptedPassword) => {
-	// 在此编写校验密码的函数
+  // 在此编写校验密码的函数
 
-	return password === encryptedPassword;
+  return password === encryptedPassword;
 };
 
-module.exports.encrypt = function(request, response, context) {
-	// get request body
-	getRawBody(request, function(err, body) {
-		const queries = request.queries;
-		const password = queries.password;
+module.exports.encrypt = function (request, response, context) {
+  // get request body
+  getRawBody(request, function (err, body) {
+    const queries = request.queries;
+    const password = queries.password;
 
-		if (!password) {
-			response.setStatusCode(500);
-			response.setHeader('content-type', 'application/json');
-			response.send(
-				JSON.stringify(
-					{
-						message: 'Please provide password via url query'
-					},
-					null,
-					4
-				)
-			);
-		}
+    if (!password) {
+      response.setStatusCode(500);
+      response.setHeader("content-type", "application/json");
+      response.send(
+        JSON.stringify(
+          {
+            message: "Please provide password via url query",
+          },
+          null,
+          4
+        )
+      );
+    }
 
-		const respBody = {
-			password: encryptPassword(password) // 在此加密密码
-		};
+    const respBody = {
+      password: encryptPassword(password), // 在此加密密码
+    };
 
-		response.setStatusCode(200);
-		response.setHeader('content-type', 'application/json');
-		response.send(JSON.stringify(respBody, null, 4));
-	});
+    response.setStatusCode(200);
+    response.setHeader("content-type", "application/json");
+    response.send(JSON.stringify(respBody, null, 4));
+  });
 };
 
-module.exports.validate = function(request, response, context) {
-	// get request body
-	getRawBody(request, function(err, body) {
-		const queries = request.queries;
-		const password = queries.password;
-		const encryptedPassword = queries.encryptedPassword;
+module.exports.validate = function (request, response, context) {
+  // get request body
+  getRawBody(request, function (err, body) {
+    const queries = request.queries;
+    const password = queries.password;
+    const encryptedPassword = queries.encryptedPassword;
 
-		if (!password) {
-			response.setStatusCode(500);
-			response.setHeader('content-type', 'application/json');
-			response.send(
-				JSON.stringify(
-					{
-						message: 'Please provide password via url query'
-					},
-					null,
-					4
-				)
-			);
-		}
+    if (!password) {
+      response.setStatusCode(500);
+      response.setHeader("content-type", "application/json");
+      response.send(
+        JSON.stringify(
+          {
+            message: "Please provide password via url query",
+          },
+          null,
+          4
+        )
+      );
+    }
 
-		const respBody = {
-			isValid: comparePassword(password, encryptedPassword) // 在此校验密码
-		};
+    const respBody = {
+      isValid: comparePassword(password, encryptedPassword), // 在此校验密码
+    };
 
-		response.setStatusCode(200);
-		response.setHeader('content-type', 'application/json');
-		response.send(JSON.stringify(respBody, null, 4));
-	});
+    response.setStatusCode(200);
+    response.setHeader("content-type", "application/json");
+    response.send(JSON.stringify(respBody, null, 4));
+  });
 };
 ```
 
@@ -119,10 +119,10 @@ module.exports.validate = function(request, response, context) {
 NPM 是 Node.js 生态的包管理工具。
 :::
 
-以下是引入 `bcrypt` 包的一个代码示例：
+以下是引入 `bcryptjs` 包的一个代码示例：
 
 ```haskell
-$ npm install bcrypt
+$ npm install bcryptjs
 ```
 
 安装完成后在文件夹内会多出一个 node_modules 文件夹，之后编写代码：
@@ -134,8 +134,9 @@ const encryptPassword = (password) => {
   // Implement your login here.
   // Your can use bcrypt for example
   // more info here: https://github.com/kelektiv/node.bcrypt.js
-  const bcrypt = require('bcrypt');
-  return await bcrypt.hash(plainText, await bcrypt.genSalt(10));
+  var bcryptjs = require("bcryptjs");
+  var genSaltSync = bcryptjs.genSaltSync();
+  return bcryptjs.hashSync(password, genSaltSync);
 };
 
 const vlidatePassword = (plainText, encrypted) => {
@@ -145,10 +146,9 @@ const vlidatePassword = (plainText, encrypted) => {
   // Implement your login here.
   // Your can use bcrypt for example
   // more info here: https://github.com/kelektiv/node.bcrypt.js
-  const bcrypt = require('bcrypt');
-  return await bcrypt.compare(plainText, encrypted);
-}
-
+  var bcryptjs = require("bcryptjs");
+  return bcryptjs.compareSync(password, encryptedPassword);
+};
 ```
 
 ### 上传函数至服务器
@@ -166,6 +166,8 @@ const vlidatePassword = (plainText, encrypted) => {
 上传成功后开发者可测试密码加密效果，如下所示，在输入框中输入原密码后点击「加密测试」即可看到加密后的密码（若未上传任何加密函数将显示 {{$localeConfig.brandName}} 默认的密码加密结果）。
 
 ![](~@imagesZhCn/guides/migrations/1616579347869.jpg)
+
+![示例代码](./zips/project.zip)
 
 ## 注意事项
 
