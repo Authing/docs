@@ -25,6 +25,7 @@ context 对象中保存了当前认证流程的上下文，包括认证手段、
 | appName     | string | 当前应用的 名称                                                                                                 |
 | appMetadata | object | 当前应用的配置信息                                                                                                  |
 | request          | object | 当前请求的详细信息，包括: <br> `ip`: 客户端 IP <br> `geo`: 通过 IP 解析的客户端地理位置 <br> `body`: 请求体 <br> `query`: query string 对象，你可以通过 `request.query.xxx` 获取对应 query 参数 |
+| accessTokenTarget | Enum: `programmaticAccount`, `user` | 仅在签发 accessToken 前的 pipeline 中有值，表示当前是为编程访问账号还是用户签发 accessToken |
 
 ## protocol
 
