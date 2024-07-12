@@ -330,7 +330,7 @@ const zhCnNavBar = {
           title: "应用访问权限申请与审批",
           path: "/guides/user-self-service/approval",
         },
-      ]
+      ],
     },
     {
       title: "授权",
@@ -431,6 +431,10 @@ const zhCnNavBar = {
         {
           title: "公共账号管理",
           path: "/guides/user/public-account",
+        },
+        {
+          title: "邀请管理",
+          path: "/guides/user/invitation-management",
         },
       ],
     },
