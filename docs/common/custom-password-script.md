@@ -167,7 +167,7 @@ const vlidatePassword = (plainText, encrypted) => {
 
 ![](~@imagesZhCn/guides/migrations/1616579347869.jpg)
 
-![示例代码](https://files.authing.co/docs/project.zip)
+[示例代码](https://files.authing.co/docs/project.zip)
 
 ## 注意事项
 
