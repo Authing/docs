@@ -34,7 +34,7 @@ After the execution is completed, click the Run Log button in the upper middle t
 
 # Step 2: Write data filtering nodes to filter users
 
-Add a "Data Filtering" node and check the output result of the previous "HTTP Request" node in the data source. Here, we select the <strong> result </strong>data item and click on it to see that the data source field automatically inputs <strong> ${HTTP Request. output. result} </strong> , which is the data we obtained from the "HTTP Request" node.
+Add a "Data Filtering" node and check the output result of the previous "HTTP Request" node in the data source. Here, we select the <strong> result </strong>data item and click on it to see that the data source field automatically inputs <strong> ${HTTP Request.output.data} </strong> , which is the data we obtained from the "HTTP Request" node.
 
 ![](../static/BZqsblc2Lozkh5x5HilcrD2OnQd.png)
 
@@ -134,7 +134,7 @@ Click execute again, and in the running log, it can be seen that the detection r
 
 The next logic we hope to implement is: when a user exists, follow the update logic; When it does not exist, follow the creation logic. So we need to use the execution result of the previous node as the judgment condition for the IF node. For detailed documentation on IF nodes, please refer to [IF] (/workflow/process control nodes/IF. HTML).
 
-The configuration of this node is as follows: First, we define a variable called exists, which takes the result of the previous node's "check if the user exists" execution <strong> ${check if the user exists. output. data. exists} </strong>. Then, we set the value of exists (referenced by <strong> $exists </strong>, which is a Boolean type) to " <strong> Yes </strong>" in the condition:
+The configuration of this node is as follows: First, we define a variable called exists, which takes the result of the previous node's "check if the user exists" execution <strong> ${checkiftheuserexists.output.data.exists}  </strong>. Then, we set the value of exists (referenced by <strong> $exists </strong>, which is a Boolean type) to " <strong> Yes </strong>" in the condition:
 
 ![](../static/Fz1ibcs2Goxd8dx0ZRxccYnvnLh.png)
 

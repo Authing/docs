@@ -30,7 +30,7 @@ You can obtain the specific content of the event body through ` ${workflow. inpu
 
 ![](../static/ERDvbXATMo5EdCxImJLcewSlnug.png)
 
-## 制造应用事件触发 workflow 执行
+## Manufacturing application events trigger workflow execution
 
 After selecting the events to listen to, the next step is to create corresponding events in third-party applications (or Authoring) to trigger the execution of the workflow.
 
@@ -47,17 +47,3 @@ Next, we will add an Authoring node in the workflow and select [Add Group Member
   "${workflow.input.eventData.id}"
 ]
 ```
-
-![](../static/PvRIbDRTMoDRl5x8NBncyx63nEg.png)
-
-After completing the configuration, click on activate and create a user in Authing:
-
-![](../static/boxcnjDVYhxK7XVhTMG6ZPGnxTh.png)
-
-You can see that this user has been successfully added to this default group:
-
-![](../static/boxcn0AlFPrGXZcEh3M3Jywhxzh.png)
-
-Looking at the execution records of the workflow again, it can be seen that the workflow was successfully triggered:
-
-![](../static/NPYhbqkwboDFuhxA1rxcWke8n4g.png)
