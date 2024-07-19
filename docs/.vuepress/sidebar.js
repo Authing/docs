@@ -957,6 +957,10 @@ const zhCnNavBar = {
               title: "WeLink",
               path: "/guides/connections/enterprise/welink/",
             },
+            {
+              title: "致远 OA",
+              path: "/guides/connections/enterprise/seeyon/",
+            },
           ],
         },
         // {
