@@ -35,9 +35,9 @@ Click the "Execute the previous link of this node" button on the node to execute
 
 ![](../static/KKgpbrKpyo1G9MxyAYicAez0nLd.png)
 
-After clicking the "Confirm Execution" button, you will see the message prompt "Node in Progress".
+<!-- After clicking the "Confirm Execution" button, you will see the message prompt "Node in Progress". -->
 
-![](../static/OtoNbQ4KoolICbxfMSicGFIenjb.png)
+<!-- ![](../static/OtoNbQ4KoolICbxfMSicGFIenjb.png) -->
 
 Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "Data Reception" nodes to view the node execution results.
 

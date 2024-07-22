@@ -15,6 +15,6 @@ The custom application function is implemented based on workflow, which is equiv
 
 ![](../../static/QYaqbDWsvoLfIKxSmlEcQuEine1.png)
 
-1. After the application is successfully created, you can find the newly created custom application in the right sidebar.
+<!-- 1. After the application is successfully created, you can find the newly created custom application in the right sidebar. -->
 
-![](../../static/SxLCbmDo9oy6TGxEVrqcLrYQnEc.png)
+<!-- ![](../../static/SxLCbmDo9oy6TGxEVrqcLrYQnEc.png) -->

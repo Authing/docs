@@ -2,7 +2,7 @@
 
 # Node Introduction
 
-The HTML Extraction node is mainly used to extract relevant attributes from HTML in data.
+The HTML extraction node is mainly used to extract relevant attributes from HTML in data.
 
 The nodes mainly include the following configurations:
 
@@ -16,7 +16,7 @@ The nodes mainly include the following configurations:
 
 ## Add node
 
-On the Add Node page, find the "HTML Extraction" application node in the "Data Processing" category.
+On the Add Node page, find the "HTML extraction" application node in the "Data Processing" category.
 
 ![](../static/KPMWbqJElomBDoxziOucqKLXnKb.png)
 
@@ -55,4 +55,4 @@ After clicking the "Confirm Execution" button, you will see the message prompt "
 
 ![](../static/QS61bC1PKoyo4BxMrJgcfN3DnbN.png)
 
-Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "HTML Extraction" nodes to view the node execution results.
+Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "HTML extraction" nodes to view the node execution results.

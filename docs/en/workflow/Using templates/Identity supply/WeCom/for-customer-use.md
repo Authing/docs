@@ -193,7 +193,7 @@ Address Book key (corpsecret) :
 Workflows can be manually executed;
 Or after the workflow is enabled in the upper right corner, the system executes according to the timing rules.
 
-# Other
-
-After the workflow is executed, you can go to the "Run Log" to view the running status and data transmission results of each node;
-![](../../../static/1869543d-37f2-42ad-9b62-b0390262b372.png)
+<!-- # Other -->
+<!-- 
+After the workflow is executed, you can go to the "Run Log" to view the running status and data transmission results of each node; -->
+<!-- ![](../../../static/1869543d-37f2-42ad-9b62-b0390262b372.png) -->

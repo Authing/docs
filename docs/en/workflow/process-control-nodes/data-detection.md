@@ -22,7 +22,7 @@ The nodes mainly include the following configurations:
 
 ## Add node
 
-On the Add Node page, enter the "Data Detection" keyword for application filtering.
+On the Add Node page, enter the "Data detection" keyword for application filtering.
 
 ![](../static/YRlGbDxcxouHxkxGFhAcZBSYnBh.png)
 

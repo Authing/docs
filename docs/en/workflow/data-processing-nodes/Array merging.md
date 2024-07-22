@@ -2,7 +2,7 @@
 
 # Node Introduction
 
-The "Array Merge" node is mainly used to merge array data from multiple data sources.
+The "number combined" node is mainly used to merge array data from multiple data sources.
 
 The nodes mainly include the following configurations:
 
@@ -13,11 +13,11 @@ The nodes mainly include the following configurations:
 
 ## A dd node
 
-On the Add Node page, find the "Array Merge" application node in the "Data Processing" category.
+On the Add Node page, find the "number combined" application node in the "Data Processing" category.
 
 ![](../static/QvMVbDYKnogdCbx5IIScrglhn0b.png)
 
-Or apply filtering by entering the "array merge" keyword.
+Or apply filtering by entering the "number combined" keyword.
 
 ![](../static/GcKPbwC3co2Ok1x70AvcwJwSnXf.png)
 
@@ -52,6 +52,6 @@ After clicking the "Confirm Execution" button, you will see the message prompt "
 
 ![](../static/Q57Ub8WHVoxHGlx0oiZcH0XbnVc.png)
 
-Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "Array Merge" nodes to view the node execution results.
+Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "number combined" nodes to view the node execution results.
 
 ![](../static/IhZIbm4YboeLp8xiQgXc7Dl9nMd.png)

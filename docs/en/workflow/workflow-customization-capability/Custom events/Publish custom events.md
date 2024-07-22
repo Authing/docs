@@ -6,7 +6,6 @@
 
 1. Click Add node, enter the publishing event in the shortcut text box, and then find the publishing event node.
 
-![](../../static/NbJ9btdiEo4gl1xXYl0cokw4nyc.png)
 
 ![](../../static/RImlb7W2WoM9f6xru5VczPIUn1c.png)
 
