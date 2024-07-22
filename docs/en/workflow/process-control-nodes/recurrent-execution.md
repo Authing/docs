@@ -57,9 +57,9 @@ Click execute and you can see that it has been executed twice in total:
 
 ![](../static/NdJJbt2adoXjh1xIf4ncZVIvn6c.png)
 
-## Example 2: Loop sending emails to users
+<!-- ## Example 2: Loop sending emails to users -->
 
-In this example, we first use the "Get User List" method of the Authing application to pull the user list:
+<!-- In this example, we first use the "Get User List" method of the Authing application to pull the user list:
 
 ![](../static/UuKfb0hQGoyEbDxFKPCciW5mnFd.png)
 
@@ -69,11 +69,11 @@ Next, add a loop execution node, set the loop mode to "loop list", and assemble 
 
 Next, add an "Authoring Mail Service" node to the loop body, where the recipient is set to ${getLoopItem. output. result. email}, which is the email value of the current element:
 
-![](../static/K8OYbojA4o8kymxQFYgczEUyngd.png)
+![](../static/K8OYbojA4o8kymxQFYgczEUyngd.png) -->
 
-Click execute: You can see that an email has been sent for each user.
+<!-- Click execute: You can see that an email has been sent for each user. -->
 
-## Example 3: Paging and pulling database data
+## Example 2: Paging and pulling database data
 
 Here we take pulling user data from the Postgres database by pagination as an example. When we page and pull database data in a program, it is generally divided into the following steps:
 
@@ -112,51 +112,14 @@ Here, we have set a dynamic parameter for OFFSET: `$[($.loopIndex -1) * 10]`, wh
 
 ![](../static/JGcrbhWhko7969xUBCQcTiNinVg.png)
 
-After clicking save, you can see that the Postgres node in the loop has been executed several times:
+<!-- After clicking save, you can see that the Postgres node in the loop has been executed several times: -->
 
-![](../static/boxcnwQretb81OnXmgMUQE9ud3c.png)
+<!-- ![](../static/boxcnwQretb81OnXmgMUQE9ud3c.png) -->
 
-The output of the loop's direct node is in the following format:
+<!-- The output of the loop's direct node is in the following format: -->
 
-![](../static/boxcnZEs9zT3rix1kAtSG7jepzd.png)
+<!-- ![](../static/boxcnZEs9zT3rix1kAtSG7jepzd.png) -->
 
 The iteration in the output result represents the total number of iterations. In this example, there were 5 iterations, and the results of each iteration are shown in keys 1-5. Since a loop node may contain multiple nodes, the output of each node in each iteration uses the taskReferenceName of that node as the key. For example, in this example, the taskReferenceName of the Postgres node in the loop execution node is t40e5c41d1b12449dae532defdabae761, and its output is in the result field, which is an array.
 
 ![](../static/boxcnYybguszz4nUudIggC4h5dq.png)
-
-After clarifying the output structure of the loop execution node, we will now use the "custom code" node to obtain the final data. Firstly, assemble the output result of the "loop execution" node in the input data:
-
-![](../static/Dn8MbxD1KopZ4wxwoV9czxTLnXd.png)
-
-代码如下：
-
-1. Line 6: Obtain the total number of loop executions;
-2. Line 9: Use the for loop to traverse the execution of each iteration and obtain the output of the Postgres node (in this example, the taskReferenceName of the Postgres node is t40e5c41d1b12449dae532defdabae761);
-3. Line 13: Add the result of each execution to the final users array that needs to be returned;
-4. Line 15: Return the final result
-
-```typescript
-// If you define a variable data in the above data, you can refer to this data here through data.
-// This JS sandbox environment supports Node.js version 14 and supports the async/await syntax.
-// If this code has a return value, you need to use return to return the corresponding return value.
-
-// Total number of loop executions
-const { iteration } = data;
-
-let users = [];
-for (let i = 1; i <= iteration; i++ ) {
-  // Obtain the execution results of each iteration of the loop
-  const taskReferenceName = "t40e5c41d1b12449dae532defdabae761";
-  const iterResult = data[i.toString()][taskReferenceName].result;
-  users = users.concat(iterResult);
-}
-return users;
-```
-
-Finally, by clicking execute, we can see the output result of the custom code node:
-
-![](../static/boxcnmYWeaCc6dWxUVrX0xoVhad.png)
-
-You can see that the final result is 46 users, which is consistent with the total number of users we obtained earlier.
-
-![](../static/boxcnp8kjq0yUWUEI8bovpvDE3e.png)

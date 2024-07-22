@@ -192,23 +192,7 @@ for (const item of data) {
 return data;
 ```
 
-## Example 3: Filter users who have been updated within 7 days
 
-In the following example, before customizing the code node, we pull user data through the "Get User List" of the Authing node and input the result into the custom code node:
-
-![](../static/XPhmbc3MUoLYY8xkonFcpdDFn3g.png)
-
-We have built-in [moment](https://www.npmjs.com/package/moment)It is very convenient to perform a series of operations on the date:
-
-```typescript
-const moment = require("moment");
-
-const targetDate = moment().subtract(7,'d');
-return users.filter(user => {
-  const { updatedAt } = user;
-  return new Date(updatedAt) > targetDate;
-});
-```
 
 # Precautions
 

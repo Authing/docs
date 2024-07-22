@@ -82,9 +82,9 @@ We have configured two conversion rules here:
 
 ![](../static/boxcnoTeAv15DNOvHw5XRaxFoLb.png)
 
-Click on execute, let's take a look at the results:
+<!-- Click on execute, let's take a look at the results:
 
-![](../static/boxcnuSJmqaOQOUQ4TsIYgTebef.png)
+![](../static/boxcnuSJmqaOQOUQ4TsIYgTebef.png) -->
 
 ### Write batch modification of user information nodes
 

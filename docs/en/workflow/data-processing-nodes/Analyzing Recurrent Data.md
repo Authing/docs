@@ -2,7 +2,7 @@
 
 # Node Introduction
 
-The "Parse Loop Data" node is mainly used to parse loop data and extract data based on custom data expressions.
+The "Parse circular data" node is mainly used to Parse circular data and extract data based on custom data expressions.
 
 The nodes mainly include the following configurations:
 
@@ -17,7 +17,7 @@ On the Add Node page, find the "Resolve Recurrent Data" application node in the 
 
 ![](../static/ENdbbck2hobHLYxvcYxcYdZ0nec.png)
 
-Or apply filtering by entering the keyword "parse loop data".
+Or apply filtering by entering the keyword "Parse circular data".
 
 ![](../static/H51iblbAeooAALxOazGcVgVhn7b.png)
 
@@ -54,6 +54,6 @@ After clicking the "Confirm Execution" button, you will see the message prompt "
 
 ![](../static/DnOkbdCqVo2I2axpvGRce6Ygn1b.png)
 
-Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "Parse Loop Data" nodes to view the node execution results.
+Click on the "Run Log" column, then click on the expand button on the left side of the latest "Execution Batch" and "Parse circular data" nodes to view the node execution results.
 
 ![](../static/D6QEbMf9SovLPWxd3oEcRINJn6E.png)

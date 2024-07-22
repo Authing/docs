@@ -15,9 +15,3 @@ In this mode, when waiting for a node to execute, the node will be permanently p
 Supports seconds, minutes, hours, and days as units, and resumes the process execution when the waiting time reaches a certain amount of time.
 
 ![](../static/boxcnWQj8WRXhcOBWPllKrTbdyd.png)
-
-## Waiting until a specific point in time (please stay tuned)
-
-Manually select a fixed time point, and when the time reaches this point, the process resumes execution.
-
-![](../static/boxcnFbnJnrch2T39mjlZjdX3jg.png)

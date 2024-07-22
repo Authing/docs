@@ -31,12 +31,11 @@ User Status Optional values:
 - `Suspended` : it is suspended
 
 ![](../static/PAlGbpyWtownqmxgWsmcGs2tnqg.png)
+<!-- ## How do I pass dynamic JSON in the "Data Transformation" node? -->
 
-## How do I pass dynamic JSON in the "Data Transformation" node?
+<!-- Select the "Expression" type in the conversion rule and enter the corresponding dynamic JSON in the following input box. -->
 
-Select the "Expression" type in the conversion rule and enter the corresponding dynamic JSON in the following input box.
-
-![](../static/Hzj3bRyFEoFj5LxNjVBcVUZOn3f.png)
+<!-- ![](../static/Hzj3bRyFEoFj5LxNjVBcVUZOn3f.png)  -->
 
 ## How do I download the AD Connector to connect to your AD service
 

@@ -70,7 +70,7 @@ Ensure that the method is set to GET. Click execute and you can see that you hav
 
 ![](../static/T7vAbofTgo9kzUx3L3ZcEl4Pnmh.png)
 
-### Add user
+<!-- ### Add user
 
 1. Select POST from the method dropdown list,
 2. Open the request body button
@@ -81,11 +81,11 @@ Ensure that the method is set to GET. Click execute and you can see that you hav
 7. Enter 'job' in the<strong> Name </strong>field.
 8. Enter 'Programmer' in the<strong> Value </strong>field.
 
-![](../static/FsejbkWQsoxhH4xbJnVc2iJ8nzX.png)
+![](../static/FsejbkWQsoxhH4xbJnVc2iJ8nzX.png) -->
 
-After clicking save, execute:
+<!-- After clicking save, execute:
 
-![](../static/Rj7wb8Sa3oAJIXxqVWIcYb9nnje.png)
+![](../static/Rj7wb8Sa3oAJIXxqVWIcYb9nnje.png)  -->
 
 ## More examples
 

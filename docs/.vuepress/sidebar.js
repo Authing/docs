@@ -5991,15 +5991,15 @@ const zhCnNavBar = {
         // },
       ],
     },
-    {
-      title: "使用事件驱动 SDK 构建实时应用",
-      children: [
-        {
-          title: "事件中心概述",
-          path: "/workflow/事件中心/",
-        },
-      ],
-    },
+    // {
+    //   title: "使用事件驱动 SDK 构建实时应用",
+    //   children: [
+    //     {
+    //       title: "事件中心概述",
+    //       path: "/workflow/事件中心/",
+    //     },
+    //   ],
+    // },
     {
       title: "工作流自定义能力",
       children: [
@@ -6023,22 +6023,22 @@ const zhCnNavBar = {
               title: "创建自定义应用",
               path: "/workflow/工作流自定义能力/自定义应用/创建自定义应用",
             },
-            {
-              title: "创建自定义动作",
-              path: "/workflow/工作流自定义能力/自定义应用/创建自定义动作",
-            },
-            {
-              title: "自定义动作说明",
-              path: "/workflow/工作流自定义能力/自定义应用/自定义动作说明",
-            },
-            {
-              title: "使用自定义应用",
-              path: "/workflow/工作流自定义能力/自定义应用/使用自定义应用",
-            },
-            {
-              title: "发布自定义应用",
-              path: "/workflow/工作流自定义能力/自定义应用/发布自定义应用",
-            },
+            // {
+            //   title: "创建自定义动作",
+            //   path: "/workflow/工作流自定义能力/自定义应用/创建自定义动作",
+            // },
+            // {
+            //   title: "自定义动作说明",
+            //   path: "/workflow/工作流自定义能力/自定义应用/自定义动作说明",
+            // },
+            // {
+            //   title: "使用自定义应用",
+            //   path: "/workflow/工作流自定义能力/自定义应用/使用自定义应用",
+            // },
+            // {
+            //   title: "发布自定义应用",
+            //   path: "/workflow/工作流自定义能力/自定义应用/发布自定义应用",
+            // },
           ],
         },
         {
@@ -6096,10 +6096,10 @@ const zhCnNavBar = {
               title: "企业微信",
               path: "/workflow/使用模版/身份供给/企业微信/企业微信下游同步使用文档（客户使用）",
             },
-            {
-              title: "飞书",
-              path: "/workflow/使用模版/身份供给/飞书",
-            },
+            // {
+            //   title: "飞书",
+            //   path: "/workflow/使用模版/身份供给/飞书",
+            // },
           ],
         },
       ],
@@ -8249,10 +8249,10 @@ const translatedZhCnNavBar = {
           title: "basic conception",
           path: "/workflow/quick-start/basic-concepts",
         },
-        // {
-        //   title: "Write the first workflow",
-        //   path: "/workflow/quick-start/write-the-first-workflow",
-        // },
+        {
+          title: "Write the first workflow",
+          path: "/workflow/quick-start/write-the-first-workflow",
+        },
         {
           title: "Creating a workflow usin templates",
           path: "/workflow/quick-start/creating-a-workflow-using-templates",
@@ -8334,51 +8334,51 @@ const translatedZhCnNavBar = {
         },
       ],
     },
-    // {
-    //   title: "Operate internal resources of Authoring",
-    //   path: "/workflow/operate-internal-resources-of-authoring/",
-    // },
-    // {
-    //   title: "Using application connectors",
-    //   children: [
-    //     {
-    //       title: "HTTP Request",
-    //       path: "/workflow/using-application-connectors/HTTP Request",
-    //     },
-    //     {
-    //       title: "PostgreSQL",
-    //       path: "/workflow/using-application-connectors/PostgreSQL",
-    //     },
-    //     {
-    //       title: "MySQL",
-    //       path: "/workflow/using-application-connectors/MySQL",
-    //     },
-    //     {
-    //       title: "MongoDB",
-    //       path: "/workflow/using-application-connectors/MongoDB",
-    //     },
-    //     {
-    //       title: "Microsoft SQL",
-    //       path: "/workflow/using-application-connectors/Microsoft SQL",
-    //     },
-    //     {
-    //       title: "Feishu",
-    //       path: "/workflow/using-application-connectors/feishu",
-    //     },
-    //     // {
-    //     //   title: "邮件",
-    //     //   path: "/workflow/using-application-connectors/邮件",
-    //     // },
-    //     // {
-    //     //   title: "ZOOM",
-    //     //   path: "/workflow/using-application-connectors/ZOOM",
-    //     // },
-    //     // {
-    //     //   title: "企业微信",
-    //     //   path: "/workflow/using-application-connectors/企业微信",
-    //     // },
-    //   ],
-    // },
+    {
+      title: "Operate internal resources of Authoring",
+      path: "/workflow/operate-internal-resources-of-authoring/",
+    },
+    {
+      title: "Using application connectors",
+      children: [
+        {
+          title: "HTTP Request",
+          path: "/workflow/using-application-connectors/HTTP Request",
+        },
+        {
+          title: "PostgreSQL",
+          path: "/workflow/using-application-connectors/PostgreSQL",
+        },
+        {
+          title: "MySQL",
+          path: "/workflow/using-application-connectors/MySQL",
+        },
+        {
+          title: "MongoDB",
+          path: "/workflow/using-application-connectors/MongoDB",
+        },
+        {
+          title: "Microsoft SQL",
+          path: "/workflow/using-application-connectors/Microsoft SQL",
+        },
+        {
+          title: "Feishu",
+          path: "/workflow/using-application-connectors/feishu",
+        },
+        // {
+        //   title: "邮件",
+        //   path: "/workflow/using-application-connectors/邮件",
+        // },
+        // {
+        //   title: "ZOOM",
+        //   path: "/workflow/using-application-connectors/ZOOM",
+        // },
+        // {
+        //   title: "企业微信",
+        //   path: "/workflow/using-application-connectors/企业微信",
+        // },
+      ],
+    },
     // {
     //   title: "配置应用密钥",
     //   children: [
@@ -8396,396 +8396,396 @@ const translatedZhCnNavBar = {
     //     },
     //   ],
     // },
-    // {
-    //   title: "Process control nodes",
-    //   children: [
-    //     {
-    //       title: "IF",
-    //       path: "/workflow/process-control-nodes/IF",
-    //     },
-    //     {
-    //       title: "SWITCH",
-    //       path: "/workflow/process-control-nodes/SWITCH",
-    //     },
-    //     {
-    //       title: "Recurrent execution",
-    //       path: "/workflow/process-control-nodes/recurrent-execution",
-    //     },
-    //     {
-    //       title: "Subprocess",
-    //       path: "/workflow/process-control-nodes/subprocess",
-    //     },
-    //     {
-    //       title: "Data detection",
-    //       path: "/workflow/process-control-nodes/data-detection",
-    //     },
-    //     // {
-    //     //   title: "分支",
-    //     //   path: "/workflow/process-control-nodes/分支",
-    //     // },
-    //     {
-    //       title: "Termination process",
-    //       path: "/workflow/process-control-nodes/termination-process",
-    //     },
-    //     {
-    //       title: "Wait for",
-    //       path: "/workflow/process-control-nodes/wait",
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: "Data processing nodes",
-    //   children: [
-    //     {
-    //       title: "Custom Code",
-    //       path: "/workflow/data-processing-nodes/Custom Code",
-    //     },
-    //     {
-    //       title: "Data conversion",
-    //       path: "/workflow/data-processing-nodes/Data conversion",
-    //     },
-    //     {
-    //       title: "Data filtering",
-    //       path: "/workflow/data-processing-nodes/Data filtering",
-    //     },
-    //     {
-    //       title: "Incoming JSON data",
-    //       path: "/workflow/data-processing-nodes/Incoming JSON data",
-    //     },
-    //     {
-    //       title: "XML",
-    //       path: "/workflow/data-processing-nodes/XML",
-    //     },
-    //     {
-    //       title: "Split array ",
-    //       path: "/workflow/data-processing-nodes/split-array",
-    //     },
-    //     {
-    //       title: "Data synthesis",
-    //       path: "/workflow/data-processing-nodes/Data synthesis",
-    //     },
-    //     {
-    //       title: "Data reception",
-    //       path: "/workflow/data-processing-nodes/Data reception",
-    //     },
-    //     {
-    //       title: "Data encryption",
-    //       path: "/workflow/data-processing-nodes/Data encryption",
-    //     },
-    //     {
-    //       title: "Read RSS",
-    //       path: "/workflow/data-processing-nodes/Read RSS",
-    //     },
-    //     {
-    //       title: "Array merging",
-    //       path: "/workflow/data-processing-nodes/Array merging",
-    //     },
-    //     {
-    //       title: "Dataset comparison",
-    //       path: "/workflow/data-processing-nodes/Dataset comparison",
-    //     },
-    //     {
-    //       title: "Tree structure transformation",
-    //       path: "/workflow/data-processing-nodes/Tree structure transformation",
-    //     },
-    //     {
-    //       title: "Analyzing Recurrent Data",
-    //       path: "/workflow/data-processing-nodes/Analyzing Recurrent Data",
-    //     },
-    //     {
-    //       title: "HTML extraction",
-    //       path: "/workflow/data-processing-nodes/HTML extraction",
-    //     },
-    //     {
-    //       title: "Markdown",
-    //       path: "/workflow/data-processing-nodes/Markdown",
-    //     },
-    //     {
-    //       title: "Boolean",
-    //       children: [
-    //         {
-    //           title: "All False",
-    //           path: "/workflow/data-processing-nodes/Boolean/All False",
-    //         },
-    //         {
-    //           title: "And",
-    //           path: "/workflow/data-processing-nodes/Boolean/And",
-    //         },
-    //         {
-    //           title: "Any False",
-    //           path: "/workflow/data-processing-nodes/Boolean/Any False",
-    //         },
-    //         {
-    //           title: "Compare",
-    //           path: "/workflow/data-processing-nodes/Boolean/Compare",
-    //         },
-    //         {
-    //           title: "Not",
-    //           path: "/workflow/data-processing-nodes/Boolean/Not",
-    //         },
-    //         {
-    //           title: "Or",
-    //           path: "/workflow/data-processing-nodes/Boolean/Or",
-    //         },
-    //         {
-    //           title: "XOR",
-    //           path: "/workflow/data-processing-nodes/Boolean/XOR",
-    //         },
-    //         {
-    //           title: "XNOR",
-    //           path: "/workflow/data-processing-nodes/Boolean/XNOR",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Text",
-    //       children: [
-    //         { title: "At", path: "/workflow/data-processing-nodes/Text/At" },
-    //         {
-    //           title: "Base64 Decode",
-    //           path: "/workflow/data-processing-nodes/Text/Base64 Decode",
-    //         },
-    //         { title: "Base64", path: "/workflow/data-processing-nodes/Text/Base64" },
-    //         {
-    //           title: "Concatenate",
-    //           path: "/workflow/data-processing-nodes/Text/Concatenate",
-    //         },
-    //         {
-    //           title: "Find Email",
-    //           path: "/workflow/data-processing-nodes/Text/Find Email",
-    //         },
-    //         {
-    //           title: "Find Last",
-    //           path: "/workflow/data-processing-nodes/Text/Find Last",
-    //         },
-    //         { title: "Find", path: "/workflow/data-processing-nodes/Text/Find" },
-    //         { title: "Length", path: "/workflow/data-processing-nodes/Text/Length" },
-    //         { title: "Random", path: "/workflow/data-processing-nodes/Text/Random" },
-    //         { title: "Replace", path: "/workflow/data-processing-nodes/Text/Replace" },
-    //         { title: "Split", path: "/workflow/data-processing-nodes/Text/Split" },
-    //         {
-    //           title: "Text Segment",
-    //           path: "/workflow/data-processing-nodes/Text/Text Segment",
-    //         },
-    //         {
-    //           title: "To Lower Case",
-    //           path: "/workflow/data-processing-nodes/Text/To Lower Case",
-    //         },
-    //         {
-    //           title: "To Upper Case",
-    //           path: "/workflow/data-processing-nodes/Text/To Upper Case",
-    //         },
-    //         { title: "Trim", path: "/workflow/data-processing-nodes/Text/Trim" },
-    //         {
-    //           title: "Unique ID",
-    //           path: "/workflow/data-processing-nodes/Text/Unique ID",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Url",
-    //       children: [
-    //         {
-    //           title: "Decode Component",
-    //           path: "/workflow/data-processing-nodes/Url/Decode Component",
-    //         },
-    //         {
-    //           title: "Decode Query",
-    //           path: "/workflow/data-processing-nodes/Url/Decode Query",
-    //         },
-    //         {
-    //           title: "Encode Component",
-    //           path: "/workflow/data-processing-nodes/Url/Encode Component",
-    //         },
-    //         {
-    //           title: "Encode Query",
-    //           path: "/workflow/data-processing-nodes/Url/Encode Query",
-    //         },
-    //         { title: "Format", path: "/workflow/data-processing-nodes/Url/Format" },
-    //         { title: "Parse", path: "/workflow/data-processing-nodes/Url/Parse" },
-    //       ],
-    //     },
-    //     {
-    //       title: "Number",
-    //       children: [
-    //         {
-    //           title: "Absolute Value",
-    //           path: "/workflow/data-processing-nodes/Number/Absolute Value",
-    //         },
-    //         { title: "Add", path: "/workflow/data-processing-nodes/Number/Add" },
-    //         { title: "Divide", path: "/workflow/data-processing-nodes/Number/Divide" },
-    //         {
-    //           title: "Exponent",
-    //           path: "/workflow/data-processing-nodes/Number/Exponent",
-    //         },
-    //         {
-    //           title: "Factorial",
-    //           path: "/workflow/data-processing-nodes/Number/Factorial",
-    //         },
-    //         {
-    //           title: "Increment",
-    //           path: "/workflow/data-processing-nodes/Number/Increment",
-    //         },
-    //         { title: "Larger", path: "/workflow/data-processing-nodes/Number/Larger" },
-    //         { title: "Log", path: "/workflow/data-processing-nodes/Number/Log" },
-    //         {
-    //           title: "Multiply",
-    //           path: "/workflow/data-processing-nodes/Number/Multiply",
-    //         },
-    //         {
-    //           title: "Percentage",
-    //           path: "/workflow/data-processing-nodes/Number/Percentage",
-    //         },
-    //         { title: "Power", path: "/workflow/data-processing-nodes/Number/Power" },
-    //         {
-    //           title: "Random Integer",
-    //           path: "/workflow/data-processing-nodes/Number/Random Integer",
-    //         },
-    //         {
-    //           title: "Remainder",
-    //           path: "/workflow/data-processing-nodes/Number/Remainder",
-    //         },
-    //         { title: "Round", path: "/workflow/data-processing-nodes/Number/Round" },
-    //         { title: "Sign", path: "/workflow/data-processing-nodes/Number/Sign" },
-    //         { title: "Smaller", path: "/workflow/data-processing-nodes/Number/Smaller" },
-    //         {
-    //           title: "Square Root",
-    //           path: "/workflow/data-processing-nodes/Number/Square Root",
-    //         },
-    //         {
-    //           title: "Subtract",
-    //           path: "/workflow/data-processing-nodes/Number/Subtract",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Date",
-    //       children: [
-    //         {
-    //           title: "Add",
-    //           path: "/workflow/data-processing-nodes/Date/Add",
-    //         },
-    //         {
-    //           title: "Convert",
-    //           path: "/workflow/data-processing-nodes/Date/Convert",
-    //         },
-    //         {
-    //           title: "Date To Text",
-    //           path: "/workflow/data-processing-nodes/Date/Date to Text",
-    //         },
-    //         {
-    //           title: "Difference",
-    //           path: "/workflow/data-processing-nodes/Date/Difference",
-    //         },
-    //         {
-    //           title: "Epoch",
-    //           path: "/workflow/data-processing-nodes/Date/Epoch",
-    //         },
-    //         {
-    //           title: "ISO",
-    //           path: "/workflow/data-processing-nodes/Date/ISO",
-    //         },
-    //         {
-    //           title: "Now",
-    //           path: "/workflow/data-processing-nodes/Date/Now",
-    //         },
-    //         {
-    //           title: "Subtract",
-    //           path: "/workflow/data-processing-nodes/Date/Subtract",
-    //         },
-    //         {
-    //           title: "Text To Date",
-    //           path: "/workflow/data-processing-nodes/Date/Text to Date",
-    //         },
-    //         {
-    //           title: "UNIX",
-    //           path: "/workflow/data-processing-nodes/Date/UNIX",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Object",
-    //       children: [
-    //         {
-    //           title: "Clear Empty",
-    //           path: "/workflow/data-processing-nodes/Object/Clear Empty",
-    //         },
-    //         {
-    //           title: "Collapse",
-    //           path: "/workflow/data-processing-nodes/Object/Collapse",
-    //         },
-    //         { title: "Filter", path: "/workflow/data-processing-nodes/Object/Filter" },
-    //         { title: "Get", path: "/workflow/data-processing-nodes/Object/Get" },
-    //         { title: "Keys", path: "/workflow/data-processing-nodes/Object/Keys" },
-    //         { title: "Merge", path: "/workflow/data-processing-nodes/Object/Merge" },
-    //         { title: "Move", path: "/workflow/data-processing-nodes/Object/Move" },
-    //         { title: "Set", path: "/workflow/data-processing-nodes/Object/Set" },
-    //         { title: "Size", path: "/workflow/data-processing-nodes/Object/Size" },
-    //         { title: "Split", path: "/workflow/data-processing-nodes/Object/Split" },
-    //         { title: "Unset", path: "/workflow/data-processing-nodes/Object/Unset" },
-    //         { title: "Unzip", path: "/workflow/data-processing-nodes/Object/Unzip" },
-    //         { title: "Values", path: "/workflow/data-processing-nodes/Object/Values" },
-    //         { title: "Zip", path: "/workflow/data-processing-nodes/Object/Zip" },
-    //       ],
-    //     },
-    //     {
-    //       title: "List",
-    //       children: [
-    //         {
-    //           title: "Add to End",
-    //           path: "/workflow/data-processing-nodes/List/Add to End",
-    //         },
-    //         {
-    //           title: "Add to Front",
-    //           path: "/workflow/data-processing-nodes/List/Add to Front",
-    //         },
-    //         { title: "At", path: "/workflow/data-processing-nodes/List/At" },
-    //         { title: "Collapse", path: "/workflow/data-processing-nodes/List/Collapse" },
-    //         {
-    //           title: "Combine All",
-    //           path: "/workflow/data-processing-nodes/List/Combine All",
-    //         },
-    //         {
-    //           title: "Construct",
-    //           path: "/workflow/data-processing-nodes/List/Construct",
-    //         },
-    //         {
-    //           title: "Difference",
-    //           path: "/workflow/data-processing-nodes/List/Difference",
-    //         },
-    //         { title: "Filter", path: "/workflow/data-processing-nodes/List/Filter" },
-    //         { title: "Find", path: "/workflow/data-processing-nodes/List/Find" },
-    //         { title: "Flatten", path: "/workflow/data-processing-nodes/List/Flatten" },
-    //         { title: "For Each", path: "/workflow/data-processing-nodes/List/For Each" },
-    //         {
-    //           title: "Get First Item",
-    //           path: "/workflow/data-processing-nodes/List/Get First Item",
-    //         },
-    //         {
-    //           title: "Get Last Item",
-    //           path: "/workflow/data-processing-nodes/List/Get Last Item",
-    //         },
-    //         { title: "Group By", path: "/workflow/data-processing-nodes/List/Group By" },
-    //         { title: "Includes", path: "/workflow/data-processing-nodes/List/Includes" },
-    //         { title: "Index By", path: "/workflow/data-processing-nodes/List/Index By" },
-    //         {
-    //           title: "Intersection",
-    //           path: "/workflow/data-processing-nodes/List/Intersection",
-    //         },
-    //         { title: "Length", path: "/workflow/data-processing-nodes/List/Length" },
-    //         {
-    //           title: "List to Text",
-    //           path: "/workflow/data-processing-nodes/List/List to Text",
-    //         },
-    //         { title: "Map", path: "/workflow/data-processing-nodes/List/Map" },
-    //       ],
-    //     },
-    //     // {
-    //     //   title: "文件上传",
-    //     //   path: "/workflow/data-processing-nodes/文件上传",
-    //     // },
-    //   ],
-    // },
+    {
+      title: "Process control nodes",
+      children: [
+        {
+          title: "IF",
+          path: "/workflow/process-control-nodes/IF",
+        },
+        {
+          title: "SWITCH",
+          path: "/workflow/process-control-nodes/SWITCH",
+        },
+        {
+          title: "Recurrent execution",
+          path: "/workflow/process-control-nodes/recurrent-execution",
+        },
+        {
+          title: "Subprocess",
+          path: "/workflow/process-control-nodes/subprocess",
+        },
+        {
+          title: "Data detection",
+          path: "/workflow/process-control-nodes/data-detection",
+        },
+        // {
+        //   title: "分支",
+        //   path: "/workflow/process-control-nodes/分支",
+        // },
+        {
+          title: "Termination process",
+          path: "/workflow/process-control-nodes/termination-process",
+        },
+        {
+          title: "Wait for",
+          path: "/workflow/process-control-nodes/wait",
+        },
+      ],
+    },
+    {
+      title: "Data processing nodes",
+      children: [
+        {
+          title: "Custom Code",
+          path: "/workflow/data-processing-nodes/Custom Code",
+        },
+        {
+          title: "Data conversion",
+          path: "/workflow/data-processing-nodes/Data conversion",
+        },
+        {
+          title: "Data filtering",
+          path: "/workflow/data-processing-nodes/Data filtering",
+        },
+        {
+          title: "Incoming JSON data",
+          path: "/workflow/data-processing-nodes/Incoming JSON data",
+        },
+        {
+          title: "XML",
+          path: "/workflow/data-processing-nodes/XML",
+        },
+        {
+          title: "Split array ",
+          path: "/workflow/data-processing-nodes/split-array",
+        },
+        {
+          title: "Data synthesis",
+          path: "/workflow/data-processing-nodes/Data synthesis",
+        },
+        {
+          title: "Data reception",
+          path: "/workflow/data-processing-nodes/Data reception",
+        },
+        {
+          title: "Data encryption",
+          path: "/workflow/data-processing-nodes/Data encryption",
+        },
+        {
+          title: "Read RSS",
+          path: "/workflow/data-processing-nodes/Read RSS",
+        },
+        {
+          title: "Array merging",
+          path: "/workflow/data-processing-nodes/Array merging",
+        },
+        {
+          title: "Dataset comparison",
+          path: "/workflow/data-processing-nodes/Dataset comparison",
+        },
+        {
+          title: "Tree structure transformation",
+          path: "/workflow/data-processing-nodes/Tree structure transformation",
+        },
+        {
+          title: "Analyzing Recurrent Data",
+          path: "/workflow/data-processing-nodes/Analyzing Recurrent Data",
+        },
+        {
+          title: "HTML extraction",
+          path: "/workflow/data-processing-nodes/HTML extraction",
+        },
+        {
+          title: "Markdown",
+          path: "/workflow/data-processing-nodes/Markdown",
+        },
+        {
+          title: "Boolean",
+          children: [
+            {
+              title: "All False",
+              path: "/workflow/data-processing-nodes/Boolean/All False",
+            },
+            {
+              title: "And",
+              path: "/workflow/data-processing-nodes/Boolean/And",
+            },
+            {
+              title: "Any False",
+              path: "/workflow/data-processing-nodes/Boolean/Any False",
+            },
+            {
+              title: "Compare",
+              path: "/workflow/data-processing-nodes/Boolean/Compare",
+            },
+            {
+              title: "Not",
+              path: "/workflow/data-processing-nodes/Boolean/Not",
+            },
+            {
+              title: "Or",
+              path: "/workflow/data-processing-nodes/Boolean/Or",
+            },
+            {
+              title: "XOR",
+              path: "/workflow/data-processing-nodes/Boolean/XOR",
+            },
+            {
+              title: "XNOR",
+              path: "/workflow/data-processing-nodes/Boolean/XNOR",
+            },
+          ],
+        },
+        {
+          title: "Text",
+          children: [
+            { title: "At", path: "/workflow/data-processing-nodes/Text/At" },
+            {
+              title: "Base64 Decode",
+              path: "/workflow/data-processing-nodes/Text/Base64 Decode",
+            },
+            { title: "Base64", path: "/workflow/data-processing-nodes/Text/Base64" },
+            {
+              title: "Concatenate",
+              path: "/workflow/data-processing-nodes/Text/Concatenate",
+            },
+            {
+              title: "Find Email",
+              path: "/workflow/data-processing-nodes/Text/Find Email",
+            },
+            {
+              title: "Find Last",
+              path: "/workflow/data-processing-nodes/Text/Find Last",
+            },
+            { title: "Find", path: "/workflow/data-processing-nodes/Text/Find" },
+            { title: "Length", path: "/workflow/data-processing-nodes/Text/Length" },
+            { title: "Random", path: "/workflow/data-processing-nodes/Text/Random" },
+            { title: "Replace", path: "/workflow/data-processing-nodes/Text/Replace" },
+            { title: "Split", path: "/workflow/data-processing-nodes/Text/Split" },
+            {
+              title: "Text Segment",
+              path: "/workflow/data-processing-nodes/Text/Text Segment",
+            },
+            {
+              title: "To Lower Case",
+              path: "/workflow/data-processing-nodes/Text/To Lower Case",
+            },
+            {
+              title: "To Upper Case",
+              path: "/workflow/data-processing-nodes/Text/To Upper Case",
+            },
+            { title: "Trim", path: "/workflow/data-processing-nodes/Text/Trim" },
+            {
+              title: "Unique ID",
+              path: "/workflow/data-processing-nodes/Text/Unique ID",
+            },
+          ],
+        },
+        {
+          title: "Url",
+          children: [
+            {
+              title: "Decode Component",
+              path: "/workflow/data-processing-nodes/Url/Decode Component",
+            },
+            {
+              title: "Decode Query",
+              path: "/workflow/data-processing-nodes/Url/Decode Query",
+            },
+            {
+              title: "Encode Component",
+              path: "/workflow/data-processing-nodes/Url/Encode Component",
+            },
+            {
+              title: "Encode Query",
+              path: "/workflow/data-processing-nodes/Url/Encode Query",
+            },
+            { title: "Format", path: "/workflow/data-processing-nodes/Url/Format" },
+            { title: "Parse", path: "/workflow/data-processing-nodes/Url/Parse" },
+          ],
+        },
+        {
+          title: "Number",
+          children: [
+            {
+              title: "Absolute Value",
+              path: "/workflow/data-processing-nodes/Number/Absolute Value",
+            },
+            { title: "Add", path: "/workflow/data-processing-nodes/Number/Add" },
+            { title: "Divide", path: "/workflow/data-processing-nodes/Number/Divide" },
+            {
+              title: "Exponent",
+              path: "/workflow/data-processing-nodes/Number/Exponent",
+            },
+            {
+              title: "Factorial",
+              path: "/workflow/data-processing-nodes/Number/Factorial",
+            },
+            {
+              title: "Increment",
+              path: "/workflow/data-processing-nodes/Number/Increment",
+            },
+            { title: "Larger", path: "/workflow/data-processing-nodes/Number/Larger" },
+            { title: "Log", path: "/workflow/data-processing-nodes/Number/Log" },
+            {
+              title: "Multiply",
+              path: "/workflow/data-processing-nodes/Number/Multiply",
+            },
+            {
+              title: "Percentage",
+              path: "/workflow/data-processing-nodes/Number/Percentage",
+            },
+            { title: "Power", path: "/workflow/data-processing-nodes/Number/Power" },
+            {
+              title: "Random Integer",
+              path: "/workflow/data-processing-nodes/Number/Random Integer",
+            },
+            {
+              title: "Remainder",
+              path: "/workflow/data-processing-nodes/Number/Remainder",
+            },
+            { title: "Round", path: "/workflow/data-processing-nodes/Number/Round" },
+            { title: "Sign", path: "/workflow/data-processing-nodes/Number/Sign" },
+            { title: "Smaller", path: "/workflow/data-processing-nodes/Number/Smaller" },
+            {
+              title: "Square Root",
+              path: "/workflow/data-processing-nodes/Number/Square Root",
+            },
+            {
+              title: "Subtract",
+              path: "/workflow/data-processing-nodes/Number/Subtract",
+            },
+          ],
+        },
+        {
+          title: "Date",
+          children: [
+            {
+              title: "Add",
+              path: "/workflow/data-processing-nodes/Date/Add",
+            },
+            {
+              title: "Convert",
+              path: "/workflow/data-processing-nodes/Date/Convert",
+            },
+            {
+              title: "Date To Text",
+              path: "/workflow/data-processing-nodes/Date/Date to Text",
+            },
+            {
+              title: "Difference",
+              path: "/workflow/data-processing-nodes/Date/Difference",
+            },
+            {
+              title: "Epoch",
+              path: "/workflow/data-processing-nodes/Date/Epoch",
+            },
+            {
+              title: "ISO",
+              path: "/workflow/data-processing-nodes/Date/ISO",
+            },
+            {
+              title: "Now",
+              path: "/workflow/data-processing-nodes/Date/Now",
+            },
+            {
+              title: "Subtract",
+              path: "/workflow/data-processing-nodes/Date/Subtract",
+            },
+            {
+              title: "Text To Date",
+              path: "/workflow/data-processing-nodes/Date/Text to Date",
+            },
+            {
+              title: "UNIX",
+              path: "/workflow/data-processing-nodes/Date/UNIX",
+            },
+          ],
+        },
+        {
+          title: "Object",
+          children: [
+            {
+              title: "Clear Empty",
+              path: "/workflow/data-processing-nodes/Object/Clear Empty",
+            },
+            {
+              title: "Collapse",
+              path: "/workflow/data-processing-nodes/Object/Collapse",
+            },
+            { title: "Filter", path: "/workflow/data-processing-nodes/Object/Filter" },
+            { title: "Get", path: "/workflow/data-processing-nodes/Object/Get" },
+            { title: "Keys", path: "/workflow/data-processing-nodes/Object/Keys" },
+            { title: "Merge", path: "/workflow/data-processing-nodes/Object/Merge" },
+            { title: "Move", path: "/workflow/data-processing-nodes/Object/Move" },
+            { title: "Set", path: "/workflow/data-processing-nodes/Object/Set" },
+            { title: "Size", path: "/workflow/data-processing-nodes/Object/Size" },
+            { title: "Split", path: "/workflow/data-processing-nodes/Object/Split" },
+            { title: "Unset", path: "/workflow/data-processing-nodes/Object/Unset" },
+            { title: "Unzip", path: "/workflow/data-processing-nodes/Object/Unzip" },
+            { title: "Values", path: "/workflow/data-processing-nodes/Object/Values" },
+            { title: "Zip", path: "/workflow/data-processing-nodes/Object/Zip" },
+          ],
+        },
+        {
+          title: "List",
+          children: [
+            {
+              title: "Add to End",
+              path: "/workflow/data-processing-nodes/List/Add to End",
+            },
+            {
+              title: "Add to Front",
+              path: "/workflow/data-processing-nodes/List/Add to Front",
+            },
+            { title: "At", path: "/workflow/data-processing-nodes/List/At" },
+            { title: "Collapse", path: "/workflow/data-processing-nodes/List/Collapse" },
+            {
+              title: "Combine All",
+              path: "/workflow/data-processing-nodes/List/Combine All",
+            },
+            {
+              title: "Construct",
+              path: "/workflow/data-processing-nodes/List/Construct",
+            },
+            {
+              title: "Difference",
+              path: "/workflow/data-processing-nodes/List/Difference",
+            },
+            { title: "Filter", path: "/workflow/data-processing-nodes/List/Filter" },
+            { title: "Find", path: "/workflow/data-processing-nodes/List/Find" },
+            { title: "Flatten", path: "/workflow/data-processing-nodes/List/Flatten" },
+            { title: "For Each", path: "/workflow/data-processing-nodes/List/For Each" },
+            {
+              title: "Get First Item",
+              path: "/workflow/data-processing-nodes/List/Get First Item",
+            },
+            {
+              title: "Get Last Item",
+              path: "/workflow/data-processing-nodes/List/Get Last Item",
+            },
+            { title: "Group By", path: "/workflow/data-processing-nodes/List/Group By" },
+            { title: "Includes", path: "/workflow/data-processing-nodes/List/Includes" },
+            { title: "Index By", path: "/workflow/data-processing-nodes/List/Index By" },
+            {
+              title: "Intersection",
+              path: "/workflow/data-processing-nodes/List/Intersection",
+            },
+            { title: "Length", path: "/workflow/data-processing-nodes/List/Length" },
+            {
+              title: "List to Text",
+              path: "/workflow/data-processing-nodes/List/List to Text",
+            },
+            { title: "Map", path: "/workflow/data-processing-nodes/List/Map" },
+          ],
+        },
+        // {
+        //   title: "文件上传",
+        //   path: "/workflow/data-processing-nodes/文件上传",
+        // },
+      ],
+    },
     // {
     //   title: "Building real-time applications using event driven SDKs",
     //   children: [
@@ -8795,110 +8795,110 @@ const translatedZhCnNavBar = {
     //     },
     //   ],
     // },
-    // {
-    //   title: "Workflow customization capability",
-    //   children: [
-    //     {
-    //       title: "Custom template",
-    //       children: [
-    //         {
-    //           title: "Publish custom templates",
-    //           path: "/workflow/workflow-customization-capability/Custom template/Publish custom templates",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Custom application",
-    //       children: [
-    //         {
-    //           title: "Overview of Custom Applications",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Overview of Custom Applications",
-    //         },
-    //         {
-    //           title: "Create custom applications",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Create custom applications",
-    //         },
-    //         {
-    //           title: "Create custom actions",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Create custom actions",
-    //         },
-    //         {
-    //           title: "Custom Action Description",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Custom Action Description",
-    //         },
-    //         {
-    //           title: "Using custom apps",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Using custom apps",
-    //         },
-    //         {
-    //           title: "Publish custom applications",
-    //           path: "/workflow/workflow-customization-capability/Custom application/Publish custom applications",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Custom events",
-    //       children: [
-    //         {
-    //           title: "Publish custom events",
-    //           path: "/workflow/workflow-customization-capability/Custom events/Publish custom events",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: "Using templates",
-    //   children: [
-    //     {
-    //       title: "common problem",
-    //       path: "/workflow/Using templates/common problem",
-    //     },
-    //     {
-    //       title: "Upstream synchronization",
-    //       path: "/workflow/Using templates/Upstream synchronization",
-    //       children: [
-    //         {
-    //           title: "Create user nodes",
-    //           path: "/workflow/Using templates/Upstream synchronization/Create user nodes",
-    //         },
-    //         {
-    //           title: "Update user nodes",
-    //           path: "/workflow/Using templates/Upstream synchronization/Update user nodes",
-    //         },
-    //         {
-    //           title: "Delete User Node",
-    //           path: "/workflow/Using templates/Upstream synchronization/Delete User Node",
-    //         },
-    //         {
-    //           title: "Create department nodes",
-    //           path: "/workflow/Using templates/Upstream synchronization/Create department nodes",
-    //         },
-    //         {
-    //           title: "Update department nodes",
-    //           path: "/workflow/Using templates/Upstream synchronization/Update department nodes",
-    //         },
-    //         {
-    //           title: "Delete department node",
-    //           path: "/workflow/Using templates/Upstream synchronization/Delete department node",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Identity supply",
-    //       children: [
-    //         {
-    //           title: "WeCom",
-    //           path: "/workflow/Using templates/Identity supply/WeCom/for-customer-use",
-    //         },
-    //         {
-    //           title: "Feishu",
-    //           path: "/workflow/Using templates/Identity supply/Feishu",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+    {
+      title: "Workflow customization capability",
+      children: [
+        {
+          title: "Custom template",
+          children: [
+            {
+              title: "Publish custom templates",
+              path: "/workflow/workflow-customization-capability/Custom template/Publish custom templates",
+            },
+          ],
+        },
+        {
+          title: "Custom application",
+          children: [
+            {
+              title: "Overview of Custom Applications",
+              path: "/workflow/workflow-customization-capability/Custom application/Overview of Custom Applications",
+            },
+            {
+              title: "Create custom applications",
+              path: "/workflow/workflow-customization-capability/Custom application/Create custom applications",
+            },
+            // {
+            //   title: "Create custom actions",
+            //   path: "/workflow/workflow-customization-capability/Custom application/Create custom actions",
+            // },
+            // {
+            //   title: "Custom Action Description",
+            //   path: "/workflow/workflow-customization-capability/Custom application/Custom Action Description",
+            // },
+            // {
+            //   title: "Using custom apps",
+            //   path: "/workflow/workflow-customization-capability/Custom application/Using custom apps",
+            // },
+            // {
+            //   title: "Publish custom applications",
+            //   path: "/workflow/workflow-customization-capability/Custom application/Publish custom applications",
+            // },
+          ],
+        },
+        {
+          title: "Custom events",
+          children: [
+            {
+              title: "Publish custom events",
+              path: "/workflow/workflow-customization-capability/Custom events/Publish custom events",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Using templates",
+      children: [
+        {
+          title: "common problem",
+          path: "/workflow/Using templates/common problem",
+        },
+        {
+          title: "Upstream synchronization",
+          path: "/workflow/Using templates/Upstream synchronization",
+          children: [
+            {
+              title: "Create user nodes",
+              path: "/workflow/Using templates/Upstream synchronization/Create user nodes",
+            },
+            {
+              title: "Update user nodes",
+              path: "/workflow/Using templates/Upstream synchronization/Update user nodes",
+            },
+            {
+              title: "Delete User Node",
+              path: "/workflow/Using templates/Upstream synchronization/Delete User Node",
+            },
+            {
+              title: "Create department nodes",
+              path: "/workflow/Using templates/Upstream synchronization/Create department nodes",
+            },
+            {
+              title: "Update department nodes",
+              path: "/workflow/Using templates/Upstream synchronization/Update department nodes",
+            },
+            {
+              title: "Delete department node",
+              path: "/workflow/Using templates/Upstream synchronization/Delete department node",
+            },
+          ],
+        },
+        {
+          title: "Identity supply",
+          children: [
+            {
+              title: "WeCom",
+              path: "/workflow/Using templates/Identity supply/WeCom/for-customer-use",
+            },
+            // {
+            //   title: "Feishu",
+            //   path: "/workflow/Using templates/Identity supply/Feishu",
+            // },
+          ],
+        },
+      ],
+    },
   ],
   "/integration/": [],
 };

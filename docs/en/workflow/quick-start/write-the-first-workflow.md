@@ -118,7 +118,7 @@ The value of the current element's email can be obtained through <strong> ${getL
 
 ## Write the "Determine User Existence" interface for the Authoring node to determine whether the current user exists
 
-Select the action "Check if the user exists" in the "Authoring" application:
+Select the action "Determine whether the user exists" in the "Authoring" application:
 
 ![](../static/MmHwb2krgo6t19xWYyKcT7Wancf.png)
 
@@ -160,11 +160,9 @@ I won't go into too much detail here. It should be mentioned that when creating 
 
 At the same time, the list passed in at the loop node is third-party user data, not Authing users, so when updating user information, it is not possible to obtain Authing's user ID. Fortunately, our V3 update user profile API supports passing in an optional field - <strong> userIdType </strong>. We can update users based on the <strong> externalId </strong>field:
 
-![](../static/boxcn63K72BUZochnbl6VkSoWLh.png)
 
 ![](../static/OCkCbo7RPop5wHx6wXTcDLGmnMg.png)
 
-![](../static/N0wobGg0RoiElgxTPLKcNamanLT.png)
 
 Finally, let's take a look at the effect and see that the user has been successfully imported:
 
