@@ -1,0 +1,44 @@
+name: build docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Docs 构建，请选择分支"
+        required: true
+        default: "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Docker repository
+        uses: docker/login-action@v3.2.0
+        with:
+          registry: registry.cn-beijing.aliyuncs.com
+          username: ${{ secrets.ACR_REGISTRY_USERNAME }}
+          password: ${{ secrets.ACR_REGISTRY_PASSWORD }}
+      - name: Setup ossutil
+        uses: coscene-io/setup-ossutil@v2
+        with:
+          endpoint: oss-cn-beijing.aliyuncs.com
+          access-key-id: ${{ secrets.OSS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 16
+          cache: yarn
+      - name: Build the Docker image and upload to oss
+        run: |
+          VERSION=$(cat version.txt)
+          PUBLIC_URL=//cdn.authing.co/authing-docs-v2/${VERSION}/
+          TAG=registry.cn-beijing.aliyuncs.com/authing-next/authing-docs-v2:${VERSION}
+          yarn config set registry https://registry.npmmirror.com
+          yarn
+          NODE_OPTIONS=--max-old-space-size=12000 PUBLIC_URL=$PUBLIC_URL yarn docs:build
+          docker build -t ${TAG} . --no-cache
+          docker push ${TAG}
+          ossutil cp -r -f docs/.vuepress/dist oss://authing-cdn-cn-prod/authing-docs-v2/${VERSION}/
