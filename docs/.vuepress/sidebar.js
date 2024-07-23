@@ -8282,10 +8282,10 @@ const translatedZhCnNavBar = {
           title: "Add node",
           path: "/workflow/write-workflow/add-node",
         },
-        // {
-        //   title: "Configure account connection",
-        //   path: "/workflow/write-workflow/configure-account-connection",
-        // },
+        {
+          title: "Configure account connection",
+          path: "/workflow/write-workflow/configure-account-connection",
+        },
         {
           title: "Add process control node",
           path: "/workflow/write-workflow/add-process-control-node",
