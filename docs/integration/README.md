@@ -540,8 +540,8 @@
       {
         key: "sharepoint",
         name: " SharePoint",
-        image: "sharepoint-logo@2x.png",
-        image2x: "sharepoint-logo@2x.png",
+        image: "sharepoint-logo.svg",
+        image2x: "sharepoint-logo.svg",
         category: "office",
       },
       {
