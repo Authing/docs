@@ -193,7 +193,7 @@ managementClient.acl().createResource(options)
 - `options.code` \<String\> 资源标识符，不可使用值 `userpool`、`user`、`application`、`role`、`group`、`org`、`*`、`api`、`resource-namespace`、`custom-resource`
 - `options.namespace` \<String\> 权限分组命名空间
 - `options.type` \<String\> 资源类型，可选值为 `DATA`、`API`、`MENU`、`UI`、`BUTTON`。
-- `options.actions` \<List\<IAction\>\> 资源操作对象数组。其中 name 为操作名称，填写一个**动词**，description 为操作描述，填写述信息。
+- `options.actions` \<List\<IAction\>\> 资源操作对象数组。其中 name 为操作名称，填写一个**动词**，description 为操作描述，填写描述信息。
   - `IAction`: `name` \<String\> 操作名称，`description` \<String\> 描述信息。
 - `options.description` \<String\> 资源描述信息
 
