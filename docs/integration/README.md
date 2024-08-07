@@ -531,11 +531,18 @@
         category: "office",
       },
       {
-      key: "outlookwebapp",
-      name: " Outlook Web App",
-      image: "outlook-logo@2x.png",
-      image2x: "outlook-logo@2x.png",
-      category: "office",
+        key: "outlookwebapp",
+        name: " Outlook Web App",
+        image: "outlook-logo@2x.png",
+        image2x: "outlook-logo@2x.png",
+        category: "office",
+      },
+      {
+        key: "sharepoint",
+        name: " SharePoint",
+        image: "sharepoint-logo.svg",
+        image2x: "sharepoint-logo.svg",
+        category: "office",
       },
       {
         key: "cas-jumpserver",

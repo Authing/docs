@@ -364,6 +364,7 @@ module.exports = {
         oldVersion: "Old Version",
         nav: [
           { text: "Concept", link: "/en/concepts/" },
+          { text: "workflow", link: "/en/workflow/" },
           { text: "Guides", link: "/en/guides/" },
           { text: "Development Integration", link: "/en/reference/" },
           {
