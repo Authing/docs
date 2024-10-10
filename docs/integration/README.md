@@ -867,6 +867,13 @@
         category: "devtools",
       },
       {
+        key: "hdcre",
+        name: "海鼎 CRE",
+        image: "hdlogo.svg",
+        image2x: "hdlogo.svg",
+        category: "other",
+      },
+      {
         key: "weaver",
         name: "泛微 OA",
         image: "weaver_logo@2x.png",
