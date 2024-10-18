@@ -8,7 +8,7 @@
 
 1. [使用 {{$localeConfig.brandName}} 托管登录页](../use-hosted-login-page.md)。
 2. [使用 {{$localeConfig.brandName}} 提供的内嵌登录组件](../use-embeded-login-component/)，可以集成到你的 Web 和移动端项目中，你不需要自己实现登录表单 UI。
-3. [使用 API & SDK](./use-api-sdk/)，{{$localeConfig.brandName}} 提供 RESTFul 和 GraphQL 两种形式的 API 以及 10 余种语言或框架的 SDK，你可以基于此自定义 UI 和认证流程。
+3. [使用 API & SDK](../use-api-sdk/)，{{$localeConfig.brandName}} 提供 RESTFul 和 GraphQL 两种形式的 API 以及 10 余种语言或框架的 SDK，你可以基于此自定义 UI 和认证流程。
 
 {{$localeConfig.brandName}} 可以集成到标准 Web 应用、单页 Web 应用、客户端应用以及后端应用等各种场景中，你可以分别阅读不同场景的接入方式：
 
