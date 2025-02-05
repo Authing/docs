@@ -20,17 +20,17 @@ For example, when a specific action occurs within your application—such as a u
 1. Navigate to the Authing Console.
 2. Select the workflow you want to trigger.
 3. In the Trigger Method section, choose 'Trigger By Webhook'.
-![](../static/IRyPbZcu5oGYZPxdPrrce9Y7nph.png)
+![workflow-trigger-by-webhook](../static/IRyPbZcu5oGYZPxdPrrce9Y7nph.png)
 4. A unique webhook URL will be generated for this workflow.
 5. Copy the webhook URL for later use from the <strong> Webhook address</strong> section.
-![](../static/EchAbaE8gorT4PxdtHucGkjMnJc.png)
+![copy-the-webhook-URL](../static/EchAbaE8gorT4PxdtHucGkjMnJc.png)
 
 ### Step 2: Sending an HTTP Request to the Webhook
 
 To trigger the workflow, send an HTTP request to the copied webhook URL. You can use POST requests to pass relevant data.
 
 ```javaScript
-POST https://<your-webhook-url>
+POST https://<your-authing-webhook-url-to-trigger-the-workflow>
 Content-Type: application/json
 
 {
