@@ -895,6 +895,13 @@
         category: "other",
       },
       {
+        key: "times-bright-cresuccess",
+        name: "时代光华",
+        image: "tbc1.png",
+        image2x: "tbc1.png",
+        category: "other",
+      },
+      {
         key: "tita",
         name: "Tita",
         image: "Tita_logo@2x.png",
