@@ -902,6 +902,13 @@
         category: "other",
       },
       {
+        key: "hubspot-saml",
+        name: "HubSpot(SSO)",
+        image: "logo_hubstop.svg",
+        image2x: "logo_hubstop.svg",
+        category: "other",
+      },
+      {
         key: "tita",
         name: "Tita",
         image: "Tita_logo@2x.png",
