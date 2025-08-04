@@ -986,6 +986,13 @@
         category: "hr",
       },
       {
+        key: "kayang",
+        name: "嘉扬 HR",
+        image: "logo_kayang.svg",
+        image2x: "logo_kayang.svg",
+        category: "hr",
+      },
+      {
         key: "datart",
         name: "Datart",
         image: "datart_logo.svg",
