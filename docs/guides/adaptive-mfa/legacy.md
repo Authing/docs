@@ -305,20 +305,16 @@ if(mfaTriggerData) {
 ```
 
 #### Step 3.2.5 添加全新接口，校验 MFA token 有效性，根据校验结果重新签发用户 Token
-
+![API](./images/3.5.png)
+https://api-explorer.authing.cn/?tag=tag/MFA%20%E8%A6%81%E7%B4%A0%E7%AE%A1%E7%90%86/API%20%E5%88%97%E8%A1%A8/operation/FactorsV3Controller_MfaVerifyStatus
 ```javascript
 // MFA verify 接口
 function clientReissueToken(mfaToken) {
-    const mfaRes = authingAuthenticationClient.verify(mfaToken)
+    const mfaRes = authingAuthenticationClient.verify(userId,mfaToken)
     // 如果 mfaToken 校验成功
     if(mfaRes.status) {
-        // 取出 mfaToken 包含的 Id 信息
-        const { originalIdentity } = mfaRes.data
-        // 根据 Id 查询所包含的用户，如果用户存在则返回 Token 封装
-        const user = db.findByUsername(originalIdentity)
         return {
             status: true,
-            token: jwt(user)
         }
     } else {
     // 如果 mfaToken 校验失败，则返回失败信息
