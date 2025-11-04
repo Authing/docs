@@ -29,9 +29,10 @@
 #### 我们为您推荐的改造已有系统接入 Authing 自适应 MFA 方案
 
 以下是交互时序图
-![交互时序图](./images/3.3.png)
+![功能交互图](./images/3.4.png)
 
 [Live Demo For MFA ](https://codesandbox.io/s/damp-paper-ub60yu?file=/src/index.js)
+
 
 ##### 客户端改造方案
 - 在代码中安装 Authing MFA SDK,  Authing SDK 并引入 AuthinMFA, MetadataClient
@@ -51,6 +52,7 @@
 - 改造登录接口接收并携带认证状态上报用户行为数据到 Authing 系统
 - 用户行为数据上报后，如果用户一次认证通过后，调用 Authing 安全策略引擎计算本次认证是否触发 MFA
 - 如果触发 MFA，将本次进行 MFA 的 trigger data 返回给客户端；如果不进行 MFA，则验证通过
+- 客户端收到 MFA 认证结果后，获取到 MFA 认证 Token，使用 MFA 认证 Token 请求 Authing 接口获取到 MFA 认证结果，如果认证通过，则记录用户登录状态，跳转到业务系统；如果认证不通过，则显示错误提示
 
 ##### 以一个简单的应用系统登录代码示例，帮助您来理解如何进行对系统的逐步改造
 我们假定您登录系统的客户端、服务端代码如下所示，它足够简单易于理解
