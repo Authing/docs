@@ -1159,6 +1159,20 @@ const zhCnNavBar = {
       ],
     },
     {
+      title: "Passkey 使用指南",
+      path: "/guides/passkey/",
+      children: [
+        {
+          title: "Passkey 的启用与管理",
+          path: "/guides/passkey/enable-and-manage",
+        },
+        {
+          title: "终端用户如何使用 Passkey？",
+          path: "/guides/passkey/end-user",
+        },
+      ],
+    },
+    {
       title: "品牌化",
       children: [
         {
