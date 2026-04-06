@@ -6,7 +6,7 @@
 
 目前 Authing 实现了 CAS 1.0 的 `/login`，`/validate`，`/logout` 端点。
 
-你可以在[这里](https://apereo.github.io/cas/6.3.x/protocol/CAS-Protocol-Specification.html)深入理解 CAS 协议。
+你可以在[这里](https://apereo.github.io/cas/6.6.x/protocol/CAS-Protocol-Specification.html)深入理解 CAS 协议。
 
 ## 创建应用
 
